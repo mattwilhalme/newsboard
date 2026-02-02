@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Archive files (can be large)
+archive/
+
+# Debug files
+debug/
+
+# Cache (can be regenerated)
+cache.json
+
+# Raw HTML dumps
+*.html
+
+# OS files
+.DS_Store
+
+# Temporary files
+*.tmp
+*.save
