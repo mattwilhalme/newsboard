@@ -24,6 +24,13 @@ jobs:
 
       - name: Install Playwright (Chromium)
         run: npx playwright install --with-deps chromium
+      
+        - name: Debug checked-out code
+        run: |
+          echo "HEAD SHA:" && git rev-parse HEAD
+          echo "server.js export lines:" && grep -n "export async function scrape" -n server.js || true
+          echo "module exports:" && node -e "import('./server.js').then(m=>console.log(Object.keys(m))).catch(e=>{console.error(e);process.exit(1)})"
+
 
       - name: Run Newsboard scraper
         run: node scripts/run-scrape.js
