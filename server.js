@@ -569,3 +569,4 @@ if (process.env.START_SERVER === "1") {
     console.log(`Newsboard API + UI: http://localhost:${PORT}`);
   });
 }
+
