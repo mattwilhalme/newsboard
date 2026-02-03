@@ -1,21 +1,21 @@
 {
-  "name": "NewsBoard",
+  "name": "newsboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Private newsroom tooling experiment for tracking editorial headline changes",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "scrape-abc": "node -e \"import('./server.js').then(m => m.scrapeABCFrontPage().then(console.log))\"",
+    "scrape-cbs": "node -e \"import('./server.js').then(m => m.scrapeCBSFrontPage().then(console.log))\"",
+    "clean-cache": "rm -f cache.json",
+    "clean-archive": "rm -rf archive/*",
+    "install-browsers": "npx playwright install"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
     "express": "^5.2.1",
     "playwright": "^1.58.0"
-  }
-}
-{
-  "scripts": {
-    "dev": "START_SERVER=1 node server.js",
-    "scrape": "node scripts/run-scrape.js"
   }
 }
