@@ -150,7 +150,7 @@ async function archiveRun(page, runId, snapshotObj) {
 
 // -------- Scrapers --------
 
-async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
+export async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
   return await withBrowser(async (page) => {
     const runId = `abc_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
@@ -268,7 +268,7 @@ async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
   });
 }
 
-async function scrapeCBSFrontPage({ scrollPasses = 2 } = {}) {
+export async function scrapeCBSFrontPage({ scrollPasses = 2 } = {}) {
   return await withBrowser(async (page) => {
     const runId = `cbs_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
@@ -564,6 +564,8 @@ app.get("/api/history", (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Newsboard API + UI: http://localhost:${PORT}`);
-});
+if (process.env.START_SERVER === "1") {
+  app.listen(PORT, () => {
+    console.log(`Newsboard API + UI: http://localhost:${PORT}`);
+  });
+}
