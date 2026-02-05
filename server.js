@@ -1,8 +1,10 @@
+// server.js
 import express from "express";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 import { chromium } from "playwright";
+import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
@@ -346,7 +348,7 @@ async function scrapeCBSFrontPage({ scrollPasses = 2 } = {}) {
   });
 }
 
-// -------- NEW: Hero-only scrapers --------
+// -------- Hero-only scrapers --------
 
 async function scrapeABCHero() {
   return await withBrowser(async (page) => {
@@ -383,7 +385,6 @@ async function scrapeABCHero() {
         return best?.url || null;
       }
 
-      // From your snippet: a[data-testid="prism-linkbase"] contains h2[id$="headline"]
       const h2 = document.querySelector(
         'main a[data-testid="prism-linkbase"][href] h2[id$="headline"]'
       );
@@ -396,7 +397,6 @@ async function scrapeABCHero() {
       let imgUrl = null;
       let imgAlt = null;
 
-      // Try to locate an image in the same card/container
       const card =
         a?.closest('[data-testid="prism-card"]') ||
         a?.closest('[data-container="band"]') ||
@@ -431,7 +431,6 @@ async function scrapeABCHero() {
     let finalTitle = cleanText(hero?.title || "");
     let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
 
-    // Fallback: if homepage image isn't found, try article og:image (reliable)
     if (hero?.ok && finalUrl && !finalImgUrl) {
       try {
         const r = await page.request.get(finalUrl, { timeout: 20000 });
@@ -511,9 +510,10 @@ async function scrapeCBSHero() {
         return best?.url || parts[parts.length - 1]?.split(/\s+/)?.[0] || null;
       }
 
-      // Your snippet: article.item -> a.item__anchor[href] -> h4.item__hed + img
       const firstAnchor = document.querySelector("main article.item a.item__anchor[href]");
-      const article = firstAnchor?.closest("article.item") || document.querySelector("article.item");
+      const article =
+        firstAnchor?.closest("article.item") || document.querySelector("article.item");
+
       if (!article) return { ok: false, error: "CBS hero article.item not found" };
 
       const a = article.querySelector("a.item__anchor[href]");
@@ -792,14 +792,19 @@ app.get("/api/history", (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Newsboard API + UI: http://localhost:${PORT}`);
-});
+// IMPORTANT: only start the server when running `node server.js`.
+// When imported (e.g., by scripts/run-scrape.js in GitHub Actions), do not listen.
+const __filename = fileURLToPath(import.meta.url);
+if (process.argv[1] === __filename) {
+  app.listen(PORT, () => {
+    console.log(`Newsboard API + UI: http://localhost:${PORT}`);
+  });
+}
 
 // Exports for scripts/run-scrape.js and local tooling
 export {
   scrapeABCFrontPage,
   scrapeCBSFrontPage,
   scrapeABCHero,
-  scrapeCBSHero
+  scrapeCBSHero,
 };
