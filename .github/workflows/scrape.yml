@@ -1,23 +1,33 @@
-name: Newsboard Scrape
+name: Scrape + Publish (GitHub Pages)
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
-  workflow_dispatch:
+    - cron: "*/5 * * * *" # every 5 minutes
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape-publish
+  cancel-in-progress: false
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 12
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -25,11 +35,28 @@ jobs:
       - name: Install Playwright (Chromium)
         run: npx playwright install --with-deps chromium
 
-      - name: Run Newsboard scraper
+      - name: Run scraper
+        env:
+          NODE_ENV: production
         run: node scripts/run-scrape.js
 
-      - name: Upload latest snapshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: newsboard-latest
-          path: latest.json
+      - name: Verify output files exist
+        run: |
+          test -d docs || (echo "Missing docs/ directory" && exit 1)
+          test -d docs/data || (echo "Missing docs/data/ directory" && exit 1)
+          ls -la docs/data
+
+      - name: Commit & push updated data
+        run: |
+          git config user.name "newsboard-bot"
+          git config user.email "newsboard-bot@users.noreply.github.com"
+
+          git add -A docs/data
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update scraped data"
+          git push

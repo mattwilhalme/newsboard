@@ -1,10 +1,7 @@
 // scripts/run-scrape.js
 import fs from "fs";
 import path from "path";
-import {
-  scrapeABCFrontPage,
-  scrapeCBSFrontPage
-} from "../server.js";
+import { scrapeABCHero, scrapeCBSHero } from "../server.js";
 
 const DATA_DIR = path.join("docs", "data");
 
@@ -21,69 +18,72 @@ function writeJSON(filename, payload) {
 }
 
 async function run() {
-  console.log("🗞️ Newsboard scrape starting…");
+  console.log("🗞️ Newsboard hero scrape starting…");
 
   ensureDir(DATA_DIR);
+
+  const generatedAt = new Date().toISOString();
 
   let abc = null;
   let cbs = null;
 
   try {
-    abc = await scrapeABCFrontPage();
+    abc = await scrapeABCHero();
   } catch (err) {
-    console.error("❌ ABC scrape failed", err);
+    console.error("❌ ABC hero scrape failed", err);
     abc = {
       ok: false,
       error: String(err),
       updatedAt: new Date().toISOString(),
-      items: []
+      item: null,
     };
   }
 
   try {
-    cbs = await scrapeCBSFrontPage();
+    cbs = await scrapeCBSHero();
   } catch (err) {
-    console.error("❌ CBS scrape failed", err);
+    console.error("❌ CBS hero scrape failed", err);
     cbs = {
       ok: false,
       error: String(err),
       updatedAt: new Date().toISOString(),
-      items: []
+      item: null,
     };
   }
 
-  const generatedAt = new Date().toISOString();
-
-  /**
-   * current.json
-   * Used by index.html for the "Now" view
-   */
+  // current.json (for "Now" view)
   const current = {
     ok: Boolean(abc?.ok || cbs?.ok),
     generatedAt,
     sources: {
-      abc,
-      cbs
-    }
+      abc: {
+        ok: Boolean(abc?.ok),
+        updatedAt: abc?.updatedAt || null,
+        error: abc?.error || null,
+        runId: abc?.runId || null,
+        item: abc?.item || null,
+      },
+      cbs: {
+        ok: Boolean(cbs?.ok),
+        updatedAt: cbs?.updatedAt || null,
+        error: cbs?.error || null,
+        runId: cbs?.runId || null,
+        item: cbs?.item || null,
+      },
+    },
   };
 
   writeJSON("current.json", current);
 
-  /**
-   * unified.json
-   * Temporary placeholder until hero-epoch logic is added.
-   * Right now it just exposes the top item per source.
-   */
+  // unified.json (placeholder unified feed until epoch logic is added)
+  // For now: just the two current hero items, with their updatedAt timestamps.
   const unified = {
+    ok: Boolean(abc?.ok || cbs?.ok),
     generatedAt,
     items: [
-      abc?.items?.[0]
-        ? { source: "abc", ...abc.items[0], updatedAt: abc.updatedAt }
-        : null,
-      cbs?.items?.[0]
-        ? { source: "cbs", ...cbs.items[0], updatedAt: cbs.updatedAt }
-        : null
-    ].filter(Boolean)
+      abc?.item ? { source: "abc", updatedAt: abc.updatedAt, ...abc.item } : null,
+      cbs?.item ? { source: "cbs", updatedAt: cbs.updatedAt, ...cbs.item } : null,
+    ].filter(Boolean),
   };
 
   writeJSON("unified.json", unified);
@@ -92,22 +92,15 @@ async function run() {
   console.log("✅ Wrote docs/data/unified.json");
 }
 
-run().catch(err => {
+run().catch((err) => {
   console.error("❌ Scrape failed hard");
   console.error(err);
 
-  // Still ensure Pages has *something* to read
   ensureDir(DATA_DIR);
-  writeJSON("current.json", {
-    ok: false,
-    generatedAt: new Date().toISOString(),
-    error: String(err)
-  });
-  writeJSON("unified.json", {
-    generatedAt: new Date().toISOString(),
-    items: [],
-    error: String(err)
-  });
+
+  const generatedAt = new Date().toISOString();
+  writeJSON("current.json", { ok: false, generatedAt, error: String(err) });
+  writeJSON("unified.json", { ok: false, generatedAt, items: [], error: String(err) });
 
   process.exit(1);
 });

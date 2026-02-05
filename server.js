@@ -47,33 +47,27 @@ function sha1(s) {
 }
 
 function ensureCacheShape(raw) {
+  const baseSource = (id, name, homeUrl) => ({
+    id,
+    name,
+    homeUrl,
+    updatedAt: null,
+    ok: false,
+    error: "Not refreshed yet",
+    stale: false,
+    runId: null,
+    archive: null,
+    items: [],
+    item: null, // for hero sources
+  });
+
   const base = {
     generatedAt: null,
     sources: {
-      abc: {
-        id: "abc",
-        name: "ABC News",
-        homeUrl: "https://abcnews.go.com/",
-        updatedAt: null,
-        ok: false,
-        error: "Not refreshed yet",
-        stale: false,
-        runId: null,
-        archive: null,
-        items: [],
-      },
-      cbs: {
-        id: "cbs",
-        name: "CBS News",
-        homeUrl: "https://www.cbsnews.com/",
-        updatedAt: null,
-        ok: false,
-        error: "Not refreshed yet",
-        stale: false,
-        runId: null,
-        archive: null,
-        items: [],
-      },
+      abc: baseSource("abc", "ABC News", "https://abcnews.go.com/"),
+      cbs: baseSource("cbs", "CBS News", "https://www.cbsnews.com/"),
+      abc1: baseSource("abc1", "ABC News (Hero)", "https://abcnews.go.com/"),
+      cbs1: baseSource("cbs1", "CBS News (Hero)", "https://www.cbsnews.com/"),
     },
   };
 
@@ -88,11 +82,13 @@ function ensureCacheShape(raw) {
         ...raw.sources,
         abc: { ...base.sources.abc, ...(raw.sources.abc || {}) },
         cbs: { ...base.sources.cbs, ...(raw.sources.cbs || {}) },
+        abc1: { ...base.sources.abc1, ...(raw.sources.abc1 || {}) },
+        cbs1: { ...base.sources.cbs1, ...(raw.sources.cbs1 || {}) },
       },
     };
   }
 
-  if (raw.abc || raw.cbs) {
+  if (raw.abc || raw.cbs || raw.abc1 || raw.cbs1) {
     return {
       ...base,
       generatedAt: raw.generatedAt || null,
@@ -100,6 +96,8 @@ function ensureCacheShape(raw) {
         ...base.sources,
         abc: { ...base.sources.abc, ...(raw.abc || {}) },
         cbs: { ...base.sources.cbs, ...(raw.cbs || {}) },
+        abc1: { ...base.sources.abc1, ...(raw.abc1 || {}) },
+        cbs1: { ...base.sources.cbs1, ...(raw.cbs1 || {}) },
       },
     };
   }
@@ -138,9 +136,10 @@ async function archiveRun(page, runId, snapshotObj) {
   try {
     fs.writeFileSync(htmlPath, await page.content(), "utf8");
   } catch {}
-  try {
-    await page.screenshot({ path: pngPath, fullPage: true });
-  } catch {}
+
+  // Screenshots disabled for now (storage + speed).
+  // try { await page.screenshot({ path: pngPath, fullPage: true }); } catch {}
+
   try {
     fs.writeFileSync(jsonPath, JSON.stringify(snapshotObj, null, 2), "utf8");
   } catch {}
@@ -148,9 +147,9 @@ async function archiveRun(page, runId, snapshotObj) {
   return { htmlPath, pngPath, jsonPath };
 }
 
-// -------- Scrapers --------
+// -------- Scrapers (Top headlines / legacy) --------
 
-export async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
+async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
   return await withBrowser(async (page) => {
     const runId = `abc_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
@@ -268,7 +267,7 @@ export async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {
   });
 }
 
-export async function scrapeCBSFrontPage({ scrollPasses = 2 } = {}) {
+async function scrapeCBSFrontPage({ scrollPasses = 2 } = {}) {
   return await withBrowser(async (page) => {
     const runId = `cbs_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
@@ -347,7 +346,239 @@ export async function scrapeCBSFrontPage({ scrollPasses = 2 } = {}) {
   });
 }
 
-// -------- Archive + Diff helpers --------
+// -------- NEW: Hero-only scrapers --------
+
+async function scrapeABCHero() {
+  return await withBrowser(async (page) => {
+    const runId = `abc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://abcnews.go.com/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    await page.waitForSelector("main", { timeout: 20000 });
+    await page.waitForTimeout(1200);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "").replace(/\s+/g, " ").trim();
+      }
+      function absUrl(href) {
+        try {
+          return new URL(href, window.location.origin).toString();
+        } catch {
+          return null;
+        }
+      }
+      function pickFromSrcset(srcset) {
+        if (!srcset) return null;
+        const parts = srcset.split(",").map((p) => p.trim()).filter(Boolean);
+        let best = null;
+        for (const p of parts) {
+          const [u, w] = p.split(/\s+/);
+          const width = w && w.endsWith("w") ? Number(w.slice(0, -1)) : 0;
+          if (!best || width > best.width) best = { url: u, width };
+        }
+        return best?.url || null;
+      }
+
+      // From your snippet: a[data-testid="prism-linkbase"] contains h2[id$="headline"]
+      const h2 = document.querySelector(
+        'main a[data-testid="prism-linkbase"][href] h2[id$="headline"]'
+      );
+      if (!h2) return { ok: false, error: "ABC hero headline not found" };
+
+      const a = h2.closest('a[data-testid="prism-linkbase"][href]');
+      const title = clean(h2.textContent);
+      const url = absUrl(a?.getAttribute("href") || "");
+
+      let imgUrl = null;
+      let imgAlt = null;
+
+      // Try to locate an image in the same card/container
+      const card =
+        a?.closest('[data-testid="prism-card"]') ||
+        a?.closest('[data-container="band"]') ||
+        a?.closest("article") ||
+        a?.closest("section") ||
+        a?.parentElement;
+
+      if (card) {
+        const img = card.querySelector("img[src], img[srcset]");
+        if (img) {
+          imgAlt = clean(img.getAttribute("alt") || "") || null;
+          imgUrl = absUrl(img.getAttribute("src") || "") || null;
+          if (!imgUrl) {
+            const fromSet = pickFromSrcset(img.getAttribute("srcset") || "");
+            imgUrl = fromSet ? absUrl(fromSet) : null;
+          }
+        }
+
+        if (!imgUrl) {
+          const source = card.querySelector("source[srcset]");
+          if (source) {
+            const fromSet = pickFromSrcset(source.getAttribute("srcset") || "");
+            imgUrl = fromSet ? absUrl(fromSet) : null;
+          }
+        }
+      }
+
+      return { ok: Boolean(title && url), title, url, imgUrl, imgAlt };
+    });
+
+    let finalUrl = hero?.url ? normalizeUrl(hero.url) : null;
+    let finalTitle = cleanText(hero?.title || "");
+    let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
+
+    // Fallback: if homepage image isn't found, try article og:image (reliable)
+    if (hero?.ok && finalUrl && !finalImgUrl) {
+      try {
+        const r = await page.request.get(finalUrl, { timeout: 20000 });
+        const html = await r.text();
+        const m = html.match(
+          /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
+        );
+        if (m?.[1]) finalImgUrl = normalizeUrl(m[1]);
+      } catch {
+        // ignore
+      }
+    }
+
+    const item = hero?.ok
+      ? {
+          title: finalTitle,
+          url: finalUrl,
+          imgUrl: finalImgUrl,
+          imgAlt: hero?.imgAlt || null,
+          slotKey: sha1("abc|hero").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "abc1",
+      fetchedAt: nowISO(),
+      runId,
+      item,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "ABC hero not found"),
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+    };
+  });
+}
+
+async function scrapeCBSHero() {
+  return await withBrowser(async (page) => {
+    const runId = `cbs1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.cbsnews.com/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    await page.waitForTimeout(1200);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "").replace(/\s+/g, " ").trim();
+      }
+      function absUrl(href) {
+        try {
+          return new URL(href, window.location.origin).toString();
+        } catch {
+          return null;
+        }
+      }
+      function pickFromSrcset(srcset) {
+        if (!srcset) return null;
+        const parts = srcset.split(",").map((p) => p.trim()).filter(Boolean);
+        let best = null;
+        for (const p of parts) {
+          const [u, dpr] = p.split(/\s+/);
+          const mult = dpr && dpr.endsWith("x") ? Number(dpr.slice(0, -1)) : 0;
+          if (!best || mult > best.mult) best = { url: u, mult };
+        }
+        return best?.url || parts[parts.length - 1]?.split(/\s+/)?.[0] || null;
+      }
+
+      // Your snippet: article.item -> a.item__anchor[href] -> h4.item__hed + img
+      const firstAnchor = document.querySelector("main article.item a.item__anchor[href]");
+      const article = firstAnchor?.closest("article.item") || document.querySelector("article.item");
+      if (!article) return { ok: false, error: "CBS hero article.item not found" };
+
+      const a = article.querySelector("a.item__anchor[href]");
+      const h = article.querySelector("h4.item__hed");
+      const img = article.querySelector("img[src], img[srcset]");
+
+      const title = clean(h?.textContent || "");
+      const url = absUrl(a?.getAttribute("href") || "");
+
+      let imgUrl = null;
+      let imgAlt = null;
+
+      if (img) {
+        imgAlt = clean(img.getAttribute("alt") || "") || null;
+        imgUrl = absUrl(img.getAttribute("src") || "") || null;
+        if (!imgUrl) {
+          const fromSet = pickFromSrcset(img.getAttribute("srcset") || "");
+          imgUrl = fromSet ? absUrl(fromSet) : null;
+        }
+      }
+
+      if (!imgUrl) {
+        const source = article.querySelector("source[srcset]");
+        if (source) {
+          const fromSet = pickFromSrcset(source.getAttribute("srcset") || "");
+          imgUrl = fromSet ? absUrl(fromSet) : null;
+        }
+      }
+
+      return { ok: Boolean(title && url), title, url, imgUrl, imgAlt };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title),
+          url: normalizeUrl(hero.url),
+          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+          imgAlt: hero.imgAlt || null,
+          slotKey: sha1("cbs|hero").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "cbs1",
+      fetchedAt: nowISO(),
+      runId,
+      item,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "CBS hero not found"),
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+    };
+  });
+}
+
+// -------- Archive + Diff helpers (legacy top headlines) --------
 
 function listSnapshotFiles(id) {
   return fs
@@ -456,17 +687,20 @@ app.get("/api/headlines", (req, res) => {
 app.post("/api/refresh", async (req, res) => {
   cache = ensureCacheShape(cache);
 
-  const id = (req.body?.id || "").toLowerCase(); // abc | cbs | "" (all)
+  const id = (req.body?.id || "").toLowerCase(); // abc | cbs | abc1 | cbs1 | "" (all)
   const maxItems = Number(req.body?.x ?? 40);
   const scrollPasses = Number(req.body?.scrollPasses ?? 6);
 
-  const toRun = id ? [id] : ["abc", "cbs"];
+  const toRun = id ? [id] : ["abc", "cbs", "abc1", "cbs1"];
 
   try {
     for (const which of toRun) {
       let result;
+
       if (which === "abc") result = await scrapeABCFrontPage({ maxItems, scrollPasses });
       else if (which === "cbs") result = await scrapeCBSFrontPage({ scrollPasses: 2 });
+      else if (which === "abc1") result = await scrapeABCHero();
+      else if (which === "cbs1") result = await scrapeCBSHero();
       else throw new Error(`Unknown source id: ${which}`);
 
       cache.sources[which] = {
@@ -478,6 +712,7 @@ app.post("/api/refresh", async (req, res) => {
         runId: result?.runId ?? null,
         archive: result?.archive ?? null,
         items: Array.isArray(result?.items) ? result.items : [],
+        item: result?.item ?? null,
       };
     }
 
@@ -519,12 +754,6 @@ app.get("/api/diff", (req, res) => {
   }
 });
 
-/**
- * New: history feed for the drawer.
- * Returns last N snapshots and diffs between each consecutive pair.
- *
- * GET /api/history?id=abc&limit=20
- */
 app.get("/api/history", (req, res) => {
   const id = (req.query?.id || "abc").toLowerCase();
   const limit = Math.max(2, Math.min(80, Number(req.query?.limit || 20)));
@@ -543,7 +772,6 @@ app.get("/api/history", (req, res) => {
       };
     });
 
-    // diffs[i] describes changes from snaps[i-1] -> snaps[i]
     const diffs = [];
     for (let i = 1; i < files.length; i++) {
       const prevSnap = readSnapshot(files[i - 1]);
@@ -564,9 +792,14 @@ app.get("/api/history", (req, res) => {
   }
 });
 
-if (process.env.START_SERVER === "1") {
-  app.listen(PORT, () => {
-    console.log(`Newsboard API + UI: http://localhost:${PORT}`);
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Newsboard API + UI: http://localhost:${PORT}`);
+});
 
+// Exports for scripts/run-scrape.js and local tooling
+export {
+  scrapeABCFrontPage,
+  scrapeCBSFrontPage,
+  scrapeABCHero,
+  scrapeCBSHero
+};
