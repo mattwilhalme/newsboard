@@ -4,6 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Newsboard</title>
+
+  <!-- Kill favicon 404s on GitHub Pages -->
+  <link rel="icon" href="data:,">
+
   <style>
     :root{
       --bg:#f8f9fa;
@@ -223,15 +227,6 @@
       gap:10px;
     }
 
-    .twoCol{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 900px){
-      .twoCol{ grid-template-columns: 1fr; }
-    }
-
     .historyList{
       display:flex;
       flex-direction:column;
@@ -385,34 +380,15 @@
 
     <div class="sectionTitle">
       <span>History</span>
-      <span class="tiny">Reads <span class="mono">./data/history.json</span></span>
+      <span class="tiny">Coming next (no <span class="mono">./data/history.json</span> yet)</span>
     </div>
 
-    <div class="twoCol">
-      <div class="card">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot ok"></div>
-            <div class="srcMeta">
-              <div class="srcName">ABC history</div>
-              <div class="srcTime tiny" id="histmeta-abc">—</div>
-            </div>
-          </div>
+    <div class="card">
+      <div class="historyList">
+        <div class="tiny" style="color:var(--muted);">
+          No history feed is being generated yet. This section will populate once the GitHub Action writes
+          <span class="mono">docs/data/history.json</span>.
         </div>
-        <div class="historyList" id="history-abc"></div>
-      </div>
-
-      <div class="card">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot ok"></div>
-            <div class="srcMeta">
-              <div class="srcName">CBS history</div>
-              <div class="srcTime tiny" id="histmeta-cbs">—</div>
-            </div>
-          </div>
-        </div>
-        <div class="historyList" id="history-cbs"></div>
       </div>
     </div>
   </section>
@@ -430,7 +406,6 @@
 
 <script>
   const TZ_PT = "America/Los_Angeles";
-  const HISTORY_LIMIT = 20;
 
   function $(id){ return document.getElementById(id); }
 
@@ -549,85 +524,6 @@
     $(`url-${prefix}`).textContent = url || "—";
   }
 
-  function makeHistoryRow(entry){
-    const wrap = document.createElement("div");
-    wrap.className = "historyItem";
-
-    const thumb = document.createElement("div");
-    thumb.className = "hThumb";
-    const img = document.createElement("img");
-    img.alt = "";
-    if (entry.imgUrl) img.src = entry.imgUrl;
-    else img.style.display = "none";
-    thumb.appendChild(img);
-
-    const body = document.createElement("div");
-    body.className = "hBody";
-
-    const title = document.createElement("p");
-    title.className = "hTitle";
-    const a = document.createElement("a");
-    a.href = entry.url || "#";
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.textContent = entry.title || "—";
-    title.appendChild(a);
-
-    const meta = document.createElement("div");
-    meta.className = "hMeta";
-
-    const first = entry.firstSeenAt || null;
-    const last = entry.lastSeenAt || null;
-
-    const chip1 = document.createElement("span");
-    chip1.className = "hChip";
-    chip1.textContent = `First: ${fmtTimePT(first)}`;
-
-    const chip2 = document.createElement("span");
-    chip2.className = "hChip";
-    chip2.textContent = `Last: ${fmtTimePT(last)}`;
-
-    const chip3 = document.createElement("span");
-    chip3.className = "hChip";
-    chip3.textContent = `Duration: ${durShort(first, last)}`;
-
-    meta.appendChild(chip1);
-    meta.appendChild(chip2);
-    meta.appendChild(chip3);
-
-    body.appendChild(title);
-    body.appendChild(meta);
-
-    wrap.appendChild(thumb);
-    wrap.appendChild(body);
-    return wrap;
-  }
-
-  function renderHistory(history, sourceKey){
-    const el = $(`history-${sourceKey}`);
-    el.innerHTML = "";
-
-    const entries = history?.sources?.[sourceKey]?.entries;
-    const list = Array.isArray(entries) ? entries.slice().reverse().slice(0, HISTORY_LIMIT) : [];
-
-    $(`histmeta-${sourceKey}`).textContent = list.length
-      ? `${list.length} most recent changes`
-      : "No history yet";
-
-    if (!list.length){
-      const empty = document.createElement("div");
-      empty.className = "tiny";
-      empty.style.color = "var(--muted)";
-      empty.textContent = "No entries yet.";
-      el.appendChild(empty);
-      return;
-    }
-
-    for (const entry of list){
-      el.appendChild(makeHistoryRow(entry));
-    }
-  }
-
   function renderUnified(unified){
     const feed = $("feed");
     feed.innerHTML = "";
@@ -702,25 +598,15 @@
     $("btn-refresh").disabled = true;
 
     try{
-      const [current, unified, history] = await Promise.all([
+      const [current, unified] = await Promise.all([
         fetchJSON("./data/current.json"),
-        fetchJSON("./data/unified.json").catch(() => null),
-        fetchJSON("./data/history.json").catch(() => null),
+        fetchJSON("./data/unified.json").catch(() => ({ items: [] })),
       ]);
 
       renderSource("abc", current?.sources?.abc);
       renderSource("cbs", current?.sources?.cbs);
 
-      if (unified) renderUnified(unified);
-      else renderUnified({ items: [] });
-
-      if (history){
-        renderHistory(history, "abc");
-        renderHistory(history, "cbs");
-      } else {
-        renderHistory({ sources: {} }, "abc");
-        renderHistory({ sources: {} }, "cbs");
-      }
+      renderUnified(unified);
     } catch (e){
       setError(String(e.message || e));
     } finally {
