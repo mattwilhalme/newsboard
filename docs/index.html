@@ -1,692 +1,679 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Newsboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root{
-      --bg:#ffffff;
-      --paper:#fbfbf8;
-      --ink:#111111;
-      --muted:#555555;
-      --rule:#111111;
-      --soft:#dddddd;
-      --accent:#0b57d0;
-      --radius:12px;
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --panel2:#0c121a;
+      --text:#e8eef7;
+      --muted:#9fb0c7;
+      --line:rgba(255,255,255,.10);
+      --pill:rgba(255,255,255,.08);
+      --pill2:rgba(255,255,255,.12);
+      --ok:#48d17a;
+      --bad:#ff5a6b;
+      --warn:#ffcc66;
+      --radius:18px;
+      --shadow:0 12px 40px rgba(0,0,0,.45);
+      --maxw:1100px;
     }
 
-    *{ box-sizing:border-box; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      background: var(--bg);
-      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 15% -10%, rgba(255,255,255,.08), transparent 60%),
+                  radial-gradient(900px 600px at 110% 0%, rgba(255,255,255,.06), transparent 55%),
+                  var(--bg);
+      color:var(--text);
     }
 
-    /* Top bar */
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter: blur(12px);
+      background: rgba(11,15,20,.68);
+      border-bottom:1px solid var(--line);
+    }
+
     .topbar{
-      max-width: 980px;
-      margin: 18px auto 8px auto;
-      padding: 0 18px;
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:14px 16px;
       display:flex;
-      align-items:flex-end;
+      align-items:center;
       justify-content:space-between;
       gap:12px;
-      border-bottom: 3px solid var(--rule);
-      padding-bottom: 12px;
     }
+
     .brand{
-      display:flex; flex-direction:column; gap:4px;
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width: 220px;
     }
-    .brand h1{
-      margin:0;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: .3px;
-      text-transform: uppercase;
+    .brand .title{
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:16px;
+      line-height:1.2;
     }
     .brand .sub{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--muted);
       font-size:12px;
-      color: var(--muted);
     }
 
-    .actions{
-      display:flex; gap:10px; align-items:center;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    }
-    .btn{
-      appearance:none;
-      border:2px solid var(--rule);
-      background: #fff;
-      color: var(--ink);
-      padding:10px 12px;
-      border-radius: 10px;
-      cursor:pointer;
-      font-weight:800;
-      font-size:12px;
-      text-transform: uppercase;
-      letter-spacing: .35px;
-    }
-    .btn:hover{ background: #f3f3f3; }
-    .btn:disabled{ opacity:.55; cursor:not-allowed; }
-
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto 28px auto;
-      padding: 0 18px;
-    }
-
-    /* Two-column center layout */
-    .grid{
+    .controls{
       display:flex;
-      justify-content:center;   /* center the pair */
-      gap: 18px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-      margin-top: 14px;
-    }
-
-    .card{
-      width: 440px;            /* newspaper column-ish */
-      background: var(--paper);
-      border: 2px solid var(--rule);
-      border-radius: var(--radius);
-      overflow:hidden;
-    }
-
-    /* Hide the 3rd card if it exists in DOM */
-    .card.is-hidden{ display:none !important; }
-
-    .card-hdr{
-      padding: 14px 14px 10px 14px;
-      border-bottom: 2px solid var(--rule);
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-      background: #fff;
-    }
-
-    .title{
-      min-width:0;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-
-    .title-row{
-      display:flex;
-      align-items:center;
       gap:10px;
-      min-width:0;
-    }
-
-    .title h2{
-      margin:0;
-      font-size: 18px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .35px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-width: 240px;
-    }
-
-    .pill{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      font-size: 11px;
-      padding: 2px 8px;
-      border: 2px solid var(--rule);
-      background: #818de3;
-      color: var(--ink);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .35px;
-      line-height: 16px;
-    }
-
-    .meta{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      font-size: 12px;
-      color: var(--muted);
-      display:flex;
-      gap:8px;
       align-items:center;
-    }
-
-    .dot{
-      width:10px;height:10px;border-radius:50%;
-      border: 2px solid var(--rule);
-      display:inline-block;
-      background:#fff;
-    }
-    .dot.ok{ background:#1a7f37; }
-    .dot.bad{ background:#b42318; }
-
-    .card-actions{
-      display:flex;
-      gap:8px;
-      align-items:flex-start;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    }
-    .btn-mini{
-      padding:8px 10px;
-      border-radius: 10px;
-      font-size: 11px;
-    }
-
-    .card-body{
-      padding: 10px 14px 14px 14px;
-      background: #fff;
-    }
-
-    .err{
-      min-height: 16px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      font-size: 12px;
-      color: #b42318;
-      margin-bottom: 8px;
-    }
-
-    /* Hard rules between rows */
-    .rows{
-      border-top: 2px solid var(--rule);
-    }
-    .row{
-      padding: 10px 0 10px 0;
-      border-bottom: 2px solid var(--rule);
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-    }
-    .row-main{
-      flex: 1 1 auto;
-      min-width:0;
-    }
-
-    .headline{
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin: 0 0 6px 0;
-    }
-
-    .url{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 11px;
-      color: #222;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      border-left: 4px solid var(--rule);
-      padding-left: 10px;
-    }
-
-    a{
-      color: var(--ink);
-      text-decoration:none;
-    }
-    a:hover{ text-decoration: underline; }
-
-    /* Drawer (keep, but light) */
-    .drawer-overlay{
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,.35);
-      opacity:0;
-      pointer-events:none;
-      transition: opacity .18s ease;
-      z-index: 50;
-    }
-    .drawer{
-      position:fixed;
-      top:0; right:0;
-      height:100%;
-      width: min(560px, 92vw);
-      background: #fff;
-      border-left: 3px solid var(--rule);
-      transform: translateX(100%);
-      transition: transform .22s ease;
-      z-index: 60;
-      display:flex;
-      flex-direction:column;
-    }
-    .drawer.open{ transform: translateX(0); }
-    .drawer-overlay.open{
-      opacity:1;
-      pointer-events:auto;
-    }
-    .drawer-hdr{
-      padding: 14px 14px 10px 14px;
-      border-bottom: 3px solid var(--rule);
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:10px;
-      background: #fff;
-    }
-    .drawer-hdr h3{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .35px;
-    }
-    .drawer-hdr .sub{
-      margin-top:4px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .drawer-body{
-      padding: 12px 14px 18px 14px;
-      overflow:auto;
-    }
-    .timeline{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .event{
-      border: 2px solid var(--rule);
-      background: #fff;
-      border-radius: 12px;
-      padding: 10px 10px 10px 10px;
-    }
-    .event-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom: 8px;
-      border-bottom: 2px solid var(--soft);
-      padding-bottom: 8px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    }
-    .event-time{
-      font-size: 12px;
-      color: var(--muted);
-      white-space:nowrap;
-    }
-    .counts{
-      display:flex;
-      gap:6px;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-    .tag{
-      font-size: 11px;
-      border: 2px solid var(--rule);
-      background: #f2f2f2;   /* 👈 same tint for consistency */
+
+    .seg{
+      display:inline-flex;
+      background: var(--pill);
+      border:1px solid var(--line);
       border-radius: 999px;
-      padding: 2px 8px;
-      color: var(--ink);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .25px;
+      padding:4px;
+      gap:4px;
+    }
+    .seg button{
+      border:0;
+      background:transparent;
+      color:var(--muted);
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      cursor:pointer;
+      transition: .12s ease;
+      user-select:none;
+    }
+    .seg button.active{
+      background: var(--pill2);
+      color: var(--text);
     }
 
-    .chg{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      font-size: 12px;
+    .btn{
+      border:1px solid var(--line);
+      background: var(--pill);
+      color: var(--text);
+      font-size:12px;
+      padding:10px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      transition:.12s ease;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
+    .btn:disabled{ opacity:.55; cursor:not-allowed; transform:none; }
+
+    main{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:18px 16px 36px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .cardHead{
+      padding:14px 14px 10px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      border-bottom:1px solid var(--line);
+      background: rgba(0,0,0,.10);
+    }
+
+    .srcTitle{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 0;
+    }
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: var(--warn);
+      box-shadow: 0 0 0 4px rgba(255,204,102,.12);
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+    .dot.ok{
+      background: var(--ok);
+      box-shadow: 0 0 0 4px rgba(72,209,122,.12);
+    }
+    .dot.bad{
+      background: var(--bad);
+      box-shadow: 0 0 0 4px rgba(255,90,107,.12);
+    }
+
+    .srcMeta{
       display:flex;
       flex-direction:column;
-      gap:8px;
-      margin-top: 8px;
-      color:#818de3;
+      gap:2px;
+      min-width:0;
     }
-    .chg-line{
+    .srcName{
+      font-weight:700;
+      font-size:13px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .srcTime{
+      font-size:12px;
+      color: var(--muted);
+      white-space:nowrap;
+    }
+
+    .cardBody{
+      padding:14px;
       display:flex;
-      gap:8px;
+      gap:14px;
       align-items:flex-start;
     }
-
-    .chg-line div {
-      font-size: 14px;        /* up from ~12 */
-      font-weight: 600;       /* semi-bold */
-      line-height: 1.3;
-      color: var(--ink);
+    .thumb{
+      width:168px;
+      aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    @media (max-width: 520px){
+      .cardBody{ flex-direction:column; }
+      .thumb{ width:100%; }
     }
 
-    .badge{
-      font-size:10px;
-      padding:2px 6px;
-      border-radius: 8px;
-      border:2px solid var(--rule);
-      background: #f6f6f6;   /* lighter than tags */
-      color: var(--ink);
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.35px;
+    .headlineWrap{
+      min-width:0;
+      flex:1 1 auto;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .headline{
+      font-size:16px;
+      line-height:1.25;
+      font-weight:800;
+      margin:0;
+    }
+    .headline a{
+      color: var(--text);
+      text-decoration:none;
+    }
+    .headline a:hover{ text-decoration: underline; }
+
+    .row{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
-    @media (max-width: 980px){
-      .card{ width: min(520px, 100%); }
-      .topbar{ align-items:flex-start; flex-direction:column; }
-      .actions{ width:100%; justify-content:flex-start; }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      color: var(--muted);
+      font-size:12px;
     }
+
+    .linkbtn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      cursor:pointer;
+    }
+    .linkbtn:hover{ background: rgba(255,255,255,.10); }
+
+    .muted{ color: var(--muted); }
+
+    .sectionTitle{
+      margin:18px 0 10px;
+      font-size:13px;
+      letter-spacing:.2px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .feed{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .feedItem{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+    .feedTop{
+      padding:12px 14px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom:1px solid var(--line);
+      background: rgba(0,0,0,.10);
+    }
+    .feedLeft{
+      min-width:0;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .tag{
+      font-size:11px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      color: var(--muted);
+      flex:0 0 auto;
+    }
+    .feedTime{
+      font-size:12px;
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .feedBody{
+      padding:12px 14px 14px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .feedThumb{
+      width:120px;
+      aspect-ratio:16/9;
+      border-radius:14px;
+      border:1px solid var(--line);
+      overflow:hidden;
+      background: rgba(255,255,255,.06);
+      flex:0 0 auto;
+    }
+    .feedThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .feedHed{
+      margin:0;
+      font-size:14px;
+      line-height:1.3;
+      font-weight:800;
+      min-width:0;
+    }
+    .feedHed a{ color: var(--text); text-decoration:none; }
+    .feedHed a:hover{ text-decoration:underline; }
+
+    .errorBox{
+      border:1px solid rgba(255,90,107,.35);
+      background: rgba(255,90,107,.08);
+      color: var(--text);
+      border-radius: var(--radius);
+      padding:12px 14px;
+      margin-top:14px;
+      display:none;
+    }
+    .errorBox.show{ display:block; }
+
+    .tiny{ font-size:11px; color: var(--muted); }
   </style>
 </head>
 <body>
 
+<header>
   <div class="topbar">
     <div class="brand">
-      <h1>Newsboard</h1>
-      <div class="sub">Top headlines + diffs (ABC, CBS)</div>
+      <div class="title">Newsboard</div>
+      <div class="sub">Hero tracker (ABC + CBS) • Static build (GitHub Pages)</div>
     </div>
 
-    <div class="actions">
-      <button class="btn" onclick="refreshAll()" id="all-btn">Refresh all</button>
+    <div class="controls">
+      <div class="seg" role="tablist" aria-label="View">
+        <button id="tab-now" class="active" type="button">Now</button>
+        <button id="tab-unified" type="button">Unified</button>
+      </div>
+      <button id="btn-refresh" class="btn" type="button">Refresh</button>
     </div>
   </div>
+</header>
 
-  <div class="wrap">
+<main>
+  <div id="error" class="errorBox"></div>
+
+  <section id="view-now">
     <div class="grid">
-      <div class="card" id="abc">
-        <div class="card-hdr">
-          <div class="title">
-            <div class="title-row">
-              <h2>ABC News</h2>
-              <span class="pill" id="abc-pill" style="display:none">stale</span>
-            </div>
-            <div class="meta">
-              <span class="dot" id="abc-dot"></span>
-              <span id="abc-meta">Not loaded</span>
+      <div class="card" id="card-abc">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-abc"></div>
+            <div class="srcMeta">
+              <div class="srcName">ABC News</div>
+              <div class="srcTime" id="time-abc">—</div>
             </div>
           </div>
-          <div class="card-actions">
-            <button class="btn btn-mini" onclick="openHistory('abc')" title="View changes">History</button>
-            <button class="btn btn-mini" onclick="refreshOne('abc')" id="abc-btn">Refresh</button>
-          </div>
+          <div class="tiny" id="run-abc"></div>
         </div>
-        <div class="card-body">
-          <div class="err" id="abc-err"></div>
-          <div class="rows" id="abc-rows"></div>
+        <div class="cardBody">
+          <div class="thumb"><img id="img-abc" alt="" /></div>
+          <div class="headlineWrap">
+            <h2 class="headline"><a id="link-abc" href="#" target="_blank" rel="noopener">—</a></h2>
+            <div class="row">
+              <span class="pill" id="status-abc">—</span>
+              <button class="linkbtn" id="copy-abc" type="button">Copy link</button>
+            </div>
+            <div class="tiny muted" id="err-abc"></div>
+          </div>
         </div>
       </div>
 
-      <div class="card" id="cbs">
-        <div class="card-hdr">
-          <div class="title">
-            <div class="title-row">
-              <h2>CBS News</h2>
-              <span class="pill" id="cbs-pill" style="display:none">stale</span>
-            </div>
-            <div class="meta">
-              <span class="dot" id="cbs-dot"></span>
-              <span id="cbs-meta">Not loaded</span>
+      <div class="card" id="card-cbs">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-cbs"></div>
+            <div class="srcMeta">
+              <div class="srcName">CBS News</div>
+              <div class="srcTime" id="time-cbs">—</div>
             </div>
           </div>
-          <div class="card-actions">
-            <button class="btn btn-mini" onclick="openHistory('cbs')" title="View changes">History</button>
-            <button class="btn btn-mini" onclick="refreshOne('cbs')" id="cbs-btn">Refresh</button>
+          <div class="tiny" id="run-cbs"></div>
+        </div>
+        <div class="cardBody">
+          <div class="thumb"><img id="img-cbs" alt="" /></div>
+          <div class="headlineWrap">
+            <h2 class="headline"><a id="link-cbs" href="#" target="_blank" rel="noopener">—</a></h2>
+            <div class="row">
+              <span class="pill" id="status-cbs">—</span>
+              <button class="linkbtn" id="copy-cbs" type="button">Copy link</button>
+            </div>
+            <div class="tiny muted" id="err-cbs"></div>
           </div>
         </div>
-        <div class="card-body">
-          <div class="err" id="cbs-err"></div>
-          <div class="rows" id="cbs-rows"></div>
-        </div>
-      </div>
-
-      <!-- Keep DOM slot but hidden -->
-      <div class="card is-hidden" id="third-slot">
-        <div class="card-hdr">
-          <div class="title">
-            <div class="title-row">
-              <h2>Next source</h2>
-              <span class="pill">soon</span>
-            </div>
-            <div class="meta">
-              <span class="dot"></span>
-              <span>Reserve slot</span>
-            </div>
-          </div>
-        </div>
-        <div class="card-body"></div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Drawer -->
-  <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
-  <aside class="drawer" id="drawer">
-    <div class="drawer-hdr">
-      <div>
-        <h3 id="drawer-title">History</h3>
-        <div class="sub" id="drawer-sub">—</div>
-      </div>
-      <button class="btn btn-mini" onclick="closeDrawer()">Close</button>
-    </div>
-    <div class="drawer-body">
-      <div id="drawer-content" style="font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; color: var(--muted);">
-        Loading…
       </div>
     </div>
-  </aside>
+
+    <div class="sectionTitle">
+      <span>Data source</span>
+      <span class="tiny">Reads <code>./data/current.json</code> (generated by GitHub Actions)</span>
+    </div>
+  </section>
+
+  <section id="view-unified" style="display:none;">
+    <div class="sectionTitle">
+      <span>Unified feed</span>
+      <span class="tiny">Reads <code>./data/unified.json</code></span>
+    </div>
+    <div class="feed" id="feed"></div>
+  </section>
+</main>
 
 <script>
-  function fmt(ts) {
-    if (!ts) return "Not loaded";
-    return new Date(ts).toLocaleString();
+  // ---------- helpers ----------
+  const TZ_PT = "America/Los_Angeles";
+
+  function $(id){ return document.getElementById(id); }
+
+  function setError(message){
+    const box = $("error");
+    if (!message){
+      box.classList.remove("show");
+      box.textContent = "";
+      return;
+    }
+    box.classList.add("show");
+    box.textContent = message;
   }
 
-  function setStatus(id, src) {
-    const meta = document.getElementById(`${id}-meta`);
-    const err = document.getElementById(`${id}-err`);
-    const rows = document.getElementById(`${id}-rows`);
-    const pill = document.getElementById(`${id}-pill`);
-    const dot = document.getElementById(`${id}-dot`);
-
-    meta.textContent = `Updated ${fmt(src.updatedAt)}`;
-    err.textContent = src.ok ? "" : (src.error ? `Scrape failed: ${src.error}` : "Scrape failed.");
-    pill.style.display = src.stale ? "inline-block" : "none";
-
-    dot.classList.remove("ok", "bad");
-    dot.classList.add(src.ok ? "ok" : "bad");
-
-    rows.innerHTML = "";
-    (src.items || []).slice(0, 10).forEach(item => {
-      const row = document.createElement("div");
-      row.className = "row";
-      row.innerHTML = `
-        <div class="row-main">
-          <div class="headline">
-            <a href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
-          </div>
-        </div>
-      `;
-      rows.appendChild(row);
-    });
+  function fmtTimePT(iso){
+    if (!iso) return "—";
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return "—";
+    return d.toLocaleTimeString("en-US", { timeZone: TZ_PT, hour: "numeric", minute: "2-digit" }) + " PT";
   }
 
-  async function loadAll() {
-    const res = await fetch(`/api/headlines`);
-    const data = await res.json();
-    const sources = data.sources || data;
-    if (!sources.abc || !sources.cbs) return;
-    setStatus("abc", sources.abc);
-    setStatus("cbs", sources.cbs);
+  function fmtAgo(iso){
+    if (!iso) return "";
+    const t = new Date(iso).getTime();
+    if (!Number.isFinite(t)) return "";
+    const ms = Date.now() - t;
+    const s = Math.max(0, Math.floor(ms / 1000));
+    const m = Math.floor(s / 60);
+    const h = Math.floor(m / 60);
+    const d = Math.floor(h / 24);
+    if (d > 0) return `${d}d ${h % 24}h ago`;
+    if (h > 0) return `${h}h ${m % 60}m ago`;
+    if (m > 0) return `${m}m ago`;
+    return `${s}s ago`;
   }
 
-  async function refreshOne(id) {
-    const btn = document.getElementById(`${id}-btn`);
-    btn.disabled = true;
-    btn.textContent = "Refreshing…";
-    try {
-      const res = await fetch(`/api/refresh`, {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({ id })
-      });
+  async function fetchJSON(relPath){
+    const url = relPath + (relPath.includes("?") ? "&" : "?") + "ts=" + Date.now();
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok){
+      const t = await r.text().catch(() => "");
+      throw new Error(`Fetch failed (${r.status}) for ${relPath}: ${t.slice(0,120)}`);
+    }
+    const text = await r.text();
+    // If Pages returns an HTML error page, JSON.parse will throw (better than "Unexpected token <" later).
+    try { return JSON.parse(text); }
+    catch {
+      throw new Error(`Non-JSON response for ${relPath}: ${text.slice(0,60)}`);
+    }
+  }
 
-      if (!res.ok) {
-        const t = await res.text();
-        document.getElementById(`${id}-err`).textContent = `Refresh failed (${res.status}). See console.`;
-        console.error("Refresh error:", t);
-        return;
+  function setDot(id, ok){
+    const el = $(id);
+    el.classList.remove("ok","bad");
+    if (ok === true) el.classList.add("ok");
+    else if (ok === false) el.classList.add("bad");
+  }
+
+  function safeImg(imgEl, url){
+    if (!url){
+      imgEl.removeAttribute("src");
+      imgEl.style.display = "none";
+      return;
+    }
+    imgEl.style.display = "block";
+    imgEl.src = url;
+  }
+
+  function wireCopy(btnId, getUrl){
+    const btn = $(btnId);
+    btn.onclick = async () => {
+      const url = getUrl();
+      if (!url) return;
+      try{
+        await navigator.clipboard.writeText(url);
+        const prev = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(() => (btn.textContent = prev), 900);
+      } catch {
+        // fallback
+        prompt("Copy link:", url);
+      }
+    };
+  }
+
+  // ---------- rendering ----------
+  function renderSource(prefix, src){
+    const ok = Boolean(src && src.ok);
+    setDot(`dot-${prefix}`, ok);
+
+    const item = src?.item || null;
+    const updatedAt = src?.updatedAt || null;
+    const timeLine = updatedAt
+      ? `Updated ${fmtTimePT(updatedAt)} · ${fmtAgo(updatedAt)}`
+      : "Not updated yet";
+
+    $(`time-${prefix}`).textContent = timeLine;
+    $(`run-${prefix}`).textContent = src?.runId ? src.runId : "";
+
+    const title = item?.title || "—";
+    const url = item?.url || "";
+    const imgUrl = item?.imgUrl || "";
+
+    const link = $(`link-${prefix}`);
+    link.textContent = title;
+    link.href = url || "#";
+
+    safeImg($(`img-${prefix}`), imgUrl);
+
+    $(`status-${prefix}`).textContent = ok ? "OK" : "Error";
+    $(`err-${prefix}`).textContent = ok ? "" : (src?.error || "Scrape failed");
+  }
+
+  function renderUnified(unified){
+    const feed = $("feed");
+    feed.innerHTML = "";
+
+    const items = Array.isArray(unified?.items) ? unified.items : [];
+    if (!items.length){
+      const empty = document.createElement("div");
+      empty.className = "muted tiny";
+      empty.textContent = "No items yet.";
+      feed.appendChild(empty);
+      return;
+    }
+
+    for (const it of items){
+      const wrap = document.createElement("div");
+      wrap.className = "feedItem";
+
+      const top = document.createElement("div");
+      top.className = "feedTop";
+
+      const left = document.createElement("div");
+      left.className = "feedLeft";
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.textContent = (it.source || "").toUpperCase();
+
+      const t = document.createElement("div");
+      t.className = "feedTime";
+      const updatedAt = it.updatedAt || null;
+      t.textContent = updatedAt ? `Updated ${fmtTimePT(updatedAt)} · ${fmtAgo(updatedAt)}` : "";
+
+      left.appendChild(tag);
+      left.appendChild(t);
+      top.appendChild(left);
+
+      wrap.appendChild(top);
+
+      const body = document.createElement("div");
+      body.className = "feedBody";
+
+      const thumb = document.createElement("div");
+      thumb.className = "feedThumb";
+      const img = document.createElement("img");
+      img.alt = "";
+      if (it.imgUrl) img.src = it.imgUrl;
+      else img.style.display = "none";
+      thumb.appendChild(img);
+
+      const hed = document.createElement("h3");
+      hed.className = "feedHed";
+      const a = document.createElement("a");
+      a.href = it.url || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = it.title || "—";
+      hed.appendChild(a);
+
+      body.appendChild(thumb);
+      body.appendChild(hed);
+      wrap.appendChild(body);
+
+      feed.appendChild(wrap);
+    }
+  }
+
+  // ---------- view switching ----------
+  function setView(which){
+    const now = $("view-now");
+    const uni = $("view-unified");
+    $("tab-now").classList.toggle("active", which === "now");
+    $("tab-unified").classList.toggle("active", which === "unified");
+    now.style.display = which === "now" ? "" : "none";
+    uni.style.display = which === "unified" ? "" : "none";
+  }
+
+  $("tab-now").addEventListener("click", () => setView("now"));
+  $("tab-unified").addEventListener("click", () => setView("unified"));
+
+  // ---------- data loading ----------
+  async function loadAll(){
+    setError("");
+    $("btn-refresh").disabled = true;
+
+    try{
+      const current = await fetchJSON("./data/current.json");
+      renderSource("abc", current?.sources?.abc);
+      renderSource("cbs", current?.sources?.cbs);
+
+      // unified is optional; don’t hard-fail the page if it’s missing
+      try{
+        const unified = await fetchJSON("./data/unified.json");
+        renderUnified(unified);
+      } catch (e){
+        renderUnified({ items: [] });
       }
 
-      const data = await res.json();
-      const sources = data.sources || data;
-      setStatus("abc", sources.abc);
-      setStatus("cbs", sources.cbs);
-    } catch (e) {
-      document.getElementById(`${id}-err`).textContent = "Refresh request failed.";
-      console.error(e);
+    } catch (e){
+      setError(String(e.message || e));
     } finally {
-      btn.disabled = false;
-      btn.textContent = "Refresh";
+      $("btn-refresh").disabled = false;
     }
   }
 
-  async function refreshAll() {
-    const btn = document.getElementById("all-btn");
-    btn.disabled = true;
-    btn.textContent = "Refreshing…";
-    try {
-      const res = await fetch(`/api/refresh`, {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({})
-      });
-      if (!res.ok) {
-        console.error(await res.text());
-        return;
-      }
-      await loadAll();
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "Refresh all";
-    }
-  }
+  // Copy buttons
+  wireCopy("copy-abc", () => $("link-abc").href && $("link-abc").href !== "#" ? $("link-abc").href : "");
+  wireCopy("copy-cbs", () => $("link-cbs").href && $("link-cbs").href !== "#" ? $("link-cbs").href : "");
 
-  function badgeClass(type) {
-    return "";
-  }
+  $("btn-refresh").addEventListener("click", loadAll);
 
-  function shortLine(entry) {
-    if (entry.type === "added") return `#${entry.rank}: ${entry.title}`;
-    if (entry.type === "removed") return `#${entry.rank}: ${entry.title}`;
-    if (entry.type === "moved") return `${entry.title} (${entry.fromRank} → ${entry.toRank})`;
-    if (entry.type === "retitled") return `#${entry.rank}: ${entry.fromTitle} → ${entry.toTitle}`;
-    if (entry.type === "slotChanged") return `slot ${entry.slotKey}: ${entry.from.title} → ${entry.to.title}`;
-    return JSON.stringify(entry);
-  }
-
-  async function openHistory(id) {
-    const drawer = document.getElementById("drawer");
-    const overlay = document.getElementById("drawer-overlay");
-    const content = document.getElementById("drawer-content");
-    const title = document.getElementById("drawer-title");
-    const sub = document.getElementById("drawer-sub");
-
-    title.textContent = `${id.toUpperCase()} history`;
-    sub.textContent = "Loading…";
-    content.textContent = "Loading…";
-
-    overlay.classList.add("open");
-    drawer.classList.add("open");
-
-    try {
-      const res = await fetch(`/api/history?id=${encodeURIComponent(id)}&limit=24`);
-      const data = await res.json();
-
-      if (!data.ok) {
-        sub.textContent = "Error";
-        content.textContent = data.error || "Failed to load history";
-        return;
-      }
-
-      sub.textContent = `${data.returned} snapshots shown (total archived: ${data.totalSnapshots})`;
-
-      if (!data.diffs || data.diffs.length === 0) {
-        content.textContent = "No diffs yet. Refresh this source a few times.";
-        return;
-      }
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "timeline";
-
-      const diffs = [...data.diffs].reverse();
-      for (const d of diffs) {
-        const ev = document.createElement("div");
-        ev.className = "event";
-
-        const top = document.createElement("div");
-        top.className = "event-top";
-
-        const time = document.createElement("div");
-        time.className = "event-time";
-        time.textContent = `Changed: ${fmt(d.changedAt)}`;
-
-        const counts = document.createElement("div");
-        counts.className = "counts";
-        counts.innerHTML = `
-          <span class="tag">+${d.counts.added}</span>
-          <span class="tag">-${d.counts.removed}</span>
-          <span class="tag">moved ${d.counts.moved}</span>
-          <span class="tag">retitle ${d.counts.retitled}</span>
-          <span class="tag">slot ${d.counts.slotChanged}</span>
-        `;
-
-        top.appendChild(time);
-        top.appendChild(counts);
-        ev.appendChild(top);
-
-        const chg = document.createElement("div");
-        chg.className = "chg";
-
-        const log = (d.changeLog || []).slice(0, 18);
-        if (log.length === 0) {
-          const line = document.createElement("div");
-          line.style.color = "var(--muted)";
-          line.textContent = "No item-level changes detected.";
-          chg.appendChild(line);
-        } else {
-          for (const entry of log) {
-            const row = document.createElement("div");
-            row.className = "chg-line";
-            const b = document.createElement("span");
-            b.className = "badge";
-            b.textContent = entry.type;
-            const t = document.createElement("div");
-            t.textContent = shortLine(entry);
-            row.appendChild(b);
-            row.appendChild(t);
-            chg.appendChild(row);
-          }
-          if ((d.changeLog || []).length > log.length) {
-            const more = document.createElement("div");
-            more.style.color = "var(--muted)";
-            more.style.fontSize = "12px";
-            more.textContent = `…and ${(d.changeLog.length - log.length)} more changes`;
-            chg.appendChild(more);
-          }
-        }
-
-        ev.appendChild(chg);
-        wrapper.appendChild(ev);
-      }
-
-      content.innerHTML = "";
-      content.appendChild(wrapper);
-    } catch (e) {
-      sub.textContent = "Error";
-      content.textContent = "Failed to load history. See console.";
-      console.error(e);
-    }
-  }
-
-  function closeDrawer() {
-    document.getElementById("drawer").classList.remove("open");
-    document.getElementById("drawer-overlay").classList.remove("open");
-  }
-
+  // initial load
   loadAll();
 </script>
 
