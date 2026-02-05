@@ -50,7 +50,7 @@
     .topbar{
       max-width:var(--maxw);
       margin:0 auto;
-      padding:14px 16px;
+      padding:12px 16px; /* tighter */
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -76,7 +76,7 @@
       background:transparent;
       color: var(--muted);
       font-size:12px;
-      padding:10px 14px;
+      padding:9px 12px; /* tighter */
       cursor:pointer;
       user-select:none;
     }
@@ -91,7 +91,7 @@
       background: var(--card);
       color: var(--text);
       font-size:12px;
-      padding:10px 14px;
+      padding:9px 12px; /* tighter */
       border-radius:999px;
       cursor:pointer;
       user-select:none;
@@ -100,12 +100,12 @@
     .btn:hover{ border-color: rgba(26,115,232,.45); }
     .btn:disabled{ opacity:.55; cursor:not-allowed; }
 
-    main{ max-width:var(--maxw); margin:0 auto; padding:18px 16px 36px; }
+    main{ max-width:var(--maxw); margin:0 auto; padding:14px 16px 28px; } /* tighter */
 
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:14px;
+      gap:12px; /* tighter */
     }
     @media (max-width: 900px){
       .grid{ grid-template-columns: 1fr; }
@@ -121,7 +121,7 @@
     }
 
     .cardHead{
-      padding:14px 14px 10px;
+      padding:12px 12px 10px; /* tighter */
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
@@ -143,14 +143,14 @@
     .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
     .cardBody{
-      padding:14px;
+      padding:12px;              /* tighter */
       display:flex;
-      gap:14px;
+      gap:12px;                  /* tighter */
       align-items:flex-start;
     }
 
     .thumb{
-      width:168px;
+      width:160px;               /* slightly tighter */
       aspect-ratio: 16 / 9;
       border-radius: 12px;
       background: #f1f3f4;
@@ -165,7 +165,17 @@
       .thumb{ width:100%; }
     }
 
-    .headlineWrap{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:10px; }
+    .headlineWrap{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:8px; } /* tighter */
+
+    /* Publisher name above headline (same styling family as top cards) */
+    .pubLine{
+      font-weight:700;
+      font-size:13px;
+      color: var(--muted);
+      letter-spacing:.15px;
+      line-height:1.1;
+      margin-top:2px;
+    }
 
     .headline{ font-size:16px; line-height:1.25; font-weight:700; margin:0; }
     .headline a{ color: var(--text); text-decoration:none; }
@@ -217,7 +227,7 @@
     }
 
     .sectionTitle{
-      margin:18px 0 10px;
+      margin:14px 0 8px; /* tighter */
       font-size:13px;
       letter-spacing:.2px;
       color: var(--muted);
@@ -231,13 +241,13 @@
       display:flex;
       flex-direction:column;
       gap:10px;
-      padding:14px;
+      padding:12px; /* tighter */
     }
     .historyItem{
       border:1px solid var(--line);
       border-radius: 12px;
       background: #fff;
-      padding:12px;
+      padding:10px; /* tighter */
       display:flex;
       gap:12px;
       align-items:flex-start;
@@ -253,6 +263,17 @@
     }
     .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
     .hBody{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:6px; }
+
+    /* Publisher line above each unified item headline */
+    .hPub{
+      font-weight:700;
+      font-size:12px;
+      color: var(--muted);
+      letter-spacing:.15px;
+      line-height:1.1;
+      margin:0;
+    }
+
     .hTitle{
       font-weight:700;
       font-size:13px;
@@ -281,7 +302,7 @@
       color: var(--text);
       border-radius: var(--radius);
       padding:12px 14px;
-      margin-top:14px;
+      margin-top:12px; /* tighter */
       display:none;
     }
     .errorBox.show{ display:block; }
@@ -327,6 +348,7 @@
         <div class="cardBody">
           <div class="thumb"><img id="img-abc" alt="" /></div>
           <div class="headlineWrap">
+            <div class="pubLine">ABC News</div>
             <h2 class="headline"><a id="link-abc" href="#" target="_blank" rel="noopener">—</a></h2>
 
             <div class="row">
@@ -360,6 +382,7 @@
         <div class="cardBody">
           <div class="thumb"><img id="img-cbs" alt="" /></div>
           <div class="headlineWrap">
+            <div class="pubLine">CBS News</div>
             <h2 class="headline"><a id="link-cbs" href="#" target="_blank" rel="noopener">—</a></h2>
 
             <div class="row">
@@ -553,13 +576,19 @@
       const body = document.createElement("div");
       body.className = "hBody";
 
+      // Publisher line above headline (same idea as main cards)
+      const pub = document.createElement("p");
+      pub.className = "hPub";
+      const src = (it.source || "").toString().toUpperCase();
+      pub.textContent = src === "ABC" ? "ABC News" : (src === "CBS" ? "CBS News" : (it.source || "Publisher"));
+
       const title = document.createElement("p");
       title.className = "hTitle";
       const a = document.createElement("a");
       a.href = it.url || "#";
       a.target = "_blank";
       a.rel = "noopener";
-      a.textContent = `[${(it.source||"").toUpperCase()}] ${it.title || "—"}`;
+      a.textContent = it.title || "—";
       title.appendChild(a);
 
       const meta = document.createElement("div");
@@ -571,6 +600,7 @@
 
       meta.appendChild(chip1);
 
+      body.appendChild(pub);
       body.appendChild(title);
       body.appendChild(meta);
 
