@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Newsboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --paper:#fbfbf8;
+      --ink:#111111;
+      --muted:#555555;
+      --rule:#111111;
+      --soft:#dddddd;
+      --accent:#0b57d0;
+      --radius:12px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    /* Top bar */
+    .topbar{
+      max-width: 980px;
+      margin: 18px auto 8px auto;
+      padding: 0 18px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom: 3px solid var(--rule);
+      padding-bottom: 12px;
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:4px;
+    }
+    .brand h1{
+      margin:0;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+    .brand .sub{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size:12px;
+      color: var(--muted);
+    }
+
+    .actions{
+      display:flex; gap:10px; align-items:center;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    .btn{
+      appearance:none;
+      border:2px solid var(--rule);
+      background: #fff;
+      color: var(--ink);
+      padding:10px 12px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight:800;
+      font-size:12px;
+      text-transform: uppercase;
+      letter-spacing: .35px;
+    }
+    .btn:hover{ background: #f3f3f3; }
+    .btn:disabled{ opacity:.55; cursor:not-allowed; }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto 28px auto;
+      padding: 0 18px;
+    }
+
+    /* Two-column center layout */
+    .grid{
+      display:flex;
+      justify-content:center;   /* center the pair */
+      gap: 18px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
+    .card{
+      width: 440px;            /* newspaper column-ish */
+      background: var(--paper);
+      border: 2px solid var(--rule);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+
+    /* Hide the 3rd card if it exists in DOM */
+    .card.is-hidden{ display:none !important; }
+
+    .card-hdr{
+      padding: 14px 14px 10px 14px;
+      border-bottom: 2px solid var(--rule);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      background: #fff;
+    }
+
+    .title{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .title-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+
+    .title h2{
+      margin:0;
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .35px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width: 240px;
+    }
+
+    .pill{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size: 11px;
+      padding: 2px 8px;
+      border: 2px solid var(--rule);
+      background: #818de3;
+      color: var(--ink);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .35px;
+      line-height: 16px;
+    }
+
+    .meta{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      border: 2px solid var(--rule);
+      display:inline-block;
+      background:#fff;
+    }
+    .dot.ok{ background:#1a7f37; }
+    .dot.bad{ background:#b42318; }
+
+    .card-actions{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    .btn-mini{
+      padding:8px 10px;
+      border-radius: 10px;
+      font-size: 11px;
+    }
+
+    .card-body{
+      padding: 10px 14px 14px 14px;
+      background: #fff;
+    }
+
+    .err{
+      min-height: 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size: 12px;
+      color: #b42318;
+      margin-bottom: 8px;
+    }
+
+    /* Hard rules between rows */
+    .rows{
+      border-top: 2px solid var(--rule);
+    }
+    .row{
+      padding: 10px 0 10px 0;
+      border-bottom: 2px solid var(--rule);
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .row-main{
+      flex: 1 1 auto;
+      min-width:0;
+    }
+
+    .headline{
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 6px 0;
+    }
+
+    .url{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 11px;
+      color: #222;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      border-left: 4px solid var(--rule);
+      padding-left: 10px;
+    }
+
+    a{
+      color: var(--ink);
+      text-decoration:none;
+    }
+    a:hover{ text-decoration: underline; }
+
+    /* Drawer (keep, but light) */
+    .drawer-overlay{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.35);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .18s ease;
+      z-index: 50;
+    }
+    .drawer{
+      position:fixed;
+      top:0; right:0;
+      height:100%;
+      width: min(560px, 92vw);
+      background: #fff;
+      border-left: 3px solid var(--rule);
+      transform: translateX(100%);
+      transition: transform .22s ease;
+      z-index: 60;
+      display:flex;
+      flex-direction:column;
+    }
+    .drawer.open{ transform: translateX(0); }
+    .drawer-overlay.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .drawer-hdr{
+      padding: 14px 14px 10px 14px;
+      border-bottom: 3px solid var(--rule);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      background: #fff;
+    }
+    .drawer-hdr h3{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .35px;
+    }
+    .drawer-hdr .sub{
+      margin-top:4px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .drawer-body{
+      padding: 12px 14px 18px 14px;
+      overflow:auto;
+    }
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .event{
+      border: 2px solid var(--rule);
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px 10px 10px 10px;
+    }
+    .event-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom: 8px;
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 8px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    .event-time{
+      font-size: 12px;
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .counts{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .tag{
+      font-size: 11px;
+      border: 2px solid var(--rule);
+      background: #f2f2f2;   /* 👈 same tint for consistency */
+      border-radius: 999px;
+      padding: 2px 8px;
+      color: var(--ink);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .25px;
+    }
+
+    .chg{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size: 12px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top: 8px;
+      color:#818de3;
+    }
+    .chg-line{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+    }
+
+    .chg-line div {
+      font-size: 14px;        /* up from ~12 */
+      font-weight: 600;       /* semi-bold */
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    .badge{
+      font-size:10px;
+      padding:2px 6px;
+      border-radius: 8px;
+      border:2px solid var(--rule);
+      background: #f6f6f6;   /* lighter than tags */
+      color: var(--ink);
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.35px;
+    }
+
+    @media (max-width: 980px){
+      .card{ width: min(520px, 100%); }
+      .topbar{ align-items:flex-start; flex-direction:column; }
+      .actions{ width:100%; justify-content:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <h1>Newsboard</h1>
+      <div class="sub">Top headlines + diffs (ABC, CBS)</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="refreshAll()" id="all-btn">Refresh all</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="grid">
+      <div class="card" id="abc">
+        <div class="card-hdr">
+          <div class="title">
+            <div class="title-row">
+              <h2>ABC News</h2>
+              <span class="pill" id="abc-pill" style="display:none">stale</span>
+            </div>
+            <div class="meta">
+              <span class="dot" id="abc-dot"></span>
+              <span id="abc-meta">Not loaded</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-mini" onclick="openHistory('abc')" title="View changes">History</button>
+            <button class="btn btn-mini" onclick="refreshOne('abc')" id="abc-btn">Refresh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="err" id="abc-err"></div>
+          <div class="rows" id="abc-rows"></div>
+        </div>
+      </div>
+
+      <div class="card" id="cbs">
+        <div class="card-hdr">
+          <div class="title">
+            <div class="title-row">
+              <h2>CBS News</h2>
+              <span class="pill" id="cbs-pill" style="display:none">stale</span>
+            </div>
+            <div class="meta">
+              <span class="dot" id="cbs-dot"></span>
+              <span id="cbs-meta">Not loaded</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-mini" onclick="openHistory('cbs')" title="View changes">History</button>
+            <button class="btn btn-mini" onclick="refreshOne('cbs')" id="cbs-btn">Refresh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="err" id="cbs-err"></div>
+          <div class="rows" id="cbs-rows"></div>
+        </div>
+      </div>
+
+      <!-- Keep DOM slot but hidden -->
+      <div class="card is-hidden" id="third-slot">
+        <div class="card-hdr">
+          <div class="title">
+            <div class="title-row">
+              <h2>Next source</h2>
+              <span class="pill">soon</span>
+            </div>
+            <div class="meta">
+              <span class="dot"></span>
+              <span>Reserve slot</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-hdr">
+      <div>
+        <h3 id="drawer-title">History</h3>
+        <div class="sub" id="drawer-sub">—</div>
+      </div>
+      <button class="btn btn-mini" onclick="closeDrawer()">Close</button>
+    </div>
+    <div class="drawer-body">
+      <div id="drawer-content" style="font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; color: var(--muted);">
+        Loading…
+      </div>
+    </div>
+  </aside>
+
+<script>
+  function fmt(ts) {
+    if (!ts) return "Not loaded";
+    return new Date(ts).toLocaleString();
+  }
+
+  function setStatus(id, src) {
+    const meta = document.getElementById(`${id}-meta`);
+    const err = document.getElementById(`${id}-err`);
+    const rows = document.getElementById(`${id}-rows`);
+    const pill = document.getElementById(`${id}-pill`);
+    const dot = document.getElementById(`${id}-dot`);
+
+    meta.textContent = `Updated ${fmt(src.updatedAt)}`;
+    err.textContent = src.ok ? "" : (src.error ? `Scrape failed: ${src.error}` : "Scrape failed.");
+    pill.style.display = src.stale ? "inline-block" : "none";
+
+    dot.classList.remove("ok", "bad");
+    dot.classList.add(src.ok ? "ok" : "bad");
+
+    rows.innerHTML = "";
+    (src.items || []).slice(0, 10).forEach(item => {
+      const row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML = `
+        <div class="row-main">
+          <div class="headline">
+            <a href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
+          </div>
+        </div>
+      `;
+      rows.appendChild(row);
+    });
+  }
+
+  async function loadAll() {
+    const res = await fetch(`/api/headlines`);
+    const data = await res.json();
+    const sources = data.sources || data;
+    if (!sources.abc || !sources.cbs) return;
+    setStatus("abc", sources.abc);
+    setStatus("cbs", sources.cbs);
+  }
+
+  async function refreshOne(id) {
+    const btn = document.getElementById(`${id}-btn`);
+    btn.disabled = true;
+    btn.textContent = "Refreshing…";
+    try {
+      const res = await fetch(`/api/refresh`, {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ id })
+      });
+
+      if (!res.ok) {
+        const t = await res.text();
+        document.getElementById(`${id}-err`).textContent = `Refresh failed (${res.status}). See console.`;
+        console.error("Refresh error:", t);
+        return;
+      }
+
+      const data = await res.json();
+      const sources = data.sources || data;
+      setStatus("abc", sources.abc);
+      setStatus("cbs", sources.cbs);
+    } catch (e) {
+      document.getElementById(`${id}-err`).textContent = "Refresh request failed.";
+      console.error(e);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Refresh";
+    }
+  }
+
+  async function refreshAll() {
+    const btn = document.getElementById("all-btn");
+    btn.disabled = true;
+    btn.textContent = "Refreshing…";
+    try {
+      const res = await fetch(`/api/refresh`, {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({})
+      });
+      if (!res.ok) {
+        console.error(await res.text());
+        return;
+      }
+      await loadAll();
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Refresh all";
+    }
+  }
+
+  function badgeClass(type) {
+    return "";
+  }
+
+  function shortLine(entry) {
+    if (entry.type === "added") return `#${entry.rank}: ${entry.title}`;
+    if (entry.type === "removed") return `#${entry.rank}: ${entry.title}`;
+    if (entry.type === "moved") return `${entry.title} (${entry.fromRank} → ${entry.toRank})`;
+    if (entry.type === "retitled") return `#${entry.rank}: ${entry.fromTitle} → ${entry.toTitle}`;
+    if (entry.type === "slotChanged") return `slot ${entry.slotKey}: ${entry.from.title} → ${entry.to.title}`;
+    return JSON.stringify(entry);
+  }
+
+  async function openHistory(id) {
+    const drawer = document.getElementById("drawer");
+    const overlay = document.getElementById("drawer-overlay");
+    const content = document.getElementById("drawer-content");
+    const title = document.getElementById("drawer-title");
+    const sub = document.getElementById("drawer-sub");
+
+    title.textContent = `${id.toUpperCase()} history`;
+    sub.textContent = "Loading…";
+    content.textContent = "Loading…";
+
+    overlay.classList.add("open");
+    drawer.classList.add("open");
+
+    try {
+      const res = await fetch(`/api/history?id=${encodeURIComponent(id)}&limit=24`);
+      const data = await res.json();
+
+      if (!data.ok) {
+        sub.textContent = "Error";
+        content.textContent = data.error || "Failed to load history";
+        return;
+      }
+
+      sub.textContent = `${data.returned} snapshots shown (total archived: ${data.totalSnapshots})`;
+
+      if (!data.diffs || data.diffs.length === 0) {
+        content.textContent = "No diffs yet. Refresh this source a few times.";
+        return;
+      }
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "timeline";
+
+      const diffs = [...data.diffs].reverse();
+      for (const d of diffs) {
+        const ev = document.createElement("div");
+        ev.className = "event";
+
+        const top = document.createElement("div");
+        top.className = "event-top";
+
+        const time = document.createElement("div");
+        time.className = "event-time";
+        time.textContent = `Changed: ${fmt(d.changedAt)}`;
+
+        const counts = document.createElement("div");
+        counts.className = "counts";
+        counts.innerHTML = `
+          <span class="tag">+${d.counts.added}</span>
+          <span class="tag">-${d.counts.removed}</span>
+          <span class="tag">moved ${d.counts.moved}</span>
+          <span class="tag">retitle ${d.counts.retitled}</span>
+          <span class="tag">slot ${d.counts.slotChanged}</span>
+        `;
+
+        top.appendChild(time);
+        top.appendChild(counts);
+        ev.appendChild(top);
+
+        const chg = document.createElement("div");
+        chg.className = "chg";
+
+        const log = (d.changeLog || []).slice(0, 18);
+        if (log.length === 0) {
+          const line = document.createElement("div");
+          line.style.color = "var(--muted)";
+          line.textContent = "No item-level changes detected.";
+          chg.appendChild(line);
+        } else {
+          for (const entry of log) {
+            const row = document.createElement("div");
+            row.className = "chg-line";
+            const b = document.createElement("span");
+            b.className = "badge";
+            b.textContent = entry.type;
+            const t = document.createElement("div");
+            t.textContent = shortLine(entry);
+            row.appendChild(b);
+            row.appendChild(t);
+            chg.appendChild(row);
+          }
+          if ((d.changeLog || []).length > log.length) {
+            const more = document.createElement("div");
+            more.style.color = "var(--muted)";
+            more.style.fontSize = "12px";
+            more.textContent = `…and ${(d.changeLog.length - log.length)} more changes`;
+            chg.appendChild(more);
+          }
+        }
+
+        ev.appendChild(chg);
+        wrapper.appendChild(ev);
+      }
+
+      content.innerHTML = "";
+      content.appendChild(wrapper);
+    } catch (e) {
+      sub.textContent = "Error";
+      content.textContent = "Failed to load history. See console.";
+      console.error(e);
+    }
+  }
+
+  function closeDrawer() {
+    document.getElementById("drawer").classList.remove("open");
+    document.getElementById("drawer-overlay").classList.remove("open");
+  }
+
+  loadAll();
+</script>
+
+</body>
+</html>
