@@ -126,10 +126,7 @@
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-    .historyItem.older{
-      background: #f8f9fa;
-    }
-      gap:12px;
+gap:12px;
       border-bottom:1px solid var(--line);
       background: #ffffff;
     }
@@ -151,10 +148,7 @@
       display:flex;
       gap:12px; /* trimmed */
       align-items:flex-start;
-    .historyItem.older{
-      background: #f8f9fa;
-    }
-    }
+}
 
     .thumb{
       width:156px; /* trimmed */
@@ -242,7 +236,6 @@
       justify-content:space-between;
       gap:10px;
     }
-
     .historyList{
       display:flex;
       flex-direction:column;
@@ -258,30 +251,11 @@
       gap:12px;
       align-items:flex-start;
     }
+
     .historyItem.older{
       background: #f8f9fa;
     }
-      background: #f8f9fa;
-    }
-    }
-      align-items:flex-start;
-    .historyItem.older{
-      background: #f8f9fa;
-    }
-    }
-    }
-      border:1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-      padding:10px; /* trimmed */
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    .historyItem.older{
-      background: #f8f9fa;
-    }
-    }
-    .hThumb{
+.hThumb{
       width:92px;
       aspect-ratio:16/9;
       border-radius:10px;
@@ -602,21 +576,12 @@
     }
 
     for (const it of items){
-      
-      }
       const row = document.createElement("div");
       row.className = "historyItem";
-      
+
       const ageHours = it.since ? (Date.now() - new Date(it.since).getTime()) / (1000 * 60 * 60) : 0;
-      
       if (ageHours > 24) {
         row.classList.add("older");
-      }
-      
-      }
-      
-      }
-      
       }
 
       const thumb = document.createElement("div");
@@ -633,7 +598,9 @@
       const pub = document.createElement("p");
       pub.className = "hPub";
       const src = (it.source || "").toString().toUpperCase();
-      pub.textContent = src === "ABC" ? "ABC News" : (src === "CBS" ? "CBS News" : (it.source || "Publisher"));
+      pub.textContent = src === "ABC"
+        ? "ABC News"
+        : (src === "CBS" ? "CBS News" : (it.source || "Publisher"));
 
       const title = document.createElement("p");
       title.className = "hTitle";
@@ -649,8 +616,9 @@
 
       const chip1 = document.createElement("span");
       chip1.className = "hChip";
-      chip1.textContent = it.since ? `Since: ${fmtTimePT(it.since)} • ${durShort(it.since)}` : "Since: —";
-
+      chip1.textContent = it.since
+        ? `Since: ${fmtTimePT(it.since)} • ${durShort(it.since)}`
+        : "Since: —";
       meta.appendChild(chip1);
 
       body.appendChild(pub);
