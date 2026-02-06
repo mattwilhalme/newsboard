@@ -1,7 +1,7 @@
 // scripts/run-scrape.js
 import fs from "fs";
 import path from "path";
-import { scrapeABCHero, scrapeCBSHero } from "../server.js";
+import { scrapeABCHero, scrapeCBSHero, scrapeUSATHero } from "../server.js";
 
 const DATA_DIR = path.join("docs", "data");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
@@ -117,6 +117,7 @@ async function run() {
 
   let abc = null;
   let cbs = null;
+  let usat = null;
 
   try {
     abc = await scrapeABCHero();
@@ -132,25 +133,34 @@ async function run() {
     cbs = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
   }
 
+  try {
+    usat = await scrapeUSATHero();
+  } catch (err) {
+    console.error("❌ USA Today hero scrape failed", err);
+    usat = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
+  }
+
   // Load existing history, update, and write back
   const history = readJSONIfExists(HISTORY_PATH, {
     generatedAt: null,
-    sources: { abc: { entries: [] }, cbs: { entries: [] } },
+    sources: { abc: { entries: [] }, cbs: { entries: [] }, usat1: { entries: [] } },
   });
 
   history.generatedAt = generatedAt;
   upsertHistory(history, "abc", generatedAt, abc?.ok ? abc.item : null);
   upsertHistory(history, "cbs", generatedAt, cbs?.ok ? cbs.item : null);
+  upsertHistory(history, "usat1", generatedAt, usat?.ok ? usat.item : null);
 
   writeJSON("history.json", history);
 
   // Determine "since" for current heroes (first time we saw this URL)
   const abcSince = currentSinceFromHistory(history, "abc", abc?.item?.url || null);
   const cbsSince = currentSinceFromHistory(history, "cbs", cbs?.item?.url || null);
+  const usatSince = currentSinceFromHistory(history, "usat1", usat?.item?.url || null);
 
   // current.json (for "Now" view)
   const current = {
-    ok: Boolean(abc?.ok || cbs?.ok),
+    ok: Boolean(abc?.ok || cbs?.ok || usat?.ok),
     generatedAt,
     sources: {
       abc: {
@@ -169,6 +179,14 @@ async function run() {
         since: cbsSince,          // <— NEW
         item: cbs?.item || null,
       },
+      usat1: {
+        ok: Boolean(usat?.ok),
+        updatedAt: usat?.updatedAt || null,
+        error: usat?.error || null,
+        runId: usat?.runId || null,
+        since: usatSince,
+        item: usat?.item || null,
+      },
     },
   };
 
@@ -176,11 +194,12 @@ async function run() {
 
   // unified.json (simple merged list)
   const unified = {
-    ok: Boolean(abc?.ok || cbs?.ok),
+    ok: Boolean(abc?.ok || cbs?.ok || usat?.ok),
     generatedAt,
     items: [
       abc?.item ? { source: "abc", updatedAt: abc.updatedAt, since: abcSince, ...abc.item } : null,
       cbs?.item ? { source: "cbs", updatedAt: cbs.updatedAt, since: cbsSince, ...cbs.item } : null,
+      usat?.item ? { source: "usat1", updatedAt: usat.updatedAt, since: usatSince, ...usat.item } : null,
     ].filter(Boolean),
   };
 

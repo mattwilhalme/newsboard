@@ -240,6 +240,41 @@
       z-index:999;
     }
     .toast.show{ opacity: 1; }
+
+    .sectionTitle{
+      margin:14px 0 10px;
+      font-size:13px;
+      letter-spacing:.2px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .historyGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 1100px){
+      .historyGrid{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px){
+      .historyGrid{ grid-template-columns: 1fr; }
+    }
+
+    .hCard{ border:1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); overflow:hidden; }
+    .hHead{ padding:10px 12px 9px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; border-bottom:1px solid var(--line); background:#fff; }
+    .hBody{ padding:12px; display:flex; flex-direction:column; gap:10px; }
+    .hThumb{ width:100%; aspect-ratio: 16 / 9; border-radius: 12px; background:#f1f3f4; border:1px solid var(--line); overflow:hidden; align-self:center; max-width:460px; }
+    .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .hTitle{ font-size:15px; line-height:1.25; font-weight:700; margin:0; }
+    .hTitle a{ color: var(--text); text-decoration:none; }
+    .hTitle a:hover{ color: var(--blue); text-decoration: underline; }
+    .hMetaRow{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    .hMetaChips{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    .hChip{ display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background: var(--chip); border:1px solid var(--line); color: var(--chipText); font-size:12px; }
   </style>
 </head>
 <body>
@@ -366,6 +401,13 @@
       </section>
 
     </div>
+
+    <div class="sectionTitle">
+      <span>History</span>
+      <span class="tiny">Reads <span class="mono">./data/history.json</span></span>
+    </div>
+
+    <div class="historyGrid" id="history"></div>
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -486,6 +528,158 @@
       catch { throw new Error(text || `HTTP ${r.status}`); }
     }
 
+    function sourceLabel(k){
+      const s = String(k || "").toLowerCase();
+      if (s === "abc" || s === "abc1") return "ABC News";
+      if (s === "cbs" || s === "cbs1") return "CBS News";
+      if (s === "usat" || s === "usat1") return "USA Today";
+      return k || "Source";
+    }
+
+    function copyText(txt){
+      if (!txt) return;
+      return navigator.clipboard.writeText(txt);
+    }
+
+    function renderHistory(history){
+      const host = $("history");
+      if (!host) return;
+      host.innerHTML = "";
+
+      const sources = history && typeof history === "object" && history.sources && typeof history.sources === "object" ? history.sources : {};
+      const rows = [];
+      for (const [source, obj] of Object.entries(sources)){
+        const entries = Array.isArray(obj?.entries) ? obj.entries : [];
+        for (const e of entries){
+          if (!e || !e.url) continue;
+          rows.push({ source, ...e });
+        }
+      }
+
+      rows.sort((a,b) => {
+        const ta = new Date(a.lastSeenAt || a.firstSeenAt || 0).getTime();
+        const tb = new Date(b.lastSeenAt || b.firstSeenAt || 0).getTime();
+        return tb - ta;
+      });
+
+      if (!rows.length){
+        const empty = document.createElement("div");
+        empty.className = "tiny";
+        empty.style.color = "var(--muted)";
+        empty.textContent = "No history yet.";
+        host.appendChild(empty);
+        return;
+      }
+
+      for (const it of rows){
+        const card = document.createElement("section");
+        card.className = "hCard";
+
+        const head = document.createElement("div");
+        head.className = "hHead";
+
+        const left = document.createElement("div");
+        left.className = "srcTitle";
+        const dot = document.createElement("div");
+        dot.className = "dot ok";
+        left.appendChild(dot);
+
+        const meta = document.createElement("div");
+        meta.className = "srcMeta";
+        const name = document.createElement("div");
+        name.className = "srcName";
+        name.textContent = sourceLabel(it.source);
+        meta.appendChild(name);
+        left.appendChild(meta);
+
+        const right = document.createElement("div");
+        right.className = "rightMeta";
+        const updated = document.createElement("div");
+        updated.className = "srcTime";
+        updated.textContent = it.lastSeenAt ? `${fmtTime(it.lastSeenAt)} · ${ago(it.lastSeenAt)}` : "—";
+        const since = document.createElement("div");
+        since.className = "tiny";
+        since.textContent = it.firstSeenAt ? `First ${fmtTime(it.firstSeenAt)}` : "First —";
+        right.appendChild(updated);
+        right.appendChild(since);
+
+        head.appendChild(left);
+        head.appendChild(right);
+
+        const body = document.createElement("div");
+        body.className = "hBody";
+
+        const thumb = document.createElement("div");
+        thumb.className = "hThumb";
+        const img = document.createElement("img");
+        img.alt = "";
+        if (it.imgUrl) img.src = it.imgUrl;
+        else img.style.display = "none";
+        thumb.appendChild(img);
+
+        const title = document.createElement("h3");
+        title.className = "hTitle";
+        const a = document.createElement("a");
+        a.href = it.url || "#";
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = it.title || "—";
+        title.appendChild(a);
+
+        const metaRow = document.createElement("div");
+        metaRow.className = "hMetaRow";
+
+        const pills = document.createElement("div");
+        pills.className = "hMetaChips";
+
+        const chipSeen = document.createElement("span");
+        chipSeen.className = "hChip";
+        chipSeen.textContent = `Seen: ${Number(it.seenCount || 1)}`;
+        pills.appendChild(chipSeen);
+
+        const chipLast = document.createElement("span");
+        chipLast.className = "hChip";
+        chipLast.textContent = it.lastSeenAt ? `Last: ${fmtTime(it.lastSeenAt)}` : "Last: —";
+        pills.appendChild(chipLast);
+
+        metaRow.appendChild(pills);
+
+        const btnCopyLink = document.createElement("button");
+        btnCopyLink.className = "linkbtn";
+        btnCopyLink.type = "button";
+        btnCopyLink.textContent = "Copy headline link";
+        btnCopyLink.addEventListener("click", async () => {
+          try{ await copyText(a.href); showToast("Copied"); } catch { showToast("Copy failed"); }
+        });
+
+        const urlLine = document.createElement("div");
+        urlLine.className = "urlLine";
+        const urlText = document.createElement("div");
+        urlText.className = "urlText mono";
+        urlText.textContent = it.url || "—";
+        const btnCopyUrl = document.createElement("button");
+        btnCopyUrl.className = "linkbtn";
+        btnCopyUrl.type = "button";
+        btnCopyUrl.textContent = "Copy URL";
+        btnCopyUrl.addEventListener("click", async () => {
+          try{ await copyText(it.url || ""); showToast("Copied"); } catch { showToast("Copy failed"); }
+        });
+        urlLine.appendChild(urlText);
+        urlLine.appendChild(btnCopyUrl);
+
+        body.appendChild(thumb);
+        body.appendChild(title);
+        body.appendChild(metaRow);
+        body.appendChild(btnCopyLink);
+        body.appendChild(urlLine);
+
+        card.appendChild(head);
+        card.appendChild(body);
+
+        host.appendChild(card);
+      }
+    }
+
     async function loadPublishedCache() {
       const data = await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
       return data;
@@ -503,6 +697,9 @@
         renderSource("abc1", data?.sources?.abc1);
         renderSource("cbs1", data?.sources?.cbs1);
         renderSource("usat1", data?.sources?.usat1);
+
+        const history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
+        renderHistory(history);
       } catch (e) {
         console.error("Reload error:", e);
         showToast("Reload failed");
