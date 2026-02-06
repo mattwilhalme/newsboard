@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Newsboard</title>
-
-  <!-- Kill favicon 404s on GitHub Pages -->
   <link rel="icon" href="data:,">
 
   <style>
@@ -50,7 +48,7 @@
     .topbar{
       max-width:var(--maxw);
       margin:0 auto;
-      padding:11px 16px; /* trimmed */
+      padding:11px 16px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -76,7 +74,7 @@
       background:transparent;
       color: var(--muted);
       font-size:12px;
-      padding:8px 12px; /* trimmed */
+      padding:8px 12px;
       cursor:pointer;
       user-select:none;
     }
@@ -91,7 +89,7 @@
       background: var(--card);
       color: var(--text);
       font-size:12px;
-      padding:8px 12px; /* trimmed */
+      padding:8px 12px;
       border-radius:999px;
       cursor:pointer;
       user-select:none;
@@ -100,12 +98,12 @@
     .btn:hover{ border-color: rgba(26,115,232,.45); }
     .btn:disabled{ opacity:.55; cursor:not-allowed; }
 
-    main{ max-width:var(--maxw); margin:0 auto; padding:14px 16px 26px; } /* trimmed */
+    main{ max-width:var(--maxw); margin:0 auto; padding:14px 16px 26px; }
 
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap:12px; /* trimmed */
+      gap:12px;
     }
     @media (max-width: 900px){
       .grid{ grid-template-columns: 1fr; }
@@ -120,13 +118,12 @@
       overflow:hidden;
     }
 
-    /* CardHead: remove publisher label; keep dot + time */
     .cardHead{
-      padding:10px 12px 9px; /* trimmed */
+      padding:10px 12px 9px;
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-gap:12px;
+      gap:12px;
       border-bottom:1px solid var(--line);
       background: #ffffff;
     }
@@ -144,14 +141,14 @@ gap:12px;
     .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
     .cardBody{
-      padding:12px; /* trimmed */
+      padding:12px;
       display:flex;
-      gap:12px; /* trimmed */
+      gap:12px;
       align-items:flex-start;
-}
+    }
 
     .thumb{
-      width:156px; /* trimmed */
+      width:156px;
       aspect-ratio: 16 / 9;
       border-radius: 12px;
       background: #f1f3f4;
@@ -166,7 +163,7 @@ gap:12px;
       .thumb{ width:100%; }
     }
 
-    .headlineWrap{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; } /* trimmed */
+    .headlineWrap{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; }
 
     .pubLine{
       font-weight:700;
@@ -187,7 +184,7 @@ gap:12px;
       display:inline-flex;
       align-items:center;
       gap:6px;
-      padding:6px 10px; /* trimmed */
+      padding:6px 10px;
       border-radius:999px;
       background: var(--chip);
       border:1px solid var(--line);
@@ -200,7 +197,7 @@ gap:12px;
       background: var(--card);
       color: var(--text);
       font-size:12px;
-      padding:6px 10px; /* trimmed */
+      padding:6px 10px;
       border-radius:999px;
       cursor:pointer;
     }
@@ -220,82 +217,11 @@ gap:12px;
       border:1px solid var(--line);
       background: #fff;
       border-radius: 10px;
-      padding:7px 9px; /* trimmed */
+      padding:7px 9px;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
     }
-
-    .sectionTitle{
-      margin:12px 0 8px; /* trimmed */
-      font-size:13px;
-      letter-spacing:.2px;
-      color: var(--muted);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .historyList{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      padding:12px; /* trimmed */
-    }
-    .historyItem{
-      border:1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-      padding:10px; /* trimmed */
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-
-    .historyItem.older{
-      background: #f8f9fa;
-    }
-.hThumb{
-      width:92px;
-      aspect-ratio:16/9;
-      border-radius: 10px;
-      overflow:hidden;
-      background:#f1f3f4;
-      border:1px solid var(--line);
-      flex:0 0 auto;
-    }
-    .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .hMain{ min-width:0; flex:1 1 auto; }
-    .hTitle{
-      font-weight:800;
-      font-size:13px;
-      margin:0 0 6px;
-      line-height:1.25;
-    }
-    .hTitle a{ color:var(--text); text-decoration:none; }
-    .hTitle a:hover{ color:var(--blue); text-decoration:underline; }
-    .hMeta{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-    .hPill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:7px 10px;
-      border-radius:999px;
-      background: #eef1f4;
-      border:1px solid var(--line);
-      color: #3c4043;
-      font-size:12px;
-      font-weight:700; /* bolder per request */
-    }
-    .hTime{ font-size:12px; color:var(--muted); }
-
-    .divider{
-      height:1px;
-      background: var(--line);
-      margin: 8px 0 0;
-    }
-
-    .muted{ color: var(--muted); }
 
     .toast{
       position:fixed;
@@ -314,9 +240,6 @@ gap:12px;
       z-index:999;
     }
     .toast.show{ opacity: 1; }
-
-    .historyWrap{ display:none; }
-    .historyWrap.active{ display:block; }
   </style>
 </head>
 <body>
@@ -324,188 +247,139 @@ gap:12px;
     <div class="topbar">
       <div class="brand">
         <div class="title">Newsboard</div>
-        <div class="sub">Top story tracker + diffs (local archive)</div>
+        <div class="sub" id="subline">Top story tracker (published cache.json)</div>
       </div>
 
       <div class="controls">
-        <div class="tabs" role="tablist" aria-label="Views">
-          <button id="tab-now" class="active" type="button">Now</button>
-          <button id="tab-history" type="button">History</button>
-        </div>
-        <button id="btn-refresh" class="btn" type="button">Refresh</button>
+        <button id="btn-reload" class="btn" type="button">Reload</button>
+        <button id="btn-run" class="btn" type="button" style="display:none;">Run scrape (local)</button>
       </div>
     </div>
   </header>
 
   <main>
-    <div id="view-now">
-      <div class="grid">
+    <div class="grid">
 
-        <!-- ABC HERO -->
-        <section class="card">
-          <div class="cardHead">
-            <div class="srcTitle">
-              <div class="dot" id="dot-abc1"></div>
-              <div class="srcMeta">
-                <div class="srcName">ABC News</div>
-                <div class="srcTime" id="time-abc1">—</div>
-              </div>
-            </div>
-            <div class="tiny" id="since-abc1">—</div>
-          </div>
-
-          <div class="cardBody">
-            <div class="thumb"><img id="img-abc1" alt="" /></div>
-            <div class="headlineWrap">
-              <div class="pubLine">No. 1</div>
-              <h2 class="headline"><a id="link-abc1" href="#" target="_blank" rel="noopener">—</a></h2>
-
-              <div class="row">
-                <span class="pill" id="status-abc1">—</span>
-                <button class="linkbtn" id="copy-abc1" type="button">Copy headline link</button>
-              </div>
-
-              <div class="urlLine">
-                <div class="urlText mono" id="url-abc1">—</div>
-                <button class="linkbtn" id="copyurl-abc1" type="button">Copy URL</button>
-              </div>
-
-              <div class="tiny" id="err-abc1"></div>
+      <!-- ABC HERO -->
+      <section class="card">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-abc1"></div>
+            <div class="srcMeta">
+              <div class="srcName">ABC News</div>
+              <div class="srcTime" id="time-abc1">—</div>
             </div>
           </div>
-        </section>
-
-        <!-- CBS HERO -->
-        <section class="card">
-          <div class="cardHead">
-            <div class="srcTitle">
-              <div class="dot" id="dot-cbs1"></div>
-              <div class="srcMeta">
-                <div class="srcName">CBS News</div>
-                <div class="srcTime" id="time-cbs1">—</div>
-              </div>
-            </div>
-            <div class="tiny" id="since-cbs1">—</div>
-          </div>
-
-          <div class="cardBody">
-            <div class="thumb"><img id="img-cbs1" alt="" /></div>
-            <div class="headlineWrap">
-              <div class="pubLine">No. 1</div>
-              <h2 class="headline"><a id="link-cbs1" href="#" target="_blank" rel="noopener">—</a></h2>
-
-              <div class="row">
-                <span class="pill" id="status-cbs1">—</span>
-                <button class="linkbtn" id="copy-cbs1" type="button">Copy headline link</button>
-              </div>
-
-              <div class="urlLine">
-                <div class="urlText mono" id="url-cbs1">—</div>
-                <button class="linkbtn" id="copyurl-cbs1" type="button">Copy URL</button>
-              </div>
-
-              <div class="tiny" id="err-cbs1"></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- USA TODAY HERO -->
-        <section class="card">
-          <div class="cardHead">
-            <div class="srcTitle">
-              <div class="dot" id="dot-usat1"></div>
-              <div class="srcMeta">
-                <div class="srcName">USA Today</div>
-                <div class="srcTime" id="time-usat1">—</div>
-              </div>
-            </div>
-            <div class="tiny" id="since-usat1">—</div>
-          </div>
-
-          <div class="cardBody">
-            <div class="thumb"><img id="img-usat1" alt="" /></div>
-            <div class="headlineWrap">
-              <div class="pubLine">No. 1</div>
-              <h2 class="headline"><a id="link-usat1" href="#" target="_blank" rel="noopener">—</a></h2>
-
-              <div class="row">
-                <span class="pill" id="status-usat1">—</span>
-                <button class="linkbtn" id="copy-usat1" type="button">Copy headline link</button>
-              </div>
-
-              <div class="urlLine">
-                <div class="urlText mono" id="url-usat1">—</div>
-                <button class="linkbtn" id="copyurl-usat1" type="button">Copy URL</button>
-              </div>
-
-              <div class="tiny" id="err-usat1"></div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </div>
-
-    <div id="view-history" class="historyWrap">
-      <div class="sectionTitle">
-        <div>History (diff log)</div>
-        <div class="row">
-          <button class="btn" id="btn-load-history" type="button">Load history</button>
+          <div class="tiny" id="since-abc1">—</div>
         </div>
-      </div>
 
-      <div class="grid">
-        <section class="card">
-          <div class="cardHead">
-            <div class="srcTitle">
-              <div class="dot ok"></div>
-              <div class="srcMeta">
-                <div class="srcName">ABC News</div>
-                <div class="srcTime">Snapshots + diffs</div>
-              </div>
-            </div>
-            <div class="tiny" id="hist-meta-abc">—</div>
-          </div>
-          <div class="historyList" id="hist-abc"></div>
-        </section>
+        <div class="cardBody">
+          <div class="thumb"><img id="img-abc1" alt="" /></div>
+          <div class="headlineWrap">
+            <div class="pubLine">No. 1</div>
+            <h2 class="headline"><a id="link-abc1" href="#" target="_blank" rel="noopener">—</a></h2>
 
-        <section class="card">
-          <div class="cardHead">
-            <div class="srcTitle">
-              <div class="dot ok"></div>
-              <div class="srcMeta">
-                <div class="srcName">CBS News</div>
-                <div class="srcTime">Snapshots + diffs</div>
-              </div>
+            <div class="row">
+              <span class="pill" id="status-abc1">—</span>
+              <button class="linkbtn" id="copy-abc1" type="button">Copy headline link</button>
             </div>
-            <div class="tiny" id="hist-meta-cbs">—</div>
-          </div>
-          <div class="historyList" id="hist-cbs"></div>
-        </section>
 
-        <section class="card">
-          <div class="cardHead">
-            <div class="srcTitle">
-              <div class="dot ok"></div>
-              <div class="srcMeta">
-                <div class="srcName">USA Today</div>
-                <div class="srcTime">Snapshots + diffs</div>
-              </div>
+            <div class="urlLine">
+              <div class="urlText mono" id="url-abc1">—</div>
+              <button class="linkbtn" id="copyurl-abc1" type="button">Copy URL</button>
             </div>
-            <div class="tiny" id="hist-meta-usat1">—</div>
+
+            <div class="tiny" id="err-abc1"></div>
           </div>
-          <div class="historyList" id="hist-usat1"></div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <!-- CBS HERO -->
+      <section class="card">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-cbs1"></div>
+            <div class="srcMeta">
+              <div class="srcName">CBS News</div>
+              <div class="srcTime" id="time-cbs1">—</div>
+            </div>
+          </div>
+          <div class="tiny" id="since-cbs1">—</div>
+        </div>
+
+        <div class="cardBody">
+          <div class="thumb"><img id="img-cbs1" alt="" /></div>
+          <div class="headlineWrap">
+            <div class="pubLine">No. 1</div>
+            <h2 class="headline"><a id="link-cbs1" href="#" target="_blank" rel="noopener">—</a></h2>
+
+            <div class="row">
+              <span class="pill" id="status-cbs1">—</span>
+              <button class="linkbtn" id="copy-cbs1" type="button">Copy headline link</button>
+            </div>
+
+            <div class="urlLine">
+              <div class="urlText mono" id="url-cbs1">—</div>
+              <button class="linkbtn" id="copyurl-cbs1" type="button">Copy URL</button>
+            </div>
+
+            <div class="tiny" id="err-cbs1"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- USA TODAY HERO -->
+      <section class="card">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-usat1"></div>
+            <div class="srcMeta">
+              <div class="srcName">USA Today</div>
+              <div class="srcTime" id="time-usat1">—</div>
+            </div>
+          </div>
+          <div class="tiny" id="since-usat1">—</div>
+        </div>
+
+        <div class="cardBody">
+          <div class="thumb"><img id="img-usat1" alt="" /></div>
+          <div class="headlineWrap">
+            <div class="pubLine">No. 1</div>
+            <h2 class="headline"><a id="link-usat1" href="#" target="_blank" rel="noopener">—</a></h2>
+
+            <div class="row">
+              <span class="pill" id="status-usat1">—</span>
+              <button class="linkbtn" id="copy-usat1" type="button">Copy headline link</button>
+            </div>
+
+            <div class="urlLine">
+              <div class="urlText mono" id="url-usat1">—</div>
+              <button class="linkbtn" id="copyurl-usat1" type="button">Copy URL</button>
+            </div>
+
+            <div class="tiny" id="err-usat1"></div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
-    const API = "";
-
     const $ = (id) => document.getElementById(id);
+
+    const isLocal =
+      location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1";
+
+    const isGitHubPages =
+      location.hostname.endsWith("github.io");
+
+    // On GitHub Pages: read published cache.json via GET.
+    // Locally: we can do both (GET cache.json OR POST /api/refresh).
+    const CACHE_URL = "./cache.json";
 
     function fmtTime(ts) {
       if (!ts) return "—";
@@ -584,7 +458,6 @@ gap:12px;
       else setStatus(id, "Stale / Failed", false);
 
       const sinceEl = $("since-" + id);
-      // placeholder: client computes in-memory; server side "first seen" tracking can be added later.
       sinceEl.textContent = src?.ok && src?.updatedAt ? `Updated ${ago(src.updatedAt)}` : "—";
     }
 
@@ -610,125 +483,59 @@ gap:12px;
       catch { throw new Error(text || `HTTP ${r.status}`); }
     }
 
-    async function refreshAll() {
-      $("btn-refresh").disabled = true;
+    async function loadPublishedCache() {
+      const data = await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
+      return data;
+    }
+
+    async function reload() {
+      $("btn-reload").disabled = true;
       try {
-        const data = await fetchJSON(`${API}/api/refresh`, {
+        const data = await loadPublishedCache();
+
+        $("subline").textContent = data?.generatedAt
+          ? `Published cache.json · generated ${fmtTime(data.generatedAt)}`
+          : "Published cache.json";
+
+        renderSource("abc1", data?.sources?.abc1);
+        renderSource("cbs1", data?.sources?.cbs1);
+        renderSource("usat1", data?.sources?.usat1);
+      } catch (e) {
+        console.error("Reload error:", e);
+        showToast("Reload failed");
+      } finally {
+        $("btn-reload").disabled = false;
+      }
+    }
+
+    async function runScrapeLocal() {
+      // Only works when the page is being served by your Express server locally.
+      $("btn-run").disabled = true;
+      try {
+        const data = await fetchJSON(`/api/refresh`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({}),
         });
 
-        const current = data || {};
-        renderSource("abc1", current?.sources?.abc1);
-        renderSource("cbs1", current?.sources?.cbs1);
-        renderSource("usat1", current?.sources?.usat1);
+        // After refresh, re-read cache.json so UI behavior is consistent everywhere.
+        await reload();
+        showToast("Scrape complete");
       } catch (e) {
-        console.error("Refresh error:", e);
-        showToast("Refresh failed");
+        console.error("Run scrape error:", e);
+        showToast("Scrape failed");
       } finally {
-        $("btn-refresh").disabled = false;
+        $("btn-run").disabled = false;
       }
     }
 
-    function renderHistoryList(containerId, metaId, payload, idForLinks) {
-      const meta = $(metaId);
-      const root = $(containerId);
-      root.innerHTML = "";
+    // Wire UI
+    $("btn-reload").addEventListener("click", reload);
 
-      if (!payload?.ok) {
-        meta.textContent = "Failed";
-        root.innerHTML = `<div class="tiny muted">${payload?.error || "History failed"}</div>`;
-        return;
-      }
-
-      meta.textContent = `${payload.totalSnapshots} total · showing ${payload.returned}`;
-
-      // show newest first
-      const diffs = Array.isArray(payload.diffs) ? payload.diffs.slice().reverse() : [];
-      if (!diffs.length) {
-        root.innerHTML = `<div class="tiny muted">No diffs yet. Refresh a few times.</div>`;
-        return;
-      }
-
-      for (const d of diffs) {
-        const card = document.createElement("div");
-        card.className = "historyItem";
-
-        const when = d.changedAt ? fmtTime(d.changedAt) : "—";
-        const counts = d.counts || {};
-        const changes = Array.isArray(d.changeLog) ? d.changeLog : [];
-
-        let firstLink = null;
-        for (const c of changes) {
-          if (c.url) { firstLink = c.url; break; }
-          if (c.to?.url) { firstLink = c.to.url; break; }
-        }
-
-        card.innerHTML = `
-          <div class="hMain">
-            <div class="hTitle">
-              <a href="${firstLink || "#"}" target="_blank" rel="noopener">
-                ${when}
-              </a>
-            </div>
-            <div class="hMeta">
-              <span class="hPill">Δ ${counts.totalChanges || 0}</span>
-              <span class="hPill">+${counts.added || 0}</span>
-              <span class="hPill">-${counts.removed || 0}</span>
-              <span class="hPill">↕ ${counts.moved || 0}</span>
-              <span class="hPill">✎ ${counts.retitled || 0}</span>
-            </div>
-            <div class="divider"></div>
-            <div class="tiny muted" style="margin-top:8px;">
-              ${changes.slice(0, 6).map((c) => {
-                if (c.type === "moved") return `<b>moved</b>: ${c.title} (${c.fromRank}→${c.toRank})`;
-                if (c.type === "added") return `<b>added</b>: ${c.title}`;
-                if (c.type === "removed") return `<b>removed</b>: ${c.title}`;
-                if (c.type === "retitled") return `<b>retitled</b>: ${c.toTitle}`;
-                if (c.type === "slotChanged") return `<b>slot</b>: ${c.to?.title || ""}`;
-                return `${c.type}`;
-              }).join("<br/>")}
-            </div>
-          </div>
-        `;
-        root.appendChild(card);
-      }
+    if (isLocal && !isGitHubPages) {
+      $("btn-run").style.display = "inline-block";
+      $("btn-run").addEventListener("click", runScrapeLocal);
     }
-
-    async function loadHistory() {
-      $("btn-load-history").disabled = true;
-      try {
-        const [abc, cbs, usat] = await Promise.all([
-          fetchJSON(`${API}/api/history?id=abc&limit=20`),
-          fetchJSON(`${API}/api/history?id=cbs&limit=20`),
-          fetchJSON(`${API}/api/history?id=usat1&limit=20`),
-        ]);
-
-        renderHistoryList("hist-abc", "hist-meta-abc", abc, "abc");
-        renderHistoryList("hist-cbs", "hist-meta-cbs", cbs, "cbs");
-        renderHistoryList("hist-usat1", "hist-meta-usat1", usat, "usat1");
-      } catch (e) {
-        console.error("History error:", e);
-        showToast("History failed");
-      } finally {
-        $("btn-load-history").disabled = false;
-      }
-    }
-
-    function setView(which) {
-      const isNow = which === "now";
-      $("view-now").style.display = isNow ? "block" : "none";
-      $("view-history").classList.toggle("active", !isNow);
-
-      $("tab-now").classList.toggle("active", isNow);
-      $("tab-history").classList.toggle("active", !isNow);
-    }
-
-    $("tab-now").addEventListener("click", () => setView("now"));
-    $("tab-history").addEventListener("click", () => setView("history"));
-    $("btn-refresh").addEventListener("click", refreshAll);
-    $("btn-load-history").addEventListener("click", loadHistory);
 
     wireCopy("copy-abc1", () => $("link-abc1")?.href && $("link-abc1").href !== "#" ? $("link-abc1").href : "");
     wireCopy("copyurl-abc1", () => $("url-abc1")?.textContent && $("url-abc1").textContent !== "—" ? $("url-abc1").textContent : "");
@@ -737,9 +544,8 @@ gap:12px;
     wireCopy("copy-usat1", () => $("link-usat1")?.href && $("link-usat1").href !== "#" ? $("link-usat1").href : "");
     wireCopy("copyurl-usat1", () => $("url-usat1")?.textContent && $("url-usat1").textContent !== "—" ? $("url-usat1").textContent : "");
 
-    // initial load
-    setView("now");
-    refreshAll();
+    // Initial load (Pages-safe)
+    reload();
   </script>
 </body>
 </html>

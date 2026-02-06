@@ -125,7 +125,7 @@ async function withBrowser(fn) {
 
   const page = await context.newPage();
 
-  // ---- Playwright diagnostics (USA Today + general scraper debugging) ----
+  // ---- Playwright diagnostics ----
   page.on("console", (msg) => {
     try {
       const type = msg.type();
@@ -154,7 +154,7 @@ async function withBrowser(fn) {
       if (s >= 400) console.log(`[PW response ${s}] ${res.url()}`.slice(0, 1200));
     } catch {}
   });
-  // -----------------------------------------------------------------------
+  // -------------------------------
 
   try {
     return await fn(page);
@@ -474,9 +474,7 @@ async function scrapeABCHero() {
           /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
         );
         if (m?.[1]) finalImgUrl = normalizeUrl(m[1]);
-      } catch {
-        // ignore
-      }
+      } catch {}
     }
 
     const item = hero?.ok
@@ -622,12 +620,12 @@ async function scrapeUSATHero() {
       timeout: 45000,
     });
 
-    // USA Today hydrates late; wait for network + hero module.
+    // Hydration can be late.
     await page.waitForTimeout(1200);
     await page.waitForLoadState("networkidle", { timeout: 25000 }).catch(() => {});
     await page.waitForTimeout(600);
 
-    // Wait specifically for the hero anchor pattern you've observed:
+    // Wait for the exact hero pattern you've shared:
     // <a class="gnt_m_he gnt_m_he__br" data-t-l="...|hero"> ... <span class="gnt_m_he__lc" data-tb-title>...</span>
     await page
       .waitForSelector('a.gnt_m_he[data-t-l*="|hero"] span.gnt_m_he__lc[data-tb-title]', {
@@ -651,7 +649,7 @@ async function scrapeUSATHero() {
         const parts = srcset.split(",").map((p) => p.trim()).filter(Boolean);
         if (!parts.length) return null;
 
-        // Prefer 2x if present, else last candidate.
+        // Prefer 2x if present, else last.
         let best = null;
         for (const p of parts) {
           const [u, dpr] = p.split(/\s+/);
@@ -733,7 +731,7 @@ async function scrapeUSATHero() {
     let finalTitle = cleanText(hero?.title || "");
     let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
 
-    // og:image fallback if tile doesn't expose an image URL.
+    // og:image fallback if tile doesn't expose image url
     if (hero?.ok && finalUrl && !finalImgUrl) {
       try {
         const r = await page.request.get(finalUrl, { timeout: 20000 });
@@ -742,9 +740,7 @@ async function scrapeUSATHero() {
           /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
         );
         if (m?.[1]) finalImgUrl = normalizeUrl(m[1]);
-      } catch {
-        // ignore
-      }
+      } catch {}
     }
 
     const item = hero?.ok
@@ -894,7 +890,44 @@ try {
   cache = ensureCacheShape(null);
 }
 
-// -------- API --------
+// -------- Core refresh (shared by API + CLI) --------
+
+async function refreshSources({ id = "", maxItems = 40, scrollPasses = 6 } = {}) {
+  cache = ensureCacheShape(cache);
+
+  const whichId = String(id || "").toLowerCase(); // abc | cbs | abc1 | cbs1 | usat1 | "" (all)
+  const toRun = whichId ? [whichId] : ["abc", "cbs", "abc1", "cbs1", "usat1"];
+
+  for (const which of toRun) {
+    let result;
+
+    if (which === "abc") result = await scrapeABCFrontPage({ maxItems, scrollPasses });
+    else if (which === "cbs") result = await scrapeCBSFrontPage({ scrollPasses: 2 });
+    else if (which === "abc1") result = await scrapeABCHero();
+    else if (which === "cbs1") result = await scrapeCBSHero();
+    else if (which === "usat1") result = await scrapeUSATHero();
+    else throw new Error(`Unknown source id: ${which}`);
+
+    cache.sources[which] = {
+      ...cache.sources[which],
+      updatedAt: result?.updatedAt ?? nowISO(),
+      ok: Boolean(result?.ok),
+      error: result?.error ?? null,
+      stale: !Boolean(result?.ok),
+      runId: result?.runId ?? null,
+      archive: result?.archive ?? null,
+      items: Array.isArray(result?.items) ? result.items : [],
+      item: result?.item ?? null,
+    };
+  }
+
+  cache.generatedAt = nowISO();
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), "utf8");
+
+  return cache;
+}
+
+// -------- API (local use only) --------
 
 app.get("/api/headlines", (req, res) => {
   cache = ensureCacheShape(cache);
@@ -902,41 +935,13 @@ app.get("/api/headlines", (req, res) => {
 });
 
 app.post("/api/refresh", async (req, res) => {
-  cache = ensureCacheShape(cache);
-
-  const id = (req.body?.id || "").toLowerCase(); // abc | cbs | abc1 | cbs1 | usat1 | "" (all)
+  const id = (req.body?.id || "").toLowerCase();
   const maxItems = Number(req.body?.x ?? 40);
   const scrollPasses = Number(req.body?.scrollPasses ?? 6);
 
-  const toRun = id ? [id] : ["abc", "cbs", "abc1", "cbs1", "usat1"];
-
   try {
-    for (const which of toRun) {
-      let result;
-
-      if (which === "abc") result = await scrapeABCFrontPage({ maxItems, scrollPasses });
-      else if (which === "cbs") result = await scrapeCBSFrontPage({ scrollPasses: 2 });
-      else if (which === "abc1") result = await scrapeABCHero();
-      else if (which === "cbs1") result = await scrapeCBSHero();
-      else if (which === "usat1") result = await scrapeUSATHero();
-      else throw new Error(`Unknown source id: ${which}`);
-
-      cache.sources[which] = {
-        ...cache.sources[which],
-        updatedAt: result?.updatedAt ?? nowISO(),
-        ok: Boolean(result?.ok),
-        error: result?.error ?? null,
-        stale: !Boolean(result?.ok),
-        runId: result?.runId ?? null,
-        archive: result?.archive ?? null,
-        items: Array.isArray(result?.items) ? result.items : [],
-        item: result?.item ?? null,
-      };
-    }
-
-    cache.generatedAt = nowISO();
-    fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), "utf8");
-    res.json(cache);
+    const out = await refreshSources({ id, maxItems, scrollPasses });
+    res.json(out);
   } catch (err) {
     cache.generatedAt = nowISO();
     try {
@@ -1010,10 +1015,26 @@ app.get("/api/history", (req, res) => {
   }
 });
 
+// -------- Entrypoints --------
+
 // IMPORTANT: only start the server when running `node server.js`.
-// When imported (e.g., by scripts/run-scrape.js in GitHub Actions), do not listen.
 const __filename = fileURLToPath(import.meta.url);
-if (process.argv[1] === __filename) {
+
+// CLI mode (for GitHub Actions): `node server.js --refresh`
+// Optional: `--id usat1` to refresh one
+if (process.argv[1] === __filename && process.argv.includes("--refresh")) {
+  const idIdx = process.argv.indexOf("--id");
+  const id = idIdx >= 0 ? String(process.argv[idIdx + 1] || "") : "";
+  refreshSources({ id })
+    .then(() => {
+      console.log(`Wrote ${CACHE_FILE}`);
+      process.exit(0);
+    })
+    .catch((err) => {
+      console.error("Refresh failed:", err?.message || err);
+      process.exit(1);
+    });
+} else if (process.argv[1] === __filename) {
   app.listen(PORT, () => {
     console.log(`Newsboard API + UI: http://localhost:${PORT}`);
   });
@@ -1026,4 +1047,5 @@ export {
   scrapeABCHero,
   scrapeCBSHero,
   scrapeUSATHero,
+  refreshSources,
 };
