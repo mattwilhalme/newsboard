@@ -258,547 +258,488 @@ gap:12px;
 .hThumb{
       width:92px;
       aspect-ratio:16/9;
-      border-radius:10px;
-      border:1px solid var(--line);
+      border-radius: 10px;
       overflow:hidden;
       background:#f1f3f4;
+      border:1px solid var(--line);
       flex:0 0 auto;
     }
     .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .hBody{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:6px; }
-
-    .hPub{
-      font-weight:700;
-      font-size:12px;
-      color: var(--muted);
-      letter-spacing:.15px;
-      line-height:1.1;
-      margin:0;
-    }
-
+    .hMain{ min-width:0; flex:1 1 auto; }
     .hTitle{
-      font-weight:700;
+      font-weight:800;
       font-size:13px;
+      margin:0 0 6px;
       line-height:1.25;
-      margin:0;
     }
-    .hTitle a{ color: var(--text); text-decoration:none; }
-    .hTitle a:hover{ color: var(--blue); text-decoration:underline; }
-
-    .hMeta{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; color: var(--muted); font-size:12px; }
-    .hChip{
+    .hTitle a{ color:var(--text); text-decoration:none; }
+    .hTitle a:hover{ color:var(--blue); text-decoration:underline; }
+    .hMeta{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .hPill{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      padding:6px 10px;
+      padding:7px 10px;
       border-radius:999px;
-      background: var(--chip);
+      background: #eef1f4;
       border:1px solid var(--line);
-      color: var(--chipText);
+      color: #3c4043;
       font-size:12px;
+      font-weight:700; /* bolder per request */
+    }
+    .hTime{ font-size:12px; color:var(--muted); }
+
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 8px 0 0;
     }
 
-    .errorBox{
-      border:1px solid rgba(217,48,37,.35);
-      background: rgba(217,48,37,.06);
-      color: var(--text);
-      border-radius: var(--radius);
-      padding:12px 14px;
-      margin-top:12px; /* trimmed */
-      display:none;
+    .muted{ color: var(--muted); }
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform: translateX(-50%);
+      background:#202124;
+      color:#fff;
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:12px;
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .18s ease;
+      box-shadow: 0 6px 24px rgba(0,0,0,.22);
+      z-index:999;
     }
-    .errorBox.show{ display:block; }
+    .toast.show{ opacity: 1; }
+
+    .historyWrap{ display:none; }
+    .historyWrap.active{ display:block; }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="topbar">
-    <div class="brand">
-      <div class="title">Newsboard</div>
-      <div class="sub">Hero tracker (ABC + CBS) • PT only</div>
-    </div>
-
-    <div class="controls">
-      <div class="tabs" role="tablist" aria-label="View">
-        <button id="tab-now" class="active" type="button">Now</button>
-        <button id="tab-unified" type="button">Unified</button>
-      </div>
-      <button id="btn-refresh" class="btn" type="button">Refresh</button>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div id="error" class="errorBox"></div>
-
-  <section id="view-now">
-    <div class="grid">
-      <!-- ABC -->
-      <div class="card">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot" id="dot-abc"></div>
-            <div class="srcMeta">
-              <!-- publisher removed here -->
-              <div class="srcTime" id="time-abc">—</div>
-            </div>
-          </div>
-          <div class="tiny" id="since-abc">—</div>
-        </div>
-
-        <div class="cardBody">
-          <div class="thumb"><img id="img-abc" alt="" /></div>
-          <div class="headlineWrap">
-            <div class="pubLine">ABC News</div>
-            <h2 class="headline"><a id="link-abc" href="#" target="_blank" rel="noopener">—</a></h2>
-
-            <div class="row">
-              <span class="pill" id="status-abc">—</span>
-              <button class="linkbtn" id="copy-abc" type="button">Copy headline link</button>
-            </div>
-
-            <div class="urlLine">
-              <div class="urlText mono" id="url-abc">—</div>
-              <button class="linkbtn" id="copyurl-abc" type="button">Copy URL</button>
-            </div>
-
-            <div class="tiny" id="err-abc"></div>
-          </div>
-        </div>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="title">Newsboard</div>
+        <div class="sub">Top story tracker + diffs (local archive)</div>
       </div>
 
-      <!-- CBS -->
-      <div class="card">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot" id="dot-cbs"></div>
-            <div class="srcMeta">
-              <!-- publisher removed here -->
-              <div class="srcTime" id="time-cbs">—</div>
+      <div class="controls">
+        <div class="tabs" role="tablist" aria-label="Views">
+          <button id="tab-now" class="active" type="button">Now</button>
+          <button id="tab-history" type="button">History</button>
+        </div>
+        <button id="btn-refresh" class="btn" type="button">Refresh</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="view-now">
+      <div class="grid">
+
+        <!-- ABC HERO -->
+        <section class="card">
+          <div class="cardHead">
+            <div class="srcTitle">
+              <div class="dot" id="dot-abc1"></div>
+              <div class="srcMeta">
+                <div class="srcName">ABC News</div>
+                <div class="srcTime" id="time-abc1">—</div>
+              </div>
+            </div>
+            <div class="tiny" id="since-abc1">—</div>
+          </div>
+
+          <div class="cardBody">
+            <div class="thumb"><img id="img-abc1" alt="" /></div>
+            <div class="headlineWrap">
+              <div class="pubLine">No. 1</div>
+              <h2 class="headline"><a id="link-abc1" href="#" target="_blank" rel="noopener">—</a></h2>
+
+              <div class="row">
+                <span class="pill" id="status-abc1">—</span>
+                <button class="linkbtn" id="copy-abc1" type="button">Copy headline link</button>
+              </div>
+
+              <div class="urlLine">
+                <div class="urlText mono" id="url-abc1">—</div>
+                <button class="linkbtn" id="copyurl-abc1" type="button">Copy URL</button>
+              </div>
+
+              <div class="tiny" id="err-abc1"></div>
             </div>
           </div>
-          <div class="tiny" id="since-cbs">—</div>
-        </div>
+        </section>
 
-        <div class="cardBody">
-          <div class="thumb"><img id="img-cbs" alt="" /></div>
-          <div class="headlineWrap">
-            <div class="pubLine">CBS News</div>
-            <h2 class="headline"><a id="link-cbs" href="#" target="_blank" rel="noopener">—</a></h2>
-
-            <div class="row">
-              <span class="pill" id="status-cbs">—</span>
-              <button class="linkbtn" id="copy-cbs" type="button">Copy headline link</button>
+        <!-- CBS HERO -->
+        <section class="card">
+          <div class="cardHead">
+            <div class="srcTitle">
+              <div class="dot" id="dot-cbs1"></div>
+              <div class="srcMeta">
+                <div class="srcName">CBS News</div>
+                <div class="srcTime" id="time-cbs1">—</div>
+              </div>
             </div>
-
-            <div class="urlLine">
-              <div class="urlText mono" id="url-cbs">—</div>
-              <button class="linkbtn" id="copyurl-cbs" type="button">Copy URL</button>
-            </div>
-
-            <div class="tiny" id="err-cbs"></div>
+            <div class="tiny" id="since-cbs1">—</div>
           </div>
-        </div>
+
+          <div class="cardBody">
+            <div class="thumb"><img id="img-cbs1" alt="" /></div>
+            <div class="headlineWrap">
+              <div class="pubLine">No. 1</div>
+              <h2 class="headline"><a id="link-cbs1" href="#" target="_blank" rel="noopener">—</a></h2>
+
+              <div class="row">
+                <span class="pill" id="status-cbs1">—</span>
+                <button class="linkbtn" id="copy-cbs1" type="button">Copy headline link</button>
+              </div>
+
+              <div class="urlLine">
+                <div class="urlText mono" id="url-cbs1">—</div>
+                <button class="linkbtn" id="copyurl-cbs1" type="button">Copy URL</button>
+              </div>
+
+              <div class="tiny" id="err-cbs1"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- USA TODAY HERO -->
+        <section class="card">
+          <div class="cardHead">
+            <div class="srcTitle">
+              <div class="dot" id="dot-usat1"></div>
+              <div class="srcMeta">
+                <div class="srcName">USA Today</div>
+                <div class="srcTime" id="time-usat1">—</div>
+              </div>
+            </div>
+            <div class="tiny" id="since-usat1">—</div>
+          </div>
+
+          <div class="cardBody">
+            <div class="thumb"><img id="img-usat1" alt="" /></div>
+            <div class="headlineWrap">
+              <div class="pubLine">No. 1</div>
+              <h2 class="headline"><a id="link-usat1" href="#" target="_blank" rel="noopener">—</a></h2>
+
+              <div class="row">
+                <span class="pill" id="status-usat1">—</span>
+                <button class="linkbtn" id="copy-usat1" type="button">Copy headline link</button>
+              </div>
+
+              <div class="urlLine">
+                <div class="urlText mono" id="url-usat1">—</div>
+                <button class="linkbtn" id="copyurl-usat1" type="button">Copy URL</button>
+              </div>
+
+              <div class="tiny" id="err-usat1"></div>
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
 
-      <!-- USA Today -->
-      <div class="card">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot" id="dot-usat1"></div>
-            <div class="srcMeta">
-              <div class="srcTime" id="time-usat1">—</div>
-            </div>
-          </div>
-          <div class="tiny" id="since-usat1">—</div>
-        </div>
-
-        <div class="cardBody">
-          <div class="thumb"><img id="img-usat1" alt="" /></div>
-          <div class="headlineWrap">
-            <div class="pubLine">USA Today</div>
-            <h2 class="headline"><a id="link-usat1" href="#" target="_blank" rel="noopener">—</a></h2>
-            <div class="row">
-              <span class="pill" id="status-usat1">—</span>
-              <button class="linkbtn" id="copy-usat1" type="button">Copy headline link</button>
-            </div>
-
-            <div class="urlLine">
-              <div class="urlText mono" id="url-usat1">—</div>
-              <button class="linkbtn" id="copyurl-usat1" type="button">Copy URL</button>
-            </div>
-
-            <div class="tiny" id="err-usat1"></div>
-          </div>
+    <div id="view-history" class="historyWrap">
+      <div class="sectionTitle">
+        <div>History (diff log)</div>
+        <div class="row">
+          <button class="btn" id="btn-load-history" type="button">Load history</button>
         </div>
       </div>
 
-    <div class="sectionTitle">
-      <span>History</span>
-      <span class="tiny">Coming next (no <span class="mono">./data/history.json</span> yet)</span>
+      <div class="grid">
+        <section class="card">
+          <div class="cardHead">
+            <div class="srcTitle">
+              <div class="dot ok"></div>
+              <div class="srcMeta">
+                <div class="srcName">ABC News</div>
+                <div class="srcTime">Snapshots + diffs</div>
+              </div>
+            </div>
+            <div class="tiny" id="hist-meta-abc">—</div>
+          </div>
+          <div class="historyList" id="hist-abc"></div>
+        </section>
+
+        <section class="card">
+          <div class="cardHead">
+            <div class="srcTitle">
+              <div class="dot ok"></div>
+              <div class="srcMeta">
+                <div class="srcName">CBS News</div>
+                <div class="srcTime">Snapshots + diffs</div>
+              </div>
+            </div>
+            <div class="tiny" id="hist-meta-cbs">—</div>
+          </div>
+          <div class="historyList" id="hist-cbs"></div>
+        </section>
+
+        <section class="card">
+          <div class="cardHead">
+            <div class="srcTitle">
+              <div class="dot ok"></div>
+              <div class="srcMeta">
+                <div class="srcName">USA Today</div>
+                <div class="srcTime">Snapshots + diffs</div>
+              </div>
+            </div>
+            <div class="tiny" id="hist-meta-usat1">—</div>
+          </div>
+          <div class="historyList" id="hist-usat1"></div>
+        </section>
+      </div>
     </div>
+  </main>
 
-    <div class="card">
-      <div class="historyList" id="history"></div>
-    </div>
-    </div>
-  </section>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <section id="view-unified" style="display:none;">
-    <div class="sectionTitle">
-      <span>Unified feed</span>
-      <span class="tiny">Reads <span class="mono">./data/unified.json</span></span>
-    </div>
-    <div class="card">
-      <div class="historyList" id="feed"></div>
-    </div>
-  </section>
-</main>
+  <script>
+    const API = "";
 
-<script>
-  const TZ_PT = "America/Los_Angeles";
+    const $ = (id) => document.getElementById(id);
 
-  function $(id){ return document.getElementById(id); }
-
-  function setError(message){
-    const box = $("error");
-    if (!message){
-      box.classList.remove("show");
-      box.textContent = "";
-      return;
-    }
-    box.classList.add("show");
-    box.textContent = message;
-  }
-
-  function fmtTimePT(iso){
-    if (!iso) return "—";
-    const d = new Date(iso);
-    if (Number.isNaN(d.getTime())) return "—";
-    return d.toLocaleString("en-US", {
-      timeZone: TZ_PT,
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit"
-    }) + " PT";
-  }
-
-  function durShort(fromISO, toISO){
-    if (!fromISO) return "—";
-    const a = new Date(fromISO).getTime();
-    const b = toISO ? new Date(toISO).getTime() : Date.now();
-    if (!Number.isFinite(a) || !Number.isFinite(b)) return "—";
-    let s = Math.max(0, Math.floor((b - a) / 1000));
-    const d = Math.floor(s / 86400); s -= d * 86400;
-    const h = Math.floor(s / 3600); s -= h * 3600;
-    const m = Math.floor(s / 60);
-    if (d > 0) return `${d}d ${h}h`;
-    if (h > 0) return `${h}h ${m}m`;
-    return `${m}m`;
-  }
-
-  async function fetchJSON(relPath){
-    const url = relPath + (relPath.includes("?") ? "&" : "?") + "ts=" + Date.now();
-    const r = await fetch(url, { cache: "no-store" });
-    if (!r.ok){
-      const t = await r.text().catch(() => "");
-      throw new Error(`Fetch failed (${r.status}) for ${relPath}: ${t.slice(0,120)}`);
-    }
-    const text = await r.text();
-    try { return JSON.parse(text); }
-    catch { throw new Error(`Non-JSON response for ${relPath}: ${text.slice(0,60)}`); }
-  }
-
-  function setDot(id, ok){
-    const el = $(id);
-    if (!el) return;
-    el.classList.remove("ok","bad");
-    if (ok === true) el.classList.add("ok");
-    else if (ok === false) el.classList.add("bad");
-  }
-
-  function safeImg(imgEl, url){
-    if (!imgEl) return;
-    if (!url){
-      imgEl.removeAttribute("src");
-      imgEl.style.display = "none";
-      return;
-    }
-    imgEl.style.display = "block";
-    imgEl.src = url;
-  }
-
-  function wireCopy(btnId, getText){
-    const btn = $(btnId);
-    if (!btn) return;
-    btn.onclick = async () => {
-      const text = getText();
-      if (!text) return;
-      try{
-        await navigator.clipboard.writeText(text);
-        const prev = btn.textContent;
-        btn.textContent = "Copied";
-        setTimeout(() => (btn.textContent = prev), 900);
+    function fmtTime(ts) {
+      if (!ts) return "—";
+      try {
+        return new Date(ts).toLocaleString(undefined, {
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+        });
       } catch {
-        prompt("Copy:", text);
-      }
-    };
-  }
-
-  function renderSource(prefix, src){
-    const ok = Boolean(src && src.ok);
-    setDot(`dot-${prefix}`, ok);
-
-    const item = src?.item || null;
-    const updatedAt = src?.updatedAt || null;
-
-    const timeLine = updatedAt ? `Updated ${fmtTimePT(updatedAt)}` : "Not updated yet";
-    const timeEl = $(`time-${prefix}`);
-    if (timeEl) timeEl.textContent = timeLine;
-
-    const sinceISO = src?.since || null;
-    const sinceText = sinceISO
-      ? `Since ${fmtTimePT(sinceISO)} • ${durShort(sinceISO)}`
-      : "Since —";
-    const sinceEl = $(`since-${prefix}`);
-    if (sinceEl) sinceEl.textContent = sinceText;
-
-    const title = item?.title || "—";
-    const url = item?.url || "";
-    const imgUrl = item?.imgUrl || "";
-
-    const link = $(`link-${prefix}`);
-    if (link){
-      link.textContent = title;
-      link.href = url || "#";
-    }
-
-    safeImg($(`img-${prefix}`), imgUrl);
-
-    const statusEl = $(`status-${prefix}`);
-    if (statusEl) statusEl.textContent = ok ? "OK" : "Error";
-
-    const errEl = $(`err-${prefix}`);
-    if (errEl) errEl.textContent = ok ? "" : (src?.error || "Scrape failed");
-
-    const urlEl = $(`url-${prefix}`);
-    if (urlEl) urlEl.textContent = url || "—";
-  }
-
-  
-
-  function renderHistory(history){
-    const host = $("history");
-    if (!host) return;
-    host.innerHTML = "";
-
-    const sources = history && typeof history === "object" && history.sources && typeof history.sources === "object" ? history.sources : {};
-    const rows = [];
-    for (const [source, obj] of Object.entries(sources)){
-      const entries = Array.isArray(obj?.entries) ? obj.entries : [];
-      for (const e of entries){
-        if (!e || !e.url) continue;
-        rows.push({ source, ...e });
+        return "—";
       }
     }
 
-    rows.sort((a,b) => {
-      const ta = new Date(a.lastSeenAt || a.firstSeenAt || 0).getTime();
-      const tb = new Date(b.lastSeenAt || b.firstSeenAt || 0).getTime();
-      return tb - ta;
-    });
-
-    if (!rows.length){
-      const empty = document.createElement("div");
-      empty.className = "tiny";
-      empty.style.color = "var(--muted)";
-      empty.textContent = "No history yet.";
-      host.appendChild(empty);
-      return;
+    function ago(ts) {
+      if (!ts) return "—";
+      const t = new Date(ts).getTime();
+      if (!Number.isFinite(t)) return "—";
+      const s = Math.max(0, Math.floor((Date.now() - t) / 1000));
+      if (s < 60) return `${s}s ago`;
+      const m = Math.floor(s / 60);
+      if (m < 60) return `${m}m ago`;
+      const h = Math.floor(m / 60);
+      if (h < 48) return `${h}h ago`;
+      const d = Math.floor(h / 24);
+      return `${d}d ago`;
     }
 
-    for (const it of rows){
-      const row = document.createElement("div");
-      row.className = "historyItem";
-
-      const thumb = document.createElement("div");
-      thumb.className = "hThumb";
-      const img = document.createElement("img");
-      img.alt = "";
-      if (it.imgUrl) img.src = it.imgUrl;
-      else img.style.display = "none";
-      thumb.appendChild(img);
-
-      const body = document.createElement("div");
-      body.className = "hBody";
-
-      const pub = document.createElement("p");
-      pub.className = "hPub";
-      const src = (it.source || "").toString().toUpperCase();
-      pub.textContent = src === "ABC" ? "ABC News" : (src === "CBS" ? "CBS News" : (it.source || "Publisher"));
-
-      const title = document.createElement("p");
-      title.className = "hTitle";
-      const a = document.createElement("a");
-      a.href = it.url || "#";
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = it.title || "—";
-      title.appendChild(a);
-
-      const meta = document.createElement("div");
-      meta.className = "hMeta";
-
-      const chip1 = document.createElement("span");
-      chip1.className = "hChip";
-      chip1.textContent = it.firstSeenAt ? `First: ${fmtTimePT(it.firstSeenAt)}` : "First: —";
-      meta.appendChild(chip1);
-
-      const chip2 = document.createElement("span");
-      chip2.className = "hChip";
-      chip2.textContent = it.lastSeenAt ? `Last: ${fmtTimePT(it.lastSeenAt)}` : "Last: —";
-      meta.appendChild(chip2);
-
-      const chip3 = document.createElement("span");
-      chip3.className = "hChip";
-      chip3.textContent = `Seen: ${Number(it.seenCount || 1)}`;
-      meta.appendChild(chip3);
-
-      body.appendChild(pub);
-      body.appendChild(title);
-      body.appendChild(meta);
-
-      row.appendChild(thumb);
-      row.appendChild(body);
-
-      host.appendChild(row);
-    }
-  }
-
-  function renderUnified(unified){
-    const feed = $("feed");
-    if (!feed) return; // prevents null.innerHTML
-    feed.innerHTML = "";
-
-    const items = Array.isArray(unified?.items) ? unified.items : [];
-    if (!items.length){
-      const empty = document.createElement("div");
-      empty.className = "tiny";
-      empty.style.color = "var(--muted)";
-      empty.textContent = "No items yet.";
-      feed.appendChild(empty);
-      return;
+    function showToast(text) {
+      const el = $("toast");
+      el.textContent = text;
+      el.classList.add("show");
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => el.classList.remove("show"), 1200);
     }
 
-    for (const it of items){
-      const row = document.createElement("div");
-      row.className = "historyItem";
+    function setDot(id, ok) {
+      const el = $("dot-" + id);
+      el.classList.remove("ok", "bad");
+      if (ok === true) el.classList.add("ok");
+      else if (ok === false) el.classList.add("bad");
+    }
 
-      const ageHours = it.since ? (Date.now() - new Date(it.since).getTime()) / (1000 * 60 * 60) : 0;
-      if (ageHours > 24) {
-        row.classList.add("older");
+    function setStatus(id, text, ok) {
+      const el = $("status-" + id);
+      el.textContent = text || "—";
+      setDot(id, ok);
+    }
+
+    function setImg(id, url) {
+      const img = $("img-" + id);
+      if (!img) return;
+      if (url) {
+        img.src = url;
+        img.style.display = "block";
+      } else {
+        img.removeAttribute("src");
+        img.style.display = "none";
+      }
+    }
+
+    function renderSource(id, src) {
+      const t = src?.updatedAt || null;
+      $("time-" + id).textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
+      $("err-" + id).textContent = src?.error ? String(src.error) : "";
+      $("url-" + id).textContent = src?.item?.url || "—";
+
+      const link = $("link-" + id);
+      link.textContent = src?.item?.title || "—";
+      link.href = src?.item?.url || "#";
+
+      setImg(id, src?.item?.imgUrl || null);
+
+      if (src?.ok) setStatus(id, "OK", true);
+      else setStatus(id, "Stale / Failed", false);
+
+      const sinceEl = $("since-" + id);
+      // placeholder: client computes in-memory; server side "first seen" tracking can be added later.
+      sinceEl.textContent = src?.ok && src?.updatedAt ? `Updated ${ago(src.updatedAt)}` : "—";
+    }
+
+    function wireCopy(btnId, getText) {
+      const btn = $(btnId);
+      if (!btn) return;
+      btn.addEventListener("click", async () => {
+        const txt = getText();
+        if (!txt) return showToast("Nothing to copy");
+        try {
+          await navigator.clipboard.writeText(txt);
+          showToast("Copied");
+        } catch {
+          showToast("Copy failed");
+        }
+      });
+    }
+
+    async function fetchJSON(url, opts) {
+      const r = await fetch(url, opts);
+      const text = await r.text();
+      try { return JSON.parse(text); }
+      catch { throw new Error(text || `HTTP ${r.status}`); }
+    }
+
+    async function refreshAll() {
+      $("btn-refresh").disabled = true;
+      try {
+        const data = await fetchJSON(`${API}/api/refresh`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({}),
+        });
+
+        const current = data || {};
+        renderSource("abc1", current?.sources?.abc1);
+        renderSource("cbs1", current?.sources?.cbs1);
+        renderSource("usat1", current?.sources?.usat1);
+      } catch (e) {
+        console.error("Refresh error:", e);
+        showToast("Refresh failed");
+      } finally {
+        $("btn-refresh").disabled = false;
+      }
+    }
+
+    function renderHistoryList(containerId, metaId, payload, idForLinks) {
+      const meta = $(metaId);
+      const root = $(containerId);
+      root.innerHTML = "";
+
+      if (!payload?.ok) {
+        meta.textContent = "Failed";
+        root.innerHTML = `<div class="tiny muted">${payload?.error || "History failed"}</div>`;
+        return;
       }
 
-      const thumb = document.createElement("div");
-      thumb.className = "hThumb";
-      const img = document.createElement("img");
-      img.alt = "";
-      if (it.imgUrl) img.src = it.imgUrl;
-      else img.style.display = "none";
-      thumb.appendChild(img);
+      meta.textContent = `${payload.totalSnapshots} total · showing ${payload.returned}`;
 
-      const body = document.createElement("div");
-      body.className = "hBody";
+      // show newest first
+      const diffs = Array.isArray(payload.diffs) ? payload.diffs.slice().reverse() : [];
+      if (!diffs.length) {
+        root.innerHTML = `<div class="tiny muted">No diffs yet. Refresh a few times.</div>`;
+        return;
+      }
 
-      const pub = document.createElement("p");
-      pub.className = "hPub";
-      const src = (it.source || "").toString().toUpperCase();
-      pub.textContent = src === "ABC"
-        ? "ABC News"
-        : (src === "CBS" ? "CBS News" : (it.source || "Publisher"));
+      for (const d of diffs) {
+        const card = document.createElement("div");
+        card.className = "historyItem";
 
-      const title = document.createElement("p");
-      title.className = "hTitle";
-      const a = document.createElement("a");
-      a.href = it.url || "#";
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = it.title || "—";
-      title.appendChild(a);
+        const when = d.changedAt ? fmtTime(d.changedAt) : "—";
+        const counts = d.counts || {};
+        const changes = Array.isArray(d.changeLog) ? d.changeLog : [];
 
-      const meta = document.createElement("div");
-      meta.className = "hMeta";
+        let firstLink = null;
+        for (const c of changes) {
+          if (c.url) { firstLink = c.url; break; }
+          if (c.to?.url) { firstLink = c.to.url; break; }
+        }
 
-      const chip1 = document.createElement("span");
-      chip1.className = "hChip";
-      chip1.textContent = it.since
-        ? `Since: ${fmtTimePT(it.since)} • ${durShort(it.since)}`
-        : "Since: —";
-      meta.appendChild(chip1);
-
-      body.appendChild(pub);
-      body.appendChild(title);
-      body.appendChild(meta);
-
-      row.appendChild(thumb);
-      row.appendChild(body);
-
-      feed.appendChild(row);
+        card.innerHTML = `
+          <div class="hMain">
+            <div class="hTitle">
+              <a href="${firstLink || "#"}" target="_blank" rel="noopener">
+                ${when}
+              </a>
+            </div>
+            <div class="hMeta">
+              <span class="hPill">Δ ${counts.totalChanges || 0}</span>
+              <span class="hPill">+${counts.added || 0}</span>
+              <span class="hPill">-${counts.removed || 0}</span>
+              <span class="hPill">↕ ${counts.moved || 0}</span>
+              <span class="hPill">✎ ${counts.retitled || 0}</span>
+            </div>
+            <div class="divider"></div>
+            <div class="tiny muted" style="margin-top:8px;">
+              ${changes.slice(0, 6).map((c) => {
+                if (c.type === "moved") return `<b>moved</b>: ${c.title} (${c.fromRank}→${c.toRank})`;
+                if (c.type === "added") return `<b>added</b>: ${c.title}`;
+                if (c.type === "removed") return `<b>removed</b>: ${c.title}`;
+                if (c.type === "retitled") return `<b>retitled</b>: ${c.toTitle}`;
+                if (c.type === "slotChanged") return `<b>slot</b>: ${c.to?.title || ""}`;
+                return `${c.type}`;
+              }).join("<br/>")}
+            </div>
+          </div>
+        `;
+        root.appendChild(card);
+      }
     }
-  }
 
-  function setView(which){
-    const now = $("view-now");
-    const uni = $("view-unified");
-    const tabNow = $("tab-now");
-    const tabUni = $("tab-unified");
+    async function loadHistory() {
+      $("btn-load-history").disabled = true;
+      try {
+        const [abc, cbs, usat] = await Promise.all([
+          fetchJSON(`${API}/api/history?id=abc&limit=20`),
+          fetchJSON(`${API}/api/history?id=cbs&limit=20`),
+          fetchJSON(`${API}/api/history?id=usat1&limit=20`),
+        ]);
 
-    if (tabNow) tabNow.classList.toggle("active", which === "now");
-    if (tabUni) tabUni.classList.toggle("active", which === "unified");
-    if (now) now.style.display = which === "now" ? "" : "none";
-    if (uni) uni.style.display = which === "unified" ? "" : "none";
-  }
-
-  $("tab-now").addEventListener("click", () => setView("now"));
-  $("tab-unified").addEventListener("click", () => setView("unified"));
-
-  async function loadAll(){
-    setError("");
-    const refreshBtn = $("btn-refresh");
-    if (refreshBtn) refreshBtn.disabled = true;
-
-    try{
-      const [current, unified, history] = await Promise.all([
-                              fetchJSON("./data/current.json"),
-                              fetchJSON("./data/unified.json").catch(() => ({ items: [] })),
-                              fetchJSON("./data/history.json").catch(() => null),
-                            ]);
-
-      renderSource("abc", current?.sources?.abc);
-      renderSource("cbs", current?.sources?.cbs);
-      renderSource("usat1", current?.sources?.usat1);
-
-      renderUnified(unified);
-      renderHistory(history);
-    } catch (e){
-      setError(String(e.message || e));
-    } finally {
-      if (refreshBtn) refreshBtn.disabled = false;
+        renderHistoryList("hist-abc", "hist-meta-abc", abc, "abc");
+        renderHistoryList("hist-cbs", "hist-meta-cbs", cbs, "cbs");
+        renderHistoryList("hist-usat1", "hist-meta-usat1", usat, "usat1");
+      } catch (e) {
+        console.error("History error:", e);
+        showToast("History failed");
+      } finally {
+        $("btn-load-history").disabled = false;
+      }
     }
-  }
 
-  wireCopy("copy-abc", () => $("link-abc")?.href && $("link-abc").href !== "#" ? $("link-abc").href : "");
-  wireCopy("copy-cbs", () => $("link-cbs")?.href && $("link-cbs").href !== "#" ? $("link-cbs").href : "");
-  wireCopy("copyurl-abc", () => $("url-abc")?.textContent && $("url-abc").textContent !== "—" ? $("url-abc").textContent : "");
-wireCopy("copy-usat1", () => $("link-usat1")?.href && $("link-usat1").href !== "#" ? $("link-usat1").href : "");
-wireCopy("copyurl-usat1", () => $("url-usat1")?.textContent && $("url-usat1").textContent !== "—" ? $("url-usat1").textContent : "");
+    function setView(which) {
+      const isNow = which === "now";
+      $("view-now").style.display = isNow ? "block" : "none";
+      $("view-history").classList.toggle("active", !isNow);
 
-  $("btn-refresh").addEventListener("click", loadAll);
-  loadAll();
-</script>
+      $("tab-now").classList.toggle("active", isNow);
+      $("tab-history").classList.toggle("active", !isNow);
+    }
 
+    $("tab-now").addEventListener("click", () => setView("now"));
+    $("tab-history").addEventListener("click", () => setView("history"));
+    $("btn-refresh").addEventListener("click", refreshAll);
+    $("btn-load-history").addEventListener("click", loadHistory);
+
+    wireCopy("copy-abc1", () => $("link-abc1")?.href && $("link-abc1").href !== "#" ? $("link-abc1").href : "");
+    wireCopy("copyurl-abc1", () => $("url-abc1")?.textContent && $("url-abc1").textContent !== "—" ? $("url-abc1").textContent : "");
+    wireCopy("copy-cbs1", () => $("link-cbs1")?.href && $("link-cbs1").href !== "#" ? $("link-cbs1").href : "");
+    wireCopy("copyurl-cbs1", () => $("url-cbs1")?.textContent && $("url-cbs1").textContent !== "—" ? $("url-cbs1").textContent : "");
+    wireCopy("copy-usat1", () => $("link-usat1")?.href && $("link-usat1").href !== "#" ? $("link-usat1").href : "");
+    wireCopy("copyurl-usat1", () => $("url-usat1")?.textContent && $("url-usat1").textContent !== "—" ? $("url-usat1").textContent : "");
+
+    // initial load
+    setView("now");
+    refreshAll();
+  </script>
 </body>
 </html>
