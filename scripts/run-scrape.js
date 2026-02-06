@@ -53,12 +53,27 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
   const last = entries.length ? entries[entries.length - 1] : null;
 
   if (last && last.url === url) {
-    // Same hero as last time: extend lastSeenAt + increment count
-    last.lastSeenAt = generatedAtISO;
-    last.seenCount = (last.seenCount || 0) + 1;
-    // Keep latest title/imgUrl in case headline or image changes on same URL
-    last.title = title || last.title;
-    last.imgUrl = imgUrl || last.imgUrl;
+    const lastTitle = String(last.title || "");
+    const nextTitle = String(title || "");
+
+    if (lastTitle === nextTitle) {
+      // Same URL + same title: extend lastSeenAt + increment count
+      last.lastSeenAt = generatedAtISO;
+      last.seenCount = (last.seenCount || 0) + 1;
+      // Keep latest imgUrl in case image changes
+      last.imgUrl = imgUrl || last.imgUrl;
+      return h;
+    }
+
+    // Same URL but title changed: log a new variation entry
+    entries.push({
+      url,
+      title: nextTitle,
+      imgUrl,
+      firstSeenAt: generatedAtISO,
+      lastSeenAt: generatedAtISO,
+      seenCount: 1,
+    });
     return h;
   }
 
@@ -79,9 +94,15 @@ function currentSinceFromHistory(history, sourceKey, currentUrl) {
   try {
     const entries = history?.sources?.[sourceKey]?.entries;
     if (!Array.isArray(entries) || !currentUrl) return null;
+
     const last = entries[entries.length - 1];
-    if (last?.url === currentUrl) return last.firstSeenAt || null;
-    return null;
+    if (last?.url !== currentUrl) return null;
+
+    // Walk backwards across contiguous entries with the same URL (headline variations)
+    // so "since" reflects when this URL first became the hero.
+    let i = entries.length - 1;
+    while (i - 1 >= 0 && entries[i - 1]?.url === currentUrl) i -= 1;
+    return entries[i]?.firstSeenAt || last.firstSeenAt || null;
   } catch {
     return null;
   }

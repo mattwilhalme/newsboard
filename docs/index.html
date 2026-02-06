@@ -409,12 +409,8 @@ gap:12px;
     </div>
 
     <div class="card">
-      <div class="historyList">
-        <div class="tiny" style="color:var(--muted);">
-          No history feed is being generated yet. This section will populate once the GitHub Action writes
-          <span class="mono">docs/data/history.json</span>.
-        </div>
-      </div>
+      <div class="historyList" id="history"></div>
+    </div>
     </div>
   </section>
 
@@ -560,6 +556,96 @@ gap:12px;
     if (urlEl) urlEl.textContent = url || "—";
   }
 
+  
+
+  function renderHistory(history){
+    const host = $("history");
+    if (!host) return;
+    host.innerHTML = "";
+
+    const sources = history && typeof history === "object" && history.sources && typeof history.sources === "object" ? history.sources : {};
+    const rows = [];
+    for (const [source, obj] of Object.entries(sources)){
+      const entries = Array.isArray(obj?.entries) ? obj.entries : [];
+      for (const e of entries){
+        if (!e || !e.url) continue;
+        rows.push({ source, ...e });
+      }
+    }
+
+    rows.sort((a,b) => {
+      const ta = new Date(a.lastSeenAt || a.firstSeenAt || 0).getTime();
+      const tb = new Date(b.lastSeenAt || b.firstSeenAt || 0).getTime();
+      return tb - ta;
+    });
+
+    if (!rows.length){
+      const empty = document.createElement("div");
+      empty.className = "tiny";
+      empty.style.color = "var(--muted)";
+      empty.textContent = "No history yet.";
+      host.appendChild(empty);
+      return;
+    }
+
+    for (const it of rows){
+      const row = document.createElement("div");
+      row.className = "historyItem";
+
+      const thumb = document.createElement("div");
+      thumb.className = "hThumb";
+      const img = document.createElement("img");
+      img.alt = "";
+      if (it.imgUrl) img.src = it.imgUrl;
+      else img.style.display = "none";
+      thumb.appendChild(img);
+
+      const body = document.createElement("div");
+      body.className = "hBody";
+
+      const pub = document.createElement("p");
+      pub.className = "hPub";
+      const src = (it.source || "").toString().toUpperCase();
+      pub.textContent = src === "ABC" ? "ABC News" : (src === "CBS" ? "CBS News" : (it.source || "Publisher"));
+
+      const title = document.createElement("p");
+      title.className = "hTitle";
+      const a = document.createElement("a");
+      a.href = it.url || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = it.title || "—";
+      title.appendChild(a);
+
+      const meta = document.createElement("div");
+      meta.className = "hMeta";
+
+      const chip1 = document.createElement("span");
+      chip1.className = "hChip";
+      chip1.textContent = it.firstSeenAt ? `First: ${fmtTimePT(it.firstSeenAt)}` : "First: —";
+      meta.appendChild(chip1);
+
+      const chip2 = document.createElement("span");
+      chip2.className = "hChip";
+      chip2.textContent = it.lastSeenAt ? `Last: ${fmtTimePT(it.lastSeenAt)}` : "Last: —";
+      meta.appendChild(chip2);
+
+      const chip3 = document.createElement("span");
+      chip3.className = "hChip";
+      chip3.textContent = `Seen: ${Number(it.seenCount || 1)}`;
+      meta.appendChild(chip3);
+
+      body.appendChild(pub);
+      body.appendChild(title);
+      body.appendChild(meta);
+
+      row.appendChild(thumb);
+      row.appendChild(body);
+
+      host.appendChild(row);
+    }
+  }
+
   function renderUnified(unified){
     const feed = $("feed");
     if (!feed) return; // prevents null.innerHTML
@@ -653,15 +739,17 @@ gap:12px;
     if (refreshBtn) refreshBtn.disabled = true;
 
     try{
-      const [current, unified] = await Promise.all([
-        fetchJSON("./data/current.json"),
-        fetchJSON("./data/unified.json").catch(() => ({ items: [] })),
-      ]);
+      const [current, unified, history] = await Promise.all([
+                              fetchJSON("./data/current.json"),
+                              fetchJSON("./data/unified.json").catch(() => ({ items: [] })),
+                              fetchJSON("./data/history.json").catch(() => null),
+                            ]);
 
       renderSource("abc", current?.sources?.abc);
       renderSource("cbs", current?.sources?.cbs);
 
       renderUnified(unified);
+      renderHistory(history);
     } catch (e){
       setError(String(e.message || e));
     } finally {
