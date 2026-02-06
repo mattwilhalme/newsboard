@@ -1,0 +1,25 @@
+--- a/docs/index.html
++++ b/docs/index.html
+@@ -259,6 +259,10 @@
+       gap:12px;
+       align-items:flex-start;
+     }
++    .historyItem.older{
++      background: #f8f9fa;
++    }
++
+     .thumb{
+       width:156px; /* trimmed */
+       aspect-ratio: 16 / 9;
+@@ -623,6 +627,11 @@
+       const row = document.createElement("div");
+       row.className = "historyItem";
+       
++      const ageHours = it.since ? (Date.now() - new Date(it.since).getTime()) / (1000 * 60 * 60) : 0;
++      if (ageHours > 24) {
++        row.classList.add("older");
++      }
++      
+       const thumb = document.createElement("div");
+       thumb.className = "hThumb";
+       const img = document.createElement("img");

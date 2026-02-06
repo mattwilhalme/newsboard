@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Newsboard</title>
+
+  <!-- Kill favicon 404s on GitHub Pages -->
+  <link rel="icon" href="data:,">
+
+  <style>
+    :root{
+      --bg:#f8f9fa;
+      --card:#ffffff;
+      --text:#202124;
+      --muted:#5f6368;
+      --line:#dadce0;
+      --shadow: 0 1px 2px rgba(60,64,67,.18), 0 1px 3px rgba(60,64,67,.12);
+      --radius: 14px;
+      --maxw: 1100px;
+
+      --blue:#1a73e8;
+      --blue2:#174ea6;
+
+      --ok:#1e8e3e;
+      --bad:#d93025;
+      --warn:#f9ab00;
+
+      --chip:#f1f3f4;
+      --chipText:#3c4043;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background: rgba(248,249,250,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:11px 16px; /* trimmed */
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .brand{ display:flex; flex-direction:column; gap:2px; min-width: 240px; }
+    .brand .title{ font-weight:700; letter-spacing:.2px; font-size:16px; line-height:1.2; }
+    .brand .sub{ color:var(--muted); font-size:12px; }
+
+    .controls{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+
+    .tabs{
+      display:inline-flex;
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius:999px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .tabs button{
+      border:0;
+      background:transparent;
+      color: var(--muted);
+      font-size:12px;
+      padding:8px 12px; /* trimmed */
+      cursor:pointer;
+      user-select:none;
+    }
+    .tabs button.active{
+      color: var(--blue);
+      font-weight:700;
+      background: rgba(26,115,232,.08);
+    }
+
+    .btn{
+      border:1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      font-size:12px;
+      padding:8px 12px; /* trimmed */
+      border-radius:999px;
+      cursor:pointer;
+      user-select:none;
+      box-shadow: var(--shadow);
+    }
+    .btn:hover{ border-color: rgba(26,115,232,.45); }
+    .btn:disabled{ opacity:.55; cursor:not-allowed; }
+
+    main{ max-width:var(--maxw); margin:0 auto; padding:14px 16px 26px; } /* trimmed */
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px; /* trimmed */
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* CardHead: remove publisher label; keep dot + time */
+    .cardHead{
+      padding:10px 12px 9px; /* trimmed */
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+    .historyItem.older{
+      background: #f8f9fa;
+    }
+      gap:12px;
+      border-bottom:1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .srcTitle{ display:flex; align-items:center; gap:10px; min-width:0; }
+    .dot{ width:10px; height:10px; border-radius:999px; background: var(--warn); flex:0 0 auto; margin-top:2px; }
+    .dot.ok{ background: var(--ok); }
+    .dot.bad{ background: var(--bad); }
+
+    .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+    .srcName{ font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .srcTime{ font-size:12px; color: var(--muted); white-space:nowrap; }
+
+    .tiny{ font-size:11px; color: var(--muted); }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    .cardBody{
+      padding:12px; /* trimmed */
+      display:flex;
+      gap:12px; /* trimmed */
+      align-items:flex-start;
+    .historyItem.older{
+      background: #f8f9fa;
+    }
+    }
+
+    .thumb{
+      width:156px; /* trimmed */
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      background: #f1f3f4;
+      border: 1px solid var(--line);
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    @media (max-width: 520px){
+      .cardBody{ flex-direction:column; }
+      .thumb{ width:100%; }
+    }
+
+    .headlineWrap{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; } /* trimmed */
+
+    .pubLine{
+      font-weight:700;
+      font-size:13px;
+      color: var(--muted);
+      letter-spacing:.15px;
+      line-height:1.1;
+      margin-top:2px;
+    }
+
+    .headline{ font-size:16px; line-height:1.25; font-weight:700; margin:0; }
+    .headline a{ color: var(--text); text-decoration:none; }
+    .headline a:hover{ color: var(--blue); text-decoration: underline; }
+
+    .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px; /* trimmed */
+      border-radius:999px;
+      background: var(--chip);
+      border:1px solid var(--line);
+      color: var(--chipText);
+      font-size:12px;
+    }
+
+    .linkbtn{
+      border:1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      font-size:12px;
+      padding:6px 10px; /* trimmed */
+      border-radius:999px;
+      cursor:pointer;
+    }
+    .linkbtn:hover{ border-color: rgba(26,115,232,.45); color: var(--blue2); }
+
+    .urlLine{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+    }
+    .urlText{
+      min-width:0;
+      flex:1 1 auto;
+      font-size:12px;
+      color: var(--muted);
+      border:1px solid var(--line);
+      background: #fff;
+      border-radius: 10px;
+      padding:7px 9px; /* trimmed */
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .sectionTitle{
+      margin:12px 0 8px; /* trimmed */
+      font-size:13px;
+      letter-spacing:.2px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .historyList{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:12px; /* trimmed */
+    }
+    .historyItem{
+      border:1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding:10px; /* trimmed */
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .historyItem.older{
+      background: #f8f9fa;
+    }
+      background: #f8f9fa;
+    }
+    }
+      align-items:flex-start;
+    .historyItem.older{
+      background: #f8f9fa;
+    }
+    }
+    }
+      border:1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding:10px; /* trimmed */
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    .historyItem.older{
+      background: #f8f9fa;
+    }
+    }
+    .hThumb{
+      width:92px;
+      aspect-ratio:16/9;
+      border-radius:10px;
+      border:1px solid var(--line);
+      overflow:hidden;
+      background:#f1f3f4;
+      flex:0 0 auto;
+    }
+    .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .hBody{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:6px; }
+
+    .hPub{
+      font-weight:700;
+      font-size:12px;
+      color: var(--muted);
+      letter-spacing:.15px;
+      line-height:1.1;
+      margin:0;
+    }
+
+    .hTitle{
+      font-weight:700;
+      font-size:13px;
+      line-height:1.25;
+      margin:0;
+    }
+    .hTitle a{ color: var(--text); text-decoration:none; }
+    .hTitle a:hover{ color: var(--blue); text-decoration:underline; }
+
+    .hMeta{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; color: var(--muted); font-size:12px; }
+    .hChip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: var(--chip);
+      border:1px solid var(--line);
+      color: var(--chipText);
+      font-size:12px;
+    }
+
+    .errorBox{
+      border:1px solid rgba(217,48,37,.35);
+      background: rgba(217,48,37,.06);
+      color: var(--text);
+      border-radius: var(--radius);
+      padding:12px 14px;
+      margin-top:12px; /* trimmed */
+      display:none;
+    }
+    .errorBox.show{ display:block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="title">Newsboard</div>
+      <div class="sub">Hero tracker (ABC + CBS) • PT only</div>
+    </div>
+
+    <div class="controls">
+      <div class="tabs" role="tablist" aria-label="View">
+        <button id="tab-now" class="active" type="button">Now</button>
+        <button id="tab-unified" type="button">Unified</button>
+      </div>
+      <button id="btn-refresh" class="btn" type="button">Refresh</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="error" class="errorBox"></div>
+
+  <section id="view-now">
+    <div class="grid">
+      <!-- ABC -->
+      <div class="card">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-abc"></div>
+            <div class="srcMeta">
+              <!-- publisher removed here -->
+              <div class="srcTime" id="time-abc">—</div>
+            </div>
+          </div>
+          <div class="tiny" id="since-abc">—</div>
+        </div>
+
+        <div class="cardBody">
+          <div class="thumb"><img id="img-abc" alt="" /></div>
+          <div class="headlineWrap">
+            <div class="pubLine">ABC News</div>
+            <h2 class="headline"><a id="link-abc" href="#" target="_blank" rel="noopener">—</a></h2>
+
+            <div class="row">
+              <span class="pill" id="status-abc">—</span>
+              <button class="linkbtn" id="copy-abc" type="button">Copy headline link</button>
+            </div>
+
+            <div class="urlLine">
+              <div class="urlText mono" id="url-abc">—</div>
+              <button class="linkbtn" id="copyurl-abc" type="button">Copy URL</button>
+            </div>
+
+            <div class="tiny" id="err-abc"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CBS -->
+      <div class="card">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-cbs"></div>
+            <div class="srcMeta">
+              <!-- publisher removed here -->
+              <div class="srcTime" id="time-cbs">—</div>
+            </div>
+          </div>
+          <div class="tiny" id="since-cbs">—</div>
+        </div>
+
+        <div class="cardBody">
+          <div class="thumb"><img id="img-cbs" alt="" /></div>
+          <div class="headlineWrap">
+            <div class="pubLine">CBS News</div>
+            <h2 class="headline"><a id="link-cbs" href="#" target="_blank" rel="noopener">—</a></h2>
+
+            <div class="row">
+              <span class="pill" id="status-cbs">—</span>
+              <button class="linkbtn" id="copy-cbs" type="button">Copy headline link</button>
+            </div>
+
+            <div class="urlLine">
+              <div class="urlText mono" id="url-cbs">—</div>
+              <button class="linkbtn" id="copyurl-cbs" type="button">Copy URL</button>
+            </div>
+
+            <div class="tiny" id="err-cbs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sectionTitle">
+      <span>History</span>
+      <span class="tiny">Coming next (no <span class="mono">./data/history.json</span> yet)</span>
+    </div>
+
+    <div class="card">
+      <div class="historyList">
+        <div class="tiny" style="color:var(--muted);">
+          No history feed is being generated yet. This section will populate once the GitHub Action writes
+          <span class="mono">docs/data/history.json</span>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-unified" style="display:none;">
+    <div class="sectionTitle">
+      <span>Unified feed</span>
+      <span class="tiny">Reads <span class="mono">./data/unified.json</span></span>
+    </div>
+    <div class="card">
+      <div class="historyList" id="feed"></div>
+    </div>
+  </section>
+</main>
+
+<script>
+  const TZ_PT = "America/Los_Angeles";
+
+  function $(id){ return document.getElementById(id); }
+
+  function setError(message){
+    const box = $("error");
+    if (!message){
+      box.classList.remove("show");
+      box.textContent = "";
+      return;
+    }
+    box.classList.add("show");
+    box.textContent = message;
+  }
+
+  function fmtTimePT(iso){
+    if (!iso) return "—";
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return "—";
+    return d.toLocaleString("en-US", {
+      timeZone: TZ_PT,
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit"
+    }) + " PT";
+  }
+
+  function durShort(fromISO, toISO){
+    if (!fromISO) return "—";
+    const a = new Date(fromISO).getTime();
+    const b = toISO ? new Date(toISO).getTime() : Date.now();
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return "—";
+    let s = Math.max(0, Math.floor((b - a) / 1000));
+    const d = Math.floor(s / 86400); s -= d * 86400;
+    const h = Math.floor(s / 3600); s -= h * 3600;
+    const m = Math.floor(s / 60);
+    if (d > 0) return `${d}d ${h}h`;
+    if (h > 0) return `${h}h ${m}m`;
+    return `${m}m`;
+  }
+
+  async function fetchJSON(relPath){
+    const url = relPath + (relPath.includes("?") ? "&" : "?") + "ts=" + Date.now();
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok){
+      const t = await r.text().catch(() => "");
+      throw new Error(`Fetch failed (${r.status}) for ${relPath}: ${t.slice(0,120)}`);
+    }
+    const text = await r.text();
+    try { return JSON.parse(text); }
+    catch { throw new Error(`Non-JSON response for ${relPath}: ${text.slice(0,60)}`); }
+  }
+
+  function setDot(id, ok){
+    const el = $(id);
+    if (!el) return;
+    el.classList.remove("ok","bad");
+    if (ok === true) el.classList.add("ok");
+    else if (ok === false) el.classList.add("bad");
+  }
+
+  function safeImg(imgEl, url){
+    if (!imgEl) return;
+    if (!url){
+      imgEl.removeAttribute("src");
+      imgEl.style.display = "none";
+      return;
+    }
+    imgEl.style.display = "block";
+    imgEl.src = url;
+  }
+
+  function wireCopy(btnId, getText){
+    const btn = $(btnId);
+    if (!btn) return;
+    btn.onclick = async () => {
+      const text = getText();
+      if (!text) return;
+      try{
+        await navigator.clipboard.writeText(text);
+        const prev = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(() => (btn.textContent = prev), 900);
+      } catch {
+        prompt("Copy:", text);
+      }
+    };
+  }
+
+  function renderSource(prefix, src){
+    const ok = Boolean(src && src.ok);
+    setDot(`dot-${prefix}`, ok);
+
+    const item = src?.item || null;
+    const updatedAt = src?.updatedAt || null;
+
+    const timeLine = updatedAt ? `Updated ${fmtTimePT(updatedAt)}` : "Not updated yet";
+    const timeEl = $(`time-${prefix}`);
+    if (timeEl) timeEl.textContent = timeLine;
+
+    const sinceISO = src?.since || null;
+    const sinceText = sinceISO
+      ? `Since ${fmtTimePT(sinceISO)} • ${durShort(sinceISO)}`
+      : "Since —";
+    const sinceEl = $(`since-${prefix}`);
+    if (sinceEl) sinceEl.textContent = sinceText;
+
+    const title = item?.title || "—";
+    const url = item?.url || "";
+    const imgUrl = item?.imgUrl || "";
+
+    const link = $(`link-${prefix}`);
+    if (link){
+      link.textContent = title;
+      link.href = url || "#";
+    }
+
+    safeImg($(`img-${prefix}`), imgUrl);
+
+    const statusEl = $(`status-${prefix}`);
+    if (statusEl) statusEl.textContent = ok ? "OK" : "Error";
+
+    const errEl = $(`err-${prefix}`);
+    if (errEl) errEl.textContent = ok ? "" : (src?.error || "Scrape failed");
+
+    const urlEl = $(`url-${prefix}`);
+    if (urlEl) urlEl.textContent = url || "—";
+  }
+
+  function renderUnified(unified){
+    const feed = $("feed");
+    if (!feed) return; // prevents null.innerHTML
+    feed.innerHTML = "";
+
+    const items = Array.isArray(unified?.items) ? unified.items : [];
+    if (!items.length){
+      const empty = document.createElement("div");
+      empty.className = "tiny";
+      empty.style.color = "var(--muted)";
+      empty.textContent = "No items yet.";
+      feed.appendChild(empty);
+      return;
+    }
+
+    for (const it of items){
+      
+      }
+      const row = document.createElement("div");
+      row.className = "historyItem";
+      
+      const ageHours = it.since ? (Date.now() - new Date(it.since).getTime()) / (1000 * 60 * 60) : 0;
+      
+      if (ageHours > 24) {
+        row.classList.add("older");
+      }
+      
+      }
+      
+      }
+      
+      }
+
+      const thumb = document.createElement("div");
+      thumb.className = "hThumb";
+      const img = document.createElement("img");
+      img.alt = "";
+      if (it.imgUrl) img.src = it.imgUrl;
+      else img.style.display = "none";
+      thumb.appendChild(img);
+
+      const body = document.createElement("div");
+      body.className = "hBody";
+
+      const pub = document.createElement("p");
+      pub.className = "hPub";
+      const src = (it.source || "").toString().toUpperCase();
+      pub.textContent = src === "ABC" ? "ABC News" : (src === "CBS" ? "CBS News" : (it.source || "Publisher"));
+
+      const title = document.createElement("p");
+      title.className = "hTitle";
+      const a = document.createElement("a");
+      a.href = it.url || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = it.title || "—";
+      title.appendChild(a);
+
+      const meta = document.createElement("div");
+      meta.className = "hMeta";
+
+      const chip1 = document.createElement("span");
+      chip1.className = "hChip";
+      chip1.textContent = it.since ? `Since: ${fmtTimePT(it.since)} • ${durShort(it.since)}` : "Since: —";
+
+      meta.appendChild(chip1);
+
+      body.appendChild(pub);
+      body.appendChild(title);
+      body.appendChild(meta);
+
+      row.appendChild(thumb);
+      row.appendChild(body);
+
+      feed.appendChild(row);
+    }
+  }
+
+  function setView(which){
+    const now = $("view-now");
+    const uni = $("view-unified");
+    const tabNow = $("tab-now");
+    const tabUni = $("tab-unified");
+
+    if (tabNow) tabNow.classList.toggle("active", which === "now");
+    if (tabUni) tabUni.classList.toggle("active", which === "unified");
+    if (now) now.style.display = which === "now" ? "" : "none";
+    if (uni) uni.style.display = which === "unified" ? "" : "none";
+  }
+
+  $("tab-now").addEventListener("click", () => setView("now"));
+  $("tab-unified").addEventListener("click", () => setView("unified"));
+
+  async function loadAll(){
+    setError("");
+    const refreshBtn = $("btn-refresh");
+    if (refreshBtn) refreshBtn.disabled = true;
+
+    try{
+      const [current, unified] = await Promise.all([
+        fetchJSON("./data/current.json"),
+        fetchJSON("./data/unified.json").catch(() => ({ items: [] })),
+      ]);
+
+      renderSource("abc", current?.sources?.abc);
+      renderSource("cbs", current?.sources?.cbs);
+
+      renderUnified(unified);
+    } catch (e){
+      setError(String(e.message || e));
+    } finally {
+      if (refreshBtn) refreshBtn.disabled = false;
+    }
+  }
+
+  wireCopy("copy-abc", () => $("link-abc")?.href && $("link-abc").href !== "#" ? $("link-abc").href : "");
+  wireCopy("copy-cbs", () => $("link-cbs")?.href && $("link-cbs").href !== "#" ? $("link-cbs").href : "");
+  wireCopy("copyurl-abc", () => $("url-abc")?.textContent && $("url-abc").textContent !== "—" ? $("url-abc").textContent : "");
+  wireCopy("copyurl-cbs", () => $("url-cbs")?.textContent && $("url-cbs").textContent !== "—" ? $("url-cbs").textContent : "");
+
+  $("btn-refresh").addEventListener("click", loadAll);
+  loadAll();
+</script>
+
+</body>
+</html>
