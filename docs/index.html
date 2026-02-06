@@ -143,12 +143,14 @@
     .cardBody{
       padding:12px;
       display:flex;
+      flex-direction:column;
       gap:12px;
-      align-items:flex-start;
+      align-items:center;
     }
 
     .thumb{
-      width:156px;
+      width:100%;
+      max-width:520px;
       aspect-ratio: 16 / 9;
       border-radius: 12px;
       background: #f1f3f4;
@@ -158,12 +160,7 @@
     }
     .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-    @media (max-width: 520px){
-      .cardBody{ flex-direction:column; }
-      .thumb{ width:100%; }
-    }
-
-    .headlineWrap{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; }
+    .headlineWrap{ width:100%; min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; }
 
     .pubLine{
       font-weight:700;
@@ -276,7 +273,6 @@
         <div class="cardBody">
           <div class="thumb"><img id="img-abc1" alt="" /></div>
           <div class="headlineWrap">
-            <div class="pubLine">No. 1</div>
             <h2 class="headline"><a id="link-abc1" href="#" target="_blank" rel="noopener">—</a></h2>
 
             <div class="row">
@@ -310,7 +306,6 @@
         <div class="cardBody">
           <div class="thumb"><img id="img-cbs1" alt="" /></div>
           <div class="headlineWrap">
-            <div class="pubLine">No. 1</div>
             <h2 class="headline"><a id="link-cbs1" href="#" target="_blank" rel="noopener">—</a></h2>
 
             <div class="row">
@@ -344,7 +339,6 @@
         <div class="cardBody">
           <div class="thumb"><img id="img-usat1" alt="" /></div>
           <div class="headlineWrap">
-            <div class="pubLine">No. 1</div>
             <h2 class="headline"><a id="link-usat1" href="#" target="_blank" rel="noopener">—</a></h2>
 
             <div class="row">
