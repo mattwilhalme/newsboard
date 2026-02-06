@@ -590,10 +590,14 @@ async function scrapeUSATHero() {
       timeout: 45000,
     });
 
-    // USA Today can be heavy; give it a moment and wait for the hero anchor.
+    // USA Today is heavy + can hydrate late. Give it time to populate modules.
     await page.waitForTimeout(1200);
-    await page.waitForSelector("a.gnt_m_he", { timeout: 20000 }).catch(() => {});
-    await page.waitForTimeout(800);
+    await page.waitForLoadState("networkidle", { timeout: 20000 }).catch(() => {});
+    await page.waitForTimeout(600);
+
+    // Try to ensure we have some body content before evaluating.
+    await page.waitForSelector("body", { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(400);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -612,49 +616,101 @@ async function scrapeUSATHero() {
         if (!parts.length) return null;
 
         // Prefer 2x if present, else last candidate.
-        let best2x = null;
+        let best = null;
         for (const p of parts) {
           const [u, dpr] = p.split(/\s+/);
-          if (dpr && dpr.endsWith("x") && Number(dpr.slice(0, -1)) >= 2) best2x = u;
+          const mult = dpr && dpr.endsWith("x") ? Number(dpr.slice(0, -1)) : 0;
+          if (!best || mult > best.mult) best = { url: u, mult };
         }
-        const last = parts[parts.length - 1]?.split(/\s+/)?.[0] || null;
-        return best2x || last;
+        return best?.url || parts[parts.length - 1]?.split(/\s+/)?.[0] || null;
       }
 
-      // Prefer the hero tile (data-t-l includes "hero"), avoid sponsored.
-      const anchors = Array.from(document.querySelectorAll("a.gnt_m_he"));
-      let a = null;
+      function isBadAnchor(a) {
+        const rel = (a.getAttribute("rel") || "").toLowerCase();
+        if (rel.includes("sponsored")) return true;
 
-      for (const el of anchors) {
-        const rel = (el.getAttribute("rel") || "").toLowerCase();
-        if (rel.includes("sponsored")) continue;
+        const t = (a.getAttribute("data-t-l") || "").toLowerCase();
+        if (t.includes("branded")) return true;
 
-        const t = (el.getAttribute("data-t-l") || "").toLowerCase();
-        if (t.includes("branded")) continue;
+        // Some native tiles are marked in attributes like data-g-r etc; keep heuristic light.
+        const xsrc = (a.getAttribute("data-x-src") || "").toLowerCase();
+        if (xsrc.includes("doubleclick") || xsrc.includes("gampad")) return true;
 
-        if (t.includes("hero") || el.classList.contains("gnt_m_he__br")) {
-          a = el;
-          break;
-        }
+        return false;
       }
 
-      if (!a) a = anchors[0] || null;
-      if (!a) return { ok: false, error: "USA Today hero a.gnt_m_he not found" };
+      // Candidate selectors, from most-specific to broader fallbacks.
+      const candidates = [
+        // Often the hero is labeled in tracking
+        ...Array.from(document.querySelectorAll('a[data-t-l*="|hero"]')),
+        ...Array.from(document.querySelectorAll('a[data-t-l*="hero"]')),
+        // Your original target
+        ...Array.from(document.querySelectorAll("a.gnt_m_he")),
+        // Broad fallback: anything that looks like a top tile with a title marker
+        ...Array.from(document.querySelectorAll("a[data-tb-link]")),
+      ];
 
-      const href = a.getAttribute("href") || "";
-      const url = absUrl(href);
+      // De-dupe while preserving order
+      const seen = new Set();
+      const anchors = [];
+      for (const a of candidates) {
+        if (!a || seen.has(a)) continue;
+        seen.add(a);
+        anchors.push(a);
+      }
 
-      const titleSpan =
-        a.querySelector('span.gnt_lbl_lc.gnt_m_he__lc[data-tb-title]') ||
-        a.querySelector("span.gnt_m_he__lc") ||
-        a.querySelector("[data-tb-title]") ||
-        null;
+      let chosen = null;
+      let chosenTitle = "";
+      let chosenUrl = "";
 
-      const title = clean(titleSpan?.textContent || "");
+      for (const a of anchors) {
+        if (!a || isBadAnchor(a)) continue;
+
+        const href = a.getAttribute("href") || "";
+        const url = absUrl(href);
+        if (!url) continue;
+
+        // Prefer anchors that clearly represent a story
+        if (!href.includes("/story/") && !url.includes("/story/")) {
+          // still allow if it has a strong title marker, but deprioritize
+        }
+
+        // Title nodes: USA Today often uses data-tb-title on a span/div
+        const titleNode =
+          a.querySelector('[data-tb-title]') ||
+          a.querySelector("span.gnt_m_he__lc") ||
+          a.querySelector("span.gnt_lbl_lc") ||
+          a.querySelector("h1,h2,h3") ||
+          null;
+
+        const title = clean(titleNode?.textContent || "");
+        if (!title || title.length < 8) continue;
+
+        // Found a plausible hero
+        chosen = a;
+        chosenTitle = title;
+        chosenUrl = url;
+
+        // Prefer the explicit hero tracking, stop early if present.
+        const t = (a.getAttribute("data-t-l") || "").toLowerCase();
+        if (t.includes("hero") || a.classList.contains("gnt_m_he__br")) break;
+      }
+
+      if (!chosen) {
+        return {
+          ok: false,
+          error: "USA Today hero not found (no candidate anchor produced title+url).",
+          debug: {
+            candidates: anchors.length,
+            hasGntHero: Boolean(document.querySelector("a.gnt_m_he")),
+            hasAnyTbTitle: Boolean(document.querySelector("[data-tb-title]")),
+          },
+        };
+      }
 
       const img =
-        a.querySelector("img.gnt_m_he_i[src], img.gnt_m_he_i[srcset]") ||
-        a.querySelector("img[src], img[srcset]") ||
+        chosen.querySelector("img.gnt_m_he_i[src], img.gnt_m_he_i[srcset]") ||
+        chosen.querySelector("img[src], img[srcset]") ||
         null;
 
       let imgUrl = null;
@@ -669,19 +725,29 @@ async function scrapeUSATHero() {
         }
       }
 
-      const dek = clean(a.getAttribute("data-c-br") || "") || null;
+      const dek = clean(chosen.getAttribute("data-c-br") || "") || null;
 
-      const sbt = a.querySelector("[data-c-ms], [data-c-dt], [data-tb-cat-and-date]");
+      const sbt = chosen.querySelector("[data-c-ms], [data-c-dt], [data-tb-cat-and-date]");
       const label = clean(sbt?.getAttribute("data-c-ms") || "") || null;
       const dt = clean(sbt?.getAttribute("data-c-dt") || "") || null;
 
-      return { ok: Boolean(title && url), title, url, imgUrl, imgAlt, dek, label, dt };
+      return {
+        ok: Boolean(chosenTitle && chosenUrl),
+        title: chosenTitle,
+        url: chosenUrl,
+        imgUrl,
+        imgAlt,
+        dek,
+        label,
+        dt,
+      };
     });
 
     let finalUrl = hero?.url ? normalizeUrl(hero.url) : null;
     let finalTitle = cleanText(hero?.title || "");
     let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
 
+    // og:image fallback if tile doesn't expose an image URL.
     if (hero?.ok && finalUrl && !finalImgUrl) {
       try {
         const r = await page.request.get(finalUrl, { timeout: 20000 });
@@ -715,6 +781,7 @@ async function scrapeUSATHero() {
       item,
       ok: Boolean(item),
       error: item ? null : (hero?.error || "USA Today hero not found"),
+      debug: hero?.debug || null,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
