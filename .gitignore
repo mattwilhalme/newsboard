@@ -9,6 +9,7 @@ debug/
 
 # Cache (can be regenerated)
 cache.json
+!docs/cache.json
 
 # Raw HTML dumps
 *.html
@@ -20,8 +21,8 @@ cache.json
 # Temporary files
 *.tmp
 *.save
-archive/
-cache.json
+
+# Generated data files (legacy)
 history.json
 current.json
 unified.json
