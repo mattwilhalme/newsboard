@@ -133,6 +133,36 @@ async function withBrowser(fn) {
   }
 }
 
+page.on("console", (msg) => {
+  try {
+    const type = msg.type();
+    if (type === "error" || type === "warning") {
+      console.log(`[PW console.${type}] ${msg.text()}`.slice(0, 1200));
+    }
+  } catch {}
+});
+
+page.on("pageerror", (err) => {
+  console.log(`[PW pageerror] ${String(err)}`.slice(0, 1200));
+});
+
+page.on("requestfailed", (req) => {
+  try {
+    const fail = req.failure();
+    if (fail?.errorText) {
+      console.log(`[PW requestfailed] ${fail.errorText} :: ${req.url()}`.slice(0, 1200));
+    }
+  } catch {}
+});
+
+page.on("response", (res) => {
+  try {
+    const s = res.status();
+    if (s >= 400) console.log(`[PW response ${s}] ${res.url()}`.slice(0, 1200));
+  } catch {}
+});
+
+
 async function archiveRun(page, runId, snapshotObj) {
   const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
   const pngPath = path.join(ARCHIVE_DIR, `${runId}.png`);
