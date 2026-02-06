@@ -622,7 +622,10 @@ async function scrapeUSATHero() {
 
     // Hydration can be late.
     await page.waitForTimeout(1200);
-    await page.waitForLoadState("networkidle", { timeout: 25000 }).catch(() => {});
+    // Wait for network to be mostly idle
+    await page.waitForFunction(() => {
+      return performance.now() - performance.timing.navigationStart > 3000;
+    }, { timeout: 25000 }).catch(() => {});
     await page.waitForTimeout(600);
 
     // Wait for the exact hero pattern you've shared:
