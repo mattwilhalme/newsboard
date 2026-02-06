@@ -104,7 +104,7 @@
 
     .grid{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap:12px; /* trimmed */
     }
     @media (max-width: 900px){
@@ -402,6 +402,38 @@ gap:12px;
         </div>
       </div>
     </div>
+
+      <!-- USA Today -->
+      <div class="card">
+        <div class="cardHead">
+          <div class="srcTitle">
+            <div class="dot" id="dot-usat1"></div>
+            <div class="srcMeta">
+              <div class="srcTime" id="time-usat1">—</div>
+            </div>
+          </div>
+          <div class="tiny" id="since-usat1">—</div>
+        </div>
+
+        <div class="cardBody">
+          <div class="thumb"><img id="img-usat1" alt="" /></div>
+          <div class="headlineWrap">
+            <div class="pubLine">USA Today</div>
+            <h2 class="headline"><a id="link-usat1" href="#" target="_blank" rel="noopener">—</a></h2>
+            <div class="row">
+              <span class="pill" id="status-usat1">—</span>
+              <button class="linkbtn" id="copy-usat1" type="button">Copy headline link</button>
+            </div>
+
+            <div class="urlLine">
+              <div class="urlText mono" id="url-usat1">—</div>
+              <button class="linkbtn" id="copyurl-usat1" type="button">Copy URL</button>
+            </div>
+
+            <div class="tiny" id="err-usat1"></div>
+          </div>
+        </div>
+      </div>
 
     <div class="sectionTitle">
       <span>History</span>
@@ -747,6 +779,7 @@ gap:12px;
 
       renderSource("abc", current?.sources?.abc);
       renderSource("cbs", current?.sources?.cbs);
+      renderSource("usat1", current?.sources?.usat1);
 
       renderUnified(unified);
       renderHistory(history);
@@ -760,7 +793,9 @@ gap:12px;
   wireCopy("copy-abc", () => $("link-abc")?.href && $("link-abc").href !== "#" ? $("link-abc").href : "");
   wireCopy("copy-cbs", () => $("link-cbs")?.href && $("link-cbs").href !== "#" ? $("link-cbs").href : "");
   wireCopy("copyurl-abc", () => $("url-abc")?.textContent && $("url-abc").textContent !== "—" ? $("url-abc").textContent : "");
-  wireCopy("copyurl-cbs", () => $("url-cbs")?.textContent && $("url-cbs").textContent !== "—" ? $("url-cbs").textContent : "");
+  
+wireCopy("copy-usat1", () => $("link-usat1")?.href && $("link-usat1").href !== "#" ? $("link-usat1").href : "");
+wireCopy("copyurl-usat1", () => $("url-usat1")?.textContent && $("url-usat1").textContent !== "—" ? $("url-usat1").textContent : "");
 
   $("btn-refresh").addEventListener("click", loadAll);
   loadAll();
