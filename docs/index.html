@@ -241,40 +241,63 @@
     }
     .toast.show{ opacity: 1; }
 
-    .sectionTitle{
-      margin:14px 0 10px;
-      font-size:13px;
-      letter-spacing:.2px;
-      color: var(--muted);
+    .drawerOverlay{
+      position:fixed;
+      inset:0;
+      background: rgba(32,33,36,.35);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .18s ease;
+      z-index:60;
+    }
+    .drawerOverlay.show{ opacity:1; pointer-events:auto; }
+
+    .drawer{
+      position:fixed;
+      top:0;
+      right:0;
+      height:100vh;
+      width:min(520px, calc(100vw - 48px));
+      background: var(--bg);
+      border-left:1px solid var(--line);
+      box-shadow: -14px 0 30px rgba(0,0,0,.14);
+      transform: translateX(100%);
+      transition: transform .22s ease;
+      z-index:70;
       display:flex;
-      align-items:center;
+      flex-direction:column;
+    }
+    .drawer.open{ transform: translateX(0); }
+
+    .drawerHead{
+      padding:12px 14px;
+      background: rgba(248,249,250,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      display:flex;
       justify-content:space-between;
+      align-items:center;
       gap:10px;
     }
+    .drawerTitle{ font-weight:800; letter-spacing:.2px; }
+    .drawerBody{ padding:12px; overflow:auto; }
 
-    .historyGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 1100px){
-      .historyGrid{ grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 740px){
-      .historyGrid{ grid-template-columns: 1fr; }
-    }
+    .historyList{ display:flex; flex-direction:column; gap:12px; }
 
-    .hCard{ border:1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); overflow:hidden; }
+    .hItem{ border:1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); overflow:hidden; }
     .hHead{ padding:10px 12px 9px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; border-bottom:1px solid var(--line); background:#fff; }
-    .hBody{ padding:12px; display:flex; flex-direction:column; gap:10px; }
-    .hThumb{ width:100%; aspect-ratio: 16 / 9; border-radius: 12px; background:#f1f3f4; border:1px solid var(--line); overflow:hidden; align-self:center; max-width:460px; }
+    .hBody{ padding:12px; display:flex; gap:12px; align-items:flex-start; }
+    .hThumb{ width:132px; aspect-ratio: 16 / 9; border-radius: 12px; background:#f1f3f4; border:1px solid var(--line); overflow:hidden; flex:0 0 auto; }
     .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .hTitle{ font-size:15px; line-height:1.25; font-weight:700; margin:0; }
+    .hMain{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:8px; }
+    .hTitle{ font-size:14px; line-height:1.25; font-weight:700; margin:0; }
     .hTitle a{ color: var(--text); text-decoration:none; }
     .hTitle a:hover{ color: var(--blue); text-decoration: underline; }
-    .hMetaRow{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-    .hMetaChips{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-    .hChip{ display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background: var(--chip); border:1px solid var(--line); color: var(--chipText); font-size:12px; }
+
+    @media (max-width: 520px){
+      .hBody{ flex-direction:column; }
+      .hThumb{ width:100%; }
+    }
   </style>
 </head>
 <body>
@@ -287,6 +310,7 @@
 
       <div class="controls">
         <button id="btn-reload" class="btn" type="button">Reload</button>
+        <button id="btn-history" class="btn" type="button">History</button>
         <button id="btn-run" class="btn" type="button" style="display:none;">Run scrape (local)</button>
       </div>
     </div>
@@ -402,13 +426,21 @@
 
     </div>
 
-    <div class="sectionTitle">
-      <span>History</span>
-      <span class="tiny">Reads <span class="mono">./data/history.json</span></span>
-    </div>
-
-    <div class="historyGrid" id="history"></div>
   </main>
+
+  <div class="drawerOverlay" id="drawer-overlay"></div>
+  <aside class="drawer" id="drawer-history" aria-hidden="true">
+    <div class="drawerHead">
+      <div>
+        <div class="drawerTitle">History</div>
+        <div class="tiny">Reads <span class="mono">./data/history.json</span></div>
+      </div>
+      <button id="btn-history-close" class="btn" type="button">Close</button>
+    </div>
+    <div class="drawerBody">
+      <div class="historyList" id="history"></div>
+    </div>
+  </aside>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
@@ -460,6 +492,17 @@
       el.classList.add("show");
       clearTimeout(showToast._t);
       showToast._t = setTimeout(() => el.classList.remove("show"), 1200);
+    }
+
+    function setHistoryOpen(open){
+      const drawer = $("drawer-history");
+      const overlay = $("drawer-overlay");
+      const btn = $("btn-history");
+      if (!drawer || !overlay) return;
+      drawer.classList.toggle("open", Boolean(open));
+      overlay.classList.toggle("show", Boolean(open));
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
+      if (!open && btn) btn.focus();
     }
 
     function setDot(id, ok) {
@@ -573,7 +616,7 @@
 
       for (const it of rows){
         const card = document.createElement("section");
-        card.className = "hCard";
+        card.className = "hItem";
 
         const head = document.createElement("div");
         head.className = "hHead";
@@ -597,11 +640,7 @@
         const updated = document.createElement("div");
         updated.className = "srcTime";
         updated.textContent = it.lastSeenAt ? `${fmtTime(it.lastSeenAt)} · ${ago(it.lastSeenAt)}` : "—";
-        const since = document.createElement("div");
-        since.className = "tiny";
-        since.textContent = it.firstSeenAt ? `First ${fmtTime(it.firstSeenAt)}` : "First —";
         right.appendChild(updated);
-        right.appendChild(since);
 
         head.appendChild(left);
         head.appendChild(right);
@@ -617,6 +656,9 @@
         else img.style.display = "none";
         thumb.appendChild(img);
 
+        const main = document.createElement("div");
+        main.className = "hMain";
+
         const title = document.createElement("h3");
         title.className = "hTitle";
         const a = document.createElement("a");
@@ -625,24 +667,6 @@
         a.rel = "noopener";
         a.textContent = it.title || "—";
         title.appendChild(a);
-
-        const metaRow = document.createElement("div");
-        metaRow.className = "hMetaRow";
-
-        const pills = document.createElement("div");
-        pills.className = "hMetaChips";
-
-        const chipSeen = document.createElement("span");
-        chipSeen.className = "hChip";
-        chipSeen.textContent = `Seen: ${Number(it.seenCount || 1)}`;
-        pills.appendChild(chipSeen);
-
-        const chipLast = document.createElement("span");
-        chipLast.className = "hChip";
-        chipLast.textContent = it.lastSeenAt ? `Last: ${fmtTime(it.lastSeenAt)}` : "Last: —";
-        pills.appendChild(chipLast);
-
-        metaRow.appendChild(pills);
 
         const btnCopyLink = document.createElement("button");
         btnCopyLink.className = "linkbtn";
@@ -667,11 +691,12 @@
         urlLine.appendChild(urlText);
         urlLine.appendChild(btnCopyUrl);
 
+        main.appendChild(title);
+        main.appendChild(btnCopyLink);
+        main.appendChild(urlLine);
+
         body.appendChild(thumb);
-        body.appendChild(title);
-        body.appendChild(metaRow);
-        body.appendChild(btnCopyLink);
-        body.appendChild(urlLine);
+        body.appendChild(main);
 
         card.appendChild(head);
         card.appendChild(body);
@@ -731,6 +756,14 @@
 
     // Wire UI
     $("btn-reload").addEventListener("click", reload);
+
+    $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
+    $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
+    $("drawer-overlay")?.addEventListener("click", () => setHistoryOpen(false));
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setHistoryOpen(false);
+    });
 
     if (isLocal && !isGitHubPages) {
       $("btn-run").style.display = "inline-block";
