@@ -70,6 +70,7 @@ function ensureCacheShape(raw) {
       cbs: baseSource("cbs", "CBS News", "https://www.cbsnews.com/"),
       abc1: baseSource("abc1", "ABC News (Hero)", "https://abcnews.go.com/"),
       cbs1: baseSource("cbs1", "CBS News (Hero)", "https://www.cbsnews.com/"),
+      usat1: baseSource("usat1", "USA Today (Hero)", "https://www.usatoday.com/"),
     },
   };
 
@@ -86,11 +87,12 @@ function ensureCacheShape(raw) {
         cbs: { ...base.sources.cbs, ...(raw.sources.cbs || {}) },
         abc1: { ...base.sources.abc1, ...(raw.sources.abc1 || {}) },
         cbs1: { ...base.sources.cbs1, ...(raw.sources.cbs1 || {}) },
+        usat1: { ...base.sources.usat1, ...(raw.sources.usat1 || {}) },
       },
     };
   }
 
-  if (raw.abc || raw.cbs || raw.abc1 || raw.cbs1) {
+  if (raw.abc || raw.cbs || raw.abc1 || raw.cbs1 || raw.usat1) {
     return {
       ...base,
       generatedAt: raw.generatedAt || null,
@@ -100,6 +102,7 @@ function ensureCacheShape(raw) {
         cbs: { ...base.sources.cbs, ...(raw.cbs || {}) },
         abc1: { ...base.sources.abc1, ...(raw.abc1 || {}) },
         cbs1: { ...base.sources.cbs1, ...(raw.cbs1 || {}) },
+        usat1: { ...base.sources.usat1, ...(raw.usat1 || {}) },
       },
     };
   }
@@ -578,6 +581,155 @@ async function scrapeCBSHero() {
   });
 }
 
+async function scrapeUSATHero() {
+  return await withBrowser(async (page) => {
+    const runId = `usat1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.usatoday.com/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    // USA Today can be heavy; give it a moment and wait for the hero anchor.
+    await page.waitForTimeout(1200);
+    await page.waitForSelector("a.gnt_m_he", { timeout: 20000 }).catch(() => {});
+    await page.waitForTimeout(800);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "").replace(/\s+/g, " ").trim();
+      }
+      function absUrl(href) {
+        try {
+          return new URL(href, window.location.origin).toString();
+        } catch {
+          return null;
+        }
+      }
+      function pickFromSrcset(srcset) {
+        if (!srcset) return null;
+        const parts = srcset.split(",").map((p) => p.trim()).filter(Boolean);
+        if (!parts.length) return null;
+
+        // Prefer 2x if present, else last candidate.
+        let best2x = null;
+        for (const p of parts) {
+          const [u, dpr] = p.split(/\s+/);
+          if (dpr && dpr.endsWith("x") && Number(dpr.slice(0, -1)) >= 2) best2x = u;
+        }
+        const last = parts[parts.length - 1]?.split(/\s+/)?.[0] || null;
+        return best2x || last;
+      }
+
+      // Prefer the hero tile (data-t-l includes "hero"), avoid sponsored.
+      const anchors = Array.from(document.querySelectorAll("a.gnt_m_he"));
+      let a = null;
+
+      for (const el of anchors) {
+        const rel = (el.getAttribute("rel") || "").toLowerCase();
+        if (rel.includes("sponsored")) continue;
+
+        const t = (el.getAttribute("data-t-l") || "").toLowerCase();
+        if (t.includes("branded")) continue;
+
+        if (t.includes("hero") || el.classList.contains("gnt_m_he__br")) {
+          a = el;
+          break;
+        }
+      }
+
+      if (!a) a = anchors[0] || null;
+      if (!a) return { ok: false, error: "USA Today hero a.gnt_m_he not found" };
+
+      const href = a.getAttribute("href") || "";
+      const url = absUrl(href);
+
+      const titleSpan =
+        a.querySelector('span.gnt_lbl_lc.gnt_m_he__lc[data-tb-title]') ||
+        a.querySelector("span.gnt_m_he__lc") ||
+        a.querySelector("[data-tb-title]") ||
+        null;
+
+      const title = clean(titleSpan?.textContent || "");
+
+      const img =
+        a.querySelector("img.gnt_m_he_i[src], img.gnt_m_he_i[srcset]") ||
+        a.querySelector("img[src], img[srcset]") ||
+        null;
+
+      let imgUrl = null;
+      let imgAlt = null;
+
+      if (img) {
+        imgAlt = clean(img.getAttribute("alt") || "") || null;
+        imgUrl = absUrl(img.getAttribute("src") || "") || null;
+        if (!imgUrl) {
+          const fromSet = pickFromSrcset(img.getAttribute("srcset") || "");
+          imgUrl = fromSet ? absUrl(fromSet) : null;
+        }
+      }
+
+      const dek = clean(a.getAttribute("data-c-br") || "") || null;
+
+      const sbt = a.querySelector("[data-c-ms], [data-c-dt], [data-tb-cat-and-date]");
+      const label = clean(sbt?.getAttribute("data-c-ms") || "") || null;
+      const dt = clean(sbt?.getAttribute("data-c-dt") || "") || null;
+
+      return { ok: Boolean(title && url), title, url, imgUrl, imgAlt, dek, label, dt };
+    });
+
+    let finalUrl = hero?.url ? normalizeUrl(hero.url) : null;
+    let finalTitle = cleanText(hero?.title || "");
+    let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
+
+    if (hero?.ok && finalUrl && !finalImgUrl) {
+      try {
+        const r = await page.request.get(finalUrl, { timeout: 20000 });
+        const html = await r.text();
+        const m = html.match(
+          /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
+        );
+        if (m?.[1]) finalImgUrl = normalizeUrl(m[1]);
+      } catch {
+        // ignore
+      }
+    }
+
+    const item = hero?.ok
+      ? {
+          title: finalTitle,
+          url: finalUrl,
+          imgUrl: finalImgUrl,
+          imgAlt: hero?.imgAlt || null,
+          dek: hero?.dek || null,
+          label: hero?.label || null,
+          dt: hero?.dt || null,
+          slotKey: sha1("usat|hero").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "usat1",
+      fetchedAt: nowISO(),
+      runId,
+      item,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "USA Today hero not found"),
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+    };
+  });
+}
+
 // -------- Archive + Diff helpers (legacy top headlines) --------
 
 function listSnapshotFiles(id) {
@@ -687,11 +839,11 @@ app.get("/api/headlines", (req, res) => {
 app.post("/api/refresh", async (req, res) => {
   cache = ensureCacheShape(cache);
 
-  const id = (req.body?.id || "").toLowerCase(); // abc | cbs | abc1 | cbs1 | "" (all)
+  const id = (req.body?.id || "").toLowerCase(); // abc | cbs | abc1 | cbs1 | usat1 | "" (all)
   const maxItems = Number(req.body?.x ?? 40);
   const scrollPasses = Number(req.body?.scrollPasses ?? 6);
 
-  const toRun = id ? [id] : ["abc", "cbs", "abc1", "cbs1"];
+  const toRun = id ? [id] : ["abc", "cbs", "abc1", "cbs1", "usat1"];
 
   try {
     for (const which of toRun) {
@@ -701,6 +853,7 @@ app.post("/api/refresh", async (req, res) => {
       else if (which === "cbs") result = await scrapeCBSFrontPage({ scrollPasses: 2 });
       else if (which === "abc1") result = await scrapeABCHero();
       else if (which === "cbs1") result = await scrapeCBSHero();
+      else if (which === "usat1") result = await scrapeUSATHero();
       else throw new Error(`Unknown source id: ${which}`);
 
       cache.sources[which] = {
@@ -807,4 +960,5 @@ export {
   scrapeCBSFrontPage,
   scrapeABCHero,
   scrapeCBSHero,
+  scrapeUSATHero,
 };
