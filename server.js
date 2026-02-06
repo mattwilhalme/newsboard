@@ -124,6 +124,38 @@ async function withBrowser(fn) {
   });
 
   const page = await context.newPage();
+
+  // ---- Playwright diagnostics (USA Today + general scraper debugging) ----
+  page.on("console", (msg) => {
+    try {
+      const type = msg.type();
+      if (type === "error" || type === "warning") {
+        console.log(`[PW console.${type}] ${msg.text()}`.slice(0, 1200));
+      }
+    } catch {}
+  });
+
+  page.on("pageerror", (err) => {
+    console.log(`[PW pageerror] ${String(err)}`.slice(0, 1200));
+  });
+
+  page.on("requestfailed", (req) => {
+    try {
+      const fail = req.failure();
+      if (fail?.errorText) {
+        console.log(`[PW requestfailed] ${fail.errorText} :: ${req.url()}`.slice(0, 1200));
+      }
+    } catch {}
+  });
+
+  page.on("response", (res) => {
+    try {
+      const s = res.status();
+      if (s >= 400) console.log(`[PW response ${s}] ${res.url()}`.slice(0, 1200));
+    } catch {}
+  });
+  // -----------------------------------------------------------------------
+
   try {
     return await fn(page);
   } finally {
@@ -132,36 +164,6 @@ async function withBrowser(fn) {
     await browser.close().catch(() => {});
   }
 }
-
-page.on("console", (msg) => {
-  try {
-    const type = msg.type();
-    if (type === "error" || type === "warning") {
-      console.log(`[PW console.${type}] ${msg.text()}`.slice(0, 1200));
-    }
-  } catch {}
-});
-
-page.on("pageerror", (err) => {
-  console.log(`[PW pageerror] ${String(err)}`.slice(0, 1200));
-});
-
-page.on("requestfailed", (req) => {
-  try {
-    const fail = req.failure();
-    if (fail?.errorText) {
-      console.log(`[PW requestfailed] ${fail.errorText} :: ${req.url()}`.slice(0, 1200));
-    }
-  } catch {}
-});
-
-page.on("response", (res) => {
-  try {
-    const s = res.status();
-    if (s >= 400) console.log(`[PW response ${s}] ${res.url()}`.slice(0, 1200));
-  } catch {}
-});
-
 
 async function archiveRun(page, runId, snapshotObj) {
   const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
@@ -620,12 +622,13 @@ async function scrapeUSATHero() {
       timeout: 45000,
     });
 
-    // USA Today hydrates late; wait for the hero anchor specifically.
+    // USA Today hydrates late; wait for network + hero module.
     await page.waitForTimeout(1200);
     await page.waitForLoadState("networkidle", { timeout: 25000 }).catch(() => {});
     await page.waitForTimeout(600);
 
-    // Wait until the hero anchor exists (data-t-l includes "|hero")
+    // Wait specifically for the hero anchor pattern you've observed:
+    // <a class="gnt_m_he gnt_m_he__br" data-t-l="...|hero"> ... <span class="gnt_m_he__lc" data-tb-title>...</span>
     await page
       .waitForSelector('a.gnt_m_he[data-t-l*="|hero"] span.gnt_m_he__lc[data-tb-title]', {
         timeout: 20000,
@@ -680,13 +683,16 @@ async function scrapeUSATHero() {
       const span =
         a.querySelector('span.gnt_m_he__lc[data-tb-title]') ||
         a.querySelector("span.gnt_m_he__lc") ||
-        a.querySelector("[data-tb-title]");
+        a.querySelector("span.gnt_lbl_lc.gnt_m_he__lc") ||
+        a.querySelector("[data-tb-title]") ||
+        null;
 
       const title = clean(span?.textContent || "");
 
       const img =
         a.querySelector("img.gnt_m_he_i[src], img.gnt_m_he_i[srcset]") ||
-        a.querySelector("img[src], img[srcset]");
+        a.querySelector("img[src], img[srcset]") ||
+        null;
 
       let imgUrl = null;
       let imgAlt = null;
@@ -727,7 +733,7 @@ async function scrapeUSATHero() {
     let finalTitle = cleanText(hero?.title || "");
     let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
 
-    // og:image fallback if the tile image isn't present/parsable
+    // og:image fallback if tile doesn't expose an image URL.
     if (hero?.ok && finalUrl && !finalImgUrl) {
       try {
         const r = await page.request.get(finalUrl, { timeout: 20000 });
@@ -736,7 +742,9 @@ async function scrapeUSATHero() {
           /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
         );
         if (m?.[1]) finalImgUrl = normalizeUrl(m[1]);
-      } catch {}
+      } catch {
+        // ignore
+      }
     }
 
     const item = hero?.ok
@@ -774,7 +782,6 @@ async function scrapeUSATHero() {
     };
   });
 }
-
 
 // -------- Archive + Diff helpers (legacy top headlines) --------
 
@@ -839,8 +846,20 @@ function diffSnapshots(prevSnap, currSnap) {
   const changeLog = [
     ...added.map((x) => ({ type: "added", rank: x.rank, title: x.title, url: x.url })),
     ...removed.map((x) => ({ type: "removed", rank: x.rank, title: x.title, url: x.url })),
-    ...moved.map((x) => ({ type: "moved", fromRank: x.fromRank, toRank: x.toRank, title: x.title, url: x.url })),
-    ...retitled.map((x) => ({ type: "retitled", rank: x.rank, fromTitle: x.fromTitle, toTitle: x.toTitle, url: x.url })),
+    ...moved.map((x) => ({
+      type: "moved",
+      fromRank: x.fromRank,
+      toRank: x.toRank,
+      title: x.title,
+      url: x.url,
+    })),
+    ...retitled.map((x) => ({
+      type: "retitled",
+      rank: x.rank,
+      fromTitle: x.fromTitle,
+      toTitle: x.toTitle,
+      url: x.url,
+    })),
     ...slotChanged.map((x) => ({ type: "slotChanged", slotKey: x.slotKey, from: x.from, to: x.to })),
   ].sort((a, b) => {
     const ar = Number.isFinite(a.rank) ? a.rank : (Number.isFinite(a.toRank) ? a.toRank : 999);
