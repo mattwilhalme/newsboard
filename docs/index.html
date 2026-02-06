@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Newsboard</title>
 
+  <!-- Kill favicon 404s on GitHub Pages -->
   <link rel="icon" href="data:,">
 
   <style>
@@ -32,7 +33,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: var(--bg);
       color: var(--text);
     }
@@ -41,238 +42,266 @@
       position:sticky;
       top:0;
       z-index:20;
-      background: rgba(248,249,250,.94);
+      background: rgba(248,249,250,.92);
       backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .topbar{
       max-width:var(--maxw);
       margin:0 auto;
-      padding:12px 16px;
+      padding:11px 16px; /* trimmed */
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
       gap:12px;
     }
 
-    .brand .title{ font-weight:700; font-size:16px; }
-    .brand .sub{ font-size:12px; color:var(--muted); }
+    .brand{ display:flex; flex-direction:column; gap:2px; min-width: 240px; }
+    .brand .title{ font-weight:700; letter-spacing:.2px; font-size:16px; line-height:1.2; }
+    .brand .sub{ color:var(--muted); font-size:12px; }
 
-    .controls{ display:flex; gap:10px; }
+    .controls{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
 
     .tabs{
       display:inline-flex;
       border:1px solid var(--line);
-      background:#fff;
+      background: var(--card);
       border-radius:999px;
       overflow:hidden;
-      box-shadow:var(--shadow);
+      box-shadow: var(--shadow);
     }
     .tabs button{
       border:0;
       background:transparent;
+      color: var(--muted);
       font-size:12px;
-      padding:8px 12px;
+      padding:8px 12px; /* trimmed */
       cursor:pointer;
-      color:var(--muted);
+      user-select:none;
     }
     .tabs button.active{
-      color:var(--blue);
+      color: var(--blue);
       font-weight:700;
-      background:rgba(26,115,232,.08);
+      background: rgba(26,115,232,.08);
     }
 
     .btn{
       border:1px solid var(--line);
-      background:#fff;
+      background: var(--card);
+      color: var(--text);
       font-size:12px;
-      padding:8px 12px;
+      padding:8px 12px; /* trimmed */
       border-radius:999px;
       cursor:pointer;
-      box-shadow:var(--shadow);
+      user-select:none;
+      box-shadow: var(--shadow);
     }
+    .btn:hover{ border-color: rgba(26,115,232,.45); }
+    .btn:disabled{ opacity:.55; cursor:not-allowed; }
 
-    main{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:14px 16px 28px;
-    }
+    main{ max-width:var(--maxw); margin:0 auto; padding:14px 16px 26px; } /* trimmed */
 
     .grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
+      grid-template-columns: 1fr 1fr;
+      gap:12px; /* trimmed */
     }
-    @media (max-width:900px){
-      .grid{ grid-template-columns:1fr; }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
     }
 
     .card{
-      background:#fff;
+      background: var(--card);
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       overflow:hidden;
     }
 
-    /* CARD HEAD — publisher removed */
+    /* CardHead: remove publisher label; keep dot + time */
     .cardHead{
-      padding:10px 12px;
+      padding:10px 12px 9px; /* trimmed */
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
+      gap:12px;
       border-bottom:1px solid var(--line);
+      background: #ffffff;
     }
 
-    .srcLeft{
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
+    .srcTitle{ display:flex; align-items:center; gap:10px; min-width:0; }
+    .dot{ width:10px; height:10px; border-radius:999px; background: var(--warn); flex:0 0 auto; margin-top:2px; }
+    .dot.ok{ background: var(--ok); }
+    .dot.bad{ background: var(--bad); }
 
-    .dot{
-      width:10px;
-      height:10px;
-      border-radius:999px;
-      background:var(--warn);
-    }
-    .dot.ok{ background:var(--ok); }
-    .dot.bad{ background:var(--bad); }
+    .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+    .srcName{ font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .srcTime{ font-size:12px; color: var(--muted); white-space:nowrap; }
 
-    .srcTime{
-      font-size:12px;
-      color:var(--muted);
-      white-space:nowrap;
-    }
-
-    .since{
-      font-size:11px;
-      color:var(--muted);
-      white-space:nowrap;
-    }
+    .tiny{ font-size:11px; color: var(--muted); }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
     .cardBody{
-      padding:12px;
+      padding:12px; /* trimmed */
       display:flex;
-      gap:12px;
+      gap:12px; /* trimmed */
+      align-items:flex-start;
     }
 
     .thumb{
-      width:160px;
-      aspect-ratio:16/9;
-      border-radius:12px;
-      border:1px solid var(--line);
+      width:156px; /* trimmed */
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      background: #f1f3f4;
+      border: 1px solid var(--line);
       overflow:hidden;
-      background:#f1f3f4;
       flex:0 0 auto;
     }
-    .thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-    @media (max-width:520px){
+    @media (max-width: 520px){
       .cardBody{ flex-direction:column; }
       .thumb{ width:100%; }
     }
 
-    .headlineWrap{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
+    .headlineWrap{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; } /* trimmed */
 
-    /* Publisher label above headline */
     .pubLine{
+      font-weight:700;
       font-size:13px;
-      font-weight:700;
-      color:var(--muted);
+      color: var(--muted);
       letter-spacing:.15px;
-    }
-
-    .headline{
-      font-size:16px;
-      font-weight:700;
-      line-height:1.25;
-      margin:0;
-    }
-    .headline a{
-      color:var(--text);
-      text-decoration:none;
-    }
-    .headline a:hover{
-      color:var(--blue);
-      text-decoration:underline;
-    }
-
-    .row{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      align-items:center;
+      line-height:1.1;
       margin-top:2px;
     }
 
+    .headline{ font-size:16px; line-height:1.25; font-weight:700; margin:0; }
+    .headline a{ color: var(--text); text-decoration:none; }
+    .headline a:hover{ color: var(--blue); text-decoration: underline; }
+
+    .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+
     .pill{
-      padding:6px 10px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px; /* trimmed */
       border-radius:999px;
-      background:var(--chip);
+      background: var(--chip);
       border:1px solid var(--line);
+      color: var(--chipText);
       font-size:12px;
     }
 
     .linkbtn{
       border:1px solid var(--line);
-      background:#fff;
-      padding:6px 10px;
-      border-radius:999px;
+      background: var(--card);
+      color: var(--text);
       font-size:12px;
+      padding:6px 10px; /* trimmed */
+      border-radius:999px;
       cursor:pointer;
     }
+    .linkbtn:hover{ border-color: rgba(26,115,232,.45); color: var(--blue2); }
 
     .urlLine{
       display:flex;
-      gap:8px;
       align-items:center;
-      margin-top:2px;
+      gap:8px;
+      min-width:0;
     }
-
     .urlText{
-      flex:1;
+      min-width:0;
+      flex:1 1 auto;
       font-size:12px;
-      color:var(--muted);
+      color: var(--muted);
       border:1px solid var(--line);
-      border-radius:10px;
-      padding:6px 8px;
+      background: #fff;
+      border-radius: 10px;
+      padding:7px 9px; /* trimmed */
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
     }
 
-    .tiny{
-      font-size:11px;
-      color:var(--muted);
-    }
-
     .sectionTitle{
-      margin:14px 0 8px;
+      margin:12px 0 8px; /* trimmed */
       font-size:13px;
-      color:var(--muted);
+      letter-spacing:.2px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
     }
 
     .historyList{
-      padding:12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:12px; /* trimmed */
+    }
+    .historyItem{
+      border:1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding:10px; /* trimmed */
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .hThumb{
+      width:92px;
+      aspect-ratio:16/9;
+      border-radius:10px;
+      border:1px solid var(--line);
+      overflow:hidden;
+      background:#f1f3f4;
+      flex:0 0 auto;
+    }
+    .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .hBody{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:6px; }
+
+    .hPub{
+      font-weight:700;
+      font-size:12px;
+      color: var(--muted);
+      letter-spacing:.15px;
+      line-height:1.1;
+      margin:0;
+    }
+
+    .hTitle{
+      font-weight:700;
+      font-size:13px;
+      line-height:1.25;
+      margin:0;
+    }
+    .hTitle a{ color: var(--text); text-decoration:none; }
+    .hTitle a:hover{ color: var(--blue); text-decoration:underline; }
+
+    .hMeta{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; color: var(--muted); font-size:12px; }
+    .hChip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: var(--chip);
+      border:1px solid var(--line);
+      color: var(--chipText);
+      font-size:12px;
     }
 
     .errorBox{
       border:1px solid rgba(217,48,37,.35);
-      background:rgba(217,48,37,.06);
-      border-radius:var(--radius);
-      padding:10px 12px;
-      margin-bottom:12px;
+      background: rgba(217,48,37,.06);
+      color: var(--text);
+      border-radius: var(--radius);
+      padding:12px 14px;
+      margin-top:12px; /* trimmed */
       display:none;
     }
     .errorBox.show{ display:block; }
@@ -288,11 +317,11 @@
     </div>
 
     <div class="controls">
-      <div class="tabs">
-        <button id="tab-now" class="active">Now</button>
-        <button id="tab-unified">Unified</button>
+      <div class="tabs" role="tablist" aria-label="View">
+        <button id="tab-now" class="active" type="button">Now</button>
+        <button id="tab-unified" type="button">Unified</button>
       </div>
-      <button id="btn-refresh" class="btn">Refresh</button>
+      <button id="btn-refresh" class="btn" type="button">Refresh</button>
     </div>
   </div>
 </header>
@@ -302,31 +331,33 @@
 
   <section id="view-now">
     <div class="grid">
-
       <!-- ABC -->
       <div class="card">
         <div class="cardHead">
-          <div class="srcLeft">
+          <div class="srcTitle">
             <div class="dot" id="dot-abc"></div>
-            <div class="srcTime" id="time-abc">—</div>
+            <div class="srcMeta">
+              <!-- publisher removed here -->
+              <div class="srcTime" id="time-abc">—</div>
+            </div>
           </div>
-          <div class="since" id="since-abc">—</div>
+          <div class="tiny" id="since-abc">—</div>
         </div>
 
         <div class="cardBody">
-          <div class="thumb"><img id="img-abc" /></div>
+          <div class="thumb"><img id="img-abc" alt="" /></div>
           <div class="headlineWrap">
             <div class="pubLine">ABC News</div>
-            <h2 class="headline"><a id="link-abc">—</a></h2>
+            <h2 class="headline"><a id="link-abc" href="#" target="_blank" rel="noopener">—</a></h2>
 
             <div class="row">
               <span class="pill" id="status-abc">—</span>
-              <button class="linkbtn" id="copy-abc">Copy headline link</button>
+              <button class="linkbtn" id="copy-abc" type="button">Copy headline link</button>
             </div>
 
             <div class="urlLine">
-              <div class="urlText" id="url-abc">—</div>
-              <button class="linkbtn" id="copyurl-abc">Copy URL</button>
+              <div class="urlText mono" id="url-abc">—</div>
+              <button class="linkbtn" id="copyurl-abc" type="button">Copy URL</button>
             </div>
 
             <div class="tiny" id="err-abc"></div>
@@ -337,34 +368,60 @@
       <!-- CBS -->
       <div class="card">
         <div class="cardHead">
-          <div class="srcLeft">
+          <div class="srcTitle">
             <div class="dot" id="dot-cbs"></div>
-            <div class="srcTime" id="time-cbs">—</div>
+            <div class="srcMeta">
+              <!-- publisher removed here -->
+              <div class="srcTime" id="time-cbs">—</div>
+            </div>
           </div>
-          <div class="since" id="since-cbs">—</div>
+          <div class="tiny" id="since-cbs">—</div>
         </div>
 
         <div class="cardBody">
-          <div class="thumb"><img id="img-cbs" /></div>
+          <div class="thumb"><img id="img-cbs" alt="" /></div>
           <div class="headlineWrap">
             <div class="pubLine">CBS News</div>
-            <h2 class="headline"><a id="link-cbs">—</a></h2>
+            <h2 class="headline"><a id="link-cbs" href="#" target="_blank" rel="noopener">—</a></h2>
 
             <div class="row">
               <span class="pill" id="status-cbs">—</span>
-              <button class="linkbtn" id="copy-cbs">Copy headline link</button>
+              <button class="linkbtn" id="copy-cbs" type="button">Copy headline link</button>
             </div>
 
             <div class="urlLine">
-              <div class="urlText" id="url-cbs">—</div>
-              <button class="linkbtn" id="copyurl-cbs">Copy URL</button>
+              <div class="urlText mono" id="url-cbs">—</div>
+              <button class="linkbtn" id="copyurl-cbs" type="button">Copy URL</button>
             </div>
 
             <div class="tiny" id="err-cbs"></div>
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="sectionTitle">
+      <span>History</span>
+      <span class="tiny">Coming next (no <span class="mono">./data/history.json</span> yet)</span>
+    </div>
+
+    <div class="card">
+      <div class="historyList">
+        <div class="tiny" style="color:var(--muted);">
+          No history feed is being generated yet. This section will populate once the GitHub Action writes
+          <span class="mono">docs/data/history.json</span>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-unified" style="display:none;">
+    <div class="sectionTitle">
+      <span>Unified feed</span>
+      <span class="tiny">Reads <span class="mono">./data/unified.json</span></span>
+    </div>
+    <div class="card">
+      <div class="historyList" id="feed"></div>
     </div>
   </section>
 </main>
@@ -426,12 +483,14 @@
 
   function setDot(id, ok){
     const el = $(id);
+    if (!el) return;
     el.classList.remove("ok","bad");
     if (ok === true) el.classList.add("ok");
     else if (ok === false) el.classList.add("bad");
   }
 
   function safeImg(imgEl, url){
+    if (!imgEl) return;
     if (!url){
       imgEl.removeAttribute("src");
       imgEl.style.display = "none";
@@ -443,6 +502,7 @@
 
   function wireCopy(btnId, getText){
     const btn = $(btnId);
+    if (!btn) return;
     btn.onclick = async () => {
       const text = getText();
       if (!text) return;
@@ -465,32 +525,41 @@
     const updatedAt = src?.updatedAt || null;
 
     const timeLine = updatedAt ? `Updated ${fmtTimePT(updatedAt)}` : "Not updated yet";
-    $(`time-${prefix}`).textContent = timeLine;
+    const timeEl = $(`time-${prefix}`);
+    if (timeEl) timeEl.textContent = timeLine;
 
     const sinceISO = src?.since || null;
     const sinceText = sinceISO
       ? `Since ${fmtTimePT(sinceISO)} • ${durShort(sinceISO)}`
       : "Since —";
-    $(`since-${prefix}`).textContent = sinceText;
+    const sinceEl = $(`since-${prefix}`);
+    if (sinceEl) sinceEl.textContent = sinceText;
 
     const title = item?.title || "—";
     const url = item?.url || "";
     const imgUrl = item?.imgUrl || "";
 
     const link = $(`link-${prefix}`);
-    link.textContent = title;
-    link.href = url || "#";
+    if (link){
+      link.textContent = title;
+      link.href = url || "#";
+    }
 
     safeImg($(`img-${prefix}`), imgUrl);
 
-    $(`status-${prefix}`).textContent = ok ? "OK" : "Error";
-    $(`err-${prefix}`).textContent = ok ? "" : (src?.error || "Scrape failed");
+    const statusEl = $(`status-${prefix}`);
+    if (statusEl) statusEl.textContent = ok ? "OK" : "Error";
 
-    $(`url-${prefix}`).textContent = url || "—";
+    const errEl = $(`err-${prefix}`);
+    if (errEl) errEl.textContent = ok ? "" : (src?.error || "Scrape failed");
+
+    const urlEl = $(`url-${prefix}`);
+    if (urlEl) urlEl.textContent = url || "—";
   }
 
   function renderUnified(unified){
     const feed = $("feed");
+    if (!feed) return; // prevents null.innerHTML
     feed.innerHTML = "";
 
     const items = Array.isArray(unified?.items) ? unified.items : [];
@@ -518,7 +587,6 @@
       const body = document.createElement("div");
       body.className = "hBody";
 
-      // Publisher line above headline (same idea as main cards)
       const pub = document.createElement("p");
       pub.className = "hPub";
       const src = (it.source || "").toString().toUpperCase();
@@ -556,10 +624,13 @@
   function setView(which){
     const now = $("view-now");
     const uni = $("view-unified");
-    $("tab-now").classList.toggle("active", which === "now");
-    $("tab-unified").classList.toggle("active", which === "unified");
-    now.style.display = which === "now" ? "" : "none";
-    uni.style.display = which === "unified" ? "" : "none";
+    const tabNow = $("tab-now");
+    const tabUni = $("tab-unified");
+
+    if (tabNow) tabNow.classList.toggle("active", which === "now");
+    if (tabUni) tabUni.classList.toggle("active", which === "unified");
+    if (now) now.style.display = which === "now" ? "" : "none";
+    if (uni) uni.style.display = which === "unified" ? "" : "none";
   }
 
   $("tab-now").addEventListener("click", () => setView("now"));
@@ -567,7 +638,8 @@
 
   async function loadAll(){
     setError("");
-    $("btn-refresh").disabled = true;
+    const refreshBtn = $("btn-refresh");
+    if (refreshBtn) refreshBtn.disabled = true;
 
     try{
       const [current, unified] = await Promise.all([
@@ -582,14 +654,14 @@
     } catch (e){
       setError(String(e.message || e));
     } finally {
-      $("btn-refresh").disabled = false;
+      if (refreshBtn) refreshBtn.disabled = false;
     }
   }
 
-  wireCopy("copy-abc", () => $("link-abc").href && $("link-abc").href !== "#" ? $("link-abc").href : "");
-  wireCopy("copy-cbs", () => $("link-cbs").href && $("link-cbs").href !== "#" ? $("link-cbs").href : "");
-  wireCopy("copyurl-abc", () => $("url-abc").textContent && $("url-abc").textContent !== "—" ? $("url-abc").textContent : "");
-  wireCopy("copyurl-cbs", () => $("url-cbs").textContent && $("url-cbs").textContent !== "—" ? $("url-cbs").textContent : "");
+  wireCopy("copy-abc", () => $("link-abc")?.href && $("link-abc").href !== "#" ? $("link-abc").href : "");
+  wireCopy("copy-cbs", () => $("link-cbs")?.href && $("link-cbs").href !== "#" ? $("link-cbs").href : "");
+  wireCopy("copyurl-abc", () => $("url-abc")?.textContent && $("url-abc").textContent !== "—" ? $("url-abc").textContent : "");
+  wireCopy("copyurl-cbs", () => $("url-cbs")?.textContent && $("url-cbs").textContent !== "—" ? $("url-cbs").textContent : "");
 
   $("btn-refresh").addEventListener("click", loadAll);
   loadAll();
