@@ -599,10 +599,28 @@
         }
       }
 
+      function activityTime(x){
+        const t = Date.parse(x?.lastSeenAt || x?.firstSeenAt || "");
+        return Number.isFinite(t) ? t : 0;
+      }
+
       rows.sort((a,b) => {
-        const ta = new Date(a.lastSeenAt || a.firstSeenAt || 0).getTime();
-        const tb = new Date(b.lastSeenAt || b.firstSeenAt || 0).getTime();
-        return tb - ta;
+        const ta = activityTime(a);
+        const tb = activityTime(b);
+        if (tb !== ta) return tb - ta;
+
+        // Deterministic tie-breakers so ordering is stable.
+        const sa = String(a.source || "");
+        const sb = String(b.source || "");
+        if (sa !== sb) return sa.localeCompare(sb);
+
+        const ua = String(a.url || "");
+        const ub = String(b.url || "");
+        if (ua !== ub) return ua.localeCompare(ub);
+
+        const tla = String(a.title || "");
+        const tlb = String(b.title || "");
+        return tla.localeCompare(tlb);
       });
 
       if (!rows.length){
