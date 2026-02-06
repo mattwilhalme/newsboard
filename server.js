@@ -628,7 +628,7 @@ async function scrapeUSATHero() {
     }, { timeout: 25000 }).catch(() => {});
     await page.waitForTimeout(600);
 
-    // Wait for the exact hero pattern you've shared:
+    // Wait for exact hero pattern you've shared:
     // <a class="gnt_m_he gnt_m_he__br" data-t-l="...|hero"> ... <span class="gnt_m_he__lc" data-tb-title>...</span>
     await page
       .waitForSelector('a.gnt_m_he[data-t-l*="|hero"] span.gnt_m_he__lc[data-tb-title]', {
