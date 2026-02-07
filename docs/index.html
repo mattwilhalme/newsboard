@@ -459,6 +459,7 @@
     // Locally: we can do both (GET cache.json OR POST /api/refresh).
     const CACHE_URL = "./cache.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
+    const HISTORY_WINDOW_HOURS = 12;
 
     function fmtTime(ts) {
       if (!ts) return "—";
@@ -693,15 +694,22 @@
       if (!host) return;
       host.innerHTML = "";
 
+      const cutoffMs = Date.now() - (HISTORY_WINDOW_HOURS * 60 * 60 * 1000);
+      function inWindow(x){
+        const t = Date.parse(x?.lastSeenAt || x?.firstSeenAt || "");
+        return Number.isFinite(t) ? t >= cutoffMs : false;
+      }
+
       const sources = history && typeof history === "object" && history.sources && typeof history.sources === "object" ? history.sources : {};
       const rows = [];
       for (const [source, obj] of Object.entries(sources)){
         const entries = Array.isArray(obj?.entries) ? obj.entries : [];
-        for (let i = 0; i < entries.length; i++){
-          const e = entries[i];
+        const filtered = entries.filter(inWindow);
+        for (let i = 0; i < filtered.length; i++){
+          const e = filtered[i];
           if (!e || !e.url) continue;
 
-          const prev = i - 1 >= 0 ? entries[i - 1] : null;
+          const prev = i - 1 >= 0 ? filtered[i - 1] : null;
           const isHeadlineChange = Boolean(prev && prev.url === e.url && String(prev.title || "") !== String(e.title || ""));
           const isNewUrl = Boolean(!prev || prev.url !== e.url);
 
