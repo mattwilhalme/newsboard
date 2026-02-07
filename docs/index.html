@@ -255,13 +255,12 @@
     <div class="topbar">
       <div class="brand">
         <div class="title">Newsboard</div>
-        <div class="sub" id="subline">Top story tracker (published cache.json)</div>
+        <div class="sub" id="subline">Top story tracker</div>
       </div>
 
       <div class="controls">
-        <button id="btn-reload" class="btn" type="button">Reload</button>
+        <button id="btn-reload" class="btn" type="button">Refresh</button>
         <button id="btn-history" class="btn" type="button">History</button>
-        <button id="btn-run" class="btn" type="button" style="display:none;">Run scrape (local)</button>
       </div>
     </div>
   </header>
@@ -275,7 +274,6 @@
     <div class="drawerHead">
       <div>
         <div class="drawerTitle">History</div>
-        <div class="tiny">Reads <span class="mono">./data/history.json</span></div>
       </div>
       <button id="btn-history-close" class="btn" type="button">Close</button>
     </div>
@@ -921,7 +919,7 @@
             data = sb.cacheLike;
             history = sb.history;
             usingSupabase = true;
-            $("subline").textContent = "Supabase views";
+            $("subline").textContent = "We're live";
           }
         } catch (e){
           console.warn("Supabase load failed, falling back to JSON", e);
@@ -958,8 +956,8 @@
         renderHistory(history);
 
       } catch (e) {
-        console.error("Reload error:", e);
-        showToast("Reload failed");
+        console.error("Refresh error:", e);
+        showToast("Refresh failed");
       } finally {
         $("btn-reload").disabled = false;
       }
