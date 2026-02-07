@@ -350,9 +350,9 @@ function ensureCacheShape(raw) {
     sources: {
       abc: baseSource("abc", "ABC News", "https://abcnews.go.com/"),
       cbs: baseSource("cbs", "CBS News", "https://www.cbsnews.com/"),
-      abc1: baseSource("abc1", "ABC News (Hero)", "https://abcnews.go.com/"),
-      cbs1: baseSource("cbs1", "CBS News (Hero)", "https://www.cbsnews.com/"),
-      usat1: baseSource("usat1", "USA Today (Hero)", "https://www.usatoday.com/"),
+      abc1: baseSource("abc1", "ABC News", "https://abcnews.go.com/"),
+      cbs1: baseSource("cbs1", "CBS News", "https://www.cbsnews.com/"),
+      usat1: baseSource("usat1", "USA Today", "https://www.usatoday.com/"),
     },
   };
 
