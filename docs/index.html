@@ -872,34 +872,30 @@ if (src?.ok) {
       const stale2h = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
 
       if (!ok) status.textContent = "Failed";
-      else if (stale2h) status.textContent = "Stale (2h+ no change)";
-      else status.textContent = "OK";
+else if (stale2h) status.textContent = "Stale";
+else {
+  // hide status when OK
+  status.textContent = "";
+  status.style.display = "none";
+}
 
       const btnCopyLink = document.createElement("button");
       btnCopyLink.className = "linkbtn";
       btnCopyLink.type = "button";
-      btnCopyLink.textContent = "Copy headline link";
+      btnCopyLink.textContent = "Copy";
       btnCopyLink.setAttribute("data-action", "copy-headline");
       btnCopyLink.setAttribute("data-id", id);
 
       row.appendChild(status);
       row.appendChild(btnCopyLink);
-
-      const urlLine = document.createElement("div");
-      urlLine.className = "urlLine";
-
-      const urlText = document.createElement("div");
-      urlText.className = "urlText mono";
-      urlText.textContent = src?.item?.url || "—";
-      urlText.setAttribute("data-role", "url-text");
-      urlText.setAttribute("data-id", id);
+      row.appendChild(btnCopyUrl);
 
       const btnCopyUrl = document.createElement("button");
       btnCopyUrl.className = "linkbtn";
       btnCopyUrl.type = "button";
-      btnCopyUrl.textContent = "Copy URL";
-      btnCopyUrl.setAttribute("data-action", "copy-url");
-      btnCopyUrl.setAttribute("data-id", id);
+btnCopyUrl.textContent = "Copy URL";
+btnCopyUrl.setAttribute("data-action", "copy-url");
+btnCopyUrl.setAttribute("data-id", id);
 
       urlLine.appendChild(urlText);
       urlLine.appendChild(btnCopyUrl);
@@ -967,11 +963,12 @@ if (src?.ok) {
       }
 
       if (action === "copy-url") {
-        const el = document.querySelector(`div[data-role="url-text"][data-id="${CSS.escape(id)}"]`);
-        const txt = el && el.textContent && el.textContent !== "—" ? el.textContent : "";
-        if (!txt) return showToast("Nothing to copy");
-        try { await copyText(txt); showToast("Copied"); } catch { showToast("Copy failed"); }
-      }
+    const link = document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`);
+    const href = link && link.href && link.href !== "#" ? link.href : "";
+  if (!href) return showToast("Nothing to copy");
+  try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
+}
+
     });
 
     async function loadPublishedCache() {
