@@ -521,10 +521,12 @@
       if (!open && btn) btn.focus();
     }
 
-    function setDot(id, ok) {
+    function setDot(id, ok, changeType) {
       const el = $("dot-" + id);
-      el.classList.remove("ok", "bad");
-      if (ok === true) el.classList.add("ok");
+      el.classList.remove("ok", "bad", "info");
+      if (changeType === "url") el.classList.add("ok");
+      else if (changeType === "headline") el.classList.add("info");
+      else if (ok === true) el.classList.add("ok");
       else if (ok === false) el.classList.add("bad");
     }
 
@@ -546,7 +548,7 @@
       }
     }
 
-    function renderSource(id, src) {
+    function renderSource(id, src, history) {
       const t = src?.updatedAt || null;
       $("time-" + id).textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
       $("err-" + id).textContent = src?.error ? String(src.error) : "";
@@ -558,8 +560,36 @@
 
       setImg(id, src?.item?.imgUrl || null);
 
+      // Determine change type from history for dot color
+      let changeType = null;
+      if (src?.ok && history?.sources?.[id]?.entries?.length > 0) {
+        const entries = history.sources[id].entries;
+        // Find most recent entry that is NOT the current item (by checking if it matches current)
+        const currentUrl = src?.item?.url;
+        const currentTitle = src?.item?.title;
+        // Look for a previous entry (different URL or older)
+        let prevEntry = null;
+        for (let i = entries.length - 1; i >= 0; i--) {
+          const e = entries[i];
+          if (e.url !== currentUrl || e.title !== currentTitle) {
+            prevEntry = e;
+            break;
+          }
+        }
+        if (prevEntry) {
+          if (prevEntry.url !== currentUrl) changeType = "url";
+          else if (prevEntry.url === currentUrl && prevEntry.title !== currentTitle) changeType = "headline";
+        } else {
+          // No previous entry found - this is a new story
+          changeType = "url";
+        }
+      }
+
       if (src?.ok) setStatus(id, "OK", true);
       else setStatus(id, "Stale / Failed", false);
+
+      // Set dot based on change type (green=url, blue=headline) or ok/bad fallback
+      setDot(id, src?.ok, changeType);
 
       const sinceEl = $("since-" + id);
       if (src?.ok && src?.firstSeenAt) sinceEl.textContent = `First seen ${ago(src.firstSeenAt)}`;
@@ -907,9 +937,9 @@
             : "Published cache.json";
         }
 
-        renderSource("abc1", data?.sources?.abc1);
-        renderSource("cbs1", data?.sources?.cbs1);
-        renderSource("usat1", data?.sources?.usat1);
+        renderSource("abc1", data?.sources?.abc1, history);
+        renderSource("cbs1", data?.sources?.cbs1, history);
+        renderSource("usat1", data?.sources?.usat1, history);
 
         if (!history) {
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
