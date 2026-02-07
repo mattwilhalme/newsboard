@@ -93,6 +93,11 @@
       .grid{ grid-template-columns: 1fr; }
     }
 
+    /* explicit placement so DOM order always becomes 1-2-3 / 4-5-6 ... */
+    .card[data-order]{
+      /* default; actual placement is set inline by JS */
+    }
+
     .card{
       background: var(--card);
       border:1px solid var(--line);
@@ -368,11 +373,11 @@
       if (n) return String(n);
 
       const s = String(k || "").toLowerCase();
-      if (s === "abc" || s === "abc1") return "ABC News";
-      if (s === "cbs" || s === "cbs1") return "CBS News";
-      if (s === "usat" || s === "usat1") return "USA Today";
-      if (s === "nbc" || s === "nbc1") return "NBC News";
-      if (s === "cnn" || s === "cnn1") return "CNN";
+      if (s === "abc1") return "ABC News";
+      if (s === "cbs1") return "CBS News";
+      if (s === "usat1") return "USA Today";
+      if (s === "nbc1") return "NBC News";
+      if (s === "cnn1") return "CNN";
       return k || "Source";
     }
 
@@ -433,7 +438,7 @@
         .from("v_history_hero_stories")
         .select("*")
         .order("last_seen_at", { ascending: false })
-        .limit(250);
+        .limit(300);
       if (hist.error) throw hist.error;
 
       const sources = {};
@@ -664,8 +669,24 @@
     }
 
     function pickCardSourceIds(){
-      // Always show these five, in this order.
+      // fixed ordering: 1..N in row-major
       return ["abc1","cbs1","usat1","nbc1","cnn1"];
+    }
+
+    function applyGridOrder(el, index){
+      // Row-major placement for 3 columns:
+      // index 0 => row 1 col 1; 1 => row 1 col 2; 2 => row 1 col 3;
+      // 3 => row 2 col 1; 4 => row 2 col 2; etc.
+      const colCount =
+        window.matchMedia("(max-width: 640px)").matches ? 1 :
+        window.matchMedia("(max-width: 980px)").matches ? 2 : 3;
+
+      const row = Math.floor(index / colCount) + 1;
+      const col = (index % colCount) + 1;
+
+      el.style.gridRowStart = String(row);
+      el.style.gridColumnStart = String(col);
+      el.dataset.order = String(index + 1);
     }
 
     function buildCardEl(id, src, indicator){
@@ -812,7 +833,7 @@
 
       const ids = pickCardSourceIds();
 
-      for (const id of ids){
+      ids.forEach((id, idx) => {
         const src = sources?.[id] || {
           ok: false,
           updatedAt: null,
@@ -820,8 +841,18 @@
           item: { title: "—", url: null, imgUrl: null },
         };
         const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
-        grid.appendChild(buildCardEl(id, src, ind));
-      }
+
+        const el = buildCardEl(id, src, ind);
+        applyGridOrder(el, idx);
+        grid.appendChild(el);
+      });
+    }
+
+    function rerankCardsOnResize(){
+      const grid = $("cards-grid");
+      if (!grid) return;
+      const cards = Array.from(grid.querySelectorAll(".card"));
+      cards.forEach((el, idx) => applyGridOrder(el, idx));
     }
 
     document.addEventListener("click", async (e) => {
@@ -886,7 +917,6 @@
         }
 
         renderCards(sources, indicators);
-
         if (nextState) saveState(nextState);
 
         if (!history) {
@@ -932,6 +962,11 @@
       $("btn-run").style.display = "inline-block";
       $("btn-run").addEventListener("click", runScrapeLocal);
     }
+
+    window.addEventListener("resize", () => {
+      clearTimeout(window.__nbResizeT);
+      window.__nbResizeT = setTimeout(rerankCardsOnResize, 80);
+    });
 
     reload();
   </script>
