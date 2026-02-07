@@ -38,6 +38,8 @@ jobs:
       - name: Run scraper
         env:
           NODE_ENV: production
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node server.js --refresh
 
       - name: Copy cache.json to docs
@@ -46,12 +48,22 @@ jobs:
       - name: Build history/unified/current (docs/data)
         env:
           NODE_ENV: production
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node scripts/run-scrape.js
+
+      - name: Write Supabase public config for Pages
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          node -e "const fs=require('fs'); const url=process.env.SUPABASE_URL||''; const key=process.env.SUPABASE_ANON_KEY||''; if(!url||!key){console.error('Missing SUPABASE_URL or SUPABASE_ANON_KEY'); process.exit(1);} fs.writeFileSync('docs/supabase.json', JSON.stringify({ url, anonKey: key }, null, 2));"
 
       - name: Verify output files exist
         run: |
           test -d docs || (echo "Missing docs/ directory" && exit 1)
           test -f docs/cache.json || (echo "Missing docs/cache.json" && exit 1)
+          test -f docs/supabase.json || (echo "Missing docs/supabase.json" && exit 1)
           test -f docs/data/history.json || (echo "Missing docs/data/history.json" && exit 1)
           test -f docs/data/unified.json || (echo "Missing docs/data/unified.json" && exit 1)
           test -f docs/data/current.json || (echo "Missing docs/data/current.json" && exit 1)
@@ -64,6 +76,7 @@ jobs:
           git config user.email "newsboard-bot@users.noreply.github.com"
 
           git add -f docs/cache.json
+          git add -f docs/supabase.json
           git add -f docs/data/history.json docs/data/unified.json docs/data/current.json
 
           if git diff --cached --quiet; then

@@ -458,6 +458,7 @@
     // On GitHub Pages: read published cache.json via GET.
     // Locally: we can do both (GET cache.json OR POST /api/refresh).
     const CACHE_URL = "./cache.json";
+    const SUPABASE_CONFIG_URL = "./supabase.json";
 
     function fmtTime(ts) {
       if (!ts) return "—";
@@ -570,6 +571,79 @@
       const text = await r.text();
       try { return JSON.parse(text); }
       catch { throw new Error(text || `HTTP ${r.status}`); }
+    }
+
+    async function loadSupabaseConfig(){
+      try{
+        const cfg = await fetchJSON(`${SUPABASE_CONFIG_URL}?ts=${Date.now()}`);
+        if (!cfg || !cfg.url || !cfg.anonKey) return null;
+        return { url: String(cfg.url), anonKey: String(cfg.anonKey) };
+      } catch {
+        return null;
+      }
+    }
+
+    async function loadFromSupabase(){
+      const cfg = await loadSupabaseConfig();
+      if (!cfg) return null;
+
+      const mod = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm");
+      const supabase = mod.createClient(cfg.url, cfg.anonKey);
+
+      // Current cards
+      const cur = await supabase.from("v_current_hero_since").select("*");
+      if (cur.error) throw cur.error;
+
+      // Unified feed (future use)
+      // const uni = await supabase.from("v_unified_hero_feed").select("*").order("observed_at", { ascending: false }).limit(100);
+
+      // History rollup
+      const hist = await supabase
+        .from("v_history_hero_stories")
+        .select("*")
+        .order("last_seen_at", { ascending: false })
+        .limit(200);
+      if (hist.error) throw hist.error;
+
+      const sources = {};
+      for (const row of (cur.data || [])){
+        const id = String(row.source_id || row.id || "");
+        if (!id) continue;
+        sources[id] = {
+          ok: row.ok !== false,
+          updatedAt: row.observed_at || row.updated_at || row.last_seen_at || null,
+          error: row.error || null,
+          runId: row.run_id || null,
+          item: {
+            title: row.title || null,
+            url: row.url || null,
+            imgUrl: row.img_url || row.imgUrl || null,
+          },
+        };
+      }
+
+      const historyObj = { generatedAt: new Date().toISOString(), sources: {} };
+      for (const row of (hist.data || [])){
+        const id = String(row.source_id || row.id || "");
+        if (!id) continue;
+        if (!historyObj.sources[id]) historyObj.sources[id] = { entries: [] };
+        historyObj.sources[id].entries.push({
+          url: row.url || null,
+          title: row.title || null,
+          imgUrl: row.img_url || null,
+          firstSeenAt: row.first_seen_at || null,
+          lastSeenAt: row.last_seen_at || row.observed_at || null,
+          seenCount: row.seen_count || null,
+        });
+      }
+
+      return {
+        cacheLike: {
+          generatedAt: new Date().toISOString(),
+          sources,
+        },
+        history: historyObj,
+      };
     }
 
     function sourceLabel(k){
@@ -753,17 +827,34 @@
     async function reload() {
       $("btn-reload").disabled = true;
       try {
-        const data = await loadPublishedCache();
+        let data = null;
+        let history = null;
 
-        $("subline").textContent = data?.generatedAt
-          ? `Published cache.json · generated ${fmtTime(data.generatedAt)}`
-          : "Published cache.json";
+        try{
+          const sb = await loadFromSupabase();
+          if (sb?.cacheLike) {
+            data = sb.cacheLike;
+            history = sb.history;
+            $("subline").textContent = "Supabase views";
+          }
+        } catch (e){
+          console.warn("Supabase load failed, falling back to JSON", e);
+        }
+
+        if (!data) {
+          data = await loadPublishedCache();
+          $("subline").textContent = data?.generatedAt
+            ? `Published cache.json · generated ${fmtTime(data.generatedAt)}`
+            : "Published cache.json";
+        }
 
         renderSource("abc1", data?.sources?.abc1);
         renderSource("cbs1", data?.sources?.cbs1);
         renderSource("usat1", data?.sources?.usat1);
 
-        const history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
+        if (!history) {
+          history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
+        }
         renderHistory(history);
       } catch (e) {
         console.error("Reload error:", e);
