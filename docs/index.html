@@ -489,6 +489,19 @@
       return `${d}d ago`;
     }
 
+    function fmtDurationSeconds(seconds){
+      const s0 = Number(seconds);
+      if (!Number.isFinite(s0) || s0 < 0) return "—";
+      const s = Math.floor(s0);
+      if (s < 60) return `${s}s`;
+      const m = Math.floor(s / 60);
+      if (m < 60) return `${m}m`;
+      const h = Math.floor(m / 60);
+      if (h < 48) return `${h}h`;
+      const d = Math.floor(h / 24);
+      return `${d}d`;
+    }
+
     function showToast(text) {
       const el = $("toast");
       el.textContent = text;
@@ -549,7 +562,10 @@
       else setStatus(id, "Stale / Failed", false);
 
       const sinceEl = $("since-" + id);
-      sinceEl.textContent = src?.ok && src?.updatedAt ? `Updated ${ago(src.updatedAt)}` : "—";
+      if (src?.ok && src?.firstSeenAt) sinceEl.textContent = `First seen ${ago(src.firstSeenAt)}`;
+      else if (src?.ok && src?.secondsInTop !== null && src?.secondsInTop !== undefined) sinceEl.textContent = `In top ${fmtDurationSeconds(src.secondsInTop)}`;
+      else if (src?.ok && src?.updatedAt) sinceEl.textContent = `Updated ${ago(src.updatedAt)}`;
+      else sinceEl.textContent = "—";
     }
 
     function wireCopy(btnId, getText) {
@@ -620,9 +636,15 @@
       for (const row of (cur.data || [])){
         const id = String(row.source_id || row.id || "");
         if (!id) continue;
+
+        const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "since_at", "current_since_at"]);
+        const secondsInTop = pick(row, ["seconds_in_top", "secondsInTop", "seconds_in_slot", "seconds_in_current"]); 
+
         sources[id] = {
           ok: row.ok !== false,
           updatedAt: row.observed_at || row.updated_at || row.last_seen_at || null,
+          firstSeenAt,
+          secondsInTop,
           error: row.error || null,
           runId: row.run_id || null,
           item: {
