@@ -287,7 +287,6 @@
   </header>
 
   <main>
-    <!-- Dynamic cards render here -->
     <div class="grid" id="cards-grid"></div>
   </main>
 
@@ -384,7 +383,11 @@
       if (!open && btn) btn.focus();
     }
 
-    function sourceLabel(k){
+    function sourceLabel(k, row){
+      // Prefer DB-provided names if available
+      const n = row?.sourceName || row?.name || null;
+      if (n) return String(n);
+
       const s = String(k || "").toLowerCase();
       if (s === "abc" || s === "abc1") return "ABC News";
       if (s === "cbs" || s === "cbs1") return "CBS News";
@@ -449,7 +452,7 @@
         return null;
       }
 
-      // Current cards
+      // Current cards (DB-authoritative: includes change_type + is_stale if your view has them)
       const cur = await supabase.from("v_current_hero_since").select("*");
       if (cur.error) throw cur.error;
 
@@ -476,6 +479,13 @@
           secondsInTop,
           error: row.error || null,
           runId: row.run_id || null,
+
+          // Prefer view fields if present
+          sourceName: row.source_name || row.sourceName || row.name || null,
+          changeType: row.change_type || row.changeType || null,
+          isStale: Boolean(row.is_stale ?? row.isStale ?? false),
+          lastChangeAt: row.last_change_at || row.lastChangeAt || null,
+
           item: {
             title: row.title || null,
             url: row.url || null,
@@ -608,7 +618,7 @@
         meta.className = "srcMeta";
         const name = document.createElement("div");
         name.className = "srcName";
-        name.textContent = sourceLabel(it.source);
+        name.textContent = sourceLabel(it.source, null);
         meta.appendChild(name);
         left.appendChild(meta);
 
@@ -682,7 +692,7 @@
       }
     }
 
-    // ---- NEW: per-source state for lights + 2h stale ----
+    // ---- Browser fallback: per-source state for lights + 2h stale ----
     function loadState(){
       try{
         const raw = localStorage.getItem("nb_source_state_v2");
@@ -700,19 +710,16 @@
       } catch {}
     }
 
-    // Returns:
-    // { indicators: { [id]: { changeType: "url"|"headline"|null, stale2h: boolean } }, nextState }
+    // Fallback-only indicators (used when DB view doesn't provide change_type/is_stale)
     function computeIndicators(nextSources){
       const prevState = loadState();
       const nextState = { ...prevState };
       const indicators = {};
-
       const now = Date.now();
 
       for (const [id, src] of Object.entries(nextSources || {})){
         const curUrl = src?.item?.url || null;
         const curTitle = src?.item?.title || null;
-
         const prev = prevState?.[id] || null;
 
         let changeType = null;
@@ -729,7 +736,6 @@
             changeType = "headline";
             nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
           } else {
-            // No change: keep lastChangeAt as-is
             if (!nextState[id]) nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
           }
         }
@@ -745,7 +751,6 @@
 
     // ---- Dynamic cards ----
     function pickCardSourceIds(sources){
-      // Prefer "hero-like" sources (have item.url/title). Fall back to any keys.
       const ids = Object.keys(sources || {});
       const heroish = ids.filter((id) => sources?.[id]?.item?.url);
       return heroish.length ? heroish : ids;
@@ -776,7 +781,7 @@
 
       const srcName = document.createElement("div");
       srcName.className = "srcName";
-      srcName.textContent = sourceLabel(id);
+      srcName.textContent = sourceLabel(id, src);
 
       meta.appendChild(srcName);
       left.appendChild(dot);
@@ -835,7 +840,9 @@
       status.className = "pill";
 
       const ok = (src?.ok !== false);
-      const stale2h = Boolean(indicator?.stale2h);
+
+      // Use DB isStale if present, else fallback stale2h from indicator
+      const stale2h = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
 
       if (!ok) status.textContent = "Failed";
       else if (stale2h) status.textContent = "Stale (2h+ no change)";
@@ -885,8 +892,12 @@
       card.appendChild(head);
       card.appendChild(body);
 
-      // Apply dot after DOM exists
-      setDot(dot, src?.ok !== false ? true : false, indicator?.changeType || null, stale2h);
+      // Determine change type:
+      // Prefer DB view changeType/isStale; fallback to browser indicator.
+      const effectiveChangeType = (src?.isStale ? null : (src?.changeType || null)) ?? (indicator?.changeType || null);
+      const effectiveStale = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
+
+      setDot(dot, ok, effectiveChangeType, effectiveStale);
 
       return card;
     }
@@ -898,7 +909,6 @@
 
       const ids = pickCardSourceIds(sources);
 
-      // Sort by latest updatedAt / firstSeenAt
       ids.sort((a,b) => {
         const ta = tsForSort(sources, a);
         const tb = tsForSort(sources, b);
@@ -913,7 +923,7 @@
       }
     }
 
-    // Event delegation for copy buttons (works with dynamic cards)
+    // Copy handlers (works with dynamic cards)
     document.addEventListener("click", async (e) => {
       const btn = e.target && e.target.closest ? e.target.closest("button[data-action]") : null;
       if (!btn) return;
@@ -946,12 +956,14 @@
       try {
         let data = null;
         let history = null;
+        let usingSupabase = false;
 
         try{
           const sb = await loadFromSupabase();
           if (sb?.cacheLike) {
             data = sb.cacheLike;
             history = sb.history;
+            usingSupabase = true;
             $("subline").textContent = "Supabase views";
           }
         } catch (e){
@@ -967,14 +979,24 @@
 
         const sources = data?.sources || {};
 
-        // Compute indicator lights + stale2h
-        const { indicators, nextState } = computeIndicators(sources);
+        // Indicators:
+        // - If DB view provides changeType/isStale, use them.
+        // - Otherwise fallback to browser-local indicators.
+        let indicators = {};
+        let nextState = null;
 
-        // Render cards dynamically (position order = most recent update)
+        const anyDbFields =
+          Object.values(sources).some((s) => (s && (s.changeType || s.isStale || s.lastChangeAt)));
+
+        if (!usingSupabase || !anyDbFields) {
+          const res = computeIndicators(sources);
+          indicators = res.indicators;
+          nextState = res.nextState;
+        }
+
         renderCards(sources, indicators);
 
-        // Persist state for next reload (drives blue/green + stale)
-        saveState(nextState);
+        if (nextState) saveState(nextState);
 
         if (!history) {
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
@@ -1024,7 +1046,6 @@
       $("btn-run").addEventListener("click", runScrapeLocal);
     }
 
-    // Initial load (Pages-safe)
     reload();
   </script>
 </body>
