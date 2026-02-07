@@ -705,7 +705,7 @@ async function scrapeABCHero() {
       const h2 = document.querySelector(
         'main a[data-testid="prism-linkbase"][href] h2[id$="headline"]'
       );
-      if (!h2) return { ok: false, error: "ABC hero headline not found" };
+      if (!h2) return { ok: false, error: "ABC headline not found" };
 
       const a = h2.closest('a[data-testid="prism-linkbase"][href]');
       const title = clean(h2.textContent);
@@ -775,7 +775,7 @@ async function scrapeABCHero() {
       runId,
       item,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "ABC hero not found"),
+      error: item ? null : (hero?.error || "ABC not found"),
     };
 
     const archive = await archiveRun(page, runId, snapshot);
@@ -829,7 +829,7 @@ async function scrapeCBSHero() {
       const article =
         firstAnchor?.closest("article.item") || document.querySelector("article.item");
 
-      if (!article) return { ok: false, error: "CBS hero article.item not found" };
+      if (!article) return { ok: false, error: "CBS article.item not found" };
 
       const a = article.querySelector("a.item__anchor[href]");
       const h = article.querySelector("h4.item__hed");
@@ -877,7 +877,7 @@ async function scrapeCBSHero() {
       runId,
       item,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "CBS hero not found"),
+      error: item ? null : (hero?.error || "CBS not found"),
     };
 
     const archive = await archiveRun(page, runId, snapshot);
@@ -952,7 +952,7 @@ async function scrapeUSATHero() {
       if (!a) {
         return {
           ok: false,
-          error: "USA Today hero anchor not found (a.gnt_m_he).",
+          error: "USA Today anchor not found (a.gnt_m_he).",
           debug: {
             hasAnyGntHero: Boolean(document.querySelector("a.gnt_m_he")),
             hasAnyHeroTL: Boolean(document.querySelector('a.gnt_m_he[data-t-l*="|hero"]')),
@@ -1047,7 +1047,7 @@ async function scrapeUSATHero() {
       runId,
       item,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "USA Today hero not found"),
+      error: item ? null : (hero?.error || "USA Today not found"),
       debug: hero?.debug || null,
     };
 
