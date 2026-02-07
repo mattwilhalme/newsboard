@@ -796,11 +796,48 @@
       time.textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
 
       const since = document.createElement("div");
-      since.className = "tiny";
-      if (src?.ok && src?.firstSeenAt) since.textContent = `First seen ${ago(src.firstSeenAt)}`;
-      else if (src?.ok && src?.secondsInTop !== null && src?.secondsInTop !== undefined) since.textContent = `In top ${fmtDurationSeconds(src.secondsInTop)}`;
-      else if (src?.ok && src?.updatedAt) since.textContent = `Updated ${ago(src.updatedAt)}`;
-      else since.textContent = "—";
+since.className = "tiny";
+
+if (src?.ok) {
+  const hasTop = src?.secondsInTop !== null && src?.secondsInTop !== undefined;
+  const hasFirst = Boolean(src?.firstSeenAt);
+
+  const topSec = hasTop ? Number(src.secondsInTop) : null;
+
+  // Estimate "seconds since first seen" to compare with secondsInTop
+  const firstMs = hasFirst ? Date.parse(src.firstSeenAt) : NaN;
+  const firstAgeSec = Number.isFinite(firstMs) ? Math.floor((Date.now() - firstMs) / 1000) : null;
+
+  // If both exist and they’re basically the same, show only "In top"
+  const SAME_TOLERANCE_SEC = 20;
+  const same =
+    hasTop &&
+    Number.isFinite(topSec) &&
+    firstAgeSec !== null &&
+    Math.abs(topSec - firstAgeSec) <= SAME_TOLERANCE_SEC;
+
+  if (hasTop) {
+    // Always show the "in top" metric on top
+    since.textContent = `In top ${fmtDurationSeconds(topSec)}`;
+
+    // Only fall back to "first seen" if it exists AND differs
+    // (If you ever want to show both, you’d add a second line elsewhere.)
+    if (!same && hasFirst) {
+      // If you want the first-seen value somewhere else later, keep it available:
+      // since.title = `First seen ${ago(src.firstSeenAt)}`;
+      // For now: do nothing (per your spec).
+    }
+  } else if (hasFirst) {
+    since.textContent = `First seen ${ago(src.firstSeenAt)}`;
+  } else if (src?.updatedAt) {
+    since.textContent = `Updated ${ago(src.updatedAt)}`;
+  } else {
+    since.textContent = "—";
+  }
+} else {
+  since.textContent = "—";
+}
+
 
       right.appendChild(time);
       right.appendChild(since);
