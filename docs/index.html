@@ -173,26 +173,6 @@
     }
     .linkbtn:hover{ border-color: rgba(26,115,232,.45); color: var(--blue2); }
 
-    .urlLine{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      min-width:0;
-    }
-    .urlText{
-      min-width:0;
-      flex:1 1 auto;
-      font-size:12px;
-      color: var(--muted);
-      border:1px solid var(--line);
-      background: #fff;
-      border-radius: 10px;
-      padding:7px 9px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
     .toast{
       position:fixed;
       left:50%;
@@ -384,7 +364,6 @@
     }
 
     function sourceLabel(k, row){
-      // Prefer DB-provided names if available
       const n = row?.sourceName || row?.name || null;
       if (n) return String(n);
 
@@ -399,16 +378,12 @@
       if (!elDot) return;
       elDot.classList.remove("ok", "bad", "info");
 
-      // Red = scrape failed
       if (ok === false) {
         elDot.classList.add("bad");
         return;
       }
-
-      // Gray = 2h+ without URL/headline change
       if (isStale2h) return;
 
-      // Green/Blue = current-cycle changes
       if (changeType === "url") elDot.classList.add("ok");
       else if (changeType === "headline") elDot.classList.add("info");
     }
@@ -452,11 +427,9 @@
         return null;
       }
 
-      // Current cards (DB-authoritative: includes change_type + is_stale if your view has them)
       const cur = await supabase.from("v_current_hero_since").select("*");
       if (cur.error) throw cur.error;
 
-      // History rollup
       const hist = await supabase
         .from("v_history_hero_stories")
         .select("*")
@@ -480,7 +453,6 @@
           error: row.error || null,
           runId: row.run_id || null,
 
-          // Prefer view fields if present
           sourceName: row.source_name || row.sourceName || row.name || null,
           changeType: row.change_type || row.changeType || null,
           isStale: Boolean(row.is_stale ?? row.isStale ?? false),
@@ -658,29 +630,13 @@
         const btnCopyLink = document.createElement("button");
         btnCopyLink.className = "linkbtn";
         btnCopyLink.type = "button";
-        btnCopyLink.textContent = "Copy headline link";
+        btnCopyLink.textContent = "Copy";
         btnCopyLink.addEventListener("click", async () => {
           try{ await copyText(a.href); showToast("Copied"); } catch { showToast("Copy failed"); }
         });
 
-        const urlLine = document.createElement("div");
-        urlLine.className = "urlLine";
-        const urlText = document.createElement("div");
-        urlText.className = "urlText mono";
-        urlText.textContent = it.url || "—";
-        const btnCopyUrl = document.createElement("button");
-        btnCopyUrl.className = "linkbtn";
-        btnCopyUrl.type = "button";
-        btnCopyUrl.textContent = "Copy URL";
-        btnCopyUrl.addEventListener("click", async () => {
-          try{ await copyText(it.url || ""); showToast("Copied"); } catch { showToast("Copy failed"); }
-        });
-        urlLine.appendChild(urlText);
-        urlLine.appendChild(btnCopyUrl);
-
         main.appendChild(title);
         main.appendChild(btnCopyLink);
-        main.appendChild(urlLine);
 
         body.appendChild(thumb);
         body.appendChild(main);
@@ -710,7 +666,6 @@
       } catch {}
     }
 
-    // Fallback-only indicators (used when DB view doesn't provide change_type/is_stale)
     function computeIndicators(nextSources){
       const prevState = loadState();
       const nextState = { ...prevState };
@@ -724,7 +679,6 @@
 
         let changeType = null;
 
-        // Initial discovery should be GREEN (new URL)
         if (!prev && curUrl) {
           changeType = "url";
           nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
@@ -796,38 +750,33 @@
       time.textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
 
       const since = document.createElement("div");
-since.className = "tiny";
+      since.className = "tiny";
 
-if (src?.ok) {
-  const hasTop = src?.secondsInTop !== null && src?.secondsInTop !== undefined;
-  const hasUpdated = Boolean(src?.updatedAt);
+      if (src?.ok) {
+        const hasTop = src?.secondsInTop !== null && src?.secondsInTop !== undefined;
+        const hasUpdated = Boolean(src?.updatedAt);
 
-  const topSec = hasTop ? Number(src.secondsInTop) : null;
+        const topSec = hasTop ? Number(src.secondsInTop) : null;
 
-  // seconds since updatedAt (what you show on the top line via ago(updatedAt))
-  const updatedMs = hasUpdated ? Date.parse(src.updatedAt) : NaN;
-  const updatedAgeSec = Number.isFinite(updatedMs) ? Math.floor((Date.now() - updatedMs) / 1000) : null;
+        const updatedMs = hasUpdated ? Date.parse(src.updatedAt) : NaN;
+        const updatedAgeSec = Number.isFinite(updatedMs) ? Math.floor((Date.now() - updatedMs) / 1000) : null;
 
-  // If "In top" duration is basically the same as "updated ago", hide the second line.
-  const SAME_TOLERANCE_SEC = 20;
-  const redundant =
-    Number.isFinite(topSec) &&
-    updatedAgeSec !== null &&
-    Math.abs(topSec - updatedAgeSec) <= SAME_TOLERANCE_SEC;
+        const SAME_TOLERANCE_SEC = 20;
+        const redundant =
+          Number.isFinite(topSec) &&
+          updatedAgeSec !== null &&
+          Math.abs(topSec - updatedAgeSec) <= SAME_TOLERANCE_SEC;
 
-  if (Number.isFinite(topSec) && !redundant) {
-    since.textContent = `In top ${fmtDurationSeconds(topSec)}`;
-  } else {
-    // Hide second line entirely when redundant (or no usable topSec)
-    since.textContent = "";
-    since.style.display = "none";
-  }
-} else {
-  since.textContent = "";
-  since.style.display = "none";
-}
-
-
+        if (Number.isFinite(topSec) && !redundant) {
+          since.textContent = `In top ${fmtDurationSeconds(topSec)}`;
+        } else {
+          since.textContent = "";
+          since.style.display = "none";
+        }
+      } else {
+        since.textContent = "";
+        since.style.display = "none";
+      }
 
       right.appendChild(time);
       right.appendChild(since);
@@ -863,22 +812,21 @@ if (src?.ok) {
       const row = document.createElement("div");
       row.className = "row";
 
-      const status = document.createElement("span");
-      status.className = "pill";
-
       const ok = (src?.ok !== false);
-
-      // Use DB isStale if present, else fallback stale2h from indicator
       const stale2h = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
 
-      if (!ok) status.textContent = "Failed";
-else if (stale2h) status.textContent = "Stale";
-else {
-  // hide status when OK
-  status.textContent = "";
-  status.style.display = "none";
-}
+      // Status pill ONLY for Failed/Stale
+      const status = document.createElement("span");
+      status.className = "pill";
+      if (!ok) {
+        status.textContent = "Failed";
+        row.appendChild(status);
+      } else if (stale2h) {
+        status.textContent = "Stale";
+        row.appendChild(status);
+      }
 
+      // Copy headline button
       const btnCopyLink = document.createElement("button");
       btnCopyLink.className = "linkbtn";
       btnCopyLink.type = "button";
@@ -886,19 +834,16 @@ else {
       btnCopyLink.setAttribute("data-action", "copy-headline");
       btnCopyLink.setAttribute("data-id", id);
 
-      row.appendChild(status);
-      row.appendChild(btnCopyLink);
-      row.appendChild(btnCopyUrl);
-
+      // Copy URL button (copies href; URL not displayed)
       const btnCopyUrl = document.createElement("button");
       btnCopyUrl.className = "linkbtn";
       btnCopyUrl.type = "button";
-btnCopyUrl.textContent = "Copy URL";
-btnCopyUrl.setAttribute("data-action", "copy-url");
-btnCopyUrl.setAttribute("data-id", id);
+      btnCopyUrl.textContent = "Copy URL";
+      btnCopyUrl.setAttribute("data-action", "copy-url");
+      btnCopyUrl.setAttribute("data-id", id);
 
-      urlLine.appendChild(urlText);
-      urlLine.appendChild(btnCopyUrl);
+      row.appendChild(btnCopyLink);
+      row.appendChild(btnCopyUrl);
 
       const err = document.createElement("div");
       err.className = "tiny";
@@ -906,7 +851,6 @@ btnCopyUrl.setAttribute("data-id", id);
 
       wrap.appendChild(h2);
       wrap.appendChild(row);
-      wrap.appendChild(urlLine);
       wrap.appendChild(err);
 
       body.appendChild(thumb);
@@ -915,9 +859,9 @@ btnCopyUrl.setAttribute("data-id", id);
       card.appendChild(head);
       card.appendChild(body);
 
-      // Determine change type:
-      // Prefer DB view changeType/isStale; fallback to browser indicator.
-      const effectiveChangeType = (src?.isStale ? null : (src?.changeType || null)) ?? (indicator?.changeType || null);
+      // Determine effective change info
+      const effectiveChangeType =
+        (src?.isStale ? null : (src?.changeType || null)) ?? (indicator?.changeType || null);
       const effectiveStale = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
 
       setDot(dot, ok, effectiveChangeType, effectiveStale);
@@ -946,7 +890,7 @@ btnCopyUrl.setAttribute("data-id", id);
       }
     }
 
-    // Copy handlers (works with dynamic cards)
+    // Copy handlers (URL not displayed)
     document.addEventListener("click", async (e) => {
       const btn = e.target && e.target.closest ? e.target.closest("button[data-action]") : null;
       if (!btn) return;
@@ -955,20 +899,18 @@ btnCopyUrl.setAttribute("data-id", id);
       const id = btn.getAttribute("data-id");
       if (!action || !id) return;
 
+      const link = document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`);
+      const href = link && link.href && link.href !== "#" ? link.href : "";
+
       if (action === "copy-headline") {
-        const link = document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`);
-        const href = link && link.href && link.href !== "#" ? link.href : "";
         if (!href) return showToast("Nothing to copy");
         try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
       }
 
       if (action === "copy-url") {
-    const link = document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`);
-    const href = link && link.href && link.href !== "#" ? link.href : "";
-  if (!href) return showToast("Nothing to copy");
-  try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
-}
-
+        if (!href) return showToast("Nothing to copy");
+        try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
+      }
     });
 
     async function loadPublishedCache() {
@@ -1003,9 +945,6 @@ btnCopyUrl.setAttribute("data-id", id);
 
         const sources = data?.sources || {};
 
-        // Indicators:
-        // - If DB view provides changeType/isStale, use them.
-        // - Otherwise fallback to browser-local indicators.
         let indicators = {};
         let nextState = null;
 
@@ -1054,7 +993,6 @@ btnCopyUrl.setAttribute("data-id", id);
       }
     }
 
-    // Wire UI
     $("btn-reload").addEventListener("click", reload);
 
     $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
