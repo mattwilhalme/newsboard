@@ -17,7 +17,7 @@
       --radius: 12px;
 
       /* ~15% smaller overall footprint */
-      --maxw: 935px; /* 1100 * 0.85 */
+      --maxw: 935px;
 
       --blue:#1a73e8;
       --blue2:#174ea6;
@@ -124,7 +124,6 @@
     .rightMeta{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; text-align:right; }
 
     .tiny{ font-size:10px; color: var(--muted); }
-    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
     .cardBody{
       padding:10px;
@@ -136,7 +135,7 @@
 
     .thumb{
       width:100%;
-      max-width:390px; /* 460 * 0.85 */
+      max-width:390px;
       aspect-ratio: 16 / 9;
       border-radius: 11px;
       background: #f1f3f4;
@@ -373,6 +372,7 @@
       if (s === "cbs" || s === "cbs1") return "CBS News";
       if (s === "usat" || s === "usat1") return "USA Today";
       if (s === "nbc" || s === "nbc1") return "NBC News";
+      if (s === "cnn" || s === "cnn1") return "CNN";
       return k || "Source";
     }
 
@@ -380,10 +380,7 @@
       if (!elDot) return;
       elDot.classList.remove("ok", "bad", "info");
 
-      if (ok === false) {
-        elDot.classList.add("bad");
-        return;
-      }
+      if (ok === false) { elDot.classList.add("bad"); return; }
       if (isStale2h) return;
 
       if (changeType === "url") elDot.classList.add("ok");
@@ -436,7 +433,7 @@
         .from("v_history_hero_stories")
         .select("*")
         .order("last_seen_at", { ascending: false })
-        .limit(200);
+        .limit(250);
       if (hist.error) throw hist.error;
 
       const sources = {};
@@ -474,31 +471,17 @@
         if (!id) continue;
         if (!historyObj.sources[id]) historyObj.sources[id] = { entries: [] };
 
-        const url = pick(row, ["url", "story_url", "hero_url", "link", "href"]);
-        const title = pick(row, ["title", "any_title", "story_title", "headline", "hero_title"]);
-        const imgUrl = pick(row, ["img_url", "any_img_url", "imgUrl", "image_url", "image", "thumb_url", "thumbnail_url"]);
-        const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "first_seen", "first_seen_ts"]);
-        const lastSeenAt = pick(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at", "updatedAt"]);
-        const seenCount = pick(row, ["seen_count", "seenCount", "count", "observations"]);
+        const url = pick(row, ["url", "story_url", "link", "href"]);
+        const title = pick(row, ["title", "story_title", "headline"]);
+        const imgUrl = pick(row, ["img_url", "imgUrl", "image_url", "thumb_url", "thumbnail_url"]);
+        const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "first_seen"]);
+        const lastSeenAt = pick(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at"]);
+        const seenCount = pick(row, ["seen_count", "seenCount", "count"]);
 
         historyObj.sources[id].entries.push({ url, title, imgUrl, firstSeenAt, lastSeenAt, seenCount });
       }
 
-      for (const obj of Object.values(historyObj.sources)){
-        if (!obj || !Array.isArray(obj.entries)) continue;
-        obj.entries.sort((a,b) => {
-          const ta = Date.parse(a?.lastSeenAt || a?.firstSeenAt || "");
-          const tb = Date.parse(b?.lastSeenAt || b?.firstSeenAt || "");
-          const na = Number.isFinite(ta) ? ta : 0;
-          const nb = Number.isFinite(tb) ? tb : 0;
-          return na - nb;
-        });
-      }
-
-      return {
-        cacheLike: { generatedAt: new Date().toISOString(), sources },
-        history: historyObj,
-      };
+      return { cacheLike: { generatedAt: new Date().toISOString(), sources }, history: historyObj };
     }
 
     function renderHistory(history){
@@ -507,63 +490,38 @@
       host.innerHTML = "";
 
       const cutoffMs = Date.now() - (HISTORY_WINDOW_HOURS * 60 * 60 * 1000);
-      function inWindow(x){
+      const inWindow = (x) => {
         const t = Date.parse(x?.lastSeenAt || x?.firstSeenAt || "");
         return Number.isFinite(t) ? t >= cutoffMs : false;
-      }
+      };
 
-      const sources = history && typeof history === "object" && history.sources && typeof history.sources === "object" ? history.sources : {};
+      const sources = history?.sources && typeof history.sources === "object" ? history.sources : {};
       const rows = [];
+
       for (const [source, obj] of Object.entries(sources)){
         const entries = Array.isArray(obj?.entries) ? obj.entries : [];
         const filtered = entries.filter(inWindow);
+
         for (let i = 0; i < filtered.length; i++){
           const e = filtered[i];
-          if (!e || !e.url) continue;
+          if (!e?.url) continue;
 
           const prev = i - 1 >= 0 ? filtered[i - 1] : null;
           const isHeadlineChange = Boolean(prev && prev.url === e.url && String(prev.title || "") !== String(e.title || ""));
           const isNewUrl = Boolean(!prev || prev.url !== e.url);
 
-          rows.push({
-            source,
-            __changeType: isHeadlineChange ? "headline" : (isNewUrl ? "url" : "other"),
-            ...e,
-          });
+          rows.push({ source, __changeType: isHeadlineChange ? "headline" : (isNewUrl ? "url" : "other"), ...e });
         }
       }
 
-      function activityTime(x){
-        const t = Date.parse(x?.lastSeenAt || x?.firstSeenAt || "");
-        return Number.isFinite(t) ? t : 0;
-      }
-
-      function changeScore(x){
-        if (x?.__changeType === "headline") return 2;
-        if (x?.__changeType === "url") return 1;
-        return 0;
-      }
-
       rows.sort((a,b) => {
-        const ca = changeScore(a);
-        const cb = changeScore(b);
-        if (cb !== ca) return cb - ca;
+        const score = (x) => x.__changeType === "headline" ? 2 : (x.__changeType === "url" ? 1 : 0);
+        const sa = score(a), sb = score(b);
+        if (sb !== sa) return sb - sa;
 
-        const ta = activityTime(a);
-        const tb = activityTime(b);
-        if (tb !== ta) return tb - ta;
-
-        const sa = String(a.source || "");
-        const sb = String(b.source || "");
-        if (sa !== sb) return sa.localeCompare(sb);
-
-        const ua = String(a.url || "");
-        const ub = String(b.url || "");
-        if (ua !== ub) return ua.localeCompare(ub);
-
-        const tla = String(a.title || "");
-        const tlb = String(b.title || "");
-        return tla.localeCompare(tlb);
+        const ta = Date.parse(a.lastSeenAt || a.firstSeenAt || "") || 0;
+        const tb = Date.parse(b.lastSeenAt || b.firstSeenAt || "") || 0;
+        return tb - ta;
       });
 
       if (!rows.length){
@@ -584,23 +542,28 @@
 
         const left = document.createElement("div");
         left.className = "srcTitle";
+
         const dot = document.createElement("div");
         dot.className = it.__changeType === "headline" ? "dot info" : "dot ok";
         left.appendChild(dot);
 
         const meta = document.createElement("div");
         meta.className = "srcMeta";
+
         const name = document.createElement("div");
         name.className = "srcName";
         name.textContent = sourceLabel(it.source, null);
+
         meta.appendChild(name);
         left.appendChild(meta);
 
         const right = document.createElement("div");
         right.className = "rightMeta";
+
         const updated = document.createElement("div");
         updated.className = "srcTime";
         updated.textContent = it.lastSeenAt ? `${fmtTime(it.lastSeenAt)} · ${ago(it.lastSeenAt)}` : "—";
+
         right.appendChild(updated);
 
         head.appendChild(left);
@@ -629,16 +592,16 @@
         a.textContent = it.title || "—";
         title.appendChild(a);
 
-        const btnCopyLink = document.createElement("button");
-        btnCopyLink.className = "linkbtn";
-        btnCopyLink.type = "button";
-        btnCopyLink.textContent = "Copy";
-        btnCopyLink.addEventListener("click", async () => {
-          try{ await copyText(a.href); showToast("Copied"); } catch { showToast("Copy failed"); }
+        const btnCopy = document.createElement("button");
+        btnCopy.className = "linkbtn";
+        btnCopy.type = "button";
+        btnCopy.textContent = "Copy";
+        btnCopy.addEventListener("click", async () => {
+          try { await copyText(a.href); showToast("Copied"); } catch { showToast("Copy failed"); }
         });
 
         main.appendChild(title);
-        main.appendChild(btnCopyLink);
+        main.appendChild(btnCopy);
 
         body.appendChild(thumb);
         body.appendChild(main);
@@ -656,15 +619,11 @@
         if (!raw) return {};
         const obj = JSON.parse(raw);
         return obj && typeof obj === "object" ? obj : {};
-      } catch {
-        return {};
-      }
+      } catch { return {}; }
     }
 
     function saveState(state){
-      try{
-        localStorage.setItem("nb_source_state_v2", JSON.stringify(state || {}));
-      } catch {}
+      try{ localStorage.setItem("nb_source_state_v2", JSON.stringify(state || {})); } catch {}
     }
 
     function computeIndicators(nextSources){
@@ -705,8 +664,8 @@
     }
 
     function pickCardSourceIds(){
-      // Always show these four, in this order.
-      return ["abc1","cbs1","usat1","nbc1"];
+      // Always show these five, in this order.
+      return ["abc1","cbs1","usat1","nbc1","cnn1"];
     }
 
     function buildCardEl(id, src, indicator){
@@ -746,19 +705,14 @@
       since.className = "tiny";
 
       if (src?.ok) {
-        const hasTop = src?.secondsInTop !== null && src?.secondsInTop !== undefined;
-        const hasUpdated = Boolean(src?.updatedAt);
-
-        const topSec = hasTop ? Number(src.secondsInTop) : null;
-
-        const updatedMs = hasUpdated ? Date.parse(src.updatedAt) : NaN;
+        const topSec = (src?.secondsInTop !== null && src?.secondsInTop !== undefined) ? Number(src.secondsInTop) : null;
+        const updatedMs = src?.updatedAt ? Date.parse(src.updatedAt) : NaN;
         const updatedAgeSec = Number.isFinite(updatedMs) ? Math.floor((Date.now() - updatedMs) / 1000) : null;
 
-        const SAME_TOLERANCE_SEC = 20;
         const redundant =
           Number.isFinite(topSec) &&
           updatedAgeSec !== null &&
-          Math.abs(topSec - updatedAgeSec) <= SAME_TOLERANCE_SEC;
+          Math.abs(topSec - updatedAgeSec) <= 20;
 
         if (Number.isFinite(topSec) && !redundant) {
           since.textContent = `In top ${fmtDurationSeconds(topSec)}`;
@@ -808,7 +762,6 @@
       const ok = (src?.ok !== false);
       const stale2h = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
 
-      // Status pill ONLY for Failed/Stale
       if (!ok) {
         const status = document.createElement("span");
         status.className = "pill";
@@ -821,7 +774,6 @@
         row.appendChild(status);
       }
 
-      // Copy link button
       const btnCopyLink = document.createElement("button");
       btnCopyLink.className = "linkbtn";
       btnCopyLink.type = "button";
@@ -873,7 +825,7 @@
     }
 
     document.addEventListener("click", async (e) => {
-      const btn = e.target && e.target.closest ? e.target.closest("button[data-action]") : null;
+      const btn = e.target?.closest?.("button[data-action]");
       if (!btn) return;
 
       const action = btn.getAttribute("data-action");
@@ -881,7 +833,7 @@
       if (!action || !id) return;
 
       const link = document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`);
-      const href = link && link.href && link.href !== "#" ? link.href : "";
+      const href = (link && link.href && link.href !== "#") ? link.href : "";
 
       if (action === "copy-link") {
         if (!href) return showToast("Nothing to copy");
@@ -974,12 +926,8 @@
     $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
     $("drawer-overlay")?.addEventListener("click", () => setHistoryOpen(false));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setHistoryOpen(false); });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setHistoryOpen(false);
-    });
-
-    // Only show the Run button locally (not GH Pages)
     if (isLocal && !isGitHubPages) {
       $("btn-run").style.display = "inline-block";
       $("btn-run").addEventListener("click", runScrapeLocal);
