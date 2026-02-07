@@ -834,16 +834,7 @@
       btnCopyLink.setAttribute("data-action", "copy-headline");
       btnCopyLink.setAttribute("data-id", id);
 
-      // Copy URL button (copies href; URL not displayed)
-      const btnCopyUrl = document.createElement("button");
-      btnCopyUrl.className = "linkbtn";
-      btnCopyUrl.type = "button";
-      btnCopyUrl.textContent = "Copy URL";
-      btnCopyUrl.setAttribute("data-action", "copy-url");
-      btnCopyUrl.setAttribute("data-id", id);
-
       row.appendChild(btnCopyLink);
-      row.appendChild(btnCopyUrl);
 
       const err = document.createElement("div");
       err.className = "tiny";
