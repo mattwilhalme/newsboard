@@ -639,8 +639,8 @@
         if (!historyObj.sources[id]) historyObj.sources[id] = { entries: [] };
 
         const url = pick(row, ["url", "story_url", "hero_url", "link", "href"]);
-        const title = pick(row, ["title", "story_title", "headline", "hero_title"]);
-        const imgUrl = pick(row, ["img_url", "imgUrl", "image_url", "image", "thumb_url", "thumbnail_url"]);
+        const title = pick(row, ["title", "any_title", "story_title", "headline", "hero_title"]);
+        const imgUrl = pick(row, ["img_url", "any_img_url", "imgUrl", "image_url", "image", "thumb_url", "thumbnail_url"]);
         const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "first_seen", "first_seen_ts"]);
         const lastSeenAt = pick(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at", "updatedAt"]);
         const seenCount = pick(row, ["seen_count", "seenCount", "count", "observations"]);
