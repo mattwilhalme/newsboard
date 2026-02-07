@@ -68,291 +68,11 @@ function ensureCacheShape(raw) {
     sources: {
       abc: baseSource("abc", "ABC News", "https://abcnews.go.com/"),
       cbs: baseSource("cbs", "CBS News", "https://www.cbsnews.com/"),
-      abc1: baseSource("abc1", "ABC News (Hero)", "https://abcnews.go.com/"),
-      cbs1: baseSource("cbs1", "CBS News (Hero)", "https://www.cbsnews.com/"),
-      usat1: baseSource("usat1", "USA Today (Hero)", "https://www.usatoday.com/"),
-    },
-  };
 
-  if (!raw || typeof raw !== "object") return base;
-
-  if (raw.sources && typeof raw.sources === "object") {
-    return {
-      ...base,
-      ...raw,
-      sources: {
-        ...base.sources,
-        ...raw.sources,
-        abc: { ...base.sources.abc, ...(raw.sources.abc || {}) },
-        cbs: { ...base.sources.cbs, ...(raw.sources.cbs || {}) },
-        abc1: { ...base.sources.abc1, ...(raw.sources.abc1 || {}) },
-        cbs1: { ...base.sources.cbs1, ...(raw.sources.cbs1 || {}) },
-        usat1: { ...base.sources.usat1, ...(raw.sources.usat1 || {}) },
-      },
-    };
-  }
-
-  if (raw.abc || raw.cbs || raw.abc1 || raw.cbs1 || raw.usat1) {
-    return {
-      ...base,
-      generatedAt: raw.generatedAt || null,
-      sources: {
-        ...base.sources,
-        abc: { ...base.sources.abc, ...(raw.abc || {}) },
-        cbs: { ...base.sources.cbs, ...(raw.cbs || {}) },
-        abc1: { ...base.sources.abc1, ...(raw.abc1 || {}) },
-        cbs1: { ...base.sources.cbs1, ...(raw.cbs1 || {}) },
-        usat1: { ...base.sources.usat1, ...(raw.usat1 || {}) },
-      },
-    };
-  }
-
-  return base;
-}
-
-async function withBrowser(fn) {
-  const browser = await chromium.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-  });
-
-  const context = await browser.newContext({
-    viewport: { width: 1440, height: 900 },
-    locale: "en-US",
-    userAgent:
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-  });
-
-  const page = await context.newPage();
-
-  // ---- Playwright diagnostics ----
-  page.on("console", (msg) => {
-    try {
-      const type = msg.type();
-      if (type === "error" || type === "warning") {
-        console.log(`[PW console.${type}] ${msg.text()}`.slice(0, 1200));
-      }
-    } catch {}
-  });
-
-  page.on("pageerror", (err) => {
-    console.log(`[PW pageerror] ${String(err)}`.slice(0, 1200));
-  });
-
-  page.on("requestfailed", (req) => {
-    try {
-      const fail = req.failure();
-      if (fail?.errorText) {
-        console.log(`[PW requestfailed] ${fail.errorText} :: ${req.url()}`.slice(0, 1200));
-      }
-    } catch {}
-  });
-
-  page.on("response", (res) => {
-    try {
-      const s = res.status();
-      if (s >= 400) console.log(`[PW response ${s}] ${res.url()}`.slice(0, 1200));
-    } catch {}
-  });
-  // -------------------------------
-
-  try {
-    return await fn(page);
-  } finally {
-    await page.close().catch(() => {});
-    await context.close().catch(() => {});
-    await browser.close().catch(() => {});
-  }
-}
-
-async function archiveRun(page, runId, snapshotObj) {
-  const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
-  const pngPath = path.join(ARCHIVE_DIR, `${runId}.png`);
-  const jsonPath = path.join(ARCHIVE_DIR, `${runId}.json`);
-
-  try {
-    fs.writeFileSync(htmlPath, await page.content(), "utf8");
-  } catch {}
-
-  // Screenshots disabled for now (storage + speed).
-  // try { await page.screenshot({ path: pngPath, fullPage: true }); } catch {}
-
-  try {
-    fs.writeFileSync(jsonPath, JSON.stringify(snapshotObj, null, 2), "utf8");
-  } catch {}
-
-  return { htmlPath, pngPath, jsonPath };
-}
-
-// -------- Scrapers (Top headlines / legacy) --------
-
-async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
-  return await withBrowser(async (page) => {
-    const runId = `abc_${new Date().toISOString().replace(/[:.]/g, "-")}`;
-
-    await page.goto("https://abcnews.go.com/", {
-      waitUntil: "domcontentloaded",
-      timeout: 45000,
-    });
-
-    await page.waitForSelector("main", { timeout: 20000 });
-    await page.waitForTimeout(1500);
-
-    for (let i = 0; i < scrollPasses; i++) {
-      await page.mouse.wheel(0, 1400);
-      await page.waitForTimeout(700);
-    }
-
-    const rows = await page.evaluate((limit) => {
-      function clean(s) {
-        return String(s || "").replace(/\s+/g, " ").trim();
-      }
-      function absUrl(href) {
-        try {
-          return new URL(href, window.location.origin).toString();
-        } catch {
-          return null;
-        }
-      }
-
-      const main = document.querySelector("main") || document.body;
-      const bands = Array.from(main.querySelectorAll('[data-container="band"]'));
-      const cards = Array.from(main.querySelectorAll('[data-testid="prism-card"]'));
-
-      const out = [];
-      const seenUrl = new Set();
-
-      function bandIndexFor(el) {
-        const band = el.closest('[data-container="band"]');
-        if (!band) return -1;
-        return bands.indexOf(band);
-      }
-
-      for (let cardIdx = 0; cardIdx < cards.length; cardIdx++) {
-        const card = cards[cardIdx];
-
-        const h2 =
-          card.querySelector('h2[id$="headline"]') ||
-          card.querySelector("h2") ||
-          null;
-
-        const title = clean(h2?.textContent || "");
-        if (!title || title.length < 8) continue;
-
-        const a =
-          (h2 && h2.closest('a[data-testid="prism-linkbase"][href]')) ||
-          card.querySelector('a[data-testid="prism-linkbase"][href]') ||
-          null;
-
-        const href = a?.getAttribute("href") || "";
-        const url = absUrl(href);
-        if (!url) continue;
-
-        if (seenUrl.has(url)) continue;
-        seenUrl.add(url);
-
-        const bandIdx = bandIndexFor(card);
-
-        let bandCardIndex = -1;
-        if (bandIdx >= 0) {
-          const band = bands[bandIdx];
-          const bandCards = Array.from(band.querySelectorAll('[data-testid="prism-card"]'));
-          bandCardIndex = bandCards.indexOf(card);
-        }
-
-        let imgUrl = null;
-        const img =
-          card.querySelector("img[src]") ||
-          card.querySelector("img[data-src]") ||
-          null;
-
-        const src = img?.getAttribute("src") || img?.getAttribute("data-src") || "";
-        if (src) imgUrl = absUrl(src);
-
-        out.push({
-          title,
-          url,
-          imgUrl,
-          bandIdx,
-          bandCardIndex,
-          cardIdx,
-        });
-
-        if (out.length >= limit) break;
-      }
-
-      return out;
-    }, maxItems);
-
-    const items = (rows || [])
-      .map((r) => ({
-        title: cleanText(r.title),
-        url: normalizeUrl(r.url),
-        imgUrl: r.imgUrl ? normalizeUrl(r.imgUrl) : null,
-        meta: { bandIdx: r.bandIdx, bandCardIndex: r.bandCardIndex, cardIdx: r.cardIdx },
-      }))
-      .filter((x) => x.title && x.url);
-
-    const snapshot = {
-      runId,
-      fetchedAt: nowISO(),
-      count: items.length,
-      items,
-    };
-
-    await archiveRun(page, runId, snapshot);
-
-    return snapshot;
-  });
-}
-
-function nowISO() {
-  return new Date().toISOString();
-}
-
-function cleanText(s) {
-  return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
-}
-
-function normalizeUrl(u) {
-  try {
-    const url = new URL(u);
-    for (const key of [...url.searchParams.keys()]) {
-      if (key.toLowerCase().startsWith("utm_")) url.searchParams.delete(key);
-    }
-    return url.toString();
-  } catch {
-    return u;
-  }
-}
-
-function sha1(s) {
-  return crypto.createHash("sha1").update(String(s)).digest("hex");
-}
-
-function ensureCacheShape(raw) {
-  const baseSource = (id, name, homeUrl) => ({
-    id,
-    name,
-    homeUrl,
-    updatedAt: null,
-    ok: false,
-    error: "Not refreshed yet",
-    stale: false,
-    runId: null,
-    archive: null,
-    items: [],
-    item: null, // for hero sources
-  });
-
-  const base = {
-    generatedAt: null,
-    sources: {
-      abc: baseSource("abc", "ABC News", "https://abcnews.go.com/"),
-      cbs: baseSource("cbs", "CBS News", "https://www.cbsnews.com/"),
       abc1: baseSource("abc1", "ABC News", "https://abcnews.go.com/"),
       cbs1: baseSource("cbs1", "CBS News", "https://www.cbsnews.com/"),
       usat1: baseSource("usat1", "USA Today", "https://www.usatoday.com/"),
+      nbc1: baseSource("nbc1", "NBC News", "https://www.nbcnews.com/"),
     },
   };
 
@@ -370,11 +90,12 @@ function ensureCacheShape(raw) {
         abc1: { ...base.sources.abc1, ...(raw.sources.abc1 || {}) },
         cbs1: { ...base.sources.cbs1, ...(raw.sources.cbs1 || {}) },
         usat1: { ...base.sources.usat1, ...(raw.sources.usat1 || {}) },
+        nbc1: { ...base.sources.nbc1, ...(raw.sources.nbc1 || {}) },
       },
     };
   }
 
-  if (raw.abc || raw.cbs || raw.abc1 || raw.cbs1 || raw.usat1) {
+  if (raw.abc || raw.cbs || raw.abc1 || raw.cbs1 || raw.usat1 || raw.nbc1) {
     return {
       ...base,
       generatedAt: raw.generatedAt || null,
@@ -385,6 +106,7 @@ function ensureCacheShape(raw) {
         abc1: { ...base.sources.abc1, ...(raw.abc1 || {}) },
         cbs1: { ...base.sources.cbs1, ...(raw.cbs1 || {}) },
         usat1: { ...base.sources.usat1, ...(raw.usat1 || {}) },
+        nbc1: { ...base.sources.nbc1, ...(raw.nbc1 || {}) },
       },
     };
   }
@@ -905,13 +627,13 @@ async function scrapeUSATHero() {
     // Hydration can be late.
     await page.waitForTimeout(1200);
     // Wait for network to be mostly idle
-    await page.waitForFunction(() => {
-      return performance.now() - performance.timing.navigationStart > 3000;
-    }, { timeout: 25000 }).catch(() => {});
+    await page
+      .waitForFunction(() => {
+        return performance.now() - performance.timing.navigationStart > 3000;
+      }, { timeout: 25000 })
+      .catch(() => {});
     await page.waitForTimeout(600);
 
-    // Wait for exact hero pattern you've shared:
-    // <a class="gnt_m_he gnt_m_he__br" data-t-l="...|hero"> ... <span class="gnt_m_he__lc" data-tb-title>...</span>
     await page
       .waitForSelector('a.gnt_m_he[data-t-l*="|hero"] span.gnt_m_he__lc[data-tb-title]', {
         timeout: 20000,
@@ -934,7 +656,6 @@ async function scrapeUSATHero() {
         const parts = srcset.split(",").map((p) => p.trim()).filter(Boolean);
         if (!parts.length) return null;
 
-        // Prefer 2x if present, else last.
         let best = null;
         for (const p of parts) {
           const [u, dpr] = p.split(/\s+/);
@@ -1016,7 +737,6 @@ async function scrapeUSATHero() {
     let finalTitle = cleanText(hero?.title || "");
     let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
 
-    // og:image fallback if tile doesn't expose image url
     if (hero?.ok && finalUrl && !finalImgUrl) {
       try {
         const r = await page.request.get(finalUrl, { timeout: 20000 });
@@ -1048,6 +768,170 @@ async function scrapeUSATHero() {
       item,
       ok: Boolean(item),
       error: item ? null : (hero?.error || "USA Today not found"),
+      debug: hero?.debug || null,
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+    };
+  });
+}
+
+async function scrapeNBCHero() {
+  return await withBrowser(async (page) => {
+    const runId = `nbc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.nbcnews.com/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
+    await page.waitForTimeout(1400);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "").replace(/\s+/g, " ").trim();
+      }
+      function absUrl(href) {
+        try {
+          return new URL(href, window.location.origin).toString();
+        } catch {
+          return null;
+        }
+      }
+      function pickFromSrcset(srcset) {
+        if (!srcset) return null;
+        const parts = srcset.split(",").map((p) => p.trim()).filter(Boolean);
+        if (!parts.length) return null;
+
+        // NBC srcset often uses widths like "762w". Prefer max width.
+        let best = null;
+        for (const p of parts) {
+          const [u, w] = p.split(/\s+/);
+          const width = w && w.endsWith("w") ? Number(w.slice(0, -1)) : 0;
+          if (!best || width > best.width) best = { url: u, width };
+        }
+        return best?.url || parts[parts.length - 1]?.split(/\s+/)?.[0] || null;
+      }
+
+      const main = document.querySelector("main") || document.body;
+
+      // Primary: multistory lead headline you pasted:
+      // <h2 class="multistoryline__headline ..."><a href="...">TITLE</a></h2>
+      let story =
+        main.querySelector('[data-testid="multi-storyline-container"] .story-item') ||
+        main.querySelector(".multistory-container .story-item") ||
+        null;
+
+      // If that first story-item doesn't contain the expected headline, find the first that does.
+      if (story) {
+        const has = story.querySelector("h2.multistoryline__headline a[href]");
+        if (!has) {
+          const all = Array.from(
+            main.querySelectorAll('[data-testid="multi-storyline-container"] .story-item, .multistory-container .story-item')
+          );
+          story = all.find((s) => s.querySelector("h2.multistoryline__headline a[href]")) || story;
+        }
+      }
+
+      const a =
+        story?.querySelector("h2.multistoryline__headline a[href]") ||
+        main.querySelector("h2.multistoryline__headline a[href]") ||
+        main.querySelector("h2 a[href]") ||
+        null;
+
+      const title = clean(a?.textContent || "");
+      const url = absUrl(a?.getAttribute("href") || "");
+
+      // image: prefer picture/source/img near the story
+      let imgUrl = null;
+      let imgAlt = null;
+
+      const scope =
+        a?.closest(".story-item") ||
+        a?.closest("[data-contentid]") ||
+        story ||
+        a?.closest("article") ||
+        main;
+
+      if (scope) {
+        const img =
+          scope.querySelector("picture img[src], img[src], img[srcset]") ||
+          null;
+
+        if (img) {
+          imgAlt = clean(img.getAttribute("alt") || "") || null;
+          imgUrl = absUrl(img.getAttribute("src") || "") || null;
+          if (!imgUrl) {
+            const fromSet = pickFromSrcset(img.getAttribute("srcset") || "");
+            imgUrl = fromSet ? absUrl(fromSet) : null;
+          }
+        }
+
+        if (!imgUrl) {
+          const source = scope.querySelector("picture source[srcset], source[srcset]");
+          if (source) {
+            const fromSet = pickFromSrcset(source.getAttribute("srcset") || "");
+            imgUrl = fromSet ? absUrl(fromSet) : null;
+          }
+        }
+      }
+
+      if (!title || title.length < 8 || !url) {
+        return {
+          ok: false,
+          error: "NBC hero not found (headline anchor missing)",
+          debug: {
+            hasMultiStory: Boolean(main.querySelector('[data-testid="multi-storyline-container"], .multistory-container')),
+            hasAnyMultistoryHeadline: Boolean(main.querySelector("h2.multistoryline__headline a[href]")),
+            hasAnyH2Link: Boolean(main.querySelector("h2 a[href]")),
+          },
+        };
+      }
+
+      return { ok: true, title, url, imgUrl, imgAlt };
+    });
+
+    let finalUrl = hero?.url ? normalizeUrl(hero.url) : null;
+    let finalTitle = cleanText(hero?.title || "");
+    let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
+
+    if (hero?.ok && finalUrl && !finalImgUrl) {
+      try {
+        const r = await page.request.get(finalUrl, { timeout: 20000 });
+        const html = await r.text();
+        const m = html.match(
+          /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
+        );
+        if (m?.[1]) finalImgUrl = normalizeUrl(m[1]);
+      } catch {}
+    }
+
+    const item = hero?.ok
+      ? {
+          title: finalTitle,
+          url: finalUrl,
+          imgUrl: finalImgUrl,
+          imgAlt: hero?.imgAlt || null,
+          slotKey: sha1("nbc|hero").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "nbc1",
+      fetchedAt: nowISO(),
+      runId,
+      item,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "NBC not found"),
       debug: hero?.debug || null,
     };
 
@@ -1180,8 +1064,8 @@ try {
 async function refreshSources({ id = "", maxItems = 40, scrollPasses = 6 } = {}) {
   cache = ensureCacheShape(cache);
 
-  const whichId = String(id || "").toLowerCase(); // abc | cbs | abc1 | cbs1 | usat1 | "" (all)
-  const toRun = whichId ? [whichId] : ["abc", "cbs", "abc1", "cbs1", "usat1"];
+  const whichId = String(id || "").toLowerCase(); // abc | cbs | abc1 | cbs1 | usat1 | nbc1 | "" (all)
+  const toRun = whichId ? [whichId] : ["abc", "cbs", "abc1", "cbs1", "usat1", "nbc1"];
 
   for (const which of toRun) {
     let result;
@@ -1191,6 +1075,7 @@ async function refreshSources({ id = "", maxItems = 40, scrollPasses = 6 } = {})
     else if (which === "abc1") result = await scrapeABCHero();
     else if (which === "cbs1") result = await scrapeCBSHero();
     else if (which === "usat1") result = await scrapeUSATHero();
+    else if (which === "nbc1") result = await scrapeNBCHero();
     else throw new Error(`Unknown source id: ${which}`);
 
     cache.sources[which] = {
@@ -1332,5 +1217,6 @@ export {
   scrapeABCHero,
   scrapeCBSHero,
   scrapeUSATHero,
+  scrapeNBCHero,
   refreshSources,
 };
