@@ -800,43 +800,33 @@ since.className = "tiny";
 
 if (src?.ok) {
   const hasTop = src?.secondsInTop !== null && src?.secondsInTop !== undefined;
-  const hasFirst = Boolean(src?.firstSeenAt);
+  const hasUpdated = Boolean(src?.updatedAt);
 
   const topSec = hasTop ? Number(src.secondsInTop) : null;
 
-  // Estimate "seconds since first seen" to compare with secondsInTop
-  const firstMs = hasFirst ? Date.parse(src.firstSeenAt) : NaN;
-  const firstAgeSec = Number.isFinite(firstMs) ? Math.floor((Date.now() - firstMs) / 1000) : null;
+  // seconds since updatedAt (what you show on the top line via ago(updatedAt))
+  const updatedMs = hasUpdated ? Date.parse(src.updatedAt) : NaN;
+  const updatedAgeSec = Number.isFinite(updatedMs) ? Math.floor((Date.now() - updatedMs) / 1000) : null;
 
-  // If both exist and they’re basically the same, show only "In top"
+  // If "In top" duration is basically the same as "updated ago", hide the second line.
   const SAME_TOLERANCE_SEC = 20;
-  const same =
-    hasTop &&
+  const redundant =
     Number.isFinite(topSec) &&
-    firstAgeSec !== null &&
-    Math.abs(topSec - firstAgeSec) <= SAME_TOLERANCE_SEC;
+    updatedAgeSec !== null &&
+    Math.abs(topSec - updatedAgeSec) <= SAME_TOLERANCE_SEC;
 
-  if (hasTop) {
-    // Always show the "in top" metric on top
+  if (Number.isFinite(topSec) && !redundant) {
     since.textContent = `In top ${fmtDurationSeconds(topSec)}`;
-
-    // Only fall back to "first seen" if it exists AND differs
-    // (If you ever want to show both, you’d add a second line elsewhere.)
-    if (!same && hasFirst) {
-      // If you want the first-seen value somewhere else later, keep it available:
-      // since.title = `First seen ${ago(src.firstSeenAt)}`;
-      // For now: do nothing (per your spec).
-    }
-  } else if (hasFirst) {
-    since.textContent = `First seen ${ago(src.firstSeenAt)}`;
-  } else if (src?.updatedAt) {
-    since.textContent = `Updated ${ago(src.updatedAt)}`;
   } else {
-    since.textContent = "—";
+    // Hide second line entirely when redundant (or no usable topSec)
+    since.textContent = "";
+    since.style.display = "none";
   }
 } else {
-  since.textContent = "—";
+  since.textContent = "";
+  since.style.display = "none";
 }
+
 
 
       right.appendChild(time);
