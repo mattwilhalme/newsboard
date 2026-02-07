@@ -23,6 +23,7 @@
       --ok:#1e8e3e;
       --bad:#d93025;
       --warn:#f9ab00;
+      --dotIdle:#9aa0a6;
 
       --chip:#f1f3f4;
       --chipText:#3c4043;
@@ -129,7 +130,7 @@
     }
 
     .srcTitle{ display:flex; align-items:center; gap:10px; min-width:0; }
-    .dot{ width:10px; height:10px; border-radius:999px; background: var(--warn); flex:0 0 auto; margin-top:2px; }
+    .dot{ width:10px; height:10px; border-radius:999px; background: var(--dotIdle); flex:0 0 auto; margin-top:2px; }
     .dot.ok{ background: var(--ok); }
     .dot.info{ background: var(--blue); }
     .dot.bad{ background: var(--bad); }
@@ -318,10 +319,10 @@
   </header>
 
   <main>
-    <div class="grid">
+    <div class="grid" id="cards-grid">
 
       <!-- ABC HERO -->
-      <section class="card">
+      <section class="card" id="card-abc1" data-source-id="abc1">
         <div class="cardHead">
           <div class="srcTitle">
             <div class="dot" id="dot-abc1"></div>
@@ -356,7 +357,7 @@
       </section>
 
       <!-- CBS HERO -->
-      <section class="card">
+      <section class="card" id="card-cbs1" data-source-id="cbs1">
         <div class="cardHead">
           <div class="srcTitle">
             <div class="dot" id="dot-cbs1"></div>
@@ -391,7 +392,7 @@
       </section>
 
       <!-- USA TODAY HERO -->
-      <section class="card">
+      <section class="card" id="card-usat1" data-source-id="usat1">
         <div class="cardHead">
           <div class="srcTitle">
             <div class="dot" id="dot-usat1"></div>
@@ -523,17 +524,27 @@
 
     function setDot(id, ok, changeType) {
       const el = $("dot-" + id);
+      if (!el) return;
       el.classList.remove("ok", "bad", "info");
+
+      // Red = failed/stale
+      if (ok === false) {
+        el.classList.add("bad");
+        return;
+      }
+
+      // Change indicators:
+      // Green = new URL (new story)
+      // Blue  = new headline (same URL, headline text changed)
       if (changeType === "url") el.classList.add("ok");
       else if (changeType === "headline") el.classList.add("info");
-      else if (ok === true) el.classList.add("ok");
-      else if (ok === false) el.classList.add("bad");
+      // Otherwise leave as idle dot (grey)
     }
 
-    function setStatus(id, text, ok) {
+    function setStatus(id, text) {
       const el = $("status-" + id);
+      if (!el) return;
       el.textContent = text || "—";
-      setDot(id, ok);
     }
 
     function setImg(id, url) {
@@ -548,7 +559,7 @@
       }
     }
 
-    function renderSource(id, src, history) {
+    function renderSource(id, src, changeType) {
       const t = src?.updatedAt || null;
       $("time-" + id).textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
       $("err-" + id).textContent = src?.error ? String(src.error) : "";
@@ -560,35 +571,10 @@
 
       setImg(id, src?.item?.imgUrl || null);
 
-      // Determine change type from history for dot color
-      let changeType = null;
-      if (src?.ok && history?.sources?.[id]?.entries?.length > 0) {
-        const entries = history.sources[id].entries;
-        // Find most recent entry that is NOT the current item (by checking if it matches current)
-        const currentUrl = src?.item?.url;
-        const currentTitle = src?.item?.title;
-        // Look for a previous entry (different URL or older)
-        let prevEntry = null;
-        for (let i = entries.length - 1; i >= 0; i--) {
-          const e = entries[i];
-          if (e.url !== currentUrl || e.title !== currentTitle) {
-            prevEntry = e;
-            break;
-          }
-        }
-        if (prevEntry) {
-          if (prevEntry.url !== currentUrl) changeType = "url";
-          else if (prevEntry.url === currentUrl && prevEntry.title !== currentTitle) changeType = "headline";
-        } else {
-          // No previous entry found - this is a new story
-          changeType = "url";
-        }
-      }
+      if (src?.ok) setStatus(id, "OK");
+      else setStatus(id, "Stale / Failed");
 
-      if (src?.ok) setStatus(id, "OK", true);
-      else setStatus(id, "Stale / Failed", false);
-
-      // Set dot based on change type (green=url, blue=headline) or ok/bad fallback
+      // Dot indicates change type (Green = new URL, Blue = new headline), or red for failures.
       setDot(id, src?.ok, changeType);
 
       const sinceEl = $("since-" + id);
@@ -650,9 +636,6 @@
       // Current cards
       const cur = await supabase.from("v_current_hero_since").select("*");
       if (cur.error) throw cur.error;
-
-      // Unified feed (future use)
-      // const uni = await supabase.from("v_unified_hero_feed").select("*").order("observed_at", { ascending: false }).limit(100);
 
       // History rollup
       const hist = await supabase
@@ -908,6 +891,78 @@
       }
     }
 
+    function loadPrevSnapshot(){
+      try{
+        const raw = localStorage.getItem("nb_prev_snapshot_v1");
+        if (!raw) return null;
+        const obj = JSON.parse(raw);
+        if (!obj || typeof obj !== "object") return null;
+        return obj;
+      } catch {
+        return null;
+      }
+    }
+
+    function savePrevSnapshot(snapshot){
+      try{
+        localStorage.setItem("nb_prev_snapshot_v1", JSON.stringify(snapshot || {}));
+      } catch {}
+    }
+
+    function computeChangeTypes(nextSources){
+      const prev = loadPrevSnapshot() || {};
+      const out = {};
+      for (const [id, src] of Object.entries(nextSources || {})){
+        const curUrl = src?.item?.url || null;
+        const curTitle = src?.item?.title || null;
+
+        const p = prev?.[id] || null;
+        if (!p || !p.url || !curUrl) {
+          // First observation (or missing data): no indicator.
+          out[id] = null;
+          continue;
+        }
+
+        if (p.url !== curUrl) out[id] = "url";
+        else if ((p.title || "") !== (curTitle || "")) out[id] = "headline";
+        else out[id] = null;
+      }
+      return out;
+    }
+
+    function snapshotForNext(nextSources){
+      const snap = {};
+      for (const [id, src] of Object.entries(nextSources || {})){
+        const url = src?.item?.url || null;
+        const title = src?.item?.title || null;
+        if (url) snap[id] = { url, title };
+      }
+      return snap;
+    }
+
+    function sortCardsByMostRecent(sources){
+      const grid = $("cards-grid");
+      if (!grid) return;
+
+      const cards = Array.from(grid.querySelectorAll("section.card[data-source-id]"));
+      const tsFor = (id) => {
+        const t = sources?.[id]?.updatedAt || sources?.[id]?.firstSeenAt || null;
+        const ms = Date.parse(t || "");
+        return Number.isFinite(ms) ? ms : 0;
+      };
+
+      cards.sort((a,b) => {
+        const ida = a.getAttribute("data-source-id") || "";
+        const idb = b.getAttribute("data-source-id") || "";
+        const ta = tsFor(ida);
+        const tb = tsFor(idb);
+        if (tb !== ta) return tb - ta;
+        return ida.localeCompare(idb);
+      });
+
+      for (const el of cards) grid.appendChild(el);
+    }
+
     async function loadPublishedCache() {
       const data = await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
       return data;
@@ -937,9 +992,17 @@
             : "Published cache.json";
         }
 
-        renderSource("abc1", data?.sources?.abc1, history);
-        renderSource("cbs1", data?.sources?.cbs1, history);
-        renderSource("usat1", data?.sources?.usat1, history);
+        const changeTypes = computeChangeTypes(data?.sources || {});
+
+        renderSource("abc1", data?.sources?.abc1, changeTypes["abc1"] || null);
+        renderSource("cbs1", data?.sources?.cbs1, changeTypes["cbs1"] || null);
+        renderSource("usat1", data?.sources?.usat1, changeTypes["usat1"] || null);
+
+        // Order cards by most recent update so the page always "sorts to now"
+        sortCardsByMostRecent(data?.sources || {});
+
+        // Persist current snapshot so next reload can show Blue/Green change indicators
+        savePrevSnapshot(snapshotForNext(data?.sources || {}));
 
         if (!history) {
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);

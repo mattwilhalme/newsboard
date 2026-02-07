@@ -260,6 +260,288 @@ async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
           bandCardIndex = bandCards.indexOf(card);
         }
 
+        let imgUrl = null;
+        const img =
+          card.querySelector("img[src]") ||
+          card.querySelector("img[data-src]") ||
+          null;
+
+        const src = img?.getAttribute("src") || img?.getAttribute("data-src") || "";
+        if (src) imgUrl = absUrl(src);
+
+        out.push({
+          title,
+          url,
+          imgUrl,
+          bandIdx,
+          bandCardIndex,
+          cardIdx,
+        });
+
+        if (out.length >= limit) break;
+      }
+
+      return out;
+    }, maxItems);
+
+    const items = (rows || [])
+      .map((r) => ({
+        title: cleanText(r.title),
+        url: normalizeUrl(r.url),
+        imgUrl: r.imgUrl ? normalizeUrl(r.imgUrl) : null,
+        meta: { bandIdx: r.bandIdx, bandCardIndex: r.bandCardIndex, cardIdx: r.cardIdx },
+      }))
+      .filter((x) => x.title && x.url);
+
+    const snapshot = {
+      runId,
+      fetchedAt: nowISO(),
+      count: items.length,
+      items,
+    };
+
+    await archiveRun(page, runId, snapshot);
+
+    return snapshot;
+  });
+}
+
+function nowISO() {
+  return new Date().toISOString();
+}
+
+function cleanText(s) {
+  return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function normalizeUrl(u) {
+  try {
+    const url = new URL(u);
+    for (const key of [...url.searchParams.keys()]) {
+      if (key.toLowerCase().startsWith("utm_")) url.searchParams.delete(key);
+    }
+    return url.toString();
+  } catch {
+    return u;
+  }
+}
+
+function sha1(s) {
+  return crypto.createHash("sha1").update(String(s)).digest("hex");
+}
+
+function ensureCacheShape(raw) {
+  const baseSource = (id, name, homeUrl) => ({
+    id,
+    name,
+    homeUrl,
+    updatedAt: null,
+    ok: false,
+    error: "Not refreshed yet",
+    stale: false,
+    runId: null,
+    archive: null,
+    items: [],
+    item: null, // for hero sources
+  });
+
+  const base = {
+    generatedAt: null,
+    sources: {
+      abc: baseSource("abc", "ABC News", "https://abcnews.go.com/"),
+      cbs: baseSource("cbs", "CBS News", "https://www.cbsnews.com/"),
+      abc1: baseSource("abc1", "ABC News (Hero)", "https://abcnews.go.com/"),
+      cbs1: baseSource("cbs1", "CBS News (Hero)", "https://www.cbsnews.com/"),
+      usat1: baseSource("usat1", "USA Today (Hero)", "https://www.usatoday.com/"),
+    },
+  };
+
+  if (!raw || typeof raw !== "object") return base;
+
+  if (raw.sources && typeof raw.sources === "object") {
+    return {
+      ...base,
+      ...raw,
+      sources: {
+        ...base.sources,
+        ...raw.sources,
+        abc: { ...base.sources.abc, ...(raw.sources.abc || {}) },
+        cbs: { ...base.sources.cbs, ...(raw.sources.cbs || {}) },
+        abc1: { ...base.sources.abc1, ...(raw.sources.abc1 || {}) },
+        cbs1: { ...base.sources.cbs1, ...(raw.sources.cbs1 || {}) },
+        usat1: { ...base.sources.usat1, ...(raw.sources.usat1 || {}) },
+      },
+    };
+  }
+
+  if (raw.abc || raw.cbs || raw.abc1 || raw.cbs1 || raw.usat1) {
+    return {
+      ...base,
+      generatedAt: raw.generatedAt || null,
+      sources: {
+        ...base.sources,
+        abc: { ...base.sources.abc, ...(raw.abc || {}) },
+        cbs: { ...base.sources.cbs, ...(raw.cbs || {}) },
+        abc1: { ...base.sources.abc1, ...(raw.abc1 || {}) },
+        cbs1: { ...base.sources.cbs1, ...(raw.cbs1 || {}) },
+        usat1: { ...base.sources.usat1, ...(raw.usat1 || {}) },
+      },
+    };
+  }
+
+  return base;
+}
+
+async function withBrowser(fn) {
+  const browser = await chromium.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+  });
+
+  const context = await browser.newContext({
+    viewport: { width: 1440, height: 900 },
+    locale: "en-US",
+    userAgent:
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+  });
+
+  const page = await context.newPage();
+
+  // ---- Playwright diagnostics ----
+  page.on("console", (msg) => {
+    try {
+      const type = msg.type();
+      if (type === "error" || type === "warning") {
+        console.log(`[PW console.${type}] ${msg.text()}`.slice(0, 1200));
+      }
+    } catch {}
+  });
+
+  page.on("pageerror", (err) => {
+    console.log(`[PW pageerror] ${String(err)}`.slice(0, 1200));
+  });
+
+  page.on("requestfailed", (req) => {
+    try {
+      const fail = req.failure();
+      if (fail?.errorText) {
+        console.log(`[PW requestfailed] ${fail.errorText} :: ${req.url()}`.slice(0, 1200));
+      }
+    } catch {}
+  });
+
+  page.on("response", (res) => {
+    try {
+      const s = res.status();
+      if (s >= 400) console.log(`[PW response ${s}] ${res.url()}`.slice(0, 1200));
+    } catch {}
+  });
+  // -------------------------------
+
+  try {
+    return await fn(page);
+  } finally {
+    await page.close().catch(() => {});
+    await context.close().catch(() => {});
+    await browser.close().catch(() => {});
+  }
+}
+
+async function archiveRun(page, runId, snapshotObj) {
+  const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
+  const pngPath = path.join(ARCHIVE_DIR, `${runId}.png`);
+  const jsonPath = path.join(ARCHIVE_DIR, `${runId}.json`);
+
+  try {
+    fs.writeFileSync(htmlPath, await page.content(), "utf8");
+  } catch {}
+
+  // Screenshots disabled for now (storage + speed).
+  // try { await page.screenshot({ path: pngPath, fullPage: true }); } catch {}
+
+  try {
+    fs.writeFileSync(jsonPath, JSON.stringify(snapshotObj, null, 2), "utf8");
+  } catch {}
+
+  return { htmlPath, pngPath, jsonPath };
+}
+
+// -------- Scrapers (Top headlines / legacy) --------
+
+async function scrapeABCFrontPage({ maxItems = 40, scrollPasses = 6 } = {}) {
+  return await withBrowser(async (page) => {
+    const runId = `abc_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://abcnews.go.com/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    await page.waitForSelector("main", { timeout: 20000 });
+    await page.waitForTimeout(1500);
+
+    for (let i = 0; i < scrollPasses; i++) {
+      await page.mouse.wheel(0, 1400);
+      await page.waitForTimeout(700);
+    }
+
+    const rows = await page.evaluate((limit) => {
+      function clean(s) {
+        return String(s || "").replace(/\s+/g, " ").trim();
+      }
+      function absUrl(href) {
+        try {
+          return new URL(href, window.location.origin).toString();
+        } catch {
+          return null;
+        }
+      }
+
+      const main = document.querySelector("main") || document.body;
+      const bands = Array.from(main.querySelectorAll('[data-container="band"]'));
+      const cards = Array.from(main.querySelectorAll('[data-testid="prism-card"]'));
+
+      const out = [];
+      const seenUrl = new Set();
+
+      function bandIndexFor(el) {
+        const band = el.closest('[data-container="band"]');
+        if (!band) return -1;
+        return bands.indexOf(band);
+      }
+
+      for (let cardIdx = 0; cardIdx < cards.length; cardIdx++) {
+        const card = cards[cardIdx];
+
+        const h2 =
+          card.querySelector('h2[id$="headline"]') ||
+          card.querySelector("h2") ||
+          null;
+
+        const title = clean(h2?.textContent || "");
+        if (!title || title.length < 8) continue;
+
+        const a =
+          (h2 && h2.closest('a[data-testid="prism-linkbase"][href]')) ||
+          card.querySelector('a[data-testid="prism-linkbase"][href]') ||
+          null;
+
+        const href = a?.getAttribute("href") || "";
+        const url = absUrl(href);
+        if (!url) continue;
+
+        if (seenUrl.has(url)) continue;
+        seenUrl.add(url);
+
+        const bandIdx = bandIndexFor(card);
+
+        let bandCardIndex = -1;
+        if (bandIdx >= 0) {
+          const band = bands[bandIdx];
+          const bandCards = Array.from(band.querySelectorAll('[data-testid="prism-card"]'));
+          bandCardIndex = bandCards.indexOf(card);
+        }
+
         const domSig = clean(
           `${card.tagName}|${card.getAttribute("data-testid") || ""}|${bandIdx}|${bandCardIndex}`
         );
