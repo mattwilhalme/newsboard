@@ -2,15 +2,16 @@
 import fs from "fs";
 import path from "path";
 import { createClient } from "@supabase/supabase-js";
-import { scrapeABCHero, scrapeCBSHero, scrapeUSATHero } from "../server.js";
+import { scrapeABCHero, scrapeCBSHero, scrapeUSATHero, scrapeNBCHero } from "../server.js";
 
 const DATA_DIR = path.join("docs", "data");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
 
 const SOURCES = {
-  abc1: { id: "abc1", name: "ABC News (Hero)", homeUrl: "https://abcnews.go.com/" },
-  cbs1: { id: "cbs1", name: "CBS News (Hero)", homeUrl: "https://www.cbsnews.com/" },
-  usat1: { id: "usat1", name: "USA Today (Hero)", homeUrl: "https://www.usatoday.com/" },
+  abc1: { id: "abc1", name: "ABC News", homeUrl: "https://abcnews.go.com/" },
+  cbs1: { id: "cbs1", name: "CBS News", homeUrl: "https://www.cbsnews.com/" },
+  usat1: { id: "usat1", name: "USA Today", homeUrl: "https://www.usatoday.com/" },
+  nbc1: { id: "nbc1", name: "NBC News", homeUrl: "https://www.nbcnews.com/" },
 };
 
 function getSupabaseAdmin() {
@@ -111,14 +112,6 @@ function readJSONIfExists(p, fallback) {
 }
 
 function upsertHistory(history, sourceKey, generatedAtISO, item) {
-  // history shape:
-  // {
-  //   generatedAt: "...",
-  //   sources: {
-  //     abc: { entries: [ {url,title,imgUrl,firstSeenAt,lastSeenAt,seenCount} ] },
-  //     cbs: { entries: [...] }
-  //   }
-  // }
   const h = history && typeof history === "object" ? history : {};
   if (!h.sources || typeof h.sources !== "object") h.sources = {};
   if (!h.sources[sourceKey]) h.sources[sourceKey] = { entries: [] };
@@ -140,15 +133,12 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
     const nextTitle = String(title || "");
 
     if (lastTitle === nextTitle) {
-      // Same URL + same title: extend lastSeenAt + increment count
       last.lastSeenAt = generatedAtISO;
       last.seenCount = (last.seenCount || 0) + 1;
-      // Keep latest imgUrl in case image changes
       last.imgUrl = imgUrl || last.imgUrl;
       return h;
     }
 
-    // Same URL but title changed: log a new variation entry
     entries.push({
       url,
       title: nextTitle,
@@ -160,7 +150,6 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
     return h;
   }
 
-  // New hero URL: add a new entry
   entries.push({
     url,
     title,
@@ -181,8 +170,6 @@ function currentSinceFromHistory(history, sourceKey, currentUrl) {
     const last = entries[entries.length - 1];
     if (last?.url !== currentUrl) return null;
 
-    // Walk backwards across contiguous entries with the same URL (headline variations)
-    // so "since" reflects when this URL first became the hero.
     let i = entries.length - 1;
     while (i - 1 >= 0 && entries[i - 1]?.url === currentUrl) i -= 1;
     return entries[i]?.firstSeenAt || last.firstSeenAt || null;
@@ -209,26 +196,34 @@ async function run() {
   let abc1 = null;
   let cbs1 = null;
   let usat1 = null;
+  let nbc1 = null;
 
   try {
     abc1 = await scrapeABCHero();
   } catch (err) {
-    console.error("❌ ABC hero scrape failed", err);
+    console.error("❌ ABC scrape failed", err);
     abc1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
   }
 
   try {
     cbs1 = await scrapeCBSHero();
   } catch (err) {
-    console.error("❌ CBS hero scrape failed", err);
+    console.error("❌ CBS scrape failed", err);
     cbs1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
   }
 
   try {
     usat1 = await scrapeUSATHero();
   } catch (err) {
-    console.error("❌ USA Today hero scrape failed", err);
+    console.error("❌ USA Today scrape failed", err);
     usat1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
+  }
+
+  try {
+    nbc1 = await scrapeNBCHero();
+  } catch (err) {
+    console.error("❌ NBC scrape failed", err);
+    nbc1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
   }
 
   if (supabase) {
@@ -236,36 +231,42 @@ async function run() {
       await upsertSourceRow(supabase, SOURCES.abc1);
       await upsertSourceRow(supabase, SOURCES.cbs1);
       await upsertSourceRow(supabase, SOURCES.usat1);
+      await upsertSourceRow(supabase, SOURCES.nbc1);
 
       await insertHeroRun(supabase, "abc1", abc1, observedAt);
       await insertHeroRun(supabase, "cbs1", cbs1, observedAt);
       await insertHeroRun(supabase, "usat1", usat1, observedAt);
+      await insertHeroRun(supabase, "nbc1", nbc1, observedAt);
     } catch (e) {
       console.error("❌ Supabase insert failed", e);
     }
   }
 
-  // Load existing history, update, and write back
   const history = readJSONIfExists(HISTORY_PATH, {
     generatedAt: null,
-    sources: { abc1: { entries: [] }, cbs1: { entries: [] }, usat1: { entries: [] } },
+    sources: {
+      abc1: { entries: [] },
+      cbs1: { entries: [] },
+      usat1: { entries: [] },
+      nbc1: { entries: [] },
+    },
   });
 
   history.generatedAt = generatedAt;
   upsertHistory(history, "abc1", generatedAt, abc1?.ok ? abc1.item : null);
   upsertHistory(history, "cbs1", generatedAt, cbs1?.ok ? cbs1.item : null);
   upsertHistory(history, "usat1", generatedAt, usat1?.ok ? usat1.item : null);
+  upsertHistory(history, "nbc1", generatedAt, nbc1?.ok ? nbc1.item : null);
 
   writeJSON("history.json", history);
 
-  // Determine "since" for current heroes (first time we saw this URL)
   const abcSince = currentSinceFromHistory(history, "abc1", abc1?.item?.url || null);
   const cbsSince = currentSinceFromHistory(history, "cbs1", cbs1?.item?.url || null);
   const usatSince = currentSinceFromHistory(history, "usat1", usat1?.item?.url || null);
+  const nbcSince = currentSinceFromHistory(history, "nbc1", nbc1?.item?.url || null);
 
-  // current.json (for "Now" view)
   const current = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok),
     generatedAt,
     sources: {
       abc1: {
@@ -273,7 +274,7 @@ async function run() {
         updatedAt: abc1?.updatedAt || null,
         error: abc1?.error || null,
         runId: abc1?.runId || null,
-        since: abcSince,          // <— NEW
+        since: abcSince,
         item: abc1?.item || null,
       },
       cbs1: {
@@ -281,7 +282,7 @@ async function run() {
         updatedAt: cbs1?.updatedAt || null,
         error: cbs1?.error || null,
         runId: cbs1?.runId || null,
-        since: cbsSince,          // <— NEW
+        since: cbsSince,
         item: cbs1?.item || null,
       },
       usat1: {
@@ -292,19 +293,27 @@ async function run() {
         since: usatSince,
         item: usat1?.item || null,
       },
+      nbc1: {
+        ok: Boolean(nbc1?.ok),
+        updatedAt: nbc1?.updatedAt || null,
+        error: nbc1?.error || null,
+        runId: nbc1?.runId || null,
+        since: nbcSince,
+        item: nbc1?.item || null,
+      },
     },
   };
 
   writeJSON("current.json", current);
 
-  // unified.json (simple merged list)
   const unified = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok),
     generatedAt,
     items: [
       abc1?.item ? { source: "abc1", updatedAt: abc1.updatedAt, since: abcSince, ...abc1.item } : null,
       cbs1?.item ? { source: "cbs1", updatedAt: cbs1.updatedAt, since: cbsSince, ...cbs1.item } : null,
       usat1?.item ? { source: "usat1", updatedAt: usat1.updatedAt, since: usatSince, ...usat1.item } : null,
+      nbc1?.item ? { source: "nbc1", updatedAt: nbc1.updatedAt, since: nbcSince, ...nbc1.item } : null,
     ].filter(Boolean),
   };
 
