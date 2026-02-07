@@ -20,10 +20,10 @@
       --blue:#1a73e8;
       --blue2:#174ea6;
 
-      --ok:#1e8e3e;
-      --bad:#d93025;
+      --ok:#1e8e3e;     /* green */
+      --bad:#d93025;    /* red */
       --warn:#f9ab00;
-      --dotIdle:#9aa0a6;
+      --dotIdle:#9aa0a6; /* gray */
 
       --chip:#f1f3f4;
       --chipText:#3c4043;
@@ -61,29 +61,6 @@
     .brand .sub{ color:var(--muted); font-size:12px; }
 
     .controls{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
-
-    .tabs{
-      display:inline-flex;
-      border:1px solid var(--line);
-      background: var(--card);
-      border-radius:999px;
-      overflow:hidden;
-      box-shadow: var(--shadow);
-    }
-    .tabs button{
-      border:0;
-      background:transparent;
-      color: var(--muted);
-      font-size:12px;
-      padding:8px 12px;
-      cursor:pointer;
-      user-select:none;
-    }
-    .tabs button.active{
-      color: var(--blue);
-      font-weight:700;
-      background: rgba(26,115,232,.08);
-    }
 
     .btn{
       border:1px solid var(--line);
@@ -131,9 +108,9 @@
 
     .srcTitle{ display:flex; align-items:center; gap:10px; min-width:0; }
     .dot{ width:10px; height:10px; border-radius:999px; background: var(--dotIdle); flex:0 0 auto; margin-top:2px; }
-    .dot.ok{ background: var(--ok); }
-    .dot.info{ background: var(--blue); }
-    .dot.bad{ background: var(--bad); }
+    .dot.ok{ background: var(--ok); }      /* green */
+    .dot.info{ background: var(--blue); }  /* blue */
+    .dot.bad{ background: var(--bad); }    /* red */
 
     .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
     .srcName{ font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -166,15 +143,6 @@
     .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 
     .headlineWrap{ width:100%; min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; }
-
-    .pubLine{
-      font-weight:700;
-      font-size:13px;
-      color: var(--muted);
-      letter-spacing:.15px;
-      line-height:1.1;
-      margin-top:2px;
-    }
 
     .headline{ font-size:16px; line-height:1.25; font-weight:700; margin:0; }
     .headline a{ color: var(--text); text-decoration:none; }
@@ -319,115 +287,8 @@
   </header>
 
   <main>
-    <div class="grid" id="cards-grid">
-
-      <!-- ABC HERO -->
-      <section class="card" id="card-abc1" data-source-id="abc1">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot" id="dot-abc1"></div>
-            <div class="srcMeta">
-              <div class="srcName">ABC News</div>
-            </div>
-          </div>
-          <div class="rightMeta">
-            <div class="srcTime" id="time-abc1">—</div>
-            <div class="tiny" id="since-abc1">—</div>
-          </div>
-        </div>
-
-        <div class="cardBody">
-          <div class="thumb"><img id="img-abc1" alt="" /></div>
-          <div class="headlineWrap">
-            <h2 class="headline"><a id="link-abc1" href="#" target="_blank" rel="noopener">—</a></h2>
-
-            <div class="row">
-              <span class="pill" id="status-abc1">—</span>
-              <button class="linkbtn" id="copy-abc1" type="button">Copy headline link</button>
-            </div>
-
-            <div class="urlLine">
-              <div class="urlText mono" id="url-abc1">—</div>
-              <button class="linkbtn" id="copyurl-abc1" type="button">Copy URL</button>
-            </div>
-
-            <div class="tiny" id="err-abc1"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CBS HERO -->
-      <section class="card" id="card-cbs1" data-source-id="cbs1">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot" id="dot-cbs1"></div>
-            <div class="srcMeta">
-              <div class="srcName">CBS News</div>
-            </div>
-          </div>
-          <div class="rightMeta">
-            <div class="srcTime" id="time-cbs1">—</div>
-            <div class="tiny" id="since-cbs1">—</div>
-          </div>
-        </div>
-
-        <div class="cardBody">
-          <div class="thumb"><img id="img-cbs1" alt="" /></div>
-          <div class="headlineWrap">
-            <h2 class="headline"><a id="link-cbs1" href="#" target="_blank" rel="noopener">—</a></h2>
-
-            <div class="row">
-              <span class="pill" id="status-cbs1">—</span>
-              <button class="linkbtn" id="copy-cbs1" type="button">Copy headline link</button>
-            </div>
-
-            <div class="urlLine">
-              <div class="urlText mono" id="url-cbs1">—</div>
-              <button class="linkbtn" id="copyurl-cbs1" type="button">Copy URL</button>
-            </div>
-
-            <div class="tiny" id="err-cbs1"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- USA TODAY HERO -->
-      <section class="card" id="card-usat1" data-source-id="usat1">
-        <div class="cardHead">
-          <div class="srcTitle">
-            <div class="dot" id="dot-usat1"></div>
-            <div class="srcMeta">
-              <div class="srcName">USA Today</div>
-            </div>
-          </div>
-          <div class="rightMeta">
-            <div class="srcTime" id="time-usat1">—</div>
-            <div class="tiny" id="since-usat1">—</div>
-          </div>
-        </div>
-
-        <div class="cardBody">
-          <div class="thumb"><img id="img-usat1" alt="" /></div>
-          <div class="headlineWrap">
-            <h2 class="headline"><a id="link-usat1" href="#" target="_blank" rel="noopener">—</a></h2>
-
-            <div class="row">
-              <span class="pill" id="status-usat1">—</span>
-              <button class="linkbtn" id="copy-usat1" type="button">Copy headline link</button>
-            </div>
-
-            <div class="urlLine">
-              <div class="urlText mono" id="url-usat1">—</div>
-              <button class="linkbtn" id="copyurl-usat1" type="button">Copy URL</button>
-            </div>
-
-            <div class="tiny" id="err-usat1"></div>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
+    <!-- Dynamic cards render here -->
+    <div class="grid" id="cards-grid"></div>
   </main>
 
   <div class="drawerOverlay" id="drawer-overlay"></div>
@@ -456,11 +317,12 @@
     const isGitHubPages =
       location.hostname.endsWith("github.io");
 
-    // On GitHub Pages: read published cache.json via GET.
-    // Locally: we can do both (GET cache.json OR POST /api/refresh).
     const CACHE_URL = "./cache.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
     const HISTORY_WINDOW_HOURS = 12;
+
+    // UI rules
+    const STALE_MS = 2 * 60 * 60 * 1000; // 2 hours
 
     function fmtTime(ts) {
       if (!ts) return "—";
@@ -522,81 +384,35 @@
       if (!open && btn) btn.focus();
     }
 
-    function setDot(id, ok, changeType) {
-      const el = $("dot-" + id);
-      if (!el) return;
-      el.classList.remove("ok", "bad", "info");
+    function sourceLabel(k){
+      const s = String(k || "").toLowerCase();
+      if (s === "abc" || s === "abc1") return "ABC News";
+      if (s === "cbs" || s === "cbs1") return "CBS News";
+      if (s === "usat" || s === "usat1") return "USA Today";
+      return k || "Source";
+    }
 
-      // Red = failed/stale
+    function setDot(elDot, ok, changeType, isStale2h) {
+      if (!elDot) return;
+      elDot.classList.remove("ok", "bad", "info");
+
+      // Red = scrape failed
       if (ok === false) {
-        el.classList.add("bad");
+        elDot.classList.add("bad");
         return;
       }
 
-      // Change indicators:
-      // Green = new URL (new story)
-      // Blue  = new headline (same URL, headline text changed)
-      if (changeType === "url") el.classList.add("ok");
-      else if (changeType === "headline") el.classList.add("info");
-      // Otherwise leave as idle dot (grey)
+      // Gray = 2h+ without URL/headline change
+      if (isStale2h) return;
+
+      // Green/Blue = current-cycle changes
+      if (changeType === "url") elDot.classList.add("ok");
+      else if (changeType === "headline") elDot.classList.add("info");
     }
 
-    function setStatus(id, text) {
-      const el = $("status-" + id);
-      if (!el) return;
-      el.textContent = text || "—";
-    }
-
-    function setImg(id, url) {
-      const img = $("img-" + id);
-      if (!img) return;
-      if (url) {
-        img.src = url;
-        img.style.display = "block";
-      } else {
-        img.removeAttribute("src");
-        img.style.display = "none";
-      }
-    }
-
-    function renderSource(id, src, changeType) {
-      const t = src?.updatedAt || null;
-      $("time-" + id).textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
-      $("err-" + id).textContent = src?.error ? String(src.error) : "";
-      $("url-" + id).textContent = src?.item?.url || "—";
-
-      const link = $("link-" + id);
-      link.textContent = src?.item?.title || "—";
-      link.href = src?.item?.url || "#";
-
-      setImg(id, src?.item?.imgUrl || null);
-
-      if (src?.ok) setStatus(id, "OK");
-      else setStatus(id, "Stale / Failed");
-
-      // Dot indicates change type (Green = new URL, Blue = new headline), or red for failures.
-      setDot(id, src?.ok, changeType);
-
-      const sinceEl = $("since-" + id);
-      if (src?.ok && src?.firstSeenAt) sinceEl.textContent = `First seen ${ago(src.firstSeenAt)}`;
-      else if (src?.ok && src?.secondsInTop !== null && src?.secondsInTop !== undefined) sinceEl.textContent = `In top ${fmtDurationSeconds(src.secondsInTop)}`;
-      else if (src?.ok && src?.updatedAt) sinceEl.textContent = `Updated ${ago(src.updatedAt)}`;
-      else sinceEl.textContent = "—";
-    }
-
-    function wireCopy(btnId, getText) {
-      const btn = $(btnId);
-      if (!btn) return;
-      btn.addEventListener("click", async () => {
-        const txt = getText();
-        if (!txt) return showToast("Nothing to copy");
-        try {
-          await navigator.clipboard.writeText(txt);
-          showToast("Copied");
-        } catch {
-          showToast("Copy failed");
-        }
-      });
+    function copyText(txt){
+      if (!txt) return;
+      return navigator.clipboard.writeText(txt);
     }
 
     async function fetchJSON(url, opts) {
@@ -651,7 +467,7 @@
         if (!id) continue;
 
         const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "since_at", "current_since_at"]);
-        const secondsInTop = pick(row, ["seconds_in_top", "secondsInTop", "seconds_in_slot", "seconds_in_current"]); 
+        const secondsInTop = pick(row, ["seconds_in_top", "secondsInTop", "seconds_in_slot", "seconds_in_current"]);
 
         sources[id] = {
           ok: row.ok !== false,
@@ -681,14 +497,7 @@
         const lastSeenAt = pick(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at", "updatedAt"]);
         const seenCount = pick(row, ["seen_count", "seenCount", "count", "observations"]);
 
-        historyObj.sources[id].entries.push({
-          url,
-          title,
-          imgUrl,
-          firstSeenAt,
-          lastSeenAt,
-          seenCount,
-        });
+        historyObj.sources[id].entries.push({ url, title, imgUrl, firstSeenAt, lastSeenAt, seenCount });
       }
 
       for (const obj of Object.values(historyObj.sources)){
@@ -703,25 +512,9 @@
       }
 
       return {
-        cacheLike: {
-          generatedAt: new Date().toISOString(),
-          sources,
-        },
+        cacheLike: { generatedAt: new Date().toISOString(), sources },
         history: historyObj,
       };
-    }
-
-    function sourceLabel(k){
-      const s = String(k || "").toLowerCase();
-      if (s === "abc" || s === "abc1") return "ABC News";
-      if (s === "cbs" || s === "cbs1") return "CBS News";
-      if (s === "usat" || s === "usat1") return "USA Today";
-      return k || "Source";
-    }
-
-    function copyText(txt){
-      if (!txt) return;
-      return navigator.clipboard.writeText(txt);
     }
 
     function renderHistory(history){
@@ -762,7 +555,6 @@
       }
 
       function changeScore(x){
-        // Higher score sorts earlier.
         if (x?.__changeType === "headline") return 2;
         if (x?.__changeType === "url") return 1;
         return 0;
@@ -777,7 +569,6 @@
         const tb = activityTime(b);
         if (tb !== ta) return tb - ta;
 
-        // Deterministic tie-breakers so ordering is stable.
         const sa = String(a.source || "");
         const sb = String(b.source || "");
         if (sa !== sb) return sa.localeCompare(sb);
@@ -891,81 +682,263 @@
       }
     }
 
-    function loadPrevSnapshot(){
+    // ---- NEW: per-source state for lights + 2h stale ----
+    function loadState(){
       try{
-        const raw = localStorage.getItem("nb_prev_snapshot_v1");
-        if (!raw) return null;
+        const raw = localStorage.getItem("nb_source_state_v2");
+        if (!raw) return {};
         const obj = JSON.parse(raw);
-        if (!obj || typeof obj !== "object") return null;
-        return obj;
+        return obj && typeof obj === "object" ? obj : {};
       } catch {
-        return null;
+        return {};
       }
     }
 
-    function savePrevSnapshot(snapshot){
+    function saveState(state){
       try{
-        localStorage.setItem("nb_prev_snapshot_v1", JSON.stringify(snapshot || {}));
+        localStorage.setItem("nb_source_state_v2", JSON.stringify(state || {}));
       } catch {}
     }
 
-    function computeChangeTypes(nextSources){
-      const prev = loadPrevSnapshot() || {};
-      const out = {};
+    // Returns:
+    // { indicators: { [id]: { changeType: "url"|"headline"|null, stale2h: boolean } }, nextState }
+    function computeIndicators(nextSources){
+      const prevState = loadState();
+      const nextState = { ...prevState };
+      const indicators = {};
+
+      const now = Date.now();
+
       for (const [id, src] of Object.entries(nextSources || {})){
         const curUrl = src?.item?.url || null;
         const curTitle = src?.item?.title || null;
 
-        const p = prev?.[id] || null;
-        if (!p || !p.url || !curUrl) {
-          // First observation (or missing data): no indicator.
-          out[id] = null;
-          continue;
+        const prev = prevState?.[id] || null;
+
+        let changeType = null;
+
+        // Initial discovery should be GREEN (new URL)
+        if (!prev && curUrl) {
+          changeType = "url";
+          nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
+        } else if (prev && curUrl) {
+          if (prev.url !== curUrl) {
+            changeType = "url";
+            nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
+          } else if (String(prev.title || "") !== String(curTitle || "")) {
+            changeType = "headline";
+            nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
+          } else {
+            // No change: keep lastChangeAt as-is
+            if (!nextState[id]) nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
+          }
         }
 
-        if (p.url !== curUrl) out[id] = "url";
-        else if ((p.title || "") !== (curTitle || "")) out[id] = "headline";
-        else out[id] = null;
+        const lastChangeAt = Number(nextState?.[id]?.lastChangeAt || 0);
+        const stale2h = (changeType === null) && lastChangeAt > 0 && (now - lastChangeAt >= STALE_MS);
+
+        indicators[id] = { changeType, stale2h };
       }
-      return out;
+
+      return { indicators, nextState };
     }
 
-    function snapshotForNext(nextSources){
-      const snap = {};
-      for (const [id, src] of Object.entries(nextSources || {})){
-        const url = src?.item?.url || null;
-        const title = src?.item?.title || null;
-        if (url) snap[id] = { url, title };
-      }
-      return snap;
+    // ---- Dynamic cards ----
+    function pickCardSourceIds(sources){
+      // Prefer "hero-like" sources (have item.url/title). Fall back to any keys.
+      const ids = Object.keys(sources || {});
+      const heroish = ids.filter((id) => sources?.[id]?.item?.url);
+      return heroish.length ? heroish : ids;
     }
 
-    function sortCardsByMostRecent(sources){
+    function tsForSort(sources, id){
+      const t = sources?.[id]?.updatedAt || sources?.[id]?.firstSeenAt || null;
+      const ms = Date.parse(t || "");
+      return Number.isFinite(ms) ? ms : 0;
+    }
+
+    function buildCardEl(id, src, indicator){
+      const card = document.createElement("section");
+      card.className = "card";
+      card.setAttribute("data-source-id", id);
+
+      const head = document.createElement("div");
+      head.className = "cardHead";
+
+      const left = document.createElement("div");
+      left.className = "srcTitle";
+
+      const dot = document.createElement("div");
+      dot.className = "dot";
+
+      const meta = document.createElement("div");
+      meta.className = "srcMeta";
+
+      const srcName = document.createElement("div");
+      srcName.className = "srcName";
+      srcName.textContent = sourceLabel(id);
+
+      meta.appendChild(srcName);
+      left.appendChild(dot);
+      left.appendChild(meta);
+
+      const right = document.createElement("div");
+      right.className = "rightMeta";
+
+      const time = document.createElement("div");
+      time.className = "srcTime";
+      const t = src?.updatedAt || null;
+      time.textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
+
+      const since = document.createElement("div");
+      since.className = "tiny";
+      if (src?.ok && src?.firstSeenAt) since.textContent = `First seen ${ago(src.firstSeenAt)}`;
+      else if (src?.ok && src?.secondsInTop !== null && src?.secondsInTop !== undefined) since.textContent = `In top ${fmtDurationSeconds(src.secondsInTop)}`;
+      else if (src?.ok && src?.updatedAt) since.textContent = `Updated ${ago(src.updatedAt)}`;
+      else since.textContent = "—";
+
+      right.appendChild(time);
+      right.appendChild(since);
+
+      head.appendChild(left);
+      head.appendChild(right);
+
+      const body = document.createElement("div");
+      body.className = "cardBody";
+
+      const thumb = document.createElement("div");
+      thumb.className = "thumb";
+      const img = document.createElement("img");
+      img.alt = "";
+      if (src?.item?.imgUrl) img.src = src.item.imgUrl;
+      else img.style.display = "none";
+      thumb.appendChild(img);
+
+      const wrap = document.createElement("div");
+      wrap.className = "headlineWrap";
+
+      const h2 = document.createElement("h2");
+      h2.className = "headline";
+      const a = document.createElement("a");
+      a.setAttribute("data-role", "headline-link");
+      a.setAttribute("data-id", id);
+      a.href = src?.item?.url || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = src?.item?.title || "—";
+      h2.appendChild(a);
+
+      const row = document.createElement("div");
+      row.className = "row";
+
+      const status = document.createElement("span");
+      status.className = "pill";
+
+      const ok = (src?.ok !== false);
+      const stale2h = Boolean(indicator?.stale2h);
+
+      if (!ok) status.textContent = "Failed";
+      else if (stale2h) status.textContent = "Stale (2h+ no change)";
+      else status.textContent = "OK";
+
+      const btnCopyLink = document.createElement("button");
+      btnCopyLink.className = "linkbtn";
+      btnCopyLink.type = "button";
+      btnCopyLink.textContent = "Copy headline link";
+      btnCopyLink.setAttribute("data-action", "copy-headline");
+      btnCopyLink.setAttribute("data-id", id);
+
+      row.appendChild(status);
+      row.appendChild(btnCopyLink);
+
+      const urlLine = document.createElement("div");
+      urlLine.className = "urlLine";
+
+      const urlText = document.createElement("div");
+      urlText.className = "urlText mono";
+      urlText.textContent = src?.item?.url || "—";
+      urlText.setAttribute("data-role", "url-text");
+      urlText.setAttribute("data-id", id);
+
+      const btnCopyUrl = document.createElement("button");
+      btnCopyUrl.className = "linkbtn";
+      btnCopyUrl.type = "button";
+      btnCopyUrl.textContent = "Copy URL";
+      btnCopyUrl.setAttribute("data-action", "copy-url");
+      btnCopyUrl.setAttribute("data-id", id);
+
+      urlLine.appendChild(urlText);
+      urlLine.appendChild(btnCopyUrl);
+
+      const err = document.createElement("div");
+      err.className = "tiny";
+      err.textContent = src?.error ? String(src.error) : "";
+
+      wrap.appendChild(h2);
+      wrap.appendChild(row);
+      wrap.appendChild(urlLine);
+      wrap.appendChild(err);
+
+      body.appendChild(thumb);
+      body.appendChild(wrap);
+
+      card.appendChild(head);
+      card.appendChild(body);
+
+      // Apply dot after DOM exists
+      setDot(dot, src?.ok !== false ? true : false, indicator?.changeType || null, stale2h);
+
+      return card;
+    }
+
+    function renderCards(sources, indicatorsById){
       const grid = $("cards-grid");
       if (!grid) return;
+      grid.innerHTML = "";
 
-      const cards = Array.from(grid.querySelectorAll("section.card[data-source-id]"));
-      const tsFor = (id) => {
-        const t = sources?.[id]?.updatedAt || sources?.[id]?.firstSeenAt || null;
-        const ms = Date.parse(t || "");
-        return Number.isFinite(ms) ? ms : 0;
-      };
+      const ids = pickCardSourceIds(sources);
 
-      cards.sort((a,b) => {
-        const ida = a.getAttribute("data-source-id") || "";
-        const idb = b.getAttribute("data-source-id") || "";
-        const ta = tsFor(ida);
-        const tb = tsFor(idb);
+      // Sort by latest updatedAt / firstSeenAt
+      ids.sort((a,b) => {
+        const ta = tsForSort(sources, a);
+        const tb = tsForSort(sources, b);
         if (tb !== ta) return tb - ta;
-        return ida.localeCompare(idb);
+        return String(a).localeCompare(String(b));
       });
 
-      for (const el of cards) grid.appendChild(el);
+      for (const id of ids){
+        const src = sources?.[id] || {};
+        const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
+        grid.appendChild(buildCardEl(id, src, ind));
+      }
     }
 
+    // Event delegation for copy buttons (works with dynamic cards)
+    document.addEventListener("click", async (e) => {
+      const btn = e.target && e.target.closest ? e.target.closest("button[data-action]") : null;
+      if (!btn) return;
+
+      const action = btn.getAttribute("data-action");
+      const id = btn.getAttribute("data-id");
+      if (!action || !id) return;
+
+      if (action === "copy-headline") {
+        const link = document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`);
+        const href = link && link.href && link.href !== "#" ? link.href : "";
+        if (!href) return showToast("Nothing to copy");
+        try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
+      }
+
+      if (action === "copy-url") {
+        const el = document.querySelector(`div[data-role="url-text"][data-id="${CSS.escape(id)}"]`);
+        const txt = el && el.textContent && el.textContent !== "—" ? el.textContent : "";
+        if (!txt) return showToast("Nothing to copy");
+        try { await copyText(txt); showToast("Copied"); } catch { showToast("Copy failed"); }
+      }
+    });
+
     async function loadPublishedCache() {
-      const data = await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
-      return data;
+      return await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
     }
 
     async function reload() {
@@ -992,22 +965,22 @@
             : "Published cache.json";
         }
 
-        const changeTypes = computeChangeTypes(data?.sources || {});
+        const sources = data?.sources || {};
 
-        renderSource("abc1", data?.sources?.abc1, changeTypes["abc1"] || null);
-        renderSource("cbs1", data?.sources?.cbs1, changeTypes["cbs1"] || null);
-        renderSource("usat1", data?.sources?.usat1, changeTypes["usat1"] || null);
+        // Compute indicator lights + stale2h
+        const { indicators, nextState } = computeIndicators(sources);
 
-        // Order cards by most recent update so the page always "sorts to now"
-        sortCardsByMostRecent(data?.sources || {});
+        // Render cards dynamically (position order = most recent update)
+        renderCards(sources, indicators);
 
-        // Persist current snapshot so next reload can show Blue/Green change indicators
-        savePrevSnapshot(snapshotForNext(data?.sources || {}));
+        // Persist state for next reload (drives blue/green + stale)
+        saveState(nextState);
 
         if (!history) {
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
         }
         renderHistory(history);
+
       } catch (e) {
         console.error("Reload error:", e);
         showToast("Reload failed");
@@ -1017,16 +990,14 @@
     }
 
     async function runScrapeLocal() {
-      // Only works when the page is being served by your Express server locally.
       $("btn-run").disabled = true;
       try {
-        const data = await fetchJSON(`/api/refresh`, {
+        await fetchJSON(`/api/refresh`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({}),
         });
 
-        // After refresh, re-read cache.json so UI behavior is consistent everywhere.
         await reload();
         showToast("Scrape complete");
       } catch (e) {
@@ -1052,13 +1023,6 @@
       $("btn-run").style.display = "inline-block";
       $("btn-run").addEventListener("click", runScrapeLocal);
     }
-
-    wireCopy("copy-abc1", () => $("link-abc1")?.href && $("link-abc1").href !== "#" ? $("link-abc1").href : "");
-    wireCopy("copyurl-abc1", () => $("url-abc1")?.textContent && $("url-abc1").textContent !== "—" ? $("url-abc1").textContent : "");
-    wireCopy("copy-cbs1", () => $("link-cbs1")?.href && $("link-cbs1").href !== "#" ? $("link-cbs1").href : "");
-    wireCopy("copyurl-cbs1", () => $("url-cbs1")?.textContent && $("url-cbs1").textContent !== "—" ? $("url-cbs1").textContent : "");
-    wireCopy("copy-usat1", () => $("link-usat1")?.href && $("link-usat1").href !== "#" ? $("link-usat1").href : "");
-    wireCopy("copyurl-usat1", () => $("url-usat1")?.textContent && $("url-usat1").textContent !== "—" ? $("url-usat1").textContent : "");
 
     // Initial load (Pages-safe)
     reload();
