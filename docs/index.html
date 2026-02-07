@@ -590,6 +590,16 @@
       const mod = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm");
       const supabase = mod.createClient(cfg.url, cfg.anonKey);
 
+      function pick(row, keys){
+        for (const k of keys){
+          const v = row?.[k];
+          if (v === null || v === undefined) continue;
+          if (typeof v === "string" && !v.trim()) continue;
+          return v;
+        }
+        return null;
+      }
+
       // Current cards
       const cur = await supabase.from("v_current_hero_since").select("*");
       if (cur.error) throw cur.error;
@@ -624,16 +634,35 @@
 
       const historyObj = { generatedAt: new Date().toISOString(), sources: {} };
       for (const row of (hist.data || [])){
-        const id = String(row.source_id || row.id || "");
+        const id = String(pick(row, ["source_id", "source", "id"]) || "");
         if (!id) continue;
         if (!historyObj.sources[id]) historyObj.sources[id] = { entries: [] };
+
+        const url = pick(row, ["url", "story_url", "hero_url", "link", "href"]);
+        const title = pick(row, ["title", "story_title", "headline", "hero_title"]);
+        const imgUrl = pick(row, ["img_url", "imgUrl", "image_url", "image", "thumb_url", "thumbnail_url"]);
+        const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "first_seen", "first_seen_ts"]);
+        const lastSeenAt = pick(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at", "updatedAt"]);
+        const seenCount = pick(row, ["seen_count", "seenCount", "count", "observations"]);
+
         historyObj.sources[id].entries.push({
-          url: row.url || null,
-          title: row.title || null,
-          imgUrl: row.img_url || null,
-          firstSeenAt: row.first_seen_at || null,
-          lastSeenAt: row.last_seen_at || row.observed_at || null,
-          seenCount: row.seen_count || null,
+          url,
+          title,
+          imgUrl,
+          firstSeenAt,
+          lastSeenAt,
+          seenCount,
+        });
+      }
+
+      for (const obj of Object.values(historyObj.sources)){
+        if (!obj || !Array.isArray(obj.entries)) continue;
+        obj.entries.sort((a,b) => {
+          const ta = Date.parse(a?.lastSeenAt || a?.firstSeenAt || "");
+          const tb = Date.parse(b?.lastSeenAt || b?.firstSeenAt || "");
+          const na = Number.isFinite(ta) ? ta : 0;
+          const nb = Number.isFinite(tb) ? tb : 0;
+          return na - nb;
         });
       }
 
