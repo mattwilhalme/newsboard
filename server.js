@@ -526,10 +526,62 @@ app.get("/api/cache", (req, res) => {
   res.json(cache);
 });
 
+// -------- Entrypoints --------
+
+const isRefresh = process.argv.includes("--refresh");
+
+async function main() {
+  if (isRefresh) {
+    const idIdx = process.argv.indexOf("--id");
+    const id = idIdx >= 0 ? String(process.argv[idIdx + 1] || "") : "";
+
+    await refreshSources({ id });
+    console.log(`Wrote ${CACHE_FILE}`);
+    process.exit(0);
+  }
+
+  app.listen(PORT, () => {
+    console.log(`Newsboard server on http://localhost:${PORT}`);
+  });
+}
+
+main().catch((err) => {
+  console.error("Entrypoint failed:", err?.message || err);
+  process.exit(1);
+});
+
+
 // Start server only when run directly (not when imported by scripts)
 if (process.argv[1] && process.argv[1].endsWith("server.js")) {
   app.listen(PORT, () => console.log(`Newsboard server on http://localhost:${PORT}`));
 }
+
+// -------- Entrypoint --------
+// NOTE: In GitHub Actions we want `node server.js --refresh` to run once and EXIT,
+// never start an HTTP listener inside the runner VM.
+
+const isDirectRun = Boolean(process.argv[1] && process.argv[1].endsWith("server.js"));
+const wantsRefresh = process.argv.includes("--refresh");
+
+async function main() {
+  if (!isDirectRun) return; // imported by another module
+
+  if (wantsRefresh) {
+    const idIdx = process.argv.indexOf("--id");
+    const id = idIdx >= 0 ? String(process.argv[idIdx + 1] || "") : "";
+    await refreshSources({ id });
+    console.log(`Wrote ${CACHE_FILE}`);
+    process.exit(0); // critical: prevent fall-through to app.listen
+  }
+
+  app.listen(PORT, () => console.log(`Newsboard server on http://localhost:${PORT}`));
+}
+
+main().catch((e) => {
+  console.error("Entrypoint failed:", String(e));
+  process.exit(1);
+});
+
 
 export {
   scrapeABCHero,
