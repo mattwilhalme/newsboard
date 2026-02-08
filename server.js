@@ -198,34 +198,69 @@ async function scrapeABCHero() {
 /* ---------------------------
    CBS (single top item)
 --------------------------- */
+/* ---------------------------
+   CBS (single top item) - strict /news/ picker
+--------------------------- */
 async function scrapeCBSHero() {
   return await withBrowser(async (page) => {
     const runId = `cbs1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.cbsnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1400);
+
+    // Give CBS a moment + wait for a real story link
+    await page.waitForSelector('main a[href*="/news/"]', { timeout: 25000 }).catch(() => {});
+    await page.waitForTimeout(1200);
 
     const hero = await page.evaluate(() => {
       function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
       function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
 
-      const a =
-        document.querySelector('a[href][data-testid="component-card-link"]') ||
-        document.querySelector("main a[href]") ||
-        document.querySelector('a[href^="/"]');
+      const main = document.querySelector("main") || document.body;
 
-      if (!a) return { ok:false, error:"CBS: no link found" };
+      const bad = (u) =>
+        /\/(live|watch|shows|podcasts|newsletters|app|team|executive|sitemap)\b/i.test(u) ||
+        /\/local\//i.test(u);
 
-      const url = abs(a.getAttribute("href"));
-      const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+      // Strongly prefer CBS story pages
+      const candidates = Array.from(main.querySelectorAll('a[href]'))
+        .map(a => {
+          const url = abs(a.getAttribute("href"));
+          const title = clean(a.getAttribute("aria-label") || a.textContent || "");
+          const r = a.getBoundingClientRect();
+          return { a, url, title, top: r?.top ?? 1e9, left: r?.left ?? 1e9 };
+        })
+        .filter(x =>
+          x.url &&
+          x.title &&
+          x.title.length >= 20 &&
+          x.url.startsWith("https://www.cbsnews.com/") &&
+          x.url.includes("/news/") &&
+          !x.url.includes("/video/") &&
+          !bad(x.url)
+        );
 
-      if (!url || !title || title.length < 8) return { ok:false, error:"CBS: missing url/title" };
+      if (!candidates.length) {
+        return { ok:false, error:"CBS: missing url/title", debug:{ reason:"no /news/ candidates" } };
+      }
 
-      const scope = a.closest("article") || a.parentElement || document.body;
-      const img = scope.querySelector("img[src]") || document.querySelector("main img[src]");
+      // Pick most hero-like: closest to top-left
+      candidates.sort((a,b) => (a.top - b.top) || (a.left - b.left));
+      const best = candidates[0];
 
-      const imgUrl = img ? abs(img.getAttribute("src")) : null;
-      return { ok:true, url, title, imgUrl };
+      const scope =
+        best.a.closest("article") ||
+        best.a.closest("section") ||
+        best.a.closest("div") ||
+        main;
+
+      const img =
+        scope.querySelector("img[src]") ||
+        main.querySelector("img[src]") ||
+        null;
+
+      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+
+      return { ok:true, url: best.url, title: best.title, imgUrl, debug:{ pickedTop: best.top, pickedUrl: best.url } };
     });
 
     const item = hero?.ok ? {
@@ -241,14 +276,15 @@ async function scrapeCBSHero() {
       runId,
       ok: Boolean(item),
       error: item ? null : (hero?.error || "CBS not found"),
+      debug: hero?.debug || null,
       item,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
-
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
+
 
 /* ---------------------------
    USA Today (single top item)
