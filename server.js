@@ -193,9 +193,6 @@ async function scrapeABCHero() {
 }
 
 /* ---------------------------
-   CBS (single top item) - strict /news/ picker
---------------------------- */
-/* ---------------------------
    CBS (single top item) - target item__thumb + item__hed
 --------------------------- */
 async function scrapeCBSHero() {
@@ -494,86 +491,77 @@ async function scrapeCNNHero() {
     await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
-      function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
-      function abs(h){
-        try { return new URL(h, "https://www.cnn.com").toString(); }
-        catch { return null; }
-      }
-      function bestFromSrcset(srcset){
-        if (!srcset) return null;
-        const parts = srcset.split(",").map(p => p.trim()).filter(Boolean);
-        if (!parts.length) return null;
-        let best = null;
-        for (const p of parts) {
-          const [u, w] = p.split(/\s+/);
-          const width = w && w.endsWith("w") ? Number(w.slice(0, -1)) : 0;
-          if (!best || width > best.width) best = { url: u, width };
-        }
-        return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
-      }
+  function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
+  function abs(h){
+    try { return new URL(h, "https://www.cnn.com").toString(); }
+    catch { return null; }
+  }
+  function bestFromSrcset(srcset){
+    if (!srcset) return null;
+    const parts = srcset.split(",").map(p => p.trim()).filter(Boolean);
+    if (!parts.length) return null;
+    let best = null;
+    for (const p of parts) {
+      const [u, w] = p.split(/\s+/);
+      const width = w && w.endsWith("w") ? Number(w.slice(0, -1)) : 0;
+      if (!best || width > best.width) best = { url: u, width };
+    }
+    return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
+  }
 
-      const h2 =
-        document.querySelector('h2.container__title_url-text.container_lead-package__title_url-text[data-editable="title"]') ||
-        document.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
-        document.querySelector('h2.container__title_url-text[data-editable="title"]');
+  // 1) Anchor to the selected lead card (most precise)
+  const card =
+    document.querySelector("li.container_lead-package__item.container_lead-package__selected") ||
+    document.querySelector("li.container_lead-package__item") ||
+    document.querySelector("li.card.container__item");
 
-      if (!h2) return { ok:false, error:"CNN: lead title h2 not found" };
+  if (!card) return { ok:false, error:"CNN: lead card <li> not found" };
 
-      const title = clean(h2.textContent || "");
-      if (!title || title.length < 8) return { ok:false, error:"CNN: missing title" };
+  // 2) URL: prefer card’s own open-link (very stable), fall back to <a href>
+  const href =
+    card.getAttribute("data-open-link") ||
+    card.querySelector('a.container_lead-package__link[href]')?.getAttribute("href") ||
+    card.querySelector('a[href]')?.getAttribute("href");
 
-      const leadLink =
-        h2.closest('a.container__link.container_lead-package__link[href]') ||
-        h2.closest('a.container__link[href]') ||
-        h2.closest('a[href]');
+  const url = href ? abs(href) : null;
+  if (!url) return { ok:false, error:"CNN: missing url for lead card" };
 
-      const url = leadLink ? abs(leadLink.getAttribute("href")) : null;
-      if (!url) return { ok:false, error:"CNN: missing url for lead title" };
+  // 3) Title: from the headline container within this card
+  const titleEl =
+    card.querySelector(".container__headline.container_lead-package__headline") ||
+    card.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
+    card.querySelector('h2[data-editable="title"]');
 
-      // Narrow host aggressively to the lead-package item if possible
-      const host =
-        leadLink?.closest(".container_lead-package__item") ||
-        leadLink?.closest("li") ||
-        leadLink?.closest(".container__item") ||
-        h2.closest(".container_lead-package__item") ||
-        h2.closest("li") ||
-        h2.closest(".container__item") ||
-        h2.closest("section") ||
-        document.body;
+  const title = clean(titleEl?.textContent || "");
+  if (!title || title.length < 8) return { ok:false, error:"CNN: missing title in lead card" };
 
-      let imgUrl = null;
+  // 4) Image: prefer the component’s data-url (original), then picture/img
+  let imgUrl = null;
 
-      // Prefer the image nearest the lead item media block
-      const media =
-        host.querySelector(".container__item-media, .container_lead-package__item-media") || host;
+  const media = card.querySelector(".container__item-media.container_lead-package__item-media") ||
+                card.querySelector(".container__item-media") ||
+                card;
 
-      const img =
-        media.querySelector("picture img.image__dam-img[src], picture img[src]") ||
-        media.querySelector("img.image__dam-img[src], img[src]") ||
-        null;
+  const comp = media.querySelector('.image[data-url]');
+  if (comp?.getAttribute("data-url")) {
+    imgUrl = comp.getAttribute("data-url");
+  } else {
+    const img =
+      media.querySelector("picture img.image__dam-img[src]") ||
+      media.querySelector("picture img[src]") ||
+      media.querySelector("img.image__dam-img[src]") ||
+      media.querySelector("img[src]") ||
+      null;
 
-      if (img?.getAttribute("src")) {
-        imgUrl = img.getAttribute("src");
-      } else if (img?.getAttribute("srcset")) {
-        imgUrl = bestFromSrcset(img.getAttribute("srcset"));
-      }
+    if (img?.getAttribute("src")) imgUrl = img.getAttribute("src");
+    else if (img?.getAttribute("srcset")) imgUrl = bestFromSrcset(img.getAttribute("srcset"));
+  }
 
-      if (!imgUrl) {
-        const comp =
-          media.querySelector('.image[data-url]') ||
-          host.querySelector('.image[data-url]');
-        if (comp) imgUrl = comp.getAttribute("data-url");
-      }
+  imgUrl = imgUrl ? abs(imgUrl) : null;
 
-      imgUrl = imgUrl ? abs(imgUrl) : null;
+  return { ok:true, url, title, imgUrl };
+});
 
-      // Capture a tiny bit of context so Node can decide if this is a "video still"/live updates
-      const hasLiveUpdates =
-        Boolean(media.querySelector(".card__label--type-updates")) ||
-        /live updates/i.test(media.textContent || "");
-
-      return { ok:true, url, title, imgUrl, hasLiveUpdates };
-    });
 
     // ---- NEW: og:image override when DOM image looks wrong ----
     let finalUrl = hero?.ok ? normalizeUrl(hero.url) : null;
