@@ -721,7 +721,15 @@ async function scrapeCNNHero() {
               container.querySelector("h2.container__title-text")?.textContent ||
               ""
           );
-          const hasTitleLink = Boolean(container.querySelector("a.container__title-url[href]"));
+          const titleLinkHref = container.querySelector("a.container__title-url[href]")?.getAttribute("href") || null;
+          const titleLinkAbs = titleLinkHref ? abs(titleLinkHref) : null;
+          const hasTitleLink = Boolean(titleLinkAbs);
+          const hasTitleUrlText = Boolean(container.querySelector("h2.container__title_url-text"));
+          const titleMatchesCard = Boolean(titleLinkAbs && absUrl && titleLinkAbs === absUrl);
+          const cardLinkType = String(card.querySelector("a.container__link[data-link-type]")?.getAttribute("data-link-type") || "")
+            .toLowerCase()
+            .trim();
+          const isArticleCard = cardLinkType === "article";
 
           const isLiveCard =
             Boolean(card.querySelector('a[data-link-type="live-story"]')) ||
@@ -739,14 +747,31 @@ async function scrapeCNNHero() {
           );
 
           let score = 0;
-          if (isLiveCard) score += 100;
-          if (hasTitleLink) score += 30;
+          // Prefer top editorial packages with title-url headline and matching article card.
+          if (hasTitleUrlText) score += 220;
+          if (hasTitleLink) score += 180;
+          if (titleMatchesCard) score += 320;
+          if (isArticleCard) score += 120;
+
+          // Keep live packages as fallback only.
+          if (isLiveCard) score -= 120;
           if (containerTitle.length >= 8) score += 20;
           if (absUrl) score += 10;
           if (cardMedia) score += 5;
           if (hasStillAsset) score += 5;
 
-          return { container, card, score, idx, relHref, absUrl, isLiveCard, containerTitle };
+          return {
+            container,
+            card,
+            score,
+            idx,
+            relHref,
+            absUrl,
+            isLiveCard,
+            containerTitle,
+            titleLinkAbs,
+            titleMatchesCard,
+          };
         })
         .filter(Boolean);
 
@@ -776,7 +801,7 @@ async function scrapeCNNHero() {
 
       // 3) URL from the selected card
       const relHref = getCardHref(card);
-      const url = relHref ? abs(relHref) : null;
+      const url = bestCandidate.titleLinkAbs || (relHref ? abs(relHref) : null);
       if (!url) return { ok: false, error: "CNN: missing url for lead card" };
 
       // Determine if this is a live-news story (so we keep still promo imagery)
