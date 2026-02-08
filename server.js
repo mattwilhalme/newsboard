@@ -307,6 +307,78 @@ async function scrapeUSATHero() {
 }
 
 /* ---------------------------
+   NBC (single top item)
+--------------------------- */
+async function scrapeNBCHero() {
+  return await withBrowser(async (page) => {
+    const runId = `nbc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.nbcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
+    await page.waitForTimeout(1400);
+
+    const hero = await page.evaluate(() => {
+      function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
+      function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
+
+      const main = document.querySelector("main") || document.body;
+
+      // Try known headline patterns first, then fall back to a reasonable first story link in main
+      const a =
+        main.querySelector('h2.multistoryline__headline a[href]') ||
+        main.querySelector('h2 a[href]') ||
+        main.querySelector('a[href^="/"]');
+
+      if (!a) return { ok:false, error:"NBC: no link found" };
+
+      const url = abs(a.getAttribute("href"));
+      const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+
+      if (!url || !title || title.length < 8) return { ok:false, error:"NBC: missing url/title" };
+
+      const scope =
+        a.closest(".story-item") ||
+        a.closest("article") ||
+        a.parentElement ||
+        main;
+
+      const img =
+        scope.querySelector("picture img[src]") ||
+        scope.querySelector("img[src]") ||
+        main.querySelector("picture img[src]") ||
+        main.querySelector("img[src]") ||
+        null;
+
+      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+
+      return { ok:true, url, title, imgUrl };
+    });
+
+    const item = hero?.ok ? {
+      title: cleanText(hero.title),
+      url: normalizeUrl(hero.url),
+      imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+      slotKey: sha1("nbc1|top").slice(0, 12),
+    } : null;
+
+    const snapshot = {
+      id: "nbc1",
+      fetchedAt: nowISO(),
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "NBC not found"),
+      item,
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+  });
+}
+
+
+
+/* ---------------------------
    CNN (single top item)
    Uses your provided structure:
    - <a class="container__link ..."> ... <span class="container__headline-text" data-editable="headline">...</span>
