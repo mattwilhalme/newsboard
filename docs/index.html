@@ -255,14 +255,22 @@
       border-radius: 12px;
       background: var(--card);
       box-shadow: var(--shadow);
-      padding:10px 12px;
+      overflow:hidden;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:0;
     }
     .latestItem.isClickable{ cursor:pointer; }
-    .latestMetaRow{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
-    .latestBody{ display:flex; gap:12px; align-items:flex-start; }
+    .latestMetaRow{
+      padding:10px 12px 9px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .latestBody{ padding:12px; display:flex; gap:12px; align-items:flex-start; }
     .latestMain{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:8px; }
     .latestTitle{ font-size:13px; line-height:1.3; font-weight:700; margin:0; }
     .latestTitle a{ color: var(--text); text-decoration:none; }
