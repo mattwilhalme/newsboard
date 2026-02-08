@@ -2,7 +2,13 @@
 import fs from "fs";
 import path from "path";
 import { createClient } from "@supabase/supabase-js";
-import { scrapeABCHero, scrapeCBSHero, scrapeUSATHero, scrapeNBCHero } from "../server.js";
+import {
+  scrapeABCHero,
+  scrapeCBSHero,
+  scrapeUSATHero,
+  scrapeNBCHero,
+  scrapeCNNHero,
+} from "../server.js";
 
 const DATA_DIR = path.join("docs", "data");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
@@ -12,6 +18,7 @@ const SOURCES = {
   cbs1: { id: "cbs1", name: "CBS News", homeUrl: "https://www.cbsnews.com/" },
   usat1: { id: "usat1", name: "USA Today", homeUrl: "https://www.usatoday.com/" },
   nbc1: { id: "nbc1", name: "NBC News", homeUrl: "https://www.nbcnews.com/" },
+  cnn1: { id: "cnn1", name: "CNN", homeUrl: "https://www.cnn.com/" },
 };
 
 function getSupabaseAdmin() {
@@ -119,7 +126,6 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
 
   const entries = h.sources[sourceKey].entries;
 
-  // If scrape failed or no item, do nothing
   if (!item || !item.url) return h;
 
   const url = item.url;
@@ -178,6 +184,15 @@ function currentSinceFromHistory(history, sourceKey, currentUrl) {
   }
 }
 
+async function safeScrape(label, fn, generatedAt) {
+  try {
+    return await fn();
+  } catch (err) {
+    console.error(`❌ ${label} hero scrape failed`, err);
+    return { ok: false, error: String(err), updatedAt: generatedAt, item: null };
+  }
+}
+
 async function run() {
   console.log("🗞️ Newsboard hero scrape starting…");
 
@@ -187,61 +202,30 @@ async function run() {
   const observedAt = generatedAt;
 
   const supabase = getSupabaseAdmin();
-  if (supabase) {
-    console.log("🧩 Supabase enabled: inserting hero_runs");
-  } else {
-    console.log("🧩 Supabase not configured (SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing)");
-  }
+  if (supabase) console.log("🧩 Supabase enabled: inserting hero_runs");
+  else console.log("🧩 Supabase not configured (SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing)");
 
-  let abc1 = null;
-  let cbs1 = null;
-  let usat1 = null;
-  let nbc1 = null;
-
-  try {
-    abc1 = await scrapeABCHero();
-  } catch (err) {
-    console.error("❌ ABC scrape failed", err);
-    abc1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
-  }
-
-  try {
-    cbs1 = await scrapeCBSHero();
-  } catch (err) {
-    console.error("❌ CBS scrape failed", err);
-    cbs1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
-  }
-
-  try {
-    usat1 = await scrapeUSATHero();
-  } catch (err) {
-    console.error("❌ USA Today scrape failed", err);
-    usat1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
-  }
-
-  try {
-    nbc1 = await scrapeNBCHero();
-  } catch (err) {
-    console.error("❌ NBC scrape failed", err);
-    nbc1 = { ok: false, error: String(err), updatedAt: generatedAt, item: null };
-  }
+  const abc1 = await safeScrape("ABC", scrapeABCHero, generatedAt);
+  const cbs1 = await safeScrape("CBS", scrapeCBSHero, generatedAt);
+  const usat1 = await safeScrape("USA Today", scrapeUSATHero, generatedAt);
+  const nbc1 = await safeScrape("NBC", scrapeNBCHero, generatedAt);
+  const cnn1 = await safeScrape("CNN", scrapeCNNHero, generatedAt);
 
   if (supabase) {
     try {
-      await upsertSourceRow(supabase, SOURCES.abc1);
-      await upsertSourceRow(supabase, SOURCES.cbs1);
-      await upsertSourceRow(supabase, SOURCES.usat1);
-      await upsertSourceRow(supabase, SOURCES.nbc1);
+      for (const s of Object.values(SOURCES)) await upsertSourceRow(supabase, s);
 
       await insertHeroRun(supabase, "abc1", abc1, observedAt);
       await insertHeroRun(supabase, "cbs1", cbs1, observedAt);
       await insertHeroRun(supabase, "usat1", usat1, observedAt);
       await insertHeroRun(supabase, "nbc1", nbc1, observedAt);
+      await insertHeroRun(supabase, "cnn1", cnn1, observedAt);
     } catch (e) {
       console.error("❌ Supabase insert failed", e);
     }
   }
 
+  // Load existing history, update, and write back
   const history = readJSONIfExists(HISTORY_PATH, {
     generatedAt: null,
     sources: {
@@ -249,14 +233,17 @@ async function run() {
       cbs1: { entries: [] },
       usat1: { entries: [] },
       nbc1: { entries: [] },
+      cnn1: { entries: [] },
     },
   });
 
   history.generatedAt = generatedAt;
+
   upsertHistory(history, "abc1", generatedAt, abc1?.ok ? abc1.item : null);
   upsertHistory(history, "cbs1", generatedAt, cbs1?.ok ? cbs1.item : null);
   upsertHistory(history, "usat1", generatedAt, usat1?.ok ? usat1.item : null);
   upsertHistory(history, "nbc1", generatedAt, nbc1?.ok ? nbc1.item : null);
+  upsertHistory(history, "cnn1", generatedAt, cnn1?.ok ? cnn1.item : null);
 
   writeJSON("history.json", history);
 
@@ -264,56 +251,31 @@ async function run() {
   const cbsSince = currentSinceFromHistory(history, "cbs1", cbs1?.item?.url || null);
   const usatSince = currentSinceFromHistory(history, "usat1", usat1?.item?.url || null);
   const nbcSince = currentSinceFromHistory(history, "nbc1", nbc1?.item?.url || null);
+  const cnnSince = currentSinceFromHistory(history, "cnn1", cnn1?.item?.url || null);
 
   const current = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok),
     generatedAt,
     sources: {
-      abc1: {
-        ok: Boolean(abc1?.ok),
-        updatedAt: abc1?.updatedAt || null,
-        error: abc1?.error || null,
-        runId: abc1?.runId || null,
-        since: abcSince,
-        item: abc1?.item || null,
-      },
-      cbs1: {
-        ok: Boolean(cbs1?.ok),
-        updatedAt: cbs1?.updatedAt || null,
-        error: cbs1?.error || null,
-        runId: cbs1?.runId || null,
-        since: cbsSince,
-        item: cbs1?.item || null,
-      },
-      usat1: {
-        ok: Boolean(usat1?.ok),
-        updatedAt: usat1?.updatedAt || null,
-        error: usat1?.error || null,
-        runId: usat1?.runId || null,
-        since: usatSince,
-        item: usat1?.item || null,
-      },
-      nbc1: {
-        ok: Boolean(nbc1?.ok),
-        updatedAt: nbc1?.updatedAt || null,
-        error: nbc1?.error || null,
-        runId: nbc1?.runId || null,
-        since: nbcSince,
-        item: nbc1?.item || null,
-      },
+      abc1: { ok: Boolean(abc1?.ok), updatedAt: abc1?.updatedAt || null, error: abc1?.error || null, runId: abc1?.runId || null, since: abcSince, item: abc1?.item || null },
+      cbs1: { ok: Boolean(cbs1?.ok), updatedAt: cbs1?.updatedAt || null, error: cbs1?.error || null, runId: cbs1?.runId || null, since: cbsSince, item: cbs1?.item || null },
+      usat1:{ ok: Boolean(usat1?.ok),updatedAt: usat1?.updatedAt|| null,error: usat1?.error|| null,runId: usat1?.runId|| null,since: usatSince,item: usat1?.item|| null },
+      nbc1: { ok: Boolean(nbc1?.ok), updatedAt: nbc1?.updatedAt || null, error: nbc1?.error || null, runId: nbc1?.runId || null, since: nbcSince, item: nbc1?.item || null },
+      cnn1: { ok: Boolean(cnn1?.ok), updatedAt: cnn1?.updatedAt || null, error: cnn1?.error || null, runId: cnn1?.runId || null, since: cnnSince, item: cnn1?.item || null },
     },
   };
 
   writeJSON("current.json", current);
 
   const unified = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok),
     generatedAt,
     items: [
       abc1?.item ? { source: "abc1", updatedAt: abc1.updatedAt, since: abcSince, ...abc1.item } : null,
       cbs1?.item ? { source: "cbs1", updatedAt: cbs1.updatedAt, since: cbsSince, ...cbs1.item } : null,
       usat1?.item ? { source: "usat1", updatedAt: usat1.updatedAt, since: usatSince, ...usat1.item } : null,
       nbc1?.item ? { source: "nbc1", updatedAt: nbc1.updatedAt, since: nbcSince, ...nbc1.item } : null,
+      cnn1?.item ? { source: "cnn1", updatedAt: cnn1.updatedAt, since: cnnSince, ...cnn1.item } : null,
     ].filter(Boolean),
   };
 
