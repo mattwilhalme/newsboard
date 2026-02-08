@@ -525,15 +525,17 @@ async function scrapeCNNHero() {
       const leadLink =
         h2.closest('a.container__link.container_lead-package__link[href]') ||
         h2.closest('a.container__link[href]') ||
-        h2.parentElement?.querySelector?.('a.container__link[href]') ||
         h2.closest('a[href]');
 
       const url = leadLink ? abs(leadLink.getAttribute("href")) : null;
       if (!url) return { ok:false, error:"CNN: missing url for lead title" };
 
+      // Narrow host aggressively to the lead-package item if possible
       const host =
+        leadLink?.closest(".container_lead-package__item") ||
         leadLink?.closest("li") ||
         leadLink?.closest(".container__item") ||
+        h2.closest(".container_lead-package__item") ||
         h2.closest("li") ||
         h2.closest(".container__item") ||
         h2.closest("section") ||
@@ -541,11 +543,13 @@ async function scrapeCNNHero() {
 
       let imgUrl = null;
 
+      // Prefer the image nearest the lead item media block
+      const media =
+        host.querySelector(".container__item-media, .container_lead-package__item-media") || host;
+
       const img =
-        host.querySelector(".container__item-media img.image__dam-img[src]") ||
-        host.querySelector(".container__item-media img[src]") ||
-        host.querySelector("img.image__dam-img[src]") ||
-        host.querySelector("img[src]") ||
+        media.querySelector("picture img.image__dam-img[src], picture img[src]") ||
+        media.querySelector("img.image__dam-img[src], img[src]") ||
         null;
 
       if (img?.getAttribute("src")) {
@@ -556,20 +560,52 @@ async function scrapeCNNHero() {
 
       if (!imgUrl) {
         const comp =
-          host.querySelector('.container__item-media .image[data-url]') ||
+          media.querySelector('.image[data-url]') ||
           host.querySelector('.image[data-url]');
         if (comp) imgUrl = comp.getAttribute("data-url");
       }
 
       imgUrl = imgUrl ? abs(imgUrl) : null;
 
-      return { ok:true, url, title, imgUrl };
+      // Capture a tiny bit of context so Node can decide if this is a "video still"/live updates
+      const hasLiveUpdates =
+        Boolean(media.querySelector(".card__label--type-updates")) ||
+        /live updates/i.test(media.textContent || "");
+
+      return { ok:true, url, title, imgUrl, hasLiveUpdates };
     });
 
+    // ---- NEW: og:image override when DOM image looks wrong ----
+    let finalUrl = hero?.ok ? normalizeUrl(hero.url) : null;
+    let finalTitle = hero?.ok ? cleanText(hero.title) : "";
+    let finalImgUrl = hero?.ok && hero.imgUrl ? normalizeUrl(hero.imgUrl) : null;
+
+    const looksLikeStill =
+      typeof finalImgUrl === "string" &&
+      /\/prod\/still-|\/stellar\/prod\/still-|still[_-]\d|_still\.jpg|\/video\//i.test(finalImgUrl);
+
+    const shouldOverrideFromOg =
+      Boolean(hero?.ok && finalUrl) &&
+      (!finalImgUrl || looksLikeStill || hero?.hasLiveUpdates);
+
+    if (shouldOverrideFromOg) {
+      try {
+        const r = await page.request.get(finalUrl, { timeout: 20000 });
+        const html = await r.text();
+
+        // Try og:image (and fall back to twitter:image if needed)
+        const mOg = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
+        const mTw = html.match(/<meta\s+name=["']twitter:image["']\s+content=["']([^"']+)["']/i);
+
+        const picked = (mOg?.[1] || mTw?.[1] || "").trim();
+        if (picked) finalImgUrl = normalizeUrl(picked);
+      } catch {}
+    }
+
     const item = hero?.ok ? {
-      title: cleanText(hero.title),
-      url: normalizeUrl(hero.url),
-      imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+      title: cleanText(finalTitle),
+      url: finalUrl,
+      imgUrl: finalImgUrl || null,
       slotKey: sha1("cnn1|top").slice(0, 12),
     } : null;
 
