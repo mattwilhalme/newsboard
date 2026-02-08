@@ -85,13 +85,13 @@ function ensureCacheShape(raw) {
   };
 
   if (!raw || typeof raw !== "object") return base;
+
   const merged = {
     ...base,
     ...raw,
     sources: { ...base.sources, ...(raw.sources || {}) },
   };
 
-  // Hard-enforce known keys
   for (const k of Object.keys(base.sources)) {
     merged.sources[k] = { ...base.sources[k], ...(merged.sources[k] || {}) };
   }
@@ -114,7 +114,6 @@ async function withBrowser(fn) {
 
   const page = await context.newPage();
 
-  // Lightweight diagnostics
   page.on("pageerror", (err) => console.log("[PW pageerror]", String(err).slice(0, 900)));
 
   try {
@@ -164,10 +163,8 @@ async function scrapeABCHero() {
 
       if (!url || !title || title.length < 8) return { ok:false, error:"ABC: missing url/title" };
 
-      // Try nearby image
       const scope = first.closest('[data-testid="prism-card"]') || first.closest("article") || main;
       const img = scope.querySelector("img[src]");
-
       const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
 
       return { ok:true, url, title, imgUrl };
@@ -196,9 +193,6 @@ async function scrapeABCHero() {
 }
 
 /* ---------------------------
-   CBS (single top item)
---------------------------- */
-/* ---------------------------
    CBS (single top item) - strict /news/ picker
 --------------------------- */
 async function scrapeCBSHero() {
@@ -206,8 +200,6 @@ async function scrapeCBSHero() {
     const runId = `cbs1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.cbsnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-
-    // Give CBS a moment + wait for a real story link
     await page.waitForSelector('main a[href*="/news/"]', { timeout: 25000 }).catch(() => {});
     await page.waitForTimeout(1200);
 
@@ -221,7 +213,6 @@ async function scrapeCBSHero() {
         /\/(live|watch|shows|podcasts|newsletters|app|team|executive|sitemap)\b/i.test(u) ||
         /\/local\//i.test(u);
 
-      // Strongly prefer CBS story pages
       const candidates = Array.from(main.querySelectorAll('a[href]'))
         .map(a => {
           const url = abs(a.getAttribute("href"));
@@ -243,7 +234,6 @@ async function scrapeCBSHero() {
         return { ok:false, error:"CBS: missing url/title", debug:{ reason:"no /news/ candidates" } };
       }
 
-      // Pick most hero-like: closest to top-left
       candidates.sort((a,b) => (a.top - b.top) || (a.left - b.left));
       const best = candidates[0];
 
@@ -260,7 +250,7 @@ async function scrapeCBSHero() {
 
       const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
 
-      return { ok:true, url: best.url, title: best.title, imgUrl, debug:{ pickedTop: best.top, pickedUrl: best.url } };
+      return { ok:true, url: best.url, title: best.title, imgUrl, debug:{ pickedUrl: best.url } };
     });
 
     const item = hero?.ok ? {
@@ -285,10 +275,6 @@ async function scrapeCBSHero() {
   });
 }
 
-
-/* ---------------------------
-   USA Today (single top item)
---------------------------- */
 /* ---------------------------
    USA Today (single top item) - target tb headline span
 --------------------------- */
@@ -306,13 +292,11 @@ async function scrapeUSATHero() {
         if (!el) return false;
         const r = el.getBoundingClientRect();
         if (!r || r.width < 2 || r.height < 2) return false;
-        // Prefer stuff actually in the viewport region near top
         return r.bottom > 0 && r.top < window.innerHeight * 1.25;
       }
 
       const main = document.querySelector("main") || document.body;
 
-      // 1) Prefer the exact headline span structure you referenced
       const spans = Array.from(
         main.querySelectorAll('span[data-tb-shadow-region-title], span[data-tb-title]')
       )
@@ -325,12 +309,10 @@ async function scrapeUSATHero() {
 
       if (!spans.length) return { ok:false, error:"USAT: no tb headline span found" };
 
-      // Choose the most "hero-like" span: closest to top-left
       spans.sort((a,b) => (a.top - b.top) || (a.left - b.left));
       const bestSpan = spans[0].sp;
       const title = clean(bestSpan.textContent || "");
 
-      // 2) Find the nearest anchor that actually navigates to the story
       const a =
         bestSpan.closest("a[href]") ||
         bestSpan.parentElement?.closest("a[href]") ||
@@ -339,30 +321,19 @@ async function scrapeUSATHero() {
       if (!a) return { ok:false, error:"USAT: headline span has no enclosing link" };
 
       const url = abs(a.getAttribute("href"));
+      if (!url || !title || title.length < 8) return { ok:false, error:"USAT: missing url/title" };
 
-      if (!url || !title || title.length < 8) {
-        return { ok:false, error:"USAT: missing url/title" };
-      }
-
-      // 3) Image: keep it from the same card/article/container as the headline
       const scope =
         a.closest("article") ||
-        a.closest('section') ||
-        a.closest('div') ||
+        a.closest("section") ||
+        a.closest("div") ||
         main;
 
-      // Prefer images that look like the hero image (wide-ish)
       const imgs = Array.from(scope.querySelectorAll("img"))
         .map(img => {
           const src = img.getAttribute("src") || "";
           const r = img.getBoundingClientRect();
-          return {
-            img,
-            src,
-            w: r?.width ?? 0,
-            h: r?.height ?? 0,
-            area: (r?.width ?? 0) * (r?.height ?? 0),
-          };
+          return { src, area: (r?.width ?? 0) * (r?.height ?? 0) };
         })
         .filter(x => x.src && x.area > 3000);
 
@@ -389,14 +360,12 @@ async function scrapeUSATHero() {
     };
 
     const archive = await archiveRun(page, runId, snapshot);
-
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
-
 /* ---------------------------
-   NBC (single top item)
+   NBC (single top item) - pick whichever appears first
 --------------------------- */
 async function scrapeNBCHero() {
   return await withBrowser(async (page) => {
@@ -407,90 +376,70 @@ async function scrapeNBCHero() {
     await page.waitForTimeout(1400);
 
     const hero = await page.evaluate(() => {
-  function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
-  function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
+      function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
+      function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
 
-  const main = document.querySelector("main") || document.body;
+      const main = document.querySelector("main") || document.body;
+      const candidates = [];
 
-  // Gather candidates from BOTH patterns:
-  // 1) the h2 headline link(s)
-  // 2) direct story anchors that sometimes become the lead
-  const candidates = [];
+      function pushAnchor(a, reason){
+        if (!a) return;
+        const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+        const url = abs(a.getAttribute("href"));
+        if (!url || !title || title.length < 8) return;
 
-  function pushAnchor(a, reason){
-    if (!a) return;
-    const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-    const url = abs(a.getAttribute("href"));
-    if (!url || !title || title.length < 8) return;
+        const r = a.getBoundingClientRect();
+        if (!r || r.width < 2 || r.height < 2) return;
 
-    const r = a.getBoundingClientRect();
-    // Ignore offscreen/hidden junk
-    if (!r || r.width < 2 || r.height < 2) return;
+        candidates.push({ a, url, title, top: r.top ?? 1e9, left: r.left ?? 1e9, reason });
+      }
 
-    candidates.push({
-      a,
-      url,
-      title,
-      top: r.top ?? 1e9,
-      left: r.left ?? 1e9,
-      reason
+      for (const a of Array.from(main.querySelectorAll('h2.multistoryline__headline a[href], h2 a[href]')).slice(0, 10)) {
+        pushAnchor(a, "h2");
+      }
+
+      for (const a of Array.from(main.querySelectorAll('a[href]')).slice(0, 250)) {
+        const href = a.getAttribute("href") || "";
+        const looksStory =
+          href.startsWith("https://www.nbcnews.com/news/") ||
+          href.startsWith("/news/") ||
+          href.startsWith("/politics/") ||
+          href.startsWith("/world/") ||
+          href.startsWith("/business/") ||
+          href.startsWith("/health/") ||
+          href.startsWith("/tech/") ||
+          href.startsWith("/science/") ||
+          href.startsWith("/investigations/");
+
+        if (!looksStory) continue;
+        if (a.closest("nav, header, footer")) continue;
+
+        pushAnchor(a, "story-link");
+      }
+
+      if (!candidates.length) return { ok:false, error:"NBC: no link found" };
+
+      candidates.sort((x,y) => (x.top - y.top) || (x.left - y.left));
+      const best = candidates[0];
+
+      const scope =
+        best.a.closest(".story-item") ||
+        best.a.closest("article") ||
+        best.a.closest("section") ||
+        best.a.parentElement ||
+        main;
+
+      const img =
+        scope.querySelector("picture img[src]") ||
+        scope.querySelector("img[src]") ||
+        main.querySelector("picture img[src]") ||
+        main.querySelector("img[src]") ||
+        null;
+
+      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+
+      return { ok:true, url: best.url, title: best.title, imgUrl, debug:{ picked: best.reason } };
     });
-  }
-
-  // Pattern A: known headline container
-  for (const a of Array.from(main.querySelectorAll('h2.multistoryline__headline a[href], h2 a[href]')).slice(0, 8)) {
-    pushAnchor(a, "h2");
-  }
-
-  // Pattern B: direct story anchors (absolute or /news/…)
-  for (const a of Array.from(main.querySelectorAll('a[href]')).slice(0, 200)) {
-    const href = a.getAttribute("href") || "";
-    // match the kind of link you showed + avoid nav
-    const looksStory =
-      href.startsWith("https://www.nbcnews.com/news/") ||
-      href.startsWith("/news/") ||
-      href.startsWith("/politics/") ||
-      href.startsWith("/world/") ||
-      href.startsWith("/business/") ||
-      href.startsWith("/health/") ||
-      href.startsWith("/tech/") ||
-      href.startsWith("/science/") ||
-      href.startsWith("/investigations/");
-
-    if (!looksStory) continue;
-
-    // avoid obvious header/footer/nav buckets
-    const inNav = a.closest("nav, header, footer");
-    if (inNav) continue;
-
-    pushAnchor(a, "story-link");
-  }
-
-  if (!candidates.length) return { ok:false, error:"NBC: no link found" };
-
-  // Choose whichever comes first visually (top-most; tie-break left-most)
-  candidates.sort((x,y) => (x.top - y.top) || (x.left - y.left));
-  const best = candidates[0];
-
-  const scope =
-    best.a.closest(".story-item") ||
-    best.a.closest("article") ||
-    best.a.closest("section") ||
-    best.a.parentElement ||
-    main;
-
-  const img =
-    scope.querySelector("picture img[src]") ||
-    scope.querySelector("img[src]") ||
-    main.querySelector("picture img[src]") ||
-    main.querySelector("img[src]") ||
-    null;
-
-  const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
-
-  return { ok:true, url: best.url, title: best.title, imgUrl, debug:{ picked: best.reason } };
-});
-
 
     const item = hero?.ok ? {
       title: cleanText(hero.title),
@@ -505,35 +454,23 @@ async function scrapeNBCHero() {
       runId,
       ok: Boolean(item),
       error: item ? null : (hero?.error || "NBC not found"),
+      debug: hero?.debug || null,
       item,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
-
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
-
-
 /* ---------------------------
-   CNN (single top item)
-   Uses your provided structure:
-   - <a class="container__link ..."> ... <span class="container__headline-text" data-editable="headline">...</span>
-   - image in nearby .container__item-media; prefer img.image__dam-img src; fallback data-url on .image
---------------------------- */
-/* ---------------------------
-   CNN (single top item)
-   Target:
-   <h2 class="container__title_url-text container_lead-package__title_url-text" data-editable="title">...</h2>
+   CNN (single top item) - target lead title H2
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
     const runId = `cnn1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.cnn.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-
-    // Give CNN a moment; lead package often hydrates after DOMContentLoaded
     await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
@@ -555,7 +492,6 @@ async function scrapeCNNHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      // 1) Find the lead title H2 you specified
       const h2 =
         document.querySelector('h2.container__title_url-text.container_lead-package__title_url-text[data-editable="title"]') ||
         document.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
@@ -564,9 +500,8 @@ async function scrapeCNNHero() {
       if (!h2) return { ok:false, error:"CNN: lead title h2 not found" };
 
       const title = clean(h2.textContent || "");
-      if (!title || title.length < 8) return { ok:false, error:"CNN: missing title", debug:{ titleLen: title.length } };
+      if (!title || title.length < 8) return { ok:false, error:"CNN: missing title" };
 
-      // 2) Find the correct link associated with this lead package title
       const leadLink =
         h2.closest('a.container__link.container_lead-package__link[href]') ||
         h2.closest('a.container__link[href]') ||
@@ -576,7 +511,6 @@ async function scrapeCNNHero() {
       const url = leadLink ? abs(leadLink.getAttribute("href")) : null;
       if (!url) return { ok:false, error:"CNN: missing url for lead title" };
 
-      // 3) Image: look in the same lead package container/card
       const host =
         leadLink?.closest("li") ||
         leadLink?.closest(".container__item") ||
@@ -625,41 +559,90 @@ async function scrapeCNNHero() {
       runId,
       ok: Boolean(item),
       error: item ? null : (hero?.error || "CNN not found"),
-      debug: hero?.debug || null,
       item,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
-
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
-// -------- Entrypoints --------
+/* ---------------------------
+   Refresh / API
+--------------------------- */
+async function refreshSources({ id = "" } = {}) {
+  const cache = ensureCacheShape(readCache());
+  const which = String(id || "").toLowerCase();
 
-const isDirectRun = Boolean(process.argv[1] && process.argv[1].endsWith("server.js"));
-const wantsRefresh = process.argv.includes("--refresh");
+  const runList = which ? [which] : ["abc1","cbs1","usat1","nbc1","cnn1"];
 
-async function main() {
-  if (!isDirectRun) return; // imported by another module
+  for (const sid of runList) {
+    let res;
 
-  if (wantsRefresh) {
-    const idIdx = process.argv.indexOf("--id");
-    const id = idIdx >= 0 ? String(process.argv[idIdx + 1] || "") : "";
+    if (sid === "abc1") res = await scrapeABCHero();
+    else if (sid === "cbs1") res = await scrapeCBSHero();
+    else if (sid === "usat1") res = await scrapeUSATHero();
+    else if (sid === "nbc1") res = await scrapeNBCHero();
+    else if (sid === "cnn1") res = await scrapeCNNHero();
+    else throw new Error(`Unknown source id: ${sid}`);
 
-    await refreshSources({ id });
-    console.log(`Wrote ${CACHE_FILE}`);
-    process.exit(0); // critical: prevent fall-through to app.listen
+    cache.sources[sid] = {
+      ...cache.sources[sid],
+      ok: res.ok,
+      error: res.error || null,
+      updatedAt: res.updatedAt || nowISO(),
+      runId: res.runId || null,
+      archive: res.archive || null,
+      item: res.item || null,
+    };
   }
 
-  app.listen(PORT, () => console.log(`Newsboard server on http://localhost:${PORT}`));
+  cache.generatedAt = nowISO();
+  writeCache(cache);
+  return cache;
 }
 
-main().catch((e) => {
-  console.error("Entrypoint failed:", String(e));
-  process.exit(1);
+app.get("/api/health", (req, res) => {
+  res.json({ ok: true, ts: nowISO() });
 });
 
+app.post("/api/refresh", async (req, res) => {
+  try {
+    const id = req.body?.id || "";
+    const out = await refreshSources({ id });
+    res.json({ ok: true, cache: out });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: String(e) });
+  }
+});
+
+app.get("/api/cache", (req, res) => {
+  const cache = ensureCacheShape(readCache());
+  res.json(cache);
+});
+
+async function main() {
+  const args = new Set(process.argv.slice(2));
+
+  // CLI mode for GitHub Actions
+  if (args.has("--refresh")) {
+    try {
+      await refreshSources({});
+      console.log(`Refreshed cache.json at ${nowISO()}`);
+      process.exit(0);
+    } catch (e) {
+      console.error("Refresh failed:", e);
+      process.exit(1);
+    }
+  }
+
+  // Start server only when run directly
+  if (process.argv[1] && process.argv[1].endsWith("server.js")) {
+    app.listen(PORT, () => console.log(`Newsboard server on http://localhost:${PORT}`));
+  }
+}
+
+await main();
 
 export {
   scrapeABCHero,
