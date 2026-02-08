@@ -269,6 +269,7 @@
     .hHead{ padding:10px 12px 9px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; border-bottom:1px solid var(--line); background:#fff; }
     .hBody{ padding:12px; display:flex; gap:12px; align-items:flex-start; }
     .hThumb{ width:132px; aspect-ratio: 16 / 9; border-radius: 12px; background:#f1f3f4; border:1px solid var(--line); overflow:hidden; flex:0 0 auto; }
+    .hThumb.isHidden{ display:none; }
     .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
     .hMain{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:8px; }
     .hTitle{ font-size:14px; line-height:1.25; font-weight:700; margin:0; }
@@ -736,11 +737,11 @@
         body.className = "hBody";
 
         const thumb = document.createElement("div");
-        thumb.className = "hThumb";
+        thumb.className = "hThumb isHidden";
         const img = document.createElement("img");
         img.alt = "";
-        if (it.imgUrl) img.src = it.imgUrl;
-        else img.style.display = "none";
+        if (it.imgUrl) img.dataset.src = it.imgUrl;
+        else thumb.style.display = "none";
         thumb.appendChild(img);
 
         const main = document.createElement("div");
@@ -763,8 +764,31 @@
           try{ await copyText(a.href); showToast("Copied"); } catch { showToast("Copy failed"); }
         });
 
+        const btnToggleImage = document.createElement("button");
+        btnToggleImage.className = "linkbtn";
+        btnToggleImage.type = "button";
+        btnToggleImage.textContent = "Show image";
+        if (!it.imgUrl) {
+          btnToggleImage.style.display = "none";
+        } else {
+          btnToggleImage.addEventListener("click", () => {
+            const showing = !thumb.classList.contains("isHidden");
+            if (showing) {
+              thumb.classList.add("isHidden");
+              btnToggleImage.textContent = "Show image";
+              return;
+            }
+            if (!img.getAttribute("src") && img.dataset.src) {
+              img.src = img.dataset.src;
+            }
+            thumb.classList.remove("isHidden");
+            btnToggleImage.textContent = "Hide image";
+          });
+        }
+
         main.appendChild(title);
         main.appendChild(btnCopyLink);
+        main.appendChild(btnToggleImage);
 
         body.appendChild(thumb);
         body.appendChild(main);
