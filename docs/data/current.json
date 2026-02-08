@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-08T19:42:34.216Z",
+  "generatedAt": "2026-02-08T19:56:27.029Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T19:42:37.474Z",
+      "updatedAt": "2026-02-08T19:56:30.052Z",
       "error": null,
-      "runId": "abc1_2026-02-08T19-42-34-317Z",
+      "runId": "abc1_2026-02-08T19-56-27-118Z",
       "since": "2026-02-08T15:55:50.869Z",
       "item": {
         "title": "GOP Rep. Lawler says image posted by Trump mocking Obamas was 'racist'",
@@ -17,9 +17,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-08T19:43:03.888Z",
+      "updatedAt": "2026-02-08T19:56:56.417Z",
       "error": null,
-      "runId": "cbs1_2026-02-08T19-42-37-628Z",
+      "runId": "cbs1_2026-02-08T19-56-30-180Z",
       "since": "2026-02-08T13:29:52.957Z",
       "item": {
         "title": "Lindsey Vonn undergoes surgery for leg fracture after crash at Winter Olympics",
@@ -29,18 +29,23 @@
       }
     },
     "usat1": {
-      "ok": false,
-      "updatedAt": "2026-02-08T19:43:06.413Z",
-      "error": "USAT: no tb headline span found",
-      "runId": "usat1_2026-02-08T19-43-04-199Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-02-08T19:56:58.741Z",
+      "error": null,
+      "runId": "usat1_2026-02-08T19-56-56-709Z",
+      "since": "2026-02-08T17:49:50.737Z",
+      "item": {
+        "title": "Lindsey Vonn's crash was cruel. Her bravery epitomizes Olympic spirit",
+        "url": "https://www.usatoday.com/story/sports/columnist/nancy-armour/2026/02/08/olympics-2026-lindsey-vonn-crash-courage/88578686007/",
+        "imgUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/02/08/USAT/88578869007-vonnnew-28.JPG?crop=2151,1209,x0,y72&width=430&height=242&format=pjpg&auto=webp",
+        "slotKey": "5fd21635ad69"
+      }
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T19:43:35.631Z",
+      "updatedAt": "2026-02-08T19:57:26.418Z",
       "error": null,
-      "runId": "nbc1_2026-02-08T19-43-06-632Z",
+      "runId": "nbc1_2026-02-08T19-56-58-924Z",
       "since": "2026-02-08T19:17:34.161Z",
       "item": {
         "title": "How the F-15 — 'America's sweetheart' — protects the Super Bowl",
@@ -51,9 +56,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-02-08T19:43:41.009Z",
+      "updatedAt": "2026-02-08T19:57:30.013Z",
       "error": null,
-      "runId": "cnn1_2026-02-08T19-43-35-808Z",
+      "runId": "cnn1_2026-02-08T19-57-26-566Z",
       "since": "2026-02-08T18:49:54.015Z",
       "item": {
         "title": "Super Bowl",
