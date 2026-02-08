@@ -348,7 +348,7 @@
     const SUPABASE_CONFIG_URL = "./supabase.json";
 
     // Expect exactly these sources; render placeholders when missing
-    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1"];
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1"];
 
     // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
@@ -447,6 +447,7 @@
       if (s === "usat" || s === "usat1" || s === "usatoday" || s === "usatoday1") return "USA Today";
       if (s === "nbc" || s === "nbc1") return "NBC News";
       if (s === "cnn" || s === "cnn1") return "CNN";
+      if (s === "reuters" || s === "reuters1" || s === "rtr" || s === "rtr1") return "Reuters";
 
       return k || "Source";
     }
@@ -1023,7 +1024,7 @@
           Math.abs(topSec - updatedAgeSec) <= SAME_TOLERANCE_SEC;
 
         if (Number.isFinite(topSec) && !redundant) {
-          since.textContent = `In top ${fmtDurationSeconds(topSec)}`;
+          since.textContent = `First Seen ${fmtDurationSeconds(topSec)}`;
         } else {
           since.textContent = "";
           since.style.display = "none";

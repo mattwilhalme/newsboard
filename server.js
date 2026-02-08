@@ -81,6 +81,7 @@ function ensureCacheShape(raw) {
       usat1: baseSource("usat1", "USA Today", "https://www.usatoday.com/"),
       nbc1: baseSource("nbc1", "NBC News", "https://www.nbcnews.com/"),
       cnn1: baseSource("cnn1", "CNN", "https://www.cnn.com/"),
+      reuters1: baseSource("reuters1", "Reuters", "https://www.reuters.com/"),
     },
   };
 
@@ -900,13 +901,128 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
+   Reuters (single top item) - top story card with TitleHeading + TitleLink + hero media
+--------------------------- */
+async function scrapeReutersHero() {
+  return await withBrowser(async (page) => {
+    const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForSelector('main [data-testid="StoryCard"] [data-testid="TitleHeading"]', { timeout: 25000 }).catch(() => {});
+    await page.waitForTimeout(1200);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function abs(h) {
+        try {
+          return new URL(h, "https://www.reuters.com").toString();
+        } catch {
+          return null;
+        }
+      }
+
+      function bestFromSrcset(srcset) {
+        if (!srcset) return null;
+        const parts = srcset
+          .split(",")
+          .map((p) => p.trim())
+          .filter(Boolean);
+        if (!parts.length) return null;
+        let best = null;
+        for (const p of parts) {
+          const [u, w] = p.split(/\s+/);
+          const width = w && w.endsWith("w") ? Number(w.slice(0, -1)) : 0;
+          if (!best || width > best.width) best = { url: u, width };
+        }
+        return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
+      }
+
+      const main = document.querySelector("main#main-content, main") || document.body;
+      const cards = Array.from(main.querySelectorAll('li[data-testid="StoryCard"]'));
+      if (!cards.length) return { ok: false, error: "Reuters: story cards not found" };
+
+      const ranked = cards
+        .map((card, idx) => {
+          const titleEl = card.querySelector('span[data-testid="TitleHeading"]');
+          const linkEl = card.querySelector('a[data-testid="TitleLink"][href]') || card.querySelector("a[href]");
+          const imgEl =
+            card.querySelector('img[data-testid="EagerImage"][src]') ||
+            card.querySelector("img[src]") ||
+            null;
+
+          const title = clean(titleEl?.textContent || "");
+          const relHref = linkEl?.getAttribute("href") || null;
+          const url = relHref ? abs(relHref) : null;
+
+          let imgUrl = null;
+          if (imgEl?.getAttribute("src")) imgUrl = imgEl.getAttribute("src");
+          else if (imgEl?.getAttribute("srcset")) imgUrl = bestFromSrcset(imgEl.getAttribute("srcset"));
+          imgUrl = imgUrl ? abs(imgUrl) : null;
+
+          if (!title || !url) return null;
+
+          const cardClass = String(card.className || "");
+          const hasHeroClass = /\btpl-hero\b/i.test(cardClass);
+          const hasHeading4Class = /\bheading_4\b/i.test(String(titleEl?.className || ""));
+          const hasDescription = Boolean(card.querySelector('p[data-testid="Description"]'));
+          const hasMedia = Boolean(card.querySelector('[data-testid="MediaImage"], [data-testid="MediaImageLink"]'));
+
+          let score = 0;
+          if (hasHeroClass) score += 300;
+          if (hasHeading4Class) score += 220;
+          if (hasDescription) score += 90;
+          if (hasMedia) score += 50;
+          if (imgUrl) score += 20;
+          if (/\/video\//i.test(url)) score -= 120;
+          if (/\/pictures\//i.test(url)) score -= 80;
+
+          return { title, url, imgUrl, score, idx };
+        })
+        .filter(Boolean);
+
+      if (!ranked.length) return { ok: false, error: "Reuters: title/url not found in story cards" };
+      ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
+
+      return { ok: true, ...ranked[0] };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title),
+          url: normalizeUrl(hero.url),
+          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+          slotKey: sha1("reuters1|top").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "reuters1",
+      fetchedAt: nowISO(),
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "Reuters not found"),
+      item,
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+  });
+}
+
+/* ---------------------------
    Refresh / API
 --------------------------- */
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
 
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1"];
 
   for (const sid of runList) {
     let res;
@@ -916,6 +1032,7 @@ async function refreshSources({ id = "" } = {}) {
     else if (sid === "usat1") res = await scrapeUSATHero();
     else if (sid === "nbc1") res = await scrapeNBCHero();
     else if (sid === "cnn1") res = await scrapeCNNHero();
+    else if (sid === "reuters1") res = await scrapeReutersHero();
     else throw new Error(`Unknown source id: ${sid}`);
 
     cache.sources[sid] = {
@@ -982,5 +1099,6 @@ export {
   scrapeUSATHero,
   scrapeNBCHero,
   scrapeCNNHero,
+  scrapeReutersHero,
   refreshSources,
 };
