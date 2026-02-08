@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-08T05:50:59.023Z",
+  "generatedAt": "2026-02-08T06:35:42.106Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T05:51:02.404Z",
+      "updatedAt": "2026-02-08T06:35:45.138Z",
       "error": null,
-      "runId": "abc1_2026-02-08T05-50-59-129Z",
+      "runId": "abc1_2026-02-08T06-35-42-207Z",
       "since": "2026-02-08T02:44:33.014Z",
       "item": {
         "title": "Savannah Guthrie in new video pleads for mother's return: 'We will pay'",
@@ -17,9 +17,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-08T05:51:28.805Z",
+      "updatedAt": "2026-02-08T06:36:11.729Z",
       "error": null,
-      "runId": "cbs1_2026-02-08T05-51-02-562Z",
+      "runId": "cbs1_2026-02-08T06-35-45-303Z",
       "since": "2026-02-08T04:17:44.086Z",
       "item": {
         "title": "Savannah Guthrie says \"we will pay\" in new plea for mother's safe return",
@@ -29,18 +29,23 @@
       }
     },
     "usat1": {
-      "ok": false,
-      "updatedAt": "2026-02-08T05:51:31.079Z",
-      "error": "USAT: no tb headline span found",
-      "runId": "usat1_2026-02-08T05-51-29-011Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-02-08T06:36:14.401Z",
+      "error": null,
+      "runId": "usat1_2026-02-08T06-36-12-062Z",
+      "since": "2026-02-08T04:00:45.154Z",
+      "item": {
+        "title": "What ex-FBI agents see in clues in Guthrie kidnapping case",
+        "url": "https://www.usatoday.com/story/entertainment/celebrities/2026/02/07/savannah-guthrie-mom-nancy-kidnapping-rare-circumstances/88566906007/",
+        "imgUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/02/06/USAT/88545045007-photo-05.jpg?crop=1079,607,x0,y108&width=430&height=242&format=pjpg&auto=webp",
+        "slotKey": "5fd21635ad69"
+      }
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T05:51:58.710Z",
+      "updatedAt": "2026-02-08T06:36:42.053Z",
       "error": null,
-      "runId": "nbc1_2026-02-08T05-51-31-259Z",
+      "runId": "nbc1_2026-02-08T06-36-14-606Z",
       "since": "2026-02-08T04:00:45.154Z",
       "item": {
         "title": "Savannah Guthrie tells mother's possible kidnapper 'we will pay' in new video",
@@ -51,9 +56,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-02-08T05:52:02.387Z",
+      "updatedAt": "2026-02-08T06:36:45.743Z",
       "error": null,
-      "runId": "cnn1_2026-02-08T05-51-58-858Z",
+      "runId": "cnn1_2026-02-08T06-36-42-215Z",
       "since": "2026-02-08T04:27:46.338Z",
       "item": {
         "title": "'We will pay,' Nancy Guthrie's children say to possible captors",
