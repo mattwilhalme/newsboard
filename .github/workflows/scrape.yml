@@ -2,7 +2,7 @@ name: Scrape + Publish (GitHub Pages)
 
 on:
   schedule:
-    - cron: "*/5 * * * *" # every 2 minutes
+    - cron: "*/5 * * * *" # every 5 minutes
   workflow_dispatch: {}
 
 permissions:
@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: scrape-publish
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   scrape:
@@ -35,7 +35,12 @@ jobs:
       - name: Install Playwright (Chromium)
         run: npx playwright install --with-deps chromium
 
-      - name: Run scraper
+      - name: Ensure docs dirs
+        run: |
+          mkdir -p docs
+          mkdir -p docs/data
+
+      - name: Run scraper (writes cache.json)
         env:
           NODE_ENV: production
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -43,7 +48,9 @@ jobs:
         run: node server.js --refresh
 
       - name: Copy cache.json to docs
-        run: cp cache.json docs/cache.json
+        run: |
+          test -f cache.json || (echo "Missing cache.json (server.js --refresh failed)" && exit 1)
+          cp cache.json docs/cache.json
 
       - name: Build history/unified/current (docs/data)
         env:
@@ -85,4 +92,7 @@ jobs:
           fi
 
           git commit -m "Update scraped data"
+
+          # Avoid non-fast-forward failures if something changed while we were scraping
+          git pull --rebase
           git push
