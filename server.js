@@ -548,7 +548,7 @@ async function scrapeNBCHero() {
 }
 
 /* ---------------------------
-   CNN (single top item) - lead-package container + selected card URL + smart image override
+   CNN (single top item) - lead-package container + selected card URL + canonical image + safe override
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
@@ -572,6 +572,14 @@ async function scrapeCNNHero() {
         }
       }
 
+      // Decode HTML entities like &#x3D; and &amp; inside attribute strings
+      function decodeHtml(s) {
+        if (!s) return s;
+        const ta = document.createElement("textarea");
+        ta.innerHTML = s;
+        return ta.value;
+      }
+
       function bestFromSrcset(srcset) {
         if (!srcset) return null;
         const parts = srcset
@@ -588,42 +596,45 @@ async function scrapeCNNHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      // 1) Pick the lead-package container (prefer stack_condensed)
+      // 1) Pick the lead-package container (prefer stack_condensed, then generic lead-package)
       const container =
         document.querySelector(
           '.stack_condensed__items .container.container_lead-package[data-layout="container_lead-package"]'
         ) ||
         document.querySelector('.container.container_lead-package[data-layout="container_lead-package"]') ||
-        document.querySelector('.container.container_lead-package') ||
+        document.querySelector(".container.container_lead-package") ||
         null;
 
       if (!container) return { ok: false, error: "CNN: lead-package container not found" };
 
-      // 2) Title from container h2 (do NOT rely on container title <a>; it may be missing)
-      const h2 =
-        container.querySelector('h2.container__title_url-text.container_lead-package__title_url-text[data-editable="title"]') ||
-        container.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
-        container.querySelector('h2[data-editable="title"]') ||
-        null;
-
-      const title = clean(h2?.textContent || "");
-      if (!title || title.length < 8) {
-        return { ok: false, error: "CNN: missing title in lead-package container" };
-      }
-
-      // 3) Select the lead card inside this container
-      const list = container.querySelector("ul.container_lead-package__field-links") || container;
+      // 2) Select the lead card inside this container
+      const list =
+        container.querySelector("ul.container_lead-package__field-links") ||
+        container.querySelector("ul.container__field-links") ||
+        container;
 
       const card =
         // best: the selected card
         list.querySelector('li.container_lead-package__item.container_lead-package__selected') ||
         // fallback: a live-story card
-        list.querySelector('li.container_lead-package__item a[data-link-type="live-story"]')?.closest("li") ||
+        list.querySelector('a[data-link-type="live-story"]')?.closest("li") ||
         // last: first card
-        list.querySelector('li.container_lead-package__item') ||
+        list.querySelector("li.container_lead-package__item") ||
+        list.querySelector("li") ||
         null;
 
       if (!card) return { ok: false, error: "CNN: lead-package card not found" };
+
+      // 3) Title from the CARD headline (more reliable than container title h2)
+      const headlineEl =
+        card.querySelector('span.container__headline-text[data-editable="headline"]') ||
+        card.querySelector(".container__headline-text") ||
+        null;
+
+      const title = clean(headlineEl?.textContent || "");
+      if (!title || title.length < 8) {
+        return { ok: false, error: "CNN: missing headline in selected card" };
+      }
 
       // 4) URL from the card (prefer data-open-link)
       const relHref =
@@ -635,6 +646,12 @@ async function scrapeCNNHero() {
       const url = relHref ? abs(relHref) : null;
       if (!url) return { ok: false, error: "CNN: missing url for lead card" };
 
+      // Determine if this is a live-news story (so we don't override promo image aggressively)
+      const isLive =
+        Boolean(card.querySelector('a[data-link-type="live-story"]')) ||
+        /\/live-news\//i.test(String(relHref || "")) ||
+        /\/live-news\//i.test(String(url || ""));
+
       // 5) Image scoped to THIS card only
       const media =
         card.querySelector(".container__item-media.container_lead-package__item-media") ||
@@ -643,10 +660,10 @@ async function scrapeCNNHero() {
 
       let imgUrl = null;
 
-      // Prefer canonical/original image URL if present
-      const comp = media.querySelector('.image[data-url]');
+      // Prefer canonical/original image URL if present (decode HTML entities)
+      const comp = media.querySelector(".image[data-url]");
       if (comp?.getAttribute("data-url")) {
-        imgUrl = comp.getAttribute("data-url");
+        imgUrl = decodeHtml(comp.getAttribute("data-url"));
       } else {
         const img =
           media.querySelector("picture img.image__dam-img[src]") ||
@@ -661,10 +678,11 @@ async function scrapeCNNHero() {
 
       imgUrl = imgUrl ? abs(imgUrl) : null;
 
-      return { ok: true, url, title, imgUrl };
+      return { ok: true, url, title, imgUrl, isLive };
     });
 
     // --- Smart override: if homepage image looks like a video still, try og:image from destination page ---
+    // BUT avoid overriding for live-news items (CNN often uses "still" assets intentionally there).
     function looksLikeVideoStill(u) {
       if (!u) return false;
       return /\/prod\/still-|\/stellar\/prod\/still-|_still\.jpg\b|still[_-]\d/i.test(String(u));
@@ -682,7 +700,7 @@ async function scrapeCNNHero() {
     let finalTitle = hero?.ok ? cleanText(hero.title) : "";
     let finalImgUrl = hero?.ok && hero.imgUrl ? normalizeUrl(hero.imgUrl) : null;
 
-    if (finalUrl && looksLikeVideoStill(finalImgUrl)) {
+    if (finalUrl && finalImgUrl && looksLikeVideoStill(finalImgUrl) && !hero.isLive) {
       try {
         const r = await page.request.get(finalUrl, { timeout: 20000 });
         const html = await r.text();
