@@ -407,41 +407,90 @@ async function scrapeNBCHero() {
     await page.waitForTimeout(1400);
 
     const hero = await page.evaluate(() => {
-      function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
-      function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
+  function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
+  function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
 
-      const main = document.querySelector("main") || document.body;
+  const main = document.querySelector("main") || document.body;
 
-      // Try known headline patterns first, then fall back to a reasonable first story link in main
-      const a =
-        main.querySelector('h2.multistoryline__headline a[href]') ||
-        main.querySelector('h2 a[href]') ||
-        main.querySelector('a[href^="/"]');
+  // Gather candidates from BOTH patterns:
+  // 1) the h2 headline link(s)
+  // 2) direct story anchors that sometimes become the lead
+  const candidates = [];
 
-      if (!a) return { ok:false, error:"NBC: no link found" };
+  function pushAnchor(a, reason){
+    if (!a) return;
+    const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+    const url = abs(a.getAttribute("href"));
+    if (!url || !title || title.length < 8) return;
 
-      const url = abs(a.getAttribute("href"));
-      const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+    const r = a.getBoundingClientRect();
+    // Ignore offscreen/hidden junk
+    if (!r || r.width < 2 || r.height < 2) return;
 
-      if (!url || !title || title.length < 8) return { ok:false, error:"NBC: missing url/title" };
-
-      const scope =
-        a.closest(".story-item") ||
-        a.closest("article") ||
-        a.parentElement ||
-        main;
-
-      const img =
-        scope.querySelector("picture img[src]") ||
-        scope.querySelector("img[src]") ||
-        main.querySelector("picture img[src]") ||
-        main.querySelector("img[src]") ||
-        null;
-
-      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
-
-      return { ok:true, url, title, imgUrl };
+    candidates.push({
+      a,
+      url,
+      title,
+      top: r.top ?? 1e9,
+      left: r.left ?? 1e9,
+      reason
     });
+  }
+
+  // Pattern A: known headline container
+  for (const a of Array.from(main.querySelectorAll('h2.multistoryline__headline a[href], h2 a[href]')).slice(0, 8)) {
+    pushAnchor(a, "h2");
+  }
+
+  // Pattern B: direct story anchors (absolute or /news/…)
+  for (const a of Array.from(main.querySelectorAll('a[href]')).slice(0, 200)) {
+    const href = a.getAttribute("href") || "";
+    // match the kind of link you showed + avoid nav
+    const looksStory =
+      href.startsWith("https://www.nbcnews.com/news/") ||
+      href.startsWith("/news/") ||
+      href.startsWith("/politics/") ||
+      href.startsWith("/world/") ||
+      href.startsWith("/business/") ||
+      href.startsWith("/health/") ||
+      href.startsWith("/tech/") ||
+      href.startsWith("/science/") ||
+      href.startsWith("/investigations/");
+
+    if (!looksStory) continue;
+
+    // avoid obvious header/footer/nav buckets
+    const inNav = a.closest("nav, header, footer");
+    if (inNav) continue;
+
+    pushAnchor(a, "story-link");
+  }
+
+  if (!candidates.length) return { ok:false, error:"NBC: no link found" };
+
+  // Choose whichever comes first visually (top-most; tie-break left-most)
+  candidates.sort((x,y) => (x.top - y.top) || (x.left - y.left));
+  const best = candidates[0];
+
+  const scope =
+    best.a.closest(".story-item") ||
+    best.a.closest("article") ||
+    best.a.closest("section") ||
+    best.a.parentElement ||
+    main;
+
+  const img =
+    scope.querySelector("picture img[src]") ||
+    scope.querySelector("img[src]") ||
+    main.querySelector("picture img[src]") ||
+    main.querySelector("img[src]") ||
+    null;
+
+  const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+
+  return { ok:true, url: best.url, title: best.title, imgUrl, debug:{ picked: best.reason } };
+});
+
 
     const item = hero?.ok ? {
       title: cleanText(hero.title),
