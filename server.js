@@ -461,66 +461,138 @@ async function scrapeNBCHero() {
         }
       }
 
+      function hostName(u) {
+        try {
+          return new URL(u).hostname.toLowerCase();
+        } catch {
+          return "";
+        }
+      }
+
+      function isPreferredStoryUrl(u) {
+        const h = hostName(u);
+        // Keep NBC News stories and reject sister-site content that can appear in headline rails.
+        return h === "www.nbcnews.com" || h === "nbcnews.com";
+      }
+
+      function firstUrlFromSrcset(srcset) {
+        if (!srcset) return null;
+        // URLs can contain commas (e.g. Cloudinary transforms), so don't split on comma.
+        return String(srcset).trim().split(/\s+/)[0] || null;
+      }
+
+      function urlFromBackgroundImage(styleText) {
+        if (!styleText) return null;
+        const m = String(styleText).match(/url\((['"]?)([^'")]+)\1\)/i);
+        return m?.[2] || null;
+      }
+
+      function pickMediaUrl(scope) {
+        if (!scope) return null;
+
+        // Prefer source/srcset first (usually highest quality), then img src.
+        const srcsetUrl = firstUrlFromSrcset(scope.querySelector("picture source[srcset]")?.getAttribute("srcset"));
+        if (srcsetUrl) return abs(srcsetUrl);
+
+        const imgSrc = scope.querySelector("picture img[src], img[src]")?.getAttribute("src");
+        if (imgSrc) return abs(imgSrc);
+
+        const previewStyle = scope.querySelector(".jw-preview")?.getAttribute("style");
+        const previewUrl = urlFromBackgroundImage(previewStyle);
+        if (previewUrl) return abs(previewUrl);
+
+        return null;
+      }
+
       const main = document.querySelector("main") || document.body;
-      const candidates = [];
+      const leadCandidates = Array.from(main.querySelectorAll("div.story-item.multistory-item, article.story-item.multistory-item"))
+        .map((scope) => {
+          const anchor =
+            scope.querySelector("h2.multistoryline__headline a[href]") ||
+            scope.querySelector(".headline-large h2 a[href]") ||
+            scope.querySelector("h2 a[href]") ||
+            null;
+          if (!anchor) return null;
 
-      function pushAnchor(a, reason) {
-        if (!a) return;
-        const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-        const url = abs(a.getAttribute("href"));
-        if (!url || !title || title.length < 8) return;
+          const title = clean(anchor.textContent || anchor.getAttribute("aria-label") || "");
+          const url = abs(anchor.getAttribute("href"));
+          if (!title || title.length < 8 || !url) return null;
+          if (!isPreferredStoryUrl(url)) return null;
 
-        const r = a.getBoundingClientRect();
-        if (!r || r.width < 2 || r.height < 2) return;
+          const r = scope.getBoundingClientRect();
+          const mediaUrl = pickMediaUrl(scope);
+          const className = scope.className || "";
 
-        candidates.push({ a, url, title, top: r.top ?? 1e9, left: r.left ?? 1e9, reason });
+          let score = 0;
+          if (/\blead-column\b/.test(className)) score += 40;
+          if (/\bimage-lead\b/.test(className)) score += 30;
+          if (scope.querySelector(".headline-large")) score += 20;
+          if (scope.querySelector('[data-testid="storyline-media-video"], .video-container')) score += 10;
+          if (mediaUrl) score += 8;
+          if (/\/live-blog\//i.test(url)) score += 12;
+          if (/\/sports\/nfl\/live-blog\//i.test(url)) score += 8;
+
+          return {
+            scope,
+            title,
+            url,
+            imgUrl: mediaUrl,
+            top: r?.top ?? 1e9,
+            left: r?.left ?? 1e9,
+            score,
+          };
+        })
+        .filter(Boolean);
+
+      if (leadCandidates.length) {
+        leadCandidates.sort((a, b) => a.top - b.top || a.left - b.left || b.score - a.score);
+        const best = leadCandidates[0];
+        return {
+          ok: true,
+          url: best.url,
+          title: best.title,
+          imgUrl: best.imgUrl || null,
+          debug: { picked: "lead-multistory" },
+        };
       }
 
-      for (const a of Array.from(main.querySelectorAll('h2.multistoryline__headline a[href], h2 a[href]')).slice(0, 10)) {
-        pushAnchor(a, "h2");
-      }
-
-      for (const a of Array.from(main.querySelectorAll('a[href]')).slice(0, 250)) {
+      // Fallback: generic top story links (for future layout changes).
+      const fallbackAnchors = Array.from(main.querySelectorAll('h2 a[href], a[href*="/news/"], a[href*="/politics/"]')).slice(
+        0,
+        350
+      );
+      const fallback = [];
+      for (const a of fallbackAnchors) {
         const href = a.getAttribute("href") || "";
-        const looksStory =
-          href.startsWith("https://www.nbcnews.com/news/") ||
-          href.startsWith("/news/") ||
-          href.startsWith("/politics/") ||
-          href.startsWith("/world/") ||
-          href.startsWith("/business/") ||
-          href.startsWith("/health/") ||
-          href.startsWith("/tech/") ||
-          href.startsWith("/science/") ||
-          href.startsWith("/investigations/");
-
-        if (!looksStory) continue;
+        if (!href) continue;
         if (a.closest("nav, header, footer")) continue;
 
-        pushAnchor(a, "story-link");
+        const url = abs(href);
+        const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+        if (!url || !title || title.length < 8) continue;
+        if (!isPreferredStoryUrl(url)) continue;
+
+        const scope =
+          a.closest(".story-item") ||
+          a.closest("article") ||
+          a.closest("section") ||
+          a.parentElement ||
+          main;
+
+        const r = scope?.getBoundingClientRect?.() || a.getBoundingClientRect();
+        fallback.push({
+          title,
+          url,
+          imgUrl: pickMediaUrl(scope) || null,
+          top: r?.top ?? 1e9,
+          left: r?.left ?? 1e9,
+        });
       }
 
-      if (!candidates.length) return { ok: false, error: "NBC: no link found" };
-
-      candidates.sort((x, y) => x.top - y.top || x.left - y.left);
-      const best = candidates[0];
-
-      const scope =
-        best.a.closest(".story-item") ||
-        best.a.closest("article") ||
-        best.a.closest("section") ||
-        best.a.parentElement ||
-        main;
-
-      const img =
-        scope.querySelector("picture img[src]") ||
-        scope.querySelector("img[src]") ||
-        main.querySelector("picture img[src]") ||
-        main.querySelector("img[src]") ||
-        null;
-
-      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
-
-      return { ok: true, url: best.url, title: best.title, imgUrl, debug: { picked: best.reason } };
+      if (!fallback.length) return { ok: false, error: "NBC: no link found" };
+      fallback.sort((a, b) => a.top - b.top || a.left - b.left);
+      const best = fallback[0];
+      return { ok: true, url: best.url, title: best.title, imgUrl: best.imgUrl, debug: { picked: "fallback" } };
     });
 
     const item = hero?.ok
