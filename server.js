@@ -309,13 +309,15 @@ async function scrapeUSATHero() {
 /* ---------------------------
    NBC (single top item)
 --------------------------- */
-async function scrapeNBCHero() {
+/* ---------------------------
+   CBS (single top item) - robust
+--------------------------- */
+async function scrapeCBSHero() {
   return await withBrowser(async (page) => {
-    const runId = `nbc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    const runId = `cbs1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.nbcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(1400);
+    await page.goto("https://www.cbsnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
       function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
@@ -323,38 +325,95 @@ async function scrapeNBCHero() {
 
       const main = document.querySelector("main") || document.body;
 
-      const a =
-        main.querySelector('h2.multistoryline__headline a[href]') ||
-        main.querySelector('h2 a[href]') ||
-        main.querySelector('a[href^="/"]');
+      // Collect candidate links in main content only
+      const anchors = Array.from(main.querySelectorAll('a[href]'))
+        .map(a => {
+          const href = a.getAttribute("href") || "";
+          const url = abs(href);
+          const title = clean(a.getAttribute("aria-label") || a.textContent || "");
+          const r = a.getBoundingClientRect();
+          return { a, href, url, title, top: r?.top ?? 1e9, left: r?.left ?? 1e9 };
+        })
+        .filter(x => x.url && x.title && x.title.length >= 20);
 
-      if (!a) return { ok:false, error:"NBC: no link found" };
+      if (!anchors.length) {
+        return { ok:false, error:"CBS: no headline-like links found", debug:{ count: 0 } };
+      }
 
-      const url = abs(a.getAttribute("href"));
-      const title = clean(a.textContent || "");
+      // Prefer story-ish URLs; avoid nav/local/etc.
+      function isStoryUrl(u){
+        return (
+          /\/news\//i.test(u) ||
+          /\/video\//i.test(u) ||            // CBS often surfaces video leads
+          /\/(politics|world|us|health|moneywatch|crime|space|sports)\//i.test(u)
+        );
+      }
+      function isBadUrl(u){
+        return (
+          /\/(live|watch|shows|podcasts|newsletters|app|team|executive|sitemap)\b/i.test(u) ||
+          /\/local\//i.test(u)
+        );
+      }
 
-      if (!url || !title || title.length < 8) return { ok:false, error:"NBC: missing url/title" };
+      const scored = anchors.map(x => {
+        let score = 0;
 
-      const scope = a.closest(".story-item") || a.closest("article") || main;
-      const img = scope.querySelector("picture img[src], img[src]") || null;
-      const imgUrl = img ? abs(img.getAttribute("src")) : null;
+        // Higher score for story-ish urls
+        if (isStoryUrl(x.url)) score += 50;
+        if (isBadUrl(x.url)) score -= 80;
 
-      return { ok:true, url, title, imgUrl };
+        // Prefer closer to top-left of main
+        score += Math.max(0, 40 - Math.min(40, Math.floor(x.top / 40)));
+
+        // Prefer longer headline (but cap)
+        score += Math.min(30, Math.floor(x.title.length / 4));
+
+        return { ...x, score };
+      });
+
+      scored.sort((a,b) => b.score - a.score);
+
+      const best = scored[0];
+      if (!best?.url || !best?.title) {
+        return { ok:false, error:"CBS: missing url/title", debug:{ topScore: best?.score ?? null } };
+      }
+
+      // Try to find a nearby image
+      const host =
+        best.a.closest("article") ||
+        best.a.closest("section") ||
+        best.a.closest("div") ||
+        main;
+
+      const img =
+        host.querySelector("img[src]") ||
+        main.querySelector("img[src]");
+
+      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+
+      return {
+        ok:true,
+        url: best.url,
+        title: best.title,
+        imgUrl,
+        debug: { pickedScore: best.score, pickedTop: best.top, pickedHref: best.href }
+      };
     });
 
     const item = hero?.ok ? {
       title: cleanText(hero.title),
       url: normalizeUrl(hero.url),
       imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
-      slotKey: sha1("nbc1|top").slice(0, 12),
+      slotKey: sha1("cbs1|top").slice(0, 12),
     } : null;
 
     const snapshot = {
-      id: "nbc1",
+      id: "cbs1",
       fetchedAt: nowISO(),
       runId,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "NBC not found"),
+      error: item ? null : (hero?.error || "CBS not found"),
+      debug: hero?.debug || null,
       item,
     };
 
