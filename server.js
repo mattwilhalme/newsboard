@@ -509,38 +509,56 @@ async function scrapeCNNHero() {
     return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
   }
 
-  // 1) Anchor to the selected lead card (most precise)
+  // 1) Pick the lead-package container (prefer the stack_condensed area)
+  const container =
+    document.querySelector('.stack_condensed__items .container.container_lead-package[data-layout="container_lead-package"]') ||
+    document.querySelector('.container.container_lead-package[data-layout="container_lead-package"]') ||
+    document.querySelector('.container.container_lead-package') ||
+    null;
+
+  if (!container) return { ok:false, error:"CNN: lead-package container not found" };
+
+  // 2) Canonical hero URL from the container title link
+  const titleLinkEl =
+    container.querySelector('a.container__title-url.container_lead-package__title-url[href]') ||
+    container.querySelector('a.container_lead-package__title-url[href]') ||
+    null;
+
+  const relHref = titleLinkEl?.getAttribute("href") || null;
+  const url = relHref ? abs(relHref) : null;
+  if (!url) return { ok:false, error:"CNN: lead-package title link href not found" };
+
+  // 3) Title from the container title h2
+  const h2 =
+    container.querySelector('h2.container__title_url-text.container_lead-package__title_url-text[data-editable="title"]') ||
+    container.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
+    container.querySelector('h2[data-editable="title"]') ||
+    null;
+
+  const title = clean(h2?.textContent || "");
+  if (!title || title.length < 8) return { ok:false, error:"CNN: missing title in lead-package container" };
+
+  // 4) Find the matching card <li> whose open-link or live-story link matches the container href
+  const list = container.querySelector("ul.container_lead-package__field-links") || container;
+
   const card =
-    document.querySelector("li.container_lead-package__item.container_lead-package__selected") ||
-    document.querySelector("li.container_lead-package__item") ||
-    document.querySelector("li.card.container__item");
+    list.querySelector(`li.container_lead-package__item[data-open-link="${relHref}"]`) ||
+    list.querySelector(`li.container_lead-package__item a.container__link[data-link-type="live-story"][href="${relHref}"]`)?.closest("li") ||
+    // fallback: selected item, but only if it’s a live-story, not a video card
+    list.querySelector('li.container_lead-package__item.container_lead-package__selected a[data-link-type="live-story"]')?.closest("li") ||
+    null;
 
-  if (!card) return { ok:false, error:"CNN: lead card <li> not found" };
+  if (!card) {
+    return { ok:false, error:"CNN: matching lead card not found (href mismatch)" };
+  }
 
-  // 2) URL: prefer card’s own open-link (very stable), fall back to <a href>
-  const href =
-    card.getAttribute("data-open-link") ||
-    card.querySelector('a.container_lead-package__link[href]')?.getAttribute("href") ||
-    card.querySelector('a[href]')?.getAttribute("href");
+  // 5) Image: prefer data-url inside THIS card; fall back to <img>
+  const media =
+    card.querySelector(".container__item-media.container_lead-package__item-media") ||
+    card.querySelector(".container__item-media") ||
+    card;
 
-  const url = href ? abs(href) : null;
-  if (!url) return { ok:false, error:"CNN: missing url for lead card" };
-
-  // 3) Title: from the headline container within this card
-  const titleEl =
-    card.querySelector(".container__headline.container_lead-package__headline") ||
-    card.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
-    card.querySelector('h2[data-editable="title"]');
-
-  const title = clean(titleEl?.textContent || "");
-  if (!title || title.length < 8) return { ok:false, error:"CNN: missing title in lead card" };
-
-  // 4) Image: prefer the component’s data-url (original), then picture/img
   let imgUrl = null;
-
-  const media = card.querySelector(".container__item-media.container_lead-package__item-media") ||
-                card.querySelector(".container__item-media") ||
-                card;
 
   const comp = media.querySelector('.image[data-url]');
   if (comp?.getAttribute("data-url")) {
@@ -561,6 +579,7 @@ async function scrapeCNNHero() {
 
   return { ok:true, url, title, imgUrl };
 });
+
 
 
     // ---- NEW: og:image override when DOM image looks wrong ----
