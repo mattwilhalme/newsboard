@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-02-08T18:31:05.766Z",
+  "generatedAt": "2026-02-08T18:49:53.536Z",
   "sources": {
     "abc1": {
       "id": "abc1",
       "name": "ABC News",
       "homeUrl": "https://abcnews.go.com/",
-      "updatedAt": "2026-02-08T18:30:02.726Z",
+      "updatedAt": "2026-02-08T18:48:51.733Z",
       "ok": true,
       "error": null,
-      "runId": "abc1_2026-02-08T18-29-59-424Z",
+      "runId": "abc1_2026-02-08T18-48-48-838Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T18-29-59-424Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T18-29-59-424Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T18-48-48-838Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T18-48-48-838Z.json"
       },
       "item": {
         "title": "GOP Rep. Lawler says image posted by Trump mocking Obamas was 'racist'",
@@ -24,18 +24,18 @@
       "id": "cbs1",
       "name": "CBS News",
       "homeUrl": "https://www.cbsnews.com/",
-      "updatedAt": "2026-02-08T18:30:29.332Z",
+      "updatedAt": "2026-02-08T18:49:18.101Z",
       "ok": true,
       "error": null,
-      "runId": "cbs1_2026-02-08T18-30-02-880Z",
+      "runId": "cbs1_2026-02-08T18-48-51-902Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T18-30-02-880Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T18-30-02-880Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T18-48-51-902Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T18-48-51-902Z.json"
       },
       "item": {
-        "title": "Lindsey Vonn crashes out in women's downhill race at 2026 Milano Cortina Games",
+        "title": "Lindsey Vonn crashes out in women's downhill race at 2026 Winter Olympics",
         "url": "https://www.cbsnews.com/news/lindsey-vonn-downhill-milano-cortina/",
-        "imgUrl": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/02/08/9162d5e4-942d-492e-bb09-4112485d3c68/thumbnail/1280x720/807bf4c0316ca9d3161d5423a23e1a08/ap26039404715882.jpg",
+        "imgUrl": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/02/08/4a786a37-95b0-4b46-8364-06a308c381a1/thumbnail/1280x720/e231ede847e3da507c8a179948c4eae8/gettyimages-2260513503.jpg",
         "slotKey": "4d6f70f0b663"
       }
     },
@@ -43,27 +43,32 @@
       "id": "usat1",
       "name": "USA Today",
       "homeUrl": "https://www.usatoday.com/",
-      "updatedAt": "2026-02-08T18:30:31.869Z",
-      "ok": false,
-      "error": "USAT: no tb headline span found",
-      "runId": "usat1_2026-02-08T18-30-29-628Z",
+      "updatedAt": "2026-02-08T18:49:20.416Z",
+      "ok": true,
+      "error": null,
+      "runId": "usat1_2026-02-08T18-49-18-381Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T18-30-29-628Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T18-30-29-628Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T18-49-18-381Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T18-49-18-381Z.json"
       },
-      "item": null
+      "item": {
+        "title": "Lindsey Vonn's crash was cruel. Her bravery epitomizes Olympic spirit",
+        "url": "https://www.usatoday.com/story/sports/columnist/nancy-armour/2026/02/08/olympics-2026-lindsey-vonn-crash-courage/88578686007/",
+        "imgUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/02/08/USAT/88578869007-vonnnew-28.JPG?crop=2151,1209,x0,y72&width=430&height=242&format=pjpg&auto=webp",
+        "slotKey": "5fd21635ad69"
+      }
     },
     "nbc1": {
       "id": "nbc1",
       "name": "NBC News",
       "homeUrl": "https://www.nbcnews.com/",
-      "updatedAt": "2026-02-08T18:31:00.481Z",
+      "updatedAt": "2026-02-08T18:49:48.147Z",
       "ok": true,
       "error": null,
-      "runId": "nbc1_2026-02-08T18-30-32-091Z",
+      "runId": "nbc1_2026-02-08T18-49-20-574Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T18-30-32-091Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T18-30-32-091Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T18-49-20-574Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T18-49-20-574Z.json"
       },
       "item": {
         "title": "Who holds the edge? Our predictions for the game",
@@ -76,18 +81,18 @@
       "id": "cnn1",
       "name": "CNN",
       "homeUrl": "https://www.cnn.com/",
-      "updatedAt": "2026-02-08T18:31:05.715Z",
+      "updatedAt": "2026-02-08T18:49:53.486Z",
       "ok": true,
       "error": null,
-      "runId": "cnn1_2026-02-08T18-31-00-655Z",
+      "runId": "cnn1_2026-02-08T18-49-48-315Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T18-31-00-655Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T18-31-00-655Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T18-49-48-315Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T18-49-48-315Z.json"
       },
       "item": {
-        "title": "'We will pay,' Nancy Guthrie's children say to possible captors",
-        "url": "https://www.cnn.com/us/live-news/savannah-guthrie-mom-nancy-missing-02-08-26",
-        "imgUrl": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2260513503.jpg?c=16x9&q=h_438,w_780,c_fill",
+        "title": "Streaming Now CNN explores why Bad Bunny’s Super Bowl presence is upsetting some conservative Americans",
+        "url": "https://www.cnn.com/videos/title-2584831",
+        "imgUrl": "https://media.cnn.com/api/v1/images/stellar/prod/c-gettyimages-2258027271.jpg?c=original",
         "slotKey": "e75971db9693"
       }
     }
