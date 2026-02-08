@@ -631,18 +631,20 @@
         return String(a.source || "").localeCompare(String(b.source || ""));
       });
 
+      const section = document.createElement("section");
+      section.className = "historySection";
+
+      const sectionTitle = document.createElement("div");
+      sectionTitle.className = "historySectionTitle";
+      sectionTitle.textContent = "Latest Updates";
+      section.appendChild(sectionTitle);
+
+      const unifiedList = document.createElement("div");
+      unifiedList.className = "historyList";
+      section.appendChild(unifiedList);
+      host.appendChild(section);
+
       if (latestRows.length) {
-        const section = document.createElement("section");
-        section.className = "historySection";
-
-        const title = document.createElement("div");
-        title.className = "historySectionTitle";
-        title.textContent = "Latest Publisher Updates";
-        section.appendChild(title);
-
-        const list = document.createElement("div");
-        list.className = "latestList";
-
         for (const row of latestRows) {
           const card = document.createElement("article");
           card.className = "latestItem";
@@ -723,18 +725,8 @@
           body.appendChild(thumb);
           body.appendChild(main);
           card.appendChild(body);
-          list.appendChild(card);
+          unifiedList.appendChild(card);
         }
-
-        section.appendChild(list);
-        host.appendChild(section);
-      }
-
-      if (latestRows.length && Object.keys(sources).length) {
-        const divider = document.createElement("div");
-        divider.className = "historySectionTitle";
-        divider.textContent = "Recent Story History";
-        host.appendChild(divider);
       }
 
       const rows = [];
@@ -790,12 +782,12 @@
         return tla.localeCompare(tlb);
       });
 
-      if (!rows.length){
+      if (!rows.length && !latestRows.length){
         const empty = document.createElement("div");
         empty.className = "tiny";
         empty.style.color = "var(--muted)";
         empty.textContent = "No history yet.";
-        host.appendChild(empty);
+        unifiedList.appendChild(empty);
         return;
       }
 
@@ -881,7 +873,7 @@
           });
         }
 
-        host.appendChild(card);
+        unifiedList.appendChild(card);
       }
     }
 
