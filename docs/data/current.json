@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-08T18:53:05.181Z",
+  "generatedAt": "2026-02-08T19:17:34.161Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T18:53:08.654Z",
+      "updatedAt": "2026-02-08T19:17:37.422Z",
       "error": null,
-      "runId": "abc1_2026-02-08T18-53-05-283Z",
+      "runId": "abc1_2026-02-08T19-17-34-267Z",
       "since": "2026-02-08T15:55:50.869Z",
       "item": {
         "title": "GOP Rep. Lawler says image posted by Trump mocking Obamas was 'racist'",
@@ -17,12 +17,12 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-08T18:53:35.197Z",
+      "updatedAt": "2026-02-08T19:18:03.967Z",
       "error": null,
-      "runId": "cbs1_2026-02-08T18-53-08-793Z",
+      "runId": "cbs1_2026-02-08T19-17-37-659Z",
       "since": "2026-02-08T13:29:52.957Z",
       "item": {
-        "title": "Lindsey Vonn crashes out in women's downhill race at 2026 Winter Olympics",
+        "title": "Lindsey Vonn undergoes surgery for leg fracture after crash at Winter Olympics",
         "url": "https://www.cbsnews.com/news/lindsey-vonn-downhill-milano-cortina/",
         "imgUrl": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/02/08/4a786a37-95b0-4b46-8364-06a308c381a1/thumbnail/1280x720/e231ede847e3da507c8a179948c4eae8/gettyimages-2260513503.jpg",
         "slotKey": "4d6f70f0b663"
@@ -30,9 +30,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-02-08T18:53:37.829Z",
+      "updatedAt": "2026-02-08T19:18:06.716Z",
       "error": null,
-      "runId": "usat1_2026-02-08T18-53-35-531Z",
+      "runId": "usat1_2026-02-08T19-18-04-281Z",
       "since": "2026-02-08T17:49:50.737Z",
       "item": {
         "title": "Lindsey Vonn's crash was cruel. Her bravery epitomizes Olympic spirit",
@@ -43,29 +43,24 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T18:54:05.879Z",
+      "updatedAt": "2026-02-08T19:18:34.460Z",
       "error": null,
-      "runId": "nbc1_2026-02-08T18-53-38-029Z",
-      "since": "2026-02-08T17:20:25.570Z",
+      "runId": "nbc1_2026-02-08T19-18-06-926Z",
+      "since": "2026-02-08T19:17:34.161Z",
       "item": {
-        "title": "Who holds the edge? Our predictions for the game",
-        "url": "https://www.nbcnews.com/sports/nfl/super-bowl-60-nfl-seattle-seahawks-new-england-patriots-prediction-rcna257840",
-        "imgUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_focal-762x508,f_auto,q_auto:best/rockcms/2026-02/260206-super-bowl-preview-bf-1713-0aca22.jpg",
+        "title": "How the F-15 — 'America's sweetheart' — protects the Super Bowl",
+        "url": "https://www.nbcnews.com/politics/national-security/americas-sweetheart-protects-super-bowl-rcna257704",
+        "imgUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_focal-760x428,f_auto,q_auto:best/rockcms/2026-02/260205-Hallie-Jackson-national-guard-super-bowl-nfl-ww-2000-125d3e.jpg",
         "slotKey": "579270cafa55"
       }
     },
     "cnn1": {
-      "ok": true,
-      "updatedAt": "2026-02-08T18:54:11.307Z",
-      "error": null,
-      "runId": "cnn1_2026-02-08T18-54-06-049Z",
-      "since": "2026-02-08T18:49:54.015Z",
-      "item": {
-        "title": "Streaming Now CNN explores why Bad Bunny’s Super Bowl presence is upsetting some conservative Americans",
-        "url": "https://www.cnn.com/videos/title-2584831",
-        "imgUrl": "https://media.cnn.com/api/v1/images/stellar/prod/c-gettyimages-2258027271.jpg?c=original",
-        "slotKey": "e75971db9693"
-      }
+      "ok": false,
+      "updatedAt": "2026-02-08T19:18:39.851Z",
+      "error": "CNN: lead-package title link href not found",
+      "runId": "cnn1_2026-02-08T19-18-34-640Z",
+      "since": null,
+      "item": null
     }
   }
 }
