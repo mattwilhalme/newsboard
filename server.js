@@ -195,60 +195,80 @@ async function scrapeABCHero() {
 /* ---------------------------
    CBS (single top item) - strict /news/ picker
 --------------------------- */
+/* ---------------------------
+   CBS (single top item) - target item__thumb + item__hed
+--------------------------- */
 async function scrapeCBSHero() {
   return await withBrowser(async (page) => {
     const runId = `cbs1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.cbsnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForSelector('main a[href*="/news/"]', { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(1200);
+
+    // Wait for the card structure you pasted (thumb + hed)
+    await page
+      .waitForSelector('main a[href] span.item__thumb img[src], main a[href] h4.item__hed', { timeout: 25000 })
+      .catch(() => {});
+    await page.waitForTimeout(900);
 
     const hero = await page.evaluate(() => {
       function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
       function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
+      function bestFromSrcset(srcset){
+        if (!srcset) return null;
+        const parts = srcset.split(",").map(p => p.trim()).filter(Boolean);
+        // prefer last (often 2x) or largest width if present
+        let best = null;
+        for (const p of parts) {
+          const [u, d] = p.split(/\s+/); // "1x" / "2x" or "640w"
+          let score = 0;
+          if (d && d.endsWith("x")) score = Number(d.slice(0, -1)) || 0;
+          if (d && d.endsWith("w")) score = Number(d.slice(0, -1)) || 0;
+          if (!best || score > best.score) best = { url: u, score };
+        }
+        return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
+      }
+      function isVisible(el){
+        if (!el) return false;
+        const r = el.getBoundingClientRect();
+        return r && r.width > 2 && r.height > 2 && r.bottom > 0 && r.top < window.innerHeight * 1.25;
+      }
 
       const main = document.querySelector("main") || document.body;
 
-      const bad = (u) =>
-        /\/(live|watch|shows|podcasts|newsletters|app|team|executive|sitemap)\b/i.test(u) ||
-        /\/local\//i.test(u);
-
-      const candidates = Array.from(main.querySelectorAll('a[href]'))
+      // Candidate anchors that look like the story cards you pasted
+      const anchors = Array.from(main.querySelectorAll('a[href]'))
         .map(a => {
+          const img = a.querySelector("span.item__thumb img[src]") || a.querySelector(".item__thumb img[src]");
+          const hed = a.querySelector("h4.item__hed");
           const url = abs(a.getAttribute("href"));
-          const title = clean(a.getAttribute("aria-label") || a.textContent || "");
+          const title = clean(hed?.textContent || a.getAttribute("aria-label") || "");
           const r = a.getBoundingClientRect();
-          return { a, url, title, top: r?.top ?? 1e9, left: r?.left ?? 1e9 };
+          return { a, img, hed, url, title, top: r?.top ?? 1e9, left: r?.left ?? 1e9 };
         })
         .filter(x =>
           x.url &&
           x.title &&
-          x.title.length >= 20 &&
+          x.title.length >= 12 &&
           x.url.startsWith("https://www.cbsnews.com/") &&
           x.url.includes("/news/") &&
           !x.url.includes("/video/") &&
-          !bad(x.url)
+          x.img &&
+          isVisible(x.a)
         );
 
-      if (!candidates.length) {
-        return { ok:false, error:"CBS: missing url/title", debug:{ reason:"no /news/ candidates" } };
+      if (!anchors.length) {
+        return { ok:false, error:"CBS: missing url/title", debug:{ reason:"no item__thumb + item__hed anchors" } };
       }
 
-      candidates.sort((a,b) => (a.top - b.top) || (a.left - b.left));
-      const best = candidates[0];
+      // Pick whichever card appears first on the page
+      anchors.sort((a,b) => (a.top - b.top) || (a.left - b.left));
+      const best = anchors[0];
 
-      const scope =
-        best.a.closest("article") ||
-        best.a.closest("section") ||
-        best.a.closest("div") ||
-        main;
-
-      const img =
-        scope.querySelector("img[src]") ||
-        main.querySelector("img[src]") ||
-        null;
-
-      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+      let imgUrl = null;
+      const src = best.img.getAttribute("src");
+      const srcset = best.img.getAttribute("srcset");
+      imgUrl = bestFromSrcset(srcset) || src || null;
+      imgUrl = imgUrl ? abs(imgUrl) : null;
 
       return { ok:true, url: best.url, title: best.title, imgUrl, debug:{ pickedUrl: best.url } };
     });
