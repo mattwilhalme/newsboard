@@ -275,6 +275,7 @@
       <div class="controls">
         <button id="btn-reload" class="btn" type="button">Refresh</button>
         <button id="btn-history" class="btn" type="button">History</button>
+        <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
   </header>
@@ -310,6 +311,9 @@
 
     const CACHE_URL = "./cache.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
+
+    // Expect exactly these sources; render placeholders when missing
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1"];
 
     // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
@@ -397,10 +401,18 @@
       const n = row?.sourceName || row?.name || null;
       if (n) return String(n);
 
-      const s = String(k || "").toLowerCase();
+      // Normalize IDs coming from Supabase/views (case, punctuation, etc.)
+      const s = String(k || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]/g, ""); // e.g. "nbc1", "NBC-1", "nbc_1" -> "nbc1"
+
       if (s === "abc" || s === "abc1") return "ABC News";
       if (s === "cbs" || s === "cbs1") return "CBS News";
-      if (s === "usat" || s === "usat1") return "USA Today";
+      if (s === "usat" || s === "usat1" || s === "usatoday" || s === "usatoday1") return "USA Today";
+      if (s === "nbc" || s === "nbc1") return "NBC News";
+      if (s === "cnn" || s === "cnn1") return "CNN";
+
       return k || "Source";
     }
 
@@ -719,11 +731,37 @@
       return { indicators, nextState };
     }
 
+    function ensureExpectedSources(sources){
+      const out = { ...(sources || {}) };
+      for (const id of EXPECTED_SOURCE_IDS){
+        if (!out[id]) {
+          out[id] = {
+            ok: false,
+            updatedAt: null,
+            error: "No data yet",
+            item: { title: "—", url: null, imgUrl: null }
+          };
+        } else {
+          // normalize missing shapes
+          if (!out[id].item) out[id].item = { title: "—", url: null, imgUrl: null };
+          if (out[id].item.title == null) out[id].item.title = "—";
+        }
+      }
+      return out;
+    }
+
     // ---- Dynamic cards ----
     function pickCardSourceIds(sources){
-      const ids = Object.keys(sources || {});
-      const heroish = ids.filter((id) => sources?.[id]?.item?.url);
-      return heroish.length ? heroish : ids;
+      // Always render in a stable order with placeholders
+      const have = new Set(Object.keys(sources || {}));
+      const ordered = [];
+      for (const id of EXPECTED_SOURCE_IDS){
+        ordered.push(id);
+        have.delete(id);
+      }
+      // append any unexpected sources after
+      for (const id of Array.from(have).sort()) ordered.push(id);
+      return ordered;
     }
 
     function tsForSort(sources, id){
@@ -890,6 +928,7 @@
 
       const ids = pickCardSourceIds(sources);
 
+      // keep your “most recent first” sort, but stable within expected ids by appending id tie-breaker
       ids.sort((a,b) => {
         const ta = tsForSort(sources, a);
         const tb = tsForSort(sources, b);
@@ -920,11 +959,6 @@
         if (!href) return showToast("Nothing to copy");
         try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
       }
-
-      if (action === "copy-url") {
-        if (!href) return showToast("Nothing to copy");
-        try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
-      }
     });
 
     async function loadPublishedCache() {
@@ -932,11 +966,17 @@
     }
 
     async function reload() {
-      $("btn-reload").disabled = true;
+      const btnReload = $("btn-reload");
+      if (btnReload) btnReload.disabled = true;
+
       try {
         let data = null;
         let history = null;
         let usingSupabase = false;
+
+        // IMPORTANT: keep a single indicators var (no shadowing)
+        let indicators = {};
+        let nextState = null;
 
         try{
           const sb = await loadFromSupabase();
@@ -946,25 +986,25 @@
             usingSupabase = true;
             $("subline").textContent = "We're live";
 
-            // Compute indicators by comparing current items with history
+            // Optional: indicator based on history (best-effort)
             indicators = {};
             for (const [sourceId, src] of Object.entries(data.sources || {})) {
               const entries = history?.sources?.[sourceId]?.entries || [];
               const currentUrl = src?.item?.url;
               const currentTitle = src?.item?.title;
-              // Find most recent entry that is NOT the current one
+
               let prevEntry = null;
               for (let i = entries.length - 1; i >= 0; i--) {
                 const e = entries[i];
                 if (e.url !== currentUrl || e.title !== currentTitle) { prevEntry = e; break; }
               }
-              if (prevEntry) {
+
+              if (prevEntry && currentUrl) {
                 indicators[sourceId] = {
                   changeType: (prevEntry.url !== currentUrl) ? "url" : "headline",
                   stale2h: false,
                 };
               } else {
-                // No previous entry: don't show indicator on first load
                 indicators[sourceId] = { changeType: null, stale2h: false };
               }
             }
@@ -980,10 +1020,8 @@
             : "Published cache.json";
         }
 
-        const sources = data?.sources || {};
-
-        let indicators = {};
-        let nextState = null;
+        // Ensure we always have the full set, so cards don't disappear
+        const sources = ensureExpectedSources(data?.sources || {});
 
         const anyDbFields =
           Object.values(sources).some((s) => (s && (s.changeType || s.isStale || s.lastChangeAt)));
@@ -1007,12 +1045,14 @@
         console.error("Refresh error:", e);
         showToast("Refresh failed");
       } finally {
-        $("btn-reload").disabled = false;
+        if (btnReload) btnReload.disabled = false;
       }
     }
 
     async function runScrapeLocal() {
-      $("btn-run").disabled = true;
+      const btnRun = $("btn-run");
+      if (btnRun) btnRun.disabled = true;
+
       try {
         await fetchJSON(`/api/refresh`, {
           method: "POST",
@@ -1026,11 +1066,11 @@
         console.error("Run scrape error:", e);
         showToast("Scrape failed");
       } finally {
-        $("btn-run").disabled = false;
+        if (btnRun) btnRun.disabled = false;
       }
     }
 
-    $("btn-reload").addEventListener("click", reload);
+    $("btn-reload")?.addEventListener("click", reload);
 
     $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
@@ -1041,8 +1081,11 @@
     });
 
     if (isLocal && !isGitHubPages) {
-      $("btn-run").style.display = "inline-block";
-      $("btn-run").addEventListener("click", runScrapeLocal);
+      const btnRun = $("btn-run");
+      if (btnRun) {
+        btnRun.style.display = "inline-block";
+        btnRun.addEventListener("click", runScrapeLocal);
+      }
     }
 
     reload();
