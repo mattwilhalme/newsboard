@@ -481,7 +481,7 @@ async function scrapeNBCHero() {
 }
 
 /* ---------------------------
-   CNN (single top item) - lead-package container + card match + smart image override
+   CNN (single top item) - lead-package container + selected card URL + smart image override
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
@@ -509,7 +509,7 @@ async function scrapeCNNHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      // 1) Pick the lead-package container (prefer the stack_condensed area)
+      // 1) Pick the lead-package container (prefer stack_condensed)
       const container =
         document.querySelector('.stack_condensed__items .container.container_lead-package[data-layout="container_lead-package"]') ||
         document.querySelector('.container.container_lead-package[data-layout="container_lead-package"]') ||
@@ -518,17 +518,7 @@ async function scrapeCNNHero() {
 
       if (!container) return { ok:false, error:"CNN: lead-package container not found" };
 
-      // 2) Canonical hero URL from the container title link
-      const titleLinkEl =
-        container.querySelector('a.container__title-url.container_lead-package__title-url[href]') ||
-        container.querySelector('a.container_lead-package__title-url[href]') ||
-        null;
-
-      const relHref = titleLinkEl?.getAttribute("href") || null;
-      const url = relHref ? abs(relHref) : null;
-      if (!url) return { ok:false, error:"CNN: lead-package title link href not found" };
-
-      // 3) Title from the container title h2
+      // 2) Title from container h2 (do NOT rely on container title <a>; it may be missing)
       const h2 =
         container.querySelector('h2.container__title_url-text.container_lead-package__title_url-text[data-editable="title"]') ||
         container.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
@@ -538,21 +528,31 @@ async function scrapeCNNHero() {
       const title = clean(h2?.textContent || "");
       if (!title || title.length < 8) return { ok:false, error:"CNN: missing title in lead-package container" };
 
-      // 4) Find the matching card <li> whose open-link or live-story link matches the container href
+      // 3) Select the lead card inside this container
       const list = container.querySelector("ul.container_lead-package__field-links") || container;
 
       const card =
-        list.querySelector(`li.container_lead-package__item[data-open-link="${relHref}"]`) ||
-        list.querySelector(`li.container_lead-package__item a.container__link[data-link-type="live-story"][href="${relHref}"]`)?.closest("li") ||
-        // fallback: selected item, but only if it’s a live-story, not a video card
-        list.querySelector('li.container_lead-package__item.container_lead-package__selected a[data-link-type="live-story"]')?.closest("li") ||
+        // best: the selected card
+        list.querySelector('li.container_lead-package__item.container_lead-package__selected') ||
+        // fallback: a live-story card
+        list.querySelector('li.container_lead-package__item a[data-link-type="live-story"]')?.closest("li") ||
+        // last: first card
+        list.querySelector('li.container_lead-package__item') ||
         null;
 
-      if (!card) {
-        return { ok:false, error:"CNN: matching lead card not found (href mismatch)" };
-      }
+      if (!card) return { ok:false, error:"CNN: lead-package card not found" };
 
-      // 5) Image: prefer data-url inside THIS card; fall back to <img>
+      // 4) URL from the card (prefer data-open-link)
+      const relHref =
+        card.getAttribute("data-open-link") ||
+        card.querySelector('a.container__link[href]')?.getAttribute("href") ||
+        card.querySelector('a[href]')?.getAttribute("href") ||
+        null;
+
+      const url = relHref ? abs(relHref) : null;
+      if (!url) return { ok:false, error:"CNN: missing url for lead card" };
+
+      // 5) Image scoped to THIS card only
       const media =
         card.querySelector(".container__item-media.container_lead-package__item-media") ||
         card.querySelector(".container__item-media") ||
@@ -560,6 +560,7 @@ async function scrapeCNNHero() {
 
       let imgUrl = null;
 
+      // Prefer canonical/original image URL if present
       const comp = media.querySelector('.image[data-url]');
       if (comp?.getAttribute("data-url")) {
         imgUrl = comp.getAttribute("data-url");
@@ -580,7 +581,7 @@ async function scrapeCNNHero() {
       return { ok:true, url, title, imgUrl };
     });
 
-    // --- Smart override: if homepage image looks like a video still, try og:image from the destination page ---
+    // --- Smart override: if homepage image looks like a video still, try og:image from destination page ---
     function looksLikeVideoStill(u) {
       if (!u) return false;
       return /\/prod\/still-|\/stellar\/prod\/still-|_still\.jpg\b|still[_-]\d/i.test(String(u));
@@ -620,53 +621,6 @@ async function scrapeCNNHero() {
       title: cleanText(finalTitle),
       url: normalizeUrl(finalUrl),
       imgUrl: finalImgUrl ? normalizeUrl(finalImgUrl) : null,
-      slotKey: sha1("cnn1|top").slice(0, 12),
-    } : null;
-
-    const snapshot = {
-      id: "cnn1",
-      fetchedAt: nowISO(),
-      runId,
-      ok: Boolean(item),
-      error: item ? null : (hero?.error || "CNN not found"),
-      item,
-    };
-
-    const archive = await archiveRun(page, runId, snapshot);
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  });
-}
-    // ---- NEW: og:image override when DOM image looks wrong ----
-    let finalUrl = hero?.ok ? normalizeUrl(hero.url) : null;
-    let finalTitle = hero?.ok ? cleanText(hero.title) : "";
-    let finalImgUrl = hero?.ok && hero.imgUrl ? normalizeUrl(hero.imgUrl) : null;
-
-    const looksLikeStill =
-      typeof finalImgUrl === "string" &&
-      /\/prod\/still-|\/stellar\/prod\/still-|still[_-]\d|_still\.jpg|\/video\//i.test(finalImgUrl);
-
-    const shouldOverrideFromOg =
-      Boolean(hero?.ok && finalUrl) &&
-      (!finalImgUrl || looksLikeStill || hero?.hasLiveUpdates);
-
-    if (shouldOverrideFromOg) {
-      try {
-        const r = await page.request.get(finalUrl, { timeout: 20000 });
-        const html = await r.text();
-
-        // Try og:image (and fall back to twitter:image if needed)
-        const mOg = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
-        const mTw = html.match(/<meta\s+name=["']twitter:image["']\s+content=["']([^"']+)["']/i);
-
-        const picked = (mOg?.[1] || mTw?.[1] || "").trim();
-        if (picked) finalImgUrl = normalizeUrl(picked);
-      } catch {}
-    }
-
-    const item = hero?.ok ? {
-      title: cleanText(finalTitle),
-      url: finalUrl,
-      imgUrl: finalImgUrl || null,
       slotKey: sha1("cnn1|top").slice(0, 12),
     } : null;
 
