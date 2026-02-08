@@ -1,261 +1,94 @@
 {
-  "generatedAt": "2026-02-07T22:37:44.086Z",
+  "generatedAt": "2026-02-08T02:44:32.515Z",
   "sources": {
-    "abc": {
-      "id": "abc",
-      "name": "ABC News",
-      "homeUrl": "https://abcnews.go.com/",
-      "updatedAt": "2026-02-07T22:36:14.172Z",
-      "ok": true,
-      "error": null,
-      "stale": false,
-      "runId": "abc_2026-02-07T22-36-06-209Z",
-      "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/abc_2026-02-07T22-36-06-209Z.html",
-        "pngPath": "/home/runner/work/newsboard/newsboard/archive/abc_2026-02-07T22-36-06-209Z.png",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/abc_2026-02-07T22-36-06-209Z.json"
-      },
-      "items": [
-        {
-          "rank": 1,
-          "title": "'Indefensible': Black Trump allies grapple with fallout from racist video of Obamas",
-          "url": "https://abcnews.go.com/Politics/indefensible-black-trump-allies-grapple-fallout-racist-video/story?id=129940924",
-          "slotKey": "58362222186a",
-          "bandIdx": 1,
-          "bandCardIndex": 0
-        },
-        {
-          "rank": 2,
-          "title": "Authorities 'aware of new message regarding Nancy Guthrie': Sheriff",
-          "url": "https://abcnews.go.com/US/authorities-aware-new-message-nancy-guthrie-sheriff/story?id=129934478",
-          "slotKey": "2b26484f9466",
-          "bandIdx": 2,
-          "bandCardIndex": 0
-        },
-        {
-          "rank": 3,
-          "title": "Millions of Americans on alert as dangerous cold sweeps East Coast",
-          "url": "https://abcnews.go.com/US/millions-americans-alert-dangerous-cold-sweeps-east-coast/story?id=129945433",
-          "slotKey": "95a290c7ca96",
-          "bandIdx": 2,
-          "bandCardIndex": 1
-        },
-        {
-          "rank": 4,
-          "title": "3 Doors Down singer Brad Arnold dies at 47",
-          "url": "https://abcnews.go.com/GMA/Culture/3-doors-singer-brad-arnold-dies-47/story?id=129953955",
-          "slotKey": "a139d1ab0c3e",
-          "bandIdx": 2,
-          "bandCardIndex": 2
-        },
-        {
-          "rank": 5,
-          "title": "Stepbrother arrested, charged after teen girl's death on Carnival Cruise: Stepfather",
-          "url": "https://abcnews.go.com/US/stepbrother-arrested-charged-after-teen-girls-death-carnival/story?id=129935644",
-          "slotKey": "3f6af2ea4a3f",
-          "bandIdx": 2,
-          "bandCardIndex": 3
-        },
-        {
-          "rank": 6,
-          "title": "Trump admin declines judge’s request to return deported college student",
-          "url": "https://abcnews.go.com/US/trump-administration-declines-judges-request-return-college-student/story?id=129936369",
-          "slotKey": "4fe311cfcd8b",
-          "bandIdx": 2,
-          "bandCardIndex": 4
-        },
-        {
-          "rank": 7,
-          "title": "Russia launches more than 440 drones, missiles at Ukraine overnight, Zelenskyy says",
-          "url": "https://abcnews.go.com/International/russia-launches-440-drones-missiles-ukraine-overnight-zelenskyy/story?id=129944707",
-          "slotKey": "e15862fce039",
-          "bandIdx": 2,
-          "bandCardIndex": 5
-        },
-        {
-          "rank": 8,
-          "title": "US ski star competing at the Olympics despite torn ACL. What experts say",
-          "url": "https://abcnews.go.com/Health/lindsey-vonn-skiing-completely-torn-acl-win-olympic/story?id=129945749",
-          "slotKey": "c59efb297b37",
-          "bandIdx": 2,
-          "bandCardIndex": 6
-        },
-        {
-          "rank": 9,
-          "title": "Meloni's face painted on religious icon turns restoration into spectacle",
-          "url": "https://abcnews.go.com/International/italian-prime-ministers-likeness-painted-religious-icon-turns/story?id=129856913",
-          "slotKey": "c08995b0bb78",
-          "bandIdx": 2,
-          "bandCardIndex": 7
-        }
-      ],
-      "item": null
-    },
-    "cbs": {
-      "id": "cbs",
-      "name": "CBS News",
-      "homeUrl": "https://www.cbsnews.com/",
-      "updatedAt": "2026-02-07T22:36:17.907Z",
-      "ok": true,
-      "error": null,
-      "stale": false,
-      "runId": "cbs_2026-02-07T22-36-14-383Z",
-      "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cbs_2026-02-07T22-36-14-383Z.html",
-        "pngPath": "/home/runner/work/newsboard/newsboard/archive/cbs_2026-02-07T22-36-14-383Z.png",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cbs_2026-02-07T22-36-14-383Z.json"
-      },
-      "items": [
-        {
-          "rank": 1,
-          "title": "Some Team USA athletes speak out about politics at home",
-          "url": "https://www.cbsnews.com/news/as-winter-olympics-begin-in-italy-some-team-usa-athletes-speak-out-about-politics-at-home/",
-          "slotKey": "d7c6944bf745"
-        },
-        {
-          "rank": 2,
-          "title": "Authorities tow car from Nancy Guthrie's home, investigate new message",
-          "url": "https://www.cbsnews.com/news/savannah-guthrie-mom-nancy-missing-new-message/",
-          "slotKey": "1aa3753521a3"
-        },
-        {
-          "rank": 3,
-          "title": "Trump throws support behind Nexstar-Tegna broadcast deal he once opposed",
-          "url": "https://www.cbsnews.com/news/trump-support-nexstar-tegna-broadcast-deal/",
-          "slotKey": "9fe490814c6e"
-        },
-        {
-          "rank": 4,
-          "title": "Injured Lindsey Vonn completes final training run ahead of Olympic race",
-          "url": "https://www.cbsnews.com/news/lindsey-vonn-injury-olympic-race-skiing-training/",
-          "slotKey": "02a5b10acf58"
-        },
-        {
-          "rank": 5,
-          "title": "White House removes Trump post with racist footage of Obamas hours after defending it",
-          "url": "https://www.cbsnews.com/news/trump-shares-racist-video-depicting-obamas-as-apes/",
-          "slotKey": "8f168aae9002"
-        },
-        {
-          "rank": 6,
-          "title": "Brad Arnold, 3 Doors Down founder and lead singer, dies at 47",
-          "url": "https://www.cbsnews.com/news/brad-arnold-3-doors-down-founder-and-lead-singer-dies-at-47/",
-          "slotKey": "3dee2648ce14"
-        },
-        {
-          "rank": 7,
-          "title": "Bad Bunny lyrics to know before his Super Bowl halftime show",
-          "url": "https://www.cbsnews.com/news/bad-bunny-lyrics-2026-super-bowl-halftime-show/",
-          "slotKey": "28d2c4790b5f"
-        },
-        {
-          "rank": 8,
-          "title": "Zelenskyy says U.S. gave Ukraine, Russia a deadline for agreement to end war",
-          "url": "https://www.cbsnews.com/news/zelenskyy-ukraine-russia-war-united-states-deadline/",
-          "slotKey": "f1b67f30c31e"
-        },
-        {
-          "rank": 9,
-          "title": "U.S. speedskater Greta Myers learned of Olympic debut hours before race",
-          "url": "https://www.cbsnews.com/news/us-speedskater-greta-myers-3000-meters-olympics/",
-          "slotKey": "1f9ff7cc1c8a"
-        }
-      ],
-      "item": null
-    },
     "abc1": {
       "id": "abc1",
       "name": "ABC News",
       "homeUrl": "https://abcnews.go.com/",
-      "updatedAt": "2026-02-07T22:36:21.239Z",
+      "updatedAt": "2026-02-08T02:43:56.421Z",
       "ok": true,
       "error": null,
-      "stale": false,
-      "runId": "abc1_2026-02-07T22-36-18-085Z",
+      "runId": "abc1_2026-02-08T02-43-53-206Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-07T22-36-18-085Z.html",
-        "pngPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-07T22-36-18-085Z.png",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-07T22-36-18-085Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T02-43-53-206Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T02-43-53-206Z.json"
       },
-      "items": [],
       "item": {
-        "title": "'Indefensible': Black Trump allies grapple with fallout from racist video of Obamas",
-        "url": "https://abcnews.go.com/Politics/indefensible-black-trump-allies-grapple-fallout-racist-video/story?id=129940924",
-        "imgUrl": "https://i.abcnewsfe.com/a/bf88e501-7870-4caf-bb25-23318ac70f0a/trump-af1-feb-6_1770441350936_hpMain_16x9.jpg",
-        "imgAlt": null,
-        "slotKey": "e769a506261e"
+        "title": "Savannah Guthrie in new video pleads for mother's return: 'We will pay'",
+        "url": "https://abcnews.go.com/US/savannah-guthrie-new-video-pleads-mothers-return-pay/story?id=129957144",
+        "imgUrl": "https://i.abcnewsfe.com/a/fc07c4cb-b0ed-49dc-a71e-7d328ece27f5/2-7-25-guthrie-video_1770513204374_hpMain_16x9.jpg",
+        "slotKey": "5be6806db8a5"
       }
     },
     "cbs1": {
       "id": "cbs1",
       "name": "CBS News",
       "homeUrl": "https://www.cbsnews.com/",
-      "updatedAt": "2026-02-07T22:36:22.885Z",
-      "ok": true,
-      "error": null,
-      "stale": false,
-      "runId": "cbs1_2026-02-07T22-36-21-403Z",
+      "updatedAt": "2026-02-08T02:43:58.418Z",
+      "ok": false,
+      "error": "CBS: missing url/title",
+      "runId": "cbs1_2026-02-08T02-43-56-580Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-07T22-36-21-403Z.html",
-        "pngPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-07T22-36-21-403Z.png",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-07T22-36-21-403Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T02-43-56-580Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T02-43-56-580Z.json"
       },
-      "items": [],
-      "item": {
-        "title": "Some Team USA athletes speak out about politics at home",
-        "url": "https://www.cbsnews.com/news/as-winter-olympics-begin-in-italy-some-team-usa-athletes-speak-out-about-politics-at-home/",
-        "imgUrl": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/02/06/278aa8d5-079f-401f-a7df-35db87cc6387/thumbnail/640x360/d782bf69489853e1e7607308be37744c/ap26037814806722.jpg#",
-        "imgAlt": "Milan Cortina Olympics Opening Ceremony",
-        "slotKey": "3294fbcd664f"
-      }
+      "item": null
     },
     "usat1": {
       "id": "usat1",
       "name": "USA Today",
       "homeUrl": "https://www.usatoday.com/",
-      "updatedAt": "2026-02-07T22:37:15.267Z",
+      "updatedAt": "2026-02-08T02:44:00.575Z",
       "ok": true,
       "error": null,
-      "stale": false,
-      "runId": "usat1_2026-02-07T22-36-23-263Z",
+      "runId": "usat1_2026-02-08T02-43-58-539Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-07T22-36-23-263Z.html",
-        "pngPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-07T22-36-23-263Z.png",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-07T22-36-23-263Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T02-43-58-539Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T02-43-58-539Z.json"
       },
-      "items": [],
       "item": {
-        "title": "Democrats 'dropped the ball' on MAHA: Michelle Obama righthand man",
-        "url": "https://www.usatoday.com/story/news/politics/2026/02/07/maha-trump-obama-rfk-jr-kennedy/88182915007/",
-        "imgUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/01/15/USAT/88198314007-20260115-usat-sam-kass-0001.jpg?crop=5999,3375,x0,y312&width=430&height=242&format=pjpg&auto=webp",
-        "imgAlt": null,
-        "dek": "Former Obama adviser Sam Kass says RFK Jr's policies connecting food to chronic illness have found resonance among wide swaths of the American public.",
-        "label": "POLITICS",
-        "dt": "11:42 a.m. ET Feb. 7",
-        "slotKey": "2f4f5e88af94"
+        "title": "Get top stories in your inbox",
+        "url": "https://profile.usatoday.com/newsletters/Daily-Briefing/",
+        "imgUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/02/07/USAT/88566259007-milanprotests.JPG?crop=5495,3093,x0,y266&width=210&height=118&format=pjpg&auto=webp",
+        "slotKey": "5fd21635ad69"
       }
     },
     "nbc1": {
       "id": "nbc1",
       "name": "NBC News",
       "homeUrl": "https://www.nbcnews.com/",
-      "updatedAt": "2026-02-07T22:37:43.986Z",
+      "updatedAt": "2026-02-08T02:44:28.949Z",
       "ok": true,
       "error": null,
-      "stale": false,
-      "runId": "nbc1_2026-02-07T22-37-15-596Z",
+      "runId": "nbc1_2026-02-08T02-44-00-847Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-07T22-37-15-596Z.html",
-        "pngPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-07T22-37-15-596Z.png",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-07T22-37-15-596Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T02-44-00-847Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T02-44-00-847Z.json"
       },
-      "items": [],
       "item": {
         "title": "Ilia Malinin makes Olympic debut with strong second-place performance",
         "url": "https://www.nbcnews.com/sports/olympics/ilia-malinin-winter-olympics-2026-rcna257948",
-        "imgUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_focal-762x508,f_auto,q_auto:best/rockcms/2026-02/250207-ilia-malinin-ch-1558-df7850.jpg",
-        "imgAlt": "Ilia Malinin.",
-        "slotKey": "397f827435f4"
+        "imgUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_focal-760x428,f_auto,q_auto:best/rockcms/2026-02/260207-ilia-malinin-olympics-16x9-ww-2014-097b8f.jpg",
+        "slotKey": "579270cafa55"
+      }
+    },
+    "cnn1": {
+      "id": "cnn1",
+      "name": "CNN",
+      "homeUrl": "https://www.cnn.com/",
+      "updatedAt": "2026-02-08T02:44:32.448Z",
+      "ok": true,
+      "error": null,
+      "runId": "cnn1_2026-02-08T02-44-29-111Z",
+      "archive": {
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T02-44-29-111Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T02-44-29-111Z.json"
+      },
+      "item": {
+        "title": "• For Subscribers For Subscribers Elijah Nouvelage for CNN",
+        "url": "https://www.cnn.com/2026/02/07/us/hanceville-alabama-police-reckoning",
+        "imgUrl": null,
+        "slotKey": "e75971db9693"
       }
     }
   }
