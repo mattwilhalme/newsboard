@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-02-08T03:27:48.499Z",
+  "generatedAt": "2026-02-08T03:39:36.916Z",
   "sources": {
     "abc1": {
       "id": "abc1",
       "name": "ABC News",
       "homeUrl": "https://abcnews.go.com/",
-      "updatedAt": "2026-02-08T03:27:11.221Z",
+      "updatedAt": "2026-02-08T03:38:35.768Z",
       "ok": true,
       "error": null,
-      "runId": "abc1_2026-02-08T03-27-08-059Z",
+      "runId": "abc1_2026-02-08T03-38-32-230Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T03-27-08-059Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T03-27-08-059Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T03-38-32-230Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/abc1_2026-02-08T03-38-32-230Z.json"
       },
       "item": {
         "title": "Savannah Guthrie in new video pleads for mother's return: 'We will pay'",
@@ -24,27 +24,32 @@
       "id": "cbs1",
       "name": "CBS News",
       "homeUrl": "https://www.cbsnews.com/",
-      "updatedAt": "2026-02-08T03:27:13.354Z",
-      "ok": false,
-      "error": "CBS: missing url/title",
-      "runId": "cbs1_2026-02-08T03-27-11-391Z",
+      "updatedAt": "2026-02-08T03:39:02.551Z",
+      "ok": true,
+      "error": null,
+      "runId": "cbs1_2026-02-08T03-38-35-925Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T03-27-11-391Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T03-27-11-391Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T03-38-35-925Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cbs1_2026-02-08T03-38-35-925Z.json"
       },
-      "item": null
+      "item": {
+        "title": "Jake Paul joins JD Vance to watch U.S. women's hockey team at Olympics",
+        "url": "https://www.cbsnews.com/news/jd-vance-jake-paul-olympics-womens-ice-hockey-finland-united-states/",
+        "imgUrl": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/02/06/278aa8d5-079f-401f-a7df-35db87cc6387/thumbnail/640x360/d782bf69489853e1e7607308be37744c/ap26037814806722.jpg#",
+        "slotKey": "4d6f70f0b663"
+      }
     },
     "usat1": {
       "id": "usat1",
       "name": "USA Today",
       "homeUrl": "https://www.usatoday.com/",
-      "updatedAt": "2026-02-08T03:27:16.225Z",
+      "updatedAt": "2026-02-08T03:39:05.078Z",
       "ok": true,
       "error": null,
-      "runId": "usat1_2026-02-08T03-27-13-483Z",
+      "runId": "usat1_2026-02-08T03-39-02-912Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T03-27-13-483Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T03-27-13-483Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T03-39-02-912Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/usat1_2026-02-08T03-39-02-912Z.json"
       },
       "item": {
         "title": "Police unleash tear gas and water cannons on Olympics protestors in Milan",
@@ -57,13 +62,13 @@
       "id": "nbc1",
       "name": "NBC News",
       "homeUrl": "https://www.nbcnews.com/",
-      "updatedAt": "2026-02-08T03:27:44.924Z",
+      "updatedAt": "2026-02-08T03:39:33.332Z",
       "ok": true,
       "error": null,
-      "runId": "nbc1_2026-02-08T03-27-16-473Z",
+      "runId": "nbc1_2026-02-08T03-39-05-471Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T03-27-16-473Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T03-27-16-473Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T03-39-05-471Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/nbc1_2026-02-08T03-39-05-471Z.json"
       },
       "item": {
         "title": "Ilia Malinin makes Olympic debut with strong second-place performance",
@@ -76,13 +81,13 @@
       "id": "cnn1",
       "name": "CNN",
       "homeUrl": "https://www.cnn.com/",
-      "updatedAt": "2026-02-08T03:27:48.418Z",
+      "updatedAt": "2026-02-08T03:39:36.843Z",
       "ok": true,
       "error": null,
-      "runId": "cnn1_2026-02-08T03-27-45-095Z",
+      "runId": "cnn1_2026-02-08T03-39-33-558Z",
       "archive": {
-        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T03-27-45-095Z.html",
-        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T03-27-45-095Z.json"
+        "htmlPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T03-39-33-558Z.html",
+        "jsonPath": "/home/runner/work/newsboard/newsboard/archive/cnn1_2026-02-08T03-39-33-558Z.json"
       },
       "item": {
         "title": "• For Subscribers For Subscribers Elijah Nouvelage for CNN",
