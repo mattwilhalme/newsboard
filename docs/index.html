@@ -262,10 +262,12 @@
     }
     .latestItem.isClickable{ cursor:pointer; }
     .latestMetaRow{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+    .latestBody{ display:flex; gap:12px; align-items:flex-start; }
+    .latestMain{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:8px; }
     .latestTitle{ font-size:13px; line-height:1.3; font-weight:700; margin:0; }
     .latestTitle a{ color: var(--text); text-decoration:none; }
     .latestTitle a:hover{ color: var(--blue); text-decoration: underline; }
-    .latestThumb{ width:100%; aspect-ratio:16 / 9; border-radius:12px; background:#f1f3f4; border:1px solid var(--line); overflow:hidden; }
+    .latestThumb{ width:132px; aspect-ratio:16 / 9; border-radius:12px; background:#f1f3f4; border:1px solid var(--line); overflow:hidden; flex:0 0 auto; }
     .latestThumb.isHidden{ display:none; }
     .latestThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 
@@ -282,6 +284,8 @@
     .hTitle a:hover{ color: var(--blue); text-decoration: underline; }
 
     @media (max-width: 520px){
+      .latestBody{ flex-direction:column; }
+      .latestThumb{ width:100%; }
       .hBody{ flex-direction:column; }
       .hThumb{ width:100%; }
     }
@@ -568,10 +572,36 @@
         const item = src?.item || {};
         const title = String(item.title || "").trim();
         const url = String(item.url || "").trim();
-        const historyEntries = sources?.[sourceId]?.entries;
+        const historyEntries = Array.isArray(sources?.[sourceId]?.entries) ? sources[sourceId].entries : [];
         const latestHist = Array.isArray(historyEntries) && historyEntries.length
           ? historyEntries[historyEntries.length - 1]
           : null;
+
+        let latestChangeType = "other";
+        if (historyEntries.length) {
+          const last = historyEntries[historyEntries.length - 1];
+          let prevDifferent = null;
+          for (let i = historyEntries.length - 2; i >= 0; i--) {
+            const prev = historyEntries[i];
+            if (!prev) continue;
+            const urlChanged = String(prev.url || "") !== String(last?.url || "");
+            const titleChanged = String(prev.title || "") !== String(last?.title || "");
+            if (urlChanged || titleChanged) {
+              prevDifferent = prev;
+              break;
+            }
+          }
+
+          if (!prevDifferent) {
+            latestChangeType = "url";
+          } else if (String(prevDifferent.url || "") !== String(last?.url || "")) {
+            latestChangeType = "url";
+          } else if (String(prevDifferent.title || "") !== String(last?.title || "")) {
+            latestChangeType = "headline";
+          }
+        } else {
+          latestChangeType = "url";
+        }
 
         const tRaw = src?.updatedAt || src?.lastChangeAt || latestHist?.lastSeenAt || latestHist?.firstSeenAt || null;
         const tMs = Number.isFinite(Date.parse(tRaw || "")) ? Date.parse(tRaw) : 0;
@@ -583,6 +613,7 @@
           url: url || "#",
           imgUrl: item?.imgUrl || latestHist?.imgUrl || null,
           updatedAt: tRaw,
+          __changeType: latestChangeType,
           __tMs: tMs,
         });
       }
@@ -611,15 +642,25 @@
           const meta = document.createElement("div");
           meta.className = "latestMetaRow";
 
+          const left = document.createElement("div");
+          left.className = "srcTitle";
+          const dot = document.createElement("div");
+          dot.className = row.__changeType === "headline" ? "dot info" : (row.__changeType === "url" ? "dot ok" : "dot");
+          left.appendChild(dot);
+
+          const leftMeta = document.createElement("div");
+          leftMeta.className = "srcMeta";
           const sourceName = document.createElement("div");
           sourceName.className = "srcName";
           sourceName.textContent = sourceLabel(row.source, null);
-          meta.appendChild(sourceName);
-
+          leftMeta.appendChild(sourceName);
           const when = document.createElement("div");
           when.className = "srcTime";
           when.textContent = row.updatedAt ? `${fmtTime(row.updatedAt)} · ${ago(row.updatedAt)}` : "—";
-          meta.appendChild(when);
+          leftMeta.appendChild(when);
+
+          left.appendChild(leftMeta);
+          meta.appendChild(left);
 
           const h = document.createElement("h3");
           h.className = "latestTitle";
@@ -631,10 +672,17 @@
           h.appendChild(a);
 
           card.appendChild(meta);
-          card.appendChild(h);
 
           const thumb = document.createElement("div");
           thumb.className = "latestThumb isHidden";
+
+          const body = document.createElement("div");
+          body.className = "latestBody";
+
+          const main = document.createElement("div");
+          main.className = "latestMain";
+          main.appendChild(h);
+
           if (!row.imgUrl) {
             thumb.style.display = "none";
           } else {
@@ -664,7 +712,9 @@
             });
           }
 
-          card.appendChild(thumb);
+          body.appendChild(thumb);
+          body.appendChild(main);
+          card.appendChild(body);
           list.appendChild(card);
         }
 
@@ -760,17 +810,13 @@
         name.className = "srcName";
         name.textContent = sourceLabel(it.source, null);
         meta.appendChild(name);
-        left.appendChild(meta);
-
-        const right = document.createElement("div");
-        right.className = "rightMeta";
         const updated = document.createElement("div");
         updated.className = "srcTime";
         updated.textContent = it.lastSeenAt ? `${fmtTime(it.lastSeenAt)} · ${ago(it.lastSeenAt)}` : "—";
-        right.appendChild(updated);
+        meta.appendChild(updated);
 
+        left.appendChild(meta);
         head.appendChild(left);
-        head.appendChild(right);
 
         const body = document.createElement("div");
         body.className = "hBody";
@@ -811,7 +857,7 @@
             const isOpen = !thumb.classList.contains("isHidden");
 
             // Keep one expanded history image at a time.
-            for (const el of host.querySelectorAll(".hThumb")) {
+            for (const el of host.querySelectorAll(".hThumb, .latestThumb")) {
               if (el !== thumb) el.classList.add("isHidden");
             }
 
