@@ -88,6 +88,20 @@
       .brand{ min-width: unset; }
     }
 
+    /* Change indicators near headlines */
+    .change-indicator{
+      display:inline-block;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      margin-left:8px;
+      vertical-align:middle;
+      opacity:0.8;
+      transition:opacity 0.4s ease;
+    }
+    .change-indicator.new-url{ background:var(--ok); }
+    .change-indicator.new-headline{ background:var(--blue); }
+
     .card{
       background: var(--card);
       border:1px solid var(--line);
@@ -886,6 +900,13 @@
       a.textContent = src?.item?.title || "—";
       h2.appendChild(a);
 
+      // Lightweight change indicator near headline
+      if (indicator?.changeType && indicator.changeType !== "other") {
+        const ind = document.createElement("span");
+        ind.className = `change-indicator ${indicator.changeType === "url" ? "new-url" : "new-headline"}`;
+        h2.appendChild(ind);
+      }
+
       const row = document.createElement("div");
       row.className = "row";
 
@@ -999,6 +1020,29 @@
             history = sb.history;
             usingSupabase = true;
             $("subline").textContent = "We're live";
+
+            // Compute indicators by comparing current items with history
+            indicators = {};
+            for (const [sourceId, src] of Object.entries(data.sources || {})) {
+              const entries = history?.sources?.[sourceId]?.entries || [];
+              const currentUrl = src?.item?.url;
+              const currentTitle = src?.item?.title;
+              // Find most recent entry that is NOT the current one
+              let prevEntry = null;
+              for (let i = entries.length - 1; i >= 0; i--) {
+                const e = entries[i];
+                if (e.url !== currentUrl || e.title !== currentTitle) { prevEntry = e; break; }
+              }
+              if (prevEntry) {
+                indicators[sourceId] = {
+                  changeType: (prevEntry.url !== currentUrl) ? "url" : "headline",
+                  stale2h: false,
+                };
+              } else {
+                // No previous entry: don't show indicator on first load
+                indicators[sourceId] = { changeType: null, stale2h: false };
+              }
+            }
           }
         } catch (e){
           console.warn("Supabase load failed, falling back to JSON", e);
