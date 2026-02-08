@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-08T03:27:48.986Z",
+  "generatedAt": "2026-02-08T03:39:37.417Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T03:27:52.161Z",
+      "updatedAt": "2026-02-08T03:39:40.717Z",
       "error": null,
-      "runId": "abc1_2026-02-08T03-27-49-089Z",
+      "runId": "abc1_2026-02-08T03-39-37-525Z",
       "since": "2026-02-08T02:44:33.014Z",
       "item": {
         "title": "Savannah Guthrie in new video pleads for mother's return: 'We will pay'",
@@ -16,18 +16,23 @@
       }
     },
     "cbs1": {
-      "ok": false,
-      "updatedAt": "2026-02-08T03:27:54.067Z",
-      "error": "CBS: missing url/title",
-      "runId": "cbs1_2026-02-08T03-27-52-313Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-02-08T03:40:07.971Z",
+      "error": null,
+      "runId": "cbs1_2026-02-08T03-39-40-993Z",
+      "since": "2026-02-08T03:39:37.417Z",
+      "item": {
+        "title": "Jake Paul joins JD Vance to watch U.S. women's hockey team at Olympics",
+        "url": "https://www.cbsnews.com/news/jd-vance-jake-paul-olympics-womens-ice-hockey-finland-united-states/",
+        "imgUrl": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/02/06/278aa8d5-079f-401f-a7df-35db87cc6387/thumbnail/640x360/d782bf69489853e1e7607308be37744c/ap26037814806722.jpg#",
+        "slotKey": "4d6f70f0b663"
+      }
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-02-08T03:27:56.310Z",
+      "updatedAt": "2026-02-08T03:40:10.585Z",
       "error": null,
-      "runId": "usat1_2026-02-08T03-27-54-204Z",
+      "runId": "usat1_2026-02-08T03-40-08-300Z",
       "since": "2026-02-08T03:27:48.986Z",
       "item": {
         "title": "Police unleash tear gas and water cannons on Olympics protestors in Milan",
@@ -38,9 +43,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-08T03:28:24.039Z",
+      "updatedAt": "2026-02-08T03:40:38.406Z",
       "error": null,
-      "runId": "nbc1_2026-02-08T03-27-56-487Z",
+      "runId": "nbc1_2026-02-08T03-40-10-811Z",
       "since": "2026-02-07T22:37:44.568Z",
       "item": {
         "title": "Ilia Malinin makes Olympic debut with strong second-place performance",
