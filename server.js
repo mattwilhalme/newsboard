@@ -596,63 +596,124 @@ async function scrapeCNNHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      // 1) Pick the lead-package container (prefer stack_condensed, then generic lead-package)
-      const container =
-        document.querySelector(
-          '.stack_condensed__items .container.container_lead-package[data-layout="container_lead-package"]'
-        ) ||
-        document.querySelector('.container.container_lead-package[data-layout="container_lead-package"]') ||
-        document.querySelector(".container.container_lead-package") ||
-        null;
-
-      if (!container) return { ok: false, error: "CNN: lead-package container not found" };
-
-      // 2) Select the lead card inside this container
-      const list =
-        container.querySelector("ul.container_lead-package__field-links") ||
-        container.querySelector("ul.container__field-links") ||
-        container;
-
-      const card =
-        // best: the selected card
-        list.querySelector('li.container_lead-package__item.container_lead-package__selected') ||
-        // fallback: a live-story card
-        list.querySelector('a[data-link-type="live-story"]')?.closest("li") ||
-        // last: first card
-        list.querySelector("li.container_lead-package__item") ||
-        list.querySelector("li") ||
-        null;
-
-      if (!card) return { ok: false, error: "CNN: lead-package card not found" };
-
-      // 3) Title from the CARD headline (more reliable than container title h2)
-      const headlineEl =
-        card.querySelector('span.container__headline-text[data-editable="headline"]') ||
-        card.querySelector(".container__headline-text") ||
-        null;
-
-      const title = clean(headlineEl?.textContent || "");
-      if (!title || title.length < 8) {
-        return { ok: false, error: "CNN: missing headline in selected card" };
+      function getList(container) {
+        return (
+          container.querySelector("ul.container_lead-package__field-links") ||
+          container.querySelector("ul.container__field-links") ||
+          container
+        );
       }
 
-      // 4) URL from the card (prefer data-open-link)
-      const relHref =
-        card.getAttribute("data-open-link") ||
-        card.querySelector('a.container__link[href]')?.getAttribute("href") ||
-        card.querySelector('a[href]')?.getAttribute("href") ||
-        null;
+      function getCard(list) {
+        return (
+          // best: explicitly selected card
+          list.querySelector("li.container_lead-package__item.container_lead-package__selected") ||
+          // fallback: a live-story card
+          list.querySelector('a[data-link-type="live-story"]')?.closest("li") ||
+          // last: first card
+          list.querySelector("li.container_lead-package__item") ||
+          list.querySelector("li") ||
+          null
+        );
+      }
 
+      function getCardHref(card) {
+        return (
+          card.getAttribute("data-open-link") ||
+          card.querySelector('a.container__link[href]')?.getAttribute("href") ||
+          card.querySelector('a[href]')?.getAttribute("href") ||
+          null
+        );
+      }
+
+      // 1) Gather and score lead-package candidates.
+      // CNN often has several lead-package containers (e.g. Super Bowl + live news),
+      // so selecting the first container by DOM can be wrong.
+      const containers = Array.from(
+        document.querySelectorAll('.container.container_lead-package[data-layout="container_lead-package"], .container.container_lead-package')
+      );
+
+      if (!containers.length) return { ok: false, error: "CNN: lead-package container not found" };
+
+      const ranked = containers
+        .map((container, idx) => {
+          const list = getList(container);
+          const card = getCard(list);
+          if (!card) return null;
+
+          const relHref = getCardHref(card);
+          const absUrl = relHref ? abs(relHref) : null;
+
+          const containerTitle = clean(
+            container.querySelector("h2.container__title_url-text")?.textContent ||
+              container.querySelector("h2.container__title-text")?.textContent ||
+              ""
+          );
+          const hasTitleLink = Boolean(container.querySelector("a.container__title-url[href]"));
+
+          const isLiveCard =
+            Boolean(card.querySelector('a[data-link-type="live-story"]')) ||
+            /\/live-news\//i.test(String(relHref || "")) ||
+            /\/live-news\//i.test(String(absUrl || ""));
+
+          const cardMedia =
+            card.querySelector(".container__item-media.container_lead-package__item-media") ||
+            card.querySelector(".container__item-media") ||
+            null;
+
+          const cardDataUrl = cardMedia?.querySelector(".image[data-url]")?.getAttribute("data-url") || "";
+          const hasStillAsset = /\/prod\/still-|\/stellar\/prod\/still-|_still\.jpg\b|still[_-]\d/i.test(
+            String(cardDataUrl)
+          );
+
+          let score = 0;
+          if (isLiveCard) score += 100;
+          if (hasTitleLink) score += 30;
+          if (containerTitle.length >= 8) score += 20;
+          if (absUrl) score += 10;
+          if (cardMedia) score += 5;
+          if (hasStillAsset) score += 5;
+
+          return { container, card, score, idx, relHref, absUrl, isLiveCard, containerTitle };
+        })
+        .filter(Boolean);
+
+      if (!ranked.length) return { ok: false, error: "CNN: lead-package card not found" };
+
+      ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
+      const bestCandidate = ranked[0];
+      const container = bestCandidate.container;
+      const card = bestCandidate.card;
+
+      // 2) Prefer the package title (matches CNN live package heading),
+      // then fall back to the selected card headline.
+      const containerTitle = clean(
+        container.querySelector("h2.container__title_url-text")?.textContent ||
+          container.querySelector("h2.container__title-text")?.textContent ||
+          ""
+      );
+      const cardHeadline = clean(
+        card.querySelector('span.container__headline-text[data-editable="headline"]')?.textContent ||
+          card.querySelector(".container__headline-text")?.textContent ||
+          ""
+      );
+      const title = containerTitle || cardHeadline;
+      if (!title || title.length < 8) {
+        return { ok: false, error: "CNN: missing title in lead-package selection" };
+      }
+
+      // 3) URL from the selected card
+      const relHref = getCardHref(card);
       const url = relHref ? abs(relHref) : null;
       if (!url) return { ok: false, error: "CNN: missing url for lead card" };
 
-      // Determine if this is a live-news story (so we don't override promo image aggressively)
+      // Determine if this is a live-news story (so we keep still promo imagery)
       const isLive =
         Boolean(card.querySelector('a[data-link-type="live-story"]')) ||
         /\/live-news\//i.test(String(relHref || "")) ||
         /\/live-news\//i.test(String(url || ""));
 
-      // 5) Image scoped to THIS card only
+      // 4) Image scoped to THIS card only
       const media =
         card.querySelector(".container__item-media.container_lead-package__item-media") ||
         card.querySelector(".container__item-media") ||
