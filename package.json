@@ -7,8 +7,6 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "scrape-abc": "node -e \"import('./server.js').then(m => m.scrapeABCFrontPage().then(console.log))\"",
-    "scrape-cbs": "node -e \"import('./server.js').then(m => m.scrapeCBSFrontPage().then(console.log))\"",
     "clean-cache": "rm -f cache.json",
     "clean-archive": "rm -rf archive/*",
     "install-browsers": "npx playwright install"
