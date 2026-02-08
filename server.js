@@ -253,34 +253,86 @@ async function scrapeCBSHero() {
 /* ---------------------------
    USA Today (single top item)
 --------------------------- */
+/* ---------------------------
+   USA Today (single top item) - target tb headline span
+--------------------------- */
 async function scrapeUSATHero() {
   return await withBrowser(async (page) => {
     const runId = `usat1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.usatoday.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1600);
+    await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
       function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
       function abs(h){ try{ return new URL(h, location.origin).toString(); } catch { return null; } }
+      function isVisible(el){
+        if (!el) return false;
+        const r = el.getBoundingClientRect();
+        if (!r || r.width < 2 || r.height < 2) return false;
+        // Prefer stuff actually in the viewport region near top
+        return r.bottom > 0 && r.top < window.innerHeight * 1.25;
+      }
 
       const main = document.querySelector("main") || document.body;
 
-      const a =
-        main.querySelector('a[href][aria-label]') ||
-        main.querySelector('a[href^="/"]');
+      // 1) Prefer the exact headline span structure you referenced
+      const spans = Array.from(
+        main.querySelectorAll('span[data-tb-shadow-region-title], span[data-tb-title]')
+      )
+        .map(sp => {
+          const text = clean(sp.textContent || "");
+          const r = sp.getBoundingClientRect();
+          return { sp, text, top: r?.top ?? 1e9, left: r?.left ?? 1e9, ok: text.length >= 15 };
+        })
+        .filter(x => x.ok && isVisible(x.sp));
 
-      if (!a) return { ok:false, error:"USAT: no link found" };
+      if (!spans.length) return { ok:false, error:"USAT: no tb headline span found" };
+
+      // Choose the most "hero-like" span: closest to top-left
+      spans.sort((a,b) => (a.top - b.top) || (a.left - b.left));
+      const bestSpan = spans[0].sp;
+      const title = clean(bestSpan.textContent || "");
+
+      // 2) Find the nearest anchor that actually navigates to the story
+      const a =
+        bestSpan.closest("a[href]") ||
+        bestSpan.parentElement?.closest("a[href]") ||
+        null;
+
+      if (!a) return { ok:false, error:"USAT: headline span has no enclosing link" };
 
       const url = abs(a.getAttribute("href"));
-      const title = clean(a.getAttribute("aria-label") || a.textContent || "");
 
-      if (!url || !title || title.length < 8) return { ok:false, error:"USAT: missing url/title" };
+      if (!url || !title || title.length < 8) {
+        return { ok:false, error:"USAT: missing url/title" };
+      }
 
-      const scope = a.closest("article") || a.parentElement || main;
-      const img = scope.querySelector("img[src]") || main.querySelector("img[src]");
+      // 3) Image: keep it from the same card/article/container as the headline
+      const scope =
+        a.closest("article") ||
+        a.closest('section') ||
+        a.closest('div') ||
+        main;
 
-      const imgUrl = img ? abs(img.getAttribute("src")) : null;
+      // Prefer images that look like the hero image (wide-ish)
+      const imgs = Array.from(scope.querySelectorAll("img"))
+        .map(img => {
+          const src = img.getAttribute("src") || "";
+          const r = img.getBoundingClientRect();
+          return {
+            img,
+            src,
+            w: r?.width ?? 0,
+            h: r?.height ?? 0,
+            area: (r?.width ?? 0) * (r?.height ?? 0),
+          };
+        })
+        .filter(x => x.src && x.area > 3000);
+
+      imgs.sort((a,b) => b.area - a.area);
+      const imgUrl = imgs[0]?.src ? abs(imgs[0].src) : null;
+
       return { ok:true, url, title, imgUrl };
     });
 
@@ -305,6 +357,7 @@ async function scrapeUSATHero() {
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
+
 
 /* ---------------------------
    NBC (single top item)
