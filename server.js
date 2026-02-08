@@ -473,12 +473,19 @@ async function scrapeNBCHero() {
    - <a class="container__link ..."> ... <span class="container__headline-text" data-editable="headline">...</span>
    - image in nearby .container__item-media; prefer img.image__dam-img src; fallback data-url on .image
 --------------------------- */
+/* ---------------------------
+   CNN (single top item)
+   Target:
+   <h2 class="container__title_url-text container_lead-package__title_url-text" data-editable="title">...</h2>
+--------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
     const runId = `cnn1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.cnn.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1500);
+
+    // Give CNN a moment; lead package often hydrates after DOMContentLoaded
+    await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
       function clean(s){ return String(s||"").replace(/\s+/g," ").trim(); }
@@ -490,7 +497,6 @@ async function scrapeCNNHero() {
         if (!srcset) return null;
         const parts = srcset.split(",").map(p => p.trim()).filter(Boolean);
         if (!parts.length) return null;
-        // prefer largest "w" if present
         let best = null;
         for (const p of parts) {
           const [u, w] = p.split(/\s+/);
@@ -500,31 +506,34 @@ async function scrapeCNNHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      // The lead package often contains a selected <li> with the lead link.
+      // 1) Find the lead title H2 you specified
+      const h2 =
+        document.querySelector('h2.container__title_url-text.container_lead-package__title_url-text[data-editable="title"]') ||
+        document.querySelector('h2.container_lead-package__title_url-text[data-editable="title"]') ||
+        document.querySelector('h2.container__title_url-text[data-editable="title"]');
+
+      if (!h2) return { ok:false, error:"CNN: lead title h2 not found" };
+
+      const title = clean(h2.textContent || "");
+      if (!title || title.length < 8) return { ok:false, error:"CNN: missing title", debug:{ titleLen: title.length } };
+
+      // 2) Find the correct link associated with this lead package title
       const leadLink =
-        document.querySelector('a.container__link.container_lead-package__link[href]') ||
-        document.querySelector('a.container__link[href][data-link-type="live-story"]') ||
-        document.querySelector('a.container__link[href]');
+        h2.closest('a.container__link.container_lead-package__link[href]') ||
+        h2.closest('a.container__link[href]') ||
+        h2.parentElement?.querySelector?.('a.container__link[href]') ||
+        h2.closest('a[href]');
 
-      if (!leadLink) return { ok:false, error:"CNN: no lead link found" };
+      const url = leadLink ? abs(leadLink.getAttribute("href")) : null;
+      if (!url) return { ok:false, error:"CNN: missing url for lead title" };
 
-      const headlineSpan =
-        leadLink.querySelector('span.container__headline-text[data-editable="headline"]') ||
-        leadLink.querySelector("span.container__headline-text");
-
-      const title = clean(headlineSpan?.textContent || leadLink.textContent || "");
-      const url = abs(leadLink.getAttribute("href"));
-
-      if (!url || !title || title.length < 8) {
-        return { ok:false, error:"CNN: missing url/title", debug:{ hasLink:Boolean(leadLink), titleLen:title.length } };
-      }
-
-      // Image can be adjacent in a sibling/nearby container.
-      // Try closest LI/card/container then find .container__item-media image.
+      // 3) Image: look in the same lead package container/card
       const host =
-        leadLink.closest("li") ||
-        leadLink.closest(".container__item") ||
-        leadLink.parentElement ||
+        leadLink?.closest("li") ||
+        leadLink?.closest(".container__item") ||
+        h2.closest("li") ||
+        h2.closest(".container__item") ||
+        h2.closest("section") ||
         document.body;
 
       let imgUrl = null;
@@ -533,6 +542,7 @@ async function scrapeCNNHero() {
         host.querySelector(".container__item-media img.image__dam-img[src]") ||
         host.querySelector(".container__item-media img[src]") ||
         host.querySelector("img.image__dam-img[src]") ||
+        host.querySelector("img[src]") ||
         null;
 
       if (img?.getAttribute("src")) {
@@ -541,9 +551,10 @@ async function scrapeCNNHero() {
         imgUrl = bestFromSrcset(img.getAttribute("srcset"));
       }
 
-      // Fallback: CNN image component sometimes has data-url with original
       if (!imgUrl) {
-        const comp = host.querySelector('.container__item-media .image[data-url]') || host.querySelector('.image[data-url]');
+        const comp =
+          host.querySelector('.container__item-media .image[data-url]') ||
+          host.querySelector('.image[data-url]');
         if (comp) imgUrl = comp.getAttribute("data-url");
       }
 
@@ -574,60 +585,6 @@ async function scrapeCNNHero() {
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
-
-/* ---------------------------
-   Refresh / API
---------------------------- */
-async function refreshSources({ id = "" } = {}) {
-  const cache = ensureCacheShape(readCache());
-  const which = String(id || "").toLowerCase();
-
-  const runList = which ? [which] : ["abc1","cbs1","usat1","nbc1","cnn1"];
-
-  for (const sid of runList) {
-    let res;
-
-    if (sid === "abc1") res = await scrapeABCHero();
-    else if (sid === "cbs1") res = await scrapeCBSHero();
-    else if (sid === "usat1") res = await scrapeUSATHero();
-    else if (sid === "nbc1") res = await scrapeNBCHero();
-    else if (sid === "cnn1") res = await scrapeCNNHero();
-    else throw new Error(`Unknown source id: ${sid}`);
-
-    cache.sources[sid] = {
-      ...cache.sources[sid],
-      ok: res.ok,
-      error: res.error || null,
-      updatedAt: res.updatedAt || nowISO(),
-      runId: res.runId || null,
-      archive: res.archive || null,
-      item: res.item || null,
-    };
-  }
-
-  cache.generatedAt = nowISO();
-  writeCache(cache);
-  return cache;
-}
-
-app.get("/api/health", (req, res) => {
-  res.json({ ok: true, ts: nowISO() });
-});
-
-app.post("/api/refresh", async (req, res) => {
-  try {
-    const id = req.body?.id || "";
-    const out = await refreshSources({ id });
-    res.json({ ok: true, cache: out });
-  } catch (e) {
-    res.status(500).json({ ok: false, error: String(e) });
-  }
-});
-
-app.get("/api/cache", (req, res) => {
-  const cache = ensureCacheShape(readCache());
-  res.json(cache);
-});
 
 // -------- Entrypoints --------
 
