@@ -901,14 +901,21 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
-   Reuters (single top item) - top story card with TitleHeading + TitleLink + hero media
+   Reuters (single top item) - prefer tpl-hero StoryCard with TitleHeading + TitleLink + hero media
 --------------------------- */
 async function scrapeReutersHero() {
   return await withBrowser(async (page) => {
     const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForSelector('main [data-testid="StoryCard"] [data-testid="TitleHeading"]', { timeout: 25000 }).catch(() => {});
+    await page.goto("https://www.reuters.com/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    // Reuters often renders quickly, but story cards can settle a beat later.
+    await page
+      .waitForSelector('main [data-testid="StoryCard"] [data-testid="TitleHeading"]', { timeout: 25000 })
+      .catch(() => {});
     await page.waitForTimeout(1200);
 
     const hero = await page.evaluate(() => {
@@ -934,6 +941,7 @@ async function scrapeReutersHero() {
           .map((p) => p.trim())
           .filter(Boolean);
         if (!parts.length) return null;
+
         let best = null;
         for (const p of parts) {
           const [u, w] = p.split(/\s+/);
@@ -943,53 +951,120 @@ async function scrapeReutersHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      const main = document.querySelector("main#main-content, main") || document.body;
-      const cards = Array.from(main.querySelectorAll('li[data-testid="StoryCard"]'));
-      if (!cards.length) return { ok: false, error: "Reuters: story cards not found" };
+      // Prefer explicit main-content if present
+      const main = document.querySelector("main#main-content") || document.querySelector("main") || document.body;
+
+      const cards = Array.from(main.querySelectorAll('[data-testid="StoryCard"]'));
+      if (!cards.length) {
+        return {
+          ok: false,
+          error: "Reuters: story cards not found",
+          debug: {
+            hasMain: Boolean(document.querySelector("main")),
+            hasMainContent: Boolean(document.querySelector("main#main-content")),
+            storyCardCount: 0,
+          },
+        };
+      }
+
+      function pickImageUrl(card) {
+        // Common patterns: eager img, lazy img with srcset, or <source srcset> in <picture>
+        const img =
+          card.querySelector('img[data-testid="EagerImage"][src], img[data-testid="EagerImage"][srcset]') ||
+          card.querySelector("img[src], img[srcset]") ||
+          null;
+
+        if (img) {
+          const src = img.getAttribute("src") || "";
+          const srcset = img.getAttribute("srcset") || "";
+          let u = src || bestFromSrcset(srcset);
+          return u ? abs(u) : null;
+        }
+
+        const source = card.querySelector("picture source[srcset]");
+        if (source) {
+          const u = bestFromSrcset(source.getAttribute("srcset") || "");
+          return u ? abs(u) : null;
+        }
+
+        return null;
+      }
 
       const ranked = cards
         .map((card, idx) => {
-          const titleEl = card.querySelector('span[data-testid="TitleHeading"]');
-          const linkEl = card.querySelector('a[data-testid="TitleLink"][href]') || card.querySelector("a[href]");
-          const imgEl =
-            card.querySelector('img[data-testid="EagerImage"][src]') ||
-            card.querySelector("img[src]") ||
-            null;
+          const titleEl = card.querySelector('[data-testid="TitleHeading"]');
+          const linkEl =
+            card.querySelector('a[data-testid="TitleLink"][href]') ||
+            card.querySelector('a[href*="/article/"], a[href^="/"]') ||
+            card.querySelector("a[href]");
 
           const title = clean(titleEl?.textContent || "");
           const relHref = linkEl?.getAttribute("href") || null;
           const url = relHref ? abs(relHref) : null;
 
-          let imgUrl = null;
-          if (imgEl?.getAttribute("src")) imgUrl = imgEl.getAttribute("src");
-          else if (imgEl?.getAttribute("srcset")) imgUrl = bestFromSrcset(imgEl.getAttribute("srcset"));
-          imgUrl = imgUrl ? abs(imgUrl) : null;
-
           if (!title || !url) return null;
 
-          const cardClass = String(card.className || "");
-          const hasHeroClass = /\btpl-hero\b/i.test(cardClass);
-          const hasHeading4Class = /\bheading_4\b/i.test(String(titleEl?.className || ""));
-          const hasDescription = Boolean(card.querySelector('p[data-testid="Description"]'));
-          const hasMedia = Boolean(card.querySelector('[data-testid="MediaImage"], [data-testid="MediaImageLink"]'));
+          const cls = String(card.className || "");
+          const titleCls = String(titleEl?.className || "");
+          const linkCls = String(linkEl?.className || "");
+
+          // Reuters hero card uses story-card-module__tpl-hero__... (substring match is key)
+          const isHeroTpl = cls.includes("__tpl-hero__") || cls.includes("tpl-hero");
+          const isHeading4 = titleCls.includes("heading_4") || titleCls.includes("heading-module__heading_4");
+
+          const hasDescription = Boolean(card.querySelector('[data-testid="Description"]'));
+          const hasMedia = Boolean(
+            card.querySelector('[data-testid*="Media"], picture, img[src], img[srcset], source[srcset]')
+          );
+
+          const imgUrl = pickImageUrl(card);
 
           let score = 0;
-          if (hasHeroClass) score += 300;
-          if (hasHeading4Class) score += 220;
+          if (isHeroTpl) score += 500;
+          if (isHeading4) score += 250;
           if (hasDescription) score += 90;
-          if (hasMedia) score += 50;
-          if (imgUrl) score += 20;
+          if (hasMedia) score += 60;
+          if (imgUrl) score += 30;
+
+          // De-prioritize non-news content types
           if (/\/video\//i.test(url)) score -= 120;
           if (/\/pictures\//i.test(url)) score -= 80;
+          if (/\/podcasts?\//i.test(url)) score -= 200;
+          if (/\/graphics?\//i.test(url)) score -= 80;
 
-          return { title, url, imgUrl, score, idx };
+          return {
+            title,
+            url,
+            imgUrl,
+            score,
+            idx,
+            debug: {
+              cardClass: cls || null,
+              titleClass: titleCls || null,
+              linkClass: linkCls || null,
+              isHeroTpl,
+              isHeading4,
+              hasDescription,
+              hasMedia,
+            },
+          };
         })
         .filter(Boolean);
 
-      if (!ranked.length) return { ok: false, error: "Reuters: title/url not found in story cards" };
-      ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
+      if (!ranked.length) {
+        return {
+          ok: false,
+          error: "Reuters: title/url not found in story cards",
+          debug: {
+            storyCardCount: cards.length,
+          },
+        };
+      }
 
-      return { ok: true, ...ranked[0] };
+      ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
+      const best = ranked[0];
+
+      return { ok: true, title: best.title, url: best.url, imgUrl: best.imgUrl || null, debug: best.debug };
     });
 
     const item = hero?.ok
@@ -1008,6 +1083,7 @@ async function scrapeReutersHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "Reuters not found"),
       item,
+      debug: hero?.debug || null,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
