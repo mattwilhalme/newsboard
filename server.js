@@ -611,20 +611,17 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
-   Reuters (single top item) - prefer tpl-hero StoryCard with TitleHeading + TitleLink + hero media
+   Reuters (single top item) - durable hero via StoryCard/TitleHeading + JSON fallback
 --------------------------- */
 async function scrapeReutersHero() {
   return await withBrowser(async (page) => {
     const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.reuters.com/", {
-      waitUntil: "domcontentloaded",
-      timeout: 45000,
-    });
+    await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
 
-    // Reuters often renders quickly, but story cards can settle a beat later.
+    // Reuters sometimes needs a beat to hydrate
     await page
-      .waitForSelector('main [data-testid="StoryCard"] [data-testid="TitleHeading"]', { timeout: 25000 })
+      .waitForSelector('main a[data-testid="TitleLink"] span[data-testid="TitleHeading"]', { timeout: 25000 })
       .catch(() => {});
     await page.waitForTimeout(1200);
 
@@ -638,6 +635,18 @@ async function scrapeReutersHero() {
 
       function abs(h) {
         try {
+          return new URL(h, "https://www.reuters.com").toString();
+        } catch {
+          return null;
+        }
+      }
+
+      // Reuters often uses a "resizer" URL that is already absolute-ish
+      function absImg(h) {
+        if (!h) return null;
+        try {
+          // If it's already absolute
+          if (/^https?:\/\//i.test(h)) return h;
           return new URL(h, "https://www.reuters.com").toString();
         } catch {
           return null;
@@ -661,130 +670,171 @@ async function scrapeReutersHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      // Prefer explicit main-content if present
-      const main = document.querySelector("main#main-content") || document.querySelector("main") || document.body;
-
+      // 1) Primary strategy: score all StoryCards (any tag, not just <li>)
+      const main = document.querySelector("main#main-content, main") || document.body;
       const cards = Array.from(main.querySelectorAll('[data-testid="StoryCard"]'));
-      if (!cards.length) {
-        return {
-          ok: false,
-          error: "Reuters: story cards not found",
-          debug: {
-            hasMain: Boolean(document.querySelector("main")),
-            hasMainContent: Boolean(document.querySelector("main#main-content")),
-            storyCardCount: 0,
-          },
-        };
-      }
 
-      function pickImageUrl(card) {
-        // Common patterns: eager img, lazy img with srcset, or <source srcset> in <picture>
-        const img =
-          card.querySelector('img[data-testid="EagerImage"][src], img[data-testid="EagerImage"][srcset]') ||
-          card.querySelector("img[src], img[srcset]") ||
+      function extractFromCard(card, idx) {
+        const titleEl =
+          card.querySelector('span[data-testid="TitleHeading"]') ||
+          card.querySelector('[data-testid="TitleHeading"]');
+
+        const linkEl =
+          card.querySelector('a[data-testid="TitleLink"][href]') ||
+          card.querySelector('a[href]');
+
+        const title = clean(titleEl?.textContent || "");
+        const relHref = linkEl?.getAttribute("href") || null;
+        const url = relHref ? abs(relHref) : null;
+
+        // DOM image attempts (often present post-hydration)
+        let imgUrl = null;
+        const imgEl =
+          card.querySelector('img[data-testid="EagerImage"][src]') ||
+          card.querySelector('img[src]') ||
+          card.querySelector('img[srcset]') ||
           null;
 
-        if (img) {
-          const src = img.getAttribute("src") || "";
-          const srcset = img.getAttribute("srcset") || "";
-          let u = src || bestFromSrcset(srcset);
-          return u ? abs(u) : null;
-        }
+        if (imgEl?.getAttribute("src")) imgUrl = imgEl.getAttribute("src");
+        else if (imgEl?.getAttribute("srcset")) imgUrl = bestFromSrcset(imgEl.getAttribute("srcset"));
+        imgUrl = absImg(imgUrl);
 
-        const source = card.querySelector("picture source[srcset]");
-        if (source) {
-          const u = bestFromSrcset(source.getAttribute("srcset") || "");
-          return u ? abs(u) : null;
-        }
+        // scoring signals (these survive small layout tweaks)
+        const cardClass = String(card.className || "");
+        const titleClass = String(titleEl?.className || "");
+        const hasHeroClass = /\btpl-hero\b/i.test(cardClass);
+        const hasHeading4Class = /\bheading_4\b/i.test(titleClass);
+        const hasDescription = Boolean(card.querySelector('[data-testid="Description"]'));
+        const hasMedia = Boolean(card.querySelector('[data-testid="MediaImage"], [data-testid="MediaImageLink"]'));
 
-        return null;
+        let score = 0;
+        if (hasHeroClass) score += 300;
+        if (hasHeading4Class) score += 220;
+        if (hasDescription) score += 90;
+        if (hasMedia) score += 50;
+        if (imgUrl) score += 20;
+
+        // avoid non-standard destinations
+        if (url && /\/video\//i.test(url)) score -= 120;
+        if (url && /\/pictures\//i.test(url)) score -= 80;
+
+        if (!title || !url) return null;
+        return { title, url, imgUrl, score, idx };
       }
 
-      const ranked = cards
-        .map((card, idx) => {
-          const titleEl = card.querySelector('[data-testid="TitleHeading"]');
-          const linkEl =
-            card.querySelector('a[data-testid="TitleLink"][href]') ||
-            card.querySelector('a[href*="/article/"], a[href^="/"]') ||
-            card.querySelector("a[href]");
+      let ranked = [];
+      if (cards.length) {
+        ranked = cards.map(extractFromCard).filter(Boolean);
+      }
 
-          const title = clean(titleEl?.textContent || "");
-          const relHref = linkEl?.getAttribute("href") || null;
-          const url = relHref ? abs(relHref) : null;
+      // 2) Fallback: if no cards, pick strongest TitleLink/TitleHeading pair
+      if (!ranked.length) {
+        const pairs = Array.from(
+          main.querySelectorAll('a[data-testid="TitleLink"][href] span[data-testid="TitleHeading"]')
+        );
 
-          if (!title || !url) return null;
+        ranked = pairs
+          .map((span, idx) => {
+            const a = span.closest('a[href]');
+            const title = clean(span.textContent || "");
+            const relHref = a?.getAttribute("href") || null;
+            const url = relHref ? abs(relHref) : null;
 
-          const cls = String(card.className || "");
-          const titleCls = String(titleEl?.className || "");
-          const linkCls = String(linkEl?.className || "");
+            let score = 0;
+            const cls = String(span.className || "");
+            if (/\bheading_4\b/i.test(cls)) score += 220;
+            if (a && a.getAttribute("aria-label")) score += 10;
 
-          // Reuters hero card uses story-card-module__tpl-hero__... (substring match is key)
-          const isHeroTpl = cls.includes("__tpl-hero__") || cls.includes("tpl-hero");
-          const isHeadline =
-            titleCls.includes("heading_4") ||
-            titleCls.includes("heading_5") ||
-            titleCls.includes("heading_6") ||
-            titleCls.includes("heading-module__heading_4") ||
-            titleCls.includes("heading-module__heading_5") ||
-            titleCls.includes("heading-module__heading_6");
+            // try to find nearby media container
+            const cardish = a?.closest('[data-testid="StoryCard"]') || a?.closest("article, li, div") || null;
+            const hasDescription = Boolean(cardish?.querySelector?.('[data-testid="Description"]'));
+            const hasMedia = Boolean(cardish?.querySelector?.('[data-testid="MediaImage"], [data-testid="MediaImageLink"]'));
+            if (hasDescription) score += 90;
+            if (hasMedia) score += 50;
 
-          const hasDateLine = Boolean(card.querySelector('[data-testid="DateLineText"]'));
+            if (!title || !url) return null;
+            return { title, url, imgUrl: null, score, idx };
+          })
+          .filter(Boolean);
+      }
 
-          const hasDescription = Boolean(card.querySelector('[data-testid="Description"]'));
-          const hasMedia = Boolean(
-            card.querySelector('[data-testid*="Media"], picture, img[src], img[srcset], source[srcset]')
+      // 3) Fallback: parse embedded cache-ish payload for a known homepage collection (bs11 / bs9 etc.)
+      // Your reuters-hp.html shows patterns like:
+      // {"collection_alias":"bs11",...,"articles":[{"canonical_url":"...","web":"...","thumbnail":{"url":"..."}}]}
+      function tryParseFromHtml() {
+        const html = document.documentElement?.innerHTML || "";
+        const candidates = [];
+
+        // try a couple known homepage “big story” collections; order matters
+        const aliases = ["bs11", "bs9", "bs6", "bs5", "bs4", "bs3", "bs2", "bs1"];
+
+        for (const alias of aliases) {
+          // pull the first article object after this alias
+          const re = new RegExp(
+            `"collection_alias"\\s*:\\s*"${alias}"[\\s\\S]*?"articles"\\s*:\\s*\\[\\s*\\{([\\s\\S]*?)\\}\\s*\\]`,
+            "i"
           );
+          const m = html.match(re);
+          if (!m) continue;
 
-          const imgUrl = pickImageUrl(card);
+          const blob = m[1] || "";
 
-          let score = 0;
-          if (isHeroTpl) score += 500;
-          if (isHeadline) score += 250;
-          if (hasDateLine) score += 40;
-          if (hasDescription) score += 90;
-          if (hasMedia) score += 60;
-          if (imgUrl) score += 30;
+          // canonical_url
+          const urlM = blob.match(/"canonical_url"\s*:\s*"([^"]+)"/i);
+          const webM = blob.match(/"web"\s*:\s*"([^"]+)"/i);
+          const thumbM = blob.match(/"thumbnail"\s*:\s*\{\s*"url"\s*:\s*"([^"]+)"/i);
 
-          // De-prioritize non-news content types
-          if (/\/video\//i.test(url)) score -= 120;
-          if (/\/pictures\//i.test(url)) score -= 80;
-          if (/\/podcasts?\//i.test(url)) score -= 200;
-          if (/\/graphics?\//i.test(url)) score -= 80;
+          const relUrl = urlM ? urlM[1] : null;
+          const title = webM ? webM[1] : null;
+          const imgUrl = thumbM ? thumbM[1] : null;
 
-          return {
-            title,
-            url,
-            imgUrl,
-            score,
-            idx,
-            debug: {
-              cardClass: cls || null,
-              titleClass: titleCls || null,
-              linkClass: linkCls || null,
-              isHeroTpl,
-              isHeadline,
-              hasDateLine,
-              hasDescription,
-              hasMedia,
-            },
-          };
-        })
-        .filter(Boolean);
+          if (relUrl && title) {
+            candidates.push({
+              title: clean(title),
+              url: abs(relUrl),
+              imgUrl: absImg(imgUrl),
+              score: 1000, // treat as strong fallback
+              idx: 0,
+            });
+          }
+        }
+
+        return candidates.length ? candidates[0] : null;
+      }
 
       if (!ranked.length) {
-        return {
-          ok: false,
-          error: "Reuters: title/url not found in story cards",
-          debug: {
-            storyCardCount: cards.length,
-          },
-        };
+        const parsed = tryParseFromHtml();
+        if (parsed?.title && parsed?.url) return { ok: true, ...parsed };
+        return { ok: false, error: "Reuters: story cards / title links not found" };
       }
 
       ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
-      const best = ranked[0];
+      const top = ranked[0];
 
-      return { ok: true, title: best.title, url: best.url, imgUrl: best.imgUrl || null, debug: best.debug };
+      // If DOM image missing, try to pull thumbnail from embedded payload for that url
+      if (!top.imgUrl) {
+        const html = document.documentElement?.innerHTML || "";
+        const urlPath = (() => {
+          try {
+            const u = new URL(top.url);
+            return u.pathname;
+          } catch {
+            return null;
+          }
+        })();
+
+        if (urlPath) {
+          // locate thumbnail url near that canonical_url
+          const re = new RegExp(
+            `"canonical_url"\\s*:\\s*"${urlPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[\\s\\S]{0,4000}?"thumbnail"\\s*:\\s*\\{\\s*"url"\\s*:\\s*"([^"]+)"`,
+            "i"
+          );
+          const m = html.match(re);
+          if (m && m[1]) top.imgUrl = absImg(m[1]);
+        }
+      }
+
+      return { ok: true, ...top };
     });
 
     const item = hero?.ok
@@ -803,7 +853,6 @@ async function scrapeReutersHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "Reuters not found"),
       item,
-      debug: hero?.debug || null,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
