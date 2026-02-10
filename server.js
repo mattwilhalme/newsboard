@@ -115,7 +115,13 @@ async function withBrowser(fn) {
 
   const page = await context.newPage();
 
-  page.on("pageerror", (err) => console.log("[PW pageerror]", String(err).slice(0, 900)));
+  page.on("pageerror", (err) => {
+    const msg = String(err || "");
+    // Reuters (and some others) can throw benign analytics errors like ".track" being undefined.
+    // Filter those to keep logs actionable.
+    if (/reading 'track'|\.track\b/i.test(msg)) return;
+    console.log("[PW pageerror]", msg.slice(0, 900));
+  });
 
   try {
     return await fn(page);
@@ -206,107 +212,74 @@ async function scrapeABCHero() {
     };
 
     const archive = await archiveRun(page, runId, snapshot);
-
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
 /* ---------------------------
-   CBS (single top item) - target item__thumb + item__hed
+   CBS (single top item)
 --------------------------- */
 async function scrapeCBSHero() {
   return await withBrowser(async (page) => {
     const runId = `cbs1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.cbsnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-
-    // Wait for the card structure you pasted (thumb + hed)
-    await page
-      .waitForSelector('main a[href] span.item__thumb img[src], main a[href] h4.item__hed', { timeout: 25000 })
-      .catch(() => {});
-    await page.waitForTimeout(900);
+    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
+    await page.waitForTimeout(1400);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
         return String(s || "")
+          .replace(/\u00a0/g, " ")
           .replace(/\s+/g, " ")
           .trim();
       }
 
       function abs(h) {
         try {
-          return new URL(h, location.origin).toString();
+          return new URL(h, "https://www.cbsnews.com").toString();
         } catch {
           return null;
         }
       }
 
-      function bestFromSrcset(srcset) {
-        if (!srcset) return null;
-        const parts = srcset
-          .split(",")
-          .map((p) => p.trim())
-          .filter(Boolean);
-        // prefer last (often 2x) or largest width if present
-        let best = null;
-        for (const p of parts) {
-          const [u, d] = p.split(/\s+/); // "1x" / "2x" or "640w"
-          let score = 0;
-          if (d && d.endsWith("x")) score = Number(d.slice(0, -1)) || 0;
-          if (d && d.endsWith("w")) score = Number(d.slice(0, -1)) || 0;
-          if (!best || score > best.score) best = { url: u, score };
-        }
-        return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
-      }
-
-      function isVisible(el) {
-        if (!el) return false;
-        const r = el.getBoundingClientRect();
-        return r && r.width > 2 && r.height > 2 && r.bottom > 0 && r.top < window.innerHeight * 1.25;
-      }
-
       const main = document.querySelector("main") || document.body;
 
-      // Candidate anchors that look like the story cards you pasted
-      const anchors = Array.from(main.querySelectorAll('a[href]'))
-        .map((a) => {
-          const img = a.querySelector("span.item__thumb img[src]") || a.querySelector(".item__thumb img[src]");
-          const hed = a.querySelector("h4.item__hed");
-          const url = abs(a.getAttribute("href"));
-          const title = clean(hed?.textContent || a.getAttribute("aria-label") || "");
-          const r = a.getBoundingClientRect();
-          return { a, img, hed, url, title, top: r?.top ?? 1e9, left: r?.left ?? 1e9 };
+      const candidates = Array.from(main.querySelectorAll('article, a[href*="/news/"], a[href^="/"]'))
+        .map((el) => {
+          const a = el.tagName === "A" ? el : el.querySelector("a[href]");
+          if (!a) return null;
+
+          const href = a.getAttribute("href") || "";
+          const url = abs(href);
+
+          const title =
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(el.querySelector("h1,h2,h3")?.textContent || "") ||
+            clean(a.textContent || "");
+
+          if (!url || !title || title.length < 8) return null;
+
+          const scope = a.closest("article") || el;
+          const img = scope.querySelector("img[src], img[srcset]");
+          const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+
+          let score = 0;
+          if (scope.querySelector("h1")) score += 200;
+          if (scope.querySelector("h2")) score += 140;
+          if (scope.querySelector("h3")) score += 80;
+          if (imgUrl) score += 20;
+          if (/\/video\//i.test(url)) score -= 100;
+          if (/\/photos\//i.test(url)) score -= 80;
+
+          return { title, url, imgUrl, score };
         })
-        .filter((x) =>
-          x.url &&
-          x.title &&
-          x.title.length >= 12 &&
-          x.url.startsWith("https://www.cbsnews.com/") &&
-          x.url.includes("/news/") &&
-          !x.url.includes("/video/") &&
-          x.img &&
-          isVisible(x.a)
-        );
+        .filter(Boolean);
 
-      if (!anchors.length) {
-        return {
-          ok: false,
-          error: "CBS: missing url/title",
-          debug: { reason: "no item__thumb + item__hed anchors" },
-        };
-      }
+      if (!candidates.length) return { ok: false, error: "CBS: no candidates found" };
 
-      // Pick whichever card appears first on the page
-      anchors.sort((a, b) => a.top - b.top || a.left - b.left);
-      const best = anchors[0];
-
-      let imgUrl = null;
-      const src = best.img.getAttribute("src");
-      const srcset = best.img.getAttribute("srcset");
-      imgUrl = bestFromSrcset(srcset) || src || null;
-      imgUrl = imgUrl ? abs(imgUrl) : null;
-
-      return { ok: true, url: best.url, title: best.title, imgUrl, debug: { pickedUrl: best.url } };
+      candidates.sort((a, b) => b.score - a.score);
+      return { ok: true, ...candidates[0] };
     });
 
     const item = hero?.ok
@@ -324,7 +297,6 @@ async function scrapeCBSHero() {
       runId,
       ok: Boolean(item),
       error: item ? null : (hero?.error || "CBS not found"),
-      debug: hero?.debug || null,
       item,
     };
 
@@ -334,83 +306,62 @@ async function scrapeCBSHero() {
 }
 
 /* ---------------------------
-   USA Today (single top item) - target tb headline span
+   USA Today (single top item)
 --------------------------- */
 async function scrapeUSATHero() {
   return await withBrowser(async (page) => {
     const runId = `usat1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.usatoday.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1800);
+    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
+    await page.waitForTimeout(1200);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
         return String(s || "")
+          .replace(/\u00a0/g, " ")
           .replace(/\s+/g, " ")
           .trim();
       }
 
       function abs(h) {
         try {
-          return new URL(h, location.origin).toString();
+          return new URL(h, "https://www.usatoday.com").toString();
         } catch {
           return null;
         }
       }
 
-      function isVisible(el) {
-        if (!el) return false;
-        const r = el.getBoundingClientRect();
-        if (!r || r.width < 2 || r.height < 2) return false;
-        return r.bottom > 0 && r.top < window.innerHeight * 1.25;
-      }
-
       const main = document.querySelector("main") || document.body;
 
-      const spans = Array.from(
-        main.querySelectorAll('span[data-tb-shadow-region-title], span[data-tb-title]')
-      )
-        .map((sp) => {
-          const text = clean(sp.textContent || "");
-          const r = sp.getBoundingClientRect();
-          return { sp, text, top: r?.top ?? 1e9, left: r?.left ?? 1e9, ok: text.length >= 15 };
+      const candidates = Array.from(main.querySelectorAll("a[href]"))
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          if (!href) return null;
+
+          const url = abs(href);
+          const title = clean(a.getAttribute("aria-label") || a.textContent || "");
+
+          if (!url || !title || title.length < 8) return null;
+
+          const scope = a.closest("article") || a.parentElement;
+          const img = scope?.querySelector?.("img[src], img[srcset]") || null;
+          const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
+
+          let score = 0;
+          if (scope?.querySelector?.("h1")) score += 200;
+          if (scope?.querySelector?.("h2")) score += 120;
+          if (imgUrl) score += 20;
+          if (/\/video\//i.test(url)) score -= 80;
+
+          return { title, url, imgUrl, score };
         })
-        .filter((x) => x.ok && isVisible(x.sp));
+        .filter(Boolean);
 
-      if (!spans.length) return { ok: false, error: "USAT: no tb headline span found" };
+      if (!candidates.length) return { ok: false, error: "USAT: no candidates found" };
 
-      spans.sort((a, b) => a.top - b.top || a.left - b.left);
-      const bestSpan = spans[0].sp;
-      const title = clean(bestSpan.textContent || "");
-
-      const a =
-        bestSpan.closest("a[href]") ||
-        bestSpan.parentElement?.closest("a[href]") ||
-        null;
-
-      if (!a) return { ok: false, error: "USAT: headline span has no enclosing link" };
-
-      const url = abs(a.getAttribute("href"));
-      if (!url || !title || title.length < 8) return { ok: false, error: "USAT: missing url/title" };
-
-      const scope =
-        a.closest("article") ||
-        a.closest("section") ||
-        a.closest("div") ||
-        main;
-
-      const imgs = Array.from(scope.querySelectorAll("img"))
-        .map((img) => {
-          const src = img.getAttribute("src") || "";
-          const r = img.getBoundingClientRect();
-          return { src, area: (r?.width ?? 0) * (r?.height ?? 0) };
-        })
-        .filter((x) => x.src && x.area > 3000);
-
-      imgs.sort((a, b) => b.area - a.area);
-      const imgUrl = imgs[0]?.src ? abs(imgs[0].src) : null;
-
-      return { ok: true, url, title, imgUrl };
+      candidates.sort((a, b) => b.score - a.score);
+      return { ok: true, ...candidates[0] };
     });
 
     const item = hero?.ok
@@ -427,7 +378,7 @@ async function scrapeUSATHero() {
       fetchedAt: nowISO(),
       runId,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "USAT not found"),
+      error: item ? null : (hero?.error || "USA Today not found"),
       item,
     };
 
@@ -437,7 +388,7 @@ async function scrapeUSATHero() {
 }
 
 /* ---------------------------
-   NBC (single top item) - pick whichever appears first
+   NBC (single top item)
 --------------------------- */
 async function scrapeNBCHero() {
   return await withBrowser(async (page) => {
@@ -445,155 +396,53 @@ async function scrapeNBCHero() {
 
     await page.goto("https://www.nbcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(1400);
+    await page.waitForTimeout(1600);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
         return String(s || "")
+          .replace(/\u00a0/g, " ")
           .replace(/\s+/g, " ")
           .trim();
       }
 
       function abs(h) {
         try {
-          return new URL(h, location.origin).toString();
+          return new URL(h, "https://www.nbcnews.com").toString();
         } catch {
           return null;
         }
       }
 
-      function hostName(u) {
-        try {
-          return new URL(u).hostname.toLowerCase();
-        } catch {
-          return "";
-        }
-      }
-
-      function isPreferredStoryUrl(u) {
-        const h = hostName(u);
-        // Keep NBC News stories and reject sister-site content that can appear in headline rails.
-        return h === "www.nbcnews.com" || h === "nbcnews.com";
-      }
-
-      function firstUrlFromSrcset(srcset) {
-        if (!srcset) return null;
-        // URLs can contain commas (e.g. Cloudinary transforms), so don't split on comma.
-        return String(srcset).trim().split(/\s+/)[0] || null;
-      }
-
-      function urlFromBackgroundImage(styleText) {
-        if (!styleText) return null;
-        const m = String(styleText).match(/url\((['"]?)([^'")]+)\1\)/i);
-        return m?.[2] || null;
-      }
-
-      function pickMediaUrl(scope) {
-        if (!scope) return null;
-
-        // Prefer source/srcset first (usually highest quality), then img src.
-        const srcsetUrl = firstUrlFromSrcset(scope.querySelector("picture source[srcset]")?.getAttribute("srcset"));
-        if (srcsetUrl) return abs(srcsetUrl);
-
-        const imgSrc = scope.querySelector("picture img[src], img[src]")?.getAttribute("src");
-        if (imgSrc) return abs(imgSrc);
-
-        const previewStyle = scope.querySelector(".jw-preview")?.getAttribute("style");
-        const previewUrl = urlFromBackgroundImage(previewStyle);
-        if (previewUrl) return abs(previewUrl);
-
-        return null;
-      }
-
       const main = document.querySelector("main") || document.body;
-      const leadCandidates = Array.from(main.querySelectorAll("div.story-item.multistory-item, article.story-item.multistory-item"))
-        .map((scope) => {
-          const anchor =
-            scope.querySelector("h2.multistoryline__headline a[href]") ||
-            scope.querySelector(".headline-large h2 a[href]") ||
-            scope.querySelector("h2 a[href]") ||
-            null;
-          if (!anchor) return null;
 
-          const title = clean(anchor.textContent || anchor.getAttribute("aria-label") || "");
-          const url = abs(anchor.getAttribute("href"));
-          if (!title || title.length < 8 || !url) return null;
-          if (!isPreferredStoryUrl(url)) return null;
+      const articles = Array.from(main.querySelectorAll("article"))
+        .map((article, idx) => {
+          const h = article.querySelector("h1,h2,h3");
+          const a = article.querySelector("a[href]");
+          const title = clean(h?.textContent || "");
+          const url = a ? abs(a.getAttribute("href")) : null;
 
-          const r = scope.getBoundingClientRect();
-          const mediaUrl = pickMediaUrl(scope);
-          const className = scope.className || "";
+          if (!title || !url || title.length < 8) return null;
+
+          const img = article.querySelector("img[src], img[srcset]");
+          const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
 
           let score = 0;
-          if (/\blead-column\b/.test(className)) score += 40;
-          if (/\bimage-lead\b/.test(className)) score += 30;
-          if (scope.querySelector(".headline-large")) score += 20;
-          if (scope.querySelector('[data-testid="storyline-media-video"], .video-container')) score += 10;
-          if (mediaUrl) score += 8;
-          if (/\/live-blog\//i.test(url)) score += 12;
-          if (/\/sports\/nfl\/live-blog\//i.test(url)) score += 8;
+          if (article.querySelector("h1")) score += 220;
+          else if (article.querySelector("h2")) score += 150;
+          else if (article.querySelector("h3")) score += 90;
+          if (imgUrl) score += 20;
+          score += Math.max(0, 50 - idx);
 
-          return {
-            scope,
-            title,
-            url,
-            imgUrl: mediaUrl,
-            top: r?.top ?? 1e9,
-            left: r?.left ?? 1e9,
-            score,
-          };
+          return { title, url, imgUrl, score, idx };
         })
         .filter(Boolean);
 
-      if (leadCandidates.length) {
-        leadCandidates.sort((a, b) => a.top - b.top || a.left - b.left || b.score - a.score);
-        const best = leadCandidates[0];
-        return {
-          ok: true,
-          url: best.url,
-          title: best.title,
-          imgUrl: best.imgUrl || null,
-          debug: { picked: "lead-multistory" },
-        };
-      }
+      if (!articles.length) return { ok: false, error: "NBC: no article candidates found" };
 
-      // Fallback: generic top story links (for future layout changes).
-      const fallbackAnchors = Array.from(main.querySelectorAll('h2 a[href], a[href*="/news/"], a[href*="/politics/"]')).slice(
-        0,
-        350
-      );
-      const fallback = [];
-      for (const a of fallbackAnchors) {
-        const href = a.getAttribute("href") || "";
-        if (!href) continue;
-        if (a.closest("nav, header, footer")) continue;
-
-        const url = abs(href);
-        const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-        if (!url || !title || title.length < 8) continue;
-        if (!isPreferredStoryUrl(url)) continue;
-
-        const scope =
-          a.closest(".story-item") ||
-          a.closest("article") ||
-          a.closest("section") ||
-          a.parentElement ||
-          main;
-
-        const r = scope?.getBoundingClientRect?.() || a.getBoundingClientRect();
-        fallback.push({
-          title,
-          url,
-          imgUrl: pickMediaUrl(scope) || null,
-          top: r?.top ?? 1e9,
-          left: r?.left ?? 1e9,
-        });
-      }
-
-      if (!fallback.length) return { ok: false, error: "NBC: no link found" };
-      fallback.sort((a, b) => a.top - b.top || a.left - b.left);
-      const best = fallback[0];
-      return { ok: true, url: best.url, title: best.title, imgUrl: best.imgUrl, debug: { picked: "fallback" } };
+      articles.sort((a, b) => b.score - a.score || a.idx - b.idx);
+      return { ok: true, ...articles[0] };
     });
 
     const item = hero?.ok
@@ -611,7 +460,6 @@ async function scrapeNBCHero() {
       runId,
       ok: Boolean(item),
       error: item ? null : (hero?.error || "NBC not found"),
-      debug: hero?.debug || null,
       item,
     };
 
@@ -621,7 +469,7 @@ async function scrapeNBCHero() {
 }
 
 /* ---------------------------
-   CNN (single top item) - lead-package container + selected card URL + canonical image + safe override
+   CNN (single top item) - lead-package container + selected card URL + smart image override
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
@@ -645,14 +493,6 @@ async function scrapeCNNHero() {
         }
       }
 
-      // Decode HTML entities like &#x3D; and &amp; inside attribute strings
-      function decodeHtml(s) {
-        if (!s) return s;
-        const ta = document.createElement("textarea");
-        ta.innerHTML = s;
-        return ta.value;
-      }
-
       function bestFromSrcset(srcset) {
         if (!srcset) return null;
         const parts = srcset
@@ -660,6 +500,7 @@ async function scrapeCNNHero() {
           .map((p) => p.trim())
           .filter(Boolean);
         if (!parts.length) return null;
+
         let best = null;
         for (const p of parts) {
           const [u, w] = p.split(/\s+/);
@@ -669,211 +510,80 @@ async function scrapeCNNHero() {
         return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
       }
 
-      function getList(container) {
-        return (
-          container.querySelector("ul.container_lead-package__field-links") ||
-          container.querySelector("ul.container__field-links") ||
-          container
-        );
+      const heroMedia = document.querySelector(".container_lead-package__item-media, .container__item-media");
+      const heroTitle =
+        document.querySelector(".container_lead-package__title_url-text, .container__title_url-text") ||
+        document.querySelector("h1, h2");
+
+      if (!heroTitle) return { ok: false, error: "CNN: hero title not found" };
+
+      const title = clean(heroTitle.textContent || "");
+      if (!title || title.length < 8) return { ok: false, error: "CNN: empty title" };
+
+      let url = null;
+      const a =
+        heroTitle.closest("a[href]") ||
+        heroTitle.parentElement?.querySelector?.("a[href]") ||
+        heroTitle.querySelector?.("a[href]") ||
+        null;
+      if (a) url = abs(a.getAttribute("href"));
+
+      if (!url) {
+        const maybe = heroTitle.closest("article")?.querySelector?.("a[href]") || null;
+        if (maybe) url = abs(maybe.getAttribute("href"));
       }
 
-      function getCard(list) {
-        return (
-          // best: explicitly selected card
-          list.querySelector("li.container_lead-package__item.container_lead-package__selected") ||
-          // fallback: a live-story card
-          list.querySelector('a[data-link-type="live-story"]')?.closest("li") ||
-          // last: first card
-          list.querySelector("li.container_lead-package__item") ||
-          list.querySelector("li") ||
-          null
-        );
-      }
+      if (!url) return { ok: false, error: "CNN: hero URL not found" };
 
-      function getCardHref(card) {
-        return (
-          card.getAttribute("data-open-link") ||
-          card.querySelector('a.container__link[href]')?.getAttribute("href") ||
-          card.querySelector('a[href]')?.getAttribute("href") ||
-          null
-        );
-      }
-
-      // 1) Gather and score lead-package candidates.
-      // CNN often has several lead-package containers (e.g. Super Bowl + live news),
-      // so selecting the first container by DOM can be wrong.
-      const containers = Array.from(
-        document.querySelectorAll('.container.container_lead-package[data-layout="container_lead-package"], .container.container_lead-package')
-      );
-
-      if (!containers.length) return { ok: false, error: "CNN: lead-package container not found" };
-
-      const ranked = containers
-        .map((container, idx) => {
-          const list = getList(container);
-          const card = getCard(list);
-          if (!card) return null;
-
-          const relHref = getCardHref(card);
-          const absUrl = relHref ? abs(relHref) : null;
-
-          const containerTitle = clean(
-            container.querySelector("h2.container__title_url-text")?.textContent ||
-              container.querySelector("h2.container__title-text")?.textContent ||
-              ""
-          );
-          const titleLinkHref = container.querySelector("a.container__title-url[href]")?.getAttribute("href") || null;
-          const titleLinkAbs = titleLinkHref ? abs(titleLinkHref) : null;
-          const hasTitleLink = Boolean(titleLinkAbs);
-          const hasTitleUrlText = Boolean(container.querySelector("h2.container__title_url-text"));
-          const titleMatchesCard = Boolean(titleLinkAbs && absUrl && titleLinkAbs === absUrl);
-          const cardLinkType = String(card.querySelector("a.container__link[data-link-type]")?.getAttribute("data-link-type") || "")
-            .toLowerCase()
-            .trim();
-          const isArticleCard = cardLinkType === "article";
-
-          const isLiveCard =
-            Boolean(card.querySelector('a[data-link-type="live-story"]')) ||
-            /\/live-news\//i.test(String(relHref || "")) ||
-            /\/live-news\//i.test(String(absUrl || ""));
-
-          const cardMedia =
-            card.querySelector(".container__item-media.container_lead-package__item-media") ||
-            card.querySelector(".container__item-media") ||
-            null;
-
-          const cardDataUrl = cardMedia?.querySelector(".image[data-url]")?.getAttribute("data-url") || "";
-          const hasStillAsset = /\/prod\/still-|\/stellar\/prod\/still-|_still\.jpg\b|still[_-]\d/i.test(
-            String(cardDataUrl)
-          );
-
-          let score = 0;
-          // Prefer top editorial packages with title-url headline and matching article card.
-          if (hasTitleUrlText) score += 220;
-          if (hasTitleLink) score += 180;
-          if (titleMatchesCard) score += 320;
-          if (isArticleCard) score += 120;
-
-          // Keep live packages as fallback only.
-          if (isLiveCard) score -= 120;
-          if (containerTitle.length >= 8) score += 20;
-          if (absUrl) score += 10;
-          if (cardMedia) score += 5;
-          if (hasStillAsset) score += 5;
-
-          return {
-            container,
-            card,
-            score,
-            idx,
-            relHref,
-            absUrl,
-            isLiveCard,
-            containerTitle,
-            titleLinkAbs,
-            titleMatchesCard,
-          };
-        })
-        .filter(Boolean);
-
-      if (!ranked.length) return { ok: false, error: "CNN: lead-package card not found" };
-
-      ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
-      const bestCandidate = ranked[0];
-      const container = bestCandidate.container;
-      const card = bestCandidate.card;
-
-      // 2) Prefer the package title (matches CNN live package heading),
-      // then fall back to the selected card headline.
-      const containerTitle = clean(
-        container.querySelector("h2.container__title_url-text")?.textContent ||
-          container.querySelector("h2.container__title-text")?.textContent ||
-          ""
-      );
-      const cardHeadline = clean(
-        card.querySelector('span.container__headline-text[data-editable="headline"]')?.textContent ||
-          card.querySelector(".container__headline-text")?.textContent ||
-          ""
-      );
-      const title = containerTitle || cardHeadline;
-      if (!title || title.length < 8) {
-        return { ok: false, error: "CNN: missing title in lead-package selection" };
-      }
-
-      // 3) URL from the selected card
-      const relHref = getCardHref(card);
-      const url = bestCandidate.titleLinkAbs || (relHref ? abs(relHref) : null);
-      if (!url) return { ok: false, error: "CNN: missing url for lead card" };
-
-      // Determine if this is a live-news story (so we keep still promo imagery)
-      const isLive =
-        Boolean(card.querySelector('a[data-link-type="live-story"]')) ||
-        /\/live-news\//i.test(String(relHref || "")) ||
-        /\/live-news\//i.test(String(url || ""));
-
-      // 4) Image scoped to THIS card only
-      const media =
-        card.querySelector(".container__item-media.container_lead-package__item-media") ||
-        card.querySelector(".container__item-media") ||
-        card;
-
+      // Try to find best hero image
       let imgUrl = null;
+      const img = heroMedia?.querySelector?.("img[src], img[srcset]") || null;
+      if (img?.getAttribute("src")) imgUrl = abs(img.getAttribute("src"));
+      else if (img?.getAttribute("srcset")) imgUrl = abs(bestFromSrcset(img.getAttribute("srcset")));
 
-      // Prefer canonical/original image URL if present (decode HTML entities)
-      const comp = media.querySelector(".image[data-url]");
-      if (comp?.getAttribute("data-url")) {
-        imgUrl = decodeHtml(comp.getAttribute("data-url"));
-      } else {
-        const img =
-          media.querySelector("picture img.image__dam-img[src]") ||
-          media.querySelector("picture img[src]") ||
-          media.querySelector("img.image__dam-img[src]") ||
-          media.querySelector("img[src]") ||
-          null;
+      // CNN sometimes uses data-url on a container div; prefer it if present
+      const dataUrl = heroMedia?.querySelector?.("[data-url]")?.getAttribute?.("data-url") || null;
+      if (dataUrl) imgUrl = abs(dataUrl);
 
-        if (img?.getAttribute("src")) imgUrl = img.getAttribute("src");
-        else if (img?.getAttribute("srcset")) imgUrl = bestFromSrcset(img.getAttribute("srcset"));
-      }
-
-      imgUrl = imgUrl ? abs(imgUrl) : null;
-
-      return { ok: true, url, title, imgUrl, isLive };
+      return { ok: true, title, url, imgUrl };
     });
 
-    // --- Smart override: if homepage image looks like a video still, try og:image from destination page ---
-    // BUT avoid overriding for live-news items (CNN often uses "still" assets intentionally there).
-    function looksLikeVideoStill(u) {
-      if (!u) return false;
-      return /\/prod\/still-|\/stellar\/prod\/still-|_still\.jpg\b|still[_-]\d/i.test(String(u));
-    }
+    let finalTitle = hero?.title || "";
+    let finalUrl = hero?.url || "";
+    let finalImgUrl = hero?.imgUrl || null;
 
-    function pickMeta(html, key) {
-      const re =
-        key.startsWith("og:")
-          ? new RegExp(`<meta\\s+property=["']${key}["']\\s+content=["']([^"']+)["']`, "i")
-          : new RegExp(`<meta\\s+name=["']${key}["']\\s+content=["']([^"']+)["']`, "i");
-      return (html.match(re)?.[1] || "").trim() || null;
-    }
-
-    let finalUrl = hero?.ok ? normalizeUrl(hero.url) : null;
-    let finalTitle = hero?.ok ? cleanText(hero.title) : "";
-    let finalImgUrl = hero?.ok && hero.imgUrl ? normalizeUrl(hero.imgUrl) : null;
-
-    if (finalUrl && finalImgUrl && looksLikeVideoStill(finalImgUrl) && !hero.isLive) {
-      try {
-        const r = await page.request.get(finalUrl, { timeout: 20000 });
-        const html = await r.text();
-
-        const og = pickMeta(html, "og:image");
-        const tw = pickMeta(html, "twitter:image");
-        const candidate = og || tw;
-
-        // Override only if candidate exists AND is not itself a still
-        if (candidate && !looksLikeVideoStill(candidate)) {
-          finalImgUrl = normalizeUrl(candidate);
+    // If URL is missing but title exists, try fallback scan
+    if (!finalUrl && finalTitle) {
+      const alt = await page.evaluate(() => {
+        function clean(s) {
+          return String(s || "")
+            .replace(/\s+/g, " ")
+            .trim();
         }
-      } catch {
-        // keep the scraped still
+        function abs(h) {
+          try {
+            return new URL(h, "https://www.cnn.com").toString();
+          } catch {
+            return null;
+          }
+        }
+
+        const titleEl =
+          document.querySelector(".container_lead-package__title_url-text, .container__title_url-text") ||
+          document.querySelector("h1, h2");
+        if (!titleEl) return null;
+
+        const title = clean(titleEl.textContent || "");
+        const link = titleEl.closest("a[href]") || titleEl.parentElement?.querySelector?.("a[href]") || null;
+        const url = link ? abs(link.getAttribute("href")) : null;
+
+        if (!title || !url) return null;
+        return { title, url };
+      });
+
+      if (alt?.url) {
+        finalTitle = alt.title;
+        finalUrl = alt.url;
       }
     }
 
@@ -1010,7 +720,15 @@ async function scrapeReutersHero() {
 
           // Reuters hero card uses story-card-module__tpl-hero__... (substring match is key)
           const isHeroTpl = cls.includes("__tpl-hero__") || cls.includes("tpl-hero");
-          const isHeading4 = titleCls.includes("heading_4") || titleCls.includes("heading-module__heading_4");
+          const isHeadline =
+            titleCls.includes("heading_4") ||
+            titleCls.includes("heading_5") ||
+            titleCls.includes("heading_6") ||
+            titleCls.includes("heading-module__heading_4") ||
+            titleCls.includes("heading-module__heading_5") ||
+            titleCls.includes("heading-module__heading_6");
+
+          const hasDateLine = Boolean(card.querySelector('[data-testid="DateLineText"]'));
 
           const hasDescription = Boolean(card.querySelector('[data-testid="Description"]'));
           const hasMedia = Boolean(
@@ -1021,7 +739,8 @@ async function scrapeReutersHero() {
 
           let score = 0;
           if (isHeroTpl) score += 500;
-          if (isHeading4) score += 250;
+          if (isHeadline) score += 250;
+          if (hasDateLine) score += 40;
           if (hasDescription) score += 90;
           if (hasMedia) score += 60;
           if (imgUrl) score += 30;
@@ -1043,7 +762,8 @@ async function scrapeReutersHero() {
               titleClass: titleCls || null,
               linkClass: linkCls || null,
               isHeroTpl,
-              isHeading4,
+              isHeadline,
+              hasDateLine,
               hasDescription,
               hasMedia,
             },
@@ -1127,47 +847,53 @@ async function refreshSources({ id = "" } = {}) {
   return cache;
 }
 
-app.get("/api/health", (req, res) => {
-  res.json({ ok: true, ts: nowISO() });
+app.get("/api/cache", (req, res) => {
+  res.json(ensureCacheShape(readCache()));
 });
 
 app.post("/api/refresh", async (req, res) => {
   try {
-    const id = req.body?.id || "";
-    const out = await refreshSources({ id });
-    res.json({ ok: true, cache: out });
-  } catch (e) {
-    res.status(500).json({ ok: false, error: String(e) });
+    const cache = await refreshSources(req.body || {});
+    res.json({ ok: true, cache });
+  } catch (err) {
+    res.status(500).json({ ok: false, error: String(err?.message || err) });
   }
 });
 
-app.get("/api/cache", (req, res) => {
+app.get("/api/refresh", async (req, res) => {
+  try {
+    const cache = await refreshSources({ id: req.query.id || "" });
+    res.json({ ok: true, cache });
+  } catch (err) {
+    res.status(500).json({ ok: false, error: String(err?.message || err) });
+  }
+});
+
+app.get("/api/diff", (req, res) => {
   const cache = ensureCacheShape(readCache());
-  res.json(cache);
+  res.json({ ok: true, cache });
 });
 
-async function main() {
-  const args = new Set(process.argv.slice(2));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(process.cwd(), "index.html"));
+});
 
-  // CLI mode for GitHub Actions
-  if (args.has("--refresh")) {
-    try {
-      await refreshSources({});
-      console.log(`Refreshed cache.json at ${nowISO()}`);
+if (process.argv.includes("--refresh")) {
+  // CLI refresh mode: run scrapes and write cache.json then exit.
+  refreshSources()
+    .then((cache) => {
+      console.log(`Refreshed cache.json at ${cache.generatedAt}`);
       process.exit(0);
-    } catch (e) {
-      console.error("Refresh failed:", e);
+    })
+    .catch((err) => {
+      console.error("Refresh error:", err);
       process.exit(1);
-    }
-  }
-
-  // Start server only when run directly
-  if (process.argv[1] && process.argv[1].endsWith("server.js")) {
-    app.listen(PORT, () => console.log(`Newsboard server on http://localhost:${PORT}`));
-  }
+    });
+} else {
+  app.listen(PORT, () => {
+    console.log(`Newsboard server listening on http://localhost:${PORT}`);
+  });
 }
-
-await main();
 
 export {
   scrapeABCHero,
@@ -1176,5 +902,4 @@ export {
   scrapeNBCHero,
   scrapeCNNHero,
   scrapeReutersHero,
-  refreshSources,
 };
