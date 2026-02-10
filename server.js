@@ -115,10 +115,26 @@ async function withBrowser(fn) {
 
   const page = await context.newPage();
 
+  // PRE-SCRAPER MODE: block heavy resources (we'll add screenshots later in a dedicated pass)
+  await page.route("**/*", (route) => {
+    const req = route.request();
+    const rt = req.resourceType();
+    if (rt === "image" || rt === "media" || rt === "font") return route.abort();
+
+    // optional: drop obvious analytics/beacons
+    const url = req.url();
+    if (
+      /doubleclick|googletagmanager|google-analytics|analytics|segment|optimizely|adservice|taboola|outbrain/i.test(url)
+    ) {
+      return route.abort();
+    }
+
+    return route.continue();
+  });
+
   page.on("pageerror", (err) => {
     const msg = String(err || "");
     // Reuters (and some others) can throw benign analytics errors like ".track" being undefined.
-    // Filter those to keep logs actionable.
     if (/reading 'track'|\.track\b/i.test(msg)) return;
     console.log("[PW pageerror]", msg.slice(0, 900));
   });
@@ -136,8 +152,12 @@ async function archiveRun(page, runId, snapshotObj) {
   const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
   const jsonPath = path.join(ARCHIVE_DIR, `${runId}.json`);
 
+  // Only write full HTML if you explicitly enable it:
+  // ARCHIVE_HTML=1
   try {
-    fs.writeFileSync(htmlPath, await page.content(), "utf8");
+    if (process.env.ARCHIVE_HTML === "1") {
+      fs.writeFileSync(htmlPath, await page.content(), "utf8");
+    }
   } catch {}
 
   try {
@@ -154,17 +174,14 @@ async function scrapeABCHero() {
   return await withBrowser(async (page) => {
     const runId = `abc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://abcnews.go.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(1200);
+    await page.goto("https://abcnews.go.com/", { waitUntil: "domcontentloaded", timeout: 20000 });
+    await page.waitForSelector("main", { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(250);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
-        return String(s || "")
-          .replace(/\s+/g, " ")
-          .trim();
+        return String(s || "").replace(/\s+/g, " ").trim();
       }
-
       function abs(h) {
         try {
           return new URL(h, location.origin).toString();
@@ -174,7 +191,6 @@ async function scrapeABCHero() {
       }
 
       const main = document.querySelector("main") || document.body;
-
       const first =
         main.querySelector('a[data-testid="prism-linkbase"][href]') ||
         main.querySelector('a[href*="/"]');
@@ -186,18 +202,14 @@ async function scrapeABCHero() {
 
       if (!url || !title || title.length < 8) return { ok: false, error: "ABC: missing url/title" };
 
-      const scope = first.closest('[data-testid="prism-card"]') || first.closest("article") || main;
-      const img = scope.querySelector("img[src]");
-      const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
-
-      return { ok: true, url, title, imgUrl };
+      return { ok: true, url, title };
     });
 
     const item = hero?.ok
       ? {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
-          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+          imgUrl: null,
           slotKey: sha1("abc1|top").slice(0, 12),
         }
       : null;
@@ -223,9 +235,9 @@ async function scrapeCBSHero() {
   return await withBrowser(async (page) => {
     const runId = `cbs1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.cbsnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(1400);
+    await page.goto("https://www.cbsnews.com/", { waitUntil: "domcontentloaded", timeout: 20000 });
+    await page.waitForSelector("main", { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(250);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -260,24 +272,19 @@ async function scrapeCBSHero() {
 
           if (!url || !title || title.length < 8) return null;
 
-          const scope = a.closest("article") || el;
-          const img = scope.querySelector("img[src], img[srcset]");
-          const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
-
           let score = 0;
+          const scope = a.closest("article") || el;
           if (scope.querySelector("h1")) score += 200;
           if (scope.querySelector("h2")) score += 140;
           if (scope.querySelector("h3")) score += 80;
-          if (imgUrl) score += 20;
           if (/\/video\//i.test(url)) score -= 100;
           if (/\/photos\//i.test(url)) score -= 80;
 
-          return { title, url, imgUrl, score };
+          return { title, url, score };
         })
         .filter(Boolean);
 
       if (!candidates.length) return { ok: false, error: "CBS: no candidates found" };
-
       candidates.sort((a, b) => b.score - a.score);
       return { ok: true, ...candidates[0] };
     });
@@ -286,7 +293,7 @@ async function scrapeCBSHero() {
       ? {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
-          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+          imgUrl: null,
           slotKey: sha1("cbs1|top").slice(0, 12),
         }
       : null;
@@ -312,9 +319,9 @@ async function scrapeUSATHero() {
   return await withBrowser(async (page) => {
     const runId = `usat1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.usatoday.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(1200);
+    await page.goto("https://www.usatoday.com/", { waitUntil: "domcontentloaded", timeout: 20000 });
+    await page.waitForSelector("main", { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(250);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -344,22 +351,17 @@ async function scrapeUSATHero() {
 
           if (!url || !title || title.length < 8) return null;
 
-          const scope = a.closest("article") || a.parentElement;
-          const img = scope?.querySelector?.("img[src], img[srcset]") || null;
-          const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
-
           let score = 0;
+          const scope = a.closest("article") || a.parentElement;
           if (scope?.querySelector?.("h1")) score += 200;
           if (scope?.querySelector?.("h2")) score += 120;
-          if (imgUrl) score += 20;
           if (/\/video\//i.test(url)) score -= 80;
 
-          return { title, url, imgUrl, score };
+          return { title, url, score };
         })
         .filter(Boolean);
 
       if (!candidates.length) return { ok: false, error: "USAT: no candidates found" };
-
       candidates.sort((a, b) => b.score - a.score);
       return { ok: true, ...candidates[0] };
     });
@@ -368,7 +370,7 @@ async function scrapeUSATHero() {
       ? {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
-          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+          imgUrl: null,
           slotKey: sha1("usat1|top").slice(0, 12),
         }
       : null;
@@ -394,9 +396,9 @@ async function scrapeNBCHero() {
   return await withBrowser(async (page) => {
     const runId = `nbc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.nbcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForSelector("main", { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(1600);
+    await page.goto("https://www.nbcnews.com/", { waitUntil: "domcontentloaded", timeout: 20000 });
+    await page.waitForSelector("main", { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(250);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -425,17 +427,13 @@ async function scrapeNBCHero() {
 
           if (!title || !url || title.length < 8) return null;
 
-          const img = article.querySelector("img[src], img[srcset]");
-          const imgUrl = img?.getAttribute("src") ? abs(img.getAttribute("src")) : null;
-
           let score = 0;
           if (article.querySelector("h1")) score += 220;
           else if (article.querySelector("h2")) score += 150;
           else if (article.querySelector("h3")) score += 90;
-          if (imgUrl) score += 20;
           score += Math.max(0, 50 - idx);
 
-          return { title, url, imgUrl, score, idx };
+          return { title, url, score, idx };
         })
         .filter(Boolean);
 
@@ -449,7 +447,7 @@ async function scrapeNBCHero() {
       ? {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
-          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+          imgUrl: null,
           slotKey: sha1("nbc1|top").slice(0, 12),
         }
       : null;
@@ -469,20 +467,21 @@ async function scrapeNBCHero() {
 }
 
 /* ---------------------------
-   CNN (single top item) - lead-package container + selected card URL + smart image override
+   CNN (single top item)
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
     const runId = `cnn1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.cnn.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1800);
+    await page.goto("https://www.cnn.com/", { waitUntil: "domcontentloaded", timeout: 20000 });
+    await page
+      .waitForSelector(".container_lead-package__title_url-text, .container__title_url-text, h1, h2", { timeout: 8000 })
+      .catch(() => {});
+    await page.waitForTimeout(250);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
-        return String(s || "")
-          .replace(/\s+/g, " ")
-          .trim();
+        return String(s || "").replace(/\s+/g, " ").trim();
       }
 
       function abs(h) {
@@ -493,24 +492,6 @@ async function scrapeCNNHero() {
         }
       }
 
-      function bestFromSrcset(srcset) {
-        if (!srcset) return null;
-        const parts = srcset
-          .split(",")
-          .map((p) => p.trim())
-          .filter(Boolean);
-        if (!parts.length) return null;
-
-        let best = null;
-        for (const p of parts) {
-          const [u, w] = p.split(/\s+/);
-          const width = w && w.endsWith("w") ? Number(w.slice(0, -1)) : 0;
-          if (!best || width > best.width) best = { url: u, width };
-        }
-        return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
-      }
-
-      const heroMedia = document.querySelector(".container_lead-package__item-media, .container__item-media");
       const heroTitle =
         document.querySelector(".container_lead-package__title_url-text, .container__title_url-text") ||
         document.querySelector("h1, h2");
@@ -526,6 +507,7 @@ async function scrapeCNNHero() {
         heroTitle.parentElement?.querySelector?.("a[href]") ||
         heroTitle.querySelector?.("a[href]") ||
         null;
+
       if (a) url = abs(a.getAttribute("href"));
 
       if (!url) {
@@ -534,64 +516,14 @@ async function scrapeCNNHero() {
       }
 
       if (!url) return { ok: false, error: "CNN: hero URL not found" };
-
-      // Try to find best hero image
-      let imgUrl = null;
-      const img = heroMedia?.querySelector?.("img[src], img[srcset]") || null;
-      if (img?.getAttribute("src")) imgUrl = abs(img.getAttribute("src"));
-      else if (img?.getAttribute("srcset")) imgUrl = abs(bestFromSrcset(img.getAttribute("srcset")));
-
-      // CNN sometimes uses data-url on a container div; prefer it if present
-      const dataUrl = heroMedia?.querySelector?.("[data-url]")?.getAttribute?.("data-url") || null;
-      if (dataUrl) imgUrl = abs(dataUrl);
-
-      return { ok: true, title, url, imgUrl };
+      return { ok: true, title, url };
     });
-
-    let finalTitle = hero?.title || "";
-    let finalUrl = hero?.url || "";
-    let finalImgUrl = hero?.imgUrl || null;
-
-    // If URL is missing but title exists, try fallback scan
-    if (!finalUrl && finalTitle) {
-      const alt = await page.evaluate(() => {
-        function clean(s) {
-          return String(s || "")
-            .replace(/\s+/g, " ")
-            .trim();
-        }
-        function abs(h) {
-          try {
-            return new URL(h, "https://www.cnn.com").toString();
-          } catch {
-            return null;
-          }
-        }
-
-        const titleEl =
-          document.querySelector(".container_lead-package__title_url-text, .container__title_url-text") ||
-          document.querySelector("h1, h2");
-        if (!titleEl) return null;
-
-        const title = clean(titleEl.textContent || "");
-        const link = titleEl.closest("a[href]") || titleEl.parentElement?.querySelector?.("a[href]") || null;
-        const url = link ? abs(link.getAttribute("href")) : null;
-
-        if (!title || !url) return null;
-        return { title, url };
-      });
-
-      if (alt?.url) {
-        finalTitle = alt.title;
-        finalUrl = alt.url;
-      }
-    }
 
     const item = hero?.ok
       ? {
-          title: cleanText(finalTitle),
-          url: normalizeUrl(finalUrl),
-          imgUrl: finalImgUrl ? normalizeUrl(finalImgUrl) : null,
+          title: cleanText(hero.title),
+          url: normalizeUrl(hero.url),
+          imgUrl: null,
           slotKey: sha1("cnn1|top").slice(0, 12),
         }
       : null;
@@ -617,13 +549,11 @@ async function scrapeReutersHero() {
   return await withBrowser(async (page) => {
     const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-
-    // Reuters sometimes needs a beat to hydrate
+    await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 20000 });
     await page
-      .waitForSelector('main a[data-testid="TitleLink"] span[data-testid="TitleHeading"]', { timeout: 25000 })
+      .waitForSelector('main a[data-testid="TitleLink"] span[data-testid="TitleHeading"]', { timeout: 8000 })
       .catch(() => {});
-    await page.waitForTimeout(1200);
+    await page.waitForTimeout(250);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -632,7 +562,6 @@ async function scrapeReutersHero() {
           .replace(/\s+/g, " ")
           .trim();
       }
-
       function abs(h) {
         try {
           return new URL(h, "https://www.reuters.com").toString();
@@ -641,207 +570,63 @@ async function scrapeReutersHero() {
         }
       }
 
-      // Reuters often uses a "resizer" URL that is already absolute-ish
-      function absImg(h) {
-        if (!h) return null;
-        try {
-          // If it's already absolute
-          if (/^https?:\/\//i.test(h)) return h;
-          return new URL(h, "https://www.reuters.com").toString();
-        } catch {
-          return null;
-        }
-      }
-
-      function bestFromSrcset(srcset) {
-        if (!srcset) return null;
-        const parts = srcset
-          .split(",")
-          .map((p) => p.trim())
-          .filter(Boolean);
-        if (!parts.length) return null;
-
-        let best = null;
-        for (const p of parts) {
-          const [u, w] = p.split(/\s+/);
-          const width = w && w.endsWith("w") ? Number(w.slice(0, -1)) : 0;
-          if (!best || width > best.width) best = { url: u, width };
-        }
-        return best?.url || parts[parts.length - 1].split(/\s+/)[0] || null;
-      }
-
-      // 1) Primary strategy: score all StoryCards (any tag, not just <li>)
       const main = document.querySelector("main#main-content, main") || document.body;
+
+      // Prefer StoryCard wrappers if present
       const cards = Array.from(main.querySelectorAll('[data-testid="StoryCard"]'));
+      const ranked = cards
+        .map((card, idx) => {
+          const titleEl = card.querySelector('[data-testid="TitleHeading"]');
+          const linkEl =
+            card.querySelector('a[data-testid="TitleLink"][href]') ||
+            card.querySelector("a[href]");
 
-      function extractFromCard(card, idx) {
-        const titleEl =
-          card.querySelector('span[data-testid="TitleHeading"]') ||
-          card.querySelector('[data-testid="TitleHeading"]');
+          const title = clean(titleEl?.textContent || "");
+          const href = linkEl?.getAttribute("href") || null;
+          const url = href ? abs(href) : null;
+          if (!title || !url) return null;
 
-        const linkEl =
-          card.querySelector('a[data-testid="TitleLink"][href]') ||
-          card.querySelector('a[href]');
+          const cardClass = String(card.className || "");
+          const titleClass = String(titleEl?.className || "");
+          const hasHeroClass = /\btpl-hero\b/i.test(cardClass);
+          const hasHeading4Class = /\bheading_4\b/i.test(titleClass);
+          const hasDescription = Boolean(card.querySelector('[data-testid="Description"]'));
 
-        const title = clean(titleEl?.textContent || "");
-        const relHref = linkEl?.getAttribute("href") || null;
-        const url = relHref ? abs(relHref) : null;
+          let score = 0;
+          if (hasHeroClass) score += 300;
+          if (hasHeading4Class) score += 220;
+          if (hasDescription) score += 90;
+          score += Math.max(0, 40 - idx);
 
-        // DOM image attempts (often present post-hydration)
-        let imgUrl = null;
-        const imgEl =
-          card.querySelector('img[data-testid="EagerImage"][src]') ||
-          card.querySelector('img[src]') ||
-          card.querySelector('img[srcset]') ||
-          null;
+          if (/\/video\//i.test(url)) score -= 120;
+          if (/\/pictures\//i.test(url)) score -= 80;
 
-        if (imgEl?.getAttribute("src")) imgUrl = imgEl.getAttribute("src");
-        else if (imgEl?.getAttribute("srcset")) imgUrl = bestFromSrcset(imgEl.getAttribute("srcset"));
-        imgUrl = absImg(imgUrl);
+          return { title, url, score, idx };
+        })
+        .filter(Boolean);
 
-        // scoring signals (these survive small layout tweaks)
-        const cardClass = String(card.className || "");
-        const titleClass = String(titleEl?.className || "");
-        const hasHeroClass = /\btpl-hero\b/i.test(cardClass);
-        const hasHeading4Class = /\bheading_4\b/i.test(titleClass);
-        const hasDescription = Boolean(card.querySelector('[data-testid="Description"]'));
-        const hasMedia = Boolean(card.querySelector('[data-testid="MediaImage"], [data-testid="MediaImageLink"]'));
-
-        let score = 0;
-        if (hasHeroClass) score += 300;
-        if (hasHeading4Class) score += 220;
-        if (hasDescription) score += 90;
-        if (hasMedia) score += 50;
-        if (imgUrl) score += 20;
-
-        // avoid non-standard destinations
-        if (url && /\/video\//i.test(url)) score -= 120;
-        if (url && /\/pictures\//i.test(url)) score -= 80;
-
-        if (!title || !url) return null;
-        return { title, url, imgUrl, score, idx };
+      if (ranked.length) {
+        ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
+        return { ok: true, title: ranked[0].title, url: ranked[0].url };
       }
 
-      let ranked = [];
-      if (cards.length) {
-        ranked = cards.map(extractFromCard).filter(Boolean);
-      }
+      // Fallback: first TitleLink/TitleHeading pair
+      const span = main.querySelector('a[data-testid="TitleLink"][href] span[data-testid="TitleHeading"]');
+      if (!span) return { ok: false, error: "Reuters: TitleHeading not found" };
 
-      // 2) Fallback: if no cards, pick strongest TitleLink/TitleHeading pair
-      if (!ranked.length) {
-        const pairs = Array.from(
-          main.querySelectorAll('a[data-testid="TitleLink"][href] span[data-testid="TitleHeading"]')
-        );
+      const a = span.closest("a[href]");
+      const title = clean(span.textContent || "");
+      const url = a ? abs(a.getAttribute("href")) : null;
+      if (!title || !url) return { ok: false, error: "Reuters: missing title/url" };
 
-        ranked = pairs
-          .map((span, idx) => {
-            const a = span.closest('a[href]');
-            const title = clean(span.textContent || "");
-            const relHref = a?.getAttribute("href") || null;
-            const url = relHref ? abs(relHref) : null;
-
-            let score = 0;
-            const cls = String(span.className || "");
-            if (/\bheading_4\b/i.test(cls)) score += 220;
-            if (a && a.getAttribute("aria-label")) score += 10;
-
-            // try to find nearby media container
-            const cardish = a?.closest('[data-testid="StoryCard"]') || a?.closest("article, li, div") || null;
-            const hasDescription = Boolean(cardish?.querySelector?.('[data-testid="Description"]'));
-            const hasMedia = Boolean(cardish?.querySelector?.('[data-testid="MediaImage"], [data-testid="MediaImageLink"]'));
-            if (hasDescription) score += 90;
-            if (hasMedia) score += 50;
-
-            if (!title || !url) return null;
-            return { title, url, imgUrl: null, score, idx };
-          })
-          .filter(Boolean);
-      }
-
-      // 3) Fallback: parse embedded cache-ish payload for a known homepage collection (bs11 / bs9 etc.)
-      // Your reuters-hp.html shows patterns like:
-      // {"collection_alias":"bs11",...,"articles":[{"canonical_url":"...","web":"...","thumbnail":{"url":"..."}}]}
-      function tryParseFromHtml() {
-        const html = document.documentElement?.innerHTML || "";
-        const candidates = [];
-
-        // try a couple known homepage “big story” collections; order matters
-        const aliases = ["bs11", "bs9", "bs6", "bs5", "bs4", "bs3", "bs2", "bs1"];
-
-        for (const alias of aliases) {
-          // pull the first article object after this alias
-          const re = new RegExp(
-            `"collection_alias"\\s*:\\s*"${alias}"[\\s\\S]*?"articles"\\s*:\\s*\\[\\s*\\{([\\s\\S]*?)\\}\\s*\\]`,
-            "i"
-          );
-          const m = html.match(re);
-          if (!m) continue;
-
-          const blob = m[1] || "";
-
-          // canonical_url
-          const urlM = blob.match(/"canonical_url"\s*:\s*"([^"]+)"/i);
-          const webM = blob.match(/"web"\s*:\s*"([^"]+)"/i);
-          const thumbM = blob.match(/"thumbnail"\s*:\s*\{\s*"url"\s*:\s*"([^"]+)"/i);
-
-          const relUrl = urlM ? urlM[1] : null;
-          const title = webM ? webM[1] : null;
-          const imgUrl = thumbM ? thumbM[1] : null;
-
-          if (relUrl && title) {
-            candidates.push({
-              title: clean(title),
-              url: abs(relUrl),
-              imgUrl: absImg(imgUrl),
-              score: 1000, // treat as strong fallback
-              idx: 0,
-            });
-          }
-        }
-
-        return candidates.length ? candidates[0] : null;
-      }
-
-      if (!ranked.length) {
-        const parsed = tryParseFromHtml();
-        if (parsed?.title && parsed?.url) return { ok: true, ...parsed };
-        return { ok: false, error: "Reuters: story cards / title links not found" };
-      }
-
-      ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
-      const top = ranked[0];
-
-      // If DOM image missing, try to pull thumbnail from embedded payload for that url
-      if (!top.imgUrl) {
-        const html = document.documentElement?.innerHTML || "";
-        const urlPath = (() => {
-          try {
-            const u = new URL(top.url);
-            return u.pathname;
-          } catch {
-            return null;
-          }
-        })();
-
-        if (urlPath) {
-          // locate thumbnail url near that canonical_url
-          const re = new RegExp(
-            `"canonical_url"\\s*:\\s*"${urlPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[\\s\\S]{0,4000}?"thumbnail"\\s*:\\s*\\{\\s*"url"\\s*:\\s*"([^"]+)"`,
-            "i"
-          );
-          const m = html.match(re);
-          if (m && m[1]) top.imgUrl = absImg(m[1]);
-        }
-      }
-
-      return { ok: true, ...top };
+      return { ok: true, title, url };
     });
 
     const item = hero?.ok
       ? {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
-          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
+          imgUrl: null,
           slotKey: sha1("reuters1|top").slice(0, 12),
         }
       : null;
