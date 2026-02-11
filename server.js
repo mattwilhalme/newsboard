@@ -348,29 +348,47 @@ async function scrapeNBCHero() {
 
         const main = document.querySelector("main") || document.body;
 
-        // Strategy A: find first decent heading with a link
-        const headings = Array.from(main.querySelectorAll("h1, h2, h3"));
-        for (const h of headings) {
-          const a = h.closest("a[href]") || h.querySelector("a[href]") || h.parentElement?.querySelector?.("a[href]");
-          const title = clean(h.textContent || "");
-          const href = a?.getAttribute("href") || null;
-          const url = href ? abs(href) : null;
+        function isGoodNBCUrl(u) {
+          if (!u) return false;
+          try {
+            const url = new URL(u);
+            if (!/\.nbcnews\.com$/i.test(url.hostname)) return false; // avoid nbc.com, today.com, etc.
+            const p = url.pathname || "";
+            if (/^\/watch\b/i.test(p)) return false;
+            if (/^\/podcasts?\b/i.test(p)) return false;
+            if (/^\/now\b/i.test(p)) return false;
+            return true;
+          } catch {
+            return false;
+          }
+        }
 
-          // Filter obvious junk
+        // Prefer the storyline headline anchors (this is where the real top story lives).
+        const preferredAnchors = Array.from(
+          main.querySelectorAll(
+            "h2.storyline__headline a[href], h2[class*='storyline__headline'] a[href], h2.styles_headline__Gk6tj a[href], h2.styles_headline__ a[href]"
+          )
+        );
+
+        for (const a of preferredAnchors) {
+          const title = clean(a.textContent || "");
+          const url = abs(a.getAttribute("href") || "");
           if (!title || title.length < 12) continue;
           if (!url) continue;
+          if (!isGoodNBCUrl(url)) continue;
           if (/\/video\//i.test(url)) continue;
-
           return { ok: true, title, url };
         }
 
-        // Strategy B: fallback to first “card” link with meaningful aria-label/text
+        // Fallback: any meaningful link inside main that points to nbcnews.com.
         const links = Array.from(main.querySelectorAll("a[href]"))
           .map((a) => {
-            const href = a.getAttribute("href") || "";
-            const url = abs(href);
+            // Avoid header/nav menus where “More From NBC” lives.
+            if (a.closest("nav") || a.closest("header") || a.closest(".menu-section")) return null;
             const title = clean(a.getAttribute("aria-label") || a.textContent || "");
-            if (!url || !title || title.length < 12) return null;
+            const url = abs(a.getAttribute("href") || "");
+            if (!title || title.length < 12) return null;
+            if (!url || !isGoodNBCUrl(url)) return null;
             if (/\/video\//i.test(url)) return null;
             return { title, url };
           })
@@ -511,81 +529,109 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
-   Reuters (single top item)
+   Reuters (single top item) - JSON-LD ItemList -> open story -> grab H1
 --------------------------- */
 async function scrapeReutersHero() {
   return await withBrowser(async (page) => {
     const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
+    // 1) Go to homepage
     await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1800);
+    await page.waitForTimeout(1200);
 
-    const hero = await page.evaluate(() => {
-      function clean(s) {
-        return String(s || "").replace(/\s+/g, " ").trim();
-      }
-      function abs(h) {
+    // 2) Pull top URL from JSON-LD (ItemList)
+    const topUrl = await page.evaluate(() => {
+      function safeJsonParse(s) {
         try {
-          return new URL(h, "https://www.reuters.com").toString();
+          return JSON.parse(s);
         } catch {
           return null;
         }
       }
-      function pickImg(el) {
-        if (!el) return null;
-        const img = el.querySelector?.("img");
-        const src = img?.getAttribute?.("src") || img?.src;
-        if (src) return src;
-        const source = el.querySelector?.("source[srcset]");
-        const srcset = source?.getAttribute?.("srcset") || "";
-        if (srcset) {
-          const first = srcset.split(",")[0]?.trim()?.split(" ")[0];
-          if (first) return first;
-        }
-        return null;
+
+      const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+      for (const s of scripts) {
+        const txt = s.textContent || "";
+        const data = safeJsonParse(txt);
+        if (!data) continue;
+
+        // Reuters sometimes has multiple JSON-LD scripts; we want the CollectionPage -> ItemList
+        const mainEntity = data.mainEntity;
+        if (!mainEntity) continue;
+
+        const list = mainEntity.itemListElement;
+        if (!Array.isArray(list) || !list.length) continue;
+
+        // position 1 preferred; otherwise first entry
+        const pos1 = list.find((x) => String(x?.position) === "1" && x?.url);
+        const first = pos1?.url || list[0]?.url;
+        if (typeof first === "string" && first.startsWith("http")) return first;
       }
 
-      const main = document.querySelector("main") || document.body;
-
-      // Look for the first meaningful link that contains a heading
-      const candidates = Array.from(main.querySelectorAll("a[href]"))
-        .map((a) => {
-          const href = a.getAttribute("href") || "";
-          const url = abs(href);
-          if (!url) return null;
-
-          // Prefer story links (avoid markets/tools etc)
-          if (!/^https:\/\/www\.reuters\.com\//.test(url)) return null;
-          if (/\/video\//i.test(url)) return null;
-
-          const h = a.querySelector("h1,h2,h3,[data-testid*='Heading']");
-          const title = clean(h?.textContent || a.getAttribute("aria-label") || a.textContent || "");
-          if (!title || title.length < 12) return null;
-
-          return { title, url, imgUrl: pickImg(a) };
-        })
-        .filter(Boolean);
-
-      if (!candidates.length) return { ok: false, error: "Reuters: no candidates found" };
-
-      return { ok: true, ...candidates[0] };
+      return null;
     });
 
-    const item = hero?.ok
-      ? {
-          title: cleanText(hero.title),
-          url: normalizeUrl(hero.url),
-          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
-          slotKey: sha1("reuters1|top").slice(0, 12),
-        }
-      : null;
+    if (!topUrl) {
+      const snapshot = {
+        id: "reuters1",
+        fetchedAt: nowISO(),
+        runId,
+        ok: false,
+        error: "Reuters: JSON-LD ItemList not found",
+        item: null,
+      };
+      const archive = await archiveRun(page, runId, snapshot);
+      return { ok: false, error: snapshot.error, updatedAt: nowISO(), runId, archive, item: null };
+    }
+
+    // 3) Open the story URL and scrape the real headline
+    await page.goto(topUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(1200);
+
+    const story = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "").replace(/\s+/g, " ").trim();
+      }
+
+      const h1 =
+        document.querySelector("h1") ||
+        document.querySelector('[data-testid="Heading"]') ||
+        document.querySelector('[class*="headline"] h1, [class*="headline"] h2');
+
+      const title = clean(h1?.textContent || "");
+      const canonical =
+        document.querySelector('link[rel="canonical"]')?.getAttribute("href") ||
+        location.href;
+
+      const ogImg =
+        document.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
+        document.querySelector('meta[name="twitter:image"]')?.getAttribute("content") ||
+        null;
+
+      return {
+        ok: Boolean(title && canonical),
+        title: title || null,
+        url: canonical || null,
+        imgUrl: ogImg || null,
+      };
+    });
+
+    const item =
+      story?.ok
+        ? {
+            title: cleanText(story.title),
+            url: normalizeUrl(story.url),
+            imgUrl: story.imgUrl ? normalizeUrl(story.imgUrl) : null,
+            slotKey: sha1("reuters1|top").slice(0, 12),
+          }
+        : null;
 
     const snapshot = {
       id: "reuters1",
       fetchedAt: nowISO(),
       runId,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "Reuters not found"),
+      error: item ? null : "Reuters: story page missing headline/url",
       item,
     };
 
@@ -670,19 +716,28 @@ app.get("/api/diff", (req, res) => {
   res.json({ ok: true, cache });
 });
 
-if (process.argv.includes("--refresh")) {
-  refreshSources({})
-    .then((cache) => {
+async function main() {
+  const args = new Set(process.argv.slice(2));
+
+  // CLI mode (GitHub Actions): scrape once, write cache.json, and exit.
+  if (args.has("--refresh")) {
+    try {
+      const cache = await refreshSources({});
       console.log(JSON.stringify({ ok: true, cache }, null, 2));
       process.exit(0);
-    })
-    .catch((err) => {
+    } catch (err) {
       console.error("Refresh error:", err);
       process.exit(1);
-    });
-} else {
-  app.listen(PORT, () => console.log(`Newsboard server listening on http://localhost:${PORT}`));
+    }
+  }
+
+  // Only start the HTTP server when this file is executed directly.
+  if (process.argv[1] && process.argv[1].endsWith("server.js")) {
+    app.listen(PORT, () => console.log(`Newsboard server listening on http://localhost:${PORT}`));
+  }
 }
+
+await main();
 
 export {
   scrapeABCHero,
@@ -691,4 +746,5 @@ export {
   scrapeNBCHero,
   scrapeCNNHero,
   scrapeReutersHero,
+  refreshSources,
 };
