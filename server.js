@@ -447,7 +447,7 @@ async function scrapeNBCHero() {
 }
 
 /* ---------------------------
-   CNN (single top item) - lead-package container
+   CNN (single top item) - prefer lead-plus-headlines, fallback lead-package
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
@@ -467,10 +467,11 @@ async function scrapeCNNHero() {
           return null;
         }
       }
+
       function pickImg(el) {
         if (!el) return null;
 
-        // CNN often stores the canonical image URL on a div.image[data-url]
+        // CNN often stores canonical image URL on a div.image[data-url]
         const dataUrl =
           el.querySelector?.("div.image[data-url]")?.getAttribute("data-url") ||
           el.querySelector?.("[data-url]")?.getAttribute?.("data-url");
@@ -493,7 +494,51 @@ async function scrapeCNNHero() {
 
       const main = document.querySelector("main") || document.body;
 
-      // Primary: lead package container
+      // --- 1) Prefer lead-plus-headlines (matches your target area) ---
+      // Find the first lead-plus-headlines container on the page
+      const lph =
+        main.querySelector(".container.container_lead-plus-headlines") ||
+        main.querySelector("[class*='container_lead-plus-headlines']");
+
+      if (lph) {
+        // CNN marks many cards as "selected"; pick the first viable one.
+        const cards = Array.from(
+          lph.querySelectorAll("li.card.container_lead-plus-headlines__item, li.card[class*='container_lead-plus-headlines__item']")
+        );
+
+        for (const li of cards) {
+          const a =
+            li.querySelector("a.container__link[href]") ||
+            li.querySelector("a[href]");
+          const href = a?.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          if (!url) continue;
+
+          // Skip videos
+          if (/\/videos?\//i.test(url) || /\/video\//i.test(url)) continue;
+
+          // Headline can appear as:
+          // - your requested h2.container__title_url-text... (sometimes)
+          // - OR span.container__headline-text[data-editable="headline"] (common in cnn-hp.html)
+          const h2 =
+            li.querySelector("h2.container__title_url-text.container_lead-plus-headlines__title_url-text") ||
+            li.querySelector("h2.container__title_url-text") ||
+            li.querySelector("h2");
+
+          const spanHeadline =
+            li.querySelector("span.container__headline-text[data-editable='headline']") ||
+            li.querySelector("span.container__headline-text");
+
+          const title = clean((h2?.textContent || "") || (spanHeadline?.textContent || ""));
+          if (!title || title.length < 8) continue;
+
+          const imgUrl = pickImg(li) || pickImg(a) || pickImg(h2) || pickImg(spanHeadline);
+
+          return { ok: true, title, url, imgUrl: imgUrl || null };
+        }
+      }
+
+      // --- 2) Fallback to lead-package (your previous logic) ---
       const lead =
         main.querySelector(".container_lead-package") ||
         main.querySelector("[class*='lead-package']") ||
@@ -501,7 +546,6 @@ async function scrapeCNNHero() {
 
       const scope = lead || main;
 
-      // CNN headline in lead package is often an h2 with text, link is on surrounding <a>
       const h2 =
         scope.querySelector("h2.container__title_url-text") ||
         scope.querySelector("h2[class*='container__title']") ||
@@ -520,11 +564,11 @@ async function scrapeCNNHero() {
       const url = href ? abs(href) : null;
       if (!url) return { ok: false, error: "CNN: URL not found" };
 
-      // Skip video pages when possible
-      if (/\/videos?\//i.test(url)) return { ok: false, error: "CNN: lead appears to be video" };
+      if (/\/videos?\//i.test(url) || /\/video\//i.test(url)) {
+        return { ok: false, error: "CNN: lead appears to be video" };
+      }
 
       const imgUrl = pickImg(lead) || pickImg(a) || pickImg(h2);
-
       return { ok: true, title, url, imgUrl: imgUrl || null };
     });
 
