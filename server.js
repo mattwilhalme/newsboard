@@ -166,6 +166,48 @@ async function withBrowser(fn) {
   }
 }
 
+async function withBrowser(fn, opts = {}) {
+  const mobile = Boolean(opts.mobile);
+
+  const browser = await chromium.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+  });
+
+  const context = await browser.newContext({
+    viewport: mobile ? { width: 390, height: 844 } : { width: 1440, height: 900 },
+    deviceScaleFactor: mobile ? 3 : 1,
+    isMobile: mobile,
+    hasTouch: mobile,
+    locale: "en-US",
+    userAgent: mobile
+      ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.1"
+      : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+  });
+
+  const page = await context.newPage();
+
+  await page.route("**/*", (route) => {
+    const req = route.request();
+    if (shouldAbortRequest(req)) return route.abort();
+    return route.continue();
+  });
+
+  page.on("pageerror", (err) => {
+    const msg = String(err || "");
+    if (shouldIgnorePageError(msg)) return;
+    console.log("[PW pageerror]", msg.slice(0, 900));
+  });
+
+  try {
+    return await fn(page);
+  } finally {
+    await page.close().catch(() => {});
+    await context.close().catch(() => {});
+    await browser.close().catch(() => {});
+  }
+}
+
 async function archiveRun(page, runId, snapshotObj) {
   const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
   const jsonPath = path.join(ARCHIVE_DIR, `${runId}.json`);
@@ -347,189 +389,88 @@ async function scrapeUSATHero() {
 }
 
 /* ---------------------------
-   NBC (headline-only)
+   NBC (headline-only) - MOBILE rendering for durability
 --------------------------- */
 async function scrapeNBCHero() {
-  return await withBrowser(async (page) => {
-    const runId = `nbc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+  return await withBrowser(
+    async (page) => {
+      const runId = `nbc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.nbcnews.com/", { waitUntil: "domcontentloaded", timeout: 15000 });
-    await page.waitForSelector("main", { timeout: 6000 }).catch(() => {});
+      await page.goto("https://www.nbcnews.com/", { waitUntil: "domcontentloaded", timeout: 15000 });
 
-    const hero = await page.evaluate(() => {
-      function clean(s) {
-        return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
-      }
-      function abs(h) {
-        try {
-          return new URL(h, "https://www.nbcnews.com").toString();
-        } catch {
-          return null;
+      // On mobile layout, headings/links hydrate quickly; keep the wait cheap.
+      await page.waitForSelector("main", { timeout: 6000 }).catch(() => {});
+      await page.waitForTimeout(150);
+
+      const hero = await page.evaluate(() => {
+        function clean(s) {
+          return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
         }
-      }
+        function abs(h) {
+          try {
+            return new URL(h, "https://www.nbcnews.com").toString();
+          } catch {
+            return null;
+          }
+        }
 
-      const main = document.querySelector("main") || document.body;
-      const candidates = Array.from(main.querySelectorAll("article"))
-        .map((article, idx) => {
-          const a = article.querySelector("a[href]");
-          const h = article.querySelector("h1,h2,h3");
-          const title = clean(h?.textContent || "");
+        const main = document.querySelector("main") || document.body;
+
+        // Strategy A: find first decent heading with a link
+        const headings = Array.from(main.querySelectorAll("h1, h2, h3"));
+        for (const h of headings) {
+          const a = h.closest("a[href]") || h.querySelector("a[href]") || h.parentElement?.querySelector?.("a[href]");
+          const title = clean(h.textContent || "");
           const href = a?.getAttribute("href") || null;
           const url = href ? abs(href) : null;
-          if (!title || !url || title.length < 8) return null;
 
-          let score = 0;
-          if (article.querySelector("h1")) score += 220;
-          else if (article.querySelector("h2")) score += 150;
-          else if (article.querySelector("h3")) score += 90;
-          score += Math.max(0, 40 - idx);
-          return { title, url, score, idx };
-        })
-        .filter(Boolean);
+          // Filter obvious junk
+          if (!title || title.length < 12) continue;
+          if (!url) continue;
+          if (/\/video\//i.test(url)) continue;
 
-      if (!candidates.length) return { ok: false, error: "NBC: no candidates found" };
-      candidates.sort((a, b) => b.score - a.score || a.idx - b.idx);
-      return { ok: true, ...candidates[0] };
-    });
-
-    const item = hero?.ok
-      ? { title: cleanText(hero.title), url: normalizeUrl(hero.url), imgUrl: null, slotKey: sha1("nbc1|top").slice(0, 12) }
-      : null;
-
-    const snapshot = { id: "nbc1", fetchedAt: nowISO(), runId, ok: Boolean(item), error: item ? null : (hero?.error || "NBC not found"), item };
-    const archive = await archiveRun(page, runId, snapshot);
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  });
-}
-
-/* ---------------------------
-   CNN (headline-only)
---------------------------- */
-async function scrapeCNNHero() {
-  return await withBrowser(async (page) => {
-    const runId = `cnn1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
-
-    await page.goto("https://www.cnn.com/", { waitUntil: "domcontentloaded", timeout: 15000 });
-    await page.waitForSelector(".container_lead-package__title_url-text, .container__title_url-text, h1, h2", { timeout: 6000 }).catch(() => {});
-
-    const hero = await page.evaluate(() => {
-      function clean(s) {
-        return String(s || "").replace(/\s+/g, " ").trim();
-      }
-      function abs(h) {
-        try {
-          return new URL(h, "https://www.cnn.com").toString();
-        } catch {
-          return null;
+          return { ok: true, title, url };
         }
-      }
 
-      const heroTitle =
-        document.querySelector(".container_lead-package__title_url-text, .container__title_url-text") ||
-        document.querySelector("h1, h2");
+        // Strategy B: fallback to first “card” link with meaningful aria-label/text
+        const links = Array.from(main.querySelectorAll("a[href]"))
+          .map((a) => {
+            const href = a.getAttribute("href") || "";
+            const url = abs(href);
+            const title = clean(a.getAttribute("aria-label") || a.textContent || "");
+            if (!url || !title || title.length < 12) return null;
+            if (/\/video\//i.test(url)) return null;
+            return { title, url };
+          })
+          .filter(Boolean);
 
-      if (!heroTitle) return { ok: false, error: "CNN: hero title not found" };
+        if (!links.length) return { ok: false, error: "NBC mobile: no candidates found" };
+        return { ok: true, ...links[0] };
+      });
 
-      const title = clean(heroTitle.textContent || "");
-      if (!title || title.length < 8) return { ok: false, error: "CNN: empty title" };
+      const item = hero?.ok
+        ? {
+            title: cleanText(hero.title),
+            url: normalizeUrl(hero.url),
+            imgUrl: null,
+            slotKey: sha1("nbc1|top").slice(0, 12),
+          }
+        : null;
 
-      const a =
-        heroTitle.closest("a[href]") ||
-        heroTitle.parentElement?.querySelector?.("a[href]") ||
-        null;
+      const snapshot = {
+        id: "nbc1",
+        fetchedAt: nowISO(),
+        runId,
+        ok: Boolean(item),
+        error: item ? null : (hero?.error || "NBC not found"),
+        item,
+      };
 
-      const url = a ? abs(a.getAttribute("href")) : null;
-      if (!url) return { ok: false, error: "CNN: hero URL not found" };
-      return { ok: true, title, url };
-    });
-
-    const item = hero?.ok
-      ? { title: cleanText(hero.title), url: normalizeUrl(hero.url), imgUrl: null, slotKey: sha1("cnn1|top").slice(0, 12) }
-      : null;
-
-    const snapshot = { id: "cnn1", fetchedAt: nowISO(), runId, ok: Boolean(item), error: item ? null : (hero?.error || "CNN not found"), item };
-    const archive = await archiveRun(page, runId, snapshot);
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  });
-}
-
-/* ---------------------------
-   Reuters (headline-only)
---------------------------- */
-async function scrapeReutersHero() {
-  return await withBrowser(async (page) => {
-    const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
-
-    await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 15000 });
-    await page.waitForSelector('main a[data-testid="TitleLink"] span[data-testid="TitleHeading"]', { timeout: 6000 }).catch(() => {});
-
-    const hero = await page.evaluate(() => {
-      function clean(s) {
-        return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
-      }
-      function abs(h) {
-        try {
-          return new URL(h, "https://www.reuters.com").toString();
-        } catch {
-          return null;
-        }
-      }
-
-      const main = document.querySelector("main#main-content, main") || document.body;
-
-      const cards = Array.from(main.querySelectorAll('[data-testid="StoryCard"]'));
-      const ranked = cards
-        .map((card, idx) => {
-          const titleEl = card.querySelector('[data-testid="TitleHeading"]');
-          const linkEl = card.querySelector('a[data-testid="TitleLink"][href]') || card.querySelector("a[href]");
-          const title = clean(titleEl?.textContent || "");
-          const href = linkEl?.getAttribute("href") || null;
-          const url = href ? abs(href) : null;
-          if (!title || !url) return null;
-
-          const cardClass = String(card.className || "");
-          const titleClass = String(titleEl?.className || "");
-          const hasHero = /\btpl-hero\b/i.test(cardClass);
-          const hasH4 = /\bheading_4\b/i.test(titleClass);
-          const hasDesc = Boolean(card.querySelector('[data-testid="Description"]'));
-
-          let score = 0;
-          if (hasHero) score += 300;
-          if (hasH4) score += 220;
-          if (hasDesc) score += 90;
-          score += Math.max(0, 40 - idx);
-
-          if (/\/video\//i.test(url)) score -= 120;
-          if (/\/pictures\//i.test(url)) score -= 80;
-
-          return { title, url, score, idx };
-        })
-        .filter(Boolean);
-
-      if (ranked.length) {
-        ranked.sort((a, b) => b.score - a.score || a.idx - b.idx);
-        return { ok: true, title: ranked[0].title, url: ranked[0].url };
-      }
-
-      const span = main.querySelector('a[data-testid="TitleLink"][href] span[data-testid="TitleHeading"]');
-      if (!span) return { ok: false, error: "Reuters: TitleHeading not found" };
-
-      const a = span.closest("a[href]");
-      const title = clean(span.textContent || "");
-      const url = a ? abs(a.getAttribute("href")) : null;
-      if (!title || !url) return { ok: false, error: "Reuters: missing title/url" };
-
-      return { ok: true, title, url };
-    });
-
-    const item = hero?.ok
-      ? { title: cleanText(hero.title), url: normalizeUrl(hero.url), imgUrl: null, slotKey: sha1("reuters1|top").slice(0, 12) }
-      : null;
-
-    const snapshot = { id: "reuters1", fetchedAt: nowISO(), runId, ok: Boolean(item), error: item ? null : (hero?.error || "Reuters not found"), item };
-    const archive = await archiveRun(page, runId, snapshot);
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  });
+      const archive = await archiveRun(page, runId, snapshot);
+      return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+    },
+    { mobile: true }
+  );
 }
 
 /* ---------------------------
