@@ -129,42 +129,6 @@ function shouldIgnorePageError(msg) {
   );
 }
 
-async function withBrowser(fn) {
-  const browser = await chromium.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-  });
-
-  const context = await browser.newContext({
-    viewport: { width: 1440, height: 900 },
-    locale: "en-US",
-    userAgent:
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-  });
-
-  const page = await context.newPage();
-
-  // PRE-SCRAPER: block heavy/noisy requests
-  await page.route("**/*", (route) => {
-    const req = route.request();
-    if (shouldAbortRequest(req)) return route.abort();
-    return route.continue();
-  });
-
-  page.on("pageerror", (err) => {
-    const msg = String(err || "");
-    if (shouldIgnorePageError(msg)) return;
-    console.log("[PW pageerror]", msg.slice(0, 900));
-  });
-
-  try {
-    return await fn(page);
-  } finally {
-    await page.close().catch(() => {});
-    await context.close().catch(() => {});
-    await browser.close().catch(() => {});
-  }
-}
 
 async function withBrowser(fn, opts = {}) {
   const mobile = Boolean(opts.mobile);
