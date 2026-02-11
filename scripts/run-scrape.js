@@ -15,7 +15,7 @@ const DATA_DIR = path.join("docs", "data");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
 
 const SOURCES = {
-  abc1: { id: "abc1", name: "ABC News", homeUrl: "https://abcnews.go.com/" },
+  abc1: { id: "abc1", name: "ABC News", homeUrl: "https://abcnews.com/" },
   cbs1: { id: "cbs1", name: "CBS News", homeUrl: "https://www.cbsnews.com/" },
   usat1: { id: "usat1", name: "USA Today", homeUrl: "https://www.usatoday.com/" },
   nbc1: { id: "nbc1", name: "NBC News", homeUrl: "https://www.nbcnews.com/" },
