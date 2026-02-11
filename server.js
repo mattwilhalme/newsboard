@@ -199,7 +199,7 @@ async function scrapeABCHero() {
 }
 
 /* ---------------------------
-   CBS (single top item)
+   CBS (single top item) - "Latest news" module, prefer real articles
 --------------------------- */
 async function scrapeCBSHero() {
   return await withBrowser(async (page) => {
@@ -215,6 +215,7 @@ async function scrapeCBSHero() {
           .replace(/\s+/g, " ")
           .trim();
       }
+
       function abs(h) {
         try {
           return new URL(h, "https://www.cbsnews.com").toString();
@@ -223,102 +224,124 @@ async function scrapeCBSHero() {
         }
       }
 
-      const main = document.querySelector("main") || document.body;
+      function bestFromSrcset(srcset) {
+        // CBS srcset here is often "url 1x, url 2x"
+        if (!srcset) return null;
+        const parts = srcset
+          .split(",")
+          .map((p) => p.trim())
+          .filter(Boolean)
+          .map((p) => {
+            const [u, scale] = p.split(/\s+/);
+            let score = 0;
+            if (scale && scale.endsWith("x")) score = parseFloat(scale) || 0;
+            return { u, score };
+          })
+          .filter((x) => x.u);
 
-      // Prefer the first headline link
-      const a = main.querySelector('a[href*="/news/"] h3, a[href*="/news/"] h2')?.closest("a[href]");
-      if (a) {
-        const title = clean(a.textContent || "");
-        const url = abs(a.getAttribute("href") || "");
-        if (title && url) return { ok: true, title, url };
+        if (!parts.length) return null;
+        parts.sort((a, b) => (b.score || 0) - (a.score || 0));
+        return parts[0].u || null;
       }
 
-      // fallback: first anchor with meaningful text
-      const links = Array.from(main.querySelectorAll("a[href]"))
-        .map((a2) => {
-          const url = abs(a2.getAttribute("href") || "");
-          const title = clean(a2.getAttribute("aria-label") || a2.textContent || "");
-          if (!url || !title || title.length < 12) return null;
-          return { title, url };
+      function pickImg(container) {
+        if (!container) return null;
+        const img = container.querySelector("img");
+        if (!img) return null;
+
+        const srcset = img.getAttribute("srcset") || "";
+        const best = bestFromSrcset(srcset);
+        const src = img.getAttribute("src") || img.src || null;
+
+        return best || src || null;
+      }
+
+      function isStoryUrl(u) {
+        if (!u) return false;
+        try {
+          const url = new URL(u);
+          // We want actual CBS News story URLs (not empty hrefs, not generic pages)
+          if (!/(\.|^)cbsnews\.com$/i.test(url.hostname)) return false;
+          if (!/^\/news\//i.test(url.pathname || "")) return false;
+          return true;
+        } catch {
+          return false;
+        }
+      }
+
+      // Prefer the "Latest news" component where your target <h4.item__hed> lives.
+      // In the HTML, it's:
+      // <section ... id="component-latest-news" ...> ... <article class="item ... item--type-article ..."><a class="item__anchor" href=...><h4 class="item__hed">...</h4>
+      const latest = document.querySelector("#component-latest-news");
+      const scope = latest || document;
+
+      // 1) First real article inside the Latest module
+      // Avoid videos/live blocks that also contain h4.item__hed
+      const candidates = Array.from(
+        scope.querySelectorAll('article.item a.item__anchor[href]') // anchor inside article
+      )
+        .map((a) => {
+          const article = a.closest("article");
+          if (!article) return null;
+
+          const cls = article.className || "";
+          // Keep “type-article” only (skip video/live placeholders)
+          if (!cls.includes("item--type-article")) return null;
+
+          const hed = article.querySelector("h4.item__hed");
+          const title = clean(hed?.textContent || "");
+          const url = abs(a.getAttribute("href") || "");
+          if (!title || !url || !isStoryUrl(url)) return null;
+
+          const imgUrl = pickImg(article);
+          return { title, url, imgUrl: imgUrl ? abs(imgUrl) : null };
         })
         .filter(Boolean);
 
-      if (!links.length) return { ok: false, error: "CBS not found" };
-      return { ok: true, ...links[0] };
+      if (candidates.length) return { ok: true, ...candidates[0] };
+
+      // 2) Fallback: first h4.item__hed whose parent anchor is a /news/ story and not inside “CBS News Live”
+      const heds = Array.from(scope.querySelectorAll("h4.item__hed"));
+      for (const h of heds) {
+        const title = clean(h.textContent || "");
+        if (!title) continue;
+
+        const a = h.closest("a[href]");
+        const url = abs(a?.getAttribute("href") || "");
+        if (!url || !isStoryUrl(url)) continue;
+
+        // Avoid the always-on “CBS News 24/7” live module
+        const componentHeadline = h.closest("a")?.querySelector("h4.item__component-headline");
+        const compText = clean(componentHeadline?.textContent || "");
+        if (/cbs news live/i.test(compText)) continue;
+
+        const article = h.closest("article");
+        const imgUrl = pickImg(article);
+        return { ok: true, title, url, imgUrl: imgUrl ? abs(imgUrl) : null };
+      }
+
+      return { ok: false, error: "CBS: no candidates found" };
     });
 
     const item = hero?.ok
       ? {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
-          imgUrl: null,
+          imgUrl: hero.imgUrl ? normalizeUrl(hero.imgUrl) : null,
           slotKey: sha1("cbs1|top").slice(0, 12),
         }
       : null;
 
-    const snapshot = { id: "cbs1", fetchedAt: nowISO(), runId, ok: Boolean(item), error: item ? null : (hero?.error || "CBS not found"), item };
+    const snapshot = {
+      id: "cbs1",
+      fetchedAt: nowISO(),
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "CBS not found"),
+      item,
+    };
+
     const archive = await archiveRun(page, runId, snapshot);
-
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  });
-}
-
-/* ---------------------------
-   USA Today (single top item)
---------------------------- */
-async function scrapeUSATHero() {
-  return await withBrowser(async (page) => {
-    const runId = `usat_${new Date().toISOString().replace(/[:.]/g, "-")}`;
-
-    await page.goto("https://www.usatoday.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1800);
-
-    const hero = await page.evaluate(() => {
-      function clean(s) {
-        return String(s || "").replace(/\s+/g, " ").trim();
-      }
-      function abs(h) {
-        try {
-          return new URL(h, "https://www.usatoday.com").toString();
-        } catch {
-          return null;
-        }
-      }
-
-      const main = document.querySelector("main") || document.body;
-
-      // Try: first h2/h3 with a link in it
-      const h = main.querySelector("h1 a[href], h2 a[href], h3 a[href]");
-      if (h) {
-        const a = h.closest("a[href]");
-        const title = clean(h.textContent || "");
-        const url = abs(a?.getAttribute("href") || "");
-        if (title && url) return { ok: true, title, url };
-      }
-
-      // Fallback: first "a" with aria-label
-      const a2 = main.querySelector("a[aria-label][href]");
-      if (a2) {
-        const title = clean(a2.getAttribute("aria-label") || "");
-        const url = abs(a2.getAttribute("href") || "");
-        if (title && url) return { ok: true, title, url };
-      }
-
-      return { ok: false, error: "USA Today not found" };
-    });
-
-    const item = hero?.ok
-      ? {
-          title: cleanText(hero.title),
-          url: normalizeUrl(hero.url),
-          imgUrl: null,
-          slotKey: sha1("usat1|top").slice(0, 12),
-        }
-      : null;
-
-    const snapshot = { id: "usat1", fetchedAt: nowISO(), runId, ok: Boolean(item), error: item ? null : (hero?.error || "USA Today not found"), item };
-    const archive = await archiveRun(page, runId, snapshot);
-
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
@@ -637,6 +660,164 @@ async function scrapeReutersHero() {
 
     const archive = await archiveRun(page, runId, snapshot);
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+  });
+}
+
+/* ---------------------------
+   USA Today (single top item) - hero anchor + tb-title span (incl shadow-region)
+--------------------------- */
+async function scrapeUSATHero() {
+  return await withBrowser(async (page) => {
+    const runId = `usat1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.usatoday.com/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    // Hydration can be late on USAT
+    await page.waitForTimeout(1200);
+    await page
+      .waitForSelector('a.gnt_m_he[href][data-t-l*="|hero"]', { timeout: 20000 })
+      .catch(() => {});
+    await page.waitForTimeout(600);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "").replace(/\s+/g, " ").trim();
+      }
+      function absUrl(href) {
+        try {
+          return new URL(href, window.location.origin).toString();
+        } catch {
+          return null;
+        }
+      }
+      function pickFromSrcset(srcset) {
+        if (!srcset) return null;
+        const parts = srcset.split(",").map((p) => p.trim()).filter(Boolean);
+        if (!parts.length) return null;
+
+        // Prefer 2x if present, else highest multiplier, else last.
+        let best = null;
+        for (const p of parts) {
+          const [u, dpr] = p.split(/\s+/);
+          const mult = dpr && dpr.endsWith("x") ? Number(dpr.slice(0, -1)) : 0;
+          if (!best || mult > best.mult) best = { url: u, mult };
+        }
+        return best?.url || parts[parts.length - 1]?.split(/\s+/)?.[0] || null;
+      }
+
+      // Anchor-first: hero is an <a class="gnt_m_he ..." data-t-l="...|hero">
+      const a =
+        document.querySelector('a.gnt_m_he[href][data-t-l*="|hero"]') ||
+        document.querySelector("a.gnt_m_he.gnt_m_he__br[href]") ||
+        document.querySelector("a.gnt_m_he[href]");
+
+      if (!a) {
+        return {
+          ok: false,
+          error: "USAT: hero anchor not found (a.gnt_m_he).",
+          debug: {
+            hasAnyGntHero: Boolean(document.querySelector("a.gnt_m_he")),
+            hasAnyHeroTL: Boolean(document.querySelector('a.gnt_m_he[data-t-l*="|hero"]')),
+          },
+        };
+      }
+
+      const href = a.getAttribute("href") || "";
+      const url = absUrl(href);
+
+      // Your new selector form + standard tb-title form
+      const span =
+        a.querySelector('span[data-tb-shadow-region-title="0"]') ||
+        a.querySelector("span[data-tb-title]") ||
+        a.querySelector("[data-tb-shadow-region-title]") ||
+        a.querySelector("[data-tb-title]") ||
+        null;
+
+      const title = clean(span?.textContent || "");
+
+      const img =
+        a.querySelector("img.gnt_m_he_i[src], img.gnt_m_he_i[srcset]") ||
+        a.querySelector("img[src], img[srcset]") ||
+        null;
+
+      let imgUrl = null;
+      let imgAlt = null;
+
+      if (img) {
+        imgAlt = clean(img.getAttribute("alt") || "") || null;
+        imgUrl = absUrl(img.getAttribute("src") || "") || null;
+        if (!imgUrl) {
+          const fromSet = pickFromSrcset(img.getAttribute("srcset") || "");
+          imgUrl = fromSet ? absUrl(fromSet) : null;
+        }
+      }
+
+      const dek = clean(a.getAttribute("data-c-br") || "") || null;
+
+      return {
+        ok: Boolean(title && url),
+        title,
+        url,
+        imgUrl,
+        imgAlt,
+        dek,
+        debug: {
+          href,
+          aClass: a.getAttribute("class") || null,
+          dataTL: a.getAttribute("data-t-l") || null,
+          pickedSpanHasShadow0: Boolean(a.querySelector('span[data-tb-shadow-region-title="0"]')),
+        },
+      };
+    });
+
+    // Optional: og:image fallback if tile doesn't expose image url
+    let finalUrl = hero?.url ? normalizeUrl(hero.url) : null;
+    let finalTitle = cleanText(hero?.title || "");
+    let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
+
+    if (hero?.ok && finalUrl && !finalImgUrl) {
+      try {
+        const r = await page.request.get(finalUrl, { timeout: 20000 });
+        const html = await r.text();
+        const m = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
+        if (m?.[1]) finalImgUrl = normalizeUrl(m[1]);
+      } catch {}
+    }
+
+    const item = hero?.ok
+      ? {
+          title: finalTitle,
+          url: finalUrl,
+          imgUrl: finalImgUrl,
+          imgAlt: hero?.imgAlt || null,
+          dek: hero?.dek || null,
+          slotKey: sha1("usat|hero").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "usat1",
+      fetchedAt: nowISO(),
+      runId,
+      item,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "USAT not found"),
+      debug: hero?.debug || null,
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+    };
   });
 }
 
