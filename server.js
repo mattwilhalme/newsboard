@@ -610,20 +610,22 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
-   Reuters (single top item) - go /home -> wait for ld+json -> parse ItemList -> open story -> H1
+   Reuters (single top item) - /home + wait for ld+json + strong debug on failure
 --------------------------- */
 async function scrapeReutersHero() {
   return await withBrowser(async (page) => {
     const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    // Prefer /home/ because that's what the JSON-LD in your saved HTML declares
-    const startUrl = "https://www.reuters.com/home/";
+    await page.goto("https://www.reuters.com/home/", {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
 
-    await page.goto(startUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
-
-    // Give time for scripts to appear; don’t assume they exist at domcontentloaded
+    // Give it time to inject JSON-LD
     await page.waitForTimeout(1200);
-    await page.waitForSelector('script[type="application/ld+json"]', { timeout: 20000 }).catch(() => {});
+    await page
+      .waitForSelector('script[type="application/ld+json"]', { timeout: 20000 })
+      .catch(() => {});
     await page.waitForTimeout(800);
 
     const extracted = await page.evaluate(() => {
@@ -639,62 +641,60 @@ async function scrapeReutersHero() {
         const list = obj?.itemListElement;
         if (!Array.isArray(list) || !list.length) return null;
         const pos1 = list.find((x) => String(x?.position) === "1" && x?.url);
-        const first = pos1?.url || list[0]?.url;
-        return typeof first === "string" ? first : null;
+        return (pos1?.url || list[0]?.url) || null;
       }
 
+      const html = document.documentElement?.innerHTML || "";
+      const title = document.title || "";
       const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
       const texts = scripts.map((s) => s.textContent || "").filter(Boolean);
 
-      const parsed = texts.map(safeParse).filter(Boolean);
-
-      // Flatten if any scripts are arrays
+      // parse all scripts (some may be arrays)
       const nodes = [];
-      for (const p of parsed) {
-        if (Array.isArray(p)) nodes.push(...p);
+      for (const t of texts) {
+        const p = safeParse(t);
+        if (!p) continue;
+        if (Array.isArray(p)) nodes.push(...p.filter(Boolean));
         else nodes.push(p);
       }
 
-      // Look for exactly what your reuters-hp.html contains:
-      // CollectionPage with mainEntity ItemList
-      let top = null;
-
+      // Try: CollectionPage -> mainEntity(ItemList)
+      let topUrl = null;
       for (const n of nodes) {
-        if (n?.mainEntity && (n.mainEntity["@type"] === "ItemList" || (Array.isArray(n.mainEntity["@type"]) && n.mainEntity["@type"].includes("ItemList")))) {
-          top = pickFromItemList(n.mainEntity);
-          if (top) break;
-        }
+        const me = n?.mainEntity;
+        if (!me) continue;
+        const t = me?.["@type"];
+        const isItemList = t === "ItemList" || (Array.isArray(t) && t.includes("ItemList"));
+        if (!isItemList) continue;
+        topUrl = pickFromItemList(me);
+        if (topUrl) break;
       }
 
-      // Also allow standalone ItemList nodes
-      if (!top) {
+      // Try: standalone ItemList
+      if (!topUrl) {
         for (const n of nodes) {
-          if (n?.["@type"] === "ItemList" || (Array.isArray(n?.["@type"]) && n["@type"].includes("ItemList"))) {
-            top = pickFromItemList(n);
-            if (top) break;
-          }
+          const t = n?.["@type"];
+          const isItemList = t === "ItemList" || (Array.isArray(t) && t.includes("ItemList"));
+          if (!isItemList) continue;
+          topUrl = pickFromItemList(n);
+          if (topUrl) break;
         }
       }
-
-      const title = document.title || "";
-      const html = document.documentElement?.innerHTML || "";
 
       return {
-        topUrl: top || null,
-        diag: {
+        topUrl,
+        debug: {
           title,
           ldCount: scripts.length,
           hasConsent: /consent|privacy|cookie/i.test(html),
           hasChallenge: /captcha|robot|challenge|cloudflare|akamai/i.test(html),
-          // helpful preview for debugging without dumping everything
-          ldPreview0: texts[0]?.slice(0, 800) || null,
+          // just enough to confirm structure without dumping megabytes
+          ldPreview0: texts[0]?.slice(0, 900) || null,
         },
       };
     });
 
-    const topUrl = extracted?.topUrl || null;
-
-    if (!topUrl) {
+    if (!extracted?.topUrl) {
       const snapshot = {
         id: "reuters1",
         fetchedAt: nowISO(),
@@ -702,30 +702,28 @@ async function scrapeReutersHero() {
         ok: false,
         error: "Reuters: could not extract a story URL from JSON-LD",
         item: null,
-        debug: extracted?.diag || null,
+        debug: extracted?.debug || null,
       };
       const archive = await archiveRun(page, runId, snapshot);
       return { ok: false, error: snapshot.error, updatedAt: nowISO(), runId, archive, item: null };
     }
 
-    await page.goto(topUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
+    // Open story page and scrape headline
+    await page.goto(extracted.topUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(900);
 
     const story = await page.evaluate(() => {
       function clean(s) {
         return String(s || "").replace(/\s+/g, " ").trim();
       }
-
       const h1 = document.querySelector("h1") || document.querySelector('[data-testid="Heading"]');
       const title = clean(h1?.textContent || "");
       const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute("href") || location.href;
-
       const ogImg =
         document.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
         document.querySelector('meta[name="twitter:image"]')?.getAttribute("content") ||
         null;
-
-      return { ok: Boolean(title && canonical), title: title || null, url: canonical || null, imgUrl: ogImg || null };
+      return { ok: Boolean(title && canonical), title, url: canonical, imgUrl: ogImg };
     });
 
     const item = story?.ok
@@ -744,7 +742,7 @@ async function scrapeReutersHero() {
       ok: Boolean(item),
       error: item ? null : "Reuters: story page missing headline/url",
       item,
-      debug: { topUrl, ...(extracted?.diag || {}) },
+      debug: { ...(extracted?.debug || {}), topUrl: extracted.topUrl },
     };
 
     const archive = await archiveRun(page, runId, snapshot);
