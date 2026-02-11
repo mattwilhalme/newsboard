@@ -552,19 +552,40 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
-   Reuters (single top item) - JSON-LD ItemList -> open story -> grab H1
+   Reuters (single top item) - robust JSON-LD walker -> open story -> H1
 --------------------------- */
 async function scrapeReutersHero() {
   return await withBrowser(async (page) => {
     const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    // 1) Go to homepage
     await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1200);
 
-    // 2) Pull top URL from JSON-LD (ItemList)
+    // Best-effort consent click (won't always exist)
+    try {
+      const consentSelectors = [
+        'button:has-text("Accept")',
+        'button:has-text("I agree")',
+        'button:has-text("Agree")',
+        'button:has-text("Accept all")',
+        '[aria-label*="accept" i]',
+        '[id*="accept" i]',
+      ];
+      for (const sel of consentSelectors) {
+        const btn = await page.$(sel);
+        if (btn) {
+          await btn.click({ timeout: 1500 }).catch(() => {});
+          await page.waitForTimeout(800);
+          break;
+        }
+      }
+    } catch {}
+
+    // Let JSON-LD hydrate
+    await page.waitForTimeout(800);
+
     const topUrl = await page.evaluate(() => {
-      function safeJsonParse(s) {
+      function safeParse(s) {
         try {
           return JSON.parse(s);
         } catch {
@@ -572,26 +593,71 @@ async function scrapeReutersHero() {
         }
       }
 
-      const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
-      for (const s of scripts) {
-        const txt = s.textContent || "";
-        const data = safeJsonParse(txt);
-        if (!data) continue;
-
-        // Reuters sometimes has multiple JSON-LD scripts; we want the CollectionPage -> ItemList
-        const mainEntity = data.mainEntity;
-        if (!mainEntity) continue;
-
-        const list = mainEntity.itemListElement;
-        if (!Array.isArray(list) || !list.length) continue;
-
-        // position 1 preferred; otherwise first entry
-        const pos1 = list.find((x) => String(x?.position) === "1" && x?.url);
-        const first = pos1?.url || list[0]?.url;
-        if (typeof first === "string" && first.startsWith("http")) return first;
+      function looksLikeStoryUrl(u) {
+        if (typeof u !== "string") return false;
+        if (!u.startsWith("https://www.reuters.com/")) return false;
+        try {
+          const url = new URL(u);
+          const p = url.pathname || "";
+          // filter obvious non-story / junk paths
+          if (p === "/" || p.length < 4) return false;
+          if (p.startsWith("/video/")) return false;
+          if (p.startsWith("/graphics/")) return false;
+          if (p.startsWith("/my-news")) return false;
+          if (p.startsWith("/account/")) return false;
+          if (p.startsWith("/legal/") && p.length <= 7) return false;
+          return true;
+        } catch {
+          return false;
+        }
       }
 
-      return null;
+      // Recursively walk any JSON structure and collect URL-ish strings
+      function walk(node, out) {
+        if (!node) return;
+        if (typeof node === "string") {
+          if (looksLikeStoryUrl(node)) out.push(node);
+          return;
+        }
+        if (Array.isArray(node)) {
+          for (const x of node) walk(x, out);
+          return;
+        }
+        if (typeof node === "object") {
+          // common URL-bearing keys
+          for (const k of ["url", "@id", "mainEntityOfPage"]) {
+            const v = node[k];
+            if (typeof v === "string" && looksLikeStoryUrl(v)) out.push(v);
+            if (v && typeof v === "object") walk(v, out);
+          }
+          // walk all other properties
+          for (const key of Object.keys(node)) {
+            if (key === "url" || key === "@id" || key === "mainEntityOfPage") continue;
+            walk(node[key], out);
+          }
+        }
+      }
+
+      const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+      const urls = [];
+      for (const s of scripts) {
+        const data = safeParse(s.textContent || "");
+        if (!data) continue;
+        walk(data, urls);
+      }
+
+      // De-dupe while preserving order
+      const seen = new Set();
+      const uniq = [];
+      for (const u of urls) {
+        if (seen.has(u)) continue;
+        seen.add(u);
+        uniq.push(u);
+      }
+
+      // Heuristic: prefer URLs that look like actual article pages
+      const preferred = uniq.find((u) => /\/article\//i.test(u)) || uniq[0] || null;
+      return preferred;
     });
 
     if (!topUrl) {
@@ -600,16 +666,16 @@ async function scrapeReutersHero() {
         fetchedAt: nowISO(),
         runId,
         ok: false,
-        error: "Reuters: JSON-LD ItemList not found",
+        error: "Reuters: could not extract a story URL from JSON-LD",
         item: null,
       };
       const archive = await archiveRun(page, runId, snapshot);
       return { ok: false, error: snapshot.error, updatedAt: nowISO(), runId, archive, item: null };
     }
 
-    // 3) Open the story URL and scrape the real headline
+    // Open the candidate story and pull canonical headline + image
     await page.goto(topUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1200);
+    await page.waitForTimeout(900);
 
     const story = await page.evaluate(() => {
       function clean(s) {
@@ -622,32 +688,24 @@ async function scrapeReutersHero() {
         document.querySelector('[class*="headline"] h1, [class*="headline"] h2');
 
       const title = clean(h1?.textContent || "");
-      const canonical =
-        document.querySelector('link[rel="canonical"]')?.getAttribute("href") ||
-        location.href;
+      const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute("href") || location.href;
 
       const ogImg =
         document.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
         document.querySelector('meta[name="twitter:image"]')?.getAttribute("content") ||
         null;
 
-      return {
-        ok: Boolean(title && canonical),
-        title: title || null,
-        url: canonical || null,
-        imgUrl: ogImg || null,
-      };
+      return { ok: Boolean(title && canonical), title: title || null, url: canonical || null, imgUrl: ogImg || null };
     });
 
-    const item =
-      story?.ok
-        ? {
-            title: cleanText(story.title),
-            url: normalizeUrl(story.url),
-            imgUrl: story.imgUrl ? normalizeUrl(story.imgUrl) : null,
-            slotKey: sha1("reuters1|top").slice(0, 12),
-          }
-        : null;
+    const item = story?.ok
+      ? {
+          title: cleanText(story.title),
+          url: normalizeUrl(story.url),
+          imgUrl: story.imgUrl ? normalizeUrl(story.imgUrl) : null,
+          slotKey: sha1("reuters1|top").slice(0, 12),
+        }
+      : null;
 
     const snapshot = {
       id: "reuters1",
@@ -656,6 +714,7 @@ async function scrapeReutersHero() {
       ok: Boolean(item),
       error: item ? null : "Reuters: story page missing headline/url",
       item,
+      debug: { topUrl },
     };
 
     const archive = await archiveRun(page, runId, snapshot);
