@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-11T04:40:51.113Z",
+  "generatedAt": "2026-02-11T04:53:05.681Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-11T04:40:54.125Z",
+      "updatedAt": "2026-02-11T04:53:08.658Z",
       "error": null,
-      "runId": "abc_2026-02-11T04-40-51-213Z",
+      "runId": "abc_2026-02-11T04-53-05-782Z",
       "since": "2026-02-11T04:05:00.798Z",
       "item": {
         "title": "Person detained for questioning in Nancy Guthrie abduction: Official",
@@ -17,9 +17,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-11T04:40:56.476Z",
+      "updatedAt": "2026-02-11T04:53:11.121Z",
       "error": null,
-      "runId": "cbs_2026-02-11T04-40-54-265Z",
+      "runId": "cbs_2026-02-11T04-53-08-792Z",
       "since": "2026-02-11T04:40:51.113Z",
       "item": {
         "title": "Grand jury declines criminal charges against 6 Democrats, sources say",
@@ -30,9 +30,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-02-11T04:40:58.796Z",
+      "updatedAt": "2026-02-11T04:53:13.516Z",
       "error": null,
-      "runId": "usat1_2026-02-11T04-40-56-594Z",
+      "runId": "usat1_2026-02-11T04-53-11-238Z",
       "since": "2026-02-11T04:40:51.113Z",
       "item": {
         "title": "Nancy Guthrie live updates: Person detained after FBI released photos",
@@ -45,9 +45,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-11T04:41:01.806Z",
+      "updatedAt": "2026-02-11T04:53:16.640Z",
       "error": null,
-      "runId": "nbc_2026-02-11T04-40-58-940Z",
+      "runId": "nbc_2026-02-11T04-53-13-691Z",
       "since": "2026-02-11T04:05:00.798Z",
       "item": {
         "title": "Man detained for questioning in Nancy Guthrie case",
@@ -57,18 +57,23 @@
       }
     },
     "cnn1": {
-      "ok": false,
-      "updatedAt": "2026-02-11T04:41:05.520Z",
-      "error": "CNN: headline not found",
-      "runId": "cnn1_2026-02-11T04-41-01-930Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-02-11T04:53:20.447Z",
+      "error": null,
+      "runId": "cnn1_2026-02-11T04-53-16-761Z",
+      "since": "2026-02-11T04:53:05.681Z",
+      "item": {
+        "title": "Grand jury declines to indict Democratic lawmakers who urged service members to disobey illegal Trump orders",
+        "url": "https://www.cnn.com/2026/02/10/politics/jury-declines-to-indict-lawmakers-illegal-orders-video",
+        "imgUrl": "https://media.cnn.com/api/v1/images/stellar/prod/20260210-6-lawmakers.jpg?c=original",
+        "slotKey": "e75971db9693"
+      }
     },
     "reuters1": {
       "ok": false,
-      "updatedAt": "2026-02-11T04:41:07.756Z",
+      "updatedAt": "2026-02-11T04:53:22.735Z",
       "error": "Reuters: could not extract a story URL from JSON-LD",
-      "runId": "reuters1_2026-02-11T04-41-05-644Z",
+      "runId": "reuters1_2026-02-11T04-53-20-580Z",
       "since": null,
       "item": null
     }
