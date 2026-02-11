@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-11T05:09:53.504Z",
+  "generatedAt": "2026-02-11T05:36:45.924Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-11T05:09:56.494Z",
+      "updatedAt": "2026-02-11T05:36:49.065Z",
       "error": null,
-      "runId": "abc_2026-02-11T05-09-53-608Z",
+      "runId": "abc_2026-02-11T05-36-46-031Z",
       "since": "2026-02-11T04:05:00.798Z",
       "item": {
         "title": "Person detained for questioning in Nancy Guthrie abduction: Official",
@@ -17,22 +17,22 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-11T05:09:58.955Z",
+      "updatedAt": "2026-02-11T05:36:51.330Z",
       "error": null,
-      "runId": "cbs_2026-02-11T05-09-56-633Z",
-      "since": "2026-02-11T04:40:51.113Z",
+      "runId": "cbs_2026-02-11T05-36-49-207Z",
+      "since": "2026-02-11T05:36:45.924Z",
       "item": {
-        "title": "Grand jury declines criminal charges against 6 Democrats, sources say",
-        "url": "https://www.cbsnews.com/news/grand-jury-declines-charges-against-6-democrats/",
-        "imgUrl": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/01/15/af375515-bc47-4252-af56-ca17c6a94bfe/thumbnail/1280x720/a89298a969d9b84d418f47453f95118c/gettyimages-2252049693.jpg",
+        "title": "Person of interest in Nancy Guthrie's disappearance detained in Arizona",
+        "url": "https://www.cbsnews.com/live-updates/nancy-guthrie-disappearance-swat-team-ransom/",
+        "imgUrl": null,
         "slotKey": "4d6f70f0b663"
       }
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-02-11T05:10:01.184Z",
+      "updatedAt": "2026-02-11T05:36:53.647Z",
       "error": null,
-      "runId": "usat1_2026-02-11T05-09-59-082Z",
+      "runId": "usat1_2026-02-11T05-36-51-447Z",
       "since": "2026-02-11T04:40:51.113Z",
       "item": {
         "title": "Nancy Guthrie live updates: Person detained after FBI released photos",
@@ -45,30 +45,35 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-11T05:10:04.761Z",
+      "updatedAt": "2026-02-11T05:36:57.138Z",
       "error": null,
-      "runId": "nbc_2026-02-11T05-10-01-349Z",
+      "runId": "nbc_2026-02-11T05-36-53-857Z",
       "since": "2026-02-11T04:05:00.798Z",
       "item": {
-        "title": "Man detained for questioning in Nancy Guthrie case",
+        "title": "LIVENancy Guthrie",
         "url": "https://www.nbcnews.com/news/us-news/live-blog/live-updates-savannah-guthrie-mother-nancy-missing-search-rcna258281",
         "imgUrl": null,
         "slotKey": "579270cafa55"
       }
     },
     "cnn1": {
-      "ok": false,
-      "updatedAt": "2026-02-11T05:10:08.846Z",
-      "error": "CNN: headline not found",
-      "runId": "cnn1_2026-02-11T05-10-04-888Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-02-11T05:37:00.948Z",
+      "error": null,
+      "runId": "cnn1_2026-02-11T05-36-57-286Z",
+      "since": "2026-02-11T05:36:45.924Z",
+      "item": {
+        "title": "Person detained for questioning in Nancy Guthrie case, official says",
+        "url": "https://www.cnn.com/us/live-news/nancy-guthrie-savannah-missing-mom-02-10-26",
+        "imgUrl": null,
+        "slotKey": "e75971db9693"
+      }
     },
     "reuters1": {
       "ok": false,
-      "updatedAt": "2026-02-11T05:10:31.119Z",
-      "error": "Reuters: could not extract a story URL from JSON-LD",
-      "runId": "reuters1_2026-02-11T05-10-09-006Z",
+      "updatedAt": "2026-02-11T05:37:02.972Z",
+      "error": "Reuters: JSON-LD ItemList not found",
+      "runId": "reuters1_2026-02-11T05-37-01-101Z",
       "since": null,
       "item": null
     }
