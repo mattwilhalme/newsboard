@@ -81,7 +81,7 @@ function ensureCacheShape(cache) {
   const c = cache && typeof cache === "object" ? cache : {};
   if (!c.sources || typeof c.sources !== "object") c.sources = {};
 
-  if (!c.sources.abc1) c.sources.abc1 = baseSource("abc1", "ABC News", "https://abcnews.go.com/", "hero");
+  if (!c.sources.abc1) c.sources.abc1 = baseSource("abc1", "ABC News", "https://abcnews.com/", "hero");
   if (!c.sources.cbs1) c.sources.cbs1 = baseSource("cbs1", "CBS News", "https://www.cbsnews.com/", "hero");
   if (!c.sources.usat1) c.sources.usat1 = baseSource("usat1", "USA Today", "https://www.usatoday.com/", "hero");
   if (!c.sources.nbc1) c.sources.nbc1 = baseSource("nbc1", "NBC News", "https://www.nbcnews.com/", "hero");
@@ -140,7 +140,7 @@ async function scrapeABCHero() {
   return await withBrowser(async (page) => {
     const runId = `abc_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://abcnews.go.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.goto("https://abcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
@@ -152,7 +152,7 @@ async function scrapeABCHero() {
       }
       function abs(h) {
         try {
-          return new URL(h, "https://abcnews.go.com").toString();
+          return new URL(h, "https://abcnews.com").toString();
         } catch {
           return null;
         }
