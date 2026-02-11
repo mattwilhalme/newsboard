@@ -237,7 +237,7 @@ async function run() {
       reuters1: { entries: [] },
     },
   });
-
+  
   history.generatedAt = generatedAt;
 
   upsertHistory(history, "abc1", generatedAt, abc1?.ok ? abc1.item : null);
