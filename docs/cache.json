@@ -5,8 +5,8 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-12T00:44:16.640Z",
-      "updated_at": "2026-02-12T00:44:19.925Z",
+      "created_at": "2026-02-12T01:45:19.960Z",
+      "updated_at": "2026-02-12T01:45:23.679Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -16,17 +16,17 @@
         "slotKey": "5be6806db8a5"
       },
       "last": {
-        "runId": "abc_2026-02-12T00-44-16-867Z",
+        "runId": "abc_2026-02-12T01-45-20-651Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-12T00:44:19.925Z"
+        "fetchedAt": "2026-02-12T01:45:23.679Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "abc_2026-02-12T00-44-16-867Z",
-          "html": "/archive/abc_2026-02-12T00-44-16-867Z.html",
-          "json": "/archive/abc_2026-02-12T00-44-16-867Z.json"
+          "runId": "abc_2026-02-12T01-45-20-651Z",
+          "html": "/archive/abc_2026-02-12T01-45-20-651Z.html",
+          "json": "/archive/abc_2026-02-12T01-45-20-651Z.json"
         }
       ]
     },
@@ -35,28 +35,28 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-12T00:44:16.640Z",
-      "updated_at": "2026-02-12T00:44:22.434Z",
+      "created_at": "2026-02-12T01:45:19.960Z",
+      "updated_at": "2026-02-12T01:45:26.406Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Bondi faces heated questions on handling of Epstein files at House hearing",
-        "url": "https://www.cbsnews.com/live-updates/pam-bondi-hearing-epstein-files-justice-department-congress/",
+        "title": "Investigators in Guthrie search get over 4,000 calls to tip line in 24 hours",
+        "url": "https://www.cbsnews.com/live-updates/nancy-guthrie-disappearance-swat-team-ransom/",
         "imgUrl": null,
         "slotKey": "4d6f70f0b663"
       },
       "last": {
-        "runId": "cbs_2026-02-12T00-44-20-055Z",
+        "runId": "cbs_2026-02-12T01-45-23-808Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-12T00:44:22.434Z"
+        "fetchedAt": "2026-02-12T01:45:26.406Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "cbs_2026-02-12T00-44-20-055Z",
-          "html": "/archive/cbs_2026-02-12T00-44-20-055Z.html",
-          "json": "/archive/cbs_2026-02-12T00-44-20-055Z.json"
+          "runId": "cbs_2026-02-12T01-45-23-808Z",
+          "html": "/archive/cbs_2026-02-12T01-45-23-808Z.html",
+          "json": "/archive/cbs_2026-02-12T01-45-23-808Z.json"
         }
       ]
     },
@@ -65,8 +65,8 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-02-12T00:44:16.640Z",
-      "updated_at": "2026-02-12T00:44:24.799Z",
+      "created_at": "2026-02-12T01:45:19.960Z",
+      "updated_at": "2026-02-12T01:45:28.519Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -78,17 +78,17 @@
         "slotKey": "2f4f5e88af94"
       },
       "last": {
-        "runId": "usat1_2026-02-12T00-44-22-548Z",
+        "runId": "usat1_2026-02-12T01-45-26-521Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-12T00:44:24.799Z"
+        "fetchedAt": "2026-02-12T01:45:28.519Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "usat1_2026-02-12T00-44-22-548Z",
-          "html": "/archive/usat1_2026-02-12T00-44-22-548Z.html",
-          "json": "/archive/usat1_2026-02-12T00-44-22-548Z.json"
+          "runId": "usat1_2026-02-12T01-45-26-521Z",
+          "html": "/archive/usat1_2026-02-12T01-45-26-521Z.html",
+          "json": "/archive/usat1_2026-02-12T01-45-26-521Z.json"
         }
       ]
     },
@@ -97,28 +97,23 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-12T00:44:16.640Z",
-      "updated_at": "2026-02-12T00:44:28.363Z",
-      "ok": true,
-      "stale": false,
-      "item": {
-        "title": "LIVENancy Guthrie",
-        "url": "https://www.nbcnews.com/news/us-news/live-blog/live-updates-savannah-guthrie-mother-nancy-search-rcna258489",
-        "imgUrl": null,
-        "slotKey": "579270cafa55"
-      },
+      "created_at": "2026-02-12T01:45:19.960Z",
+      "updated_at": "2026-02-12T01:45:32.556Z",
+      "ok": false,
+      "stale": true,
+      "item": null,
       "last": {
-        "runId": "nbc_2026-02-12T00-44-24-954Z",
-        "ok": true,
-        "error": null,
-        "fetchedAt": "2026-02-12T00:44:28.363Z"
+        "runId": "nbc_2026-02-12T01-45-28-659Z",
+        "ok": false,
+        "error": "NBC: top story not found",
+        "fetchedAt": "2026-02-12T01:45:32.556Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "nbc_2026-02-12T00-44-24-954Z",
-          "html": "/archive/nbc_2026-02-12T00-44-24-954Z.html",
-          "json": "/archive/nbc_2026-02-12T00-44-24-954Z.json"
+          "runId": "nbc_2026-02-12T01-45-28-659Z",
+          "html": "/archive/nbc_2026-02-12T01-45-28-659Z.html",
+          "json": "/archive/nbc_2026-02-12T01-45-28-659Z.json"
         }
       ]
     },
@@ -127,8 +122,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-02-12T00:44:16.640Z",
-      "updated_at": "2026-02-12T00:44:32.051Z",
+      "created_at": "2026-02-12T01:45:19.960Z",
+      "updated_at": "2026-02-12T01:45:36.348Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -138,17 +133,17 @@
         "slotKey": "e75971db9693"
       },
       "last": {
-        "runId": "cnn1_2026-02-12T00-44-28-505Z",
+        "runId": "cnn1_2026-02-12T01-45-32-680Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-12T00:44:32.051Z"
+        "fetchedAt": "2026-02-12T01:45:36.348Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-02-12T00-44-28-505Z",
-          "html": "/archive/cnn1_2026-02-12T00-44-28-505Z.html",
-          "json": "/archive/cnn1_2026-02-12T00-44-28-505Z.json"
+          "runId": "cnn1_2026-02-12T01-45-32-680Z",
+          "html": "/archive/cnn1_2026-02-12T01-45-32-680Z.html",
+          "json": "/archive/cnn1_2026-02-12T01-45-32-680Z.json"
         }
       ]
     },
@@ -157,8 +152,8 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-02-12T00:44:16.640Z",
-      "updated_at": "2026-02-12T00:44:34.421Z",
+      "created_at": "2026-02-12T01:45:19.960Z",
+      "updated_at": "2026-02-12T01:45:38.680Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -168,17 +163,17 @@
         "slotKey": "4c3ef987876a"
       },
       "last": {
-        "runId": "reuters1_2026-02-12T00-44-32-181Z",
+        "runId": "reuters1_2026-02-12T01-45-36-489Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-12T00:44:34.421Z"
+        "fetchedAt": "2026-02-12T01:45:38.680Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "reuters1_2026-02-12T00-44-32-181Z",
-          "html": "/archive/reuters1_2026-02-12T00-44-32-181Z.html",
-          "json": "/archive/reuters1_2026-02-12T00-44-32-181Z.json"
+          "runId": "reuters1_2026-02-12T01-45-36-489Z",
+          "html": "/archive/reuters1_2026-02-12T01-45-36-489Z.html",
+          "json": "/archive/reuters1_2026-02-12T01-45-36-489Z.json"
         }
       ]
     },
@@ -187,8 +182,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-12T00:44:16.640Z",
-      "updated_at": "2026-02-12T00:44:37.480Z",
+      "created_at": "2026-02-12T01:45:19.960Z",
+      "updated_at": "2026-02-12T01:45:41.839Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -198,17 +193,17 @@
         "slotKey": "083847305a8b"
       },
       "last": {
-        "runId": "ap1_2026-02-12T00-44-34-573Z",
+        "runId": "ap1_2026-02-12T01-45-38-838Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-12T00:44:37.480Z"
+        "fetchedAt": "2026-02-12T01:45:41.839Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "ap1_2026-02-12T00-44-34-573Z",
-          "html": "/archive/ap1_2026-02-12T00-44-34-573Z.html",
-          "json": "/archive/ap1_2026-02-12T00-44-34-573Z.json"
+          "runId": "ap1_2026-02-12T01-45-38-838Z",
+          "html": "/archive/ap1_2026-02-12T01-45-38-838Z.html",
+          "json": "/archive/ap1_2026-02-12T01-45-38-838Z.json"
         }
       ]
     }
