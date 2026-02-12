@@ -88,6 +88,7 @@ function ensureCacheShape(cache) {
   if (!c.sources.cnn1) c.sources.cnn1 = baseSource("cnn1", "CNN", "https://www.cnn.com/", "hero");
   if (!c.sources.reuters1) c.sources.reuters1 = baseSource("reuters1", "The Guardian", "https://www.theguardian.com/", "hero");
   if (!c.sources.ap1) c.sources.ap1 = baseSource("ap1", "Associated Press", "https://apnews.com/", "hero");
+  if (!c.sources.latimes1) c.sources.latimes1 = baseSource("latimes1", "Los Angeles Times", "https://www.latimes.com/", "hero");
 
   return c;
 }
@@ -308,34 +309,28 @@ async function scrapeNBCHero() {
 
       function scoreAnchor(a, title, url) {
         let score = 0;
-
-        if (a.closest("main")) score += 20;
-        if (a.closest(".headline-item-container, .multistoryline__headline, [data-testid*='headline'], [data-testid*='storyline']")) score += 65;
-        if (a.closest("h1,h2,h3")) score += 20;
-        if (a.getAttribute("tabindex") === "-1") score += 10;
-
-        if (/\/live-blog\//i.test(url)) score += 45;
+        if (a.closest(".headline-item-container, .headline-large, .multistoryline__headline")) score += 100;
+        if (a.closest("h1,h2,h3")) score += 25;
+        if (a.closest("main")) score += 30;
+        if (a.getAttribute("tabindex") === "-1") score += 12;
+        if (/\/live-blog\//i.test(url)) score += 60;
         if (/-rcna\d+/i.test(url)) score += 20;
-        if (/\/(us-news|world|politics|news|sports|business|health|science)\//i.test(url)) score += 25;
-
-        if (title.length >= 25 && title.length <= 220) score += 15;
-        else if (title.length >= 12) score += 5;
-
-        if (inBlockedChrome(a)) score -= 120;
-        if (/^\s*(Olympics|Politics|U\.?S\.?\s*News|World|Health|Sports|Local|Business|Science)\s*$/i.test(title)) score -= 100;
+        if (/\/(us-news|world|politics|news|sports|business|health|science)\//i.test(url)) score += 20;
+        if (title.length >= 20 && title.length <= 220) score += 12;
+        if (inBlockedChrome(a)) score -= 150;
+        if (/^\s*(Olympics|Politics|U\.?S\.?\s*News|World|Health|Sports|Local|Business|Science)\s*$/i.test(title)) score -= 120;
         if (/watch live|newsletter/i.test(title)) score -= 30;
-
         return score;
       }
 
       const seen = new Set();
       const anchors = [];
       const selectors = [
-        "main .headline-item-container .headline-large h2 a[href]",
-        "main .multistoryline__headline a[href]",
-        "main [data-testid*='headline'] a[href]",
-        "main a[href*='/live-blog/'][href]",
-        "main h1 a[href], main h2 a[href], main h3 a[href]",
+        "h2.multistoryline__headline a[href]",
+        ".headline-item-container .headline-large h2 a[href]",
+        "[data-testid*='storyline'] h2 a[href]",
+        "a[href*='/live-blog/'][href]",
+        "h1 a[href], h2 a[href], h3 a[href]",
         "main a[href]",
       ];
 
@@ -355,7 +350,7 @@ async function scrapeNBCHero() {
           if (!url || !title || !isStoryUrl(url)) return null;
           return { title, url, score: scoreAnchor(a, title, url) };
         })
-        .filter((x) => x && x.score > 0)
+        .filter((x) => x && x.score > -10)
         .sort((a, b) => b.score - a.score);
 
       if (ranked.length) {
@@ -728,38 +723,59 @@ async function scrapeAPHero() {
         }
       }
 
-      const candidates = [
-        '[data-key="main-story"] a[href]',
-        "main h1 a[href]",
-        "main h2 a[href]",
-        "article h1 a[href]",
-        "article h2 a[href]",
-        'a[data-card-index="0"][href]',
+      function isStoryUrl(url) {
+        return Boolean(url && /^https?:\/\/(www\.)?apnews\.com\/article\//i.test(url));
+      }
+
+      function scoreAnchor(a, title, url) {
+        let score = 0;
+        if (a.closest(".PageListStandardE-leadPromo-info")) score += 90;
+        if (a.closest(".PagePromo-title, h1, h2, h3")) score += 40;
+        if (a.querySelector('span[data-tb-shadow-region-title="0"]')) score += 35;
+        if (a.querySelector("span.PagePromoContentIcons-text")) score += 20;
+        if (/\/article\//i.test(url)) score += 15;
+        if (title.length >= 24 && title.length <= 240) score += 12;
+        if (a.closest(".PagePromo-description, .Trending")) score -= 45;
+        return score;
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        '.PageListStandardE-leadPromo-info h3.PagePromo-title a.Link[href]',
+        '.PageListStandardE-leadPromo-info .PagePromo-title a.Link[href]',
+        'a.Link[href] span.PagePromoContentIcons-text[data-tb-shadow-region-title="0"]',
+        ".PagePromo-title a.Link[href]",
+        "main a.Link[href]",
       ];
 
-      for (const sel of candidates) {
-        const anchors = Array.from(document.querySelectorAll(sel));
-        for (const a of anchors) {
-          const href = a.getAttribute("href") || "";
-          const title =
-            clean(a.getAttribute("aria-label") || "") ||
-            clean(a.querySelector("h1, h2, h3, span")?.textContent || "") ||
-            clean(a.textContent || "");
-          const url = href ? abs(href) : null;
-          if (!title || title.length < 20) continue;
-          if (!url) continue;
-          return { ok: true, title, url };
+      for (const sel of selectors) {
+        for (const el of Array.from(document.querySelectorAll(sel))) {
+          const a = el.tagName === "A" ? el : el.closest("a[href]");
+          if (!a || seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
         }
       }
 
-      const anyLinks = Array.from(document.querySelectorAll('main a[href^="/article/"], main a[href*="/article/"]'));
-      for (const a of anyLinks) {
-        const href = a.getAttribute("href") || "";
-        const title = clean(a.getAttribute("aria-label") || a.textContent || "");
-        const url = href ? abs(href) : null;
-        if (!title || title.length < 20) continue;
-        if (!url) continue;
-        return { ok: true, title, url };
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title =
+            clean(a.querySelector('span[data-tb-shadow-region-title="0"]')?.textContent || "") ||
+            clean(a.querySelector("span.PagePromoContentIcons-text")?.textContent || "") ||
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(a.textContent || "");
+          if (!url || !title || !isStoryUrl(url)) return null;
+          return { title, url, score: scoreAnchor(a, title, url) };
+        })
+        .filter((x) => x && x.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (ranked.length) {
+        const top = ranked[0];
+        return { ok: true, title: top.title, url: top.url };
       }
 
       return { ok: false, error: "AP: top story not found" };
@@ -790,12 +806,111 @@ async function scrapeAPHero() {
 }
 
 /* ---------------------------
+   Los Angeles Times (single top item)
+--------------------------- */
+async function scrapeLATimesHero() {
+  return await withBrowser(async (page) => {
+    const runId = `latimes1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.latimes.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(1800);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function abs(h) {
+        try {
+          return new URL(h, "https://www.latimes.com").toString();
+        } catch {
+          return null;
+        }
+      }
+      function isStoryUrl(url) {
+        if (!url) return false;
+        if (!/^https?:\/\/(www\.)?latimes\.com\//i.test(url)) return false;
+        if (!/\/story\//i.test(url)) return false;
+        if (/\/b2b\//i.test(url)) return false;
+        return true;
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        "main h1.promo-title a.link[href*='/story/']",
+        "main h1 a.link[href*='/story/']",
+        "main .promo-title a.link[href*='/story/']",
+        "main a.link[href*='/story/']",
+        "h1.promo-title a.link[href*='/story/']",
+      ];
+
+      for (const sel of selectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+          if (!url || !title || !isStoryUrl(url)) return null;
+          let score = 0;
+          if (a.closest("h1")) score += 80;
+          if (a.closest(".promo-title")) score += 40;
+          if (a.closest("main")) score += 30;
+          if (title.length >= 24 && title.length <= 240) score += 10;
+          if (a.closest("header,nav,footer,[data-element='page-header'],[data-element='page-subheader']")) score -= 120;
+          return { title, url, score };
+        })
+        .filter((x) => x && x.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (ranked.length) {
+        const top = ranked[0];
+        return { ok: true, title: top.title, url: top.url };
+      }
+
+      return { ok: false, error: "LA Times: top story not found" };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title || "Top story"),
+          url: normalizeUrl(hero.url),
+          imgUrl: null,
+          slotKey: sha1("latimes1|top").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "latimes1",
+      fetchedAt: nowISO(),
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "LA Times not found"),
+      item,
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+  });
+}
+
+/* ---------------------------
    Refresh / API
 --------------------------- */
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1"];
 
   for (const sid of runList) {
     let res;
@@ -807,6 +922,7 @@ async function refreshSources({ id = "" } = {}) {
     else if (sid === "cnn1") res = await scrapeCNNHero();
     else if (sid === "reuters1") res = await scrapeReutersHero();
     else if (sid === "ap1") res = await scrapeAPHero();
+    else if (sid === "latimes1") res = await scrapeLATimesHero();
     else throw new Error(`Unknown source id: ${sid}`);
 
     cache.sources[sid] = {
@@ -897,5 +1013,6 @@ export {
   scrapeCNNHero,
   scrapeReutersHero,
   scrapeAPHero,
+  scrapeLATimesHero,
   refreshSources,
 };
