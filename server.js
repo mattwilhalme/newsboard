@@ -414,13 +414,13 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
-   Reuters (single top item) - JSON-LD ItemList
+   Associated Press (single top item) - main headline
 --------------------------- */
-async function scrapeReutersHero() {
+async function scrapeAPHero() {
   return await withBrowser(async (page) => {
-    const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    const runId = `ap1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.reuters.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.goto("https://apnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
@@ -430,48 +430,50 @@ async function scrapeReutersHero() {
           .replace(/\s+/g, " ")
           .trim();
       }
-
-      const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
-      const parsed = [];
-
-      for (const s of scripts) {
+      function abs(h) {
         try {
-          const txt = s.textContent || "";
-          if (!txt.trim()) continue;
-          parsed.push(JSON.parse(txt));
-        } catch {}
-      }
-
-      // Find ItemList under CollectionPage.mainEntity OR direct ItemList
-      let itemList = null;
-
-      for (const obj of parsed) {
-        if (!obj) continue;
-
-        if (obj["@type"] === "CollectionPage" && obj.mainEntity && obj.mainEntity["@type"] === "ItemList") {
-          itemList = obj.mainEntity;
-          break;
-        }
-
-        if (obj["@type"] === "ItemList" && Array.isArray(obj.itemListElement)) {
-          itemList = obj;
-          break;
+          return new URL(h, "https://apnews.com").toString();
+        } catch {
+          return null;
         }
       }
 
-      if (!itemList || !Array.isArray(itemList.itemListElement)) {
-        return { ok: false, error: "Reuters: JSON-LD ItemList not found" };
+      // AP: Look for main headline card or link
+      const mainCard = document.querySelector('[data-testid="headline-card"]') ||
+                     document.querySelector('.Card') ||
+                     document.querySelector('article') ||
+                     document.querySelector('a[href*="/article/"]');
+
+      if (mainCard) {
+        const a = mainCard.tagName === 'A' ? mainCard : mainCard.querySelector('a[href]');
+        const title = clean(mainCard.querySelector('h1, h2, h3, [data-testid="headline"]')?.textContent || 
+                           a?.getAttribute('aria-label') || 
+                           a?.textContent || '');
+        const href = a?.getAttribute("href") || "";
+        const url = href ? abs(href) : null;
+        
+        if (title && url && title.length > 10) {
+          return { ok: true, title, url };
+        }
       }
 
-      // Get first valid ListItem with a url
-      const first = itemList.itemListElement.find((x) => x && typeof x === "object" && typeof x.url === "string" && x.url.length > 10);
-      if (!first) return { ok: false, error: "Reuters: could not extract a story URL from JSON-LD" };
+      // Fallback: look for any headline links
+      const headlines = Array.from(document.querySelectorAll('a[href*="/article/"]'))
+        .map(a => ({
+          a,
+          title: clean(a.querySelector('h1, h2, h3')?.textContent || a.textContent || ''),
+          href: a.getAttribute("href") || ""
+        }))
+        .filter(item => item.title.length > 15 && item.href)
+        .slice(0, 5);
 
-      return {
-        ok: true,
-        title: clean(first.name || first.headline || "") || null,
-        url: first.url,
-      };
+      if (headlines.length > 0) {
+        const first = headlines[0];
+        const url = first.href ? abs(first.href) : null;
+        return { ok: true, title: first.title, url };
+      }
+
+      return { ok: false, error: "AP: no headline found" };
     });
 
     const item = hero?.ok
@@ -479,28 +481,17 @@ async function scrapeReutersHero() {
           title: cleanText(hero.title || "Top story"),
           url: normalizeUrl(hero.url),
           imgUrl: null,
-          slotKey: sha1("reuters1|top").slice(0, 12),
+          slotKey: sha1("ap1|top").slice(0, 12),
         }
       : null;
 
-    // Debug signals (useful when anti-bot pages strip JSON-LD)
-    const debug = {
-      title: await page.title().catch(() => null),
-      ldCount: await page
-        .evaluate(() => (document.querySelectorAll('script[type="application/ld+json"]').length || 0))
-        .catch(() => null),
-      hasConsent: await page.evaluate(() => /consent|privacy|cookie/i.test(document.body?.innerText || "")).catch(() => null),
-      hasChallenge: await page.evaluate(() => /captcha|robot|challenge|cloudflare|akamai|datadome/i.test(document.documentElement?.innerHTML || "")).catch(() => null),
-    };
-
     const snapshot = {
-      id: "reuters1",
+      id: "ap1",
       fetchedAt: nowISO(),
       runId,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "Reuters not found"),
+      error: item ? null : (hero?.error || "AP not found"),
       item,
-      debug,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
@@ -657,74 +648,12 @@ async function scrapeUSATHero() {
 }
 
 /* ---------------------------
-   AP (single top item) - lead promo
---------------------------- */
-async function scrapeAPHero() {
-  return await withBrowser(async (page) => {
-    const runId = `ap1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
-
-    await page.goto("https://apnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1800);
-
-    const hero = await page.evaluate(() => {
-      function clean(s) {
-        return String(s || "")
-          .replace(/\u00a0/g, " ")
-          .replace(/\s+/g, " ")
-          .trim();
-      }
-      function abs(h) {
-        try {
-          return new URL(h, "https://apnews.com").toString();
-        } catch {
-          return null;
-        }
-      }
-
-      // Prefer the lead promo block used on the homepage
-      const lead = document.querySelector(".PageListStandardE-leadPromo-info");
-      if (lead) {
-        const a = lead.querySelector("h3.PagePromo-title a[href]");
-        const title = clean(a?.querySelector(".PagePromoContentIcons-text")?.textContent || a?.textContent || "");
-        const url = a ? abs(a.getAttribute("href") || "") : null;
-        if (title && url) return { ok: true, title, url };
-      }
-
-      // Fallback: first title link in main content (avoid nav + descriptions)
-      const main = document.querySelector("main") || document.body;
-      const links = Array.from(main.querySelectorAll("h3.PagePromo-title a[href]"));
-      for (const a of links) {
-        const title = clean(a.querySelector(".PagePromoContentIcons-text")?.textContent || a.textContent || "");
-        const url = abs(a.getAttribute("href") || "");
-        if (title && url) return { ok: true, title, url };
-      }
-
-      return { ok: false, error: "AP: headline not found" };
-    });
-
-    const item = hero?.ok
-      ? {
-          title: cleanText(hero.title),
-          url: normalizeUrl(hero.url),
-          imgUrl: null,
-          slotKey: sha1("ap1|top").slice(0, 12),
-        }
-      : null;
-
-    const snapshot = { id: "ap1", fetchedAt: nowISO(), runId, ok: Boolean(item), error: item ? null : (hero?.error || "AP not found"), item };
-    const archive = await archiveRun(page, runId, snapshot);
-
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  });
-}
-
-/* ---------------------------
    Refresh / API
 --------------------------- */
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "ap1"];
 
   for (const sid of runList) {
     let res;
@@ -734,7 +663,6 @@ async function refreshSources({ id = "" } = {}) {
     else if (sid === "usat1") res = await scrapeUSATHero();
     else if (sid === "nbc1") res = await scrapeNBCHero();
     else if (sid === "cnn1") res = await scrapeCNNHero();
-    else if (sid === "reuters1") res = await scrapeReutersHero();
     else if (sid === "ap1") res = await scrapeAPHero();
     else throw new Error(`Unknown source id: ${sid}`);
 
@@ -824,7 +752,6 @@ export {
   scrapeUSATHero,
   scrapeNBCHero,
   scrapeCNNHero,
-  scrapeReutersHero,
   scrapeAPHero,
   refreshSources,
 };
