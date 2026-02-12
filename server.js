@@ -644,6 +644,92 @@ async function scrapeUSATHero() {
 }
 
 /* ---------------------------
+   Associated Press (single top item)
+--------------------------- */
+async function scrapeAPHero() {
+  return await withBrowser(async (page) => {
+    const runId = `ap1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://apnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(1800);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function abs(h) {
+        try {
+          return new URL(h, "https://apnews.com").toString();
+        } catch {
+          return null;
+        }
+      }
+
+      const candidates = [
+        '[data-key="main-story"] a[href]',
+        "main h1 a[href]",
+        "main h2 a[href]",
+        "article h1 a[href]",
+        "article h2 a[href]",
+        'a[data-card-index="0"][href]',
+      ];
+
+      for (const sel of candidates) {
+        const anchors = Array.from(document.querySelectorAll(sel));
+        for (const a of anchors) {
+          const href = a.getAttribute("href") || "";
+          const title =
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(a.querySelector("h1, h2, h3, span")?.textContent || "") ||
+            clean(a.textContent || "");
+          const url = href ? abs(href) : null;
+          if (!title || title.length < 20) continue;
+          if (!url) continue;
+          return { ok: true, title, url };
+        }
+      }
+
+      const anyLinks = Array.from(document.querySelectorAll('main a[href^="/article/"], main a[href*="/article/"]'));
+      for (const a of anyLinks) {
+        const href = a.getAttribute("href") || "";
+        const title = clean(a.getAttribute("aria-label") || a.textContent || "");
+        const url = href ? abs(href) : null;
+        if (!title || title.length < 20) continue;
+        if (!url) continue;
+        return { ok: true, title, url };
+      }
+
+      return { ok: false, error: "AP: top story not found" };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title || "Top story"),
+          url: normalizeUrl(hero.url),
+          imgUrl: null,
+          slotKey: sha1("ap1|top").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "ap1",
+      fetchedAt: nowISO(),
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "AP not found"),
+      item,
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+  });
+}
+
+/* ---------------------------
    Refresh / API
 --------------------------- */
 async function refreshSources({ id = "" } = {}) {
@@ -750,5 +836,6 @@ export {
   scrapeNBCHero,
   scrapeCNNHero,
   scrapeReutersHero,
+  scrapeAPHero,
   refreshSources,
 };
