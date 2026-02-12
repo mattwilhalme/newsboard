@@ -9,6 +9,8 @@ import {
   scrapeNBCHero,
   scrapeCNNHero,
   scrapeReutersHero,
+  scrapeAPHero,
+  scrapeLATimesHero,
 } from "../server.js";
 
 const DATA_DIR = path.join("docs", "data");
@@ -21,6 +23,8 @@ const SOURCES = {
   nbc1: { id: "nbc1", name: "NBC News", homeUrl: "https://www.nbcnews.com/" },
   cnn1: { id: "cnn1", name: "CNN", homeUrl: "https://www.cnn.com/" },
   reuters1: { id: "reuters1", name: "The Guardian", homeUrl: "https://www.theguardian.com/" },
+  ap1: { id: "ap1", name: "Associated Press", homeUrl: "https://apnews.com/" },
+  latimes1: { id: "latimes1", name: "Los Angeles Times", homeUrl: "https://www.latimes.com/" },
 };
 
 function getSupabaseAdmin() {
@@ -209,6 +213,8 @@ async function run() {
   const nbc1 = await safeScrape("NBC", scrapeNBCHero, generatedAt);
   const cnn1 = await safeScrape("CNN", scrapeCNNHero, generatedAt);
   const reuters1 = await safeScrape("The Guardian", scrapeReutersHero, generatedAt);
+  const ap1 = await safeScrape("Associated Press", scrapeAPHero, generatedAt);
+  const latimes1 = await safeScrape("Los Angeles Times", scrapeLATimesHero, generatedAt);
 
   if (supabase) {
     try {
@@ -220,6 +226,8 @@ async function run() {
       await insertHeroRun(supabase, "nbc1", nbc1, observedAt);
       await insertHeroRun(supabase, "cnn1", cnn1, observedAt);
       await insertHeroRun(supabase, "reuters1", reuters1, observedAt);
+      await insertHeroRun(supabase, "ap1", ap1, observedAt);
+      await insertHeroRun(supabase, "latimes1", latimes1, observedAt);
     } catch (e) {
       console.error("❌ Supabase insert failed", e);
     }
@@ -235,6 +243,8 @@ async function run() {
       nbc1: { entries: [] },
       cnn1: { entries: [] },
       reuters1: { entries: [] },
+      ap1: { entries: [] },
+      latimes1: { entries: [] },
     },
   });
   
@@ -246,6 +256,8 @@ async function run() {
   upsertHistory(history, "nbc1", generatedAt, nbc1?.ok ? nbc1.item : null);
   upsertHistory(history, "cnn1", generatedAt, cnn1?.ok ? cnn1.item : null);
   upsertHistory(history, "reuters1", generatedAt, reuters1?.ok ? reuters1.item : null);
+  upsertHistory(history, "ap1", generatedAt, ap1?.ok ? ap1.item : null);
+  upsertHistory(history, "latimes1", generatedAt, latimes1?.ok ? latimes1.item : null);
 
   writeJSON("history.json", history);
 
@@ -255,9 +267,11 @@ async function run() {
   const nbcSince = currentSinceFromHistory(history, "nbc1", nbc1?.item?.url || null);
   const cnnSince = currentSinceFromHistory(history, "cnn1", cnn1?.item?.url || null);
   const reutersSince = currentSinceFromHistory(history, "reuters1", reuters1?.item?.url || null);
+  const apSince = currentSinceFromHistory(history, "ap1", ap1?.item?.url || null);
+  const latimesSince = currentSinceFromHistory(history, "latimes1", latimes1?.item?.url || null);
 
   const current = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok || ap1?.ok || latimes1?.ok),
     generatedAt,
     sources: {
       abc1: {
@@ -308,13 +322,29 @@ async function run() {
         since: reutersSince,
         item: reuters1?.item || null,
       },
+      ap1: {
+        ok: Boolean(ap1?.ok),
+        updatedAt: ap1?.updatedAt || null,
+        error: ap1?.error || null,
+        runId: ap1?.runId || null,
+        since: apSince,
+        item: ap1?.item || null,
+      },
+      latimes1: {
+        ok: Boolean(latimes1?.ok),
+        updatedAt: latimes1?.updatedAt || null,
+        error: latimes1?.error || null,
+        runId: latimes1?.runId || null,
+        since: latimesSince,
+        item: latimes1?.item || null,
+      },
     },
   };
 
   writeJSON("current.json", current);
 
   const unified = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok || ap1?.ok || latimes1?.ok),
     generatedAt,
     items: [
       abc1?.item ? { source: "abc1", updatedAt: abc1.updatedAt, since: abcSince, ...abc1.item } : null,
@@ -324,6 +354,10 @@ async function run() {
       cnn1?.item ? { source: "cnn1", updatedAt: cnn1.updatedAt, since: cnnSince, ...cnn1.item } : null,
       reuters1?.item
         ? { source: "reuters1", updatedAt: reuters1.updatedAt, since: reutersSince, ...reuters1.item }
+        : null,
+      ap1?.item ? { source: "ap1", updatedAt: ap1.updatedAt, since: apSince, ...ap1.item } : null,
+      latimes1?.item
+        ? { source: "latimes1", updatedAt: latimes1.updatedAt, since: latimesSince, ...latimes1.item }
         : null,
     ].filter(Boolean),
   };

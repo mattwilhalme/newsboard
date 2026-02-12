@@ -344,7 +344,7 @@
     const SUPABASE_CONFIG_URL = "./supabase.json";
 
     // Expect exactly these sources; render placeholders when missing
-    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1"];
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1"];
 
     // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
@@ -444,6 +444,8 @@
       if (s === "nbc" || s === "nbc1") return "NBC News";
       if (s === "cnn" || s === "cnn1") return "CNN";
       if (s === "reuters" || s === "reuters1" || s === "guardian" || s === "guardian1") return "The Guardian";
+      if (s === "ap" || s === "ap1" || s === "associatedpress") return "Associated Press";
+      if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "Los Angeles Times";
 
       return k || "Source";
     }
