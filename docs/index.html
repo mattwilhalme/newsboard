@@ -363,6 +363,7 @@
 
     const CACHE_URL = "./cache.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
+    const SUPABASE_PROXY_URL = "/api/supabase-snapshot";
 
     // Expect exactly these sources; render placeholders when missing
     const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","npr1"];
@@ -525,6 +526,20 @@
     }
 
     async function loadFromSupabase(){
+      // Prefer same-origin proxy when available; this avoids browser CORS issues.
+      try {
+        const proxied = await fetchJSON(`${SUPABASE_PROXY_URL}?ts=${Date.now()}`);
+        if (proxied?.ok && proxied?.cacheLike) {
+          return { cacheLike: proxied.cacheLike, history: proxied.history || null };
+        }
+      } catch {
+        // Ignore and continue to optional direct browser fallback below.
+      }
+
+      // GitHub Pages is static and cannot host our proxy endpoint.
+      // Skip direct Supabase browser calls there to avoid noisy CORS failures.
+      if (isGitHubPages) return null;
+
       const supabase = await getSupabaseClient();
       if (!supabase) return null;
 
