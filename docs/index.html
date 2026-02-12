@@ -365,7 +365,7 @@
     const SUPABASE_CONFIG_URL = "./supabase.json";
 
     // Expect exactly these sources; render placeholders when missing
-    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","wsj1"];
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","npr1"];
 
     // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
@@ -463,7 +463,8 @@
       if (s === "reuters" || s === "reuters1" || s === "guardian" || s === "guardian1") return "reuters1";
       if (s === "ap" || s === "ap1" || s === "associatedpress") return "ap1";
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "latimes1";
-      if (s === "wsj" || s === "wsj1" || s === "wallstreetjournal") return "wsj1";
+      if (s === "wsj" || s === "wsj1" || s === "wallstreetjournal") return "";
+      if (s === "npr" || s === "npr1" || s === "nationalpublicradio") return "npr1";
       return s;
     }
 
@@ -496,7 +497,7 @@
       if (s === "reuters" || s === "reuters1" || s === "guardian" || s === "guardian1") return "The Guardian";
       if (s === "ap" || s === "ap1" || s === "associatedpress") return "Associated Press";
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "Los Angeles Times";
-      if (s === "wsj" || s === "wsj1" || s === "wallstreetjournal") return "Wall Street Journal";
+      if (s === "npr" || s === "npr1" || s === "nationalpublicradio") return "NPR";
 
       return k || "Source";
     }
@@ -1194,8 +1195,22 @@
 
       const ids = pickCardSourceIds(sources);
 
-      // keep your “most recent first” sort, but stable within expected ids by appending id tie-breaker
+      function cardPriority(id){
+        const src = sources?.[id] || {};
+        const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
+        const stale = Boolean(src?.isStale) || Boolean(ind?.stale2h);
+        if (stale) return 0;
+        if (ind?.changeType === "url") return 3;
+        if (ind?.changeType === "headline") return 2;
+        return 1;
+      }
+
+      // Priority: URL update > headline update > stale; then newest timestamp.
       ids.sort((a,b) => {
+        const pa = cardPriority(a);
+        const pb = cardPriority(b);
+        if (pb !== pa) return pb - pa;
+
         const ta = tsForSort(sources, a);
         const tb = tsForSort(sources, b);
         if (tb !== ta) return tb - ta;
