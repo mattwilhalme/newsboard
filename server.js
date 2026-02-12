@@ -86,7 +86,7 @@ function ensureCacheShape(cache) {
   if (!c.sources.usat1) c.sources.usat1 = baseSource("usat1", "USA Today", "https://www.usatoday.com/", "hero");
   if (!c.sources.nbc1) c.sources.nbc1 = baseSource("nbc1", "NBC News", "https://www.nbcnews.com/", "hero");
   if (!c.sources.cnn1) c.sources.cnn1 = baseSource("cnn1", "CNN", "https://www.cnn.com/", "hero");
-  if (!c.sources.reuters1) c.sources.reuters1 = baseSource("reuters1", "Reuters", "https://www.reuters.com/", "hero");
+  if (!c.sources.reuters1) c.sources.reuters1 = baseSource("reuters1", "The Guardian", "https://www.theguardian.com/", "hero");
   if (!c.sources.ap1) c.sources.ap1 = baseSource("ap1", "Associated Press", "https://apnews.com/", "hero");
 
   return c;
@@ -414,13 +414,13 @@ async function scrapeCNNHero() {
 }
 
 /* ---------------------------
-   Associated Press (single top item) - main headline
+   The Guardian (single top item) - main headline card
 --------------------------- */
-async function scrapeAPHero() {
+async function scrapeReutersHero() {
   return await withBrowser(async (page) => {
-    const runId = `ap1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://apnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.goto("https://www.theguardian.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
@@ -432,48 +432,44 @@ async function scrapeAPHero() {
       }
       function abs(h) {
         try {
-          return new URL(h, "https://apnews.com").toString();
+          return new URL(h, "https://www.theguardian.com").toString();
         } catch {
           return null;
         }
       }
 
-      // AP: Look for main headline card or link
-      const mainCard = document.querySelector('[data-testid="headline-card"]') ||
-                     document.querySelector('.Card') ||
-                     document.querySelector('article') ||
-                     document.querySelector('a[href*="/article/"]');
+      // Guardian: Look for main news cards with data-link-name containing "news | group"
+      const newsCards = Array.from(document.querySelectorAll('a[data-link-name*="news | group"][href*="/us-news/"], a[data-link-name*="news | group"][href*="/world/"], a[data-link-name*="news | group"][href*="/politics/"]'))
+        .map(a => {
+          const title = clean(a.getAttribute('aria-label') || a.querySelector('.headline-text')?.textContent || '');
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          return { a, title, url };
+        })
+        .filter(item => item.title && item.url && item.title.length > 15);
 
-      if (mainCard) {
-        const a = mainCard.tagName === 'A' ? mainCard : mainCard.querySelector('a[href]');
-        const title = clean(mainCard.querySelector('h1, h2, h3, [data-testid="headline"]')?.textContent || 
-                           a?.getAttribute('aria-label') || 
-                           a?.textContent || '');
-        const href = a?.getAttribute("href") || "";
-        const url = href ? abs(href) : null;
-        
-        if (title && url && title.length > 10) {
-          return { ok: true, title, url };
-        }
+      if (newsCards.length > 0) {
+        const first = newsCards[0];
+        return { ok: true, title: first.title, url: first.url };
       }
 
-      // Fallback: look for any headline links
-      const headlines = Array.from(document.querySelectorAll('a[href*="/article/"]'))
-        .map(a => ({
-          a,
-          title: clean(a.querySelector('h1, h2, h3')?.textContent || a.textContent || ''),
-          href: a.getAttribute("href") || ""
-        }))
-        .filter(item => item.title.length > 15 && item.href)
-        .slice(0, 5);
+      // Fallback: any card with headline-text
+      const headlineCards = Array.from(document.querySelectorAll('.headline-text'))
+        .map(span => {
+          const a = span.closest('a[href]');
+          const title = clean(span.textContent || '');
+          const href = a?.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          return { title, url };
+        })
+        .filter(item => item.title && item.url && item.title.length > 15);
 
-      if (headlines.length > 0) {
-        const first = headlines[0];
-        const url = first.href ? abs(first.href) : null;
-        return { ok: true, title: first.title, url };
+      if (headlineCards.length > 0) {
+        const first = headlineCards[0];
+        return { ok: true, title: first.title, url: first.url };
       }
 
-      return { ok: false, error: "AP: no headline found" };
+      return { ok: false, error: "Guardian: no headline found" };
     });
 
     const item = hero?.ok
@@ -481,16 +477,16 @@ async function scrapeAPHero() {
           title: cleanText(hero.title || "Top story"),
           url: normalizeUrl(hero.url),
           imgUrl: null,
-          slotKey: sha1("ap1|top").slice(0, 12),
+          slotKey: sha1("reuters1|top").slice(0, 12),
         }
       : null;
 
     const snapshot = {
-      id: "ap1",
+      id: "reuters1",
       fetchedAt: nowISO(),
       runId,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "AP not found"),
+      error: item ? null : (hero?.error || "The Guardian not found"),
       item,
     };
 
@@ -653,7 +649,7 @@ async function scrapeUSATHero() {
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "ap1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1"];
 
   for (const sid of runList) {
     let res;
@@ -663,6 +659,7 @@ async function refreshSources({ id = "" } = {}) {
     else if (sid === "usat1") res = await scrapeUSATHero();
     else if (sid === "nbc1") res = await scrapeNBCHero();
     else if (sid === "cnn1") res = await scrapeCNNHero();
+    else if (sid === "reuters1") res = await scrapeReutersHero();
     else if (sid === "ap1") res = await scrapeAPHero();
     else throw new Error(`Unknown source id: ${sid}`);
 
@@ -752,6 +749,6 @@ export {
   scrapeUSATHero,
   scrapeNBCHero,
   scrapeCNNHero,
-  scrapeAPHero,
+  scrapeReutersHero,
   refreshSources,
 };
