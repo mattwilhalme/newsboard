@@ -20,6 +20,7 @@ app.use((req, res, next) => {
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
+const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
 
@@ -58,6 +59,117 @@ function readCache() {
 
 function writeCache(obj) {
   fs.writeFileSync(CACHE_FILE, JSON.stringify(obj, null, 2), "utf8");
+}
+
+function readSupabaseConfig() {
+  try {
+    if (!fs.existsSync(SUPABASE_CONFIG_FILE)) return null;
+    const raw = JSON.parse(fs.readFileSync(SUPABASE_CONFIG_FILE, "utf8"));
+    if (!raw?.url || !raw?.anonKey) return null;
+    return { url: String(raw.url), anonKey: String(raw.anonKey) };
+  } catch {
+    return null;
+  }
+}
+
+function pickSupabaseRowValue(row, keys) {
+  for (const k of keys) {
+    const v = row?.[k];
+    if (v === null || v === undefined) continue;
+    if (typeof v === "string" && !v.trim()) continue;
+    return v;
+  }
+  return null;
+}
+
+function mergeSourceSnapshotRows(older, newer) {
+  if (!older) return newer;
+  if (!newer) return older;
+  return {
+    ...older,
+    ...newer,
+    item: { ...(older?.item || {}), ...(newer?.item || {}) },
+  };
+}
+
+async function fetchSupabaseRows(cfg, relation, opts = {}) {
+  const url = new URL(`/rest/v1/${relation}`, cfg.url);
+  url.searchParams.set("select", "*");
+  if (opts.order) url.searchParams.set("order", opts.order);
+  if (Number.isFinite(opts.limit)) url.searchParams.set("limit", String(opts.limit));
+
+  const resp = await fetch(url.toString(), {
+    headers: {
+      apikey: cfg.anonKey,
+      Authorization: `Bearer ${cfg.anonKey}`,
+      Accept: "application/json",
+    },
+  });
+
+  if (!resp.ok) {
+    const body = await resp.text().catch(() => "");
+    throw new Error(`Supabase ${relation} failed (${resp.status}): ${body.slice(0, 160)}`);
+  }
+
+  const rows = await resp.json();
+  return Array.isArray(rows) ? rows : [];
+}
+
+async function loadSupabaseSnapshot() {
+  const cfg = readSupabaseConfig();
+  if (!cfg) throw new Error("Supabase config missing or invalid");
+
+  const [curRows, histRows] = await Promise.all([
+    fetchSupabaseRows(cfg, "v_current_hero_since"),
+    fetchSupabaseRows(cfg, "v_history_hero_stories", { order: "last_seen_at.desc", limit: 200 }),
+  ]);
+
+  const sources = {};
+  for (const row of curRows) {
+    const id = String(row?.source_id || row?.id || "").trim();
+    if (!id) continue;
+
+    const mapped = {
+      ok: row.ok !== false,
+      updatedAt: row.observed_at || row.updated_at || row.last_seen_at || null,
+      firstSeenAt: pickSupabaseRowValue(row, ["first_seen_at", "firstSeenAt", "since_at", "current_since_at"]),
+      secondsInTop: pickSupabaseRowValue(row, ["seconds_in_top", "secondsInTop", "seconds_in_slot", "seconds_in_current"]),
+      error: row.error || null,
+      runId: row.run_id || null,
+      sourceName: row.source_name || row.sourceName || row.name || null,
+      changeType: row.change_type || row.changeType || null,
+      isStale: Boolean(row.is_stale ?? row.isStale ?? false),
+      lastChangeAt: row.last_change_at || row.lastChangeAt || null,
+      item: {
+        title: row.title || null,
+        url: row.url || null,
+        imgUrl: row.img_url || row.imgUrl || null,
+      },
+    };
+    sources[id] = mergeSourceSnapshotRows(sources[id], mapped);
+  }
+
+  const history = { generatedAt: nowISO(), sources: {} };
+  for (const row of histRows) {
+    const id = String(pickSupabaseRowValue(row, ["source_id", "source", "id"]) || "").trim();
+    if (!id) continue;
+    if (!history.sources[id]) history.sources[id] = { entries: [] };
+
+    history.sources[id].entries.push({
+      url: pickSupabaseRowValue(row, ["url", "story_url", "hero_url", "link", "href"]),
+      title: pickSupabaseRowValue(row, ["title", "any_title", "story_title", "headline", "hero_title"]),
+      imgUrl: pickSupabaseRowValue(row, ["img_url", "any_img_url", "imgUrl", "image_url", "image", "thumb_url", "thumbnail_url"]),
+      firstSeenAt: pickSupabaseRowValue(row, ["first_seen_at", "firstSeenAt", "first_seen", "first_seen_ts"]),
+      lastSeenAt: pickSupabaseRowValue(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at", "updatedAt"]),
+      seenCount: pickSupabaseRowValue(row, ["seen_count", "seenCount", "count", "observations"]),
+    });
+  }
+
+  return {
+    generatedAt: nowISO(),
+    cacheLike: { generatedAt: nowISO(), sources },
+    history,
+  };
 }
 
 function baseSource(id, name, home_url, kind = "hero") {
@@ -1075,6 +1187,15 @@ app.get("/api/sources", (req, res) => {
 app.get("/api/state", (req, res) => {
   const cache = ensureCacheShape(readCache());
   res.json({ ok: true, cache });
+});
+
+app.get("/api/supabase-snapshot", async (req, res) => {
+  try {
+    const snapshot = await loadSupabaseSnapshot();
+    res.json({ ok: true, ...snapshot });
+  } catch (err) {
+    res.status(502).json({ ok: false, error: String(err?.message || err) });
+  }
 });
 
 app.post("/api/refresh", async (req, res) => {
