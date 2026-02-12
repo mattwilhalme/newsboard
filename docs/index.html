@@ -23,7 +23,6 @@
       --ok:#1e8e3e;     /* green */
       --bad:#d93025;    /* red */
       --warn:#f9ab00;
-      --dotIdle:#9aa0a6; /* gray */
 
       --chip:#f1f3f4;
       --chipText:#3c4043;
@@ -120,11 +119,7 @@
       background: #ffffff;
     }
 
-    .srcTitle{ display:flex; align-items:center; gap:10px; min-width:0; }
-    .dot{ width:10px; height:10px; border-radius:999px; background: var(--dotIdle); flex:0 0 auto; margin-top:2px; }
-    .dot.ok{ background: var(--ok); }      /* green */
-    .dot.info{ background: var(--blue); }  /* blue */
-    .dot.bad{ background: var(--bad); }    /* red */
+    .srcTitle{ display:flex; align-items:center; min-width:0; }
 
     .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
     .srcName{ font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -453,20 +448,6 @@
       return k || "Source";
     }
 
-    function setDot(elDot, ok, changeType, isStale2h) {
-      if (!elDot) return;
-      elDot.classList.remove("ok", "bad", "info");
-
-      if (ok === false) {
-        elDot.classList.add("bad");
-        return;
-      }
-      if (isStale2h) return;
-
-      if (changeType === "url") elDot.classList.add("ok");
-      else if (changeType === "headline") elDot.classList.add("info");
-    }
-
     function copyText(txt){
       if (!txt) return;
       return navigator.clipboard.writeText(txt);
@@ -656,9 +637,6 @@
 
           const left = document.createElement("div");
           left.className = "srcTitle";
-          const dot = document.createElement("div");
-          dot.className = row.__changeType === "headline" ? "dot info" : (row.__changeType === "url" ? "dot ok" : "dot");
-          left.appendChild(dot);
 
           const leftMeta = document.createElement("div");
           leftMeta.className = "srcMeta";
@@ -802,9 +780,6 @@
 
         const left = document.createElement("div");
         left.className = "srcTitle";
-        const dot = document.createElement("div");
-        dot.className = it.__changeType === "headline" ? "dot info" : "dot ok";
-        left.appendChild(dot);
 
         const meta = document.createElement("div");
         meta.className = "srcMeta";
@@ -984,9 +959,6 @@
       const left = document.createElement("div");
       left.className = "srcTitle";
 
-      const dot = document.createElement("div");
-      dot.className = "dot";
-
       const meta = document.createElement("div");
       meta.className = "srcMeta";
 
@@ -995,7 +967,6 @@
       srcName.textContent = sourceLabel(id, src);
 
       meta.appendChild(srcName);
-      left.appendChild(dot);
       left.appendChild(meta);
 
       const right = document.createElement("div");
@@ -1113,13 +1084,6 @@
 
       card.appendChild(head);
       card.appendChild(body);
-
-      // Determine effective change info
-      const effectiveChangeType =
-        (src?.isStale ? null : (src?.changeType || null)) ?? (indicator?.changeType || null);
-      const effectiveStale = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
-
-      setDot(dot, ok, effectiveChangeType, effectiveStale);
 
       return card;
     }
