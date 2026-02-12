@@ -339,7 +339,7 @@ async function scrapeNBCHero() {
 }
 
 /* ---------------------------
-   CNN (single top item) - lead-plus-headlines title
+   CNN (single top item) - lead-package container + title
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
@@ -363,20 +363,32 @@ async function scrapeCNNHero() {
         }
       }
 
-      const h2 = document.querySelector("h2.container__title_url-text.container_lead-plus-headlines__title_url-text");
+      // Target the specific h2 you mentioned: container__title_url-text container_lead-package__title_url-text
+      const h2 = document.querySelector("h2.container__title_url-text.container_lead-package__title_url-text[data-editable='title']");
       if (h2) {
-        const a = h2.closest("a[href]");
         const title = clean(h2.textContent || "");
+        const a = h2.closest("a[href]");
         const href = a?.getAttribute("href") || "";
         const url = href ? abs(href) : null;
         if (title && url) return { ok: true, title, url };
       }
 
-      // Fallback: the "collapsed text" / title attributes on the lead container
-      const lead = document.querySelector(".container.container_lead-plus-headlines");
+      // Fallback: look for any lead-package container with title
+      const container = document.querySelector(".container.container_lead-package[data-layout='container_lead-package']");
+      if (container) {
+        const titleEl = container.querySelector("h2.container__title_url-text[data-editable='title']");
+        const title = clean(titleEl?.textContent || "");
+        const a = container.querySelector('a.container__title-url[href]');
+        const href = a?.getAttribute("href") || "";
+        const url = href ? abs(href) : null;
+        if (title && url) return { ok: true, title, url };
+      }
+
+      // Final fallback: use container attributes
+      const lead = document.querySelector(".container.container_lead-package");
       if (lead) {
         const title = clean(lead.getAttribute("data-title") || lead.getAttribute("data-collapsed-text") || "");
-        const a = lead.querySelector('a.container__title-url[href]');
+        const a = lead.querySelector('a[href]');
         const href = a?.getAttribute("href") || "";
         const url = href ? abs(href) : null;
         if (title && url) return { ok: true, title, url };
