@@ -291,35 +291,95 @@ async function scrapeNBCHero() {
         }
       }
 
-      // Your target: a plain <a> containing the headline text
-      const links = Array.from(document.querySelectorAll('a[href*="/news/"], a[href*="/us-news/"], a[href*="/world/"], a[href*="/politics/"]'));
-      for (const a of links) {
-        const title = clean(a.textContent || "");
-        const href = a.getAttribute("href") || "";
-        const url = href ? abs(href) : null;
-
-        if (!title || title.length < 12) continue;
-        if (!url) continue;
-
-        // Avoid "More From NBC" style nav links
-        if (/nbc\.com\/?$/i.test(url)) continue;
-
-        return { ok: true, title, url };
+      function isStoryUrl(url) {
+        if (!url) return false;
+        if (!/^https?:\/\/(www\.)?nbcnews\.com\//i.test(url)) return false;
+        if (/\/(account|search|tips|newsletters|video\/shorts)(\/|$)/i.test(url)) return false;
+        return true;
       }
 
-      // Fallback: first decent headline-ish link on page
-      const all = Array.from(document.querySelectorAll("a[href]"));
-      for (const a of all) {
-        const title = clean(a.textContent || "");
-        const href = a.getAttribute("href") || "";
-        const url = href ? abs(href) : null;
-        if (!title || title.length < 12) continue;
-        if (!url) continue;
-        if (!/nbcnews\.com/i.test(url)) continue;
-        return { ok: true, title, url };
+      function inBlockedChrome(el) {
+        return Boolean(
+          el.closest(
+            "header,nav,footer,aside,[role='navigation'],.layout-header,.menu-overlay-wrapper,.shortcuts,.share-list,.headline-container",
+          ),
+        );
       }
 
-      return { ok: false, error: "NBC not found" };
+      function scoreAnchor(a, title, url) {
+        let score = 0;
+
+        if (a.closest("main")) score += 20;
+        if (a.closest(".headline-item-container, .multistoryline__headline, [data-testid*='headline'], [data-testid*='storyline']")) score += 65;
+        if (a.closest("h1,h2,h3")) score += 20;
+        if (a.getAttribute("tabindex") === "-1") score += 10;
+
+        if (/\/live-blog\//i.test(url)) score += 45;
+        if (/-rcna\d+/i.test(url)) score += 20;
+        if (/\/(us-news|world|politics|news|sports|business|health|science)\//i.test(url)) score += 25;
+
+        if (title.length >= 25 && title.length <= 220) score += 15;
+        else if (title.length >= 12) score += 5;
+
+        if (inBlockedChrome(a)) score -= 120;
+        if (/^\s*(Olympics|Politics|U\.?S\.?\s*News|World|Health|Sports|Local|Business|Science)\s*$/i.test(title)) score -= 100;
+        if (/watch live|newsletter/i.test(title)) score -= 30;
+
+        return score;
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        "main .headline-item-container .headline-large h2 a[href]",
+        "main .multistoryline__headline a[href]",
+        "main [data-testid*='headline'] a[href]",
+        "main a[href*='/live-blog/'][href]",
+        "main h1 a[href], main h2 a[href], main h3 a[href]",
+        "main a[href]",
+      ];
+
+      for (const sel of selectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+          if (!url || !title || !isStoryUrl(url)) return null;
+          return { title, url, score: scoreAnchor(a, title, url) };
+        })
+        .filter((x) => x && x.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (ranked.length) {
+        const top = ranked[0];
+        return { ok: true, title: top.title, url: top.url };
+      }
+
+      // Fallback: parse inline JSON blobs when DOM classes shift.
+      const scripts = Array.from(document.querySelectorAll("script"));
+      for (const s of scripts) {
+        const txt = s.textContent || "";
+        if (!txt || txt.length < 2000) continue;
+        const re = /"headline":"([^"]{12,240})"[\s\S]{0,600}?"url":\{"primary":"(https:\\\/\\\/www\.nbcnews\.com\\\/[^"]+)"/g;
+        let m;
+        while ((m = re.exec(txt))) {
+          const title = clean(m[1]);
+          const raw = m[2].replace(/\\\//g, "/").replace(/\\u0026/g, "&");
+          const url = abs(raw);
+          if (!url || !title || !isStoryUrl(url)) continue;
+          return { ok: true, title, url };
+        }
+      }
+
+      return { ok: false, error: "NBC: top story not found" };
     });
 
     const item = hero?.ok
