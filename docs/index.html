@@ -107,6 +107,27 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
+      --enter-x: 0px;
+      --enter-y: 18px;
+      --enter-r: 0deg;
+      --enter-delay: 0ms;
+    }
+    @media (prefers-reduced-motion: no-preference){
+      .card.card-enter{
+        opacity:0;
+        transform: translate3d(var(--enter-x), var(--enter-y), 0) rotate(var(--enter-r)) scale(0.985);
+        filter: saturate(0.94);
+      }
+      .card.card-enter.card-settle{
+        opacity:1;
+        transform: translate3d(0,0,0) rotate(0deg) scale(1);
+        filter: saturate(1);
+        transition:
+          transform 740ms cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 520ms ease-out,
+          filter 700ms ease-out;
+        transition-delay: var(--enter-delay);
+      }
     }
 
     .cardHead{
@@ -344,7 +365,7 @@
     const SUPABASE_CONFIG_URL = "./supabase.json";
 
     // Expect exactly these sources; render placeholders when missing
-    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1"];
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","wsj1"];
 
     // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
@@ -428,15 +449,44 @@
       if (!open && btn) btn.focus();
     }
 
+    function canonicalSourceId(rawId){
+      const s = String(rawId || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]/g, "");
+      if (!s) return "";
+      if (s === "abc" || s === "abc1") return "abc1";
+      if (s === "cbs" || s === "cbs1") return "cbs1";
+      if (s === "usat" || s === "usat1" || s === "usatoday" || s === "usatoday1") return "usat1";
+      if (s === "nbc" || s === "nbc1") return "nbc1";
+      if (s === "cnn" || s === "cnn1") return "cnn1";
+      if (s === "reuters" || s === "reuters1" || s === "guardian" || s === "guardian1") return "reuters1";
+      if (s === "ap" || s === "ap1" || s === "associatedpress") return "ap1";
+      if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "latimes1";
+      if (s === "wsj" || s === "wsj1" || s === "wallstreetjournal") return "wsj1";
+      return s;
+    }
+
+    function mergeSourceRows(prev, next){
+      if (!prev) return next;
+      const prevTs = Date.parse(prev?.updatedAt || prev?.lastChangeAt || "");
+      const nextTs = Date.parse(next?.updatedAt || next?.lastChangeAt || "");
+      const chooseNext = Number.isFinite(nextTs) && (!Number.isFinite(prevTs) || nextTs >= prevTs);
+      const newer = chooseNext ? next : prev;
+      const older = chooseNext ? prev : next;
+      return {
+        ...older,
+        ...newer,
+        item: { ...(older?.item || {}), ...(newer?.item || {}) },
+      };
+    }
+
     function sourceLabel(k, row){
       const n = row?.sourceName || row?.name || null;
       if (n) return String(n);
 
-      // Normalize IDs coming from Supabase/views (case, punctuation, etc.)
-      const s = String(k || "")
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9]/g, ""); // e.g. "nbc1", "NBC-1", "nbc_1" -> "nbc1"
+      // Normalize IDs coming from Supabase/views (case, punctuation, aliases)
+      const s = canonicalSourceId(k);
 
       if (s === "abc" || s === "abc1") return "ABC News";
       if (s === "cbs" || s === "cbs1") return "CBS News";
@@ -446,6 +496,7 @@
       if (s === "reuters" || s === "reuters1" || s === "guardian" || s === "guardian1") return "The Guardian";
       if (s === "ap" || s === "ap1" || s === "associatedpress") return "Associated Press";
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "Los Angeles Times";
+      if (s === "wsj" || s === "wsj1" || s === "wallstreetjournal") return "Wall Street Journal";
 
       return k || "Source";
     }
@@ -498,13 +549,13 @@
 
       const sources = {};
       for (const row of (cur.data || [])){
-        const id = String(row.source_id || row.id || "");
+        const id = canonicalSourceId(row.source_id || row.id || "");
         if (!id) continue;
 
         const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "since_at", "current_since_at"]);
         const secondsInTop = pick(row, ["seconds_in_top", "secondsInTop", "seconds_in_slot", "seconds_in_current"]);
 
-        sources[id] = {
+        const mapped = {
           ok: row.ok !== false,
           updatedAt: row.observed_at || row.updated_at || row.last_seen_at || null,
           firstSeenAt,
@@ -523,11 +574,12 @@
             imgUrl: row.img_url || row.imgUrl || null,
           },
         };
+        sources[id] = mergeSourceRows(sources[id], mapped);
       }
 
       const historyObj = { generatedAt: new Date().toISOString(), sources: {} };
       for (const row of (hist.data || [])){
-        const id = String(pick(row, ["source_id", "source", "id"]) || "");
+        const id = canonicalSourceId(pick(row, ["source_id", "source", "id"]) || "");
         if (!id) continue;
         if (!historyObj.sources[id]) historyObj.sources[id] = { entries: [] };
 
@@ -930,6 +982,28 @@
       return out;
     }
 
+    function canonicalizeSourcesMap(sources){
+      const out = {};
+      for (const [rawId, src] of Object.entries(sources || {})) {
+        const id = canonicalSourceId(rawId);
+        if (!id) continue;
+        out[id] = mergeSourceRows(out[id], src || {});
+      }
+      return out;
+    }
+
+    function canonicalizeHistoryObj(history){
+      const out = { generatedAt: history?.generatedAt || new Date().toISOString(), sources: {} };
+      for (const [rawId, payload] of Object.entries(history?.sources || {})) {
+        const id = canonicalSourceId(rawId);
+        if (!id) continue;
+        if (!out.sources[id]) out.sources[id] = { entries: [] };
+        const entries = Array.isArray(payload?.entries) ? payload.entries : [];
+        out.sources[id].entries.push(...entries);
+      }
+      return out;
+    }
+
     // ---- Dynamic cards ----
     function pickCardSourceIds(sources){
       // Always render in a stable order with placeholders
@@ -948,6 +1022,29 @@
       const t = sources?.[id]?.updatedAt || sources?.[id]?.firstSeenAt || null;
       const ms = Date.parse(t || "");
       return Number.isFinite(ms) ? ms : 0;
+    }
+
+    function applyCardEntrance(card, id, idx){
+      const seedBase = `${id}|${idx}`;
+      let h = 2166136261;
+      for (let i = 0; i < seedBase.length; i++) {
+        h ^= seedBase.charCodeAt(i);
+        h += (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
+      }
+      const u1 = ((h >>> 0) % 1000) / 1000;
+      const u2 = (((h >>> 9) >>> 0) % 1000) / 1000;
+      const u3 = (((h >>> 18) >>> 0) % 1000) / 1000;
+
+      const x = Math.round((u1 * 24) - 12);
+      const y = Math.round((u2 * 38) - 10);
+      const r = ((u3 * 7.2) - 3.6).toFixed(2);
+      const delay = Math.round((idx * 24) + (u1 * 130));
+
+      card.classList.add("card-enter");
+      card.style.setProperty("--enter-x", `${x}px`);
+      card.style.setProperty("--enter-y", `${y}px`);
+      card.style.setProperty("--enter-r", `${r}deg`);
+      card.style.setProperty("--enter-delay", `${delay}ms`);
     }
 
     function buildCardEl(id, src, indicator){
@@ -1108,8 +1205,18 @@
       for (const id of ids){
         const src = sources?.[id] || {};
         const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
-        grid.appendChild(buildCardEl(id, src, ind));
+        const card = buildCardEl(id, src, ind);
+        applyCardEntrance(card, id, grid.children.length);
+        grid.appendChild(card);
       }
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          for (const card of grid.querySelectorAll(".card.card-enter")) {
+            card.classList.add("card-settle");
+          }
+        });
+      });
     }
 
     // Copy handlers (URL not displayed)
@@ -1190,7 +1297,7 @@
         }
 
         // Ensure we always have the full set, so cards don't disappear
-        const sources = ensureExpectedSources(data?.sources || {});
+        const sources = ensureExpectedSources(canonicalizeSourcesMap(data?.sources || {}));
 
         const anyDbFields =
           Object.values(sources).some((s) => (s && (s.changeType || s.isStale || s.lastChangeAt)));
@@ -1208,7 +1315,7 @@
         if (!history) {
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
         }
-        renderHistory(history, sources);
+        renderHistory(canonicalizeHistoryObj(history || {}), sources);
 
       } catch (e) {
         console.error("Refresh error:", e);
