@@ -912,8 +912,10 @@ async function scrapeWSJHero() {
   return await withBrowser(async (page) => {
     const runId = `wsj1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.wsj.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    const response = await page.goto("https://www.wsj.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
+    const httpStatus = response?.status?.() ?? null;
+    const finalUrl = page.url();
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -986,6 +988,24 @@ async function scrapeWSJHero() {
       return { ok: false, error: "WSJ: top story not found" };
     });
 
+    let wsjDiag = null;
+    if (!hero?.ok) {
+      wsjDiag = await page.evaluate(() => {
+        const title = String(document.title || "").trim();
+        const bodyText = String(document.body?.innerText || "")
+          .replace(/\s+/g, " ")
+          .slice(0, 20000);
+        const lower = `${title} ${bodyText}`.toLowerCase();
+
+        const blockedByChallenge =
+          /access denied|request blocked|forbidden|verify you are human|captcha|security check|unusual traffic|bot detection|challenge/.test(lower);
+        const paywallLike =
+          /subscribe|subscription|already a subscriber|sign in|log in|create account|member content/.test(lower);
+
+        return { title, blockedByChallenge, paywallLike };
+      });
+    }
+
     const item = hero?.ok
       ? {
           title: cleanText(hero.title || "Top story"),
@@ -1000,7 +1020,18 @@ async function scrapeWSJHero() {
       fetchedAt: nowISO(),
       runId,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "WSJ not found"),
+      error: item
+        ? null
+        : [
+            hero?.error || "WSJ not found",
+            httpStatus ? `status=${httpStatus}` : "status=unknown",
+            `url=${finalUrl}`,
+            wsjDiag?.blockedByChallenge ? "blocked=challenge" : null,
+            wsjDiag?.paywallLike ? "blocked=paywall_or_login" : null,
+            wsjDiag?.title ? `title=${wsjDiag.title}` : null,
+          ]
+            .filter(Boolean)
+            .join(" | "),
       item,
     };
 
