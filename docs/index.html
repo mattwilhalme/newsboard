@@ -600,7 +600,7 @@
       return { cacheLike, history: historyObj };
     }
 
-    function renderHistory(history, currentSources){
+    function renderHistory(history, currentSources, indicatorsById = {}){
       const host = $("history");
       if (!host) return;
       host.innerHTML = "";
@@ -623,31 +623,9 @@
           ? historyEntries[historyEntries.length - 1]
           : null;
 
-        let latestChangeType = "other";
-        if (historyEntries.length) {
-          const last = historyEntries[historyEntries.length - 1];
-          let prevDifferent = null;
-          for (let i = historyEntries.length - 2; i >= 0; i--) {
-            const prev = historyEntries[i];
-            if (!prev) continue;
-            const urlChanged = String(prev.url || "") !== String(last?.url || "");
-            const titleChanged = String(prev.title || "") !== String(last?.title || "");
-            if (urlChanged || titleChanged) {
-              prevDifferent = prev;
-              break;
-            }
-          }
-
-          if (!prevDifferent) {
-            latestChangeType = "url";
-          } else if (String(prevDifferent.url || "") !== String(last?.url || "")) {
-            latestChangeType = "url";
-          } else if (String(prevDifferent.title || "") !== String(last?.title || "")) {
-            latestChangeType = "headline";
-          }
-        } else {
-          latestChangeType = "url";
-        }
+        const ind = indicatorsById?.[sourceId] || { changeType: null, stale2h: false };
+        const stale2h = Boolean(src?.isStale) || Boolean(ind?.stale2h);
+        const latestChangeType = ind?.changeType || null;
 
         const tRaw = src?.updatedAt || src?.lastChangeAt || latestHist?.lastSeenAt || latestHist?.firstSeenAt || null;
         const tMs = Number.isFinite(Date.parse(tRaw || "")) ? Date.parse(tRaw) : 0;
@@ -660,11 +638,22 @@
           imgUrl: item?.imgUrl || latestHist?.imgUrl || null,
           updatedAt: tRaw,
           __changeType: latestChangeType,
+          __stale2h: stale2h,
           __tMs: tMs,
         });
       }
 
+      function cardPriorityForRow(row){
+        if (row?.__stale2h) return 0;
+        if (row?.__changeType === "url") return 3;
+        if (row?.__changeType === "headline") return 2;
+        return 1;
+      }
+
       latestRows.sort((a, b) => {
+        const pa = cardPriorityForRow(a);
+        const pb = cardPriorityForRow(b);
+        if (pb !== pa) return pb - pa;
         if (b.__tMs !== a.__tMs) return b.__tMs - a.__tMs;
         return String(a.source || "").localeCompare(String(b.source || ""));
       });
@@ -909,7 +898,7 @@
       }
     }
 
-    // ---- Browser fallback: per-source state for lights + 2h stale ----
+    // ---- Indicator state: 2h active windows for URL/headline changes ----
     function loadState(){
       try{
         const raw = localStorage.getItem("nb_source_state_v2");
@@ -927,7 +916,58 @@
       } catch {}
     }
 
-    function computeIndicators(nextSources){
+    function deriveFromHistoryEntries(entries, currentUrl, currentTitle, nowMs){
+      const out = {
+        changeType: null,
+        stale2h: false,
+        urlFirstSeenAt: 0,
+        titleFirstSeenAt: 0,
+        lastChangeAt: 0,
+      };
+
+      if (!currentUrl || !Array.isArray(entries) || !entries.length) return out;
+
+      const tail = [];
+      for (let i = entries.length - 1; i >= 0; i--) {
+        const e = entries[i];
+        if (!e || !e.url) continue;
+        if (String(e.url) !== String(currentUrl)) break;
+        tail.push(e);
+      }
+      if (!tail.length) return out;
+
+      const toMs = (x) => {
+        const m = Date.parse(String(x || ""));
+        return Number.isFinite(m) ? m : 0;
+      };
+      const entryMs = (e) => toMs(e.firstSeenAt || e.lastSeenAt);
+
+      out.urlFirstSeenAt = entryMs(tail[tail.length - 1]);
+
+      const titleTail = [];
+      for (let i = 0; i < tail.length; i++) {
+        const e = tail[i];
+        if (String(e.title || "") !== String(currentTitle || "")) break;
+        titleTail.push(e);
+      }
+      out.titleFirstSeenAt = titleTail.length ? entryMs(titleTail[titleTail.length - 1]) : out.urlFirstSeenAt;
+      out.lastChangeAt = Math.max(out.urlFirstSeenAt, out.titleFirstSeenAt);
+
+      if (out.urlFirstSeenAt > 0 && nowMs - out.urlFirstSeenAt < STALE_MS) {
+        out.changeType = "url";
+      } else if (
+        out.titleFirstSeenAt > out.urlFirstSeenAt &&
+        out.titleFirstSeenAt > 0 &&
+        nowMs - out.titleFirstSeenAt < STALE_MS
+      ) {
+        out.changeType = "headline";
+      }
+
+      out.stale2h = !out.changeType && out.lastChangeAt > 0 && nowMs - out.lastChangeAt >= STALE_MS;
+      return out;
+    }
+
+    function computeIndicators(nextSources, historyObj = null){
       const prevState = loadState();
       const nextState = { ...prevState };
       const indicators = {};
@@ -936,28 +976,62 @@
       for (const [id, src] of Object.entries(nextSources || {})){
         const curUrl = src?.item?.url || null;
         const curTitle = src?.item?.title || null;
-        const prev = prevState?.[id] || null;
+        const histEntries = historyObj?.sources?.[id]?.entries || null;
+        const histDerived = deriveFromHistoryEntries(histEntries, curUrl, curTitle, now);
 
-        let changeType = null;
+        if (Array.isArray(histEntries) && histEntries.length && curUrl) {
+          nextState[id] = {
+            url: curUrl,
+            title: curTitle || null,
+            urlFirstSeenAt: histDerived.urlFirstSeenAt || 0,
+            titleFirstSeenAt: histDerived.titleFirstSeenAt || 0,
+            lastChangeAt: histDerived.lastChangeAt || 0,
+          };
+          indicators[id] = { changeType: histDerived.changeType, stale2h: histDerived.stale2h };
+          continue;
+        }
+
+        const prev = prevState?.[id] || null;
+        const prevUrlFirstSeenAt = Number(prev?.urlFirstSeenAt || prev?.lastChangeAt || 0);
+        const prevTitleFirstSeenAt = Number(prev?.titleFirstSeenAt || prev?.lastChangeAt || 0);
+
+        let urlFirstSeenAt = prevUrlFirstSeenAt;
+        let titleFirstSeenAt = prevTitleFirstSeenAt;
 
         if (!prev && curUrl) {
-          changeType = "url";
-          nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
+          urlFirstSeenAt = now;
+          titleFirstSeenAt = now;
         } else if (prev && curUrl) {
-          if (prev.url !== curUrl) {
-            changeType = "url";
-            nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
+          if (String(prev.url || "") !== String(curUrl || "")) {
+            urlFirstSeenAt = now;
+            titleFirstSeenAt = now;
           } else if (String(prev.title || "") !== String(curTitle || "")) {
-            changeType = "headline";
-            nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
-          } else {
-            if (!nextState[id]) nextState[id] = { url: curUrl, title: curTitle || null, lastChangeAt: now };
+            titleFirstSeenAt = now;
           }
         }
 
-        const lastChangeAt = Number(nextState?.[id]?.lastChangeAt || 0);
-        const stale2h = (changeType === null) && lastChangeAt > 0 && (now - lastChangeAt >= STALE_MS);
+        let changeType = null;
+        if (curUrl && urlFirstSeenAt > 0 && now - urlFirstSeenAt < STALE_MS) {
+          changeType = "url";
+        } else if (
+          curUrl &&
+          titleFirstSeenAt > urlFirstSeenAt &&
+          titleFirstSeenAt > 0 &&
+          now - titleFirstSeenAt < STALE_MS
+        ) {
+          changeType = "headline";
+        }
 
+        const lastChangeAt = Math.max(urlFirstSeenAt, titleFirstSeenAt, 0);
+        const stale2h = !changeType && lastChangeAt > 0 && now - lastChangeAt >= STALE_MS;
+
+        nextState[id] = {
+          url: curUrl,
+          title: curTitle || null,
+          urlFirstSeenAt,
+          titleFirstSeenAt,
+          lastChangeAt,
+        };
         indicators[id] = { changeType, stale2h };
       }
 
@@ -1263,42 +1337,13 @@
       try {
         let data = null;
         let history = null;
-        let usingSupabase = false;
-
-        // IMPORTANT: keep a single indicators var (no shadowing)
-        let indicators = {};
-        let nextState = null;
 
         try{
           const sb = await loadFromSupabase();
           if (sb?.cacheLike) {
             data = sb.cacheLike;
             history = sb.history;
-            usingSupabase = true;
             $("subline").textContent = "We're live";
-
-            // Optional: indicator based on history (best-effort)
-            indicators = {};
-            for (const [sourceId, src] of Object.entries(data.sources || {})) {
-              const entries = history?.sources?.[sourceId]?.entries || [];
-              const currentUrl = src?.item?.url;
-              const currentTitle = src?.item?.title;
-
-              let prevEntry = null;
-              for (let i = entries.length - 1; i >= 0; i--) {
-                const e = entries[i];
-                if (e.url !== currentUrl || e.title !== currentTitle) { prevEntry = e; break; }
-              }
-
-              if (prevEntry && currentUrl) {
-                indicators[sourceId] = {
-                  changeType: (prevEntry.url !== currentUrl) ? "url" : "headline",
-                  stale2h: false,
-                };
-              } else {
-                indicators[sourceId] = { changeType: null, stale2h: false };
-              }
-            }
           }
         } catch (e){
           console.warn("Supabase load failed, falling back to JSON", e);
@@ -1314,23 +1359,16 @@
         // Ensure we always have the full set, so cards don't disappear
         const sources = ensureExpectedSources(canonicalizeSourcesMap(data?.sources || {}));
 
-        const anyDbFields =
-          Object.values(sources).some((s) => (s && (s.changeType || s.isStale || s.lastChangeAt)));
-
-        if (!usingSupabase || !anyDbFields) {
-          const res = computeIndicators(sources);
-          indicators = res.indicators;
-          nextState = res.nextState;
-        }
-
-        renderCards(sources, indicators);
-
-        if (nextState) saveState(nextState);
-
         if (!history) {
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
         }
-        renderHistory(canonicalizeHistoryObj(history || {}), sources);
+        const normalizedHistory = canonicalizeHistoryObj(history || {});
+
+        const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
+        renderCards(sources, indicators);
+        if (nextState) saveState(nextState);
+
+        renderHistory(normalizedHistory, sources, indicators);
 
       } catch (e) {
         console.error("Refresh error:", e);
