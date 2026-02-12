@@ -8,7 +8,7 @@ import {
   scrapeUSATHero,
   scrapeNBCHero,
   scrapeCNNHero,
-  scrapeReutersHero,
+  scrapeAPHero,
 } from "../server.js";
 
 const DATA_DIR = path.join("docs", "data");
@@ -20,7 +20,7 @@ const SOURCES = {
   usat1: { id: "usat1", name: "USA Today", homeUrl: "https://www.usatoday.com/" },
   nbc1: { id: "nbc1", name: "NBC News", homeUrl: "https://www.nbcnews.com/" },
   cnn1: { id: "cnn1", name: "CNN", homeUrl: "https://www.cnn.com/" },
-  reuters1: { id: "reuters1", name: "Reuters", homeUrl: "https://www.reuters.com/" },
+  ap1: { id: "ap1", name: "Associated Press", homeUrl: "https://apnews.com/" },
 };
 
 function getSupabaseAdmin() {
@@ -208,7 +208,7 @@ async function run() {
   const usat1 = await safeScrape("USA Today", scrapeUSATHero, generatedAt);
   const nbc1 = await safeScrape("NBC", scrapeNBCHero, generatedAt);
   const cnn1 = await safeScrape("CNN", scrapeCNNHero, generatedAt);
-  const reuters1 = await safeScrape("Reuters", scrapeReutersHero, generatedAt);
+  const ap1 = await safeScrape("Associated Press", scrapeAPHero, generatedAt);
 
   if (supabase) {
     try {
@@ -219,7 +219,7 @@ async function run() {
       await insertHeroRun(supabase, "usat1", usat1, observedAt);
       await insertHeroRun(supabase, "nbc1", nbc1, observedAt);
       await insertHeroRun(supabase, "cnn1", cnn1, observedAt);
-      await insertHeroRun(supabase, "reuters1", reuters1, observedAt);
+      await insertHeroRun(supabase, "ap1", ap1, observedAt);
     } catch (e) {
       console.error("❌ Supabase insert failed", e);
     }
@@ -234,7 +234,7 @@ async function run() {
       usat1: { entries: [] },
       nbc1: { entries: [] },
       cnn1: { entries: [] },
-      reuters1: { entries: [] },
+      ap1: { entries: [] },
     },
   });
   
@@ -245,7 +245,7 @@ async function run() {
   upsertHistory(history, "usat1", generatedAt, usat1?.ok ? usat1.item : null);
   upsertHistory(history, "nbc1", generatedAt, nbc1?.ok ? nbc1.item : null);
   upsertHistory(history, "cnn1", generatedAt, cnn1?.ok ? cnn1.item : null);
-  upsertHistory(history, "reuters1", generatedAt, reuters1?.ok ? reuters1.item : null);
+  upsertHistory(history, "ap1", generatedAt, ap1?.ok ? ap1.item : null);
 
   writeJSON("history.json", history);
 
@@ -254,10 +254,10 @@ async function run() {
   const usatSince = currentSinceFromHistory(history, "usat1", usat1?.item?.url || null);
   const nbcSince = currentSinceFromHistory(history, "nbc1", nbc1?.item?.url || null);
   const cnnSince = currentSinceFromHistory(history, "cnn1", cnn1?.item?.url || null);
-  const reutersSince = currentSinceFromHistory(history, "reuters1", reuters1?.item?.url || null);
+  const apSince = currentSinceFromHistory(history, "ap1", ap1?.item?.url || null);
 
   const current = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || ap1?.ok),
     generatedAt,
     sources: {
       abc1: {
@@ -300,13 +300,13 @@ async function run() {
         since: cnnSince,
         item: cnn1?.item || null,
       },
-      reuters1: {
-        ok: Boolean(reuters1?.ok),
-        updatedAt: reuters1?.updatedAt || null,
-        error: reuters1?.error || null,
-        runId: reuters1?.runId || null,
-        since: reutersSince,
-        item: reuters1?.item || null,
+      ap1: {
+        ok: Boolean(ap1?.ok),
+        updatedAt: ap1?.updatedAt || null,
+        error: ap1?.error || null,
+        runId: ap1?.runId || null,
+        since: apSince,
+        item: ap1?.item || null,
       },
     },
   };
@@ -314,7 +314,7 @@ async function run() {
   writeJSON("current.json", current);
 
   const unified = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || ap1?.ok),
     generatedAt,
     items: [
       abc1?.item ? { source: "abc1", updatedAt: abc1.updatedAt, since: abcSince, ...abc1.item } : null,
@@ -322,8 +322,8 @@ async function run() {
       usat1?.item ? { source: "usat1", updatedAt: usat1.updatedAt, since: usatSince, ...usat1.item } : null,
       nbc1?.item ? { source: "nbc1", updatedAt: nbc1.updatedAt, since: nbcSince, ...nbc1.item } : null,
       cnn1?.item ? { source: "cnn1", updatedAt: cnn1.updatedAt, since: cnnSince, ...cnn1.item } : null,
-      reuters1?.item
-        ? { source: "reuters1", updatedAt: reuters1.updatedAt, since: reutersSince, ...reuters1.item }
+      ap1?.item
+        ? { source: "ap1", updatedAt: ap1.updatedAt, since: apSince, ...ap1.item }
         : null,
     ].filter(Boolean),
   };
