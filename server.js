@@ -89,7 +89,7 @@ function ensureCacheShape(cache) {
   if (!c.sources.reuters1) c.sources.reuters1 = baseSource("reuters1", "The Guardian", "https://www.theguardian.com/", "hero");
   if (!c.sources.ap1) c.sources.ap1 = baseSource("ap1", "Associated Press", "https://apnews.com/", "hero");
   if (!c.sources.latimes1) c.sources.latimes1 = baseSource("latimes1", "Los Angeles Times", "https://www.latimes.com/", "hero");
-  if (!c.sources.wsj1) c.sources.wsj1 = baseSource("wsj1", "Wall Street Journal", "https://www.wsj.com/", "hero");
+  if (!c.sources.npr1) c.sources.npr1 = baseSource("npr1", "NPR", "https://www.npr.org/", "hero");
 
   return c;
 }
@@ -906,16 +906,14 @@ async function scrapeLATimesHero() {
 }
 
 /* ---------------------------
-   Wall Street Journal (single top item)
+   NPR (single top item)
 --------------------------- */
-async function scrapeWSJHero() {
+async function scrapeNPRHero() {
   return await withBrowser(async (page) => {
-    const runId = `wsj1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    const runId = `npr1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    const response = await page.goto("https://www.wsj.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1800);
-    const httpStatus = response?.status?.() ?? null;
-    const finalUrl = page.url();
+    await page.goto("https://www.npr.org/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(2000);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -926,25 +924,26 @@ async function scrapeWSJHero() {
       }
       function abs(h) {
         try {
-          return new URL(h, "https://www.wsj.com").toString();
+          return new URL(h, "https://www.npr.org").toString();
         } catch {
           return null;
         }
       }
       function isStoryUrl(url) {
         if (!url) return false;
-        if (!/^https?:\/\/(www\.)?wsj\.com\//i.test(url)) return false;
-        if (/\/(livecoverage|video|podcasts?|newsletters?|subscribe|account|signin)(\/|$)/i.test(url)) return false;
+        if (!/^https?:\/\/(www\.)?npr\.org\//i.test(url)) return false;
+        if (!/^https?:\/\/(www\.)?npr\.org\/\d{4}\/\d{2}\/\d{2}\//i.test(url)) return false;
+        if (/\/(podcasts?|newsletters?|shop|donate|series|sections|programs|music)(\/|$)/i.test(url)) return false;
         return true;
       }
 
       const seen = new Set();
       const anchors = [];
       const selectors = [
-        'a[data-testid="flexcard-headline"][href]',
-        'a[data-fclink][data-testid="flexcard-headline"][href]',
-        'main a[data-testid="flexcard-headline"][href]',
-        "h1 a[href], h2 a[href], h3 a[href]",
+        'a[data-metrics-ga4*="homepage_curation_click"][data-metrics-ga4*="curated story"][data-metrics-ga4*="1.1.1-L"][href]',
+        'a[data-metrics-ga4*="homepage_curation_click"][data-metrics-ga4*="curated story"][href]',
+        ".story-text a[href]",
+        "main a[href]",
       ];
 
       for (const sel of selectors) {
@@ -958,22 +957,24 @@ async function scrapeWSJHero() {
       const ranked = anchors
         .map((a) => {
           const href = a.getAttribute("href") || "";
+          const metrics = String(a.getAttribute("data-metrics-ga4") || "").toLowerCase();
           const url = href ? abs(href) : null;
           const title =
-            clean(a.querySelector('div[class*="HeadlineTextBlock"]')?.textContent || "") ||
+            clean(a.querySelector("h3.title, h3 .title-inner")?.textContent || "") ||
             clean(a.getAttribute("aria-label") || "") ||
             clean(a.textContent || "");
 
           if (!url || !title || !isStoryUrl(url)) return null;
 
           let score = 0;
-          if (a.getAttribute("data-testid") === "flexcard-headline") score += 90;
-          if (a.querySelector('div[class*="HeadlineTextBlock"]')) score += 50;
-          if (/-hp_lead|[?&]mod=hp_lead/i.test(url)) score += 40;
+          if (metrics.includes("homepage_curation_click")) score += 40;
+          if (metrics.includes("curated story")) score += 80;
+          if (metrics.includes("1.1.1-l")) score += 120;
+          if (a.querySelector("h3.title, h3 .title-inner")) score += 35;
           if (a.closest("h1,h2,h3")) score += 20;
-          if (a.closest("main")) score += 15;
+          if (a.closest(".story-wrap,.story-text,article,main")) score += 15;
           if (title.length >= 24 && title.length <= 240) score += 10;
-          if (a.closest("header,nav,footer,[data-testid*='nav']")) score -= 120;
+          if (a.closest("header,nav,footer,.menu,.navigation,[data-metrics-category-ga4='recirculation']")) score -= 160;
 
           return { title, url, score };
         })
@@ -985,53 +986,24 @@ async function scrapeWSJHero() {
         return { ok: true, title: top.title, url: top.url };
       }
 
-      return { ok: false, error: "WSJ: top story not found" };
+      return { ok: false, error: "NPR: top story not found" };
     });
-
-    let wsjDiag = null;
-    if (!hero?.ok) {
-      wsjDiag = await page.evaluate(() => {
-        const title = String(document.title || "").trim();
-        const bodyText = String(document.body?.innerText || "")
-          .replace(/\s+/g, " ")
-          .slice(0, 20000);
-        const lower = `${title} ${bodyText}`.toLowerCase();
-
-        const blockedByChallenge =
-          /access denied|request blocked|forbidden|verify you are human|captcha|security check|unusual traffic|bot detection|challenge/.test(lower);
-        const paywallLike =
-          /subscribe|subscription|already a subscriber|sign in|log in|create account|member content/.test(lower);
-
-        return { title, blockedByChallenge, paywallLike };
-      });
-    }
 
     const item = hero?.ok
       ? {
           title: cleanText(hero.title || "Top story"),
           url: normalizeUrl(hero.url),
           imgUrl: null,
-          slotKey: sha1("wsj1|top").slice(0, 12),
+          slotKey: sha1("npr1|top").slice(0, 12),
         }
       : null;
 
     const snapshot = {
-      id: "wsj1",
+      id: "npr1",
       fetchedAt: nowISO(),
       runId,
       ok: Boolean(item),
-      error: item
-        ? null
-        : [
-            hero?.error || "WSJ not found",
-            httpStatus ? `status=${httpStatus}` : "status=unknown",
-            `url=${finalUrl}`,
-            wsjDiag?.blockedByChallenge ? "blocked=challenge" : null,
-            wsjDiag?.paywallLike ? "blocked=paywall_or_login" : null,
-            wsjDiag?.title ? `title=${wsjDiag.title}` : null,
-          ]
-            .filter(Boolean)
-            .join(" | "),
+      error: item ? null : (hero?.error || "NPR not found"),
       item,
     };
 
@@ -1047,7 +1019,7 @@ async function scrapeWSJHero() {
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "wsj1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "npr1"];
 
   for (const sid of runList) {
     let res;
@@ -1060,7 +1032,7 @@ async function refreshSources({ id = "" } = {}) {
     else if (sid === "reuters1") res = await scrapeReutersHero();
     else if (sid === "ap1") res = await scrapeAPHero();
     else if (sid === "latimes1") res = await scrapeLATimesHero();
-    else if (sid === "wsj1") res = await scrapeWSJHero();
+    else if (sid === "npr1") res = await scrapeNPRHero();
     else throw new Error(`Unknown source id: ${sid}`);
 
     cache.sources[sid] = {
@@ -1152,6 +1124,6 @@ export {
   scrapeReutersHero,
   scrapeAPHero,
   scrapeLATimesHero,
-  scrapeWSJHero,
+  scrapeNPRHero,
   refreshSources,
 };
