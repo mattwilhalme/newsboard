@@ -89,6 +89,7 @@ function ensureCacheShape(cache) {
   if (!c.sources.reuters1) c.sources.reuters1 = baseSource("reuters1", "The Guardian", "https://www.theguardian.com/", "hero");
   if (!c.sources.ap1) c.sources.ap1 = baseSource("ap1", "Associated Press", "https://apnews.com/", "hero");
   if (!c.sources.latimes1) c.sources.latimes1 = baseSource("latimes1", "Los Angeles Times", "https://www.latimes.com/", "hero");
+  if (!c.sources.wsj1) c.sources.wsj1 = baseSource("wsj1", "Wall Street Journal", "https://www.wsj.com/", "hero");
 
   return c;
 }
@@ -905,12 +906,117 @@ async function scrapeLATimesHero() {
 }
 
 /* ---------------------------
+   Wall Street Journal (single top item)
+--------------------------- */
+async function scrapeWSJHero() {
+  return await withBrowser(async (page) => {
+    const runId = `wsj1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    await page.goto("https://www.wsj.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(1800);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function abs(h) {
+        try {
+          return new URL(h, "https://www.wsj.com").toString();
+        } catch {
+          return null;
+        }
+      }
+      function isStoryUrl(url) {
+        if (!url) return false;
+        if (!/^https?:\/\/(www\.)?wsj\.com\//i.test(url)) return false;
+        if (/\/(livecoverage|video|podcasts?|newsletters?|subscribe|account|signin)(\/|$)/i.test(url)) return false;
+        return true;
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        'a[data-testid="flexcard-headline"][href]',
+        'a[data-fclink][data-testid="flexcard-headline"][href]',
+        'main a[data-testid="flexcard-headline"][href]',
+        "h1 a[href], h2 a[href], h3 a[href]",
+      ];
+
+      for (const sel of selectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title =
+            clean(a.querySelector('div[class*="HeadlineTextBlock"]')?.textContent || "") ||
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(a.textContent || "");
+
+          if (!url || !title || !isStoryUrl(url)) return null;
+
+          let score = 0;
+          if (a.getAttribute("data-testid") === "flexcard-headline") score += 90;
+          if (a.querySelector('div[class*="HeadlineTextBlock"]')) score += 50;
+          if (/-hp_lead|[?&]mod=hp_lead/i.test(url)) score += 40;
+          if (a.closest("h1,h2,h3")) score += 20;
+          if (a.closest("main")) score += 15;
+          if (title.length >= 24 && title.length <= 240) score += 10;
+          if (a.closest("header,nav,footer,[data-testid*='nav']")) score -= 120;
+
+          return { title, url, score };
+        })
+        .filter((x) => x && x.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (ranked.length) {
+        const top = ranked[0];
+        return { ok: true, title: top.title, url: top.url };
+      }
+
+      return { ok: false, error: "WSJ: top story not found" };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title || "Top story"),
+          url: normalizeUrl(hero.url),
+          imgUrl: null,
+          slotKey: sha1("wsj1|top").slice(0, 12),
+        }
+      : null;
+
+    const snapshot = {
+      id: "wsj1",
+      fetchedAt: nowISO(),
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "WSJ not found"),
+      item,
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+  });
+}
+
+/* ---------------------------
    Refresh / API
 --------------------------- */
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "wsj1"];
 
   for (const sid of runList) {
     let res;
@@ -923,6 +1029,7 @@ async function refreshSources({ id = "" } = {}) {
     else if (sid === "reuters1") res = await scrapeReutersHero();
     else if (sid === "ap1") res = await scrapeAPHero();
     else if (sid === "latimes1") res = await scrapeLATimesHero();
+    else if (sid === "wsj1") res = await scrapeWSJHero();
     else throw new Error(`Unknown source id: ${sid}`);
 
     cache.sources[sid] = {
@@ -1014,5 +1121,6 @@ export {
   scrapeReutersHero,
   scrapeAPHero,
   scrapeLATimesHero,
+  scrapeWSJHero,
   refreshSources,
 };

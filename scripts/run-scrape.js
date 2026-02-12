@@ -11,6 +11,7 @@ import {
   scrapeReutersHero,
   scrapeAPHero,
   scrapeLATimesHero,
+  scrapeWSJHero,
 } from "../server.js";
 
 const DATA_DIR = path.join("docs", "data");
@@ -25,6 +26,7 @@ const SOURCES = {
   reuters1: { id: "reuters1", name: "The Guardian", homeUrl: "https://www.theguardian.com/" },
   ap1: { id: "ap1", name: "Associated Press", homeUrl: "https://apnews.com/" },
   latimes1: { id: "latimes1", name: "Los Angeles Times", homeUrl: "https://www.latimes.com/" },
+  wsj1: { id: "wsj1", name: "Wall Street Journal", homeUrl: "https://www.wsj.com/" },
 };
 
 function getSupabaseAdmin() {
@@ -215,6 +217,7 @@ async function run() {
   const reuters1 = await safeScrape("The Guardian", scrapeReutersHero, generatedAt);
   const ap1 = await safeScrape("Associated Press", scrapeAPHero, generatedAt);
   const latimes1 = await safeScrape("Los Angeles Times", scrapeLATimesHero, generatedAt);
+  const wsj1 = await safeScrape("Wall Street Journal", scrapeWSJHero, generatedAt);
 
   if (supabase) {
     try {
@@ -228,6 +231,7 @@ async function run() {
       await insertHeroRun(supabase, "reuters1", reuters1, observedAt);
       await insertHeroRun(supabase, "ap1", ap1, observedAt);
       await insertHeroRun(supabase, "latimes1", latimes1, observedAt);
+      await insertHeroRun(supabase, "wsj1", wsj1, observedAt);
     } catch (e) {
       console.error("❌ Supabase insert failed", e);
     }
@@ -245,6 +249,7 @@ async function run() {
       reuters1: { entries: [] },
       ap1: { entries: [] },
       latimes1: { entries: [] },
+      wsj1: { entries: [] },
     },
   });
   
@@ -258,6 +263,7 @@ async function run() {
   upsertHistory(history, "reuters1", generatedAt, reuters1?.ok ? reuters1.item : null);
   upsertHistory(history, "ap1", generatedAt, ap1?.ok ? ap1.item : null);
   upsertHistory(history, "latimes1", generatedAt, latimes1?.ok ? latimes1.item : null);
+  upsertHistory(history, "wsj1", generatedAt, wsj1?.ok ? wsj1.item : null);
 
   writeJSON("history.json", history);
 
@@ -269,9 +275,10 @@ async function run() {
   const reutersSince = currentSinceFromHistory(history, "reuters1", reuters1?.item?.url || null);
   const apSince = currentSinceFromHistory(history, "ap1", ap1?.item?.url || null);
   const latimesSince = currentSinceFromHistory(history, "latimes1", latimes1?.item?.url || null);
+  const wsjSince = currentSinceFromHistory(history, "wsj1", wsj1?.item?.url || null);
 
   const current = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok || ap1?.ok || latimes1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok || ap1?.ok || latimes1?.ok || wsj1?.ok),
     generatedAt,
     sources: {
       abc1: {
@@ -338,13 +345,21 @@ async function run() {
         since: latimesSince,
         item: latimes1?.item || null,
       },
+      wsj1: {
+        ok: Boolean(wsj1?.ok),
+        updatedAt: wsj1?.updatedAt || null,
+        error: wsj1?.error || null,
+        runId: wsj1?.runId || null,
+        since: wsjSince,
+        item: wsj1?.item || null,
+      },
     },
   };
 
   writeJSON("current.json", current);
 
   const unified = {
-    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok || ap1?.ok || latimes1?.ok),
+    ok: Boolean(abc1?.ok || cbs1?.ok || usat1?.ok || nbc1?.ok || cnn1?.ok || reuters1?.ok || ap1?.ok || latimes1?.ok || wsj1?.ok),
     generatedAt,
     items: [
       abc1?.item ? { source: "abc1", updatedAt: abc1.updatedAt, since: abcSince, ...abc1.item } : null,
@@ -359,6 +374,7 @@ async function run() {
       latimes1?.item
         ? { source: "latimes1", updatedAt: latimes1.updatedAt, since: latimesSince, ...latimes1.item }
         : null,
+      wsj1?.item ? { source: "wsj1", updatedAt: wsj1.updatedAt, since: wsjSince, ...wsj1.item } : null,
     ].filter(Boolean),
   };
 
