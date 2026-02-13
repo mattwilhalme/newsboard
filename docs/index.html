@@ -327,6 +327,7 @@
       <div class="controls">
         <button id="btn-reload" class="btn" type="button">Refresh</button>
         <button id="btn-history" class="btn" type="button">History</button>
+        <button id="btn-timeline" class="btn" type="button">Timeline</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -346,6 +347,49 @@
     </div>
     <div class="drawerBody">
       <div class="historyList" id="history"></div>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="drawer-timeline" aria-hidden="true">
+    <div class="drawerHead">
+      <div>
+        <div class="drawerTitle">Timeline (12h)</div>
+      </div>
+      <button id="btn-timeline-close" class="btn" type="button">Close</button>
+    </div>
+    <div class="drawerBody">
+      <div class="row" style="margin-bottom:10px">
+        <select id="tl-source" class="linkbtn" style="min-width:160px">
+          <option value="all">All Sources</option>
+        </select>
+        <label class="pill" style="cursor:pointer">
+          <input id="tl-changes-only" type="checkbox" />
+          Changes only
+        </label>
+      </div>
+      <div class="row" style="margin-bottom:10px; align-items:center">
+        <input id="tl-scrubber" type="range" min="0" max="0" value="0" style="width:100%" />
+        <span id="tl-pos" class="tiny mono">0/0</span>
+      </div>
+      <div id="tl-preview" class="hItem" style="margin-bottom:10px; display:none">
+        <div class="hHead">
+          <div class="srcMeta">
+            <div id="tl-preview-source" class="srcName">—</div>
+            <div id="tl-preview-time" class="srcTime">—</div>
+          </div>
+        </div>
+        <div class="hBody">
+          <div class="hThumb" id="tl-preview-thumb">
+            <img id="tl-preview-img" alt="" />
+          </div>
+          <div class="hMain">
+            <h3 class="hTitle"><a id="tl-preview-link" href="#" target="_blank" rel="noopener">—</a></h3>
+            <div id="tl-preview-kind" class="tiny">—</div>
+          </div>
+        </div>
+      </div>
+      <div id="tl-empty" class="tiny" style="display:none; color:var(--muted)">No timeline events in range.</div>
+      <div id="tl-list" class="historyList"></div>
     </div>
   </aside>
 
@@ -439,11 +483,39 @@
       showToast._t = setTimeout(() => el.classList.remove("show"), 1200);
     }
 
+    function closeAllDrawers() {
+      const ids = ["drawer-history", "drawer-timeline"];
+      for (const id of ids) {
+        const d = $(id);
+        if (!d) continue;
+        d.classList.remove("open");
+        d.setAttribute("aria-hidden", "true");
+      }
+      $("drawer-overlay")?.classList.remove("show");
+    }
+
     function setHistoryOpen(open){
       const drawer = $("drawer-history");
       const overlay = $("drawer-overlay");
       const btn = $("btn-history");
       if (!drawer || !overlay) return;
+      if (open) {
+        closeAllDrawers();
+      }
+      drawer.classList.toggle("open", Boolean(open));
+      overlay.classList.toggle("show", Boolean(open));
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
+      if (!open && btn) btn.focus();
+    }
+
+    function setTimelineOpen(open){
+      const drawer = $("drawer-timeline");
+      const overlay = $("drawer-overlay");
+      const btn = $("btn-timeline");
+      if (!drawer || !overlay) return;
+      if (open) {
+        closeAllDrawers();
+      }
       drawer.classList.toggle("open", Boolean(open));
       overlay.classList.toggle("show", Boolean(open));
       drawer.setAttribute("aria-hidden", open ? "false" : "true");
@@ -1345,6 +1417,171 @@
       return await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
     }
 
+    const timelineState = {
+      allEvents: [],
+      filteredEvents: [],
+      source: "all",
+      changesOnly: false,
+      index: 0,
+      imageCache: new Set(),
+    };
+
+    function timelineKindLabel(kind){
+      if (kind === "new_url") return "URL changed";
+      if (kind === "new_headline") return "Headline changed";
+      return "Heartbeat";
+    }
+
+    function timelineSourceName(id){
+      return sourceLabel(id, null);
+    }
+
+    function applyTimelineFilters() {
+      const src = timelineState.source;
+      const changesOnly = timelineState.changesOnly;
+      let rows = Array.isArray(timelineState.allEvents) ? [...timelineState.allEvents] : [];
+      if (src && src !== "all") rows = rows.filter((e) => String(e.source_id || "") === src);
+      if (changesOnly) rows = rows.filter((e) => e.kind !== "heartbeat");
+      timelineState.filteredEvents = rows;
+      if (timelineState.index >= rows.length) timelineState.index = Math.max(0, rows.length - 1);
+    }
+
+    function primeTimelineNeighborImages() {
+      const rows = timelineState.filteredEvents;
+      const idx = timelineState.index;
+      const start = Math.max(0, idx - 2);
+      const end = Math.min(rows.length - 1, idx + 2);
+      for (let i = start; i <= end; i++) {
+        const u = rows[i]?.shot_url;
+        if (!u || timelineState.imageCache.has(u)) continue;
+        const im = new Image();
+        im.src = u;
+        timelineState.imageCache.add(u);
+      }
+    }
+
+    function renderTimelinePreview() {
+      const rows = timelineState.filteredEvents;
+      const posEl = $("tl-pos");
+      if (posEl) posEl.textContent = rows.length ? `${timelineState.index + 1}/${rows.length}` : "0/0";
+
+      const preview = $("tl-preview");
+      const empty = $("tl-empty");
+      const scrubber = $("tl-scrubber");
+      if (scrubber) {
+        scrubber.max = String(Math.max(0, rows.length - 1));
+        scrubber.value = String(Math.max(0, timelineState.index));
+      }
+
+      if (!rows.length) {
+        if (preview) preview.style.display = "none";
+        if (empty) empty.style.display = "block";
+        return;
+      }
+
+      if (empty) empty.style.display = "none";
+      if (preview) preview.style.display = "block";
+
+      const ev = rows[timelineState.index];
+      $("tl-preview-source").textContent = timelineSourceName(ev.source_id);
+      $("tl-preview-time").textContent = `${fmtTime(ev.ts)} · ${ago(ev.ts)}`;
+      $("tl-preview-kind").textContent = timelineKindLabel(ev.kind);
+
+      const link = $("tl-preview-link");
+      link.textContent = ev.title || "—";
+      link.href = ev.url || "#";
+
+      const imgWrap = $("tl-preview-thumb");
+      const img = $("tl-preview-img");
+      if (ev.shot_url) {
+        imgWrap.classList.remove("isHidden");
+        img.src = ev.shot_url;
+      } else {
+        imgWrap.classList.add("isHidden");
+        img.removeAttribute("src");
+      }
+
+      primeTimelineNeighborImages();
+    }
+
+    function renderTimelineList() {
+      const list = $("tl-list");
+      if (!list) return;
+      list.innerHTML = "";
+
+      const rows = timelineState.filteredEvents;
+      const grouped = {};
+      for (const ev of rows) {
+        const id = String(ev.source_id || "");
+        if (!grouped[id]) grouped[id] = [];
+        grouped[id].push(ev);
+      }
+
+      const sources = Object.keys(grouped).sort((a, b) => timelineSourceName(a).localeCompare(timelineSourceName(b)));
+      for (const sourceId of sources) {
+        const section = document.createElement("section");
+        section.className = "historySection";
+
+        const sectionTitle = document.createElement("div");
+        sectionTitle.className = "historySectionTitle";
+        sectionTitle.textContent = timelineSourceName(sourceId);
+        section.appendChild(sectionTitle);
+
+        const sourceRows = grouped[sourceId];
+        for (const ev of sourceRows) {
+          const btn = document.createElement("button");
+          btn.className = "linkbtn";
+          btn.type = "button";
+          btn.style.textAlign = "left";
+          btn.style.width = "100%";
+          const t = `${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${ev.title || "—"}`;
+          btn.textContent = t;
+          btn.addEventListener("click", () => {
+            const idx = timelineState.filteredEvents.indexOf(ev);
+            if (idx >= 0) timelineState.index = idx;
+            renderTimelinePreview();
+          });
+          section.appendChild(btn);
+        }
+
+        list.appendChild(section);
+      }
+    }
+
+    function renderTimeline() {
+      applyTimelineFilters();
+      renderTimelineList();
+      renderTimelinePreview();
+    }
+
+    async function loadTimeline(hours = 12) {
+      try {
+        const q = new URLSearchParams({ hours: String(hours) });
+        const resp = await fetchJSON(`/api/timeline?${q.toString()}`);
+        timelineState.allEvents = Array.isArray(resp?.events) ? resp.events : [];
+
+        const sel = $("tl-source");
+        const cur = timelineState.source || "all";
+        if (sel) {
+          const ids = [...new Set(timelineState.allEvents.map((e) => String(e.source_id || "")).filter(Boolean))].sort();
+          sel.innerHTML = `<option value="all">All Sources</option>`;
+          for (const id of ids) {
+            const opt = document.createElement("option");
+            opt.value = id;
+            opt.textContent = timelineSourceName(id);
+            sel.appendChild(opt);
+          }
+          sel.value = ids.includes(cur) || cur === "all" ? cur : "all";
+          timelineState.source = sel.value;
+        }
+
+        timelineState.index = 0;
+        renderTimeline();
+      } catch (e) {
+        console.warn("timeline load failed", e);
+      }
+    }
+
     async function reload() {
       const btnReload = $("btn-reload");
       if (btnReload) btnReload.disabled = true;
@@ -1418,10 +1655,30 @@
 
     $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
-    $("drawer-overlay")?.addEventListener("click", () => setHistoryOpen(false));
+    $("btn-timeline")?.addEventListener("click", async () => {
+      await loadTimeline(12);
+      setTimelineOpen(true);
+    });
+    $("btn-timeline-close")?.addEventListener("click", () => setTimelineOpen(false));
+    $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setHistoryOpen(false);
+      if (e.key === "Escape") closeAllDrawers();
+    });
+
+    $("tl-source")?.addEventListener("change", (e) => {
+      timelineState.source = e.target.value || "all";
+      timelineState.index = 0;
+      renderTimeline();
+    });
+    $("tl-changes-only")?.addEventListener("change", (e) => {
+      timelineState.changesOnly = Boolean(e.target.checked);
+      timelineState.index = 0;
+      renderTimeline();
+    });
+    $("tl-scrubber")?.addEventListener("input", (e) => {
+      timelineState.index = Number(e.target.value || 0);
+      renderTimelinePreview();
     });
 
     if (isLocal && !isGitHubPages) {

@@ -4,7 +4,8 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 import { chromium } from "playwright";
-import { uploadScreenshot, pruneOldScreenshots } from "./lib/supabaseShots.js";
+import { getSupabaseAdmin, hasSupabaseAdmin, SUPABASE_SCREENSHOT_BUCKET, SUPABASE_SCREENSHOT_PUBLIC } from "./lib/supabaseClient.js";
+import { captureAndUploadScreenshot, recordScreenshotEvent, pruneOldScreenshots } from "./lib/screenshots.js";
 
 const app = express();
 app.use(express.json());
@@ -22,13 +23,9 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
-const DATA_DIR = path.join(process.cwd(), "data");
-const SCREENSHOT_EVENTS_FILE = path.join(DATA_DIR, "screenshot_events.jsonl");
-const SUPABASE_SCREENSHOT_BUCKET = process.env.SUPABASE_SCREENSHOT_BUCKET || "screenshots";
 const SCREENSHOT_RETENTION_HOURS = 12;
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
 function nowISO() {
   return new Date().toISOString();
@@ -235,125 +232,16 @@ async function withBrowser(fn, opts = {}) {
   }
 }
 
-async function captureScreenshotBuffer(page) {
-  try {
-    const buffer = await page.screenshot({
-      type: "webp",
-      quality: 70,
-      fullPage: false,
-    });
-    return { buffer, contentType: "image/webp" };
-  } catch {
-    const buffer = await page.screenshot({
-      type: "jpeg",
-      quality: 70,
-      fullPage: false,
-    });
-    return { buffer, contentType: "image/jpeg" };
-  }
-}
+function classifyScreenshotKind(prevItem, nextItem) {
+  const prevUrl = String(prevItem?.url || "");
+  const nextUrl = String(nextItem?.url || "");
+  const prevTitle = String(prevItem?.title || "");
+  const nextTitle = String(nextItem?.title || "");
 
-function appendScreenshotEvent(entry) {
-  try {
-    const line = `${JSON.stringify(entry)}\n`;
-    fs.appendFileSync(SCREENSHOT_EVENTS_FILE, line, "utf8");
-  } catch {}
-}
-
-function pruneScreenshotEventLog(cutoffIso) {
-  try {
-    if (!fs.existsSync(SCREENSHOT_EVENTS_FILE)) return { removedCount: 0 };
-    const cutoffMs = Date.parse(String(cutoffIso || ""));
-    if (!Number.isFinite(cutoffMs)) return { removedCount: 0 };
-
-    const lines = fs
-      .readFileSync(SCREENSHOT_EVENTS_FILE, "utf8")
-      .split("\n")
-      .filter(Boolean);
-
-    let removedCount = 0;
-    const kept = [];
-    for (const line of lines) {
-      try {
-        const ev = JSON.parse(line);
-        const ts = Date.parse(String(ev?.tsIso || ev?.capturedAt || ""));
-        if (Number.isFinite(ts) && ts < cutoffMs) {
-          removedCount += 1;
-          continue;
-        }
-        kept.push(line);
-      } catch {
-        // Keep malformed lines rather than dropping unknown data.
-        kept.push(line);
-      }
-    }
-
-    const body = kept.length ? `${kept.join("\n")}\n` : "";
-    fs.writeFileSync(SCREENSHOT_EVENTS_FILE, body, "utf8");
-    return { removedCount };
-  } catch {
-    return { removedCount: 0 };
-  }
-}
-
-async function captureAndUploadScreenshot(page, { sourceId, runId, tsIso }) {
-  if (!sourceId || !runId || !tsIso) return null;
-  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return null;
-
-  try {
-    const { buffer, contentType } = await captureScreenshotBuffer(page);
-    const uploaded = await uploadScreenshot({
-      sourceId,
-      runId,
-      tsIso,
-      buffer,
-      contentType,
-    });
-
-    const shot = {
-      objectPath: uploaded.objectPath,
-      url: uploaded.url,
-      contentType,
-      sizeBytes: buffer?.length || null,
-      capturedAt: tsIso,
-      bucket: SUPABASE_SCREENSHOT_BUCKET,
-    };
-
-    appendScreenshotEvent({
-      tsIso,
-      sourceId,
-      runId,
-      bucket: SUPABASE_SCREENSHOT_BUCKET,
-      objectPath: shot.objectPath,
-      url: shot.url,
-      contentType: shot.contentType,
-      sizeBytes: shot.sizeBytes,
-    });
-
-    return shot;
-  } catch (err) {
-    console.warn(`Screenshot upload failed for ${sourceId} (${runId}):`, String(err?.message || err));
-    return null;
-  }
-}
-
-async function pruneScreenshotRetention() {
-  const cutoffIso = new Date(Date.now() - SCREENSHOT_RETENTION_HOURS * 60 * 60 * 1000).toISOString();
-  let deletedCount = 0;
-  if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    try {
-      const pruned = await pruneOldScreenshots({
-        cutoffIso,
-        bucket: SUPABASE_SCREENSHOT_BUCKET,
-      });
-      deletedCount = pruned?.deletedCount || 0;
-    } catch (err) {
-      console.warn("Screenshot retention prune failed:", String(err?.message || err));
-    }
-  }
-
-  const prunedMeta = pruneScreenshotEventLog(cutoffIso);
-  return { deletedCount, trimmedEvents: prunedMeta?.removedCount || 0, cutoffIso };
+  if (!nextUrl) return "heartbeat";
+  if (!prevUrl || prevUrl !== nextUrl) return "new_url";
+  if (prevTitle !== nextTitle) return "new_headline";
+  return "heartbeat";
 }
 
 async function archiveRun(page, runId, snapshot) {
@@ -434,7 +322,7 @@ async function scrapeABCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "abc1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "abc1", runId, tsIso: fetchedAt }) : null;
     const snapshot = { id: "abc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "ABC not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -503,7 +391,7 @@ async function scrapeCBSHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "cbs1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "cbs1", runId, tsIso: fetchedAt }) : null;
     const snapshot = { id: "cbs1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CBS not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -631,7 +519,7 @@ async function scrapeNBCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "nbc1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "nbc1", runId, tsIso: fetchedAt }) : null;
     const snapshot = { id: "nbc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "NBC not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -708,7 +596,7 @@ async function scrapeCNNHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "cnn1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "cnn1", runId, tsIso: fetchedAt }) : null;
     const snapshot = { id: "cnn1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CNN not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -785,7 +673,7 @@ async function scrapeReutersHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "reuters1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "reuters1", runId, tsIso: fetchedAt }) : null;
     const snapshot = {
       id: "reuters1",
       fetchedAt,
@@ -927,7 +815,7 @@ async function scrapeUSATHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "usat1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "usat1", runId, tsIso: fetchedAt }) : null;
     const snapshot = {
       id: "usat1",
       fetchedAt,
@@ -1046,7 +934,7 @@ async function scrapeAPHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "ap1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "ap1", runId, tsIso: fetchedAt }) : null;
     const snapshot = {
       id: "ap1",
       fetchedAt,
@@ -1148,7 +1036,7 @@ async function scrapeLATimesHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "latimes1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "latimes1", runId, tsIso: fetchedAt }) : null;
     const snapshot = {
       id: "latimes1",
       fetchedAt,
@@ -1259,7 +1147,7 @@ async function scrapeNPRHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot(page, { sourceId: "npr1", runId, tsIso: fetchedAt }) : null;
+    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "npr1", runId, tsIso: fetchedAt }) : null;
     const snapshot = {
       id: "npr1",
       fetchedAt,
@@ -1283,15 +1171,14 @@ async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
   const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "npr1"];
-  const pruneResult = await pruneScreenshotRetention();
-  if ((pruneResult?.deletedCount || 0) > 0 || (pruneResult?.trimmedEvents || 0) > 0) {
-    console.log(
-      `Screenshot prune @ ${pruneResult.cutoffIso}: deleted=${pruneResult.deletedCount || 0}, trimmedEvents=${pruneResult.trimmedEvents || 0}`,
-    );
+  const pruneResult = await pruneOldScreenshots({ hours: SCREENSHOT_RETENTION_HOURS });
+  if ((pruneResult?.prunedRows || 0) > 0 || (pruneResult?.deletedObjects || 0) > 0) {
+    console.log(`Screenshot prune: rows=${pruneResult.prunedRows || 0}, storage_objects=${pruneResult.deletedObjects || 0}`);
   }
 
   for (const sid of runList) {
     let res;
+    const prevItem = cache.sources?.[sid]?.item || null;
 
     if (sid === "abc1") res = await scrapeABCHero();
     else if (sid === "cbs1") res = await scrapeCBSHero();
@@ -1303,6 +1190,24 @@ async function refreshSources({ id = "" } = {}) {
     else if (sid === "latimes1") res = await scrapeLATimesHero();
     else if (sid === "npr1") res = await scrapeNPRHero();
     else throw new Error(`Unknown source id: ${sid}`);
+
+    if (res?.item && res?.shot?.object_path) {
+      try {
+        const kind = classifyScreenshotKind(prevItem, res.item);
+        await recordScreenshotEvent({
+          ts: res.updatedAt || nowISO(),
+          sourceId: sid,
+          runId: res.runId || "",
+          kind,
+          title: res.item?.title || null,
+          url: res.item?.url || null,
+          object_path: res.shot.object_path,
+          shot_url: res.shot.shot_url || null,
+        });
+      } catch (err) {
+        console.warn(`screenshot_events insert failed (${sid}):`, String(err?.message || err));
+      }
+    }
 
     cache.sources[sid] = {
       ...cache.sources[sid],
@@ -1353,6 +1258,79 @@ app.get("/api/supabase-snapshot", async (req, res) => {
     res.json({ ok: true, ...snapshot });
   } catch (err) {
     res.status(502).json({ ok: false, error: String(err?.message || err) });
+  }
+});
+
+app.get("/api/timeline", async (req, res) => {
+  try {
+    const hoursRaw = Number(req.query?.hours || 12);
+    const hours = Number.isFinite(hoursRaw) ? Math.max(1, Math.min(72, Math.floor(hoursRaw))) : 12;
+    const source = String(req.query?.source || "").trim();
+    const cutoffIso = new Date(Date.now() - hours * 60 * 60 * 1000).toISOString();
+
+    if (!hasSupabaseAdmin()) {
+      return res.json({ ok: true, hours, generatedAt: nowISO(), events: [] });
+    }
+
+    const sb = getSupabaseAdmin();
+    let q = sb
+      .from("screenshot_events")
+      .select("ts,source_id,kind,title,url,object_path,shot_url")
+      .gte("ts", cutoffIso)
+      .order("ts", { ascending: true });
+
+    if (source) q = q.eq("source_id", source);
+
+    const { data, error } = await q;
+    if (error) throw error;
+
+    const events = Array.isArray(data) ? data.map((x) => ({ ...x })) : [];
+
+    if (!SUPABASE_SCREENSHOT_PUBLIC) {
+      const objectPaths = events.map((e) => e.object_path).filter(Boolean);
+      const uniquePaths = [...new Set(objectPaths)];
+      const signedByPath = new Map();
+
+      for (let i = 0; i < uniquePaths.length; i += 100) {
+        const batch = uniquePaths.slice(i, i + 100);
+        const { data: signed, error: signErr } = await sb.storage
+          .from(SUPABASE_SCREENSHOT_BUCKET)
+          .createSignedUrls(batch, 3600);
+        if (signErr) {
+          console.warn("timeline signed url generation failed:", signErr.message || signErr);
+          continue;
+        }
+        for (const row of signed || []) {
+          if (row?.path && row?.signedUrl) signedByPath.set(row.path, row.signedUrl);
+        }
+      }
+
+      for (const ev of events) {
+        ev.shot_url = signedByPath.get(ev.object_path) || null;
+      }
+    } else {
+      for (const ev of events) {
+        if (ev.shot_url) continue;
+        const pub = sb.storage.from(SUPABASE_SCREENSHOT_BUCKET).getPublicUrl(ev.object_path || "");
+        ev.shot_url = pub?.data?.publicUrl || null;
+      }
+    }
+
+    res.json({
+      ok: true,
+      hours,
+      generatedAt: nowISO(),
+      events: events.map((e) => ({
+        ts: e.ts,
+        source_id: e.source_id,
+        kind: e.kind,
+        title: e.title,
+        url: e.url,
+        shot_url: e.shot_url || null,
+      })),
+    });
+  } catch (err) {
+    res.status(500).json({ ok: false, error: String(err?.message || err) });
   }
 });
 
