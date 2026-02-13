@@ -6,6 +6,7 @@ import crypto from "crypto";
 import { chromium } from "playwright";
 import { getSupabaseAdmin, hasSupabaseAdmin, SUPABASE_SCREENSHOT_BUCKET, SUPABASE_SCREENSHOT_PUBLIC } from "./lib/supabaseClient.js";
 import { captureAndUploadScreenshot, recordScreenshotEvent, pruneOldScreenshots } from "./lib/screenshots.js";
+import { dismissOverlays } from "./lib/dismissOverlays.js";
 
 const app = express();
 app.use(express.json());
@@ -24,6 +25,7 @@ const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
 const SCREENSHOT_RETENTION_HOURS = 12;
+const DEBUG_OVERLAYS = process.env.DEBUG_OVERLAYS === "1";
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
 
@@ -244,6 +246,12 @@ function classifyScreenshotKind(prevItem, nextItem) {
   return "heartbeat";
 }
 
+async function captureTimelineShot(page, { sourceId, runId, tsIso, item }) {
+  if (!item) return null;
+  await dismissOverlays(page, { debug: DEBUG_OVERLAYS });
+  return await captureAndUploadScreenshot({ page, sourceId, runId, tsIso });
+}
+
 async function archiveRun(page, runId, snapshot) {
   try {
     const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
@@ -322,7 +330,7 @@ async function scrapeABCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "abc1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "abc1", runId, tsIso: fetchedAt, item });
     const snapshot = { id: "abc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "ABC not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -391,7 +399,7 @@ async function scrapeCBSHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "cbs1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "cbs1", runId, tsIso: fetchedAt, item });
     const snapshot = { id: "cbs1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CBS not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -519,7 +527,7 @@ async function scrapeNBCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "nbc1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "nbc1", runId, tsIso: fetchedAt, item });
     const snapshot = { id: "nbc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "NBC not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -596,7 +604,7 @@ async function scrapeCNNHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "cnn1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "cnn1", runId, tsIso: fetchedAt, item });
     const snapshot = { id: "cnn1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CNN not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
@@ -673,7 +681,7 @@ async function scrapeReutersHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "reuters1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "reuters1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "reuters1",
       fetchedAt,
@@ -815,7 +823,7 @@ async function scrapeUSATHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "usat1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "usat1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "usat1",
       fetchedAt,
@@ -934,7 +942,7 @@ async function scrapeAPHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "ap1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "ap1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "ap1",
       fetchedAt,
@@ -1036,7 +1044,7 @@ async function scrapeLATimesHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "latimes1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "latimes1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "latimes1",
       fetchedAt,
@@ -1147,7 +1155,7 @@ async function scrapeNPRHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = item ? await captureAndUploadScreenshot({ page, sourceId: "npr1", runId, tsIso: fetchedAt }) : null;
+    const shot = await captureTimelineShot(page, { sourceId: "npr1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "npr1",
       fetchedAt,
