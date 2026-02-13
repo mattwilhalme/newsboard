@@ -27,27 +27,27 @@ const SCREENSHOT_RETENTION_HOURS = 12;
 const DEBUG_SCREENSHOT = process.env.DEBUG_SCREENSHOT === "1";
 
 const DEFAULT_SCREENSHOT_PROFILE = {
-  viewportWidth: 1280,
-  viewportHeight: 720,
+  viewportWidth: 1920,
+  viewportHeight: 1080,
   scrollY: 0,
   settleMs: 700,
 };
 
 const SCREENSHOT_PROFILES = {
   // aliases
-  usatoday1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
-  lat1: { viewportHeight: 1000, scrollY: 760, settleMs: 900 },
+  usatoday1: { viewportHeight: 1500, scrollY: 0, settleMs: 900 },
+  lat1: { viewportHeight: 1500, scrollY: 1140, settleMs: 900 },
 
   // in-repo source IDs
-  abc1: { viewportHeight: 900, scrollY: 420 },
-  cbs1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
-  usat1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
-  nbc1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
-  cnn1: { viewportHeight: 1000, scrollY: 760, settleMs: 900 },
-  reuters1: { viewportHeight: 1000, scrollY: 300, settleMs: 900 },
-  ap1: { viewportHeight: 1000, scrollY: 620, settleMs: 900 },
-  latimes1: { viewportHeight: 1000, scrollY: 760, settleMs: 900 },
-  npr1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
+  abc1: { viewportHeight: 1350, scrollY: 630 },
+  cbs1: { viewportHeight: 1500, scrollY: 0, settleMs: 900 },
+  usat1: { viewportHeight: 1500, scrollY: 0, settleMs: 900 },
+  nbc1: { viewportHeight: 1500, scrollY: 0, settleMs: 900 },
+  cnn1: { viewportHeight: 1500, scrollY: 1140, settleMs: 900 },
+  reuters1: { viewportHeight: 1500, scrollY: 450, settleMs: 900 },
+  ap1: { viewportHeight: 1500, scrollY: 930, settleMs: 900 },
+  latimes1: { viewportHeight: 1500, scrollY: 1140, settleMs: 900 },
+  npr1: { viewportHeight: 1500, scrollY: 0, settleMs: 900 },
 };
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
