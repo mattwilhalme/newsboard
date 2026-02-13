@@ -115,17 +115,14 @@
     @media (prefers-reduced-motion: no-preference){
       .card.card-enter{
         opacity:0;
-        transform: translate3d(0, var(--enter-y), 0);
-        filter: saturate(0.96);
+        transform: none;
+        filter: none;
       }
       .card.card-enter.card-settle{
         opacity:1;
-        transform: translate3d(0,0,0) rotate(0deg) scale(1);
-        filter: saturate(1);
-        transition:
-          transform 480ms cubic-bezier(0.22, 1, 0.36, 1),
-          opacity 360ms ease-out,
-          filter 420ms ease-out;
+        transform: none;
+        filter: none;
+        transition: opacity 260ms ease-out;
         transition-delay: var(--enter-delay);
       }
     }
@@ -204,22 +201,7 @@
       cursor:pointer;
     }
     .linkbtn:hover{ border-color: rgba(26,115,232,.45); color: var(--blue2); }
-    .shotRail{
-      display:flex;
-      gap:10px;
-      overflow-x:auto;
-      overflow-y:hidden;
-      padding: 2px 1px 6px;
-      scroll-snap-type: x proximity;
-      scroll-behavior: auto;
-      overscroll-behavior-x: contain;
-      -webkit-overflow-scrolling: touch;
-      touch-action: pan-x;
-    }
-    .shotRail::-webkit-scrollbar{ display:none; }
-    .shotRail{ scrollbar-width:none; }
     .shotTile{
-      flex:0 0 min(300px, 76vw);
       display:flex;
       flex-direction:column;
       gap:6px;
@@ -228,8 +210,13 @@
       border-radius:12px;
       background:#fff;
       cursor:pointer;
-      scroll-snap-align:start;
       text-align:left;
+    }
+    .shotFrame{
+      width:100%;
+      max-width:360px;
+      margin:0 auto;
+      touch-action: pan-y;
     }
     .shotRailControls{
       display:flex;
@@ -351,10 +338,44 @@
       .latestThumb{ width:100%; }
       .hBody{ flex-direction:column; }
       .hThumb{ width:100%; }
-      .shotTile{ flex-basis: 82vw; }
+      .shotFrame{ max-width: 100%; }
       .shotRailControls .linkbtn{
         padding:6px 8px;
         min-width:38px;
+      }
+    }
+    @media (max-width: 430px){
+      .topbar{
+        padding:10px 10px;
+        align-items:flex-start;
+        flex-direction:column;
+        gap:8px;
+      }
+      .controls{
+        width:100%;
+        justify-content:flex-start;
+      }
+      .btn{
+        padding:7px 10px;
+        font-size:11px;
+      }
+      main{
+        padding:10px 10px 20px;
+      }
+      .cardHead{
+        padding:9px 10px 8px;
+      }
+      .cardBody{
+        padding:10px;
+      }
+      .drawer{
+        width:100vw;
+      }
+      .drawerBody{
+        padding:10px;
+      }
+      .shotRailControls{
+        gap:6px;
       }
     }
     
@@ -1636,49 +1657,83 @@
 
         const hint = document.createElement("div");
         hint.className = "tiny";
-        hint.textContent = "Newest first. Swipe left and drag the slider to browse older screenshots.";
+        hint.textContent = "Newest first. Swipe left/right or use controls to fade between screenshots.";
 
-        const rail = document.createElement("div");
-        rail.className = "shotRail";
+        const frame = document.createElement("div");
+        frame.className = "shotFrame";
+
+        const tile = document.createElement("button");
+        tile.type = "button";
+        tile.className = "shotTile";
+        tile.style.width = "100%";
+        tile.style.transition = "opacity 180ms ease";
+
+        const meta = document.createElement("div");
+        meta.className = "tiny";
+        meta.style.textAlign = "left";
+
+        const imgWrap = document.createElement("div");
+        imgWrap.style.width = "100%";
+        imgWrap.style.aspectRatio = "16 / 9";
+        imgWrap.style.borderRadius = "10px";
+        imgWrap.style.overflow = "hidden";
+        imgWrap.style.background = "#0f1113";
+        imgWrap.style.border = "1px solid var(--line)";
+
+        const img = document.createElement("img");
+        img.alt = "";
+        img.loading = "lazy";
+        img.style.width = "100%";
+        img.style.height = "100%";
+        img.style.objectFit = "contain";
+        img.style.background = "#0f1113";
+        img.style.opacity = "1";
+        img.style.transition = "opacity 180ms ease";
+        imgWrap.appendChild(img);
+
+        tile.appendChild(meta);
+        tile.appendChild(imgWrap);
+        frame.appendChild(tile);
 
         const eventsWithShots = timelineEvents.filter((ev) => ev?.shot_url);
-        eventsWithShots.forEach((ev, idx) => {
-          const tile = document.createElement("button");
-          tile.type = "button";
-          tile.className = "shotTile";
-          tile.style.transition = "opacity 220ms ease";
+        let shotIdx = 0;
+        let shotFadeToken = 0;
 
-          const meta = document.createElement("div");
-          meta.className = "tiny";
-          meta.style.textAlign = "left";
+        function renderShot(i){
+          if (!eventsWithShots.length) return;
+          shotIdx = Math.max(0, Math.min(eventsWithShots.length - 1, i));
+          const ev = eventsWithShots[shotIdx];
+          const nextSrc = ev?.shot_url || "";
+          const currentSrc = img.getAttribute("src") || "";
+
           meta.textContent = `${fmtTime(ev?.ts)} · ${ago(ev?.ts)} · ${timelineKindLabel(ev?.kind)}`;
+          scrubber.max = String(Math.max(0, eventsWithShots.length - 1));
+          scrubber.value = String(shotIdx);
+          prev.disabled = shotIdx <= 0;
+          next.disabled = shotIdx >= eventsWithShots.length - 1;
 
-          const imgWrap = document.createElement("div");
-          imgWrap.style.width = "100%";
-          imgWrap.style.aspectRatio = "16 / 9";
-          imgWrap.style.borderRadius = "10px";
-          imgWrap.style.overflow = "hidden";
-          imgWrap.style.background = "#0f1113";
-          imgWrap.style.border = "1px solid var(--line)";
+          if (!nextSrc || currentSrc === nextSrc) {
+            img.style.opacity = "1";
+            if (nextSrc && !currentSrc) img.src = nextSrc;
+            return;
+          }
 
-          const img = document.createElement("img");
-          img.alt = "";
-          img.loading = "lazy";
-          img.src = ev.shot_url;
-          img.style.width = "100%";
-          img.style.height = "100%";
-          img.style.objectFit = "contain";
-          img.style.background = "#0f1113";
-          imgWrap.appendChild(img);
+          shotFadeToken += 1;
+          const token = shotFadeToken;
+          img.style.opacity = "0.16";
+          const pre = new Image();
+          pre.onload = () => {
+            if (token !== shotFadeToken) return;
+            img.src = nextSrc;
+            requestAnimationFrame(() => {
+              img.style.opacity = "1";
+            });
+          };
+          pre.src = nextSrc;
+        }
 
-          tile.appendChild(meta);
-          tile.appendChild(imgWrap);
-
-          tile.addEventListener("click", () => {
-            ensureShotLightbox().open(eventsWithShots, idx);
-          });
-
-          rail.appendChild(tile);
+        tile.addEventListener("click", () => {
+          ensureShotLightbox().open(eventsWithShots, shotIdx);
         });
 
         const controls = document.createElement("div");
@@ -1706,56 +1761,38 @@
         controls.appendChild(scrubber);
         controls.appendChild(next);
 
-        function syncScrubberFromRail(){
-          const maxLeft = Math.max(0, rail.scrollWidth - rail.clientWidth);
-          scrubber.max = String(Math.ceil(maxLeft));
-          scrubber.value = String(Math.round(Math.min(maxLeft, rail.scrollLeft)));
-          controls.style.display = maxLeft > 0 ? "flex" : "none";
+        if (eventsWithShots.length <= 1) {
+          prev.disabled = true;
+          next.disabled = true;
+        }
+        if (!eventsWithShots.length) {
+          hint.textContent = "No screenshots available yet.";
+          controls.style.display = "none";
+          tile.disabled = true;
         }
 
-        function applyRailCrossfade(){
-          const tiles = rail.querySelectorAll(".shotTile");
-          if (!tiles.length) return;
-          const railRect = rail.getBoundingClientRect();
-          const centerX = railRect.left + (railRect.width / 2);
-          const fadeRadius = Math.max(railRect.width * 0.72, 260);
-          for (const tile of tiles) {
-            const rect = tile.getBoundingClientRect();
-            const tileCenter = rect.left + (rect.width / 2);
-            const dist = Math.abs(tileCenter - centerX);
-            const w = Math.max(0, 1 - (dist / fadeRadius));
-            const opacity = 0.2 + (w * 0.8);
-            tile.style.opacity = opacity.toFixed(3);
-            tile.style.transform = "none";
-          }
-        }
-
-        let railFxRaf = 0;
-        function scheduleRailFx(){
-          if (railFxRaf) return;
-          railFxRaf = requestAnimationFrame(() => {
-            railFxRaf = 0;
-            applyRailCrossfade();
-          });
-        }
-
-        function scrollRailBy(delta){
-          rail.scrollBy({ left: delta, behavior: "smooth" });
-        }
-
-        rail.addEventListener("scroll", () => {
-          syncScrubberFromRail();
-          scheduleRailFx();
-        }, { passive: true });
         scrubber.addEventListener("input", () => {
-          rail.scrollTo({ left: Number(scrubber.value || 0), behavior: "auto" });
-          scheduleRailFx();
+          renderShot(Number(scrubber.value || 0));
         });
-        prev.addEventListener("click", () => scrollRailBy(-Math.max(220, Math.floor(rail.clientWidth * 0.7))));
-        next.addEventListener("click", () => scrollRailBy(Math.max(220, Math.floor(rail.clientWidth * 0.7))));
+        prev.addEventListener("click", () => renderShot(shotIdx - 1));
+        next.addEventListener("click", () => renderShot(shotIdx + 1));
+
+        let startX = null;
+        frame.addEventListener("touchstart", (e) => {
+          startX = e.touches?.[0]?.clientX ?? null;
+        }, { passive: true });
+        frame.addEventListener("touchend", (e) => {
+          const endX = e.changedTouches?.[0]?.clientX ?? null;
+          if (startX === null || endX === null) return;
+          const dx = endX - startX;
+          startX = null;
+          if (Math.abs(dx) < 36) return;
+          if (dx < 0) renderShot(shotIdx + 1);
+          else renderShot(shotIdx - 1);
+        }, { passive: true });
 
         panel.appendChild(hint);
-        panel.appendChild(rail);
+        panel.appendChild(frame);
         panel.appendChild(controls);
 
         foot.appendChild(trigger);
@@ -1764,13 +1801,10 @@
         trigger.addEventListener("click", () => {
           const open = panel.style.display !== "none";
           panel.style.display = open ? "none" : "flex";
-          if (!open) {
-            requestAnimationFrame(() => {
-              syncScrubberFromRail();
-              applyRailCrossfade();
-            });
-          }
+          if (!open) requestAnimationFrame(() => renderShot(shotIdx));
         });
+
+        renderShot(0);
 
         body.appendChild(foot);
       }

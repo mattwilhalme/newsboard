@@ -23,7 +23,7 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
-const SCREENSHOT_RETENTION_HOURS = 12;
+const SCREENSHOT_RETENTION_HOURS = 18;
 const DEBUG_SCREENSHOT = process.env.DEBUG_SCREENSHOT === "1";
 
 const DEFAULT_SCREENSHOT_PROFILE = {
