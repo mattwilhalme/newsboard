@@ -1646,6 +1646,7 @@
           const tile = document.createElement("button");
           tile.type = "button";
           tile.className = "shotTile";
+          tile.style.transition = "opacity 220ms ease, transform 220ms ease";
 
           const meta = document.createElement("div");
           meta.className = "tiny";
@@ -1712,13 +1713,44 @@
           controls.style.display = maxLeft > 0 ? "flex" : "none";
         }
 
+        function applyRailCrossfade(){
+          const tiles = rail.querySelectorAll(".shotTile");
+          if (!tiles.length) return;
+          const railRect = rail.getBoundingClientRect();
+          const centerX = railRect.left + (railRect.width / 2);
+          const fadeRadius = Math.max(railRect.width * 0.72, 260);
+          for (const tile of tiles) {
+            const rect = tile.getBoundingClientRect();
+            const tileCenter = rect.left + (rect.width / 2);
+            const dist = Math.abs(tileCenter - centerX);
+            const w = Math.max(0, 1 - (dist / fadeRadius));
+            const opacity = 0.38 + (w * 0.62);
+            const scale = 0.965 + (w * 0.035);
+            tile.style.opacity = opacity.toFixed(3);
+            tile.style.transform = `scale(${scale.toFixed(3)})`;
+          }
+        }
+
+        let railFxRaf = 0;
+        function scheduleRailFx(){
+          if (railFxRaf) return;
+          railFxRaf = requestAnimationFrame(() => {
+            railFxRaf = 0;
+            applyRailCrossfade();
+          });
+        }
+
         function scrollRailBy(delta){
           rail.scrollBy({ left: delta, behavior: "smooth" });
         }
 
-        rail.addEventListener("scroll", syncScrubberFromRail, { passive: true });
+        rail.addEventListener("scroll", () => {
+          syncScrubberFromRail();
+          scheduleRailFx();
+        }, { passive: true });
         scrubber.addEventListener("input", () => {
           rail.scrollTo({ left: Number(scrubber.value || 0), behavior: "auto" });
+          scheduleRailFx();
         });
         prev.addEventListener("click", () => scrollRailBy(-Math.max(220, Math.floor(rail.clientWidth * 0.7))));
         next.addEventListener("click", () => scrollRailBy(Math.max(220, Math.floor(rail.clientWidth * 0.7))));
@@ -1733,7 +1765,12 @@
         trigger.addEventListener("click", () => {
           const open = panel.style.display !== "none";
           panel.style.display = open ? "none" : "flex";
-          if (!open) requestAnimationFrame(syncScrubberFromRail);
+          if (!open) {
+            requestAnimationFrame(() => {
+              syncScrubberFromRail();
+              applyRailCrossfade();
+            });
+          }
         });
 
         body.appendChild(foot);
