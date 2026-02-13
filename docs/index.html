@@ -1209,7 +1209,7 @@
       card.style.setProperty("--enter-delay", `${delay}ms`);
     }
 
-    function buildCardEl(id, src, indicator){
+    function buildCardEl(id, src, indicator, timelineBySource = {}){
       const card = document.createElement("section");
       card.className = "card";
       card.setAttribute("data-source-id", id);
@@ -1235,36 +1235,24 @@
 
       const time = document.createElement("div");
       time.className = "srcTime";
-      const t = src?.updatedAt || null;
-      time.textContent = t ? `${fmtTime(t)} · ${ago(t)}` : "—";
+      const updatedAt = src?.updatedAt || null;
+      const firstSeenAt = src?.firstSeenAt || src?.since || null;
+      if (updatedAt) {
+        time.textContent = `Updated ${ago(updatedAt)}`;
+      } else if (firstSeenAt) {
+        time.textContent = `First seen ${ago(firstSeenAt)}`;
+      } else {
+        time.textContent = "Updated —";
+      }
 
       const since = document.createElement("div");
       since.className = "tiny";
-
-      if (src?.ok) {
-        const hasTop = src?.secondsInTop !== null && src?.secondsInTop !== undefined;
-        const hasUpdated = Boolean(src?.updatedAt);
-
-        const topSec = hasTop ? Number(src.secondsInTop) : null;
-
-        const updatedMs = hasUpdated ? Date.parse(src.updatedAt) : NaN;
-        const updatedAgeSec = Number.isFinite(updatedMs) ? Math.floor((Date.now() - updatedMs) / 1000) : null;
-
-        const SAME_TOLERANCE_SEC = 20;
-        const redundant =
-          Number.isFinite(topSec) &&
-          updatedAgeSec !== null &&
-          Math.abs(topSec - updatedAgeSec) <= SAME_TOLERANCE_SEC;
-
-        if (Number.isFinite(topSec) && !redundant) {
-          since.textContent = `First Seen ${fmtDurationSeconds(topSec)}`;
-        } else {
-          since.textContent = "";
-          since.style.display = "none";
-        }
+      if (firstSeenAt) {
+        since.textContent = `First seen ${ago(firstSeenAt)}`;
+      } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
+        since.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
       } else {
-        since.textContent = "";
-        since.style.display = "none";
+        since.textContent = "First seen —";
       }
 
       right.appendChild(time);
@@ -1343,13 +1331,120 @@
       body.appendChild(thumb);
       body.appendChild(wrap);
 
+      const timelineEvents = Array.isArray(timelineBySource?.[id]) ? timelineBySource[id] : [];
+      if (timelineEvents.length) {
+        const foot = document.createElement("div");
+        foot.style.borderTop = "1px solid var(--line)";
+        foot.style.padding = "10px 12px 12px";
+        foot.style.display = "flex";
+        foot.style.flexDirection = "column";
+        foot.style.gap = "8px";
+
+        const trigger = document.createElement("button");
+        trigger.className = "linkbtn";
+        trigger.type = "button";
+        trigger.textContent = `${sourceLabel(id, src)} timeline`;
+
+        const panel = document.createElement("div");
+        panel.style.display = "none";
+        panel.style.flexDirection = "column";
+        panel.style.gap = "8px";
+
+        const controls = document.createElement("div");
+        controls.className = "row";
+
+        const prev = document.createElement("button");
+        prev.className = "linkbtn";
+        prev.type = "button";
+        prev.textContent = "Back";
+
+        const next = document.createElement("button");
+        next.className = "linkbtn";
+        next.type = "button";
+        next.textContent = "Forward";
+
+        const pos = document.createElement("span");
+        pos.className = "tiny mono";
+
+        controls.appendChild(prev);
+        controls.appendChild(next);
+        controls.appendChild(pos);
+
+        const pMeta = document.createElement("div");
+        pMeta.className = "tiny";
+
+        const imgWrap = document.createElement("div");
+        imgWrap.style.border = "1px solid var(--line)";
+        imgWrap.style.borderRadius = "12px";
+        imgWrap.style.overflow = "hidden";
+        imgWrap.style.background = "#f1f3f4";
+        imgWrap.style.width = "100%";
+        imgWrap.style.aspectRatio = "16 / 9";
+        const img = document.createElement("img");
+        img.alt = "";
+        img.style.width = "100%";
+        img.style.height = "100%";
+        img.style.objectFit = "cover";
+        imgWrap.appendChild(img);
+
+        panel.appendChild(controls);
+        panel.appendChild(pMeta);
+        panel.appendChild(imgWrap);
+
+        foot.appendChild(trigger);
+        foot.appendChild(panel);
+
+        let idx = timelineEvents.length - 1;
+        function preloadNeighbor(i) {
+          if (i < 0 || i >= timelineEvents.length) return;
+          const u = timelineEvents[i]?.shot_url;
+          if (!u) return;
+          const im = new Image();
+          im.src = u;
+        }
+        function renderTimelinePanel() {
+          const ev = timelineEvents[idx];
+          pos.textContent = `${idx + 1}/${timelineEvents.length}`;
+          pMeta.textContent = `${fmtTime(ev?.ts)} · ${ago(ev?.ts)} · ${timelineKindLabel(ev?.kind)}`;
+          if (ev?.shot_url) {
+            img.src = ev.shot_url;
+            imgWrap.style.display = "block";
+          } else {
+            img.removeAttribute("src");
+            imgWrap.style.display = "none";
+          }
+          prev.disabled = idx <= 0;
+          next.disabled = idx >= timelineEvents.length - 1;
+          preloadNeighbor(idx - 1);
+          preloadNeighbor(idx + 1);
+        }
+
+        trigger.addEventListener("click", () => {
+          const open = panel.style.display !== "none";
+          panel.style.display = open ? "none" : "flex";
+          if (!open) renderTimelinePanel();
+        });
+        prev.addEventListener("click", () => {
+          if (idx <= 0) return;
+          idx -= 1;
+          renderTimelinePanel();
+        });
+        next.addEventListener("click", () => {
+          if (idx >= timelineEvents.length - 1) return;
+          idx += 1;
+          renderTimelinePanel();
+        });
+
+        body.appendChild(foot);
+      }
+
       card.appendChild(head);
       card.appendChild(body);
 
       return card;
     }
 
-    function renderCards(sources, indicatorsById){
+    function renderCards(sources, indicatorsById, timelineBySource = {}){
       const grid = $("cards-grid");
       if (!grid) return;
       grid.innerHTML = "";
@@ -1381,7 +1476,7 @@
       for (const id of ids){
         const src = sources?.[id] || {};
         const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
-        const card = buildCardEl(id, src, ind);
+        const card = buildCardEl(id, src, ind, timelineBySource);
         applyCardEntrance(card, id, grid.children.length);
         grid.appendChild(card);
       }
@@ -1415,6 +1510,23 @@
 
     async function loadPublishedCache() {
       return await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
+    }
+
+    async function loadCardTimelineBySource(hours = 12) {
+      try {
+        const resp = await fetchJSON(`/api/timeline?hours=${encodeURIComponent(String(hours))}`);
+        const events = Array.isArray(resp?.events) ? resp.events : [];
+        const out = {};
+        for (const ev of events) {
+          const id = canonicalSourceId(ev?.source_id || "");
+          if (!id) continue;
+          if (!out[id]) out[id] = [];
+          out[id].push(ev);
+        }
+        return out;
+      } catch {
+        return {};
+      }
     }
 
     const timelineState = {
@@ -1589,6 +1701,7 @@
       try {
         let data = null;
         let history = null;
+        let timelineBySource = {};
 
         try{
           const sb = await loadFromSupabase();
@@ -1615,9 +1728,10 @@
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
         }
         const normalizedHistory = canonicalizeHistoryObj(history || {});
+        timelineBySource = await loadCardTimelineBySource(12);
 
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
-        renderCards(sources, indicators);
+        renderCards(sources, indicators, timelineBySource);
         if (nextState) saveState(nextState);
 
         renderHistory(normalizedHistory, sources, indicators);
