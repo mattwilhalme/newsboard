@@ -29,6 +29,90 @@ const SOURCES = {
   npr1: { id: "npr1", name: "NPR", homeUrl: "https://www.npr.org/" },
 };
 
+const SUPABASE_RETRY_ATTEMPTS = Number(process.env.SUPABASE_RETRY_ATTEMPTS || 4);
+const SUPABASE_RETRY_BASE_MS = Number(process.env.SUPABASE_RETRY_BASE_MS || 700);
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function compactSupabaseError(err) {
+  const status = err?.status ? `status=${err.status}` : null;
+  const code = err?.code ? `code=${err.code}` : null;
+  const details = err?.details ? `details=${String(err.details).slice(0, 180)}` : null;
+  const hint = err?.hint ? `hint=${String(err.hint).slice(0, 180)}` : null;
+
+  let message = String(err?.message || err || "Unknown error");
+  const cfTitleMatch = message.match(/<title>([^<]+)<\/title>/i);
+  if (cfTitleMatch?.[1]) {
+    message = cfTitleMatch[1].trim();
+  } else {
+    // Collapse giant HTML payloads into the first readable line.
+    message = message
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 220);
+  }
+
+  return [status, code, details, hint, `message=${message}`].filter(Boolean).join(" | ");
+}
+
+function isTransientSupabaseError(err) {
+  const status = Number(err?.status || err?.statusCode || 0);
+  if ([408, 425, 429, 500, 502, 503, 504, 520, 522, 524].includes(status)) return true;
+
+  const text = String(err?.message || err || "").toLowerCase();
+  return (
+    text.includes("connection timed out") ||
+    text.includes("error code 522") ||
+    text.includes("etimedout") ||
+    text.includes("econnreset") ||
+    text.includes("fetch failed") ||
+    text.includes("network error") ||
+    text.includes("temporarily unavailable")
+  );
+}
+
+function isOutageLikeSummary(summary) {
+  const s = String(summary || "").toLowerCase();
+  return (
+    s.includes("status=522") ||
+    s.includes("status=520") ||
+    s.includes("status=524") ||
+    s.includes("connection timed out") ||
+    s.includes("temporarily unavailable") ||
+    s.includes("fetch failed")
+  );
+}
+
+async function withSupabaseRetry(label, work) {
+  let lastErr = null;
+  for (let attempt = 1; attempt <= SUPABASE_RETRY_ATTEMPTS; attempt++) {
+    try {
+      await work();
+      if (attempt > 1) {
+        console.warn(`⚠️ Supabase ${label} succeeded after retry ${attempt}/${SUPABASE_RETRY_ATTEMPTS}`);
+      }
+      return;
+    } catch (err) {
+      lastErr = err;
+      const transient = isTransientSupabaseError(err);
+      const summary = compactSupabaseError(err);
+      if (!transient || attempt === SUPABASE_RETRY_ATTEMPTS) {
+        throw new Error(`${label} failed (${attempt}/${SUPABASE_RETRY_ATTEMPTS}) | ${summary}`);
+      }
+
+      const jitter = Math.floor(Math.random() * 250);
+      const waitMs = (SUPABASE_RETRY_BASE_MS * Math.pow(2, attempt - 1)) + jitter;
+      console.warn(`⚠️ Supabase ${label} transient error (${attempt}/${SUPABASE_RETRY_ATTEMPTS}) | ${summary} | retrying in ${waitMs}ms`);
+      await sleep(waitMs);
+    }
+  }
+
+  throw lastErr || new Error(`${label} failed`);
+}
+
 function getSupabaseAdmin() {
   const url = process.env.SUPABASE_URL || "";
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
@@ -47,8 +131,10 @@ async function upsertSourceRow(sb, source) {
     home_url: source.homeUrl,
   };
 
-  const { error } = await sb.from("sources").upsert(row, { onConflict: "id" });
-  if (error) throw error;
+  await withSupabaseRetry(`upsert sources.${source.id}`, async () => {
+    const { error } = await sb.from("sources").upsert(row, { onConflict: "id" });
+    if (error) throw error;
+  });
 }
 
 async function latestRunForSource(sb, sourceId) {
@@ -101,8 +187,10 @@ async function insertHeroRun(sb, sourceId, result, observedAtISO) {
     raw: rawPayload,
   };
 
-  const { error } = await sb.from("hero_runs").insert(row);
-  if (error) throw error;
+  await withSupabaseRetry(`insert hero_runs.${sourceId}`, async () => {
+    const { error } = await sb.from("hero_runs").insert(row);
+    if (error) throw error;
+  });
 }
 
 function ensureDir(dir) {
@@ -220,20 +308,40 @@ async function run() {
   const npr1 = await safeScrape("NPR", scrapeNPRHero, generatedAt);
 
   if (supabase) {
-    try {
-      for (const s of Object.values(SOURCES)) await upsertSourceRow(supabase, s);
+    const sbWrites = [
+      ...Object.values(SOURCES).map((s) => ({ label: `sources.${s.id}`, fn: () => upsertSourceRow(supabase, s) })),
+      { label: "hero_runs.abc1", fn: () => insertHeroRun(supabase, "abc1", abc1, observedAt) },
+      { label: "hero_runs.cbs1", fn: () => insertHeroRun(supabase, "cbs1", cbs1, observedAt) },
+      { label: "hero_runs.usat1", fn: () => insertHeroRun(supabase, "usat1", usat1, observedAt) },
+      { label: "hero_runs.nbc1", fn: () => insertHeroRun(supabase, "nbc1", nbc1, observedAt) },
+      { label: "hero_runs.cnn1", fn: () => insertHeroRun(supabase, "cnn1", cnn1, observedAt) },
+      { label: "hero_runs.reuters1", fn: () => insertHeroRun(supabase, "reuters1", reuters1, observedAt) },
+      { label: "hero_runs.ap1", fn: () => insertHeroRun(supabase, "ap1", ap1, observedAt) },
+      { label: "hero_runs.latimes1", fn: () => insertHeroRun(supabase, "latimes1", latimes1, observedAt) },
+      { label: "hero_runs.npr1", fn: () => insertHeroRun(supabase, "npr1", npr1, observedAt) },
+    ];
 
-      await insertHeroRun(supabase, "abc1", abc1, observedAt);
-      await insertHeroRun(supabase, "cbs1", cbs1, observedAt);
-      await insertHeroRun(supabase, "usat1", usat1, observedAt);
-      await insertHeroRun(supabase, "nbc1", nbc1, observedAt);
-      await insertHeroRun(supabase, "cnn1", cnn1, observedAt);
-      await insertHeroRun(supabase, "reuters1", reuters1, observedAt);
-      await insertHeroRun(supabase, "ap1", ap1, observedAt);
-      await insertHeroRun(supabase, "latimes1", latimes1, observedAt);
-      await insertHeroRun(supabase, "npr1", npr1, observedAt);
-    } catch (e) {
-      console.error("❌ Supabase insert failed", e);
+    const failures = [];
+    let outageLikeFailures = 0;
+    for (const w of sbWrites) {
+      if (outageLikeFailures >= 2) {
+        console.warn("⚠️ Supabase appears broadly unavailable; skipping remaining Supabase writes for this run.");
+        break;
+      }
+      try {
+        await w.fn();
+      } catch (e) {
+        const summary = compactSupabaseError(e);
+        failures.push({ label: w.label, error: summary });
+        if (isOutageLikeSummary(summary)) outageLikeFailures += 1;
+      }
+    }
+
+    if (failures.length) {
+      console.error(`❌ Supabase writes failed (${failures.length}/${sbWrites.length})`);
+      for (const f of failures) {
+        console.error(`  - ${f.label}: ${f.error}`);
+      }
     }
   }
 
