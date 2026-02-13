@@ -210,14 +210,16 @@
       overflow-x:auto;
       overflow-y:hidden;
       padding: 2px 1px 6px;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
+      scroll-snap-type: x proximity;
+      scroll-behavior: auto;
       overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
       touch-action: pan-x;
     }
+    .shotRail::-webkit-scrollbar{ display:none; }
+    .shotRail{ scrollbar-width:none; }
     .shotTile{
-      flex:0 0 min(320px, 84vw);
+      flex:0 0 min(300px, 76vw);
       display:flex;
       flex-direction:column;
       gap:6px;
@@ -349,7 +351,7 @@
       .latestThumb{ width:100%; }
       .hBody{ flex-direction:column; }
       .hThumb{ width:100%; }
-      .shotTile{ flex-basis: 88vw; }
+      .shotTile{ flex-basis: 82vw; }
       .shotRailControls .linkbtn{
         padding:6px 8px;
         min-width:38px;
@@ -599,15 +601,34 @@
       frame.style.display = "flex";
       frame.style.alignItems = "center";
       frame.style.justifyContent = "center";
+      frame.style.padding = "10px";
+      frame.style.touchAction = "pan-y";
 
       const img = document.createElement("img");
       img.alt = "";
-      img.style.maxWidth = "100%";
-      img.style.maxHeight = "100%";
+      img.style.maxWidth = "96%";
+      img.style.maxHeight = "96%";
       img.style.objectFit = "contain";
+
+      const sliderRow = document.createElement("div");
+      sliderRow.style.display = "flex";
+      sliderRow.style.alignItems = "center";
+      sliderRow.style.gap = "8px";
+
+      const slider = document.createElement("input");
+      slider.type = "range";
+      slider.min = "0";
+      slider.max = "0";
+      slider.step = "1";
+      slider.value = "0";
+      slider.style.width = "100%";
+      slider.style.accentColor = "var(--blue)";
+
       frame.appendChild(img);
 
       panel.appendChild(top);
+      sliderRow.appendChild(slider);
+      panel.appendChild(sliderRow);
       panel.appendChild(frame);
       root.appendChild(panel);
       document.body.appendChild(root);
@@ -621,6 +642,8 @@
         meta.textContent = `${idx + 1}/${events.length} · ${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${sourceLabel(ev.source_id, null)}`;
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= events.length - 1;
+        slider.max = String(Math.max(0, events.length - 1));
+        slider.value = String(idx);
       }
 
       function close(){
@@ -641,6 +664,25 @@
         idx += 1;
         render();
       });
+      slider.addEventListener("input", () => {
+        idx = Math.max(0, Math.min(events.length - 1, Number(slider.value || 0)));
+        render();
+      });
+
+      let touchStartX = null;
+      frame.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches?.[0]?.clientX ?? null;
+      }, { passive: true });
+      frame.addEventListener("touchend", (e) => {
+        const endX = e.changedTouches?.[0]?.clientX ?? null;
+        if (touchStartX === null || endX === null) return;
+        const dx = endX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(dx) < 40) return;
+        if (dx < 0 && idx < events.length - 1) idx += 1;
+        if (dx > 0 && idx > 0) idx -= 1;
+        render();
+      }, { passive: true });
 
       _shotLightbox = {
         open(nextEvents, startIdx){
@@ -1594,7 +1636,7 @@
           imgWrap.style.aspectRatio = "16 / 9";
           imgWrap.style.borderRadius = "10px";
           imgWrap.style.overflow = "hidden";
-          imgWrap.style.background = "#f1f3f4";
+          imgWrap.style.background = "#0f1113";
           imgWrap.style.border = "1px solid var(--line)";
 
           const img = document.createElement("img");
@@ -1603,7 +1645,8 @@
           img.src = ev.shot_url;
           img.style.width = "100%";
           img.style.height = "100%";
-          img.style.objectFit = "cover";
+          img.style.objectFit = "contain";
+          img.style.background = "#0f1113";
           imgWrap.appendChild(img);
 
           tile.appendChild(meta);
@@ -1987,6 +2030,12 @@
           const resp = await fetchJSON(`/api/timeline?${q.toString()}`);
           timelineState.allEvents = Array.isArray(resp?.events) ? resp.events : [];
         }
+
+        timelineState.allEvents.sort((a, b) => {
+          const ta = Date.parse(String(a?.ts || ""));
+          const tb = Date.parse(String(b?.ts || ""));
+          return (Number.isFinite(tb) ? tb : 0) - (Number.isFinite(ta) ? ta : 0);
+        });
 
         const sel = $("tl-source");
         const cur = timelineState.source || "all";
