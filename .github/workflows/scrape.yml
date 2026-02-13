@@ -89,6 +89,7 @@ jobs:
           test -f docs/cache.json || (echo "Missing docs/cache.json" && exit 1)
           test -f docs/supabase.json || (echo "Missing docs/supabase.json" && exit 1)
           test -f docs/data/history.json || (echo "Missing docs/data/history.json" && exit 1)
+          test -f docs/data/timeline.json || (echo "Missing docs/data/timeline.json" && exit 1)
           test -f docs/data/unified.json || (echo "Missing docs/data/unified.json" && exit 1)
           test -f docs/data/current.json || (echo "Missing docs/data/current.json" && exit 1)
           ls -la docs/
@@ -101,7 +102,7 @@ jobs:
 
           git add -f docs/cache.json
           git add -f docs/supabase.json
-          git add -f docs/data/history.json docs/data/unified.json docs/data/current.json
+          git add -f docs/data/history.json docs/data/timeline.json docs/data/unified.json docs/data/current.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit."

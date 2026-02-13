@@ -406,6 +406,7 @@
       location.hostname.endsWith("github.io");
 
     const CACHE_URL = "./cache.json";
+    const TIMELINE_URL = "./data/timeline.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
     const SUPABASE_PROXY_URL = "/api/supabase-snapshot";
     const SUPABASE_SCREENSHOT_BUCKET = "screenshots";
@@ -1531,6 +1532,20 @@
       return await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
     }
 
+    async function loadPublishedTimeline(hours = 12) {
+      try {
+        const payload = await fetchJSON(`${TIMELINE_URL}?ts=${Date.now()}`);
+        const events = Array.isArray(payload?.events) ? payload.events : [];
+        const cutoffMs = Date.now() - (Number(hours) * 60 * 60 * 1000);
+        return events.filter((ev) => {
+          const t = Date.parse(String(ev?.ts || ""));
+          return Number.isFinite(t) ? t >= cutoffMs : false;
+        });
+      } catch {
+        return [];
+      }
+    }
+
     async function loadCardTimelineBySource(hours = 12, sourcesData = null) {
       function derivePublicShotUrl(objectPath){
         if (!objectPath) return null;
@@ -1563,6 +1578,17 @@
       }
 
       if (isGitHubPages) {
+        const published = await loadPublishedTimeline(hours);
+        if (published.length) {
+          const out = {};
+          for (const ev of published) {
+            const id = canonicalSourceId(ev?.source_id || "");
+            if (!id) continue;
+            if (!out[id]) out[id] = [];
+            out[id].push(ev);
+          }
+          return out;
+        }
         if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
         return buildFromCacheSources(sourcesData || {});
       }
@@ -1723,17 +1749,22 @@
     async function loadTimeline(hours = 12) {
       try {
         if (isGitHubPages) {
-          const bySource = await loadCardTimelineBySource(hours, null);
-          const all = [];
-          for (const arr of Object.values(bySource || {})) {
-            if (Array.isArray(arr)) all.push(...arr);
+          const published = await loadPublishedTimeline(hours);
+          if (published.length) {
+            timelineState.allEvents = published;
+          } else {
+            const bySource = await loadCardTimelineBySource(hours, null);
+            const all = [];
+            for (const arr of Object.values(bySource || {})) {
+              if (Array.isArray(arr)) all.push(...arr);
+            }
+            all.sort((a, b) => {
+              const ta = Date.parse(a?.ts || "");
+              const tb = Date.parse(b?.ts || "");
+              return (Number.isFinite(ta) ? ta : 0) - (Number.isFinite(tb) ? tb : 0);
+            });
+            timelineState.allEvents = all;
           }
-          all.sort((a, b) => {
-            const ta = Date.parse(a?.ts || "");
-            const tb = Date.parse(b?.ts || "");
-            return (Number.isFinite(ta) ? ta : 0) - (Number.isFinite(tb) ? tb : 0);
-          });
-          timelineState.allEvents = all;
         } else {
           const q = new URLSearchParams({ hours: String(hours) });
           const resp = await fetchJSON(`/api/timeline?${q.toString()}`);
