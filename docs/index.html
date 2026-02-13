@@ -408,6 +408,7 @@
     const CACHE_URL = "./cache.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
     const SUPABASE_PROXY_URL = "/api/supabase-snapshot";
+    const SUPABASE_SCREENSHOT_BUCKET = "screenshots";
 
     // Expect exactly these sources; render placeholders when missing
     const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","npr1"];
@@ -598,6 +599,8 @@
     }
 
     async function loadFromSupabase(){
+      if (isGitHubPages) return null;
+
       // Prefer same-origin proxy when available; this avoids browser CORS issues.
       try {
         const proxied = await fetchJSON(`${SUPABASE_PROXY_URL}?ts=${Date.now()}`);
@@ -607,10 +610,6 @@
       } catch {
         // Ignore and continue to optional direct browser fallback below.
       }
-
-      // GitHub Pages is static and cannot host our proxy endpoint.
-      // Skip direct Supabase browser calls there to avoid noisy CORS failures.
-      if (isGitHubPages) return null;
 
       const supabase = await getSupabaseClient();
       if (!supabase) return null;
@@ -1149,7 +1148,27 @@
       for (const [rawId, src] of Object.entries(sources || {})) {
         const id = canonicalSourceId(rawId);
         if (!id) continue;
-        out[id] = mergeSourceRows(out[id], src || {});
+        const row = src || {};
+        const item = row.item || {};
+        const last = row.last || {};
+        const mapped = {
+          ...row,
+          ok: row.ok !== false,
+          updatedAt: row.updatedAt || row.updated_at || last.fetchedAt || null,
+          firstSeenAt: row.firstSeenAt || row.first_seen_at || row.since || null,
+          secondsInTop: row.secondsInTop ?? row.seconds_in_top ?? null,
+          sourceName: row.sourceName || row.source_name || row.name || null,
+          changeType: row.changeType || row.change_type || null,
+          isStale: Boolean(row.isStale ?? row.is_stale ?? row.stale ?? false),
+          lastChangeAt: row.lastChangeAt || row.last_change_at || null,
+          item: {
+            title: item.title || null,
+            url: item.url || null,
+            imgUrl: item.imgUrl || item.img_url || null,
+          },
+          shot: row.shot || last.shot || null,
+        };
+        out[id] = mergeSourceRows(out[id], mapped);
       }
       return out;
     }
@@ -1512,7 +1531,42 @@
       return await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
     }
 
-    async function loadCardTimelineBySource(hours = 12) {
+    async function loadCardTimelineBySource(hours = 12, sourcesData = null) {
+      function derivePublicShotUrl(objectPath){
+        if (!objectPath) return null;
+        const base = String(_supabaseCfg?.url || "").replace(/\/+$/, "");
+        if (!base) return null;
+        return `${base}/storage/v1/object/public/${SUPABASE_SCREENSHOT_BUCKET}/${objectPath}`;
+      }
+
+      function buildFromCacheSources(srcMap){
+        const out = {};
+        for (const [rawId, rawSrc] of Object.entries(srcMap || {})) {
+          const id = canonicalSourceId(rawId);
+          if (!id) continue;
+          const src = rawSrc || {};
+          const shot = src.shot || src.last?.shot || null;
+          const objectPath = shot?.object_path || shot?.objectPath || null;
+          const shotUrl = shot?.shot_url || shot?.shotUrl || derivePublicShotUrl(objectPath);
+          if (!shotUrl) continue;
+          if (!out[id]) out[id] = [];
+          out[id].push({
+            ts: src.updatedAt || src.updated_at || src.last?.fetchedAt || null,
+            source_id: id,
+            kind: src.changeType || src.change_type || "heartbeat",
+            title: src?.item?.title || null,
+            url: src?.item?.url || null,
+            shot_url: shotUrl,
+          });
+        }
+        return out;
+      }
+
+      if (isGitHubPages) {
+        if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
+        return buildFromCacheSources(sourcesData || {});
+      }
+
       try {
         const resp = await fetchJSON(`/api/timeline?hours=${encodeURIComponent(String(hours))}`);
         const events = Array.isArray(resp?.events) ? resp.events : [];
@@ -1525,7 +1579,7 @@
         }
         return out;
       } catch {
-        return {};
+        return buildFromCacheSources(sourcesData || {});
       }
     }
 
@@ -1668,9 +1722,23 @@
 
     async function loadTimeline(hours = 12) {
       try {
-        const q = new URLSearchParams({ hours: String(hours) });
-        const resp = await fetchJSON(`/api/timeline?${q.toString()}`);
-        timelineState.allEvents = Array.isArray(resp?.events) ? resp.events : [];
+        if (isGitHubPages) {
+          const bySource = await loadCardTimelineBySource(hours, null);
+          const all = [];
+          for (const arr of Object.values(bySource || {})) {
+            if (Array.isArray(arr)) all.push(...arr);
+          }
+          all.sort((a, b) => {
+            const ta = Date.parse(a?.ts || "");
+            const tb = Date.parse(b?.ts || "");
+            return (Number.isFinite(ta) ? ta : 0) - (Number.isFinite(tb) ? tb : 0);
+          });
+          timelineState.allEvents = all;
+        } else {
+          const q = new URLSearchParams({ hours: String(hours) });
+          const resp = await fetchJSON(`/api/timeline?${q.toString()}`);
+          timelineState.allEvents = Array.isArray(resp?.events) ? resp.events : [];
+        }
 
         const sel = $("tl-source");
         const cur = timelineState.source || "all";
@@ -1728,7 +1796,7 @@
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
         }
         const normalizedHistory = canonicalizeHistoryObj(history || {});
-        timelineBySource = await loadCardTimelineBySource(12);
+        timelineBySource = await loadCardTimelineBySource(12, sources);
 
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
         renderCards(sources, indicators, timelineBySource);
