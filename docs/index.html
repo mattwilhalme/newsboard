@@ -627,9 +627,9 @@
       frame.appendChild(img);
 
       panel.appendChild(top);
+      panel.appendChild(frame);
       sliderRow.appendChild(slider);
       panel.appendChild(sliderRow);
-      panel.appendChild(frame);
       root.appendChild(panel);
       document.body.appendChild(root);
 
@@ -1646,7 +1646,7 @@
           const tile = document.createElement("button");
           tile.type = "button";
           tile.className = "shotTile";
-          tile.style.transition = "opacity 220ms ease, transform 220ms ease";
+          tile.style.transition = "opacity 220ms ease";
 
           const meta = document.createElement("div");
           meta.className = "tiny";
@@ -1724,10 +1724,9 @@
             const tileCenter = rect.left + (rect.width / 2);
             const dist = Math.abs(tileCenter - centerX);
             const w = Math.max(0, 1 - (dist / fadeRadius));
-            const opacity = 0.38 + (w * 0.62);
-            const scale = 0.965 + (w * 0.035);
+            const opacity = 0.2 + (w * 0.8);
             tile.style.opacity = opacity.toFixed(3);
-            tile.style.transform = `scale(${scale.toFixed(3)})`;
+            tile.style.transform = "none";
           }
         }
 

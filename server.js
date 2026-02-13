@@ -45,7 +45,7 @@ const SCREENSHOT_PROFILES = {
   nbc1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   cnn1: { viewportHeight: 2250, scrollY: 700, settleMs: 900 },
   reuters1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  ap1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
+  ap1: { viewportHeight: 2700, scrollY: 0, settleMs: 900 },
   latimes1: { viewportHeight: 2250, scrollY: 120, settleMs: 900 },
   npr1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
 };
