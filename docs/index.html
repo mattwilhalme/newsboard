@@ -635,10 +635,31 @@
 
       let events = [];
       let idx = 0;
+      let fadeToken = 0;
+      function setLightboxImageWithFade(url){
+        if (!url) return;
+        if (img.getAttribute("src") === url) {
+          img.style.opacity = "1";
+          return;
+        }
+        fadeToken += 1;
+        const token = fadeToken;
+        img.style.transition = "opacity 180ms ease";
+        img.style.opacity = "0.18";
+        const pre = new Image();
+        pre.onload = () => {
+          if (token !== fadeToken) return;
+          img.src = url;
+          requestAnimationFrame(() => {
+            img.style.opacity = "1";
+          });
+        };
+        pre.src = url;
+      }
       function render(){
         const ev = events[idx] || null;
         if (!ev || !ev.shot_url) return;
-        img.src = ev.shot_url;
+        setLightboxImageWithFade(ev.shot_url);
         meta.textContent = `${idx + 1}/${events.length} · ${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${sourceLabel(ev.source_id, null)}`;
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= events.length - 1;
@@ -1876,6 +1897,7 @@
       changesOnly: false,
       index: 0,
       imageCache: new Set(),
+      previewFadeToken: 0,
     };
 
     function timelineKindLabel(kind){
@@ -1947,7 +1969,23 @@
       const img = $("tl-preview-img");
       if (ev.shot_url) {
         imgWrap.classList.remove("isHidden");
-        img.src = ev.shot_url;
+        if (img.getAttribute("src") !== ev.shot_url) {
+          timelineState.previewFadeToken += 1;
+          const token = timelineState.previewFadeToken;
+          img.style.transition = "opacity 180ms ease";
+          img.style.opacity = "0.2";
+          const pre = new Image();
+          pre.onload = () => {
+            if (token !== timelineState.previewFadeToken) return;
+            img.src = ev.shot_url;
+            requestAnimationFrame(() => {
+              img.style.opacity = "1";
+            });
+          };
+          pre.src = ev.shot_url;
+        } else {
+          img.style.opacity = "1";
+        }
       } else {
         imgWrap.classList.add("isHidden");
         img.removeAttribute("src");
