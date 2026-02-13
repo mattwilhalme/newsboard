@@ -485,6 +485,134 @@
       showToast._t = setTimeout(() => el.classList.remove("show"), 1200);
     }
 
+    let _shotLightbox = null;
+    function ensureShotLightbox(){
+      if (_shotLightbox) return _shotLightbox;
+
+      const root = document.createElement("div");
+      root.style.position = "fixed";
+      root.style.inset = "0";
+      root.style.background = "rgba(0,0,0,.72)";
+      root.style.display = "none";
+      root.style.alignItems = "center";
+      root.style.justifyContent = "center";
+      root.style.padding = "24px";
+      root.style.zIndex = "1000";
+
+      const panel = document.createElement("div");
+      panel.style.width = "min(1200px, 96vw)";
+      panel.style.maxHeight = "92vh";
+      panel.style.display = "flex";
+      panel.style.flexDirection = "column";
+      panel.style.gap = "10px";
+      panel.style.background = "#111";
+      panel.style.border = "1px solid rgba(255,255,255,.16)";
+      panel.style.borderRadius = "12px";
+      panel.style.padding = "10px";
+
+      const top = document.createElement("div");
+      top.style.display = "flex";
+      top.style.justifyContent = "space-between";
+      top.style.alignItems = "center";
+      top.style.gap = "8px";
+
+      const meta = document.createElement("div");
+      meta.style.color = "#f1f3f4";
+      meta.style.fontSize = "12px";
+      meta.style.whiteSpace = "nowrap";
+      meta.style.overflow = "hidden";
+      meta.style.textOverflow = "ellipsis";
+
+      const btns = document.createElement("div");
+      btns.style.display = "flex";
+      btns.style.gap = "8px";
+
+      const btnPrev = document.createElement("button");
+      btnPrev.className = "linkbtn";
+      btnPrev.type = "button";
+      btnPrev.textContent = "Back";
+
+      const btnNext = document.createElement("button");
+      btnNext.className = "linkbtn";
+      btnNext.type = "button";
+      btnNext.textContent = "Forward";
+
+      const btnClose = document.createElement("button");
+      btnClose.className = "linkbtn";
+      btnClose.type = "button";
+      btnClose.textContent = "Close";
+
+      btns.appendChild(btnPrev);
+      btns.appendChild(btnNext);
+      btns.appendChild(btnClose);
+      top.appendChild(meta);
+      top.appendChild(btns);
+
+      const frame = document.createElement("div");
+      frame.style.width = "100%";
+      frame.style.height = "min(80vh, 900px)";
+      frame.style.borderRadius = "10px";
+      frame.style.overflow = "hidden";
+      frame.style.background = "#000";
+      frame.style.display = "flex";
+      frame.style.alignItems = "center";
+      frame.style.justifyContent = "center";
+
+      const img = document.createElement("img");
+      img.alt = "";
+      img.style.maxWidth = "100%";
+      img.style.maxHeight = "100%";
+      img.style.objectFit = "contain";
+      frame.appendChild(img);
+
+      panel.appendChild(top);
+      panel.appendChild(frame);
+      root.appendChild(panel);
+      document.body.appendChild(root);
+
+      let events = [];
+      let idx = 0;
+      function render(){
+        const ev = events[idx] || null;
+        if (!ev || !ev.shot_url) return;
+        img.src = ev.shot_url;
+        meta.textContent = `${idx + 1}/${events.length} · ${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${sourceLabel(ev.source_id, null)}`;
+        btnPrev.disabled = idx <= 0;
+        btnNext.disabled = idx >= events.length - 1;
+      }
+
+      function close(){
+        root.style.display = "none";
+      }
+
+      btnClose.addEventListener("click", close);
+      root.addEventListener("click", (e) => {
+        if (e.target === root) close();
+      });
+      btnPrev.addEventListener("click", () => {
+        if (idx <= 0) return;
+        idx -= 1;
+        render();
+      });
+      btnNext.addEventListener("click", () => {
+        if (idx >= events.length - 1) return;
+        idx += 1;
+        render();
+      });
+
+      _shotLightbox = {
+        open(nextEvents, startIdx){
+          events = Array.isArray(nextEvents) ? nextEvents.filter((e) => e?.shot_url) : [];
+          if (!events.length) return;
+          idx = Math.max(0, Math.min(events.length - 1, Number(startIdx) || 0));
+          root.style.display = "flex";
+          render();
+        },
+        close,
+      };
+      return _shotLightbox;
+    }
+
     function closeAllDrawers() {
       const ids = ["drawer-history", "drawer-timeline"];
       for (const id of ids) {
@@ -1370,89 +1498,73 @@
         panel.style.flexDirection = "column";
         panel.style.gap = "8px";
 
-        const controls = document.createElement("div");
-        controls.className = "row";
+        const hint = document.createElement("div");
+        hint.className = "tiny";
+        hint.textContent = "Scroll left/right and click any screenshot to enlarge.";
 
-        const prev = document.createElement("button");
-        prev.className = "linkbtn";
-        prev.type = "button";
-        prev.textContent = "Back";
+        const rail = document.createElement("div");
+        rail.style.display = "flex";
+        rail.style.gap = "10px";
+        rail.style.overflowX = "auto";
+        rail.style.paddingBottom = "4px";
+        rail.style.scrollSnapType = "x proximity";
 
-        const next = document.createElement("button");
-        next.className = "linkbtn";
-        next.type = "button";
-        next.textContent = "Forward";
+        const eventsWithShots = timelineEvents.filter((ev) => ev?.shot_url);
+        eventsWithShots.forEach((ev, idx) => {
+          const tile = document.createElement("button");
+          tile.type = "button";
+          tile.style.flex = "0 0 320px";
+          tile.style.display = "flex";
+          tile.style.flexDirection = "column";
+          tile.style.gap = "6px";
+          tile.style.padding = "8px";
+          tile.style.border = "1px solid var(--line)";
+          tile.style.borderRadius = "12px";
+          tile.style.background = "#fff";
+          tile.style.cursor = "pointer";
+          tile.style.scrollSnapAlign = "start";
 
-        const pos = document.createElement("span");
-        pos.className = "tiny mono";
+          const meta = document.createElement("div");
+          meta.className = "tiny";
+          meta.style.textAlign = "left";
+          meta.textContent = `${fmtTime(ev?.ts)} · ${ago(ev?.ts)} · ${timelineKindLabel(ev?.kind)}`;
 
-        controls.appendChild(prev);
-        controls.appendChild(next);
-        controls.appendChild(pos);
+          const imgWrap = document.createElement("div");
+          imgWrap.style.width = "100%";
+          imgWrap.style.aspectRatio = "16 / 9";
+          imgWrap.style.borderRadius = "10px";
+          imgWrap.style.overflow = "hidden";
+          imgWrap.style.background = "#f1f3f4";
+          imgWrap.style.border = "1px solid var(--line)";
 
-        const pMeta = document.createElement("div");
-        pMeta.className = "tiny";
+          const img = document.createElement("img");
+          img.alt = "";
+          img.loading = "lazy";
+          img.src = ev.shot_url;
+          img.style.width = "100%";
+          img.style.height = "100%";
+          img.style.objectFit = "cover";
+          imgWrap.appendChild(img);
 
-        const imgWrap = document.createElement("div");
-        imgWrap.style.border = "1px solid var(--line)";
-        imgWrap.style.borderRadius = "12px";
-        imgWrap.style.overflow = "hidden";
-        imgWrap.style.background = "#f1f3f4";
-        imgWrap.style.width = "100%";
-        imgWrap.style.aspectRatio = "16 / 9";
-        const img = document.createElement("img");
-        img.alt = "";
-        img.style.width = "100%";
-        img.style.height = "100%";
-        img.style.objectFit = "cover";
-        imgWrap.appendChild(img);
+          tile.appendChild(meta);
+          tile.appendChild(imgWrap);
 
-        panel.appendChild(controls);
-        panel.appendChild(pMeta);
-        panel.appendChild(imgWrap);
+          tile.addEventListener("click", () => {
+            ensureShotLightbox().open(eventsWithShots, idx);
+          });
+
+          rail.appendChild(tile);
+        });
+
+        panel.appendChild(hint);
+        panel.appendChild(rail);
 
         foot.appendChild(trigger);
         foot.appendChild(panel);
 
-        let idx = timelineEvents.length - 1;
-        function preloadNeighbor(i) {
-          if (i < 0 || i >= timelineEvents.length) return;
-          const u = timelineEvents[i]?.shot_url;
-          if (!u) return;
-          const im = new Image();
-          im.src = u;
-        }
-        function renderTimelinePanel() {
-          const ev = timelineEvents[idx];
-          pos.textContent = `${idx + 1}/${timelineEvents.length}`;
-          pMeta.textContent = `${fmtTime(ev?.ts)} · ${ago(ev?.ts)} · ${timelineKindLabel(ev?.kind)}`;
-          if (ev?.shot_url) {
-            img.src = ev.shot_url;
-            imgWrap.style.display = "block";
-          } else {
-            img.removeAttribute("src");
-            imgWrap.style.display = "none";
-          }
-          prev.disabled = idx <= 0;
-          next.disabled = idx >= timelineEvents.length - 1;
-          preloadNeighbor(idx - 1);
-          preloadNeighbor(idx + 1);
-        }
-
         trigger.addEventListener("click", () => {
           const open = panel.style.display !== "none";
           panel.style.display = open ? "none" : "flex";
-          if (!open) renderTimelinePanel();
-        });
-        prev.addEventListener("click", () => {
-          if (idx <= 0) return;
-          idx -= 1;
-          renderTimelinePanel();
-        });
-        next.addEventListener("click", () => {
-          if (idx >= timelineEvents.length - 1) return;
-          idx += 1;
-          renderTimelinePanel();
         });
 
         body.appendChild(foot);
@@ -1876,7 +1988,10 @@
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeAllDrawers();
+      if (e.key === "Escape") {
+        if (_shotLightbox) _shotLightbox.close();
+        closeAllDrawers();
+      }
     });
 
     $("tl-source")?.addEventListener("change", (e) => {
