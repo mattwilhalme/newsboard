@@ -115,17 +115,17 @@
     @media (prefers-reduced-motion: no-preference){
       .card.card-enter{
         opacity:0;
-        transform: translate3d(var(--enter-x), var(--enter-y), 0) rotate(var(--enter-r)) scale(0.985);
-        filter: saturate(0.94);
+        transform: translate3d(0, var(--enter-y), 0);
+        filter: saturate(0.96);
       }
       .card.card-enter.card-settle{
         opacity:1;
         transform: translate3d(0,0,0) rotate(0deg) scale(1);
         filter: saturate(1);
         transition:
-          transform 740ms cubic-bezier(0.16, 1, 0.3, 1),
-          opacity 520ms ease-out,
-          filter 700ms ease-out;
+          transform 480ms cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 360ms ease-out,
+          filter 420ms ease-out;
         transition-delay: var(--enter-delay);
       }
     }
@@ -144,6 +144,8 @@
 
     .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
     .srcName{ font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .srcNameLink{ color:inherit; text-decoration:none; }
+    .srcNameLink:hover{ color:var(--blue); text-decoration:underline; }
     .srcTime{ font-size:12px; color: var(--muted); white-space:nowrap; }
 
     .rightMeta{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; text-align:right; }
@@ -202,6 +204,41 @@
       cursor:pointer;
     }
     .linkbtn:hover{ border-color: rgba(26,115,232,.45); color: var(--blue2); }
+    .shotRail{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      overflow-y:hidden;
+      padding: 2px 1px 6px;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x;
+    }
+    .shotTile{
+      flex:0 0 min(320px, 84vw);
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      padding:8px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      cursor:pointer;
+      scroll-snap-align:start;
+      text-align:left;
+    }
+    .shotRailControls{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .shotRailScrubber{
+      width:100%;
+      min-width:120px;
+      accent-color: var(--blue);
+    }
 
     .toast{
       position:fixed;
@@ -312,6 +349,11 @@
       .latestThumb{ width:100%; }
       .hBody{ flex-direction:column; }
       .hThumb{ width:100%; }
+      .shotTile{ flex-basis: 88vw; }
+      .shotRailControls .linkbtn{
+        padding:6px 8px;
+        min-width:38px;
+      }
     }
     
   </style>
@@ -703,6 +745,23 @@
       if (s === "npr" || s === "npr1" || s === "nationalpublicradio") return "NPR";
 
       return k || "Source";
+    }
+
+    function sourceHomeUrl(k, row){
+      const fromRow = row?.home_url || row?.homeUrl || null;
+      if (fromRow) return String(fromRow);
+
+      const s = canonicalSourceId(k);
+      if (s === "abc1") return "https://abcnews.com/";
+      if (s === "cbs1") return "https://www.cbsnews.com/";
+      if (s === "usat1") return "https://www.usatoday.com/";
+      if (s === "nbc1") return "https://www.nbcnews.com/";
+      if (s === "cnn1") return "https://www.cnn.com/";
+      if (s === "reuters1") return "https://www.theguardian.com/";
+      if (s === "ap1") return "https://apnews.com/";
+      if (s === "latimes1") return "https://www.latimes.com/";
+      if (s === "npr1") return "https://www.npr.org/";
+      return null;
     }
 
     function copyText(txt){
@@ -1335,25 +1394,12 @@
     }
 
     function applyCardEntrance(card, id, idx){
-      const seedBase = `${id}|${idx}`;
-      let h = 2166136261;
-      for (let i = 0; i < seedBase.length; i++) {
-        h ^= seedBase.charCodeAt(i);
-        h += (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
-      }
-      const u1 = ((h >>> 0) % 1000) / 1000;
-      const u2 = (((h >>> 9) >>> 0) % 1000) / 1000;
-      const u3 = (((h >>> 18) >>> 0) % 1000) / 1000;
-
-      const x = Math.round((u1 * 24) - 12);
-      const y = Math.round((u2 * 38) - 10);
-      const r = ((u3 * 7.2) - 3.6).toFixed(2);
-      const delay = Math.round((idx * 24) + (u1 * 130));
+      const delay = Math.round(idx * 28);
 
       card.classList.add("card-enter");
-      card.style.setProperty("--enter-x", `${x}px`);
-      card.style.setProperty("--enter-y", `${y}px`);
-      card.style.setProperty("--enter-r", `${r}deg`);
+      card.style.setProperty("--enter-x", "0px");
+      card.style.setProperty("--enter-y", "20px");
+      card.style.setProperty("--enter-r", "0deg");
       card.style.setProperty("--enter-delay", `${delay}ms`);
     }
 
@@ -1373,7 +1419,18 @@
 
       const srcName = document.createElement("div");
       srcName.className = "srcName";
-      srcName.textContent = sourceLabel(id, src);
+      const homeUrl = sourceHomeUrl(id, src);
+      if (homeUrl) {
+        const srcAnchor = document.createElement("a");
+        srcAnchor.className = "srcNameLink";
+        srcAnchor.href = homeUrl;
+        srcAnchor.target = "_blank";
+        srcAnchor.rel = "noopener";
+        srcAnchor.textContent = sourceLabel(id, src);
+        srcName.appendChild(srcAnchor);
+      } else {
+        srcName.textContent = sourceLabel(id, src);
+      }
 
       meta.appendChild(srcName);
       left.appendChild(meta);
@@ -1458,6 +1515,16 @@
         row.appendChild(status);
       }
 
+      if (homeUrl) {
+        const btnSite = document.createElement("a");
+        btnSite.className = "linkbtn";
+        btnSite.href = homeUrl;
+        btnSite.target = "_blank";
+        btnSite.rel = "noopener";
+        btnSite.textContent = "Website";
+        row.appendChild(btnSite);
+      }
+
       // Copy headline button
       const btnCopyLink = document.createElement("button");
       btnCopyLink.className = "linkbtn";
@@ -1479,8 +1546,14 @@
       body.appendChild(thumb);
       body.appendChild(wrap);
 
-      const timelineEvents = Array.isArray(timelineBySource?.[id]) ? timelineBySource[id] : [];
+      const timelineEvents = Array.isArray(timelineBySource?.[id]) ? [...timelineBySource[id]] : [];
       if (timelineEvents.length) {
+        timelineEvents.sort((a, b) => {
+          const ta = Date.parse(String(a?.ts || ""));
+          const tb = Date.parse(String(b?.ts || ""));
+          return (Number.isFinite(tb) ? tb : 0) - (Number.isFinite(ta) ? ta : 0);
+        });
+
         const foot = document.createElement("div");
         foot.style.borderTop = "1px solid var(--line)";
         foot.style.padding = "10px 12px 12px";
@@ -1500,29 +1573,16 @@
 
         const hint = document.createElement("div");
         hint.className = "tiny";
-        hint.textContent = "Scroll left/right and click any screenshot to enlarge.";
+        hint.textContent = "Newest first. Swipe left and drag the slider to browse older screenshots.";
 
         const rail = document.createElement("div");
-        rail.style.display = "flex";
-        rail.style.gap = "10px";
-        rail.style.overflowX = "auto";
-        rail.style.paddingBottom = "4px";
-        rail.style.scrollSnapType = "x proximity";
+        rail.className = "shotRail";
 
         const eventsWithShots = timelineEvents.filter((ev) => ev?.shot_url);
         eventsWithShots.forEach((ev, idx) => {
           const tile = document.createElement("button");
           tile.type = "button";
-          tile.style.flex = "0 0 320px";
-          tile.style.display = "flex";
-          tile.style.flexDirection = "column";
-          tile.style.gap = "6px";
-          tile.style.padding = "8px";
-          tile.style.border = "1px solid var(--line)";
-          tile.style.borderRadius = "12px";
-          tile.style.background = "#fff";
-          tile.style.cursor = "pointer";
-          tile.style.scrollSnapAlign = "start";
+          tile.className = "shotTile";
 
           const meta = document.createElement("div");
           meta.className = "tiny";
@@ -1556,8 +1616,52 @@
           rail.appendChild(tile);
         });
 
+        const controls = document.createElement("div");
+        controls.className = "shotRailControls";
+
+        const prev = document.createElement("button");
+        prev.className = "linkbtn";
+        prev.type = "button";
+        prev.textContent = "Back";
+
+        const next = document.createElement("button");
+        next.className = "linkbtn";
+        next.type = "button";
+        next.textContent = "Forward";
+
+        const scrubber = document.createElement("input");
+        scrubber.className = "shotRailScrubber";
+        scrubber.type = "range";
+        scrubber.min = "0";
+        scrubber.max = "0";
+        scrubber.value = "0";
+        scrubber.step = "1";
+
+        controls.appendChild(prev);
+        controls.appendChild(scrubber);
+        controls.appendChild(next);
+
+        function syncScrubberFromRail(){
+          const maxLeft = Math.max(0, rail.scrollWidth - rail.clientWidth);
+          scrubber.max = String(Math.ceil(maxLeft));
+          scrubber.value = String(Math.round(Math.min(maxLeft, rail.scrollLeft)));
+          controls.style.display = maxLeft > 0 ? "flex" : "none";
+        }
+
+        function scrollRailBy(delta){
+          rail.scrollBy({ left: delta, behavior: "smooth" });
+        }
+
+        rail.addEventListener("scroll", syncScrubberFromRail, { passive: true });
+        scrubber.addEventListener("input", () => {
+          rail.scrollTo({ left: Number(scrubber.value || 0), behavior: "auto" });
+        });
+        prev.addEventListener("click", () => scrollRailBy(-Math.max(220, Math.floor(rail.clientWidth * 0.7))));
+        next.addEventListener("click", () => scrollRailBy(Math.max(220, Math.floor(rail.clientWidth * 0.7))));
+
         panel.appendChild(hint);
         panel.appendChild(rail);
+        panel.appendChild(controls);
 
         foot.appendChild(trigger);
         foot.appendChild(panel);
@@ -1565,6 +1669,7 @@
         trigger.addEventListener("click", () => {
           const open = panel.style.display !== "none";
           panel.style.display = open ? "none" : "flex";
+          if (!open) requestAnimationFrame(syncScrubberFromRail);
         });
 
         body.appendChild(foot);
