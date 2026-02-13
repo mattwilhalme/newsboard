@@ -16,6 +16,8 @@ import {
 
 const DATA_DIR = path.join("docs", "data");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
+const TIMELINE_HOURS = Number(process.env.TIMELINE_HOURS || 12);
+const SUPABASE_SCREENSHOT_BUCKET = process.env.SUPABASE_SCREENSHOT_BUCKET || "screenshots";
 
 const SOURCES = {
   abc1: { id: "abc1", name: "ABC News", homeUrl: "https://abcnews.com/" },
@@ -201,6 +203,12 @@ function writeJSON(filename, payload) {
   fs.writeFileSync(path.join(DATA_DIR, filename), JSON.stringify(payload, null, 2), "utf8");
 }
 
+function derivePublicShotUrl(objectPath) {
+  const base = String(process.env.SUPABASE_URL || "").replace(/\/+$/, "");
+  if (!base || !objectPath) return null;
+  return `${base}/storage/v1/object/public/${SUPABASE_SCREENSHOT_BUCKET}/${objectPath}`;
+}
+
 function readJSONIfExists(p, fallback) {
   try {
     if (!fs.existsSync(p)) return fallback;
@@ -283,6 +291,31 @@ async function safeScrape(label, fn, generatedAt) {
     console.error(`❌ ${label} hero scrape failed`, err);
     return { ok: false, error: String(err), updatedAt: generatedAt, item: null };
   }
+}
+
+async function loadTimelineEventsFromSupabase(sb, hours = 12) {
+  if (!sb) return [];
+  const cutoffIso = new Date(Date.now() - Math.max(1, Number(hours || 12)) * 60 * 60 * 1000).toISOString();
+
+  const { data, error } = await sb
+    .from("screenshot_events")
+    .select("ts,source_id,kind,title,url,object_path,shot_url")
+    .gte("ts", cutoffIso)
+    .order("ts", { ascending: true })
+    .limit(10000);
+  if (error) throw error;
+
+  return (Array.isArray(data) ? data : []).map((row) => ({
+    ts: row.ts || null,
+    source_id: row.source_id || null,
+    kind: row.kind || "heartbeat",
+    title: row.title || null,
+    url: row.url || null,
+    object_path: row.object_path || null,
+    shot_url:
+      row.shot_url ||
+      derivePublicShotUrl(row.object_path || null),
+  }));
 }
 
 async function run() {
@@ -374,6 +407,27 @@ async function run() {
   upsertHistory(history, "npr1", generatedAt, npr1?.ok ? npr1.item : null);
 
   writeJSON("history.json", history);
+
+  let timelinePayload = {
+    ok: false,
+    generatedAt,
+    hours: TIMELINE_HOURS,
+    events: [],
+  };
+  if (supabase) {
+    try {
+      const events = await loadTimelineEventsFromSupabase(supabase, TIMELINE_HOURS);
+      timelinePayload = {
+        ok: true,
+        generatedAt,
+        hours: TIMELINE_HOURS,
+        events,
+      };
+    } catch (err) {
+      console.warn("⚠️ timeline.json build failed from Supabase:", compactSupabaseError(err));
+    }
+  }
+  writeJSON("timeline.json", timelinePayload);
 
   const abcSince = currentSinceFromHistory(history, "abc1", abc1?.item?.url || null);
   const cbsSince = currentSinceFromHistory(history, "cbs1", cbs1?.item?.url || null);
@@ -491,6 +545,7 @@ async function run() {
   console.log("✅ Wrote docs/data/current.json");
   console.log("✅ Wrote docs/data/unified.json");
   console.log("✅ Wrote docs/data/history.json");
+  console.log("✅ Wrote docs/data/timeline.json");
 }
 
 run().catch((err) => {
@@ -502,6 +557,7 @@ run().catch((err) => {
   const generatedAt = new Date().toISOString();
   writeJSON("current.json", { ok: false, generatedAt, error: String(err) });
   writeJSON("unified.json", { ok: false, generatedAt, items: [], error: String(err) });
+  writeJSON("timeline.json", { ok: false, generatedAt, hours: TIMELINE_HOURS, events: [], error: String(err) });
 
   process.exit(1);
 });

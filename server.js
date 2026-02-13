@@ -35,19 +35,19 @@ const DEFAULT_SCREENSHOT_PROFILE = {
 
 const SCREENSHOT_PROFILES = {
   // aliases
-  usatoday1: { viewportHeight: 1000, scrollY: 980, settleMs: 900 },
-  lat1: { viewportHeight: 1000, scrollY: 900, settleMs: 900 },
+  usatoday1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
+  lat1: { viewportHeight: 1000, scrollY: 760, settleMs: 900 },
 
   // in-repo source IDs
   abc1: { viewportHeight: 900, scrollY: 420 },
-  cbs1: { viewportHeight: 900, scrollY: 380 },
-  usat1: { viewportHeight: 1000, scrollY: 980, settleMs: 900 },
-  nbc1: { viewportHeight: 1000, scrollY: 700, settleMs: 900 },
+  cbs1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
+  usat1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
+  nbc1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
   cnn1: { viewportHeight: 1000, scrollY: 760, settleMs: 900 },
-  reuters1: { viewportHeight: 900, scrollY: 420 },
-  ap1: { viewportHeight: 1000, scrollY: 760, settleMs: 900 },
-  latimes1: { viewportHeight: 1000, scrollY: 900, settleMs: 900 },
-  npr1: { viewportHeight: 900, scrollY: 360 },
+  reuters1: { viewportHeight: 1000, scrollY: 300, settleMs: 900 },
+  ap1: { viewportHeight: 1000, scrollY: 620, settleMs: 900 },
+  latimes1: { viewportHeight: 1000, scrollY: 760, settleMs: 900 },
+  npr1: { viewportHeight: 1000, scrollY: 0, settleMs: 900 },
 };
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
