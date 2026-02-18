@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-18T16:07:08.545Z",
+  "generatedAt": "2026-02-18T17:18:36.501Z",
   "source_id": "abc1",
   "events": [
     {
@@ -912,6 +912,26 @@
       "to_rank": 1,
       "from_title": "6 rescued as efforts for missing continue following California avalanche: Authorities",
       "to_title": "Desperate search continues for 9 missing skiers following California avalanche"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T17:18:47.108Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aef7e59f54e253c1d21af61cd2fb5a0c10ac0f5a",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Unruly passenger prompts plane's return to airport"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T17:18:47.108Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b3db5fae0dc5334b29edb739ee2c4bb5655956b9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Ghislaine Maxwell's brother speaks out on Epstein",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
