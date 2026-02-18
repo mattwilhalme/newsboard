@@ -4,6 +4,7 @@ import path from "path";
 import { createClient } from "@supabase/supabase-js";
 import {
   scrapeABCHero,
+  scrapeABCTop10,
   scrapeCBSHero,
   scrapeUSATHero,
   scrapeNBCHero,
@@ -16,8 +17,15 @@ import {
 
 const DATA_DIR = path.join("docs", "data");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
+const TOP10_ABC_HISTORY_PATH = path.join(DATA_DIR, "top10_abc_history.json");
+const TOP10_ABC_EVENTS_HISTORY_PATH = path.join(DATA_DIR, "top10_abc_events_history.json");
+const TOP10_ABC_LATEST_PATH = path.join(DATA_DIR, "top10_abc_latest.json");
+const TOP10_ABC_EVENTS_24H_PATH = path.join(DATA_DIR, "top10_abc_events_24h.json");
 const TIMELINE_HOURS = Number(process.env.TIMELINE_HOURS || 12);
 const SUPABASE_SCREENSHOT_BUCKET = process.env.SUPABASE_SCREENSHOT_BUCKET || "screenshots";
+const TOP10_SOURCE_ID = "abc1";
+const TOP10_HISTORY_CAP = Number(process.env.TOP10_HISTORY_CAP || 336);
+const TOP10_EVENTS_CAP = Number(process.env.TOP10_EVENTS_CAP || 3000);
 
 const SOURCES = {
   abc1: { id: "abc1", name: "ABC News", homeUrl: "https://abcnews.com/" },
@@ -218,6 +226,166 @@ function readJSONIfExists(p, fallback) {
   }
 }
 
+function hoursToMs(hours) {
+  return Math.max(1, Number(hours || 24)) * 60 * 60 * 1000;
+}
+
+function isoWithinHours(ts, hours) {
+  const ms = Date.parse(String(ts || ""));
+  if (!Number.isFinite(ms)) return false;
+  return ms >= (Date.now() - hoursToMs(hours));
+}
+
+function computeTop10Diff(prevRun, currRun) {
+  const prevItems = Array.isArray(prevRun?.items) ? prevRun.items : [];
+  const currItems = Array.isArray(currRun?.items) ? currRun.items : [];
+
+  const prevByFp = new Map(prevItems.map((it) => [String(it.fingerprint || ""), it]).filter(([fp]) => fp));
+  const currByFp = new Map(currItems.map((it) => [String(it.fingerprint || ""), it]).filter(([fp]) => fp));
+
+  const events = [];
+  const observedAt = currRun?.observedAt || new Date().toISOString();
+
+  for (const [fp, curr] of currByFp.entries()) {
+    const prev = prevByFp.get(fp);
+    if (!prev) {
+      events.push({
+        source_id: TOP10_SOURCE_ID,
+        observed_at: observedAt,
+        event_type: "ENTERED_TOP10",
+        fingerprint: fp,
+        from_rank: null,
+        to_rank: curr.rank ?? null,
+        from_title: null,
+        to_title: curr.title || null,
+      });
+      continue;
+    }
+
+    if (Number(prev.rank) !== Number(curr.rank)) {
+      events.push({
+        source_id: TOP10_SOURCE_ID,
+        observed_at: observedAt,
+        event_type: "MOVED",
+        fingerprint: fp,
+        from_rank: prev.rank ?? null,
+        to_rank: curr.rank ?? null,
+        from_title: prev.title || null,
+        to_title: curr.title || null,
+      });
+    }
+
+    if (String(prev.title || "") !== String(curr.title || "")) {
+      events.push({
+        source_id: TOP10_SOURCE_ID,
+        observed_at: observedAt,
+        event_type: "TITLE_UPDATED",
+        fingerprint: fp,
+        from_rank: prev.rank ?? null,
+        to_rank: curr.rank ?? null,
+        from_title: prev.title || null,
+        to_title: curr.title || null,
+      });
+    }
+  }
+
+  for (const [fp, prev] of prevByFp.entries()) {
+    if (currByFp.has(fp)) continue;
+    events.push({
+      source_id: TOP10_SOURCE_ID,
+      observed_at: observedAt,
+      event_type: "EXITED_TOP10",
+      fingerprint: fp,
+      from_rank: prev.rank ?? null,
+      to_rank: null,
+      from_title: prev.title || null,
+      to_title: null,
+    });
+  }
+
+  return events;
+}
+
+async function insertTop10RunAndItems(sb, top10) {
+  if (!sb || !top10) return null;
+
+  const runRow = {
+    source_id: TOP10_SOURCE_ID,
+    observed_at: top10.observedAt || new Date().toISOString(),
+    ok: Boolean(top10.ok),
+    error: top10.error ? String(top10.error) : null,
+  };
+
+  const { data: runData, error: runErr } = await sb
+    .from("top10_runs")
+    .insert(runRow)
+    .select("id,source_id,observed_at")
+    .single();
+  if (runErr) throw runErr;
+
+  const items = Array.isArray(top10.items) ? top10.items : [];
+  if (items.length) {
+    const itemRows = items.map((it) => ({
+      run_id: runData.id,
+      source_id: TOP10_SOURCE_ID,
+      rank: Number(it.rank) || null,
+      title: it.title || null,
+      url: it.url || null,
+      fingerprint: it.fingerprint || null,
+    }));
+    const { error: itemErr } = await sb.from("top10_items").insert(itemRows);
+    if (itemErr) throw itemErr;
+  }
+
+  return runData;
+}
+
+async function fetchTop10ItemsForRun(sb, runId) {
+  if (!runId) return [];
+  const { data, error } = await sb
+    .from("top10_items")
+    .select("rank,title,url,fingerprint")
+    .eq("run_id", runId)
+    .order("rank", { ascending: true });
+  if (error) throw error;
+  return Array.isArray(data) ? data : [];
+}
+
+async function fetchPreviousTop10Run(sb, sourceId, observedAtIso) {
+  const { data, error } = await sb
+    .from("top10_runs")
+    .select("id,source_id,observed_at")
+    .eq("source_id", sourceId)
+    .lt("observed_at", observedAtIso)
+    .order("observed_at", { ascending: false })
+    .limit(1);
+  if (error) throw error;
+  const row = Array.isArray(data) && data.length ? data[0] : null;
+  if (!row) return null;
+  const items = await fetchTop10ItemsForRun(sb, row.id);
+  return { ...row, items };
+}
+
+async function insertTop10Events(sb, prevRun, currRun) {
+  if (!sb || !currRun) return;
+  const events = computeTop10Diff(prevRun, currRun);
+  if (!events.length) return;
+  const rows = events.map((ev) => ({
+    source_id: ev.source_id,
+    observed_at: ev.observed_at,
+    event_type: ev.event_type,
+    fingerprint: ev.fingerprint,
+    from_rank: ev.from_rank,
+    to_rank: ev.to_rank,
+    from_title: ev.from_title,
+    to_title: ev.to_title,
+    from_run_id: prevRun?.id || null,
+    to_run_id: currRun?.id || null,
+  }));
+  const { error } = await sb.from("top10_events").insert(rows);
+  if (error) throw error;
+}
+
 function upsertHistory(history, sourceKey, generatedAtISO, item) {
   const h = history && typeof history === "object" ? history : {};
   if (!h.sources || typeof h.sources !== "object") h.sources = {};
@@ -331,6 +499,15 @@ async function run() {
   else console.log("🧩 Supabase not configured (SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing)");
 
   const abc1 = await safeScrape("ABC", scrapeABCHero, generatedAt);
+  const abcTop10Raw = await safeScrape("ABC Top 10", scrapeABCTop10, generatedAt);
+  const abcTop10 = {
+    sourceId: TOP10_SOURCE_ID,
+    observedAt: abcTop10Raw?.observedAt || generatedAt,
+    runId: abcTop10Raw?.runId || null,
+    ok: Boolean(abcTop10Raw?.ok),
+    error: abcTop10Raw?.error || null,
+    items: Array.isArray(abcTop10Raw?.items) ? abcTop10Raw.items : [],
+  };
   const cbs1 = await safeScrape("CBS", scrapeCBSHero, generatedAt);
   const usat1 = await safeScrape("USA Today", scrapeUSATHero, generatedAt);
   const nbc1 = await safeScrape("NBC", scrapeNBCHero, generatedAt);
@@ -375,6 +552,22 @@ async function run() {
       for (const f of failures) {
         console.error(`  - ${f.label}: ${f.error}`);
       }
+    }
+
+    try {
+      await withSupabaseRetry("insert top10_runs/items", async () => {
+        const currRun = await insertTop10RunAndItems(supabase, abcTop10);
+        if (!currRun) return;
+        const prevRun = await fetchPreviousTop10Run(supabase, TOP10_SOURCE_ID, String(currRun.observed_at || abcTop10.observedAt));
+        const currItems = await fetchTop10ItemsForRun(supabase, currRun.id);
+        await insertTop10Events(
+          supabase,
+          prevRun,
+          { ...currRun, items: currItems }
+        );
+      });
+    } catch (err) {
+      console.warn(`⚠️ top10 Supabase write skipped: ${compactSupabaseError(err)}`);
     }
   }
 
@@ -428,6 +621,81 @@ async function run() {
     }
   }
   writeJSON("timeline.json", timelinePayload);
+
+  const top10History = readJSONIfExists(TOP10_ABC_HISTORY_PATH, {
+    source_id: TOP10_SOURCE_ID,
+    generatedAt: null,
+    runs: [],
+  });
+  if (!Array.isArray(top10History.runs)) top10History.runs = [];
+
+  const prevTop10Run = top10History.runs.length ? top10History.runs[top10History.runs.length - 1] : null;
+  const currTop10Run = {
+    runId: abcTop10.runId,
+    observedAt: abcTop10.observedAt,
+    ok: Boolean(abcTop10.ok),
+    error: abcTop10.error || null,
+    items: (Array.isArray(abcTop10.items) ? abcTop10.items : []).map((it) => ({
+      rank: Number(it.rank) || null,
+      title: it.title || null,
+      url: it.url || null,
+      fingerprint: it.fingerprint || null,
+    })),
+  };
+  top10History.generatedAt = generatedAt;
+  top10History.source_id = TOP10_SOURCE_ID;
+  top10History.runs.push(currTop10Run);
+  if (top10History.runs.length > TOP10_HISTORY_CAP) {
+    top10History.runs = top10History.runs.slice(-TOP10_HISTORY_CAP);
+  }
+  fs.writeFileSync(TOP10_ABC_HISTORY_PATH, JSON.stringify(top10History, null, 2), "utf8");
+
+  const top10EventsHistory = readJSONIfExists(TOP10_ABC_EVENTS_HISTORY_PATH, {
+    source_id: TOP10_SOURCE_ID,
+    generatedAt: null,
+    events: [],
+  });
+  if (!Array.isArray(top10EventsHistory.events)) top10EventsHistory.events = [];
+  const newEvents = computeTop10Diff(prevTop10Run, currTop10Run);
+  for (const ev of newEvents) top10EventsHistory.events.push(ev);
+  if (top10EventsHistory.events.length > TOP10_EVENTS_CAP) {
+    top10EventsHistory.events = top10EventsHistory.events.slice(-TOP10_EVENTS_CAP);
+  }
+  top10EventsHistory.generatedAt = generatedAt;
+  fs.writeFileSync(TOP10_ABC_EVENTS_HISTORY_PATH, JSON.stringify(top10EventsHistory, null, 2), "utf8");
+
+  const events24h = top10EventsHistory.events.filter((ev) => isoWithinHours(ev?.observed_at, 24));
+  fs.writeFileSync(
+    TOP10_ABC_EVENTS_24H_PATH,
+    JSON.stringify(
+      {
+        source_id: TOP10_SOURCE_ID,
+        generatedAt,
+        hours: 24,
+        events: events24h,
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
+
+  fs.writeFileSync(
+    TOP10_ABC_LATEST_PATH,
+    JSON.stringify(
+      {
+        source_id: TOP10_SOURCE_ID,
+        generatedAt,
+        observedAt: currTop10Run.observedAt,
+        ok: currTop10Run.ok,
+        error: currTop10Run.error,
+        items: currTop10Run.items,
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
 
   const abcSince = currentSinceFromHistory(history, "abc1", abc1?.item?.url || null);
   const cbsSince = currentSinceFromHistory(history, "cbs1", cbs1?.item?.url || null);
@@ -546,6 +814,10 @@ async function run() {
   console.log("✅ Wrote docs/data/unified.json");
   console.log("✅ Wrote docs/data/history.json");
   console.log("✅ Wrote docs/data/timeline.json");
+  console.log("✅ Wrote docs/data/top10_abc_latest.json");
+  console.log("✅ Wrote docs/data/top10_abc_events_24h.json");
+  console.log("✅ Wrote docs/data/top10_abc_events_history.json");
+  console.log("✅ Wrote docs/data/top10_abc_history.json");
 }
 
 run().catch((err) => {
@@ -558,6 +830,10 @@ run().catch((err) => {
   writeJSON("current.json", { ok: false, generatedAt, error: String(err) });
   writeJSON("unified.json", { ok: false, generatedAt, items: [], error: String(err) });
   writeJSON("timeline.json", { ok: false, generatedAt, hours: TIMELINE_HOURS, events: [], error: String(err) });
+  writeJSON("top10_abc_latest.json", { ok: false, generatedAt, source_id: TOP10_SOURCE_ID, observedAt: generatedAt, items: [], error: String(err) });
+  writeJSON("top10_abc_events_24h.json", { ok: false, generatedAt, source_id: TOP10_SOURCE_ID, hours: 24, events: [], error: String(err) });
+  writeJSON("top10_abc_events_history.json", { ok: false, generatedAt, source_id: TOP10_SOURCE_ID, events: [], error: String(err) });
+  writeJSON("top10_abc_history.json", { ok: false, generatedAt, source_id: TOP10_SOURCE_ID, runs: [], error: String(err) });
 
   process.exit(1);
 });

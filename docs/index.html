@@ -8,30 +8,35 @@
 
   <style>
     :root{
-      --bg:#f8f9fa;
-      --card:#ffffff;
-      --text:#202124;
-      --muted:#5f6368;
-      --line:#dadce0;
-      --shadow: 0 1px 2px rgba(60,64,67,.18), 0 1px 3px rgba(60,64,67,.12);
-      --radius: 14px;
+      --bg:#f6f3ec;
+      --surface:#fffdf8;
+      --card:#fffdf8;
+      --text:#1e242b;
+      --muted:#5e6977;
+      --line:#d8d2c5;
+      --line-strong:#c7bda9;
+      --shadow: 0 1px 0 rgba(30,36,43,.04);
+      --radius: 10px;
       --maxw: 1100px;
 
-      --blue:#1a73e8;
-      --blue2:#174ea6;
+      --blue:#175cd3;
+      --blue2:#1249ab;
 
       --ok:#1e8e3e;     /* green */
       --bad:#d93025;    /* red */
       --warn:#f9ab00;
 
-      --chip:#f1f3f4;
-      --chipText:#3c4043;
+      --chip:#f2ede3;
+      --chipText:#3e4957;
+
+      --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
     }
 
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
     }
@@ -40,8 +45,7 @@
       position:sticky;
       top:0;
       z-index:20;
-      background: rgba(248,249,250,.92);
-      backdrop-filter: blur(10px);
+      background: rgba(246,243,236,.96);
       border-bottom: 1px solid var(--line);
     }
 
@@ -67,15 +71,39 @@
       color: var(--text);
       font-size:12px;
       padding:8px 12px;
-      border-radius:999px;
+      border-radius:8px;
       cursor:pointer;
       user-select:none;
-      box-shadow: var(--shadow);
+      box-shadow: none;
     }
     .btn:hover{ border-color: rgba(26,115,232,.45); }
     .btn:disabled{ opacity:.55; cursor:not-allowed; }
 
     main{ max-width:var(--maxw); margin:0 auto; padding:14px 16px 26px; }
+
+    .viewTabs{
+      display:flex;
+      gap:8px;
+      margin-bottom:12px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:8px;
+    }
+    .tabBtn{
+      border:1px solid transparent;
+      background:transparent;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:8px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.2px;
+      cursor:pointer;
+    }
+    .tabBtn.active{
+      color:var(--text);
+      background:var(--surface);
+      border-color:var(--line);
+    }
 
     .grid{
       display:grid;
@@ -134,7 +162,7 @@
       align-items:flex-start;
       gap:12px;
       border-bottom:1px solid var(--line);
-      background: #ffffff;
+      background: var(--surface);
     }
 
     .srcTitle{ display:flex; align-items:center; min-width:0; }
@@ -173,7 +201,7 @@
 
     .headlineWrap{ width:100%; min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:7px; }
 
-    .headline{ font-size:16px; line-height:1.25; font-weight:700; margin:0; }
+    .headline{ font-size:17px; line-height:1.26; font-weight:700; margin:0; font-family: var(--font-serif); }
     .headline a{ color: var(--text); text-decoration:none; }
     .headline a:hover{ color: var(--blue); text-decoration: underline; }
 
@@ -197,7 +225,7 @@
       color: var(--text);
       font-size:12px;
       padding:6px 10px;
-      border-radius:999px;
+      border-radius:8px;
       cursor:pointer;
     }
     .linkbtn:hover{ border-color: rgba(26,115,232,.45); color: var(--blue2); }
@@ -266,7 +294,7 @@
       width:min(520px, calc(100vw - 48px));
       background: var(--bg);
       border-left:1px solid var(--line);
-      box-shadow: -14px 0 30px rgba(0,0,0,.14);
+      box-shadow: -3px 0 16px rgba(30,36,43,.08);
       transform: translateX(100%);
       transition: transform .22s ease;
       z-index:70;
@@ -277,8 +305,7 @@
 
     .drawerHead{
       padding:12px 14px;
-      background: rgba(248,249,250,.92);
-      backdrop-filter: blur(10px);
+      background: rgba(246,243,236,.96);
       border-bottom:1px solid var(--line);
       display:flex;
       justify-content:space-between;
@@ -314,7 +341,7 @@
     }
     .latestBody{ padding:12px; display:flex; gap:12px; align-items:flex-start; }
     .latestMain{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:8px; }
-    .latestTitle{ font-size:13px; line-height:1.3; font-weight:700; margin:0; }
+    .latestTitle{ font-size:15px; line-height:1.3; font-weight:700; margin:0; font-family: var(--font-serif); }
     .latestTitle a{ color: var(--text); text-decoration:none; }
     .latestTitle a:hover{ color: var(--blue); text-decoration: underline; }
     .latestThumb{ width:132px; aspect-ratio:16 / 9; border-radius:12px; background:#f1f3f4; border:1px solid var(--line); overflow:hidden; flex:0 0 auto; }
@@ -329,7 +356,87 @@
     .hThumb.isHidden{ display:none; }
     .hThumb img{ width:100%; height:100%; object-fit:cover; display:block; }
     .hMain{ min-width:0; flex:1 1 auto; display:flex; flex-direction:column; gap:8px; }
-    .hTitle{ font-size:14px; line-height:1.25; font-weight:700; margin:0; }
+    .hTitle{ font-size:15px; line-height:1.25; font-weight:700; margin:0; font-family: var(--font-serif); }
+
+    .deepDive{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:14px;
+    }
+    .deepTop{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:12px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:10px;
+    }
+    .deepTitle{
+      font-size:22px;
+      line-height:1.1;
+      margin:0;
+      font-family:var(--font-serif);
+    }
+    .deepMeta{ font-size:12px; color:var(--muted); }
+    .deepSection{ margin-top:12px; }
+    .deepSectionTitle{
+      margin:0 0 8px;
+      font-size:11px;
+      color:var(--muted);
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .top10List, .deepEvents{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap:0;
+    }
+    .top10Row, .deepEvent{
+      border-bottom:1px solid var(--line);
+      padding:10px 0;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .top10Rank{
+      width:28px;
+      flex:0 0 28px;
+      font-size:12px;
+      font-weight:800;
+      color:var(--muted);
+    }
+    .top10Link{
+      font-family:var(--font-serif);
+      color:var(--text);
+      text-decoration:none;
+      font-size:16px;
+    }
+    .top10Link:hover{ color:var(--blue); text-decoration:underline; }
+    .deepStamp{ font-size:12px; color:var(--muted); }
+    .eventBadge{
+      display:inline-flex;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:2px 7px;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.3px;
+      background:var(--chip);
+      color:var(--chipText);
+      min-width:52px;
+      justify-content:center;
+      margin-right:6px;
+    }
+    .deepEventBody{ min-width:0; }
+    .deepEventMain{ font-size:14px; line-height:1.3; font-family:var(--font-serif); }
+    .deepEventMeta{ font-size:11px; color:var(--muted); margin-top:2px; }
     .hTitle a{ color: var(--text); text-decoration:none; }
     .hTitle a:hover{ color: var(--blue); text-decoration: underline; }
 
@@ -399,7 +506,45 @@
   </header>
 
   <main>
-    <div class="grid" id="cards-grid"></div>
+    <div class="viewTabs" role="tablist" aria-label="Views">
+      <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
+      <button id="tab-deepdive" class="tabBtn" type="button" role="tab" aria-selected="false">Deep Dive</button>
+    </div>
+
+    <section id="view-overview">
+      <div class="grid" id="cards-grid"></div>
+    </section>
+
+    <section id="view-deepdive" style="display:none">
+      <div class="deepDive">
+        <div class="deepTop">
+          <div>
+            <h2 class="deepTitle">Deep Dive</h2>
+            <div class="deepMeta">Publisher: ABC News</div>
+          </div>
+          <div class="row">
+            <label class="tiny" for="deep-window">Change log window</label>
+            <select id="deep-window" class="linkbtn">
+              <option value="6">6h</option>
+              <option value="24" selected>24h</option>
+              <option value="168">7d</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="deepSection">
+          <h3 class="deepSectionTitle">Current Top 10</h3>
+          <div id="deep-latest-time" class="deepStamp">Observed: —</div>
+          <div id="deep-latest-error" class="tiny" style="margin-top:6px"></div>
+          <ol id="deep-top10-list" class="top10List"></ol>
+        </div>
+
+        <div class="deepSection">
+          <h3 class="deepSectionTitle">Change Log</h3>
+          <ul id="deep-events-list" class="deepEvents"></ul>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="drawerOverlay" id="drawer-overlay"></div>
@@ -472,6 +617,9 @@
 
     const CACHE_URL = "./cache.json";
     const TIMELINE_URL = "./data/timeline.json";
+    const TOP10_ABC_LATEST_URL = "./data/top10_abc_latest.json";
+    const TOP10_ABC_EVENTS_HISTORY_URL = "./data/top10_abc_events_history.json";
+    const TOP10_ABC_EVENTS_24H_URL = "./data/top10_abc_events_24h.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
     const SUPABASE_PROXY_URL = "/api/supabase-snapshot";
     const SUPABASE_SCREENSHOT_BUCKET = "screenshots";
@@ -497,6 +645,12 @@
     }
 
     const HISTORY_WINDOW_HOURS = 12;
+    const DEEP_DIVE_DEFAULT_HOURS = 24;
+    const deepDiveState = {
+      latest: null,
+      events: [],
+      windowHours: DEEP_DIVE_DEFAULT_HOURS,
+    };
 
     // UI rules
     const STALE_MS = 2 * 60 * 60 * 1000; // 2 hours
@@ -1897,6 +2051,169 @@
       }
     }
 
+    function deepDiveEventLabel(eventType) {
+      if (eventType === "ENTERED_TOP10") return "ENTER";
+      if (eventType === "EXITED_TOP10") return "EXIT";
+      if (eventType === "MOVED") return "MOVE";
+      if (eventType === "TITLE_UPDATED") return "TITLE";
+      return "EVENT";
+    }
+
+    function deepDiveEventText(ev) {
+      const fromRank = Number(ev?.from_rank);
+      const toRank = Number(ev?.to_rank);
+      const fromTitle = String(ev?.from_title || "").trim();
+      const toTitle = String(ev?.to_title || "").trim();
+      const eventType = String(ev?.event_type || "");
+
+      if (eventType === "ENTERED_TOP10") {
+        return `${toTitle || "Untitled story"} entered at #${Number.isFinite(toRank) ? toRank : "?"}`;
+      }
+      if (eventType === "EXITED_TOP10") {
+        return `${fromTitle || "Untitled story"} exited from #${Number.isFinite(fromRank) ? fromRank : "?"}`;
+      }
+      if (eventType === "MOVED") {
+        return `${toTitle || fromTitle || "Untitled story"} moved ${Number.isFinite(fromRank) ? `#${fromRank}` : "#?"} to ${Number.isFinite(toRank) ? `#${toRank}` : "#?"}`;
+      }
+      if (eventType === "TITLE_UPDATED") {
+        if (fromTitle && toTitle) return `${fromTitle} → ${toTitle}`;
+        return `${toTitle || fromTitle || "Untitled story"} title updated`;
+      }
+      return toTitle || fromTitle || "Unknown change";
+    }
+
+    function setView(which) {
+      const overview = $("view-overview");
+      const deepDive = $("view-deepdive");
+      const tabOverview = $("tab-overview");
+      const tabDeepDive = $("tab-deepdive");
+
+      const showDeepDive = which === "deepdive";
+      if (overview) overview.style.display = showDeepDive ? "none" : "";
+      if (deepDive) deepDive.style.display = showDeepDive ? "" : "none";
+      if (tabOverview) {
+        tabOverview.classList.toggle("active", !showDeepDive);
+        tabOverview.setAttribute("aria-selected", showDeepDive ? "false" : "true");
+      }
+      if (tabDeepDive) {
+        tabDeepDive.classList.toggle("active", showDeepDive);
+        tabDeepDive.setAttribute("aria-selected", showDeepDive ? "true" : "false");
+      }
+    }
+
+    function renderDeepDive() {
+      const latest = deepDiveState.latest || {};
+      const events = Array.isArray(deepDiveState.events) ? deepDiveState.events : [];
+      const latestItems = Array.isArray(latest?.items) ? latest.items : [];
+
+      const latestTime = $("deep-latest-time");
+      if (latestTime) latestTime.textContent = `Observed: ${latest?.observedAt ? fmtTime(latest.observedAt) : "—"}`;
+
+      const err = $("deep-latest-error");
+      if (err) err.textContent = latest?.ok === false ? String(latest?.error || "Top 10 scrape incomplete") : "";
+
+      const topList = $("deep-top10-list");
+      if (topList) {
+        topList.innerHTML = "";
+        for (const row of latestItems) {
+          const li = document.createElement("li");
+          li.className = "top10Row";
+
+          const rank = document.createElement("div");
+          rank.className = "top10Rank";
+          rank.textContent = `${Number(row?.rank) || "?"}.`;
+
+          const body = document.createElement("div");
+          body.className = "deepEventBody";
+          const a = document.createElement("a");
+          a.className = "top10Link";
+          a.href = row?.url || "#";
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = row?.title || "—";
+          body.appendChild(a);
+
+          li.appendChild(rank);
+          li.appendChild(body);
+          topList.appendChild(li);
+        }
+        if (!latestItems.length) {
+          const li = document.createElement("li");
+          li.className = "top10Row";
+          li.textContent = "No Top 10 snapshot available yet.";
+          topList.appendChild(li);
+        }
+      }
+
+      const eventList = $("deep-events-list");
+      if (eventList) {
+        eventList.innerHTML = "";
+        const cutoffMs = Date.now() - (Number(deepDiveState.windowHours || DEEP_DIVE_DEFAULT_HOURS) * 60 * 60 * 1000);
+        const filtered = events
+          .filter((ev) => {
+            const ts = Date.parse(String(ev?.observed_at || ""));
+            return Number.isFinite(ts) ? ts >= cutoffMs : false;
+          })
+          .sort((a, b) => Date.parse(String(b?.observed_at || "")) - Date.parse(String(a?.observed_at || "")));
+
+        for (const ev of filtered) {
+          const li = document.createElement("li");
+          li.className = "deepEvent";
+
+          const badge = document.createElement("span");
+          badge.className = "eventBadge";
+          badge.textContent = deepDiveEventLabel(ev?.event_type);
+
+          const body = document.createElement("div");
+          body.className = "deepEventBody";
+          const main = document.createElement("div");
+          main.className = "deepEventMain";
+          main.textContent = deepDiveEventText(ev);
+          const meta = document.createElement("div");
+          meta.className = "deepEventMeta mono";
+          meta.textContent = ev?.observed_at ? `${fmtTime(ev.observed_at)} · ${ago(ev.observed_at)}` : "—";
+          body.appendChild(main);
+          body.appendChild(meta);
+
+          li.appendChild(badge);
+          li.appendChild(body);
+          eventList.appendChild(li);
+        }
+
+        if (!filtered.length) {
+          const li = document.createElement("li");
+          li.className = "deepEvent";
+          li.textContent = "No change events in this time window.";
+          eventList.appendChild(li);
+        }
+      }
+    }
+
+    async function loadDeepDiveData() {
+      let latest = null;
+      let events = [];
+
+      try {
+        latest = await fetchJSON(`${TOP10_ABC_LATEST_URL}?ts=${Date.now()}`);
+      } catch {}
+
+      try {
+        const payload = await fetchJSON(`${TOP10_ABC_EVENTS_HISTORY_URL}?ts=${Date.now()}`);
+        events = Array.isArray(payload?.events) ? payload.events : [];
+      } catch {
+        try {
+          const payload24h = await fetchJSON(`${TOP10_ABC_EVENTS_24H_URL}?ts=${Date.now()}`);
+          events = Array.isArray(payload24h?.events) ? payload24h.events : [];
+        } catch {
+          events = [];
+        }
+      }
+
+      deepDiveState.latest = latest || { ok: false, observedAt: null, items: [], error: "Deep Dive data unavailable" };
+      deepDiveState.events = events;
+      renderDeepDive();
+    }
+
     async function loadCardTimelineBySource(hours = 12, sourcesData = null) {
       function derivePublicShotUrl(objectPath){
         if (!objectPath) return null;
@@ -2208,9 +2525,11 @@
         if (nextState) saveState(nextState);
 
         renderHistory(normalizedHistory, sources, indicators);
+        await loadDeepDiveData();
 
       } catch (e) {
         console.error("Refresh error:", e);
+        await loadDeepDiveData().catch(() => {});
         showToast("Refresh failed");
       } finally {
         if (btnReload) btnReload.disabled = false;
@@ -2239,6 +2558,12 @@
     }
 
     $("btn-reload")?.addEventListener("click", reload);
+    $("tab-overview")?.addEventListener("click", () => setView("overview"));
+    $("tab-deepdive")?.addEventListener("click", () => setView("deepdive"));
+    $("deep-window")?.addEventListener("change", (e) => {
+      deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
+      renderDeepDive();
+    });
 
     $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
@@ -2279,6 +2604,9 @@
       }
     }
 
+    setView("overview");
+    const deepWindow = $("deep-window");
+    if (deepWindow) deepWindow.value = String(DEEP_DIVE_DEFAULT_HOURS);
     reload();
   </script>
 </body>
