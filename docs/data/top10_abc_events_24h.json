@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-18T23:36:25.800Z",
+  "generatedAt": "2026-02-18T23:56:34.568Z",
   "hours": 24,
   "events": [
     {
@@ -1311,6 +1311,66 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Surprise shark caught on camera for first time in Antarctica’s near-freezing deep",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T23:56:45.739Z",
+      "event_type": "MOVED",
+      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say",
+      "to_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T23:56:45.739Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "8 of 9 missing skiers found dead following California avalanche",
+      "to_title": "8 of 9 missing skiers found dead following California avalanche"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T23:56:45.739Z",
+      "event_type": "MOVED",
+      "fingerprint": "06288bb5fa87857d4de2c1bb6edd9642363395c6",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "'On the right path': Housing market offers glimmers of hope, some analysts say",
+      "to_title": "'On the right path': Housing market offers glimmers of hope, some analysts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T23:56:45.739Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c399e6dc200d81285502b43198638a979a58b8c",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "5 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police",
+      "to_title": "5 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T23:56:45.739Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "07bd31626d701b745b7284863c5e84c9386a574f",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "U2's new music honors Renee Good and draws inspiration from world events"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T23:56:45.739Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9d84bb7cecdde85e73502b6f3769e846a08730d4",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "US star Mikaela Shiffrin wins slalom to break 8-year Olympic drought",
       "to_title": null
     }
   ]
