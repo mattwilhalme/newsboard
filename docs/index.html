@@ -165,7 +165,25 @@
       background: var(--surface);
     }
 
-    .srcTitle{ display:flex; align-items:center; min-width:0; }
+    .srcTitle{ display:flex; align-items:center; gap:6px; min-width:0; }
+    .srcTitle .srcMeta{ flex:1 1 auto; }
+    .copyIconBtn{
+      border:1px solid var(--line);
+      background:var(--card);
+      color:var(--muted);
+      border-radius:6px;
+      width:24px;
+      height:24px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      line-height:1;
+      padding:0;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+    .copyIconBtn:hover{ border-color: rgba(26,115,232,.45); color:var(--blue2); }
 
     .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
     .srcName{ font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -533,9 +551,9 @@
     }
     .deepRunRail{
       display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:space-between;
+      flex-direction:column;
+      gap:6px;
+      align-items:stretch;
       padding:4px 2px 8px;
       border-bottom:1px solid var(--line);
     }
@@ -556,12 +574,11 @@
       background:var(--chip);
     }
     .snapshotStamp{
-      flex:1 1 auto;
       min-width:0;
       text-align:center;
-      border-color:var(--line-strong);
+      font-size:12px;
       color:var(--text);
-      background:var(--chip);
+      font-weight:700;
     }
     .top10Rank{
       width:28px;
@@ -966,7 +983,7 @@
         panX = 0;
         panY = 0;
         applyZoom();
-        meta.textContent = `${idx + 1}/${events.length} · ${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${sourceLabel(ev.source_id, null)}`;
+        meta.textContent = `${fmtTime(ev.ts)}`;
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= events.length - 1;
         slider.max = String(Math.max(0, events.length - 1));
@@ -1873,6 +1890,16 @@
       meta.appendChild(srcName);
       left.appendChild(meta);
 
+      const btnCopyLink = document.createElement("button");
+      btnCopyLink.className = "copyIconBtn";
+      btnCopyLink.type = "button";
+      btnCopyLink.textContent = "⧉";
+      btnCopyLink.title = "Copy headline link";
+      btnCopyLink.setAttribute("aria-label", "Copy headline link");
+      btnCopyLink.setAttribute("data-action", "copy-headline");
+      btnCopyLink.setAttribute("data-id", id);
+      left.appendChild(btnCopyLink);
+
       const right = document.createElement("div");
       right.className = "rightMeta";
 
@@ -1959,22 +1986,12 @@
         row.appendChild(status);
       }
 
-      // Copy headline button
-      const btnCopyLink = document.createElement("button");
-      btnCopyLink.className = "linkbtn";
-      btnCopyLink.type = "button";
-      btnCopyLink.textContent = "Copy";
-      btnCopyLink.setAttribute("data-action", "copy-headline");
-      btnCopyLink.setAttribute("data-id", id);
-
-      row.appendChild(btnCopyLink);
-
       const err = document.createElement("div");
       err.className = "tiny";
       err.textContent = src?.error ? String(src.error) : "";
 
       wrap.appendChild(h2);
-      wrap.appendChild(row);
+      if (row.childElementCount > 0) wrap.appendChild(row);
       wrap.appendChild(err);
 
       body.appendChild(thumb);
@@ -1998,7 +2015,7 @@
         const trigger = document.createElement("button");
         trigger.className = "linkbtn";
         trigger.type = "button";
-        trigger.textContent = `${sourceLabel(id, src)} timeline`;
+        trigger.textContent = "Timelapse";
 
         const panel = document.createElement("div");
         panel.style.display = "none";
@@ -2052,7 +2069,7 @@
           const nextSrc = ev?.shot_url || "";
           const currentSrc = img.getAttribute("src") || "";
 
-          meta.textContent = `${fmtTime(ev?.ts)} · ${ago(ev?.ts)} · ${timelineKindLabel(ev?.kind)}`;
+          meta.textContent = `${fmtTime(ev?.ts)}`;
           scrubber.max = String(Math.max(0, eventsWithShots.length - 1));
           scrubber.value = String(shotIdx);
           prev.disabled = shotIdx <= 0;
@@ -2295,6 +2312,11 @@
       return { label: `↓ #${p}`, delta: c - p };
     }
 
+    function isBreakingBannerTop10Item(item){
+      const title = String(item?.title || "").trim();
+      return /^breaking(\b|\d)/i.test(title);
+    }
+
     function deepDiveTop10Since(runs, selectedIdx, fingerprint){
       let firstIdx = selectedIdx;
       for (let i = selectedIdx; i >= 0; i--) {
@@ -2404,51 +2426,40 @@
       const selectedIdx = foundIdx >= 0 ? foundIdx : Math.max(0, runs.length - 1);
       const selectedRun = runs[selectedIdx] || latest || {};
       const prevRun = selectedIdx > 0 ? runs[selectedIdx - 1] : null;
-      const topItems = Array.isArray(selectedRun?.items) ? [...selectedRun.items].sort((a, b) => Number(a.rank) - Number(b.rank)) : [];
+      const topItems = Array.isArray(selectedRun?.items)
+        ? [...selectedRun.items]
+          .filter((row) => !isBreakingBannerTop10Item(row))
+          .sort((a, b) => Number(a.rank) - Number(b.rank))
+        : [];
 
       const rail = $("deep-run-rail");
       if (rail) {
         rail.innerHTML = "";
-        const older = document.createElement("button");
-        older.type = "button";
-        older.className = "deepRunBtn";
-        older.textContent = "←";
-        older.title = "Older snapshot";
+        const stamp = document.createElement("div");
+        stamp.className = "snapshotStamp";
+        stamp.textContent = selectedRun?.observedAt ? fmtTime(selectedRun.observedAt) : "No snapshots";
 
-        const stamp = document.createElement("button");
-        stamp.type = "button";
-        stamp.className = "deepRunBtn active snapshotStamp";
-        const reversePos = runs.length ? (runs.length - selectedIdx) : 0; // 1 = newest
-        stamp.textContent = runs.length
-          ? `${reversePos}/${runs.length} · ${fmtTime(selectedRun?.observedAt)}`
-          : "No snapshots";
-        stamp.disabled = true;
+        const scrubber = document.createElement("input");
+        scrubber.className = "shotRailScrubber";
+        scrubber.type = "range";
+        scrubber.min = "0";
+        scrubber.max = String(Math.max(0, runs.length - 1));
+        scrubber.step = "1";
+        scrubber.value = String(runs.length ? (runs.length - 1 - selectedIdx) : 0); // 0=newest, max=oldest
+        scrubber.disabled = runs.length <= 1;
 
-        const newer = document.createElement("button");
-        newer.type = "button";
-        newer.className = "deepRunBtn";
-        newer.textContent = "→";
-        newer.title = "Newer snapshot";
-
-        older.disabled = selectedIdx <= 0;
-        newer.disabled = selectedIdx >= (runs.length - 1);
-
-        older.addEventListener("click", () => {
-          const next = runs[selectedIdx - 1];
-          if (!next) return;
-          deepDiveState.selectedObservedAt = next?.observedAt || null;
-          renderDeepDive();
-        });
-        newer.addEventListener("click", () => {
-          const next = runs[selectedIdx + 1];
+        scrubber.addEventListener("input", () => {
+          if (!runs.length) return;
+          const reverseIdx = Math.max(0, Math.min(runs.length - 1, Number(scrubber.value || 0)));
+          const nextIdx = (runs.length - 1) - reverseIdx;
+          const next = runs[nextIdx];
           if (!next) return;
           deepDiveState.selectedObservedAt = next?.observedAt || null;
           renderDeepDive();
         });
 
-        rail.appendChild(older);
         rail.appendChild(stamp);
-        rail.appendChild(newer);
+        rail.appendChild(scrubber);
       }
 
       const latestTime = $("deep-latest-time");
