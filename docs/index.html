@@ -410,6 +410,7 @@
       display:flex;
       gap:6px;
       flex-wrap:wrap;
+      align-items:center;
     }
     .statBtn{
       border:1px solid var(--line);
@@ -421,6 +422,80 @@
       padding:4px 8px;
       line-height:1;
     }
+    .statBtn.isTop10{
+      border-color: rgba(23, 92, 211, .45);
+      background: rgba(23, 92, 211, .08);
+      color:#1249ab;
+    }
+    .statBtn.isNo1{
+      border-color: rgba(30, 142, 62, .55);
+      background: rgba(30, 142, 62, .08);
+      color:#1e8e3e;
+    }
+    .statLabel{
+      font-size:10px;
+      font-weight:800;
+      color:var(--muted);
+      letter-spacing:.25px;
+      text-transform:uppercase;
+      margin-left:2px;
+    }
+    .relatedWrap{
+      margin-top:8px;
+      border-top:1px solid var(--line);
+      padding-top:8px;
+    }
+    .relatedToggle{
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--muted);
+      border-radius:8px;
+      font-size:11px;
+      font-weight:700;
+      padding:4px 8px;
+      cursor:pointer;
+    }
+    .relatedPanel{
+      max-height:0;
+      overflow:hidden;
+      opacity:0;
+      transform: translateY(8px);
+      transition: max-height 220ms ease, opacity 180ms ease, transform 220ms ease;
+    }
+    .relatedPanel.open{
+      max-height:240px;
+      opacity:1;
+      transform: translateY(0);
+      margin-top:8px;
+    }
+    .relatedList{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .relatedItem{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:6px 8px;
+      background:var(--surface);
+    }
+    .relatedLink{
+      color:var(--text);
+      font-size:12px;
+      text-decoration:none;
+      min-width:0;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .relatedLink:hover{ color:var(--blue); text-decoration:underline; }
     .deepRunRail{
       display:flex;
       gap:8px;
@@ -2081,7 +2156,7 @@
       const p = Number(prev.rank);
       const c = Number(item?.rank);
       if (!Number.isFinite(p) || !Number.isFinite(c)) return { label: "NEW", delta: null };
-      if (p === c) return { label: "SAME", delta: 0 };
+      if (p === c) return { label: "", delta: 0 };
       if (p > c) return { label: `↑ #${p}`, delta: p - c };
       return { label: `↓ #${p}`, delta: c - p };
     }
@@ -2101,6 +2176,18 @@
       for (let i = selectedIdx; i >= 0; i--) {
         const row = (runs[i]?.items || []).find((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
         if (!row || Number(row.rank) !== 1) break;
+        firstIdx = i;
+      }
+      return runs[firstIdx]?.observedAt || null;
+    }
+
+    function deepDiveRelatedSince(runs, selectedIdx, url){
+      let firstIdx = selectedIdx;
+      for (let i = selectedIdx; i >= 0; i--) {
+        const topRow = (runs[i]?.items || [])[0] || null;
+        const rel = Array.isArray(topRow?.related_links) ? topRow.related_links : [];
+        const has = rel.some((it) => String(it?.url || "") === String(url || ""));
+        if (!has) break;
         firstIdx = i;
       }
       return runs[firstIdx]?.observedAt || null;
@@ -2185,26 +2272,84 @@
           meta.className = "top10Meta";
 
           const move = deepDiveMovement(row, prevRun);
-          const moveChip = document.createElement("span");
-          moveChip.className = "statBtn";
-          moveChip.textContent = move.label;
-          meta.appendChild(moveChip);
+          if (move.label) {
+            const moveChip = document.createElement("span");
+            moveChip.className = "statBtn";
+            moveChip.textContent = move.label;
+            meta.appendChild(moveChip);
+          }
 
           const top10Since = deepDiveTop10Since(runs, selectedIdx, row?.fingerprint);
+          if (Number(row?.rank) === 1) {
+            const top10Lbl = document.createElement("span");
+            top10Lbl.className = "statLabel";
+            top10Lbl.textContent = "Top 10";
+            meta.appendChild(top10Lbl);
+          }
           const top10Chip = document.createElement("span");
-          top10Chip.className = "statBtn";
-          top10Chip.textContent = `Top 10 ${deepDiveDurationLabel(top10Since, selectedRun?.observedAt)}`;
+          top10Chip.className = "statBtn isTop10";
+          top10Chip.textContent = deepDiveDurationLabel(top10Since, selectedRun?.observedAt);
           meta.appendChild(top10Chip);
 
           if (Number(row?.rank) === 1) {
             const no1Since = deepDiveNo1Since(runs, selectedIdx, row?.fingerprint);
+            const no1Lbl = document.createElement("span");
+            no1Lbl.className = "statLabel";
+            no1Lbl.textContent = "No. 1";
+            meta.appendChild(no1Lbl);
             const no1Chip = document.createElement("span");
-            no1Chip.className = "statBtn";
-            no1Chip.textContent = `No.1 ${deepDiveDurationLabel(no1Since, selectedRun?.observedAt)}`;
+            no1Chip.className = "statBtn isNo1";
+            no1Chip.textContent = deepDiveDurationLabel(no1Since, selectedRun?.observedAt);
             meta.appendChild(no1Chip);
           }
 
           body.appendChild(meta);
+
+          if (Number(row?.rank) === 1) {
+            const related = Array.isArray(row?.related_links) ? row.related_links : [];
+            if (related.length) {
+              const wrap = document.createElement("div");
+              wrap.className = "relatedWrap";
+
+              const toggle = document.createElement("button");
+              toggle.type = "button";
+              toggle.className = "relatedToggle";
+              toggle.textContent = `Context links (${related.length})`;
+
+              const panel = document.createElement("div");
+              panel.className = "relatedPanel";
+
+              const list = document.createElement("ul");
+              list.className = "relatedList";
+
+              for (const rel of related) {
+                const item = document.createElement("li");
+                item.className = "relatedItem";
+
+                const link = document.createElement("a");
+                link.className = "relatedLink";
+                link.href = rel?.url || "#";
+                link.target = "_blank";
+                link.rel = "noopener";
+                link.textContent = rel?.title || rel?.url || "Related link";
+
+                const since = deepDiveRelatedSince(runs, selectedIdx, rel?.url);
+                const chip = document.createElement("span");
+                chip.className = "statBtn isTop10";
+                chip.textContent = deepDiveDurationLabel(since, selectedRun?.observedAt);
+
+                item.appendChild(link);
+                item.appendChild(chip);
+                list.appendChild(item);
+              }
+
+              panel.appendChild(list);
+              toggle.addEventListener("click", () => panel.classList.toggle("open"));
+              wrap.appendChild(toggle);
+              wrap.appendChild(panel);
+              body.appendChild(wrap);
+            }
+          }
 
           li.appendChild(rank);
           li.appendChild(body);
