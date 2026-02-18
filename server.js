@@ -60,6 +60,22 @@ function cleanText(s) {
   return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
 }
 
+function stripHeadlineNoise(s) {
+  let t = cleanText(s || "");
+  if (!t) return t;
+
+  // ISO timestamps / datastore-looking tails.
+  t = t.replace(/\b20\d{2}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z\b/g, "");
+  t = t.replace(/\b20\d{2}-\d{2}-\d{2}\s+\d{1,2}:\d{2}(:\d{2})?\b/g, "");
+
+  // Relative freshness badges often injected into anchor text.
+  t = t.replace(/\b\d+\s*(sec|secs|second|seconds|min|mins|minute|minutes|hr|hrs|hour|hours|day|days)\s+ago\b/gi, "");
+  t = t.replace(/\b(updated|posted)\s+\d+\s*(sec|secs|second|seconds|min|mins|minute|minutes|hr|hrs|hour|hours|day|days)\s+ago\b/gi, "");
+
+  t = t.replace(/\s{2,}/g, " ").replace(/[|•\-:;, ]+$/g, "").trim();
+  return t;
+}
+
 function normalizeUrl(u) {
   try {
     const url = new URL(u);
@@ -508,7 +524,7 @@ async function scrapeABCTop10() {
     const candidates = [];
     const seen = new Set();
     for (const row of Array.isArray(raw) ? raw : []) {
-      const title = cleanText(row?.title || "");
+      const title = stripHeadlineNoise(cleanText(row?.title || ""));
       const url = normalizeUrl(row?.url || "");
       if (!title || !url || seen.has(url)) continue;
       const lcTitle = title.toLowerCase();

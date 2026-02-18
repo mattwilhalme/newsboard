@@ -454,7 +454,6 @@
     }
     .relatedWrap{
       margin-top:8px;
-      border-top:1px solid var(--line);
       padding-top:8px;
     }
     .relatedToggle{
@@ -510,7 +509,6 @@
     .relatedLink:hover{ color:var(--blue); text-decoration:underline; }
     .headlineDiff{
       margin-top:8px;
-      border:1px solid var(--line);
       border-radius:8px;
       padding:8px;
       background:var(--surface);
@@ -1825,6 +1823,8 @@
         time.textContent = `Updated ${ago(updatedAt)}`;
       } else if (firstSeenAt) {
         time.textContent = `First seen ${ago(firstSeenAt)}`;
+      } else if (updatedAt) {
+        time.textContent = `First seen ${ago(updatedAt)}`;
       } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
         time.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
       } else {
@@ -1835,6 +1835,8 @@
       since.className = "tiny";
       if (hasMeaningfulUpdate && firstSeenAt) {
         since.textContent = `First seen ${ago(firstSeenAt)}`;
+      } else if (hasMeaningfulUpdate && updatedAt) {
+        since.textContent = `First seen ${ago(updatedAt)}`;
       } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
         since.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
       } else if (!hasMeaningfulUpdate && firstSeenAt) {
@@ -2229,7 +2231,7 @@
       const p = Number(prev.rank);
       const c = Number(item?.rank);
       if (!Number.isFinite(p) || !Number.isFinite(c)) return { label: "NEW", delta: null };
-      if (p === c) return { label: "—", delta: 0 };
+      if (p === c) return { label: `#${p}`, delta: 0 };
       if (p > c) return { label: `↑ #${p}`, delta: p - c };
       return { label: `↓ #${p}`, delta: c - p };
     }
@@ -2449,7 +2451,7 @@
               diff.className = "headlineDiff";
               const metaLine = document.createElement("div");
               metaLine.className = "headlineDiffMeta";
-              metaLine.textContent = `First Seen: ${fmtTime(ev?.firstSeenAt)} · Changed: ${fmtTime(ev?.changedAt)}`;
+              metaLine.innerHTML = `<strong>Updated:</strong> ${escapeHtml(fmtTime(ev?.changedAt))}`;
               const line = document.createElement("div");
               line.innerHTML = headlineDiffHtml(ev?.fromTitle, ev?.toTitle);
               diff.appendChild(metaLine);
