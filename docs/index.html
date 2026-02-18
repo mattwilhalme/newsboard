@@ -1680,22 +1680,28 @@
       time.className = "srcTime";
       const updatedAt = src?.updatedAt || null;
       const firstSeenAt = src?.firstSeenAt || src?.since || null;
-      if (updatedAt) {
+      const hasMeaningfulUpdate = (indicator?.changeType === "url" || indicator?.changeType === "headline");
+
+      if (hasMeaningfulUpdate && updatedAt) {
         time.textContent = `Updated ${ago(updatedAt)}`;
       } else if (firstSeenAt) {
         time.textContent = `First seen ${ago(firstSeenAt)}`;
+      } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
+        time.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
       } else {
-        time.textContent = "Updated —";
+        time.textContent = "First seen —";
       }
 
       const since = document.createElement("div");
       since.className = "tiny";
-      if (firstSeenAt) {
+      if (hasMeaningfulUpdate && firstSeenAt) {
         since.textContent = `First seen ${ago(firstSeenAt)}`;
       } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
         since.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
+      } else if (!hasMeaningfulUpdate && firstSeenAt) {
+        since.textContent = "";
       } else {
-        since.textContent = "First seen —";
+        since.textContent = "";
       }
 
       right.appendChild(time);
