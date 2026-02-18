@@ -640,6 +640,11 @@ async function run() {
       title: it.title || null,
       url: it.url || null,
       fingerprint: it.fingerprint || null,
+      related_links: Array.isArray(it.related_links)
+        ? it.related_links
+            .map((rel) => ({ title: rel?.title || null, url: rel?.url || null }))
+            .filter((rel) => rel.url)
+        : [],
     })),
   };
   top10History.generatedAt = generatedAt;

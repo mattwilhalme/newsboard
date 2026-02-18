@@ -108,6 +108,14 @@ function top10Fingerprint(url, title) {
   return sha1(t || "unknown");
 }
 
+function parseUrlSafe(u) {
+  try {
+    return new URL(String(u || ""));
+  } catch {
+    return null;
+  }
+}
+
 function readCache() {
   try {
     if (!fs.existsSync(CACHE_FILE)) return null;
@@ -432,9 +440,11 @@ async function scrapeABCTop10() {
         const t = String(title || "").toLowerCase();
         if (!u || u.startsWith("javascript:") || u.startsWith("mailto:")) return false;
         if (u.includes("/video") || u.includes("/videos") || u.includes("/live/video")) return false;
+        if (u.endsWith("/live") || u.includes("/live?") || u.includes("/live/")) return false;
         if (u.includes("/search") || u.includes("/account") || u.includes("/newsletters")) return false;
         if (u.includes("/shop") || u.includes("/about") || u.includes("/contact")) return false;
         if (t.includes("sign in") || t.includes("subscribe") || t.includes("watch live")) return false;
+        if (t.includes("abcnl prime") || t.includes("abc news live")) return false;
         return true;
       }
       function collectFromJsonLdNode(node, out) {
@@ -495,21 +505,54 @@ async function scrapeABCTop10() {
       return picked;
     });
 
-    const items = [];
+    const candidates = [];
     const seen = new Set();
     for (const row of Array.isArray(raw) ? raw : []) {
       const title = cleanText(row?.title || "");
       const url = normalizeUrl(row?.url || "");
       if (!title || !url || seen.has(url)) continue;
+      const lcTitle = title.toLowerCase();
+      const lcUrl = url.toLowerCase();
+      if (lcUrl === "https://abcnews.com/live" || lcUrl === "https://abcnews.com/live/") continue;
+      if (lcTitle.includes("abcnl prime") || lcTitle.includes("abc news live")) continue;
       seen.add(url);
-      items.push({
-        rank: items.length + 1,
+      candidates.push({
         title,
         url,
         fingerprint: top10Fingerprint(url, title),
       });
-      if (items.length >= 10) break;
     }
+
+    const primary = candidates[0] || null;
+    const relatedLinks = [];
+    const rankingRows = [];
+    const primaryUrl = parseUrlSafe(primary?.url || "");
+    const primaryId = primaryUrl?.searchParams?.get("id") || "";
+
+    for (const row of candidates) {
+      const u = parseUrlSafe(row.url);
+      const isPrimaryFamily =
+        Boolean(primaryUrl && u) &&
+        String(primaryUrl.origin + primaryUrl.pathname).toLowerCase() === String(u.origin + u.pathname).toLowerCase();
+      const hasEntry = Boolean(u?.searchParams?.get("entryId"));
+      const sameId = Boolean(primaryId) && String(u?.searchParams?.get("id") || "") === String(primaryId);
+
+      if (isPrimaryFamily && hasEntry && sameId) {
+        relatedLinks.push({ title: row.title, url: row.url });
+        continue;
+      }
+
+      rankingRows.push(row);
+      if (rankingRows.length >= 10) break;
+    }
+
+    const items = rankingRows.map((row, idx) => ({
+      rank: idx + 1,
+      title: row.title,
+      url: row.url,
+      fingerprint: row.fingerprint,
+      related_links: idx === 0 ? relatedLinks.slice(0, 12) : [],
+    }));
 
     const observedAt = nowISO();
     const ok = items.length >= 10;
