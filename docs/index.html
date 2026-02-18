@@ -492,7 +492,8 @@
       transition: max-height 220ms ease, opacity 180ms ease, transform 220ms ease;
     }
     .relatedPanel.open{
-      max-height:240px;
+      max-height:min(55vh, 460px);
+      overflow:auto;
       opacity:1;
       transform: translateY(0);
       margin-top:8px;
@@ -1961,26 +1962,33 @@
 
       if (hasHeadlineUpdate && headlineSinceAt) {
         time.textContent = `Updated ${ago(headlineSinceAt)}`;
-      } else if (firstSeenEverAt) {
-        time.textContent = `First seen ${ago(firstSeenEverAt)}`;
-      } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
-        time.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
       } else {
-        time.textContent = "First seen —";
+        time.textContent = "";
       }
 
       const since = document.createElement("div");
       since.className = "tiny";
-      if (hasHeadlineUpdate && firstSeenEverAt) {
-        since.textContent = `First seen ${ago(firstSeenEverAt)}`;
-      } else if (reenteredAt) {
+      if (reenteredAt) {
         since.textContent = `Re-entered No. 1 ${ago(reenteredAt)}`;
       } else {
         since.textContent = "";
       }
 
+      const firstSeenLine = document.createElement("div");
+      firstSeenLine.className = "tiny";
+      if (hasHeadlineUpdate && headlineSinceAt) {
+        firstSeenLine.textContent = firstSeenEverAt ? `First seen ${ago(firstSeenEverAt)}` : "First seen —";
+      } else if (firstSeenEverAt) {
+        firstSeenLine.textContent = `First seen ${ago(firstSeenEverAt)}`;
+      } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
+        firstSeenLine.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
+      } else {
+        firstSeenLine.textContent = "First seen —";
+      }
+
       right.appendChild(time);
       right.appendChild(since);
+      right.appendChild(firstSeenLine);
 
       head.appendChild(left);
       head.appendChild(right);
@@ -2190,7 +2198,7 @@
         panel.appendChild(frame);
         panel.appendChild(controls);
 
-        const headlineHistory = headlineHistoryFromTimeline(timelineEvents);
+        const headlineHistory = headlineHistoryFromTimeline(timelineEvents, src?.item?.url || null);
         const headlineChanges = headlineHistory.changes;
         if ((headlineHistory.original && headlineHistory.original.title) || headlineChanges.length) {
           const hw = document.createElement("div");
@@ -2228,6 +2236,19 @@
 
             appendHeadlineEditMarkup(diff, ev?.fromTitle, ev?.toTitle);
             hp.appendChild(diff);
+          }
+
+          if (headlineHistory.previous && headlineHistory.previous.title) {
+            const prev = document.createElement("div");
+            prev.className = "headlineDiff";
+            const prevMeta = document.createElement("div");
+            prevMeta.className = "headlineDiffMeta";
+            prevMeta.innerHTML = `<strong>Previously:</strong> ${escapeHtml(fmtTime(headlineHistory.previous.ts))}`;
+            const prevTitle = document.createElement("div");
+            prevTitle.textContent = headlineHistory.previous.title;
+            prev.appendChild(prevMeta);
+            prev.appendChild(prevTitle);
+            hp.appendChild(prev);
           }
 
           ht.addEventListener("click", () => hp.classList.toggle("open"));
@@ -2431,17 +2452,36 @@
       host.appendChild(line);
     }
 
-    function headlineHistoryFromTimeline(events){
+    function headlineHistoryFromTimeline(events, currentUrl = null){
       const rows = [...(events || [])]
-        .filter((ev) => ev && ev.ts && ev.title)
+        .filter((ev) => ev && ev.ts && ev.title && ev.url)
         .sort((a, b) => Date.parse(String(a.ts || "")) - Date.parse(String(b.ts || "")));
 
-      const original = rows.length
-        ? { title: String(rows[0].title || "").trim(), ts: rows[0].ts }
+      if (!rows.length) return { original: null, previous: null, changes: [] };
+
+      const latest = rows[rows.length - 1];
+      const activeUrl = String(currentUrl || latest?.url || "");
+      if (!activeUrl) return { original: null, previous: null, changes: [] };
+
+      // Current URL streak (same story URL currently in No. 1 spot).
+      const streak = [];
+      for (let i = rows.length - 1; i >= 0; i--) {
+        const ev = rows[i];
+        if (String(ev?.url || "") !== activeUrl) break;
+        streak.unshift(ev);
+      }
+      if (!streak.length) return { original: null, previous: null, changes: [] };
+
+      const streakStartIdx = rows.length - streak.length;
+      const prevEv = streakStartIdx > 0 ? rows[streakStartIdx - 1] : null;
+      const previous = prevEv
+        ? { title: String(prevEv.title || "").trim(), ts: prevEv.ts, url: prevEv.url || null }
         : null;
+      const original = { title: String(streak[0].title || "").trim(), ts: streak[0].ts, url: activeUrl };
+
       const out = [];
       let prevTitle = null;
-      for (const ev of rows) {
+      for (const ev of streak) {
         const title = String(ev.title || "").trim();
         if (!title) continue;
         if (prevTitle === null) {
@@ -2460,6 +2500,7 @@
 
       return {
         original,
+        previous,
         changes: out.sort((a, b) => Date.parse(String(b?.changedAt || "")) - Date.parse(String(a?.changedAt || ""))),
       };
     }

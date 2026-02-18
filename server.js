@@ -1448,7 +1448,14 @@ async function scrapeLATimesHero() {
       function isStoryUrl(url) {
         if (!url) return false;
         if (!/^https?:\/\/(www\.)?latimes\.com\//i.test(url)) return false;
-        if (!/\/story\//i.test(url)) return false;
+        const u = (() => {
+          try { return new URL(url); } catch { return null; }
+        })();
+        if (!u) return false;
+        const path = String(u.pathname || "");
+        const isStory = /\/story\//i.test(path);
+        const isLive = /\/live(\/|$)/i.test(path) || /\/live-updates(\/|$)/i.test(path);
+        if (!isStory && !isLive) return false;
         if (/\/b2b\//i.test(url)) return false;
         return true;
       }
@@ -1456,11 +1463,19 @@ async function scrapeLATimesHero() {
       const seen = new Set();
       const anchors = [];
       const selectors = [
+        "main h1 a.link[href*='/live']",
+        "main h1 a[href*='/live']",
+        "main .promo-title a.link[href*='/live']",
+        "main .promo-title a[href*='/live']",
+        "main a.link[href*='/live-updates']",
+        "main a[href*='/live-updates']",
         "main h1.promo-title a.link[href*='/story/']",
         "main h1 a.link[href*='/story/']",
         "main .promo-title a.link[href*='/story/']",
         "main a.link[href*='/story/']",
         "h1.promo-title a.link[href*='/story/']",
+        "main article h1 a[href]",
+        "main article a[href]",
       ];
 
       for (const sel of selectors) {
@@ -1477,10 +1492,16 @@ async function scrapeLATimesHero() {
           const url = href ? abs(href) : null;
           const title = clean(a.textContent || a.getAttribute("aria-label") || "");
           if (!url || !title || !isStoryUrl(url)) return null;
+          const path = (() => {
+            try { return new URL(url).pathname || ""; } catch { return ""; }
+          })();
+          const isLive = /\/live(\/|$)/i.test(path) || /\/live-updates(\/|$)/i.test(path);
           let score = 0;
           if (a.closest("h1")) score += 80;
           if (a.closest(".promo-title")) score += 40;
+          if (a.closest("article")) score += 20;
           if (a.closest("main")) score += 30;
+          if (isLive) score += 35;
           if (title.length >= 24 && title.length <= 240) score += 10;
           if (a.closest("header,nav,footer,[data-element='page-header'],[data-element='page-subheader']")) score -= 120;
           return { title, url, score };
