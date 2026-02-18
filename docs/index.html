@@ -2190,8 +2190,9 @@
         panel.appendChild(frame);
         panel.appendChild(controls);
 
-        const headlineChanges = headlineChangesFromTimeline(timelineEvents);
-        if (headlineChanges.length) {
+        const headlineHistory = headlineHistoryFromTimeline(timelineEvents);
+        const headlineChanges = headlineHistory.changes;
+        if ((headlineHistory.original && headlineHistory.original.title) || headlineChanges.length) {
           const hw = document.createElement("div");
           hw.className = "relatedWrap";
 
@@ -2202,6 +2203,19 @@
 
           const hp = document.createElement("div");
           hp.className = "relatedPanel";
+
+          if (headlineHistory.original && headlineHistory.original.title) {
+            const first = document.createElement("div");
+            first.className = "headlineDiff";
+            const firstMeta = document.createElement("div");
+            firstMeta.className = "headlineDiffMeta";
+            firstMeta.innerHTML = `<strong>Original:</strong> ${escapeHtml(fmtTime(headlineHistory.original.ts))}`;
+            const firstTitle = document.createElement("div");
+            firstTitle.textContent = headlineHistory.original.title;
+            first.appendChild(firstMeta);
+            first.appendChild(firstTitle);
+            hp.appendChild(first);
+          }
 
           for (const ev of headlineChanges) {
             const diff = document.createElement("div");
@@ -2219,7 +2233,7 @@
           ht.addEventListener("click", () => hp.classList.toggle("open"));
           hw.appendChild(ht);
           hw.appendChild(hp);
-          panel.appendChild(hw);
+          body.appendChild(hw);
         }
 
         foot.appendChild(trigger);
@@ -2417,11 +2431,14 @@
       host.appendChild(line);
     }
 
-    function headlineChangesFromTimeline(events){
+    function headlineHistoryFromTimeline(events){
       const rows = [...(events || [])]
         .filter((ev) => ev && ev.ts && ev.title)
         .sort((a, b) => Date.parse(String(a.ts || "")) - Date.parse(String(b.ts || "")));
 
+      const original = rows.length
+        ? { title: String(rows[0].title || "").trim(), ts: rows[0].ts }
+        : null;
       const out = [];
       let prevTitle = null;
       for (const ev of rows) {
@@ -2441,7 +2458,10 @@
         }
       }
 
-      return out.sort((a, b) => Date.parse(String(b?.changedAt || "")) - Date.parse(String(a?.changedAt || "")));
+      return {
+        original,
+        changes: out.sort((a, b) => Date.parse(String(b?.changedAt || "")) - Date.parse(String(a?.changedAt || ""))),
+      };
     }
 
     function deepDiveMovement(item, prevRun){
@@ -2592,25 +2612,35 @@
         scrubber.value = String(runs.length ? (runs.length - 1 - selectedIdx) : 0); // 0=newest, max=oldest
         scrubber.disabled = runs.length <= 1;
         let pendingReverseIdx = Number(scrubber.value || 0);
-        let scrubRaf = 0;
 
-        function applyScrubSelection() {
-          scrubRaf = 0;
+        function runFromReverseIdx(reverseIdx) {
           if (!runs.length) return;
-          const reverseIdx = Math.max(0, Math.min(runs.length - 1, Number(pendingReverseIdx || 0)));
-          const nextIdx = (runs.length - 1) - reverseIdx;
-          const next = runs[nextIdx];
+          const idx = Math.max(0, Math.min(runs.length - 1, Number(reverseIdx || 0)));
+          const nextIdx = (runs.length - 1) - idx;
+          return runs[nextIdx] || null;
+        }
+
+        function previewScrubSelection() {
+          const next = runFromReverseIdx(pendingReverseIdx);
           if (!next) return;
+          stamp.textContent = fmtTime(next?.observedAt);
+        }
+
+        function commitScrubSelection() {
+          const next = runFromReverseIdx(pendingReverseIdx);
+          if (!next) return;
+          if (String(next?.observedAt || "") === String(deepDiveState.selectedObservedAt || "")) return;
           deepDiveState.selectedObservedAt = next?.observedAt || null;
           renderDeepDive();
         }
 
         scrubber.addEventListener("input", () => {
           pendingReverseIdx = Number(scrubber.value || 0);
-          if (scrubRaf) return;
-          scrubRaf = requestAnimationFrame(applyScrubSelection);
+          previewScrubSelection();
         });
-        scrubber.addEventListener("change", applyScrubSelection);
+        scrubber.addEventListener("change", commitScrubSelection);
+        scrubber.addEventListener("mouseup", commitScrubSelection);
+        scrubber.addEventListener("touchend", commitScrubSelection, { passive: true });
         scrubber.addEventListener("wheel", (ev) => {
           if (scrubber.disabled) return;
           ev.preventDefault();
@@ -2621,8 +2651,8 @@
           if (next === Number(scrubber.value || 0)) return;
           scrubber.value = String(next);
           pendingReverseIdx = next;
-          if (scrubRaf) return;
-          scrubRaf = requestAnimationFrame(applyScrubSelection);
+          previewScrubSelection();
+          commitScrubSelection();
         }, { passive: false });
 
         rail.appendChild(stamp);
