@@ -105,6 +105,80 @@
       border-color:var(--line);
     }
 
+    .visualWrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .centerpieceCard,
+    .stackCard{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:var(--card);
+    }
+    .centerpieceCard{
+      padding:18px;
+      transition: background-color .2s ease, box-shadow .2s ease;
+    }
+    .stackCard{
+      padding:12px 14px;
+    }
+    .visualMeta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:6px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .visualPublisher{
+      font-weight:700;
+      color:var(--text);
+    }
+    .centerpieceTitle{
+      margin:0 0 10px;
+      font-family:var(--font-serif);
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:.1px;
+    }
+    .stackTitle{
+      margin:0 0 8px;
+      font-family:var(--font-serif);
+      font-size:20px;
+      line-height:1.2;
+    }
+    .visualCardFoot{
+      display:flex;
+      justify-content:flex-end;
+    }
+    .flashYellow{
+      animation: flashYellow 0.9s ease;
+    }
+    @keyframes flashYellow{
+      0% { background:#fff7c5; }
+      100% { background:var(--card); }
+    }
+    .editedBadge{
+      display:inline-flex;
+      margin-left:8px;
+      padding:2px 7px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.25px;
+      color:var(--chipText);
+      background:var(--chip);
+      vertical-align:middle;
+    }
+    .editedOutline{
+      box-shadow: inset 0 0 0 1px rgba(26,115,232,.35);
+    }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -266,7 +340,8 @@
     }
     .shotRailControls{
       display:flex;
-      align-items:center;
+      flex-direction:column;
+      align-items:stretch;
       gap:8px;
     }
     .shotRailScrubber{
@@ -581,6 +656,17 @@
       color:var(--text);
       font-weight:700;
     }
+    .snapshotNav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+    .snapshotNav .linkbtn{
+      min-width:34px;
+      padding:6px 10px;
+      font-weight:700;
+    }
     .headlineNew{
       font-weight:700;
       font-size:13px;
@@ -690,6 +776,7 @@
     <div class="viewTabs" role="tablist" aria-label="Views">
       <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
       <button id="tab-deepdive" class="tabBtn" type="button" role="tab" aria-selected="false">Timeline</button>
+      <button id="tab-visual" class="tabBtn" type="button" role="tab" aria-selected="false">Visual</button>
     </div>
 
     <section id="view-overview">
@@ -725,6 +812,10 @@
           <ol id="deep-top10-list" class="top10List"></ol>
         </div>
       </div>
+    </section>
+
+    <section id="view-visual" style="display:none">
+      <div id="visual-wrap" class="visualWrap"></div>
     </section>
   </main>
 
@@ -789,6 +880,15 @@
       windowHours: DEEP_DIVE_DEFAULT_HOURS,
       selectedObservedAt: null,
     };
+    const VIEW_STORAGE_KEY = "newsboard_view";
+    const CENTERPIECE_ID_KEY = "nb_last_centerpiece_id";
+    const CENTERPIECE_TITLE_KEY = "nb_last_centerpiece_title";
+    const appRenderState = {
+      sources: {},
+      indicators: {},
+      timelineBySource: {},
+    };
+    let activeView = "overview";
 
     // UI rules
     const STALE_MS = 2 * 60 * 60 * 1000; // 2 hours
@@ -1896,6 +1996,139 @@
       return Number.isFinite(ms) ? ms : 0;
     }
 
+    function normalizeStoryUrl(url){
+      const raw = String(url || "").trim();
+      if (!raw) return "";
+      try {
+        const u = new URL(raw);
+        u.hash = "";
+        const path = u.pathname.replace(/\/+$/, "") || "/";
+        return `${u.origin.toLowerCase()}${path}${u.search || ""}`;
+      } catch {
+        return raw.replace(/\/+$/, "").toLowerCase();
+      }
+    }
+
+    function visualIdentityFor(item){
+      const normalizedUrl = normalizeStoryUrl(item?.url || "");
+      if (normalizedUrl) return normalizedUrl;
+      return `${String(item?.source_id || "unknown")}:${String(item?.slot_key || "top")}`;
+    }
+
+    function visualItemsFromSources(sources){
+      const items = [];
+      for (const id of pickCardSourceIds(sources || {})) {
+        const src = sources?.[id] || {};
+        const row = src?.item || {};
+        const title = String(row?.title || "").trim();
+        const url = String(row?.url || "").trim();
+        const updatedAt = src?.updatedAt || src?.firstSeenAt || null;
+        const updatedMs = tsForSort(sources, id);
+        if (!title && !url) continue;
+        items.push({
+          source_id: id,
+          source_name: sourceLabel(id, src),
+          slot_key: row?.slot_key || row?.slotKey || src?.slot_key || src?.slotKey || "top",
+          title: title || "—",
+          url: url || "#",
+          updatedAt,
+          updatedMs,
+        });
+      }
+      items.sort((a, b) => {
+        if (b.updatedMs !== a.updatedMs) return b.updatedMs - a.updatedMs;
+        return String(a.source_id || "").localeCompare(String(b.source_id || ""));
+      });
+      return items;
+    }
+
+    function buildVisualCard(item, isCenterpiece, isEdited){
+      const card = document.createElement("article");
+      card.className = isCenterpiece ? "centerpieceCard" : "stackCard";
+      if (isEdited) card.classList.add("editedOutline");
+
+      const meta = document.createElement("div");
+      meta.className = "visualMeta";
+      const publisher = document.createElement("div");
+      publisher.className = "visualPublisher";
+      publisher.textContent = item?.source_name || "Unknown";
+      const rel = document.createElement("div");
+      rel.textContent = ago(item?.updatedAt);
+      meta.appendChild(publisher);
+      meta.appendChild(rel);
+      card.appendChild(meta);
+
+      const title = document.createElement(isCenterpiece ? "h2" : "h3");
+      title.className = isCenterpiece ? "centerpieceTitle" : "stackTitle";
+      title.textContent = item?.title || "—";
+      if (isEdited) {
+        const edited = document.createElement("span");
+        edited.className = "editedBadge";
+        edited.textContent = "Edited";
+        title.appendChild(edited);
+      }
+      card.appendChild(title);
+
+      const foot = document.createElement("div");
+      foot.className = "visualCardFoot";
+      const open = document.createElement("a");
+      open.className = "linkbtn";
+      open.href = item?.url || "#";
+      open.target = "_blank";
+      open.rel = "noopener";
+      open.textContent = "Open";
+      foot.appendChild(open);
+      card.appendChild(foot);
+
+      return card;
+    }
+
+    function renderVisual(items){
+      const host = $("visual-wrap");
+      if (!host) return;
+      host.innerHTML = "";
+
+      if (!Array.isArray(items) || !items.length) {
+        const empty = document.createElement("div");
+        empty.className = "tiny";
+        empty.style.color = "var(--muted)";
+        empty.textContent = "No items available.";
+        host.appendChild(empty);
+        return;
+      }
+
+      const top = items[0];
+      const rest = items.slice(1, 9);
+      const currId = visualIdentityFor(top);
+      const currTitle = String(top?.title || "");
+
+      let prevId = "";
+      let prevTitle = "";
+      try {
+        prevId = String(localStorage.getItem(CENTERPIECE_ID_KEY) || "");
+        prevTitle = String(localStorage.getItem(CENTERPIECE_TITLE_KEY) || "");
+      } catch {}
+
+      const slotChanged = Boolean(prevId && currId !== prevId);
+      const edited = Boolean(currId === prevId && currTitle !== prevTitle);
+
+      const centerpiece = buildVisualCard(top, true, edited);
+      if (slotChanged) {
+        centerpiece.classList.add("flashYellow");
+        setTimeout(() => centerpiece.classList.remove("flashYellow"), 900);
+      }
+      host.appendChild(centerpiece);
+
+      for (const it of rest) {
+        host.appendChild(buildVisualCard(it, false, false));
+      }
+
+      try {
+        localStorage.setItem(CENTERPIECE_ID_KEY, currId);
+        localStorage.setItem(CENTERPIECE_TITLE_KEY, currTitle);
+      } catch {}
+    }
+
     function applyCardEntrance(card, id, idx){
       const delay = Math.round(idx * 28);
 
@@ -2091,8 +2324,7 @@
         tile.style.width = "100%";
 
         const meta = document.createElement("div");
-        meta.className = "tiny";
-        meta.style.textAlign = "left";
+        meta.className = "snapshotStamp";
 
         const imgWrap = document.createElement("div");
         imgWrap.style.width = "100%";
@@ -2111,7 +2343,6 @@
         img.style.background = "#0f1113";
         imgWrap.appendChild(img);
 
-        tile.appendChild(meta);
         tile.appendChild(imgWrap);
         frame.appendChild(tile);
 
@@ -2142,15 +2373,18 @@
         const controls = document.createElement("div");
         controls.className = "shotRailControls";
 
+        const shotNav = document.createElement("div");
+        shotNav.className = "snapshotNav";
+
         const prev = document.createElement("button");
         prev.className = "linkbtn";
         prev.type = "button";
-        prev.textContent = "Back";
+        prev.textContent = "<";
 
         const next = document.createElement("button");
         next.className = "linkbtn";
         next.type = "button";
-        next.textContent = "Forward";
+        next.textContent = ">";
 
         const scrubber = document.createElement("input");
         scrubber.className = "shotRailScrubber";
@@ -2160,9 +2394,11 @@
         scrubber.value = "0";
         scrubber.step = "1";
 
-        controls.appendChild(prev);
+        shotNav.appendChild(prev);
+        shotNav.appendChild(meta);
+        shotNav.appendChild(next);
+        controls.appendChild(shotNav);
         controls.appendChild(scrubber);
-        controls.appendChild(next);
 
         if (eventsWithShots.length <= 1) {
           prev.disabled = true;
@@ -2602,22 +2838,44 @@
       return runs[firstIdx]?.observedAt || null;
     }
 
-    function setView(which) {
+    function setView(which, persist = true) {
+      const valid = new Set(["overview", "deepdive", "visual"]);
+      activeView = valid.has(which) ? which : "overview";
+
       const overview = $("view-overview");
       const deepDive = $("view-deepdive");
+      const visual = $("view-visual");
       const tabOverview = $("tab-overview");
       const tabDeepDive = $("tab-deepdive");
+      const tabVisual = $("tab-visual");
 
-      const showDeepDive = which === "deepdive";
-      if (overview) overview.style.display = showDeepDive ? "none" : "";
+      const showOverview = activeView === "overview";
+      const showDeepDive = activeView === "deepdive";
+      const showVisual = activeView === "visual";
+
+      if (overview) overview.style.display = showOverview ? "" : "none";
       if (deepDive) deepDive.style.display = showDeepDive ? "" : "none";
+      if (visual) visual.style.display = showVisual ? "" : "none";
+
       if (tabOverview) {
-        tabOverview.classList.toggle("active", !showDeepDive);
-        tabOverview.setAttribute("aria-selected", showDeepDive ? "false" : "true");
+        tabOverview.classList.toggle("active", showOverview);
+        tabOverview.setAttribute("aria-selected", showOverview ? "true" : "false");
       }
       if (tabDeepDive) {
         tabDeepDive.classList.toggle("active", showDeepDive);
         tabDeepDive.setAttribute("aria-selected", showDeepDive ? "true" : "false");
+      }
+      if (tabVisual) {
+        tabVisual.classList.toggle("active", showVisual);
+        tabVisual.setAttribute("aria-selected", showVisual ? "true" : "false");
+      }
+
+      if (persist) {
+        try { localStorage.setItem(VIEW_STORAGE_KEY, activeView); } catch {}
+      }
+
+      if (showVisual) {
+        renderVisual(visualItemsFromSources(appRenderState.sources));
       }
     }
 
@@ -2643,6 +2901,20 @@
         const stamp = document.createElement("div");
         stamp.className = "snapshotStamp";
         stamp.textContent = selectedRun?.observedAt ? fmtTime(selectedRun.observedAt) : "No snapshots";
+
+        const stampNav = document.createElement("div");
+        stampNav.className = "snapshotNav";
+        const prevSnap = document.createElement("button");
+        prevSnap.className = "linkbtn";
+        prevSnap.type = "button";
+        prevSnap.textContent = "<";
+        const nextSnap = document.createElement("button");
+        nextSnap.className = "linkbtn";
+        nextSnap.type = "button";
+        nextSnap.textContent = ">";
+        stampNav.appendChild(prevSnap);
+        stampNav.appendChild(stamp);
+        stampNav.appendChild(nextSnap);
 
         const scrubber = document.createElement("input");
         scrubber.className = "shotRailScrubber";
@@ -2675,6 +2947,19 @@
           renderDeepDive();
         }
 
+        function stepScrubber(delta) {
+          if (scrubber.disabled) return;
+          const min = Number(scrubber.min || 0);
+          const max = Number(scrubber.max || 0);
+          const current = Number(scrubber.value || 0);
+          const next = Math.max(min, Math.min(max, current + delta));
+          if (next === current) return;
+          scrubber.value = String(next);
+          pendingReverseIdx = next;
+          previewScrubSelection();
+          commitScrubSelection();
+        }
+
         scrubber.addEventListener("input", () => {
           pendingReverseIdx = Number(scrubber.value || 0);
           previewScrubSelection();
@@ -2686,17 +2971,15 @@
           if (scrubber.disabled) return;
           ev.preventDefault();
           const dir = ev.deltaY > 0 ? 1 : -1;
-          const min = Number(scrubber.min || 0);
-          const max = Number(scrubber.max || 0);
-          const next = Math.max(min, Math.min(max, Number(scrubber.value || 0) + dir));
-          if (next === Number(scrubber.value || 0)) return;
-          scrubber.value = String(next);
-          pendingReverseIdx = next;
-          previewScrubSelection();
-          commitScrubSelection();
+          stepScrubber(dir);
         }, { passive: false });
 
-        rail.appendChild(stamp);
+        prevSnap.disabled = runs.length <= 1;
+        nextSnap.disabled = runs.length <= 1;
+        prevSnap.addEventListener("click", () => stepScrubber(1));
+        nextSnap.addEventListener("click", () => stepScrubber(-1));
+
+        rail.appendChild(stampNav);
         rail.appendChild(scrubber);
       }
 
@@ -2978,7 +3261,13 @@
         timelineBySource = await loadCardTimelineBySource(12, sources);
 
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
+        appRenderState.sources = sources;
+        appRenderState.indicators = indicators;
+        appRenderState.timelineBySource = timelineBySource;
         renderCards(sources, indicators, timelineBySource);
+        if (activeView === "visual") {
+          renderVisual(visualItemsFromSources(sources));
+        }
         if (nextState) saveState(nextState);
 
         renderHistory(normalizedHistory, sources, indicators);
@@ -3017,6 +3306,7 @@
     $("btn-reload")?.addEventListener("click", reload);
     $("tab-overview")?.addEventListener("click", () => setView("overview"));
     $("tab-deepdive")?.addEventListener("click", () => setView("deepdive"));
+    $("tab-visual")?.addEventListener("click", () => setView("visual"));
     $("deep-window")?.addEventListener("change", (e) => {
       deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
       deepDiveState.selectedObservedAt = null;
@@ -3042,7 +3332,14 @@
       }
     }
 
-    setView("overview");
+    let initialView = "overview";
+    try {
+      const savedView = String(localStorage.getItem(VIEW_STORAGE_KEY) || "").toLowerCase();
+      if (savedView === "overview" || savedView === "deepdive" || savedView === "visual") {
+        initialView = savedView;
+      }
+    } catch {}
+    setView(initialView, false);
     const deepWindow = $("deep-window");
     if (deepWindow) deepWindow.value = String(DEEP_DIVE_DEFAULT_HOURS);
     reload();
