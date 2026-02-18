@@ -445,12 +445,12 @@
       color:#1e8e3e;
     }
     .statBtn.isPrev{
-      border-color: rgba(23, 92, 211, .4);
-      color:#1249ab;
-      background: linear-gradient(90deg, rgba(23,92,211,.24), rgba(255,255,255,.85));
+      border-color: rgba(200, 108, 0, .42);
+      color:#8f4d00;
+      background: linear-gradient(90deg, rgba(200,108,0,.22), rgba(255,255,255,.85));
     }
     .statBtn.isPrev.down{
-      background: linear-gradient(90deg, rgba(255,255,255,.88), rgba(23,92,211,.2));
+      background: linear-gradient(90deg, rgba(255,255,255,.88), rgba(200,108,0,.18));
     }
     .relatedWrap{
       margin-top:8px;
@@ -534,10 +534,10 @@
     .deepRunRail{
       display:flex;
       gap:8px;
-      overflow-x:auto;
+      align-items:center;
+      justify-content:space-between;
       padding:4px 2px 8px;
       border-bottom:1px solid var(--line);
-      scrollbar-width:thin;
     }
     .deepRunBtn{
       border:1px solid var(--line);
@@ -553,6 +553,14 @@
     .deepRunBtn.active{
       color:var(--text);
       border-color:var(--line-strong);
+      background:var(--chip);
+    }
+    .snapshotStamp{
+      flex:1 1 auto;
+      min-width:0;
+      text-align:center;
+      border-color:var(--line-strong);
+      color:var(--text);
       background:var(--chip);
     }
     .top10Rank{
@@ -682,7 +690,7 @@
         </div>
 
         <div class="deepSection">
-          <h3 class="deepSectionTitle">Snapshot Timeline</h3>
+          <h3 class="deepSectionTitle">Snapshots</h3>
           <div id="deep-run-rail" class="deepRunRail"></div>
         </div>
 
@@ -1872,9 +1880,9 @@
       time.className = "srcTime";
       const updatedAt = src?.updatedAt || null;
       const firstSeenAt = src?.firstSeenAt || src?.since || null;
-      const hasMeaningfulUpdate = (indicator?.changeType === "url" || indicator?.changeType === "headline");
+      const hasHeadlineUpdate = indicator?.changeType === "headline";
 
-      if (hasMeaningfulUpdate && updatedAt) {
+      if (hasHeadlineUpdate && updatedAt) {
         time.textContent = `Updated ${ago(updatedAt)}`;
       } else if (firstSeenAt) {
         time.textContent = `First seen ${ago(firstSeenAt)}`;
@@ -1888,14 +1896,10 @@
 
       const since = document.createElement("div");
       since.className = "tiny";
-      if (hasMeaningfulUpdate && firstSeenAt) {
+      if (hasHeadlineUpdate && firstSeenAt) {
         since.textContent = `First seen ${ago(firstSeenAt)}`;
-      } else if (hasMeaningfulUpdate && updatedAt) {
+      } else if (hasHeadlineUpdate && updatedAt) {
         since.textContent = `First seen ${ago(updatedAt)}`;
-      } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
-        since.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
-      } else if (!hasMeaningfulUpdate && firstSeenAt) {
-        since.textContent = "";
       } else {
         since.textContent = "";
       }
@@ -2340,8 +2344,18 @@
     }
 
     function deepDiveNo1Since(runs, selectedIdx, fingerprint){
-      let firstIdx = selectedIdx;
+      let lastNo1Idx = -1;
       for (let i = selectedIdx; i >= 0; i--) {
+        const row = (runs[i]?.items || []).find((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
+        if (row && Number(row.rank) === 1) {
+          lastNo1Idx = i;
+          break;
+        }
+      }
+      if (lastNo1Idx < 0) return null;
+
+      let firstIdx = lastNo1Idx;
+      for (let i = lastNo1Idx; i >= 0; i--) {
         const row = (runs[i]?.items || []).find((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
         if (!row || Number(row.rank) !== 1) break;
         firstIdx = i;
@@ -2395,18 +2409,46 @@
       const rail = $("deep-run-rail");
       if (rail) {
         rail.innerHTML = "";
-        for (const run of runs) {
-          const b = document.createElement("button");
-          b.type = "button";
-          b.className = "deepRunBtn";
-          if (String(run?.observedAt || "") === String(deepDiveState.selectedObservedAt || "")) b.classList.add("active");
-          b.textContent = fmtTime(run?.observedAt);
-          b.addEventListener("click", () => {
-            deepDiveState.selectedObservedAt = run?.observedAt || null;
-            renderDeepDive();
-          });
-          rail.appendChild(b);
-        }
+        const older = document.createElement("button");
+        older.type = "button";
+        older.className = "deepRunBtn";
+        older.textContent = "←";
+        older.title = "Older snapshot";
+
+        const stamp = document.createElement("button");
+        stamp.type = "button";
+        stamp.className = "deepRunBtn active snapshotStamp";
+        const reversePos = runs.length ? (runs.length - selectedIdx) : 0; // 1 = newest
+        stamp.textContent = runs.length
+          ? `${reversePos}/${runs.length} · ${fmtTime(selectedRun?.observedAt)}`
+          : "No snapshots";
+        stamp.disabled = true;
+
+        const newer = document.createElement("button");
+        newer.type = "button";
+        newer.className = "deepRunBtn";
+        newer.textContent = "→";
+        newer.title = "Newer snapshot";
+
+        older.disabled = selectedIdx <= 0;
+        newer.disabled = selectedIdx >= (runs.length - 1);
+
+        older.addEventListener("click", () => {
+          const next = runs[selectedIdx - 1];
+          if (!next) return;
+          deepDiveState.selectedObservedAt = next?.observedAt || null;
+          renderDeepDive();
+        });
+        newer.addEventListener("click", () => {
+          const next = runs[selectedIdx + 1];
+          if (!next) return;
+          deepDiveState.selectedObservedAt = next?.observedAt || null;
+          renderDeepDive();
+        });
+
+        rail.appendChild(older);
+        rail.appendChild(stamp);
+        rail.appendChild(newer);
       }
 
       const latestTime = $("deep-latest-time");
@@ -2480,8 +2522,8 @@
             const intensity = Math.min(0.52, 0.16 + (move.delta * 0.04));
             const dirDown = String(move.label || "").startsWith("↓");
             mPrev.chip.style.background = dirDown
-              ? `linear-gradient(90deg, rgba(255,255,255,.92), rgba(23,92,211,${intensity}))`
-              : `linear-gradient(90deg, rgba(23,92,211,${intensity}), rgba(255,255,255,.9))`;
+              ? `linear-gradient(90deg, rgba(255,255,255,.92), rgba(200,108,0,${intensity}))`
+              : `linear-gradient(90deg, rgba(200,108,0,${intensity}), rgba(255,255,255,.9))`;
           }
 
           body.appendChild(meta);
