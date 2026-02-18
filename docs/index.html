@@ -412,6 +412,18 @@
       flex-wrap:wrap;
       align-items:center;
     }
+    .metric{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+    .statLabel{
+      font-size:10px;
+      font-weight:800;
+      color:var(--muted);
+      letter-spacing:.25px;
+      text-transform:uppercase;
+    }
     .statBtn{
       border:1px solid var(--line);
       background:var(--chip);
@@ -424,21 +436,21 @@
     }
     .statBtn.isTop10{
       border-color: rgba(23, 92, 211, .45);
-      background: rgba(23, 92, 211, .08);
+      background: linear-gradient(90deg, rgba(23,92,211,.18), rgba(23,92,211,.03));
       color:#1249ab;
     }
     .statBtn.isNo1{
       border-color: rgba(30, 142, 62, .55);
-      background: rgba(30, 142, 62, .08);
+      background: linear-gradient(90deg, rgba(30,142,62,.16), rgba(30,142,62,.03));
       color:#1e8e3e;
     }
-    .statLabel{
-      font-size:10px;
-      font-weight:800;
-      color:var(--muted);
-      letter-spacing:.25px;
-      text-transform:uppercase;
-      margin-left:2px;
+    .statBtn.isPrev{
+      border-color: rgba(23, 92, 211, .4);
+      color:#1249ab;
+      background: linear-gradient(90deg, rgba(23,92,211,.24), rgba(255,255,255,.85));
+    }
+    .statBtn.isPrev.down{
+      background: linear-gradient(90deg, rgba(255,255,255,.88), rgba(23,92,211,.2));
     }
     .relatedWrap{
       margin-top:8px;
@@ -496,6 +508,31 @@
       text-overflow:ellipsis;
     }
     .relatedLink:hover{ color:var(--blue); text-decoration:underline; }
+    .headlineDiff{
+      margin-top:8px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:8px;
+      background:var(--surface);
+      font-size:12px;
+      line-height:1.35;
+    }
+    .headlineDiffMeta{
+      color:var(--muted);
+      font-size:11px;
+      margin-bottom:6px;
+    }
+    .diffDel{
+      color:#c62828;
+      text-decoration:line-through;
+      text-decoration-thickness:2px;
+    }
+    .diffAdd{
+      color:#0d47a1;
+      background:rgba(13,71,161,.11);
+      border-radius:3px;
+      padding:0 1px;
+    }
     .deepRunRail{
       display:flex;
       gap:8px;
@@ -614,7 +651,6 @@
       <div class="controls">
         <button id="btn-reload" class="btn" type="button">Refresh</button>
         <button id="btn-history" class="btn" type="button">History</button>
-        <button id="btn-timeline" class="btn" type="button">Timeline</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -623,7 +659,7 @@
   <main>
     <div class="viewTabs" role="tablist" aria-label="Views">
       <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
-      <button id="tab-deepdive" class="tabBtn" type="button" role="tab" aria-selected="false">Deep Dive</button>
+      <button id="tab-deepdive" class="tabBtn" type="button" role="tab" aria-selected="false">Timeline</button>
     </div>
 
     <section id="view-overview">
@@ -634,7 +670,7 @@
       <div class="deepDive">
         <div class="deepTop">
           <div>
-            <h2 class="deepTitle">Deep Dive</h2>
+            <h2 class="deepTitle">Timeline</h2>
             <div class="deepMeta">Publisher: ABC News</div>
           </div>
           <div class="row">
@@ -672,49 +708,6 @@
     </div>
     <div class="drawerBody">
       <div class="historyList" id="history"></div>
-    </div>
-  </aside>
-
-  <aside class="drawer" id="drawer-timeline" aria-hidden="true">
-    <div class="drawerHead">
-      <div>
-        <div class="drawerTitle">Timeline (12h)</div>
-      </div>
-      <button id="btn-timeline-close" class="btn" type="button">Close</button>
-    </div>
-    <div class="drawerBody">
-      <div class="row" style="margin-bottom:10px">
-        <select id="tl-source" class="linkbtn" style="min-width:160px">
-          <option value="all">All Sources</option>
-        </select>
-        <label class="pill" style="cursor:pointer">
-          <input id="tl-changes-only" type="checkbox" />
-          Changes only
-        </label>
-      </div>
-      <div class="row" style="margin-bottom:10px; align-items:center">
-        <input id="tl-scrubber" type="range" min="0" max="0" value="0" style="width:100%" />
-        <span id="tl-pos" class="tiny mono">0/0</span>
-      </div>
-      <div id="tl-preview" class="hItem" style="margin-bottom:10px; display:none">
-        <div class="hHead">
-          <div class="srcMeta">
-            <div id="tl-preview-source" class="srcName">—</div>
-            <div id="tl-preview-time" class="srcTime">—</div>
-          </div>
-        </div>
-        <div class="hBody">
-          <div class="hThumb" id="tl-preview-thumb">
-            <img id="tl-preview-img" alt="" />
-          </div>
-          <div class="hMain">
-            <h3 class="hTitle"><a id="tl-preview-link" href="#" target="_blank" rel="noopener">—</a></h3>
-            <div id="tl-preview-kind" class="tiny">—</div>
-          </div>
-        </div>
-      </div>
-      <div id="tl-empty" class="tiny" style="display:none; color:var(--muted)">No timeline events in range.</div>
-      <div id="tl-list" class="historyList"></div>
     </div>
   </aside>
 
@@ -876,6 +869,24 @@
       btnClose.type = "button";
       btnClose.textContent = "Close";
 
+      const btnZoomOut = document.createElement("button");
+      btnZoomOut.className = "linkbtn";
+      btnZoomOut.type = "button";
+      btnZoomOut.textContent = "−";
+
+      const btnZoomReset = document.createElement("button");
+      btnZoomReset.className = "linkbtn";
+      btnZoomReset.type = "button";
+      btnZoomReset.textContent = "100%";
+
+      const btnZoomIn = document.createElement("button");
+      btnZoomIn.className = "linkbtn";
+      btnZoomIn.type = "button";
+      btnZoomIn.textContent = "+";
+
+      btns.appendChild(btnZoomOut);
+      btns.appendChild(btnZoomReset);
+      btns.appendChild(btnZoomIn);
       btns.appendChild(btnPrev);
       btns.appendChild(btnNext);
       btns.appendChild(btnClose);
@@ -899,6 +910,8 @@
       img.style.maxWidth = "99%";
       img.style.maxHeight = "99%";
       img.style.objectFit = "contain";
+      img.style.transformOrigin = "center center";
+      img.style.willChange = "transform";
 
       const sliderRow = document.createElement("div");
       sliderRow.style.display = "flex";
@@ -925,10 +938,21 @@
 
       let events = [];
       let idx = 0;
+      let zoom = 1;
+      let pinchStart = null;
+      function clampZoom(v){
+        return Math.max(1, Math.min(4, v));
+      }
+      function applyZoom(){
+        img.style.transform = `scale(${zoom})`;
+        btnZoomReset.textContent = `${Math.round(zoom * 100)}%`;
+      }
       function render(){
         const ev = events[idx] || null;
         if (!ev || !ev.shot_url) return;
         img.src = ev.shot_url;
+        zoom = 1;
+        applyZoom();
         meta.textContent = `${idx + 1}/${events.length} · ${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${sourceLabel(ev.source_id, null)}`;
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= events.length - 1;
@@ -958,12 +982,47 @@
         idx = Math.max(0, Math.min(events.length - 1, Number(slider.value || 0)));
         render();
       });
+      btnZoomIn.addEventListener("click", () => {
+        zoom = clampZoom(zoom + 0.2);
+        applyZoom();
+      });
+      btnZoomOut.addEventListener("click", () => {
+        zoom = clampZoom(zoom - 0.2);
+        applyZoom();
+      });
+      btnZoomReset.addEventListener("click", () => {
+        zoom = 1;
+        applyZoom();
+      });
+      frame.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.12 : -0.12;
+        zoom = clampZoom(zoom + delta);
+        applyZoom();
+      }, { passive: false });
 
       let touchStartX = null;
       frame.addEventListener("touchstart", (e) => {
+        if ((e.touches?.length || 0) === 2) {
+          const a = e.touches[0];
+          const b = e.touches[1];
+          pinchStart = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+          return;
+        }
         touchStartX = e.touches?.[0]?.clientX ?? null;
       }, { passive: true });
+      frame.addEventListener("touchmove", (e) => {
+        if ((e.touches?.length || 0) !== 2 || !pinchStart) return;
+        const a = e.touches[0];
+        const b = e.touches[1];
+        const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+        const ratio = d / pinchStart;
+        zoom = clampZoom(zoom * ratio);
+        pinchStart = d;
+        applyZoom();
+      }, { passive: true });
       frame.addEventListener("touchend", (e) => {
+        if ((e.touches?.length || 0) < 2) pinchStart = null;
         const endX = e.changedTouches?.[0]?.clientX ?? null;
         if (touchStartX === null || endX === null) return;
         const dx = endX - touchStartX;
@@ -988,7 +1047,7 @@
     }
 
     function closeAllDrawers() {
-      const ids = ["drawer-history", "drawer-timeline"];
+      const ids = ["drawer-history"];
       for (const id of ids) {
         const d = $(id);
         if (!d) continue;
@@ -1002,20 +1061,6 @@
       const drawer = $("drawer-history");
       const overlay = $("drawer-overlay");
       const btn = $("btn-history");
-      if (!drawer || !overlay) return;
-      if (open) {
-        closeAllDrawers();
-      }
-      drawer.classList.toggle("open", Boolean(open));
-      overlay.classList.toggle("show", Boolean(open));
-      drawer.setAttribute("aria-hidden", open ? "false" : "true");
-      if (!open && btn) btn.focus();
-    }
-
-    function setTimelineOpen(open){
-      const drawer = $("drawer-timeline");
-      const overlay = $("drawer-overlay");
-      const btn = $("btn-timeline");
       if (!drawer || !overlay) return;
       if (open) {
         closeAllDrawers();
@@ -1853,16 +1898,6 @@
         row.appendChild(status);
       }
 
-      if (homeUrl) {
-        const btnSite = document.createElement("a");
-        btnSite.className = "linkbtn";
-        btnSite.href = homeUrl;
-        btnSite.target = "_blank";
-        btnSite.rel = "noopener";
-        btnSite.textContent = "Website";
-        row.appendChild(btnSite);
-      }
-
       // Copy headline button
       const btnCopyLink = document.createElement("button");
       btnCopyLink.className = "linkbtn";
@@ -2149,6 +2184,60 @@
       return fmtDurationSeconds(Math.floor((to - from) / 1000));
     }
 
+    function fmtTimePT(ts){
+      if (!ts) return "—";
+      try {
+        return new Date(ts).toLocaleString("en-US", {
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+          timeZone: "America/Los_Angeles",
+        }) + " PT";
+      } catch {
+        return "—";
+      }
+    }
+
+    function escapeHtml(v){
+      return String(v || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;");
+    }
+
+    function headlineDiffHtml(prevTitle, nextTitle){
+      const a = String(prevTitle || "");
+      const b = String(nextTitle || "");
+      if (!a && !b) return "—";
+      if (!a || !b || a === b) return escapeHtml(b || a);
+
+      let start = 0;
+      const minLen = Math.min(a.length, b.length);
+      while (start < minLen && a[start] === b[start]) start += 1;
+
+      let endA = a.length - 1;
+      let endB = b.length - 1;
+      while (endA >= start && endB >= start && a[endA] === b[endB]) {
+        endA -= 1;
+        endB -= 1;
+      }
+
+      const prefix = a.slice(0, start);
+      const removed = a.slice(start, endA + 1);
+      const added = b.slice(start, endB + 1);
+      const suffix = b.slice(endB + 1);
+
+      let html = "";
+      if (prefix) html += escapeHtml(prefix);
+      if (removed) html += `<span class="diffDel">${escapeHtml(removed)}</span>`;
+      if (added) html += `<span class="diffAdd">${escapeHtml(added)}</span>`;
+      if (suffix) html += escapeHtml(suffix);
+      return html;
+    }
+
     function deepDiveMovement(item, prevRun){
       const prevItems = Array.isArray(prevRun?.items) ? prevRun.items : [];
       const prev = prevItems.find((x) => String(x?.fingerprint || "") === String(item?.fingerprint || ""));
@@ -2156,7 +2245,7 @@
       const p = Number(prev.rank);
       const c = Number(item?.rank);
       if (!Number.isFinite(p) || !Number.isFinite(c)) return { label: "NEW", delta: null };
-      if (p === c) return { label: "", delta: 0 };
+      if (p === c) return { label: "—", delta: 0 };
       if (p > c) return { label: `↑ #${p}`, delta: p - c };
       return { label: `↓ #${p}`, delta: c - p };
     }
@@ -2169,6 +2258,41 @@
         firstIdx = i;
       }
       return runs[firstIdx]?.observedAt || null;
+    }
+
+    function deepDivePreviousHeadlineInfo(runs, selectedIdx, row){
+      const fp = String(row?.fingerprint || "");
+      const currentTitle = String(row?.title || "");
+      if (!fp || !currentTitle) return null;
+
+      let titleSince = runs[selectedIdx]?.observedAt || null;
+      for (let i = selectedIdx - 1; i >= 0; i--) {
+        const it = (runs[i]?.items || []).find((x) => String(x?.fingerprint || "") === fp);
+        if (!it || String(it?.title || "") !== currentTitle) break;
+        titleSince = runs[i]?.observedAt || titleSince;
+      }
+
+      for (let i = selectedIdx - 1; i >= 0; i--) {
+        const it = (runs[i]?.items || []).find((x) => String(x?.fingerprint || "") === fp);
+        if (!it) continue;
+        const prevTitle = String(it?.title || "");
+        if (!prevTitle || prevTitle === currentTitle) continue;
+        return {
+          previousTitle: prevTitle,
+          currentTitle,
+          publishedAt: titleSince,
+          changedAt: runs[selectedIdx]?.observedAt || null,
+          previousSeenAt: runs[i]?.observedAt || null,
+        };
+      }
+
+      return {
+        previousTitle: null,
+        currentTitle,
+        publishedAt: titleSince,
+        changedAt: null,
+        previousSeenAt: null,
+      };
     }
 
     function deepDiveNo1Since(runs, selectedIdx, fingerprint){
@@ -2272,56 +2396,65 @@
           meta.className = "top10Meta";
 
           const move = deepDiveMovement(row, prevRun);
-          if (move.label) {
-            const moveChip = document.createElement("span");
-            moveChip.className = "statBtn";
-            moveChip.textContent = move.label;
-            meta.appendChild(moveChip);
-          }
-
           const top10Since = deepDiveTop10Since(runs, selectedIdx, row?.fingerprint);
-          if (Number(row?.rank) === 1) {
-            const top10Lbl = document.createElement("span");
-            top10Lbl.className = "statLabel";
-            top10Lbl.textContent = "Top 10";
-            meta.appendChild(top10Lbl);
+          const no1Since = deepDiveNo1Since(runs, selectedIdx, row?.fingerprint);
+
+          function metric(label, value, klass) {
+            const wrap = document.createElement("div");
+            wrap.className = "metric";
+            const lbl = document.createElement("span");
+            lbl.className = "statLabel";
+            lbl.textContent = label;
+            const chip = document.createElement("span");
+            chip.className = `statBtn ${klass || ""}`.trim();
+            chip.textContent = value || "—";
+            wrap.appendChild(lbl);
+            wrap.appendChild(chip);
+            return { wrap, chip };
           }
-          const top10Chip = document.createElement("span");
-          top10Chip.className = "statBtn isTop10";
-          top10Chip.textContent = deepDiveDurationLabel(top10Since, selectedRun?.observedAt);
-          meta.appendChild(top10Chip);
+
+          const mPrev = metric("Previously", move.label || "—", `isPrev ${String(move.label || "").startsWith("↓") ? "down" : ""}`);
+          const mNo1 = metric("No. 1", deepDiveDurationLabel(no1Since, selectedRun?.observedAt), "isNo1");
+          const mTop10 = metric("Top 10", deepDiveDurationLabel(top10Since, selectedRun?.observedAt), "isTop10");
 
           if (Number(row?.rank) === 1) {
-            const no1Since = deepDiveNo1Since(runs, selectedIdx, row?.fingerprint);
-            const no1Lbl = document.createElement("span");
-            no1Lbl.className = "statLabel";
-            no1Lbl.textContent = "No. 1";
-            meta.appendChild(no1Lbl);
-            const no1Chip = document.createElement("span");
-            no1Chip.className = "statBtn isNo1";
-            no1Chip.textContent = deepDiveDurationLabel(no1Since, selectedRun?.observedAt);
-            meta.appendChild(no1Chip);
+            meta.appendChild(mNo1.wrap);
+            meta.appendChild(mTop10.wrap);
+            meta.appendChild(mPrev.wrap);
+          } else {
+            meta.appendChild(mPrev.wrap);
+            meta.appendChild(mNo1.wrap);
+            meta.appendChild(mTop10.wrap);
+          }
+
+          if (move.delta && Number.isFinite(move.delta)) {
+            const intensity = Math.min(0.52, 0.16 + (move.delta * 0.04));
+            const dirDown = String(move.label || "").startsWith("↓");
+            mPrev.chip.style.background = dirDown
+              ? `linear-gradient(90deg, rgba(255,255,255,.92), rgba(23,92,211,${intensity}))`
+              : `linear-gradient(90deg, rgba(23,92,211,${intensity}), rgba(255,255,255,.9))`;
           }
 
           body.appendChild(meta);
 
-          if (Number(row?.rank) === 1) {
-            const related = Array.isArray(row?.related_links) ? row.related_links : [];
+          const historyInfo = deepDivePreviousHeadlineInfo(runs, selectedIdx, row);
+          const related = Number(row?.rank) === 1 && Array.isArray(row?.related_links) ? row.related_links : [];
+          const hasDetails = true;
+          if (hasDetails) {
+            const wrap = document.createElement("div");
+            wrap.className = "relatedWrap";
+
+            const toggle = document.createElement("button");
+            toggle.type = "button";
+            toggle.className = "relatedToggle";
+            toggle.textContent = Number(row?.rank) === 1 ? `Details (${related.length} context)` : "Details";
+
+            const panel = document.createElement("div");
+            panel.className = "relatedPanel";
+
             if (related.length) {
-              const wrap = document.createElement("div");
-              wrap.className = "relatedWrap";
-
-              const toggle = document.createElement("button");
-              toggle.type = "button";
-              toggle.className = "relatedToggle";
-              toggle.textContent = `Context links (${related.length})`;
-
-              const panel = document.createElement("div");
-              panel.className = "relatedPanel";
-
               const list = document.createElement("ul");
               list.className = "relatedList";
-
               for (const rel of related) {
                 const item = document.createElement("li");
                 item.className = "relatedItem";
@@ -2342,13 +2475,28 @@
                 item.appendChild(chip);
                 list.appendChild(item);
               }
-
               panel.appendChild(list);
-              toggle.addEventListener("click", () => panel.classList.toggle("open"));
-              wrap.appendChild(toggle);
-              wrap.appendChild(panel);
-              body.appendChild(wrap);
             }
+
+            const diff = document.createElement("div");
+            diff.className = "headlineDiff";
+            const metaLine = document.createElement("div");
+            metaLine.className = "headlineDiffMeta";
+            metaLine.textContent = `Published: ${fmtTimePT(historyInfo?.publishedAt)} · Changed: ${fmtTimePT(historyInfo?.changedAt)}`;
+            const line = document.createElement("div");
+            if (historyInfo?.previousTitle) {
+              line.innerHTML = headlineDiffHtml(historyInfo.previousTitle, historyInfo.currentTitle);
+            } else {
+              line.innerHTML = escapeHtml(historyInfo?.currentTitle || row?.title || "No headline history yet.");
+            }
+            diff.appendChild(metaLine);
+            diff.appendChild(line);
+            panel.appendChild(diff);
+
+            toggle.addEventListener("click", () => panel.classList.toggle("open"));
+            wrap.appendChild(toggle);
+            wrap.appendChild(panel);
+            body.appendChild(wrap);
           }
 
           li.appendChild(rank);
@@ -2379,7 +2527,7 @@
         historyRuns = [];
       }
 
-      deepDiveState.latest = latest || { ok: false, observedAt: null, items: [], error: "Deep Dive data unavailable" };
+      deepDiveState.latest = latest || { ok: false, observedAt: null, items: [], error: "Timeline data unavailable" };
       deepDiveState.historyRuns = historyRuns;
       if (!deepDiveState.selectedObservedAt && deepDiveState.latest?.observedAt) {
         deepDiveState.selectedObservedAt = deepDiveState.latest.observedAt;
@@ -2450,194 +2598,10 @@
       }
     }
 
-    const timelineState = {
-      allEvents: [],
-      filteredEvents: [],
-      source: "all",
-      changesOnly: false,
-      index: 0,
-      imageCache: new Set(),
-    };
-
     function timelineKindLabel(kind){
       if (kind === "new_url") return "URL changed";
       if (kind === "new_headline") return "Headline changed";
       return "Heartbeat";
-    }
-
-    function timelineSourceName(id){
-      return sourceLabel(id, null);
-    }
-
-    function applyTimelineFilters() {
-      const src = timelineState.source;
-      const changesOnly = timelineState.changesOnly;
-      let rows = Array.isArray(timelineState.allEvents) ? [...timelineState.allEvents] : [];
-      if (src && src !== "all") rows = rows.filter((e) => String(e.source_id || "") === src);
-      if (changesOnly) rows = rows.filter((e) => e.kind !== "heartbeat");
-      timelineState.filteredEvents = rows;
-      if (timelineState.index >= rows.length) timelineState.index = Math.max(0, rows.length - 1);
-    }
-
-    function primeTimelineNeighborImages() {
-      const rows = timelineState.filteredEvents;
-      const idx = timelineState.index;
-      const start = Math.max(0, idx - 2);
-      const end = Math.min(rows.length - 1, idx + 2);
-      for (let i = start; i <= end; i++) {
-        const u = rows[i]?.shot_url;
-        if (!u || timelineState.imageCache.has(u)) continue;
-        const im = new Image();
-        im.src = u;
-        timelineState.imageCache.add(u);
-      }
-    }
-
-    function renderTimelinePreview() {
-      const rows = timelineState.filteredEvents;
-      const posEl = $("tl-pos");
-      if (posEl) posEl.textContent = rows.length ? `${timelineState.index + 1}/${rows.length}` : "0/0";
-
-      const preview = $("tl-preview");
-      const empty = $("tl-empty");
-      const scrubber = $("tl-scrubber");
-      if (scrubber) {
-        scrubber.max = String(Math.max(0, rows.length - 1));
-        scrubber.value = String(Math.max(0, timelineState.index));
-      }
-
-      if (!rows.length) {
-        if (preview) preview.style.display = "none";
-        if (empty) empty.style.display = "block";
-        return;
-      }
-
-      if (empty) empty.style.display = "none";
-      if (preview) preview.style.display = "block";
-
-      const ev = rows[timelineState.index];
-      $("tl-preview-source").textContent = timelineSourceName(ev.source_id);
-      $("tl-preview-time").textContent = `${fmtTime(ev.ts)} · ${ago(ev.ts)}`;
-      $("tl-preview-kind").textContent = timelineKindLabel(ev.kind);
-
-      const link = $("tl-preview-link");
-      link.textContent = ev.title || "—";
-      link.href = ev.url || "#";
-
-      const imgWrap = $("tl-preview-thumb");
-      const img = $("tl-preview-img");
-      if (ev.shot_url) {
-        imgWrap.classList.remove("isHidden");
-        if (img.getAttribute("src") !== ev.shot_url) img.src = ev.shot_url;
-      } else {
-        imgWrap.classList.add("isHidden");
-        img.removeAttribute("src");
-      }
-
-      primeTimelineNeighborImages();
-    }
-
-    function renderTimelineList() {
-      const list = $("tl-list");
-      if (!list) return;
-      list.innerHTML = "";
-
-      const rows = timelineState.filteredEvents;
-      const grouped = {};
-      for (const ev of rows) {
-        const id = String(ev.source_id || "");
-        if (!grouped[id]) grouped[id] = [];
-        grouped[id].push(ev);
-      }
-
-      const sources = Object.keys(grouped).sort((a, b) => timelineSourceName(a).localeCompare(timelineSourceName(b)));
-      for (const sourceId of sources) {
-        const section = document.createElement("section");
-        section.className = "historySection";
-
-        const sectionTitle = document.createElement("div");
-        sectionTitle.className = "historySectionTitle";
-        sectionTitle.textContent = timelineSourceName(sourceId);
-        section.appendChild(sectionTitle);
-
-        const sourceRows = grouped[sourceId];
-        for (const ev of sourceRows) {
-          const btn = document.createElement("button");
-          btn.className = "linkbtn";
-          btn.type = "button";
-          btn.style.textAlign = "left";
-          btn.style.width = "100%";
-          const t = `${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${ev.title || "—"}`;
-          btn.textContent = t;
-          btn.addEventListener("click", () => {
-            const idx = timelineState.filteredEvents.indexOf(ev);
-            if (idx >= 0) timelineState.index = idx;
-            renderTimelinePreview();
-          });
-          section.appendChild(btn);
-        }
-
-        list.appendChild(section);
-      }
-    }
-
-    function renderTimeline() {
-      applyTimelineFilters();
-      renderTimelineList();
-      renderTimelinePreview();
-    }
-
-    async function loadTimeline(hours = 12) {
-      try {
-        if (isGitHubPages) {
-          const published = await loadPublishedTimeline(hours);
-          if (published.length) {
-            timelineState.allEvents = published;
-          } else {
-            const bySource = await loadCardTimelineBySource(hours, null);
-            const all = [];
-            for (const arr of Object.values(bySource || {})) {
-              if (Array.isArray(arr)) all.push(...arr);
-            }
-            all.sort((a, b) => {
-              const ta = Date.parse(a?.ts || "");
-              const tb = Date.parse(b?.ts || "");
-              return (Number.isFinite(ta) ? ta : 0) - (Number.isFinite(tb) ? tb : 0);
-            });
-            timelineState.allEvents = all;
-          }
-        } else {
-          const q = new URLSearchParams({ hours: String(hours) });
-          const resp = await fetchJSON(`/api/timeline?${q.toString()}`);
-          timelineState.allEvents = Array.isArray(resp?.events) ? resp.events : [];
-        }
-
-        timelineState.allEvents.sort((a, b) => {
-          const ta = Date.parse(String(a?.ts || ""));
-          const tb = Date.parse(String(b?.ts || ""));
-          return (Number.isFinite(tb) ? tb : 0) - (Number.isFinite(ta) ? ta : 0);
-        });
-
-        const sel = $("tl-source");
-        const cur = timelineState.source || "all";
-        if (sel) {
-          const ids = [...new Set(timelineState.allEvents.map((e) => String(e.source_id || "")).filter(Boolean))].sort();
-          sel.innerHTML = `<option value="all">All Sources</option>`;
-          for (const id of ids) {
-            const opt = document.createElement("option");
-            opt.value = id;
-            opt.textContent = timelineSourceName(id);
-            sel.appendChild(opt);
-          }
-          sel.value = ids.includes(cur) || cur === "all" ? cur : "all";
-          timelineState.source = sel.value;
-        }
-
-        timelineState.index = 0;
-        renderTimeline();
-      } catch (e) {
-        console.warn("timeline load failed", e);
-      }
     }
 
     async function reload() {
@@ -2724,11 +2688,6 @@
 
     $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
-    $("btn-timeline")?.addEventListener("click", async () => {
-      await loadTimeline(12);
-      setTimelineOpen(true);
-    });
-    $("btn-timeline-close")?.addEventListener("click", () => setTimelineOpen(false));
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
 
     document.addEventListener("keydown", (e) => {
@@ -2736,21 +2695,6 @@
         if (_shotLightbox) _shotLightbox.close();
         closeAllDrawers();
       }
-    });
-
-    $("tl-source")?.addEventListener("change", (e) => {
-      timelineState.source = e.target.value || "all";
-      timelineState.index = 0;
-      renderTimeline();
-    });
-    $("tl-changes-only")?.addEventListener("change", (e) => {
-      timelineState.changesOnly = Boolean(e.target.checked);
-      timelineState.index = 0;
-      renderTimeline();
-    });
-    $("tl-scrubber")?.addEventListener("input", (e) => {
-      timelineState.index = Number(e.target.value || 0);
-      renderTimelinePreview();
     });
 
     if (isLocal && !isGitHubPages) {
