@@ -910,6 +910,7 @@
       img.style.objectFit = "contain";
       img.style.transformOrigin = "center center";
       img.style.willChange = "transform";
+      img.style.cursor = "grab";
 
       const sliderRow = document.createElement("div");
       sliderRow.style.display = "flex";
@@ -937,12 +938,16 @@
       let events = [];
       let idx = 0;
       let zoom = 1;
+      let panX = 0;
+      let panY = 0;
       let pinchStart = null;
+      let panStart = null;
       function clampZoom(v){
         return Math.max(1, Math.min(4, v));
       }
       function applyZoom(){
-        img.style.transform = `scale(${zoom})`;
+        img.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
+        img.style.cursor = zoom > 1 ? "grab" : "default";
         btnZoomReset.textContent = `${Math.round(zoom * 100)}%`;
       }
       function render(){
@@ -950,6 +955,8 @@
         if (!ev || !ev.shot_url) return;
         img.src = ev.shot_url;
         zoom = 1;
+        panX = 0;
+        panY = 0;
         applyZoom();
         meta.textContent = `${idx + 1}/${events.length} · ${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${sourceLabel(ev.source_id, null)}`;
         btnPrev.disabled = idx <= 0;
@@ -982,22 +989,50 @@
       });
       btnZoomIn.addEventListener("click", () => {
         zoom = clampZoom(zoom + 0.2);
+        if (zoom <= 1) { panX = 0; panY = 0; }
         applyZoom();
       });
       btnZoomOut.addEventListener("click", () => {
         zoom = clampZoom(zoom - 0.2);
+        if (zoom <= 1) { panX = 0; panY = 0; }
         applyZoom();
       });
       btnZoomReset.addEventListener("click", () => {
         zoom = 1;
+        panX = 0;
+        panY = 0;
         applyZoom();
       });
       frame.addEventListener("wheel", (e) => {
         e.preventDefault();
         const delta = e.deltaY < 0 ? 0.12 : -0.12;
         zoom = clampZoom(zoom + delta);
+        if (zoom <= 1) { panX = 0; panY = 0; }
         applyZoom();
       }, { passive: false });
+
+      img.addEventListener("mousedown", (e) => {
+        if (zoom <= 1) return;
+        panStart = {
+          x: e.clientX,
+          y: e.clientY,
+          panX,
+          panY,
+        };
+        img.style.cursor = "grabbing";
+        e.preventDefault();
+      });
+      window.addEventListener("mousemove", (e) => {
+        if (!panStart || zoom <= 1) return;
+        panX = panStart.panX + (e.clientX - panStart.x);
+        panY = panStart.panY + (e.clientY - panStart.y);
+        applyZoom();
+      });
+      window.addEventListener("mouseup", () => {
+        if (!panStart) return;
+        panStart = null;
+        img.style.cursor = zoom > 1 ? "grab" : "default";
+      });
 
       let touchStartX = null;
       frame.addEventListener("touchstart", (e) => {
@@ -1005,6 +1040,16 @@
           const a = e.touches[0];
           const b = e.touches[1];
           pinchStart = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+          return;
+        }
+        if ((e.touches?.length || 0) === 1 && zoom > 1) {
+          const t = e.touches[0];
+          panStart = {
+            x: t.clientX,
+            y: t.clientY,
+            panX,
+            panY,
+          };
           return;
         }
         touchStartX = e.touches?.[0]?.clientX ?? null;
@@ -1016,11 +1061,21 @@
         const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
         const ratio = d / pinchStart;
         zoom = clampZoom(zoom * ratio);
+        if (zoom <= 1) { panX = 0; panY = 0; }
         pinchStart = d;
+        applyZoom();
+      }, { passive: true });
+      frame.addEventListener("touchmove", (e) => {
+        if ((e.touches?.length || 0) !== 1 || !panStart || zoom <= 1) return;
+        const t = e.touches[0];
+        panX = panStart.panX + (t.clientX - panStart.x);
+        panY = panStart.panY + (t.clientY - panStart.y);
         applyZoom();
       }, { passive: true });
       frame.addEventListener("touchend", (e) => {
         if ((e.touches?.length || 0) < 2) pinchStart = null;
+        if ((e.touches?.length || 0) === 0) panStart = null;
+        if (zoom > 1) return;
         const endX = e.changedTouches?.[0]?.clientX ?? null;
         if (touchStartX === null || endX === null) return;
         const dx = endX - touchStartX;
