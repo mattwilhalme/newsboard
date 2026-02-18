@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-18T12:00:34.790Z",
+  "generatedAt": "2026-02-18T13:20:24.044Z",
   "source_id": "abc1",
   "events": [
     {
@@ -772,6 +772,86 @@
       "to_rank": 5,
       "from_title": "US-Ukraine-Russia peace talks in Geneva expected to resume Wednesday",
       "to_title": "Day 2 of US-Ukraine-Russia peace talks in Geneva conclude, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fae03a3e96885c8272d3f26cf39bdabb33b1ba67",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "A 600-acre AI data center could cost some Wisconsin residents their land"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "2f87aa6bf7ad72a811c99a97e71362e671e4f526",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Mark Zuckerberg set to testify in landmark trial over social media addiction claims",
+      "to_title": "Mark Zuckerberg set to testify in landmark trial over social media addiction claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "06288bb5fa87857d4de2c1bb6edd9642363395c6",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'On the right path': Housing market offers glimmers of hope, some analysts say",
+      "to_title": "'On the right path': Housing market offers glimmers of hope, some analysts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "8f071be4ef861199592cb4b2bfa140962107b914",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Day 2 of US-Ukraine-Russia peace talks in Geneva conclude, official says",
+      "to_title": "Ukraine peace talks in Geneva end after 'difficult' meetings, Russian delegation says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "8f071be4ef861199592cb4b2bfa140962107b914",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Day 2 of US-Ukraine-Russia peace talks in Geneva conclude, official says",
+      "to_title": "Ukraine peace talks in Geneva end after 'difficult' meetings, Russian delegation says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "b90d8f0962e25e58e2c5a5e00ed0e94fc6a82826",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Judges reject Trump admin's bid to deport 2 pro-Palestinian college students",
+      "to_title": "Judges reject Trump admin's bid to deport 2 pro-Palestinian college students"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c399e6dc200d81285502b43198638a979a58b8c",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "4 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police",
+      "to_title": "4 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T13:20:34.076Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "94b84a5a846f859ebf28ae9002bd8c5d88b4d489",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "'No meat on its bones': Judge tosses lawsuit over Buffalo Wild Wings' boneless wings",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
