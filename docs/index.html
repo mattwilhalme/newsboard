@@ -120,10 +120,24 @@
     }
     .centerpieceCard{
       padding:18px;
+      min-height:320px;
+      aspect-ratio: 1.45 / 1;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
       transition: background-color .2s ease, box-shadow .2s ease;
+    }
+    .visualStack{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:10px;
     }
     .stackCard{
       padding:12px 14px;
+      min-height:210px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
     .visualMeta{
       display:flex;
@@ -148,12 +162,32 @@
     .stackTitle{
       margin:0 0 8px;
       font-family:var(--font-serif);
-      font-size:20px;
-      line-height:1.2;
+      font-size:19px;
+      line-height:1.22;
+    }
+    .centerpieceTitle a,
+    .stackTitle a{
+      color:var(--text);
+      text-decoration:none;
+    }
+    .centerpieceTitle a:hover,
+    .stackTitle a:hover{
+      color:var(--blue);
+      text-decoration:underline;
     }
     .visualCardFoot{
       display:flex;
-      justify-content:flex-end;
+      flex-wrap:wrap;
+      gap:6px;
+      align-items:center;
+    }
+    .visualCardFoot .metric{ gap:4px; }
+    .visualCardFoot .statLabel{ font-size:9px; }
+    .stackCard .stackTitle{
+      display:-webkit-box;
+      -webkit-line-clamp:4;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
     }
     .flashYellow{
       animation: flashYellow 0.9s ease;
@@ -177,6 +211,38 @@
     }
     .editedOutline{
       box-shadow: inset 0 0 0 1px rgba(26,115,232,.35);
+    }
+    @media (max-width: 900px){
+      .visualWrap{ gap:10px; }
+      .centerpieceCard{
+        aspect-ratio:1 / 1;
+        min-height:0;
+        padding:14px;
+      }
+      .centerpieceTitle{
+        font-size:28px;
+        line-height:1.14;
+      }
+      .visualStack{
+        display:flex;
+        gap:8px;
+        overflow-x:auto;
+        padding-bottom:4px;
+        scrollbar-width:thin;
+      }
+      .stackCard{
+        flex:0 0 188px;
+        min-height:170px;
+        padding:10px 11px;
+      }
+      .stackTitle{
+        font-size:15px;
+        line-height:1.2;
+      }
+      .visualCardFoot .statBtn{
+        font-size:10px;
+        padding:3px 6px;
+      }
     }
 
     .grid{
@@ -883,11 +949,6 @@
     const VIEW_STORAGE_KEY = "newsboard_view";
     const CENTERPIECE_ID_KEY = "nb_last_centerpiece_id";
     const CENTERPIECE_TITLE_KEY = "nb_last_centerpiece_title";
-    const appRenderState = {
-      sources: {},
-      indicators: {},
-      timelineBySource: {},
-    };
     let activeView = "overview";
 
     // UI rules
@@ -2015,52 +2076,66 @@
       return `${String(item?.source_id || "unknown")}:${String(item?.slot_key || "top")}`;
     }
 
-    function visualItemsFromSources(sources){
-      const items = [];
-      for (const id of pickCardSourceIds(sources || {})) {
-        const src = sources?.[id] || {};
-        const row = src?.item || {};
-        const title = String(row?.title || "").trim();
-        const url = String(row?.url || "").trim();
-        const updatedAt = src?.updatedAt || src?.firstSeenAt || null;
-        const updatedMs = tsForSort(sources, id);
-        if (!title && !url) continue;
-        items.push({
-          source_id: id,
-          source_name: sourceLabel(id, src),
-          slot_key: row?.slot_key || row?.slotKey || src?.slot_key || src?.slotKey || "top",
-          title: title || "—",
-          url: url || "#",
-          updatedAt,
-          updatedMs,
-        });
-      }
-      items.sort((a, b) => {
-        if (b.updatedMs !== a.updatedMs) return b.updatedMs - a.updatedMs;
-        return String(a.source_id || "").localeCompare(String(b.source_id || ""));
-      });
-      return items;
+    function visualTop10Context(){
+      const latest = deepDiveState.latest || {};
+      const runs = deepDiveRunsForWindow();
+      const selectedIdx = runs.length ? (runs.length - 1) : -1;
+      const selectedRun = selectedIdx >= 0 ? runs[selectedIdx] : latest;
+      const prevRun = selectedIdx > 0 ? runs[selectedIdx - 1] : null;
+      const rows = Array.isArray(selectedRun?.items)
+        ? [...selectedRun.items]
+          .filter((row) => !isBreakingBannerTop10Item(row))
+          .sort((a, b) => Number(a?.rank) - Number(b?.rank))
+        : [];
+      return { runs, selectedIdx, selectedRun, prevRun, rows };
     }
 
-    function buildVisualCard(item, isCenterpiece, isEdited){
+    function visualMetric(label, value, klass){
+      const wrap = document.createElement("div");
+      wrap.className = "metric";
+      const lbl = document.createElement("span");
+      lbl.className = "statLabel";
+      lbl.textContent = label;
+      const chip = document.createElement("span");
+      chip.className = `statBtn ${klass || ""}`.trim();
+      chip.textContent = value || "—";
+      wrap.appendChild(lbl);
+      wrap.appendChild(chip);
+      return wrap;
+    }
+
+    function buildVisualTop10Card(item, ctx, isCenterpiece, isEdited){
+      const { runs, selectedIdx, selectedRun, prevRun } = ctx;
       const card = document.createElement("article");
       card.className = isCenterpiece ? "centerpieceCard" : "stackCard";
       if (isEdited) card.classList.add("editedOutline");
+
+      const rank = Number(item?.rank);
+      const move = deepDiveMovement(item, prevRun);
+      const top10Since = selectedIdx >= 0 ? deepDiveTop10Since(runs, selectedIdx, item?.fingerprint) : null;
+      const no1Since = selectedIdx >= 0 ? deepDiveNo1Since(runs, selectedIdx, item?.fingerprint) : null;
+      const headlineChanges = selectedIdx >= 0 ? deepDiveHeadlineChanges(runs, selectedIdx, item) : [];
+      const updatedAt = headlineChanges[0]?.changedAt || selectedRun?.observedAt || null;
 
       const meta = document.createElement("div");
       meta.className = "visualMeta";
       const publisher = document.createElement("div");
       publisher.className = "visualPublisher";
-      publisher.textContent = item?.source_name || "Unknown";
+      publisher.textContent = `ABC News · #${Number.isFinite(rank) ? rank : "?"}`;
       const rel = document.createElement("div");
-      rel.textContent = ago(item?.updatedAt);
+      rel.textContent = updatedAt ? ago(updatedAt) : "—";
       meta.appendChild(publisher);
       meta.appendChild(rel);
       card.appendChild(meta);
 
       const title = document.createElement(isCenterpiece ? "h2" : "h3");
       title.className = isCenterpiece ? "centerpieceTitle" : "stackTitle";
-      title.textContent = item?.title || "—";
+      const link = document.createElement("a");
+      link.href = item?.url || "#";
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = item?.title || "—";
+      title.appendChild(link);
       if (isEdited) {
         const edited = document.createElement("span");
         edited.className = "editedBadge";
@@ -2071,35 +2146,42 @@
 
       const foot = document.createElement("div");
       foot.className = "visualCardFoot";
-      const open = document.createElement("a");
-      open.className = "linkbtn";
-      open.href = item?.url || "#";
-      open.target = "_blank";
-      open.rel = "noopener";
-      open.textContent = "Open";
-      foot.appendChild(open);
+      const no1Value = deepDiveDurationLabel(no1Since, selectedRun?.observedAt);
+      const top10Value = deepDiveDurationLabel(top10Since, selectedRun?.observedAt);
+      foot.appendChild(visualMetric("Previously", move.label || "—", `isPrev ${String(move.label || "").startsWith("↓") ? "down" : ""}`));
+      if (no1Value !== "—") foot.appendChild(visualMetric("No. 1", no1Value, "isNo1"));
+      if (top10Value !== "—") foot.appendChild(visualMetric("Top 10", top10Value, "isTop10"));
+      foot.appendChild(visualMetric("Headline", `${headlineChanges.length} changes`, ""));
+      foot.appendChild(visualMetric("First Seen", top10Since ? fmtTime(top10Since) : "—", ""));
+      foot.appendChild(visualMetric("Updated", updatedAt ? fmtTime(updatedAt) : "—", ""));
       card.appendChild(foot);
 
       return card;
     }
 
-    function renderVisual(items){
+    function renderVisual(){
       const host = $("visual-wrap");
       if (!host) return;
       host.innerHTML = "";
 
-      if (!Array.isArray(items) || !items.length) {
+      const ctx = visualTop10Context();
+      const items = Array.isArray(ctx.rows) ? ctx.rows.slice(0, 9) : [];
+      if (!items.length) {
         const empty = document.createElement("div");
         empty.className = "tiny";
         empty.style.color = "var(--muted)";
-        empty.textContent = "No items available.";
+        empty.textContent = "No Top 10 items available yet.";
         host.appendChild(empty);
         return;
       }
 
       const top = items[0];
       const rest = items.slice(1, 9);
-      const currId = visualIdentityFor(top);
+      const currId = visualIdentityFor({
+        ...top,
+        source_id: "abc1",
+        slot_key: `rank-${Number(top?.rank) || 1}`,
+      });
       const currTitle = String(top?.title || "");
 
       let prevId = "";
@@ -2112,16 +2194,19 @@
       const slotChanged = Boolean(prevId && currId !== prevId);
       const edited = Boolean(currId === prevId && currTitle !== prevTitle);
 
-      const centerpiece = buildVisualCard(top, true, edited);
+      const centerpiece = buildVisualTop10Card(top, ctx, true, edited);
       if (slotChanged) {
         centerpiece.classList.add("flashYellow");
         setTimeout(() => centerpiece.classList.remove("flashYellow"), 900);
       }
       host.appendChild(centerpiece);
 
+      const stack = document.createElement("div");
+      stack.className = "visualStack";
       for (const it of rest) {
-        host.appendChild(buildVisualCard(it, false, false));
+        stack.appendChild(buildVisualTop10Card(it, ctx, false, false));
       }
+      host.appendChild(stack);
 
       try {
         localStorage.setItem(CENTERPIECE_ID_KEY, currId);
@@ -2875,7 +2960,7 @@
       }
 
       if (showVisual) {
-        renderVisual(visualItemsFromSources(appRenderState.sources));
+        renderVisual();
       }
     }
 
@@ -2976,8 +3061,9 @@
 
         prevSnap.disabled = runs.length <= 1;
         nextSnap.disabled = runs.length <= 1;
-        prevSnap.addEventListener("click", () => stepScrubber(1));
-        nextSnap.addEventListener("click", () => stepScrubber(-1));
+        // Left (<): more recent. Right (>): older / back in time.
+        prevSnap.addEventListener("click", () => stepScrubber(-1));
+        nextSnap.addEventListener("click", () => stepScrubber(1));
 
         rail.appendChild(stampNav);
         rail.appendChild(scrubber);
@@ -3153,6 +3239,7 @@
         deepDiveState.selectedObservedAt = deepDiveState.latest.observedAt;
       }
       renderDeepDive();
+      if (activeView === "visual") renderVisual();
     }
 
     async function loadCardTimelineBySource(hours = 12, sourcesData = null) {
@@ -3261,13 +3348,7 @@
         timelineBySource = await loadCardTimelineBySource(12, sources);
 
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
-        appRenderState.sources = sources;
-        appRenderState.indicators = indicators;
-        appRenderState.timelineBySource = timelineBySource;
         renderCards(sources, indicators, timelineBySource);
-        if (activeView === "visual") {
-          renderVisual(visualItemsFromSources(sources));
-        }
         if (nextState) saveState(nextState);
 
         renderHistory(normalizedHistory, sources, indicators);
@@ -3311,6 +3392,7 @@
       deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
       deepDiveState.selectedObservedAt = null;
       renderDeepDive();
+      if (activeView === "visual") renderVisual();
     });
 
     $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
