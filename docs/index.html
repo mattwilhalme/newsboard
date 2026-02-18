@@ -2184,22 +2184,6 @@
       return fmtDurationSeconds(Math.floor((to - from) / 1000));
     }
 
-    function fmtTimePT(ts){
-      if (!ts) return "—";
-      try {
-        return new Date(ts).toLocaleString("en-US", {
-          month: "short",
-          day: "numeric",
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: true,
-          timeZone: "America/Los_Angeles",
-        }) + " PT";
-      } catch {
-        return "—";
-      }
-    }
-
     function escapeHtml(v){
       return String(v || "")
         .replace(/&/g, "&amp;")
@@ -2260,39 +2244,42 @@
       return runs[firstIdx]?.observedAt || null;
     }
 
-    function deepDivePreviousHeadlineInfo(runs, selectedIdx, row){
+    function deepDiveHeadlineChanges(runs, selectedIdx, row) {
       const fp = String(row?.fingerprint || "");
-      const currentTitle = String(row?.title || "");
-      if (!fp || !currentTitle) return null;
+      if (!fp) return [];
 
-      let titleSince = runs[selectedIdx]?.observedAt || null;
-      for (let i = selectedIdx - 1; i >= 0; i--) {
-        const it = (runs[i]?.items || []).find((x) => String(x?.fingerprint || "") === fp);
-        if (!it || String(it?.title || "") !== currentTitle) break;
-        titleSince = runs[i]?.observedAt || titleSince;
-      }
+      const events = [];
+      let currentTitle = null;
+      let currentTitleFirstSeenAt = null;
 
-      for (let i = selectedIdx - 1; i >= 0; i--) {
+      for (let i = 0; i <= selectedIdx; i++) {
         const it = (runs[i]?.items || []).find((x) => String(x?.fingerprint || "") === fp);
         if (!it) continue;
-        const prevTitle = String(it?.title || "");
-        if (!prevTitle || prevTitle === currentTitle) continue;
-        return {
-          previousTitle: prevTitle,
-          currentTitle,
-          publishedAt: titleSince,
-          changedAt: runs[selectedIdx]?.observedAt || null,
-          previousSeenAt: runs[i]?.observedAt || null,
-        };
+        const title = String(it?.title || "");
+        if (!title) continue;
+
+        if (currentTitle === null) {
+          currentTitle = title;
+          currentTitleFirstSeenAt = runs[i]?.observedAt || null;
+          continue;
+        }
+
+        if (title !== currentTitle) {
+          events.push({
+            fromTitle: currentTitle,
+            toTitle: title,
+            firstSeenAt: runs[i]?.observedAt || null,
+            changedAt: runs[i]?.observedAt || null,
+          });
+          currentTitle = title;
+          currentTitleFirstSeenAt = runs[i]?.observedAt || null;
+        }
       }
 
-      return {
-        previousTitle: null,
-        currentTitle,
-        publishedAt: titleSince,
-        changedAt: null,
-        previousSeenAt: null,
-      };
+      if (!events.length) return [];
+
+      // Reverse chronological (latest first)
+      return events.sort((a, b) => Date.parse(String(b?.changedAt || "")) - Date.parse(String(a?.changedAt || "")));
     }
 
     function deepDiveNo1Since(runs, selectedIdx, fingerprint){
@@ -2399,7 +2386,7 @@
           const top10Since = deepDiveTop10Since(runs, selectedIdx, row?.fingerprint);
           const no1Since = deepDiveNo1Since(runs, selectedIdx, row?.fingerprint);
 
-          function metric(label, value, klass) {
+          function metric(label, value, klass, showLabel = true) {
             const wrap = document.createElement("div");
             wrap.className = "metric";
             const lbl = document.createElement("span");
@@ -2408,23 +2395,28 @@
             const chip = document.createElement("span");
             chip.className = `statBtn ${klass || ""}`.trim();
             chip.textContent = value || "—";
-            wrap.appendChild(lbl);
+            if (showLabel) wrap.appendChild(lbl);
             wrap.appendChild(chip);
             return { wrap, chip };
           }
 
-          const mPrev = metric("Previously", move.label || "—", `isPrev ${String(move.label || "").startsWith("↓") ? "down" : ""}`);
-          const mNo1 = metric("No. 1", deepDiveDurationLabel(no1Since, selectedRun?.observedAt), "isNo1");
-          const mTop10 = metric("Top 10", deepDiveDurationLabel(top10Since, selectedRun?.observedAt), "isTop10");
+          const showLabels = Number(row?.rank) === 1;
+          const prevValue = move.label || "—";
+          const no1Value = deepDiveDurationLabel(no1Since, selectedRun?.observedAt);
+          const top10Value = deepDiveDurationLabel(top10Since, selectedRun?.observedAt);
+
+          const mPrev = metric("Previously", prevValue, `isPrev ${String(move.label || "").startsWith("↓") ? "down" : ""}`, showLabels);
+          const mNo1 = metric("No. 1", no1Value, "isNo1", showLabels);
+          const mTop10 = metric("Top 10", top10Value, "isTop10", showLabels);
 
           if (Number(row?.rank) === 1) {
-            meta.appendChild(mNo1.wrap);
-            meta.appendChild(mTop10.wrap);
-            meta.appendChild(mPrev.wrap);
+            meta.appendChild(mNo1.wrap); // Always show for #1
+            if (top10Value !== "—") meta.appendChild(mTop10.wrap);
+            if (prevValue !== "NEW") meta.appendChild(mPrev.wrap); // New #1 has no "Previously"
           } else {
             meta.appendChild(mPrev.wrap);
-            meta.appendChild(mNo1.wrap);
-            meta.appendChild(mTop10.wrap);
+            if (no1Value !== "—") meta.appendChild(mNo1.wrap);
+            if (top10Value !== "—") meta.appendChild(mTop10.wrap);
           }
 
           if (move.delta && Number.isFinite(move.delta)) {
@@ -2437,9 +2429,9 @@
 
           body.appendChild(meta);
 
-          const historyInfo = deepDivePreviousHeadlineInfo(runs, selectedIdx, row);
+          const headlineChanges = deepDiveHeadlineChanges(runs, selectedIdx, row);
           const related = Number(row?.rank) === 1 && Array.isArray(row?.related_links) ? row.related_links : [];
-          const hasDetails = true;
+          const hasDetails = Boolean(headlineChanges.length);
           if (hasDetails) {
             const wrap = document.createElement("div");
             wrap.className = "relatedWrap";
@@ -2447,11 +2439,25 @@
             const toggle = document.createElement("button");
             toggle.type = "button";
             toggle.className = "relatedToggle";
-            toggle.textContent = Number(row?.rank) === 1 ? `Details (${related.length} context)` : "Details";
+            toggle.textContent = Number(row?.rank) === 1 && related.length ? `Details (${related.length} context)` : "Details";
 
             const panel = document.createElement("div");
             panel.className = "relatedPanel";
 
+            for (const ev of headlineChanges) {
+              const diff = document.createElement("div");
+              diff.className = "headlineDiff";
+              const metaLine = document.createElement("div");
+              metaLine.className = "headlineDiffMeta";
+              metaLine.textContent = `First Seen: ${fmtTime(ev?.firstSeenAt)} · Changed: ${fmtTime(ev?.changedAt)}`;
+              const line = document.createElement("div");
+              line.innerHTML = headlineDiffHtml(ev?.fromTitle, ev?.toTitle);
+              diff.appendChild(metaLine);
+              diff.appendChild(line);
+              panel.appendChild(diff);
+            }
+
+            // For #1, list content/context links after headline changes.
             if (related.length) {
               const list = document.createElement("ul");
               list.className = "relatedList";
@@ -2472,26 +2478,11 @@
                 chip.textContent = deepDiveDurationLabel(since, selectedRun?.observedAt);
 
                 item.appendChild(link);
-                item.appendChild(chip);
+                if (chip.textContent !== "—") item.appendChild(chip);
                 list.appendChild(item);
               }
               panel.appendChild(list);
             }
-
-            const diff = document.createElement("div");
-            diff.className = "headlineDiff";
-            const metaLine = document.createElement("div");
-            metaLine.className = "headlineDiffMeta";
-            metaLine.textContent = `Published: ${fmtTimePT(historyInfo?.publishedAt)} · Changed: ${fmtTimePT(historyInfo?.changedAt)}`;
-            const line = document.createElement("div");
-            if (historyInfo?.previousTitle) {
-              line.innerHTML = headlineDiffHtml(historyInfo.previousTitle, historyInfo.currentTitle);
-            } else {
-              line.innerHTML = escapeHtml(historyInfo?.currentTitle || row?.title || "No headline history yet.");
-            }
-            diff.appendChild(metaLine);
-            diff.appendChild(line);
-            panel.appendChild(diff);
 
             toggle.addEventListener("click", () => panel.classList.toggle("open"));
             wrap.appendChild(toggle);
