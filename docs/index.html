@@ -405,6 +405,46 @@
       gap:10px;
       align-items:flex-start;
     }
+    .top10Meta{
+      margin-top:6px;
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+    }
+    .statBtn{
+      border:1px solid var(--line);
+      background:var(--chip);
+      color:var(--chipText);
+      border-radius:999px;
+      font-size:11px;
+      font-weight:700;
+      padding:4px 8px;
+      line-height:1;
+    }
+    .deepRunRail{
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:4px 2px 8px;
+      border-bottom:1px solid var(--line);
+      scrollbar-width:thin;
+    }
+    .deepRunBtn{
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--muted);
+      border-radius:8px;
+      font-size:11px;
+      font-weight:700;
+      padding:6px 8px;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .deepRunBtn.active{
+      color:var(--text);
+      border-color:var(--line-strong);
+      background:var(--chip);
+    }
     .top10Rank{
       width:28px;
       flex:0 0 28px;
@@ -533,15 +573,15 @@
         </div>
 
         <div class="deepSection">
-          <h3 class="deepSectionTitle">Current Top 10</h3>
-          <div id="deep-latest-time" class="deepStamp">Observed: —</div>
-          <div id="deep-latest-error" class="tiny" style="margin-top:6px"></div>
-          <ol id="deep-top10-list" class="top10List"></ol>
+          <h3 class="deepSectionTitle">Snapshot Timeline</h3>
+          <div id="deep-run-rail" class="deepRunRail"></div>
         </div>
 
         <div class="deepSection">
-          <h3 class="deepSectionTitle">Change Log</h3>
-          <ul id="deep-events-list" class="deepEvents"></ul>
+          <h3 class="deepSectionTitle">Top 10 Details</h3>
+          <div id="deep-latest-time" class="deepStamp">Observed: —</div>
+          <div id="deep-latest-error" class="tiny" style="margin-top:6px"></div>
+          <ol id="deep-top10-list" class="top10List"></ol>
         </div>
       </div>
     </section>
@@ -618,8 +658,7 @@
     const CACHE_URL = "./cache.json";
     const TIMELINE_URL = "./data/timeline.json";
     const TOP10_ABC_LATEST_URL = "./data/top10_abc_latest.json";
-    const TOP10_ABC_EVENTS_HISTORY_URL = "./data/top10_abc_events_history.json";
-    const TOP10_ABC_EVENTS_24H_URL = "./data/top10_abc_events_24h.json";
+    const TOP10_ABC_HISTORY_URL = "./data/top10_abc_history.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
     const SUPABASE_PROXY_URL = "/api/supabase-snapshot";
     const SUPABASE_SCREENSHOT_BUCKET = "screenshots";
@@ -648,8 +687,9 @@
     const DEEP_DIVE_DEFAULT_HOURS = 24;
     const deepDiveState = {
       latest: null,
-      events: [],
+      historyRuns: [],
       windowHours: DEEP_DIVE_DEFAULT_HOURS,
+      selectedObservedAt: null,
     };
 
     // UI rules
@@ -719,8 +759,8 @@
       root.style.zIndex = "1000";
 
       const panel = document.createElement("div");
-      panel.style.width = "min(1200px, 96vw)";
-      panel.style.maxHeight = "92vh";
+      panel.style.width = "min(1500px, 99vw)";
+      panel.style.maxHeight = "98vh";
       panel.style.display = "flex";
       panel.style.flexDirection = "column";
       panel.style.gap = "10px";
@@ -769,7 +809,7 @@
 
       const frame = document.createElement("div");
       frame.style.width = "100%";
-      frame.style.height = "min(80vh, 900px)";
+      frame.style.height = "min(92vh, 1400px)";
       frame.style.borderRadius = "10px";
       frame.style.overflow = "hidden";
       frame.style.background = "#000";
@@ -781,8 +821,8 @@
 
       const img = document.createElement("img");
       img.alt = "";
-      img.style.maxWidth = "96%";
-      img.style.maxHeight = "96%";
+      img.style.maxWidth = "99%";
+      img.style.maxHeight = "99%";
       img.style.objectFit = "contain";
 
       const sliderRow = document.createElement("div");
@@ -810,31 +850,10 @@
 
       let events = [];
       let idx = 0;
-      let fadeToken = 0;
-      function setLightboxImageWithFade(url){
-        if (!url) return;
-        if (img.getAttribute("src") === url) {
-          img.style.opacity = "1";
-          return;
-        }
-        fadeToken += 1;
-        const token = fadeToken;
-        img.style.transition = "opacity 180ms ease";
-        img.style.opacity = "0.18";
-        const pre = new Image();
-        pre.onload = () => {
-          if (token !== fadeToken) return;
-          img.src = url;
-          requestAnimationFrame(() => {
-            img.style.opacity = "1";
-          });
-        };
-        pre.src = url;
-      }
       function render(){
         const ev = events[idx] || null;
         if (!ev || !ev.shot_url) return;
-        setLightboxImageWithFade(ev.shot_url);
+        img.src = ev.shot_url;
         meta.textContent = `${idx + 1}/${events.length} · ${fmtTime(ev.ts)} · ${timelineKindLabel(ev.kind)} · ${sourceLabel(ev.source_id, null)}`;
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= events.length - 1;
@@ -1817,7 +1836,7 @@
 
         const hint = document.createElement("div");
         hint.className = "tiny";
-        hint.textContent = "Newest first. Swipe left/right or use controls to fade between screenshots.";
+        hint.textContent = "Newest first. Swipe left/right or use controls to step through screenshots.";
 
         const frame = document.createElement("div");
         frame.className = "shotFrame";
@@ -1826,7 +1845,6 @@
         tile.type = "button";
         tile.className = "shotTile";
         tile.style.width = "100%";
-        tile.style.transition = "opacity 180ms ease";
 
         const meta = document.createElement("div");
         meta.className = "tiny";
@@ -1847,8 +1865,6 @@
         img.style.height = "100%";
         img.style.objectFit = "contain";
         img.style.background = "#0f1113";
-        img.style.opacity = "1";
-        img.style.transition = "opacity 180ms ease";
         imgWrap.appendChild(img);
 
         tile.appendChild(meta);
@@ -1857,7 +1873,6 @@
 
         const eventsWithShots = timelineEvents.filter((ev) => ev?.shot_url);
         let shotIdx = 0;
-        let shotFadeToken = 0;
 
         function renderShot(i){
           if (!eventsWithShots.length) return;
@@ -1872,24 +1887,8 @@
           prev.disabled = shotIdx <= 0;
           next.disabled = shotIdx >= eventsWithShots.length - 1;
 
-          if (!nextSrc || currentSrc === nextSrc) {
-            img.style.opacity = "1";
-            if (nextSrc && !currentSrc) img.src = nextSrc;
-            return;
-          }
-
-          shotFadeToken += 1;
-          const token = shotFadeToken;
-          img.style.opacity = "0.16";
-          const pre = new Image();
-          pre.onload = () => {
-            if (token !== shotFadeToken) return;
-            img.src = nextSrc;
-            requestAnimationFrame(() => {
-              img.style.opacity = "1";
-            });
-          };
-          pre.src = nextSrc;
+          if (!nextSrc) return;
+          if (currentSrc !== nextSrc) img.src = nextSrc;
         }
 
         tile.addEventListener("click", () => {
@@ -2057,35 +2056,54 @@
       }
     }
 
-    function deepDiveEventLabel(eventType) {
-      if (eventType === "ENTERED_TOP10") return "ENTER";
-      if (eventType === "EXITED_TOP10") return "EXIT";
-      if (eventType === "MOVED") return "MOVE";
-      if (eventType === "TITLE_UPDATED") return "TITLE";
-      return "EVENT";
+    function deepDiveRunsForWindow() {
+      const runs = Array.isArray(deepDiveState.historyRuns) ? deepDiveState.historyRuns : [];
+      const cutoffMs = Date.now() - (Number(deepDiveState.windowHours || DEEP_DIVE_DEFAULT_HOURS) * 60 * 60 * 1000);
+      return runs
+        .filter((run) => {
+          const ms = Date.parse(String(run?.observedAt || ""));
+          return Number.isFinite(ms) && ms >= cutoffMs;
+        })
+        .sort((a, b) => Date.parse(String(a?.observedAt || "")) - Date.parse(String(b?.observedAt || "")));
     }
 
-    function deepDiveEventText(ev) {
-      const fromRank = Number(ev?.from_rank);
-      const toRank = Number(ev?.to_rank);
-      const fromTitle = String(ev?.from_title || "").trim();
-      const toTitle = String(ev?.to_title || "").trim();
-      const eventType = String(ev?.event_type || "");
+    function deepDiveDurationLabel(fromTs, toTs){
+      const from = Date.parse(String(fromTs || ""));
+      const to = Date.parse(String(toTs || ""));
+      if (!Number.isFinite(from) || !Number.isFinite(to) || to < from) return "—";
+      return fmtDurationSeconds(Math.floor((to - from) / 1000));
+    }
 
-      if (eventType === "ENTERED_TOP10") {
-        return `${toTitle || "Untitled story"} entered at #${Number.isFinite(toRank) ? toRank : "?"}`;
+    function deepDiveMovement(item, prevRun){
+      const prevItems = Array.isArray(prevRun?.items) ? prevRun.items : [];
+      const prev = prevItems.find((x) => String(x?.fingerprint || "") === String(item?.fingerprint || ""));
+      if (!prev) return { label: "NEW", delta: null };
+      const p = Number(prev.rank);
+      const c = Number(item?.rank);
+      if (!Number.isFinite(p) || !Number.isFinite(c)) return { label: "NEW", delta: null };
+      if (p === c) return { label: "SAME", delta: 0 };
+      if (p > c) return { label: `↑ #${p}`, delta: p - c };
+      return { label: `↓ #${p}`, delta: c - p };
+    }
+
+    function deepDiveTop10Since(runs, selectedIdx, fingerprint){
+      let firstIdx = selectedIdx;
+      for (let i = selectedIdx; i >= 0; i--) {
+        const has = (runs[i]?.items || []).some((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
+        if (!has) break;
+        firstIdx = i;
       }
-      if (eventType === "EXITED_TOP10") {
-        return `${fromTitle || "Untitled story"} exited from #${Number.isFinite(fromRank) ? fromRank : "?"}`;
+      return runs[firstIdx]?.observedAt || null;
+    }
+
+    function deepDiveNo1Since(runs, selectedIdx, fingerprint){
+      let firstIdx = selectedIdx;
+      for (let i = selectedIdx; i >= 0; i--) {
+        const row = (runs[i]?.items || []).find((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
+        if (!row || Number(row.rank) !== 1) break;
+        firstIdx = i;
       }
-      if (eventType === "MOVED") {
-        return `${toTitle || fromTitle || "Untitled story"} moved ${Number.isFinite(fromRank) ? `#${fromRank}` : "#?"} to ${Number.isFinite(toRank) ? `#${toRank}` : "#?"}`;
-      }
-      if (eventType === "TITLE_UPDATED") {
-        if (fromTitle && toTitle) return `${fromTitle} → ${toTitle}`;
-        return `${toTitle || fromTitle || "Untitled story"} title updated`;
-      }
-      return toTitle || fromTitle || "Unknown change";
+      return runs[firstIdx]?.observedAt || null;
     }
 
     function setView(which) {
@@ -2109,19 +2127,43 @@
 
     function renderDeepDive() {
       const latest = deepDiveState.latest || {};
-      const events = Array.isArray(deepDiveState.events) ? deepDiveState.events : [];
-      const latestItems = Array.isArray(latest?.items) ? latest.items : [];
+      const runs = deepDiveRunsForWindow();
+      if (!deepDiveState.selectedObservedAt && runs.length) {
+        deepDiveState.selectedObservedAt = runs[runs.length - 1]?.observedAt || null;
+      }
+      const foundIdx = runs.findIndex((r) => String(r?.observedAt || "") === String(deepDiveState.selectedObservedAt || ""));
+      const selectedIdx = foundIdx >= 0 ? foundIdx : Math.max(0, runs.length - 1);
+      const selectedRun = runs[selectedIdx] || latest || {};
+      const prevRun = selectedIdx > 0 ? runs[selectedIdx - 1] : null;
+      const topItems = Array.isArray(selectedRun?.items) ? [...selectedRun.items].sort((a, b) => Number(a.rank) - Number(b.rank)) : [];
+
+      const rail = $("deep-run-rail");
+      if (rail) {
+        rail.innerHTML = "";
+        for (const run of runs) {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "deepRunBtn";
+          if (String(run?.observedAt || "") === String(deepDiveState.selectedObservedAt || "")) b.classList.add("active");
+          b.textContent = fmtTime(run?.observedAt);
+          b.addEventListener("click", () => {
+            deepDiveState.selectedObservedAt = run?.observedAt || null;
+            renderDeepDive();
+          });
+          rail.appendChild(b);
+        }
+      }
 
       const latestTime = $("deep-latest-time");
-      if (latestTime) latestTime.textContent = `Observed: ${latest?.observedAt ? fmtTime(latest.observedAt) : "—"}`;
+      if (latestTime) latestTime.textContent = `Observed: ${selectedRun?.observedAt ? fmtTime(selectedRun.observedAt) : "—"}`;
 
       const err = $("deep-latest-error");
-      if (err) err.textContent = latest?.ok === false ? String(latest?.error || "Top 10 scrape incomplete") : "";
+      if (err) err.textContent = selectedRun?.ok === false ? String(selectedRun?.error || "Top 10 scrape incomplete") : "";
 
       const topList = $("deep-top10-list");
       if (topList) {
         topList.innerHTML = "";
-        for (const row of latestItems) {
+        for (const row of topItems) {
           const li = document.createElement("li");
           li.className = "top10Row";
 
@@ -2139,84 +2181,64 @@
           a.textContent = row?.title || "—";
           body.appendChild(a);
 
+          const meta = document.createElement("div");
+          meta.className = "top10Meta";
+
+          const move = deepDiveMovement(row, prevRun);
+          const moveChip = document.createElement("span");
+          moveChip.className = "statBtn";
+          moveChip.textContent = move.label;
+          meta.appendChild(moveChip);
+
+          const top10Since = deepDiveTop10Since(runs, selectedIdx, row?.fingerprint);
+          const top10Chip = document.createElement("span");
+          top10Chip.className = "statBtn";
+          top10Chip.textContent = `Top 10 ${deepDiveDurationLabel(top10Since, selectedRun?.observedAt)}`;
+          meta.appendChild(top10Chip);
+
+          if (Number(row?.rank) === 1) {
+            const no1Since = deepDiveNo1Since(runs, selectedIdx, row?.fingerprint);
+            const no1Chip = document.createElement("span");
+            no1Chip.className = "statBtn";
+            no1Chip.textContent = `No.1 ${deepDiveDurationLabel(no1Since, selectedRun?.observedAt)}`;
+            meta.appendChild(no1Chip);
+          }
+
+          body.appendChild(meta);
+
           li.appendChild(rank);
           li.appendChild(body);
           topList.appendChild(li);
         }
-        if (!latestItems.length) {
+        if (!topItems.length) {
           const li = document.createElement("li");
           li.className = "top10Row";
           li.textContent = "No Top 10 snapshot available yet.";
           topList.appendChild(li);
         }
       }
-
-      const eventList = $("deep-events-list");
-      if (eventList) {
-        eventList.innerHTML = "";
-        const cutoffMs = Date.now() - (Number(deepDiveState.windowHours || DEEP_DIVE_DEFAULT_HOURS) * 60 * 60 * 1000);
-        const filtered = events
-          .filter((ev) => {
-            const ts = Date.parse(String(ev?.observed_at || ""));
-            return Number.isFinite(ts) ? ts >= cutoffMs : false;
-          })
-          .sort((a, b) => Date.parse(String(b?.observed_at || "")) - Date.parse(String(a?.observed_at || "")));
-
-        for (const ev of filtered) {
-          const li = document.createElement("li");
-          li.className = "deepEvent";
-
-          const badge = document.createElement("span");
-          badge.className = "eventBadge";
-          badge.textContent = deepDiveEventLabel(ev?.event_type);
-
-          const body = document.createElement("div");
-          body.className = "deepEventBody";
-          const main = document.createElement("div");
-          main.className = "deepEventMain";
-          main.textContent = deepDiveEventText(ev);
-          const meta = document.createElement("div");
-          meta.className = "deepEventMeta mono";
-          meta.textContent = ev?.observed_at ? `${fmtTime(ev.observed_at)} · ${ago(ev.observed_at)}` : "—";
-          body.appendChild(main);
-          body.appendChild(meta);
-
-          li.appendChild(badge);
-          li.appendChild(body);
-          eventList.appendChild(li);
-        }
-
-        if (!filtered.length) {
-          const li = document.createElement("li");
-          li.className = "deepEvent";
-          li.textContent = "No change events in this time window.";
-          eventList.appendChild(li);
-        }
-      }
     }
 
     async function loadDeepDiveData() {
       let latest = null;
-      let events = [];
+      let historyRuns = [];
 
       try {
         latest = await fetchJSON(`${TOP10_ABC_LATEST_URL}?ts=${Date.now()}`);
       } catch {}
 
       try {
-        const payload = await fetchJSON(`${TOP10_ABC_EVENTS_HISTORY_URL}?ts=${Date.now()}`);
-        events = Array.isArray(payload?.events) ? payload.events : [];
+        const payload = await fetchJSON(`${TOP10_ABC_HISTORY_URL}?ts=${Date.now()}`);
+        historyRuns = Array.isArray(payload?.runs) ? payload.runs : [];
       } catch {
-        try {
-          const payload24h = await fetchJSON(`${TOP10_ABC_EVENTS_24H_URL}?ts=${Date.now()}`);
-          events = Array.isArray(payload24h?.events) ? payload24h.events : [];
-        } catch {
-          events = [];
-        }
+        historyRuns = [];
       }
 
       deepDiveState.latest = latest || { ok: false, observedAt: null, items: [], error: "Deep Dive data unavailable" };
-      deepDiveState.events = events;
+      deepDiveState.historyRuns = historyRuns;
+      if (!deepDiveState.selectedObservedAt && deepDiveState.latest?.observedAt) {
+        deepDiveState.selectedObservedAt = deepDiveState.latest.observedAt;
+      }
       renderDeepDive();
     }
 
@@ -2290,7 +2312,6 @@
       changesOnly: false,
       index: 0,
       imageCache: new Set(),
-      previewFadeToken: 0,
     };
 
     function timelineKindLabel(kind){
@@ -2362,23 +2383,7 @@
       const img = $("tl-preview-img");
       if (ev.shot_url) {
         imgWrap.classList.remove("isHidden");
-        if (img.getAttribute("src") !== ev.shot_url) {
-          timelineState.previewFadeToken += 1;
-          const token = timelineState.previewFadeToken;
-          img.style.transition = "opacity 180ms ease";
-          img.style.opacity = "0.2";
-          const pre = new Image();
-          pre.onload = () => {
-            if (token !== timelineState.previewFadeToken) return;
-            img.src = ev.shot_url;
-            requestAnimationFrame(() => {
-              img.style.opacity = "1";
-            });
-          };
-          pre.src = ev.shot_url;
-        } else {
-          img.style.opacity = "1";
-        }
+        if (img.getAttribute("src") !== ev.shot_url) img.src = ev.shot_url;
       } else {
         imgWrap.classList.add("isHidden");
         img.removeAttribute("src");
@@ -2568,6 +2573,7 @@
     $("tab-deepdive")?.addEventListener("click", () => setView("deepdive"));
     $("deep-window")?.addEventListener("change", (e) => {
       deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
+      deepDiveState.selectedObservedAt = null;
       renderDeepDive();
     });
 
