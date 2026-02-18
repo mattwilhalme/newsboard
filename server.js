@@ -366,6 +366,94 @@ async function archiveRun(page, runId, snapshot) {
   }
 }
 
+function getSupabaseAdminOrNull() {
+  if (!hasSupabaseAdmin()) return null;
+  try {
+    return getSupabaseAdmin();
+  } catch {
+    return null;
+  }
+}
+
+function pickHeroSlotKey(item) {
+  const raw = String(item?.slotKey || "").trim();
+  if (!raw) return "hero:1";
+  // Older scrapers may use hashed slot keys; normalize to a stable hero slot.
+  if (/^[a-f0-9]{12,40}$/i.test(raw)) return "hero:1";
+  return raw;
+}
+
+async function insertHeroRun({ sourceId, observedAtIso, runId, item, ok, error, raw }) {
+  const sb = getSupabaseAdminOrNull();
+  if (!sb) return { inserted: 0, skipped: true };
+
+  const row = {
+    source_id: sourceId,
+    observed_at: observedAtIso,
+    run_id: runId || null,
+    title: item?.title || null,
+    url: item?.url || null,
+    img_url: item?.imgUrl || null,
+    ok: Boolean(ok),
+    error: error ? String(error) : null,
+    raw: raw && typeof raw === "object" ? raw : {},
+  };
+
+  const { error: dbErr } = await sb.from("hero_runs").insert(row);
+  if (dbErr) throw dbErr;
+  return { inserted: 1 };
+}
+
+async function insertHeadlineEvent({ sourceId, observedAtIso, slotKey, item, ok, error, raw }) {
+  const sb = getSupabaseAdminOrNull();
+  if (!sb) return { inserted: 0, skipped: true };
+
+  const row = {
+    source_id: sourceId,
+    observed_at: observedAtIso,
+    slot_key: slotKey || "hero:1",
+    title: item?.title || null,
+    url: item?.url || null,
+    img_url: item?.imgUrl || null,
+    ok: Boolean(ok),
+    error: error ? String(error) : null,
+    raw: raw && typeof raw === "object" ? raw : {},
+  };
+
+  const { error: dbErr } = await sb.from("headline_events").insert(row);
+  if (dbErr) throw dbErr;
+  return { inserted: 1 };
+}
+
+async function insertTop10Snapshot({ sourceId, observedAtIso, runId, items, raw }) {
+  const sb = getSupabaseAdminOrNull();
+  if (!sb) return { inserted: 0, skipped: true };
+
+  const rows = (Array.isArray(items) ? items : [])
+    .filter((it) => Number.isFinite(Number(it?.rank)))
+    .map((it) => ({
+      source_id: sourceId,
+      observed_at: observedAtIso,
+      slot_key: `top10:${Number(it.rank)}`,
+      title: it?.title || null,
+      url: it?.url || null,
+      img_url: it?.imgUrl || null,
+      ok: true,
+      error: null,
+      raw: {
+        ...(raw && typeof raw === "object" ? raw : {}),
+        run_id: runId || null,
+        rank: Number(it.rank),
+        fingerprint: it?.fingerprint || null,
+      },
+    }));
+
+  if (!rows.length) return { inserted: 0 };
+  const { error: dbErr } = await sb.from("headline_events").insert(rows);
+  if (dbErr) throw dbErr;
+  return { inserted: rows.length };
+}
+
 /* ---------------------------
    ABC (single top item)
 --------------------------- */
@@ -1433,23 +1521,84 @@ async function refreshSources({ id = "" } = {}) {
   for (const sid of runList) {
     let res;
     const prevItem = cache.sources?.[sid]?.item || null;
+    const t0 = Date.now();
+    try {
+      if (sid === "abc1") res = await scrapeABCHero();
+      else if (sid === "cbs1") res = await scrapeCBSHero();
+      else if (sid === "usat1") res = await scrapeUSATHero();
+      else if (sid === "nbc1") res = await scrapeNBCHero();
+      else if (sid === "cnn1") res = await scrapeCNNHero();
+      else if (sid === "reuters1") res = await scrapeReutersHero();
+      else if (sid === "ap1") res = await scrapeAPHero();
+      else if (sid === "latimes1") res = await scrapeLATimesHero();
+      else if (sid === "npr1") res = await scrapeNPRHero();
+      else throw new Error(`Unknown source id: ${sid}`);
+    } catch (err) {
+      res = {
+        ok: false,
+        error: String(err?.message || err),
+        updatedAt: nowISO(),
+        runId: `${sid}_error_${new Date().toISOString().replace(/[:.]/g, "-")}`,
+        item: null,
+        shot: null,
+      };
+    }
+    const durationMs = Math.max(0, Date.now() - t0);
+    const observedAtIso = res?.updatedAt || nowISO();
 
-    if (sid === "abc1") res = await scrapeABCHero();
-    else if (sid === "cbs1") res = await scrapeCBSHero();
-    else if (sid === "usat1") res = await scrapeUSATHero();
-    else if (sid === "nbc1") res = await scrapeNBCHero();
-    else if (sid === "cnn1") res = await scrapeCNNHero();
-    else if (sid === "reuters1") res = await scrapeReutersHero();
-    else if (sid === "ap1") res = await scrapeAPHero();
-    else if (sid === "latimes1") res = await scrapeLATimesHero();
-    else if (sid === "npr1") res = await scrapeNPRHero();
-    else throw new Error(`Unknown source id: ${sid}`);
+    const heroRaw = {
+      source_id: sid,
+      run_id: res?.runId || null,
+      duration_ms: durationMs,
+      final_url: res?.item?.url || null,
+      has_item: Boolean(res?.item),
+      has_screenshot: Boolean(res?.shot?.object_path),
+      scraper_error: res?.error || null,
+      debug: {
+        archive: Boolean(res?.archive),
+      },
+    };
+
+    try {
+      await insertHeroRun({
+        sourceId: sid,
+        observedAtIso,
+        runId: res?.runId || null,
+        item: res?.item || null,
+        ok: Boolean(res?.ok),
+        error: res?.error || null,
+        raw: heroRaw,
+      });
+    } catch (err) {
+      console.warn(`hero_runs insert failed (${sid}):`, String(err?.message || err));
+    }
+
+    if (res?.ok && res?.item) {
+      try {
+        await insertHeadlineEvent({
+          sourceId: sid,
+          observedAtIso,
+          slotKey: pickHeroSlotKey(res.item),
+          item: res.item,
+          ok: true,
+          error: null,
+          raw: {
+            run_id: res?.runId || null,
+            fingerprint: res?.item?.fingerprint || null,
+            duration_ms: durationMs,
+            final_url: res?.item?.url || null,
+          },
+        });
+      } catch (err) {
+        console.warn(`headline_events insert failed (${sid}):`, String(err?.message || err));
+      }
+    }
 
     if (res?.item && res?.shot?.object_path) {
       try {
         const kind = classifyScreenshotKind(prevItem, res.item);
         await recordScreenshotEvent({
-          ts: res.updatedAt || nowISO(),
+          ts: observedAtIso,
           sourceId: sid,
           runId: res.runId || "",
           kind,
@@ -1467,7 +1616,7 @@ async function refreshSources({ id = "" } = {}) {
 
     cache.sources[sid] = {
       ...cache.sources[sid],
-      updated_at: res.updatedAt || nowISO(),
+      updated_at: observedAtIso,
       ok: Boolean(res.ok),
       stale: !res.ok,
       item: nextItem,
@@ -1475,7 +1624,7 @@ async function refreshSources({ id = "" } = {}) {
         runId: res.runId || null,
         ok: Boolean(res.ok),
         error: res.error || null,
-        fetchedAt: res.updatedAt || nowISO(),
+        fetchedAt: observedAtIso,
         shot: res.shot || null,
       },
     };
@@ -1600,6 +1749,60 @@ app.post("/api/refresh", async (req, res) => {
   }
 });
 
+// POST /api/top10/refresh?source=abc1
+// POST /api/refresh_top10
+async function handleTop10Refresh(req, res) {
+  try {
+    const source = String(req.query?.source || req.body?.source || "abc1").toLowerCase();
+    if (source !== "abc1") {
+      return res.status(400).json({ ok: false, error: "Only source=abc1 is supported right now." });
+    }
+
+    const t0 = Date.now();
+    const top10 = await scrapeABCTop10();
+    const observedAtIso = top10?.observedAt || nowISO();
+    const durationMs = Math.max(0, Date.now() - t0);
+
+    let inserted = 0;
+    try {
+      const result = await insertTop10Snapshot({
+        sourceId: "abc1",
+        observedAtIso,
+        runId: top10?.runId || null,
+        items: top10?.items || [],
+        raw: {
+          source_id: "abc1",
+          run_id: top10?.runId || null,
+          duration_ms: durationMs,
+          expected_count: 10,
+          observed_count: Array.isArray(top10?.items) ? top10.items.length : 0,
+          scrape_ok: Boolean(top10?.ok),
+          scrape_error: top10?.error || null,
+        },
+      });
+      inserted = Number(result?.inserted || 0);
+    } catch (dbErr) {
+      console.warn("top10 headline_events insert failed (abc1):", String(dbErr?.message || dbErr));
+    }
+
+    return res.json({
+      ok: Boolean(top10?.ok),
+      source: "abc1",
+      observedAt: observedAtIso,
+      runId: top10?.runId || null,
+      inserted,
+      expected: 10,
+      found: Array.isArray(top10?.items) ? top10.items.length : 0,
+      error: top10?.error || null,
+    });
+  } catch (err) {
+    return res.status(500).json({ ok: false, error: String(err?.message || err) });
+  }
+}
+
+app.post("/api/top10/refresh", handleTop10Refresh);
+app.post("/api/refresh_top10", handleTop10Refresh);
+
 app.get("/api/diff", (req, res) => {
   const cache = ensureCacheShape(readCache());
   res.json({ ok: true, cache });
@@ -1627,6 +1830,34 @@ async function main() {
 }
 
 await main();
+
+/*
+Sample SQL: Which stories were #1 between 2pm and 4pm?
+select observed_at, source_id, title, url
+from public.headline_events
+where source_id = 'abc1'
+  and slot_key = 'top10:1'
+  and observed_at >= '2026-02-18 14:00:00-08'
+  and observed_at <  '2026-02-18 16:00:00-08'
+order by observed_at asc;
+
+Sample SQL: Hero slot in a time window
+select observed_at, source_id, title, url, ok, error
+from public.headline_events
+where slot_key = 'hero:1'
+  and observed_at >= now() - interval '6 hours'
+order by observed_at desc;
+
+Sample SQL: Source reliability in last 24h
+select source_id,
+       count(*) as attempts,
+       count(*) filter (where ok) as ok_count,
+       count(*) filter (where not ok) as fail_count
+from public.hero_runs
+where observed_at >= now() - interval '24 hours'
+group by source_id
+order by source_id;
+*/
 
 export {
   scrapeABCHero,
