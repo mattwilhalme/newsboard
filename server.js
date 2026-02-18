@@ -117,6 +117,68 @@ function sha1(s) {
   return crypto.createHash("sha1").update(String(s)).digest("hex");
 }
 
+function hashString(str) {
+  return crypto.createHash("sha1").update(String(str || "")).digest("hex");
+}
+
+function canonicalizeUrl(input) {
+  if (!input) return null;
+  try {
+    const u = new URL(String(input));
+    u.hash = "";
+    u.pathname = u.pathname.replace(/\/{2,}/g, "/");
+    if (u.pathname.length > 1 && u.pathname.endsWith("/")) u.pathname = u.pathname.slice(0, -1);
+
+    const drop = new Set([
+      "gclid",
+      "fbclid",
+      "dclid",
+      "cmpid",
+      "icid",
+      "ito",
+      "mc_cid",
+      "mc_eid",
+      "ocid",
+      "_ga",
+      "_gl",
+      "spm",
+      "wt.mc_id",
+    ]);
+    for (const key of [...u.searchParams.keys()]) {
+      const lk = String(key || "").toLowerCase();
+      if (lk.startsWith("utm_") || drop.has(lk)) u.searchParams.delete(key);
+    }
+    u.searchParams.sort();
+    return u.toString();
+  } catch {
+    return null;
+  }
+}
+
+function inferContentType({ url, title }) {
+  const u = String(url || "").toLowerCase();
+  const t = String(title || "").toLowerCase();
+  if (u.includes("/video") || u.includes("video.")) return "video";
+  if (u.includes("/live") || /\blive\b/.test(t)) return "live";
+  if (u.includes("/opinion") || u.includes("/editorial")) return "opinion";
+  if (u.includes("/analysis")) return "analysis";
+  if (u.includes("/photo") || u.includes("/gallery")) return "gallery";
+  return "news";
+}
+
+function detectBlocked({ httpStatus, finalUrl, pageTitle, errorText }) {
+  const status = Number(httpStatus);
+  if (status === 403) return { blocked: true, blocked_reason: "http_403" };
+  if (status === 429) return { blocked: true, blocked_reason: "http_429" };
+
+  const hay = `${finalUrl || ""} ${pageTitle || ""} ${errorText || ""}`.toLowerCase();
+  if (/captcha|are you a robot|verify you are human/.test(hay)) return { blocked: true, blocked_reason: "captcha" };
+  if (/consent|gdpr|privacy/.test(hay)) return { blocked: true, blocked_reason: "consent" };
+  if (/paywall|subscribe to read/.test(hay)) return { blocked: true, blocked_reason: "paywall" };
+  if (/interstitial|access denied|forbidden|blocked/.test(hay)) return { blocked: true, blocked_reason: "interstitial" };
+  return { blocked: false, blocked_reason: null };
+}
+
 function top10Fingerprint(url, title) {
   const u = String(url || "").trim();
   if (u) return sha1(u);
@@ -442,9 +504,13 @@ async function insertTop10Snapshot({ sourceId, observedAtIso, runId, items, raw 
       error: null,
       raw: {
         ...(raw && typeof raw === "object" ? raw : {}),
+        run_kind: "top10",
         run_id: runId || null,
         rank: Number(it.rank),
         fingerprint: it?.fingerprint || null,
+        canonical_url: canonicalizeUrl(it?.url || null),
+        module: "top10_list",
+        content_type: inferContentType({ url: it?.url, title: it?.title }),
       },
     }));
 
@@ -461,7 +527,7 @@ async function scrapeABCHero() {
   return await withBrowser(async (page) => {
     const runId = `abc_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://abcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    const navResp = await page.goto("https://abcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
@@ -480,12 +546,23 @@ async function scrapeABCHero() {
       }
 
       // ABC: try prism linkbase blocks first
+      const prismMatches = document.querySelectorAll('[data-testid="prism-linkbase"]').length;
+      const headingMatches = (document.querySelector("main") || document.body).querySelectorAll("h1, h2, h3").length;
       const a = document.querySelector('[data-testid="prism-linkbase"]');
       if (a) {
         const href = a.getAttribute("href") || "";
         const title = clean(a.getAttribute("aria-label") || a.textContent || "");
         const url = href ? abs(href) : null;
-        if (title && url) return { ok: true, title, url };
+        if (title && url) {
+          return {
+            ok: true,
+            title,
+            url,
+            selector_used: "abc_prism_linkbase",
+            candidates: { primary: prismMatches, fallback: headingMatches },
+            hero_html: a.outerHTML || null,
+          };
+        }
       }
 
       // Fallback: first strong h1/h2 with link
@@ -498,7 +575,14 @@ async function scrapeABCHero() {
         const url = href ? abs(href) : null;
         if (!title || title.length < 12) continue;
         if (!url) continue;
-        return { ok: true, title, url };
+        return {
+          ok: true,
+          title,
+          url,
+          selector_used: "heading_fallback",
+          candidates: { primary: prismMatches, fallback: headingMatches },
+          hero_html: (a2?.outerHTML || h?.outerHTML || null),
+        };
       }
 
       return { ok: false, error: "ABC not found" };
@@ -517,18 +601,37 @@ async function scrapeABCHero() {
     const shot = await captureTimelineShot(page, { sourceId: "abc1", runId, tsIso: fetchedAt, item });
     const snapshot = { id: "abc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "ABC not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
+    const pageTitle = await page.title().catch(() => null);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+      shot,
+      meta: {
+        run_kind: "hero",
+        profile: "desktop",
+        final_url: page.url() || null,
+        http_status: navResp?.status?.() ?? null,
+        page_title: pageTitle || null,
+        selector_used: hero?.selector_used || null,
+        candidates: hero?.candidates || null,
+        hero_html: hero?.hero_html || null,
+      },
+    };
   });
 }
 
 async function scrapeABCTop10() {
   return await withBrowser(async (page) => {
     const runId = `abc_top10_${new Date().toISOString().replace(/[:.]/g, "-")}`;
-    await page.goto("https://abcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    const navResp = await page.goto("https://abcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
 
-    const raw = await page.evaluate(() => {
+    const extracted = await page.evaluate(() => {
       function clean(s) {
         return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
       }
@@ -582,6 +685,8 @@ async function scrapeABCTop10() {
       }
 
       const picked = [];
+      let used = "anchor_harvest";
+      let anchorAdded = 0;
 
       for (const script of Array.from(document.querySelectorAll('script[type="application/ld+json"]')).slice(0, 40)) {
         const text = script.textContent || "";
@@ -592,7 +697,15 @@ async function scrapeABCTop10() {
         } catch {}
       }
 
-      if (picked.length >= 10) return picked.slice(0, 40);
+      const jsonldCount = picked.length;
+      if (picked.length >= 10) {
+        used = "jsonld";
+        return {
+          rows: picked.slice(0, 40),
+          selector_used: used,
+          candidates: { primary: jsonldCount, fallback: 0 },
+        };
+      }
 
       const root = document.querySelector("main") || document.body;
       const links = Array.from(root.querySelectorAll("a[href]")).slice(0, 900);
@@ -604,14 +717,19 @@ async function scrapeABCTop10() {
         if (!storyLike(href, title)) continue;
         if (!href || !title || title.length < 16) continue;
         picked.push({ title, url: href });
+        anchorAdded += 1;
       }
 
-      return picked;
+      return {
+        rows: picked,
+        selector_used: used,
+        candidates: { primary: jsonldCount, fallback: anchorAdded },
+      };
     });
 
     const candidates = [];
     const seen = new Set();
-    for (const row of Array.isArray(raw) ? raw : []) {
+    for (const row of Array.isArray(extracted?.rows) ? extracted.rows : []) {
       const title = stripHeadlineNoise(cleanText(row?.title || ""));
       const url = normalizeUrl(row?.url || "");
       if (!title || !url || seen.has(url)) continue;
@@ -660,6 +778,7 @@ async function scrapeABCTop10() {
 
     const observedAt = nowISO();
     const ok = items.length >= 10;
+    const pageTitle = await page.title().catch(() => null);
     return {
       ok,
       sourceId: "abc1",
@@ -668,6 +787,15 @@ async function scrapeABCTop10() {
       runId,
       error: ok ? null : `Expected 10 stories, found ${items.length}`,
       items,
+      meta: {
+        run_kind: "top10",
+        profile: "desktop",
+        final_url: page.url() || null,
+        http_status: navResp?.status?.() ?? null,
+        page_title: pageTitle || null,
+        selector_used: extracted?.selector_used || null,
+        candidates: extracted?.candidates || null,
+      },
     };
   });
 }
@@ -1545,12 +1673,29 @@ async function refreshSources({ id = "" } = {}) {
     }
     const durationMs = Math.max(0, Date.now() - t0);
     const observedAtIso = res?.updatedAt || nowISO();
+    const finalUrl = res?.meta?.final_url || res?.item?.url || null;
+    const httpStatus = Number.isFinite(Number(res?.meta?.http_status)) ? Number(res.meta.http_status) : null;
+    const blockedInfo = detectBlocked({
+      httpStatus,
+      finalUrl,
+      pageTitle: res?.meta?.page_title || null,
+      errorText: res?.error || null,
+    });
+    const heroHash = res?.meta?.hero_html ? hashString(res.meta.hero_html) : null;
 
     const heroRaw = {
       source_id: sid,
       run_id: res?.runId || null,
       duration_ms: durationMs,
-      final_url: res?.item?.url || null,
+      final_url: finalUrl,
+      http_status: httpStatus,
+      blocked: Boolean(blockedInfo.blocked),
+      blocked_reason: blockedInfo.blocked_reason || null,
+      profile: res?.meta?.profile || "desktop",
+      selector_used: res?.meta?.selector_used || null,
+      candidates: res?.meta?.candidates || null,
+      hero_hash: heroHash,
+      run_kind: "hero",
       has_item: Boolean(res?.item),
       has_screenshot: Boolean(res?.shot?.object_path),
       scraper_error: res?.error || null,
@@ -1583,10 +1728,22 @@ async function refreshSources({ id = "" } = {}) {
           ok: true,
           error: null,
           raw: {
+            run_kind: "hero",
             run_id: res?.runId || null,
-            fingerprint: res?.item?.fingerprint || null,
+            rank: 1,
+            fingerprint: res?.item?.fingerprint || hashString(`${canonicalizeUrl(res?.item?.url) || ""}|${cleanText(res?.item?.title || "")}`),
+            canonical_url: canonicalizeUrl(res?.item?.url || null),
+            module: "homepage_hero",
+            content_type: inferContentType({ url: res?.item?.url, title: res?.item?.title }),
             duration_ms: durationMs,
-            final_url: res?.item?.url || null,
+            final_url: finalUrl,
+            http_status: httpStatus,
+            blocked: Boolean(blockedInfo.blocked),
+            blocked_reason: blockedInfo.blocked_reason || null,
+            profile: res?.meta?.profile || "desktop",
+            selector_used: res?.meta?.selector_used || null,
+            candidates: res?.meta?.candidates || null,
+            hero_hash: heroHash,
           },
         });
       } catch (err) {
@@ -1762,6 +1919,14 @@ async function handleTop10Refresh(req, res) {
     const top10 = await scrapeABCTop10();
     const observedAtIso = top10?.observedAt || nowISO();
     const durationMs = Math.max(0, Date.now() - t0);
+    const finalUrl = top10?.meta?.final_url || null;
+    const httpStatus = Number.isFinite(Number(top10?.meta?.http_status)) ? Number(top10.meta.http_status) : null;
+    const blockedInfo = detectBlocked({
+      httpStatus,
+      finalUrl,
+      pageTitle: top10?.meta?.page_title || null,
+      errorText: top10?.error || null,
+    });
 
     let inserted = 0;
     try {
@@ -1773,7 +1938,16 @@ async function handleTop10Refresh(req, res) {
         raw: {
           source_id: "abc1",
           run_id: top10?.runId || null,
+          run_kind: "top10",
           duration_ms: durationMs,
+          final_url: finalUrl,
+          http_status: httpStatus,
+          blocked: Boolean(blockedInfo.blocked),
+          blocked_reason: blockedInfo.blocked_reason || null,
+          profile: top10?.meta?.profile || "desktop",
+          selector_used: top10?.meta?.selector_used || null,
+          candidates: top10?.meta?.candidates || null,
+          hero_hash: null,
           expected_count: 10,
           observed_count: Array.isArray(top10?.items) ? top10.items.length : 0,
           scrape_ok: Boolean(top10?.ok),
@@ -1857,6 +2031,24 @@ from public.hero_runs
 where observed_at >= now() - interval '24 hours'
 group by source_id
 order by source_id;
+
+Sample SQL: Blocked rate per source per day
+select date_trunc('day', observed_at) as day,
+       source_id,
+       avg(case when coalesce((raw->>'blocked')::boolean, false) then 1 else 0 end) as blocked_rate
+from public.hero_runs
+where observed_at >= now() - interval '7 days'
+group by 1, 2
+order by day desc, source_id;
+
+Sample SQL: Average duration_ms by source in last 24 hours
+select source_id,
+       avg((raw->>'duration_ms')::numeric) as avg_duration_ms
+from public.hero_runs
+where observed_at >= now() - interval '24 hours'
+  and raw ? 'duration_ms'
+group by source_id
+order by avg_duration_ms desc;
 */
 
 export {
