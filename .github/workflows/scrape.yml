@@ -92,6 +92,10 @@ jobs:
           test -f docs/data/timeline.json || (echo "Missing docs/data/timeline.json" && exit 1)
           test -f docs/data/unified.json || (echo "Missing docs/data/unified.json" && exit 1)
           test -f docs/data/current.json || (echo "Missing docs/data/current.json" && exit 1)
+          test -f docs/data/top10_abc_latest.json || (echo "Missing docs/data/top10_abc_latest.json" && exit 1)
+          test -f docs/data/top10_abc_events_24h.json || (echo "Missing docs/data/top10_abc_events_24h.json" && exit 1)
+          test -f docs/data/top10_abc_events_history.json || (echo "Missing docs/data/top10_abc_events_history.json" && exit 1)
+          test -f docs/data/top10_abc_history.json || (echo "Missing docs/data/top10_abc_history.json" && exit 1)
           ls -la docs/
           ls -la docs/data || true
 
@@ -103,6 +107,7 @@ jobs:
           git add -f docs/cache.json
           git add -f docs/supabase.json
           git add -f docs/data/history.json docs/data/timeline.json docs/data/unified.json docs/data/current.json
+          git add -f docs/data/top10_abc_latest.json docs/data/top10_abc_events_24h.json docs/data/top10_abc_events_history.json docs/data/top10_abc_history.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit."

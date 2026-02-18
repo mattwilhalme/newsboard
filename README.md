@@ -51,6 +51,26 @@ The server will start on `http://localhost:3001`.
 - `GET /api/diff?id=abc` - Diff between last two snapshots
 - `GET /api/history?id=abc&limit=20` - Historical timeline with diffs
 
+## Deep Dive (Top 10 + Change Log)
+
+- Scraper now captures an ABC News Top 10 snapshot on each run (`rank`, `title`, canonical `url`, `fingerprint`).
+- Consecutive snapshots are diffed into `ENTERED_TOP10`, `EXITED_TOP10`, `MOVED`, and `TITLE_UPDATED` events.
+- Data is persisted to Supabase tables (`top10_runs`, `top10_items`, `top10_events`) when configured.
+- GitHub Pages JSON outputs are also written for the UI:
+  - `docs/data/top10_abc_latest.json`
+  - `docs/data/top10_abc_events_24h.json`
+  - `docs/data/top10_abc_events_history.json`
+  - `docs/data/top10_abc_history.json`
+
+Local verification:
+1. Run `node scripts/run-scrape.js`.
+2. Open `docs/index.html` (or run `npm start`) and switch to the `Deep Dive` tab.
+3. Confirm `Current Top 10` renders and `Change Log` updates when running another scrape.
+
+GitHub Actions verification:
+1. Run the `Scrape + Publish (GitHub Pages)` workflow.
+2. Confirm the new Top 10 JSON files are present under `docs/data/` in the commit.
+
 ## Glossary
 
 - **snapshot** - One scrape run (JSON + HTML + PNG)

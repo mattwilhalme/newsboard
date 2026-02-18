@@ -63,9 +63,34 @@ function cleanText(s) {
 function normalizeUrl(u) {
   try {
     const url = new URL(u);
-    for (const key of [...url.searchParams.keys()]) {
-      if (key.toLowerCase().startsWith("utm_")) url.searchParams.delete(key);
+    const host = url.hostname.toLowerCase();
+    if (host.startsWith("www.")) url.hostname = host.slice(4);
+    url.hash = "";
+
+    url.pathname = url.pathname.replace(/\/{2,}/g, "/");
+    if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
+      url.pathname = url.pathname.slice(0, -1);
     }
+
+    const dropParams = new Set([
+      "fbclid",
+      "gclid",
+      "dclid",
+      "igshid",
+      "mc_cid",
+      "mc_eid",
+      "ocid",
+      "_ga",
+      "_gl",
+      "spm",
+    ]);
+
+    for (const key of [...url.searchParams.keys()]) {
+      const lk = key.toLowerCase();
+      if (lk.startsWith("utm_") || dropParams.has(lk)) url.searchParams.delete(key);
+    }
+
+    url.searchParams.sort();
     return url.toString();
   } catch {
     return u;
@@ -74,6 +99,13 @@ function normalizeUrl(u) {
 
 function sha1(s) {
   return crypto.createHash("sha1").update(String(s)).digest("hex");
+}
+
+function top10Fingerprint(url, title) {
+  const u = String(url || "").trim();
+  if (u) return sha1(u);
+  const t = cleanText(title || "").toLowerCase();
+  return sha1(t || "unknown");
 }
 
 function readCache() {
@@ -375,6 +407,121 @@ async function scrapeABCHero() {
     const archive = await archiveRun(page, runId, snapshot);
 
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+  });
+}
+
+async function scrapeABCTop10() {
+  return await withBrowser(async (page) => {
+    const runId = `abc_top10_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    await page.goto("https://abcnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(1800);
+
+    const raw = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+      }
+      function abs(href) {
+        try {
+          return new URL(href, "https://abcnews.com").toString();
+        } catch {
+          return null;
+        }
+      }
+      function storyLike(link, title) {
+        const u = String(link || "").toLowerCase();
+        const t = String(title || "").toLowerCase();
+        if (!u || u.startsWith("javascript:") || u.startsWith("mailto:")) return false;
+        if (u.includes("/video") || u.includes("/videos") || u.includes("/live/video")) return false;
+        if (u.includes("/search") || u.includes("/account") || u.includes("/newsletters")) return false;
+        if (u.includes("/shop") || u.includes("/about") || u.includes("/contact")) return false;
+        if (t.includes("sign in") || t.includes("subscribe") || t.includes("watch live")) return false;
+        return true;
+      }
+      function collectFromJsonLdNode(node, out) {
+        if (!node || typeof node !== "object") return;
+        if (Array.isArray(node)) {
+          for (const item of node) collectFromJsonLdNode(item, out);
+          return;
+        }
+        const t = Array.isArray(node["@type"]) ? node["@type"] : [node["@type"]];
+        const typeSet = new Set(t.map((x) => String(x || "").toLowerCase()));
+        const isStory = typeSet.has("newsarticle") || typeSet.has("article") || typeSet.has("reportage");
+        const isList = typeSet.has("itemlist");
+
+        if (isStory) {
+          const title = clean(node.headline || node.name || "");
+          const url = abs(node.url || node.mainEntityOfPage?.["@id"] || node.mainEntityOfPage || "");
+          if (title && url) out.push({ title, url });
+        }
+
+        if (isList && Array.isArray(node.itemListElement)) {
+          for (const listItem of node.itemListElement) {
+            const it = listItem?.item || listItem;
+            if (!it) continue;
+            const title = clean(it.headline || it.name || listItem?.name || "");
+            const url = abs(it.url || it["@id"] || listItem?.url || "");
+            if (title && url) out.push({ title, url });
+          }
+        }
+
+        for (const v of Object.values(node)) collectFromJsonLdNode(v, out);
+      }
+
+      const picked = [];
+
+      for (const script of Array.from(document.querySelectorAll('script[type="application/ld+json"]')).slice(0, 40)) {
+        const text = script.textContent || "";
+        if (!text.trim()) continue;
+        try {
+          const parsed = JSON.parse(text);
+          collectFromJsonLdNode(parsed, picked);
+        } catch {}
+      }
+
+      if (picked.length >= 10) return picked.slice(0, 40);
+
+      const root = document.querySelector("main") || document.body;
+      const links = Array.from(root.querySelectorAll("a[href]")).slice(0, 900);
+      for (const a of links) {
+        if (picked.length >= 80) break;
+        if (a.closest("header,nav,footer,[role='navigation']")) continue;
+        const href = abs(a.getAttribute("href") || "");
+        const title = clean(a.getAttribute("aria-label") || a.textContent || "");
+        if (!storyLike(href, title)) continue;
+        if (!href || !title || title.length < 16) continue;
+        picked.push({ title, url: href });
+      }
+
+      return picked;
+    });
+
+    const items = [];
+    const seen = new Set();
+    for (const row of Array.isArray(raw) ? raw : []) {
+      const title = cleanText(row?.title || "");
+      const url = normalizeUrl(row?.url || "");
+      if (!title || !url || seen.has(url)) continue;
+      seen.add(url);
+      items.push({
+        rank: items.length + 1,
+        title,
+        url,
+        fingerprint: top10Fingerprint(url, title),
+      });
+      if (items.length >= 10) break;
+    }
+
+    const observedAt = nowISO();
+    const ok = items.length >= 10;
+    return {
+      ok,
+      sourceId: "abc1",
+      observedAt,
+      updatedAt: observedAt,
+      runId,
+      error: ok ? null : `Expected 10 stories, found ${items.length}`,
+      items,
+    };
   });
 }
 
@@ -1424,6 +1571,7 @@ await main();
 
 export {
   scrapeABCHero,
+  scrapeABCTop10,
   scrapeCBSHero,
   scrapeUSATHero,
   scrapeNBCHero,
