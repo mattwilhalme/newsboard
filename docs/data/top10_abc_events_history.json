@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-18T18:05:18.784Z",
+  "generatedAt": "2026-02-18T19:11:59.426Z",
   "source_id": "abc1",
   "events": [
     {
@@ -1022,6 +1022,26 @@
       "to_rank": null,
       "from_title": "Unruly passenger prompts plane's return to airport",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T19:12:10.547Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Desperate search continues for 9 missing skiers following California avalanche",
+      "to_title": "Desperate search continues for 9 missing skiers following California avalanche"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-18T19:12:10.547Z",
+      "event_type": "MOVED",
+      "fingerprint": "c789be36f96337e1a59380bb828f4f574acd23dd",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "House Oversight Committee set to depose former Epstein associate Leslie Wexner",
+      "to_title": "House Oversight Committee set to depose former Epstein associate Leslie Wexner"
     }
   ],
   "error": "No Top 10 events yet"
