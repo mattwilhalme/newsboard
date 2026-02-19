@@ -430,11 +430,6 @@
     }
     .dataSortBtn:hover{ color:var(--blue2); }
     .dataSortBtn .sortArrow{ color:var(--muted); margin-left:4px; }
-    .btn.isOn{
-      border-color: rgba(26,115,232,.55);
-      color: var(--blue2);
-      background: #f5f9ff;
-    }
     .clusterControls{
       display:flex;
       flex-direction:column;
@@ -443,7 +438,7 @@
       padding:10px;
       border:1px solid var(--line);
       border-radius:10px;
-      background:var(--surface);
+      background:var(--card);
     }
     .clusterRow{
       display:flex;
@@ -487,14 +482,14 @@
     }
     .chipAction:hover{ color:var(--blue2); }
     #cluster-groups{
-      display:none;
+      display:flex;
       flex-direction:column;
       gap:14px;
     }
     .clusterGroup{
       border:1px solid var(--line);
       border-radius:10px;
-      background:var(--surface);
+      background:var(--card);
       padding:10px;
       display:flex;
       flex-direction:column;
@@ -505,9 +500,9 @@
       align-items:baseline;
       gap:8px;
     }
-    .clusterHeader h3{
+    .clusterHeader h1{
       margin:0;
-      font-size:16px;
+      font-size:20px;
       font-family:var(--font-serif);
     }
 
@@ -828,7 +823,6 @@
         <button id="btn-reload" class="btn" type="button">Refresh</button>
         <button id="btn-history" class="btn" type="button">History</button>
         <button id="btn-data" class="btn" type="button">Data</button>
-        <button id="btn-clusters" class="btn" type="button" aria-pressed="false">Clusters</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -837,10 +831,15 @@
   <main>
     <div class="viewTabs" role="tablist" aria-label="Views">
       <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
+      <button id="tab-storyclusters" class="tabBtn" type="button" role="tab" aria-selected="false">Story Clusters</button>
       <button id="tab-deepdive" class="tabBtn" type="button" role="tab" aria-selected="false">Timeline</button>
     </div>
 
     <section id="view-overview">
+      <div class="grid" id="cards-grid"></div>
+    </section>
+
+    <section id="view-storyclusters" style="display:none">
       <div class="clusterControls">
         <div class="clusterRow">
           <div class="tiny">Active clusters</div>
@@ -851,7 +850,6 @@
           <div id="cluster-suggestions" class="clusterChipRow"></div>
         </div>
       </div>
-      <div class="grid" id="cards-grid"></div>
       <div id="cluster-groups"></div>
     </section>
 
@@ -936,6 +934,18 @@
     </div>
   </aside>
 
+  <aside class="drawer" id="drawer-source-data" aria-hidden="true">
+    <div class="drawerHead">
+      <div>
+        <div class="drawerTitle" id="source-data-title">Data</div>
+      </div>
+      <button id="btn-source-data-close" class="btn" type="button">Close</button>
+    </div>
+    <div class="drawerBody">
+      <div id="source-data"></div>
+    </div>
+  </aside>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -986,14 +996,15 @@
       selectedObservedAt: null,
     };
     const VIEW_STORAGE_KEY = "newsboard_view";
-    const CLUSTER_MODE_KEY = "nb_cluster_mode";
     const CLUSTER_PINNED_KEY = "nb_pinned_clusters";
     const CLUSTER_ACTIVE_KEY = "nb_active_clusters";
+    const CLUSTER_DISMISSED_KEY = "nb_cluster_dismissed";
     let activeView = "overview";
     let selectedWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     let latestDrawerPayload = { normalizedHistory: null, sources: null, indicators: null };
     let latestOverviewPayload = { sources: {}, indicators: {}, timelineBySource: {} };
     let dataSortState = { key: "publisher", dir: "asc" };
+    let selectedSourceDataId = "";
 
     const DEFAULT_CLUSTERS = [
       {
@@ -1095,6 +1106,10 @@
       if (!normalizedHistory || !sources || !indicators) return;
       renderHistory(normalizedHistory, sources, indicators, selectedWindowHours);
       renderData(normalizedHistory, indicators, sources, selectedWindowHours);
+      const sourceDrawerOpen = $("drawer-source-data")?.classList.contains("open");
+      if (sourceDrawerOpen && selectedSourceDataId) {
+        renderSourceDataPanel(selectedSourceDataId);
+      }
     }
 
     function setSelectedWindowHours(windowSpec){
@@ -1401,7 +1416,7 @@
     }
 
     function closeAllDrawers() {
-      const ids = ["drawer-history", "drawer-data"];
+      const ids = ["drawer-history", "drawer-data", "drawer-source-data"];
       for (const id of ids) {
         const d = $(id);
         if (!d) continue;
@@ -1423,6 +1438,22 @@
       overlay.classList.toggle("show", Boolean(open));
       drawer.setAttribute("aria-hidden", open ? "false" : "true");
       if (!open && btn) btn.focus();
+    }
+
+    function setSourceDataOpen(open, sourceId = selectedSourceDataId){
+      const drawer = $("drawer-source-data");
+      const overlay = $("drawer-overlay");
+      if (!drawer || !overlay) return;
+      if (open) {
+        closeAllDrawers();
+      }
+      selectedSourceDataId = sourceId || selectedSourceDataId || "";
+      if (open && selectedSourceDataId) {
+        renderSourceDataPanel(selectedSourceDataId);
+      }
+      drawer.classList.toggle("open", Boolean(open));
+      overlay.classList.toggle("show", Boolean(open));
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
     }
 
     function setDataOpen(open){
@@ -2152,6 +2183,56 @@
       host.appendChild(table);
     }
 
+    function renderSourceDataPanel(sourceId){
+      const host = $("source-data");
+      const title = $("source-data-title");
+      if (!host || !title) return;
+      host.innerHTML = "";
+
+      const normalizedHistory = latestDrawerPayload?.normalizedHistory || { sources: {} };
+      const indicatorsById = latestDrawerPayload?.indicators || {};
+      const currentSources = latestDrawerPayload?.sources || {};
+      const sourceRow = currentSources?.[sourceId] || {};
+      const sourceName = sourceLabel(sourceId, sourceRow);
+      title.textContent = `${sourceName} Data`;
+
+      const entries = Array.isArray(normalizedHistory?.sources?.[sourceId]?.entries)
+        ? normalizedHistory.sources[sourceId].entries
+        : [];
+      const metrics = computeSourceDataMetrics(entries, selectedWindowHours);
+      const currentSinceRaw = indicatorsById?.[sourceId]?.currentSinceAt || null;
+      const currentSinceMs = Number.isFinite(Date.parse(String(currentSinceRaw || "")))
+        ? Date.parse(String(currentSinceRaw || ""))
+        : 0;
+      const winStart = windowStartMs(selectedWindowHours);
+
+      const table = document.createElement("table");
+      table.className = "dataTable";
+      const tbody = document.createElement("tbody");
+
+      function row(label, value){
+        const tr = document.createElement("tr");
+        const tdL = document.createElement("td");
+        tdL.textContent = label;
+        const tdV = document.createElement("td");
+        tdV.textContent = value;
+        tr.appendChild(tdL);
+        tr.appendChild(tdV);
+        tbody.appendChild(tr);
+      }
+
+      row("URL changes", fmtMetricValue(metrics.urlChangesDisplay, metrics.perDay));
+      row("Longest run", fmtDurationMs(metrics.longestRunMs));
+      row("Unique stories", fmtMetricValue(metrics.uniqueStoriesDisplay, metrics.perDay));
+      row("Headline-only changes", fmtMetricValue(metrics.headlineOnlyChangesDisplay, metrics.perDay));
+      if (currentSinceMs > 0) {
+        row("Current run", fmtDurationMs(Math.max(0, Date.now() - Math.max(winStart, currentSinceMs))));
+      }
+
+      table.appendChild(tbody);
+      host.appendChild(table);
+    }
+
     // ---- Indicator state: 2h active windows for URL/headline changes ----
     function loadState(){
       try{
@@ -2466,11 +2547,19 @@
       btnCopyLink.setAttribute("data-id", id);
       left.appendChild(btnCopyLink);
 
+      const btnCardData = document.createElement("button");
+      btnCardData.className = "linkbtn";
+      btnCardData.type = "button";
+      btnCardData.textContent = "Data";
+      btnCardData.setAttribute("data-action", "open-source-data");
+      btnCardData.setAttribute("data-id", id);
+      left.appendChild(btnCardData);
+
       const right = document.createElement("div");
       right.className = "rightMeta";
 
       const time = document.createElement("div");
-      time.className = "srcTime";
+      time.className = "tiny";
       const updatedAt = src?.updatedAt || null;
       const firstSeenAt = src?.firstSeenAt || src?.since || null;
       const hasHeadlineUpdate = indicator?.changeType === "headline";
@@ -2487,7 +2576,7 @@
       const since = document.createElement("div");
       since.className = "tiny";
       if (reenteredAt) {
-        since.textContent = `Re-entered No. 1 ${ago(reenteredAt)}`;
+        since.textContent = `Re-entered ${ago(reenteredAt)}`;
       } else {
         since.textContent = "";
       }
@@ -2916,15 +3005,6 @@
       try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
     }
 
-    function loadClusterMode(){
-      try { return localStorage.getItem(CLUSTER_MODE_KEY) === "1"; }
-      catch { return false; }
-    }
-
-    function saveClusterMode(on){
-      try { localStorage.setItem(CLUSTER_MODE_KEY, on ? "1" : "0"); } catch {}
-    }
-
     function loadPinnedClusters(){
       const stored = loadJSONStorage(CLUSTER_PINNED_KEY, null);
       if (Array.isArray(stored)) {
@@ -2951,9 +3031,19 @@
       saveJSONStorage(CLUSTER_ACTIVE_KEY, keep);
     }
 
-    let clusterMode = loadClusterMode();
+    function loadDismissedSuggestions(){
+      const stored = loadJSONStorage(CLUSTER_DISMISSED_KEY, []);
+      if (!Array.isArray(stored)) return new Set();
+      return new Set(stored.map((x) => normalizeForCluster(x)).filter(Boolean));
+    }
+
+    function saveDismissedSuggestions(setObj){
+      saveJSONStorage(CLUSTER_DISMISSED_KEY, Array.from(setObj || []));
+    }
+
     let pinnedClusters = loadPinnedClusters();
     let activeClusters = loadActiveClusters(pinnedClusters);
+    let dismissedSuggestions = loadDismissedSuggestions();
 
     function clusterSort(a, b){
       const pa = Number(a?.priority || 0);
@@ -3071,6 +3161,7 @@
         const score = (publisherDiversity * 3) + row.freqTotal;
         if (!(publisherDiversity >= 2 || row.freqTotal >= 3)) continue;
         if (phraseCoveredByClusters(row.phrase, clusters)) continue;
+        if (dismissedSuggestions.has(normalizeForCluster(row.phrase))) continue;
         out.push({
           phrase: row.phrase,
           count: row.freqTotal,
@@ -3160,106 +3251,88 @@
     function renderClusterChips(items){
       const activeHost = $("cluster-active");
       const suggHost = $("cluster-suggestions");
-      const btn = $("btn-clusters");
-      if (btn) {
-        btn.classList.toggle("isOn", clusterMode);
-        btn.setAttribute("aria-pressed", clusterMode ? "true" : "false");
-      }
       if (activeHost) activeHost.innerHTML = "";
       if (suggHost) suggHost.innerHTML = "";
 
       const activeSorted = [...activeClusters].sort(clusterSort);
       if (activeHost) {
-        if (!activeSorted.length) {
-          const empty = document.createElement("div");
-          empty.className = "tiny";
-          empty.textContent = "No active clusters.";
-          activeHost.appendChild(empty);
-        } else {
-          for (const cluster of activeSorted) {
-            const chip = document.createElement("div");
-            chip.className = "chip";
-            const lbl = document.createElement("button");
-            lbl.type = "button";
-            lbl.className = "chipLabel";
-            lbl.textContent = cluster.label;
-            lbl.title = (cluster.includeAny || []).join(", ");
+        for (const cluster of activeSorted) {
+          const chip = document.createElement("div");
+          chip.className = "chip";
+          const lbl = document.createElement("button");
+          lbl.type = "button";
+          lbl.className = "chipLabel";
+          lbl.textContent = cluster.label;
+          lbl.title = (cluster.includeAny || []).join(", ");
 
-            const pin = document.createElement("button");
-            pin.type = "button";
-            pin.className = "chipAction";
-            pin.textContent = pinnedClusters.some((x) => x.id === cluster.id) ? "Unpin" : "Pin";
-            pin.addEventListener("click", () => {
-              const isPinned = pinnedClusters.some((x) => x.id === cluster.id);
-              setPinned(cluster, !isPinned);
-              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-            });
+          const pin = document.createElement("button");
+          pin.type = "button";
+          pin.className = "chipAction";
+          pin.textContent = pinnedClusters.some((x) => x.id === cluster.id) ? "•" : "o";
+          pin.title = pinnedClusters.some((x) => x.id === cluster.id) ? "Unpin" : "Pin";
+          pin.addEventListener("click", () => {
+            const isPinned = pinnedClusters.some((x) => x.id === cluster.id);
+            setPinned(cluster, !isPinned);
+            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+          });
 
-            const remove = document.createElement("button");
-            remove.type = "button";
-            remove.className = "chipAction";
-            remove.textContent = "×";
-            remove.setAttribute("aria-label", `Remove ${cluster.label}`);
-            remove.addEventListener("click", () => {
-              removeActiveCluster(cluster.id);
-              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-            });
+          const remove = document.createElement("button");
+          remove.type = "button";
+          remove.className = "chipAction";
+          remove.textContent = "×";
+          remove.setAttribute("aria-label", `Remove ${cluster.label}`);
+          remove.addEventListener("click", () => {
+            removeActiveCluster(cluster.id);
+            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+          });
 
-            chip.appendChild(lbl);
-            chip.appendChild(pin);
-            chip.appendChild(remove);
-            activeHost.appendChild(chip);
-          }
+          chip.appendChild(lbl);
+          chip.appendChild(pin);
+          chip.appendChild(remove);
+          activeHost.appendChild(chip);
         }
       }
 
       const suggestions = buildClusterSuggestions(items, [...activeClusters, ...pinnedClusters]);
       if (suggHost) {
-        if (!suggestions.length) {
-          const empty = document.createElement("div");
-          empty.className = "tiny";
-          empty.textContent = "No additional suggestions right now.";
-          suggHost.appendChild(empty);
-        } else {
-          for (const suggestion of suggestions) {
-            const chip = document.createElement("div");
-            chip.className = "chip";
-            const lbl = document.createElement("button");
-            lbl.type = "button";
-            lbl.className = "chipLabel";
-            lbl.textContent = `${titleCaseShortLabel(suggestion.phrase)} (${suggestion.count})`;
-            lbl.addEventListener("click", () => {
-              const cluster = createClusterFromPhrase(suggestion.phrase);
-              upsertActiveCluster(cluster);
-              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-            });
+        for (const suggestion of suggestions) {
+          const chip = document.createElement("div");
+          chip.className = "chip";
+          const lbl = document.createElement("button");
+          lbl.type = "button";
+          lbl.className = "chipLabel";
+          lbl.textContent = `${titleCaseShortLabel(suggestion.phrase)} (${suggestion.count})`;
+          lbl.addEventListener("click", () => {
+            const cluster = createClusterFromPhrase(suggestion.phrase);
+            upsertActiveCluster(cluster);
+            dismissedSuggestions.delete(normalizeForCluster(suggestion.phrase));
+            saveDismissedSuggestions(dismissedSuggestions);
+            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+          });
 
-            const pin = document.createElement("button");
-            pin.type = "button";
-            pin.className = "chipAction";
-            pin.textContent = "Pin";
-            pin.addEventListener("click", () => {
-              const cluster = createClusterFromPhrase(suggestion.phrase);
-              upsertActiveCluster(cluster);
-              setPinned(cluster, true);
-              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-            });
+          const add = document.createElement("button");
+          add.type = "button";
+          add.className = "chipAction";
+          add.textContent = "×";
+          add.title = "Dismiss suggestion";
+          add.addEventListener("click", () => {
+            dismissedSuggestions.add(normalizeForCluster(suggestion.phrase));
+            saveDismissedSuggestions(dismissedSuggestions);
+            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+          });
 
-            chip.appendChild(lbl);
-            chip.appendChild(pin);
-            suggHost.appendChild(chip);
-          }
+          chip.appendChild(lbl);
+          chip.appendChild(add);
+          suggHost.appendChild(chip);
         }
       }
     }
 
     function renderClusteredOverview(sources, indicatorsById, timelineBySource = {}){
-      const grid = $("cards-grid");
       const groupsHost = $("cluster-groups");
-      if (!grid || !groupsHost) return;
-      grid.style.display = "none";
-      groupsHost.style.display = "flex";
+      if (!groupsHost) return;
       groupsHost.innerHTML = "";
+      if (!sources || !Object.keys(sources).length) return;
 
       const ids = sortedOverviewIds(sources, indicatorsById);
 
@@ -3285,15 +3358,15 @@
         section.className = "clusterGroup";
         const head = document.createElement("div");
         head.className = "clusterHeader";
-        const h3 = document.createElement("h3");
+        const h1 = document.createElement("h1");
         const label = clusterId === "other"
           ? "Other"
           : (activeSorted.find((c) => c.id === clusterId)?.label || "Other");
-        h3.textContent = label;
+        h1.textContent = label;
         const count = document.createElement("span");
         count.className = "tiny";
         count.textContent = `(${idsInGroup.length})`;
-        head.appendChild(h3);
+        head.appendChild(h1);
         head.appendChild(count);
 
         const groupGrid = document.createElement("div");
@@ -3314,20 +3387,14 @@
 
     function renderOverview(sources, indicatorsById, timelineBySource = {}){
       latestOverviewPayload = { sources, indicators: indicatorsById, timelineBySource };
+      renderCards(sources, indicatorsById, timelineBySource);
+    }
+
+    function renderStoryClusters(sources, indicatorsById, timelineBySource = {}){
+      latestOverviewPayload = { sources, indicators: indicatorsById, timelineBySource };
       const items = overviewItemsFromSources(sources);
       renderClusterChips(items);
-      const grid = $("cards-grid");
-      const groupsHost = $("cluster-groups");
-      if (clusterMode) {
-        renderClusteredOverview(sources, indicatorsById, timelineBySource);
-        return;
-      }
-      if (grid) grid.style.display = "";
-      if (groupsHost) {
-        groupsHost.style.display = "none";
-        groupsHost.innerHTML = "";
-      }
-      renderCards(sources, indicatorsById, timelineBySource);
+      renderClusteredOverview(sources, indicatorsById, timelineBySource);
     }
 
     // Copy handlers (URL not displayed)
@@ -3345,6 +3412,11 @@
       if (action === "copy-headline") {
         if (!href) return showToast("Nothing to copy");
         try { await copyText(href); showToast("Copied"); } catch { showToast("Copy failed"); }
+        return;
+      }
+
+      if (action === "open-source-data") {
+        setSourceDataOpen(true, id);
       }
     });
 
@@ -3610,23 +3682,31 @@
     }
 
     function setView(which, persist = true) {
-      const valid = new Set(["overview", "deepdive"]);
+      const valid = new Set(["overview", "storyclusters", "deepdive"]);
       activeView = valid.has(which) ? which : "overview";
 
       const overview = $("view-overview");
+      const storyClusters = $("view-storyclusters");
       const deepDive = $("view-deepdive");
       const tabOverview = $("tab-overview");
+      const tabStoryClusters = $("tab-storyclusters");
       const tabDeepDive = $("tab-deepdive");
 
       const showOverview = activeView === "overview";
+      const showStoryClusters = activeView === "storyclusters";
       const showDeepDive = activeView === "deepdive";
 
       if (overview) overview.style.display = showOverview ? "" : "none";
+      if (storyClusters) storyClusters.style.display = showStoryClusters ? "" : "none";
       if (deepDive) deepDive.style.display = showDeepDive ? "" : "none";
 
       if (tabOverview) {
         tabOverview.classList.toggle("active", showOverview);
         tabOverview.setAttribute("aria-selected", showOverview ? "true" : "false");
+      }
+      if (tabStoryClusters) {
+        tabStoryClusters.classList.toggle("active", showStoryClusters);
+        tabStoryClusters.setAttribute("aria-selected", showStoryClusters ? "true" : "false");
       }
       if (tabDeepDive) {
         tabDeepDive.classList.toggle("active", showDeepDive);
@@ -3635,6 +3715,10 @@
 
       if (persist) {
         try { localStorage.setItem(VIEW_STORAGE_KEY, activeView); } catch {}
+      }
+
+      if (showStoryClusters) {
+        renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
       }
     }
 
@@ -4028,16 +4112,22 @@
 
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
         renderOverview(sources, indicators, timelineBySource);
+        renderStoryClusters(sources, indicators, timelineBySource);
         if (nextState) saveState(nextState);
 
         latestDrawerPayload = { normalizedHistory, sources, indicators };
         renderHistory(normalizedHistory, sources, indicators, selectedWindowHours);
         renderData(normalizedHistory, indicators, sources, selectedWindowHours);
+        if ($("drawer-source-data")?.classList.contains("open") && selectedSourceDataId) {
+          renderSourceDataPanel(selectedSourceDataId);
+        }
         await loadDeepDiveData();
 
       } catch (e) {
         console.error("Refresh error:", e);
         latestDrawerPayload = { normalizedHistory: { generatedAt: null, sources: {} }, sources: {}, indicators: {} };
+        renderOverview({}, {}, {});
+        renderStoryClusters({}, {}, {});
         renderHistory(latestDrawerPayload.normalizedHistory, latestDrawerPayload.sources, latestDrawerPayload.indicators, selectedWindowHours);
         renderData(latestDrawerPayload.normalizedHistory, latestDrawerPayload.indicators, latestDrawerPayload.sources, selectedWindowHours);
         await loadDeepDiveData().catch(() => {});
@@ -4070,6 +4160,7 @@
 
     $("btn-reload")?.addEventListener("click", reload);
     $("tab-overview")?.addEventListener("click", () => setView("overview"));
+    $("tab-storyclusters")?.addEventListener("click", () => setView("storyclusters"));
     $("tab-deepdive")?.addEventListener("click", () => setView("deepdive"));
     $("deep-window")?.addEventListener("change", (e) => {
       deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
@@ -4081,11 +4172,7 @@
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
     $("btn-data")?.addEventListener("click", () => setDataOpen(true));
     $("btn-data-close")?.addEventListener("click", () => setDataOpen(false));
-    $("btn-clusters")?.addEventListener("click", () => {
-      clusterMode = !clusterMode;
-      saveClusterMode(clusterMode);
-      renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-    });
+    $("btn-source-data-close")?.addEventListener("click", () => setSourceDataOpen(false));
     $("history-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
@@ -4108,7 +4195,7 @@
     let initialView = "overview";
     try {
       const savedView = String(localStorage.getItem(VIEW_STORAGE_KEY) || "").toLowerCase();
-      if (savedView === "overview" || savedView === "deepdive") {
+      if (savedView === "overview" || savedView === "storyclusters" || savedView === "deepdive") {
         initialView = savedView;
       }
     } catch {}
