@@ -1,18 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-19T10:56:59.784Z",
+  "generatedAt": "2026-02-19T11:37:35.966Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T11:26:28.571Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "8f071be4ef861199592cb4b2bfa140962107b914",
-      "from_rank": 5,
-      "to_rank": 5,
-      "from_title": "US-Ukraine-Russia peace talks in Geneva expected to resume Wednesday",
-      "to_title": "Day 2 of US-Ukraine-Russia peace talks in Geneva conclude, official says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T13:20:34.076Z",
@@ -961,6 +951,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "More renderings of White House ballroom submitted to fine arts panel ahead of meeting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T11:37:46.710Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6850f675f25a1b91017c95aa36ab5ce573f58614",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T11:37:46.710Z",
+      "event_type": "MOVED",
+      "fingerprint": "ebf59a97bef810db85f01225ce37756372e60dc3",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Passengers evacuated via slides in incident that temporarily suspended flights",
+      "to_title": "Passengers evacuated via slides in incident that temporarily suspended flights"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T11:37:46.710Z",
+      "event_type": "MOVED",
+      "fingerprint": "13da143ce522448ae0e858ed735905cd08f81de8",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Trump company seeks to trademark his name on airports",
+      "to_title": "Trump company seeks to trademark his name on airports"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T11:37:46.710Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T11:37:46.710Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e163a11fa865aa916c47c57d96446a3a8f81d405",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Democrats, White House still far from DHS funding deal amid standoff over ICE",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T11:37:46.710Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "149548dbe3e6ef2c3638d87cb44f4d8385d7d506",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "NYPD officers who helped rescue injured bald eagle on Hudson River speak out",
       "to_title": null
     }
   ]
