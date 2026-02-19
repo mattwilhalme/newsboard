@@ -419,6 +419,97 @@
     }
     .dataTable tr:last-child td{ border-bottom:0; }
     .dataPublisherCell{ min-width:130px; }
+    .dataSortBtn{
+      border:0;
+      background:transparent;
+      color:inherit;
+      font:inherit;
+      font-weight:inherit;
+      padding:0;
+      cursor:pointer;
+    }
+    .dataSortBtn:hover{ color:var(--blue2); }
+    .dataSortBtn .sortArrow{ color:var(--muted); margin-left:4px; }
+    .btn.isOn{
+      border-color: rgba(26,115,232,.55);
+      color: var(--blue2);
+      background: #f5f9ff;
+    }
+    .clusterControls{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:12px;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--surface);
+    }
+    .clusterRow{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .clusterChipRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:999px;
+      padding:5px 9px;
+      font-size:12px;
+      color:var(--chipText);
+    }
+    .chipLabel{
+      border:0;
+      background:transparent;
+      padding:0;
+      margin:0;
+      cursor:pointer;
+      color:inherit;
+      font:inherit;
+    }
+    .chipLabel:hover{ color:var(--blue2); }
+    .chipAction{
+      border:0;
+      background:transparent;
+      color:var(--muted);
+      cursor:pointer;
+      font-size:11px;
+      line-height:1;
+      padding:0 2px;
+    }
+    .chipAction:hover{ color:var(--blue2); }
+    #cluster-groups{
+      display:none;
+      flex-direction:column;
+      gap:14px;
+    }
+    .clusterGroup{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--surface);
+      padding:10px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .clusterHeader{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+    }
+    .clusterHeader h3{
+      margin:0;
+      font-size:16px;
+      font-family:var(--font-serif);
+    }
 
     .deepDive{
       background:var(--surface);
@@ -737,6 +828,7 @@
         <button id="btn-reload" class="btn" type="button">Refresh</button>
         <button id="btn-history" class="btn" type="button">History</button>
         <button id="btn-data" class="btn" type="button">Data</button>
+        <button id="btn-clusters" class="btn" type="button" aria-pressed="false">Clusters</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -749,7 +841,18 @@
     </div>
 
     <section id="view-overview">
+      <div class="clusterControls">
+        <div class="clusterRow">
+          <div class="tiny">Active clusters</div>
+          <div id="cluster-active" class="clusterChipRow"></div>
+        </div>
+        <div class="clusterRow">
+          <div class="tiny">Suggested clusters</div>
+          <div id="cluster-suggestions" class="clusterChipRow"></div>
+        </div>
+      </div>
       <div class="grid" id="cards-grid"></div>
+      <div id="cluster-groups"></div>
     </section>
 
     <section id="view-deepdive" style="display:none">
@@ -883,9 +986,37 @@
       selectedObservedAt: null,
     };
     const VIEW_STORAGE_KEY = "newsboard_view";
+    const CLUSTER_MODE_KEY = "nb_cluster_mode";
+    const CLUSTER_PINNED_KEY = "nb_pinned_clusters";
+    const CLUSTER_ACTIVE_KEY = "nb_active_clusters";
     let activeView = "overview";
     let selectedWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     let latestDrawerPayload = { normalizedHistory: null, sources: null, indicators: null };
+    let latestOverviewPayload = { sources: {}, indicators: {}, timelineBySource: {} };
+    let dataSortState = { key: "publisher", dir: "asc" };
+
+    const DEFAULT_CLUSTERS = [
+      {
+        id: "trump",
+        label: "Trump",
+        priority: 100,
+        includeAny: ["trump", "donald trump", "maga", "mar-a-lago", "jack smith"],
+        includeAll: [],
+        exclude: ["trumpet"],
+        createdAt: new Date().toISOString(),
+        pinned: true,
+      },
+      {
+        id: "olympics",
+        label: "Olympics",
+        priority: 100,
+        includeAny: ["olympics", "olympic", "ioc", "team usa", "paris 2024", "la 2028"],
+        includeAll: [],
+        exclude: ["olympic peninsula", "olympia"],
+        createdAt: new Date().toISOString(),
+        pinned: true,
+      },
+    ];
 
     // UI rules
     const STALE_MS = 2 * 60 * 60 * 1000; // 2 hours
@@ -1800,6 +1931,8 @@
 
     function computeSourceDataMetrics(entries, windowSpec){
       const winStart = windowStartMs(windowSpec);
+      const hours = parseHoursSpec(windowSpec);
+      const daysDivisor = hours === 168 ? 7 : 1;
       const normalized = [...(Array.isArray(entries) ? entries : [])]
         .map((entry) => {
           const bounds = historyEntryBoundsMs(entry);
@@ -1859,7 +1992,32 @@
         headlineOnlyChanges,
         uniqueStories: distinctUrls.size,
         longestRunMs,
+        urlChangesDisplay: urlChanges / daysDivisor,
+        headlineOnlyChangesDisplay: headlineOnlyChanges / daysDivisor,
+        uniqueStoriesDisplay: distinctUrls.size / daysDivisor,
+        perDay: daysDivisor > 1,
       };
+    }
+
+    function fmtMetricValue(v, perDay){
+      const n = Number(v);
+      if (!Number.isFinite(n)) return "—";
+      const rounded = perDay ? Math.round(n * 10) / 10 : Math.round(n);
+      return perDay ? `${rounded.toFixed(1)}/day` : String(rounded);
+    }
+
+    function dataSortArrow(key){
+      if (dataSortState.key !== key) return "↕";
+      return dataSortState.dir === "asc" ? "↑" : "↓";
+    }
+
+    function toggleDataSort(key){
+      if (dataSortState.key === key) {
+        dataSortState = { key, dir: dataSortState.dir === "asc" ? "desc" : "asc" };
+      } else {
+        dataSortState = { key, dir: key === "publisher" ? "asc" : "desc" };
+      }
+      rerenderDrawers();
     }
 
     function renderData(normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = selectedWindowHours){
@@ -1886,29 +2044,79 @@
         return;
       }
 
-      const table = document.createElement("table");
-      table.className = "dataTable";
-
-      const thead = document.createElement("thead");
-      thead.innerHTML = "<tr><th>Publisher</th><th>URL changes</th><th>Longest run</th><th>Unique stories</th><th>Headline-only changes</th></tr>";
-      table.appendChild(thead);
-
-      const tbody = document.createElement("tbody");
       const winStart = windowStartMs(windowSpec);
       const now = Date.now();
+      const rows = [];
 
       for (const sourceId of sourceIds) {
         const sourceRow = currentSources?.[sourceId] || null;
         const entries = Array.isArray(historySources?.[sourceId]?.entries) ? historySources[sourceId].entries : [];
         const metrics = computeSourceDataMetrics(entries, windowSpec);
+        rows.push({
+          sourceId,
+          sourceRow,
+          metrics,
+          currentSinceAt: indicatorsById?.[sourceId]?.currentSinceAt || null,
+          sortPublisher: sourceLabel(sourceId, sourceRow),
+        });
+      }
 
+      rows.sort((a, b) => {
+        const mult = dataSortState.dir === "asc" ? 1 : -1;
+        const key = dataSortState.key;
+        if (key === "publisher") {
+          return mult * String(a.sortPublisher || "").localeCompare(String(b.sortPublisher || ""));
+        }
+        if (key === "urlChanges") {
+          return mult * (a.metrics.urlChangesDisplay - b.metrics.urlChangesDisplay);
+        }
+        if (key === "longestRun") {
+          return mult * (a.metrics.longestRunMs - b.metrics.longestRunMs);
+        }
+        if (key === "uniqueStories") {
+          return mult * (a.metrics.uniqueStoriesDisplay - b.metrics.uniqueStoriesDisplay);
+        }
+        if (key === "headlineOnly") {
+          return mult * (a.metrics.headlineOnlyChangesDisplay - b.metrics.headlineOnlyChangesDisplay);
+        }
+        return 0;
+      });
+
+      const table = document.createElement("table");
+      table.className = "dataTable";
+
+      const thead = document.createElement("thead");
+      const trHead = document.createElement("tr");
+      const cols = [
+        { key: "publisher", label: "Publisher" },
+        { key: "urlChanges", label: "URL changes" },
+        { key: "longestRun", label: "Longest run" },
+        { key: "uniqueStories", label: "Unique stories" },
+        { key: "headlineOnly", label: "Headline-only changes" },
+      ];
+      for (const col of cols) {
+        const th = document.createElement("th");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "dataSortBtn";
+        btn.innerHTML = `${escapeHtml(col.label)} <span class="sortArrow">${escapeHtml(dataSortArrow(col.key))}</span>`;
+        btn.addEventListener("click", () => toggleDataSort(col.key));
+        th.appendChild(btn);
+        trHead.appendChild(th);
+      }
+      thead.appendChild(trHead);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+
+      for (const row of rows) {
         const tr = document.createElement("tr");
 
         const tdPublisher = document.createElement("td");
         tdPublisher.className = "dataPublisherCell";
-        tdPublisher.textContent = sourceLabel(sourceId, sourceRow);
+        tdPublisher.textContent = sourceLabel(row.sourceId, row.sourceRow);
 
-        const currentSinceRaw = indicatorsById?.[sourceId]?.currentSinceAt || null;
+        const currentSinceRaw = row.currentSinceAt;
         const currentSinceMs = Number.isFinite(Date.parse(String(currentSinceRaw || "")))
           ? Date.parse(String(currentSinceRaw || ""))
           : 0;
@@ -1921,16 +2129,16 @@
         }
 
         const tdUrl = document.createElement("td");
-        tdUrl.textContent = String(metrics.urlChanges);
+        tdUrl.textContent = fmtMetricValue(row.metrics.urlChangesDisplay, row.metrics.perDay);
 
         const tdLongest = document.createElement("td");
-        tdLongest.textContent = fmtDurationMs(metrics.longestRunMs);
+        tdLongest.textContent = fmtDurationMs(row.metrics.longestRunMs);
 
         const tdUnique = document.createElement("td");
-        tdUnique.textContent = String(metrics.uniqueStories);
+        tdUnique.textContent = fmtMetricValue(row.metrics.uniqueStoriesDisplay, row.metrics.perDay);
 
         const tdHeadline = document.createElement("td");
-        tdHeadline.textContent = String(metrics.headlineOnlyChanges);
+        tdHeadline.textContent = fmtMetricValue(row.metrics.headlineOnlyChangesDisplay, row.metrics.perDay);
 
         tr.appendChild(tdPublisher);
         tr.appendChild(tdUrl);
@@ -2606,13 +2814,8 @@
       return card;
     }
 
-    function renderCards(sources, indicatorsById, timelineBySource = {}){
-      const grid = $("cards-grid");
-      if (!grid) return;
-      grid.innerHTML = "";
-
+    function sortedOverviewIds(sources, indicatorsById){
       const ids = pickCardSourceIds(sources);
-
       function cardPriority(id){
         const src = sources?.[id] || {};
         const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
@@ -2634,6 +2837,14 @@
         if (tb !== ta) return tb - ta;
         return String(a).localeCompare(String(b));
       });
+      return ids;
+    }
+
+    function renderCards(sources, indicatorsById, timelineBySource = {}){
+      const grid = $("cards-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
+      const ids = sortedOverviewIds(sources, indicatorsById);
 
       for (const id of ids){
         const src = sources?.[id] || {};
@@ -2650,6 +2861,473 @@
           }
         });
       });
+    }
+
+    function normalizeForCluster(value){
+      return String(value || "")
+        .toLowerCase()
+        .replace(/https?:\/\//g, " ")
+        .replace(/[^a-z0-9\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function slugify(value){
+      const s = normalizeForCluster(value).replace(/\s+/g, "-");
+      return s || `cluster-${Math.random().toString(36).slice(2, 8)}`;
+    }
+
+    function titleCaseShortLabel(phrase){
+      const tokens = normalizeForCluster(phrase).split(" ").filter(Boolean);
+      const sliced = tokens.slice(0, 2);
+      if (!sliced.length) return "Topic";
+      return sliced.map((tok) => tok.charAt(0).toUpperCase() + tok.slice(1)).join(" ");
+    }
+
+    function clusterSanitize(obj, fallbackLabel = "Topic"){
+      const label = String(obj?.label || fallbackLabel).trim() || fallbackLabel;
+      const includeAny = Array.isArray(obj?.includeAny) ? obj.includeAny.map((x) => String(x || "").trim()).filter(Boolean) : [];
+      const includeAll = Array.isArray(obj?.includeAll) ? obj.includeAll.map((x) => String(x || "").trim()).filter(Boolean) : [];
+      const exclude = Array.isArray(obj?.exclude) ? obj.exclude.map((x) => String(x || "").trim()).filter(Boolean) : [];
+      return {
+        id: String(obj?.id || slugify(label)),
+        label,
+        priority: Number.isFinite(Number(obj?.priority)) ? Number(obj.priority) : 50,
+        includeAny,
+        includeAll,
+        exclude,
+        createdAt: obj?.createdAt || new Date().toISOString(),
+        pinned: Boolean(obj?.pinned),
+      };
+    }
+
+    function loadJSONStorage(key, fallback){
+      try{
+        const raw = localStorage.getItem(key);
+        if (!raw) return fallback;
+        const parsed = JSON.parse(raw);
+        return parsed ?? fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    function saveJSONStorage(key, value){
+      try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
+    }
+
+    function loadClusterMode(){
+      try { return localStorage.getItem(CLUSTER_MODE_KEY) === "1"; }
+      catch { return false; }
+    }
+
+    function saveClusterMode(on){
+      try { localStorage.setItem(CLUSTER_MODE_KEY, on ? "1" : "0"); } catch {}
+    }
+
+    function loadPinnedClusters(){
+      const stored = loadJSONStorage(CLUSTER_PINNED_KEY, null);
+      if (Array.isArray(stored)) {
+        return stored.map((row) => clusterSanitize({ ...row, pinned: true }, row?.label || "Topic"));
+      }
+      return DEFAULT_CLUSTERS.map((c) => clusterSanitize({ ...c, pinned: true }, c.label));
+    }
+
+    function savePinnedClusters(clusters){
+      const keep = (clusters || []).map((c) => clusterSanitize({ ...c, pinned: true }, c?.label || "Topic"));
+      saveJSONStorage(CLUSTER_PINNED_KEY, keep);
+    }
+
+    function loadActiveClusters(pinned){
+      const stored = loadJSONStorage(CLUSTER_ACTIVE_KEY, null);
+      if (Array.isArray(stored)) {
+        return stored.map((row) => clusterSanitize(row, row?.label || "Topic"));
+      }
+      return (pinned || []).map((c) => clusterSanitize(c, c.label));
+    }
+
+    function saveActiveClusters(clusters){
+      const keep = (clusters || []).map((c) => clusterSanitize(c, c?.label || "Topic"));
+      saveJSONStorage(CLUSTER_ACTIVE_KEY, keep);
+    }
+
+    let clusterMode = loadClusterMode();
+    let pinnedClusters = loadPinnedClusters();
+    let activeClusters = loadActiveClusters(pinnedClusters);
+
+    function clusterSort(a, b){
+      const pa = Number(a?.priority || 0);
+      const pb = Number(b?.priority || 0);
+      if (pb !== pa) return pb - pa;
+      return String(a?.label || "").localeCompare(String(b?.label || ""));
+    }
+
+    function overviewItemsFromSources(sources){
+      const out = [];
+      for (const [sourceId, src] of Object.entries(sources || {})) {
+        out.push({
+          sourceId,
+          sourceName: sourceLabel(sourceId, src),
+          title: String(src?.item?.title || ""),
+          url: String(src?.item?.url || ""),
+        });
+      }
+      return out;
+    }
+
+    function textTokens(value){
+      return normalizeForCluster(value).split(" ").filter(Boolean);
+    }
+
+    const CLUSTER_STOPWORDS = new Set([
+      "the","a","an","and","or","for","with","from","into","over","under","amid","after","before","during",
+      "says","warns","calls","live","latest","update","updates","new","news","today","why","how","what","when",
+      "who","his","her","their","our","your","this","that","these","those","will","could","should","about","into",
+      "video","photos","photo","story","stories","analysis","report","reports","breaking","just","more","than"
+    ]);
+
+    function phraseLooksUseful(phrase){
+      const norm = normalizeForCluster(phrase);
+      if (norm.length < 8) return false;
+      const toks = norm.split(" ").filter(Boolean);
+      if (!toks.length) return false;
+      const meaningful = toks.filter((t) => t.length > 2 && !CLUSTER_STOPWORDS.has(t));
+      return meaningful.length >= 1;
+    }
+
+    function extractCapitalizedPhrases(title){
+      const out = [];
+      const matches = String(title || "").match(/(?:\b(?:[A-Z][a-z]+|[A-Z]{2,})\b(?:\s+|$)){2,3}/g) || [];
+      for (const m of matches) {
+        const trimmed = String(m || "").trim();
+        if (trimmed) out.push(trimmed);
+      }
+      return out;
+    }
+
+    function extractNgrams(tokens, minN = 2, maxN = 3){
+      const out = [];
+      for (let n = minN; n <= maxN; n += 1) {
+        for (let i = 0; i + n <= tokens.length; i += 1) {
+          const slice = tokens.slice(i, i + n);
+          if (slice.some((t) => CLUSTER_STOPWORDS.has(t))) continue;
+          out.push(slice.join(" "));
+        }
+      }
+      return out;
+    }
+
+    function extractUrlPhrases(url){
+      try{
+        const u = new URL(url);
+        const toks = u.pathname
+          .split("/")
+          .flatMap((seg) => seg.split(/[-_]+/))
+          .map((t) => normalizeForCluster(t))
+          .filter((t) => t && t.length > 2 && !CLUSTER_STOPWORDS.has(t));
+        return extractNgrams(toks, 1, 2);
+      } catch {
+        return [];
+      }
+    }
+
+    function phraseCoveredByClusters(phrase, clusters){
+      const p = normalizeForCluster(phrase);
+      for (const c of (clusters || [])) {
+        for (const inc of (c.includeAny || [])) {
+          const n = normalizeForCluster(inc);
+          if (!n) continue;
+          if (p.includes(n) || n.includes(p)) return true;
+        }
+      }
+      return false;
+    }
+
+    function buildClusterSuggestions(items, clusters){
+      const byPhrase = new Map();
+      for (const item of (items || [])) {
+        const sourceId = String(item?.sourceId || "");
+        const title = String(item?.title || "");
+        const url = String(item?.url || "");
+        const titleTokens = textTokens(title);
+        const candidates = [
+          ...extractNgrams(titleTokens, 2, 3),
+          ...extractCapitalizedPhrases(title),
+          ...extractUrlPhrases(url),
+        ];
+        for (const cand of candidates) {
+          const phrase = normalizeForCluster(cand);
+          if (!phraseLooksUseful(phrase)) continue;
+          if (!byPhrase.has(phrase)) byPhrase.set(phrase, { phrase, freqTotal: 0, sources: new Set() });
+          const row = byPhrase.get(phrase);
+          row.freqTotal += 1;
+          if (sourceId) row.sources.add(sourceId);
+        }
+      }
+
+      const out = [];
+      for (const row of byPhrase.values()) {
+        const publisherDiversity = row.sources.size;
+        const score = (publisherDiversity * 3) + row.freqTotal;
+        if (!(publisherDiversity >= 2 || row.freqTotal >= 3)) continue;
+        if (phraseCoveredByClusters(row.phrase, clusters)) continue;
+        out.push({
+          phrase: row.phrase,
+          count: row.freqTotal,
+          publisherDiversity,
+          score,
+        });
+      }
+      out.sort((a, b) => (b.score - a.score) || (b.publisherDiversity - a.publisherDiversity) || (b.count - a.count) || a.phrase.localeCompare(b.phrase));
+      return out.slice(0, 10);
+    }
+
+    function createClusterFromPhrase(phrase){
+      const label = titleCaseShortLabel(phrase);
+      return clusterSanitize({
+        id: slugify(label),
+        label,
+        priority: 50,
+        includeAny: [String(phrase || "").trim()],
+        includeAll: [],
+        exclude: [],
+        createdAt: new Date().toISOString(),
+        pinned: false,
+      }, label);
+    }
+
+    function matchCluster(item, cluster){
+      const titleNorm = normalizeForCluster(item?.title || "");
+      const urlNorm = normalizeForCluster(item?.url || "");
+      const combined = `${titleNorm} ${urlNorm}`.trim();
+      let score = 0;
+
+      for (const phraseRaw of (cluster?.includeAny || [])) {
+        const phrase = normalizeForCluster(phraseRaw);
+        if (!phrase) continue;
+        if (titleNorm.includes(phrase)) score += 4;
+        if (urlNorm.includes(phrase)) score += 2;
+      }
+
+      const includeAll = (cluster?.includeAll || []).map((x) => normalizeForCluster(x)).filter(Boolean);
+      if (includeAll.length && includeAll.every((p) => combined.includes(p))) score += 3;
+
+      for (const phraseRaw of (cluster?.exclude || [])) {
+        const phrase = normalizeForCluster(phraseRaw);
+        if (phrase && combined.includes(phrase)) score -= 10;
+      }
+
+      return { score, match: score >= 4 };
+    }
+
+    function assignItemToCluster(item, clusters){
+      let best = null;
+      for (const cluster of [...(clusters || [])].sort(clusterSort)) {
+        const result = matchCluster(item, cluster);
+        if (!result.match) continue;
+        if (!best || result.score > best.score || (result.score === best.score && Number(cluster.priority || 0) > Number(best.cluster.priority || 0))) {
+          best = { cluster, score: result.score };
+        }
+      }
+      return best ? best.cluster.id : "other";
+    }
+
+    function upsertActiveCluster(cluster){
+      const c = clusterSanitize(cluster, cluster?.label || "Topic");
+      const idx = activeClusters.findIndex((x) => x.id === c.id);
+      if (idx >= 0) activeClusters[idx] = c;
+      else activeClusters.push(c);
+      saveActiveClusters(activeClusters);
+    }
+
+    function removeActiveCluster(clusterId){
+      activeClusters = activeClusters.filter((c) => c.id !== clusterId);
+      saveActiveClusters(activeClusters);
+    }
+
+    function setPinned(cluster, pinned){
+      const c = clusterSanitize({ ...cluster, pinned }, cluster?.label || "Topic");
+      if (pinned) {
+        const idx = pinnedClusters.findIndex((x) => x.id === c.id);
+        if (idx >= 0) pinnedClusters[idx] = c;
+        else pinnedClusters.push(c);
+      } else {
+        pinnedClusters = pinnedClusters.filter((x) => x.id !== c.id);
+      }
+      savePinnedClusters(pinnedClusters);
+    }
+
+    function renderClusterChips(items){
+      const activeHost = $("cluster-active");
+      const suggHost = $("cluster-suggestions");
+      const btn = $("btn-clusters");
+      if (btn) {
+        btn.classList.toggle("isOn", clusterMode);
+        btn.setAttribute("aria-pressed", clusterMode ? "true" : "false");
+      }
+      if (activeHost) activeHost.innerHTML = "";
+      if (suggHost) suggHost.innerHTML = "";
+
+      const activeSorted = [...activeClusters].sort(clusterSort);
+      if (activeHost) {
+        if (!activeSorted.length) {
+          const empty = document.createElement("div");
+          empty.className = "tiny";
+          empty.textContent = "No active clusters.";
+          activeHost.appendChild(empty);
+        } else {
+          for (const cluster of activeSorted) {
+            const chip = document.createElement("div");
+            chip.className = "chip";
+            const lbl = document.createElement("button");
+            lbl.type = "button";
+            lbl.className = "chipLabel";
+            lbl.textContent = cluster.label;
+            lbl.title = (cluster.includeAny || []).join(", ");
+
+            const pin = document.createElement("button");
+            pin.type = "button";
+            pin.className = "chipAction";
+            pin.textContent = pinnedClusters.some((x) => x.id === cluster.id) ? "Unpin" : "Pin";
+            pin.addEventListener("click", () => {
+              const isPinned = pinnedClusters.some((x) => x.id === cluster.id);
+              setPinned(cluster, !isPinned);
+              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+            });
+
+            const remove = document.createElement("button");
+            remove.type = "button";
+            remove.className = "chipAction";
+            remove.textContent = "×";
+            remove.setAttribute("aria-label", `Remove ${cluster.label}`);
+            remove.addEventListener("click", () => {
+              removeActiveCluster(cluster.id);
+              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+            });
+
+            chip.appendChild(lbl);
+            chip.appendChild(pin);
+            chip.appendChild(remove);
+            activeHost.appendChild(chip);
+          }
+        }
+      }
+
+      const suggestions = buildClusterSuggestions(items, [...activeClusters, ...pinnedClusters]);
+      if (suggHost) {
+        if (!suggestions.length) {
+          const empty = document.createElement("div");
+          empty.className = "tiny";
+          empty.textContent = "No additional suggestions right now.";
+          suggHost.appendChild(empty);
+        } else {
+          for (const suggestion of suggestions) {
+            const chip = document.createElement("div");
+            chip.className = "chip";
+            const lbl = document.createElement("button");
+            lbl.type = "button";
+            lbl.className = "chipLabel";
+            lbl.textContent = `${titleCaseShortLabel(suggestion.phrase)} (${suggestion.count})`;
+            lbl.addEventListener("click", () => {
+              const cluster = createClusterFromPhrase(suggestion.phrase);
+              upsertActiveCluster(cluster);
+              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+            });
+
+            const pin = document.createElement("button");
+            pin.type = "button";
+            pin.className = "chipAction";
+            pin.textContent = "Pin";
+            pin.addEventListener("click", () => {
+              const cluster = createClusterFromPhrase(suggestion.phrase);
+              upsertActiveCluster(cluster);
+              setPinned(cluster, true);
+              renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+            });
+
+            chip.appendChild(lbl);
+            chip.appendChild(pin);
+            suggHost.appendChild(chip);
+          }
+        }
+      }
+    }
+
+    function renderClusteredOverview(sources, indicatorsById, timelineBySource = {}){
+      const grid = $("cards-grid");
+      const groupsHost = $("cluster-groups");
+      if (!grid || !groupsHost) return;
+      grid.style.display = "none";
+      groupsHost.style.display = "flex";
+      groupsHost.innerHTML = "";
+
+      const ids = sortedOverviewIds(sources, indicatorsById);
+
+      const activeSorted = [...activeClusters].sort(clusterSort);
+      const grouped = new Map();
+      for (const cluster of activeSorted) grouped.set(cluster.id, []);
+      grouped.set("other", []);
+
+      for (const id of ids) {
+        const src = sources?.[id] || {};
+        const item = { sourceId: id, title: src?.item?.title || "", url: src?.item?.url || "" };
+        const clusterId = assignItemToCluster(item, activeSorted);
+        if (!grouped.has(clusterId)) grouped.set(clusterId, []);
+        grouped.get(clusterId).push(id);
+      }
+
+      const order = [...activeSorted.map((c) => c.id), "other"];
+      for (const clusterId of order) {
+        const idsInGroup = grouped.get(clusterId) || [];
+        if (!idsInGroup.length) continue;
+
+        const section = document.createElement("section");
+        section.className = "clusterGroup";
+        const head = document.createElement("div");
+        head.className = "clusterHeader";
+        const h3 = document.createElement("h3");
+        const label = clusterId === "other"
+          ? "Other"
+          : (activeSorted.find((c) => c.id === clusterId)?.label || "Other");
+        h3.textContent = label;
+        const count = document.createElement("span");
+        count.className = "tiny";
+        count.textContent = `(${idsInGroup.length})`;
+        head.appendChild(h3);
+        head.appendChild(count);
+
+        const groupGrid = document.createElement("div");
+        groupGrid.className = "grid";
+        for (const id of idsInGroup) {
+          const src = sources?.[id] || {};
+          const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
+          const card = buildCardEl(id, src, ind, timelineBySource);
+          applyCardEntrance(card, id, groupGrid.children.length);
+          groupGrid.appendChild(card);
+        }
+
+        section.appendChild(head);
+        section.appendChild(groupGrid);
+        groupsHost.appendChild(section);
+      }
+    }
+
+    function renderOverview(sources, indicatorsById, timelineBySource = {}){
+      latestOverviewPayload = { sources, indicators: indicatorsById, timelineBySource };
+      const items = overviewItemsFromSources(sources);
+      renderClusterChips(items);
+      const grid = $("cards-grid");
+      const groupsHost = $("cluster-groups");
+      if (clusterMode) {
+        renderClusteredOverview(sources, indicatorsById, timelineBySource);
+        return;
+      }
+      if (grid) grid.style.display = "";
+      if (groupsHost) {
+        groupsHost.style.display = "none";
+        groupsHost.innerHTML = "";
+      }
+      renderCards(sources, indicatorsById, timelineBySource);
     }
 
     // Copy handlers (URL not displayed)
@@ -3320,7 +3998,6 @@
           if (sb?.cacheLike) {
             data = sb.cacheLike;
             history = sb.history;
-            $("subline").textContent = "We're live";
           }
         } catch (e){
           console.warn("Supabase load failed, falling back to JSON", e);
@@ -3328,13 +4005,20 @@
 
         if (!data) {
           data = await loadPublishedCache();
-          $("subline").textContent = data?.generatedAt
-            ? `Published cache.json · generated ${fmtTime(data.generatedAt)}`
-            : "Published cache.json";
         }
 
         // Ensure we always have the full set, so cards don't disappear
         const sources = ensureExpectedSources(canonicalizeSourcesMap(data?.sources || {}));
+        const latestSourceTs = Math.max(
+          0,
+          ...Object.values(sources || {}).map((src) => {
+            const ms = Date.parse(String(src?.updatedAt || src?.lastChangeAt || ""));
+            return Number.isFinite(ms) ? ms : 0;
+          })
+        );
+        const generatedMs = Date.parse(String(data?.generatedAt || ""));
+        const sublineTs = latestSourceTs || (Number.isFinite(generatedMs) ? generatedMs : 0);
+        $("subline").textContent = sublineTs ? `Last update: ${fmtTime(new Date(sublineTs).toISOString())}` : "Last update: —";
 
         if (!history) {
           history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
@@ -3343,7 +4027,7 @@
         timelineBySource = await loadCardTimelineBySource(12, sources);
 
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
-        renderCards(sources, indicators, timelineBySource);
+        renderOverview(sources, indicators, timelineBySource);
         if (nextState) saveState(nextState);
 
         latestDrawerPayload = { normalizedHistory, sources, indicators };
@@ -3397,6 +4081,11 @@
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
     $("btn-data")?.addEventListener("click", () => setDataOpen(true));
     $("btn-data-close")?.addEventListener("click", () => setDataOpen(false));
+    $("btn-clusters")?.addEventListener("click", () => {
+      clusterMode = !clusterMode;
+      saveClusterMode(clusterMode);
+      renderOverview(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+    });
     $("history-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
