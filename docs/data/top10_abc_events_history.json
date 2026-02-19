@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-19T08:08:43.996Z",
+  "generatedAt": "2026-02-19T09:03:53.653Z",
   "source_id": "abc1",
   "events": [
     {
@@ -1571,6 +1571,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Unruly passenger detained on Delta flight: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T09:04:05.668Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T09:04:05.668Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "07bd31626d701b745b7284863c5e84c9386a574f",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "U2's new music honors Renee Good and draws inspiration from world events",
       "to_title": null
     }
   ],
