@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-19T20:18:46.646Z",
+  "generatedAt": "2026-02-19T20:54:20.322Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "8 of 9 missing skiers found dead following California avalanche",
-      "to_title": "8 of 9 missing skiers found dead following California avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "MOVED",
-      "fingerprint": "ce1470bb5e3a6ba3d68214a5b5b2ecc2cbdb02a1",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "More renderings of White House ballroom submitted to fine arts panel ahead of meeting",
-      "to_title": "More renderings of White House ballroom submitted to fine arts panel ahead of meeting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "MOVED",
-      "fingerprint": "2f87aa6bf7ad72a811c99a97e71362e671e4f526",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Mark Zuckerberg testifies in landmark trial over social media addiction claims",
-      "to_title": "Mark Zuckerberg testifies in landmark trial over social media addiction claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "MOVED",
-      "fingerprint": "1e1a033f6aa9162ba0bfab23a1defb29092f867a",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Surprise shark caught on camera for first time in Antarctica’s near-freezing deep",
-      "to_title": "Surprise shark caught on camera for first time in Antarctica’s near-freezing deep"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b29a7fabe399c1a44728ba506500a18a9b3765df",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Unruly passenger detained on Delta flight: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1c22c6c0c8ca2a369a6a88474e250f12c1364977",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breaking8 of 9 missing skiers found dead following California avalanche",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T20:32:13.263Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b90d8f0962e25e58e2c5a5e00ed0e94fc6a82826",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Judges reject Trump admin's bid to deport 2 pro-Palestinian college students",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T21:10:14.773Z",
@@ -1152,6 +1072,36 @@
       "to_rank": null,
       "from_title": "Fine arts panel approves Trump's White House East Wing ballroom plans",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T20:54:31.130Z",
+      "event_type": "MOVED",
+      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "British police arrest Andrew Mountbatten-Windsor on suspicion of misconduct",
+      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T20:54:31.130Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "British police arrest Andrew Mountbatten-Windsor on suspicion of misconduct",
+      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T20:54:31.130Z",
+      "event_type": "MOVED",
+      "fingerprint": "ddf33cf54a7bf677ec0144f96ff62baf3940f78b",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Former Prince Andrew's arrest a 'threat to the monarchy,' royal expert says",
+      "to_title": "Former Prince Andrew's arrest a 'threat to the monarchy,' royal expert says"
     }
   ]
 }
