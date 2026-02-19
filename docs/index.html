@@ -2547,14 +2547,6 @@
       btnCopyLink.setAttribute("data-id", id);
       left.appendChild(btnCopyLink);
 
-      const btnCardData = document.createElement("button");
-      btnCardData.className = "linkbtn";
-      btnCardData.type = "button";
-      btnCardData.textContent = "Data";
-      btnCardData.setAttribute("data-action", "open-source-data");
-      btnCardData.setAttribute("data-id", id);
-      left.appendChild(btnCardData);
-
       const right = document.createElement("div");
       right.className = "rightMeta";
 
@@ -2679,6 +2671,18 @@
         trigger.className = "linkbtn";
         trigger.type = "button";
         trigger.textContent = "Timelapse";
+
+        const dataQuickBtn = document.createElement("button");
+        dataQuickBtn.className = "linkbtn";
+        dataQuickBtn.type = "button";
+        dataQuickBtn.textContent = "Data";
+        dataQuickBtn.setAttribute("data-action", "open-source-data");
+        dataQuickBtn.setAttribute("data-id", id);
+
+        const topActions = document.createElement("div");
+        topActions.className = "row";
+        topActions.appendChild(trigger);
+        topActions.appendChild(dataQuickBtn);
 
         const panel = document.createElement("div");
         panel.style.display = "none";
@@ -2827,10 +2831,20 @@
           const hw = document.createElement("div");
           hw.className = "relatedWrap";
 
+          const controlsRow = document.createElement("div");
+          controlsRow.className = "row";
+
           const ht = document.createElement("button");
           ht.type = "button";
           ht.className = "relatedToggle";
           ht.textContent = "History";
+
+          const dataBtn = document.createElement("button");
+          dataBtn.type = "button";
+          dataBtn.className = "relatedToggle";
+          dataBtn.textContent = "Data";
+          dataBtn.setAttribute("data-action", "open-source-data");
+          dataBtn.setAttribute("data-id", id);
 
           const hp = document.createElement("div");
           hp.className = "relatedPanel";
@@ -2875,12 +2889,14 @@
           }
 
           ht.addEventListener("click", () => hp.classList.toggle("open"));
-          hw.appendChild(ht);
+          controlsRow.appendChild(ht);
+          controlsRow.appendChild(dataBtn);
+          hw.appendChild(controlsRow);
           hw.appendChild(hp);
           body.appendChild(hw);
         }
 
-        foot.appendChild(trigger);
+        foot.appendChild(topActions);
         foot.appendChild(panel);
 
         trigger.addEventListener("click", () => {
@@ -3082,7 +3098,37 @@
       const toks = norm.split(" ").filter(Boolean);
       if (!toks.length) return false;
       const meaningful = toks.filter((t) => t.length > 2 && !CLUSTER_STOPWORDS.has(t));
-      return meaningful.length >= 1;
+      return meaningful.length >= 2;
+    }
+
+    function phraseTokensForOverlap(phrase){
+      return normalizeForCluster(phrase)
+        .split(" ")
+        .filter(Boolean)
+        .filter((t) => !CLUSTER_STOPWORDS.has(t))
+        .map((t) => {
+          if (t.length > 5 && t.endsWith("ing")) return t.slice(0, -3);
+          if (t.length > 4 && t.endsWith("ed")) return t.slice(0, -2);
+          if (t.length > 4 && t.endsWith("es")) return t.slice(0, -2);
+          if (t.length > 3 && t.endsWith("s")) return t.slice(0, -1);
+          return t;
+        });
+    }
+
+    function phrasesOverlap(a, b){
+      const na = normalizeForCluster(a);
+      const nb = normalizeForCluster(b);
+      if (!na || !nb) return false;
+      if (na.includes(nb) || nb.includes(na)) return true;
+      const ta = new Set(phraseTokensForOverlap(na));
+      const tb = new Set(phraseTokensForOverlap(nb));
+      if (!ta.size || !tb.size) return false;
+      let common = 0;
+      for (const tok of ta) {
+        if (tb.has(tok)) common += 1;
+      }
+      const minLen = Math.min(ta.size, tb.size);
+      return minLen > 0 && (common / minLen) >= 0.6;
     }
 
     function extractCapitalizedPhrases(title){
@@ -3155,22 +3201,28 @@
         }
       }
 
-      const out = [];
+      const scored = [];
       for (const row of byPhrase.values()) {
         const publisherDiversity = row.sources.size;
         const score = (publisherDiversity * 3) + row.freqTotal;
         if (!(publisherDiversity >= 2 || row.freqTotal >= 3)) continue;
         if (phraseCoveredByClusters(row.phrase, clusters)) continue;
         if (dismissedSuggestions.has(normalizeForCluster(row.phrase))) continue;
-        out.push({
+        scored.push({
           phrase: row.phrase,
           count: row.freqTotal,
           publisherDiversity,
           score,
         });
       }
-      out.sort((a, b) => (b.score - a.score) || (b.publisherDiversity - a.publisherDiversity) || (b.count - a.count) || a.phrase.localeCompare(b.phrase));
-      return out.slice(0, 10);
+      scored.sort((a, b) => (b.score - a.score) || (b.publisherDiversity - a.publisherDiversity) || (b.count - a.count) || a.phrase.localeCompare(b.phrase));
+      const out = [];
+      for (const cand of scored) {
+        if (out.some((k) => phrasesOverlap(k.phrase, cand.phrase))) continue;
+        out.push(cand);
+        if (out.length >= 10) break;
+      }
+      return out;
     }
 
     function createClusterFromPhrase(phrase){
@@ -3232,7 +3284,14 @@
     }
 
     function removeActiveCluster(clusterId){
+      const removed = activeClusters.find((c) => c.id === clusterId) || null;
       activeClusters = activeClusters.filter((c) => c.id !== clusterId);
+      if (removed) {
+        for (const phrase of (removed.includeAny || [])) {
+          dismissedSuggestions.delete(normalizeForCluster(phrase));
+        }
+        saveDismissedSuggestions(dismissedSuggestions);
+      }
       saveActiveClusters(activeClusters);
     }
 
@@ -3293,7 +3352,7 @@
         }
       }
 
-      const suggestions = buildClusterSuggestions(items, [...activeClusters, ...pinnedClusters]);
+      const suggestions = buildClusterSuggestions(items, [...activeClusters]);
       if (suggHost) {
         for (const suggestion of suggestions) {
           const chip = document.createElement("div");
@@ -3383,6 +3442,14 @@
         section.appendChild(groupGrid);
         groupsHost.appendChild(section);
       }
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          for (const card of groupsHost.querySelectorAll(".card.card-enter")) {
+            card.classList.add("card-settle");
+          }
+        });
+      });
     }
 
     function renderOverview(sources, indicatorsById, timelineBySource = {}){
