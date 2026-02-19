@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-19T21:55:07.867Z",
+  "generatedAt": "2026-02-19T22:23:13.921Z",
   "source_id": "abc1",
   "events": [
     {
@@ -2391,6 +2391,36 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T22:23:24.423Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "d4810d948b511693c90abae409a985c829cada67",
+      "from_rank": 5,
+      "to_rank": 5,
+      "from_title": "Emails suggest former Prince Andrew shared 'confidential' information with Epstein",
+      "to_title": "Emails suggest former Prince Andrew shared sensitive information with Epstein"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T22:23:24.423Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0510fbe2e4f937adf1ecf10c67f3e0b532932b7b",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Alysa Liu gives US its first women's figure skating Olympic gold in 24 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T22:23:24.423Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3a442328076abbb945ed26b0d12016641339a1b2",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "2nd US carrier group heads toward Middle East amid Iran tensions",
       "to_title": null
     }
   ],

@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-19T21:55:07.867Z",
+  "generatedAt": "2026-02-19T22:23:13.921Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T22:20:39.306Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e163a11fa865aa916c47c57d96446a3a8f81d405",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Democrats, White House still far from DHS funding deal amid standoff over ICE"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T22:20:39.306Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9c399e6dc200d81285502b43198638a979a58b8c",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "5 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T22:20:39.306Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c789be36f96337e1a59380bb828f4f574acd23dd",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "House Oversight Committee set to depose former Epstein associate Leslie Wexner",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T22:20:39.306Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1e1a033f6aa9162ba0bfab23a1defb29092f867a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Surprise shark caught on camera for first time in Antarctica’s near-freezing deep",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T23:56:45.739Z",
@@ -1121,6 +1081,36 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T22:23:24.423Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "d4810d948b511693c90abae409a985c829cada67",
+      "from_rank": 5,
+      "to_rank": 5,
+      "from_title": "Emails suggest former Prince Andrew shared 'confidential' information with Epstein",
+      "to_title": "Emails suggest former Prince Andrew shared sensitive information with Epstein"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T22:23:24.423Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0510fbe2e4f937adf1ecf10c67f3e0b532932b7b",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Alysa Liu gives US its first women's figure skating Olympic gold in 24 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T22:23:24.423Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3a442328076abbb945ed26b0d12016641339a1b2",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "2nd US carrier group heads toward Middle East amid Iran tensions",
       "to_title": null
     }
   ]
