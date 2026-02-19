@@ -984,8 +984,6 @@
       img.style.transformOrigin = "center center";
       img.style.willChange = "transform";
       img.style.cursor = "grab";
-      img.style.opacity = "1";
-      img.style.transition = "opacity .2s ease";
 
       const sliderRow = document.createElement("div");
       sliderRow.style.display = "flex";
@@ -1017,7 +1015,6 @@
       let panY = 0;
       let pinchStart = null;
       let panStart = null;
-      let renderToken = 0;
       function clampZoom(v){
         return Math.max(1, Math.min(4, v));
       }
@@ -1026,38 +1023,10 @@
         img.style.cursor = zoom > 1 ? "grab" : "default";
         btnZoomReset.textContent = `${Math.round(zoom * 100)}%`;
       }
-      function setImageWithDissolve(nextSrc){
-        if (!nextSrc) return;
-        const token = ++renderToken;
-        const currentSrc = img.getAttribute("src") || "";
-        if (!currentSrc) {
-          img.style.opacity = "1";
-          img.src = nextSrc;
-          return;
-        }
-        if (currentSrc === nextSrc) {
-          img.style.opacity = "1";
-          return;
-        }
-        img.style.opacity = "0";
-        const onDone = () => {
-          if (token !== renderToken) return;
-          img.style.opacity = "1";
-          img.removeEventListener("load", onDone);
-          img.removeEventListener("error", onDone);
-        };
-        img.addEventListener("load", onDone);
-        img.addEventListener("error", onDone);
-        setTimeout(() => {
-          if (token !== renderToken) return;
-          img.src = nextSrc;
-        }, 85);
-      }
-
       function render(){
         const ev = events[idx] || null;
         if (!ev || !ev.shot_url) return;
-        setImageWithDissolve(ev.shot_url);
+        img.src = ev.shot_url;
         applyZoom();
         meta.textContent = `${fmtTime(ev.ts)}`;
         btnPrev.disabled = idx <= 0;
@@ -2187,6 +2156,19 @@
 
         const eventsWithShots = timelineEvents.filter((ev) => ev?.shot_url);
         let shotIdx = 0;
+        let hasPreloadedShots = false;
+
+        function preloadShots() {
+          if (hasPreloadedShots || !eventsWithShots.length) return;
+          hasPreloadedShots = true;
+          for (const ev of eventsWithShots) {
+            const src = String(ev?.shot_url || "");
+            if (!src) continue;
+            const pre = new Image();
+            pre.decoding = "async";
+            pre.src = src;
+          }
+        }
 
         function renderShot(i){
           if (!eventsWithShots.length) return;
@@ -2338,7 +2320,10 @@
         trigger.addEventListener("click", () => {
           const open = panel.style.display !== "none";
           panel.style.display = open ? "none" : "flex";
-          if (!open) requestAnimationFrame(() => renderShot(shotIdx));
+          if (!open) {
+            preloadShots();
+            requestAnimationFrame(() => renderShot(shotIdx));
+          }
         });
 
         renderShot(0);
