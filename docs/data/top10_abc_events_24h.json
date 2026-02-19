@@ -1,118 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-19T10:02:05.940Z",
+  "generatedAt": "2026-02-19T10:56:59.784Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c789be36f96337e1a59380bb828f4f574acd23dd",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "House Oversight Committee set to depose former Epstein associate Leslie Wexner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2f87aa6bf7ad72a811c99a97e71362e671e4f526",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Mark Zuckerberg set to testify in landmark trial over social media addiction claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "06288bb5fa87857d4de2c1bb6edd9642363395c6",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "'On the right path': Housing market offers glimmers of hope, some analysts say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "8f071be4ef861199592cb4b2bfa140962107b914",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "US-Ukraine-Russia peace talks in Geneva expected to resume Wednesday",
-      "to_title": "US-Ukraine-Russia peace talks in Geneva expected to resume Wednesday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "b90d8f0962e25e58e2c5a5e00ed0e94fc6a82826",
-      "from_rank": 3,
-      "to_rank": 6,
-      "from_title": "Judges reject Trump admin's bid to deport 2 pro-Palestinian college students",
-      "to_title": "Judges reject Trump admin's bid to deport 2 pro-Palestinian college students"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "9c399e6dc200d81285502b43198638a979a58b8c",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "4 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police",
-      "to_title": "4 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "b3db5fae0dc5334b29edb739ee2c4bb5655956b9",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "Ghislaine Maxwell's brother talks Prince Andrew, her petition for freedom, and more",
-      "to_title": "Ghislaine Maxwell's brother speaks out on Epstein"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "b3db5fae0dc5334b29edb739ee2c4bb5655956b9",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "Ghislaine Maxwell's brother talks Prince Andrew, her petition for freedom, and more",
-      "to_title": "Ghislaine Maxwell's brother speaks out on Epstein"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Nancy Guthrie live updates: No CODIS match for glove DNA; this option could be next",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fca27e48c44e37070f81abb81377bc537f74420c",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Suspect killed ex-wife and son, injured 3 in shooting at ice skating rink",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "12b23d72dbfc2af397d85d3f364c6cb5e6c2d4e7",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Zuckerberg to testify in landmark trial",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T11:26:28.571Z",
@@ -941,6 +831,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "U2's new music honors Renee Good and draws inspiration from world events",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1972345c5ca45e1eccbaeac97d036c163a481f00",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingBritish police arrest Andrew Mountbatten-Windsor on suspicion of misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "British police arrest Andrew Mountbatten-Windsor on suspicion of misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "MOVED",
+      "fingerprint": "778b0e5abf866509a184a08997cbbd4c09dbfecf",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Parents of students at ski academy among California avalanche victims",
+      "to_title": "Parents of students at ski academy among California avalanche victims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "MOVED",
+      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say",
+      "to_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "957ea25943e7e76dfa65fb44e080550fe8bb3c14",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "How DNA and genetic genealogy might help solve the Nancy Guthrie case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "MOVED",
+      "fingerprint": "ebf59a97bef810db85f01225ce37756372e60dc3",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Passengers evacuated via slides in incident that temporarily suspended flights",
+      "to_title": "Passengers evacuated via slides in incident that temporarily suspended flights"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "MOVED",
+      "fingerprint": "13da143ce522448ae0e858ed735905cd08f81de8",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Trump company seeks to trademark his name on airports",
+      "to_title": "Trump company seeks to trademark his name on airports"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "MOVED",
+      "fingerprint": "e163a11fa865aa916c47c57d96446a3a8f81d405",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Democrats, White House still far from DHS funding deal amid standoff over ICE",
+      "to_title": "Democrats, White House still far from DHS funding deal amid standoff over ICE"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "MOVED",
+      "fingerprint": "2f87aa6bf7ad72a811c99a97e71362e671e4f526",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Mark Zuckerberg testifies in landmark trial over social media addiction claims",
+      "to_title": "Mark Zuckerberg testifies in landmark trial over social media addiction claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "MOVED",
+      "fingerprint": "149548dbe3e6ef2c3638d87cb44f4d8385d7d506",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "NYPD officers who helped rescue injured bald eagle on Hudson River speak out",
+      "to_title": "NYPD officers who helped rescue injured bald eagle on Hudson River speak out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:8 of 9 missing skiers found dead following California avalanche",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T10:57:11.029Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ce1470bb5e3a6ba3d68214a5b5b2ecc2cbdb02a1",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "More renderings of White House ballroom submitted to fine arts panel ahead of meeting",
       "to_title": null
     }
   ]
