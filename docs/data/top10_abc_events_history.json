@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-19T18:09:06.022Z",
+  "generatedAt": "2026-02-19T19:08:19.339Z",
   "source_id": "abc1",
   "events": [
     {
@@ -2111,6 +2111,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US applications for jobless aid fall to 206,000",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T19:08:29.986Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b4b42e4a9a45fbfbf1a1a43f8e49f9a5325f04ca",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T19:08:29.986Z",
+      "event_type": "MOVED",
+      "fingerprint": "6850f675f25a1b91017c95aa36ab5ce573f58614",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban",
+      "to_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T19:08:29.986Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5825375d92ed6ca39f111265db6daa8d816e572c",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "4 men exonerated in infamous 1991 yogurt shop killings"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T19:08:29.986Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6facc712e0524d7648c2d5f6d84395f168e331d5",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Fine arts panel approves Trump's White House East Wing ballroom plans"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T19:08:29.986Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ebf59a97bef810db85f01225ce37756372e60dc3",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Passengers evacuated via slides in incident that temporarily suspended flights",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T19:08:29.986Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "13da143ce522448ae0e858ed735905cd08f81de8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump company seeks to trademark his name on airports",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T19:08:29.986Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds",
       "to_title": null
     }
   ],
