@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-19T20:18:46.646Z",
+  "generatedAt": "2026-02-19T20:54:20.322Z",
   "source_id": "abc1",
   "events": [
     {
@@ -2302,6 +2302,36 @@
       "to_rank": null,
       "from_title": "Fine arts panel approves Trump's White House East Wing ballroom plans",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T20:54:31.130Z",
+      "event_type": "MOVED",
+      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "British police arrest Andrew Mountbatten-Windsor on suspicion of misconduct",
+      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T20:54:31.130Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "British police arrest Andrew Mountbatten-Windsor on suspicion of misconduct",
+      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-19T20:54:31.130Z",
+      "event_type": "MOVED",
+      "fingerprint": "ddf33cf54a7bf677ec0144f96ff62baf3940f78b",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Former Prince Andrew's arrest a 'threat to the monarchy,' royal expert says",
+      "to_title": "Former Prince Andrew's arrest a 'threat to the monarchy,' royal expert says"
     }
   ],
   "error": "No Top 10 events yet"
