@@ -454,11 +454,26 @@ function currentSinceFromHistory(history, sourceKey, currentUrl) {
 
 async function safeScrape(label, fn, generatedAt) {
   try {
-    return await fn();
+    const res = await fn();
+    if (res?.item) {
+      res.item.contentType = inferContentType({ url: res.item.url, title: res.item.title });
+    }
+    return res;
   } catch (err) {
     console.error(`❌ ${label} hero scrape failed`, err);
     return { ok: false, error: String(err), updatedAt: generatedAt, item: null };
   }
+}
+
+function inferContentType({ url, title }) {
+  const u = String(url || "").toLowerCase();
+  const t = String(title || "").toLowerCase();
+  if (u.includes("/video") || u.includes("video.")) return "video";
+  if (u.includes("/live") || /\blive\b/.test(t)) return "live";
+  if (u.includes("/opinion") || u.includes("/editorial")) return "opinion";
+  if (u.includes("/analysis")) return "analysis";
+  if (u.includes("/photo") || u.includes("/gallery")) return "gallery";
+  return "news";
 }
 
 async function loadTimelineEventsFromSupabase(sb, hours = 12) {

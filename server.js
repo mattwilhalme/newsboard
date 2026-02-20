@@ -909,6 +909,7 @@ async function scrapeNBCHero() {
 
       function isArticleLikeUrl(url) {
         if (!url) return false;
+        if (/\/live-blog\//i.test(url)) return true;
         if (/-rcna\d+/i.test(url)) return true;
         if (/\/\d{4}\/\d{2}\/\d{2}\//i.test(url)) return true;
         return false;
@@ -933,7 +934,7 @@ async function scrapeNBCHero() {
           String(title || "").trim(),
         );
         const utilityTitle = /(live updates|latest stories|calendar|newsletter|medal tracker|stream on peacock|watch live)/i.test(t);
-        const hubUrl = /\/(live-blog|collection)\//i.test(url || "");
+        const hubUrl = /\/collection\//i.test(url || "");
         const sectionUrl = /^https?:\/\/(www\.)?nbcnews\.com\/(olympics|politics|us-news|world|health|sports|business|science|tech-media)(\/)?$/i.test(
           url || "",
         );
@@ -962,7 +963,7 @@ async function scrapeNBCHero() {
         if (a.closest("h1,h2,h3")) score += 25;
         if (a.closest("main")) score += 30;
         if (a.getAttribute("tabindex") === "-1") score += 12;
-        if (/\/live-blog\//i.test(url)) score += 10;
+        if (/\/live-blog\//i.test(url)) score += 28;
         if (isArticleLikeUrl(url)) score += 35;
         if (/-rcna\d+/i.test(url)) score += 20;
         if (/\/(us-news|world|politics|news|sports|business|health|science)\//i.test(url)) score += 20;
@@ -1011,6 +1012,8 @@ async function scrapeNBCHero() {
         ".lead-type--Storyline .storyline__headline a[href]",
         ".lead-type--Storyline h2 a[href]",
         "[data-testid='front-container'] h2 a[href]",
+        "[data-testid='front-container'] a[href*='/live-blog/']",
+        "main a[href*='/live-blog/']",
       ];
 
       const leadAnchors = [];
@@ -1123,6 +1126,69 @@ async function scrapeNBCHero() {
           }
         }
       }
+
+      // Strategy 3: parse Next.js payload in DOM order when visible markup is unstable.
+      try {
+        const nextDataEl = document.querySelector("script#__NEXT_DATA__");
+        const raw = nextDataEl?.textContent || "";
+        if (raw && raw.length > 5000) {
+          const payload = JSON.parse(raw);
+          const layouts = payload?.props?.initialState?.front?.curation?.layouts || [];
+          const rankedJson = [];
+          let order = 0;
+
+          function pickString(v) {
+            if (!v) return "";
+            if (typeof v === "string") return clean(v);
+            if (typeof v === "object") {
+              if (typeof v.text === "string") return clean(v.text);
+              if (typeof v.primary === "string") return clean(v.primary);
+            }
+            return "";
+          }
+
+          function pickUrl(v) {
+            if (!v) return null;
+            if (typeof v === "string") return abs(v);
+            if (typeof v === "object") {
+              if (typeof v.primary === "string") return abs(v.primary);
+              if (typeof v.canonical === "string") return abs(v.canonical);
+            }
+            return null;
+          }
+
+          for (const layout of layouts) {
+            for (const pkg of (layout?.packages || [])) {
+              const pkgType = String(pkg?.type || "").toLowerCase();
+              if (pkgType.includes("ad") || pkgType.includes("embed")) continue;
+              for (const it of (pkg?.items || [])) {
+                order += 1;
+                const item = it?.item || {};
+                const computed = it?.computedValues || item?.computedValues || {};
+                const url = pickUrl(computed?.url) || pickUrl(item?.url) || null;
+                const title =
+                  pickString(computed?.headline) ||
+                  pickString(item?.headline) ||
+                  pickString(item?.headlineAlternatives?.[0]) ||
+                  "";
+                if (!url || !title || !isStoryUrl(url)) continue;
+                if (/\/(video|now\/video|video\/shorts)\//i.test(url)) continue;
+                let score = 700 - Math.min(500, order * 3);
+                if (/\/live-blog\//i.test(url)) score += 90;
+                if (isArticleLikeUrl(url)) score += 35;
+                if (title.length >= 18 && title.length <= 240) score += 12;
+                rankedJson.push({ title, url, score, order });
+              }
+            }
+          }
+
+          rankedJson.sort((a, b) => (b.score - a.score) || (a.order - b.order));
+          if (rankedJson.length) {
+            const top = rankedJson[0];
+            return { ok: true, title: top.title, url: top.url, selector_used: "nbc_next_data_ordered" };
+          }
+        }
+      } catch {}
 
       const ranked = anchors
         .map((a) => {
@@ -1304,35 +1370,79 @@ async function scrapeGuardianHero() {
         }
       }
 
-      // Guardian: Look for main news cards with data-link-name containing "news | group"
-      const newsCards = Array.from(document.querySelectorAll('a[data-link-name*="news | group"][href*="/us-news/"], a[data-link-name*="news | group"][href*="/world/"], a[data-link-name*="news | group"][href*="/politics/"]'))
-        .map(a => {
-          const title = clean(a.getAttribute('aria-label') || a.querySelector('.headline-text')?.textContent || '');
-          const href = a.getAttribute("href") || "";
-          const url = href ? abs(href) : null;
-          return { a, title, url };
-        })
-        .filter(item => item.title && item.url && item.title.length > 15);
-
-      if (newsCards.length > 0) {
-        const first = newsCards[0];
-        return { ok: true, title: first.title, url: first.url };
+      function isStoryUrl(url) {
+        if (!url) return false;
+        if (!/^https?:\/\/(www\.)?theguardian\.com\//i.test(url)) return false;
+        const path = (() => {
+          try { return new URL(url).pathname || ""; } catch { return ""; }
+        })();
+        if (!path || path === "/") return false;
+        if (/^\/(help|about|info|index|email-newsletters|us|world|uk|sport|culture|lifeandstyle|commentisfree)(\/)?$/i.test(path)) return false;
+        if (/^\/football\/live(\/|$)/i.test(path)) return false;
+        return /\/\d{4}\/[a-z]{3}\/\d{1,2}\//i.test(path) || /\/live\//i.test(path);
       }
 
-      // Fallback: any card with headline-text
-      const headlineCards = Array.from(document.querySelectorAll('.headline-text'))
-        .map(span => {
-          const a = span.closest('a[href]');
-          const title = clean(span.textContent || '');
-          const href = a?.getAttribute("href") || "";
-          const url = href ? abs(href) : null;
-          return { title, url };
-        })
-        .filter(item => item.title && item.url && item.title.length > 15);
+      function scoreAnchor(a, title, url) {
+        const dl = String(a.getAttribute("data-link-name") || "").toLowerCase();
+        const path = (() => {
+          try { return new URL(url).pathname || ""; } catch { return ""; }
+        })();
+        const rect = a.getBoundingClientRect();
+        const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+        let score = 0;
+        if (a.closest("main")) score += 45;
+        if (a.classList.contains("dcr-2yd10d")) score += 30;
+        if (/group-0/.test(dl)) score += 120;
+        if (dl.includes("news | group")) score += 70;
+        if (dl.includes("live | group")) score += 170;
+        if (/\/live\//i.test(path)) score += 45;
+        if (title.length >= 16 && title.length <= 240) score += 15;
+        if (Number.isFinite(topY)) {
+          if (topY < 900) score += 50;
+          else if (topY < 1700) score += 20;
+        }
+        if (a.closest("header,nav,footer,[data-component='sub-nav']")) score -= 140;
+        return { score, topY };
+      }
 
-      if (headlineCards.length > 0) {
-        const first = headlineCards[0];
-        return { ok: true, title: first.title, url: first.url };
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        'main a[data-link-name*="live | group"][href*="/live/"]',
+        'main a[data-link-name*="group-0"][href]',
+        'main a[data-link-name*="news | group"][href]',
+        'main a.dcr-2yd10d[href]',
+        'main .headline-text',
+        'main a[href*="/us-news/"], main a[href*="/world/"], main a[href*="/politics/"]',
+      ];
+
+      for (const sel of selectors) {
+        for (const el of Array.from(document.querySelectorAll(sel))) {
+          const a = el.tagName === "A" ? el : el.closest("a[href]");
+          if (!a || seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title =
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(a.querySelector(".headline-text")?.textContent || "") ||
+            clean(a.textContent || "");
+          if (!url || !title || title.length < 15 || !isStoryUrl(url)) return null;
+          const scored = scoreAnchor(a, title, url);
+          return { title, url, score: scored.score, topY: scored.topY };
+        })
+        .filter((x) => x && x.score > -10)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      if (ranked.length > 0) {
+        const top = ranked[0];
+        return { ok: true, title: top.title, url: top.url };
       }
 
       return { ok: false, error: "Guardian: no headline found" };
@@ -1542,7 +1652,11 @@ async function scrapeAPHero() {
       }
 
       function isStoryUrl(url) {
-        return Boolean(url && /^https?:\/\/(www\.)?apnews\.com\/article\//i.test(url));
+        if (!url) return false;
+        if (!/^https?:\/\/(www\.)?apnews\.com\//i.test(url)) return false;
+        if (/^https?:\/\/(www\.)?apnews\.com\/article\//i.test(url)) return true;
+        if (/^https?:\/\/(www\.)?apnews\.com\/live\//i.test(url)) return true;
+        return false;
       }
 
       function scoreAnchor(a, title, url) {
@@ -1552,8 +1666,11 @@ async function scrapeAPHero() {
         if (a.querySelector('span[data-tb-shadow-region-title="0"]')) score += 35;
         if (a.querySelector("span.PagePromoContentIcons-text")) score += 20;
         if (/\/article\//i.test(url)) score += 15;
+        if (/\/live\//i.test(url)) score += 36;
+        if (a.closest(".PageListStandardE-leadPromo-info")?.querySelector(".PagePromo-byline-liveEvent,.PageListTrending-LiveTag")) score += 24;
         if (title.length >= 24 && title.length <= 240) score += 12;
         if (a.closest(".PagePromo-description, .Trending")) score -= 45;
+        if (a.closest("header,nav,footer,.MainNavigation,.Page-header-navigation")) score -= 140;
         return score;
       }
 
@@ -1574,6 +1691,40 @@ async function scrapeAPHero() {
           seen.add(a);
           anchors.push(a);
         }
+      }
+
+      // Prefer first lead promo below top nav.
+      const navBoundaryEl =
+        document.querySelector(".Page-header-navigation") ||
+        document.querySelector("header nav") ||
+        document.querySelector(".MainNavigation");
+      const navRect = navBoundaryEl?.getBoundingClientRect?.();
+      const navBottomY = (Number.isFinite(navRect?.bottom) ? navRect.bottom : 0) + (window.scrollY || 0);
+      const leadCandidates = Array.from(
+        document.querySelectorAll(".PageListStandardE-leadPromo-info a.Link[href], .PageListStandardE-leadPromo-info .PagePromo-title a[href]"),
+      )
+        .map((a) => {
+          const url = abs(a.getAttribute("href") || "");
+          const title =
+            clean(a.querySelector('span[data-tb-shadow-region-title="0"]')?.textContent || "") ||
+            clean(a.querySelector("span.PagePromoContentIcons-text")?.textContent || "") ||
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(a.textContent || "");
+          if (!url || !title || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect();
+          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+          if (topY < Math.max(0, navBottomY - 20)) return null;
+          let score = 260;
+          score += scoreAnchor(a, title, url);
+          score -= Math.min(180, Math.max(0, topY - navBottomY) / 6);
+          return { title, url, score, topY };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      if (leadCandidates.length) {
+        const top = leadCandidates[0];
+        return { ok: true, title: top.title, url: top.url, selector_used: "ap_post_nav_lead" };
       }
 
       const ranked = anchors
@@ -2547,6 +2698,9 @@ async function refreshSources({ id = "" } = {}) {
     }
     const durationMs = Math.max(0, Date.now() - t0);
     const observedAtIso = res?.updatedAt || nowISO();
+    if (res?.item) {
+      res.item.contentType = inferContentType({ url: res.item.url, title: res.item.title });
+    }
     const finalUrl = res?.meta?.final_url || res?.item?.url || null;
     const httpStatus = Number.isFinite(Number(res?.meta?.http_status)) ? Number(res.meta.http_status) : null;
     const blockedInfo = detectBlocked({

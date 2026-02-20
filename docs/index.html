@@ -239,6 +239,14 @@
     .headline{ font-size:18px; line-height:1.26; font-weight:700; margin:0; font-family: var(--font-serif); }
     .headline a{ color: var(--text); text-decoration:none; }
     .headline a:hover{ color: var(--blue); text-decoration: underline; }
+    .liveBlogTag{
+      color:#b00020;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      line-height:1;
+    }
 
     .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 
@@ -1738,6 +1746,7 @@
             title: row.title || null,
             url: row.url || null,
             imgUrl: row.img_url || row.imgUrl || null,
+            contentType: row.content_type || row.contentType || null,
           },
         };
         sources[id] = mergeSourceRows(sources[id], mapped);
@@ -2504,6 +2513,7 @@
             title: item.title || null,
             url: item.url || null,
             imgUrl: item.imgUrl || item.img_url || null,
+            contentType: item.contentType || item.content_type || row.contentType || row.content_type || null,
           },
           shot: row.shot || last.shot || null,
         };
@@ -2542,6 +2552,19 @@
       const t = sources?.[id]?.updatedAt || sources?.[id]?.firstSeenAt || null;
       const ms = Date.parse(t || "");
       return Number.isFinite(ms) ? ms : 0;
+    }
+
+    function isLiveBlogItem(src){
+      const contentType = String(src?.item?.contentType || src?.contentType || "").toLowerCase();
+      if (contentType === "live") return true;
+      const u = String(src?.item?.url || "").toLowerCase();
+      const t = String(src?.item?.title || "").toLowerCase();
+      return (
+        /\/live(\/|$)/.test(u) ||
+        /\/live-blog\//.test(u) ||
+        /\/live-updates(\/|$)/.test(u) ||
+        /\blive blog\b/.test(t)
+      );
     }
 
     function changeTsForSort(sources, indicatorsById, id){
@@ -2665,6 +2688,13 @@
 
       const wrap = document.createElement("div");
       wrap.className = "headlineWrap";
+
+      if (isLiveBlogItem(src)) {
+        const liveTag = document.createElement("div");
+        liveTag.className = "liveBlogTag";
+        liveTag.textContent = "Live Blog";
+        wrap.appendChild(liveTag);
+      }
 
       const h2 = document.createElement("h2");
       h2.className = "headline";
@@ -2968,8 +2998,18 @@
 
     function sortedOverviewIds(sources, indicatorsById){
       const ids = pickCardSourceIds(sources);
-      // Newest URL/headline change first, then latest source timestamp.
+      // Group by change type first: URL change, then headline change, then unchanged.
+      function changePriority(id){
+        const type = String(indicatorsById?.[id]?.changeType || "").toLowerCase();
+        if (type === "url") return 0;
+        if (type === "headline") return 1;
+        return 2;
+      }
       ids.sort((a,b) => {
+        const pa = changePriority(a);
+        const pb = changePriority(b);
+        if (pa !== pb) return pa - pb;
+
         const ca = changeTsForSort(sources, indicatorsById, a);
         const cb = changeTsForSort(sources, indicatorsById, b);
         if (cb !== ca) return cb - ca;
