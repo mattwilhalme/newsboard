@@ -283,7 +283,7 @@
     }
 
     .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-    .changeRow{ display:flex; align-items:center; gap:7px; font-size:12px; color:var(--muted); }
+    .changeRow{ display:flex; align-items:center; gap:0; font-size:12px; color:var(--muted); }
     .changeDot{
       width:8px;
       height:8px;
@@ -330,7 +330,7 @@
     }
     .shotFrame{
       width:100%;
-      max-width:360px;
+      max-width:720px;
       margin:0 auto;
       touch-action: pan-y;
     }
@@ -1411,7 +1411,7 @@
       root.style.zIndex = "1000";
 
       const panel = document.createElement("div");
-      panel.style.width = "min(1500px, 99vw)";
+      panel.style.width = "min(1880px, 99.5vw)";
       panel.style.maxHeight = "98vh";
       panel.style.display = "flex";
       panel.style.flexDirection = "column";
@@ -1464,7 +1464,7 @@
 
       const frame = document.createElement("div");
       frame.style.width = "100%";
-      frame.style.height = "min(92vh, 1400px)";
+      frame.style.height = "min(96vh, 1800px)";
       frame.style.borderRadius = "10px";
       frame.style.overflow = "hidden";
       frame.style.background = "#000";
@@ -1488,7 +1488,7 @@
       sliderRow.style.alignItems = "center";
       sliderRow.style.gap = "8px";
       sliderRow.style.marginTop = "2px";
-      sliderRow.style.paddingBottom = "calc(env(safe-area-inset-bottom, 0px) + 12px)";
+      sliderRow.style.paddingBottom = "calc(env(safe-area-inset-bottom, 0px) + 26px)";
 
       const slider = document.createElement("input");
       slider.type = "range";
@@ -3132,14 +3132,7 @@
       const changeType = String(indicator?.changeType || "").toLowerCase();
       const stale2h = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
       dot.className = `changeDot ${changeType === "url" ? "url" : changeType === "headline" ? "headline" : stale2h ? "stale" : "none"}`;
-      const changeText = document.createElement("span");
-      changeText.textContent =
-        changeType === "url" ? "URL changed (new top story)"
-        : changeType === "headline" ? "Headline changed (same URL)"
-        : stale2h ? "Stale"
-        : "No recent change";
       changeRow.appendChild(dot);
-      changeRow.appendChild(changeText);
 
       const actionsRow = document.createElement("div");
       actionsRow.className = "row";
