@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-20T17:21:30.364Z",
+  "generatedAt": "2026-02-20T17:53:31.242Z",
   "hours": 24,
   "events": [
     {
@@ -2081,6 +2081,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Barcelona's Sagrada Familia reaches its maximum height after more than a century",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T17:53:41.849Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "552c2ea675d8afc924007f158933b4c584b3e8ed",
+      "from_rank": 7,
+      "to_rank": 7,
+      "from_title": "Texas Republican denies affair with staffer who died by suicide",
+      "to_title": "Texas Republican faces allegations of affair with staffer who died by suicide"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T17:53:41.849Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "775c9c5346fdc2162132691b4a068b9ec38ac0b3",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "US nears 1,000 measles cases: CDC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T17:53:41.849Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3bbce9df8158f595e85e8c28c889590ecf12b970",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Inflation rose faster than expected in December",
       "to_title": null
     }
   ]
