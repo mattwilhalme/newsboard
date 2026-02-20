@@ -997,9 +997,60 @@ async function scrapeNBCHero() {
         }
       }
 
-      // Strategy 1: NBC quick-links banner often points to the real lead topic.
-      // Find quick-links #0 URL, then pull the nearest full story headline anchor below that banner.
+      // Strategy 1: first full lead headline after top header/nav boundary.
+      // NBC frequently shifts modules; this targets the first article lead area below quick-links/header.
       const quickNav = document.querySelector("nav.quick-links, nav[data-activity-map='quick-links'], nav[class*='quickLinks']");
+      const headerEnd = document.querySelector("#header-end");
+      const firstBoundaryEl = quickNav || headerEnd || document.querySelector("header nav, #globalnav");
+      const boundaryRect = firstBoundaryEl?.getBoundingClientRect?.();
+      const boundaryY = (Number.isFinite(boundaryRect?.bottom) ? boundaryRect.bottom : 0) + (window.scrollY || 0);
+
+      const leadSelectors = [
+        "[data-testid='single-storyline'] .storyline__headline a[href]",
+        ".single-storyline .storyline__headline a[href]",
+        ".lead-type--Storyline .storyline__headline a[href]",
+        ".lead-type--Storyline h2 a[href]",
+        "[data-testid='front-container'] h2 a[href]",
+      ];
+
+      const leadAnchors = [];
+      const seenLead = new Set();
+      for (const sel of leadSelectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (seenLead.has(a)) continue;
+          seenLead.add(a);
+          leadAnchors.push(a);
+        }
+      }
+
+      const leadCandidates = leadAnchors
+        .map((a) => {
+          const url = abs(a.getAttribute("href") || "");
+          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+          if (!url || !title || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect();
+          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+          if (topY < boundaryY) return null;
+          let score = 0;
+          score += 180;
+          if (a.closest(".single-storyline, [data-testid='single-storyline']")) score += 110;
+          if (a.closest(".lead-type--Storyline")) score += 80;
+          if (a.closest("h1,h2")) score += 30;
+          score -= Math.min(120, Math.max(0, topY - boundaryY) / 8);
+          if (isArticleLikeUrl(url)) score += 35;
+          if (/\/live-blog\//i.test(url)) score += 10;
+          return { title, url, topY, score };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      if (leadCandidates.length) {
+        const best = leadCandidates[0];
+        return { ok: true, title: best.title, url: best.url, selector_used: "nbc_post_header_lead" };
+      }
+
+      // Strategy 2: NBC quick-links banner often points to the real lead topic.
+      // Match any quick-link URL to the nearest full headline below quick-links.
       if (quickNav) {
         const quickCandidates = Array.from(quickNav.querySelectorAll("a[href]"))
           .map((a) => {
@@ -1013,51 +1064,55 @@ async function scrapeNBCHero() {
           })
           .filter(Boolean);
 
-        const quickTop =
-          quickCandidates.find((x) => /quick-links-0$/i.test(x.icid)) ||
-          quickCandidates[0] ||
-          null;
-
-        if (quickTop) {
+        if (quickCandidates.length) {
           const navRect = quickNav.getBoundingClientRect();
           const navBottomY = (Number.isFinite(navRect?.bottom) ? navRect.bottom : 0) + (window.scrollY || 0);
-          const targetUrl = canonicalUrl(quickTop.url);
+          const anchorPool = Array.from(document.querySelectorAll("a[href]"));
+          let best = null;
+          for (const quick of quickCandidates) {
+            const targetUrl = canonicalUrl(quick.url);
+            const match = anchorPool
+              .map((a) => {
+                if (quickNav.contains(a)) return null;
+                const href = a.getAttribute("href") || "";
+                const url = abs(href);
+                if (!url || canonicalUrl(url) !== targetUrl) return null;
+                const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+                if (!title || title.length < 20) return null;
+                const rect = a.getBoundingClientRect();
+                const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+                let score = 0;
+                if (topY >= navBottomY) score += 95;
+                else score -= 25;
+                score -= Math.min(300, Math.abs(topY - navBottomY) / 10);
+                if (a.closest("main")) score += 40;
+                if (a.closest(".headline-item-container, .headline-large, .multistoryline__headline, [data-testid*='storyline'], .single-storyline")) score += 95;
+                if (title.length >= 24 && title.length <= 220) score += 20;
+                const icidIdx = Number(String(quick.icid || "").split("-").pop());
+                if (Number.isFinite(icidIdx)) score += Math.max(0, 15 - icidIdx);
+                return { title, url, topY, score, quickTitle: quick.title || null };
+              })
+              .filter(Boolean)
+              .sort((a, b) => (b.score - a.score) || (a.topY - b.topY))[0] || null;
+            if (match && (!best || match.score > best.score)) best = match;
+          }
 
-          const sameUrlAnchors = Array.from(document.querySelectorAll("a[href]"))
-            .map((a) => {
-              if (quickNav.contains(a)) return null;
-              const href = a.getAttribute("href") || "";
-              const url = abs(href);
-              if (!url || canonicalUrl(url) !== targetUrl) return null;
-              const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-              if (!title || title.length < 20) return null;
-              const rect = a.getBoundingClientRect();
-              const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
-              let score = 0;
-              if (topY >= navBottomY) score += 90;
-              else score -= 25;
-              score -= Math.min(300, Math.abs(topY - navBottomY) / 10);
-              if (a.closest("main")) score += 40;
-              if (a.closest(".headline-item-container, .headline-large, .multistoryline__headline, [data-testid*='storyline']")) score += 85;
-              if (title.length >= 24 && title.length <= 220) score += 20;
-              return { title, url, topY, score };
-            })
-            .filter(Boolean)
-            .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
-
-          if (sameUrlAnchors.length) {
-            const best = sameUrlAnchors[0];
+          if (best) {
             return {
               ok: true,
               title: best.title,
               url: best.url,
               selector_used: "nbc_quick_links_nearest_story",
-              quick_link_title: quickTop.title || null,
+              quick_link_title: best.quickTitle || null,
             };
           }
 
-          // If no nearby richer headline is present, fall back to quick-link itself.
-          if (quickTop.title && quickTop.title.length >= 8) {
+          // If no nearby richer headline is present, fall back to first quick-link topic.
+          const quickTop =
+            quickCandidates.find((x) => /quick-links-0$/i.test(x.icid)) ||
+            quickCandidates[0] ||
+            null;
+          if (quickTop?.title && quickTop.title.length >= 8) {
             return {
               ok: true,
               title: quickTop.title,
