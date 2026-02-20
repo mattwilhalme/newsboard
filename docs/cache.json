@@ -5,8 +5,8 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:04.651Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:09.949Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -17,21 +17,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "abc_2026-02-20T17-19-51-952Z",
+        "runId": "abc_2026-02-20T17-52-01-771Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:20:04.651Z",
+        "fetchedAt": "2026-02-20T17:52:09.949Z",
         "shot": {
-          "object_path": "screenshots/abc1/2026/02/20/abc_2026-02-20T17-19-51-952Z.jpg",
+          "object_path": "screenshots/abc1/2026/02/20/abc_2026-02-20T17-52-01-771Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "abc_2026-02-20T17-19-51-952Z",
-          "html": "/archive/abc_2026-02-20T17-19-51-952Z.html",
-          "json": "/archive/abc_2026-02-20T17-19-51-952Z.json"
+          "runId": "abc_2026-02-20T17-52-01-771Z",
+          "html": "/archive/abc_2026-02-20T17-52-01-771Z.html",
+          "json": "/archive/abc_2026-02-20T17-52-01-771Z.json"
         }
       ]
     },
@@ -40,8 +40,8 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:11.596Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:18.770Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -52,21 +52,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cbs_2026-02-20T17-20-05-331Z",
+        "runId": "cbs_2026-02-20T17-52-10-434Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:20:11.596Z",
+        "fetchedAt": "2026-02-20T17:52:18.770Z",
         "shot": {
-          "object_path": "screenshots/cbs1/2026/02/20/cbs_2026-02-20T17-20-05-331Z.jpg",
+          "object_path": "screenshots/cbs1/2026/02/20/cbs_2026-02-20T17-52-10-434Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cbs_2026-02-20T17-20-05-331Z",
-          "html": "/archive/cbs_2026-02-20T17-20-05-331Z.html",
-          "json": "/archive/cbs_2026-02-20T17-20-05-331Z.json"
+          "runId": "cbs_2026-02-20T17-52-10-434Z",
+          "html": "/archive/cbs_2026-02-20T17-52-10-434Z.html",
+          "json": "/archive/cbs_2026-02-20T17-52-10-434Z.json"
         }
       ]
     },
@@ -75,28 +75,45 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:18.815Z",
-      "ok": false,
-      "stale": true,
-      "item": null,
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:24.556Z",
+      "ok": true,
+      "stale": false,
+      "item": {
+        "title": "Supreme Court strikes down Trump's tariffs in major setback for president",
+        "url": "https://usatoday.com/story/news/politics/2026/02/20/supreme-court-trump-tariffs-ruling/87778248007",
+        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2025/10/28/USAT/86947595007-20251003-t-211539-z-1504404018-rc-2-xpdav-6-fo-4-rtrmadp-3-usaautostrump.JPG?auto=webp&crop=4999%2C2812%2Cx0%2Cy260&format=pjpg&height=242&width=430",
+        "imgAlt": null,
+        "dek": "President Trump's sweeping tariffs are the centerpiece of his economic agenda but have raised prices for businesses and consumers.",
+        "slotKey": "2f4f5e88af94",
+        "contentType": "news"
+      },
       "last": {
-        "runId": "usat1_error_2026-02-20T17-20-18-815Z",
-        "ok": false,
-        "error": "Bad Request",
-        "fetchedAt": "2026-02-20T17:20:18.815Z",
-        "shot": null
+        "runId": "usat1_2026-02-20T17-52-19-170Z",
+        "ok": true,
+        "error": null,
+        "fetchedAt": "2026-02-20T17:52:24.556Z",
+        "shot": {
+          "object_path": "screenshots/usat1/2026/02/20/usat1_2026-02-20T17-52-19-170Z.jpg",
+          "shot_url": null
+        }
       },
       "history": [],
-      "archive": []
+      "archive": [
+        {
+          "runId": "usat1_2026-02-20T17-52-19-170Z",
+          "html": "/archive/usat1_2026-02-20T17-52-19-170Z.html",
+          "json": "/archive/usat1_2026-02-20T17-52-19-170Z.json"
+        }
+      ]
     },
     "nbc1": {
       "id": "nbc1",
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:25.673Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:30.709Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -107,21 +124,21 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "nbc_2026-02-20T17-20-19-004Z",
+        "runId": "nbc_2026-02-20T17-52-25-044Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:20:25.673Z",
+        "fetchedAt": "2026-02-20T17:52:30.709Z",
         "shot": {
-          "object_path": "screenshots/nbc1/2026/02/20/nbc_2026-02-20T17-20-19-004Z.jpg",
+          "object_path": "screenshots/nbc1/2026/02/20/nbc_2026-02-20T17-52-25-044Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "nbc_2026-02-20T17-20-19-004Z",
-          "html": "/archive/nbc_2026-02-20T17-20-19-004Z.html",
-          "json": "/archive/nbc_2026-02-20T17-20-19-004Z.json"
+          "runId": "nbc_2026-02-20T17-52-25-044Z",
+          "html": "/archive/nbc_2026-02-20T17-52-25-044Z.html",
+          "json": "/archive/nbc_2026-02-20T17-52-25-044Z.json"
         }
       ]
     },
@@ -130,8 +147,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:33.391Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:37.754Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -142,21 +159,21 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "cnn1_2026-02-20T17-20-26-393Z",
+        "runId": "cnn1_2026-02-20T17-52-31-131Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:20:33.391Z",
+        "fetchedAt": "2026-02-20T17:52:37.754Z",
         "shot": {
-          "object_path": "screenshots/cnn1/2026/02/20/cnn1_2026-02-20T17-20-26-393Z.jpg",
+          "object_path": "screenshots/cnn1/2026/02/20/cnn1_2026-02-20T17-52-31-131Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-02-20T17-20-26-393Z",
-          "html": "/archive/cnn1_2026-02-20T17-20-26-393Z.html",
-          "json": "/archive/cnn1_2026-02-20T17-20-26-393Z.json"
+          "runId": "cnn1_2026-02-20T17-52-31-131Z",
+          "html": "/archive/cnn1_2026-02-20T17-52-31-131Z.html",
+          "json": "/archive/cnn1_2026-02-20T17-52-31-131Z.json"
         }
       ]
     },
@@ -165,33 +182,33 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:38.730Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:41.928Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Supreme court rules against Trump’s sweeping global tariffs",
+        "title": "Donald Trump to speak after major loss to US supreme court over sweeping global tariffs",
         "url": "https://theguardian.com/us-news/live/2026/feb/20/us-iran-nuclear-deal-trump-agreement-strikes-latest-news-live-updates",
         "imgUrl": null,
         "slotKey": "4c3ef987876a",
         "contentType": "live"
       },
       "last": {
-        "runId": "reuters1_2026-02-20T17-20-34-099Z",
+        "runId": "reuters1_2026-02-20T17-52-38-096Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:20:38.730Z",
+        "fetchedAt": "2026-02-20T17:52:41.928Z",
         "shot": {
-          "object_path": "screenshots/reuters1/2026/02/20/reuters1_2026-02-20T17-20-34-099Z.jpg",
+          "object_path": "screenshots/reuters1/2026/02/20/reuters1_2026-02-20T17-52-38-096Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "reuters1_2026-02-20T17-20-34-099Z",
-          "html": "/archive/reuters1_2026-02-20T17-20-34-099Z.html",
-          "json": "/archive/reuters1_2026-02-20T17-20-34-099Z.json"
+          "runId": "reuters1_2026-02-20T17-52-38-096Z",
+          "html": "/archive/reuters1_2026-02-20T17-52-38-096Z.html",
+          "json": "/archive/reuters1_2026-02-20T17-52-38-096Z.json"
         }
       ]
     },
@@ -200,8 +217,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:45.960Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:50.002Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -212,21 +229,21 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "ap1_2026-02-20T17-20-39-244Z",
+        "runId": "ap1_2026-02-20T17-52-42-345Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:20:45.960Z",
+        "fetchedAt": "2026-02-20T17:52:50.002Z",
         "shot": {
-          "object_path": "screenshots/ap1/2026/02/20/ap1_2026-02-20T17-20-39-244Z.jpg",
+          "object_path": "screenshots/ap1/2026/02/20/ap1_2026-02-20T17-52-42-345Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "ap1_2026-02-20T17-20-39-244Z",
-          "html": "/archive/ap1_2026-02-20T17-20-39-244Z.html",
-          "json": "/archive/ap1_2026-02-20T17-20-39-244Z.json"
+          "runId": "ap1_2026-02-20T17-52-42-345Z",
+          "html": "/archive/ap1_2026-02-20T17-52-42-345Z.html",
+          "json": "/archive/ap1_2026-02-20T17-52-42-345Z.json"
         }
       ]
     },
@@ -235,8 +252,8 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:20:53.994Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:52:58.754Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -247,21 +264,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-02-20T17-20-46-533Z",
+        "runId": "latimes1_2026-02-20T17-52-50-425Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:20:53.994Z",
+        "fetchedAt": "2026-02-20T17:52:58.754Z",
         "shot": {
-          "object_path": "screenshots/latimes1/2026/02/20/latimes1_2026-02-20T17-20-46-533Z.jpg",
+          "object_path": "screenshots/latimes1/2026/02/20/latimes1_2026-02-20T17-52-50-425Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "latimes1_2026-02-20T17-20-46-533Z",
-          "html": "/archive/latimes1_2026-02-20T17-20-46-533Z.html",
-          "json": "/archive/latimes1_2026-02-20T17-20-46-533Z.json"
+          "runId": "latimes1_2026-02-20T17-52-50-425Z",
+          "html": "/archive/latimes1_2026-02-20T17-52-50-425Z.html",
+          "json": "/archive/latimes1_2026-02-20T17-52-50-425Z.json"
         }
       ]
     },
@@ -270,8 +287,8 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:21:04.229Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:53:08.890Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -282,21 +299,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-02-20T17-20-54-568Z",
+        "runId": "npr1_2026-02-20T17-52-59-190Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:21:04.229Z",
+        "fetchedAt": "2026-02-20T17:53:08.890Z",
         "shot": {
-          "object_path": "screenshots/npr1/2026/02/20/npr1_2026-02-20T17-20-54-568Z.jpg",
+          "object_path": "screenshots/npr1/2026/02/20/npr1_2026-02-20T17-52-59-190Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "npr1_2026-02-20T17-20-54-568Z",
-          "html": "/archive/npr1_2026-02-20T17-20-54-568Z.html",
-          "json": "/archive/npr1_2026-02-20T17-20-54-568Z.json"
+          "runId": "npr1_2026-02-20T17-52-59-190Z",
+          "html": "/archive/npr1_2026-02-20T17-52-59-190Z.html",
+          "json": "/archive/npr1_2026-02-20T17-52-59-190Z.json"
         }
       ]
     },
@@ -305,8 +322,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:21:09.873Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:53:14.375Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -317,21 +334,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-02-20T17-21-04-852Z",
+        "runId": "bbc1_2026-02-20T17-53-09-426Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:21:09.873Z",
+        "fetchedAt": "2026-02-20T17:53:14.375Z",
         "shot": {
-          "object_path": "screenshots/bbc1/2026/02/20/bbc1_2026-02-20T17-21-04-852Z.jpg",
+          "object_path": "screenshots/bbc1/2026/02/20/bbc1_2026-02-20T17-53-09-426Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "bbc1_2026-02-20T17-21-04-852Z",
-          "html": "/archive/bbc1_2026-02-20T17-21-04-852Z.html",
-          "json": "/archive/bbc1_2026-02-20T17-21-04-852Z.json"
+          "runId": "bbc1_2026-02-20T17-53-09-426Z",
+          "html": "/archive/bbc1_2026-02-20T17-53-09-426Z.html",
+          "json": "/archive/bbc1_2026-02-20T17-53-09-426Z.json"
         }
       ]
     },
@@ -340,33 +357,33 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:21:18.785Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:53:21.584Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Supreme Court rules on Trump tariffs in major test of executive branch powers",
-        "url": "https://foxnews.com/politics/supreme-court-decision-donald-trump-tariff-powers",
+        "title": "President Trump responds to Supreme Court ruling rejecting sweeping tariff powers",
+        "url": "https://foxnews.com/politics/trump-responds-supreme-court-ruling-rejecting-sweeping-tariffs-powers-disgrace",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-02-20T17-21-10-349Z",
+        "runId": "fox1_2026-02-20T17-53-14-806Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:21:18.785Z",
+        "fetchedAt": "2026-02-20T17:53:21.584Z",
         "shot": {
-          "object_path": "screenshots/fox1/2026/02/20/fox1_2026-02-20T17-21-10-349Z.jpg",
+          "object_path": "screenshots/fox1/2026/02/20/fox1_2026-02-20T17-53-14-806Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "fox1_2026-02-20T17-21-10-349Z",
-          "html": "/archive/fox1_2026-02-20T17-21-10-349Z.html",
-          "json": "/archive/fox1_2026-02-20T17-21-10-349Z.json"
+          "runId": "fox1_2026-02-20T17-53-14-806Z",
+          "html": "/archive/fox1_2026-02-20T17-53-14-806Z.html",
+          "json": "/archive/fox1_2026-02-20T17-53-14-806Z.json"
         }
       ]
     },
@@ -375,8 +392,8 @@
       "name": "Yahoo News",
       "home_url": "https://news.yahoo.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:19:49.795Z",
-      "updated_at": "2026-02-20T17:21:27.677Z",
+      "created_at": "2026-02-20T17:51:58.986Z",
+      "updated_at": "2026-02-20T17:53:29.006Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -387,21 +404,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "wp1_2026-02-20T17-21-19-328Z",
+        "runId": "wp1_2026-02-20T17-53-22-021Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:21:27.677Z",
+        "fetchedAt": "2026-02-20T17:53:29.006Z",
         "shot": {
-          "object_path": "screenshots/wp1/2026/02/20/wp1_2026-02-20T17-21-19-328Z.jpg",
+          "object_path": "screenshots/wp1/2026/02/20/wp1_2026-02-20T17-53-22-021Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "wp1_2026-02-20T17-21-19-328Z",
-          "html": "/archive/wp1_2026-02-20T17-21-19-328Z.html",
-          "json": "/archive/wp1_2026-02-20T17-21-19-328Z.json"
+          "runId": "wp1_2026-02-20T17-53-22-021Z",
+          "html": "/archive/wp1_2026-02-20T17-53-22-021Z.html",
+          "json": "/archive/wp1_2026-02-20T17-53-22-021Z.json"
         }
       ]
     }
