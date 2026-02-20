@@ -7,7 +7,7 @@ function normalizeSpaces(s) {
 
 function toAbs(href) {
   try {
-    return new URL(String(href || ""), "https://www.yahoo.com").toString();
+    return new URL(String(href || ""), "https://news.yahoo.com").toString();
   } catch {
     return null;
   }

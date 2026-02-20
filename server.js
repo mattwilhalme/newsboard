@@ -353,7 +353,7 @@ function ensureCacheShape(cache) {
   if (!c.sources.npr1) c.sources.npr1 = baseSource("npr1", "NPR", "https://www.npr.org/", "hero");
   if (!c.sources.bbc1) c.sources.bbc1 = baseSource("bbc1", "BBC", "https://www.bbc.com/", "hero");
   if (!c.sources.fox1) c.sources.fox1 = baseSource("fox1", "Fox News", "https://www.foxnews.com/", "hero");
-  if (!c.sources.wp1) c.sources.wp1 = baseSource("wp1", "Yahoo", "https://www.yahoo.com/", "hero");
+  if (!c.sources.wp1) c.sources.wp1 = baseSource("wp1", "Yahoo News", "https://news.yahoo.com/", "hero");
 
   return c;
 }
@@ -1282,7 +1282,7 @@ async function scrapeCNNHero() {
 /* ---------------------------
    The Guardian (single top item) - main headline card
 --------------------------- */
-async function scrapeReutersHero() {
+async function scrapeGuardianHero() {
   return await withBrowser(async (page) => {
     const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
@@ -2253,7 +2253,7 @@ async function scrapeWPHero(opts = {}) {
   return await withBrowser(async (page) => {
     const runId = `wp1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    const navResp = await page.goto("https://www.yahoo.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    const navResp = await page.goto("https://news.yahoo.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(2200);
 
     const hero = await page.evaluate(() => {
@@ -2265,7 +2265,7 @@ async function scrapeWPHero(opts = {}) {
       }
       function abs(h) {
         try {
-          return new URL(h, "https://www.yahoo.com").toString();
+          return new URL(h, "https://news.yahoo.com").toString();
         } catch {
           return null;
         }
@@ -2527,7 +2527,7 @@ async function refreshSources({ id = "" } = {}) {
       else if (sid === "usat1") res = await scrapeUSATHero();
       else if (sid === "nbc1") res = await scrapeNBCHero();
       else if (sid === "cnn1") res = await scrapeCNNHero();
-      else if (sid === "reuters1") res = await scrapeReutersHero();
+      else if (sid === "reuters1") res = await scrapeGuardianHero();
       else if (sid === "ap1") res = await scrapeAPHero();
       else if (sid === "latimes1") res = await scrapeLATimesHero();
       else if (sid === "npr1") res = await scrapeNPRHero();
@@ -2792,7 +2792,7 @@ app.get("/api/debug/wp", async (_req, res) => {
     res.json({
       ok: Boolean(result?.ok),
       source: "wp1",
-      publisher: "Yahoo",
+      publisher: "Yahoo News",
       error: result?.error || null,
       item: result?.item || null,
       blocked: blockedInfo,
@@ -2816,7 +2816,7 @@ app.get("/api/debug/yahoo", async (_req, res) => {
     res.json({
       ok: Boolean(result?.ok),
       source: "wp1",
-      publisher: "Yahoo",
+      publisher: "Yahoo News",
       error: result?.error || null,
       item: result?.item || null,
       blocked: blockedInfo,
@@ -2824,7 +2824,7 @@ app.get("/api/debug/yahoo", async (_req, res) => {
       meta: result?.meta || null,
     });
   } catch (err) {
-    res.status(500).json({ ok: false, source: "wp1", publisher: "Yahoo", error: String(err?.message || err) });
+    res.status(500).json({ ok: false, source: "wp1", publisher: "Yahoo News", error: String(err?.message || err) });
   }
 });
 
@@ -2980,7 +2980,7 @@ export {
   scrapeUSATHero,
   scrapeNBCHero,
   scrapeCNNHero,
-  scrapeReutersHero,
+  scrapeGuardianHero,
   scrapeAPHero,
   scrapeLATimesHero,
   scrapeNPRHero,
