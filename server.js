@@ -2193,7 +2193,8 @@ async function scrapeFoxHero() {
 /* ---------------------------
    Washington Post (single top item)
 --------------------------- */
-async function scrapeWPHero() {
+async function scrapeWPHero(opts = {}) {
+  const debugMode = Boolean(opts?.debug);
   return await withBrowser(async (page) => {
     const runId = `wp1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
@@ -2262,8 +2263,17 @@ async function scrapeWPHero() {
 
       const pageTitle = clean(document.title || "");
       const pageText = clean(document.body?.innerText || "");
-      if (/verify you are human|captcha|access denied|forbidden|request blocked/i.test(`${pageTitle} ${pageText}`)) {
-        return { ok: false, error: "Washington Post blocked or interstitial challenge" };
+      const blockedByText = /verify you are human|captcha|access denied|forbidden|request blocked/i.test(`${pageTitle} ${pageText}`);
+      if (blockedByText) {
+        return {
+          ok: false,
+          error: "Washington Post blocked or interstitial challenge",
+          debug: {
+            page_title: pageTitle,
+            page_snippet: pageText.slice(0, 600),
+            blocked_signal: "text_match",
+          },
+        };
       }
 
       const allHrefAnchors = Array.from(document.querySelectorAll("a[href]"));
@@ -2326,6 +2336,11 @@ async function scrapeWPHero() {
                     url,
                     selector_used: "ld+json hasPart",
                     candidates: 1,
+                    debug: {
+                      fallback: "ld+json",
+                      page_title: pageTitle,
+                      page_snippet: pageText.slice(0, 600),
+                    },
                   };
                 }
               }
@@ -2334,15 +2349,33 @@ async function scrapeWPHero() {
             // ignore bad/partial JSON payloads
           }
         }
-        return { ok: false, error: "Washington Post: top story not found" };
+        return {
+          ok: false,
+          error: "Washington Post: top story not found",
+          debug: {
+            page_title: pageTitle,
+            page_snippet: pageText.slice(0, 600),
+            candidates: [],
+          },
+        };
       }
       const top = ranked[0];
+      const topCandidates = ranked.slice(0, 12).map((x) => ({
+        title: x.title,
+        url: x.url,
+        score: x.score,
+      }));
       return {
         ok: true,
         title: top.title,
         url: top.url,
         selector_used: selectors[0],
         candidates: ranked.length,
+        debug: {
+          page_title: pageTitle,
+          page_snippet: pageText.slice(0, 600),
+          candidates: topCandidates,
+        },
       };
     });
 
@@ -2374,6 +2407,7 @@ async function scrapeWPHero() {
         page_title: pageTitle || null,
         selector_used: hero?.selector_used || null,
         candidates: Number.isFinite(Number(hero?.candidates)) ? Number(hero.candidates) : null,
+        debug: debugMode ? (hero?.debug || null) : null,
       },
     };
 
@@ -2664,6 +2698,29 @@ app.post("/api/refresh", async (req, res) => {
     res.json({ ok: true, cache });
   } catch (err) {
     res.status(500).json({ ok: false, error: String(err?.message || err) });
+  }
+});
+
+app.get("/api/debug/wp", async (_req, res) => {
+  try {
+    const result = await scrapeWPHero({ debug: true });
+    const blockedInfo = detectBlocked({
+      httpStatus: result?.meta?.http_status || null,
+      finalUrl: result?.meta?.final_url || result?.item?.url || null,
+      pageTitle: result?.meta?.page_title || null,
+      errorText: result?.error || null,
+    });
+    res.json({
+      ok: Boolean(result?.ok),
+      source: "wp1",
+      error: result?.error || null,
+      item: result?.item || null,
+      blocked: blockedInfo,
+      runId: result?.runId || null,
+      meta: result?.meta || null,
+    });
+  } catch (err) {
+    res.status(500).json({ ok: false, source: "wp1", error: String(err?.message || err) });
   }
 });
 
