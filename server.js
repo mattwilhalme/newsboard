@@ -901,6 +901,34 @@ async function scrapeNBCHero() {
         return true;
       }
 
+      function isArticleLikeUrl(url) {
+        if (!url) return false;
+        if (/-rcna\d+/i.test(url)) return true;
+        if (/\/\d{4}\/\d{2}\/\d{2}\//i.test(url)) return true;
+        return false;
+      }
+
+      function isLikelyTopicBanner(a, title, url) {
+        const t = String(title || "").toLowerCase();
+        const genericTitle = /^(olympics|politics|u\.?s\.?\s*news|world|health|sports|business|science|latest stories|live updates|calendar|newsletter|medal tracker)$/i.test(
+          String(title || "").trim(),
+        );
+        const utilityTitle = /(live updates|latest stories|calendar|newsletter|medal tracker|stream on peacock|watch live)/i.test(t);
+        const hubUrl = /\/(live-blog|collection)\//i.test(url || "");
+        const sectionUrl = /^https?:\/\/(www\.)?nbcnews\.com\/(olympics|politics|us-news|world|health|sports|business|science|tech-media)(\/)?$/i.test(
+          url || "",
+        );
+        const inTopicChrome = Boolean(
+          a.closest(
+            "[data-testid*='subnav'], [class*='subnav'], [class*='Subnav'], [data-testid*='navigation'], [class*='navigation'], [class*='category-nav']",
+          ),
+        );
+        if (genericTitle || utilityTitle || sectionUrl) return true;
+        if (hubUrl && !isArticleLikeUrl(url || "")) return true;
+        if (inTopicChrome && !isArticleLikeUrl(url || "")) return true;
+        return false;
+      }
+
       function inBlockedChrome(el) {
         return Boolean(
           el.closest(
@@ -909,17 +937,23 @@ async function scrapeNBCHero() {
         );
       }
 
-      function scoreAnchor(a, title, url) {
+      function scoreAnchor(a, title, url, topY, isBanner) {
         let score = 0;
         if (a.closest(".headline-item-container, .headline-large, .multistoryline__headline")) score += 100;
         if (a.closest("h1,h2,h3")) score += 25;
         if (a.closest("main")) score += 30;
         if (a.getAttribute("tabindex") === "-1") score += 12;
-        if (/\/live-blog\//i.test(url)) score += 60;
+        if (/\/live-blog\//i.test(url)) score += 10;
+        if (isArticleLikeUrl(url)) score += 35;
         if (/-rcna\d+/i.test(url)) score += 20;
         if (/\/(us-news|world|politics|news|sports|business|health|science)\//i.test(url)) score += 20;
+        if (Number.isFinite(topY)) {
+          if (topY < 900) score += 65;
+          else if (topY < 1600) score += 30;
+        }
         if (title.length >= 20 && title.length <= 220) score += 12;
         if (inBlockedChrome(a)) score -= 150;
+        if (isBanner) score -= 170;
         if (/^\s*(Olympics|Politics|U\.?S\.?\s*News|World|Health|Sports|Local|Business|Science)\s*$/i.test(title)) score -= 120;
         if (/watch live|newsletter/i.test(title)) score -= 30;
         return score;
@@ -950,14 +984,26 @@ async function scrapeNBCHero() {
           const url = href ? abs(href) : null;
           const title = clean(a.textContent || a.getAttribute("aria-label") || "");
           if (!url || !title || !isStoryUrl(url)) return null;
-          return { title, url, score: scoreAnchor(a, title, url) };
+          const rect = a.getBoundingClientRect();
+          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+          const isBanner = isLikelyTopicBanner(a, title, url);
+          return { title, url, topY, isBanner, score: scoreAnchor(a, title, url, topY, isBanner) };
         })
         .filter((x) => x && x.score > -10)
-        .sort((a, b) => b.score - a.score);
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      const nonBanner = ranked
+        .filter((x) => !x.isBanner)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      if (nonBanner.length) {
+        const top = nonBanner[0];
+        return { ok: true, title: top.title, url: top.url, selector_used: "nbc_non_banner_ranked" };
+      }
 
       if (ranked.length) {
         const top = ranked[0];
-        return { ok: true, title: top.title, url: top.url };
+        return { ok: true, title: top.title, url: top.url, selector_used: "nbc_ranked_fallback" };
       }
 
       // Fallback: parse inline JSON blobs when DOM classes shift.
@@ -972,7 +1018,8 @@ async function scrapeNBCHero() {
           const raw = m[2].replace(/\\\//g, "/").replace(/\\u0026/g, "&");
           const url = abs(raw);
           if (!url || !title || !isStoryUrl(url)) continue;
-          return { ok: true, title, url };
+          if (isLikelyTopicBanner({ closest: () => null }, title, url) && !isArticleLikeUrl(url)) continue;
+          return { ok: true, title, url, selector_used: "nbc_json_fallback" };
         }
       }
 
