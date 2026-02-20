@@ -928,6 +928,84 @@ async function scrapeNBCHero() {
         }
       }
 
+      function isWeakTitle(title) {
+        const t = clean(String(title || ""));
+        if (!t) return true;
+        if (t.length < 12) return true;
+        if (/^(live|live updates|latest stories|updates|watch live)$/i.test(t)) return true;
+        return false;
+      }
+
+      function pickString(v) {
+        if (!v) return "";
+        if (typeof v === "string") return clean(v);
+        if (typeof v === "object") {
+          if (typeof v.text === "string") return clean(v.text);
+          if (typeof v.primary === "string") return clean(v.primary);
+        }
+        return "";
+      }
+
+      function pickUrl(v) {
+        if (!v) return null;
+        if (typeof v === "string") return abs(v);
+        if (typeof v === "object") {
+          if (typeof v.primary === "string") return abs(v.primary);
+          if (typeof v.canonical === "string") return abs(v.canonical);
+        }
+        return null;
+      }
+
+      function refineTitleForUrl(url, fallbackTitle) {
+        const target = canonicalUrl(url || "");
+        if (!target) return clean(fallbackTitle || "");
+
+        // Prefer structured JSON payload title when visible anchor text is generic.
+        try {
+          const nextDataEl = document.querySelector("script#__NEXT_DATA__");
+          const raw = nextDataEl?.textContent || "";
+          if (raw && raw.length > 5000) {
+            const payload = JSON.parse(raw);
+            const layouts = payload?.props?.initialState?.front?.curation?.layouts || [];
+            for (const layout of layouts) {
+              for (const pkg of (layout?.packages || [])) {
+                for (const it of (pkg?.items || [])) {
+                  const item = it?.item || {};
+                  const computed = it?.computedValues || item?.computedValues || {};
+                  const u = pickUrl(computed?.url) || pickUrl(item?.url) || null;
+                  if (!u || canonicalUrl(u) !== target) continue;
+                  const title =
+                    pickString(computed?.headline) ||
+                    pickString(item?.headline) ||
+                    pickString(item?.headlineAlternatives?.[0]) ||
+                    "";
+                  if (title && !isWeakTitle(title)) return title;
+                }
+              }
+            }
+          }
+        } catch {}
+
+        // Fallback: inspect large inline script blobs for headline/url pairs.
+        try {
+          const scripts = Array.from(document.querySelectorAll("script"));
+          for (const s of scripts) {
+            const txt = s.textContent || "";
+            if (!txt || txt.length < 2000) continue;
+            const re = /"headline":"([^"]{8,260})"[\s\S]{0,800}?"url":\{"primary":"(https:\\\/\\\/www\.nbcnews\.com\\\/[^"]+)"/g;
+            let m;
+            while ((m = re.exec(txt))) {
+              const title = clean(m[1]);
+              const rawUrl = m[2].replace(/\\\//g, "/").replace(/\\u0026/g, "&");
+              const u = abs(rawUrl);
+              if (u && canonicalUrl(u) === target && title && !isWeakTitle(title)) return title;
+            }
+          }
+        } catch {}
+
+        return clean(fallbackTitle || "");
+      }
+
       function isLikelyTopicBanner(a, title, url) {
         const t = String(title || "").toLowerCase();
         const genericTitle = /^(olympics|politics|u\.?s\.?\s*news|world|health|sports|business|science|latest stories|live updates|calendar|newsletter|medal tracker)$/i.test(
@@ -1049,7 +1127,7 @@ async function scrapeNBCHero() {
 
       if (leadCandidates.length) {
         const best = leadCandidates[0];
-        return { ok: true, title: best.title, url: best.url, selector_used: "nbc_post_header_lead" };
+        return { ok: true, title: refineTitleForUrl(best.url, best.title), url: best.url, selector_used: "nbc_post_header_lead" };
       }
 
       // Strategy 2: NBC quick-links banner often points to the real lead topic.
@@ -1103,7 +1181,7 @@ async function scrapeNBCHero() {
           if (best) {
             return {
               ok: true,
-              title: best.title,
+              title: refineTitleForUrl(best.url, best.title),
               url: best.url,
               selector_used: "nbc_quick_links_nearest_story",
               quick_link_title: best.quickTitle || null,
@@ -1118,7 +1196,7 @@ async function scrapeNBCHero() {
           if (quickTop?.title && quickTop.title.length >= 8) {
             return {
               ok: true,
-              title: quickTop.title,
+              title: refineTitleForUrl(quickTop.url, quickTop.title),
               url: quickTop.url,
               selector_used: "nbc_quick_links_direct",
               quick_link_title: quickTop.title || null,
@@ -1136,26 +1214,6 @@ async function scrapeNBCHero() {
           const layouts = payload?.props?.initialState?.front?.curation?.layouts || [];
           const rankedJson = [];
           let order = 0;
-
-          function pickString(v) {
-            if (!v) return "";
-            if (typeof v === "string") return clean(v);
-            if (typeof v === "object") {
-              if (typeof v.text === "string") return clean(v.text);
-              if (typeof v.primary === "string") return clean(v.primary);
-            }
-            return "";
-          }
-
-          function pickUrl(v) {
-            if (!v) return null;
-            if (typeof v === "string") return abs(v);
-            if (typeof v === "object") {
-              if (typeof v.primary === "string") return abs(v.primary);
-              if (typeof v.canonical === "string") return abs(v.canonical);
-            }
-            return null;
-          }
 
           for (const layout of layouts) {
             for (const pkg of (layout?.packages || [])) {
@@ -1185,7 +1243,7 @@ async function scrapeNBCHero() {
           rankedJson.sort((a, b) => (b.score - a.score) || (a.order - b.order));
           if (rankedJson.length) {
             const top = rankedJson[0];
-            return { ok: true, title: top.title, url: top.url, selector_used: "nbc_next_data_ordered" };
+            return { ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_next_data_ordered" };
           }
         }
       } catch {}
@@ -1210,12 +1268,12 @@ async function scrapeNBCHero() {
 
       if (nonBanner.length) {
         const top = nonBanner[0];
-        return { ok: true, title: top.title, url: top.url, selector_used: "nbc_non_banner_ranked" };
+        return { ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_non_banner_ranked" };
       }
 
       if (ranked.length) {
         const top = ranked[0];
-        return { ok: true, title: top.title, url: top.url, selector_used: "nbc_ranked_fallback" };
+        return { ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_ranked_fallback" };
       }
 
       // Fallback: parse inline JSON blobs when DOM classes shift.
@@ -1231,7 +1289,7 @@ async function scrapeNBCHero() {
           const url = abs(raw);
           if (!url || !title || !isStoryUrl(url)) continue;
           if (isLikelyTopicBanner({ closest: () => null }, title, url) && !isArticleLikeUrl(url)) continue;
-          return { ok: true, title, url, selector_used: "nbc_json_fallback" };
+          return { ok: true, title: refineTitleForUrl(url, title), url, selector_used: "nbc_json_fallback" };
         }
       }
 
@@ -1518,26 +1576,82 @@ async function scrapeUSATHero() {
         return parts[0].url;
       }
 
-      // USAT often uses a top hero link with a shadow-region title span.
-      const a =
-        document.querySelector('a:has(span[data-tb-shadow-region-title="0"])') ||
-        document.querySelector('a:has(span[data-tb-title])') ||
-        document.querySelector("a.gnt_m_he") ||
-        null;
+      function isStoryUrl(url) {
+        if (!url) return false;
+        if (!/^https?:\/\/(www\.)?usatoday\.com\//i.test(url)) return false;
+        if (/\/videos?\//i.test(url)) return false;
+        return /\/(story|live-story)\//i.test(url);
+      }
 
-      if (!a) return { ok: false, error: "USAT: hero anchor not found" };
+      function titleFromAnchor(a) {
+        const explicit =
+          clean(a.querySelector("span.gnt_m_he__lc")?.textContent || "") ||
+          clean(a.querySelector("span.gnt_lbl_lc")?.textContent || "") ||
+          clean(a.querySelector('span[data-tb-shadow-region-title="0"]')?.textContent || "") ||
+          clean(a.querySelector("span[data-tb-title]")?.textContent || "") ||
+          clean(a.querySelector("[data-tb-shadow-region-title]")?.textContent || "") ||
+          clean(a.querySelector("[data-tb-title]")?.textContent || "") ||
+          clean(a.querySelector("span")?.textContent || "");
+        return explicit || clean(a.getAttribute("aria-label") || "") || clean(a.textContent || "");
+      }
 
+      function scoreAnchor(a, title, url) {
+        const rect = a.getBoundingClientRect();
+        const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+        let score = 0;
+        if (a.classList.contains("gnt_m_he")) score += 160;
+        if (/\/live-story\//i.test(url)) score += 70;
+        if (a.querySelector("span.gnt_m_he__lc, span.gnt_lbl_lc")) score += 45;
+        if (a.querySelector("[data-tb-shadow-region-title], [data-tb-title]")) score += 35;
+        if (a.querySelector("img")) score += 20;
+        if (a.closest("main")) score += 25;
+        if (a.closest("header,nav,footer")) score -= 150;
+        if (title.length >= 24 && title.length <= 260) score += 20;
+        if (title.length >= 12 && title.length <= 320) score += 10;
+        if (Number.isFinite(topY)) {
+          if (topY < 900) score += 35;
+          else if (topY < 1700) score += 15;
+        }
+        return { score, topY };
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        "a.gnt_m_he[href]",
+        "main a[href*='/live-story/']",
+        "a[href*='/live-story/']",
+        "main a[href*='/story/']",
+        "a[data-tb-link][href]",
+      ];
+      for (const sel of selectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? absUrl(href) : null;
+          if (!url || !isStoryUrl(url)) return null;
+          const title = titleFromAnchor(a);
+          if (!title || title.length < 12) return null;
+          const s = scoreAnchor(a, title, url);
+          return { a, title, url, score: s.score, topY: s.topY };
+        })
+        .filter((x) => x && x.score > -20)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      const top = ranked[0] || null;
+      if (!top) return { ok: false, error: "USAT: hero anchor not found" };
+
+      const a = top.a;
       const href = a.getAttribute("href") || "";
       const url = href ? absUrl(href) : null;
-
-      const span =
-        a.querySelector('span[data-tb-shadow-region-title="0"]') ||
-        a.querySelector("span[data-tb-title]") ||
-        a.querySelector("[data-tb-shadow-region-title]") ||
-        a.querySelector("[data-tb-title]") ||
-        null;
-
-      const title = clean(span?.textContent || "");
+      const title = top.title;
 
       const img =
         a.querySelector("img.gnt_m_he_i[src], img.gnt_m_he_i[srcset]") ||
@@ -1570,6 +1684,8 @@ async function scrapeUSATHero() {
           aClass: a.getAttribute("class") || null,
           dataTL: a.getAttribute("data-t-l") || null,
           pickedSpanHasShadow0: Boolean(a.querySelector('span[data-tb-shadow-region-title="0"]')),
+          isLiveStory: /\/live-story\//i.test(url || ""),
+          rankedCandidates: ranked.length,
         },
       };
     });
