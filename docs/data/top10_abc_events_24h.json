@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-20T03:17:11.499Z",
+  "generatedAt": "2026-02-20T03:32:04.365Z",
   "hours": 24,
   "events": [
     {
@@ -1421,6 +1421,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "4 men exonerated in infamous 1991 yogurt shop killings",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "MOVED",
+      "fingerprint": "0863aef6799f33c1c56a7a923c586a7080b22994",
+      "from_rank": 6,
+      "to_rank": 1,
+      "from_title": "'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS",
+      "to_title": "breaking'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "0863aef6799f33c1c56a7a923c586a7080b22994",
+      "from_rank": 6,
+      "to_rank": 1,
+      "from_title": "'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS",
+      "to_title": "breaking'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "MOVED",
+      "fingerprint": "40a189db84c123ac9f76195bb30f582fa80e0251",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert",
+      "to_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "MOVED",
+      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct",
+      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "MOVED",
+      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Nancy Guthrie live updates: Man detained last week identified",
+      "to_title": "Nancy Guthrie live updates: Man detained last week identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "MOVED",
+      "fingerprint": "b4b42e4a9a45fbfbf1a1a43f8e49f9a5325f04ca",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran",
+      "to_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8dc6ddcd3e77d27f84af5396b96c60c8dd8874d3",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Cold case murder of teen solved 44 years later using DNA from cigarette"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T03:32:15.583Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2bb57ae78d6c30f7482bf9886a568b4f940964ae",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS",
       "to_title": null
     }
   ]
