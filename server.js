@@ -908,6 +908,19 @@ async function scrapeNBCHero() {
         return false;
       }
 
+      function canonicalUrl(url) {
+        try {
+          const u = new URL(String(url || ""));
+          u.hash = "";
+          // Keep query because NBC sometimes uses campaign params for same story;
+          // canonical comparison below strips it explicitly.
+          const bare = `${u.origin}${u.pathname}`.replace(/\/+$/, "");
+          return bare.toLowerCase();
+        } catch {
+          return String(url || "").trim().toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
+        }
+      }
+
       function isLikelyTopicBanner(a, title, url) {
         const t = String(title || "").toLowerCase();
         const genericTitle = /^(olympics|politics|u\.?s\.?\s*news|world|health|sports|business|science|latest stories|live updates|calendar|newsletter|medal tracker)$/i.test(
@@ -978,6 +991,78 @@ async function scrapeNBCHero() {
         }
       }
 
+      // Strategy 1: NBC quick-links banner often points to the real lead topic.
+      // Find quick-links #0 URL, then pull the nearest full story headline anchor below that banner.
+      const quickNav = document.querySelector("nav.quick-links, nav[data-activity-map='quick-links'], nav[class*='quickLinks']");
+      if (quickNav) {
+        const quickCandidates = Array.from(quickNav.querySelectorAll("a[href]"))
+          .map((a) => {
+            const href = a.getAttribute("href") || "";
+            const url = abs(href);
+            const icid = String(a.getAttribute("data-icid") || "");
+            const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+            if (!url || !isStoryUrl(url)) return null;
+            if (/\/tips\/?$/i.test(url)) return null;
+            return { a, url, icid, title };
+          })
+          .filter(Boolean);
+
+        const quickTop =
+          quickCandidates.find((x) => /quick-links-0$/i.test(x.icid)) ||
+          quickCandidates[0] ||
+          null;
+
+        if (quickTop) {
+          const navRect = quickNav.getBoundingClientRect();
+          const navBottomY = (Number.isFinite(navRect?.bottom) ? navRect.bottom : 0) + (window.scrollY || 0);
+          const targetUrl = canonicalUrl(quickTop.url);
+
+          const sameUrlAnchors = Array.from(document.querySelectorAll("a[href]"))
+            .map((a) => {
+              if (quickNav.contains(a)) return null;
+              const href = a.getAttribute("href") || "";
+              const url = abs(href);
+              if (!url || canonicalUrl(url) !== targetUrl) return null;
+              const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+              if (!title || title.length < 20) return null;
+              const rect = a.getBoundingClientRect();
+              const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+              let score = 0;
+              if (topY >= navBottomY) score += 90;
+              else score -= 25;
+              score -= Math.min(300, Math.abs(topY - navBottomY) / 10);
+              if (a.closest("main")) score += 40;
+              if (a.closest(".headline-item-container, .headline-large, .multistoryline__headline, [data-testid*='storyline']")) score += 85;
+              if (title.length >= 24 && title.length <= 220) score += 20;
+              return { title, url, topY, score };
+            })
+            .filter(Boolean)
+            .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+          if (sameUrlAnchors.length) {
+            const best = sameUrlAnchors[0];
+            return {
+              ok: true,
+              title: best.title,
+              url: best.url,
+              selector_used: "nbc_quick_links_nearest_story",
+              quick_link_title: quickTop.title || null,
+            };
+          }
+
+          // If no nearby richer headline is present, fall back to quick-link itself.
+          if (quickTop.title && quickTop.title.length >= 8) {
+            return {
+              ok: true,
+              title: quickTop.title,
+              url: quickTop.url,
+              selector_used: "nbc_quick_links_direct",
+              quick_link_title: quickTop.title || null,
+            };
+          }
+        }
+      }
+
       const ranked = anchors
         .map((a) => {
           const href = a.getAttribute("href") || "";
@@ -1040,7 +1125,19 @@ async function scrapeNBCHero() {
     const snapshot = { id: "nbc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "NBC not found"), item, shot };
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+      shot,
+      meta: {
+        selector_used: hero?.selector_used || null,
+        quick_link_title: hero?.quick_link_title || null,
+      },
+    };
   });
 }
 
