@@ -2040,23 +2040,39 @@ async function scrapeFoxHero() {
       function cleanTitle(title) {
         return clean(String(title || "").replace(/\s*-\s*Fox News\s*$/i, ""));
       }
-      function scoreAnchor(a, title, url, imgSrc, topY) {
+      function scoreAnchor(a, title, url, imgSrc, imgDataSrc, topY, navLastIdx, docIdx) {
         let score = 0;
-        if (a.closest("main.main-content-primary")) score += 100;
-        if (a.closest("article.story-1, article.story-2, article.story-3")) score += 130;
-        if (a.closest("article.story-1")) score += 80;
+        if (a.closest("main.main-content-primary")) score += 90;
+        if (a.closest("article[class*='story-']")) score += 90;
         if (a.closest(".collection")) score += 40;
         if (a.querySelector("img[alt]")) score += 45;
-        if (imgSrc && /\/content\/uploads\//i.test(imgSrc)) score += 25;
+        if ((imgDataSrc || imgSrc) && /\/content\/uploads\//i.test(String(imgDataSrc || imgSrc))) score += 25;
+        if ((imgDataSrc || imgSrc) && /\/prod-hp\.foxnews\.com\/images\//i.test(String(imgDataSrc || imgSrc))) score += 35;
+        if ((imgDataSrc || imgSrc) && /\/720\/405\//i.test(String(imgDataSrc || imgSrc))) score += 25;
         if (title.length >= 20 && title.length <= 220) score += 15;
         if (Number.isFinite(topY)) {
           if (topY < 900) score += 70;
           else if (topY < 1700) score += 25;
         }
+        if (Number.isFinite(navLastIdx) && Number.isFinite(docIdx)) {
+          if (docIdx > navLastIdx) {
+            const delta = docIdx - navLastIdx;
+            score += 220;
+            score += Math.max(0, 120 - Math.min(120, delta));
+          } else {
+            score -= 320;
+          }
+        }
         if (a.closest("header,nav,footer,.network-wrapper,.watch-live,.top-stories")) score -= 220;
         if (isVideoUrl(url)) score -= 220;
         return score;
       }
+
+      const allHrefAnchors = Array.from(document.querySelectorAll("a[href]"));
+      const docIndexByAnchor = new Map(allHrefAnchors.map((el, i) => [el, i]));
+      const navAnchors = Array.from(document.querySelectorAll(".nav-row.nav-row-lower a[href]"));
+      const navLast = navAnchors.length ? navAnchors[navAnchors.length - 1] : null;
+      const navLastIdx = navLast && docIndexByAnchor.has(navLast) ? docIndexByAnchor.get(navLast) : -1;
 
       const seen = new Set();
       const anchors = [];
@@ -2083,6 +2099,8 @@ async function scrapeFoxHero() {
           const img = a.querySelector("img[alt]");
           const imgAlt = clean(img?.getAttribute("alt") || "");
           const imgSrc = clean(img?.getAttribute("src") || "");
+          const imgDataSrc = clean(img?.getAttribute("data-src") || "");
+          if (imgSrc === "//static.foxnews.com/static/orion/img/clear-16x9.gif" && !imgDataSrc) return null;
           const textTitle = clean(
             a.querySelector("h1,h2,h3,.title,.headline")?.textContent ||
             a.getAttribute("title") ||
@@ -2094,18 +2112,29 @@ async function scrapeFoxHero() {
           if (!url || !title || !isStoryUrl(url)) return null;
           const rect = a.getBoundingClientRect?.();
           const topY = Number.isFinite(rect?.top) ? rect.top : NaN;
+          const docIdx = docIndexByAnchor.has(a) ? docIndexByAnchor.get(a) : NaN;
           return {
             title,
             url,
             imgSrc,
-            score: scoreAnchor(a, title, url, imgSrc, topY),
+            imgDataSrc,
+            docIdx,
+            score: scoreAnchor(a, title, url, imgSrc, imgDataSrc, topY, navLastIdx, docIdx),
           };
         })
         .filter((x) => x && x.score > 0)
         .sort((a, b) => b.score - a.score);
 
       if (!ranked.length) return { ok: false, error: "Fox News: top story not found" };
-      const top = ranked[0];
+      const prodHero = ranked
+        .filter((r) => {
+          const src = String(r.imgDataSrc || r.imgSrc || "");
+          return /\/prod-hp\.foxnews\.com\/images\//i.test(src) &&
+                 /\/720\/405\//i.test(src) &&
+                 (!Number.isFinite(navLastIdx) || navLastIdx < 0 || (Number.isFinite(r.docIdx) && r.docIdx > navLastIdx));
+        })
+        .sort((a, b) => (Number(a.docIdx || 0) - Number(b.docIdx || 0)));
+      const top = prodHero[0] || ranked[0];
       return {
         ok: true,
         title: top.title,
@@ -2201,11 +2230,12 @@ async function scrapeWPHero() {
         if (!url || !isWPHost(url)) return false;
         const u = parsed(url);
         const p = String(u?.pathname || "");
-        if (!/^\/[a-z0-9-]+\/20\d{2}\/\d{2}\/\d{2}\//i.test(p)) return false;
+        if (!/^\/[a-z0-9-]+\/20\d{2}\/\d{2}\/\d{2}\//i.test(p) && !/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(p)) return false;
         if (/\/(graphics|video|podcasts?|opinions\/letters|live-updates)\//i.test(p)) return false;
+        if (/^\/(search|subscribe|account|gift|newsletters|wp-srv)\b/i.test(p)) return false;
         return true;
       }
-      function scoreAnchor(a, title, url, topY) {
+      function scoreAnchor(a, title, url, topY, navLastIdx, docIdx) {
         let score = 0;
         if (a.getAttribute("data-pb-local-content-field") === "web_headline") score += 220;
         if (a.closest(".headline.relative, .headline")) score += 120;
@@ -2216,10 +2246,31 @@ async function scrapeWPHero() {
           if (topY < 900) score += 70;
           else if (topY < 1700) score += 25;
         }
+        if (Number.isFinite(navLastIdx) && Number.isFinite(docIdx)) {
+          if (docIdx > navLastIdx) {
+            const delta = docIdx - navLastIdx;
+            score += 220;
+            score += Math.max(0, 120 - Math.min(120, delta));
+          } else {
+            score -= 320;
+          }
+        }
         if (a.closest("nav,header,footer,[role='navigation']")) score -= 260;
         if (/\/(search|subscribe|account|gift|newsletters)\b/i.test(url)) score -= 200;
         return score;
       }
+
+      const pageTitle = clean(document.title || "");
+      const pageText = clean(document.body?.innerText || "");
+      if (/verify you are human|captcha|access denied|forbidden|request blocked/i.test(`${pageTitle} ${pageText}`)) {
+        return { ok: false, error: "Washington Post blocked or interstitial challenge" };
+      }
+
+      const allHrefAnchors = Array.from(document.querySelectorAll("a[href]"));
+      const docIndexByAnchor = new Map(allHrefAnchors.map((el, i) => [el, i]));
+      const navAnchors = Array.from(document.querySelectorAll("header a[href], nav a[href]"));
+      const navLast = navAnchors.length ? navAnchors[navAnchors.length - 1] : null;
+      const navLastIdx = navLast && docIndexByAnchor.has(navLast) ? docIndexByAnchor.get(navLast) : -1;
 
       const seen = new Set();
       const anchors = [];
@@ -2248,12 +2299,43 @@ async function scrapeWPHero() {
           if (!url || !title || !isStoryUrl(url)) return null;
           const rect = a.getBoundingClientRect?.();
           const topY = Number.isFinite(rect?.top) ? rect.top : NaN;
-          return { title, url, score: scoreAnchor(a, title, url, topY) };
+          const docIdx = docIndexByAnchor.has(a) ? docIndexByAnchor.get(a) : NaN;
+          return { title, url, score: scoreAnchor(a, title, url, topY, navLastIdx, docIdx) };
         })
         .filter((x) => x && x.score > 0)
         .sort((a, b) => b.score - a.score);
 
-      if (!ranked.length) return { ok: false, error: "Washington Post: top story not found" };
+      if (!ranked.length) {
+        // Fallback: derive from JSON-LD when DOM headline anchors are unavailable.
+        const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+        for (const script of scripts) {
+          const raw = script.textContent || "";
+          if (!raw) continue;
+          try {
+            const obj = JSON.parse(raw);
+            const graph = Array.isArray(obj?.["@graph"]) ? obj["@graph"] : [obj];
+            for (const row of graph) {
+              const parts = Array.isArray(row?.hasPart) ? row.hasPart : [];
+              for (const part of parts) {
+                const url = abs(part?.url || "");
+                const title = clean(part?.headline || "");
+                if (url && title && isStoryUrl(url)) {
+                  return {
+                    ok: true,
+                    title,
+                    url,
+                    selector_used: "ld+json hasPart",
+                    candidates: 1,
+                  };
+                }
+              }
+            }
+          } catch {
+            // ignore bad/partial JSON payloads
+          }
+        }
+        return { ok: false, error: "Washington Post: top story not found" };
+      }
       const top = ranked[0];
       return {
         ok: true,
