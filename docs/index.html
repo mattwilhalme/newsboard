@@ -247,6 +247,14 @@
       text-transform:uppercase;
       line-height:1;
     }
+    .videoTag{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      line-height:1;
+    }
     .breakingNewsTag{
       color:#b00020;
       font-size:12px;
@@ -1611,6 +1619,8 @@
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "latimes1";
       if (s === "wsj" || s === "wsj1" || s === "wallstreetjournal") return "";
       if (s === "npr" || s === "npr1" || s === "nationalpublicradio") return "npr1";
+      if (s === "bbc" || s === "bbc1") return "bbc1";
+      if (s === "fox" || s === "fox1") return "fox1";
       if (s === "yahoo" || s === "yahoo1" || s === "yahoonews") return "yahoo1";
       if (s === "wp" || s === "wp1" || s === "wapo" || s === "washingtonpost") return "yahoo1";
       return s;
@@ -1649,6 +1659,8 @@
       if (s === "ap" || s === "ap1" || s === "associatedpress") return "Associated Press";
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "Los Angeles Times";
       if (s === "npr" || s === "npr1" || s === "nationalpublicradio") return "NPR";
+      if (s === "bbc" || s === "bbc1") return "BBC";
+      if (s === "fox" || s === "fox1") return "Fox News";
 
       return k || "Source";
     }
@@ -1668,6 +1680,8 @@
       if (s === "ap1") return "https://apnews.com/";
       if (s === "latimes1") return "https://www.latimes.com/";
       if (s === "npr1") return "https://www.npr.org/";
+      if (s === "bbc1") return "https://www.bbc.com/";
+      if (s === "fox1") return "https://www.foxnews.com/";
       return null;
     }
 
@@ -2566,6 +2580,7 @@
     }
 
     function isLiveBlogItem(src){
+      if (isVideoItem(src)) return false;
       const contentType = String(src?.item?.contentType || src?.contentType || "").toLowerCase();
       if (contentType === "live") return true;
       const u = String(src?.item?.url || "").toLowerCase();
@@ -2575,6 +2590,17 @@
         /\/live-blog\//.test(u) ||
         /\/live-updates(\/|$)/.test(u) ||
         /\blive blog\b/.test(t)
+      );
+    }
+
+    function isVideoItem(src){
+      const contentType = String(src?.item?.contentType || src?.contentType || "").toLowerCase();
+      if (contentType === "video") return true;
+      const u = String(src?.item?.url || "").toLowerCase();
+      const t = String(src?.item?.title || "").toLowerCase();
+      return (
+        /\/video(\/|$)/.test(u) ||
+        (/\/live(\/|$)/.test(u) && /\babc news live\b/.test(t))
       );
     }
 
@@ -2705,6 +2731,13 @@
         breakingTag.className = "breakingNewsTag";
         breakingTag.textContent = src.item.breakingLabel;
         wrap.appendChild(breakingTag);
+      }
+
+      if (isVideoItem(src)) {
+        const videoTag = document.createElement("div");
+        videoTag.className = "videoTag";
+        videoTag.textContent = "Video";
+        wrap.appendChild(videoTag);
       }
 
       if (isLiveBlogItem(src)) {

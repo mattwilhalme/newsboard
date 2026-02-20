@@ -551,47 +551,145 @@ async function scrapeABCHero() {
         }
       }
 
-      // ABC: try prism linkbase blocks first
-      const prismMatches = document.querySelectorAll('[data-testid="prism-linkbase"]').length;
-      const headingMatches = (document.querySelector("main") || document.body).querySelectorAll("h1, h2, h3").length;
-      const a = document.querySelector('[data-testid="prism-linkbase"]');
-      if (a) {
-        const href = a.getAttribute("href") || "";
-        const title = clean(a.getAttribute("aria-label") || a.textContent || "");
-        const url = href ? abs(href) : null;
-        if (title && url) {
-          return {
-            ok: true,
-            title,
-            url,
-            selector_used: "abc_prism_linkbase",
-            candidates: { primary: prismMatches, fallback: headingMatches },
-            hero_html: a.outerHTML || null,
-          };
+      function isVideoLike(url, title, typeHint = "") {
+        const u = String(url || "").toLowerCase();
+        const t = String(title || "").toLowerCase();
+        const h = String(typeHint || "").toLowerCase();
+        if (h === "video") return true;
+        return (
+          /\/video(\/|$)/.test(u) ||
+          /\/live(\/|$)/.test(u) ||
+          /\babc news live\b/.test(t) ||
+          /\blive video\b/.test(t)
+        );
+      }
+
+      const candidates = [];
+      const main = document.querySelector("main") || document.body;
+      const prismMatches = main.querySelectorAll('[data-testid="prism-linkbase"]').length;
+      const headingMatches = main.querySelectorAll("h1, h2, h3").length;
+
+      // Candidate A: explicit live video hero block.
+      const liveHero =
+        document.querySelector(".LiveVideo__Hero") ||
+        document.querySelector(".MediaPlaceholder__Pill--live")?.closest("[data-testid='prism-card']");
+      if (liveHero) {
+        const liveMeta =
+          liveHero.closest("[data-testid='prism-card']")?.querySelector("a[data-testid='prism-meta'][href]") ||
+          liveHero.querySelector("a[data-testid='prism-meta'][href]") ||
+          null;
+        const liveH2 = liveHero.closest("[data-testid='prism-card']")?.querySelector("h2[id*='headline'], h2") || null;
+        const liveHref = liveMeta?.getAttribute("href") || "";
+        const liveUrl = liveHref ? abs(liveHref) : null;
+        const liveTitle = clean(liveH2?.textContent || liveMeta?.getAttribute("aria-label") || "");
+        if (liveTitle && liveUrl) {
+          candidates.push({
+            title: liveTitle,
+            url: liveUrl,
+            contentType: "video",
+            selector_used: "abc_live_video_hero",
+            score: 1200,
+            hero_html: liveMeta?.outerHTML || liveHero?.outerHTML || null,
+          });
         }
       }
 
-      // Fallback: first strong h1/h2 with link
-      const main = document.querySelector("main") || document.body;
-      const headings = Array.from(main.querySelectorAll("h1, h2, h3"));
-      for (const h of headings) {
-        const a2 = h.closest("a[href]") || h.querySelector("a[href]");
-        const title = clean(h.textContent || "");
-        const href = a2?.getAttribute("href") || null;
+      // Candidate B: first prism linkbase card.
+      const prismAnchor = document.querySelector('[data-testid="prism-linkbase"][href]');
+      if (prismAnchor) {
+        const href = prismAnchor.getAttribute("href") || "";
         const url = href ? abs(href) : null;
-        if (!title || title.length < 12) continue;
-        if (!url) continue;
-        return {
-          ok: true,
-          title,
-          url,
-          selector_used: "heading_fallback",
-          candidates: { primary: prismMatches, fallback: headingMatches },
-          hero_html: (a2?.outerHTML || h?.outerHTML || null),
-        };
+        const title = clean(prismAnchor.getAttribute("aria-label") || prismAnchor.textContent || "");
+        if (title && url) {
+          candidates.push({
+            title,
+            url,
+            contentType: isVideoLike(url, title) ? "video" : "news",
+            selector_used: "abc_prism_linkbase",
+            score: 800,
+            hero_html: prismAnchor.outerHTML || null,
+          });
+        }
       }
 
-      return { ok: false, error: "ABC not found" };
+      // Candidate C: first strong heading with link.
+      for (const h of Array.from(main.querySelectorAll("h1, h2, h3")).slice(0, 40)) {
+        const a2 = h.closest("a[href]") || h.querySelector("a[href]");
+        const title = clean(h.textContent || "");
+        const href = a2?.getAttribute("href") || "";
+        const url = href ? abs(href) : null;
+        if (!title || title.length < 12 || !url) continue;
+        candidates.push({
+          title,
+          url,
+          contentType: isVideoLike(url, title) ? "video" : "news",
+          selector_used: "heading_fallback",
+          score: 500,
+          hero_html: a2?.outerHTML || h?.outerHTML || null,
+        });
+        break;
+      }
+
+      const ranked = candidates
+        .filter((c) => c?.title && c?.url)
+        .sort((a, b) => (Number(b.score) - Number(a.score)));
+      const picked = ranked[0] || null;
+      if (!picked) return { ok: false, error: "ABC not found" };
+
+      // Breaking banner: DOM first, then app shell fallback.
+      let breakingHeadline = null;
+      let breakingUrl = null;
+      let hasBreakingBanner = false;
+
+      const breakingDomAnchor =
+        document.querySelector('a[tracking*="breakingnews_banner"][href]') ||
+        document.querySelector('a[href*="/story/"][tracking*="breaking"]') ||
+        null;
+      if (breakingDomAnchor) {
+        const rawTitle = clean(breakingDomAnchor.textContent || "");
+        const rawHref = clean(breakingDomAnchor.getAttribute("href") || "");
+        if (rawTitle) {
+          hasBreakingBanner = true;
+          breakingHeadline = rawTitle.replace(/^breaking\s*/i, "").trim() || rawTitle;
+          breakingUrl = rawHref ? abs(rawHref) : null;
+        }
+      }
+
+      if (!hasBreakingBanner) {
+        const shell = window.__abcnews__?.page?.content?.shell || null;
+        const bnObj = shell?.bnObj || null;
+        const bnStory = shell?.bnStory || null;
+        const showBanner =
+          typeof bnObj?.displayBanner === "boolean"
+            ? Boolean(bnObj.displayBanner)
+            : Boolean(bnObj?.text || bnStory?.locator);
+        if (showBanner) {
+          const txt = clean(bnObj?.text || bnObj?.video?.headline || "");
+          const loc = clean(bnObj?.link || bnStory?.locator || "");
+          if (txt || loc) {
+            hasBreakingBanner = true;
+            breakingHeadline = txt || null;
+            breakingUrl = loc ? abs(loc) : null;
+          }
+        }
+      }
+
+      return {
+        ok: true,
+        title: picked.title,
+        url: picked.url,
+        contentType: picked.contentType || "news",
+        selector_used: picked.selector_used || null,
+        candidates: {
+          primary: prismMatches,
+          fallback: headingMatches,
+          ranked: ranked.length,
+        },
+        hero_html: picked.hero_html || null,
+        breakingHeadline,
+        breakingUrl,
+        hasBreakingBanner,
+      };
     });
 
     const item = hero?.ok
@@ -599,6 +697,10 @@ async function scrapeABCHero() {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
           imgUrl: null,
+          contentType: hero?.contentType || "news",
+          breakingLabel: hero?.hasBreakingBanner ? "Breaking News" : null,
+          breakingHeadline: cleanText(hero?.breakingHeadline || "") || null,
+          breakingUrl: hero?.breakingUrl ? normalizeUrl(hero.breakingUrl) : null,
           slotKey: sha1("abc1|top").slice(0, 12),
         }
       : null;
