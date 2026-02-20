@@ -909,8 +909,7 @@
         <div class="deepDive">
           <div class="deepTop">
             <div>
-              <h2 class="deepTitle">Timeline</h2>
-              <div class="deepMeta">Publisher: ABC News</div>
+              <h2 class="deepTitle">ABC News</h2>
             </div>
             <div class="row">
               <label class="tiny" for="deep-window">Change log window</label>
@@ -3307,6 +3306,43 @@
       }, label);
     }
 
+    function phraseTokenSet(phrase){
+      return new Set(
+        normalizeForCluster(phrase)
+          .split(" ")
+          .filter(Boolean)
+          .filter((t) => !CLUSTER_STOPWORDS.has(t))
+          .map((t) => {
+            if (t.length > 5 && t.endsWith("ing")) return t.slice(0, -3);
+            if (t.length > 4 && t.endsWith("er")) return t.slice(0, -2);
+            if (t.length > 4 && t.endsWith("ed")) return t.slice(0, -2);
+            if (t.length > 4 && t.endsWith("es")) return t.slice(0, -2);
+            if (t.length > 3 && t.endsWith("s")) return t.slice(0, -1);
+            return t;
+          })
+          .filter((t) => t.length >= 4),
+      );
+    }
+
+    function phraseTokenOverlapScore(phrase, titleNorm, urlNorm){
+      const phraseTokens = phraseTokenSet(phrase);
+      if (!phraseTokens.size) return 0;
+      const titleTokens = phraseTokenSet(titleNorm);
+      const urlTokens = phraseTokenSet(urlNorm);
+      let titleHits = 0;
+      let urlHits = 0;
+      for (const tok of phraseTokens) {
+        if (titleTokens.has(tok)) titleHits += 1;
+        if (urlTokens.has(tok)) urlHits += 1;
+      }
+      if (!titleHits && !urlHits) return 0;
+      let score = 0;
+      if (titleHits > 0) score += 2 + (titleHits * 1.5);
+      if (urlHits > 0) score += 1 + (urlHits * 0.75);
+      if (titleHits >= 2) score += 1.5;
+      return score;
+    }
+
     function matchCluster(item, cluster){
       const titleNorm = normalizeForCluster(item?.title || "");
       const urlNorm = normalizeForCluster(item?.url || "");
@@ -3318,6 +3354,9 @@
         if (!phrase) continue;
         if (titleNorm.includes(phrase)) score += 4;
         if (urlNorm.includes(phrase)) score += 2;
+        if (!titleNorm.includes(phrase) && !urlNorm.includes(phrase)) {
+          score += phraseTokenOverlapScore(phrase, titleNorm, urlNorm);
+        }
       }
 
       const includeAll = (cluster?.includeAll || []).map((x) => normalizeForCluster(x)).filter(Boolean);
@@ -3329,6 +3368,44 @@
       }
 
       return { score, match: score >= 4 };
+    }
+
+    function autoActivateClustersForCoverage(sources){
+      const ids = sortedOverviewIds(sources || {}, latestOverviewPayload?.indicators || {});
+      if (ids.length <= 3) return false;
+
+      const countOther = () => {
+        const sorted = [...activeClusters].sort(clusterSort);
+        let other = 0;
+        for (const id of ids) {
+          const src = sources?.[id] || {};
+          const item = { sourceId: id, title: src?.item?.title || "", url: src?.item?.url || "" };
+          const clusterId = assignItemToCluster(item, sorted);
+          if (clusterId === "other") other += 1;
+        }
+        return other;
+      };
+
+      let otherCount = countOther();
+      if (otherCount <= 3) return false;
+
+      const suggestions = buildClusterSuggestions(overviewItemsFromSources(sources), [...activeClusters]);
+      let changed = false;
+      for (const suggestion of suggestions) {
+        if (otherCount <= 3) break;
+        const cluster = createClusterFromPhrase(suggestion.phrase);
+        const exists = activeClusters.some((c) =>
+          c.id === cluster.id ||
+          phrasesConflict(c.label, cluster.label) ||
+          (c.includeAny || []).some((p) => (cluster.includeAny || []).some((q) => phrasesConflict(p, q)))
+        );
+        if (exists) continue;
+        activeClusters.push(cluster);
+        changed = true;
+        otherCount = countOther();
+      }
+      if (changed) saveActiveClusters(activeClusters);
+      return changed;
     }
 
     function assignItemToCluster(item, clusters){
@@ -3627,6 +3704,7 @@
     function renderStoryClusters(sources, indicatorsById, timelineBySource = {}){
       latestOverviewPayload = { sources, indicators: indicatorsById, timelineBySource };
       consolidateActiveClusters();
+      autoActivateClustersForCoverage(sources);
       const items = overviewItemsFromSources(sources);
       renderClusterChips(items);
       renderClusteredOverview(sources, indicatorsById, timelineBySource);
