@@ -2350,6 +2350,13 @@ async function scrapeWPHero(opts = {}) {
 
       const seen = new Set();
       const anchors = [];
+      const targetHeroSelector = 'u.StretchedBox.wafer-rapid-module[class*="W(59.6%)"][data-ylk*="elm:img;"][data-wf-rapid-trigger="click"][data-wf-rapid-method="beaconClick"]';
+      const targetHeroU = document.querySelector(targetHeroSelector);
+      const targetHeroAnchor = targetHeroU ? targetHeroU.closest("a[href]") : null;
+      if (targetHeroAnchor) {
+        seen.add(targetHeroAnchor);
+        anchors.push(targetHeroAnchor);
+      }
       const selectors = [
         'a[data-ylk*="sec:strm"][data-ylk*="ct:story"][data-ylk*="elm:hdln"][href]',
         'main a[data-ylk*="ct:story"][href]',
@@ -2381,7 +2388,7 @@ async function scrapeWPHero(opts = {}) {
             title,
             url,
             ylk,
-            score: scoreAnchor(a, title, url, topY, navLastIdx, docIdx, ylk),
+            score: scoreAnchor(a, title, url, topY, navLastIdx, docIdx, ylk) + (a === targetHeroAnchor ? 500 : 0),
           };
         })
         .filter((x) => x && x.score > 0)
@@ -2441,7 +2448,7 @@ async function scrapeWPHero(opts = {}) {
         ok: true,
         title: top.title,
         url: top.url,
-        selector_used: selectors[0],
+        selector_used: top.url && targetHeroAnchor && abs(targetHeroAnchor.getAttribute("href") || "") === top.url ? targetHeroSelector : selectors[0],
         candidates: ranked.length,
         debug: {
           page_title: pageTitle,
