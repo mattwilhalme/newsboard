@@ -1056,7 +1056,7 @@
     const SUPABASE_SCREENSHOT_BUCKET = "screenshots";
 
     // Expect exactly these sources; render placeholders when missing
-    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","npr1","bbc1","fox1","yahoo1"];
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","guardian1","ap1","latimes1","npr1","bbc1","fox1","yahoo1"];
 
     // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
@@ -1613,7 +1613,7 @@
       if (s === "usat" || s === "usat1" || s === "usatoday" || s === "usatoday1") return "usat1";
       if (s === "nbc" || s === "nbc1") return "nbc1";
       if (s === "cnn" || s === "cnn1") return "cnn1";
-      if (s === "reuters" || s === "reuters1") return "reuters1";
+      if (s === "reuters" || s === "reuters1") return "guardian1";
       if (s === "guardian" || s === "guardian1") return "guardian1";
       if (s === "ap" || s === "ap1" || s === "associatedpress") return "ap1";
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "latimes1";
@@ -1645,7 +1645,6 @@
       const s = canonicalSourceId(k);
       const n = row?.sourceName || row?.name || null;
       if (s === "yahoo1") return "Yahoo News";
-      if (s === "reuters1") return "The Guardian";
       if (s === "guardian1") return "The Guardian";
       if (n) return String(n);
 
@@ -1654,7 +1653,6 @@
       if (s === "usat" || s === "usat1" || s === "usatoday" || s === "usatoday1") return "USA Today";
       if (s === "nbc" || s === "nbc1") return "NBC News";
       if (s === "cnn" || s === "cnn1") return "CNN";
-      if (s === "reuters" || s === "reuters1") return "The Guardian";
       if (s === "guardian" || s === "guardian1") return "The Guardian";
       if (s === "ap" || s === "ap1" || s === "associatedpress") return "Associated Press";
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "Los Angeles Times";
@@ -1667,7 +1665,6 @@
 
     function sourceHomeUrl(k, row){
       const s = canonicalSourceId(k);
-      if (s === "reuters1") return "https://www.theguardian.com/";
       if (s === "guardian1") return "https://www.theguardian.com/";
       if (s === "yahoo1") return "https://news.yahoo.com/";
       const fromRow = row?.home_url || row?.homeUrl || null;
