@@ -982,7 +982,7 @@
     const SUPABASE_SCREENSHOT_BUCKET = "screenshots";
 
     // Expect exactly these sources; render placeholders when missing
-    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","npr1","bbc1","fox1"];
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","reuters1","ap1","latimes1","npr1","bbc1","fox1","wp1"];
 
     // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
@@ -3163,6 +3163,20 @@
       return minLen > 0 && (common / minLen) >= 0.6;
     }
 
+    function phrasesShareCoreToken(a, b){
+      const ta = new Set(phraseTokensForOverlap(a).filter((t) => t.length >= 5));
+      const tb = new Set(phraseTokensForOverlap(b).filter((t) => t.length >= 5));
+      if (!ta.size || !tb.size) return false;
+      for (const tok of ta) {
+        if (tb.has(tok)) return true;
+      }
+      return false;
+    }
+
+    function phrasesConflict(a, b){
+      return phrasesOverlap(a, b) || phrasesShareCoreToken(a, b);
+    }
+
     function extractCapitalizedPhrases(title){
       const out = [];
       const matches = String(title || "").match(/(?:\b(?:[A-Z][a-z]+|[A-Z]{2,})\b(?:\s+|$)){2,3}/g) || [];
@@ -3205,7 +3219,7 @@
         for (const inc of (c.includeAny || [])) {
           const n = normalizeForCluster(inc);
           if (!n) continue;
-          if (p.includes(n) || n.includes(p)) return true;
+          if (p.includes(n) || n.includes(p) || phrasesConflict(p, n)) return true;
         }
       }
       return false;
@@ -3253,7 +3267,7 @@
       scored.sort((a, b) => (b.score - a.score) || (b.publisherDiversity - a.publisherDiversity) || (b.count - a.count) || a.phrase.localeCompare(b.phrase));
       const out = [];
       for (const cand of scored) {
-        if (out.some((k) => phrasesOverlap(k.phrase, cand.phrase))) continue;
+        if (out.some((k) => phrasesConflict(k.phrase, cand.phrase))) continue;
         out.push(cand);
         if (out.length >= 10) break;
       }
@@ -3314,8 +3328,8 @@
       const c = clusterSanitize(cluster, cluster?.label || "Topic");
       const overlapIdx = activeClusters.findIndex((x) =>
         x.id === c.id ||
-        phrasesOverlap(x.label, c.label) ||
-        (x.includeAny || []).some((p) => (c.includeAny || []).some((q) => phrasesOverlap(p, q)))
+        phrasesConflict(x.label, c.label) ||
+        (x.includeAny || []).some((p) => (c.includeAny || []).some((q) => phrasesConflict(p, q)))
       );
       if (overlapIdx >= 0) {
         const merged = activeClusters[overlapIdx];
@@ -3340,8 +3354,8 @@
       for (const c0 of sorted) {
         const c = clusterSanitize(c0, c0?.label || "Topic");
         const idx = out.findIndex((x) =>
-          phrasesOverlap(x.label, c.label) ||
-          (x.includeAny || []).some((p) => (c.includeAny || []).some((q) => phrasesOverlap(p, q)))
+          phrasesConflict(x.label, c.label) ||
+          (x.includeAny || []).some((p) => (c.includeAny || []).some((q) => phrasesConflict(p, q)))
         );
         if (idx < 0) {
           out.push(c);

@@ -50,6 +50,7 @@ const SCREENSHOT_PROFILES = {
   npr1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   bbc1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   fox1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
+  wp1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
 };
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
@@ -352,6 +353,7 @@ function ensureCacheShape(cache) {
   if (!c.sources.npr1) c.sources.npr1 = baseSource("npr1", "NPR", "https://www.npr.org/", "hero");
   if (!c.sources.bbc1) c.sources.bbc1 = baseSource("bbc1", "BBC", "https://www.bbc.com/", "hero");
   if (!c.sources.fox1) c.sources.fox1 = baseSource("fox1", "Fox News", "https://www.foxnews.com/", "hero");
+  if (!c.sources.wp1) c.sources.wp1 = baseSource("wp1", "Washington Post", "https://www.washingtonpost.com/", "hero");
 
   return c;
 }
@@ -2160,12 +2162,161 @@ async function scrapeFoxHero() {
 }
 
 /* ---------------------------
+   Washington Post (single top item)
+--------------------------- */
+async function scrapeWPHero() {
+  return await withBrowser(async (page) => {
+    const runId = `wp1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    const navResp = await page.goto("https://www.washingtonpost.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(2200);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function abs(h) {
+        try {
+          return new URL(h, "https://www.washingtonpost.com").toString();
+        } catch {
+          return null;
+        }
+      }
+      function parsed(url) {
+        try {
+          return new URL(String(url || ""));
+        } catch {
+          return null;
+        }
+      }
+      function isWPHost(url) {
+        const u = parsed(url);
+        if (!u) return false;
+        return /(^|\.)washingtonpost\.com$/i.test(u.hostname);
+      }
+      function isStoryUrl(url) {
+        if (!url || !isWPHost(url)) return false;
+        const u = parsed(url);
+        const p = String(u?.pathname || "");
+        if (!/^\/[a-z0-9-]+\/20\d{2}\/\d{2}\/\d{2}\//i.test(p)) return false;
+        if (/\/(graphics|video|podcasts?|opinions\/letters|live-updates)\//i.test(p)) return false;
+        return true;
+      }
+      function scoreAnchor(a, title, url, topY) {
+        let score = 0;
+        if (a.getAttribute("data-pb-local-content-field") === "web_headline") score += 220;
+        if (a.closest(".headline.relative, .headline")) score += 120;
+        if (a.closest(".main-content, main")) score += 70;
+        if (a.closest("h1,h2,h3")) score += 40;
+        if (title.length >= 20 && title.length <= 220) score += 15;
+        if (Number.isFinite(topY)) {
+          if (topY < 900) score += 70;
+          else if (topY < 1700) score += 25;
+        }
+        if (a.closest("nav,header,footer,[role='navigation']")) score -= 260;
+        if (/\/(search|subscribe|account|gift|newsletters)\b/i.test(url)) score -= 200;
+        return score;
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        'main a[data-pb-local-content-field="web_headline"][href]',
+        'a[data-pb-local-content-field="web_headline"][href]',
+        "main h1 a[href], main h2 a[href], main h3 a[href]",
+        "main a[href]",
+      ];
+      for (const sel of selectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (!a || seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title =
+            clean(a.querySelector("span")?.textContent || "") ||
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(a.textContent || "");
+          if (!url || !title || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect?.();
+          const topY = Number.isFinite(rect?.top) ? rect.top : NaN;
+          return { title, url, score: scoreAnchor(a, title, url, topY) };
+        })
+        .filter((x) => x && x.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (!ranked.length) return { ok: false, error: "Washington Post: top story not found" };
+      const top = ranked[0];
+      return {
+        ok: true,
+        title: top.title,
+        url: top.url,
+        selector_used: selectors[0],
+        candidates: ranked.length,
+      };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title || "Top story"),
+          url: normalizeUrl(hero.url),
+          imgUrl: null,
+          slotKey: sha1("wp1|top").slice(0, 12),
+        }
+      : null;
+
+    const fetchedAt = nowISO();
+    const shot = await captureTimelineShot(page, { sourceId: "wp1", runId, tsIso: fetchedAt, item });
+    const pageTitle = await page.title().catch(() => null);
+    const snapshot = {
+      id: "wp1",
+      fetchedAt,
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "Washington Post not found"),
+      item,
+      shot,
+      meta: {
+        run_kind: "hero",
+        profile: "desktop",
+        final_url: page.url() || null,
+        http_status: navResp?.status?.() ?? null,
+        page_title: pageTitle || null,
+        selector_used: hero?.selector_used || null,
+        candidates: Number.isFinite(Number(hero?.candidates)) ? Number(hero.candidates) : null,
+      },
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+      shot,
+      meta: snapshot.meta,
+    };
+  });
+}
+
+/* ---------------------------
    Refresh / API
 --------------------------- */
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "npr1", "bbc1", "fox1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "npr1", "bbc1", "fox1", "wp1"];
   const pruneResult = await pruneOldScreenshots({ hours: SCREENSHOT_RETENTION_HOURS });
   if ((pruneResult?.prunedRows || 0) > 0 || (pruneResult?.deletedObjects || 0) > 0) {
     console.log(`Screenshot prune: rows=${pruneResult.prunedRows || 0}, storage_objects=${pruneResult.deletedObjects || 0}`);
@@ -2187,6 +2338,7 @@ async function refreshSources({ id = "" } = {}) {
       else if (sid === "npr1") res = await scrapeNPRHero();
       else if (sid === "bbc1") res = await scrapeBBCHero();
       else if (sid === "fox1") res = await scrapeFoxHero();
+      else if (sid === "wp1") res = await scrapeWPHero();
       else throw new Error(`Unknown source id: ${sid}`);
     } catch (err) {
       res = {
@@ -2591,5 +2743,6 @@ export {
   scrapeNPRHero,
   scrapeBBCHero,
   scrapeFoxHero,
+  scrapeWPHero,
   refreshSources,
 };

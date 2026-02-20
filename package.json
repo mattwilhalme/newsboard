@@ -9,6 +9,7 @@
     "dev": "node server.js",
     "test:bbc": "node scripts/test-bbc-scraper.js",
     "test:fox": "node scripts/test-fox-scraper.js",
+    "test:wp": "node scripts/test-wp-scraper.js",
     "clean-cache": "rm -f cache.json",
     "clean-archive": "rm -rf archive/*",
     "install-browsers": "npx playwright install"
