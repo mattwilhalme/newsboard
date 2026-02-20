@@ -1671,6 +1671,14 @@ async function scrapeUSATHero() {
       }
 
       const dek = clean(a.getAttribute("data-c-br") || "") || null;
+      const breakingAnchor =
+        document.querySelector('a.gnt_n_bn_hl.gnt_n_bn_ce[data-g-r="base_bnlink"][href]') ||
+        document.querySelector("a.gnt_n_bn_hl.gnt_n_bn_ce[href]") ||
+        null;
+      const breakingHeadline = clean(breakingAnchor?.textContent || "") || null;
+      const breakingHref = clean(breakingAnchor?.getAttribute("href") || "");
+      const breakingUrl = breakingHref ? absUrl(breakingHref) : null;
+      const hasBreakingBanner = Boolean(breakingHeadline);
 
       return {
         ok: Boolean(title && url),
@@ -1679,12 +1687,16 @@ async function scrapeUSATHero() {
         imgUrl,
         imgAlt,
         dek,
+        breakingHeadline,
+        breakingUrl,
+        hasBreakingBanner,
         debug: {
           href,
           aClass: a.getAttribute("class") || null,
           dataTL: a.getAttribute("data-t-l") || null,
           pickedSpanHasShadow0: Boolean(a.querySelector('span[data-tb-shadow-region-title="0"]')),
           isLiveStory: /\/live-story\//i.test(url || ""),
+          hasBreakingBanner,
           rankedCandidates: ranked.length,
         },
       };
@@ -1694,6 +1706,8 @@ async function scrapeUSATHero() {
     let finalUrl = hero?.url ? normalizeUrl(hero.url) : null;
     let finalTitle = cleanText(hero?.title || "");
     let finalImgUrl = hero?.imgUrl ? normalizeUrl(hero.imgUrl) : null;
+    let finalBreakingUrl = hero?.breakingUrl ? normalizeUrl(hero.breakingUrl) : null;
+    let finalBreakingHeadline = cleanText(hero?.breakingHeadline || "");
 
     if (hero?.ok && finalUrl && !finalImgUrl) {
       try {
@@ -1711,6 +1725,9 @@ async function scrapeUSATHero() {
           imgUrl: finalImgUrl,
           imgAlt: hero?.imgAlt || null,
           dek: hero?.dek || null,
+          breakingLabel: hero?.hasBreakingBanner ? "Breaking News" : null,
+          breakingHeadline: finalBreakingHeadline || null,
+          breakingUrl: finalBreakingUrl,
           slotKey: sha1("usat|hero").slice(0, 12),
         }
       : null;
