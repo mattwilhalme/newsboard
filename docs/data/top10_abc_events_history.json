@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-20T20:51:31.384Z",
+  "generatedAt": "2026-02-20T21:12:47.101Z",
   "source_id": "abc1",
   "events": [
     {
@@ -4531,6 +4531,76 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingTrump outlines new plan for tariffs after 'deeply disappointing' SCOTUS ruling",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T21:12:58.682Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4359acaecaf87d0974505fbff2c4ea1ae3c00af6",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Sellier stretchered off after opponent's blade slices near her eye in Olympic 1500"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T21:12:58.682Z",
+      "event_type": "MOVED",
+      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "How an au pair affair and fetish website factored into double murder plot",
+      "to_title": "How an au pair affair and fetish website factored into double murder plot"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T21:12:58.682Z",
+      "event_type": "MOVED",
+      "fingerprint": "552c2ea675d8afc924007f158933b4c584b3e8ed",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Texas Republican faces allegations of affair with staffer who died by suicide",
+      "to_title": "Texas Republican faces allegations of affair with staffer who died by suicide"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T21:12:58.682Z",
+      "event_type": "MOVED",
+      "fingerprint": "fb33dc855876f442aa7fe27b986842108b81fb45",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll",
+      "to_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T21:12:58.682Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e8bd6a6fc6b63419882557140eef45357af112c8",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Trader Joe's fried rice products voluntarily recalled due to potential contamination"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T21:12:58.682Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "80035b16af88d769dedb122ca123a2f640bfa434",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Eric Dane remembered by Patrick Dempsey, Alyssa Milano and more",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-20T21:12:58.682Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "975e7c2c79197c40b834ccba3856ee7f31842d7b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "New Mexico reopens investigation into Jeffrey Epstein's Zorro Ranch",
       "to_title": null
     }
   ],
