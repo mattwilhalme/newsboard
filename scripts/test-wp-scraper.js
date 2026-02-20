@@ -7,7 +7,7 @@ function normalizeSpaces(s) {
 
 function toAbs(href) {
   try {
-    return new URL(String(href || ""), "https://www.washingtonpost.com").toString();
+    return new URL(String(href || ""), "https://www.yahoo.com").toString();
   } catch {
     return null;
   }
@@ -16,10 +16,9 @@ function toAbs(href) {
 function isStoryUrl(url) {
   try {
     const u = new URL(String(url || ""));
-    if (!/(^|\.)washingtonpost\.com$/i.test(u.hostname)) return false;
+    if (!/(^|\.)yahoo\.com$/i.test(u.hostname)) return false;
     const p = String(u.pathname || "");
-    if (!/^\/[a-z0-9-]+\/20\d{2}\/\d{2}\/\d{2}\//i.test(p)) return false;
-    if (/\/(graphics|video|podcasts?|opinions\/letters|live-updates)\//i.test(p)) return false;
+    if (!/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(p) && !/^\/news\/articles\//i.test(p)) return false;
     return true;
   } catch {
     return false;
@@ -28,10 +27,12 @@ function isStoryUrl(url) {
 
 function scoreCandidate(c) {
   let score = 0;
-  if (c.hasWebHeadlineField) score += 220;
-  if (c.inHeadlineBlock) score += 120;
-  if (c.inMain) score += 70;
-  if (c.inHeading) score += 40;
+  if (c.secStrm) score += 180;
+  if (c.ctStory) score += 120;
+  if (c.elmHdln) score += 120;
+  if (c.stretched) score += 25;
+  if (Number.isFinite(c.mpos)) score += Math.max(0, 140 - (c.mpos * 20));
+  if (Number.isFinite(c.cpos)) score += Math.max(0, 70 - (c.cpos * 8));
   if (c.title.length >= 20 && c.title.length <= 220) score += 15;
   return score;
 }
@@ -39,10 +40,9 @@ function scoreCandidate(c) {
 function extractTopStoryFromHtml(html) {
   const $ = cheerio.load(html);
   const selectors = [
-    'main a[data-pb-local-content-field="web_headline"][href]',
-    'a[data-pb-local-content-field="web_headline"][href]',
-    "main h1 a[href], main h2 a[href], main h3 a[href]",
-    "main a[href]",
+    'a[data-ylk*="sec:strm"][data-ylk*="ct:story"][data-ylk*="elm:hdln"][href]',
+    'main a[data-ylk*="ct:story"][href]',
+    'a[data-ylk][href]',
   ];
 
   const seen = new Set();
@@ -55,6 +55,7 @@ function extractTopStoryFromHtml(html) {
       if ($(el).parents("nav,header,footer,[role='navigation']").length) return;
 
       const href = $(el).attr("href") || "";
+      const ylk = $(el).attr("data-ylk") || "";
       const url = toAbs(href);
       const title =
         normalizeSpaces($(el).find("span").first().text()) ||
@@ -65,10 +66,12 @@ function extractTopStoryFromHtml(html) {
       const candidate = {
         url,
         title,
-        hasWebHeadlineField: ($(el).attr("data-pb-local-content-field") || "") === "web_headline",
-        inHeadlineBlock: $(el).parents(".headline.relative,.headline").length > 0,
-        inMain: $(el).parents("main").length > 0,
-        inHeading: $(el).parents("h1,h2,h3").length > 0,
+        secStrm: ylk.includes("sec:strm"),
+        ctStory: ylk.includes("ct:story"),
+        elmHdln: ylk.includes("elm:hdln"),
+        stretched: (($(el).attr("class") || "").includes("stretched-box")),
+        mpos: Number((ylk.match(/(?:^|;)mpos:(\d+)/) || [])[1] || NaN),
+        cpos: Number((ylk.match(/(?:^|;)cpos:(\d+)/) || [])[1] || NaN),
       };
       ranked.push({ ...candidate, score: scoreCandidate(candidate) });
     });
@@ -93,16 +96,16 @@ function assert(condition, message) {
 }
 
 function run() {
-  const html = fs.readFileSync("washington-post.html", "utf8");
+  const html = fs.readFileSync("yahoo.html", "utf8");
   const top = extractTopStoryFromHtml(html);
 
-  assert(top, "Expected a Washington Post top story candidate");
+  assert(top, "Expected a Yahoo top story candidate");
   assert(
-    top.url.includes("/national-security/2026/02/19/trump-iran-attack-military/"),
+    top.url.includes("/entertainment/celebrity/article/eric-dane-greys-anatomy-and-euphoria-star-dies-at-53-nearly-1-year-after-revealing-als-diagnosis-023808459.html"),
     `Unexpected top URL: ${top.url}`,
   );
   assert(
-    /Trump appears ready to attack Iran as U\.S\. strike force takes shape/i.test(top.title),
+    /Eric Dane, 'Grey's Anatomy' and 'Euphoria' star, dies at 53/i.test(top.title),
     `Unexpected top title: ${top.title}`,
   );
 
@@ -118,16 +121,16 @@ function run() {
     assert(got.blocked_reason === tc.out, `Expected reason=${tc.out}, got=${got.blocked_reason}`);
   }
 
-  const notBlocked = detectBlocked({ httpStatus: 200, pageTitle: "The Washington Post" });
+  const notBlocked = detectBlocked({ httpStatus: 200, pageTitle: "Yahoo" });
   assert(notBlocked.blocked === false, "Expected non-blocked case to be false");
 
-  console.log("Washington Post scraper tests passed.");
+  console.log("Yahoo scraper tests passed.");
   console.log(`Top story: ${top.title} -> ${top.url}`);
 }
 
 try {
   run();
 } catch (err) {
-  console.error("Washington Post scraper tests failed:", String(err?.message || err));
+  console.error("Yahoo scraper tests failed:", String(err?.message || err));
   process.exit(1);
 }

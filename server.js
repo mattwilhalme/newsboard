@@ -353,7 +353,7 @@ function ensureCacheShape(cache) {
   if (!c.sources.npr1) c.sources.npr1 = baseSource("npr1", "NPR", "https://www.npr.org/", "hero");
   if (!c.sources.bbc1) c.sources.bbc1 = baseSource("bbc1", "BBC", "https://www.bbc.com/", "hero");
   if (!c.sources.fox1) c.sources.fox1 = baseSource("fox1", "Fox News", "https://www.foxnews.com/", "hero");
-  if (!c.sources.wp1) c.sources.wp1 = baseSource("wp1", "Washington Post", "https://www.washingtonpost.com/", "hero");
+  if (!c.sources.wp1) c.sources.wp1 = baseSource("wp1", "Yahoo", "https://www.yahoo.com/", "hero");
 
   return c;
 }
@@ -2191,14 +2191,14 @@ async function scrapeFoxHero() {
 }
 
 /* ---------------------------
-   Washington Post (single top item)
+   Yahoo (single top item; mapped to wp1 slot)
 --------------------------- */
 async function scrapeWPHero(opts = {}) {
   const debugMode = Boolean(opts?.debug);
   return await withBrowser(async (page) => {
     const runId = `wp1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    const navResp = await page.goto("https://www.washingtonpost.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    const navResp = await page.goto("https://www.yahoo.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(2200);
 
     const hero = await page.evaluate(() => {
@@ -2210,7 +2210,7 @@ async function scrapeWPHero(opts = {}) {
       }
       function abs(h) {
         try {
-          return new URL(h, "https://www.washingtonpost.com").toString();
+          return new URL(h, "https://www.yahoo.com").toString();
         } catch {
           return null;
         }
@@ -2222,26 +2222,37 @@ async function scrapeWPHero(opts = {}) {
           return null;
         }
       }
-      function isWPHost(url) {
+      function isYahooHost(url) {
         const u = parsed(url);
         if (!u) return false;
-        return /(^|\.)washingtonpost\.com$/i.test(u.hostname);
+        return /(^|\.)yahoo\.com$/i.test(u.hostname);
       }
       function isStoryUrl(url) {
-        if (!url || !isWPHost(url)) return false;
+        if (!url || !isYahooHost(url)) return false;
         const u = parsed(url);
         const p = String(u?.pathname || "");
-        if (!/^\/[a-z0-9-]+\/20\d{2}\/\d{2}\/\d{2}\//i.test(p) && !/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(p)) return false;
-        if (/\/(graphics|video|podcasts?|opinions\/letters|live-updates)\//i.test(p)) return false;
-        if (/^\/(search|subscribe|account|gift|newsletters|wp-srv)\b/i.test(p)) return false;
+        if (!/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(p) && !/^\/news\/articles\//i.test(p)) return false;
+        if (/^\/(search|news|finance|sports|entertainment|lifestyle|mail|weather|video|autos)\/?$/i.test(p)) return false;
         return true;
       }
-      function scoreAnchor(a, title, url, topY, navLastIdx, docIdx) {
+      function numFromYlk(ylk, key) {
+        const m = String(ylk || "").match(new RegExp(`(?:^|;)${key}:(\\\\d+)`));
+        return m ? Number(m[1]) : NaN;
+      }
+      function hasYlk(ylk, token) {
+        return String(ylk || "").includes(token);
+      }
+      function scoreAnchor(a, title, url, topY, navLastIdx, docIdx, ylk) {
         let score = 0;
-        if (a.getAttribute("data-pb-local-content-field") === "web_headline") score += 220;
-        if (a.closest(".headline.relative, .headline")) score += 120;
-        if (a.closest(".main-content, main")) score += 70;
-        if (a.closest("h1,h2,h3")) score += 40;
+        const mpos = numFromYlk(ylk, "mpos");
+        const cpos = numFromYlk(ylk, "cpos");
+        if (hasYlk(ylk, "sec:strm")) score += 180;
+        if (hasYlk(ylk, "ct:story")) score += 120;
+        if (hasYlk(ylk, "elm:hdln")) score += 120;
+        if (hasYlk(ylk, "subsec:needtoknow")) score += 60;
+        if (Number.isFinite(mpos)) score += Math.max(0, 140 - (mpos * 20));
+        if (Number.isFinite(cpos)) score += Math.max(0, 70 - (cpos * 8));
+        if ((a.getAttribute("class") || "").includes("stretched-box")) score += 25;
         if (title.length >= 20 && title.length <= 220) score += 15;
         if (Number.isFinite(topY)) {
           if (topY < 900) score += 70;
@@ -2257,7 +2268,7 @@ async function scrapeWPHero(opts = {}) {
           }
         }
         if (a.closest("nav,header,footer,[role='navigation']")) score -= 260;
-        if (/\/(search|subscribe|account|gift|newsletters)\b/i.test(url)) score -= 200;
+        if (/\/(search|account|mail|weather)\b/i.test(url)) score -= 200;
         return score;
       }
 
@@ -2267,7 +2278,7 @@ async function scrapeWPHero(opts = {}) {
       if (blockedByText) {
         return {
           ok: false,
-          error: "Washington Post blocked or interstitial challenge",
+          error: "Yahoo blocked or interstitial challenge",
           debug: {
             page_title: pageTitle,
             page_snippet: pageText.slice(0, 600),
@@ -2285,10 +2296,10 @@ async function scrapeWPHero(opts = {}) {
       const seen = new Set();
       const anchors = [];
       const selectors = [
-        'main a[data-pb-local-content-field="web_headline"][href]',
-        'a[data-pb-local-content-field="web_headline"][href]',
-        "main h1 a[href], main h2 a[href], main h3 a[href]",
+        'a[data-ylk*="sec:strm"][data-ylk*="ct:story"][data-ylk*="elm:hdln"][href]',
+        'main a[data-ylk*="ct:story"][href]',
         "main a[href]",
+        'a[data-ylk][href]',
       ];
       for (const sel of selectors) {
         for (const a of Array.from(document.querySelectorAll(sel))) {
@@ -2302,6 +2313,7 @@ async function scrapeWPHero(opts = {}) {
         .map((a) => {
           const href = a.getAttribute("href") || "";
           const url = href ? abs(href) : null;
+          const ylk = a.getAttribute("data-ylk") || "";
           const title =
             clean(a.querySelector("span")?.textContent || "") ||
             clean(a.getAttribute("aria-label") || "") ||
@@ -2310,48 +2322,52 @@ async function scrapeWPHero(opts = {}) {
           const rect = a.getBoundingClientRect?.();
           const topY = Number.isFinite(rect?.top) ? rect.top : NaN;
           const docIdx = docIndexByAnchor.has(a) ? docIndexByAnchor.get(a) : NaN;
-          return { title, url, score: scoreAnchor(a, title, url, topY, navLastIdx, docIdx) };
+          return {
+            title,
+            url,
+            ylk,
+            score: scoreAnchor(a, title, url, topY, navLastIdx, docIdx, ylk),
+          };
         })
         .filter((x) => x && x.score > 0)
         .sort((a, b) => b.score - a.score);
 
       if (!ranked.length) {
-        // Fallback: derive from JSON-LD when DOM headline anchors are unavailable.
+        // Fallback: parse Next data payload for ntk stream items.
         const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
-        for (const script of scripts) {
-          const raw = script.textContent || "";
-          if (!raw) continue;
-          try {
-            const obj = JSON.parse(raw);
-            const graph = Array.isArray(obj?.["@graph"]) ? obj["@graph"] : [obj];
-            for (const row of graph) {
-              const parts = Array.isArray(row?.hasPart) ? row.hasPart : [];
-              for (const part of parts) {
-                const url = abs(part?.url || "");
-                const title = clean(part?.headline || "");
+        const nextData = scripts
+          .map((s) => s.textContent || "")
+          .find((txt) => txt.includes("window.__next_f.push") && txt.includes("\"ntk\":"));
+        if (nextData) {
+          const m = nextData.match(/\"ntk\":\\s*\\[(.*?)\\],\\s*\"spaceId\"/s);
+          if (m && m[1]) {
+            const tuples = m[1].split("},{").map((x, i, arr) => (i === 0 ? x + "}" : i === arr.length - 1 ? "{" + x : "{" + x + "}"));
+            for (const rowRaw of tuples) {
+              try {
+                const row = JSON.parse(rowRaw);
+                const url = abs(row?.url || "");
+                const title = clean(row?.title || "");
                 if (url && title && isStoryUrl(url)) {
                   return {
                     ok: true,
                     title,
                     url,
-                    selector_used: "ld+json hasPart",
+                    selector_used: "next_f ntk fallback",
                     candidates: 1,
                     debug: {
-                      fallback: "ld+json",
+                      fallback: "next_f_ntk",
                       page_title: pageTitle,
                       page_snippet: pageText.slice(0, 600),
                     },
                   };
                 }
-              }
+              } catch {}
             }
-          } catch {
-            // ignore bad/partial JSON payloads
           }
         }
         return {
           ok: false,
-          error: "Washington Post: top story not found",
+          error: "Yahoo: top story not found",
           debug: {
             page_title: pageTitle,
             page_snippet: pageText.slice(0, 600),
@@ -2364,6 +2380,7 @@ async function scrapeWPHero(opts = {}) {
         title: x.title,
         url: x.url,
         score: x.score,
+        ylk: String(x.ylk || "").slice(0, 220),
       }));
       return {
         ok: true,
@@ -2396,7 +2413,7 @@ async function scrapeWPHero(opts = {}) {
       fetchedAt,
       runId,
       ok: Boolean(item),
-      error: item ? null : (hero?.error || "Washington Post not found"),
+      error: item ? null : (hero?.error || "Yahoo not found"),
       item,
       shot,
       meta: {
@@ -2713,6 +2730,7 @@ app.get("/api/debug/wp", async (_req, res) => {
     res.json({
       ok: Boolean(result?.ok),
       source: "wp1",
+      publisher: "Yahoo",
       error: result?.error || null,
       item: result?.item || null,
       blocked: blockedInfo,
@@ -2721,6 +2739,30 @@ app.get("/api/debug/wp", async (_req, res) => {
     });
   } catch (err) {
     res.status(500).json({ ok: false, source: "wp1", error: String(err?.message || err) });
+  }
+});
+
+app.get("/api/debug/yahoo", async (_req, res) => {
+  try {
+    const result = await scrapeWPHero({ debug: true });
+    const blockedInfo = detectBlocked({
+      httpStatus: result?.meta?.http_status || null,
+      finalUrl: result?.meta?.final_url || result?.item?.url || null,
+      pageTitle: result?.meta?.page_title || null,
+      errorText: result?.error || null,
+    });
+    res.json({
+      ok: Boolean(result?.ok),
+      source: "wp1",
+      publisher: "Yahoo",
+      error: result?.error || null,
+      item: result?.item || null,
+      blocked: blockedInfo,
+      runId: result?.runId || null,
+      meta: result?.meta || null,
+    });
+  } catch (err) {
+    res.status(500).json({ ok: false, source: "wp1", publisher: "Yahoo", error: String(err?.message || err) });
   }
 });
 
