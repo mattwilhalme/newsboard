@@ -618,7 +618,88 @@ async function scrapeABCHero() {
       const prismMatches = main.querySelectorAll('[data-testid="prism-linkbase"]').length;
       const headingMatches = main.querySelectorAll("h1, h2, h3").length;
 
-      // Candidate A: explicit live video hero block.
+      function classifyType(url, title, card) {
+        const u = String(url || "").toLowerCase();
+        const t = String(title || "").toLowerCase();
+        const hasLivePill = Boolean(card?.querySelector(".MediaPlaceholder__Pill--live, [data-testid='live-icon-svg-styled']"));
+        if (/\/live(\/|$)/.test(u) || /\/live-updates(\/|$)/.test(u)) {
+          if (hasLivePill || /\blive blog\b/.test(t)) return "live";
+          if (/\babc news live\b/.test(t) || /\blive video\b/.test(t)) return "video";
+          return "live";
+        }
+        if (isVideoLike(url, title)) return "video";
+        return "news";
+      }
+
+      function pushCandidate(candidate) {
+        if (!candidate?.title || !candidate?.url) return;
+        candidates.push(candidate);
+      }
+
+      // Candidate A: first lead card in main content (article/live/video).
+      const heroCards = Array.from(main.querySelectorAll('[data-testid="prism-card"]')).slice(0, 24);
+      for (let i = 0; i < heroCards.length; i += 1) {
+        const card = heroCards[i];
+        if (!card || card.closest("header, nav, footer, [role='navigation']")) continue;
+
+        const link =
+          card.querySelector('a[data-testid="prism-linkbase"][href]') ||
+          card.querySelector("a[data-testid='prism-meta'][href]") ||
+          card.querySelector("a[href]");
+        if (!link) continue;
+        if (link.matches('[tracking*="breakingnews_banner"]')) continue;
+
+        const href = clean(link.getAttribute("href") || "");
+        const url = href ? abs(href) : null;
+        if (!url) continue;
+
+        const heading =
+          card.querySelector("h1[id*='headline'], h2[id*='headline'], h3[id*='headline'], h1, h2, h3") ||
+          link.querySelector("h1, h2, h3") ||
+          null;
+        const title = clean(
+          heading?.textContent ||
+            link.getAttribute("aria-label") ||
+            link.textContent ||
+            card.textContent ||
+            ""
+        );
+        if (!title || title.length < 12) continue;
+
+        const type = classifyType(url, title, card);
+        let score = 1500 - (i * 28);
+        if (heading?.id && /abcnews-rssource-.*headline/i.test(heading.id)) score += 140;
+        if (link.getAttribute("data-testid") === "prism-meta") score -= 40;
+        if (/\bwatch live\b/i.test(title)) score -= 220;
+
+        pushCandidate({
+          title,
+          url,
+          contentType: type,
+          selector_used: "abc_prism_main_lead",
+          score,
+          hero_html: link.outerHTML || card.outerHTML || null,
+        });
+      }
+
+      // Candidate B: first prism linkbase fallback.
+      const prismAnchor = main.querySelector('[data-testid="prism-linkbase"][href]');
+      if (prismAnchor) {
+        const href = prismAnchor.getAttribute("href") || "";
+        const url = href ? abs(href) : null;
+        const heading = prismAnchor.querySelector("h1, h2, h3");
+        const title = clean(heading?.textContent || prismAnchor.getAttribute("aria-label") || prismAnchor.textContent || "");
+        pushCandidate({
+          title,
+          url,
+          contentType: classifyType(url, title, prismAnchor.closest('[data-testid="prism-card"]')),
+          selector_used: "abc_prism_linkbase",
+          score: 900,
+          hero_html: prismAnchor.outerHTML || null,
+        });
+      }
+
+      // Candidate C: explicit live video hero fallback.
       const liveHero =
         document.querySelector(".LiveVideo__Hero") ||
         document.querySelector(".MediaPlaceholder__Pill--live")?.closest("[data-testid='prism-card']");
@@ -627,51 +708,31 @@ async function scrapeABCHero() {
           liveHero.closest("[data-testid='prism-card']")?.querySelector("a[data-testid='prism-meta'][href]") ||
           liveHero.querySelector("a[data-testid='prism-meta'][href]") ||
           null;
-        const liveH2 = liveHero.closest("[data-testid='prism-card']")?.querySelector("h2[id*='headline'], h2") || null;
+        const liveH2 = liveHero.closest("[data-testid='prism-card']")?.querySelector("h1[id*='headline'], h2[id*='headline'], h3[id*='headline'], h1, h2, h3") || null;
         const liveHref = liveMeta?.getAttribute("href") || "";
         const liveUrl = liveHref ? abs(liveHref) : null;
-        const liveTitle = clean(liveH2?.textContent || liveMeta?.getAttribute("aria-label") || "");
-        if (liveTitle && liveUrl) {
-          candidates.push({
-            title: liveTitle,
-            url: liveUrl,
-            contentType: "video",
-            selector_used: "abc_live_video_hero",
-            score: 1200,
-            hero_html: liveMeta?.outerHTML || liveHero?.outerHTML || null,
-          });
-        }
+        const liveTitle = clean(liveH2?.textContent || liveMeta?.getAttribute("aria-label") || liveMeta?.textContent || "");
+        pushCandidate({
+          title: liveTitle,
+          url: liveUrl,
+          contentType: classifyType(liveUrl, liveTitle, liveHero),
+          selector_used: "abc_live_video_fallback",
+          score: 700,
+          hero_html: liveMeta?.outerHTML || liveHero?.outerHTML || null,
+        });
       }
 
-      // Candidate B: first prism linkbase card.
-      const prismAnchor = document.querySelector('[data-testid="prism-linkbase"][href]');
-      if (prismAnchor) {
-        const href = prismAnchor.getAttribute("href") || "";
-        const url = href ? abs(href) : null;
-        const title = clean(prismAnchor.getAttribute("aria-label") || prismAnchor.textContent || "");
-        if (title && url) {
-          candidates.push({
-            title,
-            url,
-            contentType: isVideoLike(url, title) ? "video" : "news",
-            selector_used: "abc_prism_linkbase",
-            score: 800,
-            hero_html: prismAnchor.outerHTML || null,
-          });
-        }
-      }
-
-      // Candidate C: first strong heading with link.
+      // Candidate D: first strong heading with link.
       for (const h of Array.from(main.querySelectorAll("h1, h2, h3")).slice(0, 40)) {
         const a2 = h.closest("a[href]") || h.querySelector("a[href]");
         const title = clean(h.textContent || "");
         const href = a2?.getAttribute("href") || "";
         const url = href ? abs(href) : null;
         if (!title || title.length < 12 || !url) continue;
-        candidates.push({
+        pushCandidate({
           title,
           url,
-          contentType: isVideoLike(url, title) ? "video" : "news",
+          contentType: classifyType(url, title, h.closest('[data-testid="prism-card"]')),
           selector_used: "heading_fallback",
           score: 500,
           hero_html: a2?.outerHTML || h?.outerHTML || null,
