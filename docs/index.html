@@ -169,14 +169,18 @@
     @media (prefers-reduced-motion: no-preference){
       .card.card-enter{
         opacity:0;
-        transform: none;
-        filter: none;
+        transform: translate3d(var(--enter-x), var(--enter-y), 0) rotate(var(--enter-r)) scale(0.985);
+        filter: blur(1.5px);
+        will-change: transform, opacity, filter;
       }
       .card.card-enter.card-settle{
         opacity:1;
-        transform: none;
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
         filter: none;
-        transition: opacity 260ms ease-out;
+        transition:
+          opacity 300ms ease-out,
+          transform 520ms cubic-bezier(.2,.9,.2,1),
+          filter 420ms ease-out;
         transition-delay: var(--enter-delay);
       }
     }
@@ -1615,7 +1619,7 @@
       const s = canonicalSourceId(k);
       const n = row?.sourceName || row?.name || null;
       if (s === "yahoo1") return "Yahoo News";
-      if (s === "reuters1") return "Reuters";
+      if (s === "reuters1") return "The Guardian";
       if (s === "guardian1") return "The Guardian";
       if (n) return String(n);
 
@@ -1624,7 +1628,7 @@
       if (s === "usat" || s === "usat1" || s === "usatoday" || s === "usatoday1") return "USA Today";
       if (s === "nbc" || s === "nbc1") return "NBC News";
       if (s === "cnn" || s === "cnn1") return "CNN";
-      if (s === "reuters" || s === "reuters1") return "Reuters";
+      if (s === "reuters" || s === "reuters1") return "The Guardian";
       if (s === "guardian" || s === "guardian1") return "The Guardian";
       if (s === "ap" || s === "ap1" || s === "associatedpress") return "Associated Press";
       if (s === "latimes" || s === "latimes1" || s === "losangelestimes") return "Los Angeles Times";
@@ -1635,7 +1639,7 @@
 
     function sourceHomeUrl(k, row){
       const s = canonicalSourceId(k);
-      if (s === "reuters1") return "https://www.reuters.com/";
+      if (s === "reuters1") return "https://www.theguardian.com/";
       if (s === "guardian1") return "https://www.theguardian.com/";
       if (s === "yahoo1") return "https://news.yahoo.com/";
       const fromRow = row?.home_url || row?.homeUrl || null;
@@ -2540,13 +2544,32 @@
       return Number.isFinite(ms) ? ms : 0;
     }
 
+    function changeTsForSort(sources, indicatorsById, id){
+      const ind = indicatorsById?.[id] || {};
+      const urlMs = Number(ind?.currentSinceAt || 0);
+      const headlineMs = Number(ind?.headlineSinceAt || 0);
+      const src = sources?.[id] || {};
+      const fallbackMs = Date.parse(String(src?.lastChangeAt || src?.updatedAt || src?.firstSeenAt || ""));
+      const best = Math.max(
+        Number.isFinite(urlMs) ? urlMs : 0,
+        Number.isFinite(headlineMs) ? headlineMs : 0,
+        Number.isFinite(fallbackMs) ? fallbackMs : 0
+      );
+      return Number.isFinite(best) ? best : 0;
+    }
+
     function applyCardEntrance(card, id, idx){
-      const delay = Math.round(idx * 28);
+      const col = idx % 3;
+      const row = Math.floor(idx / 3);
+      const x = (col - 1) * 10;
+      const y = 18 + (row * 3);
+      const r = (col - 1) * 0.55;
+      const delay = Math.round((row * 90) + (col * 60));
 
       card.classList.add("card-enter");
-      card.style.setProperty("--enter-x", "0px");
-      card.style.setProperty("--enter-y", "20px");
-      card.style.setProperty("--enter-r", "0deg");
+      card.style.setProperty("--enter-x", `${x}px`);
+      card.style.setProperty("--enter-y", `${y}px`);
+      card.style.setProperty("--enter-r", `${r}deg`);
       card.style.setProperty("--enter-delay", `${delay}ms`);
     }
 
@@ -2945,21 +2968,11 @@
 
     function sortedOverviewIds(sources, indicatorsById){
       const ids = pickCardSourceIds(sources);
-      function cardPriority(id){
-        const src = sources?.[id] || {};
-        const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
-        const stale = Boolean(ind?.stale2h ?? src?.isStale);
-        if (stale) return 0;
-        if (ind?.changeType === "url") return 3;
-        if (ind?.changeType === "headline") return 2;
-        return 1;
-      }
-
-      // Priority: URL update > headline update > stale; then newest timestamp.
+      // Newest URL/headline change first, then latest source timestamp.
       ids.sort((a,b) => {
-        const pa = cardPriority(a);
-        const pb = cardPriority(b);
-        if (pb !== pa) return pb - pa;
+        const ca = changeTsForSort(sources, indicatorsById, a);
+        const cb = changeTsForSort(sources, indicatorsById, b);
+        if (cb !== ca) return cb - ca;
 
         const ta = tsForSort(sources, a);
         const tb = tsForSort(sources, b);

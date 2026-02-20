@@ -9,7 +9,7 @@ import {
   scrapeUSATHero,
   scrapeNBCHero,
   scrapeCNNHero,
-  scrapeReutersHero,
+  scrapeGuardianHero,
   scrapeAPHero,
   scrapeLATimesHero,
   scrapeNPRHero,
@@ -512,7 +512,7 @@ async function run() {
   const usat1 = await safeScrape("USA Today", scrapeUSATHero, generatedAt);
   const nbc1 = await safeScrape("NBC", scrapeNBCHero, generatedAt);
   const cnn1 = await safeScrape("CNN", scrapeCNNHero, generatedAt);
-  const reuters1 = await safeScrape("The Guardian", scrapeReutersHero, generatedAt);
+  const reuters1 = await safeScrape("The Guardian", scrapeGuardianHero, generatedAt);
   const ap1 = await safeScrape("Associated Press", scrapeAPHero, generatedAt);
   const latimes1 = await safeScrape("Los Angeles Times", scrapeLATimesHero, generatedAt);
   const npr1 = await safeScrape("NPR", scrapeNPRHero, generatedAt);
