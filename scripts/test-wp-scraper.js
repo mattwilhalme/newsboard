@@ -27,6 +27,7 @@ function isStoryUrl(url) {
 
 function scoreCandidate(c) {
   let score = 0;
+  if (c.targetHero) score += 500;
   if (c.secStrm) score += 180;
   if (c.ctStory) score += 120;
   if (c.elmHdln) score += 120;
@@ -39,7 +40,9 @@ function scoreCandidate(c) {
 
 function extractTopStoryFromHtml(html) {
   const $ = cheerio.load(html);
+  const targetHeroSelector = 'u.StretchedBox.wafer-rapid-module[class*="W(59.6%)"][data-ylk*="elm:img;"][data-wf-rapid-trigger="click"][data-wf-rapid-method="beaconClick"]';
   const selectors = [
+    targetHeroSelector,
     'a[data-ylk*="sec:strm"][data-ylk*="ct:story"][data-ylk*="elm:hdln"][href]',
     'main a[data-ylk*="ct:story"][href]',
     'a[data-ylk][href]',
@@ -52,24 +55,30 @@ function extractTopStoryFromHtml(html) {
     $(sel).each((_i, el) => {
       if (seen.has(el)) return;
       seen.add(el);
-      if ($(el).parents("nav,header,footer,[role='navigation']").length) return;
 
-      const href = $(el).attr("href") || "";
-      const ylk = $(el).attr("data-ylk") || "";
+      const anchor = String(el?.tagName || el?.name || "").toLowerCase() === "u" ? $(el).closest("a[href]").get(0) : el;
+      if (!anchor || seen.has(anchor)) return;
+      seen.add(anchor);
+      if ($(anchor).parents("nav,header,footer,[role='navigation']").length) return;
+
+      const href = $(anchor).attr("href") || "";
+      const ylk = $(anchor).attr("data-ylk") || "";
       const url = toAbs(href);
       const title =
-        normalizeSpaces($(el).find("span").first().text()) ||
-        normalizeSpaces($(el).attr("aria-label")) ||
-        normalizeSpaces($(el).text());
+        normalizeSpaces($(anchor).find("h1,h2,h3").first().text()) ||
+        normalizeSpaces($(anchor).find("span").first().text()) ||
+        normalizeSpaces($(anchor).attr("aria-label")) ||
+        normalizeSpaces($(anchor).text());
       if (!url || !title || !isStoryUrl(url)) return;
 
       const candidate = {
         url,
         title,
+        targetHero: $(anchor).find(targetHeroSelector).length > 0 || $(anchor).is("a[href].ntk-link"),
         secStrm: ylk.includes("sec:strm"),
         ctStory: ylk.includes("ct:story"),
         elmHdln: ylk.includes("elm:hdln"),
-        stretched: (($(el).attr("class") || "").includes("stretched-box")),
+        stretched: (($(anchor).attr("class") || "").includes("stretched-box")),
         mpos: Number((ylk.match(/(?:^|;)mpos:(\d+)/) || [])[1] || NaN),
         cpos: Number((ylk.match(/(?:^|;)cpos:(\d+)/) || [])[1] || NaN),
       };
@@ -101,11 +110,11 @@ function run() {
 
   assert(top, "Expected a Yahoo top story candidate");
   assert(
-    top.url.includes("/entertainment/celebrity/article/eric-dane-greys-anatomy-and-euphoria-star-dies-at-53-nearly-1-year-after-revealing-als-diagnosis-023808459.html"),
+    top.url.includes("/world/article/is-trump-about-to-go-to-war-with-iran-204654148.html"),
     `Unexpected top URL: ${top.url}`,
   );
   assert(
-    /Eric Dane, 'Grey's Anatomy' and 'Euphoria' star, dies at 53/i.test(top.title),
+    /Trump says we'll know within 10 days if the U\.S\. will be at war with Iran/i.test(top.title),
     `Unexpected top title: ${top.title}`,
   );
 
