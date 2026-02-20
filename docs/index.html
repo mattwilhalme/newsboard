@@ -484,26 +484,32 @@
     #cluster-groups{
       display:flex;
       flex-direction:column;
-      gap:14px;
+      gap:12px;
     }
     .clusterGroup{
-      border:1px solid var(--line);
-      border-radius:10px;
-      background:var(--card);
-      padding:10px;
+      border:0;
+      border-radius:0;
+      background:transparent;
+      padding:0;
       display:flex;
       flex-direction:column;
-      gap:10px;
+      gap:8px;
     }
     .clusterHeader{
       display:flex;
       align-items:baseline;
       gap:8px;
+      padding:0 2px;
     }
     .clusterHeader h1{
       margin:0;
-      font-size:20px;
+      font-size:18px;
       font-family:var(--font-serif);
+    }
+    .clusterGroup .card{ cursor:grab; }
+    .clusterGroup .card.dragging{
+      opacity:.55;
+      cursor:grabbing;
     }
 
     .deepDive{
@@ -938,6 +944,15 @@
     <div class="drawerHead">
       <div>
         <div class="drawerTitle" id="source-data-title">Data</div>
+        <div class="tiny" id="source-data-range">—</div>
+      </div>
+      <div class="row">
+        <label class="tiny" for="source-data-window">Window</label>
+        <select id="source-data-window" class="linkbtn">
+          <option value="6">6h</option>
+          <option value="24" selected>24h</option>
+          <option value="168">7d</option>
+        </select>
       </div>
       <button id="btn-source-data-close" class="btn" type="button">Close</button>
     </div>
@@ -999,12 +1014,15 @@
     const CLUSTER_PINNED_KEY = "nb_pinned_clusters";
     const CLUSTER_ACTIVE_KEY = "nb_active_clusters";
     const CLUSTER_DISMISSED_KEY = "nb_cluster_dismissed";
+    const CLUSTER_CARD_ORDER_KEY = "nb_cluster_card_order";
     let activeView = "overview";
     let selectedWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     let latestDrawerPayload = { normalizedHistory: null, sources: null, indicators: null };
     let latestOverviewPayload = { sources: {}, indicators: {}, timelineBySource: {} };
     let dataSortState = { key: "publisher", dir: "asc" };
     let selectedSourceDataId = "";
+    let sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
+    let clusterCardOrder = {};
 
     const DEFAULT_CLUSTERS = [
       {
@@ -1077,6 +1095,16 @@
       const v = Number(ms);
       if (!Number.isFinite(v) || v < 0) return "—";
       return fmtDurationSeconds(Math.floor(v / 1000));
+    }
+
+    function fmtWindowRange(windowSpec){
+      const startMs = windowStartMs(windowSpec);
+      const endMs = Date.now();
+      const start = new Date(startMs);
+      const end = new Date(endMs);
+      const dateFmt = new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric" });
+      const timeFmt = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" });
+      return `${dateFmt.format(start)} ${timeFmt.format(start)} - ${dateFmt.format(end)} ${timeFmt.format(end)}`;
     }
 
     function parseHoursSpec(windowSpec){
@@ -1443,11 +1471,13 @@
     function setSourceDataOpen(open, sourceId = selectedSourceDataId){
       const drawer = $("drawer-source-data");
       const overlay = $("drawer-overlay");
+      const sel = $("source-data-window");
       if (!drawer || !overlay) return;
       if (open) {
         closeAllDrawers();
       }
       selectedSourceDataId = sourceId || selectedSourceDataId || "";
+      if (sel) sel.value = String(parseHoursSpec(sourceDataWindowHours));
       if (open && selectedSourceDataId) {
         renderSourceDataPanel(selectedSourceDataId);
       }
@@ -2186,6 +2216,7 @@
     function renderSourceDataPanel(sourceId){
       const host = $("source-data");
       const title = $("source-data-title");
+      const range = $("source-data-range");
       if (!host || !title) return;
       host.innerHTML = "";
 
@@ -2195,16 +2226,17 @@
       const sourceRow = currentSources?.[sourceId] || {};
       const sourceName = sourceLabel(sourceId, sourceRow);
       title.textContent = `${sourceName} Data`;
+      if (range) range.textContent = fmtWindowRange(sourceDataWindowHours);
 
       const entries = Array.isArray(normalizedHistory?.sources?.[sourceId]?.entries)
         ? normalizedHistory.sources[sourceId].entries
         : [];
-      const metrics = computeSourceDataMetrics(entries, selectedWindowHours);
+      const metrics = computeSourceDataMetrics(entries, sourceDataWindowHours);
       const currentSinceRaw = indicatorsById?.[sourceId]?.currentSinceAt || null;
       const currentSinceMs = Number.isFinite(Date.parse(String(currentSinceRaw || "")))
         ? Date.parse(String(currentSinceRaw || ""))
         : 0;
-      const winStart = windowStartMs(selectedWindowHours);
+      const winStart = windowStartMs(sourceDataWindowHours);
 
       const table = document.createElement("table");
       table.className = "dataTable";
@@ -2672,18 +2704,6 @@
         trigger.type = "button";
         trigger.textContent = "Timelapse";
 
-        const dataQuickBtn = document.createElement("button");
-        dataQuickBtn.className = "linkbtn";
-        dataQuickBtn.type = "button";
-        dataQuickBtn.textContent = "Data";
-        dataQuickBtn.setAttribute("data-action", "open-source-data");
-        dataQuickBtn.setAttribute("data-id", id);
-
-        const topActions = document.createElement("div");
-        topActions.className = "row";
-        topActions.appendChild(trigger);
-        topActions.appendChild(dataQuickBtn);
-
         const panel = document.createElement("div");
         panel.style.display = "none";
         panel.style.flexDirection = "column";
@@ -2896,7 +2916,7 @@
           body.appendChild(hw);
         }
 
-        foot.appendChild(topActions);
+        foot.appendChild(trigger);
         foot.appendChild(panel);
 
         trigger.addEventListener("click", () => {
@@ -3021,6 +3041,16 @@
       try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
     }
 
+    function loadClusterCardOrder(){
+      const raw = loadJSONStorage(CLUSTER_CARD_ORDER_KEY, {});
+      if (!raw || typeof raw !== "object") return {};
+      return raw;
+    }
+
+    function saveClusterCardOrder(){
+      saveJSONStorage(CLUSTER_CARD_ORDER_KEY, clusterCardOrder || {});
+    }
+
     function loadPinnedClusters(){
       const stored = loadJSONStorage(CLUSTER_PINNED_KEY, null);
       if (Array.isArray(stored)) {
@@ -3060,6 +3090,7 @@
     let pinnedClusters = loadPinnedClusters();
     let activeClusters = loadActiveClusters(pinnedClusters);
     let dismissedSuggestions = loadDismissedSuggestions();
+    clusterCardOrder = loadClusterCardOrder();
 
     function clusterSort(a, b){
       const pa = Number(a?.priority || 0);
@@ -3393,6 +3424,36 @@
       groupsHost.innerHTML = "";
       if (!sources || !Object.keys(sources).length) return;
 
+      function applySavedOrder(clusterId, idsInGroup){
+        const saved = Array.isArray(clusterCardOrder?.[clusterId]) ? clusterCardOrder[clusterId] : [];
+        if (!saved.length) return [...idsInGroup];
+        const keep = new Set(idsInGroup);
+        const ordered = saved.filter((id) => keep.has(id));
+        for (const id of idsInGroup) {
+          if (!ordered.includes(id)) ordered.push(id);
+        }
+        return ordered;
+      }
+
+      function persistGridOrder(clusterId, gridEl){
+        const order = [...gridEl.querySelectorAll(".card[data-source-id]")]
+          .map((el) => String(el.getAttribute("data-source-id") || ""))
+          .filter(Boolean);
+        clusterCardOrder[clusterId] = order;
+        saveClusterCardOrder();
+      }
+
+      function afterElementByY(container, y){
+        const candidates = [...container.querySelectorAll(".card:not(.dragging)")];
+        let best = { offset: Number.NEGATIVE_INFINITY, el: null };
+        for (const child of candidates) {
+          const rect = child.getBoundingClientRect();
+          const offset = y - rect.top - (rect.height / 2);
+          if (offset < 0 && offset > best.offset) best = { offset, el: child };
+        }
+        return best.el;
+      }
+
       const ids = sortedOverviewIds(sources, indicatorsById);
 
       const activeSorted = [...activeClusters].sort(clusterSort);
@@ -3410,7 +3471,7 @@
 
       const order = [...activeSorted.map((c) => c.id), "other"];
       for (const clusterId of order) {
-        const idsInGroup = grouped.get(clusterId) || [];
+        const idsInGroup = applySavedOrder(clusterId, grouped.get(clusterId) || []);
         if (!idsInGroup.length) continue;
 
         const section = document.createElement("section");
@@ -3434,9 +3495,32 @@
           const src = sources?.[id] || {};
           const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
           const card = buildCardEl(id, src, ind, timelineBySource);
+          card.draggable = true;
+          card.addEventListener("dragstart", (e) => {
+            card.classList.add("dragging");
+            e.dataTransfer?.setData("text/plain", id);
+            if (e.dataTransfer) e.dataTransfer.effectAllowed = "move";
+          });
+          card.addEventListener("dragend", () => {
+            card.classList.remove("dragging");
+            persistGridOrder(clusterId, groupGrid);
+          });
           applyCardEntrance(card, id, groupGrid.children.length);
           groupGrid.appendChild(card);
         }
+
+        groupGrid.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          const dragging = groupGrid.querySelector(".card.dragging");
+          if (!dragging) return;
+          const after = afterElementByY(groupGrid, e.clientY);
+          if (!after) groupGrid.appendChild(dragging);
+          else groupGrid.insertBefore(dragging, after);
+        });
+        groupGrid.addEventListener("drop", (e) => {
+          e.preventDefault();
+          persistGridOrder(clusterId, groupGrid);
+        });
 
         section.appendChild(head);
         section.appendChild(groupGrid);
@@ -4240,6 +4324,10 @@
     $("btn-data")?.addEventListener("click", () => setDataOpen(true));
     $("btn-data-close")?.addEventListener("click", () => setDataOpen(false));
     $("btn-source-data-close")?.addEventListener("click", () => setSourceDataOpen(false));
+    $("source-data-window")?.addEventListener("change", (e) => {
+      sourceDataWindowHours = parseHoursSpec(e.target.value);
+      if (selectedSourceDataId) renderSourceDataPanel(selectedSourceDataId);
+    });
     $("history-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
@@ -4268,6 +4356,9 @@
     } catch {}
     setView(initialView, false);
     setSelectedWindowHours(HISTORY_WINDOW_DEFAULT_HOURS);
+    sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
+    const sourceDataWindow = $("source-data-window");
+    if (sourceDataWindow) sourceDataWindow.value = String(sourceDataWindowHours);
     const deepWindow = $("deep-window");
     if (deepWindow) deepWindow.value = String(DEEP_DIVE_DEFAULT_HOURS);
     reload();
