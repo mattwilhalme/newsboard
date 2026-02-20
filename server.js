@@ -2188,6 +2188,12 @@ async function scrapeBBCHero() {
       function isGenericTitle(title) {
         return /^(live|video|latest|news|bbc news)$/i.test(String(title || "").trim());
       }
+      function hasLiveBadge(a) {
+        if (!a) return false;
+        if (a.querySelector('[data-testid="live-icon-svg-styled"],[data-testid*="live-icon"]')) return true;
+        const spans = Array.from(a.querySelectorAll("span"));
+        return spans.some((s) => clean(s.textContent || "").toUpperCase() === "LIVE");
+      }
       function scoreAnchor(a, title, url, topY) {
         let score = 0;
         const headlineEl = a.querySelector('[data-testid="card-headline"],h1,h2,h3');
@@ -2196,6 +2202,7 @@ async function scrapeBBCHero() {
 
         if (/\/news\/articles\//i.test(url)) score += 220;
         if (isLiveUrl(url)) score += 120;
+        if (hasLiveBadge(a)) score += 140;
         if (/^https?:\/\/(www\.)?bbc\.(com|co\.uk)\/news\/[a-z-]+-\d+$/i.test(url)) score += 80;
         if (headlineEl) score += 60;
         if (inMain) score += 60;
@@ -2215,9 +2222,13 @@ async function scrapeBBCHero() {
       const seen = new Set();
       const anchors = [];
       const selectors = [
+        'main a[data-testid="external-anchor"][href*="/news/live/"]',
+        'main a[href*="/news/live/"]',
         'main a[data-testid="internal-link"][href*="/news/articles/"]',
         'main a[data-testid="internal-link"][href*="/news/live/"]',
         'main a[data-testid="internal-link"][href^="/news/"]',
+        'a[data-testid="external-anchor"][href*="/news/live/"]',
+        'a[href*="/news/live/"]',
         'a[data-testid="internal-link"][href*="/news/articles/"]',
         'a[data-testid="internal-link"][href*="/news/live/"]',
         'a[data-testid="internal-link"][href^="/news/"]',
@@ -2247,6 +2258,7 @@ async function scrapeBBCHero() {
             url,
             score: scoreAnchor(a, title, url, topY),
             isLive: isLiveUrl(url),
+            hasLiveBadge: hasLiveBadge(a),
           };
         })
         .filter((x) => x && x.score > 0)
@@ -2256,12 +2268,14 @@ async function scrapeBBCHero() {
 
       const topAny = ranked[0];
       const topArticle = ranked.find((r) => !r.isLive) || null;
-      const chosen = topArticle && topArticle.score >= topAny.score - 25 ? topArticle : topAny;
+      const chosen = topAny.isLive && topAny.hasLiveBadge
+        ? topAny
+        : (topArticle && topArticle.score >= topAny.score - 25 ? topArticle : topAny);
       return {
         ok: true,
         title: chosen.title,
         url: chosen.url,
-        selector_used: selectors[0],
+        selector_used: chosen.isLive ? "bbc_live_card" : "bbc_ranked_card",
         candidates: ranked.length,
       };
     });
