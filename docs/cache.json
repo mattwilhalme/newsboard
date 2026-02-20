@@ -5,32 +5,33 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:03.792Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:04.651Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Supreme Court invalidates most of Trump's tariffs",
         "url": "https://abcnews.com/Politics/supreme-court-invalidates-trumps-tariffs/story?id=129036085",
         "imgUrl": null,
-        "slotKey": "5be6806db8a5"
+        "slotKey": "5be6806db8a5",
+        "contentType": "news"
       },
       "last": {
-        "runId": "abc_2026-02-20T17-04-56-334Z",
+        "runId": "abc_2026-02-20T17-19-51-952Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:05:03.792Z",
+        "fetchedAt": "2026-02-20T17:20:04.651Z",
         "shot": {
-          "object_path": "screenshots/abc1/2026/02/20/abc_2026-02-20T17-04-56-334Z.jpg",
+          "object_path": "screenshots/abc1/2026/02/20/abc_2026-02-20T17-19-51-952Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "abc_2026-02-20T17-04-56-334Z",
-          "html": "/archive/abc_2026-02-20T17-04-56-334Z.html",
-          "json": "/archive/abc_2026-02-20T17-04-56-334Z.json"
+          "runId": "abc_2026-02-20T17-19-51-952Z",
+          "html": "/archive/abc_2026-02-20T17-19-51-952Z.html",
+          "json": "/archive/abc_2026-02-20T17-19-51-952Z.json"
         }
       ]
     },
@@ -39,32 +40,33 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:12.366Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:11.596Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Supreme Court strikes down Trump tariffs in major setback for economic agenda",
         "url": "https://cbsnews.com/news/supreme-court-tariffs-decision-trump",
         "imgUrl": null,
-        "slotKey": "4d6f70f0b663"
+        "slotKey": "4d6f70f0b663",
+        "contentType": "news"
       },
       "last": {
-        "runId": "cbs_2026-02-20T17-05-04-303Z",
+        "runId": "cbs_2026-02-20T17-20-05-331Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:05:12.366Z",
+        "fetchedAt": "2026-02-20T17:20:11.596Z",
         "shot": {
-          "object_path": "screenshots/cbs1/2026/02/20/cbs_2026-02-20T17-05-04-303Z.jpg",
+          "object_path": "screenshots/cbs1/2026/02/20/cbs_2026-02-20T17-20-05-331Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cbs_2026-02-20T17-05-04-303Z",
-          "html": "/archive/cbs_2026-02-20T17-05-04-303Z.html",
-          "json": "/archive/cbs_2026-02-20T17-05-04-303Z.json"
+          "runId": "cbs_2026-02-20T17-20-05-331Z",
+          "html": "/archive/cbs_2026-02-20T17-20-05-331Z.html",
+          "json": "/archive/cbs_2026-02-20T17-20-05-331Z.json"
         }
       ]
     },
@@ -73,68 +75,53 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:19.751Z",
-      "ok": true,
-      "stale": false,
-      "item": {
-        "title": "Supreme Court strikes down Trump's tariffs in major setback for president",
-        "url": "https://usatoday.com/story/news/politics/2026/02/20/supreme-court-trump-tariffs-ruling/87778248007",
-        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2025/10/28/USAT/86947595007-20251003-t-211539-z-1504404018-rc-2-xpdav-6-fo-4-rtrmadp-3-usaautostrump.JPG?auto=webp&crop=4999%2C2812%2Cx0%2Cy260&format=pjpg&height=242&width=430",
-        "imgAlt": null,
-        "dek": "President Trump's sweeping tariffs are the centerpiece of his economic agenda but have raised prices for businesses and consumers.",
-        "slotKey": "2f4f5e88af94"
-      },
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:18.815Z",
+      "ok": false,
+      "stale": true,
+      "item": null,
       "last": {
-        "runId": "usat1_2026-02-20T17-05-12-864Z",
-        "ok": true,
-        "error": null,
-        "fetchedAt": "2026-02-20T17:05:19.751Z",
-        "shot": {
-          "object_path": "screenshots/usat1/2026/02/20/usat1_2026-02-20T17-05-12-864Z.jpg",
-          "shot_url": null
-        }
+        "runId": "usat1_error_2026-02-20T17-20-18-815Z",
+        "ok": false,
+        "error": "Bad Request",
+        "fetchedAt": "2026-02-20T17:20:18.815Z",
+        "shot": null
       },
       "history": [],
-      "archive": [
-        {
-          "runId": "usat1_2026-02-20T17-05-12-864Z",
-          "html": "/archive/usat1_2026-02-20T17-05-12-864Z.html",
-          "json": "/archive/usat1_2026-02-20T17-05-12-864Z.json"
-        }
-      ]
+      "archive": []
     },
     "nbc1": {
       "id": "nbc1",
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:27.619Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:25.673Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Tributes pour in for actor Eric Dane",
-        "url": "https://nbcnews.com/pop-culture/pop-culture-news/tributes-pour-actor-eric-dane-death-rcna259904",
+        "title": "LIVE",
+        "url": "https://nbcnews.com/politics/supreme-court/live-blog/-trump-tariffs-ruling-supreme-court-live-updates-rcna252655",
         "imgUrl": null,
-        "slotKey": "579270cafa55"
+        "slotKey": "579270cafa55",
+        "contentType": "live"
       },
       "last": {
-        "runId": "nbc_2026-02-20T17-05-20-677Z",
+        "runId": "nbc_2026-02-20T17-20-19-004Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:05:27.619Z",
+        "fetchedAt": "2026-02-20T17:20:25.673Z",
         "shot": {
-          "object_path": "screenshots/nbc1/2026/02/20/nbc_2026-02-20T17-05-20-677Z.jpg",
+          "object_path": "screenshots/nbc1/2026/02/20/nbc_2026-02-20T17-20-19-004Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "nbc_2026-02-20T17-05-20-677Z",
-          "html": "/archive/nbc_2026-02-20T17-05-20-677Z.html",
-          "json": "/archive/nbc_2026-02-20T17-05-20-677Z.json"
+          "runId": "nbc_2026-02-20T17-20-19-004Z",
+          "html": "/archive/nbc_2026-02-20T17-20-19-004Z.html",
+          "json": "/archive/nbc_2026-02-20T17-20-19-004Z.json"
         }
       ]
     },
@@ -143,32 +130,33 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:34.898Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:33.391Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Supreme Court rules that Trump's emergency tariffs are illegal",
-        "url": "https://cnn.com/2026/02/20/politics/supreme-court-tariffs",
+        "url": "https://cnn.com/us/live-news/trump-administration-us-iran-02-20-26",
         "imgUrl": null,
-        "slotKey": "e75971db9693"
+        "slotKey": "e75971db9693",
+        "contentType": "live"
       },
       "last": {
-        "runId": "cnn1_2026-02-20T17-05-28-040Z",
+        "runId": "cnn1_2026-02-20T17-20-26-393Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:05:34.898Z",
+        "fetchedAt": "2026-02-20T17:20:33.391Z",
         "shot": {
-          "object_path": "screenshots/cnn1/2026/02/20/cnn1_2026-02-20T17-05-28-040Z.jpg",
+          "object_path": "screenshots/cnn1/2026/02/20/cnn1_2026-02-20T17-20-26-393Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-02-20T17-05-28-040Z",
-          "html": "/archive/cnn1_2026-02-20T17-05-28-040Z.html",
-          "json": "/archive/cnn1_2026-02-20T17-05-28-040Z.json"
+          "runId": "cnn1_2026-02-20T17-20-26-393Z",
+          "html": "/archive/cnn1_2026-02-20T17-20-26-393Z.html",
+          "json": "/archive/cnn1_2026-02-20T17-20-26-393Z.json"
         }
       ]
     },
@@ -177,32 +165,33 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:39.252Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:38.730Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "New Mexico to reopen inquiry into Epstein’s ranch amid pressure campaign",
-        "url": "https://theguardian.com/us-news/2026/feb/20/new-mexico-epstein-zorro-ranch-investigation",
+        "title": "Supreme court rules against Trump’s sweeping global tariffs",
+        "url": "https://theguardian.com/us-news/live/2026/feb/20/us-iran-nuclear-deal-trump-agreement-strikes-latest-news-live-updates",
         "imgUrl": null,
-        "slotKey": "4c3ef987876a"
+        "slotKey": "4c3ef987876a",
+        "contentType": "live"
       },
       "last": {
-        "runId": "reuters1_2026-02-20T17-05-35-251Z",
+        "runId": "reuters1_2026-02-20T17-20-34-099Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:05:39.252Z",
+        "fetchedAt": "2026-02-20T17:20:38.730Z",
         "shot": {
-          "object_path": "screenshots/reuters1/2026/02/20/reuters1_2026-02-20T17-05-35-251Z.jpg",
+          "object_path": "screenshots/reuters1/2026/02/20/reuters1_2026-02-20T17-20-34-099Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "reuters1_2026-02-20T17-05-35-251Z",
-          "html": "/archive/reuters1_2026-02-20T17-05-35-251Z.html",
-          "json": "/archive/reuters1_2026-02-20T17-05-35-251Z.json"
+          "runId": "reuters1_2026-02-20T17-20-34-099Z",
+          "html": "/archive/reuters1_2026-02-20T17-20-34-099Z.html",
+          "json": "/archive/reuters1_2026-02-20T17-20-34-099Z.json"
         }
       ]
     },
@@ -211,32 +200,33 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:46.239Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:45.960Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Final boundaries for congressional voting districts remain uncertain in Missouri, New York, Utah and Virginia.",
-        "url": "https://apnews.com/article/redistricting-congress-house-trump-gerrymander-2e5948055064f6e335170977bc4247f0",
+        "title": "Supreme Court deals 6-3 blow to president’s economic agenda",
+        "url": "https://apnews.com/live/supreme-court-tariff-ruling-updates",
         "imgUrl": null,
-        "slotKey": "083847305a8b"
+        "slotKey": "083847305a8b",
+        "contentType": "live"
       },
       "last": {
-        "runId": "ap1_2026-02-20T17-05-39-564Z",
+        "runId": "ap1_2026-02-20T17-20-39-244Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:05:46.239Z",
+        "fetchedAt": "2026-02-20T17:20:45.960Z",
         "shot": {
-          "object_path": "screenshots/ap1/2026/02/20/ap1_2026-02-20T17-05-39-564Z.jpg",
+          "object_path": "screenshots/ap1/2026/02/20/ap1_2026-02-20T17-20-39-244Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "ap1_2026-02-20T17-05-39-564Z",
-          "html": "/archive/ap1_2026-02-20T17-05-39-564Z.html",
-          "json": "/archive/ap1_2026-02-20T17-05-39-564Z.json"
+          "runId": "ap1_2026-02-20T17-20-39-244Z",
+          "html": "/archive/ap1_2026-02-20T17-20-39-244Z.html",
+          "json": "/archive/ap1_2026-02-20T17-20-39-244Z.json"
         }
       ]
     },
@@ -245,32 +235,33 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:05:53.479Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:20:53.994Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Supreme Court rejects Trump’s tariffs as illegal import taxes",
         "url": "https://latimes.com/politics/story/2026-02-20/supreme-court-trumps-tariffs",
         "imgUrl": null,
-        "slotKey": "06617b56ef8d"
+        "slotKey": "06617b56ef8d",
+        "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-02-20T17-05-46-634Z",
+        "runId": "latimes1_2026-02-20T17-20-46-533Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:05:53.479Z",
+        "fetchedAt": "2026-02-20T17:20:53.994Z",
         "shot": {
-          "object_path": "screenshots/latimes1/2026/02/20/latimes1_2026-02-20T17-05-46-634Z.jpg",
+          "object_path": "screenshots/latimes1/2026/02/20/latimes1_2026-02-20T17-20-46-533Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "latimes1_2026-02-20T17-05-46-634Z",
-          "html": "/archive/latimes1_2026-02-20T17-05-46-634Z.html",
-          "json": "/archive/latimes1_2026-02-20T17-05-46-634Z.json"
+          "runId": "latimes1_2026-02-20T17-20-46-533Z",
+          "html": "/archive/latimes1_2026-02-20T17-20-46-533Z.html",
+          "json": "/archive/latimes1_2026-02-20T17-20-46-533Z.json"
         }
       ]
     },
@@ -279,32 +270,33 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:06:04.112Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:21:04.229Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "The Supreme Court strikes down Trump's tariffs",
         "url": "https://npr.org/2026/02/20/nx-s1-5672383/supreme-court-tariffs",
         "imgUrl": null,
-        "slotKey": "3f6d722bf103"
+        "slotKey": "3f6d722bf103",
+        "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-02-20T17-05-53-870Z",
+        "runId": "npr1_2026-02-20T17-20-54-568Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:06:04.112Z",
+        "fetchedAt": "2026-02-20T17:21:04.229Z",
         "shot": {
-          "object_path": "screenshots/npr1/2026/02/20/npr1_2026-02-20T17-05-53-870Z.jpg",
+          "object_path": "screenshots/npr1/2026/02/20/npr1_2026-02-20T17-20-54-568Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "npr1_2026-02-20T17-05-53-870Z",
-          "html": "/archive/npr1_2026-02-20T17-05-53-870Z.html",
-          "json": "/archive/npr1_2026-02-20T17-05-53-870Z.json"
+          "runId": "npr1_2026-02-20T17-20-54-568Z",
+          "html": "/archive/npr1_2026-02-20T17-20-54-568Z.html",
+          "json": "/archive/npr1_2026-02-20T17-20-54-568Z.json"
         }
       ]
     },
@@ -313,32 +305,33 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:06:09.202Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:21:09.873Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Tariffs ruling is major blow to Trump's second-term agenda",
         "url": "https://bbc.com/news/articles/cx2jqgdn719o",
         "imgUrl": null,
-        "slotKey": "b890b46a9e6c"
+        "slotKey": "b890b46a9e6c",
+        "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-02-20T17-06-04-564Z",
+        "runId": "bbc1_2026-02-20T17-21-04-852Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:06:09.202Z",
+        "fetchedAt": "2026-02-20T17:21:09.873Z",
         "shot": {
-          "object_path": "screenshots/bbc1/2026/02/20/bbc1_2026-02-20T17-06-04-564Z.jpg",
+          "object_path": "screenshots/bbc1/2026/02/20/bbc1_2026-02-20T17-21-04-852Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "bbc1_2026-02-20T17-06-04-564Z",
-          "html": "/archive/bbc1_2026-02-20T17-06-04-564Z.html",
-          "json": "/archive/bbc1_2026-02-20T17-06-04-564Z.json"
+          "runId": "bbc1_2026-02-20T17-21-04-852Z",
+          "html": "/archive/bbc1_2026-02-20T17-21-04-852Z.html",
+          "json": "/archive/bbc1_2026-02-20T17-21-04-852Z.json"
         }
       ]
     },
@@ -347,32 +340,33 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:06:17.856Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:21:18.785Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Supreme Court rules on Trump tariffs in major test of executive branch powers",
         "url": "https://foxnews.com/politics/supreme-court-decision-donald-trump-tariff-powers",
         "imgUrl": null,
-        "slotKey": "6b38efbc88f8"
+        "slotKey": "6b38efbc88f8",
+        "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-02-20T17-06-09-626Z",
+        "runId": "fox1_2026-02-20T17-21-10-349Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:06:17.856Z",
+        "fetchedAt": "2026-02-20T17:21:18.785Z",
         "shot": {
-          "object_path": "screenshots/fox1/2026/02/20/fox1_2026-02-20T17-06-09-626Z.jpg",
+          "object_path": "screenshots/fox1/2026/02/20/fox1_2026-02-20T17-21-10-349Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "fox1_2026-02-20T17-06-09-626Z",
-          "html": "/archive/fox1_2026-02-20T17-06-09-626Z.html",
-          "json": "/archive/fox1_2026-02-20T17-06-09-626Z.json"
+          "runId": "fox1_2026-02-20T17-21-10-349Z",
+          "html": "/archive/fox1_2026-02-20T17-21-10-349Z.html",
+          "json": "/archive/fox1_2026-02-20T17-21-10-349Z.json"
         }
       ]
     },
@@ -381,32 +375,33 @@
       "name": "Yahoo News",
       "home_url": "https://news.yahoo.com/",
       "kind": "hero",
-      "created_at": "2026-02-20T17:04:52.523Z",
-      "updated_at": "2026-02-20T17:06:27.307Z",
+      "created_at": "2026-02-20T17:19:49.795Z",
+      "updated_at": "2026-02-20T17:21:27.677Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Supreme Court strikes down Trump's sweeping tariffs in a blow to his economic agenda",
         "url": "https://news.yahoo.com/finance/news/supreme-court-strikes-down-trumps-blanket-tariffs-151806658.html",
         "imgUrl": null,
-        "slotKey": "1d6c96a60ab5"
+        "slotKey": "1d6c96a60ab5",
+        "contentType": "news"
       },
       "last": {
-        "runId": "wp1_2026-02-20T17-06-18-239Z",
+        "runId": "wp1_2026-02-20T17-21-19-328Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-02-20T17:06:27.307Z",
+        "fetchedAt": "2026-02-20T17:21:27.677Z",
         "shot": {
-          "object_path": "screenshots/wp1/2026/02/20/wp1_2026-02-20T17-06-18-239Z.jpg",
+          "object_path": "screenshots/wp1/2026/02/20/wp1_2026-02-20T17-21-19-328Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "wp1_2026-02-20T17-06-18-239Z",
-          "html": "/archive/wp1_2026-02-20T17-06-18-239Z.html",
-          "json": "/archive/wp1_2026-02-20T17-06-18-239Z.json"
+          "runId": "wp1_2026-02-20T17-21-19-328Z",
+          "html": "/archive/wp1_2026-02-20T17-21-19-328Z.html",
+          "json": "/archive/wp1_2026-02-20T17-21-19-328Z.json"
         }
       ]
     }
