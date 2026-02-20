@@ -47,14 +47,14 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node server.js --refresh
 
-      # ✅ Added: capture runner HTML/JSON for debugging (Reuters/CNN issues)
+      # Capture runner HTML/JSON for debugging (Guardian/CNN/Yahoo issues)
       - name: List archive outputs (debug)
         if: always()
         run: |
           echo "PWD: $(pwd)"
           ls -la
           ls -la archive || true
-          find . -maxdepth 6 -type f \( -name 'reuters*.html' -o -name 'reuters*.json' -o -name 'cnn*.html' -o -name 'cnn*.json' \) -print || true
+          find . -maxdepth 6 -type f \( -name 'guardian1*.html' -o -name 'guardian1*.json' -o -name 'cnn*.html' -o -name 'cnn*.json' -o -name 'yahoo1*.html' -o -name 'yahoo1*.json' \) -print || true
 
       - name: Upload archive (debug)
         if: always()

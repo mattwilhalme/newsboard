@@ -44,12 +44,15 @@ const SCREENSHOT_PROFILES = {
   usat1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   nbc1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   cnn1: { viewportHeight: 2250, scrollY: 700, settleMs: 900 },
-  reuters1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
+  guardian1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   ap1: { viewportHeight: 2700, scrollY: 0, settleMs: 900 },
   latimes1: { viewportHeight: 2250, scrollY: 120, settleMs: 900 },
   npr1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   bbc1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   fox1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
+  yahoo1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
+  // Backwards compatibility aliases
+  reuters1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
   wp1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
 };
 
@@ -338,24 +341,70 @@ function baseSource(id, name, home_url, kind = "hero") {
   };
 }
 
+const SOURCE_REGISTRY = [
+  { id: "abc1", name: "ABC News", home_url: "https://abcnews.com/" },
+  { id: "cbs1", name: "CBS News", home_url: "https://www.cbsnews.com/" },
+  { id: "usat1", name: "USA Today", home_url: "https://www.usatoday.com/" },
+  { id: "nbc1", name: "NBC News", home_url: "https://www.nbcnews.com/" },
+  { id: "cnn1", name: "CNN", home_url: "https://www.cnn.com/" },
+  { id: "guardian1", name: "The Guardian", home_url: "https://www.theguardian.com/" },
+  { id: "ap1", name: "Associated Press", home_url: "https://apnews.com/" },
+  { id: "latimes1", name: "Los Angeles Times", home_url: "https://www.latimes.com/" },
+  { id: "npr1", name: "NPR", home_url: "https://www.npr.org/" },
+  { id: "bbc1", name: "BBC", home_url: "https://www.bbc.com/" },
+  { id: "fox1", name: "Fox News", home_url: "https://www.foxnews.com/" },
+  { id: "yahoo1", name: "Yahoo News", home_url: "https://news.yahoo.com/" },
+];
+
+const SERVER_SOURCE_IDS = SOURCE_REGISTRY.map((s) => s.id);
+const UI_EXPECTED_SOURCE_IDS = ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "guardian1", "ap1", "latimes1", "npr1", "bbc1", "fox1", "yahoo1"];
+
+function canonicalServerSourceId(rawId) {
+  const s = String(rawId || "").toLowerCase().trim();
+  if (!s) return "";
+  if (s === "guardian" || s === "reuters1" || s === "reuters") return "guardian1";
+  if (s === "yahoo" || s === "wp1" || s === "wp" || s === "wapo" || s === "washingtonpost") return "yahoo1";
+  return s;
+}
+
+function buildRefreshRunList(id = "") {
+  const which = canonicalServerSourceId(id);
+  if (!which) return [...SERVER_SOURCE_IDS];
+  return SERVER_SOURCE_IDS.includes(which) ? [which] : [];
+}
+
 function ensureCacheShape(cache) {
   const c = cache && typeof cache === "object" ? cache : {};
   if (!c.sources || typeof c.sources !== "object") c.sources = {};
 
-  if (!c.sources.abc1) c.sources.abc1 = baseSource("abc1", "ABC News", "https://abcnews.com/", "hero");
-  if (!c.sources.cbs1) c.sources.cbs1 = baseSource("cbs1", "CBS News", "https://www.cbsnews.com/", "hero");
-  if (!c.sources.usat1) c.sources.usat1 = baseSource("usat1", "USA Today", "https://www.usatoday.com/", "hero");
-  if (!c.sources.nbc1) c.sources.nbc1 = baseSource("nbc1", "NBC News", "https://www.nbcnews.com/", "hero");
-  if (!c.sources.cnn1) c.sources.cnn1 = baseSource("cnn1", "CNN", "https://www.cnn.com/", "hero");
-  if (!c.sources.reuters1) c.sources.reuters1 = baseSource("reuters1", "The Guardian", "https://www.theguardian.com/", "hero");
-  if (!c.sources.ap1) c.sources.ap1 = baseSource("ap1", "Associated Press", "https://apnews.com/", "hero");
-  if (!c.sources.latimes1) c.sources.latimes1 = baseSource("latimes1", "Los Angeles Times", "https://www.latimes.com/", "hero");
-  if (!c.sources.npr1) c.sources.npr1 = baseSource("npr1", "NPR", "https://www.npr.org/", "hero");
-  if (!c.sources.bbc1) c.sources.bbc1 = baseSource("bbc1", "BBC", "https://www.bbc.com/", "hero");
-  if (!c.sources.fox1) c.sources.fox1 = baseSource("fox1", "Fox News", "https://www.foxnews.com/", "hero");
-  if (!c.sources.wp1) c.sources.wp1 = baseSource("wp1", "Yahoo News", "https://news.yahoo.com/", "hero");
+  // Migrate legacy IDs to canonical IDs.
+  if (c.sources.reuters1 && !c.sources.guardian1) {
+    c.sources.guardian1 = { ...c.sources.reuters1, id: "guardian1", name: "The Guardian", home_url: "https://www.theguardian.com/" };
+  }
+  if (c.sources.wp1 && !c.sources.yahoo1) {
+    c.sources.yahoo1 = { ...c.sources.wp1, id: "yahoo1", name: "Yahoo News", home_url: "https://news.yahoo.com/" };
+  }
+  delete c.sources.reuters1;
+  delete c.sources.wp1;
+
+  for (const s of SOURCE_REGISTRY) {
+    if (!c.sources[s.id]) c.sources[s.id] = baseSource(s.id, s.name, s.home_url, "hero");
+  }
 
   return c;
+}
+
+function logSourceGuardrail() {
+  const serverSet = new Set(SERVER_SOURCE_IDS);
+  const missingInServer = UI_EXPECTED_SOURCE_IDS.filter((id) => !serverSet.has(id));
+  if (missingInServer.length) {
+    console.warn(`[guardrail] UI expected IDs missing in server source list: ${missingInServer.join(",")}`);
+  }
+  const fullRunList = buildRefreshRunList("");
+  const notInRefresh = SERVER_SOURCE_IDS.filter((id) => !fullRunList.includes(id));
+  if (notInRefresh.length) {
+    console.warn(`[guardrail] refreshSources() would skip configured IDs: ${notInRefresh.join(",")}`);
+  }
 }
 
 async function withBrowser(fn, opts = {}) {
@@ -1510,7 +1559,7 @@ async function scrapeCNNHero() {
 --------------------------- */
 async function scrapeGuardianHero() {
   return await withBrowser(async (page) => {
-    const runId = `reuters1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    const runId = `guardian1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     await page.goto("https://www.theguardian.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
@@ -1613,14 +1662,14 @@ async function scrapeGuardianHero() {
           title: cleanText(hero.title || "Top story"),
           url: normalizeUrl(hero.url),
           imgUrl: null,
-          slotKey: sha1("reuters1|top").slice(0, 12),
+          slotKey: sha1("guardian1|top").slice(0, 12),
         }
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "reuters1", runId, tsIso: fetchedAt, item });
+    const shot = await captureTimelineShot(page, { sourceId: "guardian1", runId, tsIso: fetchedAt, item });
     const snapshot = {
-      id: "reuters1",
+      id: "guardian1",
       fetchedAt,
       runId,
       ok: Boolean(item),
@@ -2646,12 +2695,12 @@ async function scrapeFoxHero() {
 }
 
 /* ---------------------------
-   Yahoo (single top item; mapped to wp1 slot)
+   Yahoo (single top item)
 --------------------------- */
 async function scrapeWPHero(opts = {}) {
   const debugMode = Boolean(opts?.debug);
   return await withBrowser(async (page) => {
-    const runId = `wp1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    const runId = `yahoo1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
     const navResp = await page.goto("https://news.yahoo.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(2200);
@@ -2863,15 +2912,15 @@ async function scrapeWPHero(opts = {}) {
           title: cleanText(hero.title || "Top story"),
           url: normalizeUrl(hero.url),
           imgUrl: null,
-          slotKey: sha1("wp1|top").slice(0, 12),
+          slotKey: sha1("yahoo1|top").slice(0, 12),
         }
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "wp1", runId, tsIso: fetchedAt, item });
+    const shot = await captureTimelineShot(page, { sourceId: "yahoo1", runId, tsIso: fetchedAt, item });
     const pageTitle = await page.title().catch(() => null);
     const snapshot = {
-      id: "wp1",
+      id: "yahoo1",
       fetchedAt,
       runId,
       ok: Boolean(item),
@@ -2908,13 +2957,40 @@ async function scrapeWPHero(opts = {}) {
 /* ---------------------------
    Refresh / API
 --------------------------- */
+const HERO_SCRAPERS = {
+  abc1: scrapeABCHero,
+  cbs1: scrapeCBSHero,
+  usat1: scrapeUSATHero,
+  nbc1: scrapeNBCHero,
+  cnn1: scrapeCNNHero,
+  guardian1: scrapeGuardianHero,
+  ap1: scrapeAPHero,
+  latimes1: scrapeLATimesHero,
+  npr1: scrapeNPRHero,
+  bbc1: scrapeBBCHero,
+  fox1: scrapeFoxHero,
+  yahoo1: scrapeWPHero,
+};
+
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
-  const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "npr1", "bbc1", "fox1", "wp1"];
+  const requested = canonicalServerSourceId(id);
+  const runList = buildRefreshRunList(id);
+  if (id && !runList.length) {
+    throw new Error(`Unknown source id: ${id}`);
+  }
   const pruneResult = await pruneOldScreenshots({ hours: SCREENSHOT_RETENTION_HOURS });
   if ((pruneResult?.prunedRows || 0) > 0 || (pruneResult?.deletedObjects || 0) > 0) {
     console.log(`Screenshot prune: rows=${pruneResult.prunedRows || 0}, storage_objects=${pruneResult.deletedObjects || 0}`);
+  }
+  const skipped = SERVER_SOURCE_IDS.filter((sid) => !runList.includes(sid));
+  const ran = [];
+  const failed = [];
+  if (!requested) {
+    const notCovered = SERVER_SOURCE_IDS.filter((sid) => !runList.includes(sid));
+    if (notCovered.length) {
+      console.warn(`[guardrail] full refresh list missing source ids: ${notCovered.join(",")}`);
+    }
   }
 
   for (const sid of runList) {
@@ -2922,19 +2998,9 @@ async function refreshSources({ id = "" } = {}) {
     const prevItem = cache.sources?.[sid]?.item || null;
     const t0 = Date.now();
     try {
-      if (sid === "abc1") res = await scrapeABCHero();
-      else if (sid === "cbs1") res = await scrapeCBSHero();
-      else if (sid === "usat1") res = await scrapeUSATHero();
-      else if (sid === "nbc1") res = await scrapeNBCHero();
-      else if (sid === "cnn1") res = await scrapeCNNHero();
-      else if (sid === "reuters1") res = await scrapeGuardianHero();
-      else if (sid === "ap1") res = await scrapeAPHero();
-      else if (sid === "latimes1") res = await scrapeLATimesHero();
-      else if (sid === "npr1") res = await scrapeNPRHero();
-      else if (sid === "bbc1") res = await scrapeBBCHero();
-      else if (sid === "fox1") res = await scrapeFoxHero();
-      else if (sid === "wp1") res = await scrapeWPHero();
-      else throw new Error(`Unknown source id: ${sid}`);
+      const scraper = HERO_SCRAPERS[sid];
+      if (!scraper) throw new Error(`No scraper registered for source id: ${sid}`);
+      res = await scraper();
     } catch (err) {
       res = {
         ok: false,
@@ -2944,7 +3010,9 @@ async function refreshSources({ id = "" } = {}) {
         item: null,
         shot: null,
       };
+      failed.push(sid);
     }
+    ran.push(sid);
     const durationMs = Math.max(0, Date.now() - t0);
     const observedAtIso = res?.updatedAt || nowISO();
     if (res?.item) {
@@ -3069,6 +3137,7 @@ async function refreshSources({ id = "" } = {}) {
       cache.sources[sid].archive = cache.sources[sid].archive.slice(0, 30);
     }
   }
+  console.log(`[refresh] requested=${requested || "all"} ran=${ran.join(",")} skipped=${skipped.join(",") || "-"} failed=${failed.join(",") || "-"}`);
 
   writeCache(cache);
   return cache;
@@ -3194,7 +3263,7 @@ app.get("/api/debug/wp", async (_req, res) => {
     });
     res.json({
       ok: Boolean(result?.ok),
-      source: "wp1",
+      source: "yahoo1",
       publisher: "Yahoo News",
       error: result?.error || null,
       item: result?.item || null,
@@ -3203,7 +3272,7 @@ app.get("/api/debug/wp", async (_req, res) => {
       meta: result?.meta || null,
     });
   } catch (err) {
-    res.status(500).json({ ok: false, source: "wp1", error: String(err?.message || err) });
+    res.status(500).json({ ok: false, source: "yahoo1", error: String(err?.message || err) });
   }
 });
 
@@ -3218,7 +3287,7 @@ app.get("/api/debug/yahoo", async (_req, res) => {
     });
     res.json({
       ok: Boolean(result?.ok),
-      source: "wp1",
+      source: "yahoo1",
       publisher: "Yahoo News",
       error: result?.error || null,
       item: result?.item || null,
@@ -3227,7 +3296,7 @@ app.get("/api/debug/yahoo", async (_req, res) => {
       meta: result?.meta || null,
     });
   } catch (err) {
-    res.status(500).json({ ok: false, source: "wp1", publisher: "Yahoo News", error: String(err?.message || err) });
+    res.status(500).json({ ok: false, source: "yahoo1", publisher: "Yahoo News", error: String(err?.message || err) });
   }
 });
 
@@ -3309,6 +3378,11 @@ app.get("/api/diff", (req, res) => {
 
 async function main() {
   const args = new Set(process.argv.slice(2));
+  logSourceGuardrail();
+  const missingScrapers = SERVER_SOURCE_IDS.filter((sid) => typeof HERO_SCRAPERS[sid] !== "function");
+  if (missingScrapers.length) {
+    console.warn(`[guardrail] missing scraper handlers for source ids: ${missingScrapers.join(",")}`);
+  }
 
   // CLI mode (GitHub Actions): scrape once, write cache.json, and exit.
   if (args.has("--refresh")) {
@@ -3377,6 +3451,8 @@ order by avg_duration_ms desc;
 */
 
 export {
+  SOURCE_REGISTRY,
+  SERVER_SOURCE_IDS,
   scrapeABCHero,
   scrapeABCTop10,
   scrapeCBSHero,
