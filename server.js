@@ -48,6 +48,8 @@ const SCREENSHOT_PROFILES = {
   ap1: { viewportHeight: 2700, scrollY: 0, settleMs: 900 },
   latimes1: { viewportHeight: 2250, scrollY: 120, settleMs: 900 },
   npr1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
+  bbc1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
+  fox1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
 };
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
@@ -348,6 +350,8 @@ function ensureCacheShape(cache) {
   if (!c.sources.ap1) c.sources.ap1 = baseSource("ap1", "Associated Press", "https://apnews.com/", "hero");
   if (!c.sources.latimes1) c.sources.latimes1 = baseSource("latimes1", "Los Angeles Times", "https://www.latimes.com/", "hero");
   if (!c.sources.npr1) c.sources.npr1 = baseSource("npr1", "NPR", "https://www.npr.org/", "hero");
+  if (!c.sources.bbc1) c.sources.bbc1 = baseSource("bbc1", "BBC", "https://www.bbc.com/", "hero");
+  if (!c.sources.fox1) c.sources.fox1 = baseSource("fox1", "Fox News", "https://www.foxnews.com/", "hero");
 
   return c;
 }
@@ -1800,12 +1804,368 @@ async function scrapeNPRHero() {
 }
 
 /* ---------------------------
+   BBC (single top item)
+--------------------------- */
+async function scrapeBBCHero() {
+  return await withBrowser(async (page) => {
+    const runId = `bbc1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    const navResp = await page.goto("https://www.bbc.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(2000);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function abs(h) {
+        try {
+          return new URL(h, "https://www.bbc.com").toString();
+        } catch {
+          return null;
+        }
+      }
+      function parsed(url) {
+        try {
+          return new URL(String(url || ""));
+        } catch {
+          return null;
+        }
+      }
+      function isBbcNewsHost(url) {
+        const u = parsed(url);
+        if (!u) return false;
+        return /(^|\.)bbc\.com$|(^|\.)bbc\.co\.uk$/i.test(u.hostname);
+      }
+      function isLiveUrl(url) {
+        const p = parsed(url);
+        const path = String(p?.pathname || "").toLowerCase();
+        return /\/news\/live\//.test(path);
+      }
+      function isVideoUrl(url) {
+        const p = parsed(url);
+        const path = String(p?.pathname || "").toLowerCase();
+        return /\/news\/(videos|av)\//.test(path);
+      }
+      function isStoryUrl(url) {
+        if (!url || !isBbcNewsHost(url)) return false;
+        const p = parsed(url);
+        const path = String(p?.pathname || "");
+        if (!path.startsWith("/news/")) return false;
+        if (/^\/news\/?$/i.test(path)) return false;
+        if (/^\/news\/(videos|av|topics|special-reports)(\/|$)/i.test(path)) return false;
+        if (/^\/news\/articles\/[a-z0-9]+$/i.test(path)) return true;
+        if (/^\/news\/live\/[a-z0-9\/-]+$/i.test(path)) return true;
+        if (/^\/news\/[a-z-]+-\d+$/i.test(path)) return true;
+        return false;
+      }
+      function isGenericTitle(title) {
+        return /^(live|video|latest|news|bbc news)$/i.test(String(title || "").trim());
+      }
+      function scoreAnchor(a, title, url, topY) {
+        let score = 0;
+        const headlineEl = a.querySelector('[data-testid="card-headline"],h1,h2,h3');
+        const inMain = Boolean(a.closest("main,[id='main-content'],[data-testid='main-content']"));
+        const inHeroish = Boolean(a.closest("article,section,[data-testid*='index-page'],[data-testid*='top-stories'],[data-testid*='top-stories']"));
+
+        if (/\/news\/articles\//i.test(url)) score += 220;
+        if (isLiveUrl(url)) score += 120;
+        if (/^https?:\/\/(www\.)?bbc\.(com|co\.uk)\/news\/[a-z-]+-\d+$/i.test(url)) score += 80;
+        if (headlineEl) score += 60;
+        if (inMain) score += 60;
+        if (inHeroish) score += 25;
+        if (title.length >= 24 && title.length <= 240) score += 16;
+        if (Number.isFinite(topY)) {
+          if (topY < 900) score += 55;
+          else if (topY < 1700) score += 20;
+        }
+        if (isVideoUrl(url)) score -= 220;
+        if (a.closest("header,nav,footer,[role='navigation'],[data-testid*='navigation']")) score -= 280;
+        if (a.closest("[aria-label*='Sign in'],[aria-label*='Search']")) score -= 120;
+        if (isGenericTitle(title)) score -= 140;
+        return score;
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        'main a[data-testid="internal-link"][href*="/news/articles/"]',
+        'main a[data-testid="internal-link"][href*="/news/live/"]',
+        'main a[data-testid="internal-link"][href^="/news/"]',
+        'a[data-testid="internal-link"][href*="/news/articles/"]',
+        'a[data-testid="internal-link"][href*="/news/live/"]',
+        'a[data-testid="internal-link"][href^="/news/"]',
+      ];
+      for (const sel of selectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (!a || seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title =
+            clean(a.querySelector('[data-testid="card-headline"]')?.textContent || "") ||
+            clean(a.querySelector("h1,h2,h3")?.textContent || "") ||
+            clean(a.getAttribute("aria-label") || "") ||
+            clean(a.textContent || "");
+          if (!url || !title || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect?.();
+          const topY = Number.isFinite(rect?.top) ? rect.top : NaN;
+          return {
+            title,
+            url,
+            score: scoreAnchor(a, title, url, topY),
+            isLive: isLiveUrl(url),
+          };
+        })
+        .filter((x) => x && x.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (!ranked.length) return { ok: false, error: "BBC: top story not found" };
+
+      const topAny = ranked[0];
+      const topArticle = ranked.find((r) => !r.isLive) || null;
+      const chosen = topArticle && topArticle.score >= topAny.score - 25 ? topArticle : topAny;
+      return {
+        ok: true,
+        title: chosen.title,
+        url: chosen.url,
+        selector_used: selectors[0],
+        candidates: ranked.length,
+      };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title || "Top story"),
+          url: normalizeUrl(hero.url),
+          imgUrl: null,
+          slotKey: sha1("bbc1|top").slice(0, 12),
+        }
+      : null;
+
+    const fetchedAt = nowISO();
+    const shot = await captureTimelineShot(page, { sourceId: "bbc1", runId, tsIso: fetchedAt, item });
+    const pageTitle = await page.title().catch(() => null);
+    const snapshot = {
+      id: "bbc1",
+      fetchedAt,
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "BBC not found"),
+      item,
+      shot,
+      meta: {
+        run_kind: "hero",
+        profile: "desktop",
+        final_url: page.url() || null,
+        http_status: navResp?.status?.() ?? null,
+        page_title: pageTitle || null,
+        selector_used: hero?.selector_used || null,
+        candidates: Number.isFinite(Number(hero?.candidates)) ? Number(hero.candidates) : null,
+      },
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+      shot,
+      meta: snapshot.meta,
+    };
+  });
+}
+
+/* ---------------------------
+   Fox News (single top item)
+--------------------------- */
+async function scrapeFoxHero() {
+  return await withBrowser(async (page) => {
+    const runId = `fox1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+
+    const navResp = await page.goto("https://www.foxnews.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(2000);
+
+    const hero = await page.evaluate(() => {
+      function clean(s) {
+        return String(s || "")
+          .replace(/\u00a0/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function abs(h) {
+        try {
+          return new URL(h, "https://www.foxnews.com").toString();
+        } catch {
+          return null;
+        }
+      }
+      function parsed(url) {
+        try {
+          return new URL(String(url || ""));
+        } catch {
+          return null;
+        }
+      }
+      function isFoxHost(url) {
+        const u = parsed(url);
+        if (!u) return false;
+        return /(^|\.)foxnews\.com$/i.test(u.hostname);
+      }
+      function isVideoUrl(url) {
+        return /\/video\//i.test(String(url || ""));
+      }
+      function isStoryUrl(url) {
+        if (!url || !isFoxHost(url)) return false;
+        const p = parsed(url);
+        const path = String(p?.pathname || "");
+        if (!/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(path)) return false;
+        if (/^\/(live|search|category|shows|video|fox-nation|weather|sports\/odds|person|about|newsletter|apps)(\/|$)/i.test(path)) return false;
+        return true;
+      }
+      function cleanTitle(title) {
+        return clean(String(title || "").replace(/\s*-\s*Fox News\s*$/i, ""));
+      }
+      function scoreAnchor(a, title, url, imgSrc, topY) {
+        let score = 0;
+        if (a.closest("main.main-content-primary")) score += 100;
+        if (a.closest("article.story-1, article.story-2, article.story-3")) score += 130;
+        if (a.closest("article.story-1")) score += 80;
+        if (a.closest(".collection")) score += 40;
+        if (a.querySelector("img[alt]")) score += 45;
+        if (imgSrc && /\/content\/uploads\//i.test(imgSrc)) score += 25;
+        if (title.length >= 20 && title.length <= 220) score += 15;
+        if (Number.isFinite(topY)) {
+          if (topY < 900) score += 70;
+          else if (topY < 1700) score += 25;
+        }
+        if (a.closest("header,nav,footer,.network-wrapper,.watch-live,.top-stories")) score -= 220;
+        if (isVideoUrl(url)) score -= 220;
+        return score;
+      }
+
+      const seen = new Set();
+      const anchors = [];
+      const selectors = [
+        "main.main-content-primary article.story-1 a[href]",
+        "main.main-content-primary article[class*='story-'] a[href]",
+        "main.main-content-primary a[href]",
+        "main a[href]",
+        "article.story-1 a[href]",
+      ];
+
+      for (const sel of selectors) {
+        for (const a of Array.from(document.querySelectorAll(sel))) {
+          if (!a || seen.has(a)) continue;
+          seen.add(a);
+          anchors.push(a);
+        }
+      }
+
+      const ranked = anchors
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const img = a.querySelector("img[alt]");
+          const imgAlt = clean(img?.getAttribute("alt") || "");
+          const imgSrc = clean(img?.getAttribute("src") || "");
+          const textTitle = clean(
+            a.querySelector("h1,h2,h3,.title,.headline")?.textContent ||
+            a.getAttribute("title") ||
+            a.getAttribute("aria-label") ||
+            a.textContent ||
+            "",
+          );
+          const title = cleanTitle(imgAlt || textTitle);
+          if (!url || !title || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect?.();
+          const topY = Number.isFinite(rect?.top) ? rect.top : NaN;
+          return {
+            title,
+            url,
+            imgSrc,
+            score: scoreAnchor(a, title, url, imgSrc, topY),
+          };
+        })
+        .filter((x) => x && x.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (!ranked.length) return { ok: false, error: "Fox News: top story not found" };
+      const top = ranked[0];
+      return {
+        ok: true,
+        title: top.title,
+        url: top.url,
+        selector_used: selectors[0],
+        candidates: ranked.length,
+      };
+    });
+
+    const item = hero?.ok
+      ? {
+          title: cleanText(hero.title || "Top story"),
+          url: normalizeUrl(hero.url),
+          imgUrl: null,
+          slotKey: sha1("fox1|top").slice(0, 12),
+        }
+      : null;
+
+    const fetchedAt = nowISO();
+    const shot = await captureTimelineShot(page, { sourceId: "fox1", runId, tsIso: fetchedAt, item });
+    const pageTitle = await page.title().catch(() => null);
+    const snapshot = {
+      id: "fox1",
+      fetchedAt,
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "Fox News not found"),
+      item,
+      shot,
+      meta: {
+        run_kind: "hero",
+        profile: "desktop",
+        final_url: page.url() || null,
+        http_status: navResp?.status?.() ?? null,
+        page_title: pageTitle || null,
+        selector_used: hero?.selector_used || null,
+        candidates: Number.isFinite(Number(hero?.candidates)) ? Number(hero.candidates) : null,
+      },
+    };
+
+    const archive = await archiveRun(page, runId, snapshot);
+
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: nowISO(),
+      runId,
+      archive,
+      item,
+      shot,
+      meta: snapshot.meta,
+    };
+  });
+}
+
+/* ---------------------------
    Refresh / API
 --------------------------- */
 async function refreshSources({ id = "" } = {}) {
   const cache = ensureCacheShape(readCache());
   const which = String(id || "").toLowerCase();
-  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "npr1"];
+  const runList = which ? [which] : ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "reuters1", "ap1", "latimes1", "npr1", "bbc1", "fox1"];
   const pruneResult = await pruneOldScreenshots({ hours: SCREENSHOT_RETENTION_HOURS });
   if ((pruneResult?.prunedRows || 0) > 0 || (pruneResult?.deletedObjects || 0) > 0) {
     console.log(`Screenshot prune: rows=${pruneResult.prunedRows || 0}, storage_objects=${pruneResult.deletedObjects || 0}`);
@@ -1825,6 +2185,8 @@ async function refreshSources({ id = "" } = {}) {
       else if (sid === "ap1") res = await scrapeAPHero();
       else if (sid === "latimes1") res = await scrapeLATimesHero();
       else if (sid === "npr1") res = await scrapeNPRHero();
+      else if (sid === "bbc1") res = await scrapeBBCHero();
+      else if (sid === "fox1") res = await scrapeFoxHero();
       else throw new Error(`Unknown source id: ${sid}`);
     } catch (err) {
       res = {
@@ -2227,5 +2589,7 @@ export {
   scrapeAPHero,
   scrapeLATimesHero,
   scrapeNPRHero,
+  scrapeBBCHero,
+  scrapeFoxHero,
   refreshSources,
 };
