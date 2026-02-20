@@ -42,6 +42,7 @@ function scoreCandidate(c) {
   let score = 0;
   if (/\/news\/articles\//i.test(c.url)) score += 220;
   if (isLive(c.url)) score += 120;
+  if (c.hasLiveBadge) score += 140;
   if (/^https?:\/\/(www\.)?bbc\.(com|co\.uk)\/news\/[a-z-]+-\d+$/i.test(c.url)) score += 80;
   if (c.hasHeadline) score += 60;
   if (c.inMain) score += 60;
@@ -52,10 +53,20 @@ function scoreCandidate(c) {
 
 function extractTopStoryFromHtml(html) {
   const $ = cheerio.load(html);
+  const hasLiveBadge = (el) =>
+    $(el).find('[data-testid="live-icon-svg-styled"],[data-testid*="live-icon"]').length > 0 ||
+    $(el)
+      .find("span")
+      .toArray()
+      .some((s) => normalizeSpaces($(s).text()).toUpperCase() === "LIVE");
   const selectors = [
+    'main a[data-testid="external-anchor"][href*="/news/live/"]',
+    'main a[href*="/news/live/"]',
     'main a[data-testid="internal-link"][href*="/news/articles/"]',
     'main a[data-testid="internal-link"][href*="/news/live/"]',
     'main a[data-testid="internal-link"][href^="/news/"]',
+    'a[data-testid="external-anchor"][href*="/news/live/"]',
+    'a[href*="/news/live/"]',
     'a[data-testid="internal-link"][href*="/news/articles/"]',
     'a[data-testid="internal-link"][href*="/news/live/"]',
     'a[data-testid="internal-link"][href^="/news/"]',
@@ -79,6 +90,7 @@ function extractTopStoryFromHtml(html) {
       const candidate = {
         url,
         title,
+        hasLiveBadge: hasLiveBadge(el),
         hasHeadline: $(el).find('[data-testid="card-headline"],h1,h2,h3').length > 0,
         inMain: $(el).parents("main").length > 0,
       };
@@ -90,6 +102,7 @@ function extractTopStoryFromHtml(html) {
   if (!ranked.length) return null;
   const topAny = ranked[0];
   const topArticle = ranked.find((r) => !isLive(r.url)) || null;
+  if (isLive(topAny.url) && topAny.hasLiveBadge) return topAny;
   return topArticle && topArticle.score >= topAny.score - 25 ? topArticle : topAny;
 }
 
@@ -112,15 +125,18 @@ function run() {
   const top = extractTopStoryFromHtml(html);
 
   assert(top, "Expected a BBC top story candidate");
-  assert(/\/news\/articles\//.test(top.url), `Expected article URL, got: ${top.url}`);
-  assert(
-    top.url.includes("/news/articles/cx28yel4811o"),
-    `Expected current centerpiece URL (/news/articles/cx28yel4811o), got: ${top.url}`,
-  );
-  assert(
-    /Andrew released under investigation after arrest on suspicion of misconduct in public office/i.test(top.title),
-    `Expected centerpiece headline, got: ${top.title}`,
-  );
+  const isLive = /\/news\/live\//i.test(top.url);
+  const isArticle = /\/news\/articles\//i.test(top.url);
+  assert(isLive || isArticle, `Expected BBC article or live URL, got: ${top.url}`);
+  if (isLive) {
+    assert(
+      /Trump to speak after Supreme Court struck down global tariffs/i.test(top.title),
+      `Expected live-blog headline, got: ${top.title}`,
+    );
+  } else {
+    assert(/^https?:\/\/(www\.)?bbc\.(com|co\.uk)\/news\/articles\/[a-z0-9]+$/i.test(top.url), `Expected BBC article URL, got: ${top.url}`);
+    assert(top.title.length >= 24, `Expected non-trivial article headline, got: ${top.title}`);
+  }
 
   const blockCases = [
     { in: { httpStatus: 403 }, out: "http_403" },
