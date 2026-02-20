@@ -171,6 +171,7 @@
     }
     .change-indicator.new-url{ background:var(--ok); }
     .change-indicator.new-headline{ background:var(--blue); }
+    .change-indicator.stale{ background:var(--line-strong); }
 
     .card{
       background: var(--card);
@@ -292,6 +293,7 @@
     }
     .changeDot.url{ background:var(--ok); }
     .changeDot.headline{ background:var(--blue); }
+    .changeDot.stale{ background:var(--line-strong); }
     .changeDot.none{ background:var(--line-strong); }
 
     .pill{
@@ -410,18 +412,18 @@
     #drawer-source-data{
       left:50%;
       right:auto;
-      transform:translate(-50%, 100%);
-      width:min(760px, 100vw);
-      max-height:82vh;
-      height:auto;
-      top:auto;
-      bottom:0;
-      border-left:1px solid var(--line);
-      border-top-left-radius:14px;
-      border-top-right-radius:14px;
+      top:50%;
+      bottom:auto;
+      width:min(920px, calc(100vw - 64px));
+      height:min(86vh, 840px);
+      max-height:min(86vh, 840px);
+      transform:translate(-50%, calc(100% + 24px));
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:0 10px 28px rgba(30,36,43,.2);
     }
     #drawer-source-data.open{
-      transform:translate(-50%, 0);
+      transform:translate(-50%, -50%);
     }
     .detailsTabs{
       display:flex;
@@ -935,6 +937,24 @@
         min-width:38px;
       }
     }
+    @media (max-width: 700px){
+      #drawer-source-data{
+        top:auto;
+        bottom:0;
+        height:auto;
+        max-height:82vh;
+        width:100vw;
+        transform:translate(-50%, 100%);
+        border-radius:14px 14px 0 0;
+        border-left:1px solid var(--line);
+        border-right:1px solid var(--line);
+        border-bottom:none;
+        box-shadow:-3px 0 16px rgba(30,36,43,.08);
+      }
+      #drawer-source-data.open{
+        transform:translate(-50%, 0);
+      }
+    }
     @media (max-width: 430px){
       .topbar{
         padding:10px 10px;
@@ -960,10 +980,6 @@
         padding:10px;
       }
       .drawer{ width:100vw; }
-      #drawer-source-data{
-        width:100vw;
-        border-radius:14px 14px 0 0;
-      }
       .drawerBody{
         padding:10px;
       }
@@ -1004,6 +1020,7 @@
       <div id="legend-more" class="legendMore">
         <span class="legendPill"><span class="change-indicator new-url"></span> Green dot = URL changed (new top story)</span>
         <span class="legendPill"><span class="change-indicator new-headline"></span> Blue dot = headline changed (same URL)</span>
+        <span class="legendPill"><span class="change-indicator stale"></span> Gray dot = stale (no change in 2h)</span>
         <span class="legendNote">First seen shows how long the current top story URL has been in the #1 slot.</span>
       </div>
     </div>
@@ -1404,32 +1421,20 @@
       panel.style.borderRadius = "12px";
       panel.style.padding = "10px";
 
-      const top = document.createElement("div");
-      top.style.display = "flex";
-      top.style.justifyContent = "space-between";
-      top.style.alignItems = "center";
-      top.style.gap = "8px";
-
       const meta = document.createElement("div");
       meta.style.color = "#f1f3f4";
       meta.style.fontSize = "12px";
       meta.style.whiteSpace = "nowrap";
       meta.style.overflow = "hidden";
       meta.style.textOverflow = "ellipsis";
+      meta.style.flex = "1 1 auto";
+      meta.style.minWidth = "0";
 
-      const btns = document.createElement("div");
-      btns.style.display = "flex";
-      btns.style.gap = "8px";
-
-      const btnPrev = document.createElement("button");
-      btnPrev.className = "linkbtn";
-      btnPrev.type = "button";
-      btnPrev.textContent = "Back";
-
-      const btnNext = document.createElement("button");
-      btnNext.className = "linkbtn";
-      btnNext.type = "button";
-      btnNext.textContent = "Forward";
+      const controlsRow = document.createElement("div");
+      controlsRow.style.display = "flex";
+      controlsRow.style.alignItems = "center";
+      controlsRow.style.gap = "8px";
+      controlsRow.style.flexWrap = "wrap";
 
       const btnClose = document.createElement("button");
       btnClose.className = "linkbtn";
@@ -1451,14 +1456,11 @@
       btnZoomIn.type = "button";
       btnZoomIn.textContent = "+";
 
-      btns.appendChild(btnZoomOut);
-      btns.appendChild(btnZoomReset);
-      btns.appendChild(btnZoomIn);
-      btns.appendChild(btnPrev);
-      btns.appendChild(btnNext);
-      btns.appendChild(btnClose);
-      top.appendChild(meta);
-      top.appendChild(btns);
+      controlsRow.appendChild(meta);
+      controlsRow.appendChild(btnZoomOut);
+      controlsRow.appendChild(btnZoomReset);
+      controlsRow.appendChild(btnZoomIn);
+      controlsRow.appendChild(btnClose);
 
       const frame = document.createElement("div");
       frame.style.width = "100%";
@@ -1485,6 +1487,8 @@
       sliderRow.style.display = "flex";
       sliderRow.style.alignItems = "center";
       sliderRow.style.gap = "8px";
+      sliderRow.style.marginTop = "2px";
+      sliderRow.style.paddingBottom = "calc(env(safe-area-inset-bottom, 0px) + 12px)";
 
       const slider = document.createElement("input");
       slider.type = "range";
@@ -1497,10 +1501,10 @@
 
       frame.appendChild(img);
 
-      panel.appendChild(top);
       panel.appendChild(frame);
       sliderRow.appendChild(slider);
       panel.appendChild(sliderRow);
+      panel.appendChild(controlsRow);
       root.appendChild(panel);
       document.body.appendChild(root);
 
@@ -1525,8 +1529,6 @@
         img.src = ev.shot_url;
         applyZoom();
         meta.textContent = `${fmtTime(ev.ts)}`;
-        btnPrev.disabled = idx <= 0;
-        btnNext.disabled = idx >= events.length - 1;
         slider.max = String(Math.max(0, events.length - 1));
         slider.value = String(idx);
       }
@@ -1538,16 +1540,6 @@
       btnClose.addEventListener("click", close);
       root.addEventListener("click", (e) => {
         if (e.target === root) close();
-      });
-      btnPrev.addEventListener("click", () => {
-        if (idx <= 0) return;
-        idx -= 1;
-        render();
-      });
-      btnNext.addEventListener("click", () => {
-        if (idx >= events.length - 1) return;
-        idx += 1;
-        render();
       });
       slider.addEventListener("input", () => {
         idx = Math.max(0, Math.min(events.length - 1, Number(slider.value || 0)));
@@ -3134,22 +3126,17 @@
       a.textContent = src?.item?.title || "—";
       h2.appendChild(a);
 
-      // Lightweight change indicator near headline
-      if (indicator?.changeType && indicator.changeType !== "other") {
-        const ind = document.createElement("span");
-        ind.className = `change-indicator ${indicator.changeType === "url" ? "new-url" : "new-headline"}`;
-        h2.appendChild(ind);
-      }
-
       const changeRow = document.createElement("div");
       changeRow.className = "changeRow";
       const dot = document.createElement("span");
       const changeType = String(indicator?.changeType || "").toLowerCase();
-      dot.className = `changeDot ${changeType === "url" ? "url" : changeType === "headline" ? "headline" : "none"}`;
+      const stale2h = Boolean(src?.isStale) || Boolean(indicator?.stale2h);
+      dot.className = `changeDot ${changeType === "url" ? "url" : changeType === "headline" ? "headline" : stale2h ? "stale" : "none"}`;
       const changeText = document.createElement("span");
       changeText.textContent =
         changeType === "url" ? "URL changed (new top story)"
         : changeType === "headline" ? "Headline changed (same URL)"
+        : stale2h ? "Stale"
         : "No recent change";
       changeRow.appendChild(dot);
       changeRow.appendChild(changeText);
