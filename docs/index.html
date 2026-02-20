@@ -247,6 +247,14 @@
       text-transform:uppercase;
       line-height:1;
     }
+    .breakingNewsTag{
+      color:#b00020;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      line-height:1;
+    }
 
     .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 
@@ -2514,6 +2522,9 @@
             url: item.url || null,
             imgUrl: item.imgUrl || item.img_url || null,
             contentType: item.contentType || item.content_type || row.contentType || row.content_type || null,
+            breakingLabel: item.breakingLabel || item.breaking_label || row.breakingLabel || row.breaking_label || null,
+            breakingHeadline: item.breakingHeadline || item.breaking_headline || row.breakingHeadline || row.breaking_headline || null,
+            breakingUrl: item.breakingUrl || item.breaking_url || row.breakingUrl || row.breaking_url || null,
           },
           shot: row.shot || last.shot || null,
         };
@@ -2688,6 +2699,13 @@
 
       const wrap = document.createElement("div");
       wrap.className = "headlineWrap";
+
+      if (src?.item?.breakingLabel) {
+        const breakingTag = document.createElement("div");
+        breakingTag.className = "breakingNewsTag";
+        breakingTag.textContent = src.item.breakingLabel;
+        wrap.appendChild(breakingTag);
+      }
 
       if (isLiveBlogItem(src)) {
         const liveTag = document.createElement("div");
