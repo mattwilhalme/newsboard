@@ -52,22 +52,22 @@
     .topbar{
       max-width:var(--maxw);
       margin:0 auto;
-      padding:11px 16px;
+      padding:8px 14px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
+      gap:10px;
     }
 
-    .brand{ display:flex; flex-direction:column; gap:3px; min-width: 240px; }
-    .brand .title{ font-weight:700; letter-spacing:.2px; font-size:17px; line-height:1.2; }
-    .brand .sub{ color:var(--muted); font-size:13px; }
+    .brand{ display:flex; flex-direction:column; gap:2px; min-width: 220px; }
+    .brand .title{ font-weight:800; letter-spacing:.2px; font-size:16px; line-height:1.1; }
+    .brand .sub{ color:var(--muted); font-size:12px; }
 
     .controls{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
     .statusInline{
-      font-size:12px;
+      font-size:11px;
       color:var(--muted);
-      min-width:70px;
+      min-width:84px;
       text-align:right;
     }
 
@@ -115,11 +115,28 @@
       display:flex;
       flex-wrap:wrap;
       align-items:center;
-      gap:8px 12px;
-      margin-bottom:14px;
+      gap:8px;
+      margin-bottom:10px;
       color:var(--muted);
       font-size:12px;
     }
+    .legendInline{ display:flex; align-items:center; gap:8px; }
+    .legendToggle{
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--muted);
+      border-radius:999px;
+      width:20px;
+      height:20px;
+      line-height:18px;
+      text-align:center;
+      padding:0;
+      cursor:pointer;
+      font-size:12px;
+      font-weight:700;
+    }
+    .legendMore{ display:none; width:100%; gap:8px; flex-wrap:wrap; }
+    .legendMore.open{ display:flex; }
     .legendPill{
       display:inline-flex;
       align-items:center;
@@ -265,6 +282,17 @@
     }
 
     .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    .changeRow{ display:flex; align-items:center; gap:7px; font-size:12px; color:var(--muted); }
+    .changeDot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      display:inline-block;
+      flex:0 0 auto;
+    }
+    .changeDot.url{ background:var(--ok); }
+    .changeDot.headline{ background:var(--blue); }
+    .changeDot.none{ background:var(--line-strong); }
 
     .pill{
       display:inline-flex;
@@ -378,6 +406,73 @@
       z-index:70;
       display:flex;
       flex-direction:column;
+    }
+    #drawer-source-data{
+      left:50%;
+      right:auto;
+      transform:translate(-50%, 100%);
+      width:min(760px, 100vw);
+      max-height:82vh;
+      height:auto;
+      top:auto;
+      bottom:0;
+      border-left:1px solid var(--line);
+      border-top-left-radius:14px;
+      border-top-right-radius:14px;
+    }
+    #drawer-source-data.open{
+      transform:translate(-50%, 0);
+    }
+    .detailsTabs{
+      display:flex;
+      gap:6px;
+      margin-top:8px;
+    }
+    .detailsTab{
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--muted);
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .detailsTab.active{
+      color:var(--text);
+      border-color:var(--line-strong);
+      background:#fff;
+    }
+    .statsGrid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      margin-bottom:10px;
+    }
+    .statCard{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#fff;
+      padding:8px;
+    }
+    .statLabel{ font-size:11px; color:var(--muted); }
+    .statValue{ font-size:17px; font-weight:800; margin-top:2px; }
+    .chartCard{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#fff;
+      padding:8px;
+      margin-bottom:8px;
+    }
+    .chartTitle{ font-size:12px; color:var(--muted); margin-bottom:6px; }
+    .chartCanvas{ width:100%; height:120px; display:block; }
+    .inlineEmpty{
+      font-size:12px;
+      color:var(--muted);
+      border:1px dashed var(--line);
+      border-radius:10px;
+      padding:10px;
+      background:var(--surface);
     }
     .drawer.open{ transform: translateX(0); }
 
@@ -864,8 +959,10 @@
       .cardBody{
         padding:10px;
       }
-      .drawer{
+      .drawer{ width:100vw; }
+      #drawer-source-data{
         width:100vw;
+        border-radius:14px 14px 0 0;
       }
       .drawerBody{
         padding:10px;
@@ -888,8 +985,7 @@
       <div class="controls">
         <button id="btn-reload" class="btn" type="button">Refresh</button>
         <div id="refresh-indicator" class="statusInline" aria-live="polite"></div>
-        <button id="btn-history" class="btn" type="button">History</button>
-        <button id="btn-data" class="btn" type="button">Data</button>
+        <button id="btn-menu" class="btn" type="button" aria-label="Open menu">⋯</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -901,9 +997,15 @@
       <button id="tab-labs" class="tabBtn" type="button" role="tab" aria-selected="false">Labs</button>
     </div>
     <div id="legend" class="legend">
-      <span class="legendPill"><span class="change-indicator new-url"></span> Green dot = URL changed (new top story)</span>
-      <span class="legendPill"><span class="change-indicator new-headline"></span> Blue dot = Headline changed (same URL)</span>
-      <span class="legendNote">First seen shows how long the current top story URL has been in the #1 slot.</span>
+      <div class="legendInline">
+        <span class="legendNote">Change dots track URL vs headline movement.</span>
+        <button id="legend-toggle" class="legendToggle" type="button" aria-expanded="false" aria-label="Legend details">i</button>
+      </div>
+      <div id="legend-more" class="legendMore">
+        <span class="legendPill"><span class="change-indicator new-url"></span> Green dot = URL changed (new top story)</span>
+        <span class="legendPill"><span class="change-indicator new-headline"></span> Blue dot = headline changed (same URL)</span>
+        <span class="legendNote">First seen shows how long the current top story URL has been in the #1 slot.</span>
+      </div>
     </div>
 
     <section id="view-overview">
@@ -974,7 +1076,7 @@
   </footer>
 
   <div class="drawerOverlay" id="drawer-overlay"></div>
-  <aside class="drawer" id="drawer-history" aria-hidden="true">
+  <aside class="drawer" id="drawer-history" aria-hidden="true" style="display:none">
     <div class="drawerHead">
       <div>
         <div class="drawerTitle">History</div>
@@ -994,7 +1096,7 @@
     </div>
   </aside>
 
-  <aside class="drawer" id="drawer-data" aria-hidden="true">
+  <aside class="drawer" id="drawer-data" aria-hidden="true" style="display:none">
     <div class="drawerHead">
       <div>
         <div class="drawerTitle">Data</div>
@@ -1017,8 +1119,13 @@
   <aside class="drawer" id="drawer-source-data" aria-hidden="true">
     <div class="drawerHead">
       <div>
-        <div class="drawerTitle" id="source-data-title">Data</div>
+        <div class="drawerTitle" id="source-data-title">Details</div>
         <div class="tiny" id="source-data-range">—</div>
+        <div class="detailsTabs" role="tablist" aria-label="Details tabs">
+          <button id="details-tab-changes" class="detailsTab active" type="button" role="tab" aria-selected="true">Changes</button>
+          <button id="details-tab-data" class="detailsTab" type="button" role="tab" aria-selected="false">Data</button>
+          <button id="details-tab-shots" class="detailsTab" type="button" role="tab" aria-selected="false">Screenshots</button>
+        </div>
       </div>
       <div class="row">
         <label class="tiny" for="source-data-window">Window</label>
@@ -1032,6 +1139,23 @@
     </div>
     <div class="drawerBody">
       <div id="source-data"></div>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="drawer-menu" aria-hidden="true">
+    <div class="drawerHead">
+      <div>
+        <div class="drawerTitle">Menu</div>
+        <div class="tiny">Global controls</div>
+      </div>
+      <button id="btn-menu-close" class="btn" type="button">Close</button>
+    </div>
+    <div class="drawerBody">
+      <div class="historyList">
+        <div class="latestItem"><div class="latestTitle">About (coming soon)</div></div>
+        <div class="latestItem"><div class="latestTitle">Legend (in header)</div></div>
+        <div class="latestItem"><div class="latestTitle">Export (coming soon)</div></div>
+      </div>
     </div>
   </aside>
 
@@ -1096,6 +1220,7 @@
     let dataSortState = { key: "publisher", dir: "asc" };
     let selectedSourceDataId = "";
     let sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
+    let selectedDetailsTab = "changes";
     let clusterCardOrder = {};
     let isRefreshing = false;
     let lastRefreshError = null;
@@ -1209,8 +1334,6 @@
       const sources = latestDrawerPayload?.sources;
       const indicators = latestDrawerPayload?.indicators;
       if (!normalizedHistory || !sources || !indicators) return;
-      renderHistory(normalizedHistory, sources, indicators, selectedWindowHours);
-      renderData(normalizedHistory, indicators, sources, selectedWindowHours);
       const sourceDrawerOpen = $("drawer-source-data")?.classList.contains("open");
       if (sourceDrawerOpen && selectedSourceDataId) {
         renderSourceDataPanel(selectedSourceDataId);
@@ -1242,7 +1365,7 @@
       const refreshIndicator = $("refresh-indicator");
       const tsLabel = lastSuccessfulUpdateTs ? fmtTime(new Date(lastSuccessfulUpdateTs).toISOString()) : "—";
 
-      if (refreshIndicator) refreshIndicator.textContent = isRefreshing ? "Refreshing…" : "";
+      if (refreshIndicator) refreshIndicator.textContent = isRefreshing ? "⟳ Refreshing" : "";
       if (!subline) return;
 
       if (lastRefreshError) {
@@ -1546,7 +1669,7 @@
     }
 
     function closeAllDrawers() {
-      const ids = ["drawer-history", "drawer-data", "drawer-source-data"];
+      const ids = ["drawer-history", "drawer-data", "drawer-source-data", "drawer-menu"];
       for (const id of ids) {
         const d = $(id);
         if (!d) continue;
@@ -1554,6 +1677,16 @@
         d.setAttribute("aria-hidden", "true");
       }
       $("drawer-overlay")?.classList.remove("show");
+    }
+
+    function setMenuOpen(open){
+      const drawer = $("drawer-menu");
+      const overlay = $("drawer-overlay");
+      if (!drawer || !overlay) return;
+      if (open) closeAllDrawers();
+      drawer.classList.toggle("open", Boolean(open));
+      overlay.classList.toggle("show", Boolean(open));
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
     }
 
     function setHistoryOpen(open){
@@ -1586,6 +1719,24 @@
       drawer.classList.toggle("open", Boolean(open));
       overlay.classList.toggle("show", Boolean(open));
       drawer.setAttribute("aria-hidden", open ? "false" : "true");
+    }
+
+    function setDetailsTab(tab){
+      const valid = new Set(["changes", "data", "shots"]);
+      selectedDetailsTab = valid.has(tab) ? tab : "changes";
+      const tabs = [
+        ["details-tab-changes", "changes"],
+        ["details-tab-data", "data"],
+        ["details-tab-shots", "shots"],
+      ];
+      for (const [id, key] of tabs) {
+        const btn = $(id);
+        if (!btn) continue;
+        const active = key === selectedDetailsTab;
+        btn.classList.toggle("active", active);
+        btn.setAttribute("aria-selected", active ? "true" : "false");
+      }
+      if (selectedSourceDataId) renderSourceDataPanel(selectedSourceDataId);
     }
 
     function setDataOpen(open){
@@ -1764,7 +1915,6 @@
           item: {
             title: row.title || null,
             url: row.url || null,
-            imgUrl: row.img_url || row.imgUrl || null,
             contentType: row.content_type || row.contentType || null,
           },
         };
@@ -1779,12 +1929,11 @@
 
         const url = pick(row, ["url", "story_url", "hero_url", "link", "href"]);
         const title = pick(row, ["title", "any_title", "story_title", "headline", "hero_title"]);
-        const imgUrl = pick(row, ["img_url", "any_img_url", "imgUrl", "image_url", "image"]);
         const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "first_seen", "first_seen_ts"]);
         const lastSeenAt = pick(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at", "updatedAt"]);
         const seenCount = pick(row, ["seen_count", "seenCount", "count", "observations"]);
 
-        historyObj.sources[id].entries.push({ url, title, imgUrl, firstSeenAt, lastSeenAt, seenCount });
+        historyObj.sources[id].entries.push({ url, title, firstSeenAt, lastSeenAt, seenCount });
       }
 
       // Align to cache.json-like structure for renderer
@@ -2052,7 +2201,30 @@
         });
 
       const inWindow = normalized.filter((entry) => entry.endMs >= winStart);
-      const distinctUrls = new Set(inWindow.map((entry) => String(entry?.url || "").trim()).filter(Boolean));
+      // Stats derivation:
+      // - URL change: consecutive entries with different canonical URL.
+      // - Headline-only change: same canonical URL, different title.
+      // - Unique stories: canonical URL count, with title fingerprint fallback when URL is missing.
+      // - Longest run: max continuous duration for a single canonical URL/fingerprint in window.
+      const canonicalKey = (entry) => {
+        const rawUrl = String(entry?.url || "").trim().toLowerCase();
+        if (rawUrl) {
+          try {
+            const u = new URL(rawUrl);
+            u.hash = "";
+            if (u.pathname.length > 1 && u.pathname.endsWith("/")) u.pathname = u.pathname.slice(0, -1);
+            for (const k of [...u.searchParams.keys()]) {
+              const lk = k.toLowerCase();
+              if (lk.startsWith("utm_") || lk === "fbclid" || lk === "gclid") u.searchParams.delete(k);
+            }
+            u.searchParams.sort();
+            return `u:${u.toString()}`;
+          } catch {}
+        }
+        const t = String(entry?.title || "").trim().toLowerCase();
+        return t ? `t:${t}` : "unknown";
+      };
+      const distinctUrls = new Set(inWindow.map((entry) => canonicalKey(entry)));
 
       let urlChanges = 0;
       let headlineOnlyChanges = 0;
@@ -2061,11 +2233,10 @@
         const cur = normalized[i];
         if (cur.endMs < winStart) continue;
 
-        const prevUrl = String(prev?.url || "");
-        const curUrl = String(cur?.url || "");
+        const prevUrl = canonicalKey(prev);
+        const curUrl = canonicalKey(cur);
         const prevTitle = String(prev?.title || "");
         const curTitle = String(cur?.title || "");
-        if (!curUrl || !prevUrl) continue;
 
         if (curUrl !== prevUrl) {
           urlChanges += 1;
@@ -2078,19 +2249,38 @@
       let i = 0;
       while (i < normalized.length) {
         const first = normalized[i];
-        const runUrl = String(first?.url || "");
+        const runUrl = canonicalKey(first);
         let runStart = first.startMs;
         let runEnd = first.endMs;
         let j = i + 1;
-        while (j < normalized.length && String(normalized[j]?.url || "") === runUrl) {
+        while (j < normalized.length && canonicalKey(normalized[j]) === runUrl) {
           runEnd = Math.max(runEnd, normalized[j].endMs);
           j += 1;
         }
-        if (runUrl && runEnd >= winStart) {
+        if (runEnd >= winStart) {
           const boundedStart = Math.max(runStart, winStart);
           longestRunMs = Math.max(longestRunMs, Math.max(0, runEnd - boundedStart));
         }
         i = j;
+      }
+
+      const bucketMinutes = hours <= 6 ? 30 : 60;
+      const bucketMs = bucketMinutes * 60 * 1000;
+      const bucketCount = Math.max(1, Math.ceil((Date.now() - winStart) / bucketMs));
+      const buckets = Array.from({ length: bucketCount }, (_, idx) => ({
+        startMs: winStart + (idx * bucketMs),
+        url: 0,
+        headline: 0,
+      }));
+      for (let i = 1; i < normalized.length; i += 1) {
+        const prev = normalized[i - 1];
+        const cur = normalized[i];
+        if (cur.endMs < winStart) continue;
+        const idx = Math.min(bucketCount - 1, Math.max(0, Math.floor((cur.endMs - winStart) / bucketMs)));
+        const prevKey = canonicalKey(prev);
+        const curKey = canonicalKey(cur);
+        if (curKey !== prevKey) buckets[idx].url += 1;
+        else if (String(cur?.title || "") !== String(prev?.title || "")) buckets[idx].headline += 1;
       }
 
       return {
@@ -2102,6 +2292,7 @@
         headlineOnlyChangesDisplay: headlineOnlyChanges / daysDivisor,
         uniqueStoriesDisplay: distinctUrls.size / daysDivisor,
         perDay: daysDivisor > 1,
+        buckets,
       };
     }
 
@@ -2258,6 +2449,64 @@
       host.appendChild(table);
     }
 
+    function drawMiniBars(canvas, buckets){
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      const dpr = window.devicePixelRatio || 1;
+      const cssW = canvas.clientWidth || 300;
+      const cssH = canvas.clientHeight || 120;
+      canvas.width = Math.floor(cssW * dpr);
+      canvas.height = Math.floor(cssH * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, cssW, cssH);
+      const data = Array.isArray(buckets) ? buckets : [];
+      if (!data.length) return;
+      const max = Math.max(1, ...data.map((b) => Number(b.url || 0) + Number(b.headline || 0)));
+      const gap = 2;
+      const barW = Math.max(2, Math.floor((cssW - (data.length - 1) * gap) / data.length));
+      let x = 0;
+      for (const b of data) {
+        const total = Number(b.url || 0) + Number(b.headline || 0);
+        const h = Math.round((total / max) * (cssH - 12));
+        ctx.fillStyle = "#d8d2c5";
+        ctx.fillRect(x, cssH - h, barW, h);
+        const hu = Math.round((Number(b.url || 0) / max) * (cssH - 12));
+        const hh = Math.round((Number(b.headline || 0) / max) * (cssH - 12));
+        ctx.fillStyle = "rgba(30,142,62,.9)";
+        if (hu > 0) ctx.fillRect(x, cssH - hu, barW, hu);
+        ctx.fillStyle = "rgba(23,92,211,.85)";
+        if (hh > 0) ctx.fillRect(x, cssH - hu - hh, barW, hh);
+        x += barW + gap;
+      }
+    }
+
+    function drawSplitBars(canvas, metrics){
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      const dpr = window.devicePixelRatio || 1;
+      const cssW = canvas.clientWidth || 300;
+      const cssH = canvas.clientHeight || 120;
+      canvas.width = Math.floor(cssW * dpr);
+      canvas.height = Math.floor(cssH * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, cssW, cssH);
+      const url = Number(metrics?.urlChanges || 0);
+      const hl = Number(metrics?.headlineOnlyChanges || 0);
+      const max = Math.max(1, url, hl);
+      const barW = Math.floor((cssW - 48) / 2);
+      const baseY = cssH - 18;
+      const h1 = Math.round((url / max) * (cssH - 32));
+      const h2 = Math.round((hl / max) * (cssH - 32));
+      ctx.fillStyle = "rgba(30,142,62,.9)";
+      ctx.fillRect(14, baseY - h1, barW, h1);
+      ctx.fillStyle = "rgba(23,92,211,.9)";
+      ctx.fillRect(28 + barW, baseY - h2, barW, h2);
+      ctx.fillStyle = "#5e6977";
+      ctx.font = "11px sans-serif";
+      ctx.fillText("URL", 14, cssH - 4);
+      ctx.fillText("Headline", 28 + barW, cssH - 4);
+    }
+
     function renderSourceDataPanel(sourceId){
       const host = $("source-data");
       const title = $("source-data-title");
@@ -2270,44 +2519,175 @@
       const currentSources = latestDrawerPayload?.sources || {};
       const sourceRow = currentSources?.[sourceId] || {};
       const sourceName = sourceLabel(sourceId, sourceRow);
-      title.textContent = `${sourceName} Data`;
+      title.textContent = `${sourceName} Details`;
       if (range) range.textContent = fmtWindowRange(sourceDataWindowHours);
 
       const entries = Array.isArray(normalizedHistory?.sources?.[sourceId]?.entries)
         ? normalizedHistory.sources[sourceId].entries
         : [];
       const metrics = computeSourceDataMetrics(entries, sourceDataWindowHours);
-      const currentSinceRaw = indicatorsById?.[sourceId]?.currentSinceAt || null;
-      const currentSinceMs = Number.isFinite(Date.parse(String(currentSinceRaw || "")))
-        ? Date.parse(String(currentSinceRaw || ""))
-        : 0;
-      const winStart = windowStartMs(sourceDataWindowHours);
+      const timelineEvents = Array.isArray(latestOverviewPayload?.timelineBySource?.[sourceId])
+        ? [...latestOverviewPayload.timelineBySource[sourceId]]
+        : [];
+      timelineEvents.sort((a, b) => Date.parse(String(b?.ts || "")) - Date.parse(String(a?.ts || "")));
+      const headlineHistory = headlineHistoryFromTimeline(timelineEvents, sourceRow?.item?.url || null);
 
-      const table = document.createElement("table");
-      table.className = "dataTable";
-      const tbody = document.createElement("tbody");
-
-      function row(label, value){
-        const tr = document.createElement("tr");
-        const tdL = document.createElement("td");
-        tdL.textContent = label;
-        const tdV = document.createElement("td");
-        tdV.textContent = value;
-        tr.appendChild(tdL);
-        tr.appendChild(tdV);
-        tbody.appendChild(tr);
+      if (selectedDetailsTab === "changes") {
+        const wrap = document.createElement("div");
+        wrap.className = "relatedPanel open";
+        if (headlineHistory.original?.title) {
+          const first = document.createElement("div");
+          first.className = "headlineDiff";
+          first.innerHTML = `<div class="headlineDiffMeta"><strong>Original:</strong> ${escapeHtml(fmtTime(headlineHistory.original.ts))}</div><div>${escapeHtml(headlineHistory.original.title)}</div>`;
+          wrap.appendChild(first);
+        }
+        if (headlineHistory.previous?.title) {
+          const prev = document.createElement("div");
+          prev.className = "headlineDiff";
+          prev.innerHTML = `<div class="headlineDiffMeta"><strong>Previous:</strong> ${escapeHtml(fmtTime(headlineHistory.previous.ts))}</div><div>${escapeHtml(headlineHistory.previous.title)}</div>`;
+          wrap.appendChild(prev);
+        }
+        for (const ev of headlineHistory.changes || []) {
+          const diff = document.createElement("div");
+          diff.className = "headlineDiff";
+          const meta = document.createElement("div");
+          meta.className = "headlineDiffMeta";
+          meta.innerHTML = `<strong>Updated:</strong> ${escapeHtml(fmtTime(ev?.changedAt))}`;
+          diff.appendChild(meta);
+          appendHeadlineEditMarkup(diff, ev?.fromTitle, ev?.toTitle);
+          wrap.appendChild(diff);
+        }
+        if (!wrap.childElementCount) {
+          const empty = document.createElement("div");
+          empty.className = "inlineEmpty";
+          empty.textContent = "Not enough history yet.";
+          host.appendChild(empty);
+          return;
+        }
+        host.appendChild(wrap);
+        return;
       }
 
-      row("URL changes", fmtMetricValue(metrics.urlChangesDisplay, metrics.perDay));
-      row("Longest run", fmtDurationMs(metrics.longestRunMs));
-      row("Unique stories", fmtMetricValue(metrics.uniqueStoriesDisplay, metrics.perDay));
-      row("Headline-only changes", fmtMetricValue(metrics.headlineOnlyChangesDisplay, metrics.perDay));
-      if (currentSinceMs > 0) {
-        row("Current run", fmtDurationMs(Math.max(0, Date.now() - Math.max(winStart, currentSinceMs))));
+      if (selectedDetailsTab === "data") {
+        const hasData = (metrics.urlChanges + metrics.headlineOnlyChanges + metrics.uniqueStories) > 0;
+        const stats = document.createElement("div");
+        stats.className = "statsGrid";
+        const statsRows = [
+          ["URL changes", String(metrics.urlChanges)],
+          ["Headline-only changes", String(metrics.headlineOnlyChanges)],
+          ["Unique stories", String(metrics.uniqueStories)],
+          ["Longest run", fmtDurationMs(metrics.longestRunMs)],
+        ];
+        for (const [label, value] of statsRows) {
+          const card = document.createElement("div");
+          card.className = "statCard";
+          card.innerHTML = `<div class="statLabel">${escapeHtml(label)}</div><div class="statValue">${escapeHtml(value)}</div>`;
+          stats.appendChild(card);
+        }
+        host.appendChild(stats);
+        if (!hasData) {
+          const empty = document.createElement("div");
+          empty.className = "inlineEmpty";
+          empty.textContent = "Not enough history yet.";
+          host.appendChild(empty);
+          return;
+        }
+        const c1 = document.createElement("div");
+        c1.className = "chartCard";
+        c1.innerHTML = `<div class="chartTitle">Changes over time</div>`;
+        const canvas1 = document.createElement("canvas");
+        canvas1.className = "chartCanvas";
+        c1.appendChild(canvas1);
+        host.appendChild(c1);
+        drawMiniBars(canvas1, metrics.buckets);
+
+        const c2 = document.createElement("div");
+        c2.className = "chartCard";
+        c2.innerHTML = `<div class="chartTitle">URL vs headline-only split</div>`;
+        const canvas2 = document.createElement("canvas");
+        canvas2.className = "chartCanvas";
+        c2.appendChild(canvas2);
+        host.appendChild(c2);
+        drawSplitBars(canvas2, metrics);
+        return;
       }
 
-      table.appendChild(tbody);
-      host.appendChild(table);
+      const shots = timelineEvents.filter((ev) => ev?.shot_url);
+      if (!shots.length) {
+        const empty = document.createElement("div");
+        empty.className = "inlineEmpty";
+        empty.textContent = "No screenshots available yet.";
+        host.appendChild(empty);
+        return;
+      }
+      const topMeta = document.createElement("div");
+      topMeta.className = "tiny";
+      topMeta.textContent = `What changed: ${timelineKindLabel(shots[0]?.kind || "heartbeat")} · ${fmtTime(shots[0]?.ts)}`;
+      host.appendChild(topMeta);
+
+      const frame = document.createElement("div");
+      frame.className = "shotFrame";
+      const tile = document.createElement("button");
+      tile.type = "button";
+      tile.className = "shotTile";
+      const imgWrap = document.createElement("div");
+      imgWrap.style.width = "100%";
+      imgWrap.style.aspectRatio = "16 / 9";
+      imgWrap.style.borderRadius = "10px";
+      imgWrap.style.overflow = "hidden";
+      imgWrap.style.background = "#0f1113";
+      const img = document.createElement("img");
+      img.style.width = "100%";
+      img.style.height = "100%";
+      img.style.objectFit = "contain";
+      imgWrap.appendChild(img);
+      tile.appendChild(imgWrap);
+      frame.appendChild(tile);
+      host.appendChild(frame);
+
+      const controls = document.createElement("div");
+      controls.className = "shotRailControls";
+      const nav = document.createElement("div");
+      nav.className = "snapshotNav";
+      const prev = document.createElement("button");
+      prev.className = "linkbtn";
+      prev.type = "button";
+      prev.textContent = "<";
+      const next = document.createElement("button");
+      next.className = "linkbtn";
+      next.type = "button";
+      next.textContent = ">";
+      const meta = document.createElement("div");
+      meta.className = "snapshotStamp";
+      const scrubber = document.createElement("input");
+      scrubber.type = "range";
+      scrubber.className = "shotRailScrubber";
+      scrubber.min = "0";
+      scrubber.max = String(Math.max(0, shots.length - 1));
+      scrubber.step = "1";
+      scrubber.value = "0";
+      nav.appendChild(prev);
+      nav.appendChild(meta);
+      nav.appendChild(next);
+      controls.appendChild(nav);
+      controls.appendChild(scrubber);
+      host.appendChild(controls);
+
+      let idx = 0;
+      function paint(i){
+        idx = Math.max(0, Math.min(shots.length - 1, i));
+        const ev = shots[idx];
+        meta.textContent = fmtTime(ev?.ts);
+        img.src = ev?.shot_url || "";
+        prev.disabled = idx <= 0;
+        next.disabled = idx >= shots.length - 1;
+        scrubber.value = String(idx);
+      }
+      prev.addEventListener("click", () => paint(idx - 1));
+      next.addEventListener("click", () => paint(idx + 1));
+      scrubber.addEventListener("input", () => paint(Number(scrubber.value || 0)));
+      tile.addEventListener("click", () => ensureShotLightbox().open(shots, idx));
+      paint(0);
     }
 
     // ---- Indicator state: 2h active windows for URL/headline changes ----
@@ -2499,11 +2879,11 @@
             ok: false,
             updatedAt: null,
             error: "No data yet",
-            item: { title: "—", url: null, imgUrl: null }
+            item: { title: "—", url: null }
           };
         } else {
           // normalize missing shapes
-          if (!out[id].item) out[id].item = { title: "—", url: null, imgUrl: null };
+          if (!out[id].item) out[id].item = { title: "—", url: null };
           if (out[id].item.title == null) out[id].item.title = "—";
         }
       }
@@ -2531,7 +2911,6 @@
           item: {
             title: item.title || null,
             url: item.url || null,
-            imgUrl: item.imgUrl || item.img_url || null,
             contentType: item.contentType || item.content_type || row.contentType || row.content_type || null,
             breakingLabel: item.breakingLabel || item.breaking_label || row.breakingLabel || row.breaking_label || null,
             breakingHeadline: item.breakingHeadline || item.breaking_headline || row.breakingHeadline || row.breaking_headline || null,
@@ -2762,281 +3141,39 @@
         h2.appendChild(ind);
       }
 
-      const row = document.createElement("div");
-      row.className = "row";
+      const changeRow = document.createElement("div");
+      changeRow.className = "changeRow";
+      const dot = document.createElement("span");
+      const changeType = String(indicator?.changeType || "").toLowerCase();
+      dot.className = `changeDot ${changeType === "url" ? "url" : changeType === "headline" ? "headline" : "none"}`;
+      const changeText = document.createElement("span");
+      changeText.textContent =
+        changeType === "url" ? "URL changed (new top story)"
+        : changeType === "headline" ? "Headline changed (same URL)"
+        : "No recent change";
+      changeRow.appendChild(dot);
+      changeRow.appendChild(changeText);
 
-      const ok = (src?.ok !== false);
-      const stale2h = Boolean(indicator?.stale2h ?? src?.isStale);
-
-      // Status pill ONLY for Failed/Stale
-      const status = document.createElement("span");
-      status.className = "pill";
-      if (!ok) {
-        status.textContent = "Failed";
-        row.appendChild(status);
-      } else if (stale2h) {
-        status.textContent = "Stale";
-        row.appendChild(status);
-      }
+      const actionsRow = document.createElement("div");
+      actionsRow.className = "row";
+      const detailsBtn = document.createElement("button");
+      detailsBtn.type = "button";
+      detailsBtn.className = "linkbtn";
+      detailsBtn.textContent = "Details";
+      detailsBtn.setAttribute("data-action", "open-source-data");
+      detailsBtn.setAttribute("data-id", id);
+      actionsRow.appendChild(detailsBtn);
 
       const err = document.createElement("div");
       err.className = "tiny";
       err.textContent = src?.error ? String(src.error) : "";
 
       wrap.appendChild(h2);
-      if (row.childElementCount > 0) wrap.appendChild(row);
+      wrap.appendChild(changeRow);
+      wrap.appendChild(actionsRow);
       wrap.appendChild(err);
 
       body.appendChild(wrap);
-
-      const timelineEvents = Array.isArray(timelineBySource?.[id]) ? [...timelineBySource[id]] : [];
-      if (timelineEvents.length) {
-        timelineEvents.sort((a, b) => {
-          const ta = Date.parse(String(a?.ts || ""));
-          const tb = Date.parse(String(b?.ts || ""));
-          return (Number.isFinite(tb) ? tb : 0) - (Number.isFinite(ta) ? ta : 0);
-        });
-
-        const foot = document.createElement("div");
-        foot.style.borderTop = "1px solid var(--line)";
-        foot.style.padding = "10px 12px 12px";
-        foot.style.display = "flex";
-        foot.style.flexDirection = "column";
-        foot.style.gap = "8px";
-
-        const trigger = document.createElement("button");
-        trigger.className = "linkbtn";
-        trigger.type = "button";
-        trigger.textContent = "Timelapse";
-
-        const panel = document.createElement("div");
-        panel.style.display = "none";
-        panel.style.flexDirection = "column";
-        panel.style.gap = "8px";
-
-        const hint = document.createElement("div");
-        hint.className = "tiny";
-        hint.textContent = "Newest first. Swipe left/right or use controls to step through screenshots.";
-
-        const frame = document.createElement("div");
-        frame.className = "shotFrame";
-
-        const tile = document.createElement("button");
-        tile.type = "button";
-        tile.className = "shotTile";
-        tile.style.width = "100%";
-
-        const meta = document.createElement("div");
-        meta.className = "snapshotStamp";
-
-        const imgWrap = document.createElement("div");
-        imgWrap.style.width = "100%";
-        imgWrap.style.aspectRatio = "16 / 9";
-        imgWrap.style.borderRadius = "10px";
-        imgWrap.style.overflow = "hidden";
-        imgWrap.style.background = "#0f1113";
-        imgWrap.style.border = "1px solid var(--line)";
-
-        const img = document.createElement("img");
-        img.alt = "";
-        img.loading = "lazy";
-        img.style.width = "100%";
-        img.style.height = "100%";
-        img.style.objectFit = "contain";
-        img.style.background = "#0f1113";
-        imgWrap.appendChild(img);
-
-        tile.appendChild(imgWrap);
-        frame.appendChild(tile);
-
-        const eventsWithShots = timelineEvents.filter((ev) => ev?.shot_url);
-        let shotIdx = 0;
-        let hasPreloadedShots = false;
-
-        function preloadShots() {
-          if (hasPreloadedShots || !eventsWithShots.length) return;
-          hasPreloadedShots = true;
-          for (const ev of eventsWithShots) {
-            const src = String(ev?.shot_url || "");
-            if (!src) continue;
-            const pre = new Image();
-            pre.decoding = "async";
-            pre.src = src;
-          }
-        }
-
-        function renderShot(i){
-          if (!eventsWithShots.length) return;
-          shotIdx = Math.max(0, Math.min(eventsWithShots.length - 1, i));
-          const ev = eventsWithShots[shotIdx];
-          const nextSrc = ev?.shot_url || "";
-          const currentSrc = img.getAttribute("src") || "";
-
-          meta.textContent = `${fmtTime(ev?.ts)}`;
-          scrubber.max = String(Math.max(0, eventsWithShots.length - 1));
-          scrubber.value = String(shotIdx);
-          prev.disabled = shotIdx <= 0;
-          next.disabled = shotIdx >= eventsWithShots.length - 1;
-
-          if (!nextSrc) return;
-          if (currentSrc !== nextSrc) img.src = nextSrc;
-        }
-
-        tile.addEventListener("click", () => {
-          ensureShotLightbox().open(eventsWithShots, shotIdx);
-        });
-
-        const controls = document.createElement("div");
-        controls.className = "shotRailControls";
-
-        const shotNav = document.createElement("div");
-        shotNav.className = "snapshotNav";
-
-        const prev = document.createElement("button");
-        prev.className = "linkbtn";
-        prev.type = "button";
-        prev.textContent = "<";
-
-        const next = document.createElement("button");
-        next.className = "linkbtn";
-        next.type = "button";
-        next.textContent = ">";
-
-        const scrubber = document.createElement("input");
-        scrubber.className = "shotRailScrubber";
-        scrubber.type = "range";
-        scrubber.min = "0";
-        scrubber.max = "0";
-        scrubber.value = "0";
-        scrubber.step = "1";
-
-        shotNav.appendChild(prev);
-        shotNav.appendChild(meta);
-        shotNav.appendChild(next);
-        controls.appendChild(shotNav);
-        controls.appendChild(scrubber);
-
-        if (eventsWithShots.length <= 1) {
-          prev.disabled = true;
-          next.disabled = true;
-        }
-        if (!eventsWithShots.length) {
-          hint.textContent = "No screenshots available yet.";
-          controls.style.display = "none";
-          tile.disabled = true;
-        }
-
-        scrubber.addEventListener("input", () => {
-          renderShot(Number(scrubber.value || 0));
-        });
-        prev.addEventListener("click", () => renderShot(shotIdx - 1));
-        next.addEventListener("click", () => renderShot(shotIdx + 1));
-
-        let startX = null;
-        frame.addEventListener("touchstart", (e) => {
-          startX = e.touches?.[0]?.clientX ?? null;
-        }, { passive: true });
-        frame.addEventListener("touchend", (e) => {
-          const endX = e.changedTouches?.[0]?.clientX ?? null;
-          if (startX === null || endX === null) return;
-          const dx = endX - startX;
-          startX = null;
-          if (Math.abs(dx) < 36) return;
-          if (dx < 0) renderShot(shotIdx + 1);
-          else renderShot(shotIdx - 1);
-        }, { passive: true });
-
-        panel.appendChild(hint);
-        panel.appendChild(frame);
-        panel.appendChild(controls);
-
-        const headlineHistory = headlineHistoryFromTimeline(timelineEvents, src?.item?.url || null);
-        const headlineChanges = headlineHistory.changes;
-        if ((headlineHistory.original && headlineHistory.original.title) || headlineChanges.length) {
-          const hw = document.createElement("div");
-          hw.className = "relatedWrap";
-
-          const controlsRow = document.createElement("div");
-          controlsRow.className = "row";
-
-          const ht = document.createElement("button");
-          ht.type = "button";
-          ht.className = "relatedToggle";
-          ht.textContent = "History";
-
-          const dataBtn = document.createElement("button");
-          dataBtn.type = "button";
-          dataBtn.className = "relatedToggle";
-          dataBtn.textContent = "Data";
-          dataBtn.setAttribute("data-action", "open-source-data");
-          dataBtn.setAttribute("data-id", id);
-
-          const hp = document.createElement("div");
-          hp.className = "relatedPanel";
-
-          for (const ev of headlineChanges) {
-            const diff = document.createElement("div");
-            diff.className = "headlineDiff";
-
-            const metaLine = document.createElement("div");
-            metaLine.className = "headlineDiffMeta";
-            metaLine.innerHTML = `<strong>Updated:</strong> ${escapeHtml(fmtTime(ev?.changedAt))}`;
-            diff.appendChild(metaLine);
-
-            appendHeadlineEditMarkup(diff, ev?.fromTitle, ev?.toTitle);
-            hp.appendChild(diff);
-          }
-
-          if (headlineHistory.original && headlineHistory.original.title) {
-            const first = document.createElement("div");
-            first.className = "headlineDiff";
-            const firstMeta = document.createElement("div");
-            firstMeta.className = "headlineDiffMeta";
-            firstMeta.innerHTML = `<strong>Original:</strong> ${escapeHtml(fmtTime(headlineHistory.original.ts))}`;
-            const firstTitle = document.createElement("div");
-            firstTitle.textContent = headlineHistory.original.title;
-            first.appendChild(firstMeta);
-            first.appendChild(firstTitle);
-            hp.appendChild(first);
-          }
-
-          if (headlineHistory.previous && headlineHistory.previous.title) {
-            const prev = document.createElement("div");
-            prev.className = "headlineDiff";
-            const prevMeta = document.createElement("div");
-            prevMeta.className = "headlineDiffMeta";
-            prevMeta.innerHTML = `<strong>Previously:</strong> ${escapeHtml(fmtTime(headlineHistory.previous.ts))}`;
-            const prevTitle = document.createElement("div");
-            prevTitle.textContent = headlineHistory.previous.title;
-            prev.appendChild(prevMeta);
-            prev.appendChild(prevTitle);
-            hp.appendChild(prev);
-          }
-
-          ht.addEventListener("click", () => hp.classList.toggle("open"));
-          controlsRow.appendChild(ht);
-          controlsRow.appendChild(dataBtn);
-          hw.appendChild(controlsRow);
-          hw.appendChild(hp);
-          body.appendChild(hw);
-        }
-
-        foot.appendChild(trigger);
-        foot.appendChild(panel);
-
-        trigger.addEventListener("click", () => {
-          const open = panel.style.display !== "none";
-          panel.style.display = open ? "none" : "flex";
-          if (!open) {
-            preloadShots();
-            requestAnimationFrame(() => renderShot(shotIdx));
-          }
-        });
-
-        renderShot(0);
-
-        body.appendChild(foot);
-      }
 
       card.appendChild(head);
       card.appendChild(body);
@@ -4524,8 +4661,6 @@
         if (nextState) saveState(nextState);
 
         latestDrawerPayload = { normalizedHistory, sources, indicators };
-        renderHistory(normalizedHistory, sources, indicators, selectedWindowHours);
-        renderData(normalizedHistory, indicators, sources, selectedWindowHours);
         if ($("drawer-source-data")?.classList.contains("open") && selectedSourceDataId) {
           renderSourceDataPanel(selectedSourceDataId);
         }
@@ -4543,8 +4678,6 @@
           renderOverview(placeholderSources, placeholderIndicators, {});
           renderStoryClusters(placeholderSources, placeholderIndicators, {});
           latestDrawerPayload = { normalizedHistory, sources: placeholderSources, indicators: placeholderIndicators };
-          renderHistory(normalizedHistory, placeholderSources, placeholderIndicators, selectedWindowHours);
-          renderData(normalizedHistory, placeholderIndicators, placeholderSources, selectedWindowHours);
         }
         await loadDeepDiveData().catch(() => {});
       } finally {
@@ -4576,17 +4709,27 @@
     }
 
     $("btn-reload")?.addEventListener("click", reload);
+    $("btn-menu")?.addEventListener("click", () => setMenuOpen(true));
+    $("btn-menu-close")?.addEventListener("click", () => setMenuOpen(false));
+    $("legend-toggle")?.addEventListener("click", () => {
+      const panel = $("legend-more");
+      const btn = $("legend-toggle");
+      if (!panel || !btn) return;
+      const open = panel.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
     $("tab-overview")?.addEventListener("click", () => setView("overview"));
     $("tab-labs")?.addEventListener("click", () => setView("labs"));
+    $("details-tab-changes")?.addEventListener("click", () => setDetailsTab("changes"));
+    $("details-tab-data")?.addEventListener("click", () => setDetailsTab("data"));
+    $("details-tab-shots")?.addEventListener("click", () => setDetailsTab("shots"));
     $("deep-window")?.addEventListener("change", (e) => {
       deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
       deepDiveState.selectedObservedAt = null;
       renderDeepDive();
     });
 
-    $("btn-history")?.addEventListener("click", () => setHistoryOpen(true));
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
-    $("btn-data")?.addEventListener("click", () => setDataOpen(true));
     $("btn-data-close")?.addEventListener("click", () => setDataOpen(false));
     $("btn-source-data-close")?.addEventListener("click", () => setSourceDataOpen(false));
     $("source-data-window")?.addEventListener("change", (e) => {
@@ -4622,6 +4765,7 @@
     setView(initialView, false);
     setSelectedWindowHours(HISTORY_WINDOW_DEFAULT_HOURS);
     sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
+    setDetailsTab("changes");
     const sourceDataWindow = $("source-data-window");
     if (sourceDataWindow) sourceDataWindow.value = String(sourceDataWindowHours);
     const deepWindow = $("deep-window");
