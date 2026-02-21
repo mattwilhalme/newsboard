@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-21T23:14:10.783Z",
+  "generatedAt": "2026-02-21T23:39:44.008Z",
   "hours": 24,
   "events": [
     {
@@ -511,6 +511,46 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T23:39:54.554Z",
+      "event_type": "MOVED",
+      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Criminal negligence investigation launched into Sierra Nevada avalanche deaths",
+      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T23:39:54.554Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Criminal negligence investigation launched into Sierra Nevada avalanche deaths",
+      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T23:39:54.554Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "60e34e21c8e9569edae1c6ae45bfbb1e4f1fcf2f",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Trump approves disaster assistance to DC to help with sewage spill into Potomac River"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T23:39:54.554Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f72f0fe654f72f40b6b6ebc527d0072917807a74",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Man who called 911 to report wife shot and intruder in home charged with her murder",
       "to_title": null
     }
   ]
