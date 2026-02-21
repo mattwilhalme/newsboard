@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-21T20:59:33.062Z",
+  "generatedAt": "2026-02-21T21:27:44.450Z",
   "source_id": "abc1",
   "events": [
     {
@@ -5161,6 +5161,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "How an au pair affair and fetish website factored into double murder plot",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T21:27:55.053Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Criminal negligence investigation launched into Sierra Nevada avalanche deaths"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T21:27:55.053Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d180458b0861e18d574ad6bd9a27f58bb8a174e8",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms",
       "to_title": null
     }
   ],
