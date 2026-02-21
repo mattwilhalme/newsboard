@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-21T07:22:29.926Z",
+  "generatedAt": "2026-02-21T07:49:30.366Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:22:37.076Z",
+      "updatedAt": "2026-02-21T07:49:37.961Z",
       "error": null,
-      "runId": "abc_2026-02-21T07-22-30-027Z",
+      "runId": "abc_2026-02-21T07-49-30-471Z",
       "since": "2026-02-21T01:46:04.546Z",
       "item": {
         "title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
@@ -21,9 +21,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:22:47.878Z",
+      "updatedAt": "2026-02-21T07:49:50.138Z",
       "error": null,
-      "runId": "cbs_2026-02-21T07-22-40-180Z",
+      "runId": "cbs_2026-02-21T07-49-41-116Z",
       "since": "2026-02-21T01:46:04.546Z",
       "item": {
         "title": "Trump imposes 10% tariffs on all countries after SCOTUS struck down earlier tariffs",
@@ -35,9 +35,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:22:54.292Z",
+      "updatedAt": "2026-02-21T07:49:57.927Z",
       "error": null,
-      "runId": "usat1_2026-02-21T07-22-48-084Z",
+      "runId": "usat1_2026-02-21T07-49-50-396Z",
       "since": "2026-02-21T04:21:30.149Z",
       "item": {
         "title": "Will MAHA turn on Trump? How his executive order feels like 'betrayal'",
@@ -54,9 +54,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:23:00.617Z",
+      "updatedAt": "2026-02-21T07:50:03.868Z",
       "error": null,
-      "runId": "nbc_2026-02-21T07-22-54-551Z",
+      "runId": "nbc_2026-02-21T07-49-58-218Z",
       "since": "2026-02-20T21:42:45.277Z",
       "item": {
         "title": "British government considers removing former Prince Andrew from the royal line of succession",
@@ -68,9 +68,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:23:07.541Z",
+      "updatedAt": "2026-02-21T07:50:10.892Z",
       "error": null,
-      "runId": "cnn1_2026-02-21T07-23-00-786Z",
+      "runId": "cnn1_2026-02-21T07-50-04-045Z",
       "since": "2026-02-21T02:17:29.165Z",
       "item": {
         "title": "What the tariffs ruling could mean for Trump's presidency",
@@ -82,9 +82,9 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:23:11.865Z",
+      "updatedAt": "2026-02-21T07:50:15.608Z",
       "error": null,
-      "runId": "guardian1_2026-02-21T07-23-07-717Z",
+      "runId": "guardian1_2026-02-21T07-50-11-069Z",
       "since": "2026-02-21T07:22:29.926Z",
       "item": {
         "title": "US envoy Mike Huckabee says it would be ‘fine’ if Israel took all Middle East land",
@@ -96,9 +96,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:23:17.475Z",
+      "updatedAt": "2026-02-21T07:50:24.954Z",
       "error": null,
-      "runId": "ap1_2026-02-21T07-23-12-024Z",
+      "runId": "ap1_2026-02-21T07-50-15-749Z",
       "since": "2026-02-21T04:21:30.149Z",
       "item": {
         "title": "Trump seethes over Supreme Court justices who opposed him on tariffs, especially those he appointed",
@@ -110,9 +110,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:23:25.778Z",
+      "updatedAt": "2026-02-21T07:50:33.126Z",
       "error": null,
-      "runId": "latimes1_2026-02-21T07-23-17-635Z",
+      "runId": "latimes1_2026-02-21T07-50-25-224Z",
       "since": "2026-02-20T19:22:35.182Z",
       "item": {
         "title": "Trump calls justices ‘fools,’ announces new 10% global tariff after Supreme Court setback",
@@ -123,18 +123,24 @@
       }
     },
     "npr1": {
-      "ok": false,
-      "updatedAt": "2026-02-21T07:22:29.926Z",
-      "error": "StorageApiError: Bad Gateway",
-      "runId": null,
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-02-21T07:50:40.794Z",
+      "error": null,
+      "runId": "npr1_2026-02-21T07-50-33-308Z",
+      "since": "2026-02-21T07:49:30.366Z",
+      "item": {
+        "title": "Trump calls SCOTUS tariffs decision 'deeply disappointing' and lays out path forward",
+        "url": "https://npr.org/2026/02/20/nx-s1-5720826/trump-calls-scotus-tariffs-decision-deeply-disappointing-and-lays-out-path-forward",
+        "imgUrl": null,
+        "slotKey": "3f6d722bf103",
+        "contentType": "news"
+      }
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:24:08.005Z",
+      "updatedAt": "2026-02-21T07:50:45.881Z",
       "error": null,
-      "runId": "bbc1_2026-02-21T07-24-02-949Z",
+      "runId": "bbc1_2026-02-21T07-50-41-000Z",
       "since": "2026-02-20T23:48:32.460Z",
       "item": {
         "title": "Trump brings in new 10% tariff as Supreme Court rejects his global import taxes",
@@ -146,9 +152,9 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:24:16.268Z",
+      "updatedAt": "2026-02-21T07:50:54.884Z",
       "error": null,
-      "runId": "fox1_2026-02-21T07-24-08-152Z",
+      "runId": "fox1_2026-02-21T07-50-46-033Z",
       "since": "2026-02-21T02:45:06.075Z",
       "item": {
         "title": "Tehran draws red line on missiles, experts say, as Trump's ultimatum looms",
@@ -160,9 +166,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-02-21T07:24:24.046Z",
+      "updatedAt": "2026-02-21T07:51:09.977Z",
       "error": null,
-      "runId": "yahoo1_2026-02-21T07-24-16-458Z",
+      "runId": "yahoo1_2026-02-21T07-50-55-084Z",
       "since": "2026-02-21T01:46:04.546Z",
       "item": {
         "title": "Newly released records show immigration agents killed 23-year-old U.S. citizen",
