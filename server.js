@@ -521,10 +521,20 @@ async function insertHeroRun({ sourceId, observedAtIso, runId, item, ok, error, 
   return { inserted: 1 };
 }
 
-async function insertHeadlineEvent({ sourceId, observedAtIso, slotKey, item, ok, error, raw }) {
+async function insertHeadlineEvents(rows = []) {
   const sb = getSupabaseAdminOrNull();
-  if (!sb) return { inserted: 0, skipped: true };
+  if (!sb) return { ok: false, inserted: 0, error: "SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not configured" };
+  const payload = Array.isArray(rows) ? rows.filter(Boolean) : [];
+  if (!payload.length) return { ok: true, inserted: 0, error: null };
 
+  const { error: dbErr } = await sb.from("headline_events").insert(payload);
+  if (dbErr) {
+    return { ok: false, inserted: 0, error: dbErr };
+  }
+  return { ok: true, inserted: payload.length, error: null };
+}
+
+async function insertHeadlineEvent({ sourceId, observedAtIso, slotKey, item, ok, error, raw }) {
   const row = {
     source_id: sourceId,
     observed_at: observedAtIso,
@@ -536,10 +546,9 @@ async function insertHeadlineEvent({ sourceId, observedAtIso, slotKey, item, ok,
     error: error ? String(error) : null,
     raw: raw && typeof raw === "object" ? raw : {},
   };
-
-  const { error: dbErr } = await sb.from("headline_events").insert(row);
-  if (dbErr) throw dbErr;
-  return { inserted: 1 };
+  const inserted = await insertHeadlineEvents([row]);
+  if (!inserted.ok) throw inserted.error || new Error("headline_events insert failed");
+  return { inserted: Number(inserted.inserted || 0) };
 }
 
 async function insertTop10Snapshot({ sourceId, observedAtIso, runId, items, raw }) {
@@ -570,9 +579,9 @@ async function insertTop10Snapshot({ sourceId, observedAtIso, runId, items, raw 
     }));
 
   if (!rows.length) return { inserted: 0 };
-  const { error: dbErr } = await sb.from("headline_events").insert(rows);
-  if (dbErr) throw dbErr;
-  return { inserted: rows.length };
+  const inserted = await insertHeadlineEvents(rows);
+  if (!inserted.ok) throw inserted.error || new Error("headline_events insert failed");
+  return { inserted: Number(inserted.inserted || 0) };
 }
 
 /* ---------------------------
@@ -3188,6 +3197,12 @@ async function refreshSources({ id = "" } = {}) {
       run_kind: "hero",
       has_item: Boolean(res?.item),
       has_screenshot: Boolean(res?.shot?.object_path),
+      content_type: res?.item?.contentType || inferContentType({ url: res?.item?.url, title: res?.item?.title }),
+      breaking_label: res?.item?.breakingLabel || null,
+      breaking_headline: res?.item?.breakingHeadline || null,
+      breaking_url: res?.item?.breakingUrl || null,
+      has_breaking: Boolean(res?.item?.breakingLabel || res?.item?.breakingHeadline || res?.item?.breakingUrl),
+      is_live_blog: String(res?.item?.contentType || "").toLowerCase() === "live",
       scraper_error: res?.error || null,
       debug: {
         archive: Boolean(res?.archive),
@@ -3225,6 +3240,11 @@ async function refreshSources({ id = "" } = {}) {
             canonical_url: canonicalizeUrl(res?.item?.url || null),
             module: "homepage_hero",
             content_type: inferContentType({ url: res?.item?.url, title: res?.item?.title }),
+            breaking_label: res?.item?.breakingLabel || null,
+            breaking_headline: res?.item?.breakingHeadline || null,
+            breaking_url: res?.item?.breakingUrl || null,
+            has_breaking: Boolean(res?.item?.breakingLabel || res?.item?.breakingHeadline || res?.item?.breakingUrl),
+            is_live_blog: String(res?.item?.contentType || "").toLowerCase() === "live",
             duration_ms: durationMs,
             final_url: finalUrl,
             http_status: httpStatus,
@@ -3472,6 +3492,7 @@ async function handleTop10Refresh(req, res) {
     });
 
     let inserted = 0;
+    let insertError = null;
     try {
       const result = await insertTop10Snapshot({
         sourceId: "abc1",
@@ -3498,8 +3519,13 @@ async function handleTop10Refresh(req, res) {
         },
       });
       inserted = Number(result?.inserted || 0);
+      console.log(`Top10 ABC inserted headline_events: ${inserted}`);
     } catch (dbErr) {
-      console.warn("top10 headline_events insert failed (abc1):", String(dbErr?.message || dbErr));
+      const msg = String(dbErr?.message || dbErr || "unknown");
+      const hint = dbErr?.hint ? ` | hint=${dbErr.hint}` : "";
+      insertError = `${msg}${hint}`;
+      console.error("Top10 ABC insert failed:", dbErr);
+      console.error(`Top10 ABC insert failed: ${insertError}`);
     }
 
     return res.json({
@@ -3507,10 +3533,12 @@ async function handleTop10Refresh(req, res) {
       source: "abc1",
       observedAt: observedAtIso,
       runId: top10?.runId || null,
-      inserted,
+      inserted_count: inserted,
       expected: 10,
       found: Array.isArray(top10?.items) ? top10.items.length : 0,
-      error: top10?.error || null,
+      error: insertError || top10?.error || null,
+      scrape_error: top10?.error || null,
+      insert_error: insertError,
     });
   } catch (err) {
     return res.status(500).json({ ok: false, error: String(err?.message || err) });

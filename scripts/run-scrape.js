@@ -399,6 +399,10 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
   const url = item.url;
   const title = item.title || "";
   const imgUrl = item.imgUrl || null;
+  const contentType = item.contentType || null;
+  const breakingLabel = item.breakingLabel || null;
+  const breakingHeadline = item.breakingHeadline || null;
+  const breakingUrl = item.breakingUrl || null;
 
   const last = entries.length ? entries[entries.length - 1] : null;
 
@@ -410,6 +414,10 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
       last.lastSeenAt = generatedAtISO;
       last.seenCount = (last.seenCount || 0) + 1;
       last.imgUrl = imgUrl || last.imgUrl;
+      if (contentType) last.contentType = contentType;
+      if (breakingLabel) last.breakingLabel = breakingLabel;
+      if (breakingHeadline) last.breakingHeadline = breakingHeadline;
+      if (breakingUrl) last.breakingUrl = breakingUrl;
       return h;
     }
 
@@ -417,6 +425,10 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
       url,
       title: nextTitle,
       imgUrl,
+      contentType,
+      breakingLabel,
+      breakingHeadline,
+      breakingUrl,
       firstSeenAt: generatedAtISO,
       lastSeenAt: generatedAtISO,
       seenCount: 1,
@@ -428,6 +440,10 @@ function upsertHistory(history, sourceKey, generatedAtISO, item) {
     url,
     title,
     imgUrl,
+    contentType,
+    breakingLabel,
+    breakingHeadline,
+    breakingUrl,
     firstSeenAt: generatedAtISO,
     lastSeenAt: generatedAtISO,
     seenCount: 1,
@@ -474,6 +490,74 @@ function inferContentType({ url, title }) {
   if (u.includes("/analysis")) return "analysis";
   if (u.includes("/photo") || u.includes("/gallery")) return "gallery";
   return "news";
+}
+
+function canonicalizeUrl(input) {
+  const raw = String(input || "").trim();
+  if (!raw) return null;
+  try {
+    const u = new URL(raw);
+    for (const k of [...u.searchParams.keys()]) {
+      const lk = k.toLowerCase();
+      if (lk.startsWith("utm_") || lk === "fbclid" || lk === "gclid" || lk === "cmpid" || lk === "cid") {
+        u.searchParams.delete(k);
+      }
+    }
+    u.hash = "";
+    const normalized = `${u.origin}${u.pathname.replace(/\/+$/, "")}${u.search ? `?${u.searchParams.toString()}` : ""}`;
+    return normalized || null;
+  } catch {
+    return raw.replace(/[?#].*$/, "").replace(/\/+$/, "") || null;
+  }
+}
+
+async function insertTop10HeadlineEvents(sb, top10) {
+  if (!sb) {
+    const error = "SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not configured";
+    console.error(`Top10 ABC insert failed: ${error}`);
+    return { ok: false, inserted: 0, error };
+  }
+  const observedAt = top10?.observedAt || new Date().toISOString();
+  const items = (Array.isArray(top10?.items) ? top10.items : [])
+    .filter((it) => Number.isFinite(Number(it?.rank)))
+    .slice(0, 10);
+  if (!items.length) return { ok: true, inserted: 0, error: null };
+
+  const rows = items.map((it) => ({
+    source_id: "abc1",
+    slot_key: `top10:${Number(it.rank)}`,
+    observed_at: observedAt,
+    title: it?.title || null,
+    url: it?.url || null,
+    img_url: null,
+    ok: true,
+    error: null,
+    raw: {
+      rank: Number(it.rank),
+      canonical_url: canonicalizeUrl(it?.url || null),
+      fingerprint: it?.fingerprint || null,
+      content_type: inferContentType({ url: it?.url, title: it?.title }),
+      selector_used: top10?.meta?.selector_used || null,
+      profile: top10?.meta?.profile || "desktop",
+      candidates: top10?.meta?.candidates || null,
+      topY: Number.isFinite(Number(it?.topY)) ? Number(it.topY) : null,
+      boundaryY: Number.isFinite(Number(it?.boundaryY)) ? Number(it.boundaryY) : null,
+      run_id: top10?.runId || null,
+      run_kind: "top10",
+    },
+  }));
+
+  try {
+    await withSupabaseRetry("insert headline_events.top10_abc", async () => {
+      const { error } = await sb.from("headline_events").insert(rows);
+      if (error) throw error;
+    });
+    return { ok: true, inserted: rows.length, error: null };
+  } catch (err) {
+    console.error("Top10 ABC insert failed:", err);
+    const msg = String(err?.message || err || "unknown");
+    return { ok: false, inserted: 0, error: msg };
+  }
 }
 
 async function loadTimelineEventsFromSupabase(sb, hours = 12) {
@@ -573,6 +657,13 @@ async function run() {
       for (const f of failures) {
         console.error(`  - ${f.label}: ${f.error}`);
       }
+    }
+
+    const top10HeadlineResult = await insertTop10HeadlineEvents(supabase, abcTop10);
+    if (top10HeadlineResult.ok) {
+      console.log(`Top10 ABC inserted headline_events: ${top10HeadlineResult.inserted}`);
+    } else {
+      console.error(`Top10 ABC insert failed: ${top10HeadlineResult.error || "unknown error"}`);
     }
 
     try {
