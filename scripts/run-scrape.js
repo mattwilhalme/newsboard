@@ -179,6 +179,10 @@ async function insertHeroRun(sb, sourceId, result, observedAtISO) {
     ...result,
     observedAt: observedAtISO,
     sourceId,
+    boundaryY: Number.isFinite(Number(result?.meta?.boundaryY)) ? Number(result.meta.boundaryY) : null,
+    pickedTopY: Number.isFinite(Number(result?.meta?.pickedTopY)) ? Number(result.meta.pickedTopY) : null,
+    pickedDistance: Number.isFinite(Number(result?.meta?.pickedDistance)) ? Number(result.meta.pickedDistance) : null,
+    candidateCount: Number.isFinite(Number(result?.meta?.candidateCount)) ? Number(result.meta.candidateCount) : null,
   };
 
   const row = {

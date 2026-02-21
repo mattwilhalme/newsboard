@@ -1288,13 +1288,15 @@ async function scrapeNBCHero() {
         }
       }
 
-      // Strategy 1: first full lead headline after top header/nav boundary.
-      // NBC frequently shifts modules; this targets the first article lead area below quick-links/header.
+      // Strategy 1: pick closest-to-boundary lead candidate after top header/nav boundary.
+      // Tie-break by score only within a tight top-Y cluster around the nearest boundary candidate.
       const quickNav = document.querySelector("nav.quick-links, nav[data-activity-map='quick-links'], nav[class*='quickLinks']");
       const headerEnd = document.querySelector("#header-end");
       const firstBoundaryEl = quickNav || headerEnd || document.querySelector("header nav, #globalnav");
       const boundaryRect = firstBoundaryEl?.getBoundingClientRect?.();
       const boundaryY = (Number.isFinite(boundaryRect?.bottom) ? boundaryRect.bottom : 0) + (window.scrollY || 0);
+      const leadWindowPx = 900;
+      const clusterPx = 80;
 
       const leadSelectors = [
         "[data-testid='single-storyline'] .storyline__headline a[href]",
@@ -1324,22 +1326,44 @@ async function scrapeNBCHero() {
           const rect = a.getBoundingClientRect();
           const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
           if (topY < boundaryY) return null;
+          const distance = Math.max(0, topY - boundaryY);
           let score = 0;
           score += 180;
           if (a.closest(".single-storyline, [data-testid='single-storyline']")) score += 110;
           if (a.closest(".lead-type--Storyline")) score += 80;
           if (a.closest("h1,h2")) score += 30;
-          score -= Math.min(120, Math.max(0, topY - boundaryY) / 8);
+          score -= Math.min(120, distance / 8);
           if (isArticleLikeUrl(url)) score += 35;
           if (/\/live-blog\//i.test(url)) score += 10;
-          return { title, url, topY, score };
+          return { title, url, topY, distance, score };
         })
-        .filter(Boolean)
-        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+        .filter(Boolean);
 
       if (leadCandidates.length) {
-        const best = leadCandidates[0];
-        return { ok: true, title: refineTitleForUrl(best.url, best.title), url: best.url, selector_used: "nbc_post_header_lead" };
+        const inWindow = leadCandidates.filter((c) => c.distance <= leadWindowPx);
+        const pool = inWindow.length ? inWindow : leadCandidates;
+        const minDistance = Math.min(...pool.map((c) => c.distance));
+        const cluster = pool
+          .filter((c) => c.distance <= (minDistance + clusterPx))
+          .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+        let picked = cluster[0] || null;
+        let selectorUsed = "nbc_post_header_boundary";
+        if (picked && picked.distance > leadWindowPx) {
+          picked = leadCandidates.slice().sort((a, b) => a.topY - b.topY)[0] || null;
+          selectorUsed = "nbc_post_header_boundary_topmost_fallback";
+        }
+        if (picked) {
+          return {
+            ok: true,
+            title: refineTitleForUrl(picked.url, picked.title),
+            url: picked.url,
+            selector_used: selectorUsed,
+            boundaryY,
+            pickedTopY: picked.topY,
+            pickedDistance: picked.distance,
+            candidateCount: inWindow.length,
+          };
+        }
       }
 
       // Strategy 2: NBC quick-links banner often points to the real lead topic.
@@ -1519,7 +1543,24 @@ async function scrapeNBCHero() {
 
     const fetchedAt = nowISO();
     const shot = await captureTimelineShot(page, { sourceId: "nbc1", runId, tsIso: fetchedAt, item });
-    const snapshot = { id: "nbc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "NBC not found"), item, shot };
+    const snapshotMeta = {
+      selector_used: hero?.selector_used || null,
+      quick_link_title: hero?.quick_link_title || null,
+      boundaryY: Number.isFinite(Number(hero?.boundaryY)) ? Number(hero.boundaryY) : null,
+      pickedTopY: Number.isFinite(Number(hero?.pickedTopY)) ? Number(hero.pickedTopY) : null,
+      pickedDistance: Number.isFinite(Number(hero?.pickedDistance)) ? Number(hero.pickedDistance) : null,
+      candidateCount: Number.isFinite(Number(hero?.candidateCount)) ? Number(hero.candidateCount) : null,
+    };
+    const snapshot = {
+      id: "nbc1",
+      fetchedAt,
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "NBC not found"),
+      item,
+      shot,
+      meta: snapshotMeta,
+    };
     const archive = await archiveRun(page, runId, snapshot);
 
     return {
@@ -1530,10 +1571,7 @@ async function scrapeNBCHero() {
       archive,
       item,
       shot,
-      meta: {
-        selector_used: hero?.selector_used || null,
-        quick_link_title: hero?.quick_link_title || null,
-      },
+      meta: snapshotMeta,
     };
   });
 }
@@ -1695,7 +1733,17 @@ async function scrapeGuardianHero() {
         }
       }
 
-      const ranked = anchors
+      const boundaryEl =
+        document.querySelector("header [data-component='sub-nav']") ||
+        document.querySelector("[data-component='sub-nav']") ||
+        document.querySelector("header nav") ||
+        document.querySelector("header");
+      const boundaryRect = boundaryEl?.getBoundingClientRect?.();
+      const boundaryY = (Number.isFinite(boundaryRect?.bottom) ? boundaryRect.bottom : 0) + (window.scrollY || 0);
+      const leadWindowPx = 900;
+      const clusterPx = 80;
+
+      const candidates = anchors
         .map((a) => {
           const href = a.getAttribute("href") || "";
           const url = href ? abs(href) : null;
@@ -1704,15 +1752,39 @@ async function scrapeGuardianHero() {
             clean(a.querySelector(".headline-text")?.textContent || "") ||
             clean(a.textContent || "");
           if (!url || !title || title.length < 15 || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect();
+          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+          if (topY < boundaryY) return null;
           const scored = scoreAnchor(a, title, url);
-          return { title, url, score: scored.score, topY: scored.topY };
+          return { title, url, score: scored.score, topY, distance: Math.max(0, topY - boundaryY) };
         })
-        .filter((x) => x && x.score > -10)
-        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+        .filter((x) => x && x.score > -10);
 
-      if (ranked.length > 0) {
-        const top = ranked[0];
-        return { ok: true, title: top.title, url: top.url };
+      if (candidates.length > 0) {
+        const inWindow = candidates.filter((c) => c.distance <= leadWindowPx);
+        const pool = inWindow.length ? inWindow : candidates;
+        const minDistance = Math.min(...pool.map((c) => c.distance));
+        const cluster = pool
+          .filter((c) => c.distance <= (minDistance + clusterPx))
+          .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+        let picked = cluster[0] || null;
+        let selectorUsed = "guardian_post_header_boundary";
+        if (picked && picked.distance > leadWindowPx) {
+          picked = candidates.slice().sort((a, b) => a.topY - b.topY)[0] || null;
+          selectorUsed = "guardian_post_header_boundary_topmost_fallback";
+        }
+        if (picked) {
+          return {
+            ok: true,
+            title: picked.title,
+            url: picked.url,
+            selector_used: selectorUsed,
+            boundaryY,
+            pickedTopY: picked.topY,
+            pickedDistance: picked.distance,
+            candidateCount: inWindow.length,
+          };
+        }
       }
 
       return { ok: false, error: "Guardian: no headline found" };
@@ -1729,6 +1801,13 @@ async function scrapeGuardianHero() {
 
     const fetchedAt = nowISO();
     const shot = await captureTimelineShot(page, { sourceId: "guardian1", runId, tsIso: fetchedAt, item });
+    const snapshotMeta = {
+      selector_used: hero?.selector_used || null,
+      boundaryY: Number.isFinite(Number(hero?.boundaryY)) ? Number(hero.boundaryY) : null,
+      pickedTopY: Number.isFinite(Number(hero?.pickedTopY)) ? Number(hero.pickedTopY) : null,
+      pickedDistance: Number.isFinite(Number(hero?.pickedDistance)) ? Number(hero.pickedDistance) : null,
+      candidateCount: Number.isFinite(Number(hero?.candidateCount)) ? Number(hero.candidateCount) : null,
+    };
     const snapshot = {
       id: "guardian1",
       fetchedAt,
@@ -1737,11 +1816,12 @@ async function scrapeGuardianHero() {
       error: item ? null : (hero?.error || "The Guardian not found"),
       item,
       shot,
+      meta: snapshotMeta,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot, meta: snapshotMeta };
   });
 }
 
@@ -3100,6 +3180,10 @@ async function refreshSources({ id = "" } = {}) {
       profile: res?.meta?.profile || "desktop",
       selector_used: res?.meta?.selector_used || null,
       candidates: res?.meta?.candidates || null,
+      boundaryY: Number.isFinite(Number(res?.meta?.boundaryY)) ? Number(res.meta.boundaryY) : null,
+      pickedTopY: Number.isFinite(Number(res?.meta?.pickedTopY)) ? Number(res.meta.pickedTopY) : null,
+      pickedDistance: Number.isFinite(Number(res?.meta?.pickedDistance)) ? Number(res.meta.pickedDistance) : null,
+      candidateCount: Number.isFinite(Number(res?.meta?.candidateCount)) ? Number(res.meta.candidateCount) : null,
       hero_hash: heroHash,
       run_kind: "hero",
       has_item: Boolean(res?.item),
@@ -3149,6 +3233,10 @@ async function refreshSources({ id = "" } = {}) {
             profile: res?.meta?.profile || "desktop",
             selector_used: res?.meta?.selector_used || null,
             candidates: res?.meta?.candidates || null,
+            boundaryY: Number.isFinite(Number(res?.meta?.boundaryY)) ? Number(res.meta.boundaryY) : null,
+            pickedTopY: Number.isFinite(Number(res?.meta?.pickedTopY)) ? Number(res.meta.pickedTopY) : null,
+            pickedDistance: Number.isFinite(Number(res?.meta?.pickedDistance)) ? Number(res.meta.pickedDistance) : null,
+            candidateCount: Number.isFinite(Number(res?.meta?.candidateCount)) ? Number(res.meta.candidateCount) : null,
             hero_hash: heroHash,
           },
         });
