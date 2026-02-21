@@ -1336,23 +1336,31 @@ async function scrapeNBCHero() {
           const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
           if (topY < boundaryY) return null;
           const distance = Math.max(0, topY - boundaryY);
+          const storyItem = a.closest(".story-item.multistory-item, .story-item, [data-contentid]");
+          const className = String(storyItem?.className || "");
+          const isLeadColumn = /\blead-column\b/i.test(className) && !/\bnot-lead-column\b/i.test(className);
+          const isImageLead = /\bimage-lead\b/i.test(className) && !/\bnot-image-lead\b/i.test(className);
           let score = 0;
           score += 180;
           if (a.closest(".single-storyline, [data-testid='single-storyline']")) score += 110;
           if (a.closest(".lead-type--Storyline")) score += 80;
+          if (isLeadColumn) score += 160;
+          if (isImageLead) score += 90;
           if (a.closest("h1,h2")) score += 30;
           score -= Math.min(120, distance / 8);
           if (isArticleLikeUrl(url)) score += 35;
           if (/\/live-blog\//i.test(url)) score += 10;
-          return { title, url, topY, distance, score };
+          return { title, url, topY, distance, score, isLeadColumn, isImageLead };
         })
         .filter(Boolean);
 
       if (leadCandidates.length) {
         const inWindow = leadCandidates.filter((c) => c.distance <= leadWindowPx);
         const pool = inWindow.length ? inWindow : leadCandidates;
-        const minDistance = Math.min(...pool.map((c) => c.distance));
-        const cluster = pool
+        const leadPreferred = pool.filter((c) => c.isLeadColumn || c.isImageLead);
+        const boundaryPool = leadPreferred.length ? leadPreferred : pool;
+        const minDistance = Math.min(...boundaryPool.map((c) => c.distance));
+        const cluster = boundaryPool
           .filter((c) => c.distance <= (minDistance + clusterPx))
           .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
         let picked = cluster[0] || null;
