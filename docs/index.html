@@ -1000,8 +1000,9 @@
 
       <div class="controls">
         <button id="btn-reload" class="btn" type="button">Refresh</button>
+        <button id="btn-data" class="btn" type="button">Data</button>
         <div id="refresh-indicator" class="statusInline" aria-live="polite"></div>
-        <button id="btn-menu" class="btn" type="button" aria-label="Open menu">⋯</button>
+        <button id="btn-menu" class="btn" type="button" aria-label="Open menu">📰</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -1010,6 +1011,7 @@
   <main>
     <div class="viewTabs" role="tablist" aria-label="Views">
       <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
+      <button id="tab-playxplay" class="tabBtn" type="button" role="tab" aria-selected="false">Play x Play</button>
       <button id="tab-labs" class="tabBtn" type="button" role="tab" aria-selected="false">Labs</button>
     </div>
     <div id="legend" class="legend">
@@ -1027,6 +1029,17 @@
 
     <section id="view-overview">
       <div class="grid" id="cards-grid"></div>
+    </section>
+
+    <section id="view-playxplay" style="display:none">
+      <section class="labsSection">
+        <div class="labsHeader">
+          <h2>Play x Play</h2>
+          <div class="labsHelp">Live sequence of publisher top-story updates.</div>
+        </div>
+        <div id="playxplay-status" class="tiny" style="margin-bottom:8px;color:var(--muted)"></div>
+        <div class="historyList" id="playxplay-history"></div>
+      </section>
     </section>
 
     <section id="view-labs" style="display:none">
@@ -1093,7 +1106,7 @@
   </footer>
 
   <div class="drawerOverlay" id="drawer-overlay"></div>
-  <aside class="drawer" id="drawer-history" aria-hidden="true" style="display:none">
+  <aside class="drawer" id="drawer-history" aria-hidden="true">
     <div class="drawerHead">
       <div>
         <div class="drawerTitle">History</div>
@@ -1113,7 +1126,7 @@
     </div>
   </aside>
 
-  <aside class="drawer" id="drawer-data" aria-hidden="true" style="display:none">
+  <aside class="drawer" id="drawer-data" aria-hidden="true">
     <div class="drawerHead">
       <div>
         <div class="drawerTitle">Data</div>
@@ -1163,15 +1176,16 @@
     <div class="drawerHead">
       <div>
         <div class="drawerTitle">Menu</div>
-        <div class="tiny">Global controls</div>
+        <div class="tiny">Navigation</div>
       </div>
       <button id="btn-menu-close" class="btn" type="button">Close</button>
     </div>
     <div class="drawerBody">
       <div class="historyList">
-        <div class="latestItem"><div class="latestTitle">About (coming soon)</div></div>
-        <div class="latestItem"><div class="latestTitle">Legend (in header)</div></div>
-        <div class="latestItem"><div class="latestTitle">Export (coming soon)</div></div>
+        <div class="latestItem"><div class="latestTitle">About</div></div>
+        <button id="menu-go-overview" class="btn" type="button">Overview</button>
+        <button id="menu-go-playxplay" class="btn" type="button">Play x Play</button>
+        <button id="menu-go-labs" class="btn" type="button">Labs</button>
       </div>
     </div>
   </aside>
@@ -1242,6 +1256,7 @@
     let isRefreshing = false;
     let lastRefreshError = null;
     let lastSuccessfulUpdateTs = 0;
+    const PLAY_X_PLAY_RECENT_LIMIT = 16;
 
     const DEFAULT_CLUSTERS = [
       {
@@ -1351,6 +1366,12 @@
       const sources = latestDrawerPayload?.sources;
       const indicators = latestDrawerPayload?.indicators;
       if (!normalizedHistory || !sources || !indicators) return;
+      renderData(normalizedHistory, indicators, sources, selectedWindowHours);
+      renderHistory(normalizedHistory, sources, indicators, {
+        hostId: "playxplay-history",
+        useWindow: false,
+        recentLimit: PLAY_X_PLAY_RECENT_LIMIT,
+      });
       const sourceDrawerOpen = $("drawer-source-data")?.classList.contains("open");
       if (sourceDrawerOpen && selectedSourceDataId) {
         renderSourceDataPanel(selectedSourceDataId);
@@ -1394,6 +1415,12 @@
         return;
       }
       subline.textContent = isRefreshing ? "Refreshing…" : "Top story tracker";
+    }
+
+    function setPlayXPlayStatus(text){
+      const el = $("playxplay-status");
+      if (!el) return;
+      el.textContent = String(text || "");
     }
 
     let _shotLightbox = null;
@@ -1934,13 +1961,16 @@
       return { cacheLike, history: historyObj };
     }
 
-    function renderHistory(history, currentSources, indicatorsById = {}, windowSpec = selectedWindowHours){
-      const host = $("history");
+    function renderHistory(history, currentSources, indicatorsById = {}, options = {}){
+      const host = $(options?.hostId || "history");
       if (!host) return;
       host.innerHTML = "";
 
-      const cutoffMs = windowStartMs(windowSpec);
+      const useWindow = Boolean(options?.useWindow);
+      const cutoffMs = windowStartMs(options?.windowSpec ?? selectedWindowHours);
+      const recentLimit = Math.max(1, Number(options?.recentLimit || 16));
       function inWindow(x){
+        if (!useWindow) return true;
         const t = Date.parse(x?.lastSeenAt || x?.firstSeenAt || "");
         return Number.isFinite(t) ? t >= cutoffMs : false;
       }
@@ -1976,17 +2006,7 @@
         });
       }
 
-      function cardPriorityForRow(row){
-        if (row?.__stale2h) return 0;
-        if (row?.__changeType === "url") return 3;
-        if (row?.__changeType === "headline") return 2;
-        return 1;
-      }
-
       latestRows.sort((a, b) => {
-        const pa = cardPriorityForRow(a);
-        const pb = cardPriorityForRow(b);
-        if (pb !== pa) return pb - pa;
         if (b.__tMs !== a.__tMs) return b.__tMs - a.__tMs;
         return String(a.source || "").localeCompare(String(b.source || ""));
       });
@@ -1996,7 +2016,7 @@
 
       const sectionTitle = document.createElement("div");
       sectionTitle.className = "historySectionTitle";
-      sectionTitle.textContent = "Latest Updates";
+      sectionTitle.textContent = "Most recent updates";
       section.appendChild(sectionTitle);
 
       const unifiedList = document.createElement("div");
@@ -2005,7 +2025,7 @@
       host.appendChild(section);
 
       if (latestRows.length) {
-        for (const row of latestRows) {
+        for (const row of latestRows.slice(0, recentLimit)) {
           const card = document.createElement("article");
           card.className = "latestItem";
 
@@ -2077,17 +2097,7 @@
         return Number.isFinite(t) ? t : 0;
       }
 
-      function changeScore(x){
-        if (x?.__changeType === "headline") return 2;
-        if (x?.__changeType === "url") return 1;
-        return 0;
-      }
-
       rows.sort((a,b) => {
-        const ca = changeScore(a);
-        const cb = changeScore(b);
-        if (cb !== ca) return cb - ca;
-
         const ta = activityTime(a);
         const tb = activityTime(b);
         if (tb !== ta) return tb - ta;
@@ -2113,6 +2123,31 @@
         unifiedList.appendChild(empty);
         return;
       }
+
+      const fullSection = document.createElement("section");
+      fullSection.className = "historySection";
+      const fullTitle = document.createElement("div");
+      fullTitle.className = "historySectionTitle";
+      fullTitle.textContent = "Full history";
+      fullSection.appendChild(fullTitle);
+
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "linkbtn";
+      toggle.textContent = "Show all";
+      fullSection.appendChild(toggle);
+
+      const fullList = document.createElement("div");
+      fullList.className = "historyList";
+      fullList.style.display = "none";
+      fullSection.appendChild(fullList);
+      host.appendChild(fullSection);
+
+      toggle.addEventListener("click", () => {
+        const show = fullList.style.display === "none";
+        fullList.style.display = show ? "" : "none";
+        toggle.textContent = show ? "Hide all" : "Show all";
+      });
 
       for (const it of rows){
         const card = document.createElement("section");
@@ -2160,7 +2195,7 @@
         card.appendChild(head);
         card.appendChild(body);
 
-        unifiedList.appendChild(card);
+        fullList.appendChild(card);
       }
     }
 
@@ -4213,23 +4248,31 @@
     }
 
     function setView(which, persist = true) {
-      const valid = new Set(["overview", "labs"]);
+      const valid = new Set(["overview", "playxplay", "labs"]);
       activeView = valid.has(which) ? which : "overview";
 
       const overview = $("view-overview");
+      const playxplay = $("view-playxplay");
       const labs = $("view-labs");
       const tabOverview = $("tab-overview");
+      const tabPlayXPlay = $("tab-playxplay");
       const tabLabs = $("tab-labs");
 
       const showOverview = activeView === "overview";
+      const showPlayXPlay = activeView === "playxplay";
       const showLabs = activeView === "labs";
 
       if (overview) overview.style.display = showOverview ? "" : "none";
+      if (playxplay) playxplay.style.display = showPlayXPlay ? "" : "none";
       if (labs) labs.style.display = showLabs ? "" : "none";
 
       if (tabOverview) {
         tabOverview.classList.toggle("active", showOverview);
         tabOverview.setAttribute("aria-selected", showOverview ? "true" : "false");
+      }
+      if (tabPlayXPlay) {
+        tabPlayXPlay.classList.toggle("active", showPlayXPlay);
+        tabPlayXPlay.setAttribute("aria-selected", showPlayXPlay ? "true" : "false");
       }
       if (tabLabs) {
         tabLabs.classList.toggle("active", showLabs);
@@ -4596,6 +4639,7 @@
       if (btnReload) btnReload.disabled = true;
       isRefreshing = true;
       renderStatusLine();
+      setPlayXPlayStatus("Loading updates...");
 
       try {
         let data = null;
@@ -4636,11 +4680,17 @@
         timelineBySource = await loadCardTimelineBySource(12, sources);
 
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
+        latestDrawerPayload = { normalizedHistory, sources, indicators };
+        renderData(normalizedHistory, indicators, sources, selectedWindowHours);
+        renderHistory(normalizedHistory, sources, indicators, {
+          hostId: "playxplay-history",
+          useWindow: false,
+          recentLimit: PLAY_X_PLAY_RECENT_LIMIT,
+        });
         renderOverview(sources, indicators, timelineBySource);
         renderStoryClusters(sources, indicators, timelineBySource);
         if (nextState) saveState(nextState);
-
-        latestDrawerPayload = { normalizedHistory, sources, indicators };
+        setPlayXPlayStatus(`Updated ${fmtTime(new Date().toISOString())}`);
         if ($("drawer-source-data")?.classList.contains("open") && selectedSourceDataId) {
           renderSourceDataPanel(selectedSourceDataId);
         }
@@ -4655,10 +4705,17 @@
           const placeholderSources = ensureExpectedSources({});
           const placeholderIndicators = {};
           const normalizedHistory = { generatedAt: null, sources: {} };
+          latestDrawerPayload = { normalizedHistory, sources: placeholderSources, indicators: placeholderIndicators };
+          renderData(normalizedHistory, placeholderIndicators, placeholderSources, selectedWindowHours);
+          renderHistory(normalizedHistory, placeholderSources, placeholderIndicators, {
+            hostId: "playxplay-history",
+            useWindow: false,
+            recentLimit: PLAY_X_PLAY_RECENT_LIMIT,
+          });
           renderOverview(placeholderSources, placeholderIndicators, {});
           renderStoryClusters(placeholderSources, placeholderIndicators, {});
-          latestDrawerPayload = { normalizedHistory, sources: placeholderSources, indicators: placeholderIndicators };
         }
+        setPlayXPlayStatus("Refresh failed. Showing last successful Play x Play data when available.");
         await loadDeepDiveData().catch(() => {});
       } finally {
         isRefreshing = false;
@@ -4689,6 +4746,7 @@
     }
 
     $("btn-reload")?.addEventListener("click", reload);
+    $("btn-data")?.addEventListener("click", () => setDataOpen(true));
     $("btn-menu")?.addEventListener("click", () => setMenuOpen(true));
     $("btn-menu-close")?.addEventListener("click", () => setMenuOpen(false));
     $("legend-toggle")?.addEventListener("click", () => {
@@ -4699,6 +4757,7 @@
       btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
     $("tab-overview")?.addEventListener("click", () => setView("overview"));
+    $("tab-playxplay")?.addEventListener("click", () => setView("playxplay"));
     $("tab-labs")?.addEventListener("click", () => setView("labs"));
     $("details-tab-changes")?.addEventListener("click", () => setDetailsTab("changes"));
     $("details-tab-data")?.addEventListener("click", () => setDetailsTab("data"));
@@ -4719,6 +4778,18 @@
     $("history-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
+    $("menu-go-overview")?.addEventListener("click", () => {
+      setMenuOpen(false);
+      setView("overview");
+    });
+    $("menu-go-playxplay")?.addEventListener("click", () => {
+      setMenuOpen(false);
+      setView("playxplay");
+    });
+    $("menu-go-labs")?.addEventListener("click", () => {
+      setMenuOpen(false);
+      setView("labs");
+    });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
@@ -4738,7 +4809,7 @@
     let initialView = "overview";
     try {
       const savedView = String(localStorage.getItem(VIEW_STORAGE_KEY) || "").toLowerCase();
-      if (savedView === "overview" || savedView === "labs") {
+      if (savedView === "overview" || savedView === "playxplay" || savedView === "labs") {
         initialView = savedView;
       }
     } catch {}
