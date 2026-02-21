@@ -2502,12 +2502,17 @@
         return t ? `t:${t}` : "unknown";
       };
       const distinctUrls = new Set(inWindow.map((entry) => canonicalKey(entry)));
-      const liveBlogCount = inWindow.filter((entry) => {
-        const type = String(entry?.contentType || entry?.content_type || "").toLowerCase();
-        const url = String(entry?.url || "").toLowerCase();
-        const title = String(entry?.title || "").toLowerCase();
-        return type === "live" || /\/live(\/|$)/.test(url) || /\blive blog\b/.test(title);
-      }).length;
+      const liveBlogUrls = new Set(
+        inWindow
+          .filter((entry) => {
+            const type = String(entry?.contentType || entry?.content_type || "").toLowerCase();
+            const url = String(entry?.url || "").toLowerCase();
+            const title = String(entry?.title || "").toLowerCase();
+            return (type === "live" || /\/live(\/|$)/.test(url) || /\blive blog\b/.test(title)) && url;
+          })
+          .map((entry) => canonicalKey(entry)),
+      );
+      const liveBlogCount = liveBlogUrls.size;
       const breakingNewsCount = inWindow.filter((entry) => {
         const label = String(entry?.breakingLabel || entry?.breaking_label || "").toLowerCase();
         const headline = String(entry?.breakingHeadline || entry?.breaking_headline || "").toLowerCase();
