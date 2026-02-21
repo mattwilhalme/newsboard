@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-21T19:54:23.088Z",
+  "generatedAt": "2026-02-21T20:14:02.751Z",
   "source_id": "abc1",
   "events": [
     {
@@ -5142,6 +5142,26 @@
       "to_rank": 8,
       "from_title": "Investigators release photo of suspect in murder of man at senior living facility",
       "to_title": "Investigators release photo of suspect in murder of 87-year-old"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T20:14:13.560Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ba3a2e0c8b46a8f06b148b508c0160f8ac003728",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Willie Colón, salsa pioneer and activist, dies at 75"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T20:14:13.560Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "How an au pair affair and fetish website factored into double murder plot",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
