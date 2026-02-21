@@ -241,6 +241,12 @@
     .copyIconBtn:hover{ border-color: rgba(37,99,235,.45); color:var(--blue2); }
 
     .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+    .srcMetaInline{
+      flex-direction:row;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
     .srcName{ font-weight:700; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .srcNameLink{ color:inherit; text-decoration:none; }
     .srcNameLink:hover{ color:var(--blue); text-decoration:underline; }
@@ -416,6 +422,7 @@
       display:flex;
       flex-direction:column;
     }
+    #drawer-data,
     #drawer-source-data{
       left:50%;
       right:auto;
@@ -429,6 +436,7 @@
       border-radius:14px;
       box-shadow:0 10px 28px rgba(30,36,43,.2);
     }
+    #drawer-data.open,
     #drawer-source-data.open{
       transform:translate(-50%, -50%);
     }
@@ -966,6 +974,7 @@
       }
     }
     @media (max-width: 700px){
+      #drawer-data,
       #drawer-source-data{
         top:auto;
         bottom:0;
@@ -979,6 +988,7 @@
         border-bottom:none;
         box-shadow:-3px 0 16px rgba(30,36,43,.08);
       }
+      #drawer-data.open,
       #drawer-source-data.open{
         transform:translate(-50%, 0);
       }
@@ -1028,9 +1038,8 @@
 
       <div class="controls">
         <button id="btn-reload" class="btn" type="button">Refresh</button>
-        <button id="btn-data" class="btn" type="button">Data</button>
+        <button id="btn-menu" class="btn" type="button" aria-label="Open menu">About</button>
         <div id="refresh-indicator" class="statusInline" aria-live="polite"></div>
-        <button id="btn-menu" class="btn" type="button" aria-label="Open menu">☰</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -1039,6 +1048,7 @@
   <main>
     <div class="viewTabs" role="tablist" aria-label="Views">
       <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
+      <button id="tab-data" class="tabBtn" type="button" role="tab" aria-selected="false">Data</button>
       <button id="tab-playxplay" class="tabBtn" type="button" role="tab" aria-selected="false">Play x Play</button>
       <button id="tab-labs" class="tabBtn" type="button" role="tab" aria-selected="false">Labs</button>
     </div>
@@ -1215,6 +1225,7 @@
           <p class="aboutText">NewsBoard is a newsroom tool for quickly checking the lead story or centerpiece across major news sites. It tracks homepage changes over time, making it easy to see what moved, when headlines or links shifted, and to rewind the front page to review editorial decisions and recreate breaking news moments.</p>
         </div>
         <button id="menu-go-overview" class="btn" type="button">Overview</button>
+        <button id="menu-go-data" class="btn" type="button">Data</button>
         <button id="menu-go-playxplay" class="btn" type="button">Play x Play</button>
         <button id="menu-go-labs" class="btn" type="button">Labs</button>
       </div>
@@ -1792,7 +1803,7 @@
     function setDataOpen(open){
       const drawer = $("drawer-data");
       const overlay = $("drawer-overlay");
-      const btn = $("btn-data");
+      const btn = $("tab-data");
       if (!drawer || !overlay) return;
       if (open) {
         closeAllDrawers();
@@ -2067,7 +2078,7 @@
           left.className = "srcTitle";
 
           const leftMeta = document.createElement("div");
-          leftMeta.className = "srcMeta";
+          leftMeta.className = "srcMeta srcMetaInline";
           const sourceName = document.createElement("div");
           sourceName.className = "srcName";
           sourceName.textContent = sourceLabel(row.source, null);
@@ -2191,7 +2202,7 @@
         left.className = "srcTitle";
 
         const meta = document.createElement("div");
-        meta.className = "srcMeta";
+        meta.className = "srcMeta srcMetaInline";
         const name = document.createElement("div");
         name.className = "srcName";
         name.textContent = sourceLabel(it.source, null);
@@ -2428,9 +2439,6 @@
         if (key === "longestRun") {
           return mult * (a.metrics.longestRunMs - b.metrics.longestRunMs);
         }
-        if (key === "uniqueStories") {
-          return mult * (a.metrics.uniqueStoriesDisplay - b.metrics.uniqueStoriesDisplay);
-        }
         if (key === "headlineOnly") {
           return mult * (a.metrics.headlineOnlyChangesDisplay - b.metrics.headlineOnlyChangesDisplay);
         }
@@ -2446,8 +2454,7 @@
         { key: "publisher", label: "Publisher" },
         { key: "urlChanges", label: "URL changes" },
         { key: "longestRun", label: "Longest run" },
-        { key: "uniqueStories", label: "Unique stories" },
-        { key: "headlineOnly", label: "Headline-only changes" },
+        { key: "headlineOnly", label: "Headline Changes" },
       ];
       for (const col of cols) {
         const th = document.createElement("th");
@@ -2489,16 +2496,12 @@
         const tdLongest = document.createElement("td");
         tdLongest.textContent = fmtDurationMs(row.metrics.longestRunMs);
 
-        const tdUnique = document.createElement("td");
-        tdUnique.textContent = fmtMetricValue(row.metrics.uniqueStoriesDisplay, row.metrics.perDay);
-
         const tdHeadline = document.createElement("td");
         tdHeadline.textContent = fmtMetricValue(row.metrics.headlineOnlyChangesDisplay, row.metrics.perDay);
 
         tr.appendChild(tdPublisher);
         tr.appendChild(tdUrl);
         tr.appendChild(tdLongest);
-        tr.appendChild(tdUnique);
         tr.appendChild(tdHeadline);
         tbody.appendChild(tr);
       }
@@ -2627,13 +2630,12 @@
       }
 
       if (selectedDetailsTab === "data") {
-        const hasData = (metrics.urlChanges + metrics.headlineOnlyChanges + metrics.uniqueStories) > 0;
+        const hasData = (metrics.urlChanges + metrics.headlineOnlyChanges) > 0;
         const stats = document.createElement("div");
         stats.className = "statsGrid";
         const statsRows = [
           ["URL changes", String(metrics.urlChanges)],
-          ["Headline-only changes", String(metrics.headlineOnlyChanges)],
-          ["Unique stories", String(metrics.uniqueStories)],
+          ["Headline Changes", String(metrics.headlineOnlyChanges)],
           ["Longest run", fmtDurationMs(metrics.longestRunMs)],
         ];
         for (const [label, value] of statsRows) {
@@ -4279,17 +4281,19 @@
     }
 
     function setView(which, persist = true) {
-      const valid = new Set(["overview", "playxplay", "labs"]);
+      const valid = new Set(["overview", "data", "playxplay", "labs"]);
       activeView = valid.has(which) ? which : "overview";
 
       const overview = $("view-overview");
       const playxplay = $("view-playxplay");
       const labs = $("view-labs");
       const tabOverview = $("tab-overview");
+      const tabData = $("tab-data");
       const tabPlayXPlay = $("tab-playxplay");
       const tabLabs = $("tab-labs");
 
       const showOverview = activeView === "overview";
+      const showData = activeView === "data";
       const showPlayXPlay = activeView === "playxplay";
       const showLabs = activeView === "labs";
 
@@ -4300,6 +4304,10 @@
       if (tabOverview) {
         tabOverview.classList.toggle("active", showOverview);
         tabOverview.setAttribute("aria-selected", showOverview ? "true" : "false");
+      }
+      if (tabData) {
+        tabData.classList.toggle("active", showData);
+        tabData.setAttribute("aria-selected", showData ? "true" : "false");
       }
       if (tabPlayXPlay) {
         tabPlayXPlay.classList.toggle("active", showPlayXPlay);
@@ -4316,6 +4324,11 @@
 
       if (showLabs) {
         renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+      }
+      if (showData) {
+        setDataOpen(true);
+      } else {
+        setDataOpen(false);
       }
     }
 
@@ -4777,7 +4790,6 @@
     }
 
     $("btn-reload")?.addEventListener("click", reload);
-    $("btn-data")?.addEventListener("click", () => setDataOpen(true));
     $("btn-menu")?.addEventListener("click", () => setMenuOpen(true));
     $("btn-menu-close")?.addEventListener("click", () => setMenuOpen(false));
     $("legend-toggle")?.addEventListener("click", () => {
@@ -4788,6 +4800,7 @@
       btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
     $("tab-overview")?.addEventListener("click", () => setView("overview"));
+    $("tab-data")?.addEventListener("click", () => setView("data"));
     $("tab-playxplay")?.addEventListener("click", () => setView("playxplay"));
     $("tab-labs")?.addEventListener("click", () => setView("labs"));
     $("details-tab-changes")?.addEventListener("click", () => setDetailsTab("changes"));
@@ -4812,6 +4825,10 @@
     $("menu-go-overview")?.addEventListener("click", () => {
       setMenuOpen(false);
       setView("overview");
+    });
+    $("menu-go-data")?.addEventListener("click", () => {
+      setMenuOpen(false);
+      setView("data");
     });
     $("menu-go-playxplay")?.addEventListener("click", () => {
       setMenuOpen(false);
@@ -4840,7 +4857,7 @@
     let initialView = "overview";
     try {
       const savedView = String(localStorage.getItem(VIEW_STORAGE_KEY) || "").toLowerCase();
-      if (savedView === "overview" || savedView === "playxplay" || savedView === "labs") {
+      if (savedView === "overview" || savedView === "data" || savedView === "playxplay" || savedView === "labs") {
         initialView = savedView;
       }
     } catch {}
