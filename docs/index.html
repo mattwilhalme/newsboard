@@ -482,8 +482,8 @@
     .statsGrid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:8px;
-      margin-bottom:10px;
+      gap:6px;
+      margin-bottom:8px;
     }
     .statCard{
       border:1px solid var(--line);
@@ -497,11 +497,11 @@
       border:1px solid var(--line);
       border-radius:10px;
       background:#fff;
-      padding:8px;
-      margin-bottom:8px;
+      padding:7px;
+      margin-bottom:6px;
     }
-    .chartTitle{ font-size:12px; color:var(--muted); margin-bottom:6px; }
-    .chartCanvas{ width:100%; height:120px; display:block; }
+    .chartTitle{ font-size:12px; color:var(--muted); margin-bottom:4px; }
+    .chartCanvas{ width:100%; height:108px; display:block; }
     .inlineEmpty{
       font-size:12px;
       color:var(--muted);
@@ -614,6 +614,34 @@
     }
     .dataSortBtn:hover{ color:var(--blue2); }
     .dataSortBtn .sortArrow{ color:var(--muted); margin-left:4px; }
+    .viewDataShell{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .viewDataControls{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      margin-bottom:2px;
+    }
+    .historyMetaDrawer{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .historyMetaCard{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#fff;
+      padding:10px;
+    }
+    .historyMetaGrid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+    }
     .clusterControls{
       display:flex;
       flex-direction:column;
@@ -1068,7 +1096,7 @@
     <div class="viewTabs" role="tablist" aria-label="Views">
       <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
       <button id="tab-data" class="tabBtn" type="button" role="tab" aria-selected="false">Data</button>
-      <button id="tab-playxplay" class="tabBtn" type="button" role="tab" aria-selected="false">Play x Play</button>
+      <button id="tab-playxplay" class="tabBtn" type="button" role="tab" aria-selected="false">History</button>
       <button id="tab-labs" class="tabBtn" type="button" role="tab" aria-selected="false">Labs</button>
     </div>
     <div id="legend" class="legend">
@@ -1088,12 +1116,28 @@
       <div class="grid" id="cards-grid"></div>
     </section>
 
-    <section id="view-playxplay" style="display:none">
+    <section id="view-data" style="display:none">
       <section class="labsSection">
         <div class="labsHeader">
-          <h2>Play x Play</h2>
-          <div class="labsHelp">Live sequence of publisher top-story updates.</div>
+          <h2>Data</h2>
         </div>
+        <div class="viewDataShell">
+          <div class="viewDataControls">
+            <label class="tiny" for="data-window-page">Window</label>
+            <select id="data-window-page" class="linkbtn">
+              <option value="6">6h</option>
+              <option value="24" selected>24h</option>
+              <option value="168">7d</option>
+            </select>
+          </div>
+          <div id="data-page"></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="view-playxplay" style="display:none">
+      <section class="labsSection">
+        <div class="labsHelp">Live sequence of publisher top-story updates.</div>
         <div id="playxplay-status" class="tiny" style="margin-bottom:8px;color:var(--muted)"></div>
         <div class="historyList" id="playxplay-history"></div>
       </section>
@@ -1245,9 +1289,22 @@
         </div>
         <button id="menu-go-overview" class="btn" type="button">Overview</button>
         <button id="menu-go-data" class="btn" type="button">Data</button>
-        <button id="menu-go-playxplay" class="btn" type="button">Play x Play</button>
+        <button id="menu-go-playxplay" class="btn" type="button">History</button>
         <button id="menu-go-labs" class="btn" type="button">Labs</button>
       </div>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="drawer-history-item" aria-hidden="true">
+    <div class="drawerHead">
+      <div>
+        <div class="drawerTitle" id="history-item-title">Story Details</div>
+        <div class="tiny" id="history-item-source">—</div>
+      </div>
+      <button id="btn-history-item-close" class="btn" type="button">Close</button>
+    </div>
+    <div class="drawerBody">
+      <div id="history-item-body" class="historyMetaDrawer"></div>
     </div>
   </aside>
 
@@ -1312,12 +1369,17 @@
     let dataSortState = { key: "publisher", dir: "asc" };
     let selectedSourceDataId = "";
     let sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
+    let selectedHistoryItem = null;
     let selectedDetailsTab = "changes";
     let clusterCardOrder = {};
     let isRefreshing = false;
     let lastRefreshError = null;
     let lastSuccessfulUpdateTs = 0;
     const PLAY_X_PLAY_RECENT_LIMIT = 16;
+
+    function isNarrowLayout(){
+      return window.matchMedia("(max-width: 700px)").matches;
+    }
 
     const DEFAULT_CLUSTERS = [
       {
@@ -1418,8 +1480,10 @@
       const hours = String(parseHoursSpec(windowSpec));
       const historySel = $("history-window");
       const dataSel = $("data-window");
+      const dataPageSel = $("data-window-page");
       if (historySel && historySel.value !== hours) historySel.value = hours;
       if (dataSel && dataSel.value !== hours) dataSel.value = hours;
+      if (dataPageSel && dataPageSel.value !== hours) dataPageSel.value = hours;
     }
 
     function rerenderDrawers(){
@@ -1749,7 +1813,7 @@
     }
 
     function closeAllDrawers() {
-      const ids = ["drawer-history", "drawer-data", "drawer-source-data", "drawer-menu"];
+      const ids = ["drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item"];
       for (const id of ids) {
         const d = $(id);
         if (!d) continue;
@@ -1823,6 +1887,14 @@
       const drawer = $("drawer-data");
       const overlay = $("drawer-overlay");
       const btn = $("tab-data");
+      if (!isNarrowLayout()) {
+        if (drawer) {
+          drawer.classList.remove("open");
+          drawer.setAttribute("aria-hidden", "true");
+        }
+        if (overlay) overlay.classList.remove("show");
+        return;
+      }
       if (!drawer || !overlay) return;
       if (open) {
         closeAllDrawers();
@@ -1831,6 +1903,16 @@
       overlay.classList.toggle("show", Boolean(open));
       drawer.setAttribute("aria-hidden", open ? "false" : "true");
       if (!open && btn) btn.focus();
+    }
+
+    function setHistoryItemOpen(open){
+      const drawer = $("drawer-history-item");
+      const overlay = $("drawer-overlay");
+      if (!drawer || !overlay) return;
+      if (open) closeAllDrawers();
+      drawer.classList.toggle("open", Boolean(open));
+      overlay.classList.toggle("show", Boolean(open));
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
     }
 
     function canonicalSourceId(rawId){
@@ -2022,6 +2104,105 @@
       return { cacheLike, history: historyObj };
     }
 
+    function canonicalStoryUrl(url){
+      const raw = String(url || "").trim().toLowerCase();
+      if (!raw) return "";
+      try {
+        const u = new URL(raw);
+        u.hash = "";
+        if (u.pathname.length > 1 && u.pathname.endsWith("/")) u.pathname = u.pathname.slice(0, -1);
+        for (const k of [...u.searchParams.keys()]) {
+          const lk = k.toLowerCase();
+          if (lk.startsWith("utm_") || lk === "fbclid" || lk === "gclid") u.searchParams.delete(k);
+        }
+        u.searchParams.sort();
+        return u.toString();
+      } catch {
+        return raw.replace(/[?#].*$/, "").replace(/\/+$/, "");
+      }
+    }
+
+    function openHistoryItemDrawer(sourceId, storyUrl, storyTitle, observedAt){
+      const titleEl = $("history-item-title");
+      const sourceEl = $("history-item-source");
+      const bodyEl = $("history-item-body");
+      if (!titleEl || !sourceEl || !bodyEl) return;
+
+      const normalizedHistory = latestDrawerPayload?.normalizedHistory || { sources: {} };
+      const entries = Array.isArray(normalizedHistory?.sources?.[sourceId]?.entries)
+        ? normalizedHistory.sources[sourceId].entries
+        : [];
+      const target = canonicalStoryUrl(storyUrl);
+      const matching = entries.filter((entry) => canonicalStoryUrl(entry?.url || "") === target);
+      const firstSeen = matching.length ? (matching[0]?.firstSeenAt || matching[0]?.lastSeenAt || null) : null;
+      const sinceAt = latestDrawerPayload?.indicators?.[sourceId]?.currentSinceAt || firstSeen || null;
+      const durationMs = Number.isFinite(Date.parse(String(sinceAt || ""))) ? Math.max(0, Date.now() - Date.parse(String(sinceAt))) : 0;
+
+      const headlineChanges = [];
+      for (let i = 1; i < matching.length; i += 1) {
+        const prev = matching[i - 1];
+        const cur = matching[i];
+        const prevTitle = String(prev?.title || "");
+        const curTitle = String(cur?.title || "");
+        if (prevTitle && curTitle && prevTitle !== curTitle) {
+          headlineChanges.push({
+            changedAt: cur?.firstSeenAt || cur?.lastSeenAt || null,
+            fromTitle: prevTitle,
+            toTitle: curTitle,
+          });
+        }
+      }
+
+      titleEl.textContent = storyTitle || "Story Details";
+      sourceEl.textContent = sourceLabel(sourceId, latestDrawerPayload?.sources?.[sourceId] || null);
+      bodyEl.innerHTML = "";
+
+      const statsCard = document.createElement("div");
+      statsCard.className = "historyMetaCard";
+      const statsGrid = document.createElement("div");
+      statsGrid.className = "historyMetaGrid";
+      statsGrid.innerHTML = `
+        <div><div class="statLabel">First seen</div><div class="statValue">${escapeHtml(firstSeen ? fmtTime(firstSeen) : "—")}</div></div>
+        <div><div class="statLabel">Duration</div><div class="statValue">${escapeHtml(durationMs ? fmtDurationMs(durationMs) : "—")}</div></div>
+      `;
+      statsCard.appendChild(statsGrid);
+      bodyEl.appendChild(statsCard);
+
+      if (storyUrl) {
+        const linkCard = document.createElement("div");
+        linkCard.className = "historyMetaCard";
+        const link = document.createElement("a");
+        link.href = storyUrl;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.className = "top10Link";
+        link.textContent = storyUrl;
+        linkCard.appendChild(link);
+        bodyEl.appendChild(linkCard);
+      }
+
+      const changesCard = document.createElement("div");
+      changesCard.className = "historyMetaCard";
+      if (!headlineChanges.length) {
+        changesCard.innerHTML = `<div class="inlineEmpty">No headline change history for this story yet.</div>`;
+      } else {
+        for (const ev of headlineChanges) {
+          const diff = document.createElement("div");
+          diff.className = "headlineDiff";
+          const meta = document.createElement("div");
+          meta.className = "headlineDiffMeta";
+          meta.innerHTML = `<strong>Updated:</strong> ${escapeHtml(fmtTime(ev?.changedAt))}`;
+          diff.appendChild(meta);
+          appendHeadlineEditMarkup(diff, ev?.fromTitle, ev?.toTitle);
+          changesCard.appendChild(diff);
+        }
+      }
+      bodyEl.appendChild(changesCard);
+
+      selectedHistoryItem = { sourceId, storyUrl, storyTitle, observedAt };
+      setHistoryItemOpen(true);
+    }
+
     function renderHistory(history, currentSources, indicatorsById = {}, options = {}){
       const host = $(options?.hostId || "history");
       if (!host) return;
@@ -2088,7 +2269,7 @@
       if (latestRows.length) {
         for (const row of latestRows.slice(0, recentLimit)) {
           const card = document.createElement("article");
-          card.className = "latestItem";
+          card.className = "latestItem isClickable";
 
           const meta = document.createElement("div");
           meta.className = "latestMetaRow";
@@ -2129,6 +2310,10 @@
           main.appendChild(h);
           body.appendChild(main);
           card.appendChild(body);
+          card.addEventListener("click", (evt) => {
+            if (evt.target && evt.target.closest && evt.target.closest("a, button, input, select, label")) return;
+            openHistoryItemDrawer(row.source, row.url || "", row.title || "", row.updatedAt || null);
+          });
           unifiedList.appendChild(card);
         }
       }
@@ -2212,7 +2397,7 @@
 
       for (const it of rows){
         const card = document.createElement("section");
-        card.className = "hItem";
+        card.className = "hItem latestItem isClickable";
 
         const head = document.createElement("div");
         head.className = "hHead";
@@ -2255,6 +2440,10 @@
 
         card.appendChild(head);
         card.appendChild(body);
+        card.addEventListener("click", (evt) => {
+          if (evt.target && evt.target.closest && evt.target.closest("a, button, input, select, label")) return;
+          openHistoryItemDrawer(it.source, it.url || "", it.title || "", it.lastSeenAt || null);
+        });
 
         fullList.appendChild(card);
       }
@@ -2313,6 +2502,18 @@
         return t ? `t:${t}` : "unknown";
       };
       const distinctUrls = new Set(inWindow.map((entry) => canonicalKey(entry)));
+      const liveBlogCount = inWindow.filter((entry) => {
+        const type = String(entry?.contentType || entry?.content_type || "").toLowerCase();
+        const url = String(entry?.url || "").toLowerCase();
+        const title = String(entry?.title || "").toLowerCase();
+        return type === "live" || /\/live(\/|$)/.test(url) || /\blive blog\b/.test(title);
+      }).length;
+      const breakingNewsCount = inWindow.filter((entry) => {
+        const label = String(entry?.breakingLabel || entry?.breaking_label || "").toLowerCase();
+        const headline = String(entry?.breakingHeadline || entry?.breaking_headline || "").toLowerCase();
+        const title = String(entry?.title || "").toLowerCase();
+        return label.includes("breaking") || headline.includes("breaking") || title.startsWith("breaking");
+      }).length;
 
       let urlChanges = 0;
       let headlineOnlyChanges = 0;
@@ -2380,6 +2581,10 @@
         headlineOnlyChangesDisplay: headlineOnlyChanges / daysDivisor,
         uniqueStoriesDisplay: distinctUrls.size / daysDivisor,
         perDay: daysDivisor > 1,
+        liveBlogs: liveBlogCount,
+        breakingNews: breakingNewsCount,
+        liveBlogsDisplay: liveBlogCount / daysDivisor,
+        breakingNewsDisplay: breakingNewsCount / daysDivisor,
         buckets,
       };
     }
@@ -2405,8 +2610,7 @@
       rerenderDrawers();
     }
 
-    function renderData(normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = selectedWindowHours){
-      const host = $("data");
+    function renderDataInto(host, normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = selectedWindowHours){
       if (!host) return;
       host.innerHTML = "";
 
@@ -2461,6 +2665,12 @@
         if (key === "headlineOnly") {
           return mult * (a.metrics.headlineOnlyChangesDisplay - b.metrics.headlineOnlyChangesDisplay);
         }
+        if (key === "liveBlogs") {
+          return mult * (a.metrics.liveBlogsDisplay - b.metrics.liveBlogsDisplay);
+        }
+        if (key === "breakingNews") {
+          return mult * (a.metrics.breakingNewsDisplay - b.metrics.breakingNewsDisplay);
+        }
         return 0;
       });
 
@@ -2474,6 +2684,8 @@
         { key: "urlChanges", label: "URL changes" },
         { key: "longestRun", label: "Longest run" },
         { key: "headlineOnly", label: "Headline Changes" },
+        { key: "liveBlogs", label: "Live Blogs" },
+        { key: "breakingNews", label: "Breaking News" },
       ];
       for (const col of cols) {
         const th = document.createElement("th");
@@ -2517,16 +2729,27 @@
 
         const tdHeadline = document.createElement("td");
         tdHeadline.textContent = fmtMetricValue(row.metrics.headlineOnlyChangesDisplay, row.metrics.perDay);
+        const tdLive = document.createElement("td");
+        tdLive.textContent = fmtMetricValue(row.metrics.liveBlogsDisplay, row.metrics.perDay);
+        const tdBreaking = document.createElement("td");
+        tdBreaking.textContent = fmtMetricValue(row.metrics.breakingNewsDisplay, row.metrics.perDay);
 
         tr.appendChild(tdPublisher);
         tr.appendChild(tdUrl);
         tr.appendChild(tdLongest);
         tr.appendChild(tdHeadline);
+        tr.appendChild(tdLive);
+        tr.appendChild(tdBreaking);
         tbody.appendChild(tr);
       }
 
       table.appendChild(tbody);
       host.appendChild(table);
+    }
+
+    function renderData(normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = selectedWindowHours){
+      renderDataInto($("data"), normalizedHistory, indicatorsById, currentSources, windowSpec);
+      renderDataInto($("data-page"), normalizedHistory, indicatorsById, currentSources, windowSpec);
     }
 
     function drawMiniBars(canvas, buckets){
@@ -2655,6 +2878,8 @@
         const statsRows = [
           ["URL changes", String(metrics.urlChanges)],
           ["Headline Changes", String(metrics.headlineOnlyChanges)],
+          ["Live Blogs", String(metrics.liveBlogs)],
+          ["Breaking News", String(metrics.breakingNews)],
           ["Longest run", fmtDurationMs(metrics.longestRunMs)],
         ];
         for (const [label, value] of statsRows) {
@@ -4317,6 +4542,7 @@
       activeView = valid.has(which) ? which : "overview";
 
       const overview = $("view-overview");
+      const data = $("view-data");
       const playxplay = $("view-playxplay");
       const labs = $("view-labs");
       const tabOverview = $("tab-overview");
@@ -4330,6 +4556,7 @@
       const showLabs = activeView === "labs";
 
       if (overview) overview.style.display = showOverview ? "" : "none";
+      if (data) data.style.display = (showData && !isNarrowLayout()) ? "" : "none";
       if (playxplay) playxplay.style.display = showPlayXPlay ? "" : "none";
       if (labs) labs.style.display = showLabs ? "" : "none";
 
@@ -4358,7 +4585,7 @@
         renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
       }
       if (showData) {
-        setDataOpen(true);
+        setDataOpen(isNarrowLayout());
       } else {
         setDataOpen(false);
       }
@@ -4791,7 +5018,7 @@
           renderOverview(placeholderSources, placeholderIndicators, {});
           renderStoryClusters(placeholderSources, placeholderIndicators, {});
         }
-        setPlayXPlayStatus("Refresh failed. Showing last successful Play x Play data when available.");
+        setPlayXPlayStatus("Refresh failed. Showing last successful History data when available.");
         await loadDeepDiveData().catch(() => {});
       } finally {
         isRefreshing = false;
@@ -4847,12 +5074,14 @@
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
     $("btn-data-close")?.addEventListener("click", () => setDataOpen(false));
     $("btn-source-data-close")?.addEventListener("click", () => setSourceDataOpen(false));
+    $("btn-history-item-close")?.addEventListener("click", () => setHistoryItemOpen(false));
     $("source-data-window")?.addEventListener("change", (e) => {
       sourceDataWindowHours = parseHoursSpec(e.target.value);
       if (selectedSourceDataId) renderSourceDataPanel(selectedSourceDataId);
     });
     $("history-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
+    $("data-window-page")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
     $("menu-go-overview")?.addEventListener("click", () => {
       setMenuOpen(false);
@@ -4876,6 +5105,10 @@
         if (_shotLightbox) _shotLightbox.close();
         closeAllDrawers();
       }
+    });
+
+    window.addEventListener("resize", () => {
+      if (activeView === "data") setDataOpen(isNarrowLayout());
     });
 
     if (isLocal && !isGitHubPages) {
