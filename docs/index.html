@@ -297,6 +297,13 @@
 
     .row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
     .changeRow{ display:flex; align-items:center; gap:0; font-size:12px; color:var(--muted); }
+    .cardActions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      flex-wrap:wrap;
+    }
     .changeDot{
       width:8px;
       height:8px;
@@ -343,7 +350,7 @@
     }
     .shotFrame{
       width:100%;
-      max-width:720px;
+      max-width:972px;
       margin:0 auto;
       touch-action: pan-y;
     }
@@ -422,8 +429,7 @@
       display:flex;
       flex-direction:column;
     }
-    #drawer-data,
-    #drawer-source-data{
+    #drawer-data{
       left:50%;
       right:auto;
       top:50%;
@@ -431,6 +437,19 @@
       width:min(920px, calc(100vw - 64px));
       height:min(86vh, 840px);
       max-height:min(86vh, 840px);
+      transform:translate(-50%, calc(100% + 24px));
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:0 10px 28px rgba(30,36,43,.2);
+    }
+    #drawer-source-data{
+      left:50%;
+      right:auto;
+      top:50%;
+      bottom:auto;
+      width:min(1242px, calc(100vw - 32px));
+      height:min(90vh, 920px);
+      max-height:min(90vh, 920px);
       transform:translate(-50%, calc(100% + 24px));
       border:1px solid var(--line);
       border-radius:14px;
@@ -3203,13 +3222,14 @@
       changeRow.appendChild(dot);
 
       const actionsRow = document.createElement("div");
-      actionsRow.className = "row";
+      actionsRow.className = "cardActions";
       const detailsBtn = document.createElement("button");
       detailsBtn.type = "button";
       detailsBtn.className = "linkbtn";
       detailsBtn.textContent = "Details";
       detailsBtn.setAttribute("data-action", "open-source-data");
       detailsBtn.setAttribute("data-id", id);
+      actionsRow.appendChild(changeRow);
       actionsRow.appendChild(detailsBtn);
 
       const err = document.createElement("div");
@@ -3217,7 +3237,6 @@
       err.textContent = src?.error ? String(src.error) : "";
 
       wrap.appendChild(h2);
-      wrap.appendChild(changeRow);
       wrap.appendChild(actionsRow);
       wrap.appendChild(err);
 
@@ -3996,7 +4015,19 @@
       renderClusteredOverview(sources, indicatorsById, timelineBySource);
     }
 
-    // Copy handlers (URL not displayed)
+    // Overview card click -> open source details on screenshots tab.
+    document.addEventListener("click", (e) => {
+      const card = e.target && e.target.closest ? e.target.closest(".card[data-source-id]") : null;
+      if (!card) return;
+      if (card.classList.contains("dragging")) return;
+      if (e.target && e.target.closest && e.target.closest("a, button, input, select, label")) return;
+      const id = card.getAttribute("data-source-id");
+      if (!id) return;
+      setDetailsTab("shots");
+      setSourceDataOpen(true, id);
+    });
+
+    // Copy/details handlers (URL not displayed)
     document.addEventListener("click", async (e) => {
       const btn = e.target && e.target.closest ? e.target.closest("button[data-action]") : null;
       if (!btn) return;
@@ -4015,6 +4046,7 @@
       }
 
       if (action === "open-source-data") {
+        setDetailsTab("shots");
         setSourceDataOpen(true, id);
       }
     });
