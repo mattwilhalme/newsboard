@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-21T11:52:42.611Z",
+  "generatedAt": "2026-02-21T12:01:41.147Z",
   "source_id": "abc1",
   "events": [
     {
@@ -4901,6 +4901,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Northeast winter storm set to arrive Friday, just before possible weekend nor’easter",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Over 40 million Americans on alert for winter storm conditions over the weekend"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "MOVED",
+      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Trump says he has signed order for new 10% tariff after Supreme Court ruling",
+      "to_title": "Trump says he has signed order for new 10% tariff after Supreme Court ruling"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "MOVED",
+      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
+      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "MOVED",
+      "fingerprint": "d180458b0861e18d574ad6bd9a27f58bb8a174e8",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms",
+      "to_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "MOVED",
+      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
+      "to_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "MOVED",
+      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "How an au pair affair and fetish website factored into double murder plot",
+      "to_title": "How an au pair affair and fetish website factored into double murder plot"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "MOVED",
+      "fingerprint": "f303e7c3c499e83312944c76dff00ae722ff7ca3",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "Former Prince Andrew arrested: What's next for King Charles' brother",
+      "to_title": "What's next for former Prince Andrew after arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "f303e7c3c499e83312944c76dff00ae722ff7ca3",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "Former Prince Andrew arrested: What's next for King Charles' brother",
+      "to_title": "What's next for former Prince Andrew after arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T12:01:51.890Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Nancy Guthrie live updates: More than 1 suspect not ruled out, sheriff's office says",
       "to_title": null
     }
   ],
