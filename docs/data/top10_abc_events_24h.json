@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-21T19:14:45.776Z",
+  "generatedAt": "2026-02-21T19:38:27.829Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "MOVED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Trump slams Supreme Court tariff ruling",
-      "to_title": "Trump outlines new plan for tariffs after 'deeply disappointing' Supreme Court ruling"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Trump slams Supreme Court tariff ruling",
-      "to_title": "Trump outlines new plan for tariffs after 'deeply disappointing' Supreme Court ruling"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "MOVED",
-      "fingerprint": "04887490ca31e4134fd476edc1089a970c9d105e",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Related:Supreme Court invalidates most of Trump's tariffs",
-      "to_title": "Related:Supreme Court invalidates most of Trump's tariffs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a2687c4688b0f9f6db3a5ebbd49153d44cde0c91",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Northeast winter storm set to arrive Friday, just before possible weekend nor’easter"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "MOVED",
-      "fingerprint": "fb33dc855876f442aa7fe27b986842108b81fb45",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll",
-      "to_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "MOVED",
-      "fingerprint": "80035b16af88d769dedb122ca123a2f640bfa434",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Eric Dane remembered by Patrick Dempsey, Alyssa Milano and more",
-      "to_title": "Eric Dane remembered by Patrick Dempsey, Alyssa Milano and more"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "MOVED",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "How an au pair affair and fetish website factored into double murder plot",
-      "to_title": "How an au pair affair and fetish website factored into double murder plot"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6636cc051ec7463f89dbe37b27e8c15f45f7456c",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "US economy slowed more than expected at end of 2025",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T20:17:51.040Z",
@@ -792,6 +712,16 @@
       "to_rank": null,
       "from_title": "US captures record 11th gold medal at Winter Games",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T19:38:38.645Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "d3648652a5f0b4a18d6a77a989f6082dfc3860e3",
+      "from_rank": 8,
+      "to_rank": 8,
+      "from_title": "Investigators release photo of suspect in murder of man at senior living facility",
+      "to_title": "Investigators release photo of suspect in murder of 87-year-old"
     }
   ]
 }

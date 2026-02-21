@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-21T19:14:45.776Z",
+  "generatedAt": "2026-02-21T19:38:27.829Z",
   "source_id": "abc1",
   "events": [
     {
@@ -5132,6 +5132,16 @@
       "to_rank": null,
       "from_title": "US captures record 11th gold medal at Winter Games",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-21T19:38:38.645Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "d3648652a5f0b4a18d6a77a989f6082dfc3860e3",
+      "from_rank": 8,
+      "to_rank": 8,
+      "from_title": "Investigators release photo of suspect in murder of man at senior living facility",
+      "to_title": "Investigators release photo of suspect in murder of 87-year-old"
     }
   ],
   "error": "No Top 10 events yet"
