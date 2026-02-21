@@ -8,26 +8,33 @@
 
   <style>
     :root{
-      --bg:#f6f3ec;
-      --surface:#fffdf8;
-      --card:#fffdf8;
-      --text:#1e242b;
-      --muted:#5e6977;
-      --line:#d8d2c5;
-      --line-strong:#c7bda9;
-      --shadow: 0 1px 0 rgba(30,36,43,.04);
+      --bg:#F7F8FA;
+      --surface:#FFFFFF;
+      --card:#FFFFFF;
+      --text:#111827;
+      --muted:#6B7280;
+      --border:#E5E7EB;
+      --line:var(--border);
+      --line-strong:#D1D5DB;
+      --accent:#2563EB;
+      --good:#22C55E;
+      --danger:#EF4444;
+      --highlight-bg:#FEF3C7;
+      --highlight-text:#92400E;
+      --highlight-border:#F59E0B;
+      --shadow: 0 1px 2px rgba(17,24,39,0.06);
       --radius: 10px;
       --maxw: 1100px;
 
-      --blue:#175cd3;
-      --blue2:#1249ab;
+      --blue:var(--accent);
+      --blue2:#1D4ED8;
 
-      --ok:#1e8e3e;     /* green */
-      --bad:#d93025;    /* red */
-      --warn:#f9ab00;
+      --ok:var(--good);
+      --bad:var(--danger);
+      --warn:var(--highlight-border);
 
-      --chip:#f2ede3;
-      --chipText:#3e4957;
+      --chip:#F9FAFB;
+      --chipText:#374151;
 
       --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
@@ -45,7 +52,7 @@
       position:sticky;
       top:0;
       z-index:20;
-      background: rgba(246,243,236,.96);
+      background: rgba(247,248,250,.96);
       border-bottom: 1px solid var(--line);
     }
 
@@ -82,7 +89,7 @@
       user-select:none;
       box-shadow: none;
     }
-    .btn:hover{ border-color: rgba(26,115,232,.45); }
+    .btn:hover{ border-color: rgba(37,99,235,.45); color:var(--accent); }
     .btn:disabled{ opacity:.55; cursor:not-allowed; }
 
     main{ max-width:var(--maxw); margin:0 auto; padding:14px 16px 26px; }
@@ -106,9 +113,9 @@
       cursor:pointer;
     }
     .tabBtn.active{
-      color:var(--text);
-      background:var(--surface);
-      border-color:var(--line);
+      color:var(--accent);
+      background:#EFF6FF;
+      border-color:var(--accent);
     }
 
     .legend{
@@ -231,7 +238,7 @@
       cursor:pointer;
       flex:0 0 auto;
     }
-    .copyIconBtn:hover{ border-color: rgba(26,115,232,.45); color:var(--blue2); }
+    .copyIconBtn:hover{ border-color: rgba(37,99,235,.45); color:var(--blue2); }
 
     .srcMeta{ display:flex; flex-direction:column; gap:2px; min-width:0; }
     .srcName{ font-weight:700; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -316,7 +323,7 @@
       border-radius:8px;
       cursor:pointer;
     }
-    .linkbtn:hover{ border-color: rgba(26,115,232,.45); color: var(--blue2); }
+    .linkbtn:hover{ border-color: rgba(37,99,235,.45); color: var(--blue2); }
     .shotTile{
       display:flex;
       flex-direction:column;
@@ -324,7 +331,7 @@
       padding:8px;
       border:1px solid var(--line);
       border-radius:12px;
-      background:#fff;
+      background:var(--card);
       cursor:pointer;
       text-align:left;
     }
@@ -480,7 +487,7 @@
 
     .drawerHead{
       padding:12px 14px;
-      background: rgba(246,243,236,.96);
+      background: rgba(247,248,250,.96);
       border-bottom:1px solid var(--line);
       display:flex;
       justify-content:space-between;
@@ -857,13 +864,14 @@
       margin-bottom:6px;
     }
     .diffDel{
-      color:#c62828;
+      color:var(--danger);
       text-decoration:line-through;
       text-decoration-thickness:2px;
     }
     .diffAdd{
-      color:#0d47a1;
-      background:rgba(13,71,161,.11);
+      color:var(--highlight-text);
+      background:var(--highlight-bg);
+      border:1px solid var(--highlight-border);
       border-radius:3px;
       padding:0 1px;
     }
@@ -1022,7 +1030,7 @@
         <button id="btn-reload" class="btn" type="button">Refresh</button>
         <button id="btn-data" class="btn" type="button">Data</button>
         <div id="refresh-indicator" class="statusInline" aria-live="polite"></div>
-        <button id="btn-menu" class="btn" type="button" aria-label="Open menu">📰</button>
+        <button id="btn-menu" class="btn" type="button" aria-label="Open menu">☰</button>
         <button id="btn-run" class="btn" type="button" style="display:none">Run scrape (local)</button>
       </div>
     </div>
@@ -2518,7 +2526,7 @@
       for (const b of data) {
         const total = Number(b.url || 0) + Number(b.headline || 0);
         const h = Math.round((total / max) * (cssH - 12));
-        ctx.fillStyle = "#d8d2c5";
+        ctx.fillStyle = "#E5E7EB";
         ctx.fillRect(x, cssH - h, barW, h);
         const hu = Math.round((Number(b.url || 0) / max) * (cssH - 12));
         const hh = Math.round((Number(b.headline || 0) / max) * (cssH - 12));
