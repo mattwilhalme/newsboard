@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-22T03:46:46.927Z",
+  "generatedAt": "2026-02-22T05:10:57.071Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "MOVED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "Trump says he has signed order for new 10% tariff after Supreme Court ruling",
-      "to_title": "Trump says he has signed order for new 10% tariff after Supreme Court ruling"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "MOVED",
-      "fingerprint": "b0f205b300c736729b1ffe181517369cece816a8",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Majority of Americans disapprove of how Trump handling tariffs: ABC/Post/Ipsos poll",
-      "to_title": "Majority of Americans disapprove of how Trump handling tariffs: ABC/Post/Ipsos poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "91b3ba020a3940f3d76fb1bad471c8a94582bc16",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "MOVED",
-      "fingerprint": "f72f0fe654f72f40b6b6ebc527d0072917807a74",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Man who called 911 to report wife shot and intruder in home charged with her murder",
-      "to_title": "Man who called 911 to report wife shot and intruder in home charged with her murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "MOVED",
-      "fingerprint": "f303e7c3c499e83312944c76dff00ae722ff7ca3",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Former Prince Andrew arrested: What's next for King Charles' brother",
-      "to_title": "Former Prince Andrew arrested: What's next for King Charles' brother"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "MOVED",
-      "fingerprint": "d180458b0861e18d574ad6bd9a27f58bb8a174e8",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms",
-      "to_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "MOVED",
-      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
-      "to_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a2687c4688b0f9f6db3a5ebbd49153d44cde0c91",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Northeast winter storm set to arrive Friday, just before possible weekend nor’easter",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-21T12:01:51.890Z",
@@ -461,6 +381,116 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Trump approves disaster assistance to DC to help with sewage spill into Potomac River",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e41c51cc9f39bb262f95102730e9fc4e33dc0fb1",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b0f205b300c736729b1ffe181517369cece816a8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Majority of Americans disapprove of how Trump handling tariffs: ABC/Post/Ipsos poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "MOVED",
+      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling",
+      "to_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "MOVED",
+      "fingerprint": "04b4b4ce977cfad4095f775f9d9fe534d9b06888",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
+      "to_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "MOVED",
+      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Bodies of all 9 missing skiers recovered after deadly avalanche",
+      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "MOVED",
+      "fingerprint": "91b3ba020a3940f3d76fb1bad471c8a94582bc16",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges",
+      "to_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "MOVED",
+      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
+      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "MOVED",
+      "fingerprint": "d3648652a5f0b4a18d6a77a989f6082dfc3860e3",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Investigators release photo of suspect in murder of 87-year-old",
+      "to_title": "Investigators release photo of suspect in murder of 87-year-old"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "MOVED",
+      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
+      "to_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "04887490ca31e4134fd476edc1089a970c9d105e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Supreme Court invalidates most of Trump's tariffs",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T05:11:07.534Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ba3a2e0c8b46a8f06b148b508c0160f8ac003728",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Willie Colón, salsa pioneer and activist, dies at 75",
       "to_title": null
     }
   ]
