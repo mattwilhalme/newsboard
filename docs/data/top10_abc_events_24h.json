@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-22T12:27:06.192Z",
+  "generatedAt": "2026-02-22T13:26:36.091Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T13:07:17.228Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "308d4ec0f2c2e3b403a91708868b3749396a48a4",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "US captures record 11th gold medal at Winter Games"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T13:07:17.228Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f303e7c3c499e83312944c76dff00ae722ff7ca3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "What's next for former Prince Andrew after arrest",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-21T17:15:29.264Z",
@@ -451,6 +431,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T13:26:46.699Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T13:26:46.699Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Heavy snow, 60 mph wind gusts: What to expect from major nor'easter",
       "to_title": null
     }
   ]
