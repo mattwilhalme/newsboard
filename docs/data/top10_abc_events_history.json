@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-22T20:38:00.448Z",
+  "generatedAt": "2026-02-22T20:58:45.815Z",
   "source_id": "abc1",
   "events": [
     {
@@ -6012,6 +6012,16 @@
       "to_rank": null,
       "from_title": "NFL receiver Rondale Moore found dead",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T20:58:56.540Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "dd8dc490649f813fb335a686ac8c08d4232a8c2c",
+      "from_rank": 1,
+      "to_rank": 1,
+      "from_title": "Severe winter storm live updates: Northeast braces for blizzard conditions",
+      "to_title": "Severe winter storm live updates: 'The worst is yet to come,' NY Gov. Hochul says"
     }
   ],
   "error": "No Top 10 events yet"
