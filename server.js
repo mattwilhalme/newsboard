@@ -419,6 +419,20 @@ function buildSnapshotDiff(prevSnapshot, snapshot) {
   return { entered, exited, moved, edits, hero_swap: heroSwap, events };
 }
 
+function sourceNameById(sourceId) {
+  const id = String(sourceId || "").toLowerCase();
+  const found = SOURCE_REGISTRY.find((row) => String(row?.id || "").toLowerCase() === id);
+  return found?.name || sourceId || "";
+}
+
+function headlineMatchesCluster(row, { canonical, fingerprint, keywords }) {
+  const canonicalMatch = Boolean(canonical) && String(row?.canonical_url || "") === String(canonical);
+  const fpMatch = Boolean(fingerprint) && String(row?.fingerprint || "") === String(fingerprint);
+  const sim = jaccardOverlap(Array.isArray(keywords) ? keywords : [], Array.isArray(row?.keywords) ? row.keywords : []);
+  const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+  return { matched: canonicalMatch || fpMatch || keywordMatch, canonicalMatch, fpMatch, keywordMatch, sim };
+}
+
 function collectSnapshotFrames(rows = [], includeTop10 = true) {
   const byGroup = new Map();
   const sorted = [...rows].sort((a, b) => parseIsoMs(a?.observed_at) - parseIsoMs(b?.observed_at));
@@ -1903,8 +1917,8 @@ async function scrapeCNNHero() {
         }
       }
 
-      // Target the specific h2 you mentioned: container__title_url-text container_lead-package__title_url-text
-      const h2 = document.querySelector("h2.container__title_url-text.container_lead-package__title_url-text[data-editable='title']");
+      // Target current lead-plus-headlines centerpiece title.
+      const h2 = document.querySelector("h2.container__title_url-text.container_lead-plus-headlines__title_url-text[data-editable='title']");
       if (h2) {
         const title = clean(h2.textContent || "");
         const a = h2.closest("a[href]");
@@ -1913,8 +1927,8 @@ async function scrapeCNNHero() {
         if (title && url) return { ok: true, title, url };
       }
 
-      // Fallback: look for any lead-package container with title
-      const container = document.querySelector(".container.container_lead-package[data-layout='container_lead-package']");
+      // Fallback: any lead-plus-headlines container with title.
+      const container = document.querySelector(".container.container_lead-plus-headlines[data-layout='container_lead-plus-headlines']");
       if (container) {
         const titleEl = container.querySelector("h2.container__title_url-text[data-editable='title']");
         const title = clean(titleEl?.textContent || "");
@@ -1924,8 +1938,8 @@ async function scrapeCNNHero() {
         if (title && url) return { ok: true, title, url };
       }
 
-      // Final fallback: use container attributes
-      const lead = document.querySelector(".container.container_lead-package");
+      // Final fallback: use lead container attributes.
+      const lead = document.querySelector(".container.container_lead-plus-headlines, .container.container_lead-package");
       if (lead) {
         const title = clean(lead.getAttribute("data-title") || lead.getAttribute("data-collapsed-text") || "");
         const a = lead.querySelector('a[href]');
@@ -3726,9 +3740,9 @@ app.get("/api/moment/build", async (req, res) => {
     const eventId = String(req.query?.event_id || "").trim();
     const selectedUrlRaw = String(req.query?.url || "").trim();
     const selectedCanonical = normalizeUrl(selectedUrlRaw || "");
+    const selectedTitleRaw = String(req.query?.title || "").trim();
     const lookbackMinutesRaw = Number(req.query?.lookback_minutes ?? 120);
     const forwardMinutesRaw = Number(req.query?.forward_minutes ?? 30);
-    const includeTop10 = parseBoolParam(req.query?.include_top10, true);
     const includeScreenshots = parseBoolParam(req.query?.include_screenshots, true);
     const startEarliest = parseBoolParam(req.query?.start_earliest, true);
     const lookbackMinutes = Number.isFinite(lookbackMinutesRaw) ? Math.max(5, Math.min(12 * 60, Math.floor(lookbackMinutesRaw))) : 120;
@@ -3746,7 +3760,6 @@ app.get("/api/moment/build", async (req, res) => {
         .from("headline_events")
         .select("id,source_id,observed_at,slot_key,title,url,raw")
         .eq("id", eventId)
-        .eq("source_id", sourceId)
         .limit(1);
       if (byIdErr) throw byIdErr;
       anchorRow = Array.isArray(byId) ? byId[0] || null : null;
@@ -3757,10 +3770,9 @@ app.get("/api/moment/build", async (req, res) => {
       const { data: recentRows, error: recentErr } = await sb
         .from("headline_events")
         .select("id,source_id,observed_at,slot_key,title,url,raw")
-        .eq("source_id", sourceId)
         .gte("observed_at", last24hIso)
         .order("observed_at", { ascending: false })
-        .limit(1500);
+        .limit(2500);
       if (recentErr) throw recentErr;
 
       const recent = (Array.isArray(recentRows) ? recentRows : []).filter((row) => {
@@ -3769,9 +3781,13 @@ app.get("/api/moment/build", async (req, res) => {
       });
       if (selectedCanonical) {
         anchorRow = recent.find((row) => {
+          if (String(row?.source_id || "") !== sourceId) return false;
           const s = storyFromHeadlineRow(row);
           return String(s.canonical_url || "") === selectedCanonical;
         }) || null;
+      }
+      if (!anchorRow) {
+        anchorRow = recent.find((row) => String(row?.source_id || "") === sourceId) || null;
       }
       if (!anchorRow) anchorRow = recent[0] || null;
     }
@@ -3787,7 +3803,6 @@ app.get("/api/moment/build", async (req, res) => {
     const { data: headlineRowsRaw, error: headlineErr } = await sb
       .from("headline_events")
       .select("id,source_id,observed_at,slot_key,title,url,raw")
-      .eq("source_id", sourceId)
       .gte("observed_at", lookbackStartIso)
       .lte("observed_at", forwardEndIso)
       .order("observed_at", { ascending: true })
@@ -3807,20 +3822,26 @@ app.get("/api/moment/build", async (req, res) => {
         .filter((row) => parseIsoMs(row?.observed_at) <= t0Ms)
         .sort((a, b) => parseIsoMs(b?.observed_at) - parseIsoMs(a?.observed_at));
       if (selectedCanonical) {
-        anchorStory = onOrBefore.find((row) => String(row?.canonical_url || "") === selectedCanonical) || null;
+        anchorStory = onOrBefore.find((row) =>
+          String(row?.source_id || "") === sourceId && String(row?.canonical_url || "") === selectedCanonical) || null;
+      }
+      if (!anchorStory) {
+        anchorStory = onOrBefore.find((row) => String(row?.source_id || "") === sourceId) || null;
       }
       if (!anchorStory) anchorStory = onOrBefore[0] || null;
     }
 
     if (!anchorStory && selectedCanonical) {
+      const titleNorm = normalizeTitle(selectedTitleRaw || "");
       anchorStory = {
+        source_id: sourceId,
         observed_at: t0Iso,
-        title: null,
+        title: selectedTitleRaw || null,
         url: selectedUrlRaw || null,
         canonical_url: selectedCanonical,
-        title_norm: "",
-        fingerprint: makeFingerprint(selectedCanonical, ""),
-        keywords: [],
+        title_norm: titleNorm || null,
+        fingerprint: makeFingerprint(selectedCanonical, titleNorm),
+        keywords: extractKeywords(titleNorm),
       };
     }
     if (!anchorStory) {
@@ -3842,11 +3863,12 @@ app.get("/api/moment/build", async (req, res) => {
 
     let primaryEvent = null;
     for (const row of lookbackRows) {
-      const canonicalMatch = Boolean(clusterCanonical) && String(row.canonical_url || "") === clusterCanonical;
-      const fpMatch = Boolean(clusterFingerprint) && String(row.fingerprint || "") === clusterFingerprint;
-      const sim = jaccardOverlap(clusterKeywords, row.keywords);
-      const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
-      if (canonicalMatch || fpMatch || keywordMatch) {
+      const matched = headlineMatchesCluster(row, {
+        canonical: clusterCanonical,
+        fingerprint: clusterFingerprint,
+        keywords: clusterKeywords,
+      });
+      if (matched.matched) {
         primaryEvent = { ...row, reason: "earliest_match" };
         break;
       }
@@ -3858,27 +3880,32 @@ app.get("/api/moment/build", async (req, res) => {
     const startAtIso = new Date(startAtMs).toISOString();
     const endAtIso = new Date(t0Ms + (forwardMinutes * 60 * 1000)).toISOString();
 
-    const frameHeadlineRows = relevantRows.filter((row) => {
-      const ms = parseIsoMs(row?.observed_at);
-      return ms >= startAtMs && ms <= parseIsoMs(endAtIso);
-    });
+    const matchedHeadlines = relevantRows
+      .map((row) => storyFromHeadlineRow(row))
+      .filter((row) => {
+        const ms = parseIsoMs(row?.observed_at);
+        if (ms < startAtMs || ms > parseIsoMs(endAtIso)) return false;
+        return headlineMatchesCluster(row, {
+          canonical: clusterCanonical,
+          fingerprint: clusterFingerprint,
+          keywords: clusterKeywords,
+        }).matched;
+      })
+      .sort((a, b) => parseIsoMs(a?.observed_at) - parseIsoMs(b?.observed_at));
 
     let screenshotRows = [];
     if (includeScreenshots) {
       const { data: shotsRaw, error: shotsErr } = await sb
         .from("screenshot_events")
         .select("id,ts,source_id,kind,title,url,shot_url,object_path,raw")
-        .eq("source_id", sourceId)
         .gte("ts", startAtIso)
         .lte("ts", endAtIso)
         .order("ts", { ascending: true })
         .limit(1000);
       if (shotsErr) {
-        // Backwards compatibility for schemas without `raw`.
         const { data: shotsNoRaw, error: shotsNoRawErr } = await sb
           .from("screenshot_events")
           .select("id,ts,source_id,kind,title,url,shot_url,object_path")
-          .eq("source_id", sourceId)
           .gte("ts", startAtIso)
           .lte("ts", endAtIso)
           .order("ts", { ascending: true })
@@ -3917,28 +3944,63 @@ app.get("/api/moment/build", async (req, res) => {
       }
     }
 
-    const snapshotFrames = collectSnapshotFrames(frameHeadlineRows, includeTop10);
-    const screenshotFrames = includeScreenshots
-      ? screenshotRows.map((row0) => {
-        const row = storyFromScreenshotRow(row0);
-        return {
-          ts: row.ts,
-          type: "screenshot",
-          kind: row.kind || "heartbeat",
-          title: row.title || null,
-          url: row.url || null,
-          shot_url: row.shot_url || null,
-        };
-      })
-      : [];
+    const shotsBySource = new Map();
+    for (const shotRaw of screenshotRows) {
+      const shot = storyFromScreenshotRow(shotRaw);
+      if (!shotsBySource.has(shot.source_id)) shotsBySource.set(shot.source_id, []);
+      shotsBySource.get(shot.source_id).push(shot);
+    }
+    for (const sourceShots of shotsBySource.values()) {
+      sourceShots.sort((a, b) => parseIsoMs(a?.ts) - parseIsoMs(b?.ts));
+    }
 
-    const frames = [...snapshotFrames, ...screenshotFrames].sort((a, b) => {
-      const ta = parseIsoMs(a?.ts);
-      const tb = parseIsoMs(b?.ts);
-      if (ta !== tb) return ta - tb;
-      if (a?.type === b?.type) return 0;
-      return a?.type === "snapshot" ? -1 : 1;
-    });
+    const frames = [];
+    const seenShots = new Set();
+    for (const hit of matchedHeadlines) {
+      const sourceShots = shotsBySource.get(hit.source_id) || [];
+      if (!sourceShots.length) continue;
+      const hitMs = parseIsoMs(hit.observed_at);
+      let picked = sourceShots.find((shot) => {
+        const ms = parseIsoMs(shot.ts);
+        return ms >= hitMs && ms <= hitMs + (20 * 60 * 1000);
+      }) || null;
+
+      if (!picked) {
+        let best = null;
+        let bestDelta = Number.POSITIVE_INFINITY;
+        for (const shot of sourceShots) {
+          const delta = Math.abs(parseIsoMs(shot.ts) - hitMs);
+          if (delta > 10 * 60 * 1000) continue;
+          if (delta < bestDelta) {
+            bestDelta = delta;
+            best = shot;
+          }
+        }
+        picked = best;
+      }
+
+      if (!picked) continue;
+      const shotKey = `${picked.source_id}|${picked.object_path || picked.id || picked.ts}`;
+      if (seenShots.has(shotKey)) continue;
+      seenShots.add(shotKey);
+
+      frames.push({
+        ts: picked.ts,
+        type: "screenshot",
+        source_id: picked.source_id,
+        source_name: sourceNameById(picked.source_id),
+        kind: picked.kind || "heartbeat",
+        title: picked.title || hit.title || null,
+        url: picked.url || hit.url || null,
+        shot_url: picked.shot_url || null,
+        match: {
+          headline_ts: hit.observed_at,
+          headline_title: hit.title || null,
+          headline_url: hit.url || null,
+        },
+      });
+    }
+    frames.sort((a, b) => parseIsoMs(a?.ts) - parseIsoMs(b?.ts));
 
     return res.json({
       ok: true,
