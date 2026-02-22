@@ -83,8 +83,10 @@ function stripHeadlineNoise(s) {
 }
 
 function normalizeUrl(u) {
+  const raw = String(u || "").trim();
+  if (!raw) return "";
   try {
-    const url = new URL(u);
+    const url = new URL(raw);
     const host = url.hostname.toLowerCase();
     if (host.startsWith("www.")) url.hostname = host.slice(4);
     url.hash = "";
@@ -115,7 +117,7 @@ function normalizeUrl(u) {
     url.searchParams.sort();
     return url.toString();
   } catch {
-    return u;
+    return raw;
   }
 }
 
@@ -127,38 +129,126 @@ function hashString(str) {
   return crypto.createHash("sha1").update(String(str || "")).digest("hex");
 }
 
-function canonicalizeUrl(input) {
-  if (!input) return null;
-  try {
-    const u = new URL(String(input));
-    u.hash = "";
-    u.pathname = u.pathname.replace(/\/{2,}/g, "/");
-    if (u.pathname.length > 1 && u.pathname.endsWith("/")) u.pathname = u.pathname.slice(0, -1);
+const STORY_STOPWORDS = new Set([
+  "the",
+  "and",
+  "for",
+  "with",
+  "this",
+  "that",
+  "from",
+  "into",
+  "about",
+  "after",
+  "before",
+  "amid",
+  "over",
+  "under",
+  "latest",
+  "update",
+  "updates",
+  "live",
+  "news",
+  "story",
+  "stories",
+  "video",
+  "photos",
+  "photo",
+  "says",
+  "said",
+  "new",
+  "today",
+  "will",
+  "just",
+  "more",
+  "than",
+  "what",
+  "when",
+  "where",
+  "why",
+  "how",
+  "who",
+  "are",
+  "was",
+  "were",
+  "has",
+  "have",
+  "had",
+  "its",
+  "their",
+  "they",
+  "them",
+  "his",
+  "her",
+  "our",
+  "your",
+]);
 
-    const drop = new Set([
-      "gclid",
-      "fbclid",
-      "dclid",
-      "cmpid",
-      "icid",
-      "ito",
-      "mc_cid",
-      "mc_eid",
-      "ocid",
-      "_ga",
-      "_gl",
-      "spm",
-      "wt.mc_id",
-    ]);
-    for (const key of [...u.searchParams.keys()]) {
-      const lk = String(key || "").toLowerCase();
-      if (lk.startsWith("utm_") || drop.has(lk)) u.searchParams.delete(key);
-    }
-    u.searchParams.sort();
-    return u.toString();
-  } catch {
-    return null;
+function normalizeTitle(title) {
+  const cleaned = cleanText(title || "").toLowerCase();
+  if (!cleaned) return "";
+  return cleaned
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractKeywords(titleNorm, maxTokens = 12) {
+  const seen = new Set();
+  const out = [];
+  const tokens = String(titleNorm || "").split(/\s+/g).filter(Boolean);
+  for (const tok of tokens) {
+    if (tok.length < 3) continue;
+    if (STORY_STOPWORDS.has(tok)) continue;
+    if (seen.has(tok)) continue;
+    seen.add(tok);
+    out.push(tok);
+    if (out.length >= maxTokens) break;
   }
+  return out;
+}
+
+function makeFingerprint(canonicalUrl, titleNorm) {
+  const cu = String(canonicalUrl || "").trim();
+  const tn = String(titleNorm || "").trim();
+  if (cu && tn) return sha1(`${cu}|${tn}`);
+  if (cu) return sha1(cu);
+  if (tn) return sha1(tn);
+  return sha1("unknown");
+}
+
+function toStoryMeta({ url, title, slotRank = null } = {}) {
+  const canonical_url = normalizeUrl(url || "");
+  const title_norm = normalizeTitle(title || "");
+  const keywords = extractKeywords(title_norm);
+  const parsedRank = Number(slotRank);
+  return {
+    canonical_url: canonical_url || null,
+    title_norm: title_norm || null,
+    fingerprint: makeFingerprint(canonical_url, title_norm),
+    keywords,
+    slot_rank: Number.isFinite(parsedRank) ? parsedRank : null,
+  };
+}
+
+function enrichRawStory(raw = {}, { url, title, slotRank = null } = {}) {
+  const base = raw && typeof raw === "object" ? { ...raw } : {};
+  const story = toStoryMeta({ url, title, slotRank });
+  const pickedTopY = Number.isFinite(Number(base.pickedTopY))
+    ? Number(base.pickedTopY)
+    : Number.isFinite(Number(base.topY))
+      ? Number(base.topY)
+      : null;
+
+  return {
+    ...base,
+    ...story,
+    selector_used: base.selector_used || null,
+    profile: base.profile || null,
+    candidates: base.candidates || null,
+    topY: pickedTopY,
+    boundaryY: Number.isFinite(Number(base.boundaryY)) ? Number(base.boundaryY) : null,
+  };
 }
 
 function inferContentType({ url, title }) {
@@ -186,10 +276,8 @@ function detectBlocked({ httpStatus, finalUrl, pageTitle, errorText }) {
 }
 
 function top10Fingerprint(url, title) {
-  const u = String(url || "").trim();
-  if (u) return sha1(u);
-  const t = cleanText(title || "").toLowerCase();
-  return sha1(t || "unknown");
+  const story = toStoryMeta({ url, title });
+  return story.fingerprint;
 }
 
 function parseUrlSafe(u) {
@@ -198,6 +286,200 @@ function parseUrlSafe(u) {
   } catch {
     return null;
   }
+}
+
+function parseIsoMs(ts) {
+  const ms = Date.parse(String(ts || ""));
+  return Number.isFinite(ms) ? ms : 0;
+}
+
+function parseBoolParam(v, defaultValue = true) {
+  const raw = String(v ?? "").trim().toLowerCase();
+  if (!raw) return Boolean(defaultValue);
+  if (raw === "1" || raw === "true" || raw === "yes" || raw === "on") return true;
+  if (raw === "0" || raw === "false" || raw === "no" || raw === "off") return false;
+  return Boolean(defaultValue);
+}
+
+function parseRankFromSlot(slotKey, fallback = null) {
+  const byRaw = Number(fallback);
+  if (Number.isFinite(byRaw)) return byRaw;
+  const m = String(slotKey || "").match(/^top10:(\d+)$/i);
+  if (m) {
+    const n = Number(m[1]);
+    if (Number.isFinite(n)) return n;
+  }
+  if (String(slotKey || "").toLowerCase() === "hero:1") return 1;
+  return null;
+}
+
+function storyFromHeadlineRow(row) {
+  const raw = row?.raw && typeof row.raw === "object" ? row.raw : {};
+  const canonical_url = String(raw.canonical_url || "").trim() || normalizeUrl(row?.url || "");
+  const title_norm = String(raw.title_norm || "").trim() || normalizeTitle(row?.title || "");
+  const keywords = Array.isArray(raw.keywords) && raw.keywords.length
+    ? raw.keywords.map((x) => String(x || "").trim()).filter(Boolean)
+    : extractKeywords(title_norm);
+  const slot_rank = parseRankFromSlot(row?.slot_key, raw.slot_rank);
+
+  return {
+    id: row?.id || null,
+    source_id: row?.source_id || null,
+    observed_at: row?.observed_at || null,
+    slot_key: row?.slot_key || null,
+    title: row?.title || null,
+    url: row?.url || null,
+    raw,
+    canonical_url: canonical_url || null,
+    title_norm: title_norm || null,
+    keywords,
+    fingerprint: String(raw.fingerprint || "").trim() || makeFingerprint(canonical_url, title_norm),
+    slot_rank,
+  };
+}
+
+function storyFromScreenshotRow(row) {
+  const raw = row?.raw && typeof row.raw === "object" ? row.raw : {};
+  const canonical_url = String(raw.canonical_url || "").trim() || normalizeUrl(row?.url || "");
+  const title_norm = String(raw.title_norm || "").trim() || normalizeTitle(row?.title || "");
+  return {
+    ...row,
+    raw,
+    canonical_url: canonical_url || null,
+    title_norm: title_norm || null,
+    keywords: Array.isArray(raw.keywords) && raw.keywords.length
+      ? raw.keywords.map((x) => String(x || "").trim()).filter(Boolean)
+      : extractKeywords(title_norm),
+    fingerprint: String(raw.fingerprint || "").trim() || makeFingerprint(canonical_url, title_norm),
+  };
+}
+
+function jaccardOverlap(a = [], b = []) {
+  const setA = new Set((Array.isArray(a) ? a : []).map((x) => String(x || "").trim()).filter(Boolean));
+  const setB = new Set((Array.isArray(b) ? b : []).map((x) => String(x || "").trim()).filter(Boolean));
+  if (!setA.size || !setB.size) return { score: 0, overlap: 0 };
+  let overlap = 0;
+  for (const token of setA) {
+    if (setB.has(token)) overlap += 1;
+  }
+  const union = setA.size + setB.size - overlap;
+  return { score: union > 0 ? (overlap / union) : 0, overlap };
+}
+
+function buildSnapshotDiff(prevSnapshot, snapshot) {
+  const prevTop = Array.isArray(prevSnapshot?.top10) ? prevSnapshot.top10 : [];
+  const currTop = Array.isArray(snapshot?.top10) ? snapshot.top10 : [];
+  const prevByKey = new Map(prevTop.map((row) => [row.story_key, row]));
+  const currByKey = new Map(currTop.map((row) => [row.story_key, row]));
+  const events = [];
+
+  const entered = currTop
+    .filter((row) => row?.story_key && !prevByKey.has(row.story_key))
+    .map((row) => ({ story_key: row.story_key, rank: row.rank, title: row.title, url: row.url }));
+  if (entered.length) events.push({ code: "ENTER", count: entered.length });
+
+  const exited = prevTop
+    .filter((row) => row?.story_key && !currByKey.has(row.story_key))
+    .map((row) => ({ story_key: row.story_key, rank: row.rank, title: row.title, url: row.url }));
+  if (exited.length) events.push({ code: "EXIT", count: exited.length });
+
+  const moved = [];
+  for (const row of currTop) {
+    const prev = prevByKey.get(row?.story_key || "");
+    if (!prev) continue;
+    const pr = Number(prev.rank);
+    const cr = Number(row.rank);
+    if (!Number.isFinite(pr) || !Number.isFinite(cr) || pr === cr) continue;
+    moved.push({ story_key: row.story_key, from_rank: pr, to_rank: cr, title: row.title, url: row.url });
+  }
+  if (moved.length) events.push({ code: "MOVE", count: moved.length });
+
+  const edits = [];
+  for (const row of currTop) {
+    const prev = prevByKey.get(row?.story_key || "");
+    if (!prev) continue;
+    const prevTitle = String(prev.title || "");
+    const currTitle = String(row.title || "");
+    if (!prevTitle || !currTitle || prevTitle === currTitle) continue;
+    edits.push({
+      story_key: row.story_key,
+      from_title: prevTitle,
+      to_title: currTitle,
+      rank: Number(row.rank) || null,
+      url: row.url,
+    });
+  }
+  if (edits.length) events.push({ code: "EDIT", count: edits.length });
+
+  const prevHeroKey = prevSnapshot?.hero?.story_key || "";
+  const currHeroKey = snapshot?.hero?.story_key || "";
+  const heroSwap = Boolean(prevHeroKey && currHeroKey && prevHeroKey !== currHeroKey);
+  if (heroSwap) events.push({ code: "HERO_SWAP", count: 1 });
+
+  return { entered, exited, moved, edits, hero_swap: heroSwap, events };
+}
+
+function collectSnapshotFrames(rows = [], includeTop10 = true) {
+  const byGroup = new Map();
+  const sorted = [...rows].sort((a, b) => parseIsoMs(a?.observed_at) - parseIsoMs(b?.observed_at));
+  for (const row0 of sorted) {
+    const row = storyFromHeadlineRow(row0);
+    const runId = String(row?.raw?.run_id || "").trim();
+    const observedMs = parseIsoMs(row.observed_at);
+    if (!observedMs) continue;
+    const bucketMs = Math.floor(observedMs / (5 * 60 * 1000)) * 5 * 60 * 1000;
+    const key = runId ? `run:${runId}` : `bucket:${bucketMs}`;
+    if (!byGroup.has(key)) byGroup.set(key, []);
+    byGroup.get(key).push(row);
+  }
+
+  const frames = [];
+  for (const rowsInGroup of byGroup.values()) {
+    const sortedRows = [...rowsInGroup].sort((a, b) => parseIsoMs(a?.observed_at) - parseIsoMs(b?.observed_at));
+    const ts = sortedRows[sortedRows.length - 1]?.observed_at || null;
+    const heroRow = [...sortedRows].reverse().find((r) => String(r?.slot_key || "") === "hero:1") || null;
+    const topRows = includeTop10
+      ? sortedRows
+        .filter((r) => /^top10:\d+$/i.test(String(r?.slot_key || "")))
+        .map((r) => ({
+          rank: parseRankFromSlot(r.slot_key, r.slot_rank),
+          title: r.title || null,
+          url: r.url || null,
+          canonical_url: r.canonical_url || null,
+          fingerprint: r.fingerprint || null,
+          story_key: r.fingerprint || makeFingerprint(r.canonical_url, r.title_norm),
+          keywords: r.keywords || [],
+        }))
+        .filter((r) => Number.isFinite(Number(r.rank)))
+        .sort((a, b) => Number(a.rank) - Number(b.rank))
+      : [];
+
+    const heroStory = heroRow
+      ? {
+        title: heroRow.title || null,
+        url: heroRow.url || null,
+        canonical_url: heroRow.canonical_url || null,
+        fingerprint: heroRow.fingerprint || null,
+        story_key: heroRow.fingerprint || makeFingerprint(heroRow.canonical_url, heroRow.title_norm),
+      }
+      : null;
+
+    frames.push({
+      ts,
+      type: "snapshot",
+      hero: heroStory,
+      top10: topRows,
+      diffs: { entered: [], exited: [], moved: [], edits: [], hero_swap: false, events: [] },
+    });
+  }
+
+  frames.sort((a, b) => parseIsoMs(a?.ts) - parseIsoMs(b?.ts));
+  let prevSnapshot = null;
+  for (const frame of frames) {
+    frame.diffs = buildSnapshotDiff(prevSnapshot, frame);
+    prevSnapshot = frame;
+  }
+  return frames;
 }
 
 function readCache() {
@@ -535,6 +817,7 @@ async function insertHeadlineEvents(rows = []) {
 }
 
 async function insertHeadlineEvent({ sourceId, observedAtIso, slotKey, item, ok, error, raw }) {
+  const defaultSlotRank = slotKey === "hero:1" ? 1 : null;
   const row = {
     source_id: sourceId,
     observed_at: observedAtIso,
@@ -544,7 +827,7 @@ async function insertHeadlineEvent({ sourceId, observedAtIso, slotKey, item, ok,
     img_url: item?.imgUrl || null,
     ok: Boolean(ok),
     error: error ? String(error) : null,
-    raw: raw && typeof raw === "object" ? raw : {},
+    raw: enrichRawStory(raw, { url: item?.url || null, title: item?.title || null, slotRank: defaultSlotRank }),
   };
   const inserted = await insertHeadlineEvents([row]);
   if (!inserted.ok) throw inserted.error || new Error("headline_events insert failed");
@@ -566,16 +849,18 @@ async function insertTop10Snapshot({ sourceId, observedAtIso, runId, items, raw 
       img_url: it?.imgUrl || null,
       ok: true,
       error: null,
-      raw: {
+      raw: enrichRawStory(
+        {
         ...(raw && typeof raw === "object" ? raw : {}),
         run_kind: "top10",
         run_id: runId || null,
         rank: Number(it.rank),
         fingerprint: it?.fingerprint || null,
-        canonical_url: canonicalizeUrl(it?.url || null),
         module: "top10_list",
         content_type: inferContentType({ url: it?.url, title: it?.title }),
-      },
+        },
+        { url: it?.url || null, title: it?.title || null, slotRank: Number(it.rank) },
+      ),
     }));
 
   if (!rows.length) return { inserted: 0 };
@@ -3244,8 +3529,6 @@ async function refreshSources({ id = "" } = {}) {
             run_kind: "hero",
             run_id: res?.runId || null,
             rank: 1,
-            fingerprint: res?.item?.fingerprint || hashString(`${canonicalizeUrl(res?.item?.url) || ""}|${cleanText(res?.item?.title || "")}`),
-            canonical_url: canonicalizeUrl(res?.item?.url || null),
             module: "homepage_hero",
             content_type: inferContentType({ url: res?.item?.url, title: res?.item?.title }),
             breaking_label: res?.item?.breakingLabel || null,
@@ -3285,6 +3568,19 @@ async function refreshSources({ id = "" } = {}) {
           url: res.item?.url || null,
           object_path: res.shot.object_path,
           shot_url: res.shot.shot_url || null,
+          raw: enrichRawStory(
+            {
+              run_kind: "hero",
+              run_id: res?.runId || null,
+              kind,
+              profile: res?.meta?.profile || "desktop",
+              selector_used: res?.meta?.selector_used || null,
+              candidates: res?.meta?.candidates || null,
+              boundaryY: Number.isFinite(Number(res?.meta?.boundaryY)) ? Number(res.meta.boundaryY) : null,
+              topY: Number.isFinite(Number(res?.meta?.pickedTopY)) ? Number(res.meta.pickedTopY) : null,
+            },
+            { url: res.item?.url || null, title: res.item?.title || null, slotRank: 1 },
+          ),
         });
       } catch (err) {
         console.warn(`screenshot_events insert failed (${sid}):`, String(err?.message || err));
@@ -3416,6 +3712,259 @@ app.get("/api/timeline", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ ok: false, error: String(err?.message || err) });
+  }
+});
+
+app.get("/api/moment/build", async (req, res) => {
+  try {
+    if (!hasSupabaseAdmin()) {
+      return res.status(503).json({ ok: false, error: "Supabase admin is not configured for moment build." });
+    }
+
+    const sb = getSupabaseAdmin();
+    const sourceId = String(req.query?.source || "").trim().toLowerCase();
+    const eventId = String(req.query?.event_id || "").trim();
+    const selectedUrlRaw = String(req.query?.url || "").trim();
+    const selectedCanonical = normalizeUrl(selectedUrlRaw || "");
+    const lookbackMinutesRaw = Number(req.query?.lookback_minutes ?? 120);
+    const forwardMinutesRaw = Number(req.query?.forward_minutes ?? 30);
+    const includeTop10 = parseBoolParam(req.query?.include_top10, true);
+    const includeScreenshots = parseBoolParam(req.query?.include_screenshots, true);
+    const startEarliest = parseBoolParam(req.query?.start_earliest, true);
+    const lookbackMinutes = Number.isFinite(lookbackMinutesRaw) ? Math.max(5, Math.min(12 * 60, Math.floor(lookbackMinutesRaw))) : 120;
+    const forwardMinutes = Number.isFinite(forwardMinutesRaw) ? Math.max(0, Math.min(6 * 60, Math.floor(forwardMinutesRaw))) : 30;
+
+    if (!sourceId) return res.status(400).json({ ok: false, error: "Missing source query param." });
+    if (!eventId && !selectedCanonical) return res.status(400).json({ ok: false, error: "Missing url or event_id query param." });
+
+    const t0Provided = String(req.query?.t0 || "").trim();
+    const t0ProvidedMs = parseIsoMs(t0Provided);
+    let anchorRow = null;
+
+    if (eventId) {
+      const { data: byId, error: byIdErr } = await sb
+        .from("headline_events")
+        .select("id,source_id,observed_at,slot_key,title,url,raw")
+        .eq("id", eventId)
+        .eq("source_id", sourceId)
+        .limit(1);
+      if (byIdErr) throw byIdErr;
+      anchorRow = Array.isArray(byId) ? byId[0] || null : null;
+    }
+
+    if (!anchorRow && !t0ProvidedMs) {
+      const last24hIso = new Date(Date.now() - (24 * 60 * 60 * 1000)).toISOString();
+      const { data: recentRows, error: recentErr } = await sb
+        .from("headline_events")
+        .select("id,source_id,observed_at,slot_key,title,url,raw")
+        .eq("source_id", sourceId)
+        .gte("observed_at", last24hIso)
+        .order("observed_at", { ascending: false })
+        .limit(1500);
+      if (recentErr) throw recentErr;
+
+      const recent = (Array.isArray(recentRows) ? recentRows : []).filter((row) => {
+        const slot = String(row?.slot_key || "");
+        return slot === "hero:1" || /^top10:\d+$/i.test(slot);
+      });
+      if (selectedCanonical) {
+        anchorRow = recent.find((row) => {
+          const s = storyFromHeadlineRow(row);
+          return String(s.canonical_url || "") === selectedCanonical;
+        }) || null;
+      }
+      if (!anchorRow) anchorRow = recent[0] || null;
+    }
+
+    const t0Ms = t0ProvidedMs || parseIsoMs(anchorRow?.observed_at);
+    if (!t0Ms) {
+      return res.status(404).json({ ok: false, error: "Unable to determine t0 for selected story." });
+    }
+    const t0Iso = new Date(t0Ms).toISOString();
+    const lookbackStartIso = new Date(t0Ms - (lookbackMinutes * 60 * 1000)).toISOString();
+    const forwardEndIso = new Date(t0Ms + (forwardMinutes * 60 * 1000)).toISOString();
+
+    const { data: headlineRowsRaw, error: headlineErr } = await sb
+      .from("headline_events")
+      .select("id,source_id,observed_at,slot_key,title,url,raw")
+      .eq("source_id", sourceId)
+      .gte("observed_at", lookbackStartIso)
+      .lte("observed_at", forwardEndIso)
+      .order("observed_at", { ascending: true })
+      .limit(5000);
+    if (headlineErr) throw headlineErr;
+
+    const headlineRows = Array.isArray(headlineRowsRaw) ? headlineRowsRaw : [];
+    const relevantRows = headlineRows.filter((row) => {
+      const slot = String(row?.slot_key || "");
+      return slot === "hero:1" || /^top10:\d+$/i.test(slot);
+    });
+
+    let anchorStory = anchorRow ? storyFromHeadlineRow(anchorRow) : null;
+    if (!anchorStory) {
+      const onOrBefore = relevantRows
+        .map((row) => storyFromHeadlineRow(row))
+        .filter((row) => parseIsoMs(row?.observed_at) <= t0Ms)
+        .sort((a, b) => parseIsoMs(b?.observed_at) - parseIsoMs(a?.observed_at));
+      if (selectedCanonical) {
+        anchorStory = onOrBefore.find((row) => String(row?.canonical_url || "") === selectedCanonical) || null;
+      }
+      if (!anchorStory) anchorStory = onOrBefore[0] || null;
+    }
+
+    if (!anchorStory && selectedCanonical) {
+      anchorStory = {
+        observed_at: t0Iso,
+        title: null,
+        url: selectedUrlRaw || null,
+        canonical_url: selectedCanonical,
+        title_norm: "",
+        fingerprint: makeFingerprint(selectedCanonical, ""),
+        keywords: [],
+      };
+    }
+    if (!anchorStory) {
+      return res.status(404).json({ ok: false, error: "No anchor story found in window." });
+    }
+
+    const clusterCanonical = String(anchorStory.canonical_url || selectedCanonical || "").trim() || null;
+    const clusterTitleNorm = String(anchorStory.title_norm || normalizeTitle(anchorStory.title || ""));
+    const clusterKeywords = extractKeywords(clusterTitleNorm);
+    const clusterFingerprint = String(anchorStory.fingerprint || makeFingerprint(clusterCanonical, clusterTitleNorm));
+
+    const lookbackRows = relevantRows
+      .map((row) => storyFromHeadlineRow(row))
+      .filter((row) => {
+        const ms = parseIsoMs(row?.observed_at);
+        return ms >= (t0Ms - lookbackMinutes * 60 * 1000) && ms <= t0Ms;
+      })
+      .sort((a, b) => parseIsoMs(a?.observed_at) - parseIsoMs(b?.observed_at));
+
+    let primaryEvent = null;
+    for (const row of lookbackRows) {
+      const canonicalMatch = Boolean(clusterCanonical) && String(row.canonical_url || "") === clusterCanonical;
+      const fpMatch = Boolean(clusterFingerprint) && String(row.fingerprint || "") === clusterFingerprint;
+      const sim = jaccardOverlap(clusterKeywords, row.keywords);
+      const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+      if (canonicalMatch || fpMatch || keywordMatch) {
+        primaryEvent = { ...row, reason: "earliest_match" };
+        break;
+      }
+    }
+    if (!primaryEvent) primaryEvent = { ...anchorStory, reason: "anchor" };
+    if (!startEarliest) primaryEvent = { ...anchorStory, reason: "anchor" };
+
+    const startAtMs = parseIsoMs(primaryEvent?.observed_at) || t0Ms;
+    const startAtIso = new Date(startAtMs).toISOString();
+    const endAtIso = new Date(t0Ms + (forwardMinutes * 60 * 1000)).toISOString();
+
+    const frameHeadlineRows = relevantRows.filter((row) => {
+      const ms = parseIsoMs(row?.observed_at);
+      return ms >= startAtMs && ms <= parseIsoMs(endAtIso);
+    });
+
+    let screenshotRows = [];
+    if (includeScreenshots) {
+      const { data: shotsRaw, error: shotsErr } = await sb
+        .from("screenshot_events")
+        .select("id,ts,source_id,kind,title,url,shot_url,object_path,raw")
+        .eq("source_id", sourceId)
+        .gte("ts", startAtIso)
+        .lte("ts", endAtIso)
+        .order("ts", { ascending: true })
+        .limit(1000);
+      if (shotsErr) {
+        // Backwards compatibility for schemas without `raw`.
+        const { data: shotsNoRaw, error: shotsNoRawErr } = await sb
+          .from("screenshot_events")
+          .select("id,ts,source_id,kind,title,url,shot_url,object_path")
+          .eq("source_id", sourceId)
+          .gte("ts", startAtIso)
+          .lte("ts", endAtIso)
+          .order("ts", { ascending: true })
+          .limit(1000);
+        if (shotsNoRawErr) throw shotsNoRawErr;
+        screenshotRows = Array.isArray(shotsNoRaw) ? shotsNoRaw : [];
+      } else {
+        screenshotRows = Array.isArray(shotsRaw) ? shotsRaw : [];
+      }
+
+      if (screenshotRows.length) {
+        if (!SUPABASE_SCREENSHOT_PUBLIC) {
+          const uniquePaths = [...new Set(screenshotRows.map((row) => row?.object_path).filter(Boolean))];
+          const signedByPath = new Map();
+          for (let i = 0; i < uniquePaths.length; i += 100) {
+            const batch = uniquePaths.slice(i, i + 100);
+            const { data: signedRows, error: signErr } = await sb.storage
+              .from(SUPABASE_SCREENSHOT_BUCKET)
+              .createSignedUrls(batch, 3600);
+            if (signErr) continue;
+            for (const signed of signedRows || []) {
+              if (signed?.path && signed?.signedUrl) signedByPath.set(signed.path, signed.signedUrl);
+            }
+          }
+          screenshotRows = screenshotRows.map((row) => ({
+            ...row,
+            shot_url: row?.shot_url || signedByPath.get(row?.object_path || "") || null,
+          }));
+        } else {
+          screenshotRows = screenshotRows.map((row) => {
+            if (row?.shot_url) return row;
+            const pub = sb.storage.from(SUPABASE_SCREENSHOT_BUCKET).getPublicUrl(row?.object_path || "");
+            return { ...row, shot_url: pub?.data?.publicUrl || null };
+          });
+        }
+      }
+    }
+
+    const snapshotFrames = collectSnapshotFrames(frameHeadlineRows, includeTop10);
+    const screenshotFrames = includeScreenshots
+      ? screenshotRows.map((row0) => {
+        const row = storyFromScreenshotRow(row0);
+        return {
+          ts: row.ts,
+          type: "screenshot",
+          kind: row.kind || "heartbeat",
+          title: row.title || null,
+          url: row.url || null,
+          shot_url: row.shot_url || null,
+        };
+      })
+      : [];
+
+    const frames = [...snapshotFrames, ...screenshotFrames].sort((a, b) => {
+      const ta = parseIsoMs(a?.ts);
+      const tb = parseIsoMs(b?.ts);
+      if (ta !== tb) return ta - tb;
+      if (a?.type === b?.type) return 0;
+      return a?.type === "snapshot" ? -1 : 1;
+    });
+
+    return res.json({
+      ok: true,
+      source_id: sourceId,
+      t0: t0Iso,
+      start_at: startAtIso,
+      end_at: endAtIso,
+      anchor: {
+        title: anchorStory?.title || null,
+        url: anchorStory?.url || selectedUrlRaw || null,
+        ts: anchorStory?.observed_at || t0Iso,
+      },
+      primary: {
+        title: primaryEvent?.title || null,
+        url: primaryEvent?.url || null,
+        ts: primaryEvent?.observed_at || t0Iso,
+        reason: primaryEvent?.reason || "anchor",
+      },
+      cluster: {
+        canonical_url: clusterCanonical,
+        keywords: clusterKeywords,
+      },
+      frames,
+    });
+  } catch (err) {
+    return res.status(500).json({ ok: false, error: String(err?.message || err) });
   }
 });
 
