@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-22T18:28:05.779Z",
+  "generatedAt": "2026-02-22T19:02:27.386Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "04887490ca31e4134fd476edc1089a970c9d105e",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Supreme Court invalidates most of Trump's tariffs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "MOVED",
-      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Over 40 million Americans on alert for winter storm conditions over the weekend",
-      "to_title": "Nor'easter to march up the East Coast, bringing significant snow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Over 40 million Americans on alert for winter storm conditions over the weekend",
-      "to_title": "Nor'easter to march up the East Coast, bringing significant snow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "MOVED",
-      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
-      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d3648652a5f0b4a18d6a77a989f6082dfc3860e3",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Investigators release photo of suspect in murder of man at senior living facility"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "MOVED",
-      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
-      "to_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "MOVED",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "How an au pair affair and fetish website factored into double murder plot",
-      "to_title": "How an au pair affair and fetish website factored into double murder plot"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b0f205b300c736729b1ffe181517369cece816a8",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Majority of Americans disapprove of how Trump handling tariffs: ABC/Post/Ipsos poll",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T18:45:26.740Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "308d4ec0f2c2e3b403a91708868b3749396a48a4",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "US captures record 11th gold medal at Winter Games",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-21T19:38:38.645Z",
@@ -772,6 +682,16 @@
       "to_rank": 1,
       "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, agency says",
       "to_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:02:38.125Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
+      "from_rank": 6,
+      "to_rank": 6,
+      "from_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown",
+      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
     }
   ]
 }

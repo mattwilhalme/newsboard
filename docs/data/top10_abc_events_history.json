@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-22T18:28:05.779Z",
+  "generatedAt": "2026-02-22T19:02:27.386Z",
   "source_id": "abc1",
   "events": [
     {
@@ -5812,6 +5812,16 @@
       "to_rank": 1,
       "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, agency says",
       "to_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:02:38.125Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
+      "from_rank": 6,
+      "to_rank": 6,
+      "from_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown",
+      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
     }
   ],
   "error": "No Top 10 events yet"
