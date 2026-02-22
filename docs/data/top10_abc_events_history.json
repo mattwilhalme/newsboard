@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-22T19:35:37.958Z",
+  "generatedAt": "2026-02-22T19:52:34.200Z",
   "source_id": "abc1",
   "events": [
     {
@@ -5882,6 +5882,136 @@
       "to_rank": 6,
       "from_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll",
       "to_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dd8dc490649f813fb335a686ac8c08d4232a8c2c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Severe winter storm live updates: Northeast braces for blizzard conditions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
+      "to_title": "Related:NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
+      "to_title": "Related:NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
+      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "4f097a463532f9b454a6caae07c81913c5793457",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say",
+      "to_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "b6bd67fac5d270aaf4fbce7c45ee53c33d8a103b",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "US beats Canada for first men's hockey gold at the Olympics since 1980",
+      "to_title": "US beats Canada for first men's hockey gold at the Olympics since 1980"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "97103096b8a5ea04a57b29d98a37331894091782",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke",
+      "to_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "e41c51cc9f39bb262f95102730e9fc4e33dc0fb1",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll",
+      "to_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "04b4b4ce977cfad4095f775f9d9fe534d9b06888",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
+      "to_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "917da92f6e99d01be6e65cab8c5bccf56f46ba53",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
+      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ad133c6830672abf449a1bf1d596530d22959228",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Russia targets Ukraine with 345 drones and missiles, Zelenskyy says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T19:52:45.726Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0345beebcbcd507da4186730c7eaad4b913d901b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "NFL receiver Rondale Moore found dead",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
