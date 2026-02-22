@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-22T21:47:59.701Z",
+  "generatedAt": "2026-02-22T22:00:53.533Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:48:08.008Z",
+      "updatedAt": "2026-02-22T22:01:01.294Z",
       "error": null,
-      "runId": "abc_2026-02-22T21-47-59-808Z",
+      "runId": "abc_2026-02-22T22-00-53-632Z",
       "since": "2026-02-22T19:52:34.200Z",
       "item": {
         "title": "Severe winter storm live updates: 'The worst is yet to come,' NY Gov. Hochul says",
@@ -21,9 +21,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:48:17.545Z",
+      "updatedAt": "2026-02-22T22:01:13.711Z",
       "error": null,
-      "runId": "cbs_2026-02-22T21-48-11-245Z",
+      "runId": "cbs_2026-02-22T22-01-05-203Z",
       "since": "2026-02-22T16:01:32.389Z",
       "item": {
         "title": "U.S. beats Canada in thrilling gold medal final at Winter Olympics",
@@ -34,18 +34,29 @@
       }
     },
     "usat1": {
-      "ok": false,
-      "updatedAt": "2026-02-22T21:47:59.701Z",
-      "error": "StorageApiError: Bad Request",
-      "runId": null,
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-02-22T22:01:18.777Z",
+      "error": null,
+      "runId": "usat1_2026-02-22T22-01-13-918Z",
+      "since": "2026-02-22T22:00:53.533Z",
+      "item": {
+        "title": "Olympic medals: The final medal count at the 2026 Winter Games",
+        "url": "https://usatoday.com/story/sports/olympics/2026/02/22/olympic-medal-count-final-2026-who-won/88812691007",
+        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/02/22/USAT/88813024007-2262855705.jpg?auto=webp&crop=4955%2C2787%2Cx0%2Cy258&format=pjpg&height=242&width=430",
+        "imgAlt": null,
+        "dek": "The United States finished the 2026 Winter Games with 33 total medals. Was it enough to top the competition?",
+        "breakingLabel": null,
+        "breakingHeadline": null,
+        "breakingUrl": null,
+        "slotKey": "2f4f5e88af94",
+        "contentType": "news"
+      }
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:48:31.751Z",
+      "updatedAt": "2026-02-22T22:01:26.470Z",
       "error": null,
-      "runId": "nbc_2026-02-22T21-48-24-808Z",
+      "runId": "nbc_2026-02-22T22-01-19-010Z",
       "since": "2026-02-22T19:35:37.958Z",
       "item": {
         "title": "Closing ceremony celebrates 'Beauty in Action'",
@@ -57,17 +68,17 @@
     },
     "cnn1": {
       "ok": false,
-      "updatedAt": "2026-02-22T21:48:35.485Z",
+      "updatedAt": "2026-02-22T22:01:31.861Z",
       "error": "CNN: headline not found",
-      "runId": "cnn1_2026-02-22T21-48-31-941Z",
+      "runId": "cnn1_2026-02-22T22-01-26-650Z",
       "since": null,
       "item": null
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:48:40.108Z",
+      "updatedAt": "2026-02-22T22:01:36.622Z",
       "error": null,
-      "runId": "guardian1_2026-02-22T21-48-35-663Z",
+      "runId": "guardian1_2026-02-22T22-01-31-998Z",
       "since": "2026-02-22T13:26:36.091Z",
       "item": {
         "title": "Worst of the worst? Most US immigrants targeted for deportation in 2025 had no criminal charges, documents reveal",
@@ -79,9 +90,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:48:49.880Z",
+      "updatedAt": "2026-02-22T22:01:46.940Z",
       "error": null,
-      "runId": "ap1_2026-02-22T21-48-40-247Z",
+      "runId": "ap1_2026-02-22T22-01-36-754Z",
       "since": "2026-02-22T19:02:27.386Z",
       "item": {
         "title": "2026 Winter Olympics live updates: Olympic flames are extinguished, marking the end of the Games",
@@ -93,9 +104,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:48:58.719Z",
+      "updatedAt": "2026-02-22T22:01:54.606Z",
       "error": null,
-      "runId": "latimes1_2026-02-22T21-48-50-154Z",
+      "runId": "latimes1_2026-02-22T22-01-47-258Z",
       "since": "2026-02-22T19:52:34.200Z",
       "item": {
         "title": "Armed man shot and killed after entering Mar-a-Lago secure perimeter, Secret Service says",
@@ -107,9 +118,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:49:06.482Z",
+      "updatedAt": "2026-02-22T22:02:05.851Z",
       "error": null,
-      "runId": "npr1_2026-02-22T21-48-58-907Z",
+      "runId": "npr1_2026-02-22T22-01-54-763Z",
       "since": "2026-02-22T10:57:14.968Z",
       "item": {
         "title": "Only a fraction of House seats are competitive. Redistricting is driving that lower",
@@ -121,9 +132,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:49:12.102Z",
+      "updatedAt": "2026-02-22T22:02:10.854Z",
       "error": null,
-      "runId": "bbc1_2026-02-22T21-49-06-669Z",
+      "runId": "bbc1_2026-02-22T22-02-06-028Z",
       "since": "2026-02-22T18:28:05.779Z",
       "item": {
         "title": "Armed man killed after entering secure perimeter of Trump's residence, Secret Service says",
@@ -135,9 +146,9 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:49:19.739Z",
+      "updatedAt": "2026-02-22T22:02:18.743Z",
       "error": null,
-      "runId": "fox1_2026-02-22T21-49-12-247Z",
+      "runId": "fox1_2026-02-22T22-02-10-991Z",
       "since": "2026-02-22T20:38:00.448Z",
       "item": {
         "title": "Violence erupts in coastal tourist hotspot as resort locks down guests",
@@ -149,12 +160,12 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-02-22T21:49:27.896Z",
+      "updatedAt": "2026-02-22T22:02:28.170Z",
       "error": null,
-      "runId": "yahoo1_2026-02-22T21-49-19-954Z",
+      "runId": "yahoo1_2026-02-22T22-02-18-920Z",
       "since": "2026-02-22T20:38:00.448Z",
       "item": {
-        "title": "Trump says a hospital ship is on the way to Greenland. Officials question why.",
+        "title": "Trump says hospital ship is headed to Greenland. Leaders say 'no thanks.'",
         "url": "https://news.yahoo.com/articles/trump-says-sending-hospital-boat-033409431.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
