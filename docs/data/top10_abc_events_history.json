@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-22T21:47:59.701Z",
+  "generatedAt": "2026-02-22T22:00:53.533Z",
   "source_id": "abc1",
   "events": [
     {
@@ -6221,6 +6221,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T22:01:04.952Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e03b5d2f0c124b6cd4bb8c744dd701d9c65d8742",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel during operation to capture him"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T22:01:04.952Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0c484c59bc346eef5423d03940185c1e7d7b4cc2",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel, official says",
       "to_title": null
     }
   ],
