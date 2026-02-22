@@ -1405,7 +1405,6 @@
             <option value="60">60m</option>
             <option value="120" selected>120m</option>
           </select>
-          <label class="tiny"><input id="moment-include-top10" type="checkbox" checked> Include Top10</label>
           <label class="tiny"><input id="moment-include-shots" type="checkbox" checked> Include screenshots</label>
           <label class="tiny"><input id="moment-start-earliest" type="checkbox" checked> Start at earliest match</label>
           <button id="btn-moment-run" class="btn" type="button">Run</button>
@@ -1494,7 +1493,6 @@
       title: "",
       t0: null,
       lookbackMinutes: 120,
-      includeTop10: true,
       includeScreenshots: true,
       startEarliest: true,
       payload: null,
@@ -2130,7 +2128,8 @@
       } else {
         const meta = document.createElement("div");
         meta.className = "momentMeta";
-        meta.textContent = `${timelineKindLabel(frame?.kind || "heartbeat")} · ${frame?.title || "—"}`;
+        const srcLabel = frame?.source_name || sourceLabel(frame?.source_id || "", null);
+        meta.textContent = `${srcLabel} · ${timelineKindLabel(frame?.kind || "heartbeat")} · ${frame?.title || "—"}`;
         host.appendChild(meta);
         if (frame?.shot_url) {
           const img = document.createElement("img");
@@ -2163,7 +2162,7 @@
         row.className = `momentFrame ${i === activeIdx ? "active" : ""}`;
         row.innerHTML = `
           <div class="momentFrameHead">
-            <span>${escapeHtml(frame?.type === "snapshot" ? "snapshot" : (frame?.kind || "screenshot"))}</span>
+            <span>${escapeHtml(frame?.source_name || sourceLabel(frame?.source_id || "", null))} · ${escapeHtml(frame?.type === "snapshot" ? "snapshot" : (frame?.kind || "screenshot"))}</span>
             <span>${escapeHtml(fmtTime(frame?.ts))}</span>
           </div>
           <div>${escapeHtml(frame?.type === "snapshot" ? (frame?.hero?.title || "Snapshot") : (frame?.title || "Screenshot"))}</div>
@@ -2218,81 +2217,66 @@
       renderMomentList();
     }
 
-    async function buildMomentFallbackLocal({ sourceId, url, t0Iso, lookbackMinutes, forwardMinutes, includeTop10, includeScreenshots, startEarliest }) {
-      const runsPayload = await fetchJSON(`${TOP10_ABC_HISTORY_URL}?ts=${Date.now()}`).catch(() => ({ runs: [] }));
-      const runs = Array.isArray(runsPayload?.runs) ? runsPayload.runs : [];
+    async function buildMomentFallbackLocal({ sourceId, url, title, t0Iso, lookbackMinutes, forwardMinutes, includeScreenshots, startEarliest }) {
       const timelinePayload = await fetchJSON(`${TIMELINE_URL}?ts=${Date.now()}`).catch(() => ({ events: [] }));
       const timelineEvents = Array.isArray(timelinePayload?.events) ? timelinePayload.events : [];
       const canonicalTarget = normalizeUrlForStory(url || "");
       const t0Ms = Number.isFinite(Date.parse(String(t0Iso || ""))) ? Date.parse(String(t0Iso)) : Date.now();
       const lookbackStart = t0Ms - (Number(lookbackMinutes) * 60 * 1000);
       const windowEnd = t0Ms + (Number(forwardMinutes) * 60 * 1000);
+      const clusterTitleNorm = normalizeTitleForStory(title || "");
+      const clusterKeywords = extractStoryKeywords(clusterTitleNorm);
 
-      const sourceRuns = runs
-        .filter((run) => String(sourceId || "abc1") === "abc1")
-        .filter((run) => {
-          const ms = Date.parse(String(run?.observedAt || ""));
+      const sortedEvents = timelineEvents
+        .filter((ev) => {
+          const ms = Date.parse(String(ev?.ts || ""));
           return Number.isFinite(ms) && ms >= lookbackStart && ms <= windowEnd;
         })
-        .sort((a, b) => Date.parse(String(a?.observedAt || "")) - Date.parse(String(b?.observedAt || "")));
+        .sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")));
 
-      const anchorRun = [...sourceRuns]
+      const anchorEvent = [...sortedEvents]
+        .filter((ev) => String(ev?.source_id || "") === String(sourceId || ""))
         .reverse()
-        .find((run) => (run?.items || []).some((it) => normalizeUrlForStory(it?.url || "") === canonicalTarget))
-        || sourceRuns[sourceRuns.length - 1]
+        .find((ev) => normalizeUrlForStory(ev?.url || "") === canonicalTarget)
+        || sortedEvents[sortedEvents.length - 1]
         || null;
-      const anchorTitle = anchorRun?.items?.find((it) => normalizeUrlForStory(it?.url || "") === canonicalTarget)?.title || "";
-      const clusterKeywords = extractStoryKeywords(normalizeTitleForStory(anchorTitle));
-
-      let primaryRun = anchorRun;
+      let primaryEvent = anchorEvent;
+      const lookbackEvents = sortedEvents.filter((ev) => {
+        const ms = Date.parse(String(ev?.ts || ""));
+        return Number.isFinite(ms) && ms <= t0Ms;
+      });
       if (startEarliest) {
-        for (const run of sourceRuns) {
-          const rows = Array.isArray(run?.items) ? run.items : [];
-          const hasCanonical = rows.some((it) => normalizeUrlForStory(it?.url || "") === canonicalTarget);
-          if (hasCanonical) {
-            primaryRun = run;
-            break;
-          }
-          const keywordHit = rows.some((it) => {
-            const ks = extractStoryKeywords(normalizeTitleForStory(it?.title || ""));
-            const sim = jaccardKeywords(clusterKeywords, ks);
-            return sim.score >= 0.35 && sim.overlap >= 3;
-          });
-          if (keywordHit) {
-            primaryRun = run;
+        for (const ev of lookbackEvents) {
+          const evCanonical = normalizeUrlForStory(ev?.url || "");
+          const canonicalMatch = Boolean(canonicalTarget) && evCanonical === canonicalTarget;
+          const evKw = extractStoryKeywords(normalizeTitleForStory(ev?.title || ""));
+          const sim = jaccardKeywords(clusterKeywords, evKw);
+          const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+          if (canonicalMatch || keywordMatch) {
+            primaryEvent = ev;
             break;
           }
         }
       }
 
-      const startMs = Number.isFinite(Date.parse(String(primaryRun?.observedAt || ""))) ? Date.parse(String(primaryRun.observedAt)) : t0Ms;
-      const snapshotFrames = sourceRuns
-        .filter((run) => {
-          const ms = Date.parse(String(run?.observedAt || ""));
-          return Number.isFinite(ms) && ms >= startMs && ms <= windowEnd;
-        })
-        .map((run) => {
-          const rows = Array.isArray(run?.items) ? [...run.items].sort((a, b) => Number(a?.rank) - Number(b?.rank)) : [];
-          const hero = rows.find((row) => Number(row?.rank) === 1) || rows[0] || null;
-          return {
-            ts: run?.observedAt || null,
-            type: "snapshot",
-            hero: hero ? { title: hero.title || null, url: hero.url || null } : null,
-            top10: includeTop10 ? rows.map((row) => ({ rank: Number(row?.rank) || null, title: row?.title || null, url: row?.url || null })) : [],
-            diffs: { entered: [], exited: [], moved: [], edits: [], hero_swap: false, events: [] },
-          };
-        });
-
-      const shotFrames = includeScreenshots
-        ? timelineEvents
-          .filter((ev) => String(ev?.source_id || "") === String(sourceId || "abc1"))
+      const startMs = Number.isFinite(Date.parse(String(primaryEvent?.ts || ""))) ? Date.parse(String(primaryEvent?.ts || "")) : t0Ms;
+      const frames = includeScreenshots
+        ? sortedEvents
           .filter((ev) => {
             const ms = Date.parse(String(ev?.ts || ""));
-            return Number.isFinite(ms) && ms >= startMs && ms <= windowEnd;
+            if (!Number.isFinite(ms) || ms < startMs || ms > windowEnd) return false;
+            const evCanonical = normalizeUrlForStory(ev?.url || "");
+            const canonicalMatch = Boolean(canonicalTarget) && evCanonical === canonicalTarget;
+            const evKw = extractStoryKeywords(normalizeTitleForStory(ev?.title || ""));
+            const sim = jaccardKeywords(clusterKeywords, evKw);
+            const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+            return canonicalMatch || keywordMatch;
           })
           .map((ev) => ({
             ts: ev?.ts || null,
             type: "screenshot",
+            source_id: ev?.source_id || null,
+            source_name: sourceLabel(ev?.source_id || "", null),
             kind: ev?.kind || "heartbeat",
             title: ev?.title || null,
             url: ev?.url || null,
@@ -2300,21 +2284,19 @@
           }))
         : [];
 
-      const frames = [...snapshotFrames, ...shotFrames].sort((a, b) => {
-        const ta = momentFrameTsMs(a);
-        const tb = momentFrameTsMs(b);
-        if (ta !== tb) return ta - tb;
-        if (a?.type === b?.type) return 0;
-        return a?.type === "snapshot" ? -1 : 1;
-      });
       return {
         ok: true,
-        source_id: sourceId || "abc1",
+        source_id: sourceId || "",
         t0: new Date(t0Ms).toISOString(),
         start_at: new Date(startMs).toISOString(),
         end_at: new Date(windowEnd).toISOString(),
-        anchor: { title: anchorTitle || momentState.title || null, url: canonicalTarget || url || null, ts: anchorRun?.observedAt || new Date(t0Ms).toISOString() },
-        primary: { title: anchorTitle || momentState.title || null, url: canonicalTarget || url || null, ts: primaryRun?.observedAt || new Date(t0Ms).toISOString(), reason: (primaryRun && primaryRun !== anchorRun) ? "earliest_match" : "anchor" },
+        anchor: { title: anchorEvent?.title || title || momentState.title || null, url: canonicalTarget || url || null, ts: anchorEvent?.ts || new Date(t0Ms).toISOString() },
+        primary: {
+          title: primaryEvent?.title || title || momentState.title || null,
+          url: canonicalTarget || url || null,
+          ts: primaryEvent?.ts || new Date(t0Ms).toISOString(),
+          reason: (primaryEvent && anchorEvent && primaryEvent !== anchorEvent) ? "earliest_match" : "anchor",
+        },
         cluster: { canonical_url: canonicalTarget || null, keywords: clusterKeywords },
         frames,
       };
@@ -2328,6 +2310,7 @@
       try {
         const sourceId = momentState.sourceId || "abc1";
         const url = momentState.url || "";
+        const title = momentState.title || "";
         const t0 = momentState.t0 || null;
         let payload = null;
 
@@ -2335,10 +2318,10 @@
           const params = new URLSearchParams();
           params.set("source", sourceId);
           if (url) params.set("url", url);
+          if (title) params.set("title", title);
           if (t0) params.set("t0", t0);
           params.set("lookback_minutes", String(momentState.lookbackMinutes));
           params.set("forward_minutes", "30");
-          params.set("include_top10", momentState.includeTop10 ? "1" : "0");
           params.set("include_screenshots", momentState.includeScreenshots ? "1" : "0");
           params.set("start_earliest", momentState.startEarliest ? "1" : "0");
           payload = await fetchJSON(`/api/moment/build?${params.toString()}`);
@@ -2348,10 +2331,10 @@
           payload = await buildMomentFallbackLocal({
             sourceId,
             url,
+            title,
             t0Iso: t0,
             lookbackMinutes: momentState.lookbackMinutes,
             forwardMinutes: 30,
-            includeTop10: momentState.includeTop10,
             includeScreenshots: momentState.includeScreenshots,
             startEarliest: momentState.startEarliest,
           });
@@ -2370,11 +2353,9 @@
       momentState.title = String(title || "").trim();
       momentState.t0 = t0 || null;
       const lookbackSel = $("moment-lookback");
-      const includeTop10 = $("moment-include-top10");
       const includeShots = $("moment-include-shots");
       const startEarliest = $("moment-start-earliest");
       if (lookbackSel) lookbackSel.value = String(momentState.lookbackMinutes);
-      if (includeTop10) includeTop10.checked = Boolean(momentState.includeTop10);
       if (includeShots) includeShots.checked = Boolean(momentState.includeScreenshots);
       if (startEarliest) startEarliest.checked = Boolean(momentState.startEarliest);
       const anchorTitle = $("moment-anchor-title");
@@ -5725,9 +5706,6 @@
     $("btn-moment-close")?.addEventListener("click", () => setMomentOpen(false));
     $("moment-lookback")?.addEventListener("change", (e) => {
       momentState.lookbackMinutes = Number(e.target.value || 120);
-    });
-    $("moment-include-top10")?.addEventListener("change", (e) => {
-      momentState.includeTop10 = Boolean(e.target.checked);
     });
     $("moment-include-shots")?.addEventListener("change", (e) => {
       momentState.includeScreenshots = Boolean(e.target.checked);
