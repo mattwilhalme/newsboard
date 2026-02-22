@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-22T01:22:03.194Z",
+  "generatedAt": "2026-02-22T03:46:46.927Z",
   "source_id": "abc1",
   "events": [
     {
@@ -5221,6 +5221,66 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Man who called 911 to report wife shot and intruder in home charged with her murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T03:46:58.179Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
+      "from_rank": 3,
+      "to_rank": 3,
+      "from_title": "Nor'easter to march up the East Coast, bringing significant snow",
+      "to_title": "Heavy snow, 60 mph wind gusts: What to expect from major nor'easter"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T03:46:58.179Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "04b4b4ce977cfad4095f775f9d9fe534d9b06888",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T03:46:58.179Z",
+      "event_type": "MOVED",
+      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Bodies of all 9 missing skiers recovered after deadly avalanche",
+      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T03:46:58.179Z",
+      "event_type": "MOVED",
+      "fingerprint": "91b3ba020a3940f3d76fb1bad471c8a94582bc16",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges",
+      "to_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T03:46:58.179Z",
+      "event_type": "MOVED",
+      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
+      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-22T03:46:58.179Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "60e34e21c8e9569edae1c6ae45bfbb1e4f1fcf2f",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Trump approves disaster assistance to DC to help with sewage spill into Potomac River",
       "to_title": null
     }
   ],
