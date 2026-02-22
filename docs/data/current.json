@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-02-22T13:59:57.095Z",
+  "generatedAt": "2026-02-22T14:31:36.152Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:00:03.121Z",
+      "updatedAt": "2026-02-22T14:31:43.138Z",
       "error": null,
-      "runId": "abc_2026-02-22T13-59-57-210Z",
+      "runId": "abc_2026-02-22T14-31-36-256Z",
       "since": "2026-02-22T05:10:57.071Z",
       "item": {
         "title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll",
@@ -21,9 +21,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:00:16.408Z",
+      "updatedAt": "2026-02-22T14:31:56.553Z",
       "error": null,
-      "runId": "cbs_2026-02-22T14-00-09-543Z",
+      "runId": "cbs_2026-02-22T14-31-46-272Z",
       "since": "2026-02-21T16:51:08.249Z",
       "item": {
         "title": "Trump says he will raise global tariffs to 15% after Supreme Court decision",
@@ -35,31 +35,31 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:00:26.832Z",
+      "updatedAt": "2026-02-22T14:32:02.985Z",
       "error": null,
-      "runId": "usat1_2026-02-22T14-00-16-600Z",
-      "since": "2026-02-22T13:59:57.095Z",
+      "runId": "usat1_2026-02-22T14-31-56-784Z",
+      "since": "2026-02-22T14:31:36.152Z",
       "item": {
-        "title": "Government shutdown halts TSA PreCheck, Global Entry",
-        "url": "https://usatoday.com/story/travel/news/2026/02/22/tsa-precheck-global-entry-suspended-shutdown/88810311007",
-        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/02/22/USAT/88810577007-img-2056.jpg?auto=webp&crop=4031%2C2268%2Cx0%2Cy604&format=pjpg&height=242&width=430",
+        "title": "Armed man shot, killed after allegedly breaching secure Mar-a-Lago area",
+        "url": "https://usatoday.com/story/news/politics/2026/02/22/man-shot-killed-mar-a-lago/88811000007",
+        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/02/22/USAT/88811069007-2190180917.jpg?auto=webp&crop=8229%2C4630%2Cx0%2Cy428&format=pjpg&height=242&width=430",
         "imgAlt": null,
-        "dek": "As funding lapses, the Department of Homeland Security paused expedited airport screening and border entry programs.",
+        "dek": "An man was shot and killed by law enforcement agents in the early hours of Sunday, Feb. 22 after allegedly breaching a secure perimeter at Mar-a-Lago.",
         "breakingLabel": "Breaking News",
-        "breakingHeadline": "TSA PreCheck and Global Entry suspended amid shutdown",
-        "breakingUrl": "https://usatoday.com/story/travel/news/2026/02/22/tsa-precheck-global-entry-suspended-shutdown/88810311007",
+        "breakingHeadline": "Armed man shot and killed by law enforcement after breaching the secure perimeter at Mar-a-Lago",
+        "breakingUrl": "https://usatoday.com/story/news/politics/2026/02/22/man-shot-killed-mar-a-lago/88811000007",
         "slotKey": "2f4f5e88af94",
         "contentType": "news"
       }
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:00:33.122Z",
+      "updatedAt": "2026-02-22T14:32:08.691Z",
       "error": null,
-      "runId": "nbc_2026-02-22T14-00-27-110Z",
+      "runId": "nbc_2026-02-22T14-32-03-234Z",
       "since": "2026-02-22T09:43:34.310Z",
       "item": {
-        "title": "U.S. takes an early lead over Canada in the men's hockey final",
+        "title": "U.S. leads Canada 1-0 in the men's hockey final",
         "url": "https://nbcnews.com/sports/olympics/live-blog/2026-winter-olympics-usa-canada-hockey-gold-medal-live-updates-rcna256614",
         "imgUrl": null,
         "slotKey": "579270cafa55",
@@ -67,24 +67,18 @@
       }
     },
     "cnn1": {
-      "ok": true,
-      "updatedAt": "2026-02-22T14:00:40.025Z",
-      "error": null,
-      "runId": "cnn1_2026-02-22T14-00-33-278Z",
-      "since": "2026-02-22T10:33:32.035Z",
-      "item": {
-        "title": "A Texas border district is flashing warning signs for Republicans",
-        "url": "https://cnn.com/2026/02/22/politics/south-texas-midterms-latino-voters-all-over-the-map",
-        "imgUrl": null,
-        "slotKey": "e75971db9693",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-02-22T14:32:12.194Z",
+      "error": "CNN: headline not found",
+      "runId": "cnn1_2026-02-22T14-32-08-863Z",
+      "since": null,
+      "item": null
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:00:44.238Z",
+      "updatedAt": "2026-02-22T14:32:16.566Z",
       "error": null,
-      "runId": "guardian1_2026-02-22T14-00-40-197Z",
+      "runId": "guardian1_2026-02-22T14-32-12-357Z",
       "since": "2026-02-22T13:26:36.091Z",
       "item": {
         "title": "Worst of the worst? Most US immigrants targeted for deportation in 2025 had no criminal charges, documents reveal",
@@ -96,13 +90,13 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:00:49.503Z",
+      "updatedAt": "2026-02-22T14:32:26.141Z",
       "error": null,
-      "runId": "ap1_2026-02-22T14-00-44-382Z",
-      "since": "2026-02-22T10:57:14.968Z",
+      "runId": "ap1_2026-02-22T14-32-16-732Z",
+      "since": "2026-02-22T14:31:36.152Z",
       "item": {
-        "title": "Homeland Security suspends TSA PreCheck and Global Entry airport security programs",
-        "url": "https://apnews.com/article/homeland-security-tsa-precheck-global-entry-dc1d2ccd913a74fa2c8b91dad340a3b3",
+        "title": "U.S. Secret Service shot and killed armed man who entered the secure perimeter of Mar-a-Lago",
+        "url": "https://apnews.com/article/secret-service-president-trump-af8b23c318e2d7709d7b4a0105f8f516",
         "imgUrl": null,
         "slotKey": "083847305a8b",
         "contentType": "news"
@@ -110,13 +104,13 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:00:56.371Z",
+      "updatedAt": "2026-02-22T14:32:34.886Z",
       "error": null,
-      "runId": "latimes1_2026-02-22T14-00-49-661Z",
-      "since": "2026-02-22T01:22:03.194Z",
+      "runId": "latimes1_2026-02-22T14-32-26-392Z",
+      "since": "2026-02-22T14:31:36.152Z",
       "item": {
-        "title": "Democrats’ fear rising that too many candidates in governor’s race could lead to a Republican victory",
-        "url": "https://latimes.com/california/story/2026-02-21/democrats-fear-rising-that-too-many-candidates-in-governors-race-could-lead-to-republican-victory",
+        "title": "‘That man is a monster,’ California serial child molester granted parole. Victims are outraged",
+        "url": "https://latimes.com/california/story/2026-02-22/california-serial-child-molester-granted-parole-victims-are-outraged",
         "imgUrl": null,
         "slotKey": "06617b56ef8d",
         "contentType": "news"
@@ -124,9 +118,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:01:05.973Z",
+      "updatedAt": "2026-02-22T14:32:43.943Z",
       "error": null,
-      "runId": "npr1_2026-02-22T14-00-56-535Z",
+      "runId": "npr1_2026-02-22T14-32-35-075Z",
       "since": "2026-02-22T10:57:14.968Z",
       "item": {
         "title": "Only a fraction of House seats are competitive. Redistricting is driving that lower",
@@ -138,23 +132,23 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:01:10.838Z",
+      "updatedAt": "2026-02-22T14:32:49.205Z",
       "error": null,
-      "runId": "bbc1_2026-02-22T14-01-06-163Z",
-      "since": "2026-02-22T07:04:24.317Z",
+      "runId": "bbc1_2026-02-22T14-32-44-172Z",
+      "since": "2026-02-22T14:31:36.152Z",
       "item": {
-        "title": "Iran students stage first large anti-government protests since deadly crackdown",
-        "url": "https://bbc.com/news/articles/c5yj2kzkrj0o",
+        "title": "Man killed after entering secure perimeter of Trump's Mar-a-Lago residence, Secret Service says",
+        "url": "https://bbc.com/news/live/cr57l3rj3yqt",
         "imgUrl": null,
         "slotKey": "b890b46a9e6c",
-        "contentType": "news"
+        "contentType": "live"
       }
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:01:18.387Z",
+      "updatedAt": "2026-02-22T14:32:59.004Z",
       "error": null,
-      "runId": "fox1_2026-02-22T14-01-10-975Z",
+      "runId": "fox1_2026-02-22T14-32-49-349Z",
       "since": "2026-02-22T13:26:36.091Z",
       "item": {
         "title": "Trump says US military hospital ship heading to Greenland to 'take care' of sick",
@@ -166,9 +160,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-02-22T14:01:27.497Z",
+      "updatedAt": "2026-02-22T14:33:09.112Z",
       "error": null,
-      "runId": "yahoo1_2026-02-22T14-01-18-561Z",
+      "runId": "yahoo1_2026-02-22T14-32-59-215Z",
       "since": "2026-02-22T08:42:53.412Z",
       "item": {
         "title": "DHS suspends TSA PreCheck and Global Entry airport security programs",
