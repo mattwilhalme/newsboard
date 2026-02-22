@@ -337,6 +337,84 @@
       cursor:pointer;
     }
     .linkbtn:hover{ border-color: rgba(37,99,235,.45); color: var(--blue2); }
+    .rewindBtn{
+      border-color: rgba(37,99,235,.35);
+      color: var(--blue2);
+      font-weight:700;
+    }
+    .momentConfig{
+      display:grid;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .momentRow{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .momentTitle{
+      font-family: var(--font-serif);
+      font-size:18px;
+      margin:0;
+      line-height:1.3;
+    }
+    .momentMeta{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .momentList{
+      display:grid;
+      gap:8px;
+    }
+    .momentFrame{
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:9px;
+      background:var(--surface);
+      cursor:pointer;
+    }
+    .momentFrame.active{
+      border-color:rgba(37,99,235,.55);
+      box-shadow:0 0 0 1px rgba(37,99,235,.18) inset;
+    }
+    .momentFrameHead{
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .momentPills{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+    }
+    .momentPill{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:2px 8px;
+      font-size:11px;
+      font-weight:700;
+      background:#F8FAFC;
+      color:#1E3A8A;
+    }
+    .momentShot{
+      width:100%;
+      border-radius:8px;
+      border:1px solid var(--line);
+      background:#0F1113;
+      max-height:320px;
+      object-fit:contain;
+    }
+    .momentEmpty{
+      font-size:12px;
+      color:var(--muted);
+      border:1px dashed var(--line);
+      border-radius:10px;
+      padding:10px;
+    }
     .shotTile{
       display:flex;
       flex-direction:column;
@@ -1308,6 +1386,44 @@
     </div>
   </aside>
 
+  <aside class="drawer" id="drawer-moment" aria-hidden="true">
+    <div class="drawerHead">
+      <div>
+        <div class="drawerTitle">Moment Reel</div>
+        <div class="tiny" id="moment-source-line">—</div>
+      </div>
+      <button id="btn-moment-close" class="btn" type="button">Close</button>
+    </div>
+    <div class="drawerBody">
+      <div class="momentConfig">
+        <h3 id="moment-anchor-title" class="momentTitle">Select a story to rewind.</h3>
+        <div id="moment-anchor-meta" class="momentMeta">—</div>
+        <div class="momentRow">
+          <label class="tiny" for="moment-lookback">Lookback</label>
+          <select id="moment-lookback" class="linkbtn">
+            <option value="30">30m</option>
+            <option value="60">60m</option>
+            <option value="120" selected>120m</option>
+          </select>
+          <label class="tiny"><input id="moment-include-top10" type="checkbox" checked> Include Top10</label>
+          <label class="tiny"><input id="moment-include-shots" type="checkbox" checked> Include screenshots</label>
+          <label class="tiny"><input id="moment-start-earliest" type="checkbox" checked> Start at earliest match</label>
+          <button id="btn-moment-run" class="btn" type="button">Run</button>
+        </div>
+        <div class="momentRow">
+          <button id="btn-moment-prev" class="linkbtn" type="button">Prev</button>
+          <button id="btn-moment-next" class="linkbtn" type="button">Next</button>
+          <button id="btn-moment-autoplay" class="linkbtn" type="button">Auto-play</button>
+          <button id="btn-moment-jump-primary" class="linkbtn" type="button">Jump primary</button>
+          <button id="btn-moment-jump-t0" class="linkbtn" type="button">Jump t0</button>
+          <span id="moment-status" class="tiny"></span>
+        </div>
+      </div>
+      <div id="moment-frame-view" class="historyMetaCard"></div>
+      <div id="moment-frame-list" class="momentList"></div>
+    </div>
+  </aside>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -1372,6 +1488,20 @@
     let selectedHistoryItem = null;
     let selectedDetailsTab = "changes";
     let clusterCardOrder = {};
+    let momentState = {
+      sourceId: "",
+      url: "",
+      title: "",
+      t0: null,
+      lookbackMinutes: 120,
+      includeTop10: true,
+      includeScreenshots: true,
+      startEarliest: true,
+      payload: null,
+      frames: [],
+      currentIdx: 0,
+      autoTimer: null,
+    };
     let isRefreshing = false;
     let lastRefreshError = null;
     let lastSuccessfulUpdateTs = 0;
@@ -1474,6 +1604,61 @@
     function windowStartMs(windowSpec){
       const hours = parseHoursSpec(windowSpec);
       return Date.now() - (hours * 60 * 60 * 1000);
+    }
+
+    function normalizeUrlForStory(value){
+      const raw = String(value || "").trim();
+      if (!raw) return "";
+      try{
+        const url = new URL(raw);
+        const host = String(url.hostname || "").toLowerCase();
+        if (host.startsWith("www.")) url.hostname = host.slice(4);
+        url.hash = "";
+        url.pathname = url.pathname.replace(/\/{2,}/g, "/");
+        if (url.pathname.length > 1 && url.pathname.endsWith("/")) url.pathname = url.pathname.slice(0, -1);
+        const drop = new Set(["fbclid","gclid","dclid","mc_cid","mc_eid","ocid","_ga","_gl","spm"]);
+        for (const key of [...url.searchParams.keys()]) {
+          const lk = String(key || "").toLowerCase();
+          if (lk.startsWith("utm_") || drop.has(lk)) url.searchParams.delete(key);
+        }
+        url.searchParams.sort();
+        return url.toString();
+      } catch {
+        return raw;
+      }
+    }
+
+    function normalizeTitleForStory(value){
+      return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    const MOMENT_STOPWORDS = new Set(["the","and","for","with","this","that","from","into","about","after","before","amid","over","under","latest","update","updates","live","news","story","stories","video","photos","photo","says","said","new","today","will","just","more","than","what","when","where","why","how","who","are","was","were","has","have","had","its","their","they","them","his","her","our","your"]);
+    function extractStoryKeywords(titleNorm){
+      const out = [];
+      const seen = new Set();
+      for (const token of String(titleNorm || "").split(/\s+/g).filter(Boolean)) {
+        if (token.length < 3) continue;
+        if (MOMENT_STOPWORDS.has(token)) continue;
+        if (seen.has(token)) continue;
+        seen.add(token);
+        out.push(token);
+        if (out.length >= 12) break;
+      }
+      return out;
+    }
+
+    function jaccardKeywords(a, b){
+      const sa = new Set((Array.isArray(a) ? a : []).map((x) => String(x || "").trim()).filter(Boolean));
+      const sb = new Set((Array.isArray(b) ? b : []).map((x) => String(x || "").trim()).filter(Boolean));
+      if (!sa.size || !sb.size) return { score: 0, overlap: 0 };
+      let overlap = 0;
+      for (const tok of sa) if (sb.has(tok)) overlap += 1;
+      const union = sa.size + sb.size - overlap;
+      return { score: union > 0 ? (overlap / union) : 0, overlap };
     }
 
     function syncWindowSelectors(windowSpec){
@@ -1812,8 +1997,400 @@
       return _shotLightbox;
     }
 
+    function stopMomentAutoplay(){
+      if (momentState?.autoTimer) {
+        clearInterval(momentState.autoTimer);
+        momentState.autoTimer = null;
+      }
+      const btn = $("btn-moment-autoplay");
+      if (btn) btn.textContent = "Auto-play";
+    }
+
+    function momentFrameTsMs(frame){
+      const ms = Date.parse(String(frame?.ts || ""));
+      return Number.isFinite(ms) ? ms : 0;
+    }
+
+    function setMomentStatus(text){
+      const el = $("moment-status");
+      if (!el) return;
+      el.textContent = String(text || "");
+    }
+
+    function ensureMomentSnapshotDiffs(frames){
+      let prev = null;
+      for (const frame of frames) {
+        if (frame?.type !== "snapshot") continue;
+        if (frame?.diffs && Array.isArray(frame.diffs.events)) {
+          prev = frame;
+          continue;
+        }
+        const prevByKey = new Map((prev?.top10 || []).map((row) => [String(row?.url || ""), row]));
+        const currTop = Array.isArray(frame?.top10) ? frame.top10 : [];
+        const entered = currTop.filter((row) => !prevByKey.has(String(row?.url || ""))).map((row) => ({ rank: row?.rank, title: row?.title, url: row?.url }));
+        const moved = currTop
+          .map((row) => {
+            const p = prevByKey.get(String(row?.url || ""));
+            if (!p) return null;
+            const pr = Number(p?.rank);
+            const cr = Number(row?.rank);
+            if (!Number.isFinite(pr) || !Number.isFinite(cr) || pr === cr) return null;
+            return { from_rank: pr, to_rank: cr, title: row?.title, url: row?.url };
+          })
+          .filter(Boolean);
+        const events = [];
+        if (entered.length) events.push({ code: "ENTER", count: entered.length });
+        if (moved.length) events.push({ code: "MOVE", count: moved.length });
+        frame.diffs = {
+          entered,
+          exited: [],
+          moved,
+          edits: [],
+          hero_swap: false,
+          events,
+        };
+        prev = frame;
+      }
+    }
+
+    function renderMomentFrame(){
+      const host = $("moment-frame-view");
+      if (!host) return;
+      host.innerHTML = "";
+      const frames = Array.isArray(momentState?.frames) ? momentState.frames : [];
+      if (!frames.length) {
+        const empty = document.createElement("div");
+        empty.className = "momentEmpty";
+        empty.textContent = "Run rewind to build a moment.";
+        host.appendChild(empty);
+        return;
+      }
+
+      const idx = Math.max(0, Math.min(frames.length - 1, Number(momentState.currentIdx || 0)));
+      momentState.currentIdx = idx;
+      const frame = frames[idx];
+
+      const head = document.createElement("div");
+      head.className = "momentFrameHead";
+      head.innerHTML = `<span>${escapeHtml(String(frame?.type || "frame"))}</span><span>${escapeHtml(fmtTime(frame?.ts))}</span>`;
+      host.appendChild(head);
+
+      if (frame?.type === "snapshot") {
+        const heroTitle = String(frame?.hero?.title || "—");
+        const heroUrl = String(frame?.hero?.url || "");
+        const hero = document.createElement("div");
+        hero.className = "historyMetaCard";
+        hero.innerHTML = `<div class="statLabel">Hero</div><div class="statValue">${escapeHtml(heroTitle)}</div>`;
+        if (heroUrl) {
+          const a = document.createElement("a");
+          a.className = "top10Link";
+          a.href = heroUrl;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = heroUrl;
+          hero.appendChild(a);
+        }
+        host.appendChild(hero);
+
+        const top = document.createElement("div");
+        top.className = "historyMetaCard";
+        const list = document.createElement("ol");
+        list.className = "top10List";
+        const topRows = (Array.isArray(frame?.top10) ? frame.top10 : []).slice(0, 5);
+        for (const row of topRows) {
+          const li = document.createElement("li");
+          li.className = "top10Row";
+          li.innerHTML = `<div class="top10Rank">${escapeHtml(String(row?.rank || "?"))}.</div><div class="deepEventBody"><a class="top10Link" href="${escapeHtml(String(row?.url || "#"))}" target="_blank" rel="noopener">${escapeHtml(String(row?.title || "—"))}</a></div>`;
+          list.appendChild(li);
+        }
+        if (!topRows.length) {
+          const li = document.createElement("li");
+          li.className = "top10Row";
+          li.textContent = "No Top 10 rows for this frame.";
+          list.appendChild(li);
+        }
+        top.appendChild(list);
+        host.appendChild(top);
+
+        const pills = document.createElement("div");
+        pills.className = "momentPills";
+        for (const ev of frame?.diffs?.events || []) {
+          const pill = document.createElement("span");
+          pill.className = "momentPill";
+          pill.textContent = `${ev?.code || "EVENT"}${Number(ev?.count || 0) > 1 ? ` ${Number(ev.count)}` : ""}`;
+          pills.appendChild(pill);
+        }
+        if (!pills.childElementCount) {
+          const quiet = document.createElement("span");
+          quiet.className = "momentMeta";
+          quiet.textContent = "No diff events in this snapshot.";
+          pills.appendChild(quiet);
+        }
+        host.appendChild(pills);
+      } else {
+        const meta = document.createElement("div");
+        meta.className = "momentMeta";
+        meta.textContent = `${timelineKindLabel(frame?.kind || "heartbeat")} · ${frame?.title || "—"}`;
+        host.appendChild(meta);
+        if (frame?.shot_url) {
+          const img = document.createElement("img");
+          img.className = "momentShot";
+          img.src = frame.shot_url;
+          img.alt = frame?.title || "Screenshot";
+          host.appendChild(img);
+        }
+      }
+      setMomentStatus(`Frame ${idx + 1} / ${frames.length}`);
+    }
+
+    function renderMomentList(){
+      const host = $("moment-frame-list");
+      if (!host) return;
+      host.innerHTML = "";
+      const frames = Array.isArray(momentState?.frames) ? momentState.frames : [];
+      if (!frames.length) {
+        const empty = document.createElement("div");
+        empty.className = "momentEmpty";
+        empty.textContent = "No frames available in this range.";
+        host.appendChild(empty);
+        return;
+      }
+      const activeIdx = Math.max(0, Math.min(frames.length - 1, Number(momentState.currentIdx || 0)));
+      for (let i = 0; i < frames.length; i += 1) {
+        const frame = frames[i];
+        const row = document.createElement("button");
+        row.type = "button";
+        row.className = `momentFrame ${i === activeIdx ? "active" : ""}`;
+        row.innerHTML = `
+          <div class="momentFrameHead">
+            <span>${escapeHtml(frame?.type === "snapshot" ? "snapshot" : (frame?.kind || "screenshot"))}</span>
+            <span>${escapeHtml(fmtTime(frame?.ts))}</span>
+          </div>
+          <div>${escapeHtml(frame?.type === "snapshot" ? (frame?.hero?.title || "Snapshot") : (frame?.title || "Screenshot"))}</div>
+        `;
+        row.addEventListener("click", () => {
+          stopMomentAutoplay();
+          momentState.currentIdx = i;
+          renderMomentFrame();
+          renderMomentList();
+        });
+        host.appendChild(row);
+      }
+    }
+
+    function applyMomentPayload(payload){
+      momentState.payload = payload || null;
+      momentState.frames = Array.isArray(payload?.frames) ? payload.frames : [];
+      momentState.frames.sort((a, b) => {
+        const ta = momentFrameTsMs(a);
+        const tb = momentFrameTsMs(b);
+        if (ta !== tb) return ta - tb;
+        if (String(a?.type || "") === String(b?.type || "")) return 0;
+        return a?.type === "snapshot" ? -1 : 1;
+      });
+      ensureMomentSnapshotDiffs(momentState.frames);
+
+      const startMs = momentFrameTsMs(payload?.start_at);
+      const targetIdx = momentState.frames.findIndex((frame) => momentFrameTsMs(frame) >= startMs);
+      momentState.currentIdx = targetIdx >= 0 ? targetIdx : 0;
+
+      const anchorTitle = $("moment-anchor-title");
+      const anchorMeta = $("moment-anchor-meta");
+      const sourceLine = $("moment-source-line");
+      if (anchorTitle) anchorTitle.textContent = String(payload?.anchor?.title || momentState.title || "Moment Reel");
+      if (anchorMeta) {
+        anchorMeta.textContent = `Primary: ${payload?.primary?.reason === "earliest_match" ? "earliest match" : "anchor"} · ${fmtTime(payload?.primary?.ts)} · t0 ${fmtTime(payload?.t0)}`;
+      }
+      if (sourceLine) sourceLine.textContent = `${sourceLabel(momentState.sourceId, null)} · ${fmtTime(payload?.start_at)} to ${fmtTime(payload?.end_at)}`;
+
+      renderMomentFrame();
+      renderMomentList();
+    }
+
+    function jumpMomentToTs(ts){
+      const targetMs = Date.parse(String(ts || ""));
+      if (!Number.isFinite(targetMs)) return;
+      const idx = momentState.frames.findIndex((frame) => momentFrameTsMs(frame) >= targetMs);
+      if (idx < 0) return;
+      stopMomentAutoplay();
+      momentState.currentIdx = idx;
+      renderMomentFrame();
+      renderMomentList();
+    }
+
+    async function buildMomentFallbackLocal({ sourceId, url, t0Iso, lookbackMinutes, forwardMinutes, includeTop10, includeScreenshots, startEarliest }) {
+      const runsPayload = await fetchJSON(`${TOP10_ABC_HISTORY_URL}?ts=${Date.now()}`).catch(() => ({ runs: [] }));
+      const runs = Array.isArray(runsPayload?.runs) ? runsPayload.runs : [];
+      const timelinePayload = await fetchJSON(`${TIMELINE_URL}?ts=${Date.now()}`).catch(() => ({ events: [] }));
+      const timelineEvents = Array.isArray(timelinePayload?.events) ? timelinePayload.events : [];
+      const canonicalTarget = normalizeUrlForStory(url || "");
+      const t0Ms = Number.isFinite(Date.parse(String(t0Iso || ""))) ? Date.parse(String(t0Iso)) : Date.now();
+      const lookbackStart = t0Ms - (Number(lookbackMinutes) * 60 * 1000);
+      const windowEnd = t0Ms + (Number(forwardMinutes) * 60 * 1000);
+
+      const sourceRuns = runs
+        .filter((run) => String(sourceId || "abc1") === "abc1")
+        .filter((run) => {
+          const ms = Date.parse(String(run?.observedAt || ""));
+          return Number.isFinite(ms) && ms >= lookbackStart && ms <= windowEnd;
+        })
+        .sort((a, b) => Date.parse(String(a?.observedAt || "")) - Date.parse(String(b?.observedAt || "")));
+
+      const anchorRun = [...sourceRuns]
+        .reverse()
+        .find((run) => (run?.items || []).some((it) => normalizeUrlForStory(it?.url || "") === canonicalTarget))
+        || sourceRuns[sourceRuns.length - 1]
+        || null;
+      const anchorTitle = anchorRun?.items?.find((it) => normalizeUrlForStory(it?.url || "") === canonicalTarget)?.title || "";
+      const clusterKeywords = extractStoryKeywords(normalizeTitleForStory(anchorTitle));
+
+      let primaryRun = anchorRun;
+      if (startEarliest) {
+        for (const run of sourceRuns) {
+          const rows = Array.isArray(run?.items) ? run.items : [];
+          const hasCanonical = rows.some((it) => normalizeUrlForStory(it?.url || "") === canonicalTarget);
+          if (hasCanonical) {
+            primaryRun = run;
+            break;
+          }
+          const keywordHit = rows.some((it) => {
+            const ks = extractStoryKeywords(normalizeTitleForStory(it?.title || ""));
+            const sim = jaccardKeywords(clusterKeywords, ks);
+            return sim.score >= 0.35 && sim.overlap >= 3;
+          });
+          if (keywordHit) {
+            primaryRun = run;
+            break;
+          }
+        }
+      }
+
+      const startMs = Number.isFinite(Date.parse(String(primaryRun?.observedAt || ""))) ? Date.parse(String(primaryRun.observedAt)) : t0Ms;
+      const snapshotFrames = sourceRuns
+        .filter((run) => {
+          const ms = Date.parse(String(run?.observedAt || ""));
+          return Number.isFinite(ms) && ms >= startMs && ms <= windowEnd;
+        })
+        .map((run) => {
+          const rows = Array.isArray(run?.items) ? [...run.items].sort((a, b) => Number(a?.rank) - Number(b?.rank)) : [];
+          const hero = rows.find((row) => Number(row?.rank) === 1) || rows[0] || null;
+          return {
+            ts: run?.observedAt || null,
+            type: "snapshot",
+            hero: hero ? { title: hero.title || null, url: hero.url || null } : null,
+            top10: includeTop10 ? rows.map((row) => ({ rank: Number(row?.rank) || null, title: row?.title || null, url: row?.url || null })) : [],
+            diffs: { entered: [], exited: [], moved: [], edits: [], hero_swap: false, events: [] },
+          };
+        });
+
+      const shotFrames = includeScreenshots
+        ? timelineEvents
+          .filter((ev) => String(ev?.source_id || "") === String(sourceId || "abc1"))
+          .filter((ev) => {
+            const ms = Date.parse(String(ev?.ts || ""));
+            return Number.isFinite(ms) && ms >= startMs && ms <= windowEnd;
+          })
+          .map((ev) => ({
+            ts: ev?.ts || null,
+            type: "screenshot",
+            kind: ev?.kind || "heartbeat",
+            title: ev?.title || null,
+            url: ev?.url || null,
+            shot_url: ev?.shot_url || null,
+          }))
+        : [];
+
+      const frames = [...snapshotFrames, ...shotFrames].sort((a, b) => {
+        const ta = momentFrameTsMs(a);
+        const tb = momentFrameTsMs(b);
+        if (ta !== tb) return ta - tb;
+        if (a?.type === b?.type) return 0;
+        return a?.type === "snapshot" ? -1 : 1;
+      });
+      return {
+        ok: true,
+        source_id: sourceId || "abc1",
+        t0: new Date(t0Ms).toISOString(),
+        start_at: new Date(startMs).toISOString(),
+        end_at: new Date(windowEnd).toISOString(),
+        anchor: { title: anchorTitle || momentState.title || null, url: canonicalTarget || url || null, ts: anchorRun?.observedAt || new Date(t0Ms).toISOString() },
+        primary: { title: anchorTitle || momentState.title || null, url: canonicalTarget || url || null, ts: primaryRun?.observedAt || new Date(t0Ms).toISOString(), reason: (primaryRun && primaryRun !== anchorRun) ? "earliest_match" : "anchor" },
+        cluster: { canonical_url: canonicalTarget || null, keywords: clusterKeywords },
+        frames,
+      };
+    }
+
+    async function runMomentBuild(){
+      const runBtn = $("btn-moment-run");
+      if (runBtn) runBtn.disabled = true;
+      stopMomentAutoplay();
+      setMomentStatus("Building moment...");
+      try {
+        const sourceId = momentState.sourceId || "abc1";
+        const url = momentState.url || "";
+        const t0 = momentState.t0 || null;
+        let payload = null;
+
+        if (!isGitHubPages) {
+          const params = new URLSearchParams();
+          params.set("source", sourceId);
+          if (url) params.set("url", url);
+          if (t0) params.set("t0", t0);
+          params.set("lookback_minutes", String(momentState.lookbackMinutes));
+          params.set("forward_minutes", "30");
+          params.set("include_top10", momentState.includeTop10 ? "1" : "0");
+          params.set("include_screenshots", momentState.includeScreenshots ? "1" : "0");
+          params.set("start_earliest", momentState.startEarliest ? "1" : "0");
+          payload = await fetchJSON(`/api/moment/build?${params.toString()}`);
+        }
+
+        if (!payload || !payload.ok) {
+          payload = await buildMomentFallbackLocal({
+            sourceId,
+            url,
+            t0Iso: t0,
+            lookbackMinutes: momentState.lookbackMinutes,
+            forwardMinutes: 30,
+            includeTop10: momentState.includeTop10,
+            includeScreenshots: momentState.includeScreenshots,
+            startEarliest: momentState.startEarliest,
+          });
+        }
+        applyMomentPayload(payload);
+      } catch (err) {
+        setMomentStatus(`Failed: ${summarizeError(err)}`);
+      } finally {
+        if (runBtn) runBtn.disabled = false;
+      }
+    }
+
+    function openMomentDrawer({ sourceId, url, title, t0 }){
+      momentState.sourceId = String(sourceId || "abc1");
+      momentState.url = normalizeUrlForStory(url || "");
+      momentState.title = String(title || "").trim();
+      momentState.t0 = t0 || null;
+      const lookbackSel = $("moment-lookback");
+      const includeTop10 = $("moment-include-top10");
+      const includeShots = $("moment-include-shots");
+      const startEarliest = $("moment-start-earliest");
+      if (lookbackSel) lookbackSel.value = String(momentState.lookbackMinutes);
+      if (includeTop10) includeTop10.checked = Boolean(momentState.includeTop10);
+      if (includeShots) includeShots.checked = Boolean(momentState.includeScreenshots);
+      if (startEarliest) startEarliest.checked = Boolean(momentState.startEarliest);
+      const anchorTitle = $("moment-anchor-title");
+      const anchorMeta = $("moment-anchor-meta");
+      const sourceLine = $("moment-source-line");
+      if (anchorTitle) anchorTitle.textContent = momentState.title || "Moment Reel";
+      if (anchorMeta) anchorMeta.textContent = momentState.url || "No URL";
+      if (sourceLine) sourceLine.textContent = sourceLabel(momentState.sourceId, null);
+      setMomentOpen(true);
+      renderMomentFrame();
+      renderMomentList();
+    }
+
     function closeAllDrawers() {
-      const ids = ["drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item"];
+      stopMomentAutoplay();
+      const ids = ["drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item", "drawer-moment"];
       for (const id of ids) {
         const d = $(id);
         if (!d) continue;
@@ -1821,6 +2398,17 @@
         d.setAttribute("aria-hidden", "true");
       }
       $("drawer-overlay")?.classList.remove("show");
+    }
+
+    function setMomentOpen(open){
+      const drawer = $("drawer-moment");
+      const overlay = $("drawer-overlay");
+      if (!drawer || !overlay) return;
+      if (open) closeAllDrawers();
+      if (!open) stopMomentAutoplay();
+      drawer.classList.toggle("open", Boolean(open));
+      overlay.classList.toggle("show", Boolean(open));
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
     }
 
     function setMenuOpen(open){
@@ -2308,6 +2896,16 @@
           const main = document.createElement("div");
           main.className = "latestMain";
           main.appendChild(h);
+          const rewind = document.createElement("button");
+          rewind.type = "button";
+          rewind.className = "linkbtn rewindBtn";
+          rewind.textContent = "Rewind";
+          rewind.setAttribute("data-action", "open-moment");
+          rewind.setAttribute("data-id", row.source || "");
+          rewind.setAttribute("data-url", row.url || "");
+          rewind.setAttribute("data-title", row.title || "");
+          rewind.setAttribute("data-ts", row.updatedAt || "");
+          main.appendChild(rewind);
           body.appendChild(main);
           card.appendChild(body);
           card.addEventListener("click", (evt) => {
@@ -2435,6 +3033,16 @@
         title.appendChild(a);
 
         main.appendChild(title);
+        const rewind = document.createElement("button");
+        rewind.type = "button";
+        rewind.className = "linkbtn rewindBtn";
+        rewind.textContent = "Rewind";
+        rewind.setAttribute("data-action", "open-moment");
+        rewind.setAttribute("data-id", it.source || "");
+        rewind.setAttribute("data-url", it.url || "");
+        rewind.setAttribute("data-title", it.title || "");
+        rewind.setAttribute("data-ts", it.lastSeenAt || it.firstSeenAt || "");
+        main.appendChild(rewind);
 
         body.appendChild(main);
 
@@ -3459,7 +4067,17 @@
       detailsBtn.textContent = "Details";
       detailsBtn.setAttribute("data-action", "open-source-data");
       detailsBtn.setAttribute("data-id", id);
+      const rewindBtn = document.createElement("button");
+      rewindBtn.type = "button";
+      rewindBtn.className = "linkbtn rewindBtn";
+      rewindBtn.textContent = "Rewind";
+      rewindBtn.setAttribute("data-action", "open-moment");
+      rewindBtn.setAttribute("data-id", id);
+      rewindBtn.setAttribute("data-url", src?.item?.url || "");
+      rewindBtn.setAttribute("data-title", src?.item?.title || "");
+      rewindBtn.setAttribute("data-ts", src?.updatedAt || "");
       actionsRow.appendChild(changeRow);
+      actionsRow.appendChild(rewindBtn);
       actionsRow.appendChild(detailsBtn);
 
       const err = document.createElement("div");
@@ -4264,9 +4882,11 @@
 
       const action = btn.getAttribute("data-action");
       const id = btn.getAttribute("data-id");
-      if (!action || !id) return;
+      if (!action) return;
 
-      const link = document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`);
+      const link = id
+        ? document.querySelector(`a[data-role="headline-link"][data-id="${CSS.escape(id)}"]`)
+        : null;
       const href = link && link.href && link.href !== "#" ? link.href : "";
 
       if (action === "copy-headline") {
@@ -4276,8 +4896,19 @@
       }
 
       if (action === "open-source-data") {
+        if (!id) return;
         setDetailsTab("shots");
         setSourceDataOpen(true, id);
+        return;
+      }
+
+      if (action === "open-moment") {
+        const sourceId = String(id || "abc1");
+        const url = btn.getAttribute("data-url") || href || "";
+        const title = btn.getAttribute("data-title") || "";
+        const ts = btn.getAttribute("data-ts") || null;
+        openMomentDrawer({ sourceId, url, title, t0: ts });
+        setMomentStatus("Ready. Click Run to build frames.");
       }
     });
 
@@ -4778,6 +5409,17 @@
 
           body.appendChild(meta);
 
+          const rewind = document.createElement("button");
+          rewind.type = "button";
+          rewind.className = "linkbtn rewindBtn";
+          rewind.textContent = "Rewind";
+          rewind.setAttribute("data-action", "open-moment");
+          rewind.setAttribute("data-id", "abc1");
+          rewind.setAttribute("data-url", row?.url || "");
+          rewind.setAttribute("data-title", row?.title || "");
+          rewind.setAttribute("data-ts", selectedRun?.observedAt || "");
+          body.appendChild(rewind);
+
           const headlineChanges = deepDiveHeadlineChanges(runs, selectedIdx, row);
           const related = Number(row?.rank) === 1 && Array.isArray(row?.related_links) ? row.related_links : [];
           const hasDetails = Boolean(headlineChanges.length);
@@ -5080,6 +5722,59 @@
     $("btn-data-close")?.addEventListener("click", () => setDataOpen(false));
     $("btn-source-data-close")?.addEventListener("click", () => setSourceDataOpen(false));
     $("btn-history-item-close")?.addEventListener("click", () => setHistoryItemOpen(false));
+    $("btn-moment-close")?.addEventListener("click", () => setMomentOpen(false));
+    $("moment-lookback")?.addEventListener("change", (e) => {
+      momentState.lookbackMinutes = Number(e.target.value || 120);
+    });
+    $("moment-include-top10")?.addEventListener("change", (e) => {
+      momentState.includeTop10 = Boolean(e.target.checked);
+    });
+    $("moment-include-shots")?.addEventListener("change", (e) => {
+      momentState.includeScreenshots = Boolean(e.target.checked);
+    });
+    $("moment-start-earliest")?.addEventListener("change", (e) => {
+      momentState.startEarliest = Boolean(e.target.checked);
+    });
+    $("btn-moment-run")?.addEventListener("click", runMomentBuild);
+    $("btn-moment-prev")?.addEventListener("click", () => {
+      stopMomentAutoplay();
+      if (!momentState.frames.length) return;
+      momentState.currentIdx = Math.max(0, Number(momentState.currentIdx || 0) - 1);
+      renderMomentFrame();
+      renderMomentList();
+    });
+    $("btn-moment-next")?.addEventListener("click", () => {
+      stopMomentAutoplay();
+      if (!momentState.frames.length) return;
+      momentState.currentIdx = Math.min(momentState.frames.length - 1, Number(momentState.currentIdx || 0) + 1);
+      renderMomentFrame();
+      renderMomentList();
+    });
+    $("btn-moment-autoplay")?.addEventListener("click", () => {
+      if (!momentState.frames.length) return;
+      const btn = $("btn-moment-autoplay");
+      if (momentState.autoTimer) {
+        stopMomentAutoplay();
+        return;
+      }
+      if (btn) btn.textContent = "Stop";
+      momentState.autoTimer = setInterval(() => {
+        if (!momentState.frames.length) {
+          stopMomentAutoplay();
+          return;
+        }
+        const next = Number(momentState.currentIdx || 0) + 1;
+        if (next >= momentState.frames.length) {
+          stopMomentAutoplay();
+          return;
+        }
+        momentState.currentIdx = next;
+        renderMomentFrame();
+        renderMomentList();
+      }, 1400);
+    });
+    $("btn-moment-jump-primary")?.addEventListener("click", () => jumpMomentToTs(momentState.payload?.primary?.ts));
+    $("btn-moment-jump-t0")?.addEventListener("click", () => jumpMomentToTs(momentState.payload?.t0));
     $("source-data-window")?.addEventListener("change", (e) => {
       sourceDataWindowHours = parseHoursSpec(e.target.value);
       if (selectedSourceDataId) renderSourceDataPanel(selectedSourceDataId);
@@ -5108,6 +5803,7 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         if (_shotLightbox) _shotLightbox.close();
+        stopMomentAutoplay();
         closeAllDrawers();
       }
     });
@@ -5139,6 +5835,8 @@
     if (sourceDataWindow) sourceDataWindow.value = String(sourceDataWindowHours);
     const deepWindow = $("deep-window");
     if (deepWindow) deepWindow.value = String(DEEP_DIVE_DEFAULT_HOURS);
+    const momentLookback = $("moment-lookback");
+    if (momentLookback) momentLookback.value = String(momentState.lookbackMinutes);
     renderStatusLine();
     reload();
   </script>
