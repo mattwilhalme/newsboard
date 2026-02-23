@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-23T12:32:50.669Z",
+  "generatedAt": "2026-02-23T13:52:45.506Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T13:26:46.699Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T13:26:46.699Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Heavy snow, 60 mph wind gusts: What to expect from major nor'easter",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T14:00:09.095Z",
@@ -1101,6 +1081,116 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Winter storm live updates: Nor'easter producing 1-3 inches of snowfall per hour",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6f085e253f2e11b020c4cb1baf5da1230d859313",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Blizzard live updates: Monster storm dropping 3 inches of snow per hour"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3d492b1674337852d4249c2a87d7d3b4ebd7a79c",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7a93af85a7b8272e5afde454bda66f4548676fa6",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "a8593df32d6cb42feee5d173a74a55f93c73598d",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "What we know about the man killed at Mar-a-Lago",
+      "to_title": "What we know about the man killed at Mar-a-Lago"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "27cee83fd0f38a2b5e306a65ab3ddae0e9a785f3",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
+      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "5edd758fecff53c3f630d485a86f350185b00224",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Largest nurses strike in New York City history ends as workers ratify contract",
+      "to_title": "Largest nurses strike in New York City history ends as workers ratify contract"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "32dfef69a36051ecc96e4519cc522603fc9eb34f",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Apology after racial slur shouted during BAFTAs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d6c5318c9893de8a632a03741699598e17d0ef4f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Blizzard live updates: Historic storm strikes with 3 inches an hour, thundersnow",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cbbf9fc53a23a53a09ca1b484d8468e556ee3485",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "US beats Canada for first men's hockey gold at the Olympics since 1980",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "63ad121e39f2afa89cf46add0192d2042f7beda9",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T13:52:56.325Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "28160b0ae4522ec67c90574cddd7edd71183a138",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "EU diplomats to meet Board of Peace director",
       "to_title": null
     }
   ]
