@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-23T10:08:22.152Z",
+  "generatedAt": "2026-02-23T11:05:10.302Z",
   "source_id": "abc1",
   "events": [
     {
@@ -6521,6 +6521,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T11:05:20.669Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d6c5318c9893de8a632a03741699598e17d0ef4f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Blizzard live updates: Historic storm strikes with 3 inches an hour, thundersnow"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T11:05:20.669Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "250868de4278373a9ac9dd40a5197786efee96ab",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Winter storm live updates: Nor'easter producing 1-3 inches of snowfall per hour",
       "to_title": null
     }
   ],
