@@ -1334,6 +1334,7 @@
           <button id="details-tab-changes" class="detailsTab active" type="button" role="tab" aria-selected="true">Changes</button>
           <button id="details-tab-data" class="detailsTab" type="button" role="tab" aria-selected="false">Data</button>
           <button id="details-tab-shots" class="detailsTab" type="button" role="tab" aria-selected="false">Screenshots</button>
+          <button id="details-rewind-action" class="detailsTab" type="button">Rewind</button>
         </div>
       </div>
       <div class="row">
@@ -2452,6 +2453,42 @@
       if (selectedSourceDataId) renderSourceDataPanel(selectedSourceDataId);
     }
 
+    function openRewindFromSource(sourceId){
+      const id = String(sourceId || "").trim();
+      if (!id) {
+        showToast("Open Details on a source first");
+        return;
+      }
+      const currentSources = latestDrawerPayload?.sources || {};
+      const normalizedHistory = latestDrawerPayload?.normalizedHistory || { sources: {} };
+      const src = currentSources?.[id] || {};
+      const entries = Array.isArray(normalizedHistory?.sources?.[id]?.entries)
+        ? normalizedHistory.sources[id].entries
+        : [];
+
+      let fallbackEntry = null;
+      let fallbackTsMs = -1;
+      for (const entry of entries) {
+        const entryTs = Date.parse(String(entry?.lastSeenAt || entry?.firstSeenAt || ""));
+        const entryTsMs = Number.isFinite(entryTs) ? entryTs : -1;
+        if (entryTsMs > fallbackTsMs) {
+          fallbackTsMs = entryTsMs;
+          fallbackEntry = entry;
+        }
+      }
+
+      const url = src?.item?.url || fallbackEntry?.url || "";
+      const title = src?.item?.title || fallbackEntry?.title || "";
+      const t0 = src?.updatedAt || fallbackEntry?.lastSeenAt || fallbackEntry?.firstSeenAt || null;
+
+      if (!url) {
+        showToast("No story available to rewind");
+        return;
+      }
+      openMomentDrawer({ sourceId: id, url, title, t0 });
+      setMomentStatus("Ready. Click Run to build frames.");
+    }
+
     function setDataOpen(open){
       const drawer = $("drawer-data");
       const overlay = $("drawer-overlay");
@@ -2877,16 +2914,6 @@
           const main = document.createElement("div");
           main.className = "latestMain";
           main.appendChild(h);
-          const rewind = document.createElement("button");
-          rewind.type = "button";
-          rewind.className = "linkbtn rewindBtn";
-          rewind.textContent = "Rewind";
-          rewind.setAttribute("data-action", "open-moment");
-          rewind.setAttribute("data-id", row.source || "");
-          rewind.setAttribute("data-url", row.url || "");
-          rewind.setAttribute("data-title", row.title || "");
-          rewind.setAttribute("data-ts", row.updatedAt || "");
-          main.appendChild(rewind);
           body.appendChild(main);
           card.appendChild(body);
           card.addEventListener("click", (evt) => {
@@ -3014,16 +3041,6 @@
         title.appendChild(a);
 
         main.appendChild(title);
-        const rewind = document.createElement("button");
-        rewind.type = "button";
-        rewind.className = "linkbtn rewindBtn";
-        rewind.textContent = "Rewind";
-        rewind.setAttribute("data-action", "open-moment");
-        rewind.setAttribute("data-id", it.source || "");
-        rewind.setAttribute("data-url", it.url || "");
-        rewind.setAttribute("data-title", it.title || "");
-        rewind.setAttribute("data-ts", it.lastSeenAt || it.firstSeenAt || "");
-        main.appendChild(rewind);
 
         body.appendChild(main);
 
@@ -5390,17 +5407,6 @@
 
           body.appendChild(meta);
 
-          const rewind = document.createElement("button");
-          rewind.type = "button";
-          rewind.className = "linkbtn rewindBtn";
-          rewind.textContent = "Rewind";
-          rewind.setAttribute("data-action", "open-moment");
-          rewind.setAttribute("data-id", "abc1");
-          rewind.setAttribute("data-url", row?.url || "");
-          rewind.setAttribute("data-title", row?.title || "");
-          rewind.setAttribute("data-ts", selectedRun?.observedAt || "");
-          body.appendChild(rewind);
-
           const headlineChanges = deepDiveHeadlineChanges(runs, selectedIdx, row);
           const related = Number(row?.rank) === 1 && Array.isArray(row?.related_links) ? row.related_links : [];
           const hasDetails = Boolean(headlineChanges.length);
@@ -5693,6 +5699,7 @@
     $("details-tab-changes")?.addEventListener("click", () => setDetailsTab("changes"));
     $("details-tab-data")?.addEventListener("click", () => setDetailsTab("data"));
     $("details-tab-shots")?.addEventListener("click", () => setDetailsTab("shots"));
+    $("details-rewind-action")?.addEventListener("click", () => openRewindFromSource(selectedSourceDataId));
     $("deep-window")?.addEventListener("change", (e) => {
       deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
       deepDiveState.selectedObservedAt = null;
