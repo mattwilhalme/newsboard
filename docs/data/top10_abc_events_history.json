@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-23T00:02:08.407Z",
+  "generatedAt": "2026-02-23T01:09:26.758Z",
   "source_id": "abc1",
   "events": [
     {
@@ -6241,6 +6241,116 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel, official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a8593df32d6cb42feee5d173a74a55f93c73598d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "What we know about the man killed at Mar-a-Lago"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "93c8d726a97cbc4178286241da3c1d363813b670",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7d0b0faab0337c09e59695e9e5d245f276c926d2",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "MOVED",
+      "fingerprint": "3ef06472ea245d67889bf164337ef8a75366848d",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "Severe winter storm live updates: 'The worst is yet to come,' NY Gov. Hochul says",
+      "to_title": "Severe winter storm live updates: 'The worst is yet to come,' NY Gov. Hochul says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "MOVED",
+      "fingerprint": "cbbf9fc53a23a53a09ca1b484d8468e556ee3485",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "US beats Canada for first men's hockey gold at the Olympics since 1980",
+      "to_title": "US beats Canada for first men's hockey gold at the Olympics since 1980"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "MOVED",
+      "fingerprint": "3398c023842854c0ac9459e0c5b4057dbdf78acf",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll",
+      "to_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "MOVED",
+      "fingerprint": "e03b5d2f0c124b6cd4bb8c744dd701d9c65d8742",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel during operation to capture him",
+      "to_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel during operation to capture him"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "MOVED",
+      "fingerprint": "63ad121e39f2afa89cf46add0192d2042f7beda9",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke",
+      "to_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "56cb8ac40f326d7413d44b938e9956aa14d8aad5",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1d9df7bb1efc58f610d4738e597c8e1b88439848",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T01:09:36.701Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bf72ce490b6361d212c7a43666cfef6770d38629",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
       "to_title": null
     }
   ],
