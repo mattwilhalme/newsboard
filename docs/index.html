@@ -735,6 +735,33 @@
       flex-direction:column;
       gap:6px;
     }
+    .clusterPresetRow{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .clusterPresetRow .linkbtn{
+      min-width:120px;
+    }
+    .clusterDebug{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .clusterDebugCard{
+      margin-top:8px;
+      border:1px dashed var(--line);
+      border-radius:8px;
+      background:var(--surface);
+      padding:8px;
+      display:grid;
+      gap:4px;
+      font-size:11px;
+      color:var(--muted);
+    }
     .clusterChipRow{
       display:flex;
       flex-wrap:wrap;
@@ -1350,11 +1377,25 @@
         </div>
         <div class="clusterControls">
           <div class="clusterRow">
-            <div class="tiny">Active clusters</div>
+            <div class="clusterPresetRow">
+              <label class="tiny" for="cluster-strictness">Clustering strictness</label>
+              <select id="cluster-strictness" class="linkbtn">
+                <option value="loose">Loose</option>
+                <option value="balanced" selected>Balanced</option>
+                <option value="strict">Strict</option>
+              </select>
+              <label class="clusterDebug" for="cluster-debug">
+                <input id="cluster-debug" type="checkbox">
+                <span>Show clustering debug</span>
+              </label>
+            </div>
+          </div>
+          <div class="clusterRow">
+            <div class="tiny">Detected clusters</div>
             <div id="cluster-active" class="clusterChipRow"></div>
           </div>
           <div class="clusterRow">
-            <div class="tiny">Suggested clusters</div>
+            <div class="tiny">Cluster notes</div>
             <div id="cluster-suggestions" class="clusterChipRow"></div>
           </div>
         </div>
@@ -1595,10 +1636,15 @@
     const VIEW_STORAGE_KEY = "newsboard_view";
     const REWIND_MAX_RANGE_MS = 6 * 60 * 60 * 1000;
     const REWIND_DEFAULT_RANGE_MS = 60 * 60 * 1000;
-    const CLUSTER_PINNED_KEY = "nb_pinned_clusters";
-    const CLUSTER_ACTIVE_KEY = "nb_active_clusters";
-    const CLUSTER_DISMISSED_KEY = "nb_cluster_dismissed";
     const CLUSTER_CARD_ORDER_KEY = "nb_cluster_card_order";
+    const CLUSTER_STRICTNESS_KEY = "nb_cluster_strictness";
+    const CLUSTER_DEBUG_KEY = "nb_cluster_debug";
+    const CLUSTER_PRESETS = {
+      loose: { primary: 0.24, secondary: 0.18, trigram: 0.16, merge: 0.32 },
+      balanced: { primary: 0.28, secondary: 0.22, trigram: 0.18, merge: 0.34 },
+      strict: { primary: 0.34, secondary: 0.26, trigram: 0.20, merge: 0.38 },
+    };
+    const CLUSTER_MERGE_WINDOW_MS = 6 * 60 * 60 * 1000;
     let activeView = "overview";
     let selectedWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     let latestDrawerPayload = { normalizedHistory: null, sources: null, indicators: null };
@@ -1637,34 +1683,14 @@
     let isRefreshing = false;
     let lastRefreshError = null;
     let lastSuccessfulUpdateTs = 0;
+    let clusteringStrictness = "balanced";
+    let clusteringDebugMode = false;
+    let latestClusterAssignmentsBySource = {};
     const PLAY_X_PLAY_RECENT_LIMIT = 16;
 
     function isNarrowLayout(){
       return window.matchMedia("(max-width: 700px)").matches;
     }
-
-    const DEFAULT_CLUSTERS = [
-      {
-        id: "trump",
-        label: "Trump",
-        priority: 100,
-        includeAny: ["trump", "donald trump", "maga", "mar-a-lago", "jack smith"],
-        includeAll: [],
-        exclude: ["trumpet"],
-        createdAt: new Date().toISOString(),
-        pinned: true,
-      },
-      {
-        id: "olympics",
-        label: "Olympics",
-        priority: 100,
-        includeAny: ["olympics", "olympic", "ioc", "team usa", "paris 2024", "la 2028"],
-        includeAll: [],
-        exclude: ["olympic peninsula", "olympia"],
-        createdAt: new Date().toISOString(),
-        pinned: true,
-      },
-    ];
 
     // UI rules
     const STALE_MS = 2 * 60 * 60 * 1000; // 2 hours
@@ -4672,9 +4698,20 @@
         .trim();
     }
 
+    function stableHash(value){
+      const input = String(value || "");
+      let h = 2166136261;
+      for (let i = 0; i < input.length; i += 1) {
+        h ^= input.charCodeAt(i);
+        h = Math.imul(h, 16777619);
+      }
+      return (h >>> 0).toString(36);
+    }
+
     function slugify(value){
       const s = normalizeForCluster(value).replace(/\s+/g, "-");
-      return s || `cluster-${Math.random().toString(36).slice(2, 8)}`;
+      if (s) return s;
+      return `cluster-${stableHash(value || "topic")}`;
     }
 
     function titleCaseShortLabel(phrase){
@@ -4682,23 +4719,6 @@
       const sliced = tokens.slice(0, 2);
       if (!sliced.length) return "Topic";
       return sliced.map((tok) => tok.charAt(0).toUpperCase() + tok.slice(1)).join(" ");
-    }
-
-    function clusterSanitize(obj, fallbackLabel = "Topic"){
-      const label = String(obj?.label || fallbackLabel).trim() || fallbackLabel;
-      const includeAny = Array.isArray(obj?.includeAny) ? obj.includeAny.map((x) => String(x || "").trim()).filter(Boolean) : [];
-      const includeAll = Array.isArray(obj?.includeAll) ? obj.includeAll.map((x) => String(x || "").trim()).filter(Boolean) : [];
-      const exclude = Array.isArray(obj?.exclude) ? obj.exclude.map((x) => String(x || "").trim()).filter(Boolean) : [];
-      return {
-        id: String(obj?.id || slugify(label)),
-        label,
-        priority: Number.isFinite(Number(obj?.priority)) ? Number(obj.priority) : 50,
-        includeAny,
-        includeAll,
-        exclude,
-        createdAt: obj?.createdAt || new Date().toISOString(),
-        pinned: Boolean(obj?.pinned),
-      };
     }
 
     function loadJSONStorage(key, fallback){
@@ -4726,53 +4746,27 @@
       saveJSONStorage(CLUSTER_CARD_ORDER_KEY, clusterCardOrder || {});
     }
 
-    function loadPinnedClusters(){
-      const stored = loadJSONStorage(CLUSTER_PINNED_KEY, null);
-      if (Array.isArray(stored)) {
-        return stored.map((row) => clusterSanitize({ ...row, pinned: true }, row?.label || "Topic"));
-      }
-      return DEFAULT_CLUSTERS.map((c) => clusterSanitize({ ...c, pinned: true }, c.label));
+    function loadClusterStrictness(){
+      const raw = String(loadJSONStorage(CLUSTER_STRICTNESS_KEY, "balanced") || "balanced").toLowerCase();
+      return CLUSTER_PRESETS[raw] ? raw : "balanced";
     }
 
-    function savePinnedClusters(clusters){
-      const keep = (clusters || []).map((c) => clusterSanitize({ ...c, pinned: true }, c?.label || "Topic"));
-      saveJSONStorage(CLUSTER_PINNED_KEY, keep);
+    function saveClusterStrictness(value){
+      const mode = CLUSTER_PRESETS[value] ? value : "balanced";
+      saveJSONStorage(CLUSTER_STRICTNESS_KEY, mode);
     }
 
-    function loadActiveClusters(pinned){
-      const stored = loadJSONStorage(CLUSTER_ACTIVE_KEY, null);
-      if (Array.isArray(stored)) {
-        return stored.map((row) => clusterSanitize(row, row?.label || "Topic"));
-      }
-      return (pinned || []).map((c) => clusterSanitize(c, c.label));
+    function loadClusterDebugMode(){
+      return Boolean(loadJSONStorage(CLUSTER_DEBUG_KEY, false));
     }
 
-    function saveActiveClusters(clusters){
-      const keep = (clusters || []).map((c) => clusterSanitize(c, c?.label || "Topic"));
-      saveJSONStorage(CLUSTER_ACTIVE_KEY, keep);
+    function saveClusterDebugMode(value){
+      saveJSONStorage(CLUSTER_DEBUG_KEY, Boolean(value));
     }
 
-    function loadDismissedSuggestions(){
-      const stored = loadJSONStorage(CLUSTER_DISMISSED_KEY, []);
-      if (!Array.isArray(stored)) return new Set();
-      return new Set(stored.map((x) => normalizeForCluster(x)).filter(Boolean));
-    }
-
-    function saveDismissedSuggestions(setObj){
-      saveJSONStorage(CLUSTER_DISMISSED_KEY, Array.from(setObj || []));
-    }
-
-    let pinnedClusters = loadPinnedClusters();
-    let activeClusters = loadActiveClusters(pinnedClusters);
-    let dismissedSuggestions = loadDismissedSuggestions();
+    clusteringStrictness = loadClusterStrictness();
+    clusteringDebugMode = loadClusterDebugMode();
     clusterCardOrder = loadClusterCardOrder();
-
-    function clusterSort(a, b){
-      const pa = Number(a?.priority || 0);
-      const pb = Number(b?.priority || 0);
-      if (pb !== pa) return pb - pa;
-      return String(a?.label || "").localeCompare(String(b?.label || ""));
-    }
 
     function overviewItemsFromSources(sources){
       const out = [];
@@ -4782,460 +4776,379 @@
           sourceName: sourceLabel(sourceId, src),
           title: String(src?.item?.title || ""),
           url: String(src?.item?.url || ""),
+          firstSeenAt: src?.firstSeenAt || src?.updatedAt || null,
         });
       }
       return out;
     }
 
-    function textTokens(value){
-      return normalizeForCluster(value).split(" ").filter(Boolean);
-    }
+    const CLUSTER_BOILERPLATE = [
+      "what we know",
+      "live updates",
+      "latest",
+      "analysis",
+      "explainer",
+      "why it matters",
+      "watch:",
+      "photos:",
+      "video:",
+      "opinion:",
+    ];
 
     const CLUSTER_STOPWORDS = new Set([
-      "the","a","an","and","or","for","with","from","into","over","under","amid","after","before","during",
-      "says","warns","calls","live","latest","update","updates","new","news","today","why","how","what","when",
-      "who","his","her","their","our","your","this","that","these","those","will","could","should","about","into",
-      "video","photos","photo","story","stories","analysis","report","reports","breaking","just","more","than"
+      "the", "a", "an", "to", "of", "in", "after", "as", "for", "and", "on", "at", "from",
     ]);
 
-    function phraseLooksUseful(phrase){
-      const norm = normalizeForCluster(phrase);
-      if (norm.length < 8) return false;
-      const toks = norm.split(" ").filter(Boolean);
-      if (!toks.length) return false;
-      const meaningful = toks.filter((t) => t.length > 2 && !CLUSTER_STOPWORDS.has(t));
-      return meaningful.length >= 2;
-    }
+    const CLUSTER_ALIAS_GROUPS = [
+      ["mexican", "mexico"],
+      ["venezuelan", "venezuela"],
+      ["british", "uk"],
+      ["russian", "russia"],
+      ["ukrainian", "ukraine"],
+      ["israeli", "israel"],
+      ["palestinian", "palestine"],
+      ["iranian", "iran"],
+      ["chinese", "china"],
+      ["troops", "soldiers"],
+      ["guard", "nationalguard"],
+      ["cartel", "drugcartel"],
+      ["boss", "leader"],
+      ["us", "u.s", "u.s.", "usa", "america", "unitedstates"],
+    ];
 
-    function phraseTokensForOverlap(phrase){
-      return normalizeForCluster(phrase)
-        .split(" ")
-        .filter(Boolean)
-        .filter((t) => !CLUSTER_STOPWORDS.has(t))
-        .map((t) => {
-          if (t.length > 5 && t.endsWith("ing")) return t.slice(0, -3);
-          if (t.length > 4 && t.endsWith("er")) return t.slice(0, -2);
-          if (t.length > 4 && t.endsWith("ed")) return t.slice(0, -2);
-          if (t.length > 4 && t.endsWith("es")) return t.slice(0, -2);
-          if (t.length > 3 && t.endsWith("s")) return t.slice(0, -1);
-          return t;
-        });
-    }
+    const CLUSTER_CANONICAL_OVERRIDES = new Map([
+      ["u.s", "us"],
+      ["u.s.", "us"],
+      ["usa", "us"],
+      ["america", "us"],
+      ["unitedstates", "us"],
+    ]);
 
-    function phrasesOverlap(a, b){
-      const na = normalizeForCluster(a);
-      const nb = normalizeForCluster(b);
-      if (!na || !nb) return false;
-      if (na.includes(nb) || nb.includes(na)) return true;
-      const ta = new Set(phraseTokensForOverlap(na));
-      const tb = new Set(phraseTokensForOverlap(nb));
-      if (!ta.size || !tb.size) return false;
-      let common = 0;
-      for (const tok of ta) {
-        if (tb.has(tok)) common += 1;
+    const CLUSTER_JOINED_BIGRAMS = new Map([
+      ["national guard", "nationalguard"],
+      ["drug cartel", "drugcartel"],
+      ["united states", "us"],
+    ]);
+
+    const CLUSTER_ALIAS_INDEX = (() => {
+      const out = new Map();
+      for (const group of CLUSTER_ALIAS_GROUPS) {
+        const normalized = group.map((x) => String(x || "").toLowerCase());
+        for (const token of normalized) {
+          out.set(token, new Set(normalized));
+        }
       }
-      const minLen = Math.min(ta.size, tb.size);
-      return minLen > 0 && (common / minLen) >= 0.6;
-    }
+      return out;
+    })();
 
-    function phrasesShareCoreToken(a, b){
-      const ta = new Set(phraseTokensForOverlap(a).filter((t) => t.length >= 5));
-      const tb = new Set(phraseTokensForOverlap(b).filter((t) => t.length >= 5));
-      if (!ta.size || !tb.size) return false;
-      for (const tok of ta) {
-        if (tb.has(tok)) return true;
+    function normalizeHeadline(text){
+      let t = String(text || "");
+      if (!t) return "";
+      t = t
+        .replace(/[‘’]/g, "'")
+        .replace(/[“”]/g, "\"")
+        .replace(/\bu\.?\s*s\.?\s*a?\b/gi, " us ")
+        .replace(/\bunited\s+states\b/gi, " us ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase();
+
+      for (const phrase of CLUSTER_BOILERPLATE) {
+        const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\\:/g, ":?");
+        t = t.replace(new RegExp(`\\b${escaped}\\b`, "gi"), " ");
       }
-      return false;
+
+      t = t
+        .replace(/(^|[^a-z0-9])-+|-+([^a-z0-9]|$)/g, " ")
+        .replace(/[^a-z0-9\s-]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      return t;
     }
 
-    function phrasesConflict(a, b){
-      return phrasesOverlap(a, b) || phrasesShareCoreToken(a, b);
+    function tokenize(text){
+      return String(text || "")
+        .split(/\s+/g)
+        .map((x) => x.trim())
+        .filter((x) => x.length >= 2);
     }
 
-    function extractCapitalizedPhrases(title){
-      const out = [];
-      const matches = String(title || "").match(/(?:\b(?:[A-Z][a-z]+|[A-Z]{2,})\b(?:\s+|$)){2,3}/g) || [];
-      for (const m of matches) {
-        const trimmed = String(m || "").trim();
-        if (trimmed) out.push(trimmed);
+    function stemToken(token){
+      let t = String(token || "").trim();
+      if (!t) return t;
+      if (t.endsWith("ies") && t.length > 4) return `${t.slice(0, -3)}y`;
+      if (t.endsWith("ing") && t.length > 5) t = t.slice(0, -3);
+      if (t.endsWith("ed") && t.length > 4) t = t.slice(0, -2);
+      if (t.endsWith("s") && t.length > 4 && !t.endsWith("ss")) t = t.slice(0, -1);
+      return t;
+    }
+
+    function canonicalizeToken(token){
+      const raw = String(token || "").toLowerCase();
+      return CLUSTER_CANONICAL_OVERRIDES.get(raw) || raw;
+    }
+
+    function expandAliases(tokens){
+      const out = new Set();
+      const list = Array.isArray(tokens) ? tokens.map((x) => canonicalizeToken(stemToken(x))).filter(Boolean) : [];
+
+      for (let i = 0; i < list.length; i += 1) {
+        const tok = list[i];
+        out.add(tok);
+        const aliases = CLUSTER_ALIAS_INDEX.get(tok);
+        if (aliases) {
+          for (const alias of aliases) out.add(canonicalizeToken(alias));
+        }
+
+        if (i + 1 < list.length) {
+          const pair = `${tok} ${list[i + 1]}`;
+          const joined = CLUSTER_JOINED_BIGRAMS.get(pair);
+          if (joined) {
+            out.add(joined);
+            const joinedAliases = CLUSTER_ALIAS_INDEX.get(joined);
+            if (joinedAliases) {
+              for (const alias of joinedAliases) out.add(canonicalizeToken(alias));
+            }
+          }
+        }
       }
       return out;
     }
 
-    function extractNgrams(tokens, minN = 2, maxN = 3){
-      const out = [];
-      for (let n = minN; n <= maxN; n += 1) {
-        for (let i = 0; i + n <= tokens.length; i += 1) {
-          const slice = tokens.slice(i, i + n);
-          if (slice.some((t) => CLUSTER_STOPWORDS.has(t))) continue;
-          out.push(slice.join(" "));
-        }
+    function jaccard(setA, setB){
+      const a = setA instanceof Set ? setA : new Set(Array.isArray(setA) ? setA : []);
+      const b = setB instanceof Set ? setB : new Set(Array.isArray(setB) ? setB : []);
+      if (!a.size || !b.size) return 0;
+      let overlap = 0;
+      for (const token of a) {
+        if (b.has(token)) overlap += 1;
+      }
+      const union = a.size + b.size - overlap;
+      return union > 0 ? overlap / union : 0;
+    }
+
+    function trigramSet(text){
+      const input = ` ${String(text || "").trim()} `;
+      const out = new Set();
+      if (input.length < 3) return out;
+      for (let i = 0; i + 3 <= input.length; i += 1) {
+        out.add(input.slice(i, i + 3));
       }
       return out;
     }
 
-    function extractUrlPhrases(url){
-      try{
-        const u = new URL(url);
-        const toks = u.pathname
-          .split("/")
-          .flatMap((seg) => seg.split(/[-_]+/))
-          .map((t) => normalizeForCluster(t))
-          .filter((t) => t && t.length > 2 && !CLUSTER_STOPWORDS.has(t));
-        return extractNgrams(toks, 1, 2);
-      } catch {
-        return [];
-      }
+    function charTrigramSimilarity(a, b){
+      return jaccard(trigramSet(a), trigramSet(b));
     }
 
-    function phraseCoveredByClusters(phrase, clusters){
-      const p = normalizeForCluster(phrase);
-      for (const c of (clusters || [])) {
-        for (const inc of (c.includeAny || [])) {
-          const n = normalizeForCluster(inc);
-          if (!n) continue;
-          if (p.includes(n) || n.includes(p) || phrasesConflict(p, n)) return true;
-        }
+    function clusterLabelFromTokens(tokens){
+      const picks = [];
+      for (const token of (tokens || [])) {
+        if (!token || token.length < 3) continue;
+        if (CLUSTER_STOPWORDS.has(token)) continue;
+        if (!picks.includes(token)) picks.push(token);
+        if (picks.length >= 2) break;
       }
-      return false;
+      if (!picks.length) return "Topic";
+      return picks.map((tok) => tok.charAt(0).toUpperCase() + tok.slice(1)).join(" ");
     }
 
-    function buildClusterSuggestions(items, clusters){
-      const byPhrase = new Map();
-      for (const item of (items || [])) {
-        const sourceId = String(item?.sourceId || "");
-        const title = String(item?.title || "");
-        const url = String(item?.url || "");
-        const titleTokens = textTokens(title);
-        const filteredTitleTokens = titleTokens.filter((t) => t.length > 2 && !CLUSTER_STOPWORDS.has(t));
-        const candidates = [
-          ...extractNgrams(filteredTitleTokens, 2, 3),
-          ...extractCapitalizedPhrases(title),
-          ...extractUrlPhrases(url),
-        ];
-        const itemKey = normalizeForCluster(`${sourceId} ${url || title}`);
-        const uniqueCandidates = new Set(candidates.map((x) => normalizeForCluster(x)).filter(Boolean));
-        for (const phrase of uniqueCandidates) {
-          if (!phraseLooksUseful(phrase)) continue;
-          if (!byPhrase.has(phrase)) byPhrase.set(phrase, { phrase, itemKeys: new Set(), sources: new Set() });
-          const row = byPhrase.get(phrase);
-          if (itemKey) row.itemKeys.add(itemKey);
-          if (sourceId) row.sources.add(sourceId);
-        }
+    function buildStoryFeature(item){
+      const title = String(item?.title || "").trim();
+      const norm = normalizeHeadline(title);
+      const stemmed = tokenize(norm).map((token) => stemToken(token)).filter(Boolean);
+      const canonicalTokens = stemmed
+        .map((token) => canonicalizeToken(token))
+        .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(token));
+      const expanded = expandAliases(canonicalTokens);
+      const topTokens = [];
+      for (const token of canonicalTokens) {
+        if (!topTokens.includes(token)) topTokens.push(token);
+        if (topTokens.length >= 6) break;
       }
-
-      const scored = [];
-      for (const row of byPhrase.values()) {
-        const articleCount = row.itemKeys.size;
-        const publisherDiversity = row.sources.size;
-        const score = (publisherDiversity * 3) + articleCount;
-        if (!(publisherDiversity >= 2 || articleCount >= 2)) continue;
-        if (phraseCoveredByClusters(row.phrase, clusters)) continue;
-        if (dismissedSuggestions.has(normalizeForCluster(row.phrase))) continue;
-        scored.push({
-          phrase: row.phrase,
-          count: articleCount,
-          publisherDiversity,
-          score,
-        });
-      }
-      scored.sort((a, b) => (b.score - a.score) || (b.publisherDiversity - a.publisherDiversity) || (b.count - a.count) || a.phrase.localeCompare(b.phrase));
-      const out = [];
-      for (const cand of scored) {
-        if (out.some((k) => phrasesConflict(k.phrase, cand.phrase))) continue;
-        out.push(cand);
-        if (out.length >= 10) break;
-      }
-      return out;
-    }
-
-    function createClusterFromPhrase(phrase){
-      const label = titleCaseShortLabel(phrase);
-      return clusterSanitize({
-        id: slugify(label),
-        label,
-        priority: 50,
-        includeAny: [String(phrase || "").trim()],
-        includeAll: [],
-        exclude: [],
-        createdAt: new Date().toISOString(),
-        pinned: false,
-      }, label);
-    }
-
-    function phraseTokenSet(phrase){
-      return new Set(
-        normalizeForCluster(phrase)
-          .split(" ")
-          .filter(Boolean)
-          .filter((t) => !CLUSTER_STOPWORDS.has(t))
-          .map((t) => {
-            if (t.length > 5 && t.endsWith("ing")) return t.slice(0, -3);
-            if (t.length > 4 && t.endsWith("er")) return t.slice(0, -2);
-            if (t.length > 4 && t.endsWith("ed")) return t.slice(0, -2);
-            if (t.length > 4 && t.endsWith("es")) return t.slice(0, -2);
-            if (t.length > 3 && t.endsWith("s")) return t.slice(0, -1);
-            return t;
-          })
-          .filter((t) => t.length >= 4),
-      );
-    }
-
-    function phraseTokenOverlapScore(phrase, titleNorm, urlNorm){
-      const phraseTokens = phraseTokenSet(phrase);
-      if (!phraseTokens.size) return 0;
-      const titleTokens = phraseTokenSet(titleNorm);
-      const urlTokens = phraseTokenSet(urlNorm);
-      let titleHits = 0;
-      let urlHits = 0;
-      for (const tok of phraseTokens) {
-        if (titleTokens.has(tok)) titleHits += 1;
-        if (urlTokens.has(tok)) urlHits += 1;
-      }
-      if (!titleHits && !urlHits) return 0;
-      let score = 0;
-      if (titleHits > 0) score += 2 + (titleHits * 1.5);
-      if (urlHits > 0) score += 1 + (urlHits * 0.75);
-      if (titleHits >= 2) score += 1.5;
-      return score;
-    }
-
-    function matchCluster(item, cluster){
-      const titleNorm = normalizeForCluster(item?.title || "");
-      const urlNorm = normalizeForCluster(item?.url || "");
-      const combined = `${titleNorm} ${urlNorm}`.trim();
-      let score = 0;
-
-      for (const phraseRaw of (cluster?.includeAny || [])) {
-        const phrase = normalizeForCluster(phraseRaw);
-        if (!phrase) continue;
-        if (titleNorm.includes(phrase)) score += 4;
-        if (urlNorm.includes(phrase)) score += 2;
-        if (!titleNorm.includes(phrase) && !urlNorm.includes(phrase)) {
-          score += phraseTokenOverlapScore(phrase, titleNorm, urlNorm);
-        }
-      }
-
-      const includeAll = (cluster?.includeAll || []).map((x) => normalizeForCluster(x)).filter(Boolean);
-      if (includeAll.length && includeAll.every((p) => combined.includes(p))) score += 3;
-
-      for (const phraseRaw of (cluster?.exclude || [])) {
-        const phrase = normalizeForCluster(phraseRaw);
-        if (phrase && combined.includes(phrase)) score -= 10;
-      }
-
-      return { score, match: score >= 4 };
-    }
-
-    function autoActivateClustersForCoverage(sources){
-      const ids = sortedOverviewIds(sources || {}, latestOverviewPayload?.indicators || {});
-      if (ids.length <= 3) return false;
-
-      const countOther = () => {
-        const sorted = [...activeClusters].sort(clusterSort);
-        let other = 0;
-        for (const id of ids) {
-          const src = sources?.[id] || {};
-          const item = { sourceId: id, title: src?.item?.title || "", url: src?.item?.url || "" };
-          const clusterId = assignItemToCluster(item, sorted);
-          if (clusterId === "other") other += 1;
-        }
-        return other;
+      return {
+        sourceId: String(item?.sourceId || ""),
+        title,
+        url: String(item?.url || ""),
+        firstSeenAt: item?.firstSeenAt || null,
+        firstSeenMs: Number.isFinite(Date.parse(String(item?.firstSeenAt || ""))) ? Date.parse(String(item.firstSeenAt)) : 0,
+        norm,
+        canonicalTokens,
+        expanded,
+        topTokens,
+        clusterKey: topTokens.join("|") || slugify(title || item?.sourceId || "topic"),
       };
-
-      let otherCount = countOther();
-      if (otherCount <= 3) return false;
-
-      const suggestions = buildClusterSuggestions(overviewItemsFromSources(sources), [...activeClusters]);
-      let changed = false;
-      for (const suggestion of suggestions) {
-        if (otherCount <= 3) break;
-        const cluster = createClusterFromPhrase(suggestion.phrase);
-        const exists = activeClusters.some((c) =>
-          c.id === cluster.id ||
-          phrasesConflict(c.label, cluster.label) ||
-          (c.includeAny || []).some((p) => (cluster.includeAny || []).some((q) => phrasesConflict(p, q)))
-        );
-        if (exists) continue;
-        activeClusters.push(cluster);
-        changed = true;
-        otherCount = countOther();
-      }
-      if (changed) saveActiveClusters(activeClusters);
-      return changed;
     }
 
-    function assignItemToCluster(item, clusters){
-      let best = null;
-      for (const cluster of [...(clusters || [])].sort(clusterSort)) {
-        const result = matchCluster(item, cluster);
-        if (!result.match) continue;
-        if (!best || result.score > best.score || (result.score === best.score && Number(cluster.priority || 0) > Number(best.cluster.priority || 0))) {
-          best = { cluster, score: result.score };
+    function sortClustersStable(clusters){
+      return [...(clusters || [])].sort((a, b) => {
+        const ta = Number(a?.firstSeenMs || 0);
+        const tb = Number(b?.firstSeenMs || 0);
+        if (ta !== tb) return ta - tb;
+        return String(a?.label || "").localeCompare(String(b?.label || ""));
+      });
+    }
+
+    function buildStoryClusters(items, strictness = "balanced"){
+      const preset = CLUSTER_PRESETS[strictness] || CLUSTER_PRESETS.balanced;
+      const features = (items || []).map((item) => buildStoryFeature(item));
+      const ordered = [...features].sort((a, b) => {
+        if (a.firstSeenMs !== b.firstSeenMs) return a.firstSeenMs - b.firstSeenMs;
+        return a.sourceId.localeCompare(b.sourceId);
+      });
+
+      const clusters = [];
+      const bySource = {};
+      for (const feature of ordered) {
+        let best = null;
+        const candidates = sortClustersStable(clusters);
+        for (const cluster of candidates) {
+          const jac = jaccard(feature.expanded, cluster.exemplarExpandedSet);
+          const tri = charTrigramSimilarity(feature.norm, cluster.exemplarNorm);
+          const primaryHit = jac >= preset.primary;
+          const secondaryHit = jac >= preset.secondary && tri >= preset.trigram;
+          if (!primaryHit && !secondaryHit) continue;
+          const score = primaryHit ? jac : ((jac * 0.7) + (tri * 0.3));
+          if (!best || score > best.score) {
+            best = {
+              cluster,
+              score,
+              jac,
+              tri,
+              rule: primaryHit ? "primary" : "secondary+trigram",
+            };
+          }
+        }
+
+        if (!best) {
+          const label = clusterLabelFromTokens(feature.topTokens);
+          const id = `${slugify(label)}-${stableHash(`${label}|${feature.sourceId}|${feature.norm}`)}`;
+          const newCluster = {
+            id,
+            label,
+            exemplarTitle: feature.title || label,
+            exemplarNorm: feature.norm,
+            exemplarExpandedSet: new Set(feature.expanded),
+            exemplarTokens: [...feature.topTokens],
+            firstSeenMs: feature.firstSeenMs,
+            items: [],
+          };
+          clusters.push(newCluster);
+          best = { cluster: newCluster, score: 1, jac: 1, tri: 1, rule: "new" };
+        }
+
+        best.cluster.items.push({
+          sourceId: feature.sourceId,
+          score: best.score,
+          jaccard: best.jac,
+          trigram: best.tri,
+          rule: best.rule,
+          topTokens: [...feature.topTokens],
+          norm: feature.norm,
+          title: feature.title,
+          firstSeenMs: feature.firstSeenMs,
+          clusterKey: feature.clusterKey,
+        });
+
+        bySource[feature.sourceId] = {
+          clusterId: best.cluster.id,
+          clusterLabel: best.cluster.label,
+          score: best.score,
+          jaccard: best.jac,
+          trigram: best.tri,
+          rule: best.rule,
+          itemTokens: feature.topTokens.slice(0, 6),
+          exemplarTokens: best.cluster.exemplarTokens.slice(0, 6),
+          clusterKey: feature.clusterKey,
+        };
+      }
+
+      let merged = sortClustersStable(clusters);
+      let changed = true;
+      while (changed) {
+        changed = false;
+        outer: for (let i = 0; i < merged.length; i += 1) {
+          for (let j = i + 1; j < merged.length; j += 1) {
+            const a = merged[i];
+            const b = merged[j];
+            if (Math.abs((a.firstSeenMs || 0) - (b.firstSeenMs || 0)) > CLUSTER_MERGE_WINDOW_MS) continue;
+            const score = jaccard(a.exemplarExpandedSet, b.exemplarExpandedSet);
+            if (score < preset.merge) continue;
+            a.items = [...a.items, ...b.items].sort((x, y) => (x.firstSeenMs || 0) - (y.firstSeenMs || 0));
+            merged.splice(j, 1);
+            changed = true;
+            break outer;
+          }
         }
       }
-      return best ? best.cluster.id : "other";
-    }
 
-    function upsertActiveCluster(cluster){
-      const c = clusterSanitize(cluster, cluster?.label || "Topic");
-      const overlapIdx = activeClusters.findIndex((x) =>
-        x.id === c.id ||
-        phrasesConflict(x.label, c.label) ||
-        (x.includeAny || []).some((p) => (c.includeAny || []).some((q) => phrasesConflict(p, q)))
-      );
-      if (overlapIdx >= 0) {
-        const merged = activeClusters[overlapIdx];
-        const includeAny = new Set([...(merged.includeAny || []), ...(c.includeAny || []), c.label]);
-        merged.includeAny = Array.from(includeAny).filter(Boolean);
-        if (Number(c.priority || 0) > Number(merged.priority || 0)) {
-          merged.priority = c.priority;
-          merged.label = c.label;
+      merged = sortClustersStable(merged).map((cluster, idx) => ({
+        ...cluster,
+        id: `${slugify(cluster.label)}-${stableHash(`${cluster.exemplarNorm}|${idx}`)}`,
+      }));
+
+      const mergedBySource = {};
+      for (const cluster of merged) {
+        for (const item of cluster.items) {
+          mergedBySource[item.sourceId] = {
+            clusterId: cluster.id,
+            clusterLabel: cluster.label,
+            score: item.score,
+            jaccard: item.jaccard,
+            trigram: item.trigram,
+            rule: item.rule,
+            itemTokens: item.topTokens.slice(0, 6),
+            exemplarTokens: cluster.exemplarTokens.slice(0, 6),
+            clusterKey: item.clusterKey,
+          };
         }
-        activeClusters[overlapIdx] = clusterSanitize(merged, merged.label);
-      } else {
-        activeClusters.push(c);
       }
-      saveActiveClusters(activeClusters);
+      return { clusters: merged, bySource: mergedBySource, strictness };
     }
 
-    function consolidateActiveClusters(){
-      if (!Array.isArray(activeClusters) || activeClusters.length < 2) return false;
-      const sorted = [...activeClusters].sort(clusterSort);
-      const out = [];
-      let changed = false;
-      for (const c0 of sorted) {
-        const c = clusterSanitize(c0, c0?.label || "Topic");
-        const idx = out.findIndex((x) =>
-          phrasesConflict(x.label, c.label) ||
-          (x.includeAny || []).some((p) => (c.includeAny || []).some((q) => phrasesConflict(p, q)))
-        );
-        if (idx < 0) {
-          out.push(c);
-          continue;
-        }
-        changed = true;
-        const base = out[idx];
-        const includeAny = new Set([...(base.includeAny || []), ...(c.includeAny || []), c.label, base.label]);
-        base.includeAny = Array.from(includeAny).filter(Boolean);
-        if (Number(c.priority || 0) > Number(base.priority || 0)) {
-          base.priority = c.priority;
-          base.label = c.label;
-        }
-        out[idx] = clusterSanitize(base, base.label);
-      }
-      if (changed) {
-        activeClusters = out;
-        saveActiveClusters(activeClusters);
-      }
-      return changed;
-    }
-
-    function removeActiveCluster(clusterId){
-      const removed = activeClusters.find((c) => c.id === clusterId) || null;
-      activeClusters = activeClusters.filter((c) => c.id !== clusterId);
-      if (removed) {
-        for (const phrase of (removed.includeAny || [])) {
-          dismissedSuggestions.delete(normalizeForCluster(phrase));
-        }
-        saveDismissedSuggestions(dismissedSuggestions);
-      }
-      saveActiveClusters(activeClusters);
-    }
-
-    function setPinned(cluster, pinned){
-      const c = clusterSanitize({ ...cluster, pinned }, cluster?.label || "Topic");
-      if (pinned) {
-        const idx = pinnedClusters.findIndex((x) => x.id === c.id);
-        if (idx >= 0) pinnedClusters[idx] = c;
-        else pinnedClusters.push(c);
-      } else {
-        pinnedClusters = pinnedClusters.filter((x) => x.id !== c.id);
-      }
-      savePinnedClusters(pinnedClusters);
-    }
-
-    function renderClusterChips(items){
+    function renderClusterChips(clusterResult){
       const activeHost = $("cluster-active");
       const suggHost = $("cluster-suggestions");
       if (activeHost) activeHost.innerHTML = "";
       if (suggHost) suggHost.innerHTML = "";
 
-      const activeSorted = [...activeClusters].sort(clusterSort);
+      const clusters = Array.isArray(clusterResult?.clusters) ? clusterResult.clusters : [];
       if (activeHost) {
-        for (const cluster of activeSorted) {
+        for (const cluster of clusters) {
           const chip = document.createElement("div");
           chip.className = "chip";
-          const lbl = document.createElement("button");
-          lbl.type = "button";
-          lbl.className = "chipLabel";
-          lbl.textContent = cluster.label;
-          lbl.title = (cluster.includeAny || []).join(", ");
-
-          const pin = document.createElement("button");
-          pin.type = "button";
-          pin.className = "chipAction";
-          pin.textContent = pinnedClusters.some((x) => x.id === cluster.id) ? "•" : "o";
-          pin.title = pinnedClusters.some((x) => x.id === cluster.id) ? "Unpin" : "Pin";
-          pin.addEventListener("click", () => {
-            const isPinned = pinnedClusters.some((x) => x.id === cluster.id);
-            setPinned(cluster, !isPinned);
-            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-          });
-
-          const remove = document.createElement("button");
-          remove.type = "button";
-          remove.className = "chipAction";
-          remove.textContent = "×";
-          remove.setAttribute("aria-label", `Remove ${cluster.label}`);
-          remove.addEventListener("click", () => {
-            removeActiveCluster(cluster.id);
-            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-          });
-
-          chip.appendChild(lbl);
-          chip.appendChild(pin);
-          chip.appendChild(remove);
+          chip.textContent = `${cluster.label} (${cluster.items.length})`;
+          chip.title = cluster.exemplarTokens.join(", ");
           activeHost.appendChild(chip);
         }
       }
-
-      const suggestions = buildClusterSuggestions(items, [...activeClusters]);
       if (suggHost) {
-        for (const suggestion of suggestions) {
-          const chip = document.createElement("div");
-          chip.className = "chip";
-          const lbl = document.createElement("button");
-          lbl.type = "button";
-          lbl.className = "chipLabel";
-          lbl.textContent = `${titleCaseShortLabel(suggestion.phrase)} (${suggestion.count})`;
-          lbl.addEventListener("click", () => {
-            const cluster = createClusterFromPhrase(suggestion.phrase);
-            upsertActiveCluster(cluster);
-            dismissedSuggestions.delete(normalizeForCluster(suggestion.phrase));
-            saveDismissedSuggestions(dismissedSuggestions);
-            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-          });
-
-          const add = document.createElement("button");
-          add.type = "button";
-          add.className = "chipAction";
-          add.textContent = "×";
-          add.title = "Dismiss suggestion";
-          add.addEventListener("click", () => {
-            dismissedSuggestions.add(normalizeForCluster(suggestion.phrase));
-            saveDismissedSuggestions(dismissedSuggestions);
-            renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-          });
-
-          chip.appendChild(lbl);
-          chip.appendChild(add);
-          suggHost.appendChild(chip);
-        }
+        const chip = document.createElement("div");
+        chip.className = "chip";
+        chip.textContent = `Mode: ${titleCaseShortLabel(clusterResult?.strictness || "balanced")}`;
+        suggHost.appendChild(chip);
       }
     }
 
-    function renderClusteredOverview(sources, indicatorsById, timelineBySource = {}){
+    function appendClusterDebugInfo(card, sourceId){
+      if (!clusteringDebugMode) return;
+      const details = latestClusterAssignmentsBySource?.[sourceId];
+      if (!details) return;
+      const body = card.querySelector(".cardBody .headlineWrap");
+      if (!body) return;
+      const box = document.createElement("div");
+      box.className = "clusterDebugCard";
+      const score = Number.isFinite(Number(details.score)) ? Number(details.score).toFixed(3) : "0.000";
+      box.innerHTML = [
+        `<div><strong>Cluster:</strong> ${escapeHtml(details.clusterLabel || "Other")}</div>`,
+        `<div><strong>Score:</strong> ${escapeHtml(score)} (${escapeHtml(details.rule || "new")})</div>`,
+        `<div><strong>Item:</strong> ${escapeHtml((details.itemTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
+        `<div><strong>Exemplar:</strong> ${escapeHtml((details.exemplarTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
+      ].join("");
+      body.appendChild(box);
+    }
+
+    function renderClusteredOverview(sources, indicatorsById, timelineBySource = {}, clusterResult = null){
       const groupsHost = $("cluster-groups");
       if (!groupsHost) return;
       groupsHost.innerHTML = "";
@@ -5272,21 +5185,17 @@
       }
 
       const ids = sortedOverviewIds(sources, indicatorsById);
-
-      const activeSorted = [...activeClusters].sort(clusterSort);
-      const grouped = new Map();
-      for (const cluster of activeSorted) grouped.set(cluster.id, []);
+      const clusters = Array.isArray(clusterResult?.clusters) ? clusterResult.clusters : [];
+      const grouped = new Map(clusters.map((cluster) => [cluster.id, []]));
       grouped.set("other", []);
 
       for (const id of ids) {
-        const src = sources?.[id] || {};
-        const item = { sourceId: id, title: src?.item?.title || "", url: src?.item?.url || "" };
-        const clusterId = assignItemToCluster(item, activeSorted);
+        const clusterId = latestClusterAssignmentsBySource?.[id]?.clusterId || "other";
         if (!grouped.has(clusterId)) grouped.set(clusterId, []);
         grouped.get(clusterId).push(id);
       }
 
-      const order = [...activeSorted.map((c) => c.id), "other"];
+      const order = [...clusters.map((cluster) => cluster.id), "other"];
       for (const clusterId of order) {
         const idsInGroup = applySavedOrder(clusterId, grouped.get(clusterId) || []);
         if (!idsInGroup.length) continue;
@@ -5298,7 +5207,7 @@
         const h1 = document.createElement("h1");
         const label = clusterId === "other"
           ? "Other"
-          : (activeSorted.find((c) => c.id === clusterId)?.label || "Other");
+          : (clusters.find((cluster) => cluster.id === clusterId)?.label || "Other");
         h1.textContent = label;
         const count = document.createElement("span");
         count.className = "tiny";
@@ -5312,6 +5221,7 @@
           const src = sources?.[id] || {};
           const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
           const card = buildCardEl(id, src, ind, timelineBySource);
+          appendClusterDebugInfo(card, id);
           card.draggable = true;
           card.addEventListener("dragstart", (e) => {
             card.classList.add("dragging");
@@ -5360,12 +5270,60 @@
 
     function renderStoryClusters(sources, indicatorsById, timelineBySource = {}){
       latestOverviewPayload = { sources, indicators: indicatorsById, timelineBySource };
-      consolidateActiveClusters();
-      autoActivateClustersForCoverage(sources);
-      const items = overviewItemsFromSources(sources);
-      renderClusterChips(items);
-      renderClusteredOverview(sources, indicatorsById, timelineBySource);
+      try {
+        const items = overviewItemsFromSources(sources);
+        const result = buildStoryClusters(items, clusteringStrictness);
+        latestClusterAssignmentsBySource = result.bySource || {};
+        renderClusterChips(result);
+        renderClusteredOverview(sources, indicatorsById, timelineBySource, result);
+      } catch (err) {
+        console.error("Cluster render failed", err);
+        const groupsHost = $("cluster-groups");
+        const activeHost = $("cluster-active");
+        const suggHost = $("cluster-suggestions");
+        if (activeHost) activeHost.innerHTML = "";
+        if (suggHost) suggHost.innerHTML = "";
+        if (groupsHost) {
+          groupsHost.innerHTML = "";
+          const alert = document.createElement("div");
+          alert.className = "inlineEmpty";
+          alert.textContent = "Story clustering is temporarily unavailable. Showing unclustered cards.";
+          groupsHost.appendChild(alert);
+          const fallback = document.createElement("section");
+          fallback.className = "clusterGroup";
+          const grid = document.createElement("div");
+          grid.className = "grid";
+          const ids = sortedOverviewIds(sources, indicatorsById);
+          for (const id of ids) {
+            const src = sources?.[id] || {};
+            const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
+            const card = buildCardEl(id, src, ind, timelineBySource);
+            grid.appendChild(card);
+          }
+          fallback.appendChild(grid);
+          groupsHost.appendChild(fallback);
+        }
+      }
     }
+
+    function runClusteringHarness(){
+      const sample = [
+        { sourceId: "s1", title: "Mexican drug cartel boss captured in Jalisco", url: "" },
+        { sourceId: "s2", title: "Cartel leader arrested in Mexico after raid", url: "" },
+        { sourceId: "s3", title: "Tourists told to take shelter after National Guard troops killed", url: "" },
+        { sourceId: "s4", title: "National Guard soldiers killed; shelter warning issued to tourists", url: "" },
+        { sourceId: "s5", title: "Federal Reserve signals no change to rates", url: "" },
+      ];
+      const result = buildStoryClusters(sample, clusteringStrictness);
+      console.log(`[cluster-harness] strictness=${clusteringStrictness} clusters=${result.clusters.length}`);
+      for (const cluster of result.clusters) {
+        const titles = cluster.items.map((item) => item.title);
+        console.log(`- ${cluster.label} (${cluster.items.length})`, titles);
+      }
+      return result;
+    }
+
+    window.__clusterHarness = runClusteringHarness;
 
     // Overview card click -> open source details on screenshots tab.
     document.addEventListener("click", (e) => {
@@ -6248,6 +6206,17 @@
       deepDiveState.selectedObservedAt = null;
       renderDeepDive();
     });
+    $("cluster-strictness")?.addEventListener("change", (e) => {
+      const next = String(e.target?.value || "balanced").toLowerCase();
+      clusteringStrictness = CLUSTER_PRESETS[next] ? next : "balanced";
+      saveClusterStrictness(clusteringStrictness);
+      renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+    });
+    $("cluster-debug")?.addEventListener("change", (e) => {
+      clusteringDebugMode = Boolean(e.target?.checked);
+      saveClusterDebugMode(clusteringDebugMode);
+      renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+    });
 
     $("btn-history-close")?.addEventListener("click", () => setHistoryOpen(false));
     $("btn-data-close")?.addEventListener("click", () => setDataOpen(false));
@@ -6377,8 +6346,17 @@
     if (deepWindow) deepWindow.value = String(DEEP_DIVE_DEFAULT_HOURS);
     const momentLookback = $("moment-lookback");
     if (momentLookback) momentLookback.value = String(momentState.lookbackMinutes);
+    const clusterStrictnessEl = $("cluster-strictness");
+    if (clusterStrictnessEl) clusterStrictnessEl.value = clusteringStrictness;
+    const clusterDebugEl = $("cluster-debug");
+    if (clusterDebugEl) clusterDebugEl.checked = clusteringDebugMode;
     renderStatusLine();
     reload();
+
+    const runClusterHarnessFromQuery = new URLSearchParams(location.search).get("cluster_harness");
+    if (runClusterHarnessFromQuery === "1" || runClusterHarnessFromQuery === "true") {
+      runClusteringHarness();
+    }
   </script>
 </body>
 </html>
