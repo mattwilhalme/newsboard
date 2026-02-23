@@ -43,3 +43,10 @@ abc-raw.html
 !docs/data/history.json
 !docs/data/current.json
 !docs/data/unified.json
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
