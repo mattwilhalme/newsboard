@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-23T18:42:45.606Z",
+  "generatedAt": "2026-02-23T19:45:50.433Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:02:38.125Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": 6,
-      "to_rank": 6,
-      "from_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
-      "from_rank": 5,
-      "to_rank": 1,
-      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
-      "to_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": 6,
-      "to_rank": 2,
-      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "4f097a463532f9b454a6caae07c81913c5793457",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say",
-      "to_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "b6bd67fac5d270aaf4fbce7c45ee53c33d8a103b",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "US beats Canada for first men's hockey gold at the Olympics since 1980",
-      "to_title": "US beats Canada for first men's hockey gold at the Olympics since 1980"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "97103096b8a5ea04a57b29d98a37331894091782",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke",
-      "to_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "e41c51cc9f39bb262f95102730e9fc4e33dc0fb1",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll",
-      "to_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T19:52:45.726Z",
@@ -1281,6 +1211,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump keeps lashing out at SCOTUS on tariff ruling",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "44e5c143d9dbd0f49156df0d1574f7754444ead8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "What to know about Mexico violence as president offers reassurances"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5f603fc7b236d7885c6bd860cc0391a8eface285",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "25 Mexican National Guard troops left dead in operation that killed cartel leader"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b30270f3cb303c0d2d6617dd012b894624116361",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "How to watch Trump's 2026 State of the Union address and what to know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fb525f3dd5f8589fc816c4715d8eb453de0d1b5",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner",
+      "to_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "MOVED",
+      "fingerprint": "2964cb0e71a9072575356c4040c2027383b56313",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Peter Mandelson arrested on suspicion of misconduct in public office",
+      "to_title": "Peter Mandelson arrested on suspicion of misconduct in public office"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "MOVED",
+      "fingerprint": "8be45b5902cb44bb66f4ded3719f4125f994437b",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "BBC apologizes after airing racial slurs in 2026 BAFTAs broadcast",
+      "to_title": "BBC apologizes after airing racial slurs in 2026 BAFTAs broadcast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "MOVED",
+      "fingerprint": "9176cbc0fec9c39dbc3d4cdbe3a00f20492527e7",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash",
+      "to_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "MOVED",
+      "fingerprint": "e957f5f6d9a84a64034a7074caf34eb08fbd2c03",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Judge permanently blocks release of final report on Trump classified documents probe",
+      "to_title": "Judge permanently blocks release of final report on Trump classified documents probe"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "43d4867bab294d85140701e688074877ae5d6bad",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingNick Reiner pleads not guilty in stabbing deaths of Rob and Michele Reiner",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "750860cf1bca9927dd2b117da7ed67b201eeeb41",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:25 Mexican National Guard troops left dead in operation that killed cartel leader",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T19:46:00.488Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7d56caf84f50473062908b1eed5f62eaa0f06413",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "FBI Director Kash Patel joins Team USA hockey in gold medal celebration",
       "to_title": null
     }
   ]
