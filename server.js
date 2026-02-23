@@ -24,6 +24,9 @@ const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
 const SCREENSHOT_RETENTION_HOURS = 18;
+const REWIND_DEFAULT_LIMIT = 500;
+const REWIND_MAX_LIMIT = 1500;
+const REWIND_MAX_RANGE_MS = 6 * 60 * 60 * 1000;
 const DEBUG_SCREENSHOT = process.env.DEBUG_SCREENSHOT === "1";
 
 const DEFAULT_SCREENSHOT_PROFILE = {
@@ -3726,6 +3729,111 @@ app.get("/api/timeline", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ ok: false, error: String(err?.message || err) });
+  }
+});
+
+app.get("/api/rewind/screenshots", async (req, res) => {
+  try {
+    const startRaw = String(req.query?.start || "").trim();
+    const endRaw = String(req.query?.end || "").trim();
+    const sourceRaw = String(req.query?.source || "").trim();
+    const limitRaw = Number(req.query?.limit || REWIND_DEFAULT_LIMIT);
+
+    const startMs = Date.parse(startRaw);
+    const endMs = Date.parse(endRaw);
+    if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) {
+      return res.status(400).json({ ok: false, error: "Invalid start/end datetime." });
+    }
+    if (endMs <= startMs) {
+      return res.status(400).json({ ok: false, error: "End must be after start." });
+    }
+    if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
+      return res.status(400).json({ ok: false, error: "Requested range exceeds 6 hours." });
+    }
+
+    const sourceId = canonicalServerSourceId(sourceRaw || "");
+    if (sourceRaw && (!sourceId || !SERVER_SOURCE_IDS.includes(sourceId))) {
+      return res.status(400).json({ ok: false, error: "Invalid source value." });
+    }
+
+    const limit = Number.isFinite(limitRaw)
+      ? Math.max(1, Math.min(REWIND_MAX_LIMIT, Math.floor(limitRaw)))
+      : REWIND_DEFAULT_LIMIT;
+
+    if (!hasSupabaseAdmin()) {
+      return res.status(503).json({ ok: false, error: "Supabase admin is not configured." });
+    }
+
+    const sb = getSupabaseAdmin();
+    let q = sb
+      .from("screenshot_events")
+      .select("ts,source_id,kind,title,url,object_path,shot_url")
+      .gte("ts", new Date(startMs).toISOString())
+      .lte("ts", new Date(endMs).toISOString())
+      .in("kind", ["new_url", "new_headline", "heartbeat"])
+      .order("ts", { ascending: false })
+      .limit(limit);
+
+    if (sourceId) {
+      q = q.eq("source_id", sourceId);
+    } else {
+      q = q.in("source_id", SERVER_SOURCE_IDS);
+    }
+
+    const { data, error } = await q;
+    if (error) throw error;
+
+    let rows = Array.isArray(data) ? data.map((row) => ({ ...row })) : [];
+    if (rows.length) {
+      if (!SUPABASE_SCREENSHOT_PUBLIC) {
+        const uniquePaths = [...new Set(rows.map((row) => row?.object_path).filter(Boolean))];
+        const signedByPath = new Map();
+        for (let i = 0; i < uniquePaths.length; i += 100) {
+          const batch = uniquePaths.slice(i, i + 100);
+          const { data: signedRows, error: signErr } = await sb.storage
+            .from(SUPABASE_SCREENSHOT_BUCKET)
+            .createSignedUrls(batch, 3600);
+          if (signErr) {
+            console.warn("rewind signed url generation failed:", signErr.message || signErr);
+            continue;
+          }
+          for (const signed of signedRows || []) {
+            if (signed?.path && signed?.signedUrl) signedByPath.set(signed.path, signed.signedUrl);
+          }
+        }
+        rows = rows.map((row) => ({
+          ...row,
+          shot_url: row?.shot_url || signedByPath.get(row?.object_path || "") || null,
+        }));
+      } else {
+        rows = rows.map((row) => {
+          if (row?.shot_url) return row;
+          const pub = sb.storage.from(SUPABASE_SCREENSHOT_BUCKET).getPublicUrl(row?.object_path || "");
+          return { ...row, shot_url: pub?.data?.publicUrl || null };
+        });
+      }
+    }
+
+    const items = rows
+      .filter((row) => row?.shot_url)
+      .map((row) => ({
+        ts: row?.ts || null,
+        source_id: row?.source_id || null,
+        source_label: sourceNameById(row?.source_id || ""),
+        kind: row?.kind || "heartbeat",
+        title: row?.title || null,
+        url: row?.url || null,
+        shot_url: row?.shot_url || null,
+      }));
+
+    return res.json({
+      start: new Date(startMs).toISOString(),
+      end: new Date(endMs).toISOString(),
+      count: items.length,
+      items,
+    });
+  } catch (err) {
+    return res.status(500).json({ ok: false, error: String(err?.message || err) });
   }
 });
 
