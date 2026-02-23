@@ -1920,9 +1920,14 @@ async function scrapeCNNHero() {
         }
       }
 
-      // Target current lead-plus-headlines centerpiece title.
-      const h2 = document.querySelector("h2.container__title_url-text.container_lead-plus-headlines__title_url-text[data-editable='title']");
-      if (h2) {
+      // Primary target: lead-package top headline URL text.
+      const primarySelectors = [
+        "h2.container__title_url-text.container_lead-package__title_url-text[data-editable='title']",
+        "h2.container__title_url-text.container_lead-plus-headlines__title_url-text[data-editable='title']",
+      ];
+      for (const sel of primarySelectors) {
+        const h2 = document.querySelector(sel);
+        if (!h2) continue;
         const title = clean(h2.textContent || "");
         const a = h2.closest("a[href]");
         const href = a?.getAttribute("href") || "";
@@ -1930,12 +1935,20 @@ async function scrapeCNNHero() {
         if (title && url) return { ok: true, title, url };
       }
 
-      // Fallback: any lead-plus-headlines container with title.
-      const container = document.querySelector(".container.container_lead-plus-headlines[data-layout='container_lead-plus-headlines']");
-      if (container) {
-        const titleEl = container.querySelector("h2.container__title_url-text[data-editable='title']");
-        const title = clean(titleEl?.textContent || "");
-        const a = container.querySelector('a.container__title-url[href]');
+      // Fallback: inspect lead-package / lead-plus-headlines containers.
+      const leadContainers = Array.from(document.querySelectorAll(
+        ".container.container_lead-package, .container.container_lead-plus-headlines",
+      ));
+      for (const container of leadContainers) {
+        const titleEl = container.querySelector(
+          "h2.container__title_url-text[data-editable='title'], h2.container__title-text[data-editable='title']",
+        );
+        const title = clean(
+          titleEl?.textContent || container.getAttribute("data-title") || container.getAttribute("data-collapsed-text") || "",
+        );
+        const a =
+          titleEl?.closest("a[href]") ||
+          container.querySelector("a.container__title-url[href], a[href*='/'][href]");
         const href = a?.getAttribute("href") || "";
         const url = href ? abs(href) : null;
         if (title && url) return { ok: true, title, url };
@@ -2554,8 +2567,9 @@ async function scrapeLATimesHero() {
         if (!u) return false;
         const path = String(u.pathname || "");
         const isStory = /\/story\//i.test(path);
+        const isList = /\/list(\/|$)/i.test(path);
         const isLive = /\/live(\/|$)/i.test(path) || /\/live-updates(\/|$)/i.test(path);
-        if (!isStory && !isLive) return false;
+        if (!isStory && !isList && !isLive) return false;
         if (/\/b2b\//i.test(url)) return false;
         return true;
       }
@@ -2569,10 +2583,16 @@ async function scrapeLATimesHero() {
         "main .promo-title a[href*='/live']",
         "main a.link[href*='/live-updates']",
         "main a[href*='/live-updates']",
+        "main h1.promo-title a.link[href*='/list/']",
+        "main h1 a.link[href*='/list/']",
+        "main .promo-title a.link[href*='/list/']",
+        "main a.link[href*='/list/']",
         "main h1.promo-title a.link[href*='/story/']",
         "main h1 a.link[href*='/story/']",
         "main .promo-title a.link[href*='/story/']",
         "main a.link[href*='/story/']",
+        "main h1.promo-title a.link[href]",
+        "main .promo-title a.link[href]",
         "h1.promo-title a.link[href*='/story/']",
         "main article h1 a[href]",
         "main article a[href]",
@@ -2596,12 +2616,16 @@ async function scrapeLATimesHero() {
             try { return new URL(url).pathname || ""; } catch { return ""; }
           })();
           const isLive = /\/live(\/|$)/i.test(path) || /\/live-updates(\/|$)/i.test(path);
+          const isList = /\/list(\/|$)/i.test(path);
+          const isStory = /\/story\//i.test(path);
           let score = 0;
           if (a.closest("h1")) score += 80;
           if (a.closest(".promo-title")) score += 40;
           if (a.closest("article")) score += 20;
           if (a.closest("main")) score += 30;
           if (isLive) score += 35;
+          if (isStory) score += 28;
+          if (isList) score += 24;
           if (title.length >= 24 && title.length <= 240) score += 10;
           if (a.closest("header,nav,footer,[data-element='page-header'],[data-element='page-subheader']")) score -= 120;
           return { title, url, score };
