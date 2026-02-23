@@ -13,12 +13,17 @@
     "test:wp": "node scripts/test-wp-scraper.js",
     "clean-cache": "rm -f cache.json",
     "clean-archive": "rm -rf archive/*",
-    "install-browsers": "npx playwright install"
+    "install-browsers": "npx playwright install",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
     "cheerio": "^1.2.0",
     "express": "^5.2.1",
-    "playwright": "^1.58.0",
-    "@supabase/supabase-js": "^2.49.1"
+    "playwright": "^1.58.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.68.0"
   }
 }
