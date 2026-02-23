@@ -1389,7 +1389,7 @@
   <aside class="drawer" id="drawer-moment" aria-hidden="true">
     <div class="drawerHead">
       <div>
-        <div class="drawerTitle">Moment Reel</div>
+        <div class="drawerTitle">Storyline Rewind</div>
         <div class="tiny" id="moment-source-line">—</div>
       </div>
       <button id="btn-moment-close" class="btn" type="button">Close</button>
@@ -1404,6 +1404,11 @@
             <option value="30">30m</option>
             <option value="60">60m</option>
             <option value="120" selected>120m</option>
+          </select>
+          <label class="tiny" for="moment-coverage-mode">Coverage</label>
+          <select id="moment-coverage-mode" class="linkbtn">
+            <option value="top10" selected>Include Top10</option>
+            <option value="only1">Only #1</option>
           </select>
           <label class="tiny"><input id="moment-include-shots" type="checkbox" checked> Include screenshots</label>
           <label class="tiny"><input id="moment-start-earliest" type="checkbox" checked> Start at earliest match</label>
@@ -1487,12 +1492,14 @@
     let selectedHistoryItem = null;
     let selectedDetailsTab = "changes";
     let clusterCardOrder = {};
+    let latestClusterReasonsBySource = {};
     let momentState = {
       sourceId: "",
       url: "",
       title: "",
       t0: null,
       lookbackMinutes: 120,
+      includeTop10: true,
       includeScreenshots: true,
       startEarliest: true,
       payload: null,
@@ -2073,58 +2080,65 @@
       head.innerHTML = `<span>${escapeHtml(String(frame?.type || "frame"))}</span><span>${escapeHtml(fmtTime(frame?.ts))}</span>`;
       host.appendChild(head);
 
-      if (frame?.type === "snapshot") {
-        const heroTitle = String(frame?.hero?.title || "—");
-        const heroUrl = String(frame?.hero?.url || "");
-        const hero = document.createElement("div");
-        hero.className = "historyMetaCard";
-        hero.innerHTML = `<div class="statLabel">Hero</div><div class="statValue">${escapeHtml(heroTitle)}</div>`;
-        if (heroUrl) {
-          const a = document.createElement("a");
-          a.className = "top10Link";
-          a.href = heroUrl;
-          a.target = "_blank";
-          a.rel = "noopener";
-          a.textContent = heroUrl;
-          hero.appendChild(a);
-        }
-        host.appendChild(hero);
+      if (frame?.type === "bucket") {
+        const meta = document.createElement("div");
+        meta.className = "momentMeta";
+        meta.textContent = `Coverage: ${Number(frame?.coverage_count || 0)} publisher(s)`;
+        host.appendChild(meta);
 
-        const top = document.createElement("div");
-        top.className = "historyMetaCard";
+        const coverage = document.createElement("div");
+        coverage.className = "historyMetaCard";
         const list = document.createElement("ol");
         list.className = "top10List";
-        const topRows = (Array.isArray(frame?.top10) ? frame.top10 : []).slice(0, 5);
-        for (const row of topRows) {
+        const rows = Array.isArray(frame?.coverage) ? frame.coverage : [];
+        for (const row of rows) {
           const li = document.createElement("li");
           li.className = "top10Row";
-          li.innerHTML = `<div class="top10Rank">${escapeHtml(String(row?.rank || "?"))}.</div><div class="deepEventBody"><a class="top10Link" href="${escapeHtml(String(row?.url || "#"))}" target="_blank" rel="noopener">${escapeHtml(String(row?.title || "—"))}</a></div>`;
+          const slot = String(row?.slot || "");
+          const rankTxt = slot === "hero:1" ? "H" : `#${Number(row?.rank || "?")}`;
+          li.innerHTML = `<div class="top10Rank">${escapeHtml(rankTxt)}</div><div class="deepEventBody"><div class="tiny">${escapeHtml(String(row?.source_name || row?.source_id || ""))}</div><a class="top10Link" href="${escapeHtml(String(row?.url || "#"))}" target="_blank" rel="noopener">${escapeHtml(String(row?.title || "—"))}</a></div>`;
           list.appendChild(li);
         }
-        if (!topRows.length) {
+        if (!rows.length) {
           const li = document.createElement("li");
           li.className = "top10Row";
-          li.textContent = "No Top 10 rows for this frame.";
+          li.textContent = "No matched publisher coverage in this bucket.";
           list.appendChild(li);
         }
-        top.appendChild(list);
-        host.appendChild(top);
+        coverage.appendChild(list);
+        host.appendChild(coverage);
 
         const pills = document.createElement("div");
         pills.className = "momentPills";
-        for (const ev of frame?.diffs?.events || []) {
+        for (const ev of frame?.events || []) {
           const pill = document.createElement("span");
           pill.className = "momentPill";
-          pill.textContent = `${ev?.code || "EVENT"}${Number(ev?.count || 0) > 1 ? ` ${Number(ev.count)}` : ""}`;
+          pill.textContent = `${ev?.code || "EVENT"}`;
           pills.appendChild(pill);
         }
         if (!pills.childElementCount) {
           const quiet = document.createElement("span");
           quiet.className = "momentMeta";
-          quiet.textContent = "No diff events in this snapshot.";
+          quiet.textContent = "No diff events in this bucket.";
           pills.appendChild(quiet);
         }
         host.appendChild(pills);
+
+        const shots = Array.isArray(frame?.screenshots) ? frame.screenshots : [];
+        if (shots.length) {
+          const shot = shots[0];
+          const shotMeta = document.createElement("div");
+          shotMeta.className = "momentMeta";
+          shotMeta.textContent = `${shot?.source_name || shot?.source_id || ""} · ${timelineKindLabel(shot?.kind || "heartbeat")} · ${shot?.title || "—"}`;
+          host.appendChild(shotMeta);
+          if (shot?.shot_url) {
+            const img = document.createElement("img");
+            img.className = "momentShot";
+            img.src = shot.shot_url;
+            img.alt = shot?.title || "Screenshot";
+            host.appendChild(img);
+          }
+        }
       } else {
         const meta = document.createElement("div");
         meta.className = "momentMeta";
@@ -2162,10 +2176,10 @@
         row.className = `momentFrame ${i === activeIdx ? "active" : ""}`;
         row.innerHTML = `
           <div class="momentFrameHead">
-            <span>${escapeHtml(frame?.source_name || sourceLabel(frame?.source_id || "", null))} · ${escapeHtml(frame?.type === "snapshot" ? "snapshot" : (frame?.kind || "screenshot"))}</span>
+            <span>${escapeHtml(frame?.source_name || sourceLabel(frame?.source_id || "", null))} · ${escapeHtml(frame?.type === "bucket" ? "bucket" : (frame?.kind || "screenshot"))}</span>
             <span>${escapeHtml(fmtTime(frame?.ts))}</span>
           </div>
-          <div>${escapeHtml(frame?.type === "snapshot" ? (frame?.hero?.title || "Snapshot") : (frame?.title || "Screenshot"))}</div>
+          <div>${escapeHtml(frame?.type === "bucket" ? `${Number(frame?.coverage_count || 0)} publishers` : (frame?.title || "Screenshot"))}</div>
         `;
         row.addEventListener("click", () => {
           stopMomentAutoplay();
@@ -2179,15 +2193,25 @@
 
     function applyMomentPayload(payload){
       momentState.payload = payload || null;
-      momentState.frames = Array.isArray(payload?.frames) ? payload.frames : [];
+      if (Array.isArray(payload?.buckets)) {
+        momentState.frames = payload.buckets.map((bucket) => ({
+          ts: bucket?.ts || null,
+          type: "bucket",
+          coverage: Array.isArray(bucket?.coverage) ? bucket.coverage : [],
+          coverage_count: Number(bucket?.coverage_count || (Array.isArray(bucket?.coverage) ? bucket.coverage.length : 0)),
+          events: Array.isArray(bucket?.events) ? bucket.events : [],
+          screenshots: Array.isArray(bucket?.screenshots) ? bucket.screenshots : [],
+        }));
+      } else {
+        momentState.frames = Array.isArray(payload?.frames) ? payload.frames : [];
+      }
       momentState.frames.sort((a, b) => {
         const ta = momentFrameTsMs(a);
         const tb = momentFrameTsMs(b);
         if (ta !== tb) return ta - tb;
         if (String(a?.type || "") === String(b?.type || "")) return 0;
-        return a?.type === "snapshot" ? -1 : 1;
+        return a?.type === "bucket" ? -1 : 1;
       });
-      ensureMomentSnapshotDiffs(momentState.frames);
 
       const startMs = momentFrameTsMs(payload?.start_at);
       const targetIdx = momentState.frames.findIndex((frame) => momentFrameTsMs(frame) >= startMs);
@@ -2196,9 +2220,10 @@
       const anchorTitle = $("moment-anchor-title");
       const anchorMeta = $("moment-anchor-meta");
       const sourceLine = $("moment-source-line");
-      if (anchorTitle) anchorTitle.textContent = String(payload?.anchor?.title || momentState.title || "Moment Reel");
+      if (anchorTitle) anchorTitle.textContent = String(payload?.cluster?.title || payload?.anchor?.title || momentState.title || "Storyline");
       if (anchorMeta) {
-        anchorMeta.textContent = `Primary: ${payload?.primary?.reason === "earliest_match" ? "earliest match" : "anchor"} · ${fmtTime(payload?.primary?.ts)} · t0 ${fmtTime(payload?.t0)}`;
+        const entities = Array.isArray(payload?.cluster?.entities) ? payload.cluster.entities.slice(0, 4).join(" · ") : "";
+        anchorMeta.textContent = `Primary: ${payload?.primary?.reason === "earliest_match" ? "earliest match" : "anchor"} · ${fmtTime(payload?.primary?.ts || payload?.start_at)} · t0 ${fmtTime(payload?.t0 || payload?.anchor?.ts)}${entities ? ` · ${entities}` : ""}`;
       }
       if (sourceLine) sourceLine.textContent = `${sourceLabel(momentState.sourceId, null)} · ${fmtTime(payload?.start_at)} to ${fmtTime(payload?.end_at)}`;
 
@@ -2217,15 +2242,18 @@
       renderMomentList();
     }
 
-    async function buildMomentFallbackLocal({ sourceId, url, title, t0Iso, lookbackMinutes, forwardMinutes, includeScreenshots, startEarliest }) {
+    async function buildMomentFallbackLocal({ sourceId, url, title, t0Iso, lookbackMinutes, extendMinutes, bucketMinutes, includeTop10, includeScreenshots, startEarliest }) {
+      const runsPayload = await fetchJSON(`${TOP10_ABC_HISTORY_URL}?ts=${Date.now()}`).catch(() => ({ runs: [] }));
+      const runs = Array.isArray(runsPayload?.runs) ? runsPayload.runs : [];
       const timelinePayload = await fetchJSON(`${TIMELINE_URL}?ts=${Date.now()}`).catch(() => ({ events: [] }));
       const timelineEvents = Array.isArray(timelinePayload?.events) ? timelinePayload.events : [];
       const canonicalTarget = normalizeUrlForStory(url || "");
       const t0Ms = Number.isFinite(Date.parse(String(t0Iso || ""))) ? Date.parse(String(t0Iso)) : Date.now();
       const lookbackStart = t0Ms - (Number(lookbackMinutes) * 60 * 1000);
-      const windowEnd = t0Ms + (Number(forwardMinutes) * 60 * 1000);
+      const windowEnd = t0Ms + (Math.min(12 * 60, Number(extendMinutes || 120)) * 60 * 1000);
       const clusterTitleNorm = normalizeTitleForStory(title || "");
       const clusterKeywords = extractStoryKeywords(clusterTitleNorm);
+      const bucketMs = Math.max(1, Number(bucketMinutes || 5)) * 60 * 1000;
 
       const sortedEvents = timelineEvents
         .filter((ev) => {
@@ -2260,29 +2288,77 @@
       }
 
       const startMs = Number.isFinite(Date.parse(String(primaryEvent?.ts || ""))) ? Date.parse(String(primaryEvent?.ts || "")) : t0Ms;
-      const frames = includeScreenshots
-        ? sortedEvents
-          .filter((ev) => {
-            const ms = Date.parse(String(ev?.ts || ""));
-            if (!Number.isFinite(ms) || ms < startMs || ms > windowEnd) return false;
-            const evCanonical = normalizeUrlForStory(ev?.url || "");
-            const canonicalMatch = Boolean(canonicalTarget) && evCanonical === canonicalTarget;
-            const evKw = extractStoryKeywords(normalizeTitleForStory(ev?.title || ""));
-            const sim = jaccardKeywords(clusterKeywords, evKw);
-            const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
-            return canonicalMatch || keywordMatch;
-          })
-          .map((ev) => ({
+      function matchesStory(titleValue, urlValue) {
+        const evCanonical = normalizeUrlForStory(urlValue || "");
+        const canonicalMatch = Boolean(canonicalTarget) && evCanonical === canonicalTarget;
+        const evKw = extractStoryKeywords(normalizeTitleForStory(titleValue || ""));
+        const sim = jaccardKeywords(clusterKeywords, evKw);
+        const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+        return canonicalMatch || keywordMatch;
+      }
+
+      const bucketMap = new Map();
+      const abcRuns = runs
+        .filter((run) => {
+          const ms = Date.parse(String(run?.observedAt || ""));
+          return Number.isFinite(ms) && ms >= startMs && ms <= windowEnd;
+        })
+        .sort((a, b) => Date.parse(String(a?.observedAt || "")) - Date.parse(String(b?.observedAt || "")));
+      for (const run of abcRuns) {
+        const runMs = Date.parse(String(run?.observedAt || ""));
+        if (!Number.isFinite(runMs)) continue;
+        const keyMs = Math.floor(runMs / bucketMs) * bucketMs;
+        const key = new Date(keyMs).toISOString();
+        if (!bucketMap.has(key)) bucketMap.set(key, { ts: key, coverage: [], screenshots: [], events: [], coverage_count: 0 });
+
+        const rows = Array.isArray(run?.items) ? run.items : [];
+        const matched = rows
+          .filter((row) => includeTop10 ? Number(row?.rank) >= 1 && Number(row?.rank) <= 10 : Number(row?.rank) === 1)
+          .filter((row) => matchesStory(row?.title || "", row?.url || ""));
+        if (!matched.length) continue;
+        const best = [...matched].sort((a, b) => Number(a?.rank || 999) - Number(b?.rank || 999))[0];
+        bucketMap.get(key).coverage.push({
+          source_id: "abc1",
+          source_name: sourceLabel("abc1", null),
+          slot: Number(best?.rank) === 1 ? "top10:1" : `top10:${Number(best?.rank || 1)}`,
+          rank: Number(best?.rank || 1),
+          title: best?.title || null,
+          url: best?.url || null,
+        });
+      }
+
+      if (includeScreenshots) {
+        for (const ev of sortedEvents) {
+          const ms = Date.parse(String(ev?.ts || ""));
+          if (!Number.isFinite(ms) || ms < startMs || ms > windowEnd) continue;
+          if (String(ev?.source_id || "") !== "abc1") continue;
+          if (!matchesStory(ev?.title || "", ev?.url || "")) continue;
+          const keyMs = Math.floor(ms / bucketMs) * bucketMs;
+          const key = new Date(keyMs).toISOString();
+          if (!bucketMap.has(key)) bucketMap.set(key, { ts: key, coverage: [], screenshots: [], events: [], coverage_count: 0 });
+          bucketMap.get(key).screenshots.push({
             ts: ev?.ts || null,
-            type: "screenshot",
-            source_id: ev?.source_id || null,
-            source_name: sourceLabel(ev?.source_id || "", null),
+            source_id: "abc1",
+            source_name: sourceLabel("abc1", null),
             kind: ev?.kind || "heartbeat",
             title: ev?.title || null,
             url: ev?.url || null,
             shot_url: ev?.shot_url || null,
-          }))
-        : [];
+          });
+        }
+      }
+
+      const buckets = [...bucketMap.values()].sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")));
+      let prevSources = new Set();
+      for (const bucket of buckets) {
+        bucket.coverage_count = (bucket.coverage || []).length;
+        const curSources = new Set((bucket.coverage || []).map((row) => String(row?.source_id || "")));
+        const entered = [...curSources].filter((id) => !prevSources.has(id));
+        const exited = [...prevSources].filter((id) => !curSources.has(id));
+        if (entered.length) bucket.events.push({ code: "ENTER", sources: entered });
+        if (exited.length) bucket.events.push({ code: "EXIT", sources: exited });
+        prevSources = curSources;
+      }
 
       return {
         ok: true,
@@ -2297,8 +2373,8 @@
           ts: primaryEvent?.ts || new Date(t0Ms).toISOString(),
           reason: (primaryEvent && anchorEvent && primaryEvent !== anchorEvent) ? "earliest_match" : "anchor",
         },
-        cluster: { canonical_url: canonicalTarget || null, keywords: clusterKeywords },
-        frames,
+        cluster: { title: title || "Storyline", canonical_url: canonicalTarget || null, keywords: clusterKeywords, entities: [] },
+        buckets,
       };
     }
 
@@ -2316,15 +2392,17 @@
 
         if (!isGitHubPages) {
           const params = new URLSearchParams();
-          params.set("source", sourceId);
+          params.set("source_id", sourceId);
           if (url) params.set("url", url);
           if (title) params.set("title", title);
           if (t0) params.set("t0", t0);
           params.set("lookback_minutes", String(momentState.lookbackMinutes));
-          params.set("forward_minutes", "30");
+          params.set("extend_minutes", "120");
+          params.set("bucket_minutes", "5");
+          params.set("include_top10", momentState.includeTop10 ? "1" : "0");
           params.set("include_screenshots", momentState.includeScreenshots ? "1" : "0");
           params.set("start_earliest", momentState.startEarliest ? "1" : "0");
-          payload = await fetchJSON(`/api/moment/build?${params.toString()}`);
+          payload = await fetchJSON(`/api/storyline/build?${params.toString()}`);
         }
 
         if (!payload || !payload.ok) {
@@ -2334,7 +2412,9 @@
             title,
             t0Iso: t0,
             lookbackMinutes: momentState.lookbackMinutes,
-            forwardMinutes: 30,
+            extendMinutes: 120,
+            bucketMinutes: 5,
+            includeTop10: momentState.includeTop10,
             includeScreenshots: momentState.includeScreenshots,
             startEarliest: momentState.startEarliest,
           });
@@ -2353,9 +2433,11 @@
       momentState.title = String(title || "").trim();
       momentState.t0 = t0 || null;
       const lookbackSel = $("moment-lookback");
+      const coverageModeSel = $("moment-coverage-mode");
       const includeShots = $("moment-include-shots");
       const startEarliest = $("moment-start-earliest");
       if (lookbackSel) lookbackSel.value = String(momentState.lookbackMinutes);
+      if (coverageModeSel) coverageModeSel.value = momentState.includeTop10 ? "top10" : "only1";
       if (includeShots) includeShots.checked = Boolean(momentState.includeScreenshots);
       if (startEarliest) startEarliest.checked = Boolean(momentState.startEarliest);
       const anchorTitle = $("moment-anchor-title");
@@ -3428,6 +3510,16 @@
         : [];
       timelineEvents.sort((a, b) => Date.parse(String(b?.ts || "")) - Date.parse(String(a?.ts || "")));
       const headlineHistory = headlineHistoryFromTimeline(timelineEvents, sourceRow?.item?.url || null);
+      const clusterWhy = latestClusterReasonsBySource?.[sourceId] || null;
+
+      if (clusterWhy) {
+        const whyCard = document.createElement("div");
+        whyCard.className = "historyMetaCard";
+        const canonicalTxt = clusterWhy.canonical_match ? "canonical URL match" : "canonical URL no";
+        const fingerprintTxt = clusterWhy.fingerprint_match ? "fingerprint match" : "fingerprint no";
+        whyCard.innerHTML = `<div class="statLabel">Why grouped?</div><div class="tiny">${escapeHtml(canonicalTxt)} · ${escapeHtml(fingerprintTxt)} · entities overlap ${escapeHtml(String(clusterWhy.entities_overlap || 0))} · keywords overlap ${escapeHtml(String(clusterWhy.keywords_overlap || 0))}</div>`;
+        host.appendChild(whyCard);
+      }
 
       if (selectedDetailsTab === "changes") {
         const wrap = document.createElement("div");
@@ -4844,6 +4936,253 @@
       renderClusteredOverview(sources, indicatorsById, timelineBySource);
     }
 
+    // Graph-based clustering replacement for Labs view.
+    function extractClientEntities(title){
+      const raw = String(title || "").trim();
+      if (!raw) return [];
+      const out = [];
+      const seen = new Set();
+      const quoted = raw.match(/["'“”]([^"'“”]{2,80})["'“”]/g) || [];
+      for (const part of quoted) {
+        const phrase = part.replace(/^["'“”]|["'“”]$/g, "").trim();
+        const key = phrase.toLowerCase();
+        if (!phrase || seen.has(key)) continue;
+        seen.add(key);
+        out.push(phrase);
+        if (out.length >= 10) return out;
+      }
+      const caps = raw.match(/\b(?:[A-Z][a-z0-9]+(?:[-'][A-Z]?[a-z0-9]+)?|[A-Z]{2,})(?:\s+(?:[A-Z][a-z0-9]+(?:[-'][A-Z]?[a-z0-9]+)?|[A-Z]{2,})){1,5}\b/g) || [];
+      for (const part of caps) {
+        const phrase = String(part || "").trim();
+        const key = phrase.toLowerCase();
+        if (!phrase || seen.has(key)) continue;
+        seen.add(key);
+        out.push(phrase);
+        if (out.length >= 10) break;
+      }
+      return out;
+    }
+
+    const CLUSTER_GENERIC_WORDS = new Set(["killed","shot","says","after","entering","operation","leader","secure","perimeter","detained"]);
+    function clientKeywords(title){
+      return extractStoryKeywords(normalizeTitleForStory(title || "")).filter((tok) => !CLUSTER_GENERIC_WORDS.has(tok));
+    }
+
+    function jaccardSets(a = [], b = []){
+      const sa = new Set((a || []).map((x) => String(x || "").toLowerCase()).filter(Boolean));
+      const sb = new Set((b || []).map((x) => String(x || "").toLowerCase()).filter(Boolean));
+      if (!sa.size || !sb.size) return { score: 0, overlap: 0 };
+      let overlap = 0;
+      for (const x of sa) if (sb.has(x)) overlap += 1;
+      const union = sa.size + sb.size - overlap;
+      return { score: union > 0 ? (overlap / union) : 0, overlap };
+    }
+
+    function clientStorySimilarity(a, b){
+      const kw = jaccardSets(a?.keywords || [], b?.keywords || []);
+      const ent = jaccardSets(a?.entities || [], b?.entities || []);
+      const canonicalMatch = Boolean(a?.canonical_url) && String(a?.canonical_url || "") === String(b?.canonical_url || "");
+      const fingerprintMatch = Boolean(a?.fingerprint) && String(a?.fingerprint || "") === String(b?.fingerprint || "");
+      let score = 0;
+      if (canonicalMatch) score += 1.0;
+      if (fingerprintMatch) score += 0.8;
+      score += 0.4 * kw.score;
+      score += 0.6 * ent.score;
+      const ta = Date.parse(String(a?.ts || ""));
+      const tb = Date.parse(String(b?.ts || ""));
+      const dt = (Number.isFinite(ta) && Number.isFinite(tb)) ? Math.abs(ta - tb) : Number.POSITIVE_INFINITY;
+      const mult = dt <= 2 * 60 * 60 * 1000 ? 1.0 : dt <= 6 * 60 * 60 * 1000 ? 0.8 : 0.5;
+      score *= mult;
+      return { score, canonicalMatch, fingerprintMatch, kwOverlap: kw.overlap, entOverlap: ent.overlap };
+    }
+
+    function clusterStoriesClient(stories){
+      const rows = [...(stories || [])].filter((x) => Number.isFinite(Date.parse(String(x?.ts || ""))))
+        .sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")));
+      const n = rows.length;
+      if (!n) return [];
+      const parent = Array.from({ length: n }, (_, i) => i);
+      function find(x){
+        let p = x;
+        while (parent[p] !== p) p = parent[p];
+        while (parent[x] !== x) {
+          const nxt = parent[x];
+          parent[x] = p;
+          x = nxt;
+        }
+        return p;
+      }
+      function union(a, b){
+        const ra = find(a);
+        const rb = find(b);
+        if (ra !== rb) parent[rb] = ra;
+      }
+
+      for (let i = 0; i < n; i += 1) {
+        const ai = rows[i];
+        const ta = Date.parse(String(ai?.ts || ""));
+        for (let j = i + 1; j < n; j += 1) {
+          const bj = rows[j];
+          const tb = Date.parse(String(bj?.ts || ""));
+          if ((tb - ta) > 24 * 60 * 60 * 1000) break;
+          const sim = clientStorySimilarity(ai, bj);
+          const edge = sim.score >= 0.85 || (sim.entOverlap >= 2 && sim.kwOverlap >= 3 && sim.score >= 0.70);
+          if (edge) union(i, j);
+        }
+      }
+
+      const grouped = new Map();
+      for (let i = 0; i < n; i += 1) {
+        const root = find(i);
+        if (!grouped.has(root)) grouped.set(root, []);
+        grouped.get(root).push(rows[i]);
+      }
+
+      const out = [];
+      for (const members of grouped.values()) {
+        const ordered = [...members].sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")));
+        const start = Date.parse(String(ordered[0]?.ts || ""));
+        const end = Date.parse(String(ordered[ordered.length - 1]?.ts || ""));
+        if ((end - start) > 24 * 60 * 60 * 1000) {
+          // split large chains into 24h chunks
+          let chunk = [];
+          let chunkStart = start;
+          for (const story of ordered) {
+            const ms = Date.parse(String(story?.ts || ""));
+            if (chunk.length && (ms - chunkStart) > 24 * 60 * 60 * 1000) {
+              out.push(chunk);
+              chunk = [story];
+              chunkStart = ms;
+            } else {
+              chunk.push(story);
+            }
+          }
+          if (chunk.length) out.push(chunk);
+        } else {
+          out.push(ordered);
+        }
+      }
+
+      return out.map((members, idx) => {
+        const entities = new Map();
+        for (const m of members) {
+          for (const e of m?.entities || []) {
+            const k = String(e || "").toLowerCase();
+            entities.set(k, { phrase: e, count: (entities.get(k)?.count || 0) + 1 });
+          }
+        }
+        const topEntities = [...entities.values()]
+          .sort((a, b) => b.count - a.count || String(b.phrase || "").length - String(a.phrase || "").length)
+          .slice(0, 2)
+          .map((x) => x.phrase);
+        const label = topEntities.length ? topEntities.join(" · ") : (members[0]?.title || "Storyline");
+        return {
+          id: `g${idx + 1}`,
+          title: label,
+          stories: members,
+          count: members.length,
+          start_at: members[0]?.ts || null,
+        };
+      }).sort((a, b) => Date.parse(String(a?.start_at || "")) - Date.parse(String(b?.start_at || "")));
+    }
+
+    function clusterReasonForStory(story, clusterStories){
+      const anchor = clusterStories.find((x) => String(x?.sourceId || "") !== String(story?.sourceId || "")) || clusterStories[0];
+      if (!anchor) return null;
+      const sim = clientStorySimilarity(story, anchor);
+      return {
+        canonical_match: sim.canonicalMatch,
+        fingerprint_match: sim.fingerprintMatch,
+        entities_overlap: sim.entOverlap,
+        keywords_overlap: sim.kwOverlap,
+        score: Number(sim.score.toFixed(2)),
+      };
+    }
+
+    function renderClusteredOverview(sources, indicatorsById, timelineBySource = {}){
+      const groupsHost = $("cluster-groups");
+      if (!groupsHost) return;
+      groupsHost.innerHTML = "";
+      latestClusterReasonsBySource = {};
+
+      const stories = [];
+      for (const [sourceId, src] of Object.entries(sources || {})) {
+        const title = String(src?.item?.title || "").trim();
+        const url = String(src?.item?.url || "").trim();
+        const ts = src?.updatedAt || src?.firstSeenAt || null;
+        if (!title && !url) continue;
+        const canonical = normalizeUrlForStory(url);
+        const titleNorm = normalizeTitleForStory(title);
+        stories.push({
+          sourceId,
+          ts,
+          title,
+          url,
+          canonical_url: canonical || "",
+          title_norm: titleNorm,
+          keywords: clientKeywords(title),
+          entities: extractClientEntities(title),
+          fingerprint: canonical ? normalizeForCluster(`${canonical}|${titleNorm}`) : normalizeForCluster(titleNorm),
+        });
+      }
+
+      const clusters = clusterStoriesClient(stories);
+      const suggested = clusters.filter((c) => Number(c?.count || 0) >= 2);
+      const singles = clusters.filter((c) => Number(c?.count || 0) < 2).flatMap((c) => c.stories || []);
+
+      const activeHost = $("cluster-active");
+      const suggHost = $("cluster-suggestions");
+      if (activeHost) activeHost.innerHTML = `<div class="tiny">Graph clusters: ${suggested.length}</div>`;
+      if (suggHost) suggHost.innerHTML = `<div class="tiny">Singletons: ${singles.length}</div>`;
+
+      function renderGroup(title, members){
+        const section = document.createElement("section");
+        section.className = "clusterGroup";
+        const head = document.createElement("div");
+        head.className = "clusterHeader";
+        const h1 = document.createElement("h1");
+        h1.textContent = title;
+        const count = document.createElement("span");
+        count.className = "tiny";
+        count.textContent = `(${members.length})`;
+        head.appendChild(h1);
+        head.appendChild(count);
+        section.appendChild(head);
+
+        const stack = document.createElement("div");
+        stack.className = "historyList";
+        for (const story of members) {
+          const id = String(story?.sourceId || "");
+          const src = sources?.[id] || {};
+          const ind = indicatorsById?.[id] || { changeType: null, stale2h: false };
+          const card = buildCardEl(id, src, ind, timelineBySource);
+          const reason = clusterReasonForStory(story, members);
+          if (reason) latestClusterReasonsBySource[id] = reason;
+          stack.appendChild(card);
+        }
+        section.appendChild(stack);
+        groupsHost.appendChild(section);
+      }
+
+      for (const cluster of suggested) {
+        renderGroup(cluster.title || "Suggested cluster", cluster.stories || []);
+      }
+      if (singles.length) {
+        renderGroup("Other stories", singles);
+      }
+      if (!suggested.length && !singles.length) {
+        const empty = document.createElement("div");
+        empty.className = "inlineEmpty";
+        empty.textContent = "No clustered stories yet.";
+        groupsHost.appendChild(empty);
+      }
+    }
+
+    function renderStoryClusters(sources, indicatorsById, timelineBySource = {}){
+      latestOverviewPayload = { sources, indicators: indicatorsById, timelineBySource };
+      renderClusteredOverview(sources, indicatorsById, timelineBySource);
+    }
+
     // Overview card click -> open source details on screenshots tab.
     document.addEventListener("click", (e) => {
       const card = e.target && e.target.closest ? e.target.closest(".card[data-source-id]") : null;
@@ -4889,7 +5228,7 @@
         const title = btn.getAttribute("data-title") || "";
         const ts = btn.getAttribute("data-ts") || null;
         openMomentDrawer({ sourceId, url, title, t0: ts });
-        setMomentStatus("Ready. Click Run to build frames.");
+        setMomentStatus("Ready. Click Run to build storyline.");
       }
     });
 
@@ -5707,6 +6046,9 @@
     $("moment-lookback")?.addEventListener("change", (e) => {
       momentState.lookbackMinutes = Number(e.target.value || 120);
     });
+    $("moment-coverage-mode")?.addEventListener("change", (e) => {
+      momentState.includeTop10 = String(e.target.value || "top10") !== "only1";
+    });
     $("moment-include-shots")?.addEventListener("change", (e) => {
       momentState.includeScreenshots = Boolean(e.target.checked);
     });
@@ -5815,6 +6157,8 @@
     if (deepWindow) deepWindow.value = String(DEEP_DIVE_DEFAULT_HOURS);
     const momentLookback = $("moment-lookback");
     if (momentLookback) momentLookback.value = String(momentState.lookbackMinutes);
+    const momentCoverageMode = $("moment-coverage-mode");
+    if (momentCoverageMode) momentCoverageMode.value = momentState.includeTop10 ? "top10" : "only1";
     renderStatusLine();
     reload();
   </script>
