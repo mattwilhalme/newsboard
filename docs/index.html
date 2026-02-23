@@ -1640,11 +1640,36 @@
     const CLUSTER_STRICTNESS_KEY = "nb_cluster_strictness";
     const CLUSTER_DEBUG_KEY = "nb_cluster_debug";
     const CLUSTER_PRESETS = {
-      loose: { primary: 0.24, secondary: 0.18, trigram: 0.16, merge: 0.32 },
-      balanced: { primary: 0.28, secondary: 0.22, trigram: 0.18, merge: 0.34 },
-      strict: { primary: 0.34, secondary: 0.26, trigram: 0.20, merge: 0.38 },
+      loose: {
+        entityStrong: 0.30,
+        entityWeak: 0.18,
+        tokenWithEntity: 0.16,
+        tokenOnly: 0.24,
+        relaxedEntity: 0.14,
+        relaxedToken: 0.12,
+        merge: 0.30,
+      },
+      balanced: {
+        entityStrong: 0.34,
+        entityWeak: 0.20,
+        tokenWithEntity: 0.18,
+        tokenOnly: 0.28,
+        relaxedEntity: 0.16,
+        relaxedToken: 0.14,
+        merge: 0.34,
+      },
+      strict: {
+        entityStrong: 0.38,
+        entityWeak: 0.24,
+        tokenWithEntity: 0.20,
+        tokenOnly: 0.34,
+        relaxedEntity: 0.18,
+        relaxedToken: 0.16,
+        merge: 0.38,
+      },
     };
     const CLUSTER_MERGE_WINDOW_MS = 6 * 60 * 60 * 1000;
+    const CLUSTER_ENTITY_BUDGET = 3;
     let activeView = "overview";
     let selectedWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     let latestDrawerPayload = { normalizedHistory: null, sources: null, indicators: null };
@@ -4850,6 +4875,131 @@
       return out;
     })();
 
+    const CLUSTER_ENTITY_STOPWORDS = new Set([
+      "the", "a", "an", "and", "or", "for", "with", "to", "of", "in", "on", "at", "from",
+      "after", "amid", "as", "by", "into", "what", "why", "how", "latest", "live", "updates",
+      "news", "video", "photos", "opinion",
+    ]);
+
+    const CLUSTER_DEMONYM_TO_COUNTRY = new Map([
+      ["mexican", "mexico"],
+      ["venezuelan", "venezuela"],
+      ["british", "uk"],
+      ["russian", "russia"],
+      ["ukrainian", "ukraine"],
+      ["israeli", "israel"],
+      ["palestinian", "palestine"],
+      ["iranian", "iran"],
+      ["chinese", "china"],
+      ["american", "us"],
+    ]);
+
+    const CLUSTER_ENTITY_PHRASE_MAP = new Map([
+      ["u.s.", "us"],
+      ["u.s", "us"],
+      ["us", "us"],
+      ["united states", "us"],
+      ["america", "us"],
+      ["uk", "uk"],
+      ["e.u.", "eu"],
+      ["eu", "eu"],
+      ["u.n.", "un"],
+      ["un", "un"],
+      ["nato", "nato"],
+      ["fbi", "fbi"],
+      ["cia", "cia"],
+      ["mexico", "mexico"],
+      ["jalisco", "jalisco"],
+      ["venezuela", "venezuela"],
+      ["russia", "russia"],
+      ["ukraine", "ukraine"],
+      ["israel", "israel"],
+      ["palestine", "palestine"],
+      ["iran", "iran"],
+      ["china", "china"],
+      ["national guard", "national_guard"],
+      ["mexican national guard", "mexico_national_guard"],
+      ["drug cartel", "drug_cartel"],
+      ["cartel", "drug_cartel"],
+      ["el mencho", "el_mencho"],
+      ["prince andrew", "prince_andrew"],
+    ]);
+    const CLUSTER_BROAD_ENTITIES = new Set([
+      "us", "uk", "eu", "un", "nato",
+      "mexico", "venezuela", "russia", "ukraine", "israel", "palestine", "iran", "china",
+    ]);
+
+    function canonicalizeEntity(value){
+      const raw = String(value || "").toLowerCase().trim();
+      if (!raw) return "";
+      const compact = raw.replace(/\./g, "");
+      const mapped = CLUSTER_DEMONYM_TO_COUNTRY.get(compact) || CLUSTER_ENTITY_PHRASE_MAP.get(raw) || CLUSTER_ENTITY_PHRASE_MAP.get(compact) || compact;
+      return String(mapped || "")
+        .replace(/[^a-z0-9]+/g, "_")
+        .replace(/^_+|_+$/g, "");
+    }
+
+    function extractCapitalizedEntities(rawTitle){
+      const title = String(rawTitle || "")
+        .replace(/[‘’]/g, "'")
+        .replace(/[“”]/g, "\"");
+      if (!title) return new Set();
+
+      const words = title.match(/[A-Za-z][A-Za-z'.-]*/g) || [];
+      const entities = new Set();
+      let i = 0;
+      while (i < words.length) {
+        const w = words[i] || "";
+        const isCap = /^[A-Z][a-z'.-]+$/.test(w) || /^[A-Z]{2,}$/.test(w);
+        if (!isCap) {
+          i += 1;
+          continue;
+        }
+        const seq = [w];
+        let j = i + 1;
+        while (j < words.length && seq.length < 4) {
+          const next = words[j] || "";
+          if (/^[A-Z][a-z'.-]+$/.test(next) || /^[A-Z]{2,}$/.test(next)) {
+            seq.push(next);
+            j += 1;
+          } else {
+            break;
+          }
+        }
+        const phrase = seq.join(" ");
+        const canonical = canonicalizeEntity(phrase);
+        const singleCanonical = canonicalizeEntity(w);
+        if (canonical && (seq.length > 1 || CLUSTER_ENTITY_PHRASE_MAP.has(canonical.replace(/_/g, " ")) || CLUSTER_ENTITY_PHRASE_MAP.has(w.toLowerCase()) || CLUSTER_DEMONYM_TO_COUNTRY.has(w.toLowerCase()))) {
+          entities.add(canonical);
+        } else if (singleCanonical && !CLUSTER_ENTITY_STOPWORDS.has(singleCanonical)) {
+          entities.add(singleCanonical);
+        }
+        i = j;
+      }
+      return entities;
+    }
+
+    function extractEntitiesFromHeadline(rawTitle, normalizedHeadline){
+      const entities = extractCapitalizedEntities(rawTitle);
+      const lower = String(normalizedHeadline || "").toLowerCase();
+      for (const [phrase, canonical] of CLUSTER_ENTITY_PHRASE_MAP.entries()) {
+        const test = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        if (new RegExp(`\\b${test}\\b`, "i").test(lower)) {
+          const c = canonicalizeEntity(canonical);
+          if (c) entities.add(c);
+        }
+      }
+      const toks = tokenize(lower);
+      for (const tok of toks) {
+        const c = canonicalizeEntity(tok);
+        if (!c || CLUSTER_ENTITY_STOPWORDS.has(c)) continue;
+        if (CLUSTER_DEMONYM_TO_COUNTRY.has(tok) || CLUSTER_ENTITY_PHRASE_MAP.has(tok)) {
+          entities.add(c);
+        }
+      }
+      return entities;
+    }
+
     function normalizeHeadline(text){
       let t = String(text || "");
       if (!t) return "";
@@ -5005,7 +5155,8 @@
       const canonicalTokens = stemmed
         .map((token) => canonicalizeToken(token))
         .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(token));
-      const expanded = expandAliases(canonicalTokens);
+      const tokenSet = new Set(canonicalTokens);
+      const entities = extractEntitiesFromHeadline(title, norm);
       const labelTokens = [];
       for (const token of rawTokens) {
         if (!labelTokens.includes(token)) labelTokens.push(token);
@@ -5025,7 +5176,8 @@
         norm,
         labelTokens,
         canonicalTokens,
-        expanded,
+        tokenSet,
+        entities,
         topTokens,
         clusterKey: canonicalTokens.slice(0, 6).join("|") || slugify(title || item?.sourceId || "topic"),
       };
@@ -5040,6 +5192,168 @@
       });
     }
 
+    function entityDisplayName(entity){
+      return String(entity || "")
+        .split("_")
+        .filter(Boolean)
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
+    }
+
+    function computeEntityTokenSimilarity(feature, cluster, preset){
+      const entityOverlap = jaccard(feature.entities, cluster.exemplarEntitySet);
+      const tokenOverlap = jaccard(feature.tokenSet, cluster.exemplarTokenSet);
+      const hasEntities = feature.entities.size > 0 && cluster.exemplarEntitySet.size > 0;
+      const sharedEntities = [];
+      if (hasEntities) {
+        for (const entity of feature.entities) {
+          if (cluster.exemplarEntitySet.has(entity)) sharedEntities.push(entity);
+        }
+      }
+      let matched = false;
+      let rule = "no_match";
+      if (hasEntities) {
+        if (entityOverlap >= preset.entityStrong) {
+          const broadOnly = sharedEntities.length === 1 && CLUSTER_BROAD_ENTITIES.has(sharedEntities[0]);
+          if (broadOnly && tokenOverlap < preset.tokenWithEntity) {
+            matched = false;
+            rule = "entity_broad_needs_tokens";
+          } else {
+            matched = true;
+            rule = "entity_strong";
+          }
+        } else if (entityOverlap >= preset.entityWeak && tokenOverlap >= preset.tokenWithEntity) {
+          matched = true;
+          rule = "entity_plus_token";
+        }
+      } else if (tokenOverlap >= preset.tokenOnly) {
+        matched = true;
+        rule = "token_fallback";
+      }
+      const score = hasEntities
+        ? ((entityOverlap * 0.68) + (tokenOverlap * 0.32))
+        : tokenOverlap;
+      return { matched, rule, score, entityOverlap, tokenOverlap, hasEntities };
+    }
+
+    function relaxedSimilarity(feature, cluster, preset){
+      const entityOverlap = jaccard(feature.entities, cluster.exemplarEntitySet);
+      const tokenOverlap = jaccard(feature.tokenSet, cluster.exemplarTokenSet);
+      const hasEntities = feature.entities.size > 0 && cluster.exemplarEntitySet.size > 0;
+      if (hasEntities) {
+        const ok = entityOverlap >= preset.relaxedEntity && tokenOverlap >= preset.relaxedToken;
+        return { ok, score: (entityOverlap * 0.6) + (tokenOverlap * 0.4), entityOverlap, tokenOverlap };
+      }
+      const ok = tokenOverlap >= preset.relaxedToken;
+      return { ok, score: tokenOverlap, entityOverlap, tokenOverlap };
+    }
+
+    function recomputeClusterMetadata(cluster){
+      const entityFreq = new Map();
+      const tokenFreq = new Map();
+      for (const item of (cluster.items || [])) {
+        for (const entity of (item.entities || [])) {
+          entityFreq.set(entity, (entityFreq.get(entity) || 0) + 1);
+        }
+        const descriptorSource = Array.isArray(item.labelTokens) && item.labelTokens.length
+          ? item.labelTokens
+          : (item.tokens || []);
+        for (const tok of descriptorSource) {
+          tokenFreq.set(tok, (tokenFreq.get(tok) || 0) + 1);
+        }
+      }
+      const topEntities = [...entityFreq.entries()]
+        .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
+        .map(([entity]) => entity)
+        .slice(0, 2);
+      const entityTokenBlocklist = new Set(topEntities.flatMap((e) => e.split("_")));
+      const descriptor = [...tokenFreq.entries()]
+        .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
+        .map(([token]) => token)
+        .find((token) => !entityTokenBlocklist.has(token) && !CLUSTER_TITLE_DEPRIORITIZED.has(token) && token.length >= 4) || "";
+      const labelParts = [...topEntities.map(entityDisplayName), descriptor ? (descriptor.charAt(0).toUpperCase() + descriptor.slice(1)) : ""].filter(Boolean);
+      const label = labelParts.length ? labelParts.join(" ") : clusterLabelFromTokens(cluster.exemplarTokens, cluster.exemplarTokens);
+      const unionEntities = new Set();
+      for (const entity of entityFreq.keys()) unionEntities.add(entity);
+      return {
+        ...cluster,
+        label,
+        entityFreq,
+        tokenFreq,
+        entitySet: unionEntities,
+      };
+    }
+
+    function mergeClusterInto(base, other){
+      const merged = {
+        ...base,
+        firstSeenMs: Math.min(Number(base.firstSeenMs || 0), Number(other.firstSeenMs || 0)),
+        items: [...(base.items || []), ...(other.items || [])].sort((a, b) => (a.firstSeenMs || 0) - (b.firstSeenMs || 0)),
+      };
+      return recomputeClusterMetadata(merged);
+    }
+
+    function entityClusterCountInWindow(clusters, entity, anchorMs){
+      return (clusters || []).filter((cluster) =>
+        cluster.entitySet?.has(entity) &&
+        Math.abs(Number(cluster.firstSeenMs || 0) - Number(anchorMs || 0)) <= CLUSTER_MERGE_WINDOW_MS).length;
+    }
+
+    function enforceEntityBudget(clusters, preset){
+      let out = sortClustersStable(clusters);
+      const hasWindowOverflow = (entity) => {
+        const ms = out
+          .filter((cluster) => cluster.entitySet?.has(entity))
+          .map((cluster) => Number(cluster.firstSeenMs || 0))
+          .sort((a, b) => a - b);
+        for (let i = 0; i < ms.length; i += 1) {
+          let count = 1;
+          for (let j = i + 1; j < ms.length; j += 1) {
+            if (ms[j] - ms[i] > CLUSTER_MERGE_WINDOW_MS) break;
+            count += 1;
+            if (count > CLUSTER_ENTITY_BUDGET) return true;
+          }
+        }
+        return false;
+      };
+
+      const allEntities = () => {
+        const outSet = new Set();
+        for (const cluster of out) {
+          for (const entity of (cluster.entitySet || [])) outSet.add(entity);
+        }
+        return [...outSet].sort((a, b) => a.localeCompare(b));
+      };
+
+      for (const entity of allEntities()) {
+        let guard = 0;
+        while (hasWindowOverflow(entity) && guard < 48) {
+          guard += 1;
+          let bestPair = null;
+          for (let i = 0; i < out.length; i += 1) {
+            if (!out[i].entitySet?.has(entity)) continue;
+            for (let j = i + 1; j < out.length; j += 1) {
+              if (!out[j].entitySet?.has(entity)) continue;
+              const delta = Math.abs(Number(out[i].firstSeenMs || 0) - Number(out[j].firstSeenMs || 0));
+              if (delta > CLUSTER_MERGE_WINDOW_MS) continue;
+              const fa = {
+                entities: out[i].exemplarEntitySet || new Set(),
+                tokenSet: out[i].exemplarTokenSet || new Set(),
+              };
+              const sim = relaxedSimilarity(fa, out[j], preset);
+              if (!sim.ok) continue;
+              if (!bestPair || sim.score > bestPair.score) bestPair = { i, j, score: sim.score };
+            }
+          }
+          if (!bestPair) break;
+          out[bestPair.i] = mergeClusterInto(out[bestPair.i], out[bestPair.j]);
+          out.splice(bestPair.j, 1);
+          out = sortClustersStable(out);
+        }
+      }
+      return out;
+    }
+
     function buildStoryClusters(items, strictness = "balanced"){
       const preset = CLUSTER_PRESETS[strictness] || CLUSTER_PRESETS.balanced;
       const features = (items || []).map((item) => buildStoryFeature(item));
@@ -5048,71 +5362,94 @@
         return a.sourceId.localeCompare(b.sourceId);
       });
 
-      const clusters = [];
-      const bySource = {};
+      let clusters = [];
       for (const feature of ordered) {
         let best = null;
         const candidates = sortClustersStable(clusters);
         for (const cluster of candidates) {
-          const jac = jaccard(feature.expanded, cluster.exemplarExpandedSet);
-          const tri = charTrigramSimilarity(feature.norm, cluster.exemplarNorm);
-          const primaryHit = jac >= preset.primary;
-          const secondaryHit = jac >= preset.secondary && tri >= preset.trigram;
-          if (!primaryHit && !secondaryHit) continue;
-          const score = primaryHit ? jac : ((jac * 0.7) + (tri * 0.3));
-          if (!best || score > best.score) {
-            best = {
-              cluster,
-              score,
-              jac,
-              tri,
-              rule: primaryHit ? "primary" : "secondary+trigram",
-            };
+          const sim = computeEntityTokenSimilarity(feature, cluster, preset);
+          if (!sim.matched) continue;
+          if (!best || sim.score > best.score) {
+            best = { cluster, ...sim, why: "direct_match" };
+          }
+        }
+
+        if (!best) {
+          const budgetEntities = [...feature.entities]
+            .filter((entity) => entityClusterCountInWindow(clusters, entity, feature.firstSeenMs) >= CLUSTER_ENTITY_BUDGET)
+            .sort((a, b) => a.localeCompare(b));
+          if (budgetEntities.length) {
+            for (const cluster of candidates) {
+              if (![...cluster.entitySet || []].some((entity) => budgetEntities.includes(entity))) continue;
+              const relaxed = relaxedSimilarity(feature, cluster, preset);
+              if (!relaxed.ok) continue;
+              if (!best || relaxed.score > best.score) {
+                best = {
+                  cluster,
+                  matched: true,
+                  score: relaxed.score,
+                  entityOverlap: relaxed.entityOverlap,
+                  tokenOverlap: relaxed.tokenOverlap,
+                  rule: "entity_budget_relaxed",
+                  why: `entity_budget(${budgetEntities.join(",")})`,
+                };
+              }
+            }
           }
         }
 
         if (!best) {
           const label = clusterLabelFromTokens(feature.labelTokens, feature.canonicalTokens);
           const id = `${slugify(label)}-${stableHash(`${label}|${feature.sourceId}|${feature.norm}`)}`;
-          const newCluster = {
+          const newCluster = recomputeClusterMetadata({
             id,
             label,
             exemplarTitle: feature.title || label,
             exemplarNorm: feature.norm,
-            exemplarExpandedSet: new Set(feature.expanded),
+            exemplarEntitySet: new Set(feature.entities),
+            exemplarTokenSet: new Set(feature.tokenSet),
             exemplarTokens: [...feature.topTokens],
             firstSeenMs: feature.firstSeenMs,
             items: [],
-          };
+            entitySet: new Set(feature.entities),
+          });
           clusters.push(newCluster);
-          best = { cluster: newCluster, score: 1, jac: 1, tri: 1, rule: "new" };
+          best = {
+            cluster: newCluster,
+            matched: true,
+            score: 1,
+            entityOverlap: feature.entities.size ? 1 : 0,
+            tokenOverlap: 1,
+            rule: "new",
+            why: "created_new_cluster",
+          };
         }
 
-        best.cluster.items.push({
+        const nextItem = {
           sourceId: feature.sourceId,
           score: best.score,
-          jaccard: best.jac,
-          trigram: best.tri,
+          entityOverlap: best.entityOverlap,
+          tokenOverlap: best.tokenOverlap,
           rule: best.rule,
+          why: best.why || best.rule,
+          entities: [...feature.entities].sort(),
+          labelTokens: [...feature.labelTokens].sort(),
+          tokens: [...feature.tokenSet].sort(),
           topTokens: [...feature.topTokens],
           norm: feature.norm,
           title: feature.title,
           firstSeenMs: feature.firstSeenMs,
           clusterKey: feature.clusterKey,
-        });
-
-        bySource[feature.sourceId] = {
-          clusterId: best.cluster.id,
-          clusterLabel: best.cluster.label,
-          score: best.score,
-          jaccard: best.jac,
-          trigram: best.tri,
-          rule: best.rule,
-          itemTokens: feature.topTokens.slice(0, 6),
-          exemplarTokens: best.cluster.exemplarTokens.slice(0, 6),
-          clusterKey: feature.clusterKey,
         };
+
+        const clusterIdx = clusters.findIndex((c) => c.id === best.cluster.id);
+        if (clusterIdx >= 0) {
+          const target = { ...clusters[clusterIdx], items: [...clusters[clusterIdx].items, nextItem] };
+          clusters[clusterIdx] = recomputeClusterMetadata(target);
+        }
       }
+
+      clusters = enforceEntityBudget(clusters, preset);
 
       let merged = sortClustersStable(clusters);
       let changed = true;
@@ -5123,9 +5460,9 @@
             const a = merged[i];
             const b = merged[j];
             if (Math.abs((a.firstSeenMs || 0) - (b.firstSeenMs || 0)) > CLUSTER_MERGE_WINDOW_MS) continue;
-            const score = jaccard(a.exemplarExpandedSet, b.exemplarExpandedSet);
+            const score = jaccard(a.exemplarTokenSet, b.exemplarTokenSet);
             if (score < preset.merge) continue;
-            a.items = [...a.items, ...b.items].sort((x, y) => (x.firstSeenMs || 0) - (y.firstSeenMs || 0));
+            merged[i] = mergeClusterInto(a, b);
             merged.splice(j, 1);
             changed = true;
             break outer;
@@ -5140,16 +5477,21 @@
 
       const mergedBySource = {};
       for (const cluster of merged) {
+        const exemplarEntities = [...(cluster.exemplarEntitySet || [])].sort().slice(0, 6);
+        const exemplarTokens = [...(cluster.exemplarTokenSet || [])].sort().slice(0, 6);
         for (const item of cluster.items) {
           mergedBySource[item.sourceId] = {
             clusterId: cluster.id,
             clusterLabel: cluster.label,
             score: item.score,
-            jaccard: item.jaccard,
-            trigram: item.trigram,
+            entityOverlap: item.entityOverlap,
+            tokenOverlap: item.tokenOverlap,
             rule: item.rule,
-            itemTokens: item.topTokens.slice(0, 6),
-            exemplarTokens: cluster.exemplarTokens.slice(0, 6),
+            why: item.why,
+            entities: (item.entities || []).slice(0, 6),
+            itemTokens: (item.tokens || []).slice(0, 6),
+            exemplarEntities,
+            exemplarTokens,
             clusterKey: item.clusterKey,
           };
         }
@@ -5169,7 +5511,7 @@
           const chip = document.createElement("div");
           chip.className = "chip";
           chip.textContent = `${cluster.label} (${cluster.items.length})`;
-          chip.title = cluster.exemplarTokens.join(", ");
+          chip.title = [...(cluster.entitySet || [])].map(entityDisplayName).join(", ");
           activeHost.appendChild(chip);
         }
       }
@@ -5190,11 +5532,17 @@
       const box = document.createElement("div");
       box.className = "clusterDebugCard";
       const score = Number.isFinite(Number(details.score)) ? Number(details.score).toFixed(3) : "0.000";
+      const entityOverlap = Number.isFinite(Number(details.entityOverlap)) ? Number(details.entityOverlap).toFixed(3) : "0.000";
+      const tokenOverlap = Number.isFinite(Number(details.tokenOverlap)) ? Number(details.tokenOverlap).toFixed(3) : "0.000";
       box.innerHTML = [
         `<div><strong>Cluster:</strong> ${escapeHtml(details.clusterLabel || "Other")}</div>`,
         `<div><strong>Score:</strong> ${escapeHtml(score)} (${escapeHtml(details.rule || "new")})</div>`,
-        `<div><strong>Item:</strong> ${escapeHtml((details.itemTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
-        `<div><strong>Exemplar:</strong> ${escapeHtml((details.exemplarTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
+        `<div><strong>Why:</strong> ${escapeHtml(details.why || details.rule || "—")}</div>`,
+        `<div><strong>Entity overlap:</strong> ${escapeHtml(entityOverlap)} | <strong>Token overlap:</strong> ${escapeHtml(tokenOverlap)}</div>`,
+        `<div><strong>Entities:</strong> ${escapeHtml((details.entities || []).slice(0, 6).map(entityDisplayName).join(", ") || "—")}</div>`,
+        `<div><strong>Exemplar entities:</strong> ${escapeHtml((details.exemplarEntities || []).slice(0, 6).map(entityDisplayName).join(", ") || "—")}</div>`,
+        `<div><strong>Tokens:</strong> ${escapeHtml((details.itemTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
+        `<div><strong>Exemplar tokens:</strong> ${escapeHtml((details.exemplarTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
       ].join("");
       body.appendChild(box);
     }
