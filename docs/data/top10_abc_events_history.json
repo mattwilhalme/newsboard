@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-23T14:39:56.590Z",
+  "generatedAt": "2026-02-23T15:32:05.720Z",
   "source_id": "abc1",
   "events": [
     {
@@ -6651,6 +6651,126 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "EU diplomats to meet Board of Peace director",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5f603fc7b236d7885c6bd860cc0391a8eface285",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "25 Mexican National Guard troops left dead in operation that killed cartel leader"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "428956090b0de3533319b58af592fe690aa4e7b7",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Stocks tumble after Trump ratchets up tariffs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "799349db3e58409ccdfe6f9a676b45de207ba8e9",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Murder trial of mom accused of killing husband with fentanyl to get underway",
+      "to_title": "Murder trial of mom accused of killing husband with fentanyl to get underway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d492b1674337852d4249c2a87d7d3b4ebd7a79c",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know",
+      "to_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "7a93af85a7b8272e5afde454bda66f4548676fa6",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats",
+      "to_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "785990824b7e4eaed47054178237dc51e4b2699f",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Protests resurging across Iranian universities as families mourn massacre victims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "a8593df32d6cb42feee5d173a74a55f93c73598d",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "What we know about the man killed at Mar-a-Lago",
+      "to_title": "What we know about the man killed at Mar-a-Lago"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4ca1595850d2bc12b1e6afbe3b407027995ca4d0",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "BBC apologizes after racial slur shouted at BAFTAs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "55b22ad3ac44fb6942f001d2d4d821600ba36f1b",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Mexico fears more violence after army kills leader of powerful Jalisco cartel",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "27cee83fd0f38a2b5e306a65ab3ddae0e9a785f3",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5edd758fecff53c3f630d485a86f350185b00224",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Largest nurses strike in New York City history ends as workers ratify contract",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T15:32:16.255Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "32dfef69a36051ecc96e4519cc522603fc9eb34f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Apology after racial slur shouted during BAFTAs",
       "to_title": null
     }
   ],
