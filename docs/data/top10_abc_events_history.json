@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-23T02:31:40.124Z",
+  "generatedAt": "2026-02-23T02:46:41.756Z",
   "source_id": "abc1",
   "events": [
     {
@@ -6361,6 +6361,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T02:46:52.433Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5edd758fecff53c3f630d485a86f350185b00224",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Largest nurses strike in New York City history ends as workers ratify contract"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T02:46:52.433Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7d0b0faab0337c09e59695e9e5d245f276c926d2",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
       "to_title": null
     }
   ],
