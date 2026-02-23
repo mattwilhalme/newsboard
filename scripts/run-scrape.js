@@ -92,6 +92,17 @@ function isOutageLikeSummary(summary) {
   );
 }
 
+function isMissingTop10SchemaError(err) {
+  const s = String(err?.message || err || "").toLowerCase();
+  return (
+    s.includes("pgrst205") ||
+    s.includes("public.top10_runs") ||
+    s.includes("public.top10_items") ||
+    s.includes("relation \"top10_runs\" does not exist") ||
+    s.includes("relation \"top10_items\" does not exist")
+  );
+}
+
 async function withSupabaseRetry(label, work) {
   let lastErr = null;
   for (let attempt = 1; attempt <= SUPABASE_RETRY_ATTEMPTS; attempt++) {
@@ -679,7 +690,11 @@ async function run() {
         );
       });
     } catch (err) {
-      console.warn(`⚠️ top10 Supabase write skipped: ${compactSupabaseError(err)}`);
+      if (isMissingTop10SchemaError(err)) {
+        console.warn("⚠️ top10_runs/top10_items tables not present; skipping legacy top10 deep-dive writes.");
+      } else {
+        console.warn(`⚠️ top10 Supabase write skipped: ${compactSupabaseError(err)}`);
+      }
     }
   }
 

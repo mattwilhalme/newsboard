@@ -468,6 +468,29 @@ function storySimilarity(a, b) {
   };
 }
 
+function storyMatchSignals(story, signature) {
+  const sim = storySimilarity(story, signature);
+  const hasStrongId = sim.canonicalMatch || sim.fpMatch;
+  const entityKeywordMatch = sim.entOverlap >= 2 && sim.kwOverlap >= 2;
+  const keywordHeavyMatch = sim.kwOverlap >= 3 && sim.kwScore >= 0.34;
+  const mixedLexicalMatch = sim.kwOverlap >= 2 && sim.entOverlap >= 1 && sim.score >= 0.20;
+  const weakLexicalMatch = sim.kwOverlap >= 2 && sim.kwScore >= 0.25;
+  const match = hasStrongId || entityKeywordMatch || keywordHeavyMatch || mixedLexicalMatch || weakLexicalMatch;
+  return {
+    match,
+    sim,
+    reason: hasStrongId
+      ? "id"
+      : entityKeywordMatch
+        ? "entities_keywords"
+        : keywordHeavyMatch
+          ? "keywords"
+          : mixedLexicalMatch
+            ? "mixed"
+            : (weakLexicalMatch ? "weak_keywords" : "none"),
+  };
+}
+
 function pickClusterVerb(stories = []) {
   const verbs = new Set(["killed", "shot", "detained", "arrested", "ruling", "rules", "rule", "wins", "win", "dead", "death", "attack", "attacks", "probe", "investigation"]);
   const counts = new Map();
@@ -554,7 +577,9 @@ function clusterStories(stories = [], opts = {}) {
       const tb = parseIsoMs(b.ts);
       if ((tb - ta) > maxPairMs) break;
       const sim = storySimilarity(a, b);
-      const hasEdge = sim.score >= edgeScore || (sim.entOverlap >= 2 && sim.kwOverlap >= 3 && sim.score >= edgeScoreSoft);
+      const hasEdge = sim.score >= edgeScore
+        || (sim.entOverlap >= 2 && sim.kwOverlap >= 2 && sim.score >= Math.min(edgeScoreSoft, 0.25))
+        || (sim.kwOverlap >= 3 && sim.kwScore >= 0.34);
       if (hasEdge) union(i, j);
     }
   }
@@ -4003,6 +4028,7 @@ app.get("/api/storyline/build", async (req, res) => {
       ? Math.max(1, Math.min(30, Math.floor(Number(req.query.bucket_minutes))))
       : 5;
     const includeTop10 = parseBoolParam(req.query?.include_top10, true);
+    const includeScreenshots = parseBoolParam(req.query?.include_screenshots, true);
     const maxRows = 8000;
     const maxBackMs = 12 * 60 * 60 * 1000;
     const maxForwardMs = 12 * 60 * 60 * 1000;
@@ -4038,12 +4064,7 @@ app.get("/api/storyline/build", async (req, res) => {
     }
 
     function isSignatureMatch(story, signature) {
-      const sim = storySimilarity(story, signature);
-      if (sim.canonicalMatch) return { match: true, sim };
-      if (sim.fpMatch) return { match: true, sim };
-      if (sim.entOverlap >= 2 && sim.kwOverlap >= 3 && sim.score >= 0.70) return { match: true, sim };
-      if (sim.score >= 0.85) return { match: true, sim };
-      return { match: false, sim };
+      return storyMatchSignals(story, signature);
     }
 
     async function fetchScreenshotsRange(startIso, endIso, limit = 1000) {
@@ -4230,7 +4251,12 @@ app.get("/api/storyline/build", async (req, res) => {
 
     // E) Build buckets
     const fullRows = await fetchHeadlineRange(startAtIso, endAtIso, maxRows);
-    const matchedRows = fullRows.filter((story) => isSignatureMatch(story, anchorSignature).match);
+    let matchedRows = fullRows.filter((story) => isSignatureMatch(story, anchorSignature).match);
+    if (!matchedRows.length) {
+      const sourceFallback = fullRows.filter((story) => String(story.source_id || "") === sourceId);
+      if (sourceFallback.length) matchedRows = sourceFallback;
+    }
+    if (!matchedRows.length) matchedRows = [anchorStory];
     const storyClusters = clusterStories(matchedRows, {
       maxPairHours: 6,
       maxClusterSpanHours: 72,
@@ -4300,21 +4326,25 @@ app.get("/api/storyline/build", async (req, res) => {
       }
     }
 
-    const screenshots = await fetchScreenshotsRange(startAtIso, endAtIso, 1000);
-    for (const shot of screenshots) {
-      const key = bucketKey(shot.ts);
-      if (!key) continue;
-      if (!bucketMap.has(key)) bucketMap.set(key, { ts: key, coverageBySource: new Map(), screenshots: [] });
-      const bucket = bucketMap.get(key);
-      bucket.screenshots.push({
-        ts: shot.ts,
-        source_id: shot.source_id,
-        source_name: sourceNameById(shot.source_id),
-        kind: shot.kind || "heartbeat",
-        title: shot.title || null,
-        url: shot.url || null,
-        shot_url: shot.shot_url || null,
-      });
+    if (includeScreenshots) {
+      const screenshots = await fetchScreenshotsRange(startAtIso, endAtIso, 1000);
+      for (const shot of screenshots) {
+        const shotMatch = isSignatureMatch(shot, anchorSignature);
+        if (!shotMatch.match) continue;
+        const key = bucketKey(shot.ts);
+        if (!key) continue;
+        if (!bucketMap.has(key)) bucketMap.set(key, { ts: key, coverageBySource: new Map(), screenshots: [] });
+        const bucket = bucketMap.get(key);
+        bucket.screenshots.push({
+          ts: shot.ts,
+          source_id: shot.source_id,
+          source_name: sourceNameById(shot.source_id),
+          kind: shot.kind || "heartbeat",
+          title: shot.title || null,
+          url: shot.url || null,
+          shot_url: shot.shot_url || null,
+        });
+      }
     }
 
     const buckets = [...bucketMap.values()]
