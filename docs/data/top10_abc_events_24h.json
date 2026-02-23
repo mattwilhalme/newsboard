@@ -1,18 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-23T20:27:41.832Z",
+  "generatedAt": "2026-02-23T21:11:05.179Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T20:58:56.540Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "dd8dc490649f813fb335a686ac8c08d4232a8c2c",
-      "from_rank": 1,
-      "to_rank": 1,
-      "from_title": "Severe winter storm live updates: Northeast braces for blizzard conditions",
-      "to_title": "Severe winter storm live updates: 'The worst is yet to come,' NY Gov. Hochul says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T21:26:40.755Z",
@@ -1311,6 +1301,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "BBC apologizes after airing racial slurs in 2026 BAFTAs broadcast",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T21:11:15.150Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "20738614418a53a1a2ea55318525836088be608f",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Trump continues to lash out at Supreme Court after tariff ruling"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T21:11:15.150Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e957f5f6d9a84a64034a7074caf34eb08fbd2c03",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Judge permanently blocks release of final report on Trump classified documents probe",
       "to_title": null
     }
   ]
