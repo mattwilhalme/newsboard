@@ -4065,17 +4065,7 @@
       detailsBtn.textContent = "Details";
       detailsBtn.setAttribute("data-action", "open-source-data");
       detailsBtn.setAttribute("data-id", id);
-      const rewindBtn = document.createElement("button");
-      rewindBtn.type = "button";
-      rewindBtn.className = "linkbtn rewindBtn";
-      rewindBtn.textContent = "Rewind";
-      rewindBtn.setAttribute("data-action", "open-moment");
-      rewindBtn.setAttribute("data-id", id);
-      rewindBtn.setAttribute("data-url", src?.item?.url || "");
-      rewindBtn.setAttribute("data-title", src?.item?.title || "");
-      rewindBtn.setAttribute("data-ts", src?.updatedAt || "");
       actionsRow.appendChild(changeRow);
-      actionsRow.appendChild(rewindBtn);
       actionsRow.appendChild(detailsBtn);
 
       const err = document.createElement("div");
