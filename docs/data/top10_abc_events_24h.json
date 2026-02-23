@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-23T22:02:25.580Z",
+  "generatedAt": "2026-02-23T22:54:50.819Z",
   "hours": 24,
   "events": [
     {
@@ -1171,6 +1171,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "FBI Director Kash Patel joins Team USA hockey in gold medal celebration",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T22:55:00.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b1282e159fef2a775996a3e7d0844dd72e4ab27e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Helpful travel information resources for Americans in Mexico"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T22:55:00.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "044347dbbb7239c46b2bfc2ac2c899ccf7b653e1",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:US embassy alerts Americans in Mexico to shelter in place",
       "to_title": null
     }
   ]
