@@ -2573,6 +2573,35 @@ async function scrapeLATimesHero() {
         if (/\/b2b\//i.test(url)) return false;
         return true;
       }
+      function isStreamingOrNavAnchor(a) {
+        if (!a) return true;
+        if (a.closest("header,nav,footer,[data-element='page-header'],[data-element='page-subheader']")) return true;
+        if (a.closest("[data-video-player],gn-video-player-live,.video-player,.studios-stream-container")) return true;
+        if (a.closest("[data-content-type='video'], .promo[data-content-type='video']")) return true;
+        const href = String(a.getAttribute("href") || "");
+        // LATMG stream links commonly use opaque UUID-ish paths ending in -123.
+        if (/\/[0-9a-f]{8,}-\d{2,}$/i.test(href)) return true;
+        return false;
+      }
+
+      // Preferred: first editorial promo title in main content after nav/streaming.
+      const primaryEditorial = Array.from(
+        document.querySelectorAll("main h1.promo-title a.link[href], main .promo-title a.link[href]"),
+      )
+        .map((a) => {
+          const href = a.getAttribute("href") || "";
+          const url = href ? abs(href) : null;
+          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+          if (!url || !title || !isStoryUrl(url) || isStreamingOrNavAnchor(a)) return null;
+          const y = Number.isFinite(a.getBoundingClientRect()?.top) ? (window.scrollY + a.getBoundingClientRect().top) : Number.MAX_SAFE_INTEGER;
+          return { title, url, y };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.y - b.y);
+      if (primaryEditorial.length) {
+        const top = primaryEditorial[0];
+        return { ok: true, title: top.title, url: top.url };
+      }
 
       const seen = new Set();
       const anchors = [];
@@ -2611,7 +2640,7 @@ async function scrapeLATimesHero() {
           const href = a.getAttribute("href") || "";
           const url = href ? abs(href) : null;
           const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-          if (!url || !title || !isStoryUrl(url)) return null;
+          if (!url || !title || !isStoryUrl(url) || isStreamingOrNavAnchor(a)) return null;
           const path = (() => {
             try { return new URL(url).pathname || ""; } catch { return ""; }
           })();
@@ -2627,7 +2656,6 @@ async function scrapeLATimesHero() {
           if (isStory) score += 28;
           if (isList) score += 24;
           if (title.length >= 24 && title.length <= 240) score += 10;
-          if (a.closest("header,nav,footer,[data-element='page-header'],[data-element='page-subheader']")) score -= 120;
           return { title, url, score };
         })
         .filter((x) => x && x.score > 0)

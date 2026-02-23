@@ -4784,6 +4784,9 @@
 
     const CLUSTER_BOILERPLATE = [
       "what we know",
+      "what to know",
+      "what's happening",
+      "whats happening",
       "live updates",
       "latest",
       "analysis",
@@ -4797,6 +4800,12 @@
 
     const CLUSTER_STOPWORDS = new Set([
       "the", "a", "an", "to", "of", "in", "after", "as", "for", "and", "on", "at", "from",
+    ]);
+    const CLUSTER_TITLE_DEPRIORITIZED = new Set([
+      "what", "know", "happening", "running", "latest", "live", "update", "updates",
+      "watch", "video", "photos", "why", "how", "new", "say", "says", "said",
+      "warn", "warns", "warning", "tell", "told", "take", "takes", "taking",
+      "impact", "impacted", "affect", "affected",
     ]);
 
     const CLUSTER_ALIAS_GROUPS = [
@@ -4941,13 +4950,46 @@
       return jaccard(trigramSet(a), trigramSet(b));
     }
 
-    function clusterLabelFromTokens(tokens){
+    function isNounLikeToken(token){
+      const t = String(token || "").toLowerCase();
+      if (!t || t.length < 3) return false;
+      if (CLUSTER_STOPWORDS.has(t)) return false;
+      if (CLUSTER_TITLE_DEPRIORITIZED.has(t)) return false;
+      if (/ing$/.test(t) || /ed$/.test(t)) return false;
+      return true;
+    }
+
+    function clusterLabelFromTokens(primaryTokens, fallbackTokens = []){
       const picks = [];
-      for (const token of (tokens || [])) {
-        if (!token || token.length < 3) continue;
-        if (CLUSTER_STOPWORDS.has(token)) continue;
-        if (!picks.includes(token)) picks.push(token);
+      const seen = new Set();
+      const tryPick = (token) => {
+        const t = String(token || "").toLowerCase();
+        if (!t || seen.has(t)) return;
+        seen.add(t);
+        if (!isNounLikeToken(t)) return;
+        picks.push(t);
+      };
+      for (const token of (primaryTokens || [])) {
+        tryPick(token);
         if (picks.length >= 2) break;
+      }
+      if (picks.length < 2) {
+        for (const token of (primaryTokens || [])) {
+          const t = String(token || "").toLowerCase();
+          if (!t || seen.has(t) || CLUSTER_STOPWORDS.has(t) || CLUSTER_TITLE_DEPRIORITIZED.has(t)) continue;
+          seen.add(t);
+          picks.push(t);
+          if (picks.length >= 2) break;
+        }
+      }
+      if (picks.length < 2) {
+        for (const token of (fallbackTokens || [])) {
+          const t = String(token || "").toLowerCase();
+          if (!t || seen.has(t) || CLUSTER_STOPWORDS.has(t)) continue;
+          seen.add(t);
+          picks.push(t);
+          if (picks.length >= 2) break;
+        }
       }
       if (!picks.length) return "Topic";
       return picks.map((tok) => tok.charAt(0).toUpperCase() + tok.slice(1)).join(" ");
@@ -4956,13 +4998,21 @@
     function buildStoryFeature(item){
       const title = String(item?.title || "").trim();
       const norm = normalizeHeadline(title);
+      const rawTokens = tokenize(norm)
+        .map((token) => canonicalizeToken(token))
+        .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(token));
       const stemmed = tokenize(norm).map((token) => stemToken(token)).filter(Boolean);
       const canonicalTokens = stemmed
         .map((token) => canonicalizeToken(token))
         .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(token));
       const expanded = expandAliases(canonicalTokens);
+      const labelTokens = [];
+      for (const token of rawTokens) {
+        if (!labelTokens.includes(token)) labelTokens.push(token);
+        if (labelTokens.length >= 8) break;
+      }
       const topTokens = [];
-      for (const token of canonicalTokens) {
+      for (const token of labelTokens) {
         if (!topTokens.includes(token)) topTokens.push(token);
         if (topTokens.length >= 6) break;
       }
@@ -4973,10 +5023,11 @@
         firstSeenAt: item?.firstSeenAt || null,
         firstSeenMs: Number.isFinite(Date.parse(String(item?.firstSeenAt || ""))) ? Date.parse(String(item.firstSeenAt)) : 0,
         norm,
+        labelTokens,
         canonicalTokens,
         expanded,
         topTokens,
-        clusterKey: topTokens.join("|") || slugify(title || item?.sourceId || "topic"),
+        clusterKey: canonicalTokens.slice(0, 6).join("|") || slugify(title || item?.sourceId || "topic"),
       };
     }
 
@@ -5021,7 +5072,7 @@
         }
 
         if (!best) {
-          const label = clusterLabelFromTokens(feature.topTokens);
+          const label = clusterLabelFromTokens(feature.labelTokens, feature.canonicalTokens);
           const id = `${slugify(label)}-${stableHash(`${label}|${feature.sourceId}|${feature.norm}`)}`;
           const newCluster = {
             id,
