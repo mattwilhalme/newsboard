@@ -1641,34 +1641,36 @@
     const CLUSTER_DEBUG_KEY = "nb_cluster_debug";
     const CLUSTER_PRESETS = {
       loose: {
-        entityStrong: 0.30,
-        entityWeak: 0.18,
+        entityStrong: 0.22,
+        entityWeak: 0.12,
         tokenWithEntity: 0.16,
-        tokenOnly: 0.24,
-        relaxedEntity: 0.14,
-        relaxedToken: 0.12,
-        merge: 0.30,
+        tokenOnly: 0.27,
+        relaxedEntity: 0.10,
+        relaxedToken: 0.14,
+        merge: 0.24,
       },
       balanced: {
-        entityStrong: 0.34,
-        entityWeak: 0.20,
+        entityStrong: 0.25,
+        entityWeak: 0.15,
         tokenWithEntity: 0.18,
-        tokenOnly: 0.28,
-        relaxedEntity: 0.16,
+        tokenOnly: 0.30,
+        relaxedEntity: 0.12,
         relaxedToken: 0.14,
-        merge: 0.34,
+        merge: 0.28,
       },
       strict: {
-        entityStrong: 0.38,
-        entityWeak: 0.24,
+        entityStrong: 0.30,
+        entityWeak: 0.18,
         tokenWithEntity: 0.20,
         tokenOnly: 0.34,
-        relaxedEntity: 0.18,
+        relaxedEntity: 0.15,
         relaxedToken: 0.16,
-        merge: 0.38,
+        merge: 0.32,
       },
     };
     const CLUSTER_MERGE_WINDOW_MS = 6 * 60 * 60 * 1000;
+    const CLUSTER_HARD_JOIN_WINDOW_MS = 12 * 60 * 60 * 1000;
+    const CLUSTER_DOMINANT_WINDOW_MS = 12 * 60 * 60 * 1000;
     const CLUSTER_ENTITY_BUDGET = 3;
     let activeView = "overview";
     let selectedWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
@@ -4809,22 +4811,25 @@
 
     const CLUSTER_BOILERPLATE = [
       "what we know",
-      "what to know",
-      "what's happening",
-      "whats happening",
       "live updates",
       "latest",
       "analysis",
       "explainer",
       "why it matters",
-      "watch:",
-      "photos:",
-      "video:",
-      "opinion:",
+      "details emerge",
+      "here's what",
+      "watch",
+      "photos",
+      "video",
+      "what to know",
+      "what's happening",
+      "whats happening",
     ];
 
     const CLUSTER_STOPWORDS = new Set([
-      "the", "a", "an", "to", "of", "in", "after", "as", "for", "and", "on", "at", "from",
+      "the", "this", "that", "a", "an", "and", "or", "to", "of", "in", "on", "at", "for", "from", "with",
+      "after", "before", "as", "by", "about", "into", "over", "under", "what", "why", "how", "who", "where",
+      "when", "we", "you", "our",
     ]);
     const CLUSTER_TITLE_DEPRIORITIZED = new Set([
       "what", "know", "happening", "running", "latest", "live", "update", "updates",
@@ -4856,6 +4861,9 @@
       ["usa", "us"],
       ["america", "us"],
       ["unitedstates", "us"],
+    ]);
+    const CLUSTER_ACRONYM_ALLOWLIST = new Set([
+      "DHS", "DOJ", "FBI", "CIA", "IRS", "ICE", "UN", "NATO", "EU", "CDC", "WHO", "SEC", "FAA", "US",
     ]);
 
     const CLUSTER_JOINED_BIGRAMS = new Map([
@@ -4939,6 +4947,32 @@
         .replace(/^_+|_+$/g, "");
     }
 
+    function normalizeAcronymToken(token){
+      const raw = String(token || "").trim();
+      if (!raw) return "";
+      const compact = raw.replace(/[^A-Za-z]/g, "");
+      if (!compact) return raw;
+      const upper = compact.toUpperCase();
+      if (/^[A-Za-z]{2,6}$/.test(compact) && CLUSTER_ACRONYM_ALLOWLIST.has(upper)) return upper;
+      return raw;
+    }
+
+    function isAllCapsAcronym(token){
+      const t = String(token || "").trim();
+      return /^[A-Z]{2,6}$/.test(t) && CLUSTER_ACRONYM_ALLOWLIST.has(t);
+    }
+
+    function cleanupToken(token){
+      let t = String(token || "").trim();
+      if (!t) return "";
+      t = t.replace(/[’']/g, "'");
+      if (/'s$/i.test(t)) t = t.replace(/'s$/i, "");
+      if (t.endsWith("s")) {
+        if (!(isAllCapsAcronym(t) || t.length <= 4 || t.endsWith("ss"))) t = t.slice(0, -1);
+      }
+      return t;
+    }
+
     function extractCapitalizedEntities(rawTitle){
       const title = String(rawTitle || "")
         .replace(/[‘’]/g, "'")
@@ -4979,7 +5013,7 @@
       return entities;
     }
 
-    function extractEntitiesFromHeadline(rawTitle, normalizedHeadline){
+    function extractEntitiesFromHeadline(rawTitle, normalizedHeadline, tokenMeta = null){
       const entities = extractCapitalizedEntities(rawTitle);
       const lower = String(normalizedHeadline || "").toLowerCase();
       for (const [phrase, canonical] of CLUSTER_ENTITY_PHRASE_MAP.entries()) {
@@ -4997,20 +5031,28 @@
           entities.add(c);
         }
       }
+      const upperTokens = Array.isArray(tokenMeta?.tokensUpper) ? tokenMeta.tokensUpper : [];
+      for (const token of upperTokens) {
+        if (isAllCapsAcronym(token)) entities.add(canonicalizeEntity(token));
+      }
+      const coreTokens = Array.isArray(tokenMeta?.tokensCore) ? tokenMeta.tokensCore : [];
+      for (let i = 0; i + 1 < coreTokens.length; i += 1) {
+        const pair = `${coreTokens[i]} ${coreTokens[i + 1]}`;
+        const joined = CLUSTER_JOINED_BIGRAMS.get(pair);
+        if (joined) entities.add(canonicalizeEntity(joined));
+      }
       return entities;
     }
 
     function normalizeHeadline(text){
       let t = String(text || "");
       if (!t) return "";
+      t = t.normalize("NFKC");
       t = t
         .replace(/[‘’]/g, "'")
         .replace(/[“”]/g, "\"")
-        .replace(/\bu\.?\s*s\.?\s*a?\b/gi, " us ")
-        .replace(/\bunited\s+states\b/gi, " us ")
-        .replace(/\s+/g, " ")
-        .trim()
-        .toLowerCase();
+        .replace(/\bu\.?\s*s\.?\s*a?\b/gi, " US ")
+        .replace(/\bunited\s+states\b/gi, " US ");
 
       for (const phrase of CLUSTER_BOILERPLATE) {
         const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\\:/g, ":?");
@@ -5018,11 +5060,23 @@
       }
 
       t = t
-        .replace(/(^|[^a-z0-9])-+|-+([^a-z0-9]|$)/g, " ")
-        .replace(/[^a-z0-9\s-]/g, " ")
+        .replace(/(^|[^A-Za-z0-9])-+|-+([^A-Za-z0-9]|$)/g, " ")
+        .replace(/[^A-Za-z0-9\s-]/g, " ")
         .replace(/\s+/g, " ")
         .trim();
-      return t;
+      if (!t) return "";
+      return t
+        .split(/\s+/g)
+        .map((token) => normalizeAcronymToken(token))
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function toLowerIfNotAcronym(token){
+      const t = String(token || "").trim();
+      if (!t) return "";
+      return isAllCapsAcronym(t) ? t : t.toLowerCase();
     }
 
     function tokenize(text){
@@ -5035,6 +5089,7 @@
     function stemToken(token){
       let t = String(token || "").trim();
       if (!t) return t;
+      if (isAllCapsAcronym(t)) return t;
       if (t.endsWith("ies") && t.length > 4) return `${t.slice(0, -3)}y`;
       if (t.endsWith("ing") && t.length > 5) t = t.slice(0, -3);
       if (t.endsWith("ed") && t.length > 4) t = t.slice(0, -2);
@@ -5043,8 +5098,11 @@
     }
 
     function canonicalizeToken(token){
-      const raw = String(token || "").toLowerCase();
-      return CLUSTER_CANONICAL_OVERRIDES.get(raw) || raw;
+      const raw = String(token || "").trim();
+      if (!raw) return "";
+      if (isAllCapsAcronym(raw)) return raw;
+      const lower = raw.toLowerCase();
+      return CLUSTER_CANONICAL_OVERRIDES.get(lower) || lower;
     }
 
     function expandAliases(tokens){
@@ -5146,19 +5204,22 @@
     }
 
     function buildStoryFeature(item){
-      const title = String(item?.title || "").trim();
-      const norm = normalizeHeadline(title);
-      const rawTokens = tokenize(norm)
+      const titleRaw = String(item?.title || "").trim();
+      const titleNorm = normalizeHeadline(titleRaw);
+      const normTokensUpper = tokenize(titleNorm).map((token) => normalizeAcronymToken(token));
+      const canonicalTokens = normTokensUpper
+        .map((token) => cleanupToken(token))
+        .map((token) => stemToken(token))
+        .map((token) => toLowerIfNotAcronym(token))
         .map((token) => canonicalizeToken(token))
-        .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(token));
-      const stemmed = tokenize(norm).map((token) => stemToken(token)).filter(Boolean);
-      const canonicalTokens = stemmed
-        .map((token) => canonicalizeToken(token))
-        .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(token));
+        .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(String(token).toLowerCase()));
       const tokenSet = new Set(canonicalTokens);
-      const entities = extractEntitiesFromHeadline(title, norm);
+      const entities = extractEntitiesFromHeadline(titleRaw, titleNorm, {
+        tokensUpper: normTokensUpper,
+        tokensCore: canonicalTokens,
+      });
       const labelTokens = [];
-      for (const token of rawTokens) {
+      for (const token of canonicalTokens) {
         if (!labelTokens.includes(token)) labelTokens.push(token);
         if (labelTokens.length >= 8) break;
       }
@@ -5169,17 +5230,19 @@
       }
       return {
         sourceId: String(item?.sourceId || ""),
-        title,
+        title: titleRaw,
+        titleRaw,
+        titleNorm,
         url: String(item?.url || ""),
         firstSeenAt: item?.firstSeenAt || null,
         firstSeenMs: Number.isFinite(Date.parse(String(item?.firstSeenAt || ""))) ? Date.parse(String(item.firstSeenAt)) : 0,
-        norm,
+        norm: titleNorm,
         labelTokens,
         canonicalTokens,
         tokenSet,
         entities,
         topTokens,
-        clusterKey: canonicalTokens.slice(0, 6).join("|") || slugify(title || item?.sourceId || "topic"),
+        clusterKey: canonicalTokens.slice(0, 8).join("|") || slugify(titleRaw || item?.sourceId || "topic"),
       };
     }
 
@@ -5193,21 +5256,28 @@
     }
 
     function entityDisplayName(entity){
-      return String(entity || "")
+      const value = String(entity || "");
+      if (/^[a-z]{2,6}$/.test(value) && CLUSTER_ACRONYM_ALLOWLIST.has(value.toUpperCase())) {
+        return value.toUpperCase();
+      }
+      return value
         .split("_")
         .filter(Boolean)
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .map((w) => (/^[a-z]{2,6}$/.test(w) && CLUSTER_ACRONYM_ALLOWLIST.has(w.toUpperCase()))
+          ? w.toUpperCase()
+          : (w.charAt(0).toUpperCase() + w.slice(1)))
         .join(" ");
     }
 
     function computeEntityTokenSimilarity(feature, cluster, preset){
-      const entityOverlap = jaccard(feature.entities, cluster.exemplarEntitySet);
+      const clusterEntities = cluster.entitySet instanceof Set ? cluster.entitySet : (cluster.exemplarEntitySet || new Set());
+      const entityOverlap = jaccard(feature.entities, clusterEntities);
       const tokenOverlap = jaccard(feature.tokenSet, cluster.exemplarTokenSet);
-      const hasEntities = feature.entities.size > 0 && cluster.exemplarEntitySet.size > 0;
+      const hasEntities = feature.entities.size > 0 && clusterEntities.size > 0;
       const sharedEntities = [];
       if (hasEntities) {
         for (const entity of feature.entities) {
-          if (cluster.exemplarEntitySet.has(entity)) sharedEntities.push(entity);
+          if (clusterEntities.has(entity)) sharedEntities.push(entity);
         }
       }
       let matched = false;
@@ -5233,7 +5303,7 @@
       const score = hasEntities
         ? ((entityOverlap * 0.68) + (tokenOverlap * 0.32))
         : tokenOverlap;
-      return { matched, rule, score, entityOverlap, tokenOverlap, hasEntities };
+      return { matched, rule, score, entityOverlap, tokenOverlap, hasEntities, sharedEntities };
     }
 
     function relaxedSimilarity(feature, cluster, preset){
@@ -5280,14 +5350,23 @@
         label,
         entityFreq,
         tokenFreq,
+        topEntities,
         entitySet: unionEntities,
       };
     }
 
     function mergeClusterInto(base, other){
+      const baseFirst = Number(base.firstSeenMs || 0);
+      const otherFirst = Number(other.firstSeenMs || 0);
+      const useOtherExemplar = otherFirst < baseFirst;
       const merged = {
         ...base,
-        firstSeenMs: Math.min(Number(base.firstSeenMs || 0), Number(other.firstSeenMs || 0)),
+        firstSeenMs: Math.min(baseFirst, otherFirst),
+        exemplarTitle: useOtherExemplar ? other.exemplarTitle : base.exemplarTitle,
+        exemplarNorm: useOtherExemplar ? other.exemplarNorm : base.exemplarNorm,
+        exemplarEntitySet: useOtherExemplar ? new Set(other.exemplarEntitySet || []) : new Set(base.exemplarEntitySet || []),
+        exemplarTokenSet: useOtherExemplar ? new Set(other.exemplarTokenSet || []) : new Set(base.exemplarTokenSet || []),
+        exemplarTokens: useOtherExemplar ? [...(other.exemplarTokens || [])] : [...(base.exemplarTokens || [])],
         items: [...(base.items || []), ...(other.items || [])].sort((a, b) => (a.firstSeenMs || 0) - (b.firstSeenMs || 0)),
       };
       return recomputeClusterMetadata(merged);
@@ -5354,6 +5433,62 @@
       return out;
     }
 
+    function enforceDominantEntityMerge(clusters){
+      let out = sortClustersStable(clusters);
+      const hasOverflowInWindow = (entity) => {
+        const ms = out
+          .filter((cluster) => cluster.entitySet?.has(entity))
+          .map((cluster) => Number(cluster.firstSeenMs || 0))
+          .sort((a, b) => a - b);
+        for (let i = 0; i < ms.length; i += 1) {
+          let count = 1;
+          for (let j = i + 1; j < ms.length; j += 1) {
+            if (ms[j] - ms[i] > CLUSTER_DOMINANT_WINDOW_MS) break;
+            count += 1;
+            if (count > CLUSTER_ENTITY_BUDGET) return true;
+          }
+        }
+        return false;
+      };
+
+      const allEntities = () => {
+        const set = new Set();
+        for (const cluster of out) {
+          for (const entity of (cluster.entitySet || [])) set.add(entity);
+        }
+        return [...set].sort((a, b) => a.localeCompare(b));
+      };
+
+      for (const dominant of allEntities()) {
+        let guard = 0;
+        while (hasOverflowInWindow(dominant) && guard < 60) {
+          guard += 1;
+          let bestPair = null;
+          for (let i = 0; i < out.length; i += 1) {
+            const a = out[i];
+            if (!a.entitySet?.has(dominant)) continue;
+            for (let j = i + 1; j < out.length; j += 1) {
+              const b = out[j];
+              if (!b.entitySet?.has(dominant)) continue;
+              const delta = Math.abs(Number(a.firstSeenMs || 0) - Number(b.firstSeenMs || 0));
+              if (delta > CLUSTER_DOMINANT_WINDOW_MS) continue;
+              const tokenOverlap = jaccard(a.exemplarTokenSet, b.exemplarTokenSet);
+              const secondaryShared = [...(a.entitySet || [])]
+                .some((entity) => entity !== dominant && b.entitySet?.has(entity));
+              if (!(tokenOverlap >= 0.18 || secondaryShared)) continue;
+              const score = tokenOverlap + (secondaryShared ? 0.5 : 0);
+              if (!bestPair || score > bestPair.score) bestPair = { i, j, score };
+            }
+          }
+          if (!bestPair) break;
+          out[bestPair.i] = mergeClusterInto(out[bestPair.i], out[bestPair.j]);
+          out.splice(bestPair.j, 1);
+          out = sortClustersStable(out);
+        }
+      }
+      return out;
+    }
+
     function buildStoryClusters(items, strictness = "balanced"){
       const preset = CLUSTER_PRESETS[strictness] || CLUSTER_PRESETS.balanced;
       const features = (items || []).map((item) => buildStoryFeature(item));
@@ -5367,10 +5502,30 @@
         let best = null;
         const candidates = sortClustersStable(clusters);
         for (const cluster of candidates) {
+          const delta = Math.abs(Number(cluster.firstSeenMs || 0) - Number(feature.firstSeenMs || 0));
+          if (delta > CLUSTER_HARD_JOIN_WINDOW_MS) continue;
+          const shared = [...feature.entities].filter((entity) => cluster.entitySet?.has(entity));
+          if (!shared.length) continue;
           const sim = computeEntityTokenSimilarity(feature, cluster, preset);
-          if (!sim.matched) continue;
           if (!best || sim.score > best.score) {
-            best = { cluster, ...sim, why: "direct_match" };
+            best = {
+              cluster,
+              ...sim,
+              matched: true,
+              rule: "hard_join_entity",
+              why: `hard_join(${shared.slice(0, 3).join(",")})`,
+              sharedAnchor: shared[0],
+            };
+          }
+        }
+
+        if (!best) {
+          for (const cluster of candidates) {
+            const sim = computeEntityTokenSimilarity(feature, cluster, preset);
+            if (!sim.matched) continue;
+            if (!best || sim.score > best.score) {
+              best = { cluster, ...sim, why: "direct_match" };
+            }
           }
         }
 
@@ -5432,12 +5587,15 @@
           tokenOverlap: best.tokenOverlap,
           rule: best.rule,
           why: best.why || best.rule,
+          hardJoinAnchor: best.sharedAnchor || "",
           entities: [...feature.entities].sort(),
           labelTokens: [...feature.labelTokens].sort(),
           tokens: [...feature.tokenSet].sort(),
           topTokens: [...feature.topTokens],
           norm: feature.norm,
           title: feature.title,
+          titleRaw: feature.titleRaw,
+          titleNorm: feature.titleNorm,
           firstSeenMs: feature.firstSeenMs,
           clusterKey: feature.clusterKey,
         };
@@ -5450,6 +5608,7 @@
       }
 
       clusters = enforceEntityBudget(clusters, preset);
+      clusters = enforceDominantEntityMerge(clusters);
 
       let merged = sortClustersStable(clusters);
       let changed = true;
@@ -5488,10 +5647,13 @@
             tokenOverlap: item.tokenOverlap,
             rule: item.rule,
             why: item.why,
-            entities: (item.entities || []).slice(0, 6),
-            itemTokens: (item.tokens || []).slice(0, 6),
+            hardJoinAnchor: item.hardJoinAnchor || "",
+            entities: (item.entities || []).slice(0, 8),
+            itemTokens: (item.tokens || []).slice(0, 8),
             exemplarEntities,
-            exemplarTokens,
+            exemplarTokens: exemplarTokens.slice(0, 8),
+            titleRaw: item.titleRaw || item.title || "",
+            titleNorm: item.titleNorm || item.norm || "",
             clusterKey: item.clusterKey,
           };
         }
@@ -5538,11 +5700,12 @@
         `<div><strong>Cluster:</strong> ${escapeHtml(details.clusterLabel || "Other")}</div>`,
         `<div><strong>Score:</strong> ${escapeHtml(score)} (${escapeHtml(details.rule || "new")})</div>`,
         `<div><strong>Why:</strong> ${escapeHtml(details.why || details.rule || "—")}</div>`,
+        `<div><strong>Hard-join anchor:</strong> ${escapeHtml(details.hardJoinAnchor ? entityDisplayName(details.hardJoinAnchor) : "—")}</div>`,
         `<div><strong>Entity overlap:</strong> ${escapeHtml(entityOverlap)} | <strong>Token overlap:</strong> ${escapeHtml(tokenOverlap)}</div>`,
-        `<div><strong>Entities:</strong> ${escapeHtml((details.entities || []).slice(0, 6).map(entityDisplayName).join(", ") || "—")}</div>`,
-        `<div><strong>Exemplar entities:</strong> ${escapeHtml((details.exemplarEntities || []).slice(0, 6).map(entityDisplayName).join(", ") || "—")}</div>`,
-        `<div><strong>Tokens:</strong> ${escapeHtml((details.itemTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
-        `<div><strong>Exemplar tokens:</strong> ${escapeHtml((details.exemplarTokens || []).slice(0, 6).join(", ") || "—")}</div>`,
+        `<div><strong>Entities:</strong> ${escapeHtml((details.entities || []).slice(0, 8).map(entityDisplayName).join(", ") || "—")}</div>`,
+        `<div><strong>Exemplar entities:</strong> ${escapeHtml((details.exemplarEntities || []).slice(0, 8).map(entityDisplayName).join(", ") || "—")}</div>`,
+        `<div><strong>Tokens:</strong> ${escapeHtml((details.itemTokens || []).slice(0, 8).join(", ") || "—")}</div>`,
+        `<div><strong>Exemplar tokens:</strong> ${escapeHtml((details.exemplarTokens || []).slice(0, 8).join(", ") || "—")}</div>`,
       ].join("");
       body.appendChild(box);
     }
@@ -5707,6 +5870,10 @@
 
     function runClusteringHarness(){
       const sample = [
+        { sourceId: "s0", title: "Dhs warns of new border threats", url: "" },
+        { sourceId: "s0b", title: "DHS warning: border threats rise", url: "" },
+        { sourceId: "s0c", title: "Schumer's proposal advances in Senate", url: "" },
+        { sourceId: "s0d", title: "Schumers proposal advances in Senate", url: "" },
         { sourceId: "s1", title: "Mexican drug cartel boss captured in Jalisco", url: "" },
         { sourceId: "s2", title: "Cartel leader arrested in Mexico after raid", url: "" },
         { sourceId: "s3", title: "Tourists told to take shelter after National Guard troops killed", url: "" },
