@@ -1,128 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-24T14:44:46.360Z",
+  "generatedAt": "2026-02-24T15:42:00.910Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5f603fc7b236d7885c6bd860cc0391a8eface285",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "25 Mexican National Guard troops left dead in operation that killed cartel leader"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "428956090b0de3533319b58af592fe690aa4e7b7",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Stocks tumble after Trump ratchets up tariffs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "799349db3e58409ccdfe6f9a676b45de207ba8e9",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Murder trial of mom accused of killing husband with fentanyl to get underway",
-      "to_title": "Murder trial of mom accused of killing husband with fentanyl to get underway"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d492b1674337852d4249c2a87d7d3b4ebd7a79c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know",
-      "to_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "7a93af85a7b8272e5afde454bda66f4548676fa6",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats",
-      "to_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "785990824b7e4eaed47054178237dc51e4b2699f",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Protests resurging across Iranian universities as families mourn massacre victims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "a8593df32d6cb42feee5d173a74a55f93c73598d",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "What we know about the man killed at Mar-a-Lago",
-      "to_title": "What we know about the man killed at Mar-a-Lago"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4ca1595850d2bc12b1e6afbe3b407027995ca4d0",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "BBC apologizes after racial slur shouted at BAFTAs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "55b22ad3ac44fb6942f001d2d4d821600ba36f1b",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Mexico fears more violence after army kills leader of powerful Jalisco cartel",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "27cee83fd0f38a2b5e306a65ab3ddae0e9a785f3",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5edd758fecff53c3f630d485a86f350185b00224",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Largest nurses strike in New York City history ends as workers ratify contract",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "32dfef69a36051ecc96e4519cc522603fc9eb34f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Apology after racial slur shouted during BAFTAs",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-23T17:43:05.736Z",
@@ -2001,6 +1881,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Suspect in Nancy Guthrie abduction appeared to visit her house before: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "53cfb88cf47f22ff8ceafcd5b544e01cedc6bb94",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Savannah Guthrie announces new reward for Nancy Guthrie: 'Somebody knows'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "MOVED",
+      "fingerprint": "c4648c9af95628efd6736a8192b7ecbf3f864e00",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "State of the Union: Trump expected to tout achievements ahead of midterms",
+      "to_title": "State of the Union: Trump expected to tout achievements ahead of midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "MOVED",
+      "fingerprint": "f84a8e8381055535cf5e622cc9b75e7b489d686d",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "SOTU: Trump speech comes at uncertain, even perilous, moment for presidency: ANALYSIS",
+      "to_title": "SOTU: Trump speech comes at uncertain, even perilous, moment for presidency: ANALYSIS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "MOVED",
+      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
+      "to_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae185d6706bb497d7533eac3d4855b2f7e56312f",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Brief snowstorm could dump another inch of snow in the Northeast",
+      "to_title": "Brief snowstorm could dump another inch of snow in the Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "MOVED",
+      "fingerprint": "38d618dbf616c4cf60e9c0205379300ccac064bd",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops",
+      "to_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "MOVED",
+      "fingerprint": "8a493c1475377db643d48dcb6fc15c65ed02c569",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "Texas Rep. Tony Gonzales appears to pursue late staffer in explicit text messages",
+      "to_title": "Texas Rep. Tony Gonzales appears to pursue late staffer in explicit text messages"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9cc61aa7321533736610f50ced835c0631b4fbf8",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "MOVED",
+      "fingerprint": "c76eb49e9132266611249ed7e166ebf733e62ce8",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says",
+      "to_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6e7ce81483d9ed2505ef94e5f4994aedcbd19ba2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "How to watch Trump's State of the Union address"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4ce9b07316365f2f9f746f35ab7708b0ba8f1821",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSavannah Guthrie announces new $1 million reward for recovery of mom Nancy Guthrie",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8c12da090e139baebfec19e64df7e573fd925ebf",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Savannah Guthrie announces $1M reward for recovery of Nancy Guthrie",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T15:42:10.858Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eb6687849693b0010bbb6964b5cc3efc46ebd4af",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "US military seizes 3rd ship in Indian Ocean linked to Venezuela",
       "to_title": null
     }
   ]
