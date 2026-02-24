@@ -861,6 +861,11 @@
       min-height:18px;
     }
     .rewindGallery{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .rewindSelectorGrid{
       display:grid;
       grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
       gap:10px;
@@ -902,6 +907,31 @@
       background:var(--chip);
       text-transform:uppercase;
       letter-spacing:.2px;
+    }
+    .rewindSourceRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:10px 0;
+    }
+    .rewindSourceBtn{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:5px 10px;
+      background:var(--chip);
+      color:var(--text);
+      font-size:11px;
+      cursor:pointer;
+    }
+    .rewindSourceBtn.active{
+      border-color:var(--blue);
+      background:rgba(24,96,214,.08);
+      color:var(--blue);
+      font-weight:700;
+    }
+    .rewindCard.active{
+      border-color:var(--blue);
+      box-shadow:0 0 0 1px rgba(24,96,214,.25) inset;
     }
     .rewindSkel{
       border:1px solid var(--line);
@@ -1215,7 +1245,7 @@
         padding:6px 8px;
         min-width:38px;
       }
-      .rewindGallery{
+      .rewindSelectorGrid{
         grid-template-columns:1fr 1fr;
       }
     }
@@ -1329,23 +1359,24 @@
       <section class="labsSection">
         <div class="labsHeader">
           <h2>Rewind Screenshots</h2>
-          <div class="labsHelp">Browse screenshots across all publishers in a time window.</div>
-          <div class="tiny">Currently limited to the last 12 hours.</div>
+          <div class="labsHelp">Browse screenshots across all publishers in a configurable lookback window.</div>
+          <div class="tiny">Defaults to the last 5 days.</div>
         </div>
         <div class="rewindControls">
           <label class="rewindField">
-            <span class="tiny">Start</span>
-            <input id="rewind-start" class="rewindInput" type="datetime-local">
-          </label>
-          <label class="rewindField">
-            <span class="tiny">End</span>
-            <input id="rewind-end" class="rewindInput" type="datetime-local">
+            <span class="tiny">Lookback</span>
+            <select id="rewind-lookback" class="rewindInput">
+              <option value="12">12h</option>
+              <option value="24">24h</option>
+              <option value="72">3d</option>
+              <option value="120" selected>5d</option>
+            </select>
           </label>
           <label class="rewindField">
             <span class="tiny">Publisher</span>
             <select id="rewind-source" class="rewindInput"></select>
           </label>
-          <button id="rewind-submit" class="btn" type="button">Submit</button>
+          <button id="rewind-submit" class="btn" type="button">Reload</button>
         </div>
         <div id="rewind-feedback" class="tiny rewindFeedback"></div>
         <div id="rewind-gallery" class="rewindGallery"></div>
@@ -1644,8 +1675,10 @@
       selectedObservedAt: null,
     };
     const VIEW_STORAGE_KEY = "newsboard_view";
-    const REWIND_MAX_RANGE_MS = 12 * 60 * 60 * 1000;
-    const REWIND_DEFAULT_RANGE_MS = 60 * 60 * 1000;
+    const REWIND_DEFAULT_LOOKBACK_HOURS = 120;
+    const REWIND_MIN_LOOKBACK_DAYS = 1;
+    const REWIND_MAX_LOOKBACK_DAYS = 7;
+    const REWIND_ROWS_PER_SOURCE = 500;
     const CLUSTER_CARD_ORDER_KEY = "nb_cluster_card_order";
     const CLUSTER_STRICTNESS_KEY = "nb_cluster_strictness";
     const CLUSTER_DEBUG_KEY = "nb_cluster_debug";
@@ -1693,10 +1726,12 @@
     let selectedDetailsTab = "changes";
     let momentStatusText = "";
     let rewindState = {
-      startLocal: "",
-      endLocal: "",
+      lookbackHours: REWIND_DEFAULT_LOOKBACK_HOURS,
       sourceId: "",
+      selectedSourceId: "",
+      selectedIndex: 0,
       loading: false,
+      hasLoaded: false,
       error: "",
       items: [],
       count: 0,
@@ -2893,47 +2928,36 @@
       catch { throw new Error(text || `HTTP ${r.status}`); }
     }
 
-    function pad2(n){
-      return String(n).padStart(2, "0");
+    function rewindLookbackDaysFromHours(hours){
+      const raw = Number(hours);
+      const safeHours = Number.isFinite(raw) ? Math.max(1, Math.floor(raw)) : REWIND_DEFAULT_LOOKBACK_HOURS;
+      const days = Math.ceil(safeHours / 24);
+      return Math.max(REWIND_MIN_LOOKBACK_DAYS, Math.min(REWIND_MAX_LOOKBACK_DAYS, days));
     }
 
-    function toLocalDateTimeValue(input){
-      const d = input instanceof Date ? input : new Date(input);
-      if (!Number.isFinite(d.getTime())) return "";
-      return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}T${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+    function rewindRangeFromHours(hours){
+      const raw = Number(hours);
+      const safeHours = Number.isFinite(raw) ? Math.max(1, Math.floor(raw)) : REWIND_DEFAULT_LOOKBACK_HOURS;
+      const endMs = Date.now();
+      const startMs = endMs - (safeHours * 60 * 60 * 1000);
+      return {
+        startIso: new Date(startMs).toISOString(),
+        endIso: new Date(endMs).toISOString(),
+      };
     }
 
-    function parseLocalDateTimeToIso(value){
-      const v = String(value || "").trim();
-      if (!v) return "";
-      const d = new Date(v);
-      if (!Number.isFinite(d.getTime())) return "";
-      return d.toISOString();
-    }
-
-    function setRewindDefaults(){
-      if (rewindState.startLocal && rewindState.endLocal) return;
-      const end = new Date();
-      const start = new Date(end.getTime() - REWIND_DEFAULT_RANGE_MS);
-      rewindState.startLocal = toLocalDateTimeValue(start);
-      rewindState.endLocal = toLocalDateTimeValue(end);
-    }
-
-    function applyRewindInputLimits(){
-      const startEl = $("rewind-start");
-      const endEl = $("rewind-end");
-      const now = new Date();
-      const oldest = new Date(now.getTime() - REWIND_MAX_RANGE_MS);
-      const minVal = toLocalDateTimeValue(oldest);
-      const maxVal = toLocalDateTimeValue(now);
-      if (startEl) {
-        startEl.min = minVal;
-        startEl.max = maxVal;
+    function capRewindItemsPerSource(items, perSourceLimit = REWIND_ROWS_PER_SOURCE){
+      const limit = Math.max(1, Math.min(REWIND_ROWS_PER_SOURCE, Number(perSourceLimit) || REWIND_ROWS_PER_SOURCE));
+      const capped = [];
+      const counts = new Map();
+      for (const item of items) {
+        const sid = String(item?.source_id || "");
+        const count = counts.get(sid) || 0;
+        if (count >= limit) continue;
+        capped.push(item);
+        counts.set(sid, count + 1);
       }
-      if (endEl) {
-        endEl.min = minVal;
-        endEl.max = maxVal;
-      }
+      return capped;
     }
 
     function fillRewindSourceOptions(){
@@ -2953,33 +2977,43 @@
       sel.value = rewindState.sourceId || "";
     }
 
-    async function fetchRewindScreenshots({ startIso, endIso, sourceId = "", limit = 500 }){
+    async function fetchRewindScreenshots({ lookbackHours, sourceId = "", limit = REWIND_ROWS_PER_SOURCE }){
       const source = String(sourceId || "").trim();
+      const { startIso, endIso } = rewindRangeFromHours(lookbackHours);
+      const startMs = Date.parse(String(startIso || ""));
+      const endMs = Date.parse(String(endIso || ""));
+      const lookbackDays = rewindLookbackDaysFromHours(lookbackHours);
+      const perSourceLimit = Math.max(1, Math.min(REWIND_ROWS_PER_SOURCE, Number(limit) || REWIND_ROWS_PER_SOURCE));
       if (!isGitHubPages) {
         try {
           const params = new URLSearchParams();
-          params.set("start", startIso);
-          params.set("end", endIso);
+          params.set("lookback", String(lookbackDays));
           if (source) params.set("source", source);
-          params.set("limit", String(limit));
+          params.set("limit", String(perSourceLimit));
           const payload = await fetchJSON(`/api/rewind/screenshots?${params.toString()}`);
           if (payload?.ok === false) throw new Error(String(payload?.error || "Rewind API failed"));
-          const items = Array.isArray(payload?.items) ? payload.items : [];
+          const itemsRaw = Array.isArray(payload?.items) ? payload.items : [];
+          let items = itemsRaw
+            .filter((item) => {
+              if (!item?.shot_url) return false;
+              const ms = Date.parse(String(item?.ts || item?.created_at || ""));
+              return Number.isFinite(ms) && ms >= startMs && ms <= endMs;
+            })
+            .sort((a, b) => Date.parse(String(a?.ts || a?.created_at || "")) - Date.parse(String(b?.ts || b?.created_at || "")));
+          if (!source) items = capRewindItemsPerSource(items, perSourceLimit);
           return {
-            start: String(payload?.start || startIso),
-            end: String(payload?.end || endIso),
-            count: Number(payload?.count || items.length || 0),
-            items: items
-              .filter((item) => item?.shot_url)
-              .map((item) => ({
-                ts: item?.ts || null,
-                source_id: item?.source_id || null,
-                source_label: item?.source_label || sourceLabel(item?.source_id || "", null),
-                kind: item?.kind || "heartbeat",
-                title: item?.title || null,
-                url: item?.url || null,
-                shot_url: item?.shot_url || null,
-              })),
+            start: startIso,
+            end: endIso,
+            count: items.length,
+            items: items.map((item) => ({
+              ts: item?.ts || item?.created_at || null,
+              source_id: item?.source_id || null,
+              source_label: item?.source_label || sourceLabel(item?.source_id || "", null),
+              kind: item?.kind || "heartbeat",
+              title: item?.title || null,
+              url: item?.url || null,
+              shot_url: item?.shot_url || null,
+            })),
           };
         } catch {
           // Fall through to timeline file fallback when API is unavailable.
@@ -2988,9 +3022,7 @@
 
       const payload = await fetchJSON(`${TIMELINE_URL}?ts=${Date.now()}`);
       const events = Array.isArray(payload?.events) ? payload.events : [];
-      const startMs = Date.parse(String(startIso || ""));
-      const endMs = Date.parse(String(endIso || ""));
-      const items = events
+      let items = events
         .filter((ev) => {
           if (!ev?.shot_url) return false;
           const ms = Date.parse(String(ev?.ts || ""));
@@ -2999,8 +3031,7 @@
           if (source && String(ev?.source_id || "") !== source) return false;
           return true;
         })
-        .sort((a, b) => Date.parse(String(b?.ts || "")) - Date.parse(String(a?.ts || "")))
-        .slice(0, Math.max(1, Math.min(1500, Number(limit) || 500)))
+        .sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")))
         .map((ev) => ({
           ts: ev?.ts || null,
           source_id: ev?.source_id || null,
@@ -3010,6 +3041,7 @@
           url: ev?.url || null,
           shot_url: ev?.shot_url || null,
         }));
+      items = source ? items.slice(0, perSourceLimit) : capRewindItemsPerSource(items, perSourceLimit);
 
       return {
         start: startIso,
@@ -3039,9 +3071,146 @@
         feedback.textContent = "";
       }
 
-      const items = Array.isArray(rewindState.items) ? rewindState.items : [];
-      for (let i = 0; i < items.length; i += 1) {
-        const item = items[i];
+      const allItems = (Array.isArray(rewindState.items) ? rewindState.items : [])
+        .filter((item) => item?.shot_url)
+        .sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")));
+      if (!allItems.length || rewindState.loading) {
+        if (rewindState.loading) {
+          for (let i = 0; i < 8; i += 1) {
+            const sk = document.createElement("div");
+            sk.className = "rewindSkel";
+            sk.innerHTML = `<div class="rewindSkelImg"></div><div class="rewindSkelMeta"></div>`;
+            host.appendChild(sk);
+          }
+        }
+        return;
+      }
+
+      const sourceCounts = new Map();
+      for (const item of allItems) {
+        const sid = String(item?.source_id || "");
+        sourceCounts.set(sid, (sourceCounts.get(sid) || 0) + 1);
+      }
+      if (rewindState.selectedSourceId && !sourceCounts.has(rewindState.selectedSourceId)) {
+        rewindState.selectedSourceId = "";
+      }
+      const filteredItems = rewindState.selectedSourceId
+        ? allItems.filter((item) => String(item?.source_id || "") === rewindState.selectedSourceId)
+        : allItems;
+      if (!filteredItems.length) {
+        const empty = document.createElement("div");
+        empty.className = "inlineEmpty";
+        empty.textContent = "No screenshots for that source in this range.";
+        host.appendChild(empty);
+        return;
+      }
+
+      const frame = document.createElement("div");
+      frame.className = "shotFrame";
+      const tile = document.createElement("button");
+      tile.type = "button";
+      tile.className = "shotTile";
+      const imgWrap = document.createElement("div");
+      imgWrap.style.width = "100%";
+      imgWrap.style.aspectRatio = "16 / 9";
+      imgWrap.style.borderRadius = "10px";
+      imgWrap.style.overflow = "hidden";
+      imgWrap.style.background = "#0f1113";
+      const img = document.createElement("img");
+      img.style.width = "100%";
+      img.style.height = "100%";
+      img.style.objectFit = "contain";
+      imgWrap.appendChild(img);
+      tile.appendChild(imgWrap);
+      frame.appendChild(tile);
+      host.appendChild(frame);
+
+      const controls = document.createElement("div");
+      controls.className = "shotRailControls";
+      const nav = document.createElement("div");
+      nav.className = "snapshotNav";
+      const prev = document.createElement("button");
+      prev.className = "linkbtn";
+      prev.type = "button";
+      prev.textContent = "<";
+      const next = document.createElement("button");
+      next.className = "linkbtn";
+      next.type = "button";
+      next.textContent = ">";
+      const meta = document.createElement("div");
+      meta.className = "snapshotStamp";
+      const scrubber = document.createElement("input");
+      scrubber.type = "range";
+      scrubber.className = "shotRailScrubber";
+      scrubber.min = "0";
+      scrubber.max = String(Math.max(0, filteredItems.length - 1));
+      scrubber.step = "1";
+      scrubber.value = "0";
+      nav.appendChild(prev);
+      nav.appendChild(meta);
+      nav.appendChild(next);
+      controls.appendChild(nav);
+      controls.appendChild(scrubber);
+      host.appendChild(controls);
+
+      const sourceRow = document.createElement("div");
+      sourceRow.className = "rewindSourceRow";
+      const sourceOptions = [
+        { id: "", label: `All (${allItems.length})` },
+        ...[...sourceCounts.entries()].map(([sid, count]) => ({
+          id: sid,
+          label: `${sourceLabel(sid, null)} (${count})`,
+        })),
+      ];
+      for (const option of sourceOptions) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `rewindSourceBtn${rewindState.selectedSourceId === option.id ? " active" : ""}`;
+        btn.textContent = option.label;
+        btn.addEventListener("click", () => {
+          rewindState.selectedSourceId = option.id;
+          rewindState.selectedIndex = 0;
+          renderRewindGallery();
+        });
+        sourceRow.appendChild(btn);
+      }
+      host.appendChild(sourceRow);
+
+      const selector = document.createElement("div");
+      selector.className = "rewindSelectorGrid";
+      host.appendChild(selector);
+
+      let idx = Math.max(0, Math.min(filteredItems.length - 1, Number(rewindState.selectedIndex || 0)));
+      let wheelLockUntil = 0;
+      function paint(i){
+        idx = Math.max(0, Math.min(filteredItems.length - 1, i));
+        rewindState.selectedIndex = idx;
+        const ev = filteredItems[idx] || null;
+        const src = String(ev?.source_label || sourceLabel(ev?.source_id || "", null) || "Source");
+        meta.textContent = `${src} · ${fmtTime(ev?.ts)} · ${timelineKindLabel(ev?.kind || "heartbeat")}`;
+        img.src = ev?.shot_url || "";
+        prev.disabled = idx <= 0;
+        next.disabled = idx >= filteredItems.length - 1;
+        scrubber.value = String(idx);
+        const cards = selector.querySelectorAll(".rewindCard");
+        cards.forEach((card, cardIdx) => card.classList.toggle("active", cardIdx === idx));
+      }
+
+      prev.addEventListener("click", () => paint(idx - 1));
+      next.addEventListener("click", () => paint(idx + 1));
+      scrubber.addEventListener("input", () => paint(Number(scrubber.value || 0)));
+      tile.addEventListener("click", () => openScreenshotGallery(filteredItems, idx));
+      frame.addEventListener("wheel", (e) => {
+        if (Math.abs(e.deltaY) < 10) return;
+        e.preventDefault();
+        const now = Date.now();
+        if (now < wheelLockUntil) return;
+        wheelLockUntil = now + 110;
+        paint(idx + (e.deltaY > 0 ? 1 : -1));
+      }, { passive: false });
+
+      for (let i = 0; i < filteredItems.length; i += 1) {
+        const item = filteredItems[i];
         const card = document.createElement("button");
         card.type = "button";
         card.className = "rewindCard";
@@ -3053,80 +3222,45 @@
             <span class="rewindKind">${escapeHtml(String(item?.kind || "heartbeat"))}</span>
           </div>
         `;
-        card.addEventListener("click", () => openScreenshotGallery(items, i));
-        host.appendChild(card);
+        card.addEventListener("click", () => paint(i));
+        selector.appendChild(card);
       }
-
-      if (rewindState.loading) {
-        for (let i = 0; i < 8; i += 1) {
-          const sk = document.createElement("div");
-          sk.className = "rewindSkel";
-          sk.innerHTML = `<div class="rewindSkelImg"></div><div class="rewindSkelMeta"></div>`;
-          host.appendChild(sk);
-        }
-      }
+      paint(idx);
     }
 
     async function runRewindQuery(){
-      applyRewindInputLimits();
-      const startLocal = String($("rewind-start")?.value || "").trim();
-      const endLocal = String($("rewind-end")?.value || "").trim();
+      const lookbackRaw = Number($("rewind-lookback")?.value || REWIND_DEFAULT_LOOKBACK_HOURS);
+      const lookbackHours = Number.isFinite(lookbackRaw) ? Math.max(1, Math.floor(lookbackRaw)) : REWIND_DEFAULT_LOOKBACK_HOURS;
       const sourceId = String($("rewind-source")?.value || "").trim();
-      const startIso = parseLocalDateTimeToIso(startLocal);
-      const endIso = parseLocalDateTimeToIso(endLocal);
-      const startMs = Date.parse(String(startIso || ""));
-      const endMs = Date.parse(String(endIso || ""));
-
-      rewindState.startLocal = startLocal;
-      rewindState.endLocal = endLocal;
+      const range = rewindRangeFromHours(lookbackHours);
+      rewindState.lookbackHours = lookbackHours;
       rewindState.sourceId = sourceId;
+      rewindState.selectedSourceId = sourceId;
       rewindState.error = "";
 
-      if (!startIso || !endIso || !Number.isFinite(startMs) || !Number.isFinite(endMs)) {
-        rewindState.error = "Enter valid local start/end datetimes.";
-        renderRewindGallery();
-        return;
-      }
-      if (endMs <= startMs) {
-        rewindState.error = "End must be later than start.";
-        renderRewindGallery();
-        return;
-      }
-      const nowMs = Date.now();
-      const earliestAllowedMs = nowMs - REWIND_MAX_RANGE_MS;
-      if (startMs < earliestAllowedMs || endMs < earliestAllowedMs || startMs > nowMs || endMs > nowMs) {
-        rewindState.error = "Rewind is limited to the last 12 hours.";
-        renderRewindGallery();
-        return;
-      }
-      if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
-        rewindState.error = "Range must be 12 hours or less.";
-        renderRewindGallery();
-        return;
-      }
-
       rewindState.loading = true;
-      rewindState.startIso = startIso;
-      rewindState.endIso = endIso;
+      rewindState.startIso = range.startIso;
+      rewindState.endIso = range.endIso;
       renderRewindGallery();
 
       try {
         const payload = await fetchRewindScreenshots({
-          startIso,
-          endIso,
+          lookbackHours,
           sourceId,
-          limit: 500,
+          limit: REWIND_ROWS_PER_SOURCE,
         });
         rewindState.items = Array.isArray(payload?.items)
-          ? payload.items.sort((a, b) => Date.parse(String(b?.ts || "")) - Date.parse(String(a?.ts || "")))
+          ? payload.items.sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")))
           : [];
+        rewindState.selectedIndex = 0;
         rewindState.count = Number(payload?.count || rewindState.items.length || 0);
-        rewindState.startIso = String(payload?.start || startIso);
-        rewindState.endIso = String(payload?.end || endIso);
+        rewindState.startIso = String(payload?.start || range.startIso);
+        rewindState.endIso = String(payload?.end || range.endIso);
       } catch (err) {
         rewindState.error = `Rewind failed: ${summarizeError(err)}`;
       } finally {
         rewindState.loading = false;
+        rewindState.hasLoaded = true;
         renderRewindGallery();
       }
     }
@@ -3961,7 +4095,7 @@
       const timelineEvents = Array.isArray(latestOverviewPayload?.timelineBySource?.[sourceId])
         ? [...latestOverviewPayload.timelineBySource[sourceId]]
         : [];
-      timelineEvents.sort((a, b) => Date.parse(String(b?.ts || "")) - Date.parse(String(a?.ts || "")));
+      timelineEvents.sort((a, b) => Date.parse(String(a?.ts || "")) - Date.parse(String(b?.ts || "")));
       const headlineHistory = headlineHistoryFromTimeline(timelineEvents, sourceRow?.item?.url || null);
 
       if (selectedDetailsTab === "changes") {
@@ -6462,7 +6596,11 @@
         renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
       }
       if (showRewind) {
-        renderRewindGallery();
+        if (!rewindState.hasLoaded && !rewindState.loading) {
+          runRewindQuery();
+        } else {
+          renderRewindGallery();
+        }
       }
       if (showData) {
         setDataOpen(isNarrowLayout());
@@ -7013,9 +7151,14 @@
     $("btn-moment-jump-primary")?.addEventListener("click", () => jumpMomentToTs(momentState.payload?.primary?.ts));
     $("btn-moment-jump-t0")?.addEventListener("click", () => jumpMomentToTs(momentState.payload?.t0));
     $("rewind-submit")?.addEventListener("click", runRewindQuery);
-    $("rewind-start")?.addEventListener("change", (e) => { rewindState.startLocal = String(e.target.value || ""); });
-    $("rewind-end")?.addEventListener("change", (e) => { rewindState.endLocal = String(e.target.value || ""); });
-    $("rewind-source")?.addEventListener("change", (e) => { rewindState.sourceId = String(e.target.value || ""); });
+    $("rewind-lookback")?.addEventListener("change", (e) => {
+      rewindState.lookbackHours = Number(e.target.value || REWIND_DEFAULT_LOOKBACK_HOURS);
+      runRewindQuery();
+    });
+    $("rewind-source")?.addEventListener("change", (e) => {
+      rewindState.sourceId = String(e.target.value || "");
+      runRewindQuery();
+    });
     $("source-data-window")?.addEventListener("change", (e) => {
       sourceDataWindowHours = parseHoursSpec(e.target.value);
       if (selectedSourceDataId) renderSourceDataPanel(selectedSourceDataId);
@@ -7073,17 +7216,12 @@
         initialView = savedView;
       }
     } catch {}
-    setRewindDefaults();
-    applyRewindInputLimits();
     fillRewindSourceOptions();
-    const rewindStartEl = $("rewind-start");
-    const rewindEndEl = $("rewind-end");
-    if (rewindStartEl) rewindStartEl.value = rewindState.startLocal;
-    if (rewindEndEl) rewindEndEl.value = rewindState.endLocal;
+    const rewindLookbackEl = $("rewind-lookback");
+    if (rewindLookbackEl) rewindLookbackEl.value = String(rewindState.lookbackHours || REWIND_DEFAULT_LOOKBACK_HOURS);
     const hashView = viewFromHash();
     if (hashView) initialView = hashView;
     setView(initialView, false);
-    if (activeView === "rewind") runRewindQuery();
     setSelectedWindowHours(HISTORY_WINDOW_DEFAULT_HOURS);
     sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     setDetailsTab("changes");
