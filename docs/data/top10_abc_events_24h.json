@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-24T00:56:23.039Z",
+  "generatedAt": "2026-02-24T01:03:00.580Z",
   "hours": 24,
   "events": [
     {
@@ -1541,6 +1541,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Motive probed in fatal Mar-a-Lago shooting of armed man as Trump speaks out",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T01:03:10.708Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2c3e0537d81510304ec654878dc45b6e3ff85377",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Lord Peter Mandelson arrested amid Epstein files fallout"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T01:03:10.708Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2964cb0e71a9072575356c4040c2027383b56313",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Peter Mandelson arrested on suspicion of misconduct in public office",
       "to_title": null
     }
   ]
