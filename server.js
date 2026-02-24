@@ -26,7 +26,7 @@ const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
 const SCREENSHOT_RETENTION_HOURS = 12;
 const REWIND_DEFAULT_LIMIT = 500;
 const REWIND_MAX_LIMIT = 1500;
-const REWIND_MAX_RANGE_MS = 6 * 60 * 60 * 1000;
+const REWIND_MAX_RANGE_MS = 12 * 60 * 60 * 1000;
 const DEBUG_SCREENSHOT = process.env.DEBUG_SCREENSHOT === "1";
 
 const DEFAULT_SCREENSHOT_PROFILE = {
@@ -3809,8 +3809,13 @@ app.get("/api/rewind/screenshots", async (req, res) => {
     if (endMs <= startMs) {
       return res.status(400).json({ ok: false, error: "End must be after start." });
     }
+    const nowMs = Date.now();
+    const earliestAllowedMs = nowMs - REWIND_MAX_RANGE_MS;
+    if (startMs < earliestAllowedMs || endMs < earliestAllowedMs || startMs > nowMs || endMs > nowMs) {
+      return res.status(400).json({ ok: false, error: "Rewind is limited to the last 12 hours." });
+    }
     if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
-      return res.status(400).json({ ok: false, error: "Requested range exceeds 6 hours." });
+      return res.status(400).json({ ok: false, error: "Requested range exceeds 12 hours." });
     }
 
     const sourceId = canonicalServerSourceId(sourceRaw || "");
@@ -4384,7 +4389,7 @@ Sample SQL: Hero slot in a time window
 select observed_at, source_id, title, url, ok, error
 from public.headline_events
 where slot_key = 'hero:1'
-  and observed_at >= now() - interval '6 hours'
+  and observed_at >= now() - interval '12 hours'
 order by observed_at desc;
 
 Sample SQL: Source reliability in last 24h

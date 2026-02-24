@@ -1321,6 +1321,7 @@
         <div class="labsHeader">
           <h2>Rewind Screenshots</h2>
           <div class="labsHelp">Browse screenshots across all publishers in a time window.</div>
+          <div class="tiny">Currently limited to the last 12 hours.</div>
         </div>
         <div class="rewindControls">
           <label class="rewindField">
@@ -1634,7 +1635,7 @@
       selectedObservedAt: null,
     };
     const VIEW_STORAGE_KEY = "newsboard_view";
-    const REWIND_MAX_RANGE_MS = 6 * 60 * 60 * 1000;
+    const REWIND_MAX_RANGE_MS = 12 * 60 * 60 * 1000;
     const REWIND_DEFAULT_RANGE_MS = 60 * 60 * 1000;
     const CLUSTER_CARD_ORDER_KEY = "nb_cluster_card_order";
     const CLUSTER_STRICTNESS_KEY = "nb_cluster_strictness";
@@ -2909,6 +2910,23 @@
       rewindState.endLocal = toLocalDateTimeValue(end);
     }
 
+    function applyRewindInputLimits(){
+      const startEl = $("rewind-start");
+      const endEl = $("rewind-end");
+      const now = new Date();
+      const oldest = new Date(now.getTime() - REWIND_MAX_RANGE_MS);
+      const minVal = toLocalDateTimeValue(oldest);
+      const maxVal = toLocalDateTimeValue(now);
+      if (startEl) {
+        startEl.min = minVal;
+        startEl.max = maxVal;
+      }
+      if (endEl) {
+        endEl.min = minVal;
+        endEl.max = maxVal;
+      }
+    }
+
     function fillRewindSourceOptions(){
       const sel = $("rewind-source");
       if (!sel) return;
@@ -3041,6 +3059,7 @@
     }
 
     async function runRewindQuery(){
+      applyRewindInputLimits();
       const startLocal = String($("rewind-start")?.value || "").trim();
       const endLocal = String($("rewind-end")?.value || "").trim();
       const sourceId = String($("rewind-source")?.value || "").trim();
@@ -3064,8 +3083,15 @@
         renderRewindGallery();
         return;
       }
+      const nowMs = Date.now();
+      const earliestAllowedMs = nowMs - REWIND_MAX_RANGE_MS;
+      if (startMs < earliestAllowedMs || endMs < earliestAllowedMs || startMs > nowMs || endMs > nowMs) {
+        rewindState.error = "Rewind is limited to the last 12 hours.";
+        renderRewindGallery();
+        return;
+      }
       if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
-        rewindState.error = "Range must be 6 hours or less.";
+        rewindState.error = "Range must be 12 hours or less.";
         renderRewindGallery();
         return;
       }
@@ -7039,6 +7065,7 @@
       }
     } catch {}
     setRewindDefaults();
+    applyRewindInputLimits();
     fillRewindSourceOptions();
     const rewindStartEl = $("rewind-start");
     const rewindEndEl = $("rewind-end");
