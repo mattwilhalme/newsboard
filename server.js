@@ -201,11 +201,16 @@ function extractKeywords(titleNorm, maxTokens = 12) {
   const out = [];
   const tokens = String(titleNorm || "").split(/\s+/g).filter(Boolean);
   for (const tok of tokens) {
-    if (tok.length < 3) continue;
-    if (STORY_STOPWORDS.has(tok)) continue;
-    if (seen.has(tok)) continue;
-    seen.add(tok);
-    out.push(tok);
+    let t = String(tok || "").trim();
+    if (!t) continue;
+    t = t.replace(/[’']/g, "'");
+    t = t.replace(/'s$/i, "");
+    if (t.endsWith("s") && t.length > 4 && !t.endsWith("ss")) t = t.slice(0, -1);
+    if (t.length < 3) continue;
+    if (STORY_STOPWORDS.has(t)) continue;
+    if (seen.has(t)) continue;
+    seen.add(t);
+    out.push(t);
     if (out.length >= maxTokens) break;
   }
   return out;
@@ -432,7 +437,12 @@ function headlineMatchesCluster(row, { canonical, fingerprint, keywords }) {
   const canonicalMatch = Boolean(canonical) && String(row?.canonical_url || "") === String(canonical);
   const fpMatch = Boolean(fingerprint) && String(row?.fingerprint || "") === String(fingerprint);
   const sim = jaccardOverlap(Array.isArray(keywords) ? keywords : [], Array.isArray(row?.keywords) ? row.keywords : []);
-  const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+  const aLen = Array.isArray(keywords) ? keywords.length : 0;
+  const bLen = Array.isArray(row?.keywords) ? row.keywords.length : 0;
+  const shortHeadline = Math.min(aLen, bLen) <= 5;
+  const minOverlap = shortHeadline ? 2 : 3;
+  const minScore = shortHeadline ? 0.24 : 0.30;
+  const keywordMatch = sim.score >= minScore && sim.overlap >= minOverlap;
   return { matched: canonicalMatch || fpMatch || keywordMatch, canonicalMatch, fpMatch, keywordMatch, sim };
 }
 

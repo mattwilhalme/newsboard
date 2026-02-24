@@ -1826,11 +1826,16 @@
       const out = [];
       const seen = new Set();
       for (const token of String(titleNorm || "").split(/\s+/g).filter(Boolean)) {
-        if (token.length < 3) continue;
-        if (MOMENT_STOPWORDS.has(token)) continue;
-        if (seen.has(token)) continue;
-        seen.add(token);
-        out.push(token);
+        let t = String(token || "").trim();
+        if (!t) continue;
+        t = t.replace(/[’']/g, "'");
+        t = t.replace(/'s$/i, "");
+        if (t.endsWith("s") && t.length > 4 && !t.endsWith("ss")) t = t.slice(0, -1);
+        if (t.length < 3) continue;
+        if (MOMENT_STOPWORDS.has(t)) continue;
+        if (seen.has(t)) continue;
+        seen.add(t);
+        out.push(t);
         if (out.length >= 12) break;
       }
       return out;
@@ -1844,6 +1849,16 @@
       for (const tok of sa) if (sb.has(tok)) overlap += 1;
       const union = sa.size + sb.size - overlap;
       return { score: union > 0 ? (overlap / union) : 0, overlap };
+    }
+
+    function momentKeywordMatch(anchorKeywords, eventKeywords){
+      const sim = jaccardKeywords(anchorKeywords, eventKeywords);
+      const aLen = Array.isArray(anchorKeywords) ? anchorKeywords.length : 0;
+      const bLen = Array.isArray(eventKeywords) ? eventKeywords.length : 0;
+      const shortHeadline = Math.min(aLen, bLen) <= 5;
+      const minOverlap = shortHeadline ? 2 : 3;
+      const minScore = shortHeadline ? 0.24 : 0.30;
+      return { matched: sim.overlap >= minOverlap && sim.score >= minScore, sim };
     }
 
     function syncWindowSelectors(windowSpec){
@@ -2494,8 +2509,7 @@
           const evCanonical = normalizeUrlForStory(ev?.url || "");
           const canonicalMatch = Boolean(canonicalTarget) && evCanonical === canonicalTarget;
           const evKw = extractStoryKeywords(normalizeTitleForStory(ev?.title || ""));
-          const sim = jaccardKeywords(clusterKeywords, evKw);
-          const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+          const keywordMatch = momentKeywordMatch(clusterKeywords, evKw).matched;
           if (canonicalMatch || keywordMatch) {
             primaryEvent = ev;
             break;
@@ -2512,8 +2526,7 @@
             const evCanonical = normalizeUrlForStory(ev?.url || "");
             const canonicalMatch = Boolean(canonicalTarget) && evCanonical === canonicalTarget;
             const evKw = extractStoryKeywords(normalizeTitleForStory(ev?.title || ""));
-            const sim = jaccardKeywords(clusterKeywords, evKw);
-            const keywordMatch = sim.score >= 0.35 && sim.overlap >= 3;
+            const keywordMatch = momentKeywordMatch(clusterKeywords, evKw).matched;
             return canonicalMatch || keywordMatch;
           })
           .map((ev) => ({
@@ -5517,6 +5530,80 @@
       return out;
     }
 
+    function reassignSoloClusters(clusters){
+      const sorted = sortClustersStable(clusters);
+      const grouped = sorted.filter((cluster) => (cluster.items || []).length > 1);
+      const solos = sorted.filter((cluster) => (cluster.items || []).length === 1);
+      const otherSourceIds = new Set();
+      if (!solos.length) return { clusters: sorted, otherSourceIds };
+      if (!grouped.length) {
+        for (const solo of solos) {
+          const item = (solo.items || [])[0];
+          if (item?.sourceId) otherSourceIds.add(String(item.sourceId));
+        }
+        return { clusters: [], otherSourceIds };
+      }
+
+      const byId = new Map(grouped.map((cluster) => [cluster.id, { ...cluster, items: [...(cluster.items || [])] }]));
+      const orderedSolos = [...solos].sort((a, b) => {
+        const ia = (a.items || [])[0] || {};
+        const ib = (b.items || [])[0] || {};
+        const ta = Number(ia.firstSeenMs || 0);
+        const tb = Number(ib.firstSeenMs || 0);
+        if (ta !== tb) return ta - tb;
+        return String(ia.sourceId || "").localeCompare(String(ib.sourceId || ""));
+      });
+
+      for (const solo of orderedSolos) {
+        const item = (solo.items || [])[0];
+        if (!item?.sourceId) continue;
+        const itemEntities = new Set(item.entities || []);
+        const itemTokens = new Set(item.tokens || []);
+        let best = null;
+        for (const cluster of byId.values()) {
+          const clusterEntities = cluster.entitySet instanceof Set ? cluster.entitySet : new Set(cluster.exemplarEntitySet || []);
+          const clusterTokens = cluster.tokenFreq ? new Set(cluster.tokenFreq.keys()) : new Set(cluster.exemplarTokenSet || []);
+          const sharedEntities = [...itemEntities].filter((entity) => clusterEntities.has(entity));
+          const sharedTokens = [...itemTokens].filter((token) =>
+            clusterTokens.has(token) &&
+            !CLUSTER_STOPWORDS.has(String(token || "").toLowerCase()) &&
+            !CLUSTER_TITLE_DEPRIORITIZED.has(String(token || "").toLowerCase()));
+          if (!sharedEntities.length && !sharedTokens.length) continue;
+          const entityOverlap = jaccard(itemEntities, clusterEntities);
+          const tokenOverlap = jaccard(itemTokens, new Set(cluster.exemplarTokenSet || []));
+          const score = (entityOverlap * 0.5) + (tokenOverlap * 0.25)
+            + Math.min(0.2, sharedEntities.length * 0.12)
+            + Math.min(0.2, sharedTokens.length * 0.06);
+          if (!best || score > best.score) {
+            best = { clusterId: cluster.id, score, sharedEntities, sharedTokens, entityOverlap, tokenOverlap };
+          }
+        }
+
+        if (!best) {
+          otherSourceIds.add(String(item.sourceId));
+          continue;
+        }
+
+        const target = byId.get(best.clusterId);
+        if (!target) {
+          otherSourceIds.add(String(item.sourceId));
+          continue;
+        }
+        target.items.push({
+          ...item,
+          rule: "solo_reassign",
+          why: `solo_reassign(${best.sharedEntities.slice(0, 2).join(",") || "token"}${best.sharedTokens.length ? `;tokens:${best.sharedTokens.slice(0, 2).join(",")}` : ""})`,
+          hardJoinAnchor: best.sharedEntities[0] || item.hardJoinAnchor || "",
+          score: best.score,
+          entityOverlap: best.entityOverlap,
+          tokenOverlap: best.tokenOverlap,
+        });
+        byId.set(best.clusterId, recomputeClusterMetadata(target));
+      }
+
+      return { clusters: sortClustersStable([...byId.values()]), otherSourceIds };
+    }
+
     function buildStoryClusters(items, strictness = "balanced"){
       const preset = CLUSTER_PRESETS[strictness] || CLUSTER_PRESETS.balanced;
       const features = (items || []).map((item) => buildStoryFeature(item));
@@ -5664,6 +5751,10 @@
         }
       }
 
+      const soloResolution = reassignSoloClusters(merged);
+      merged = sortClustersStable(soloResolution.clusters || []);
+      const forcedOtherSourceIds = new Set(soloResolution.otherSourceIds || []);
+
       merged = sortClustersStable(merged).map((cluster, idx) => ({
         ...cluster,
         id: `${slugify(cluster.label)}-${stableHash(`${cluster.exemplarNorm}|${idx}`)}`,
@@ -5692,6 +5783,25 @@
             clusterKey: item.clusterKey,
           };
         }
+      }
+      for (const sourceId of forcedOtherSourceIds) {
+        mergedBySource[sourceId] = {
+          clusterId: "other",
+          clusterLabel: "Other",
+          score: 0,
+          entityOverlap: 0,
+          tokenOverlap: 0,
+          rule: "solo_other",
+          why: "solo_no_match",
+          hardJoinAnchor: "",
+          entities: [],
+          itemTokens: [],
+          exemplarEntities: [],
+          exemplarTokens: [],
+          titleRaw: "",
+          titleNorm: "",
+          clusterKey: "",
+        };
       }
       return { clusters: merged, bySource: mergedBySource, strictness };
     }
