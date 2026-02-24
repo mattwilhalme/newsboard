@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-23T23:27:49.960Z",
+  "generatedAt": "2026-02-23T23:59:32.430Z",
   "hours": 24,
   "events": [
     {
@@ -1331,6 +1331,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump continues to lash out at Supreme Court after tariff ruling",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7bf80a966e97e0cddbe189ca747313015ff4c08c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Current travel advisories in Mexico: How flights, roads and more are impacted"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e61c39b5d7f156f631fe3b1b54dd27d128a5629b",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Swastika found at Coast Guard training center, investigation underway: USCG"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "MOVED",
+      "fingerprint": "8942ee22e3d36bdcb8800a5d8c61c576e4c56e27",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph",
+      "to_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "MOVED",
+      "fingerprint": "44811dbae916aabde7c13425abe1e9795ff06dde",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "BAFTAs face controversy over obscene outbursts during show",
+      "to_title": "BAFTAs face controversy over obscene outbursts during show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fb525f3dd5f8589fc816c4715d8eb453de0d1b5",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner",
+      "to_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "MOVED",
+      "fingerprint": "9176cbc0fec9c39dbc3d4cdbe3a00f20492527e7",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash",
+      "to_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "MOVED",
+      "fingerprint": "2964cb0e71a9072575356c4040c2027383b56313",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Peter Mandelson arrested on suspicion of misconduct in public office",
+      "to_title": "Peter Mandelson arrested on suspicion of misconduct in public office"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f2d80365ecb9553ffe6f4b7abbacdfe4e3693451",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Resources for US travelers in Mexico: What to know amid cartel unrest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-23T23:59:42.190Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c07f94ac978b0812d2419776fb0d41f76dd71b4c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Murder trial of mom accused of killing husband with fentanyl underway",
       "to_title": null
     }
   ]
