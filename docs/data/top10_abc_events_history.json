@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-24T21:23:22.512Z",
+  "generatedAt": "2026-02-24T21:59:39.568Z",
   "source_id": "abc1",
   "events": [
     {
@@ -9101,6 +9101,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T21:59:50.026Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f7fbdda6625af95106caca61a37da679e62525d7",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Exclusive: No. 2 House Democrat to skip Trump's State of the Union address"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T21:59:50.026Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f84a8e8381055535cf5e622cc9b75e7b489d686d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "SOTU: Trump speech comes at uncertain, even perilous, moment for presidency: ANALYSIS",
       "to_title": null
     }
   ],
