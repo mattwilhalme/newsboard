@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-23T23:59:32.430Z",
+  "generatedAt": "2026-02-24T00:06:03.012Z",
   "hours": 24,
   "events": [
     {
@@ -1421,6 +1421,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Murder trial of mom accused of killing husband with fentanyl underway",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:06:12.666Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "044347dbbb7239c46b2bfc2ac2c899ccf7b653e1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:US embassy alerts Americans in Mexico to shelter in place"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:06:12.666Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7bf80a966e97e0cddbe189ca747313015ff4c08c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Current travel advisories in Mexico: How flights, roads and more are impacted",
       "to_title": null
     }
   ]
