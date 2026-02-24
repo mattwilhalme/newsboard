@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-24T20:51:37.541Z",
+  "generatedAt": "2026-02-24T21:23:22.512Z",
   "source_id": "abc1",
   "events": [
     {
@@ -9071,6 +9071,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "How to watch Trump's State of the Union address",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T21:23:32.651Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Martin Short's daughter Katherine Short dies at 42"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T21:23:32.651Z",
+      "event_type": "MOVED",
+      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
+      "to_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T21:23:32.651Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9cc61aa7321533736610f50ced835c0631b4fbf8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71",
       "to_title": null
     }
   ],
