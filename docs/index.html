@@ -4835,7 +4835,7 @@
       "what", "know", "happening", "running", "latest", "live", "update", "updates",
       "watch", "video", "photos", "why", "how", "new", "say", "says", "said",
       "warn", "warns", "warning", "tell", "told", "take", "takes", "taking",
-      "impact", "impacted", "affect", "affected",
+      "impact", "impacted", "affect", "affected", "details", "detail", "emerge", "emerges", "continue", "continues",
     ]);
 
     const CLUSTER_ALIAS_GROUPS = [
@@ -4979,7 +4979,13 @@
         .replace(/[“”]/g, "\"");
       if (!title) return new Set();
 
-      const words = title.match(/[A-Za-z][A-Za-z'.-]*/g) || [];
+      const words = (title.match(/[A-Za-z][A-Za-z'.-]*/g) || [])
+        .map((word) => String(word || "")
+          .replace(/[‘’]/g, "'")
+          .replace(/'s$/i, "")
+          .replace(/\.+$/g, "")
+          .trim())
+        .filter((word) => word.length >= 2);
       const entities = new Set();
       let i = 0;
       while (i < words.length) {
@@ -5203,6 +5209,23 @@
       return picks.map((tok) => tok.charAt(0).toUpperCase() + tok.slice(1)).join(" ");
     }
 
+    function compactTwoWordLabel(label){
+      const words = String(label || "")
+        .replace(/[’']/g, "")
+        .split(/\s+/g)
+        .map((word) => word.trim())
+        .filter(Boolean)
+        .map((word) => word.replace(/[^A-Za-z0-9]/g, ""))
+        .filter((word) => word.length >= 2 && word.toLowerCase() !== "s")
+        .slice(0, 2)
+        .map((word) => {
+          const upper = word.toUpperCase();
+          if (CLUSTER_ACRONYM_ALLOWLIST.has(upper)) return upper;
+          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        });
+      return words.length ? words.join(" ") : "Topic";
+    }
+
     function buildStoryFeature(item){
       const titleRaw = String(item?.title || "").trim();
       const titleNorm = normalizeHeadline(titleRaw);
@@ -5341,8 +5364,13 @@
         .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
         .map(([token]) => token)
         .find((token) => !entityTokenBlocklist.has(token) && !CLUSTER_TITLE_DEPRIORITIZED.has(token) && token.length >= 4) || "";
-      const labelParts = [...topEntities.map(entityDisplayName), descriptor ? (descriptor.charAt(0).toUpperCase() + descriptor.slice(1)) : ""].filter(Boolean);
-      const label = labelParts.length ? labelParts.join(" ") : clusterLabelFromTokens(cluster.exemplarTokens, cluster.exemplarTokens);
+      const primaryEntityLabel = topEntities.length ? entityDisplayName(topEntities[0]) : "";
+      const descriptorLabel = descriptor ? (descriptor.charAt(0).toUpperCase() + descriptor.slice(1)) : "";
+      const fallbackLabel = clusterLabelFromTokens(cluster.exemplarTokens, cluster.exemplarTokens);
+      const rawLabel = primaryEntityLabel
+        ? (descriptorLabel ? `${primaryEntityLabel} ${descriptorLabel}` : primaryEntityLabel)
+        : fallbackLabel;
+      const label = compactTwoWordLabel(rawLabel);
       const unionEntities = new Set();
       for (const entity of entityFreq.keys()) unionEntities.add(entity);
       return {
@@ -5507,13 +5535,20 @@
           const shared = [...feature.entities].filter((entity) => cluster.entitySet?.has(entity));
           if (!shared.length) continue;
           const sim = computeEntityTokenSimilarity(feature, cluster, preset);
-          if (!best || sim.score > best.score) {
+          const clusterTokenPool = cluster.tokenFreq ? new Set(cluster.tokenFreq.keys()) : new Set(cluster.exemplarTokenSet || []);
+          const sharedNouns = [...feature.tokenSet].filter((token) =>
+            clusterTokenPool.has(token) &&
+            !CLUSTER_TITLE_DEPRIORITIZED.has(String(token || "").toLowerCase()) &&
+            !CLUSTER_STOPWORDS.has(String(token || "").toLowerCase()));
+          const hardJoinScore = sim.score + (sharedNouns.length ? Math.min(0.18, sharedNouns.length * 0.06) : 0);
+          if (!best || hardJoinScore > best.score) {
             best = {
               cluster,
               ...sim,
+              score: hardJoinScore,
               matched: true,
               rule: "hard_join_entity",
-              why: `hard_join(${shared.slice(0, 3).join(",")})`,
+              why: `hard_join(${shared.slice(0, 3).join(",")}${sharedNouns.length ? `;tokens:${sharedNouns.slice(0, 2).join(",")}` : ""})`,
               sharedAnchor: shared[0],
             };
           }
