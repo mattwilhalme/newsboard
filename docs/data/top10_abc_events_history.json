@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-24T00:06:03.012Z",
+  "generatedAt": "2026-02-24T00:26:28.767Z",
   "source_id": "abc1",
   "events": [
     {
@@ -7681,6 +7681,86 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Current travel advisories in Mexico: How flights, roads and more are impacted",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "MOVED",
+      "fingerprint": "ba51052b227f67089102428b890e12eb6ef182f8",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Suspect in Nancy Guthrie abduction appeared to visit her house before: Sources",
+      "to_title": "Suspect in Nancy Guthrie abduction appeared to visit her house before: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "202ef4ab0f573948a10a485979684fc9a5d6ee49",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "MOVED",
+      "fingerprint": "44e5c143d9dbd0f49156df0d1574f7754444ead8",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "What to know about Mexico violence as president offers reassurances",
+      "to_title": "What to know about Mexico violence as president offers reassurances"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "676546b34d2732b8bc3a26b42fb748acdf6885c5",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Motive probed in fatal Mar-a-Lago shooting of armed man as Trump speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "MOVED",
+      "fingerprint": "44811dbae916aabde7c13425abe1e9795ff06dde",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "BAFTAs face controversy over obscene outbursts during show",
+      "to_title": "BAFTAs face controversy over obscene outbursts during show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fb525f3dd5f8589fc816c4715d8eb453de0d1b5",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner",
+      "to_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "044347dbbb7239c46b2bfc2ac2c899ccf7b653e1",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:US embassy alerts Americans in Mexico to shelter in place",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:26:38.335Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9176cbc0fec9c39dbc3d4cdbe3a00f20492527e7",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash",
       "to_title": null
     }
   ],
