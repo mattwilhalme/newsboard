@@ -25,8 +25,11 @@ const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
 const SCREENSHOT_RETENTION_HOURS = 12;
 const REWIND_DEFAULT_LIMIT = 500;
-const REWIND_MAX_LIMIT = 1500;
-const REWIND_MAX_RANGE_MS = 12 * 60 * 60 * 1000;
+const REWIND_MAX_LIMIT = 500;
+const REWIND_DEFAULT_LOOKBACK_DAYS = 5;
+const REWIND_MIN_LOOKBACK_DAYS = 1;
+const REWIND_MAX_LOOKBACK_DAYS = 7;
+const REWIND_MAX_RANGE_MS = REWIND_MAX_LOOKBACK_DAYS * 24 * 60 * 60 * 1000;
 const DEBUG_SCREENSHOT = process.env.DEBUG_SCREENSHOT === "1";
 
 const DEFAULT_SCREENSHOT_PROFILE = {
@@ -3796,27 +3799,12 @@ app.get("/api/timeline", async (req, res) => {
 
 app.get("/api/rewind/screenshots", async (req, res) => {
   try {
-    const startRaw = String(req.query?.start || "").trim();
-    const endRaw = String(req.query?.end || "").trim();
     const sourceRaw = String(req.query?.source || "").trim();
     const limitRaw = Number(req.query?.limit || REWIND_DEFAULT_LIMIT);
-
-    const startMs = Date.parse(startRaw);
-    const endMs = Date.parse(endRaw);
-    if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) {
-      return res.status(400).json({ ok: false, error: "Invalid start/end datetime." });
-    }
-    if (endMs <= startMs) {
-      return res.status(400).json({ ok: false, error: "End must be after start." });
-    }
-    const nowMs = Date.now();
-    const earliestAllowedMs = nowMs - REWIND_MAX_RANGE_MS;
-    if (startMs < earliestAllowedMs || endMs < earliestAllowedMs || startMs > nowMs || endMs > nowMs) {
-      return res.status(400).json({ ok: false, error: "Rewind is limited to the last 12 hours." });
-    }
-    if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
-      return res.status(400).json({ ok: false, error: "Requested range exceeds 12 hours." });
-    }
+    const lookbackRaw = Number(req.query?.lookback ?? REWIND_DEFAULT_LOOKBACK_DAYS);
+    const lookbackDays = Number.isFinite(lookbackRaw)
+      ? Math.max(REWIND_MIN_LOOKBACK_DAYS, Math.min(REWIND_MAX_LOOKBACK_DAYS, Math.floor(lookbackRaw)))
+      : REWIND_DEFAULT_LOOKBACK_DAYS;
 
     const sourceId = canonicalServerSourceId(sourceRaw || "");
     if (sourceRaw && (!sourceId || !SERVER_SOURCE_IDS.includes(sourceId))) {
@@ -3831,26 +3819,70 @@ app.get("/api/rewind/screenshots", async (req, res) => {
       return res.status(503).json({ ok: false, error: "Supabase admin is not configured." });
     }
 
-    const sb = getSupabaseAdmin();
-    let q = sb
-      .from("screenshot_events")
-      .select("ts,source_id,kind,title,url,object_path,shot_url")
-      .gte("ts", new Date(startMs).toISOString())
-      .lte("ts", new Date(endMs).toISOString())
-      .in("kind", ["new_url", "new_headline", "heartbeat"])
-      .order("ts", { ascending: false })
-      .limit(limit);
+    const nowMs = Date.now();
+    const lookbackDate = new Date(nowMs - lookbackDays * 86400000);
+    const nowIso = new Date(nowMs).toISOString();
+    let startIso = lookbackDate.toISOString();
+    let endIso = nowIso;
+    let queryByCreatedAt = true;
 
-    if (sourceId) {
-      q = q.eq("source_id", sourceId);
-    } else {
-      q = q.in("source_id", SERVER_SOURCE_IDS);
+    // Backward-compatible legacy window support.
+    const startRaw = String(req.query?.start || "").trim();
+    const endRaw = String(req.query?.end || "").trim();
+    if (startRaw || endRaw) {
+      const startMs = Date.parse(startRaw);
+      const endMs = Date.parse(endRaw);
+      if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) {
+        return res.status(400).json({ ok: false, error: "Invalid start/end datetime." });
+      }
+      if (endMs <= startMs) {
+        return res.status(400).json({ ok: false, error: "End must be after start." });
+      }
+      const earliestAllowedMs = nowMs - REWIND_MAX_RANGE_MS;
+      if (startMs < earliestAllowedMs || endMs < earliestAllowedMs || startMs > nowMs || endMs > nowMs) {
+        return res.status(400).json({ ok: false, error: "Rewind is limited to the last 7 days." });
+      }
+      if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
+        return res.status(400).json({ ok: false, error: "Requested range exceeds 7 days." });
+      }
+      startIso = new Date(startMs).toISOString();
+      endIso = new Date(endMs).toISOString();
+      queryByCreatedAt = false;
     }
 
-    const { data, error } = await q;
-    if (error) throw error;
+    const sb = getSupabaseAdmin();
+    const sourceIds = sourceId ? [sourceId] : [...SERVER_SOURCE_IDS];
+    const bySource = await Promise.all(sourceIds.map(async (sid) => {
+      let q = sb
+        .from("screenshot_events")
+        .select("ts,created_at,source_id,kind,title,url,object_path,shot_url")
+        .eq("source_id", sid)
+        .in("kind", ["new_url", "new_headline", "heartbeat"])
+        .limit(limit);
 
-    let rows = Array.isArray(data) ? data.map((row) => ({ ...row })) : [];
+      if (queryByCreatedAt) {
+        q = q
+          .gte("created_at", startIso)
+          .lte("created_at", endIso)
+          .order("created_at", { ascending: false });
+      } else {
+        q = q
+          .gte("ts", startIso)
+          .lte("ts", endIso)
+          .order("ts", { ascending: false });
+      }
+
+      const { data, error } = await q;
+      if (error) throw error;
+      return Array.isArray(data) ? data : [];
+    }));
+
+    let rows = bySource.flat().map((row) => ({ ...row }));
+    rows.sort((a, b) => {
+      const aMs = Date.parse(String(a?.created_at || a?.ts || ""));
+      const bMs = Date.parse(String(b?.created_at || b?.ts || ""));
+      return (Number.isFinite(bMs) ? bMs : 0) - (Number.isFinite(aMs) ? aMs : 0);
+    });
     if (rows.length) {
       if (!SUPABASE_SCREENSHOT_PUBLIC) {
         const uniquePaths = [...new Set(rows.map((row) => row?.object_path).filter(Boolean))];
@@ -3884,7 +3916,8 @@ app.get("/api/rewind/screenshots", async (req, res) => {
     const items = rows
       .filter((row) => row?.shot_url)
       .map((row) => ({
-        ts: row?.ts || null,
+        ts: row?.ts || row?.created_at || null,
+        created_at: row?.created_at || null,
         source_id: row?.source_id || null,
         source_label: sourceNameById(row?.source_id || ""),
         kind: row?.kind || "heartbeat",
@@ -3894,8 +3927,10 @@ app.get("/api/rewind/screenshots", async (req, res) => {
       }));
 
     return res.json({
-      start: new Date(startMs).toISOString(),
-      end: new Date(endMs).toISOString(),
+      ok: true,
+      lookback: lookbackDays,
+      start: startIso,
+      end: endIso,
       count: items.length,
       items,
     });
