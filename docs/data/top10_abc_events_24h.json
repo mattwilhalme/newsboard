@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-24T15:42:00.910Z",
+  "generatedAt": "2026-02-24T16:53:54.272Z",
   "hours": 24,
   "events": [
     {
@@ -2012,6 +2012,36 @@
       "to_rank": null,
       "from_title": "US military seizes 3rd ship in Indian Ocean linked to Venezuela",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T16:54:03.797Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae185d6706bb497d7533eac3d4855b2f7e56312f",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Brief snowstorm could dump another inch of snow in the Northeast",
+      "to_title": "Brief snowstorm could dump another inch of snow in the Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T16:54:03.797Z",
+      "event_type": "MOVED",
+      "fingerprint": "38d618dbf616c4cf60e9c0205379300ccac064bd",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops",
+      "to_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T16:54:03.797Z",
+      "event_type": "MOVED",
+      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
+      "to_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight"
     }
   ]
 }
