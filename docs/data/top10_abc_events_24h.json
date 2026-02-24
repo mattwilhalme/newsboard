@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-24T17:45:07.360Z",
+  "generatedAt": "2026-02-24T18:40:31.750Z",
   "hours": 24,
   "events": [
     {
@@ -1921,6 +1921,66 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T18:40:41.818Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4e023bd886e8052f0ca334f12f4471d33ae05edf",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump State of the Union updates: Erika Kirk among guests invited to attend speech"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T18:40:41.818Z",
+      "event_type": "MOVED",
+      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
+      "to_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T18:40:41.818Z",
+      "event_type": "MOVED",
+      "fingerprint": "9cc61aa7321533736610f50ced835c0631b4fbf8",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71",
+      "to_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T18:40:41.818Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "16b84e87bc81d4fc3542b6d94344fc3ec3ab1583",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "American tourist says violence over Mexican drug lord's killing came without warning"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T18:40:41.818Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c4648c9af95628efd6736a8192b7ecbf3f864e00",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "State of the Union: Trump expected to tout achievements ahead of midterms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T18:40:41.818Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "38d618dbf616c4cf60e9c0205379300ccac064bd",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops",
       "to_title": null
     }
   ]
