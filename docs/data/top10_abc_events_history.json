@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-24T00:26:28.767Z",
+  "generatedAt": "2026-02-24T00:56:23.039Z",
   "source_id": "abc1",
   "events": [
     {
@@ -7761,6 +7761,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:56:32.804Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "64a8012c1ddc7fbda4ac1685195681afbdd7c427",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Trump speaks out as motive of armed intruder killed at Mar-a-Lago probed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T00:56:32.804Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "676546b34d2732b8bc3a26b42fb748acdf6885c5",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Motive probed in fatal Mar-a-Lago shooting of armed man as Trump speaks out",
       "to_title": null
     }
   ],
