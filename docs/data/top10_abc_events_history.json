@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-24T01:31:40.421Z",
+  "generatedAt": "2026-02-24T03:43:08.665Z",
   "source_id": "abc1",
   "events": [
     {
@@ -7801,6 +7801,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Peter Mandelson arrested on suspicion of misconduct in public office",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T03:43:18.223Z",
+      "event_type": "MOVED",
+      "fingerprint": "2c3e0537d81510304ec654878dc45b6e3ff85377",
+      "from_rank": 10,
+      "to_rank": 4,
+      "from_title": "Lord Peter Mandelson arrested amid Epstein files fallout",
+      "to_title": "Lord Peter Mandelson arrested amid Epstein files fallout"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T03:43:18.223Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fb525f3dd5f8589fc816c4715d8eb453de0d1b5",
+      "from_rank": 9,
+      "to_rank": 6,
+      "from_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner",
+      "to_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T03:43:18.223Z",
+      "event_type": "MOVED",
+      "fingerprint": "8942ee22e3d36bdcb8800a5d8c61c576e4c56e27",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph",
+      "to_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T03:43:18.223Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "632a2b30047c8f161bd02ffbd16d08c588df40a2",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Russell Brand due in court on further rape, sexual assault charges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T03:43:18.223Z",
+      "event_type": "MOVED",
+      "fingerprint": "64a8012c1ddc7fbda4ac1685195681afbdd7c427",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Trump speaks out as motive of armed intruder killed at Mar-a-Lago probed",
+      "to_title": "Trump speaks out as motive of armed intruder killed at Mar-a-Lago probed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T03:43:18.223Z",
+      "event_type": "MOVED",
+      "fingerprint": "44811dbae916aabde7c13425abe1e9795ff06dde",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "BAFTAs face controversy over obscene outbursts during show",
+      "to_title": "BAFTAs face controversy over obscene outbursts during show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T03:43:18.223Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e05581a9df6933a9d93cd705100251f2b5b8aa7a",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Maryland sues Trump administration to stop construction of ICE detention facility",
       "to_title": null
     }
   ],
