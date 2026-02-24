@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-24T18:40:31.750Z",
+  "generatedAt": "2026-02-24T19:39:31.450Z",
   "source_id": "abc1",
   "events": [
     {
@@ -8911,6 +8911,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T19:39:41.175Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cba70ec4859eb2fa849dc3c6e5fb01e087234689",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Louvre director resigns months after $102 million jewel heist"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T19:39:41.175Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "96a1a98d0e29f318b87b97895f7a331729343c1a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Louvre director resigns months after jewel heist",
       "to_title": null
     }
   ],
