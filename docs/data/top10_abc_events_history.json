@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-24T16:53:54.272Z",
+  "generatedAt": "2026-02-24T17:45:07.360Z",
   "source_id": "abc1",
   "events": [
     {
@@ -8812,6 +8812,46 @@
       "to_rank": 6,
       "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
       "to_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T17:45:16.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6dcdf245c46cac77b2a663b0133c1867ec4281f5",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Texas Rep. Tony Gonzales appears to pursue staffer who died in explicit text messages"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T17:45:16.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "96a1a98d0e29f318b87b97895f7a331729343c1a",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Louvre director resigns months after jewel heist"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T17:45:16.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8a493c1475377db643d48dcb6fc15c65ed02c569",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Texas Rep. Tony Gonzales appears to pursue late staffer in explicit text messages",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-24T17:45:16.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c76eb49e9132266611249ed7e166ebf733e62ce8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
