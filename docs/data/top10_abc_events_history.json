@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-25T17:34:32.240Z",
+  "generatedAt": "2026-02-25T18:40:24.369Z",
   "source_id": "abc1",
   "events": [
     {
@@ -10201,6 +10201,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Road to the 2026 Oscars: What to know about the 98th Academy Awards",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f8a410733fa2c338d2bcb69fa31c3000a122ac33",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Larry Summers to step down from Harvard amid Epstein scrutiny"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a279e28bbf666dc34785668bca2787897b6757c5",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "0e7789351ac88c33b3a2d817cad31e0165489ce5",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Fact-checking Trump's State of the Union address",
+      "to_title": "Fact-checking Trump's State of the Union address"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd4e0e324418bee8ebebc6527bb20f227e589252",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "What do the remaining tariffs mean for prices? Experts explain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9227ca6fb54f199acc74b2af852d5fc24db21628",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Trump's State of the Union speech short on plans, especially on Iran: ANALYSIS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "00c859af5fd606e277266257e6184a12e0692547",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "GOP stays competitive in midterms despite Trump's negative ratings: Poll",
+      "to_title": "GOP stays competitive in midterms despite Trump's negative ratings: Poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "0e76b081ed87f41e45f39c410f85d672b705daa1",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "What to expect as Casey Means' surgeon general confirmation hearing begins",
+      "to_title": "What to expect as Casey Means' surgeon general confirmation hearing begins"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "bdd9d1f0405cddf49c8b58785a9a1523ac38636f",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees",
+      "to_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0771067d7dd41bd1552cebf6627518f31ab4cd65",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "6 in 10 women could have at least one cardiovascular disease risk factor by 2050"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b2cc72a5044df2274c7e93165e5ff8d6154f4dd7",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump warns Iran is retooling weapons program in State of the Union address",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "931f2c93b306e61ba5bd599cbd744d945b1e0de9",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Spanberger hits Trump on affordability and immigration tactics in SOTU response",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4af48b28e1f78ab22d35877f52d7fc156c455e4b",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Snowstorm pushes through Northeast with days of melting expected to follow",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "588cea3e5c9ba4506dbce4dba62c3c4070343948",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump awards Medals of Honor to 2 military pilots during State of the Union",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T18:40:34.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
       "to_title": null
     }
   ],
