@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-25T16:22:29.896Z",
+  "generatedAt": "2026-02-25T17:34:32.240Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T16:54:03.797Z",
-      "event_type": "MOVED",
-      "fingerprint": "ae185d6706bb497d7533eac3d4855b2f7e56312f",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Brief snowstorm could dump another inch of snow in the Northeast",
-      "to_title": "Brief snowstorm could dump another inch of snow in the Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T16:54:03.797Z",
-      "event_type": "MOVED",
-      "fingerprint": "38d618dbf616c4cf60e9c0205379300ccac064bd",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops",
-      "to_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T16:54:03.797Z",
-      "event_type": "MOVED",
-      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
-      "to_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T17:45:16.922Z",
@@ -1341,6 +1311,86 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df8d13dd309d325ff6737d1d465e88515542de7b",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "National Center for Missing & Exploited Children on Guthrie family's donation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0e76b081ed87f41e45f39c410f85d672b705daa1",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "What to expect as Casey Means' surgeon general confirmation hearing begins"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bdd9d1f0405cddf49c8b58785a9a1523ac38636f",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "MOVED",
+      "fingerprint": "588cea3e5c9ba4506dbce4dba62c3c4070343948",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Trump awards Medals of Honor to 2 military pilots during State of the Union",
+      "to_title": "Trump awards Medals of Honor to 2 military pilots during State of the Union"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "MOVED",
+      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
+      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7da0b878ec3216bfa3d2d039d8c7c3972f2ae45c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "For Guthrie family 'the not knowing is the hardest part,' expert says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f394dd5ad43a22480be4ea8c757a80921cc344cf",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "What to expect during Casey Means' surgeon general confirmation hearing",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T17:34:41.188Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "62e5d59082d25329fef05e4e3864874977b13f90",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Road to the 2026 Oscars: What to know about the 98th Academy Awards",
       "to_title": null
     }
   ]
