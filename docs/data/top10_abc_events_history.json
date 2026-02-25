@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-25T18:40:24.369Z",
+  "generatedAt": "2026-02-25T19:44:25.255Z",
   "source_id": "abc1",
   "events": [
     {
@@ -10341,6 +10341,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T19:44:35.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fec1cd7569c2148d7a52206e125c48b1f5c31dd9",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Here's how Trump's remaining tariffs could affect prices, according to experts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T19:44:35.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8d488ff5ccf054ace85a8dcce57adbd4301412a8",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Casey Means indicates support of vaccines, but stops short of recommending"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T19:44:35.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd4e0e324418bee8ebebc6527bb20f227e589252",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "What do the remaining tariffs mean for prices? Experts explain",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T19:44:35.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0e76b081ed87f41e45f39c410f85d672b705daa1",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "What to expect as Casey Means' surgeon general confirmation hearing begins",
       "to_title": null
     }
   ],
