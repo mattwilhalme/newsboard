@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-25T06:47:20.367Z",
+  "generatedAt": "2026-02-25T07:42:41.612Z",
   "source_id": "abc1",
   "events": [
     {
@@ -9791,6 +9791,36 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Trump awards Medals of Honor to 2 military pilots in State of the Union",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T07:42:51.064Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "60acac883c55c709001a5cf63a3c5d345281a70b",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Key takeaways from Trump's State of the Union address"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T07:42:51.064Z",
+      "event_type": "MOVED",
+      "fingerprint": "931f2c93b306e61ba5bd599cbd744d945b1e0de9",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Spanberger hits Trump on affordability and immigration tactics in SOTU response",
+      "to_title": "Spanberger hits Trump on affordability and immigration tactics in SOTU response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-25T07:42:51.064Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f782b98d35b469aaaad714b1389a6aca95a259e2",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump State of the Union updates: Trump spars with Dems, touts economy",
       "to_title": null
     }
   ],
