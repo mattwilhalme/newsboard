@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-26T23:29:36.249Z",
+  "generatedAt": "2026-02-26T23:55:52.935Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:40:34.538Z",
-      "event_type": "MOVED",
-      "fingerprint": "5134d6db511dd3bf564a432abdba67caf219621d",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Surgeon general nominee Casey Means stops short of recommending certain vaccines",
-      "to_title": "Surgeon general nominee Casey Means stops short of recommending certain vaccines"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:40:34.538Z",
-      "event_type": "MOVED",
-      "fingerprint": "34bc270515c81827dbb5884a33f2d1e291f259fe",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "CBP agents are 'coercing' unaccompanied minors into 'voluntary' removal, lawyers say",
-      "to_title": "CBP agents are 'coercing' unaccompanied minors into 'voluntary' removal, lawyers say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:40:34.538Z",
-      "event_type": "MOVED",
-      "fingerprint": "df8d13dd309d325ff6737d1d465e88515542de7b",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "National Center for Missing & Exploited Children on Guthrie family's donation",
-      "to_title": "National Center for Missing & Exploited Children on Guthrie family's donation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:40:34.538Z",
-      "event_type": "MOVED",
-      "fingerprint": "bdd9d1f0405cddf49c8b58785a9a1523ac38636f",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees",
-      "to_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:40:34.538Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "522e311c07d499d93fac9ccda1fecc38e3ad704d",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Mayor Mamdani, NYPD engaged in war of words after cops pelted with snowballs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:40:34.538Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fec1cd7569c2148d7a52206e125c48b1f5c31dd9",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Here's how Trump's remaining tariffs could affect prices, according to experts",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-26T02:36:27.088Z",
@@ -1791,6 +1731,136 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Kremlin speaks out after Cuban border guards get in gunfight with US-registered boat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "971abdb45915e63b478b69ad503ba34cc2990b15",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Top Mideast commander briefs Trump on military options on Iran: Exclusive"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "21190281128232f58ae6c7e2eb578f9d5ecad4f8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Middle East braces for conflict but uncertainty remains over Trump's final decision"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "179c33bc5011ef2a66b57a8be14b79fefdeda7d0",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources",
+      "to_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "42933749468c198daca93fc74ef982f77109c191",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Americans confirmed among dead, injured after boat shootout in Cuba: US officials",
+      "to_title": "Americans confirmed among dead, injured after boat shootout in Cuba: US officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "4859adf4301b8364aeee00deb94d20932f609159",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Hillary Clinton's Epstein deposition paused after photo leaks",
+      "to_title": "Hillary Clinton's Epstein deposition paused after photo leaks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "31d28148965e84e6971c74f246ab0b3f322fa740",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "College professor placed on leave amid investigation into her 'abhorrent remarks'",
+      "to_title": "College professor placed on leave amid investigation into her 'abhorrent remarks'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3488013bbc4787fff8e71f71b34cb8224b4e6b4",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Genetic analysis reveals new details on ancient human and Neanderthal couplings"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "b7196409d2d75243b7da79a704048218bc63ede4",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Nancy Guthrie latest: FBI relocating command post",
+      "to_title": "Nancy Guthrie latest: FBI relocating command post"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "6632b6f02dd6cb3f05a404808671e8a27ee64f67",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Columbia student detained by DHS released after Mamdani speaks to Trump",
+      "to_title": "Columbia student detained by DHS released after Mamdani speaks to Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "d61d41ce2e4a6c221e905a8fb69488dfbadc0920",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Rare parade of planets to align in night sky, NASA says",
+      "to_title": "Rare parade of planets to align in night sky, NASA says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "acd3d3edc59fd328b9fa18187395a7f39a6a5601",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Middle East braces for conflict but uncertainty remains over Trump's final decision",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fa2d90b488de3551da53d415cc61747412a6cef9",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Hilary Knight calls Trump call with men's hockey team a 'learning moment'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:56:03.410Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1f5e4f65b95561566aa4755fdbe08dfa4c9b43d0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Notorious stowaway snuck onto another flight",
       "to_title": null
     }
   ]
