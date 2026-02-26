@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-26T17:42:05.881Z",
+  "generatedAt": "2026-02-26T18:30:33.491Z",
   "hours": 24,
   "events": [
     {
@@ -1691,6 +1691,116 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "More snow expected for the Midwest and Northeast",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f6c100e0e3dc1fae7de1de6fa46481ecf8c22444",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingHillary Clinton's deposition in House Epstein probe paused after photo leaks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd328ef7f6b2594028c8a1ae87bd97129ef6e0de",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Hillary Clinton's House Oversight Committee deposition in Epstein probe paused"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "MOVED",
+      "fingerprint": "4d5c6aff5ac19f776070270198f88378276b18ac",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Svetlana 'the stowaway' Dali allegedly snuck onto another flight: Sources",
+      "to_title": "Svetlana 'the stowaway' Dali allegedly snuck onto another flight: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "MOVED",
+      "fingerprint": "d1b2bbe844ddaef2cc3456ba7272524b08800f47",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Columbia University student detained by Homeland Security agents in dorm, school says",
+      "to_title": "Columbia University student detained by Homeland Security agents in dorm, school says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fa2d90b488de3551da53d415cc61747412a6cef9",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Hilary Knight calls Trump call with men's hockey team a 'learning moment'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "MOVED",
+      "fingerprint": "269ee5b2d95b9605c95fdedbd078b44aa6af5846",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "US mortgage rates drop below 6% for the 1st time in nearly 4 years",
+      "to_title": "US mortgage rates drop below 6% for the 1st time in nearly 4 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "MOVED",
+      "fingerprint": "5c7baaebb59dde1eb6359379af46795727bd724b",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Head of World Economic Forum resigns over ties to Epstein",
+      "to_title": "Head of World Economic Forum resigns over ties to Epstein"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "MOVED",
+      "fingerprint": "63a0616a10ee7c86d1b766317680f344353fda37",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "DOJ says it's 'reviewing' whether Epstein reports were improperly withheld",
+      "to_title": "DOJ says it's 'reviewing' whether Epstein reports were improperly withheld"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b83e10798ed7bf39e1f307bfc921a7f2247387ed",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hillary Clinton facing questions from House Oversight Committee in Epstein probe",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0fbab6d2f6b56f66775dcc5c023bcce158bcef5e",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Women's hockey star Hilary Knight calls men's team's viral phone call 'distasteful'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T18:30:43.602Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "78c7c70aff0f7498ba4c8f96b4c46d7f0a07cc9e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US long-term mortgage rate dips below 6%",
       "to_title": null
     }
   ]
