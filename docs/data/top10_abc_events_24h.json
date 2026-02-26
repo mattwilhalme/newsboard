@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-26T13:53:43.400Z",
+  "generatedAt": "2026-02-26T14:41:35.866Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T14:17:24.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "d397aaaa387ece5000e0df0b009b847973496c13",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC",
-      "to_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T14:17:24.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T16:22:40.215Z",
@@ -1471,6 +1451,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Mayor says ICE operation caused multi-car crash",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T14:41:44.759Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e818648f048110d8187d4041966645494190a770",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Nancy Guthrie latest: FBI relocating command post to Phoenix"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T14:41:44.759Z",
+      "event_type": "MOVED",
+      "fingerprint": "b7376252937ec5e501c4607c05944b02c276a676",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "At least 6 FBI agents who worked on Trump classified documents case fired: Sources",
+      "to_title": "At least 6 FBI agents who worked on Trump classified documents case fired: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T14:41:44.759Z",
+      "event_type": "MOVED",
+      "fingerprint": "756059cd2bb213c054626b50947686df33313d29",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "ICE not being deployed to polling places for midterms, state officials told: Sources",
+      "to_title": "ICE not being deployed to polling places for midterms, state officials told: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T14:41:44.759Z",
+      "event_type": "MOVED",
+      "fingerprint": "e7646f497f32015149c033644f14a5ff2032fa78",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Women's hockey star Hilary Knight calls men's hockey's viral phone call 'distasteful'",
+      "to_title": "Women's hockey star Hilary Knight calls men's hockey's viral phone call 'distasteful'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T14:41:44.759Z",
+      "event_type": "MOVED",
+      "fingerprint": "0209330f8eacea6f233813dda0e0a1c9e34d3e12",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "More snow expected for the Midwest and Northeast",
+      "to_title": "More snow expected for the Midwest and Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T14:41:44.759Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e5cadfbd33438af6c05e26a5edceb644bc83c181",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Judge to hear arguments over whether Abrego Garcia is being vindictively prosecuted",
       "to_title": null
     }
   ]
