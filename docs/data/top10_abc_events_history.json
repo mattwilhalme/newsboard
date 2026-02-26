@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-26T10:08:19.567Z",
+  "generatedAt": "2026-02-26T11:05:13.515Z",
   "source_id": "abc1",
   "events": [
     {
@@ -11221,6 +11221,126 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Larry Summers to step down from Harvard",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "MOVED",
+      "fingerprint": "756059cd2bb213c054626b50947686df33313d29",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "ICE not being deployed to polling places for midterms, state officials told: Sources",
+      "to_title": "ICE not being deployed to polling places for midterms, state officials told: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7c5e4fb8f4d42f56e01034cde3efdb2bf66a3146",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Hillary Clinton set to be deposed in House Oversight Committee's Epstein probe"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e5cadfbd33438af6c05e26a5edceb644bc83c181",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Judge to hear arguments over whether Abrego Garcia is being vindictively prosecuted"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "MOVED",
+      "fingerprint": "b7376252937ec5e501c4607c05944b02c276a676",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "At least 6 FBI agents who worked on Trump classified documents case fired: Sources",
+      "to_title": "At least 6 FBI agents who worked on Trump classified documents case fired: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "MOVED",
+      "fingerprint": "522e311c07d499d93fac9ccda1fecc38e3ad704d",
+      "from_rank": 9,
+      "to_rank": 6,
+      "from_title": "Mayor Mamdani, NYPD engaged in war of words after cops pelted with snowballs",
+      "to_title": "Mayor Mamdani, NYPD engaged in war of words after cops pelted with snowballs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "MOVED",
+      "fingerprint": "9079743144d419710ab4d300e7fd4f85ce396f56",
+      "from_rank": 1,
+      "to_rank": 8,
+      "from_title": "Cuba says 4 killed on Florida-registered speedboat were attempting 'infiltration'",
+      "to_title": "Cuba says 4 killed on Florida-registered speedboat were attempting 'infiltration'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "34ca9fb4f198e38dfe5f18a0d18f8a04c911de30",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Daylight saving time 2026: When to 'spring forward' and more"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8139b73fa3eb07a0b32731ec8c9fe04614d2085e",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Mayor says ICE operation caused multi-car crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b830e7cebab8109054e4f2ece141cf5f721b36f3",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Epstein hid trove of evidence for over a decade, documents suggest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34bc270515c81827dbb5884a33f2d1e291f259fe",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "CBP agents are 'coercing' unaccompanied minors into 'voluntary' removal, lawyers say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3c21208fea9375722c049833a69e4524b03e0bdd",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Pentagon gives Anthropic ultimatum on AI technology: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:05:23.075Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ba61fd15e3e08b0f0d5b5b9532de2db385ef8085",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Memorial for Jesse Jackson to begin in Chicago",
       "to_title": null
     }
   ],
