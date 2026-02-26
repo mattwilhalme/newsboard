@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-26T12:33:21.119Z",
+  "generatedAt": "2026-02-26T13:53:43.400Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b2cc72a5044df2274c7e93165e5ff8d6154f4dd7",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Trump warns Iran is retooling weapons program in State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "60acac883c55c709001a5cf63a3c5d345281a70b",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "Key takeaways from Trump's State of the Union address",
-      "to_title": "Key takeaways from Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4af48b28e1f78ab22d35877f52d7fc156c455e4b",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Snowstorm pushes through Northeast with days of melting expected to follow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "588cea3e5c9ba4506dbce4dba62c3c4070343948",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Trump awards Medals of Honor to 2 military pilots during State of the Union",
-      "to_title": "Trump awards Medals of Honor to 2 military pilots during State of the Union"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "d397aaaa387ece5000e0df0b009b847973496c13",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC",
-      "to_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Martin Short's daughter Katherine Short dies at 42",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8aef8e3b2f1e5b64f346594c09f41ec003d84788",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Colombian authorities investigate bullet holes found on American Airlines plane",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T14:17:24.673Z",
@@ -1411,6 +1331,146 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Mayor Mamdani, NYPD engaged in war of words after cops pelted with snowballs",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "63a0616a10ee7c86d1b766317680f344353fda37",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "DOJ says it's 'reviewing' whether Epstein reports were improperly withheld"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d33e8e8a022892ed83c571aa1ee166b19ab475b3",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Epstein hid trove of evidence for over a decade, documents suggest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "MOVED",
+      "fingerprint": "7c5e4fb8f4d42f56e01034cde3efdb2bf66a3146",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Hillary Clinton set to be deposed in House Oversight Committee's Epstein probe",
+      "to_title": "Hillary Clinton set to be deposed in House Oversight Committee's Epstein probe"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "MOVED",
+      "fingerprint": "756059cd2bb213c054626b50947686df33313d29",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "ICE not being deployed to polling places for midterms, state officials told: Sources",
+      "to_title": "ICE not being deployed to polling places for midterms, state officials told: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e7646f497f32015149c033644f14a5ff2032fa78",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Women's hockey star Hilary Knight calls men's hockey's viral phone call 'distasteful'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0209330f8eacea6f233813dda0e0a1c9e34d3e12",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "More snow expected for the Midwest and Northeast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "MOVED",
+      "fingerprint": "e5cadfbd33438af6c05e26a5edceb644bc83c181",
+      "from_rank": 3,
+      "to_rank": 8,
+      "from_title": "Judge to hear arguments over whether Abrego Garcia is being vindictively prosecuted",
+      "to_title": "Judge to hear arguments over whether Abrego Garcia is being vindictively prosecuted"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "MOVED",
+      "fingerprint": "91a6f6b5792c2ca50150fa69699767891d46902e",
+      "from_rank": 5,
+      "to_rank": 9,
+      "from_title": "US and Iran hold pivotal nuclear talks in Geneva amid heightened tensions",
+      "to_title": "US and Iran hold pivotal nuclear talks in Geneva amid heightened tensions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1a26a5fc951b29946f28eaf4f6fc0427ea588208",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Russia 'losing thousands' of troops for each mile in Ukraine, NATO commander says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "44ec9fe1e14d335aef5d983c21f54cd3fcb3a857",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "D4vd target of grand jury investigation into teen's death, court filings confirm",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "30ec5e33c8f1b0586cae5b2b27da50a95811344e",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "20-year-old plaintiff to testify in landmark social media addiction trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9079743144d419710ab4d300e7fd4f85ce396f56",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Cuba says 4 killed on Florida-registered speedboat were attempting 'infiltration'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34ca9fb4f198e38dfe5f18a0d18f8a04c911de30",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Daylight saving time 2026: When to 'spring forward' and more",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T13:53:53.654Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8139b73fa3eb07a0b32731ec8c9fe04614d2085e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Mayor says ICE operation caused multi-car crash",
       "to_title": null
     }
   ]
