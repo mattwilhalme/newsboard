@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-26T20:51:11.736Z",
+  "generatedAt": "2026-02-26T21:23:11.018Z",
   "source_id": "abc1",
   "events": [
     {
@@ -12141,6 +12141,106 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Columbia University student detained by Homeland Security agents in dorm, school says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d4c29cc2e050fe94f31772fa53346bac4252e017",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Federal judge denies request to block Trump ballroom"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "31d28148965e84e6971c74f246ab0b3f322fa740",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "College professor placed on leave amid investigation into her 'abhorrent remarks'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa2d90b488de3551da53d415cc61747412a6cef9",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Hilary Knight calls Trump call with men's hockey team a 'learning moment'",
+      "to_title": "Hilary Knight calls Trump call with men's hockey team a 'learning moment'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "acd3d3edc59fd328b9fa18187395a7f39a6a5601",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Middle East braces for conflict but uncertainty remains over Trump's final decision"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "4d5c6aff5ac19f776070270198f88378276b18ac",
+      "from_rank": 3,
+      "to_rank": 7,
+      "from_title": "Svetlana 'the stowaway' Dali allegedly snuck onto another flight: Sources",
+      "to_title": "Svetlana 'the stowaway' Dali allegedly snuck onto another flight: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "b7196409d2d75243b7da79a704048218bc63ede4",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Nancy Guthrie latest: FBI relocating command post",
+      "to_title": "Nancy Guthrie latest: FBI relocating command post"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "MOVED",
+      "fingerprint": "8f5bbdbdb635838e184c9829718934f83191f2bb",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Road to the 2026 Oscars: What to know, who's presenting and more",
+      "to_title": "Road to the 2026 Oscars: What to know, who's presenting and more"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "269ee5b2d95b9605c95fdedbd078b44aa6af5846",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "US mortgage rates drop below 6% for the 1st time in nearly 4 years",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5c7baaebb59dde1eb6359379af46795727bd724b",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Head of World Economic Forum resigns over ties to Epstein",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T21:23:21.076Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1a26a5fc951b29946f28eaf4f6fc0427ea588208",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Russia 'losing thousands' of troops for each mile in Ukraine, NATO commander says",
       "to_title": null
     }
   ],
