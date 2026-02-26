@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-26T08:27:52.687Z",
+  "generatedAt": "2026-02-26T09:12:53.727Z",
   "source_id": "abc1",
   "events": [
     {
@@ -11141,6 +11141,86 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "No-parking zone in Nancy Guthrie’s neighborhood widened amid complaints",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "MOVED",
+      "fingerprint": "34bc270515c81827dbb5884a33f2d1e291f259fe",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "CBP agents are 'coercing' unaccompanied minors into 'voluntary' removal, lawyers say",
+      "to_title": "CBP agents are 'coercing' unaccompanied minors into 'voluntary' removal, lawyers say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "30ec5e33c8f1b0586cae5b2b27da50a95811344e",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "20-year-old plaintiff to testify in landmark social media addiction trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3c21208fea9375722c049833a69e4524b03e0bdd",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Pentagon gives Anthropic ultimatum on AI technology: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "MOVED",
+      "fingerprint": "522e311c07d499d93fac9ccda1fecc38e3ad704d",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Mayor Mamdani, NYPD engaged in war of words after cops pelted with snowballs",
+      "to_title": "Mayor Mamdani, NYPD engaged in war of words after cops pelted with snowballs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ba61fd15e3e08b0f0d5b5b9532de2db385ef8085",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Memorial for Jesse Jackson to begin in Chicago"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4b646a9f318479938592ccd605d55548633add1d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Old Apollo rocks shed new light on the moon's magnetic field long ago",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "55a0bc9a3e3fe63b34ab7befad4a79a4ed7db253",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Bird flu outbreak hits California elephant seals, officials cancel popular tours",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T09:13:03.554Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ea43d68f758356d38d0a32d075ea2cadbb770894",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Larry Summers to step down from Harvard",
       "to_title": null
     }
   ],
