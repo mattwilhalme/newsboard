@@ -1,178 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-26T02:36:18.097Z",
+  "generatedAt": "2026-02-26T04:31:19.940Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3e6fde9c000d3fff7f84afde78f7e51178ea88e2",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump State of the Union updates: Trump talks tariffs, immigration in speech"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0e7789351ac88c33b3a2d817cad31e0165489ce5",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Fact-checking Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f7fbdda6625af95106caca61a37da679e62525d7",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Exclusive: No. 2 House Democrat to skip Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c4648c9af95628efd6736a8192b7ecbf3f864e00",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "State of the Union: Trump expected to tout achievements ahead of midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "15dc5cd3da194bcbd31c0927d4e872eb97675a70",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Iran looms large over State of the Union: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2ccbbfd49b207086a3c05a426dc8dbcbaebb76e7",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "US Air Force stealth fighters land in Israel, official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "MOVED",
-      "fingerprint": "f115e74c178eb61d2977d1059f696552cd32229a",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Spanberger to hit on affordability in Democrats' State of the Union response",
-      "to_title": "Spanberger to hit on affordability in Democrats' State of the Union response"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "MOVED",
-      "fingerprint": "d18337d9faa371f34367672dd4b1709f31c026d7",
-      "from_rank": 3,
-      "to_rank": 9,
-      "from_title": "Immigration is Trump's best and worst issue: ABC News/Washington Post/Ipsos poll",
-      "to_title": "Immigration is Trump's best and worst issue: ABC News/Washington Post/Ipsos poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "MOVED",
-      "fingerprint": "53cfb88cf47f22ff8ceafcd5b544e01cedc6bb94",
-      "from_rank": 4,
-      "to_rank": 10,
-      "from_title": "Savannah Guthrie announces new reward for Nancy Guthrie: 'Somebody knows'",
-      "to_title": "Savannah Guthrie announces new reward for Nancy Guthrie: 'Somebody knows'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fbced5f59d03cf4dc701240f27fe6398cef139e8",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Trump State of the Union updates: President to address the nation at key moment",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "164de14f70fbd365f4d8271cb68e4dc93ebc7c2a",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Exclusive: No. 2 House Democrat to skip Trump's State of the Union address",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Martin Short's daughter Katherine Short dies at 42",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ae185d6706bb497d7533eac3d4855b2f7e56312f",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Brief snowstorm could dump another inch of snow in the Northeast",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0bd8da855990951b25d22de4ee2fa5381d766de7",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "American tourist describes wave of violence after Mexican cartel boss killing",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cba70ec4859eb2fa849dc3c6e5fb01e087234689",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Louvre director resigns months after $102 million jewel heist",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T04:50:29.133Z",
@@ -1671,6 +1501,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Real Housewives' star Mary Cosby speaks out on son's death",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T04:31:30.536Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "756059cd2bb213c054626b50947686df33313d29",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "ICE not being deployed to polling places for midterms, state officials told: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T04:31:30.536Z",
+      "event_type": "MOVED",
+      "fingerprint": "b830e7cebab8109054e4f2ece141cf5f721b36f3",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Epstein hid trove of evidence for over a decade, documents suggest",
+      "to_title": "Epstein hid trove of evidence for over a decade, documents suggest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T04:31:30.536Z",
+      "event_type": "MOVED",
+      "fingerprint": "44ec9fe1e14d335aef5d983c21f54cd3fcb3a857",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "D4vd target of grand jury investigation into teen's death, court filings confirm",
+      "to_title": "D4vd target of grand jury investigation into teen's death, court filings confirm"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T04:31:30.536Z",
+      "event_type": "MOVED",
+      "fingerprint": "4b646a9f318479938592ccd605d55548633add1d",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Old Apollo rocks shed new light on the moon's magnetic field long ago",
+      "to_title": "Old Apollo rocks shed new light on the moon's magnetic field long ago"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T04:31:30.536Z",
+      "event_type": "MOVED",
+      "fingerprint": "2f676b1c7978761a7c6c9bb324943c67277e32c4",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "No-parking zone in Nancy Guthrie’s neighborhood widened amid complaints",
+      "to_title": "No-parking zone in Nancy Guthrie’s neighborhood widened amid complaints"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T04:31:30.536Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5134d6db511dd3bf564a432abdba67caf219621d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Surgeon general nominee Casey Means stops short of recommending certain vaccines",
       "to_title": null
     }
   ]
