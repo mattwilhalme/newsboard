@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-26T11:05:13.515Z",
+  "generatedAt": "2026-02-26T11:51:33.973Z",
   "source_id": "abc1",
   "events": [
     {
@@ -11341,6 +11341,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Memorial for Jesse Jackson to begin in Chicago",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:51:44.096Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "91a6f6b5792c2ca50150fa69699767891d46902e",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "US and Iran hold pivotal nuclear talks in Geneva amid heightened tensions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:51:44.096Z",
+      "event_type": "MOVED",
+      "fingerprint": "44ec9fe1e14d335aef5d983c21f54cd3fcb3a857",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "D4vd target of grand jury investigation into teen's death, court filings confirm",
+      "to_title": "D4vd target of grand jury investigation into teen's death, court filings confirm"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T11:51:44.096Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "522e311c07d499d93fac9ccda1fecc38e3ad704d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Mayor Mamdani, NYPD engaged in war of words after cops pelted with snowballs",
       "to_title": null
     }
   ],
