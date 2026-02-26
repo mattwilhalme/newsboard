@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-26T22:58:07.324Z",
+  "generatedAt": "2026-02-26T23:29:36.249Z",
   "source_id": "abc1",
   "events": [
     {
@@ -12551,6 +12551,46 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Federal judge denies request to block Trump ballroom",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "179c33bc5011ef2a66b57a8be14b79fefdeda7d0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "42933749468c198daca93fc74ef982f77109c191",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Americans confirmed among dead, injured after boat shootout in Cuba: US officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f7c49c8ca27482044fee2c280913a07dd1ca8ed6",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Pro-Trump attorneys push EO to oversee elections",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b4dd18cc029cad51bb384f75c1a461f2edb3cc6a",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Kremlin speaks out after Cuban border guards get in gunfight with US-registered boat",
       "to_title": null
     }
   ],

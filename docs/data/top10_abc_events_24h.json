@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-26T22:58:07.324Z",
+  "generatedAt": "2026-02-26T23:29:36.249Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:03:42.835Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "34bc270515c81827dbb5884a33f2d1e291f259fe",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "CBP agents are 'coercing' unaccompanied minors into 'voluntary' removal, lawyers say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:03:42.835Z",
-      "event_type": "MOVED",
-      "fingerprint": "df8d13dd309d325ff6737d1d465e88515542de7b",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "National Center for Missing & Exploited Children on Guthrie family's donation",
-      "to_title": "National Center for Missing & Exploited Children on Guthrie family's donation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:03:42.835Z",
-      "event_type": "MOVED",
-      "fingerprint": "bdd9d1f0405cddf49c8b58785a9a1523ac38636f",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees",
-      "to_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T23:03:42.835Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0771067d7dd41bd1552cebf6627518f31ab4cd65",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "6 in 10 women could have at least one cardiovascular disease risk factor by 2050",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T23:40:34.538Z",
@@ -1791,6 +1751,46 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Federal judge denies request to block Trump ballroom",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "179c33bc5011ef2a66b57a8be14b79fefdeda7d0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "42933749468c198daca93fc74ef982f77109c191",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Americans confirmed among dead, injured after boat shootout in Cuba: US officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f7c49c8ca27482044fee2c280913a07dd1ca8ed6",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Pro-Trump attorneys push EO to oversee elections",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-26T23:29:46.394Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b4dd18cc029cad51bb384f75c1a461f2edb3cc6a",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Kremlin speaks out after Cuban border guards get in gunfight with US-registered boat",
       "to_title": null
     }
   ]
