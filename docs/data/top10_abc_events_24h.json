@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-27T20:04:10.093Z",
+  "generatedAt": "2026-02-27T20:41:37.704Z",
   "hours": 24,
   "events": [
     {
@@ -1871,6 +1871,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "NASA revamps Artemis moon landing program to reduce flight gaps and risk",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T20:41:47.990Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2f7e7eeefc45d90dbc858289e6626486d9b15aee",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Anthropic says latest Pentagon contract doesn't alleviate concerns as deadline nears"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T20:41:47.990Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5b8e87cba0efcb73c6d57511acd8a24da5d79e5b",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Man misidentified by Cuban officials as being involved in boat shootout speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T20:41:47.990Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bc8bd05d2c38e6ab979a4501ec279d8d4a94619a",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Over half of Americans say health care, vacation, new car are unaffordable: Poll",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T20:41:47.990Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5547e784c517f70200b34f80caa05dfd9815fad7",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "30 more people charged in connection with Minnesota church incident: DOJ",
       "to_title": null
     }
   ]
