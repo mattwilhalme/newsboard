@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-27T14:25:14.063Z",
+  "generatedAt": "2026-02-27T15:05:53.629Z",
   "source_id": "abc1",
   "events": [
     {
@@ -13371,6 +13371,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Hunter College professor placed on leave",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T15:06:03.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "775cc148ae77d1b46d8efeec1b05c3ced219202a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "How the horrifying murders of 4 teen girls were solved"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T15:06:03.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3444b6442755f10fcd7874c35ea7fb08326c6376",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Austin yogurt shop murder victims remembered after emotional closure in case",
       "to_title": null
     }
   ],
