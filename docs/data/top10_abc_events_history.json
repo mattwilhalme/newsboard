@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-27T15:51:27.944Z",
+  "generatedAt": "2026-02-27T16:25:49.813Z",
   "source_id": "abc1",
   "events": [
     {
@@ -13501,6 +13501,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Anthropic won't bend to Pentagon on AI safeguards",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T16:25:59.404Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "50957296d012c64d15e416ee72d8b9bd2e32761a",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Rubio to visit Israel, Vance to meet Omanis on Iran, says 'no chance' of lengthy war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T16:25:59.404Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "584112dde8af0e568c13960f4140ad45a6e81e33",
+      "from_rank": 5,
+      "to_rank": 5,
+      "from_title": "Nancy Guthrie latest: Sheriff investigating ring camera from 2.5 miles away",
+      "to_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T16:25:59.404Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b8239357f0111c851049d2fa91840852bb83c523",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Vance to meet with Omanis on Iran, says 'no chance' of yearslong war if US strikes",
       "to_title": null
     }
   ],
