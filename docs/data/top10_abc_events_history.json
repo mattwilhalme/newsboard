@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-27T22:48:37.232Z",
+  "generatedAt": "2026-02-27T23:03:03.154Z",
   "source_id": "abc1",
   "events": [
     {
@@ -14311,6 +14311,46 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T23:03:12.772Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6c438fb414893e7989adacf4f6e5a831ec1c6e09",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingLuigi Mangione case: Ruling that took death penalty off table won't be appealed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T23:03:12.772Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "57e2464b55f170ed1ae62caa0797213f8ac527fc",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Luigi Mangione case: Ruling that took death penalty off table won't be appealed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T23:03:12.772Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T23:03:12.772Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c096b8ce093727582e953c0d4b12c2b5c52ba0e4",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
       "to_title": null
     }
   ],
