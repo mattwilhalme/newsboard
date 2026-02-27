@@ -1,118 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-27T18:24:14.264Z",
+  "generatedAt": "2026-02-27T19:08:07.818Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f6c100e0e3dc1fae7de1de6fa46481ecf8c22444",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingHillary Clinton's deposition in House Epstein probe paused after photo leaks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fd328ef7f6b2594028c8a1ae87bd97129ef6e0de",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Hillary Clinton's House Oversight Committee deposition in Epstein probe paused"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "4d5c6aff5ac19f776070270198f88378276b18ac",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Svetlana 'the stowaway' Dali allegedly snuck onto another flight: Sources",
-      "to_title": "Svetlana 'the stowaway' Dali allegedly snuck onto another flight: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "d1b2bbe844ddaef2cc3456ba7272524b08800f47",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Columbia University student detained by Homeland Security agents in dorm, school says",
-      "to_title": "Columbia University student detained by Homeland Security agents in dorm, school says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fa2d90b488de3551da53d415cc61747412a6cef9",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Hilary Knight calls Trump call with men's hockey team a 'learning moment'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "269ee5b2d95b9605c95fdedbd078b44aa6af5846",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "US mortgage rates drop below 6% for the 1st time in nearly 4 years",
-      "to_title": "US mortgage rates drop below 6% for the 1st time in nearly 4 years"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c7baaebb59dde1eb6359379af46795727bd724b",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Head of World Economic Forum resigns over ties to Epstein",
-      "to_title": "Head of World Economic Forum resigns over ties to Epstein"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "63a0616a10ee7c86d1b766317680f344353fda37",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "DOJ says it's 'reviewing' whether Epstein reports were improperly withheld",
-      "to_title": "DOJ says it's 'reviewing' whether Epstein reports were improperly withheld"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b83e10798ed7bf39e1f307bfc921a7f2247387ed",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Hillary Clinton facing questions from House Oversight Committee in Epstein probe",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0fbab6d2f6b56f66775dcc5c023bcce158bcef5e",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Women's hockey star Hilary Knight calls men's team's viral phone call 'distasteful'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T18:30:43.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "78c7c70aff0f7498ba4c8f96b4c46d7f0a07cc9e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "US long-term mortgage rate dips below 6%",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-26T19:27:52.921Z",
@@ -1891,6 +1781,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Columbia says DHS agents showed pictures of missing child before detaining student",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
+      "to_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "c096b8ce093727582e953c0d4b12c2b5c52ba0e4",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
+      "to_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "4893aba22e15c58dd008782573a60a95c3442b02",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island",
+      "to_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "50957296d012c64d15e416ee72d8b9bd2e32761a",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Rubio to visit Israel, Vance to meet Omanis on Iran, says 'no chance' of lengthy war",
+      "to_title": "Rubio to visit Israel, Vance to meet Omanis on Iran, says 'no chance' of lengthy war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "bc8bd05d2c38e6ab979a4501ec279d8d4a94619a",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Over half of Americans say health care, vacation, new car are unaffordable: Poll",
+      "to_title": "Over half of Americans say health care, vacation, new car are unaffordable: Poll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "584112dde8af0e568c13960f4140ad45a6e81e33",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away",
+      "to_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "775cc148ae77d1b46d8efeec1b05c3ced219202a",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "How the horrifying murders of 4 teen girls were solved",
+      "to_title": "How the horrifying murders of 4 teen girls were solved"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "04dc0d9d0636bc3d5def1dffbaf229aaafc76003",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Dept. of Defense shoots down Customs and Border Protection drone in Texas: Officials",
+      "to_title": "Dept. of Defense shoots down Customs and Border Protection drone in Texas: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "MOVED",
+      "fingerprint": "a2b0d1de10ce860499ca51438b032567593fd9b3",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "NASA revamps Artemis moon landing program to reduce flight gaps and risk",
+      "to_title": "NASA revamps Artemis moon landing program to reduce flight gaps and risk"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "35769bb4f311e9111df82e3513c5a81cc8ab1bda",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Columbia says DHS agents showed pictures of missing child before detaining student"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-27T19:08:17.458Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8f77e98cde486406d54e6495cc61f77126185ff3",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingBill Clinton denies knowledge of Epstein's crimes in House committee deposition",
       "to_title": null
     }
   ]
