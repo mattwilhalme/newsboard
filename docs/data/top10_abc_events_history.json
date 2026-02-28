@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-28T06:55:24.958Z",
+  "generatedAt": "2026-02-28T07:22:00.092Z",
   "source_id": "abc1",
   "events": [
     {
@@ -14691,6 +14691,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Top Mideast commander briefs Trump on military options on Iran: Exclusive",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:22:08.785Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0b42095b034d923c4e43fae5b7b5a53d23ba1738",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: US and Israel launch joint strike in Iran, US official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:22:08.785Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7fc9c8ae89f574074547ad78149445047c844c1e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Israel launches preemptive strike against Iran",
       "to_title": null
     }
   ],

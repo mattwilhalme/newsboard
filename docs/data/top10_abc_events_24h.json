@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-28T06:55:24.958Z",
+  "generatedAt": "2026-02-28T07:22:00.092Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T07:10:30.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "179c33bc5011ef2a66b57a8be14b79fefdeda7d0",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources",
-      "to_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T07:10:30.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "0c3fd98f0b02ef92f8dde2fef617cffe9db8c99a",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Top Democrats accuse Bondi and DOJ of Epstein files 'cover-up'",
-      "to_title": "Top Democrats accuse Bondi and DOJ of Epstein files 'cover-up'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T07:10:30.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "6632b6f02dd6cb3f05a404808671e8a27ee64f67",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Columbia student detained by DHS released after Mamdani speaks to Trump",
-      "to_title": "Columbia student detained by DHS released after Mamdani speaks to Trump"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T07:10:30.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "835ffdf666aff5ff6a10d8017dbfea80d39b23f2",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Key witness testifies she got drugs for mom accused of killing husband with fentanyl",
-      "to_title": "Key witness testifies she got drugs for mom accused of killing husband with fentanyl"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T07:10:30.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "f17a40e5c098a657a870d4f682cb8901b8a3ef82",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
-      "to_title": "Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T10:55:14.950Z",
@@ -1781,6 +1731,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Top Mideast commander briefs Trump on military options on Iran: Exclusive",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:22:08.785Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0b42095b034d923c4e43fae5b7b5a53d23ba1738",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: US and Israel launch joint strike in Iran, US official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:22:08.785Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7fc9c8ae89f574074547ad78149445047c844c1e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Israel launches preemptive strike against Iran",
       "to_title": null
     }
   ]
