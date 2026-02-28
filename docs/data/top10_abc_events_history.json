@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-28T11:59:17.294Z",
+  "generatedAt": "2026-02-28T12:50:24.694Z",
   "source_id": "abc1",
   "events": [
     {
@@ -15471,6 +15471,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "As EU readies tougher migration measures, a Greek island sees illegal crossings spike",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T12:50:35.030Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "10bfbfe27525f64890cd5c49302ed31407e8c3b4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingPresident Trump announces 'major combat operations' in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T12:50:35.030Z",
+      "event_type": "MOVED",
+      "fingerprint": "ff5b01a53d2b9bdf822a36e53c78cd9be461af28",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Trump announces 'major combat operations'; could last for days",
+      "to_title": "Iran live updates: Trump announces 'major combat operations'; could last for days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T12:50:35.030Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "43f8a2cc47846c7ece40168d4884d86de69facec",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Related:Trump warns of potential US casualties in 'massive ongoing operation' in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T12:50:35.030Z",
+      "event_type": "MOVED",
+      "fingerprint": "a4996b974f2c1c995b8636e19fd8a653426f58be",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran",
+      "to_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T12:50:35.030Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "454b5623972eb0ceba4860186030e9bb3510883a",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T12:50:35.030Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ae3d2a7d0a82ff7225323060b11f9bca9f71dffe",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Trump warns of potential US casualties in Iran",
       "to_title": null
     }
   ],
