@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-28T13:29:41.939Z",
+  "generatedAt": "2026-02-28T13:56:07.968Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "MOVED",
-      "fingerprint": "179c33bc5011ef2a66b57a8be14b79fefdeda7d0",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources",
-      "to_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "35769bb4f311e9111df82e3513c5a81cc8ab1bda",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Columbia says DHS agents showed pictures of missing child before detaining student"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "MOVED",
-      "fingerprint": "971abdb45915e63b478b69ad503ba34cc2990b15",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Top Mideast commander briefs Trump on military options on Iran: Exclusive",
-      "to_title": "Top Mideast commander briefs Trump on military options on Iran: Exclusive"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "MOVED",
-      "fingerprint": "f17a40e5c098a657a870d4f682cb8901b8a3ef82",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
-      "to_title": "Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "MOVED",
-      "fingerprint": "261f367f3c4032662328e864819990642569e58b",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Anthropic won't bend to Pentagon on AI safeguards",
-      "to_title": "Anthropic won't bend to Pentagon on AI safeguards"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4eacb0ff88b1c25514e5e4b4e65221e2554e0d0b",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Hunter College professor placed on leave"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0c3fd98f0b02ef92f8dde2fef617cffe9db8c99a",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Top Democrats accuse Bondi and DOJ of Epstein files 'cover-up'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T13:40:30.930Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6632b6f02dd6cb3f05a404808671e8a27ee64f67",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Columbia student detained by DHS released after Mamdani speaks to Trump",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T14:25:24.236Z",
@@ -2451,6 +2371,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:56:18.965Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cae0559feb377df44dce6cd8aba574c1d85e496e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Announcing 'major' US operation, Trump calls for regime change"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:56:18.965Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0713b0e5b020b5efc36a2a2def662374cba51af8",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran says death toll in strike on elementary school rises to 57"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:56:18.965Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "07e529c933cd579ef01cfc43a94b75fe5bc5fc81",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Senate should return to Washington and vote on war powers resolution, Sen. Tim Kaine says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:56:18.965Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ff5b01a53d2b9bdf822a36e53c78cd9be461af28",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump announces 'major combat operations'; could last for days",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:56:18.965Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e4142349aba47ba5245c87bf2d3cf1dd0af82b18",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran says Trump has turned 'America First' into 'Israel First'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:56:18.965Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "009e236049e7d6abceae4e47937bf737df6bf3a3",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Oman foreign minister: 'I urge the United States not to get sucked in further'",
       "to_title": null
     }
   ]
