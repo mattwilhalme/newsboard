@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-28T19:57:19.713Z",
+  "generatedAt": "2026-02-28T20:23:33.072Z",
   "source_id": "abc1",
   "events": [
     {
@@ -16131,6 +16131,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Paramount announces $110B deal to buy Warner Bros. Discovery",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T20:23:43.106Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ba3ea1b67b8d039dab3d1605c34584e9055abc85",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump tells ABC News 'a lot' of Iranian leadership gone"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T20:23:43.106Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cae0559feb377df44dce6cd8aba574c1d85e496e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Announcing 'major' US operation, Trump calls for regime change",
       "to_title": null
     }
   ],
