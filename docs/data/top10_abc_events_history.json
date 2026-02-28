@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-28T12:50:24.694Z",
+  "generatedAt": "2026-02-28T13:29:41.939Z",
   "source_id": "abc1",
   "events": [
     {
@@ -15531,6 +15531,126 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Trump warns of potential US casualties in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e4142349aba47ba5245c87bf2d3cf1dd0af82b18",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran says Trump has turned 'America First' into 'Israel First'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "009e236049e7d6abceae4e47937bf737df6bf3a3",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Oman foreign minister: 'I urge the United States not to get sucked in further'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "MOVED",
+      "fingerprint": "a4996b974f2c1c995b8636e19fd8a653426f58be",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran",
+      "to_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
+      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8213bce6353036a22c05431db0c607078147702c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "075ffbb6093db8d0731a6f8dc4d867a7d58563bb",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "MOVED",
+      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Singer-songwriter Neil Sedaka dies at 86",
+      "to_title": "Singer-songwriter Neil Sedaka dies at 86"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "MOVED",
+      "fingerprint": "506365b0321d72f9e104c03e927edd31b6668bf7",
+      "from_rank": 6,
+      "to_rank": 10,
+      "from_title": "President Donald Trump floats 'friendly takeover' of Cuba",
+      "to_title": "President Donald Trump floats 'friendly takeover' of Cuba"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "43f8a2cc47846c7ece40168d4884d86de69facec",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:Trump warns of potential US casualties in 'massive ongoing operation' in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7257c7fbbfa99c3475696b33471e371ffef5522e",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Trump orders US govt to cut ties with Anthropic; Hegseth declares supply chain 'risk'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4950d8ac42648dde4a055b475c74aaf508142d07",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Electrolyte supplements are everywhere. Who benefits from them and when?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T13:29:51.997Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
       "to_title": null
     }
   ],
