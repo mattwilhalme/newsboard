@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-28T07:22:00.092Z",
+  "generatedAt": "2026-02-28T07:45:43.442Z",
   "source_id": "abc1",
   "events": [
     {
@@ -14711,6 +14711,66 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Iran live updates: Israel launches preemptive strike against Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:45:53.954Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5e3c656d90c293e945ef3a055303a8b5dc4cf8b7",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingU.S. and Israel have launched a joint strike in Iran, U.S. official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:45:53.954Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4378c7312945a2295b07d1930bc11002410d8833",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:45:53.954Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "57709e414243e470509739f30ada5cc24570934b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Protests persist at Iranian colleges and raise tensions as US military threat looms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:45:53.954Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fc23988ac7fee6e5a257a8a067ba9ca73ce67b23",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingIsrael launches preemptive strike against Iran, Israeli officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:45:53.954Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0b42095b034d923c4e43fae5b7b5a53d23ba1738",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: US and Israel launch joint strike in Iran, US official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T07:45:53.954Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c06a8048758e3b32baf960c1f9008e56d391cddd",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:Trump says he hasn't made a final decision on Iran, 'not happy' with current talks",
       "to_title": null
     }
   ],
