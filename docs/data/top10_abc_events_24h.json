@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-28T06:04:25.744Z",
+  "generatedAt": "2026-02-28T06:55:24.958Z",
   "hours": 24,
   "events": [
     {
@@ -1722,6 +1722,66 @@
       "to_rank": 8,
       "from_title": "Luigi Mangione case: Ruling that took death penalty off table won't be appealed",
       "to_title": "Luigi Mangione case: Ruling that took death penalty off table won't be appealed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T06:55:35.362Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fc23988ac7fee6e5a257a8a067ba9ca73ce67b23",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingIsrael launches preemptive strike against Iran, Israeli officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T06:55:35.362Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7fc9c8ae89f574074547ad78149445047c844c1e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel launches preemptive strike against Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T06:55:35.362Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c06a8048758e3b32baf960c1f9008e56d391cddd",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Related:Trump says he hasn't made a final decision on Iran, 'not happy' with current talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T06:55:35.362Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4378c7312945a2295b07d1930bc11002410d8833",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T06:55:35.362Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "57709e414243e470509739f30ada5cc24570934b",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Protests persist at Iranian colleges and raise tensions as US military threat looms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T06:55:35.362Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "971abdb45915e63b478b69ad503ba34cc2990b15",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Top Mideast commander briefs Trump on military options on Iran: Exclusive",
+      "to_title": null
     }
   ]
 }
