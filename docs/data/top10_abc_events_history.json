@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-28T11:21:07.466Z",
+  "generatedAt": "2026-02-28T11:37:18.767Z",
   "source_id": "abc1",
   "events": [
     {
@@ -15361,6 +15361,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "LA firefighter says he warned brush fire wasn't out before massive blaze ignited",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a4996b974f2c1c995b8636e19fd8a653426f58be",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ae3d2a7d0a82ff7225323060b11f9bca9f71dffe",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump warns of potential US casualties in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "MOVED",
+      "fingerprint": "506365b0321d72f9e104c03e927edd31b6668bf7",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "President Donald Trump floats 'friendly takeover' of Cuba",
+      "to_title": "President Donald Trump floats 'friendly takeover' of Cuba"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "MOVED",
+      "fingerprint": "7257c7fbbfa99c3475696b33471e371ffef5522e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Trump orders US govt to cut ties with Anthropic; Hegseth declares supply chain 'risk'",
+      "to_title": "Trump orders US govt to cut ties with Anthropic; Hegseth declares supply chain 'risk'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "MOVED",
+      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Singer-songwriter Neil Sedaka dies at 86",
+      "to_title": "Singer-songwriter Neil Sedaka dies at 86"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "MOVED",
+      "fingerprint": "4950d8ac42648dde4a055b475c74aaf508142d07",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Electrolyte supplements are everywhere. Who benefits from them and when?",
+      "to_title": "Electrolyte supplements are everywhere. Who benefits from them and when?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
+      "to_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8213bce6353036a22c05431db0c607078147702c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ed72ae399ca483b2ba053c1231eb2d6869b68f2f",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "US-Israel operation in Iran was planned for months",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T11:37:29.113Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f0b44809dd4d1d17f7d93f5f6a623d2fb724e4e1",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "As EU readies tougher migration measures, a Greek island sees illegal crossings spike",
       "to_title": null
     }
   ],
