@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-02-28T22:11:45.652Z",
+  "generatedAt": "2026-02-28T22:40:03.619Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T22:23:18.410Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "47040d48d2414bd4067895779340bdfcdbef8e38",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Paramount and Warner Bros. Discovery announce deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T22:23:18.410Z",
-      "event_type": "MOVED",
-      "fingerprint": "4893aba22e15c58dd008782573a60a95c3442b02",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island",
-      "to_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T22:23:18.410Z",
-      "event_type": "MOVED",
-      "fingerprint": "4378c7312945a2295b07d1930bc11002410d8833",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks",
-      "to_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T22:23:18.410Z",
-      "event_type": "MOVED",
-      "fingerprint": "584112dde8af0e568c13960f4140ad45a6e81e33",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away",
-      "to_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T22:23:18.410Z",
-      "event_type": "MOVED",
-      "fingerprint": "9f83dd9892bc15eddaf4f1de91e7cda8afa62db6",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Transgender youths are targeted in Scouting America changes pushed by the Pentagon",
-      "to_title": "Transgender youths are targeted in Scouting America changes pushed by the Pentagon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T22:23:18.410Z",
-      "event_type": "MOVED",
-      "fingerprint": "775cc148ae77d1b46d8efeec1b05c3ced219202a",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "How the horrifying murders of 4 teen girls were solved",
-      "to_title": "How the horrifying murders of 4 teen girls were solved"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T22:23:18.410Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5b8e87cba0efcb73c6d57511acd8a24da5d79e5b",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Man misidentified by Cuban officials as being involved in boat shootout speaks out",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T22:48:47.175Z",
@@ -2191,6 +2121,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T22:40:13.835Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "597f52b865118e4c7ecc7276a12569c02d2c5e48",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Iran strike was Pentagon's 1st use of 1-way drones, CENTCOM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T22:40:13.835Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
+      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T22:40:13.835Z",
+      "event_type": "MOVED",
+      "fingerprint": "a149adaf16c7bc4784b7cc623e9be4e7f8468ead",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "US and Israeli strikes on Iran could rattle oil markets",
+      "to_title": "US and Israeli strikes on Iran could rattle oil markets"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T22:40:13.835Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d953de4fbfd7770ffd720ca43c8d2ef8b325820c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons",
       "to_title": null
     }
   ]
