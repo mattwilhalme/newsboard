@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-02-28T14:43:40.466Z",
+  "generatedAt": "2026-02-28T14:57:06.604Z",
   "source_id": "abc1",
   "events": [
     {
@@ -15771,6 +15771,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Senate should return to Washington and vote on war powers resolution, Sen. Tim Kaine says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T14:57:16.887Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "38e1e96f8446c030f78d76dc701289176d43c07b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingPresident Trump calls for regime change in Iran after launching military operation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-02-28T14:57:16.887Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a618cb83de9e8c326738d2707289b502950c45d3",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingPresident Trump calls for regime change after launching military operation in Iran",
       "to_title": null
     }
   ],
