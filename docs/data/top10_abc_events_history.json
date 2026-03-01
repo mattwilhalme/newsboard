@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-01T22:01:27.152Z",
+  "generatedAt": "2026-03-01T22:34:23.476Z",
   "source_id": "abc1",
   "events": [
     {
@@ -17391,6 +17391,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Florida health officials make cuts to HIV, AIDS program as thousands risk lost access",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T22:34:34.546Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "01c248791b8d7993284e4765b21c2e13f03bde24",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says there will 'likely' be more US casualties"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T22:34:34.546Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "25dce0a270ca7a3c4283c7814c760669aec31752",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 3 US service members killed, 5 wounded, CENTCOM says",
       "to_title": null
     }
   ],
