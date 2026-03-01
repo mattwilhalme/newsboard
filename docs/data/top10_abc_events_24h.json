@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-01T17:34:29.851Z",
+  "generatedAt": "2026-03-01T17:52:36.664Z",
   "hours": 24,
   "events": [
     {
@@ -1281,6 +1281,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 dead in Austin bar mass shooting, police say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:52:46.925Z",
+      "event_type": "MOVED",
+      "fingerprint": "67645ff98dad42f065fc486d35b9ec4fe107da76",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
+      "to_title": "Iranian officials claim school hit during US-Israeli army strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:52:46.925Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "597f52b865118e4c7ecc7276a12569c02d2c5e48",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Iran strike was Pentagon's 1st use of 1-way drones, CENTCOM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:52:46.925Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "98b11cf649c0b3bdb22e3bba62841329d7d3ca18",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says",
       "to_title": null
     }
   ]
