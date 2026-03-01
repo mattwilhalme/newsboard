@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-01T08:57:04.693Z",
+  "generatedAt": "2026-03-01T09:28:05.889Z",
   "hours": 24,
   "events": [
     {
@@ -1351,6 +1351,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "MAGA backlash erupts over Iran attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T09:28:16.047Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a7ddd7b783784b5e91211df76ba43ad008bcfe9a",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "'Active Attack' call in Austin prompts response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T09:28:16.047Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7fa5ff2422708ab63bbcb730ba30b40774d27932",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Russia condemns US-Israel strikes on Iran",
       "to_title": null
     }
   ]
