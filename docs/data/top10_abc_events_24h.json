@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-01T15:39:50.448Z",
+  "generatedAt": "2026-03-01T15:55:07.684Z",
   "hours": 24,
   "events": [
     {
@@ -981,6 +981,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Most Republicans support strike as Dems demand answers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T15:55:16.753Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e2a02fa13bb851c8e8680bb2083bc5832f215a1b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Israel reports 9 dead, 49 injured in 'missile barrage'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T15:55:16.753Z",
+      "event_type": "MOVED",
+      "fingerprint": "adce3178a161e7f67cbcf9b6844015ef9dc32afd",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "3 US service members killed, 5 wounded, CENTCOM says",
+      "to_title": "3 US service members killed, 5 wounded, CENTCOM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T15:55:16.753Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "20e1f6455399eb009af31545cbe84e6f34c049a5",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran forms interim leadership council, state TV reports",
       "to_title": null
     }
   ]
