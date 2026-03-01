@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-01T17:04:16.103Z",
+  "generatedAt": "2026-03-01T17:34:29.851Z",
   "hours": 24,
   "events": [
     {
@@ -1161,6 +1161,126 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2478c35a5bfc9a9bee37e94c182834cfb790852e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran forms interim leadership council as President Pezeshkian resurfaces"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bf39bf1c08c499406041201653490ac0af7b98ee",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Terrorism motive probed in mass shooting at Austin bar: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "MOVED",
+      "fingerprint": "c23398d84d816e6d1d90d0e4d1a4b4e84fbc657a",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Iranian foreign minister: 'We have a right to defend ourselves'",
+      "to_title": "Iranian foreign minister: 'We have a right to defend ourselves'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bb560118b07a4d813fdf9522e54127e2d5db408",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Schiff on Iran strikes: ‘The president broke his promise to the American people’",
+      "to_title": "Schiff on Iran strikes: ‘The president broke his promise to the American people’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fb8350924d2985cafedf1df856a0e08fa58d7e8",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike",
+      "to_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "MOVED",
+      "fingerprint": "83c58515e1a3ce4d3c25b8e45d7e38574194cc88",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets",
+      "to_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "MOVED",
+      "fingerprint": "98b11cf649c0b3bdb22e3bba62841329d7d3ca18",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says",
+      "to_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "MOVED",
+      "fingerprint": "67645ff98dad42f065fc486d35b9ec4fe107da76",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
+      "to_title": "Iranian officials claim school hit during US-Israeli army strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "85f7d9e1adcb6cb502f387a35328e54c80602ef4",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Thousands of travelers stranded after Iran attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "597f52b865118e4c7ecc7276a12569c02d2c5e48",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Iran strike was Pentagon's 1st use of 1-way drones, CENTCOM says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8680076b3355f6ed5698a87d0a1ac2eab4d7b3a7",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Most Republicans support strike as Dems demand answers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T17:34:40.258Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fba336c19afcfb6807ffa69e57d27e49257b1fc1",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "2 dead in Austin bar mass shooting, police say",
       "to_title": null
     }
   ]
