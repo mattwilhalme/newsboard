@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-01T01:09:51.146Z",
+  "generatedAt": "2026-03-01T03:49:41.218Z",
   "source_id": "abc1",
   "events": [
     {
@@ -16391,6 +16391,126 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9a4fb7e2ab3a011684d6921928abd4780aeb5324",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iranian state TV reports Iranian Supreme Leader Khamenei's death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "98b11cf649c0b3bdb22e3bba62841329d7d3ca18",
+      "from_rank": 4,
+      "to_rank": 2,
+      "from_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says",
+      "to_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "564a3bd99edbbb1ed77227602c9f6d78d1ad1ed3",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Trump says new call for regime change in Iran justified by 'imminent threats' to US",
+      "to_title": "Trump says new call for regime change in Iran justified by 'imminent threats' to US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "67645ff98dad42f065fc486d35b9ec4fe107da76",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
+      "to_title": "Iranian officials claim school hit during US-Israeli army strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "597f52b865118e4c7ecc7276a12569c02d2c5e48",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Iran strike was Pentagon's 1st use of 1-way drones, CENTCOM says",
+      "to_title": "Iran strike was Pentagon's 1st use of 1-way drones, CENTCOM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "8680076b3355f6ed5698a87d0a1ac2eab4d7b3a7",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Most Republicans support strike as Dems demand answers",
+      "to_title": "Most Republicans support strike as Dems demand answers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "8213bce6353036a22c05431db0c607078147702c",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran",
+      "to_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
+      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "MOVED",
+      "fingerprint": "a149adaf16c7bc4784b7cc623e9be4e7f8468ead",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "US and Israeli strikes on Iran could rattle oil markets",
+      "to_title": "US and Israeli strikes on Iran could rattle oil markets"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7fa5ff2422708ab63bbcb730ba30b40774d27932",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Russia condemns US-Israel strikes on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d31ef2847348fc39d6c43f560962a737efd61821",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump confirms Iranian Supreme Leader Ali Khamenei is dead",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T03:49:51.211Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0ae660144f71af077fd55f3f7060c8ab89f56b2a",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "MAGA backlash erupts over Iran attack",
       "to_title": null
     }
   ],
