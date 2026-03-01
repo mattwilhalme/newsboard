@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-01T20:53:17.540Z",
+  "generatedAt": "2026-03-01T21:12:54.585Z",
   "source_id": "abc1",
   "events": [
     {
@@ -17371,6 +17371,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T21:13:05.534Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T21:13:05.534Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "089c2356b9e5ac14d2030d64aac025724ea73f22",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Florida health officials make cuts to HIV, AIDS program as thousands risk lost access",
       "to_title": null
     }
   ],
