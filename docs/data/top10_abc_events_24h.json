@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-01T19:59:24.148Z",
+  "generatedAt": "2026-03-01T20:31:01.394Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T20:23:43.106Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ba3ea1b67b8d039dab3d1605c34584e9055abc85",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump tells ABC News 'a lot' of Iranian leadership gone"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T20:23:43.106Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cae0559feb377df44dce6cd8aba574c1d85e496e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Announcing 'major' US operation, Trump calls for regime change",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T20:46:14.963Z",
@@ -1181,6 +1161,66 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T20:31:11.514Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "089c2356b9e5ac14d2030d64aac025724ea73f22",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Florida health officials make cuts to HIV, AIDS program as thousands risk lost access"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T20:31:11.514Z",
+      "event_type": "MOVED",
+      "fingerprint": "c23398d84d816e6d1d90d0e4d1a4b4e84fbc657a",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Iranian foreign minister: 'We have a right to defend ourselves'",
+      "to_title": "Iranian foreign minister: 'We have a right to defend ourselves'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T20:31:11.514Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bb560118b07a4d813fdf9522e54127e2d5db408",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Schiff on Iran strikes: ‘The president broke his promise to the American people’",
+      "to_title": "Schiff on Iran strikes: ‘The president broke his promise to the American people’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T20:31:11.514Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fb8350924d2985cafedf1df856a0e08fa58d7e8",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike",
+      "to_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T20:31:11.514Z",
+      "event_type": "MOVED",
+      "fingerprint": "83c58515e1a3ce4d3c25b8e45d7e38574194cc88",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets",
+      "to_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T20:31:11.514Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "67645ff98dad42f065fc486d35b9ec4fe107da76",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
       "to_title": null
     }
   ]
