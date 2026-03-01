@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-01T10:03:16.418Z",
+  "generatedAt": "2026-03-01T10:37:54.470Z",
   "source_id": "abc1",
   "events": [
     {
@@ -16531,6 +16531,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Russia condemns US-Israel strikes on Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T10:38:04.756Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9b159f439f542eda5c7f52f3ff61afd85da63ac6",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: IDF strikes 'heart' of Tehran after Iran confirms Khamenei's death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T10:38:04.756Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f3e45539fea7d21a1289904447c883e4f518baa3",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "'Multiple' injuries in Austin incident, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T10:38:04.756Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9a4fb7e2ab3a011684d6921928abd4780aeb5324",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iranian state TV reports Iranian Supreme Leader Khamenei's death",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-01T10:38:04.756Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a7ddd7b783784b5e91211df76ba43ad008bcfe9a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'Active Attack' call in Austin prompts response",
       "to_title": null
     }
   ],
