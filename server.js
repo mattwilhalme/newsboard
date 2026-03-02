@@ -1451,6 +1451,18 @@ async function scrapeNBCHero() {
         return false;
       }
 
+      function findBreakingBanner() {
+        const anchor =
+          document.querySelector("[data-testid='breaking-content'] a[href][target='_blank']") ||
+          document.querySelector("span[data-icid='body-top-marquee'] a[href]") ||
+          document.querySelector("a[data-icid='body-top-marquee'][href]");
+        if (!anchor) return null;
+        const url = abs(anchor.getAttribute("href") || "");
+        const headline = clean(anchor.textContent || anchor.getAttribute("aria-label") || "");
+        if (!url || !headline || !isStoryUrl(url)) return null;
+        return { headline, url };
+      }
+
       function canonicalUrl(url) {
         try {
           const u = new URL(String(url || ""));
@@ -1563,6 +1575,18 @@ async function scrapeNBCHero() {
         return false;
       }
 
+      const breaking = findBreakingBanner();
+      function withBreaking(result) {
+        if (!result || !result.ok) return result;
+        if (!breaking) return result;
+        return {
+          ...result,
+          hasBreakingBanner: true,
+          breakingHeadline: breaking.headline,
+          breakingUrl: breaking.url,
+        };
+      }
+
       function inBlockedChrome(el) {
         return Boolean(
           el.closest(
@@ -1627,6 +1651,8 @@ async function scrapeNBCHero() {
         ".single-storyline .storyline__headline a[href]",
         ".lead-type--Storyline .storyline__headline a[href]",
         ".lead-type--Storyline h2 a[href]",
+        ".multi-storyline-container__lead-item-container .lead-headline a[href]",
+        ".multi-storyline-container .lead-headline a[href]",
         "[data-testid='front-container'] h2 a[href]",
         "[data-testid='front-container'] a[href*='/live-blog/']",
         "main a[href*='/live-blog/']",
@@ -1655,24 +1681,26 @@ async function scrapeNBCHero() {
           const className = String(storyItem?.className || "");
           const isLeadColumn = /\blead-column\b/i.test(className) && !/\bnot-lead-column\b/i.test(className);
           const isImageLead = /\bimage-lead\b/i.test(className) && !/\bnot-image-lead\b/i.test(className);
+          const isLeadHeadline = Boolean(a.closest(".multi-storyline-container__lead-item-container, .lead-headline"));
           let score = 0;
           score += 180;
           if (a.closest(".single-storyline, [data-testid='single-storyline']")) score += 110;
           if (a.closest(".lead-type--Storyline")) score += 80;
+          if (isLeadHeadline) score += 170;
           if (isLeadColumn) score += 160;
           if (isImageLead) score += 90;
           if (a.closest("h1,h2")) score += 30;
           score -= Math.min(120, distance / 8);
           if (isArticleLikeUrl(url)) score += 35;
           if (/\/live-blog\//i.test(url)) score += 10;
-          return { title, url, topY, distance, score, isLeadColumn, isImageLead };
+          return { title, url, topY, distance, score, isLeadColumn, isImageLead, isLeadHeadline };
         })
         .filter(Boolean);
 
       if (leadCandidates.length) {
         const inWindow = leadCandidates.filter((c) => c.distance <= leadWindowPx);
         const pool = inWindow.length ? inWindow : leadCandidates;
-        const leadPreferred = pool.filter((c) => c.isLeadColumn || c.isImageLead);
+        const leadPreferred = pool.filter((c) => c.isLeadColumn || c.isImageLead || c.isLeadHeadline);
         const boundaryPool = leadPreferred.length ? leadPreferred : pool;
         const minDistance = Math.min(...boundaryPool.map((c) => c.distance));
         const cluster = boundaryPool
@@ -1685,7 +1713,7 @@ async function scrapeNBCHero() {
           selectorUsed = "nbc_post_header_boundary_topmost_fallback";
         }
         if (picked) {
-          return {
+          return withBreaking({
             ok: true,
             title: refineTitleForUrl(picked.url, picked.title),
             url: picked.url,
@@ -1694,7 +1722,7 @@ async function scrapeNBCHero() {
             pickedTopY: picked.topY,
             pickedDistance: picked.distance,
             candidateCount: inWindow.length,
-          };
+          });
         }
       }
 
@@ -1747,13 +1775,13 @@ async function scrapeNBCHero() {
           }
 
           if (best) {
-            return {
+            return withBreaking({
               ok: true,
               title: refineTitleForUrl(best.url, best.title),
               url: best.url,
               selector_used: "nbc_quick_links_nearest_story",
               quick_link_title: best.quickTitle || null,
-            };
+            });
           }
 
           // If no nearby richer headline is present, fall back to first quick-link topic.
@@ -1762,13 +1790,13 @@ async function scrapeNBCHero() {
             quickCandidates[0] ||
             null;
           if (quickTop?.title && quickTop.title.length >= 8) {
-            return {
+            return withBreaking({
               ok: true,
               title: refineTitleForUrl(quickTop.url, quickTop.title),
               url: quickTop.url,
               selector_used: "nbc_quick_links_direct",
               quick_link_title: quickTop.title || null,
-            };
+            });
           }
         }
       }
@@ -1811,7 +1839,7 @@ async function scrapeNBCHero() {
           rankedJson.sort((a, b) => (b.score - a.score) || (a.order - b.order));
           if (rankedJson.length) {
             const top = rankedJson[0];
-            return { ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_next_data_ordered" };
+            return withBreaking({ ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_next_data_ordered" });
           }
         }
       } catch {}
@@ -1836,12 +1864,12 @@ async function scrapeNBCHero() {
 
       if (nonBanner.length) {
         const top = nonBanner[0];
-        return { ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_non_banner_ranked" };
+        return withBreaking({ ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_non_banner_ranked" });
       }
 
       if (ranked.length) {
         const top = ranked[0];
-        return { ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_ranked_fallback" };
+        return withBreaking({ ok: true, title: refineTitleForUrl(top.url, top.title), url: top.url, selector_used: "nbc_ranked_fallback" });
       }
 
       // Fallback: parse inline JSON blobs when DOM classes shift.
@@ -1857,7 +1885,7 @@ async function scrapeNBCHero() {
           const url = abs(raw);
           if (!url || !title || !isStoryUrl(url)) continue;
           if (isLikelyTopicBanner({ closest: () => null }, title, url) && !isArticleLikeUrl(url)) continue;
-          return { ok: true, title: refineTitleForUrl(url, title), url, selector_used: "nbc_json_fallback" };
+          return withBreaking({ ok: true, title: refineTitleForUrl(url, title), url, selector_used: "nbc_json_fallback" });
         }
       }
 
@@ -1869,6 +1897,9 @@ async function scrapeNBCHero() {
           title: cleanText(hero.title),
           url: normalizeUrl(hero.url),
           imgUrl: null,
+          breakingLabel: hero?.hasBreakingBanner ? "Breaking News" : null,
+          breakingHeadline: cleanText(hero?.breakingHeadline || "") || null,
+          breakingUrl: hero?.breakingUrl ? normalizeUrl(hero.breakingUrl) : null,
           slotKey: sha1("nbc1|top").slice(0, 12),
         }
       : null;
@@ -1882,6 +1913,7 @@ async function scrapeNBCHero() {
       pickedTopY: Number.isFinite(Number(hero?.pickedTopY)) ? Number(hero.pickedTopY) : null,
       pickedDistance: Number.isFinite(Number(hero?.pickedDistance)) ? Number(hero.pickedDistance) : null,
       candidateCount: Number.isFinite(Number(hero?.candidateCount)) ? Number(hero.candidateCount) : null,
+      has_breaking: Boolean(hero?.hasBreakingBanner),
     };
     const snapshot = {
       id: "nbc1",
@@ -1933,19 +1965,63 @@ async function scrapeCNNHero() {
         }
       }
 
+      function isStoryUrl(url) {
+        if (!url) return false;
+        if (!/^https?:\/\/(www\.)?cnn\.com\//i.test(url)) return false;
+        if (/\/cnn-underscored(\/|$)/i.test(url)) return false;
+        if (/\/(audio|videos?|profiles?|live-tv)(\/|$)/i.test(url)) return false;
+        return true;
+      }
+
+      function isWeakTitle(title) {
+        const t = clean(title || "");
+        if (!t || t.length < 12) return true;
+        if (/^cnn underscored$/i.test(t)) return true;
+        return false;
+      }
+
       // Primary target: lead-package top headline URL text.
       const primarySelectors = [
         "h2.container__title_url-text.container_lead-package__title_url-text[data-editable='title']",
         "h2.container__title_url-text.container_lead-plus-headlines__title_url-text[data-editable='title']",
+        "h2.zone__title[data-editable='title'] a.zone__title-url[href]",
       ];
       for (const sel of primarySelectors) {
-        const h2 = document.querySelector(sel);
-        if (!h2) continue;
-        const title = clean(h2.textContent || "");
-        const a = h2.closest("a[href]");
-        const href = a?.getAttribute("href") || "";
+        const node = document.querySelector(sel);
+        if (!node) continue;
+        const a = node.matches("a[href]") ? node : node.closest("a[href]");
+        const title = clean((a || node).textContent || "");
+        const href = a?.getAttribute("href") || node.getAttribute?.("href") || "";
         const url = href ? abs(href) : null;
-        if (title && url) return { ok: true, title, url };
+        if (title && url && !isWeakTitle(title) && isStoryUrl(url)) return { ok: true, title, url };
+      }
+
+      // New variation: top "zone" hero headline links.
+      const zoneCandidates = Array.from(
+        document.querySelectorAll("h2.zone__title[data-editable='title'] a.zone__title-url[href], a.zone__title-url[href]"),
+      )
+        .map((a) => {
+          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+          const url = abs(a.getAttribute("href") || "");
+          if (!title || !url || isWeakTitle(title) || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect();
+          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+          let score = 0;
+          if (/\/live-news\//i.test(url)) score += 120;
+          if (/\/world\//i.test(url)) score += 25;
+          if (a.closest("[data-component-name='zone']")) score += 50;
+          if (a.closest("h2.zone__title")) score += 35;
+          if (topY < 1200) score += 35;
+          if (topY < 800) score += 20;
+          score -= Math.min(120, topY / 30);
+          return { title, url, topY, score };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      if (zoneCandidates.length) {
+        const top = zoneCandidates[0];
+        return { ok: true, title: top.title, url: top.url, selector_used: "cnn_zone_title_url" };
       }
 
       // Fallback: inspect lead-package / lead-plus-headlines containers.
@@ -1964,7 +2040,7 @@ async function scrapeCNNHero() {
           container.querySelector("a.container__title-url[href], a[href*='/'][href]");
         const href = a?.getAttribute("href") || "";
         const url = href ? abs(href) : null;
-        if (title && url) return { ok: true, title, url };
+        if (title && url && !isWeakTitle(title) && isStoryUrl(url)) return { ok: true, title, url };
       }
 
       // Final fallback: use lead container attributes.
@@ -1974,7 +2050,7 @@ async function scrapeCNNHero() {
         const a = lead.querySelector('a[href]');
         const href = a?.getAttribute("href") || "";
         const url = href ? abs(href) : null;
-        if (title && url) return { ok: true, title, url };
+        if (title && url && !isWeakTitle(title) && isStoryUrl(url)) return { ok: true, title, url };
       }
 
       return { ok: false, error: "CNN: headline not found" };
