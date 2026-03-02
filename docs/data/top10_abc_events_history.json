@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-01T23:57:21.718Z",
+  "generatedAt": "2026-03-02T01:46:59.478Z",
   "source_id": "abc1",
   "events": [
     {
@@ -17411,6 +17411,116 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: 3 US service members killed, 5 wounded, CENTCOM says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "10d90be90bf5c346422bbacdb1b711d07177815c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:3 US service members killed, 5 wounded in Iran attacks, CENTCOM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "MOVED",
+      "fingerprint": "2478c35a5bfc9a9bee37e94c182834cfb790852e",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran forms interim leadership council as President Pezeshkian resurfaces",
+      "to_title": "Iran forms interim leadership council as President Pezeshkian resurfaces"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf39bf1c08c499406041201653490ac0af7b98ee",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Terrorism motive probed in mass shooting at Austin bar: FBI",
+      "to_title": "Terrorism motive probed in mass shooting at Austin bar: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "MOVED",
+      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
+      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fb8350924d2985cafedf1df856a0e08fa58d7e8",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike",
+      "to_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "MOVED",
+      "fingerprint": "c23398d84d816e6d1d90d0e4d1a4b4e84fbc657a",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Iranian foreign minister: 'We have a right to defend ourselves'",
+      "to_title": "Iranian foreign minister: 'We have a right to defend ourselves'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8003e9dc104f77e6318ce0db414a03e9a2530442",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Stars shine on Actor Awards red carpet: See the fashion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4bb560118b07a4d813fdf9522e54127e2d5db408",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Schiff on Iran strikes: ‘The president broke his promise to the American people’",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "597f52b865118e4c7ecc7276a12569c02d2c5e48",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Iran strike was Pentagon's 1st use of 1-way drones, CENTCOM says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T01:47:09.542Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "85f7d9e1adcb6cb502f387a35328e54c80602ef4",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Thousands of travelers stranded after Iran attack",
       "to_title": null
     }
   ],
