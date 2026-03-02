@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-02T09:36:57.931Z",
+  "generatedAt": "2026-03-02T10:29:10.308Z",
   "source_id": "abc1",
   "events": [
     {
@@ -17661,6 +17661,66 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump says there will 'likely' be more US casualties",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T10:29:20.155Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eb685b0f0966843a87e75080ecc6e93ecedb8a6a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "House primaries in Texas, North Carolina use partisan redrawn maps"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T10:29:20.155Z",
+      "event_type": "MOVED",
+      "fingerprint": "83c58515e1a3ce4d3c25b8e45d7e38574194cc88",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets",
+      "to_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T10:29:20.155Z",
+      "event_type": "MOVED",
+      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
+      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T10:29:20.155Z",
+      "event_type": "MOVED",
+      "fingerprint": "c8c19b1241a838a466ea7bf3069ddee73ff3dac3",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Catherine O'Hara wins posthumous award for 'The Studio' at Actor Awards",
+      "to_title": "Catherine O'Hara wins posthumous award for 'The Studio' at Actor Awards"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T10:29:20.155Z",
+      "event_type": "MOVED",
+      "fingerprint": "8003e9dc104f77e6318ce0db414a03e9a2530442",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Stars shine on Actor Awards red carpet: See the fashion",
+      "to_title": "Stars shine on Actor Awards red carpet: See the fashion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T10:29:20.155Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
       "to_title": null
     }
   ],
