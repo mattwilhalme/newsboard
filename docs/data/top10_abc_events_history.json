@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-02T04:01:29.316Z",
+  "generatedAt": "2026-03-02T05:19:49.954Z",
   "source_id": "abc1",
   "events": [
     {
@@ -17572,6 +17572,76 @@
       "to_rank": 8,
       "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
       "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T05:20:00.134Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8b996cfcea31e74e7ab6f9ff75bc1abe866df287",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Department of Homeland Security warns of potential attacks amid Iran operation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T05:20:00.134Z",
+      "event_type": "MOVED",
+      "fingerprint": "2478c35a5bfc9a9bee37e94c182834cfb790852e",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Iran forms interim leadership council as President Pezeshkian resurfaces",
+      "to_title": "Iran forms interim leadership council as President Pezeshkian resurfaces"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T05:20:00.134Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf39bf1c08c499406041201653490ac0af7b98ee",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Terrorism motive probed in mass shooting at Austin bar: FBI",
+      "to_title": "Terrorism motive probed in mass shooting at Austin bar: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T05:20:00.134Z",
+      "event_type": "MOVED",
+      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
+      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T05:20:00.134Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c8c19b1241a838a466ea7bf3069ddee73ff3dac3",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Catherine O'Hara wins posthumous award for 'The Studio' at Actor Awards"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T05:20:00.134Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6fb8350924d2985cafedf1df856a0e08fa58d7e8",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T05:20:00.134Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c23398d84d816e6d1d90d0e4d1a4b4e84fbc657a",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Iranian foreign minister: 'We have a right to defend ourselves'",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
