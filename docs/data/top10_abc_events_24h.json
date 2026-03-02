@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-02T10:29:10.308Z",
+  "generatedAt": "2026-03-02T11:10:12.635Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T10:38:04.756Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9b159f439f542eda5c7f52f3ff61afd85da63ac6",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: IDF strikes 'heart' of Tehran after Iran confirms Khamenei's death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T10:38:04.756Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f3e45539fea7d21a1289904447c883e4f518baa3",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "'Multiple' injuries in Austin incident, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T10:38:04.756Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9a4fb7e2ab3a011684d6921928abd4780aeb5324",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iranian state TV reports Iranian Supreme Leader Khamenei's death",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T10:38:04.756Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a7ddd7b783784b5e91211df76ba43ad008bcfe9a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Active Attack' call in Austin prompts response",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-01T11:37:25.659Z",
@@ -1191,6 +1151,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T11:10:22.700Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d6efda0ae96d10484cbdaeb1ccb5f347617a6600",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Hegseth to hold Pentagon briefing Monday morning"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T11:10:22.700Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "37419a13735ab305234740bed33e198904c684cb",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 'We will not negotiate with the United States': Iranian official",
       "to_title": null
     }
   ]
