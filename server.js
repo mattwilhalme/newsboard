@@ -23,12 +23,12 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
-const SCREENSHOT_RETENTION_HOURS = 12;
+const SCREENSHOT_RETENTION_HOURS = 120;
 const REWIND_DEFAULT_LIMIT = 500;
 const REWIND_MAX_LIMIT = 500;
 const REWIND_DEFAULT_LOOKBACK_DAYS = 5;
 const REWIND_MIN_LOOKBACK_DAYS = 1;
-const REWIND_MAX_LOOKBACK_DAYS = 7;
+const REWIND_MAX_LOOKBACK_DAYS = 5;
 const REWIND_MAX_RANGE_MS = REWIND_MAX_LOOKBACK_DAYS * 24 * 60 * 60 * 1000;
 const DEBUG_SCREENSHOT = process.env.DEBUG_SCREENSHOT === "1";
 
@@ -3916,10 +3916,10 @@ app.get("/api/rewind/screenshots", async (req, res) => {
       }
       const earliestAllowedMs = nowMs - REWIND_MAX_RANGE_MS;
       if (startMs < earliestAllowedMs || endMs < earliestAllowedMs || startMs > nowMs || endMs > nowMs) {
-        return res.status(400).json({ ok: false, error: "Rewind is limited to the last 7 days." });
+        return res.status(400).json({ ok: false, error: "Rewind is limited to the last 5 days." });
       }
       if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
-        return res.status(400).json({ ok: false, error: "Requested range exceeds 7 days." });
+        return res.status(400).json({ ok: false, error: "Requested range exceeds 5 days." });
       }
       startIso = new Date(startMs).toISOString();
       endIso = new Date(endMs).toISOString();
