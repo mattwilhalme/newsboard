@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-02T19:39:52.650Z",
+  "generatedAt": "2026-03-02T20:50:59.482Z",
   "source_id": "abc1",
   "events": [
     {
@@ -18841,6 +18841,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Oil prices surge after Iran attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "MOVED",
+      "fingerprint": "f304bb69dc571dbc5093c8305dc21ab291378e3a",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff",
+      "to_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ed0831bf73be8f8e48881bebde3110edb96d5acd",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "addf91e0331be70072322287e01986f277dd90d0",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Pentagon, Trump warn more US troops likely to die in Iran operation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9d2bbbacf92a68eeae00d55fddaa87105118f983",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "How to talk to children about conflict, war after attack on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "MOVED",
+      "fingerprint": "8706a7a3cd01c7f238397813bf589794fe550a5c",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Christina Applegate shares struggles with past abuse, eating disorder",
+      "to_title": "Christina Applegate shares struggles with past abuse, eating disorder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "MOVED",
+      "fingerprint": "eb685b0f0966843a87e75080ecc6e93ecedb8a6a",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "House primaries in Texas, North Carolina use partisan redrawn maps",
+      "to_title": "House primaries in Texas, North Carolina use partisan redrawn maps"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c975bb3294d5d1a550a80441543c064c9bbf2c9a",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Zendaya, Tom Holland are married, stylist claims: A relationship timeline"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b98b89c6784dc4a99cc4769ee775a5481b2c9b32",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "DHS warns of potential attacks after Iran strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d56d8b471bb8a5cdd7a03822e074fcd2f2bc2d4f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran operation could last weeks, Trump tells ABC News",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d449870ae44fa25625891467dddfc30105070f8c",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Hegseth defends US attack on Iran as 'our retribution'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b996cfcea31e74e7ab6f9ff75bc1abe866df287",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Department of Homeland Security warns of potential attacks amid Iran operation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "62ac9ad55a6b9ca34ae9c5d7e67a39c158ed847c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Stocks mixed after Iran attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T20:51:09.798Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
       "to_title": null
     }
   ],
