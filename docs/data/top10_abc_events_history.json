@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-02T11:46:08.057Z",
+  "generatedAt": "2026-03-02T12:03:31.679Z",
   "source_id": "abc1",
   "events": [
     {
@@ -17761,6 +17761,86 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Hegseth to hold Pentagon briefing Monday morning",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "689b44877ee3f511b3a73fded8cbb0a9b6383de9",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "MOVED",
+      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
+      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "MOVED",
+      "fingerprint": "8003e9dc104f77e6318ce0db414a03e9a2530442",
+      "from_rank": 10,
+      "to_rank": 8,
+      "from_title": "Stars shine on Actor Awards red carpet: See the fashion",
+      "to_title": "Stars shine on Actor Awards red carpet: See the fashion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3dc899e559aaf725d57a5945256b4cc436727072",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Oil prices soar as war with Iran rattles markets"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bf39bf1c08c499406041201653490ac0af7b98ee",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Terrorism motive probed in mass shooting at Austin bar: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "83c58515e1a3ce4d3c25b8e45d7e38574194cc88",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T12:03:42.205Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c8c19b1241a838a466ea7bf3069ddee73ff3dac3",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Catherine O'Hara wins posthumous award for 'The Studio' at Actor Awards",
       "to_title": null
     }
   ],
