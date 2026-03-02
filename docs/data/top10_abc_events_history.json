@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-02T11:10:12.635Z",
+  "generatedAt": "2026-03-02T11:46:08.057Z",
   "source_id": "abc1",
   "events": [
     {
@@ -17741,6 +17741,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: 'We will not negotiate with the United States': Iranian official",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T11:46:17.629Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f6ef89c04fa4da0425edbab81e8b3a30fed0be59",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US says 3 F-15s shot down by friendly fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T11:46:17.629Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d6efda0ae96d10484cbdaeb1ccb5f347617a6600",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Hegseth to hold Pentagon briefing Monday morning",
       "to_title": null
     }
   ],

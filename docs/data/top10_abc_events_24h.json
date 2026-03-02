@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-02T11:10:12.635Z",
+  "generatedAt": "2026-03-02T11:46:08.057Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T11:37:25.659Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cde08744b76dd931c93bb451b3b75677fc1e45b4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump warns Iran 'BETTER NOT' retaliate after vow from leader"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T11:37:25.659Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fba336c19afcfb6807ffa69e57d27e49257b1fc1",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "2 dead in Austin bar mass shooting, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T11:37:25.659Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9b159f439f542eda5c7f52f3ff61afd85da63ac6",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: IDF strikes 'heart' of Tehran after Iran confirms Khamenei's death",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T11:37:25.659Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f3e45539fea7d21a1289904447c883e4f518baa3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Multiple' injuries in Austin incident, police say",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-01T14:34:31.591Z",
@@ -1171,6 +1131,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: 'We will not negotiate with the United States': Iranian official",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T11:46:17.629Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f6ef89c04fa4da0425edbab81e8b3a30fed0be59",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US says 3 F-15s shot down by friendly fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T11:46:17.629Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d6efda0ae96d10484cbdaeb1ccb5f347617a6600",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Hegseth to hold Pentagon briefing Monday morning",
       "to_title": null
     }
   ]
