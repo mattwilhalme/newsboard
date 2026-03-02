@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-02T20:50:59.482Z",
+  "generatedAt": "2026-03-02T21:22:36.508Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T21:13:05.534Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T21:13:05.534Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "089c2356b9e5ac14d2030d64aac025724ea73f22",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Florida health officials make cuts to HIV, AIDS program as thousands risk lost access",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-01T22:34:34.546Z",
@@ -1601,6 +1581,106 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a924e05128677c302cadaae9a1a507275ef1ed34",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: 6 US service members killed, CENTCOM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "196252893ef2f028597dd5106b7f04f2ddf1791b",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:US-Israeli strikes on Iran: What's been hit so far during the operation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "MOVED",
+      "fingerprint": "f304bb69dc571dbc5093c8305dc21ab291378e3a",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff",
+      "to_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed0831bf73be8f8e48881bebde3110edb96d5acd",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before",
+      "to_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "MOVED",
+      "fingerprint": "addf91e0331be70072322287e01986f277dd90d0",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Pentagon, Trump warn more US troops likely to die in Iran operation",
+      "to_title": "Pentagon, Trump warn more US troops likely to die in Iran operation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "MOVED",
+      "fingerprint": "9d2bbbacf92a68eeae00d55fddaa87105118f983",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "How to talk to children about conflict, war after attack on Iran",
+      "to_title": "How to talk to children about conflict, war after attack on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "MOVED",
+      "fingerprint": "c975bb3294d5d1a550a80441543c064c9bbf2c9a",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Zendaya, Tom Holland are married, stylist claims: A relationship timeline",
+      "to_title": "Zendaya, Tom Holland are married, stylist claims: A relationship timeline"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "MOVED",
+      "fingerprint": "8706a7a3cd01c7f238397813bf589794fe550a5c",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Christina Applegate shares struggles with past abuse, eating disorder",
+      "to_title": "Christina Applegate shares struggles with past abuse, eating disorder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5b6a7dd98a6a47e26d8d98eaac14562768ae3e30",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US 'very nearly under threat,' Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T21:22:45.483Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eb685b0f0966843a87e75080ecc6e93ecedb8a6a",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "House primaries in Texas, North Carolina use partisan redrawn maps",
       "to_title": null
     }
   ]
