@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-02T18:59:50.776Z",
+  "generatedAt": "2026-03-02T19:39:52.650Z",
   "source_id": "abc1",
   "events": [
     {
@@ -18731,6 +18731,116 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Christina Applegate talks new memoir, self-love and young fame",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d56d8b471bb8a5cdd7a03822e074fcd2f2bc2d4f",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran operation could last weeks, Trump tells ABC News"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f304bb69dc571dbc5093c8305dc21ab291378e3a",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "MOVED",
+      "fingerprint": "d449870ae44fa25625891467dddfc30105070f8c",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Hegseth defends US attack on Iran as 'our retribution'",
+      "to_title": "Hegseth defends US attack on Iran as 'our retribution'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "MOVED",
+      "fingerprint": "8b996cfcea31e74e7ab6f9ff75bc1abe866df287",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Department of Homeland Security warns of potential attacks amid Iran operation",
+      "to_title": "Department of Homeland Security warns of potential attacks amid Iran operation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "MOVED",
+      "fingerprint": "62ac9ad55a6b9ca34ae9c5d7e67a39c158ed847c",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Stocks mixed after Iran attack",
+      "to_title": "Stocks mixed after Iran attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "MOVED",
+      "fingerprint": "8706a7a3cd01c7f238397813bf589794fe550a5c",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Christina Applegate shares struggles with past abuse, eating disorder",
+      "to_title": "Christina Applegate shares struggles with past abuse, eating disorder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "MOVED",
+      "fingerprint": "eb685b0f0966843a87e75080ecc6e93ecedb8a6a",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "House primaries in Texas, North Carolina use partisan redrawn maps",
+      "to_title": "House primaries in Texas, North Carolina use partisan redrawn maps"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "MOVED",
+      "fingerprint": "689b44877ee3f511b3a73fded8cbb0a9b6383de9",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb",
+      "to_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "MOVED",
+      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
+      "to_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ac72abc9f35bf04b252389986986b8afd43b933f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran operation could last weeks, Trump tells ABC News",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T19:40:02.300Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8eb06b5da3a1510fb852b2d611af9972fa093468",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Oil prices surge after Iran attack",
       "to_title": null
     }
   ],
