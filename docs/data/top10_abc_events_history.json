@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-02T22:23:19.650Z",
+  "generatedAt": "2026-03-02T22:52:40.483Z",
   "source_id": "abc1",
   "events": [
     {
@@ -19321,6 +19321,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "How to talk to children about conflict, war after attack on Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T22:52:50.777Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "883bc7c48840b01d6ef827f54538433afeb398f7",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran war live updates: Americans urged to leave 14 countries in Middle East"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-02T22:52:50.777Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4cc44198b9f21f17ed03c49d0484f0a82432dc65",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran war live updates: 6 US service members killed, CENTCOM says",
       "to_title": null
     }
   ],
