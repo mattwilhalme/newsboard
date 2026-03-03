@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-03T20:20:04.088Z",
+  "generatedAt": "2026-03-03T20:52:26.367Z",
   "source_id": "abc1",
   "events": [
     {
@@ -20602,6 +20602,96 @@
       "to_rank": 6,
       "from_title": "Trump says 'too late' for talks with Iran, warns US has munitions to fight 'forever'",
       "to_title": "Trump says 'too late' for talks with Iran, warns US has munitions to fight 'forever'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a9af8320c2c59118d0cd4eb44b8d409cf3cf2bac",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:After US-Israel attack that killed Khamenei, who is running Iran now?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6d5deb9087253a497c34b00c0892af64b80a9cba",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Howard Lutnick to 'appear voluntarily' before House panel probing Epstein: Chairman"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "MOVED",
+      "fingerprint": "332a216b7d7e97d2aacb192d1686b858a01f4bc9",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing",
+      "to_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f82c39b8f7b839531d50a1a976cbe52ae8a1de73",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "US travelers speak out as Iran war leaves them stranded"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cd64bc58b48358d1efd6964c0f78767689931cb7",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Trump says he forced Israel's hand on Iran, says Iran was going to attack US first"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "86631f86200b00c0b147eec6add3450c70b75bd0",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Stocks tumble as Iran war escalates",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d3e06285ccaf4880bd5b59911bf4d24b77ceec99",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Father of suspected school shooter convicted of murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9deb0fa7e1232fe3e6cb43e27735bd84cd253de7",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "American travelers in the Middle East speak out amid Iran conflict",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T20:52:36.382Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5fcf44e63b45462be789f7f25fc2f84117c6926b",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Trump says 'too late' for talks with Iran, warns US has munitions to fight 'forever'",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
