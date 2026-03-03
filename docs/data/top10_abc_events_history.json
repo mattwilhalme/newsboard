@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-03T21:54:11.172Z",
+  "generatedAt": "2026-03-03T22:17:38.702Z",
   "source_id": "abc1",
   "events": [
     {
@@ -20772,6 +20772,26 @@
       "to_rank": 10,
       "from_title": "Christina Applegate talks battle with MS: 'I hate it'",
       "to_title": "Christina Applegate talks battle with MS: 'I hate it'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T22:17:48.548Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f5946d4934d62d7ac9b781ccc9999cbe5447a860",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US embassies 'under direct attack,' Rubio says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T22:17:48.548Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d16e65b50ff928a2ee0b5c2a76f5efcdd9e8aaaf",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump slams Spain, UK over Iran war cooperation",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
