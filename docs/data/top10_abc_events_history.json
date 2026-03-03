@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-03T22:50:50.812Z",
+  "generatedAt": "2026-03-03T23:38:40.957Z",
   "source_id": "abc1",
   "events": [
     {
@@ -20791,6 +20791,136 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump slams Spain, UK over Iran war cooperation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cf6b446da6a261d947213062b076923baf20aeea",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingPentagon identifies four American troops killed in opening hours of war with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "MOVED",
+      "fingerprint": "f5946d4934d62d7ac9b781ccc9999cbe5447a860",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: US embassies 'under direct attack,' Rubio says",
+      "to_title": "Iran live updates: US embassies 'under direct attack,' Rubio says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d88cf3d938d745f4df2336a52bbdd80398ff2c8c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "After US-Israel attack that killed Khamenei, who is running Iran now?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "MOVED",
+      "fingerprint": "372c19af1e7ac7e362e84ad44d45fceffdaff211",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms",
+      "to_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "MOVED",
+      "fingerprint": "9ea7f9ae649c3dac6538406341c68ceede0a7ccd",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis",
+      "to_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4c000e0dadee79e7115e2bf87530a1553bb6fbbb",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Iran will 'spread the pain' with more attacks on US Middle East allies, analysts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "MOVED",
+      "fingerprint": "332a216b7d7e97d2aacb192d1686b858a01f4bc9",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing",
+      "to_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "MOVED",
+      "fingerprint": "f82c39b8f7b839531d50a1a976cbe52ae8a1de73",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "US travelers speak out as Iran war leaves them stranded",
+      "to_title": "US travelers speak out as Iran war leaves them stranded"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "MOVED",
+      "fingerprint": "6d5deb9087253a497c34b00c0892af64b80a9cba",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Howard Lutnick to 'appear voluntarily' before House panel probing Epstein: Chairman",
+      "to_title": "Howard Lutnick to 'appear voluntarily' before House panel probing Epstein: Chairman"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "MOVED",
+      "fingerprint": "cd64bc58b48358d1efd6964c0f78767689931cb7",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Trump says he forced Israel's hand on Iran, says Iran was going to attack US first",
+      "to_title": "Trump says he forced Israel's hand on Iran, says Iran was going to attack US first"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a9af8320c2c59118d0cd4eb44b8d409cf3cf2bac",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:After US-Israel attack that killed Khamenei, who is running Iran now?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2b494feb1e1967b4caf6485792a3c0c28c90d3bf",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Passenger speaks out after United Airlines flight evacuated at LAX",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T23:38:50.943Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "56fb6fe0e37e5a42fa279919763e92a6a2583d21",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Christina Applegate talks battle with MS: 'I hate it'",
       "to_title": null
     }
   ],
