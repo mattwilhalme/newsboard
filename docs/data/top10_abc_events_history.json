@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-03T11:01:00.268Z",
+  "generatedAt": "2026-03-03T11:39:54.433Z",
   "source_id": "abc1",
   "events": [
     {
@@ -19771,6 +19771,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Schools' policies for transgender students blocked",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T11:40:04.830Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "21617556d9f470fac9f49cfe4bcec78a953ec25e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran war live updates: Trump touts 'virtually unlimited' supply of US munitions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T11:40:04.830Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "59b25c83603068ad526b0ef702204a881a0e7007",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran war live updates: Israelis to 'advance' in Lebanon amid Hezbollah strikes",
       "to_title": null
     }
   ],
