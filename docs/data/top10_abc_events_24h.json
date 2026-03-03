@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-03T09:37:55.844Z",
+  "generatedAt": "2026-03-03T10:11:16.944Z",
   "hours": 24,
   "events": [
     {
@@ -1991,6 +1991,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "How to talk with kids about US, Israel strikes on Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T10:11:26.950Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "59b25c83603068ad526b0ef702204a881a0e7007",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran war live updates: Israelis to 'advance' in Lebanon amid Hezbollah strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T10:11:26.950Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "91e5cb7cdcd8250152f0a8dbbded1f18a1bb6569",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran war live updates: US embassy in Saudi Arabia struck by Iranian drones: Officials",
       "to_title": null
     }
   ]
