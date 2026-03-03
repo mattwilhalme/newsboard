@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-03T13:15:01.318Z",
+  "generatedAt": "2026-03-03T14:07:46.362Z",
   "source_id": "abc1",
   "events": [
     {
@@ -19901,6 +19901,66 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Travel updates for Americans in the Middle East amid disruptions from strikes by Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T14:07:56.572Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e7fd24ddba48f197757157f3f2187188668ef417",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran war live updates: Trump says 'too late' to talk to Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T14:07:56.572Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "56fb6fe0e37e5a42fa279919763e92a6a2583d21",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Christina Applegate talks battle with MS: 'I hate it'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T14:07:56.572Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2d607c1feb8a36c78f349da8cc2b313ce0931912",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Thousands stranded in Middle East amid Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T14:07:56.572Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7d991cae5169fa4a1c191f67451fd258417512df",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran war live updates: US closes embassies in Saudi Arabia, Kuwait amid attacks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T14:07:56.572Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7a5c31d1fce139763f35f08b79cc17b4e379ff1d",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Target reports declining sales but some positives",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T14:07:56.572Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2af42304b9263261fa9dc6330f336cc64af2b827",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Jalisco cartel leader buried in golden casket",
       "to_title": null
     }
   ],
