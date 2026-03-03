@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-03T18:09:23.119Z",
+  "generatedAt": "2026-03-03T19:10:24.732Z",
   "hours": 24,
   "events": [
     {
@@ -1751,6 +1751,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran live updates: US ramps up strikes as American death toll rises",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T19:10:35.191Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d3e06285ccaf4880bd5b59911bf4d24b77ceec99",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Father of suspected school shooter convicted of murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-03T19:10:35.191Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8f633b54190696313d2c75588faf2f102b1305ab",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Suspected school shooter's father convicted of murder",
       "to_title": null
     }
   ]
