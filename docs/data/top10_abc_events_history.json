@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T17:24:52.864Z",
+  "generatedAt": "2026-03-04T18:03:41.550Z",
   "source_id": "abc1",
   "events": [
     {
@@ -21881,6 +21881,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DOJ proposes policy aimed at limiting state bar ethics probes into its attorneys",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T18:03:52.021Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "85bc91e1c6199bdaaf484a637708e9733aad64c2",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T18:03:52.021Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "58cea126cd140a9ff321e23d8aa0898c845fc90f",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Trump 'got the last laugh,' Hegseth says of US killing Iranian assassination plotter",
       "to_title": null
     }
   ],
