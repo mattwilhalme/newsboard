@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-04T17:09:36.109Z",
+  "generatedAt": "2026-03-04T17:24:52.864Z",
   "hours": 24,
   "events": [
     {
@@ -1561,6 +1561,86 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "58cea126cd140a9ff321e23d8aa0898c845fc90f",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump 'got the last laugh,' Hegseth says of US killing Iranian assassination plotter"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "6e9dde47e952af0ed61123dc036de4fd70d65f43",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’",
+      "to_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d117fba6b697ab775b3d597b0e9c3340e5fe539",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Takeaways from the first primaries of the 2026 election cycle",
+      "to_title": "Takeaways from the first primaries of the 2026 election cycle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "da97939204f6e755b232e829aa03ec53f1016e4e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Noem testifies before House committee after grilling from senators",
+      "to_title": "Noem testifies before House committee after grilling from senators"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "2d5b4dba4006ec7546f1cf060e627329d613d914",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Senate to vote on Democrats' Iran war powers resolution",
+      "to_title": "Senate to vote on Democrats' Iran war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile",
+      "to_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "de7c8768b0867f9cac13d6b5906e6f59992b584f",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "911 calls from ICE detention center underscore concerns about facility, advocates say",
+      "to_title": "911 calls from ICE detention center underscore concerns about facility, advocates say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T17:25:02.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c7b826e459568b5d7da25551e4479c1613bd518e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "DOJ proposes policy aimed at limiting state bar ethics probes into its attorneys",
       "to_title": null
     }
   ]
