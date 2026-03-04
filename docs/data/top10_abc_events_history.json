@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T19:47:53.537Z",
+  "generatedAt": "2026-03-04T20:19:24.108Z",
   "source_id": "abc1",
   "events": [
     {
@@ -22021,6 +22021,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "911 calls from ICE detention center underscore concerns about facility, advocates say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T20:19:34.230Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1521938ab14f3e22250ba21e8c48d60f92fa8876",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "19-year-old rescued from car sinking in freezing water speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T20:19:34.230Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2fc349e4f3fae25a665cf5c9499f9ed4f212bc43",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Senate to vote on Iran war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T20:19:34.230Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2d5b4dba4006ec7546f1cf060e627329d613d914",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Senate to vote on Democrats' Iran war powers resolution",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T20:19:34.230Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "69aef01cfb644d7d2cb98aadcbebbc48c4af1874",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Recall of frozen food products expanded to over 30 million pounds",
       "to_title": null
     }
   ],
