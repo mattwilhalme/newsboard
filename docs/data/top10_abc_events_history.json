@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T16:39:13.507Z",
+  "generatedAt": "2026-03-04T16:59:32.621Z",
   "source_id": "abc1",
   "events": [
     {
@@ -21711,6 +21711,96 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingUS sub sinks Iranian ship by torpedo, 1st such attack since WWII",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3d117fba6b697ab775b3d597b0e9c3340e5fe539",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Takeaways from the first primaries of the 2026 election cycle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "da97939204f6e755b232e829aa03ec53f1016e4e",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Noem testifies before House committee after grilling from senators"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "MOVED",
+      "fingerprint": "2d5b4dba4006ec7546f1cf060e627329d613d914",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Senate to vote on Democrats' Iran war powers resolution",
+      "to_title": "Senate to vote on Democrats' Iran war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "MOVED",
+      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile",
+      "to_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "MOVED",
+      "fingerprint": "de7c8768b0867f9cac13d6b5906e6f59992b584f",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "911 calls from ICE detention center underscore concerns about facility, advocates say",
+      "to_title": "911 calls from ICE detention center underscore concerns about facility, advocates say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c7b826e459568b5d7da25551e4479c1613bd518e",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "DOJ proposes policy aimed at limiting state bar ethics probes into its attorneys"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "51c2cd9d3cc1ef7eab4bcdc773fe9e987730c3f9",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Texas 2026 live primary election results: Cornyn and Paxton headed to runoff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "64e599d811b065388e9febdf5de5f09b48184af0",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "North Carolina 2026 live primary results: Cooper, Whatley projected to win",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T16:59:42.355Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "70af1902eb5bd4888f51b247dad8115da9a50382",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race",
       "to_title": null
     }
   ],
