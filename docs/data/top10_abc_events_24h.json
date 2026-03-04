@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-04T20:53:22.151Z",
+  "generatedAt": "2026-03-04T21:23:06.804Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "372c19af1e7ac7e362e84ad44d45fceffdaff211",
-      "from_rank": 10,
-      "to_rank": 3,
-      "from_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms",
-      "to_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "9ea7f9ae649c3dac6538406341c68ceede0a7ccd",
-      "from_rank": 9,
-      "to_rank": 4,
-      "from_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis",
-      "to_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "332a216b7d7e97d2aacb192d1686b858a01f4bc9",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing",
-      "to_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "f82c39b8f7b839531d50a1a976cbe52ae8a1de73",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "US travelers speak out as Iran war leaves them stranded",
-      "to_title": "US travelers speak out as Iran war leaves them stranded"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "6d5deb9087253a497c34b00c0892af64b80a9cba",
-      "from_rank": 3,
-      "to_rank": 7,
-      "from_title": "Howard Lutnick to 'appear voluntarily' before House panel probing Epstein: Chairman",
-      "to_title": "Howard Lutnick to 'appear voluntarily' before House panel probing Epstein: Chairman"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "cd64bc58b48358d1efd6964c0f78767689931cb7",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Trump says he forced Israel's hand on Iran, says Iran was going to attack US first",
-      "to_title": "Trump says he forced Israel's hand on Iran, says Iran was going to attack US first"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "2b494feb1e1967b4caf6485792a3c0c28c90d3bf",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Passenger speaks out after United Airlines flight evacuated at LAX",
-      "to_title": "Passenger speaks out after United Airlines flight evacuated at LAX"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T21:23:16.752Z",
-      "event_type": "MOVED",
-      "fingerprint": "56fb6fe0e37e5a42fa279919763e92a6a2583d21",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Christina Applegate talks battle with MS: 'I hate it'",
-      "to_title": "Christina Applegate talks battle with MS: 'I hate it'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T22:17:48.548Z",
@@ -1371,6 +1291,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Recall of frozen food products expanded to over 30 million pounds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T21:23:16.893Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bd7cf082ebbf375a619a0f8c04e970d6b3cf9ae9",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Senate voting on Iran war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T21:23:16.893Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2fc349e4f3fae25a665cf5c9499f9ed4f212bc43",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Senate to vote on Iran war powers resolution",
       "to_title": null
     }
   ]
