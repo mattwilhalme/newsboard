@@ -1980,6 +1980,36 @@ async function scrapeCNNHero() {
         return false;
       }
 
+      // Highest-priority exception: CNN sometimes promotes the lead as a zone title
+      // anchor with rel="noopener". Prefer this over generic lead-package matches.
+      const explicitZoneLiveLead = Array.from(
+        document.querySelectorAll(
+          "a.zone__title-url[rel~='noopener'][href*='/live-news/'], h2.zone__title a.zone__title-url[href*='/live-news/']",
+        ),
+      )
+        .map((a) => {
+          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+          const url = abs(a.getAttribute("href") || "");
+          if (!title || !url || isWeakTitle(title) || !isStoryUrl(url)) return null;
+          const rect = a.getBoundingClientRect();
+          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+          let score = 0;
+          if (a.matches("a.zone__title-url[rel~='noopener']")) score += 180;
+          if (a.closest(".zone[data-component-name='zone']")) score += 120;
+          if (a.closest(".layout-homepage__main")) score += 80;
+          if (topY < 1200) score += 40;
+          if (topY < 800) score += 25;
+          score -= Math.min(160, topY / 24);
+          return { title, url, topY, score };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      if (explicitZoneLiveLead.length) {
+        const top = explicitZoneLiveLead[0];
+        return { ok: true, title: top.title, url: top.url, selector_used: "cnn_explicit_zone_live_lead" };
+      }
+
       // Primary target: lead-package top headline URL text.
       const primarySelectors = [
         "h2.container__title_url-text.container_lead-package__title_url-text[data-editable='title']",
