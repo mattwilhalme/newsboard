@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-03T23:57:43.481Z",
+  "generatedAt": "2026-03-04T01:50:32.882Z",
   "hours": 24,
   "events": [
     {
@@ -1661,6 +1661,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "US travelers speak out as Iran war leaves them stranded",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T01:50:43.308Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3872adb916b7de9ee307b87d199ae39023ea596b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Pentagon IDs 4 American troops killed in Kuwait"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T01:50:43.308Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "79d3fe14da54d58dc7af9b65ac39da72b31fef47",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "State Department scrambles to help Americans stranded in Middle East war zone"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T01:50:43.308Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cf6b446da6a261d947213062b076923baf20aeea",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingPentagon identifies four American troops killed in opening hours of war with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T01:50:43.308Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "332a216b7d7e97d2aacb192d1686b858a01f4bc9",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing",
       "to_title": null
     }
   ]
