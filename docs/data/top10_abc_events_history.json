@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T13:37:36.773Z",
+  "generatedAt": "2026-03-04T14:25:43.303Z",
   "source_id": "abc1",
   "events": [
     {
@@ -21501,6 +21501,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran will 'spread the pain' with more attacks on US Middle East allies, analysts say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T14:25:53.434Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "35f1145270b3ec389da01b2a44024661361b93ef",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingUS will have 'complete control' of Iranian skies in less than a week, Hegseth says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T14:25:53.434Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c9236e2a38c4f8ae3a511c058316bb62e95fca13",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Pentagon IDs 4 American troops killed in Kuwait"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T14:25:53.434Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6e9dde47e952af0ed61123dc036de4fd70d65f43",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T14:25:53.434Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "df4ca4ad2355bbc40e5c23c313e3a19943f29b24",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingPentagon officials give update on the war in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T14:25:53.434Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "92b5f75b0463ad24af36ae8e941d421832380c04",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Largest US military base in Middle East hit by missile, Qatar says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T14:25:53.434Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3872adb916b7de9ee307b87d199ae39023ea596b",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Pentagon IDs 4 American troops killed in Kuwait",
       "to_title": null
     }
   ],
