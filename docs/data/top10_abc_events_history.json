@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T10:55:37.272Z",
+  "generatedAt": "2026-03-04T11:25:31.637Z",
   "source_id": "abc1",
   "events": [
     {
@@ -21341,6 +21341,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump says he forced Israel's hand on Iran, says Iran was going to attack US first",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T11:25:41.770Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c8ed9136dbe8f4e1bb0a64742eb6102536fd8f90",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Any new Iranian leader 'unequivocal target,' Israel says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T11:25:41.770Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
+      "from_rank": 6,
+      "to_rank": 6,
+      "from_title": "As war with Iran stretches on. Concerns rise over US interceptor stockpile",
+      "to_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T11:25:41.770Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "df79e06caa360fdd132604863a334d97145ad085",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: IDF targets Iranian internal security forces in overnight strikes",
       "to_title": null
     }
   ],
