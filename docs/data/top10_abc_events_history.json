@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T10:07:04.674Z",
+  "generatedAt": "2026-03-04T10:55:37.272Z",
   "source_id": "abc1",
   "events": [
     {
@@ -21261,6 +21261,86 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Pentagon IDs 4 American troops killed in Kuwait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "As war with Iran stretches on. Concerns rise over US interceptor stockpile"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2d5b4dba4006ec7546f1cf060e627329d613d914",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Senate to vote on Democrats' Iran war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "de7c8768b0867f9cac13d6b5906e6f59992b584f",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "911 calls from ICE detention center underscore concerns about facility, advocates say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "7c0f977fb4d4373c15afb1f02adf77536d781131",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "US military assists Ecuador in 1st land operation against cartels: Source",
+      "to_title": "US military assists Ecuador in 1st land operation against cartels: Source"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "4c000e0dadee79e7115e2bf87530a1553bb6fbbb",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "Iran will 'spread the pain' with more attacks on US Middle East allies, analysts say",
+      "to_title": "Iran will 'spread the pain' with more attacks on US Middle East allies, analysts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "79d3fe14da54d58dc7af9b65ac39da72b31fef47",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "State Department scrambles to help Americans stranded in Middle East war zone",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6d5deb9087253a497c34b00c0892af64b80a9cba",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Howard Lutnick to 'appear voluntarily' before House panel probing Epstein: Chairman",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T10:55:47.842Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cd64bc58b48358d1efd6964c0f78767689931cb7",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Trump says he forced Israel's hand on Iran, says Iran was going to attack US first",
       "to_title": null
     }
   ],
