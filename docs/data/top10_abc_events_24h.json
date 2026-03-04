@@ -1,148 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-04T14:25:43.303Z",
+  "generatedAt": "2026-03-04T15:04:07.712Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "859c90e2f152008f5d974ce8d75d49bd712c20a6",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingDow falls 1,000 points as Iran War escalates"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0079d1874c55172f637b5a499c31dca547be8612",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: US ramps up strikes as American death toll rises"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "acb383541974e32195c60ea14fc1e4b355adb499",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:Dow falls 1,000 points as Iran War escalates"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fea3c8e01e6d8d3751ef2a39b9c901cb8ca171e6",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Noem faces grilling on Capitol Hill over ICE operations and Iran threat"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "MOVED",
-      "fingerprint": "45eb71bb7c05105a788566648958573267b7f755",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Trump administration's mixed messaging on war with Iran: ANALYSIS",
-      "to_title": "Trump administration's mixed messaging on war with Iran: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "MOVED",
-      "fingerprint": "9ea7f9ae649c3dac6538406341c68ceede0a7ccd",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis",
-      "to_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "MOVED",
-      "fingerprint": "372c19af1e7ac7e362e84ad44d45fceffdaff211",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms",
-      "to_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "MOVED",
-      "fingerprint": "ebdc33cb96a45e8031631829d291539f0fa84213",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Hillary Clinton told House panel, 'I've given the same answers over and over again'",
-      "to_title": "Hillary Clinton told House panel, 'I've given the same answers over and over again'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0b7e4d62ab876555e292590e93356f7f869041e8",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Yellowstone wildlife photographer to be honored with US postage stamp of bison"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e7fd24ddba48f197757157f3f2187188668ef417",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran war live updates: Trump says 'too late' to talk to Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5e5248b494e9d666a5cb253806dae5ccb0f5e68e",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Rubio says US struck Iran fearing it would retaliate for Israeli attack",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "89084cfbae86ceb491e4605a8f73e946685e8aa0",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Noem to face 2 days of grilling on Capitol Hill over ICE operations and Iran threat",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f2764f6f7da3c6ea64c2ce5422ed9631c3384f53",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Upcoming US postage stamp to feature modern and historic Yellowstone bison",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T15:03:31.505Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2d607c1feb8a36c78f349da8cc2b313ce0931912",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Thousands stranded in Middle East amid Iran war",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T16:44:16.930Z",
@@ -1601,6 +1461,116 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Pentagon IDs 4 American troops killed in Kuwait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74d6de6555d51329e33514dea4759bd99ace6807",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingUS sub sinks Iranian ship by torpedo, 1st such attack since WWII"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e8018c9dc18cabdc5bc7876c3de105e54f60d900",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: 'They are toast and they know it,' Hegseth says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "MOVED",
+      "fingerprint": "c9236e2a38c4f8ae3a511c058316bb62e95fca13",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Related:Pentagon IDs 4 American troops killed in Kuwait",
+      "to_title": "Related:Pentagon IDs 4 American troops killed in Kuwait"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "MOVED",
+      "fingerprint": "6e9dde47e952af0ed61123dc036de4fd70d65f43",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’",
+      "to_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "MOVED",
+      "fingerprint": "51c2cd9d3cc1ef7eab4bcdc773fe9e987730c3f9",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Texas 2026 live primary election results: Cornyn and Paxton headed to runoff",
+      "to_title": "Texas 2026 live primary election results: Cornyn and Paxton headed to runoff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "MOVED",
+      "fingerprint": "64e599d811b065388e9febdf5de5f09b48184af0",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "North Carolina 2026 live primary results: Cooper, Whatley projected to win",
+      "to_title": "North Carolina 2026 live primary results: Cooper, Whatley projected to win"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "MOVED",
+      "fingerprint": "70af1902eb5bd4888f51b247dad8115da9a50382",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race",
+      "to_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "MOVED",
+      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile",
+      "to_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "MOVED",
+      "fingerprint": "de7c8768b0867f9cac13d6b5906e6f59992b584f",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "911 calls from ICE detention center underscore concerns about facility, advocates say",
+      "to_title": "911 calls from ICE detention center underscore concerns about facility, advocates say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "35f1145270b3ec389da01b2a44024661361b93ef",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingUS will have 'complete control' of Iranian skies in less than a week, Hegseth says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T15:04:18.013Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7c0f977fb4d4373c15afb1f02adf77536d781131",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US military assists Ecuador in 1st land operation against cartels: Source",
       "to_title": null
     }
   ]
