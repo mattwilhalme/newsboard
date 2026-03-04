@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T06:52:57.218Z",
+  "generatedAt": "2026-03-04T07:30:50.655Z",
   "source_id": "abc1",
   "events": [
     {
@@ -21221,6 +21221,46 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Texas 2026 live primary election results",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T07:31:00.887Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df79e06caa360fdd132604863a334d97145ad085",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: IDF targets Iranian internal security forces in overnight strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T07:31:00.887Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2bb583c2eb2ec14181588ca1f67e8767cca8262b",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Largest US military base in Middle East hit by missile, Qatar says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T07:31:00.887Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1c0500653ee87a904ee8a98afe199476892572b1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Largest US military base in Middle East hit by missile, Qatar says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T07:31:00.887Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c9236e2a38c4f8ae3a511c058316bb62e95fca13",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pentagon IDs 4 American troops killed in Kuwait",
       "to_title": null
     }
   ],
