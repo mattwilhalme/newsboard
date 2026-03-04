@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-04T18:03:41.550Z",
+  "generatedAt": "2026-03-04T19:47:53.537Z",
   "source_id": "abc1",
   "events": [
     {
@@ -21901,6 +21901,126 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Trump 'got the last laugh,' Hegseth says of US killing Iranian assassination plotter",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74ea2d6f9601cb747e752a3e505249a7a39d53b4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Ground troops 'not part of the plan,' Leavitt says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "MOVED",
+      "fingerprint": "83c322fb764fe7a532c4df269bc63d60f51def99",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "US sub sinks Iranian ship by torpedo in Indian Ocean, 1st such attack since WWII",
+      "to_title": "US sub sinks Iranian ship by torpedo in Indian Ocean, 1st such attack since WWII"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "MOVED",
+      "fingerprint": "85bc91e1c6199bdaaf484a637708e9733aad64c2",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says",
+      "to_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "MOVED",
+      "fingerprint": "6e9dde47e952af0ed61123dc036de4fd70d65f43",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’",
+      "to_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d117fba6b697ab775b3d597b0e9c3340e5fe539",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Takeaways from the first primaries of the 2026 election cycle",
+      "to_title": "Takeaways from the first primaries of the 2026 election cycle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "MOVED",
+      "fingerprint": "da97939204f6e755b232e829aa03ec53f1016e4e",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Noem testifies before House committee after grilling from senators",
+      "to_title": "Noem testifies before House committee after grilling from senators"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "MOVED",
+      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile",
+      "to_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "69aef01cfb644d7d2cb98aadcbebbc48c4af1874",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Recall of frozen food products expanded to over 30 million pounds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1b0f285919e53310158891f9f34e43916df70612",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dilley 911 calls underscore advocates' concerns"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e8018c9dc18cabdc5bc7876c3de105e54f60d900",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 'They are toast and they know it,' Hegseth says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c9236e2a38c4f8ae3a511c058316bb62e95fca13",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pentagon IDs 4 American troops killed in Kuwait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-04T19:48:04.034Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de7c8768b0867f9cac13d6b5906e6f59992b584f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "911 calls from ICE detention center underscore concerns about facility, advocates say",
       "to_title": null
     }
   ],
