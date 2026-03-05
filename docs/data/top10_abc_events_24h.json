@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-05T09:11:47.798Z",
+  "generatedAt": "2026-03-05T10:02:49.750Z",
   "hours": 24,
   "events": [
     {
@@ -1251,6 +1251,76 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Takeaways from the first primaries of the 2026 election cycle",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T10:03:00.154Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7eb2ba702bff243cb774344c1a29463626f42155",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Building where US troops were killed was largely unfortified: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T10:03:00.154Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "23913c46f8c1cc87165b11ee8d8fe8806948f8d2",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "DHS puts man on 'worst of the worst' list, removes him after questioning"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T10:03:00.154Z",
+      "event_type": "MOVED",
+      "fingerprint": "21db40927b32f45a03fe1d2f18acf747cd8f292c",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "House Oversight Committee votes to subpoena Bondi over Epstein investigation",
+      "to_title": "House Oversight Committee votes to subpoena Bondi over Epstein investigation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T10:03:00.154Z",
+      "event_type": "MOVED",
+      "fingerprint": "85bc91e1c6199bdaaf484a637708e9733aad64c2",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says",
+      "to_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T10:03:00.154Z",
+      "event_type": "MOVED",
+      "fingerprint": "f165a0e3325da1006728692e4950e528ee600e60",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared",
+      "to_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T10:03:00.154Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "83c322fb764fe7a532c4df269bc63d60f51def99",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "US sub sinks Iranian ship by torpedo in Indian Ocean, 1st such attack since WWII",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T10:03:00.154Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1fec10452c5291030aba5c3bf478c76ebe18f697",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "What to know about how GLP-1 medications might fight addiction",
       "to_title": null
     }
   ]
