@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-05T17:50:53.746Z",
+  "generatedAt": "2026-03-05T19:04:01.528Z",
   "source_id": "abc1",
   "events": [
     {
@@ -22921,6 +22921,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Lou Holtz, legendary Notre Dame college football coach, dies at 89",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9abe45c849efe119c21c0191bd9f289a77f3a1c4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingTrump fires DHS Sec. Kristi Noem, appoints Sen. Markwayne Mullin"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5e16731ac2da8ad1880e15e39ba757587b58563a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Noem's testimony on contracts 'false,' Democratic senator claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Britney Spears arrested in California",
+      "to_title": "Britney Spears arrested in California"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "MOVED",
+      "fingerprint": "8e2f0dea0516880cb1d8f741f35c094745974538",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "House primed to vote on Iran war powers resolution",
+      "to_title": "House primed to vote on Iran war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "MOVED",
+      "fingerprint": "d92c15848051c9c35cd00edd6ce49f6c763b3e2b",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says",
+      "to_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b44551fc6883fb24f710892d4e34f97cc4ac17b3",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Israel bombards Beirut with strikes as conflict with Iran widens",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f946f042c6cf00cd5be70bb8c48d10071c48dbf4",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Noem's testimony on contracts 'false,' Democratic senator claims",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T19:04:12.011Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7eb2ba702bff243cb774344c1a29463626f42155",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Building where US troops were killed was largely unfortified: Officials",
       "to_title": null
     }
   ],
