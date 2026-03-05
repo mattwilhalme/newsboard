@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-05T14:53:39.559Z",
+  "generatedAt": "2026-03-05T15:39:27.074Z",
   "source_id": "abc1",
   "events": [
     {
@@ -22761,6 +22761,76 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T15:39:37.033Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b4723e5bf563c7e129896e6b1a4c8cb4bb6af9a1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Israel hits Beirut with strikes as Iran's proxy force in Lebanon opens up a 2nd front"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T15:39:37.033Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Britney Spears arrested in California"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T15:39:37.033Z",
+      "event_type": "MOVED",
+      "fingerprint": "396094f35d920619ab18e6cee979927e5c520cef",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says",
+      "to_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T15:39:37.033Z",
+      "event_type": "MOVED",
+      "fingerprint": "7eb2ba702bff243cb774344c1a29463626f42155",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Building where US troops were killed was largely unfortified: Officials",
+      "to_title": "Building where US troops were killed was largely unfortified: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T15:39:37.033Z",
+      "event_type": "MOVED",
+      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Gen-Z identical twins model civility as political foes",
+      "to_title": "Gen-Z identical twins model civility as political foes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T15:39:37.033Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1755574acb2c42e46aaa5ead0f10c786c1fdba7a",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pentagon identifies all 6 American troops killed in Kuwait amid Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T15:39:37.033Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "23913c46f8c1cc87165b11ee8d8fe8806948f8d2",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "DHS puts man on 'worst of the worst' list, removes him after questioning",
       "to_title": null
     }
   ],
