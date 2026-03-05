@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-05T12:57:23.079Z",
+  "generatedAt": "2026-03-05T14:00:32.775Z",
   "source_id": "abc1",
   "events": [
     {
@@ -22671,6 +22671,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Pentagon IDs remaining 2 American troops killed in Kuwait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T14:00:42.767Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d92c15848051c9c35cd00edd6ce49f6c763b3e2b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-05T14:00:42.767Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f4b0ff6ea7dfab27e6cb6525c3a4af52e623b9bf",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Explosions in Qatar, 6 injured in UAE amid Iranian attacks",
       "to_title": null
     }
   ],
