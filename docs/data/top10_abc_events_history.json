@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T16:25:22.396Z",
+  "generatedAt": "2026-03-06T17:05:48.827Z",
   "source_id": "abc1",
   "events": [
     {
@@ -24501,6 +24501,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Britney Spears arrested in California",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T17:05:59.277Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f0ad81a73edb98d3659b20fbf7e4fe496ff877bb",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T17:05:59.277Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8209818c03f212e37560729b9b0ecdaecc4d7aca",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Jobs report shows surprise losses as markets roil, gas prices surge",
       "to_title": null
     }
   ],
