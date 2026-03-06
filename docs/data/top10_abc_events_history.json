@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T21:06:05.662Z",
+  "generatedAt": "2026-03-06T21:41:26.094Z",
   "source_id": "abc1",
   "events": [
     {
@@ -25131,6 +25131,156 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Obama honors Jesse Jackson's 'legacy of hope' at a time when it's 'hard to hope'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3907c367e3f4e64fb1a3c073f24261361aee3787",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "US believes Russia is providing Iran with locations of American troops, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5e01197e77f5b65fe464123432202d026a13f71c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: US says it's hit 3,000 targets in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "397ad57b39de5053d08a3a0cb2276e5eae57b17b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Israel batters suburbs of Beirut, targeting Hezbollah amid war with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d1f84f213c60f33e08345f83373a280e62837c95",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Obama honors Jesse Jackson's 'legacy of hope' at a time when it's 'hard to hope'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "830352180982849f99fcdd23b5904d613942a998",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Former University of Michigan coach Sherrone Moore takes plea deal",
+      "to_title": "Former University of Michigan coach Sherrone Moore takes plea deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cf3643cafbb5ab77f91111bee9cc2de1a225e156",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Severe weather threat, including tornadoes, continues for millions of Americans"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "DOJ releases previously withheld FBI reports about allegation against Trump",
+      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "bec56b49e1ad7b558bd5917211a7b740adcad3dc",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "US sinking of Iranian ship raises questions of legality",
+      "to_title": "US sinking of Iranian ship raises questions of legality"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "1886b9b18e84a5b11ccba81a13cd8797f52a4444",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app",
+      "to_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "How a rising football star's life was cut short",
+      "to_title": "How a rising football star's life was cut short"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b07e1288a27d50029fa2b07f4ba1d34311e8fad2",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Obama honors Jesse Jackson's 'legacy of hope'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "47a2e89168502d0b79d70c65c55710fdba00eb55",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: US believes Russia is providing Iran intelligence, sources say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1ef1bb133417b36e5d4239e5288493a491daa809",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "07bc5cb9b84e4f3c236f8eb783e67d26f50db586",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Six Flags to sell 7 of its parks across US, Canada",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T21:41:36.765Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "975db4a2bd63418d4b967e91c36a2884b6578480",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Jobs report shows US lost jobs in February",
       "to_title": null
     }
   ],
