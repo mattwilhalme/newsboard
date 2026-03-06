@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T22:59:52.512Z",
+  "generatedAt": "2026-03-06T23:32:14.721Z",
   "source_id": "abc1",
   "events": [
     {
@@ -25431,6 +25431,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Severe weather threat, including tornadoes, continues for millions of Americans",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T23:32:24.859Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3f6bf5afc527ca580362d873bac9b62b9117366c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US was operating in area of school ahead of strike, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T23:32:24.859Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "35e1681f09ab297f708270227c42f0fbc2375dee",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingUS was operating in area of elementary school ahead of deadly strike: Sources",
       "to_title": null
     }
   ],
