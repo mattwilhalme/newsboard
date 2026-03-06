@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T11:01:00.044Z",
+  "generatedAt": "2026-03-06T11:37:08.949Z",
   "source_id": "abc1",
   "events": [
     {
@@ -24021,6 +24021,76 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Jobs report expected to show hiring slowdown",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:37:18.906Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d9877d274d38cd6151cdae8fcb470a5572bab4f2",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Ukraine drone specialists going to Middle East to defend US bases"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:37:18.906Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4827def75d72ae5565f40db8f7702dbc7c966d02",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Bryan Pata murder case ends in mistrial 20 years after football star’s killing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:37:18.906Z",
+      "event_type": "MOVED",
+      "fingerprint": "bfb262821de513c43044677181037fcbdfdaeca4",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS",
+      "to_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:37:18.906Z",
+      "event_type": "MOVED",
+      "fingerprint": "0acd6703d2a45041bcf93a4060c83f4539648360",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones",
+      "to_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:37:18.906Z",
+      "event_type": "MOVED",
+      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
+      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:37:18.906Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "10300115f85a439bd3b2fda7b0461584ceb68fc3",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump offers immunity or 'guaranteed death' to Iranian forces",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:37:18.906Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "645a48d89d4b8a50e03806216efc413fa969f403",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "This is how much ice Antarctica has lost over the last 30 years",
       "to_title": null
     }
   ],
