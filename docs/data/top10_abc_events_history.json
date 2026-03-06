@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T06:08:23.911Z",
+  "generatedAt": "2026-03-06T07:08:02.686Z",
   "source_id": "abc1",
   "events": [
     {
@@ -23851,6 +23851,56 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "House GOP leadership asks Rep. Tony Gonzales to drop reelection bid",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T07:08:12.776Z",
+      "event_type": "MOVED",
+      "fingerprint": "10300115f85a439bd3b2fda7b0461584ceb68fc3",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Trump offers immunity or 'guaranteed death' to Iranian forces",
+      "to_title": "Iran live updates: Trump offers immunity or 'guaranteed death' to Iranian forces"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T07:08:12.776Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "08693de11858c834be45ebefa80410a069e9f085",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Hegseth says US has enough munitions to continue Iran war 'as long as we need to'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T07:08:12.776Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T07:08:12.776Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a80a5d6384d9378bd798d768538125788b4a98a1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hegseth says US has enough munitions to continue Iran war 'as long as we need to'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T07:08:12.776Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c96006875280dbf13d2f99bdc077e048e01fc54e",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "How much is the war with Iran costing the US?",
       "to_title": null
     }
   ],
