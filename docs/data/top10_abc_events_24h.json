@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-06T22:33:48.399Z",
+  "generatedAt": "2026-03-06T22:59:52.512Z",
   "hours": 24,
   "events": [
     {
@@ -1921,6 +1921,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Israel batters suburbs of Beirut, targeting Hezbollah amid war with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T23:00:01.363Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6a779fe6b3ab13f36a55b0c43608700ae1bae2f8",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Tornado threat continues as millions under alert for severe weather"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T23:00:01.363Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cf3643cafbb5ab77f91111bee9cc2de1a225e156",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Severe weather threat, including tornadoes, continues for millions of Americans",
       "to_title": null
     }
   ]
