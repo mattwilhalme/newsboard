@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T11:57:23.971Z",
+  "generatedAt": "2026-03-06T12:47:29.074Z",
   "source_id": "abc1",
   "events": [
     {
@@ -24091,6 +24091,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "This is how much ice Antarctica has lost over the last 30 years",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T12:47:39.081Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1a21862e975e1a2361014f51e90d57d633168f14",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US ramping up strikes on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T12:47:39.081Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d9877d274d38cd6151cdae8fcb470a5572bab4f2",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Ukraine drone specialists going to Middle East to defend US bases",
       "to_title": null
     }
   ],
