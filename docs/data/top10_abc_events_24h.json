@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-06T07:51:05.656Z",
+  "generatedAt": "2026-03-06T08:22:58.622Z",
   "hours": 24,
   "events": [
     {
@@ -1391,6 +1391,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "How much is the war with Iran costing the US?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T08:23:08.623Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "12a5abe82b36ea04f685da6370ddd30448f22121",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "People love to hate changing clocks twice a year, but can't agree how to fix it"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T08:23:08.623Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "69db55a71ab3f7d3e7242cfcaa6c831ad1095da5",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "No chance asteroid will slam into the moon in 2032, NASA says",
       "to_title": null
     }
   ]
