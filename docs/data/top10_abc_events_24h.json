@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-06T19:49:21.786Z",
+  "generatedAt": "2026-03-06T20:04:55.846Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:59:48.249Z",
-      "event_type": "MOVED",
-      "fingerprint": "8e2f0dea0516880cb1d8f741f35c094745974538",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "House primed to vote on Iran war powers resolution",
-      "to_title": "House primed to vote on Iran war powers resolution"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:59:48.249Z",
-      "event_type": "MOVED",
-      "fingerprint": "d92c15848051c9c35cd00edd6ce49f6c763b3e2b",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says",
-      "to_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:59:48.249Z",
-      "event_type": "MOVED",
-      "fingerprint": "396094f35d920619ab18e6cee979927e5c520cef",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says",
-      "to_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:59:48.249Z",
-      "event_type": "MOVED",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
-      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:59:48.249Z",
-      "event_type": "MOVED",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 3,
-      "to_rank": 7,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": "Britney Spears arrested in California"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T20:42:08.933Z",
@@ -1791,6 +1741,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "830352180982849f99fcdd23b5904d613942a998",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Former University of Michigan coach Sherrone Moore takes plea deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "MOVED",
+      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "DOJ releases previously withheld FBI reports about allegation against Trump",
+      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "MOVED",
+      "fingerprint": "bec56b49e1ad7b558bd5917211a7b740adcad3dc",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "US sinking of Iranian ship raises questions of legality",
+      "to_title": "US sinking of Iranian ship raises questions of legality"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "MOVED",
+      "fingerprint": "1886b9b18e84a5b11ccba81a13cd8797f52a4444",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app",
+      "to_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "MOVED",
+      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "How a rising football star's life was cut short",
+      "to_title": "How a rising football star's life was cut short"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "975db4a2bd63418d4b967e91c36a2884b6578480",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Jobs report shows US lost jobs in February"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f0ad81a73edb98d3659b20fbf7e4fe496ff877bb",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T20:05:06.632Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b75493161d9ca64b1a80d864cc3aa107673811eb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dow falls 650 points as Iran war hikes oil prices",
       "to_title": null
     }
   ]
