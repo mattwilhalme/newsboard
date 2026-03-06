@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-06T09:51:28.449Z",
+  "generatedAt": "2026-03-06T10:22:45.184Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T10:03:00.154Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7eb2ba702bff243cb774344c1a29463626f42155",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Building where US troops were killed was largely unfortified: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T10:03:00.154Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "23913c46f8c1cc87165b11ee8d8fe8806948f8d2",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "DHS puts man on 'worst of the worst' list, removes him after questioning"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T10:03:00.154Z",
-      "event_type": "MOVED",
-      "fingerprint": "21db40927b32f45a03fe1d2f18acf747cd8f292c",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "House Oversight Committee votes to subpoena Bondi over Epstein investigation",
-      "to_title": "House Oversight Committee votes to subpoena Bondi over Epstein investigation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T10:03:00.154Z",
-      "event_type": "MOVED",
-      "fingerprint": "85bc91e1c6199bdaaf484a637708e9733aad64c2",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says",
-      "to_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T10:03:00.154Z",
-      "event_type": "MOVED",
-      "fingerprint": "f165a0e3325da1006728692e4950e528ee600e60",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared",
-      "to_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T10:03:00.154Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "83c322fb764fe7a532c4df269bc63d60f51def99",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "US sub sinks Iranian ship by torpedo in Indian Ocean, 1st such attack since WWII",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T10:03:00.154Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1fec10452c5291030aba5c3bf478c76ebe18f697",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "What to know about how GLP-1 medications might fight addiction",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T10:55:52.701Z",
@@ -1411,6 +1341,86 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "No chance asteroid will slam into the moon in 2032, NASA says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bec56b49e1ad7b558bd5917211a7b740adcad3dc",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "US sinking of Iranian ship raises questions of legality"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "db5dbfd2c8e8a5c6d9d17cf223c95d4316368d31",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Jobs report expected to show hiring slowdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "MOVED",
+      "fingerprint": "bfb262821de513c43044677181037fcbdfdaeca4",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS",
+      "to_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "MOVED",
+      "fingerprint": "0acd6703d2a45041bcf93a4060c83f4539648360",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones",
+      "to_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "MOVED",
+      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
+      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "MOVED",
+      "fingerprint": "645a48d89d4b8a50e03806216efc413fa969f403",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "This is how much ice Antarctica has lost over the last 30 years",
+      "to_title": "This is how much ice Antarctica has lost over the last 30 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T10:22:56.146Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "12a5abe82b36ea04f685da6370ddd30448f22121",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "People love to hate changing clocks twice a year, but can't agree how to fix it",
       "to_title": null
     }
   ]
