@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-06T19:12:35.546Z",
+  "generatedAt": "2026-03-06T19:49:21.786Z",
   "hours": 24,
   "events": [
     {
@@ -1651,6 +1651,146 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'Harry Potter' stars Daniel Radcliffe, Tom Felton reunite on Broadway",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b6aafea0913f6422895672f3b8a5211641d394f9",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingUS believes Russia is providing Iran intelligence, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "205cd65dff52d3407cf12e8b2aaa6624881698d9",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Three presidents honor Jesse Jackson in Chicago"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "MOVED",
+      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "DOJ releases previously withheld FBI reports about allegation against Trump",
+      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "MOVED",
+      "fingerprint": "bec56b49e1ad7b558bd5917211a7b740adcad3dc",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "US sinking of Iranian ship raises questions of legality",
+      "to_title": "US sinking of Iranian ship raises questions of legality"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "MOVED",
+      "fingerprint": "1886b9b18e84a5b11ccba81a13cd8797f52a4444",
+      "from_rank": 8,
+      "to_rank": 5,
+      "from_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app",
+      "to_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "MOVED",
+      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "How a rising football star's life was cut short",
+      "to_title": "How a rising football star's life was cut short"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "MOVED",
+      "fingerprint": "f0ad81a73edb98d3659b20fbf7e4fe496ff877bb",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report",
+      "to_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "MOVED",
+      "fingerprint": "1ef1bb133417b36e5d4239e5288493a491daa809",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together",
+      "to_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "07bc5cb9b84e4f3c236f8eb783e67d26f50db586",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Six Flags to sell 7 of its parks across US, Canada"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b75493161d9ca64b1a80d864cc3aa107673811eb",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dow falls 650 points as Iran war hikes oil prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6ffec152a979054a3f23777417a0e51aed5ea60e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says 'no deal with Iran except unconditional surrender'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c3c807413c6707b7f5145ca61353112476af21e5",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Israel batters suburbs of Beirut, targeting Hezbollah amid war with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f80afb1f9eeced5ca9edaaee056c39324891eea4",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Former Presidents Clinton, Obama and Biden honor Jesse Jackson at Friday service",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T19:49:32.189Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
       "to_title": null
     }
   ]
