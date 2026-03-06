@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T10:22:45.184Z",
+  "generatedAt": "2026-03-06T11:01:00.044Z",
   "source_id": "abc1",
   "events": [
     {
@@ -24001,6 +24001,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "People love to hate changing clocks twice a year, but can't agree how to fix it",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:01:10.861Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e9f72f018b98b187b781db3c3d62e7f604322f7e",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T11:01:10.861Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "db5dbfd2c8e8a5c6d9d17cf223c95d4316368d31",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Jobs report expected to show hiring slowdown",
       "to_title": null
     }
   ],
