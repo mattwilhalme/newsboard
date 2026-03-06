@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-05T23:31:37.728Z",
+  "generatedAt": "2026-03-06T00:08:20.007Z",
   "source_id": "abc1",
   "events": [
     {
@@ -23611,6 +23611,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "House fails to adopt war powers resolution",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "10300115f85a439bd3b2fda7b0461584ceb68fc3",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump offers immunity or 'guaranteed death' to Iranian forces"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "MOVED",
+      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
+      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c9598ec299ad4d22bd01a4219bfc4c3cdc54847e",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Antarctica has lost ice 10 times the size of Los Angeles over the last 30 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "MOVED",
+      "fingerprint": "69db55a71ab3f7d3e7242cfcaa6c831ad1095da5",
+      "from_rank": 10,
+      "to_rank": 8,
+      "from_title": "No chance asteroid will slam into the moon in 2032, NASA says",
+      "to_title": "No chance asteroid will slam into the moon in 2032, NASA says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Britney Spears arrested in California",
+      "to_title": "Britney Spears arrested in California"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "MOVED",
+      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Gen-Z identical twins model civility as political foes",
+      "to_title": "Gen-Z identical twins model civility as political foes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d92c15848051c9c35cd00edd6ce49f6c763b3e2b",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T00:08:29.764Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "681291bf8cb8e87903a6de575e5753bbbf69c5e4",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "American woman speaks out after escaping Middle East amid Iran war",
       "to_title": null
     }
   ],
