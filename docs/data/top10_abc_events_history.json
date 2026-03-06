@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-06T04:26:18.106Z",
+  "generatedAt": "2026-03-06T05:31:08.586Z",
   "source_id": "abc1",
   "events": [
     {
@@ -23831,6 +23831,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Gen-Z identical twins model civility as political foes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T05:31:18.237Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-06T05:31:18.237Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "df70053a225dde23923cad7962e2af014dc867bf",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "House GOP leadership asks Rep. Tony Gonzales to drop reelection bid",
       "to_title": null
     }
   ],
