@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-07T15:42:09.793Z",
+  "generatedAt": "2026-03-07T16:01:18.775Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "6ffec152a979054a3f23777417a0e51aed5ea60e",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Trump says 'no deal with Iran except unconditional surrender'",
-      "to_title": "Iran live updates: Trump says 'no deal with Iran except unconditional surrender'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "64799bdee09827537f84bc3c4dc9fb14e2b54a0d",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:How much is the war with Iran costing the US?",
-      "to_title": "Related:How much is the war with Iran costing the US?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "DOJ releases previously withheld FBI reports about allegation against Trump",
-      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "62d2e9df5aad387e64927ee7a6d0133bef0fa022",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Jobs report shows US unexpectedly lost jobs in February"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d995ea5293faf196670aff9efb38f407d7eadf31",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Dow drops 650 points as Iran war sends oil prices surging"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "e9f72f018b98b187b781db3c3d62e7f604322f7e",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service",
-      "to_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "How a rising football star's life was cut short",
-      "to_title": "How a rising football star's life was cut short"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8602eafec0f442e7786508c4cc2ac71b994afb15",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingJobs report shows US unexpectedly lost jobs in February",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bfb262821de513c43044677181037fcbdfdaeca4",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T16:25:32.471Z",
@@ -1531,6 +1441,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Acetaminophen use fell among pregnant women after White House linked drug to autism",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T16:01:29.320Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "faafd1be29341fc27917865c0a7f30dd967eb44d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump warns Iran may face 'complete destruction and certain death'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T16:01:29.320Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0e1d82a71f7249a7f9e24969a1497b31923722cd",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran says no unconditional surrender, apologizes to neighbors",
       "to_title": null
     }
   ]
