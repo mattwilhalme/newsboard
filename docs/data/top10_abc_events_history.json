@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-07T14:55:31.992Z",
+  "generatedAt": "2026-03-07T15:17:06.889Z",
   "source_id": "abc1",
   "events": [
     {
@@ -25811,6 +25811,46 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iran’s president says there’ll be no unconditional surrender",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T15:17:17.687Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7cf381e8e313e4af25f7a30bd8d414c990035be8",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Faith leaders seek access to ICE detention centers during Lent and Ramadan"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T15:17:17.687Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cc4ac2746036b78eceb6e2b509bd29c3c91edfc8",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Ukraine’s low-cost drones draw US, Gulf interest, but wartime ban blocks sales"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T15:17:17.687Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d1f84f213c60f33e08345f83373a280e62837c95",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Obama honors Jesse Jackson's 'legacy of hope' at a time when it's 'hard to hope'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T15:17:17.687Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "434bb5d2965e9de5fb2642220237ea0436d20546",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Acetaminophen use fell among pregnant women after White House linked drug to autism",
       "to_title": null
     }
   ],
