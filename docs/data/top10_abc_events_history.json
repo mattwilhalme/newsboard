@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-07T23:29:00.307Z",
+  "generatedAt": "2026-03-07T23:47:43.253Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26121,6 +26121,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Trump to attend dignified transfer of 6 fallen service members killed in Kuwait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T23:47:54.159Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "42a6298f06302936e69f2075a8d17a6f7e4664eb",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "At least 8 dead as severe weather continues across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T23:47:54.159Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "640da592d640937acb41ddb175a4c2fafa78ae26",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Severe weather continues to churn as death toll from US storms reaches 8",
       "to_title": null
     }
   ],
