@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-07T10:17:57.421Z",
+  "generatedAt": "2026-03-07T10:45:42.650Z",
   "source_id": "abc1",
   "events": [
     {
@@ -25741,6 +25741,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: 27,000 Americans have returned to US from Middle East",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T10:45:52.723Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0d4cb988893e9c244aec184b86c00b5a5c804b20",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump to attend dignified transfer of 6 fallen service members killed in Kuwait"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T10:45:52.723Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8644e71ffdfd9487c774fc8e95e58765fd9549ca",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:US was operating in area of Iran elementary school ahead of deadly strike: Sources",
       "to_title": null
     }
   ],

@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-07T10:17:57.421Z",
+  "generatedAt": "2026-03-07T10:45:42.650Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bec56b49e1ad7b558bd5917211a7b740adcad3dc",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "US sinking of Iranian ship raises questions of legality"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "db5dbfd2c8e8a5c6d9d17cf223c95d4316368d31",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Jobs report expected to show hiring slowdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "MOVED",
-      "fingerprint": "bfb262821de513c43044677181037fcbdfdaeca4",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS",
-      "to_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "MOVED",
-      "fingerprint": "0acd6703d2a45041bcf93a4060c83f4539648360",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones",
-      "to_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "MOVED",
-      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
-      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "MOVED",
-      "fingerprint": "645a48d89d4b8a50e03806216efc413fa969f403",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "This is how much ice Antarctica has lost over the last 30 years",
-      "to_title": "This is how much ice Antarctica has lost over the last 30 years"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T10:22:56.146Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "12a5abe82b36ea04f685da6370ddd30448f22121",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "People love to hate changing clocks twice a year, but can't agree how to fix it",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T11:01:10.861Z",
@@ -1821,6 +1741,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: 27,000 Americans have returned to US from Middle East",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T10:45:52.723Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0d4cb988893e9c244aec184b86c00b5a5c804b20",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump to attend dignified transfer of 6 fallen service members killed in Kuwait"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T10:45:52.723Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8644e71ffdfd9487c774fc8e95e58765fd9549ca",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:US was operating in area of Iran elementary school ahead of deadly strike: Sources",
       "to_title": null
     }
   ]
