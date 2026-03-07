@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-07T18:00:37.321Z",
+  "generatedAt": "2026-03-07T18:42:49.707Z",
   "source_id": "abc1",
   "events": [
     {
@@ -25941,6 +25941,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T18:43:00.233Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T18:43:00.233Z",
+      "event_type": "MOVED",
+      "fingerprint": "3907c367e3f4e64fb1a3c073f24261361aee3787",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "US believes Russia is providing Iran with locations of American troops, sources say",
+      "to_title": "US believes Russia is providing Iran with locations of American troops, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T18:43:00.233Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6d75ee967da269e500df6863d7d8ef8f08a28597",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Harry Styles drops cinematic 'American Girls' music video"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T18:43:00.233Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "02a534c0caccf46f73067e8650145ca250ac3bdf",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "FDA vaccine chief Dr. Vinay Prasad to leave agency next month",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T18:43:00.233Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d80dcc1fa7903c468ef421c76332b33a192c9a25",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Harry Styles debuts 'American Girls' music video from new album",
       "to_title": null
     }
   ],
