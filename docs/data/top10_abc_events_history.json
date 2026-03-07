@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-07T00:56:34.527Z",
+  "generatedAt": "2026-03-07T03:13:45.440Z",
   "source_id": "abc1",
   "events": [
     {
@@ -25611,6 +25611,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T03:13:55.708Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c5b6d8ebf8fad5ca4d0838ca6a327c3381170ee6",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "4 dead after suspected tornadoes in Michigan; millions under alert for severe weather"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T03:13:55.708Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6d2be6740ec18ea1ff9de4d0da4d07bcc6d37155",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Significant damage reported in Michigan, as millions under alert for severe weather",
       "to_title": null
     }
   ],
