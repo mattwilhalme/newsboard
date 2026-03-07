@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-07T20:25:24.482Z",
+  "generatedAt": "2026-03-07T20:47:11.706Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26071,6 +26071,36 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Faith leaders seek access to ICE detention centers during Lent and Ramadan",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T20:47:21.907Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "640da592d640937acb41ddb175a4c2fafa78ae26",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Severe weather continues to churn as death toll from US storms reaches 8"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T20:47:21.907Z",
+      "event_type": "MOVED",
+      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
+      "to_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T20:47:21.907Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c5b6d8ebf8fad5ca4d0838ca6a327c3381170ee6",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "4 dead after suspected tornadoes in Michigan; millions under alert for severe weather",
       "to_title": null
     }
   ],
