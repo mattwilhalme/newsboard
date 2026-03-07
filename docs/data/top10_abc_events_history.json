@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-07T09:00:49.014Z",
+  "generatedAt": "2026-03-07T09:36:44.847Z",
   "source_id": "abc1",
   "events": [
     {
@@ -25721,6 +25721,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "How a rising football star's life was cut short",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T09:36:54.731Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a928daa1acffb64766c3f1b9e64b7a635047670e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran’s president says there’ll be no unconditional surrender"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-07T09:36:54.731Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6450eb6da062018360814974dcdf11200462bd71",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 27,000 Americans have returned to US from Middle East",
       "to_title": null
     }
   ],
