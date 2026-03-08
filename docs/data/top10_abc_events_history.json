@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T14:01:10.445Z",
+  "generatedAt": "2026-03-08T14:32:49.882Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26261,6 +26261,136 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Trump attends dignified transfer of 6 fallen service members killed in Kuwait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "26c01ca76108a5a2bcbfb3095fc2d8ff81baddb2",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Retired admiral says regime change discussion in Iran is 'very much alive'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e66a845f5b6669b82b32e96db728e0c7b0ddd7bb",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump wants Iranian leaders who will not 'threaten Americans': Waltz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "MOVED",
+      "fingerprint": "faafd1be29341fc27917865c0a7f30dd967eb44d",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Trump warns Iran may face 'complete destruction and certain death'",
+      "to_title": "Iran live updates: Trump warns Iran may face 'complete destruction and certain death'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Police in Norway investigate explosion outside US Embassy in Oslo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "MOVED",
+      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit",
+      "to_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "MOVED",
+      "fingerprint": "42a6298f06302936e69f2075a8d17a6f7e4664eb",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "At least 8 dead as severe weather continues across US",
+      "to_title": "At least 8 dead as severe weather continues across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "MOVED",
+      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
+      "to_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "MOVED",
+      "fingerprint": "2af337adb774ed3e4038a8132d6ff042400ec95a",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms",
+      "to_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "MOVED",
+      "fingerprint": "393abda08187175ed42151466336e5861fe6d68a",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Terrorism task force investigating after device thrown during NYC protest: FBI",
+      "to_title": "Terrorism task force investigating after device thrown during NYC protest: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "MOVED",
+      "fingerprint": "6d75ee967da269e500df6863d7d8ef8f08a28597",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Harry Styles drops cinematic 'American Girls' music video",
+      "to_title": "Harry Styles drops cinematic 'American Girls' music video"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bf9dc077a452c591e48b74181b66f261b887ed94",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump wants Iranian leaders who will not 'threaten Americans': Waltz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cc4ac2746036b78eceb6e2b509bd29c3c91edfc8",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Ukraine’s low-cost drones draw US, Gulf interest, but wartime ban blocks sales",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:33:00.037Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9fcd2a303b3bf928b9bc847fcd0729959c797b9e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Daylight saving time 2026: What to know",
       "to_title": null
     }
   ],
