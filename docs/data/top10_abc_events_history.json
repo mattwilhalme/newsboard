@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T21:52:07.264Z",
+  "generatedAt": "2026-03-08T22:01:44.663Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26751,6 +26751,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: US service member dies from injuries suffered in Iranian attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T22:01:55.158Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a8e71745fedfdf168395c579ec7572016c9cd641",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Kansas City airport reopens after evacuation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T22:01:55.158Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0de7e107e8db317879e8e1f9940538c21721ed45",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "KC airport evacuated after potential threat",
       "to_title": null
     }
   ],
