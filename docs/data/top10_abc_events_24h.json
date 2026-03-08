@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-08T14:32:49.882Z",
+  "generatedAt": "2026-03-08T14:54:18.208Z",
   "hours": 24,
   "events": [
     {
@@ -581,6 +581,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Daylight saving time 2026: What to know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:54:28.035Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "708d12af85334eea7eec5474b8580664049d0496",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran's next supreme leader won't 'last long' without my approval, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:54:28.035Z",
+      "event_type": "MOVED",
+      "fingerprint": "26c01ca76108a5a2bcbfb3095fc2d8ff81baddb2",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Retired admiral says regime change discussion in Iran is 'very much alive'",
+      "to_title": "Retired admiral says regime change discussion in Iran is 'very much alive'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T14:54:28.035Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e66a845f5b6669b82b32e96db728e0c7b0ddd7bb",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump wants Iranian leaders who will not 'threaten Americans': Waltz",
       "to_title": null
     }
   ]
