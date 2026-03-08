@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-08T20:27:45.248Z",
+  "generatedAt": "2026-03-08T20:50:35.461Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:47:21.907Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "640da592d640937acb41ddb175a4c2fafa78ae26",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Severe weather continues to churn as death toll from US storms reaches 8"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:47:21.907Z",
-      "event_type": "MOVED",
-      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
-      "to_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:47:21.907Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c5b6d8ebf8fad5ca4d0838ca6a327c3381170ee6",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "4 dead after suspected tornadoes in Michigan; millions under alert for severe weather",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-07T21:01:13.175Z",
@@ -641,6 +611,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Daylight saving time 2026: What to know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T20:50:45.400Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d42fc30806c74ab3f3c5ab09794fc1650ac23c37",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US service member dies from injuries suffered in Iranian attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T20:50:45.400Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b81516c6f31bd2a701fa50d6caca2fd77a707593",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Assembly of Experts back Khamenei’s son as next leader",
       "to_title": null
     }
   ]
