@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T17:12:59.034Z",
+  "generatedAt": "2026-03-08T17:40:22.091Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26441,6 +26441,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Retired admiral says regime change discussion in Iran is 'very much alive'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T17:40:31.887Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8546f64d7509a3c772037619e95e7b84503e13ba",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Assembly expert says majority want Khamenei's son as next leader"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T17:40:31.887Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "faafd1be29341fc27917865c0a7f30dd967eb44d",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump warns Iran may face 'complete destruction and certain death'",
       "to_title": null
     }
   ],
