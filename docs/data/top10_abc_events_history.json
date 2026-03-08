@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T20:27:45.248Z",
+  "generatedAt": "2026-03-08T20:50:35.461Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26711,6 +26711,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Daylight saving time 2026: What to know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T20:50:45.400Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d42fc30806c74ab3f3c5ab09794fc1650ac23c37",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US service member dies from injuries suffered in Iranian attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T20:50:45.400Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b81516c6f31bd2a701fa50d6caca2fd77a707593",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Assembly of Experts back Khamenei’s son as next leader",
       "to_title": null
     }
   ],
