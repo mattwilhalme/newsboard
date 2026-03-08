@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T17:57:19.070Z",
+  "generatedAt": "2026-03-08T18:29:52.288Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26591,6 +26591,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: Assembly expert says majority want Khamenei's son as next leader",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T18:30:02.392Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Police say improvised explosive device was thrown at NYC mayor's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T18:30:02.392Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "393abda08187175ed42151466336e5861fe6d68a",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Terrorism task force investigating after device thrown during NYC protest: FBI",
       "to_title": null
     }
   ],
