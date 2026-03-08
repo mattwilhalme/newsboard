@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T15:56:13.694Z",
+  "generatedAt": "2026-03-08T16:21:55.930Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26421,6 +26421,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Trump wants Iranian leaders who will not 'threaten Americans': Waltz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T16:22:06.691Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a381377009094f55a76dab0ad8a5389a00251a4f",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T16:22:06.691Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "26c01ca76108a5a2bcbfb3095fc2d8ff81baddb2",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Retired admiral says regime change discussion in Iran is 'very much alive'",
       "to_title": null
     }
   ],
