@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T21:35:04.679Z",
+  "generatedAt": "2026-03-08T21:52:07.264Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26731,6 +26731,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Assembly of Experts back Khamenei’s son as next leader",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T21:52:17.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "278dd77b3993f52512000f9c4c7f6de84cbdc623",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Mojtaba Khamenei chosen as Iran's next supreme leader"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T21:52:17.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d42fc30806c74ab3f3c5ab09794fc1650ac23c37",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US service member dies from injuries suffered in Iranian attack",
       "to_title": null
     }
   ],
