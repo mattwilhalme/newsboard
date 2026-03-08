@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-08T18:29:52.288Z",
+  "generatedAt": "2026-03-08T18:59:53.028Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T18:43:00.233Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T18:43:00.233Z",
-      "event_type": "MOVED",
-      "fingerprint": "3907c367e3f4e64fb1a3c073f24261361aee3787",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "US believes Russia is providing Iran with locations of American troops, sources say",
-      "to_title": "US believes Russia is providing Iran with locations of American troops, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T18:43:00.233Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6d75ee967da269e500df6863d7d8ef8f08a28597",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Harry Styles drops cinematic 'American Girls' music video"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T18:43:00.233Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "02a534c0caccf46f73067e8650145ca250ac3bdf",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "FDA vaccine chief Dr. Vinay Prasad to leave agency next month",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T18:43:00.233Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d80dcc1fa7903c468ef421c76332b33a192c9a25",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Harry Styles debuts 'American Girls' music video from new album",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-07T19:03:38.856Z",
@@ -671,6 +621,106 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Terrorism task force investigating after device thrown during NYC protest: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b81516c6f31bd2a701fa50d6caca2fd77a707593",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Assembly of Experts back Khamenei’s son as next leader"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "MOVED",
+      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
+      "from_rank": 8,
+      "to_rank": 3,
+      "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
+      "to_title": "Police say improvised explosive device was thrown at NYC mayor's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "MOVED",
+      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Police in Norway investigate explosion outside US Embassy in Oslo",
+      "to_title": "Police in Norway investigate explosion outside US Embassy in Oslo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "MOVED",
+      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit",
+      "to_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "MOVED",
+      "fingerprint": "42a6298f06302936e69f2075a8d17a6f7e4664eb",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "At least 8 dead as severe weather continues across US",
+      "to_title": "At least 8 dead as severe weather continues across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "MOVED",
+      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
+      "to_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "MOVED",
+      "fingerprint": "2af337adb774ed3e4038a8132d6ff042400ec95a",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms",
+      "to_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0de7e107e8db317879e8e1f9940538c21721ed45",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "KC airport evacuated after potential threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9999215cae955f0fd32650e4dd663bf8d13bbbd7",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Country's Assembly of Experts want Khamenei's son as next leader",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T19:00:03.103Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9fcd2a303b3bf928b9bc847fcd0729959c797b9e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Daylight saving time 2026: What to know",
       "to_title": null
     }
   ]
