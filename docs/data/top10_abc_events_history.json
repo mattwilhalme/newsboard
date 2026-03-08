@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-08T02:14:39.248Z",
+  "generatedAt": "2026-03-08T05:18:28.364Z",
   "source_id": "abc1",
   "events": [
     {
@@ -26211,6 +26211,36 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "WH posts videos combining real Iran war footage alongside movie, video game clips",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T05:18:37.990Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "393abda08187175ed42151466336e5861fe6d68a",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Terrorism task force investigating after device thrown during NYC protest: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T05:18:37.990Z",
+      "event_type": "MOVED",
+      "fingerprint": "cc4ac2746036b78eceb6e2b509bd29c3c91edfc8",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Ukraine’s low-cost drones draw US, Gulf interest, but wartime ban blocks sales",
+      "to_title": "Ukraine’s low-cost drones draw US, Gulf interest, but wartime ban blocks sales"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-08T05:18:37.990Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "830352180982849f99fcdd23b5904d613942a998",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Former University of Michigan coach Sherrone Moore takes plea deal",
       "to_title": null
     }
   ],
