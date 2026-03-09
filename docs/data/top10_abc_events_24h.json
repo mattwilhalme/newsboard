@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-09T12:00:47.224Z",
+  "generatedAt": "2026-03-09T13:18:01.530Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T12:54:51.739Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bf9dc077a452c591e48b74181b66f261b887ed94",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Trump wants Iranian leaders who will not 'threaten Americans': Waltz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T12:54:51.739Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1beace128b129a47928c2aaa02a253badb98aac2",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump attends dignified transfer of 6 fallen service members killed in Kuwait",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T14:33:00.037Z",
@@ -1142,6 +1122,46 @@
       "to_rank": null,
       "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T13:18:11.896Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed075b0769ee00deb5d1d73d513f2c48c5359b99",
+      "from_rank": 8,
+      "to_rank": 5,
+      "from_title": "Pennsylvania state trooper fatally shot, authorities say",
+      "to_title": "Pennsylvania state trooper fatally shot, authorities say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T13:18:11.896Z",
+      "event_type": "MOVED",
+      "fingerprint": "4e0d6c5b393d2524fd1d95cfd4d195c56aa0355f",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police",
+      "to_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T13:18:11.896Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae2eff5063a0da2bb9053170bebd3f1506f4b9bc",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Senator introduces bill to combat illiteracy: 'Reading unlocks life-long success'",
+      "to_title": "Senator introduces bill to combat illiteracy: 'Reading unlocks life-long success'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T13:18:11.896Z",
+      "event_type": "MOVED",
+      "fingerprint": "490f63793800ee3ca1d015a9287e6e38ea0090be",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM",
+      "to_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM"
     }
   ]
 }
