@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-09T08:08:21.721Z",
+  "generatedAt": "2026-03-09T09:01:37.385Z",
   "source_id": "abc1",
   "events": [
     {
@@ -27141,6 +27141,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Kansas City airport reopens after evacuation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T09:01:47.355Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ed075b0769ee00deb5d1d73d513f2c48c5359b99",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Pennsylvania state trooper fatally shot, authorities say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T09:01:47.355Z",
+      "event_type": "MOVED",
+      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
+      "to_title": "Police say improvised explosive device was thrown at NYC mayor's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T09:01:47.355Z",
+      "event_type": "MOVED",
+      "fingerprint": "a381377009094f55a76dab0ad8a5389a00251a4f",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'",
+      "to_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T09:01:47.355Z",
+      "event_type": "MOVED",
+      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Police in Norway investigate explosion outside US Embassy in Oslo",
+      "to_title": "Police in Norway investigate explosion outside US Embassy in Oslo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T09:01:47.355Z",
+      "event_type": "MOVED",
+      "fingerprint": "a1cf570aba5b61cac314952be6e6bf4220c00c7c",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "'Country' Joe McDonald, proud protest counterculture icon, dies at 84",
+      "to_title": "'Country' Joe McDonald, proud protest counterculture icon, dies at 84"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T09:01:47.355Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d499a7197b3a554e80f6971fad14739ab2fb7126",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Pennsylvania state trooper fatally shot",
       "to_title": null
     }
   ],
