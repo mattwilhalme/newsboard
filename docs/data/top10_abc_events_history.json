@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-09T04:26:40.957Z",
+  "generatedAt": "2026-03-09T05:40:10.249Z",
   "source_id": "abc1",
   "events": [
     {
@@ -27041,6 +27041,86 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "At least 8 dead as severe weather continues across US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "387dcb7edf2faddf5659851fcd6c214297b2e9eb",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "US missile seen hitting building near Iranian girls' school, experts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "MOVED",
+      "fingerprint": "490f63793800ee3ca1d015a9287e6e38ea0090be",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM",
+      "to_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "MOVED",
+      "fingerprint": "4e0d6c5b393d2524fd1d95cfd4d195c56aa0355f",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police",
+      "to_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "MOVED",
+      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
+      "to_title": "Police say improvised explosive device was thrown at NYC mayor's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "MOVED",
+      "fingerprint": "a381377009094f55a76dab0ad8a5389a00251a4f",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'",
+      "to_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "MOVED",
+      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Police in Norway investigate explosion outside US Embassy in Oslo",
+      "to_title": "Police in Norway investigate explosion outside US Embassy in Oslo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "MOVED",
+      "fingerprint": "a1cf570aba5b61cac314952be6e6bf4220c00c7c",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "'Country' Joe McDonald, proud protest counterculture icon, dies at 84",
+      "to_title": "'Country' Joe McDonald, proud protest counterculture icon, dies at 84"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T05:40:19.384Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit",
       "to_title": null
     }
   ],
