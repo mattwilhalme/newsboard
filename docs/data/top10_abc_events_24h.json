@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-09T21:20:29.118Z",
+  "generatedAt": "2026-03-09T21:51:51.179Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T21:52:17.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "278dd77b3993f52512000f9c4c7f6de84cbdc623",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Mojtaba Khamenei chosen as Iran's next supreme leader"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T21:52:17.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d42fc30806c74ab3f3c5ab09794fc1650ac23c37",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US service member dies from injuries suffered in Iranian attack",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T22:01:55.158Z",
@@ -1321,6 +1301,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'ISIS-inspired terrorism' suspected after bombs thrown outside NYC mayor's home",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T21:52:02.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cd1590866a045cdfe8472db20166b76c4d62e394",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says war is 'going to be a short-term excursion'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T21:52:02.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a5abc608a94ceebe3d4fdb66ec45fbf1ef129f07",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says ships in Strait of Hormuz need to 'show some guts'",
       "to_title": null
     }
   ]
