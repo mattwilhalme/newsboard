@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-09T19:48:03.367Z",
+  "generatedAt": "2026-03-09T20:05:24.714Z",
   "hours": 24,
   "events": [
     {
@@ -1281,6 +1281,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Venezuelan family says they lost their home, jobs after being detained for 2 months",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T20:05:33.389Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a5abc608a94ceebe3d4fdb66ec45fbf1ef129f07",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says ships in Strait of Hormuz need to 'show some guts'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T20:05:33.389Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "02124b67a7e131063df3278835d33695ebf9cc1c",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says he's 'nowhere near' decision on ground operation",
       "to_title": null
     }
   ]
