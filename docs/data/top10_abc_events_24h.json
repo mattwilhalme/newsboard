@@ -1,168 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-09T14:16:07.658Z",
+  "generatedAt": "2026-03-09T15:14:41.647Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "26c01ca76108a5a2bcbfb3095fc2d8ff81baddb2",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Retired admiral says regime change discussion in Iran is 'very much alive'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e66a845f5b6669b82b32e96db728e0c7b0ddd7bb",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Trump wants Iranian leaders who will not 'threaten Americans': Waltz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "faafd1be29341fc27917865c0a7f30dd967eb44d",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Trump warns Iran may face 'complete destruction and certain death'",
-      "to_title": "Iran live updates: Trump warns Iran may face 'complete destruction and certain death'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Police in Norway investigate explosion outside US Embassy in Oslo"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit",
-      "to_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "42a6298f06302936e69f2075a8d17a6f7e4664eb",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "At least 8 dead as severe weather continues across US",
-      "to_title": "At least 8 dead as severe weather continues across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
-      "to_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "2af337adb774ed3e4038a8132d6ff042400ec95a",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms",
-      "to_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "393abda08187175ed42151466336e5861fe6d68a",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Terrorism task force investigating after device thrown during NYC protest: FBI",
-      "to_title": "Terrorism task force investigating after device thrown during NYC protest: FBI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "6d75ee967da269e500df6863d7d8ef8f08a28597",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Harry Styles drops cinematic 'American Girls' music video",
-      "to_title": "Harry Styles drops cinematic 'American Girls' music video"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bf9dc077a452c591e48b74181b66f261b887ed94",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump wants Iranian leaders who will not 'threaten Americans': Waltz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cc4ac2746036b78eceb6e2b509bd29c3c91edfc8",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Ukraine’s low-cost drones draw US, Gulf interest, but wartime ban blocks sales",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9fcd2a303b3bf928b9bc847fcd0729959c797b9e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Daylight saving time 2026: What to know",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:54:28.035Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "708d12af85334eea7eec5474b8580664049d0496",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran's next supreme leader won't 'last long' without my approval, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:54:28.035Z",
-      "event_type": "MOVED",
-      "fingerprint": "26c01ca76108a5a2bcbfb3095fc2d8ff81baddb2",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Retired admiral says regime change discussion in Iran is 'very much alive'",
-      "to_title": "Retired admiral says regime change discussion in Iran is 'very much alive'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:54:28.035Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e66a845f5b6669b82b32e96db728e0c7b0ddd7bb",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Trump wants Iranian leaders who will not 'threaten Americans': Waltz",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T16:22:06.691Z",
@@ -1251,6 +1091,106 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "126bdedb099c2dfdc63cbf1062c2e4d377a4ff9f",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: 7th killed service member is identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c44aa534e5915e6e24884bff0a25dcab71443cc6",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "'ISIS-inspired terrorism' suspected after bombs thrown outside NYC mayor's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "MOVED",
+      "fingerprint": "e46ccf5fad3c68f17706f3bf0f9aeaea3cdc0257",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Stocks tumble worldwide as oil prices soar above $100",
+      "to_title": "Stocks tumble worldwide as oil prices soar above $100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "886749b98586a4a8447c0441ef8370eb1eb3760c",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Live Nation, Justice Department reach settlement in antitrust case, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "MOVED",
+      "fingerprint": "7331fd01788f6d2eee90c9bccac3951655010289",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Venezuelan family says they lost their home, jobs after being detained for 2 months",
+      "to_title": "Venezuelan family says they lost their home, jobs after being detained for 2 months"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed075b0769ee00deb5d1d73d513f2c48c5359b99",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Pennsylvania state trooper fatally shot, authorities say",
+      "to_title": "Pennsylvania state trooper fatally shot, authorities say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "MOVED",
+      "fingerprint": "4e0d6c5b393d2524fd1d95cfd4d195c56aa0355f",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police",
+      "to_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3c4d4dcc67f37ead30760e33bae52dd8ccd405e9",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: 3 injured as Iranian missiles target central Israel",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "366ec3411a59e9f1ab3649a0e486404dda829b85",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "'Criminal explosion' strikes synagogue in Belgium, official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T15:14:52.119Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ae2eff5063a0da2bb9053170bebd3f1506f4b9bc",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Senator introduces bill to combat illiteracy: 'Reading unlocks life-long success'",
       "to_title": null
     }
   ]
