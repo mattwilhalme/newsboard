@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-09T20:05:24.714Z",
+  "generatedAt": "2026-03-09T20:50:30.431Z",
   "source_id": "abc1",
   "events": [
     {
@@ -28011,6 +28011,46 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump says he's 'nowhere near' decision on ground operation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T20:50:39.809Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "87bd0c8c3cb4b99740e99f82019a93b24712233b",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "PA state trooper died 'doing what he dedicated his life to': Governor"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T20:50:39.809Z",
+      "event_type": "MOVED",
+      "fingerprint": "1b89eae29d8a16defb57dbfcb9a12ce3a12908e8",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Travis Kelce's expected retirement decision revealed",
+      "to_title": "Travis Kelce's expected retirement decision revealed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T20:50:39.809Z",
+      "event_type": "MOVED",
+      "fingerprint": "40291e6417e074cea111303a0de80b4c1c19b01d",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Suspect identified in shooting at Rihanna’s Los Angeles home",
+      "to_title": "Suspect identified in shooting at Rihanna’s Los Angeles home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T20:50:39.809Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c44aa534e5915e6e24884bff0a25dcab71443cc6",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'ISIS-inspired terrorism' suspected after bombs thrown outside NYC mayor's home",
       "to_title": null
     }
   ],
