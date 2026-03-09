@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-09T13:18:01.530Z",
+  "generatedAt": "2026-03-09T14:16:07.658Z",
   "hours": 24,
   "events": [
     {
@@ -1162,6 +1162,96 @@
       "to_rank": 9,
       "from_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM",
       "to_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b0c6d9c105351722226ce0385d76f051554c5231",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran may be activating sleeper cells outside the country, alert says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c4d4dcc67f37ead30760e33bae52dd8ccd405e9",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Iran live updates: 3 injured as Iranian missiles target central Israel",
+      "to_title": "Iran live updates: 3 injured as Iranian missiles target central Israel"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e46ccf5fad3c68f17706f3bf0f9aeaea3cdc0257",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Stocks tumble worldwide as oil prices soar above $100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "7331fd01788f6d2eee90c9bccac3951655010289",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Venezuelan family says they lost their home, jobs after being detained for 2 months",
+      "to_title": "Venezuelan family says they lost their home, jobs after being detained for 2 months"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed075b0769ee00deb5d1d73d513f2c48c5359b99",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Pennsylvania state trooper fatally shot, authorities say",
+      "to_title": "Pennsylvania state trooper fatally shot, authorities say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "4e0d6c5b393d2524fd1d95cfd4d195c56aa0355f",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police",
+      "to_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae2eff5063a0da2bb9053170bebd3f1506f4b9bc",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Senator introduces bill to combat illiteracy: 'Reading unlocks life-long success'",
+      "to_title": "Senator introduces bill to combat illiteracy: 'Reading unlocks life-long success'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "387dcb7edf2faddf5659851fcd6c214297b2e9eb",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "US missile seen hitting building near Iranian girls' school, experts say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-09T14:16:18.186Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "490f63793800ee3ca1d015a9287e6e38ea0090be",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM",
+      "to_title": null
     }
   ]
 }
