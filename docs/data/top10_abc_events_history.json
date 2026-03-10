@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-10T10:00:46.339Z",
+  "generatedAt": "2026-03-10T10:51:19.918Z",
   "source_id": "abc1",
   "events": [
     {
@@ -28621,6 +28621,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "PA state trooper died 'doing what he dedicated his life to': Governor",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T10:51:30.048Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8c5b8a7985ed7e163279e9af25bd819d770224f4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Hegseth to address war, after Trump says it will be 'ended soon'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T10:51:30.048Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bdeb871512f6d920aa0ff5e8971524120a7561de",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says war will be 'ended soon'",
       "to_title": null
     }
   ],
