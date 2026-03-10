@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-10T11:53:15.369Z",
+  "generatedAt": "2026-03-10T12:31:04.040Z",
   "hours": 24,
   "events": [
     {
@@ -1281,6 +1281,46 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Trump 'willing to live with' US report on missile strike on Iranian girls' school",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T12:31:13.630Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b0c6d9c105351722226ce0385d76f051554c5231",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran may be activating sleeper cells outside the country, alert says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T12:31:13.630Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d03f1f8a1dbd1799e33170379bf78fb281fd1033",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "What to know about Mojtaba Khamenei, Iran's next supreme leader"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T12:31:13.630Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8c5b8a7985ed7e163279e9af25bd819d770224f4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Hegseth to address war, after Trump says it will be 'ended soon'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T12:31:13.630Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7f9ac39a1639af149fe8c705da5fcbcf3204f8cf",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran may be activating sleeper cells outside the country, alert says",
       "to_title": null
     }
   ]
