@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-10T18:10:36.394Z",
+  "generatedAt": "2026-03-10T19:09:00.669Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:04:29.483Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef22b3f551fbb2ecb312e7e7086ca2c8229a714f",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Teacher dies in student prank gone wrong, family supports dropping charges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:04:29.483Z",
-      "event_type": "MOVED",
-      "fingerprint": "c44aa534e5915e6e24884bff0a25dcab71443cc6",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "'ISIS-inspired terrorism' suspected after bombs thrown outside NYC mayor's home",
-      "to_title": "'ISIS-inspired terrorism' suspected after bombs thrown outside NYC mayor's home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:04:29.483Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0f0d1b3a5186445bc603818f42b06ed3ba72fedf",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Stocks tumble worldwide as oil prices soar above $95",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T19:48:13.843Z",
@@ -1161,6 +1131,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Liza Minnelli talks new memoir, famous parents, turning 80 and more",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T19:09:10.972Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "68493fe3dc74d3b08ddfafa33bfcc6f035e34456",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breaking140 US service members have been wounded since the start of the war with Iran: Pentagon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T19:09:10.972Z",
+      "event_type": "MOVED",
+      "fingerprint": "dff1638f629fd640b29c078f5ebc835f9b160143",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Hegseth says Trump to decide when Iran war is over, amid mixed messages on endgame",
+      "to_title": "Hegseth says Trump to decide when Iran war is over, amid mixed messages on endgame"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T19:09:10.972Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ad2be44204d064e5f69568e4fad55e1f16819abb",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump says he and Vance are 'philosophically' different on Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T19:09:10.972Z",
+      "event_type": "MOVED",
+      "fingerprint": "e0ddccf8fe23d03f268d379df97d6b5cc1bc7c58",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'The streets are emptier than ever': Iranians describe life as US escalates war",
+      "to_title": "'The streets are emptier than ever': Iranians describe life as US escalates war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T19:09:10.972Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e542e3ef89afa20b7068f0894d6aa749254b6f5f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Russia told Trump it isn't sharing US asset intelligence with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T19:09:10.972Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "85f3997573a851a3867bccb3c27ad9934a44e641",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump 'willing to live with' US report on missile strike near Iranian girls' school",
       "to_title": null
     }
   ]
