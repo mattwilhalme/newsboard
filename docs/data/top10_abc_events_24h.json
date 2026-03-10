@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-10T20:54:10.524Z",
+  "generatedAt": "2026-03-10T21:20:53.894Z",
   "hours": 24,
   "events": [
     {
@@ -1101,6 +1101,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breaking140 US service members have been wounded since the start of the war with Iran: Pentagon",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T21:21:07.310Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8af5c8cd14bf4ec57e15a6d1ba67348010906074",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Kathryn Hahn cast as Mother Gothel in live-action 'Tangled' film"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T21:21:07.310Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7791562f06ab7f76d61ffffee972afbecc86be7d",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "JetBlue flights to resume after request for ground stop, FAA says",
       "to_title": null
     }
   ]
