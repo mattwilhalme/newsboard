@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-10T10:51:19.918Z",
+  "generatedAt": "2026-03-10T11:24:09.762Z",
   "source_id": "abc1",
   "events": [
     {
@@ -28641,6 +28641,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump says war will be 'ended soon'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T11:24:19.758Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "85f3997573a851a3867bccb3c27ad9934a44e641",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump 'willing to live with' US report on missile strike near Iranian girls' school"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T11:24:19.758Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "64f772c857a2e7ba13d75205b3f1de94a918b151",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump 'willing to live with' US report on missile strike on Iranian girls' school",
       "to_title": null
     }
   ],
