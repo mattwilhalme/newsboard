@@ -1,108 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-10T10:00:46.339Z",
+  "generatedAt": "2026-03-10T10:51:19.918Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a541a65331366e9fbb8d57b5a394283352f19990",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Mojtaba Khamenei chosen as Iran's next supreme leader, Iranian state media reports"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "366ec3411a59e9f1ab3649a0e486404dda829b85",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "'Criminal explosion' strikes synagogue in Belgium, official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed075b0769ee00deb5d1d73d513f2c48c5359b99",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Pennsylvania state trooper fatally shot, authorities say",
-      "to_title": "Pennsylvania state trooper fatally shot, authorities say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ae2eff5063a0da2bb9053170bebd3f1506f4b9bc",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Senator introduces bill to combat illiteracy: 'Reading unlocks life-long success'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "MOVED",
-      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
-      "to_title": "Police say improvised explosive device was thrown at NYC mayor's home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0dd8e7f0e2cba7893b3c526ced70131db07d9f48",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "How to watch and stream the 2026 Oscars"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "278dd77b3993f52512000f9c4c7f6de84cbdc623",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Mojtaba Khamenei chosen as Iran's next supreme leader",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a381377009094f55a76dab0ad8a5389a00251a4f",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Police in Norway investigate explosion outside US Embassy in Oslo",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:03:00.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a1cf570aba5b61cac314952be6e6bf4220c00c7c",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Country' Joe McDonald, proud protest counterculture icon, dies at 84",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T10:57:44.373Z",
@@ -1421,6 +1321,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "PA state trooper died 'doing what he dedicated his life to': Governor",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T10:51:30.048Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8c5b8a7985ed7e163279e9af25bd819d770224f4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Hegseth to address war, after Trump says it will be 'ended soon'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-10T10:51:30.048Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bdeb871512f6d920aa0ff5e8971524120a7561de",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says war will be 'ended soon'",
       "to_title": null
     }
   ]
