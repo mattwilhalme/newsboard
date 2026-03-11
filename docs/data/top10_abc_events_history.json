@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-11T20:20:55.881Z",
+  "generatedAt": "2026-03-11T20:54:43.646Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T04:30:12.532Z",
-      "event_type": "MOVED",
-      "fingerprint": "fca27e48c44e37070f81abb81377bc537f74420c",
-      "from_rank": 6,
-      "to_rank": 3,
-      "from_title": "Suspect killed ex-wife and son, injured 3 in shooting at ice skating rink",
-      "to_title": "Suspect killed ex-wife and son, injured 3 in shooting at ice skating rink"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T04:30:12.532Z",
-      "event_type": "MOVED",
-      "fingerprint": "24f8746c62d21e9e38ed19ad802547b4f2252734",
-      "from_rank": 7,
-      "to_rank": 4,
-      "from_title": "'I am somebody': Tributes pour in for Rev. Jesse Jackson after his death",
-      "to_title": "'I am somebody': Tributes pour in for Rev. Jesse Jackson after his death"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T04:30:12.532Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Inflation held steady in February before war with Iran sent gas prices surging",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T20:54:53.407Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e0f26e38c92cf10941ebc1e12bfcc2bad162f39a",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "New person of interest identified in case of girl who disappeared in 1984"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T20:54:53.407Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5bff45072a57bff2721b7b57fd5b5e1f83fd3f6c",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "New person of interest identified over 40 years after 8-year-old girl went missing",
       "to_title": null
     }
   ],
