@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-11T18:05:18.197Z",
+  "generatedAt": "2026-03-11T19:08:17.835Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cdea9146790e65efe5db2b0ee7ba5b19f7638731",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "NASA hopes fuel leaks are fixed as it launches another countdown test 2026-02-18T00:27:52Z"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "eccc30af238ee0007bb1f049dff365e0b68545d1",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "18-year-old ran toward Capitol with loaded shotgun, tactical vest: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b3db5fae0dc5334b29edb739ee2c4bb5655956b9",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Ghislaine Maxwell's brother talks Prince Andrew, her petition for freedom, and more"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0925803375636d61dc2ebf481c80f9f17f2a14f0",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "JFK Jr., Carolyn Bessette Kennedy's friends describe their love story in new special"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": 1,
-      "to_rank": 1,
-      "from_title": "Nancy Guthrie live updates: Glove DNA doesn't match anyone in CODIS, sheriff says",
-      "to_title": "Nancy Guthrie live updates: No CODIS match for glove DNA; this option could be next"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T03:40:03.244Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Why are authorities finally searching Epstein's ranch in New Mexico?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:08:27.512Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:08:27.512Z",
+      "event_type": "MOVED",
+      "fingerprint": "79a167e9e1d52f4c80189f6356e62c62a0dd1663",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up",
+      "to_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:08:27.512Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae3cff9dd8d790d9f6104488b83113d560166659",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Why authorities are finally searching Epstein's ranch in New Mexico",
+      "to_title": "Why authorities are finally searching Epstein's ranch in New Mexico"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:08:27.512Z",
+      "event_type": "MOVED",
+      "fingerprint": "32e2b20821d4c63bab460de2a2049d47212f2b9c",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Inflation held steady in February before war with Iran sent gas prices surging",
+      "to_title": "Inflation held steady in February before war with Iran sent gas prices surging"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:08:27.512Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d68281bc6d75f83ae379f5acc2dd080069182dac",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingFBI warns Iran aspired to attack California with drones in retaliation for war",
       "to_title": null
     }
   ],
