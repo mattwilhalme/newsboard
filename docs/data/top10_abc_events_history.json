@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-11T17:12:57.661Z",
+  "generatedAt": "2026-03-11T18:05:18.197Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Nancy Guthrie live updates: Glove DNA doesn't match anyone in CODIS, sheriff says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7aa982ba7fb34c2896ab32622c8e0092ae2e8dae",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Genetic genealogy options eyed for glove DNA"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d91bf7229270d52737d7526cb0bc24dfc5e735af",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Glove DNA doesn't match anyone in CODIS: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "California avalanche: 10 backcountry skiers missing, authorities say 2026-02-17T23:54:55Z"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fca27e48c44e37070f81abb81377bc537f74420c",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Suspect killed ex-wife and son, injured 3 in shooting at ice skating rink"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T01:59:25.254Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "24f8746c62d21e9e38ed19ad802547b4f2252734",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "'I am somebody': Tributes pour in for Rev. Jesse Jackson after his death"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T01:59:25.254Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T18:05:28.217Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d68281bc6d75f83ae379f5acc2dd080069182dac",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingFBI warns Iran aspired to attack California with drones in retaliation for war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T18:05:28.217Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9ee20e07bc33dc941c7aa173fecec5c8ba15629a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Trump says there’s 'practically nothing left to target' in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T18:05:28.217Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ae3cff9dd8d790d9f6104488b83113d560166659",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Why authorities are finally searching Epstein's ranch in New Mexico"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T18:05:28.217Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "111453c1c43f8c0d76924147dac21cd622207bc0",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says there’s 'practically nothing left to target' in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T18:05:28.217Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f963f953db47cfdfae00289b1ade0efae14e048e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Large US special ops force needed on ground to seize Iran's uranium, experts say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T18:05:28.217Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6cf941bf29eeedfdadf745123d22cacc4adbbae2",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Why are authorities finally searching Epstein's ranch in New Mexico?",
       "to_title": null
     }
   ],
