@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-11T23:35:48.232Z",
+  "generatedAt": "2026-03-11T23:56:30.051Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T06:01:12.581Z",
-      "event_type": "MOVED",
-      "fingerprint": "b3db5fae0dc5334b29edb739ee2c4bb5655956b9",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Ghislaine Maxwell's brother talks Prince Andrew, her petition for freedom, and more",
-      "to_title": "Ghislaine Maxwell's brother talks Prince Andrew, her petition for freedom, and more"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T06:01:12.581Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0925803375636d61dc2ebf481c80f9f17f2a14f0",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "JFK Jr., Carolyn Bessette Kennedy's friends describe their love story in new special",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T07:22:14.524Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Massie raises Iran war concerns as Trump visits his Kentucky district",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T23:56:40.445Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6ab807f8144d74aa42606bcc8853ec99fce266a3",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: US senators told Iran war cost $11.3B in first 6 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T23:56:40.445Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6dc9cc1e27900ed1e835c9dbe96acba65777c71f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump says US has 'won' war but needs to 'finish the job'",
       "to_title": null
     }
   ],
