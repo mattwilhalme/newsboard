@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-11T19:08:17.835Z",
+  "generatedAt": "2026-03-11T19:50:15.730Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7183b2ac0200f65c4f77c06b17fb2f6e8647b4c1",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "ABCNL Prime with Linsey Davis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "California avalanche: 10 backcountry skiers missing, authorities say 2026-02-17T23:54:55Z",
-      "to_title": "California avalanche: 10 backcountry skiers missing, authorities say 2026-02-18T02:26:24Z"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "California avalanche: 10 backcountry skiers missing, authorities say 2026-02-17T23:54:55Z",
-      "to_title": "California avalanche: 10 backcountry skiers missing, authorities say 2026-02-18T02:26:24Z"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "MOVED",
-      "fingerprint": "fca27e48c44e37070f81abb81377bc537f74420c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Suspect killed ex-wife and son, injured 3 in shooting at ice skating rink",
-      "to_title": "Suspect killed ex-wife and son, injured 3 in shooting at ice skating rink"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "MOVED",
-      "fingerprint": "24f8746c62d21e9e38ed19ad802547b4f2252734",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "'I am somebody': Tributes pour in for Rev. Jesse Jackson after his death",
-      "to_title": "'I am somebody': Tributes pour in for Rev. Jesse Jackson after his death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "MOVED",
-      "fingerprint": "cdea9146790e65efe5db2b0ee7ba5b19f7638731",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "NASA hopes fuel leaks are fixed as it launches another countdown test 2026-02-18T00:27:52Z",
-      "to_title": "NASA hopes fuel leaks are fixed as it launches another countdown test"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T03:40:03.244Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "cdea9146790e65efe5db2b0ee7ba5b19f7638731",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "NASA hopes fuel leaks are fixed as it launches another countdown test 2026-02-18T00:27:52Z",
-      "to_title": "NASA hopes fuel leaks are fixed as it launches another countdown test"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T03:40:03.244Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingFBI warns Iran aspired to attack California with drones in retaliation for war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "501556cb7f978e83d69495ced9b79679dbb80dac",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Iran says it won't use missile warhead lighter than 1 ton"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5bff45072a57bff2721b7b57fd5b5e1f83fd3f6c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "New person of interest identified over 40 years after 8-year-old girl went missing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Trump administration opens investigation into Arizona’s 2020 election results",
+      "to_title": "Trump administration opens investigation into Arizona’s 2020 election results"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "ca37d9fb3de1a4c523556a8af07fb18f1ab92b42",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Teen charged in teacher’s death from prank gone wrong speaks out",
+      "to_title": "Teen charged in teacher’s death from prank gone wrong speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef5c16b361c70e3ac4382e8bd361e4c989f4fe52",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Many military members may get care at vulnerable hospitals: Analysis",
+      "to_title": "Many military members may get care at vulnerable hospitals: Analysis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9ee20e07bc33dc941c7aa173fecec5c8ba15629a",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump says there’s 'practically nothing left to target' in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "853de2919080507342a850f4f11049c8d0eba0e4",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Jill Biden opens up in memoir about Joe Biden's decision to end reelection bid",
       "to_title": null
     }
   ],
