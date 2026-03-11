@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-11T12:30:42.498Z",
+  "generatedAt": "2026-03-11T13:47:45.759Z",
   "source_id": "abc1",
   "events": [
     {
@@ -29691,6 +29691,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Japan marks 15 years since tsunami as Takaichi pushes more nuclear energy use",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T13:47:56.227Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "32e2b20821d4c63bab460de2a2049d47212f2b9c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Inflation held steady in February before war with Iran sent gas prices surging"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T13:47:56.227Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f12ca9120b4c0fba7207329758da4e1eb4a04f6d",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "At least 2 dead as 45 tornado warnings remain across 7 states"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T13:47:56.227Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "853de2919080507342a850f4f11049c8d0eba0e4",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Jill Biden opens up in memoir about Joe Biden's decision to end reelection bid"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T13:47:56.227Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e65eb503e6fc6fb18babb9ddacb0a69838317771",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Inflation report to be released as Iran war sends gas prices surging",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T13:47:56.227Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a19264dc424ce840e0517f30c8fcdd623d3001dd",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "100 million people from Texas to Mich. in path of severe weather, possible tornadoes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T13:47:56.227Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f12701cd3c7cfbd5ee57bdf98d85494690ee9d92",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Towering lava fountains of Hawaii's Kilauea volcano trigger park and highway closures",
       "to_title": null
     }
   ],
