@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-11T19:08:17.835Z",
+  "generatedAt": "2026-03-11T19:50:15.730Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T19:51:15.581Z",
-      "event_type": "MOVED",
-      "fingerprint": "ad2be44204d064e5f69568e4fad55e1f16819abb",
-      "from_rank": 4,
-      "to_rank": 1,
-      "from_title": "Trump says he and Vance are 'philosophically' different on Iran war",
-      "to_title": "Trump says he and Vance are 'philosophically' different on Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T19:51:15.581Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "81a3708a1f128ddba527fa5cc3d6137cd5936ba0",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: 140 US troops wounded so far, mostly minor injuries"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T19:51:15.581Z",
-      "event_type": "MOVED",
-      "fingerprint": "dff1638f629fd640b29c078f5ebc835f9b160143",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "Hegseth says Trump to decide when Iran war is over, amid mixed messages on endgame",
-      "to_title": "Hegseth says Trump to decide when Iran war is over, amid mixed messages on endgame"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T19:51:15.581Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "68493fe3dc74d3b08ddfafa33bfcc6f035e34456",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breaking140 US service members have been wounded since the start of the war with Iran: Pentagon",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-10T21:21:07.310Z",
@@ -1001,6 +961,76 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingFBI warns Iran aspired to attack California with drones in retaliation for war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "501556cb7f978e83d69495ced9b79679dbb80dac",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Iran says it won't use missile warhead lighter than 1 ton"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5bff45072a57bff2721b7b57fd5b5e1f83fd3f6c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "New person of interest identified over 40 years after 8-year-old girl went missing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Trump administration opens investigation into Arizona’s 2020 election results",
+      "to_title": "Trump administration opens investigation into Arizona’s 2020 election results"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "ca37d9fb3de1a4c523556a8af07fb18f1ab92b42",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Teen charged in teacher’s death from prank gone wrong speaks out",
+      "to_title": "Teen charged in teacher’s death from prank gone wrong speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef5c16b361c70e3ac4382e8bd361e4c989f4fe52",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Many military members may get care at vulnerable hospitals: Analysis",
+      "to_title": "Many military members may get care at vulnerable hospitals: Analysis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9ee20e07bc33dc941c7aa173fecec5c8ba15629a",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump says there’s 'practically nothing left to target' in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T19:50:25.763Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "853de2919080507342a850f4f11049c8d0eba0e4",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Jill Biden opens up in memoir about Joe Biden's decision to end reelection bid",
       "to_title": null
     }
   ]
