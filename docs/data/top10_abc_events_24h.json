@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-11T10:00:02.899Z",
+  "generatedAt": "2026-03-11T10:45:09.540Z",
   "hours": 24,
   "events": [
     {
@@ -931,6 +931,86 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "1,300-pound satellite expected to re-enter Earth's atmosphere tonight",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b99686aa3e574214a7031652a77c3748afa809ec",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran launches 'most strikes yet'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump administration opens investigation into Arizona’s 2020 election results"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "MOVED",
+      "fingerprint": "e05dd0232d5217dae97e4a4ba11a99008015afeb",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "House Oversight Committee to depose Epstein's longtime accountant",
+      "to_title": "House Oversight Committee to depose Epstein's longtime accountant"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "MOVED",
+      "fingerprint": "a19264dc424ce840e0517f30c8fcdd623d3001dd",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "100 million people from Texas to Mich. in path of severe weather, possible tornadoes",
+      "to_title": "100 million people from Texas to Mich. in path of severe weather, possible tornadoes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "MOVED",
+      "fingerprint": "99eda5eeba093fce6e4a2a6e15882e6e6ce809f5",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home",
+      "to_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "MOVED",
+      "fingerprint": "63a5774759451c6618960e533c7dc62db683161f",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "What to know about 'black rain' that fell in Iran after strikes on oil reserves",
+      "to_title": "What to know about 'black rain' that fell in Iran after strikes on oil reserves"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "81a3708a1f128ddba527fa5cc3d6137cd5936ba0",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 140 US troops wounded so far, mostly minor injuries",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T10:45:19.903Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7d262db20fc3237c36ba790677b2fb7010f3b4e8",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Oysters, clams sent to 9 states could be contaminated with norovirus, FDA warns",
       "to_title": null
     }
   ]
