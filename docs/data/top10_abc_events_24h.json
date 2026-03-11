@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-10T23:55:58.669Z",
+  "generatedAt": "2026-03-11T01:19:41.349Z",
   "hours": 24,
   "events": [
     {
@@ -991,6 +991,36 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Race to replace Marjorie Taylor Greene a test of Trump's endorsement power",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T01:19:51.409Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f12701cd3c7cfbd5ee57bdf98d85494690ee9d92",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Towering lava fountains of Hawaii's Kilauea volcano trigger park and highway closures"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T01:19:51.409Z",
+      "event_type": "MOVED",
+      "fingerprint": "362185910564b1f671c3d0339067b50fb3872535",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "FBI increases reward for 'Top 10 Most Wanted' fugitive to $1M",
+      "to_title": "FBI increases reward for 'Top 10 Most Wanted' fugitive to $1M"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T01:19:51.409Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8af5c8cd14bf4ec57e15a6d1ba67348010906074",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Kathryn Hahn cast as Mother Gothel in live-action 'Tangled' film",
       "to_title": null
     }
   ]
