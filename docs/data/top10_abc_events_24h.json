@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-11T10:45:09.540Z",
+  "generatedAt": "2026-03-11T11:22:50.996Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T10:51:30.048Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8c5b8a7985ed7e163279e9af25bd819d770224f4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Hegseth to address war, after Trump says it will be 'ended soon'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T10:51:30.048Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bdeb871512f6d920aa0ff5e8971524120a7561de",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says war will be 'ended soon'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T11:24:19.758Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "85f3997573a851a3867bccb3c27ad9934a44e641",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump 'willing to live with' US report on missile strike near Iranian girls' school"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-10T11:24:19.758Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "64f772c857a2e7ba13d75205b3f1de94a918b151",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Trump 'willing to live with' US report on missile strike on Iranian girls' school",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-10T12:31:13.630Z",
@@ -1011,6 +971,66 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Oysters, clams sent to 9 states could be contaminated with norovirus, FDA warns",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T11:23:01.282Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ef5c16b361c70e3ac4382e8bd361e4c989f4fe52",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Many military members may get care at vulnerable hospitals: Analysis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T11:23:01.282Z",
+      "event_type": "MOVED",
+      "fingerprint": "a19264dc424ce840e0517f30c8fcdd623d3001dd",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "100 million people from Texas to Mich. in path of severe weather, possible tornadoes",
+      "to_title": "100 million people from Texas to Mich. in path of severe weather, possible tornadoes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T11:23:01.282Z",
+      "event_type": "MOVED",
+      "fingerprint": "99eda5eeba093fce6e4a2a6e15882e6e6ce809f5",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home",
+      "to_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T11:23:01.282Z",
+      "event_type": "MOVED",
+      "fingerprint": "63a5774759451c6618960e533c7dc62db683161f",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "What to know about 'black rain' that fell in Iran after strikes on oil reserves",
+      "to_title": "What to know about 'black rain' that fell in Iran after strikes on oil reserves"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T11:23:01.282Z",
+      "event_type": "MOVED",
+      "fingerprint": "f12701cd3c7cfbd5ee57bdf98d85494690ee9d92",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Towering lava fountains of Hawaii's Kilauea volcano trigger park and highway closures",
+      "to_title": "Towering lava fountains of Hawaii's Kilauea volcano trigger park and highway closures"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-11T11:23:01.282Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2440fe5bf91379a767969f47699bb9294e2652b1",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Japan marks 15 years since tsunami as Takaichi pushes more nuclear energy use",
       "to_title": null
     }
   ]
