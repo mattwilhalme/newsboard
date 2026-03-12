@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T22:38:43.098Z",
+  "generatedAt": "2026-03-12T23:00:33.816Z",
   "hours": 24,
   "events": [
     {
@@ -1341,6 +1341,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Old Dominion suspected gunman ID'd as ex-Army National Guard member: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:00:44.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3e7511b5da639d20702275cb06bc6bc7a16f413",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:00:44.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ccac58cc422ee96d13544d1422a23134a515a823",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Suspect dead after ramming vehicle into synagogue",
       "to_title": null
     }
   ]

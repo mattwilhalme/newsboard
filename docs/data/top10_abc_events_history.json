@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T22:38:43.098Z",
+  "generatedAt": "2026-03-12T23:00:33.816Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T11:37:46.710Z",
-      "event_type": "MOVED",
-      "fingerprint": "ebf59a97bef810db85f01225ce37756372e60dc3",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Passengers evacuated via slides in incident that temporarily suspended flights",
-      "to_title": "Passengers evacuated via slides in incident that temporarily suspended flights"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T11:37:46.710Z",
-      "event_type": "MOVED",
-      "fingerprint": "13da143ce522448ae0e858ed735905cd08f81de8",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Trump company seeks to trademark his name on airports",
-      "to_title": "Trump company seeks to trademark his name on airports"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T11:37:46.710Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Old Dominion suspected gunman ID'd as ex-Army National Guard member: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:00:44.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3e7511b5da639d20702275cb06bc6bc7a16f413",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:00:44.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ccac58cc422ee96d13544d1422a23134a515a823",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Suspect dead after ramming vehicle into synagogue",
       "to_title": null
     }
   ],
