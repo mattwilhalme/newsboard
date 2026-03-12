@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T23:00:33.816Z",
+  "generatedAt": "2026-03-12T23:33:42.434Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T11:37:46.710Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T11:37:46.710Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e163a11fa865aa916c47c57d96446a3a8f81d405",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Democrats, White House still far from DHS funding deal amid standoff over ICE",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T11:37:46.710Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Suspect dead after ramming vehicle into synagogue",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:33:52.497Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3e6f0580b84842ae702575a5a65b814715945766",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingTruck ramming at synagogue being investigated as targeted act of violence against Jewish community, FBI says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:33:52.497Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e3e7511b5da639d20702275cb06bc6bc7a16f413",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI",
       "to_title": null
     }
   ],
