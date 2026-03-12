@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T06:06:05.967Z",
+  "generatedAt": "2026-03-12T07:12:01.429Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T09:55:18.388Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3126216f7fe929abb7adcca108ce87290a1f5a62",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "US official: Progress made in talks with Iran, US-Ukraine Russia meetings to continue",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c789be36f96337e1a59380bb828f4f574acd23dd",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "House Oversight Committee set to depose former Epstein associate Leslie Wexner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2f87aa6bf7ad72a811c99a97e71362e671e4f526",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Mark Zuckerberg set to testify in landmark trial over social media addiction claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "06288bb5fa87857d4de2c1bb6edd9642363395c6",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "'On the right path': Housing market offers glimmers of hope, some analysts say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "8f071be4ef861199592cb4b2bfa140962107b914",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "US-Ukraine-Russia peace talks in Geneva expected to resume Wednesday",
-      "to_title": "US-Ukraine-Russia peace talks in Geneva expected to resume Wednesday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "b90d8f0962e25e58e2c5a5e00ed0e94fc6a82826",
-      "from_rank": 3,
-      "to_rank": 6,
-      "from_title": "Judges reject Trump admin's bid to deport 2 pro-Palestinian college students",
-      "to_title": "Judges reject Trump admin's bid to deport 2 pro-Palestinian college students"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T10:37:15.308Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US struggles to evacuate personnel from facilities under fire in Iraq: Officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T07:12:10.719Z",
+      "event_type": "MOVED",
+      "fingerprint": "f5cb43a4d262a011f3f1cc5755b594c08283e8ec",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Iran live updates: US senators told Iran war cost $11.3B in first 6 days",
+      "to_title": "Iran live updates: US senators told Iran war cost $11.3B in first 6 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T07:12:10.719Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dcbe6e433d4854984913d5068385267aeeb9a835",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Strikes between Israel and Hezbollah ramp up as evacuation notice issued for Beirut"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T07:12:10.719Z",
+      "event_type": "MOVED",
+      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
+      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T07:12:10.719Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8bb0d497ba6392064e6c223e1cd229275c7eb8ca",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "12-year-old girl dies days after collapsing following fight near school bus stop"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T07:12:10.719Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5133f378883bda25530b8ee379d449b0459336c8",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Strikes between Israel and Hezbollah ramp up as evacuation notice issued for Beirut",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T07:12:10.719Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e0f26e38c92cf10941ebc1e12bfcc2bad162f39a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "New person of interest identified in case of girl who disappeared in 1984",
       "to_title": null
     }
   ],
