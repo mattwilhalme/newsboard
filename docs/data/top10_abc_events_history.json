@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T09:27:27.698Z",
+  "generatedAt": "2026-03-12T10:07:48.699Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "9c399e6dc200d81285502b43198638a979a58b8c",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "4 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police",
-      "to_title": "4 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T10:37:15.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "b3db5fae0dc5334b29edb739ee2c4bb5655956b9",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "Ghislaine Maxwell's brother talks Prince Andrew, her petition for freedom, and more",
-      "to_title": "Ghislaine Maxwell's brother speaks out on Epstein"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T10:37:15.308Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "New person of interest identified in case of girl who disappeared in 1984",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T10:07:58.994Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b9a8695ef09b80df7ed1e87b9ad5082831ff1fa4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: 3 more ships set afire by 'unknown' projectiles in Persian Gulf"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T10:07:58.994Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f5cb43a4d262a011f3f1cc5755b594c08283e8ec",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US senators told Iran war cost $11.3B in first 6 days",
       "to_title": null
     }
   ],
