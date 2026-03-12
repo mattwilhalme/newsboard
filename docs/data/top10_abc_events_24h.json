@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T23:33:42.434Z",
+  "generatedAt": "2026-03-12T23:55:11.629Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T23:35:58.888Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "632ab76b56d505d9035048faabc93905d112c154",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T23:35:58.888Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "baeb74feda1125ac696d66db738f581e79b55ef8",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Massie raises Iran war concerns as Trump visits his Kentucky district",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T23:56:40.445Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6ab807f8144d74aa42606bcc8853ec99fce266a3",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: US senators told Iran war cost $11.3B in first 6 days"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T23:56:40.445Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6dc9cc1e27900ed1e835c9dbe96acba65777c71f",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Trump says US has 'won' war but needs to 'finish the job'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T03:43:08.433Z",
@@ -1381,6 +1341,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:55:20.484Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3e7511b5da639d20702275cb06bc6bc7a16f413",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:55:20.484Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3e6f0580b84842ae702575a5a65b814715945766",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingTruck ramming at synagogue being investigated as targeted act of violence against Jewish community, FBI says",
       "to_title": null
     }
   ]

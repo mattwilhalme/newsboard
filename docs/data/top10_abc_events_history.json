@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T23:33:42.434Z",
+  "generatedAt": "2026-03-12T23:55:11.629Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T11:37:46.710Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "149548dbe3e6ef2c3638d87cb44f4d8385d7d506",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "NYPD officers who helped rescue injured bald eagle on Hudson River speak out",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "British police arrest Andrew Mountbatten-Windsor on suspicion of misconduct",
-      "to_title": "British police arrest Andrew Mountbatten-Windsor on suspicion of misconduct"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T13:41:32.300Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:55:20.484Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3e7511b5da639d20702275cb06bc6bc7a16f413",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T23:55:20.484Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3e6f0580b84842ae702575a5a65b814715945766",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingTruck ramming at synagogue being investigated as targeted act of violence against Jewish community, FBI says",
       "to_title": null
     }
   ],
