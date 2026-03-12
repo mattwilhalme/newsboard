@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T01:20:57.536Z",
+  "generatedAt": "2026-03-12T03:42:58.203Z",
   "hours": 24,
   "events": [
     {
@@ -1041,6 +1041,136 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Iran live updates: Trump says US has 'won' war but needs to 'finish the job'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5133f378883bda25530b8ee379d449b0459336c8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Strikes between Israel and Hezbollah ramp up as evacuation notice issued for Beirut"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "MOVED",
+      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
+      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f5cb43a4d262a011f3f1cc5755b594c08283e8ec",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: US senators told Iran war cost $11.3B in first 6 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c563677d33647b2a59314081ef289f190678146b",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "MOVED",
+      "fingerprint": "0dcd28c00b3c610dd0c83687c082e6b33b6182cf",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother",
+      "to_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "MOVED",
+      "fingerprint": "73702a68d2111039f1aeb607f59891ef722ee31f",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Survivor of deadly Kuwait drone attack speaks out from hospital",
+      "to_title": "Survivor of deadly Kuwait drone attack speaks out from hospital"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "MOVED",
+      "fingerprint": "632ab76b56d505d9035048faabc93905d112c154",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'",
+      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae3cff9dd8d790d9f6104488b83113d560166659",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Why authorities are finally searching Epstein's ranch in New Mexico",
+      "to_title": "Why authorities are finally searching Epstein's ranch in New Mexico"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "MOVED",
+      "fingerprint": "e0f26e38c92cf10941ebc1e12bfcc2bad162f39a",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "New person of interest identified in case of girl who disappeared in 1984",
+      "to_title": "New person of interest identified in case of girl who disappeared in 1984"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "MOVED",
+      "fingerprint": "da2af0ab3a9afb10f9150c9cbdacd42630081ced",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "US struggles to evacuate personnel from facilities under fire in Iraq: Officials",
+      "to_title": "US struggles to evacuate personnel from facilities under fire in Iraq: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6ab807f8144d74aa42606bcc8853ec99fce266a3",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: US senators told Iran war cost $11.3B in first 6 days",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ca37d9fb3de1a4c523556a8af07fb18f1ab92b42",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Teen charged in teacher’s death from prank gone wrong speaks out",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T03:43:08.433Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ca3c6f8a2c348da70d57c3b837407d90ab50e28f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Invasive giant reptile is thriving in Florida's climate, invading its ecosystem",
       "to_title": null
     }
   ]
