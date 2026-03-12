@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T18:30:34.150Z",
+  "generatedAt": "2026-03-12T19:26:49.964Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "MOVED",
-      "fingerprint": "79a167e9e1d52f4c80189f6356e62c62a0dd1663",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up",
-      "to_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "MOVED",
-      "fingerprint": "ae3cff9dd8d790d9f6104488b83113d560166659",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Why authorities are finally searching Epstein's ranch in New Mexico",
-      "to_title": "Why authorities are finally searching Epstein's ranch in New Mexico"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "MOVED",
-      "fingerprint": "32e2b20821d4c63bab460de2a2049d47212f2b9c",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Inflation held steady in February before war with Iran sent gas prices surging",
-      "to_title": "Inflation held steady in February before war with Iran sent gas prices surging"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d68281bc6d75f83ae379f5acc2dd080069182dac",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingFBI warns Iran aspired to attack California with drones in retaliation for war",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T19:50:25.763Z",
@@ -1341,6 +1291,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Jack Osbourne honors late father Ozzy Osbourne by naming baby after him",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T19:27:00.829Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "450bc7933fac882d800f6a44b6b96ce9fa3f8e45",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingSuspect dead, guard injured after truck ramming incident at Michigan synagogue, sheriff says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T19:27:00.829Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5113856d46a82c57ce8b5dd478ff0712f5ef5f7d",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSuspect dead after shooting, vehicle ramming incident at Michigan synagogue, sources say",
       "to_title": null
     }
   ]

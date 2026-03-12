@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T18:30:34.150Z",
+  "generatedAt": "2026-03-12T19:26:49.964Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T01:47:47.642Z",
-      "event_type": "MOVED",
-      "fingerprint": "e163a11fa865aa916c47c57d96446a3a8f81d405",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Democrats, White House still far from DHS funding deal amid standoff over ICE",
-      "to_title": "Democrats, White House still far from DHS funding deal amid standoff over ICE"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T01:47:47.642Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "149548dbe3e6ef2c3638d87cb44f4d8385d7d506",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "NYPD officers who helped rescue injured bald eagle on Hudson River speak out"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T01:47:47.642Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Jack Osbourne honors late father Ozzy Osbourne by naming baby after him",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T19:27:00.829Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "450bc7933fac882d800f6a44b6b96ce9fa3f8e45",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingSuspect dead, guard injured after truck ramming incident at Michigan synagogue, sheriff says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T19:27:00.829Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5113856d46a82c57ce8b5dd478ff0712f5ef5f7d",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSuspect dead after shooting, vehicle ramming incident at Michigan synagogue, sources say",
       "to_title": null
     }
   ],
