@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T22:03:02.904Z",
+  "generatedAt": "2026-03-12T22:38:43.098Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6dc9cc1e27900ed1e835c9dbe96acba65777c71f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Trump says US has 'won' war but needs to 'finish the job'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "MOVED",
-      "fingerprint": "0dcd28c00b3c610dd0c83687c082e6b33b6182cf",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother",
-      "to_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "MOVED",
-      "fingerprint": "73702a68d2111039f1aeb607f59891ef722ee31f",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Survivor of deadly Kuwait drone attack speaks out from hospital",
-      "to_title": "Survivor of deadly Kuwait drone attack speaks out from hospital"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "da2af0ab3a9afb10f9150c9cbdacd42630081ced",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "US struggles to evacuate personnel from facilities under fire in Iraq: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca3c6f8a2c348da70d57c3b837407d90ab50e28f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Invasive giant reptile is thriving in Florida's climate, invading its ecosystem"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "501556cb7f978e83d69495ced9b79679dbb80dac",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Iran says it won't use missile warhead lighter than 1 ton",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "113973160fd58a76a18bf8a8f9116af23c483856",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "TSA officer callouts up since start of shutdown, DHS reactivates Global Entry",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Trump administration opens investigation into Arizona’s 2020 election results",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T23:35:58.888Z",
@@ -1381,6 +1301,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Netflix confirms 'KPop Demon Hunters' sequel with original directors returning",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ccac58cc422ee96d13544d1422a23134a515a823",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Suspect dead after ramming vehicle into synagogue"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dac0cd5f1bf8877975379e627b6685c60e73079a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "ROTC students subdued and killed Old Dominion University gunman, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "79b9082939fda95653650c2aca34201760d90b20",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Suspect dead after ramming truck into Detroit-area synagogue: Sheriff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "86214532d644c3b692a3ad9a201afe88f6a42161",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Old Dominion suspected gunman ID'd as ex-Army National Guard member: FBI",
       "to_title": null
     }
   ]

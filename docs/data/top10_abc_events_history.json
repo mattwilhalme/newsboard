@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T22:03:02.904Z",
+  "generatedAt": "2026-03-12T22:38:43.098Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T10:57:11.029Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:8 of 9 missing skiers found dead following California avalanche",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T10:57:11.029Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T10:57:11.029Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ce1470bb5e3a6ba3d68214a5b5b2ecc2cbdb02a1",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "More renderings of White House ballroom submitted to fine arts panel ahead of meeting",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T11:37:46.710Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6850f675f25a1b91017c95aa36ab5ce573f58614",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T11:37:46.710Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Netflix confirms 'KPop Demon Hunters' sequel with original directors returning",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ccac58cc422ee96d13544d1422a23134a515a823",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Suspect dead after ramming vehicle into synagogue"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dac0cd5f1bf8877975379e627b6685c60e73079a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "ROTC students subdued and killed Old Dominion University gunman, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "79b9082939fda95653650c2aca34201760d90b20",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Suspect dead after ramming truck into Detroit-area synagogue: Sheriff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T22:38:53.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "86214532d644c3b692a3ad9a201afe88f6a42161",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Old Dominion suspected gunman ID'd as ex-Army National Guard member: FBI",
       "to_title": null
     }
   ],
