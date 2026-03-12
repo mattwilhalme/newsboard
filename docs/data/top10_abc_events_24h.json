@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T20:39:07.991Z",
+  "generatedAt": "2026-03-12T21:06:02.073Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T20:54:53.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e0f26e38c92cf10941ebc1e12bfcc2bad162f39a",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "New person of interest identified in case of girl who disappeared in 1984"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T20:54:53.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5bff45072a57bff2721b7b57fd5b5e1f83fd3f6c",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "New person of interest identified over 40 years after 8-year-old girl went missing",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T21:23:30.825Z",
@@ -1371,6 +1351,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T21:06:13.613Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4d106e588c67d49983e87c598565ae0b411aebac",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingSuspect dead after ramming truck into Michigan synagogue, sheriff says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T21:06:13.613Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "450bc7933fac882d800f6a44b6b96ce9fa3f8e45",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSuspect dead, guard injured after truck ramming incident at Michigan synagogue, sheriff says",
       "to_title": null
     }
   ]
