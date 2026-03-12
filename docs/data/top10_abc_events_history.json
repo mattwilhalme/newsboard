@@ -1,128 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T17:34:17.510Z",
+  "generatedAt": "2026-03-12T18:30:34.150Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T22:20:39.306Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9c399e6dc200d81285502b43198638a979a58b8c",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "5 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T22:20:39.306Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c789be36f96337e1a59380bb828f4f574acd23dd",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "House Oversight Committee set to depose former Epstein associate Leslie Wexner",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T22:20:39.306Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1e1a033f6aa9162ba0bfab23a1defb29092f867a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Surprise shark caught on camera for first time in Antarctica’s near-freezing deep",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T23:56:45.739Z",
-      "event_type": "MOVED",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say",
-      "to_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T23:56:45.739Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "8 of 9 missing skiers found dead following California avalanche",
-      "to_title": "8 of 9 missing skiers found dead following California avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T23:56:45.739Z",
-      "event_type": "MOVED",
-      "fingerprint": "06288bb5fa87857d4de2c1bb6edd9642363395c6",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "'On the right path': Housing market offers glimmers of hope, some analysts say",
-      "to_title": "'On the right path': Housing market offers glimmers of hope, some analysts say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T23:56:45.739Z",
-      "event_type": "MOVED",
-      "fingerprint": "9c399e6dc200d81285502b43198638a979a58b8c",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "5 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police",
-      "to_title": "5 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T23:56:45.739Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "07bd31626d701b745b7284863c5e84c9386a574f",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "U2's new music honors Renee Good and draws inspiration from world events"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T23:56:45.739Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9d84bb7cecdde85e73502b6f3769e846a08730d4",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "US star Mikaela Shiffrin wins slalom to break 8-year Olympic drought",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T01:47:47.642Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ebf59a97bef810db85f01225ce37756372e60dc3",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Passengers evacuated via slides in incident that temporarily suspended flights"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T01:47:47.642Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "13da143ce522448ae0e858ed735905cd08f81de8",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump company seeks to trademark his name on airports"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T01:47:47.642Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "8 of 9 missing skiers found dead following California avalanche",
-      "to_title": "8 of 9 missing skiers found dead following California avalanche"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T01:47:47.642Z",
@@ -30001,6 +29881,126 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Hacker accessed FBI server that included Epstein files in 2023, files suggest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5113856d46a82c57ce8b5dd478ff0712f5ef5f7d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingSuspect dead after shooting, vehicle ramming incident at Michigan synagogue, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "MOVED",
+      "fingerprint": "5f21049e5f410c7acb3fbe93fed5af0991c1e453",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Stocks tumble, oil prices rise as Iran attacks key shipping route",
+      "to_title": "Stocks tumble, oil prices rise as Iran attacks key shipping route"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "MOVED",
+      "fingerprint": "1ab5ee48308f178d49334960d44a3c7132875424",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars",
+      "to_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "MOVED",
+      "fingerprint": "c563677d33647b2a59314081ef289f190678146b",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources",
+      "to_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8b0a45c2a29e980fa57425c6979e971ab92a897c",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Jack Osbourne names newborn daughter after dad Ozzy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "MOVED",
+      "fingerprint": "090d6ff55b0a53e28108ab618710a3f1fe1e30a9",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Google overhauls its Maps app, adding in more AI features to help people get around",
+      "to_title": "Google overhauls its Maps app, adding in more AI features to help people get around"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "MOVED",
+      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
+      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "MOVED",
+      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
+      "to_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b45072af6370f32b5e66d7c9aba11b80892e6a70",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Ukraine awaits White House sign-off on drone deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4247c0362976ec1e7df3493171b08f27941d72a6",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingOfficials respond to reports of active shooter at synagogue in Michigan, sheriff says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5f58c7abac63afd80ccc800ede253e67070961a8",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:In Iran fight, US scrambles to adapt in its 1st major drone war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T18:30:45.019Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9cdde53b6ae6b25df34cb9423e4d8e67c967cf2c",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Jack Osbourne honors late father Ozzy Osbourne by naming baby after him",
       "to_title": null
     }
   ],
