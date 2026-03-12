@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T10:59:11.917Z",
+  "generatedAt": "2026-03-12T11:33:24.400Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T11:26:28.571Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "8f071be4ef861199592cb4b2bfa140962107b914",
-      "from_rank": 5,
-      "to_rank": 5,
-      "from_title": "US-Ukraine-Russia peace talks in Geneva expected to resume Wednesday",
-      "to_title": "Day 2 of US-Ukraine-Russia peace talks in Geneva conclude, official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T13:20:34.076Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fae03a3e96885c8272d3f26cf39bdabb33b1ba67",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "A 600-acre AI data center could cost some Wisconsin residents their land"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T13:20:34.076Z",
-      "event_type": "MOVED",
-      "fingerprint": "2f87aa6bf7ad72a811c99a97e71362e671e4f526",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Mark Zuckerberg set to testify in landmark trial over social media addiction claims",
-      "to_title": "Mark Zuckerberg set to testify in landmark trial over social media addiction claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T13:20:34.076Z",
-      "event_type": "MOVED",
-      "fingerprint": "06288bb5fa87857d4de2c1bb6edd9642363395c6",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "'On the right path': Housing market offers glimmers of hope, some analysts say",
-      "to_title": "'On the right path': Housing market offers glimmers of hope, some analysts say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T13:20:34.076Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T11:33:33.810Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0c4ddd16fd83d6df41599320d1e360c5098ab534",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: 3 more ships set afire in Persian Gulf"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T11:33:33.810Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a58599b0693c89cb3f3d3790132bc019ea15df28",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T11:33:33.810Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b9a8695ef09b80df7ed1e87b9ad5082831ff1fa4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 3 more ships set afire by 'unknown' projectiles in Persian Gulf",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T11:33:33.810Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "632ab76b56d505d9035048faabc93905d112c154",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'",
       "to_title": null
     }
   ],
