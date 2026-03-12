@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T12:35:15.230Z",
+  "generatedAt": "2026-03-12T13:47:23.685Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T13:47:56.227Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "32e2b20821d4c63bab460de2a2049d47212f2b9c",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Inflation held steady in February before war with Iran sent gas prices surging"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T13:47:56.227Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f12ca9120b4c0fba7207329758da4e1eb4a04f6d",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "At least 2 dead as 45 tornado warnings remain across 7 states"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T13:47:56.227Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "853de2919080507342a850f4f11049c8d0eba0e4",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Jill Biden opens up in memoir about Joe Biden's decision to end reelection bid"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T13:47:56.227Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e65eb503e6fc6fb18babb9ddacb0a69838317771",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Inflation report to be released as Iran war sends gas prices surging",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T13:47:56.227Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a19264dc424ce840e0517f30c8fcdd623d3001dd",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "100 million people from Texas to Mich. in path of severe weather, possible tornadoes",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T13:47:56.227Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f12701cd3c7cfbd5ee57bdf98d85494690ee9d92",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Towering lava fountains of Hawaii's Kilauea volcano trigger park and highway closures",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T14:36:59.122Z",
@@ -1111,6 +1051,106 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "95acb548a4996bd8e6df046087d7c20561ca4d7e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: New supreme leader to issue 1st message, state media says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8a1e37ca63e982926ddc67f844f64209d920a13f",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Oil prices surge and stocks fall as Iran escalates shipping attacks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
+      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "c563677d33647b2a59314081ef289f190678146b",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources",
+      "to_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "860ff6735f331fb965f84325f5780d0492018587",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Hacker accessed FBI server that included Epstein files in 2023, files suggest",
+      "to_title": "Hacker accessed FBI server that included Epstein files in 2023, files suggest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
+      "to_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "d951fb2c92f4ea62dc7520e3adfcb796cc417a4a",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Celebrity chef resigns from iconic Danish restaurant Noma after abuse allegations",
+      "to_title": "Celebrity chef resigns from iconic Danish restaurant Noma after abuse allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "a58599b0693c89cb3f3d3790132bc019ea15df28",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'",
+      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0c4ddd16fd83d6df41599320d1e360c5098ab534",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 3 more ships set afire in Persian Gulf",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T13:47:35.589Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "73702a68d2111039f1aeb607f59891ef722ee31f",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Survivor of deadly Kuwait drone attack speaks out from hospital",
       "to_title": null
     }
   ]
