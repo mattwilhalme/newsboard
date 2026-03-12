@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-12T13:47:23.685Z",
+  "generatedAt": "2026-03-12T14:37:13.863Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T16:07:19.595Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 1,
-      "to_rank": 1,
-      "from_title": "6 rescued as efforts for missing continue following California avalanche: Authorities",
-      "to_title": "Desperate search continues for 9 missing skiers following California avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T17:18:47.108Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "aef7e59f54e253c1d21af61cd2fb5a0c10ac0f5a",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Unruly passenger prompts plane's return to airport"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T17:18:47.108Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b3db5fae0dc5334b29edb739ee2c4bb5655956b9",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Ghislaine Maxwell's brother speaks out on Epstein",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T18:05:29.023Z",
-      "event_type": "MOVED",
-      "fingerprint": "fae03a3e96885c8272d3f26cf39bdabb33b1ba67",
-      "from_rank": 3,
-      "to_rank": 1,
-      "from_title": "A 600-acre AI data center could cost some Wisconsin residents their land",
-      "to_title": "A 600-acre AI data center could cost some Wisconsin residents their land"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-18T18:05:29.023Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fa88b5b50d570e1adb607addf3e13e8dc5c4e6d",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Desperate search continues for 9 missing skiers following California avalanche",
-      "to_title": "Desperate search continues for 9 missing skiers following California avalanche"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-18T18:05:29.023Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Survivor of deadly Kuwait drone attack speaks out from hospital",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T14:37:24.241Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "44bb72b34c63bbc8cc4b89fafed6467210601466",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: 1st purported message from new supreme leader read on state TV"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T14:37:24.241Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "99cf40561be80ecaf56fc33c31f9bf6c2f201dcd",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Oscars host Conan O'Brien on how he's keeping the show fresh and funny"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T14:37:24.241Z",
+      "event_type": "MOVED",
+      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
+      "to_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T14:37:24.241Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "95acb548a4996bd8e6df046087d7c20561ca4d7e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: New supreme leader to issue 1st message, state media says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-12T14:37:24.241Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a58599b0693c89cb3f3d3790132bc019ea15df28",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'",
       "to_title": null
     }
   ],
