@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-13T14:09:49.531Z",
+  "generatedAt": "2026-03-13T15:01:17.244Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T14:37:24.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "44bb72b34c63bbc8cc4b89fafed6467210601466",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 1st purported message from new supreme leader read on state TV"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T14:37:24.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "99cf40561be80ecaf56fc33c31f9bf6c2f201dcd",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Oscars host Conan O'Brien on how he's keeping the show fresh and funny"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T14:37:24.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
-      "to_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T14:37:24.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "95acb548a4996bd8e6df046087d7c20561ca4d7e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: New supreme leader to issue 1st message, state media says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T14:37:24.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a58599b0693c89cb3f3d3790132bc019ea15df28",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T15:39:05.400Z",
@@ -1281,6 +1231,86 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "TSA rolls out video warning travelers of long wait times, blaming 'Democrat shutdown'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "176c855f45482e7f9585cfdb268652072c828bc8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breaking6 dead after KC-135 US refueling aircraft goes down in western Iraq"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "MOVED",
+      "fingerprint": "c0281062633224bb7d7b3c54af580e2f96c9eba4",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Hegseth says US 'decimating' Iranian military",
+      "to_title": "Iran live updates: Hegseth says US 'decimating' Iranian military"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "05f9d354cfef6e358ee5552da104118f0a466f3d",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "What to know about Iran's long-range Shahed drones wreaking havoc in the Middle East"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "MOVED",
+      "fingerprint": "cb4153b84190b0e93f2aceaf7205b3f4abc4a1c8",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "TSA video warning air travelers of long wait times blames 'Democrat shutdown'",
+      "to_title": "TSA video warning air travelers of long wait times blames 'Democrat shutdown'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "MOVED",
+      "fingerprint": "102d26d886db0dc66708af2f79ba18601587d299",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "How geofencing technology cracked the case of a woman who vanished",
+      "to_title": "How geofencing technology cracked the case of a woman who vanished"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "MOVED",
+      "fingerprint": "cb7747cb59e7dac55e3dc54ebca11e23f1d2b998",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Teen girl's harrowing journey with measles highlights how serious the virus can be",
+      "to_title": "Teen girl's harrowing journey with measles highlights how serious the virus can be"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d76bbbca74bd0f64b176b144437b9f83da7f74ab",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "4 dead after US refueling aircraft goes down in western Iraq",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T15:01:27.212Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "58bcdfdb889ee71f0f582ef0ecc8bb3ef6ddb1fb",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Dow closes down 700 points as global oil prices top $100 a barrel",
       "to_title": null
     }
   ]
