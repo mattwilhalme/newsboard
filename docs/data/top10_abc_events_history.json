@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-13T20:03:50.519Z",
+  "generatedAt": "2026-03-13T20:51:09.848Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T03:17:21.508Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0863aef6799f33c1c56a7a923c586a7080b22994",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T03:17:21.508Z",
-      "event_type": "MOVED",
-      "fingerprint": "40a189db84c123ac9f76195bb30f582fa80e0251",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert",
-      "to_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T03:17:21.508Z",
-      "event_type": "MOVED",
-      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct",
-      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T03:17:21.508Z",
-      "event_type": "MOVED",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Nancy Guthrie live updates: Man detained last week identified",
-      "to_title": "Nancy Guthrie live updates: Man detained last week identified"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T03:17:21.508Z",
-      "event_type": "MOVED",
-      "fingerprint": "b4b42e4a9a45fbfbf1a1a43f8e49f9a5325f04ca",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran",
-      "to_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T03:17:21.508Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0510fbe2e4f937adf1ecf10c67f3e0b532932b7b",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Alysa Liu gives US its first women's figure skating Olympic gold in 24 years",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T03:17:21.508Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "How geofencing technology cracked the case of a woman who vanished",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T20:51:19.747Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bb9e96cad344825743363fc79ef652c782415f2e",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Charges dropped against teens in prank case that led to teacher's death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T20:51:19.747Z",
+      "event_type": "MOVED",
+      "fingerprint": "3e0cf5a398045e29549890bef88d5afef7c48468",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Additional images recovered from cameras at Nancy Guthrie's home: Sources",
+      "to_title": "Additional images recovered from cameras at Nancy Guthrie's home: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T20:51:19.747Z",
+      "event_type": "MOVED",
+      "fingerprint": "81ef80461c2dc6c596ba5f1e284010316e4ece91",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Michigan synagogue attack 'could have looked a lot more like Sandy Hook': Whitmer",
+      "to_title": "Michigan synagogue attack 'could have looked a lot more like Sandy Hook': Whitmer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T20:51:19.747Z",
+      "event_type": "MOVED",
+      "fingerprint": "dac0cd5f1bf8877975379e627b6685c60e73079a",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "ROTC students subdued and killed Old Dominion University gunman, officials say",
+      "to_title": "ROTC students subdued and killed Old Dominion University gunman, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T20:51:19.747Z",
+      "event_type": "MOVED",
+      "fingerprint": "4f9bca254282741cc880c5acf9858c3dba9cf720",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Iran's long-range Shahed 136 attack drones: What to know",
+      "to_title": "Iran's long-range Shahed 136 attack drones: What to know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T20:51:19.747Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1f2b9ab8d052c7dedf08e9450ec21e6369fe6f76",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Teens charged in alleged murder plot seen laughing in patrol vehicle following arrest",
       "to_title": null
     }
   ],
