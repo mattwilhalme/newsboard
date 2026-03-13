@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-13T11:06:27.218Z",
+  "generatedAt": "2026-03-13T11:42:34.035Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0c4ddd16fd83d6df41599320d1e360c5098ab534",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 3 more ships set afire in Persian Gulf"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a58599b0693c89cb3f3d3790132bc019ea15df28",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b9a8695ef09b80df7ed1e87b9ad5082831ff1fa4",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: 3 more ships set afire by 'unknown' projectiles in Persian Gulf",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "632ab76b56d505d9035048faabc93905d112c154",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T13:47:35.589Z",
@@ -1231,6 +1191,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Teens charged in alleged murder plot seen laughing in patrol vehicle following arrest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T11:42:43.602Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1062fc20cd7f04980c306c1a7f6b0234f268302c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "4 dead after US refueling aircraft goes down in western Iraq"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T11:42:43.602Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "92d72021c213864412c596a3a5922a942819deb6",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking4 dead after US refueling aircraft goes down in western Iraq",
       "to_title": null
     }
   ]
