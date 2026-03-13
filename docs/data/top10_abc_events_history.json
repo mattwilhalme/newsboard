@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-13T11:06:27.218Z",
+  "generatedAt": "2026-03-13T11:42:34.035Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T14:36:37.502Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a47ed008e9a0c1500281e9fc3d04c1cbad069273",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Walmart delivers quarter of impressive sales",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T17:16:17.242Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": 4,
-      "to_rank": 4,
-      "from_title": "Nancy Guthrie live updates: FBI has reached out to Mexican authorities, sources say",
-      "to_title": "Nancy Guthrie live updates: Man detained last week identified"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T18:09:16.460Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Teens charged in alleged murder plot seen laughing in patrol vehicle following arrest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T11:42:43.602Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1062fc20cd7f04980c306c1a7f6b0234f268302c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "4 dead after US refueling aircraft goes down in western Iraq"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T11:42:43.602Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "92d72021c213864412c596a3a5922a942819deb6",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking4 dead after US refueling aircraft goes down in western Iraq",
       "to_title": null
     }
   ],
