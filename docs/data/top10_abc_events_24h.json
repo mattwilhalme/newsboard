@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-13T15:52:53.195Z",
+  "generatedAt": "2026-03-13T16:25:01.459Z",
   "hours": 24,
   "events": [
     {
@@ -1221,6 +1221,56 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "What to know about Iran's long-range Shahed drones wreaking havoc in the Middle East",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T16:25:12.415Z",
+      "event_type": "MOVED",
+      "fingerprint": "60524528f6615ce646ac7775a55054dbeca9fb49",
+      "from_rank": 4,
+      "to_rank": 1,
+      "from_title": "Iran live updates: 2,200 Marines headed to Middle East",
+      "to_title": "Iran live updates: 2,200 Marines headed to Middle East"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T16:25:12.415Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "05d1ad72eb58ec389f588a9d2dc443b91f5dc34e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "6 dead after KC-135 US refueling aircraft goes down in western Iraq"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T16:25:12.415Z",
+      "event_type": "MOVED",
+      "fingerprint": "65ad4c2f5dec0d360815d76a94b8d815e82b728c",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Suspect in Michigan synagogue attack lost family in Israeli strike on Lebanon: Mayor",
+      "to_title": "Suspect in Michigan synagogue attack lost family in Israeli strike on Lebanon: Mayor"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T16:25:12.415Z",
+      "event_type": "MOVED",
+      "fingerprint": "dac0cd5f1bf8877975379e627b6685c60e73079a",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "ROTC students subdued and killed Old Dominion University gunman, officials say",
+      "to_title": "ROTC students subdued and killed Old Dominion University gunman, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T16:25:12.415Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "176c855f45482e7f9585cfdb268652072c828bc8",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking6 dead after KC-135 US refueling aircraft goes down in western Iraq",
       "to_title": null
     }
   ]
