@@ -5,8 +5,8 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:06:12.843Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:43:11.135Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -14,27 +14,27 @@
         "url": "https://abcnews.com/Politics/excursion-war-trump-analysis/story?id=131003550",
         "imgUrl": null,
         "contentType": "news",
-        "breakingLabel": null,
-        "breakingHeadline": null,
-        "breakingUrl": null,
+        "breakingLabel": "Breaking News",
+        "breakingHeadline": "Judge blocks DOJ subpoenas involving Fed Chair Jerome Powell",
+        "breakingUrl": "https://abcnews.com/Politics/judge-blocks-doj-subpoenas-involving-fed-chair-jerome/story?id=131049110",
         "slotKey": "5be6806db8a5"
       },
       "last": {
-        "runId": "abc_2026-03-13T19-06-05-808Z",
+        "runId": "abc_2026-03-13T19-43-03-583Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:06:12.843Z",
+        "fetchedAt": "2026-03-13T19:43:11.135Z",
         "shot": {
-          "object_path": "screenshots/abc1/2026/03/13/abc_2026-03-13T19-06-05-808Z.jpg",
+          "object_path": "screenshots/abc1/2026/03/13/abc_2026-03-13T19-43-03-583Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "abc_2026-03-13T19-06-05-808Z",
-          "html": "/archive/abc_2026-03-13T19-06-05-808Z.html",
-          "json": "/archive/abc_2026-03-13T19-06-05-808Z.json"
+          "runId": "abc_2026-03-13T19-43-03-583Z",
+          "html": "/archive/abc_2026-03-13T19-43-03-583Z.html",
+          "json": "/archive/abc_2026-03-13T19-43-03-583Z.json"
         }
       ]
     },
@@ -43,8 +43,8 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:06:21.595Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:43:21.087Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -55,21 +55,21 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "cbs_2026-03-13T19-06-13-549Z",
+        "runId": "cbs_2026-03-13T19-43-11-880Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:06:21.595Z",
+        "fetchedAt": "2026-03-13T19:43:21.087Z",
         "shot": {
-          "object_path": "screenshots/cbs1/2026/03/13/cbs_2026-03-13T19-06-13-549Z.jpg",
+          "object_path": "screenshots/cbs1/2026/03/13/cbs_2026-03-13T19-43-11-880Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cbs_2026-03-13T19-06-13-549Z",
-          "html": "/archive/cbs_2026-03-13T19-06-13-549Z.html",
-          "json": "/archive/cbs_2026-03-13T19-06-13-549Z.json"
+          "runId": "cbs_2026-03-13T19-43-11-880Z",
+          "html": "/archive/cbs_2026-03-13T19-43-11-880Z.html",
+          "json": "/archive/cbs_2026-03-13T19-43-11-880Z.json"
         }
       ]
     },
@@ -78,12 +78,12 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:06:31.180Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:43:28.088Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Fed up with RFK Jr., these doctors are getting into politics",
+        "title": "Trump, RFK Jr. face a new political foe: Disgruntled doctors",
         "url": "https://usatoday.com/story/news/politics/2026/03/13/congress-midterms-rfk-jr-maha-doctors-campaign/88866836007",
         "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/02/18/USAT/88745288007-2261095456.jpg?auto=webp&crop=5999%2C3375%2Cx0%2Cy624&format=pjpg&height=242&width=430",
         "imgAlt": null,
@@ -95,21 +95,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-03-13T19-06-22-221Z",
+        "runId": "usat1_2026-03-13T19-43-21-669Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:06:31.180Z",
+        "fetchedAt": "2026-03-13T19:43:28.088Z",
         "shot": {
-          "object_path": "screenshots/usat1/2026/03/13/usat1_2026-03-13T19-06-22-221Z.jpg",
+          "object_path": "screenshots/usat1/2026/03/13/usat1_2026-03-13T19-43-21-669Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "usat1_2026-03-13T19-06-22-221Z",
-          "html": "/archive/usat1_2026-03-13T19-06-22-221Z.html",
-          "json": "/archive/usat1_2026-03-13T19-06-22-221Z.json"
+          "runId": "usat1_2026-03-13T19-43-21-669Z",
+          "html": "/archive/usat1_2026-03-13T19-43-21-669Z.html",
+          "json": "/archive/usat1_2026-03-13T19-43-21-669Z.json"
         }
       ]
     },
@@ -118,8 +118,8 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:06:37.909Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:43:34.549Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -133,21 +133,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc_2026-03-13T19-06-31-832Z",
+        "runId": "nbc_2026-03-13T19-43-28-769Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:06:37.909Z",
+        "fetchedAt": "2026-03-13T19:43:34.549Z",
         "shot": {
-          "object_path": "screenshots/nbc1/2026/03/13/nbc_2026-03-13T19-06-31-832Z.jpg",
+          "object_path": "screenshots/nbc1/2026/03/13/nbc_2026-03-13T19-43-28-769Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "nbc_2026-03-13T19-06-31-832Z",
-          "html": "/archive/nbc_2026-03-13T19-06-31-832Z.html",
-          "json": "/archive/nbc_2026-03-13T19-06-31-832Z.json"
+          "runId": "nbc_2026-03-13T19-43-28-769Z",
+          "html": "/archive/nbc_2026-03-13T19-43-28-769Z.html",
+          "json": "/archive/nbc_2026-03-13T19-43-28-769Z.json"
         }
       ]
     },
@@ -156,8 +156,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:06:45.640Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:43:42.045Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -168,21 +168,21 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "cnn1_2026-03-13T19-06-38-410Z",
+        "runId": "cnn1_2026-03-13T19-43-35-071Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:06:45.640Z",
+        "fetchedAt": "2026-03-13T19:43:42.045Z",
         "shot": {
-          "object_path": "screenshots/cnn1/2026/03/13/cnn1_2026-03-13T19-06-38-410Z.jpg",
+          "object_path": "screenshots/cnn1/2026/03/13/cnn1_2026-03-13T19-43-35-071Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-03-13T19-06-38-410Z",
-          "html": "/archive/cnn1_2026-03-13T19-06-38-410Z.html",
-          "json": "/archive/cnn1_2026-03-13T19-06-38-410Z.json"
+          "runId": "cnn1_2026-03-13T19-43-35-071Z",
+          "html": "/archive/cnn1_2026-03-13T19-43-35-071Z.html",
+          "json": "/archive/cnn1_2026-03-13T19-43-35-071Z.json"
         }
       ]
     },
@@ -191,8 +191,8 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:06:50.463Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:43:46.754Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -203,21 +203,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-03-13T19-06-46-148Z",
+        "runId": "guardian1_2026-03-13T19-43-42-577Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:06:50.463Z",
+        "fetchedAt": "2026-03-13T19:43:46.754Z",
         "shot": {
-          "object_path": "screenshots/guardian1/2026/03/13/guardian1_2026-03-13T19-06-46-148Z.jpg",
+          "object_path": "screenshots/guardian1/2026/03/13/guardian1_2026-03-13T19-43-42-577Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "guardian1_2026-03-13T19-06-46-148Z",
-          "html": "/archive/guardian1_2026-03-13T19-06-46-148Z.html",
-          "json": "/archive/guardian1_2026-03-13T19-06-46-148Z.json"
+          "runId": "guardian1_2026-03-13T19-43-42-577Z",
+          "html": "/archive/guardian1_2026-03-13T19-43-42-577Z.html",
+          "json": "/archive/guardian1_2026-03-13T19-43-42-577Z.json"
         }
       ]
     },
@@ -226,33 +226,33 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:07:02.262Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:43:57.663Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "All six airmen aboard US refueling aircraft that went down in Iraq are dead, military says",
-        "url": "https://apnews.com/article/us-iran-tanker-aircraft-crash-iraq-kc135-c337359a58be6280dc96fdbf1cb48a5b",
+        "title": "Live updates: Hegseth says ‘don’t need to worry about’ oil supply and Iran’s closure of the Strait of Hormuz",
+        "url": "https://apnews.com/live/iran-war-israel-trump-03-13-2026",
         "imgUrl": null,
         "slotKey": "083847305a8b",
-        "contentType": "news"
+        "contentType": "live"
       },
       "last": {
-        "runId": "ap1_2026-03-13T19-06-50-931Z",
+        "runId": "ap1_2026-03-13T19-43-47-237Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:07:02.262Z",
+        "fetchedAt": "2026-03-13T19:43:57.663Z",
         "shot": {
-          "object_path": "screenshots/ap1/2026/03/13/ap1_2026-03-13T19-06-50-931Z.jpg",
+          "object_path": "screenshots/ap1/2026/03/13/ap1_2026-03-13T19-43-47-237Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "ap1_2026-03-13T19-06-50-931Z",
-          "html": "/archive/ap1_2026-03-13T19-06-50-931Z.html",
-          "json": "/archive/ap1_2026-03-13T19-06-50-931Z.json"
+          "runId": "ap1_2026-03-13T19-43-47-237Z",
+          "html": "/archive/ap1_2026-03-13T19-43-47-237Z.html",
+          "json": "/archive/ap1_2026-03-13T19-43-47-237Z.json"
         }
       ]
     },
@@ -261,33 +261,33 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:07:11.115Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:44:08.593Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "How the spike in gas prices is jolting California’s giant economy",
-        "url": "https://latimes.com/business/story/2026-03-13/how-spike-in-gas-prices-is-jolting-californias-giant-economy",
+        "title": "If the giant sequoia is dying out, why are there tens of thousands of seedlings and saplings?",
+        "url": "https://latimes.com/california/story/2026-03-13/if-giant-sequoia-is-dying-out-why-so-many-seedlings-saplings",
         "imgUrl": null,
         "slotKey": "06617b56ef8d",
         "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-03-13T19-07-02-905Z",
+        "runId": "latimes1_2026-03-13T19-43-58-276Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:07:11.115Z",
+        "fetchedAt": "2026-03-13T19:44:08.593Z",
         "shot": {
-          "object_path": "screenshots/latimes1/2026/03/13/latimes1_2026-03-13T19-07-02-905Z.jpg",
+          "object_path": "screenshots/latimes1/2026/03/13/latimes1_2026-03-13T19-43-58-276Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "latimes1_2026-03-13T19-07-02-905Z",
-          "html": "/archive/latimes1_2026-03-13T19-07-02-905Z.html",
-          "json": "/archive/latimes1_2026-03-13T19-07-02-905Z.json"
+          "runId": "latimes1_2026-03-13T19-43-58-276Z",
+          "html": "/archive/latimes1_2026-03-13T19-43-58-276Z.html",
+          "json": "/archive/latimes1_2026-03-13T19-43-58-276Z.json"
         }
       ]
     },
@@ -296,33 +296,33 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:07:20.212Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:44:18.704Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Desperate for skilled workers, a furniture maker looks to apprenticeships for relief",
-        "url": "https://npr.org/2026/03/13/nx-s1-5727509/apprenticeships-manufacturing-workforce-trump-arkansas",
+        "title": "TSA workers miss a full paycheck, while travelers keep paying airport security fees",
+        "url": "https://npr.org/2026/03/13/nx-s1-5745956/tsa-workers-paycheck-airport-dhs-shutdown",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-03-13T19-07-11-661Z",
+        "runId": "npr1_2026-03-13T19-44-09-555Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:07:20.212Z",
+        "fetchedAt": "2026-03-13T19:44:18.704Z",
         "shot": {
-          "object_path": "screenshots/npr1/2026/03/13/npr1_2026-03-13T19-07-11-661Z.jpg",
+          "object_path": "screenshots/npr1/2026/03/13/npr1_2026-03-13T19-44-09-555Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "npr1_2026-03-13T19-07-11-661Z",
-          "html": "/archive/npr1_2026-03-13T19-07-11-661Z.html",
-          "json": "/archive/npr1_2026-03-13T19-07-11-661Z.json"
+          "runId": "npr1_2026-03-13T19-44-09-555Z",
+          "html": "/archive/npr1_2026-03-13T19-44-09-555Z.html",
+          "json": "/archive/npr1_2026-03-13T19-44-09-555Z.json"
         }
       ]
     },
@@ -331,8 +331,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:07:25.642Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:44:23.439Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -343,21 +343,21 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "bbc1_2026-03-13T19-07-20-736Z",
+        "runId": "bbc1_2026-03-13T19-44-19-346Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:07:25.642Z",
+        "fetchedAt": "2026-03-13T19:44:23.439Z",
         "shot": {
-          "object_path": "screenshots/bbc1/2026/03/13/bbc1_2026-03-13T19-07-20-736Z.jpg",
+          "object_path": "screenshots/bbc1/2026/03/13/bbc1_2026-03-13T19-44-19-346Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "bbc1_2026-03-13T19-07-20-736Z",
-          "html": "/archive/bbc1_2026-03-13T19-07-20-736Z.html",
-          "json": "/archive/bbc1_2026-03-13T19-07-20-736Z.json"
+          "runId": "bbc1_2026-03-13T19-44-19-346Z",
+          "html": "/archive/bbc1_2026-03-13T19-44-19-346Z.html",
+          "json": "/archive/bbc1_2026-03-13T19-44-19-346Z.json"
         }
       ]
     },
@@ -366,33 +366,33 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:07:34.056Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:44:30.028Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Airplane nightmare unfolds after woman adjusts seat and fellow traveler erupts",
-        "url": "https://foxnews.com/travel/worst-plane-ride-airline-passenger-claims-she-repeatedly-shoved-reclining-her-seat",
+        "title": "Explosive drone boats ram oil tankers as Iran deploys dozens of mines",
+        "url": "https://foxnews.com/world/iran-deploys-explosive-suicide-skiffs-disguised-fishing-boats-strait-hormuz",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-03-13T19-07-26-139Z",
+        "runId": "fox1_2026-03-13T19-44-23-985Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:07:34.056Z",
+        "fetchedAt": "2026-03-13T19:44:30.028Z",
         "shot": {
-          "object_path": "screenshots/fox1/2026/03/13/fox1_2026-03-13T19-07-26-139Z.jpg",
+          "object_path": "screenshots/fox1/2026/03/13/fox1_2026-03-13T19-44-23-985Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "fox1_2026-03-13T19-07-26-139Z",
-          "html": "/archive/fox1_2026-03-13T19-07-26-139Z.html",
-          "json": "/archive/fox1_2026-03-13T19-07-26-139Z.json"
+          "runId": "fox1_2026-03-13T19-44-23-985Z",
+          "html": "/archive/fox1_2026-03-13T19-44-23-985Z.html",
+          "json": "/archive/fox1_2026-03-13T19-44-23-985Z.json"
         }
       ]
     },
@@ -401,33 +401,33 @@
       "name": "Yahoo News",
       "home_url": "https://news.yahoo.com/",
       "kind": "hero",
-      "created_at": "2026-03-13T19:06:00.868Z",
-      "updated_at": "2026-03-13T19:07:46.286Z",
+      "created_at": "2026-03-13T19:43:00.151Z",
+      "updated_at": "2026-03-13T19:44:46.214Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Trump says war in Iran will be over 'when I feel it in my bones'",
+        "title": "All 6 airmen aboard U.S. refueling aircraft that went down in Iraq are dead",
         "url": "https://news.yahoo.com/world/live/iran-war-live-updates-hegseth-says-irans-new-supreme-leader-is-wounded-and-likely-disfigured-4-us-service-members-confirmed-dead-in-military-plane-crash-142632269.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
         "contentType": "live"
       },
       "last": {
-        "runId": "yahoo1_2026-03-13T19-07-34-575Z",
+        "runId": "yahoo1_2026-03-13T19-44-30-656Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-03-13T19:07:46.286Z",
+        "fetchedAt": "2026-03-13T19:44:46.214Z",
         "shot": {
-          "object_path": "screenshots/yahoo1/2026/03/13/yahoo1_2026-03-13T19-07-34-575Z.jpg",
+          "object_path": "screenshots/yahoo1/2026/03/13/yahoo1_2026-03-13T19-44-30-656Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "yahoo1_2026-03-13T19-07-34-575Z",
-          "html": "/archive/yahoo1_2026-03-13T19-07-34-575Z.html",
-          "json": "/archive/yahoo1_2026-03-13T19-07-34-575Z.json"
+          "runId": "yahoo1_2026-03-13T19-44-30-656Z",
+          "html": "/archive/yahoo1_2026-03-13T19-44-30-656Z.html",
+          "json": "/archive/yahoo1_2026-03-13T19-44-30-656Z.json"
         }
       ]
     }
