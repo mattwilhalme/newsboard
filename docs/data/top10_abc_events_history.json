@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-13T07:54:17.530Z",
+  "generatedAt": "2026-03-13T08:28:07.846Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "957ea25943e7e76dfa65fb44e080550fe8bb3c14",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "How DNA and genetic genealogy might help solve the Nancy Guthrie case",
-      "to_title": "How DNA and genetic genealogy might help solve the Nancy Guthrie case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "6850f675f25a1b91017c95aa36ab5ce573f58614",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban",
-      "to_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T13:41:32.300Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: 1st purported message from new supreme leader read on state TV",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T08:28:18.360Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d889dbb748464781fd8cc7318dd7b01b8cc58352",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "US weather to go nuts with multiple phenomena"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T08:28:18.360Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b45072af6370f32b5e66d7c9aba11b80892e6a70",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Ukraine awaits White House sign-off on drone deal",
       "to_title": null
     }
   ],

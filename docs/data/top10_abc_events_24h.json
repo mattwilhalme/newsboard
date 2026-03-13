@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-13T07:54:17.530Z",
+  "generatedAt": "2026-03-13T08:28:07.846Z",
   "hours": 24,
   "events": [
     {
@@ -1111,6 +1111,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: 1st purported message from new supreme leader read on state TV",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T08:28:18.360Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d889dbb748464781fd8cc7318dd7b01b8cc58352",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "US weather to go nuts with multiple phenomena"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T08:28:18.360Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b45072af6370f32b5e66d7c9aba11b80892e6a70",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Ukraine awaits White House sign-off on drone deal",
       "to_title": null
     }
   ]
