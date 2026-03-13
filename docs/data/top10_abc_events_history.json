@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-13T13:17:49.768Z",
+  "generatedAt": "2026-03-13T14:09:49.531Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T19:08:29.986Z",
-      "event_type": "MOVED",
-      "fingerprint": "6850f675f25a1b91017c95aa36ab5ce573f58614",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban",
-      "to_title": "Texas court to hear appeal in case of midwife accused of violating state abortion ban"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T19:08:29.986Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5825375d92ed6ca39f111265db6daa8d816e572c",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "4 men exonerated in infamous 1991 yogurt shop killings"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T19:08:29.986Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6facc712e0524d7648c2d5f6d84395f168e331d5",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Fine arts panel approves Trump's White House East Wing ballroom plans"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T19:08:29.986Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ebf59a97bef810db85f01225ce37756372e60dc3",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Passengers evacuated via slides in incident that temporarily suspended flights",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T19:08:29.986Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "13da143ce522448ae0e858ed735905cd08f81de8",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Trump company seeks to trademark his name on airports",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T19:08:29.986Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T19:48:15.121Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US weather to go nuts with multiple phenomena",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T14:09:59.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d76bbbca74bd0f64b176b144437b9f83da7f74ab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "4 dead after US refueling aircraft goes down in western Iraq"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T14:09:59.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "65ad4c2f5dec0d360815d76a94b8d815e82b728c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Suspect in Michigan synagogue attack lost family in Israeli strike on Lebanon: Mayor"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T14:09:59.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cb4153b84190b0e93f2aceaf7205b3f4abc4a1c8",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "TSA video warning air travelers of long wait times blames 'Democrat shutdown'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T14:09:59.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1062fc20cd7f04980c306c1a7f6b0234f268302c",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "4 dead after US refueling aircraft goes down in western Iraq",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T14:09:59.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e3e7511b5da639d20702275cb06bc6bc7a16f413",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Synagogue ramming probed as targeted act of violence against Jewish community: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T14:09:59.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8ec4818bc87b8cc23264aaa2aafbba64df370416",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "TSA rolls out video warning travelers of long wait times, blaming 'Democrat shutdown'",
       "to_title": null
     }
   ],
