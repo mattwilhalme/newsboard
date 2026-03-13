@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-12T23:55:11.629Z",
+  "generatedAt": "2026-03-13T03:38:47.089Z",
   "hours": 24,
   "events": [
     {
@@ -1361,6 +1361,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingTruck ramming at synagogue being investigated as targeted act of violence against Jewish community, FBI says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T03:38:57.103Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d45939894224f2c238e6c188172bfb34a2d9ac87",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Rescue effort underway after US refueling aircraft crashes in Iraq"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T03:38:57.103Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "44bb72b34c63bbc8cc4b89fafed6467210601466",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: 1st purported message from new supreme leader read on state TV",
       "to_title": null
     }
   ]
