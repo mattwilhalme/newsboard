@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-13T09:06:59.845Z",
+  "generatedAt": "2026-03-13T09:55:39.124Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "ebf59a97bef810db85f01225ce37756372e60dc3",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Passengers evacuated via slides in incident that temporarily suspended flights",
-      "to_title": "Passengers evacuated via slides in incident that temporarily suspended flights"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "13da143ce522448ae0e858ed735905cd08f81de8",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Trump company seeks to trademark his name on airports",
-      "to_title": "Trump company seeks to trademark his name on airports"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "2f87aa6bf7ad72a811c99a97e71362e671e4f526",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Mark Zuckerberg testifies in landmark trial over social media addiction claims",
-      "to_title": "Mark Zuckerberg testifies in landmark trial over social media addiction claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "00b019d917ff532dc0aafb80cebb29da5e6270cc",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds",
-      "to_title": "Up to 46,000 injuries in Gaza require reconstructive surgery, study finds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a47ed008e9a0c1500281e9fc3d04c1cbad069273",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Walmart delivers quarter of impressive sales"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-19T13:41:32.300Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1972345c5ca45e1eccbaeac97d036c163a481f00",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingBritish police arrest Andrew Mountbatten-Windsor on suspicion of misconduct",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-19T14:36:37.502Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Ukraine awaits White House sign-off on drone deal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T09:55:49.410Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "102d26d886db0dc66708af2f79ba18601587d299",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "How geofencing technology cracked the case of a woman who vanished"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T09:55:49.410Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cb7747cb59e7dac55e3dc54ebca11e23f1d2b998",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Teen girl's harrowing journey with measles highlights how serious the virus can be"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T09:55:49.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "58bcdfdb889ee71f0f582ef0ecc8bb3ef6ddb1fb",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Dow closes down 700 points as global oil prices top $100 a barrel",
+      "to_title": "Dow closes down 700 points as global oil prices top $100 a barrel"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T09:55:49.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "3488412646e3a436aedf039358db98017863564b",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Has public opinion on the US striking Iran shifted since the war started?",
+      "to_title": "Has public opinion on the US striking Iran shifted since the war started?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T09:55:49.410Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1ab5ee48308f178d49334960d44a3c7132875424",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-13T09:55:49.410Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b0a45c2a29e980fa57425c6979e971ab92a897c",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Jack Osbourne names newborn daughter after dad Ozzy",
       "to_title": null
     }
   ],
