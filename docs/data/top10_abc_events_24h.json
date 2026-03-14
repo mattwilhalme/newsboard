@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-14T04:25:25.876Z",
+  "generatedAt": "2026-03-14T05:30:15.427Z",
   "hours": 24,
   "events": [
     {
@@ -1281,6 +1281,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: 2,200 Marines headed to Middle East",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T05:30:25.990Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6f46a04e3e45fddabeaaedfb025388598395a428",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:6 dead after KC-135 US refueling aircraft goes down in western Iraq"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T05:30:25.990Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2097116d7900d8876abcf22fcb06b8d27c40602b",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:A 'little excursion' or 'war'? It's 'both,' Trump says: ANALYSIS",
       "to_title": null
     }
   ]
