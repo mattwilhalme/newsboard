@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-14T08:50:31.744Z",
+  "generatedAt": "2026-03-14T09:20:38.417Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T05:09:25.188Z",
-      "event_type": "MOVED",
-      "fingerprint": "0863aef6799f33c1c56a7a923c586a7080b22994",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS",
-      "to_title": "'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T05:09:25.188Z",
-      "event_type": "MOVED",
-      "fingerprint": "4147e793539406ba1b68c62677c664d0c934240a",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Leslie Wexner says Epstein makes 'Bernie Madoff look like a Boy Scout': Deposition",
-      "to_title": "Leslie Wexner says Epstein makes 'Bernie Madoff look like a Boy Scout': Deposition"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T05:09:25.188Z",
-      "event_type": "MOVED",
-      "fingerprint": "40a189db84c123ac9f76195bb30f582fa80e0251",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert",
-      "to_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T05:09:25.188Z",
-      "event_type": "MOVED",
-      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct",
-      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T05:09:25.188Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:A 'little excursion' or 'war'? It's 'both,' Trump says: ANALYSIS",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T09:20:49.371Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7989bbe292f650153ae72ba342a07d0666864df3",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "2 DOGE staffers say 'no' regrets for people losing income: Depositions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T09:20:49.371Z",
+      "event_type": "MOVED",
+      "fingerprint": "3e0cf5a398045e29549890bef88d5afef7c48468",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Additional images recovered from cameras at Nancy Guthrie's home: Sources",
+      "to_title": "Additional images recovered from cameras at Nancy Guthrie's home: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T09:20:49.371Z",
+      "event_type": "MOVED",
+      "fingerprint": "e54751eef9ff4b0202c1ef67302a2cfb7d98bd73",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Motive still under investigation in synagogue attack as fuller timeline emerges",
+      "to_title": "Motive still under investigation in synagogue attack as fuller timeline emerges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T09:20:49.371Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4f9bca254282741cc880c5acf9858c3dba9cf720",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Iran's long-range Shahed 136 attack drones: What to know",
       "to_title": null
     }
   ],
