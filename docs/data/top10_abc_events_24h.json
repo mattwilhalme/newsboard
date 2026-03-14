@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-14T15:02:09.245Z",
+  "generatedAt": "2026-03-14T15:37:45.784Z",
   "hours": 24,
   "events": [
     {
@@ -942,6 +942,26 @@
       "to_rank": 7,
       "from_title": "Charges dropped against teens in prank case that led to teacher's death",
       "to_title": "Charges dropped against teens in prank case that led to teacher's death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T15:37:56.335Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9275fb59c6251d88fed93883bfa99afbce303a5f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump calls on other countries to assist in Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T15:37:56.335Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "166d88193257d24b402f0a544728674d0e9e0bfa",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US 'bombing raid' strikes Kharg Island, Trump says",
+      "to_title": null
     }
   ]
 }
