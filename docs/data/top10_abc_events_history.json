@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-13T23:40:32.076Z",
+  "generatedAt": "2026-03-14T00:00:59.913Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T04:28:30.420Z",
-      "event_type": "MOVED",
-      "fingerprint": "b4b42e4a9a45fbfbf1a1a43f8e49f9a5325f04ca",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran",
-      "to_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T04:28:30.420Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8dc6ddcd3e77d27f84af5396b96c60c8dd8874d3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Cold case murder of teen solved 44 years later using DNA from cigarette",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T05:09:25.188Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Michigan synagogue attack 'could have looked a lot more like Sandy Hook': Whitmer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T00:01:10.055Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "166d88193257d24b402f0a544728674d0e9e0bfa",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US 'bombing raid' strikes Kharg Island, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T00:01:10.055Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "60524528f6615ce646ac7775a55054dbeca9fb49",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 2,200 Marines headed to Middle East",
       "to_title": null
     }
   ],
