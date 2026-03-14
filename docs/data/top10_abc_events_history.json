@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-14T16:24:12.881Z",
+  "generatedAt": "2026-03-14T16:54:59.225Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T06:08:37.136Z",
-      "event_type": "MOVED",
-      "fingerprint": "40a189db84c123ac9f76195bb30f582fa80e0251",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert",
-      "to_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T06:08:37.136Z",
-      "event_type": "MOVED",
-      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct",
-      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T06:08:37.136Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: US 'bombing raid' strikes Kharg Island, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T16:55:09.987Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "483af1f1a5be3fb66751670a9aa2d732a80f03df",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Everything to know about the 98th Academy Awards"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T16:55:09.987Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c1190021141a48113ae27d32af177a2b7fd53d07",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Judge blocks subpoenas in Fed Chair Powell probe citing 'essentially zero evidence'",
       "to_title": null
     }
   ],
