@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-14T11:39:37.409Z",
+  "generatedAt": "2026-03-14T11:56:42.088Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T11:42:43.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1062fc20cd7f04980c306c1a7f6b0234f268302c",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "4 dead after US refueling aircraft goes down in western Iraq"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T11:42:43.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "92d72021c213864412c596a3a5922a942819deb6",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breaking4 dead after US refueling aircraft goes down in western Iraq",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-13T13:17:59.942Z",
@@ -1162,6 +1142,56 @@
       "to_rank": null,
       "from_title": "Iran's long-range Shahed 136 attack drones: What to know",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T11:56:52.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "7989bbe292f650153ae72ba342a07d0666864df3",
+      "from_rank": 7,
+      "to_rank": 3,
+      "from_title": "2 DOGE staffers say 'no' regrets for people losing income: Depositions",
+      "to_title": "2 DOGE staffers say 'no' regrets for people losing income: Depositions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T11:56:52.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "38f5c0aebda190299342ad1b7595afba37b607eb",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter",
+      "to_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T11:56:52.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "b9e55871b3956fac2f23b93d7bbb57760131f04d",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Cuba, US confirm high-level negotiations after Trump predicts regime's fall",
+      "to_title": "Cuba, US confirm high-level negotiations after Trump predicts regime's fall"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T11:56:52.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "c1190021141a48113ae27d32af177a2b7fd53d07",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Judge blocks subpoenas in Fed Chair Powell probe citing 'essentially zero evidence'",
+      "to_title": "Judge blocks subpoenas in Fed Chair Powell probe citing 'essentially zero evidence'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T11:56:52.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "bb9e96cad344825743363fc79ef652c782415f2e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Charges dropped against teens in prank case that led to teacher's death",
+      "to_title": "Charges dropped against teens in prank case that led to teacher's death"
     }
   ]
 }
