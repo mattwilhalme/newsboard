@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-14T20:00:49.278Z",
+  "generatedAt": "2026-03-14T20:37:11.212Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T07:14:16.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "bb99d55d89c8d25a6dc4670000dfd56a35f219ce",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Oil prices surge ahead of possible US attack on Iran",
-      "to_title": "Oil prices surge ahead of possible US attack on Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T07:14:16.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "80035b16af88d769dedb122ca123a2f640bfa434",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Eric Dane remembered by friends, costars after his death at 53",
-      "to_title": "Eric Dane remembered by friends, costars after his death at 53"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T07:14:16.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "0863aef6799f33c1c56a7a923c586a7080b22994",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS",
-      "to_title": "'Grey's Anatomy' star Eric Dane dies at 53 after battle with ALS"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T07:14:16.321Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Motive still under investigation in synagogue attack as fuller timeline emerges",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T20:37:21.777Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "82c6c395979fb1ed4e65d3b80f8dc93640ce2ea5",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Judge partially backs Democrat Kennedy Center trustee in lawsuit over renaming"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T20:37:21.777Z",
+      "event_type": "MOVED",
+      "fingerprint": "38f5c0aebda190299342ad1b7595afba37b607eb",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter",
+      "to_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T20:37:21.777Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b9e55871b3956fac2f23b93d7bbb57760131f04d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Cuba, US confirm high-level negotiations after Trump predicts regime's fall",
       "to_title": null
     }
   ],
