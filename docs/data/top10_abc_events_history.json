@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-14T22:03:22.680Z",
+  "generatedAt": "2026-03-14T22:39:23.490Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T07:14:16.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "40a189db84c123ac9f76195bb30f582fa80e0251",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert",
-      "to_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T07:14:16.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "da2f53ca4c4f778e62675975baef8029f6b87a39",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct",
-      "to_title": "Andrew Mountbatten-Windsor released after arrest on suspicion of misconduct"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T07:14:16.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Nancy Guthrie live updates: Man detained last week identified",
-      "to_title": "Nancy Guthrie live updates: Man detained last week identified"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T07:14:16.321Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b4b42e4a9a45fbfbf1a1a43f8e49f9a5325f04ca",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Trump gives 10-day timeline on whether he'll continue talks with Iran",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T10:54:29.361Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Cuba, US confirm high-level negotiations after Trump predicts regime's fall",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T22:39:33.310Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Expansive March storm ramping up, bringing snow, strong winds to millions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T22:39:33.310Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "21c59028ae919f1fbce8a1bba414f3790b4349b2",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T22:39:33.310Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5b8244a5150f5ce652e86120d64d39879ae0f324",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Cross-country storm gearing up to bring snow, strong winds for the weekend",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-14T22:39:33.310Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "82c6c395979fb1ed4e65d3b80f8dc93640ce2ea5",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Judge partially backs Democrat Kennedy Center trustee in lawsuit over renaming",
       "to_title": null
     }
   ],

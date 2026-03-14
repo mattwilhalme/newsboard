@@ -1,20 +1,29 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-14T22:03:22.680Z",
+  "generatedAt": "2026-03-14T22:39:23.490Z",
   "sources": {
     "abc1": {
-      "ok": false,
-      "updatedAt": "2026-03-14T22:03:22.680Z",
-      "error": "StorageApiError: Bad Request",
-      "runId": null,
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-03-14T22:39:30.310Z",
+      "error": null,
+      "runId": "abc_2026-03-14T22-39-23-600Z",
+      "since": "2026-03-13T21:53:25.416Z",
+      "item": {
+        "title": "Iran live updates: Trump calls on other countries to assist in Strait of Hormuz",
+        "url": "https://abcnews.com/International/live-updates/iran-live-updates?id=130893022",
+        "imgUrl": null,
+        "contentType": "live",
+        "breakingLabel": null,
+        "breakingHeadline": null,
+        "breakingUrl": null,
+        "slotKey": "5be6806db8a5"
+      }
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:03:38.038Z",
+      "updatedAt": "2026-03-14T22:39:37.027Z",
       "error": null,
-      "runId": "cbs_2026-03-14T22-03-32-803Z",
+      "runId": "cbs_2026-03-14T22-39-33-459Z",
       "since": "2026-03-13T11:06:27.218Z",
       "item": {
         "title": "Tehran threatens to retaliate after U.S. attacks vital Iranian oil hub",
@@ -26,9 +35,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:03:45.176Z",
+      "updatedAt": "2026-03-14T22:39:46.387Z",
       "error": null,
-      "runId": "usat1_2026-03-14T22-03-38-186Z",
+      "runId": "usat1_2026-03-14T22-39-37-161Z",
       "since": "2026-03-14T21:28:54.194Z",
       "item": {
         "title": "FCC chair threatens to revoke broadcaster licenses over Iran coverage",
@@ -45,9 +54,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:03:51.244Z",
+      "updatedAt": "2026-03-14T22:39:51.758Z",
       "error": null,
-      "runId": "nbc_2026-03-14T22-03-45-448Z",
+      "runId": "nbc_2026-03-14T22-39-46-682Z",
       "since": "2026-03-14T10:50:58.534Z",
       "item": {
         "title": "Videos and satellite images show Iran's drone army puncturing U.S. and allied defenses",
@@ -62,9 +71,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:03:58.292Z",
+      "updatedAt": "2026-03-14T22:39:58.747Z",
       "error": null,
-      "runId": "cnn1_2026-03-14T22-03-51-385Z",
+      "runId": "cnn1_2026-03-14T22-39-51-909Z",
       "since": "2026-03-14T10:50:58.534Z",
       "item": {
         "title": "Inside Trump team's scramble to contain Iran war fallout Show all",
@@ -76,9 +85,9 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:04:02.915Z",
+      "updatedAt": "2026-03-14T22:40:03.277Z",
       "error": null,
-      "runId": "guardian1_2026-03-14T22-03-58-431Z",
+      "runId": "guardian1_2026-03-14T22-39-58-900Z",
       "since": "2026-03-14T04:25:25.876Z",
       "item": {
         "title": "US orders Americans out of Iraq as Trump renews calls for allies to secure strait of Hormuz",
@@ -90,9 +99,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:04:11.903Z",
+      "updatedAt": "2026-03-14T22:40:14.034Z",
       "error": null,
-      "runId": "ap1_2026-03-14T22-04-03-045Z",
+      "runId": "ap1_2026-03-14T22-40-03-430Z",
       "since": "2026-03-14T20:00:49.278Z",
       "item": {
         "title": "Tehran claims the US attacked it from the UAE as Iran war enters its third week",
@@ -104,9 +113,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:04:19.044Z",
+      "updatedAt": "2026-03-14T22:40:22.259Z",
       "error": null,
-      "runId": "latimes1_2026-03-14T22-04-12-142Z",
+      "runId": "latimes1_2026-03-14T22-40-14-315Z",
       "since": "2026-03-14T20:58:39.736Z",
       "item": {
         "title": "Long COVID leaves thousands of L.A. county residents sick, broke and ignored",
@@ -118,9 +127,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:04:26.281Z",
+      "updatedAt": "2026-03-14T22:40:30.291Z",
       "error": null,
-      "runId": "npr1_2026-03-14T22-04-19-182Z",
+      "runId": "npr1_2026-03-14T22-40-22-438Z",
       "since": "2026-03-14T19:21:43.902Z",
       "item": {
         "title": "In South Carolina, measles shows how far apart neighbors can be on vaccines",
@@ -132,9 +141,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:04:30.547Z",
+      "updatedAt": "2026-03-14T22:40:35.204Z",
       "error": null,
-      "runId": "bbc1_2026-03-14T22-04-26-463Z",
+      "runId": "bbc1_2026-03-14T22-40-30-508Z",
       "since": "2026-03-14T05:30:15.427Z",
       "item": {
         "title": "Trump urges UK and other nations to send ships to help secure Strait of Hormuz after Iranian attacks",
@@ -146,12 +155,12 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:04:37.746Z",
+      "updatedAt": "2026-03-14T22:40:43.365Z",
       "error": null,
-      "runId": "fox1_2026-03-14T22-04-30-671Z",
+      "runId": "fox1_2026-03-14T22-40-35-352Z",
       "since": "2026-03-14T19:21:43.902Z",
       "item": {
-        "title": "Trump sends out an order to other countries after striking Iran's 'crown jewel'",
+        "title": "Father of baby twins, sergeant whose 'smile could light up any room,' among dead in military crash",
         "url": "https://foxnews.com/live-news/us-iran-israel-war-latest-march-14-live-updates",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
@@ -160,9 +169,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-03-14T22:04:45.994Z",
+      "updatedAt": "2026-03-14T22:40:56.862Z",
       "error": null,
-      "runId": "yahoo1_2026-03-14T22-04-37-888Z",
+      "runId": "yahoo1_2026-03-14T22-40-43-580Z",
       "since": "2026-03-14T21:51:33.651Z",
       "item": {
         "title": "Videos and satellite images show Iran's drone army puncturing U.S. defenses",
