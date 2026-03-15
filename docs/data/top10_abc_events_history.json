@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-15T22:23:51.322Z",
+  "generatedAt": "2026-03-15T22:53:11.940Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T16:24:44.743Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a9f4bb042a6173287066f1dcea67666cba7d5643",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Trump considering initial limited strike against Iran, source says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T16:24:44.743Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "84101ac738357a6e80947250e4243e295a087315",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Democratic group sees lessons for the party in Donald Trump's 2024 election win",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T16:24:44.743Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "560e68a422eed11f4832da7b0de342f96eaae825",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Wyoming abortion bills, including 'heartbeat ban,' advancing through legislature",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T17:06:39.611Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Oscars 2026: Live updates, winners, best moments",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T22:53:22.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6982cfdece3e5564c59fc3e12dd47c682038cf3c",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Airline CEOs demand Congress restore DHS funding and pay airport workers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T22:53:22.493Z",
+      "event_type": "MOVED",
+      "fingerprint": "7989bbe292f650153ae72ba342a07d0666864df3",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "2 DOGE staffers say 'no' regrets for people losing income: Depositions",
+      "to_title": "2 DOGE staffers say 'no' regrets for people losing income: Depositions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T22:53:22.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6497002ffffc7c458ba9f1e31481e812bdde713f",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Lindsey Vonn not ready to discuss her future in ski racing as she recovers from Olympic crash",
       "to_title": null
     }
   ],
