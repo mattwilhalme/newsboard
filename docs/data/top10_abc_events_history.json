@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-15T21:57:03.416Z",
+  "generatedAt": "2026-03-15T22:23:51.322Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T16:24:44.743Z",
-      "event_type": "MOVED",
-      "fingerprint": "fb33dc855876f442aa7fe27b986842108b81fb45",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll",
-      "to_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T16:24:44.743Z",
-      "event_type": "MOVED",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "How an au pair affair and fetish website factored into double murder plot",
-      "to_title": "How an au pair affair and fetish website factored into double murder plot"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T16:24:44.743Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Expansive March storm ramping up, bringing snow, strong winds to millions",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T22:24:01.515Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "45bb72dce089c8275409d8ac1a7e1c2b1b5e8f49",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Oscars 2026 live updates: Rose Byrne, Jessie Buckley and more walk the red carpet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T22:24:01.515Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a2355466f1d343a6acb9897e762f37260a4ea2ee",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Oscars 2026: Live updates, winners, best moments",
       "to_title": null
     }
   ],
