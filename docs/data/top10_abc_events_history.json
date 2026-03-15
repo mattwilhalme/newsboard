@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-15T11:45:08.148Z",
+  "generatedAt": "2026-03-15T11:59:42.592Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T11:24:37.306Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fb33dc855876f442aa7fe27b986842108b81fb45",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T11:24:37.306Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9f4bb042a6173287066f1dcea67666cba7d5643",
-      "from_rank": 4,
-      "to_rank": 2,
-      "from_title": "Trump considering initial limited strike against Iran, source says",
-      "to_title": "Trump considering initial limited strike against Iran, source says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T11:24:37.306Z",
-      "event_type": "MOVED",
-      "fingerprint": "6636cc051ec7463f89dbe37b27e8c15f45f7456c",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "US economy expected to have slowed at end of 2025",
-      "to_title": "US economy expected to have slowed at end of 2025"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T11:24:37.306Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "How a plot involving a fetish website and an au pair affair led to murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T11:24:37.306Z",
-      "event_type": "MOVED",
-      "fingerprint": "975e7c2c79197c40b834ccba3856ee7f31842d7b",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "New Mexico reopens investigation into Jeffrey Epstein's Zorro Ranch",
-      "to_title": "New Mexico reopens investigation into Jeffrey Epstein's Zorro Ranch"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T11:24:37.306Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "64fd510a878051d6ab8b64c8ad8988aa5f50e5b6",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Poland quits treaty banning antipersonnel mines"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T11:24:37.306Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T11:59:52.985Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9275fb59c6251d88fed93883bfa99afbce303a5f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump calls on other countries to assist in Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T11:59:52.985Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c03535a67cb7dd3b588bdcbe1891c15ae9327459",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Pentagon identifies 6 Air Force airmen killed in KC-135 refueling aircraft crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T11:59:52.985Z",
+      "event_type": "MOVED",
+      "fingerprint": "483af1f1a5be3fb66751670a9aa2d732a80f03df",
+      "from_rank": 7,
+      "to_rank": 4,
+      "from_title": "Everything to know about the 98th Academy Awards",
+      "to_title": "Everything to know about the 98th Academy Awards"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T11:59:52.985Z",
+      "event_type": "MOVED",
+      "fingerprint": "38322ebf52f8811f281189be6cc6224713f242f7",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Heightened security plans for 2026 Oscars amid war with Iran",
+      "to_title": "Heightened security plans for 2026 Oscars amid war with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T11:59:52.985Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9e9c50f86d817c369bb92d85fdd7291b65333ce1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Pentagon identifies 6 Air Force airmen killed in KC-135 refueling aircraft crash",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T11:59:52.985Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cab82bc7d63d35762c47929691f4716786544f09",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump calls on other countries to assist in Strait of Hormuz",
       "to_title": null
     }
   ],
