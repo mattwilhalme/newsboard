@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-15T21:01:54.658Z",
+  "generatedAt": "2026-03-15T21:37:19.727Z",
   "hours": 24,
   "events": [
     {
@@ -581,6 +581,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Zelenskyy says Ukraine is waiting on US, Russia to set next round of talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T21:37:31.563Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f14a05b495b81bc4a01c0c59d07e0a054165a2dc",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "100 million people under threat for severe weather as expansive March storm continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T21:37:31.563Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Expansive March storm ramping up, bringing snow, strong winds to millions",
       "to_title": null
     }
   ]
