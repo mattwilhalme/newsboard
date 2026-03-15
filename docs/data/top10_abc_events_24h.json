@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-15T01:29:12.583Z",
+  "generatedAt": "2026-03-15T04:16:46.037Z",
   "hours": 24,
   "events": [
     {
@@ -291,6 +291,46 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Judge partially backs Democrat Kennedy Center trustee in lawsuit over renaming",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T04:16:56.327Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9e9c50f86d817c369bb92d85fdd7291b65333ce1",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Pentagon identifies 6 Air Force airmen killed in KC-135 refueling aircraft crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T04:16:56.327Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cab82bc7d63d35762c47929691f4716786544f09",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Trump calls on other countries to assist in Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T04:16:56.327Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9275fb59c6251d88fed93883bfa99afbce303a5f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump calls on other countries to assist in Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T04:16:56.327Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6f46a04e3e45fddabeaaedfb025388598395a428",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:6 dead after KC-135 US refueling aircraft goes down in western Iraq",
       "to_title": null
     }
   ]
