@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-15T20:03:04.469Z",
+  "generatedAt": "2026-03-15T20:41:40.037Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T15:53:18.237Z",
-      "event_type": "MOVED",
-      "fingerprint": "975e7c2c79197c40b834ccba3856ee7f31842d7b",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "New Mexico reopens investigation into Jeffrey Epstein's Zorro Ranch",
-      "to_title": "New Mexico reopens investigation into Jeffrey Epstein's Zorro Ranch"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T15:53:18.237Z",
-      "event_type": "MOVED",
-      "fingerprint": "560e68a422eed11f4832da7b0de342f96eaae825",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Wyoming abortion bills, including 'heartbeat ban,' advancing through legislature",
-      "to_title": "Wyoming abortion bills, including 'heartbeat ban,' advancing through legislature"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T15:53:18.237Z",
-      "event_type": "MOVED",
-      "fingerprint": "302aff645b756095c3ec0596c4bb207c49f97742",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Barcelona's Sagrada Familia reaches its maximum height after more than a century",
-      "to_title": "Barcelona's Sagrada Familia reaches its maximum height after more than a century"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T15:53:18.237Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3bbce9df8158f595e85e8c28c889590ecf12b970",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Inflation rose more quickly than expected in December",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T15:53:18.237Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "40a189db84c123ac9f76195bb30f582fa80e0251",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Survivors may hold answers to what went wrong in deadly California avalanche: Expert",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T16:24:44.743Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Charges dropped against teens in prank case that led to teacher's death",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T20:41:50.579Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6497002ffffc7c458ba9f1e31481e812bdde713f",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Lindsey Vonn not ready to discuss her future in ski racing as she recovers from Olympic crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T20:41:50.579Z",
+      "event_type": "MOVED",
+      "fingerprint": "483af1f1a5be3fb66751670a9aa2d732a80f03df",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Everything to know about the 98th Academy Awards",
+      "to_title": "Everything to know about the 98th Academy Awards"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T20:41:50.579Z",
+      "event_type": "MOVED",
+      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Expansive March storm ramping up, bringing snow, strong winds to millions",
+      "to_title": "Expansive March storm ramping up, bringing snow, strong winds to millions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T20:41:50.579Z",
+      "event_type": "MOVED",
+      "fingerprint": "21c59028ae919f1fbce8a1bba414f3790b4349b2",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming",
+      "to_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T20:41:50.579Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "817ea687d74ac4db42001b8fe300c441fbb10c24",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Zelenskyy says Ukraine is waiting on US, Russia to set next round of talks",
       "to_title": null
     }
   ],
