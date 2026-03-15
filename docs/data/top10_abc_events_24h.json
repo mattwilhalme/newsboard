@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-15T09:22:52.626Z",
+  "generatedAt": "2026-03-15T09:55:06.287Z",
   "hours": 24,
   "events": [
     {
@@ -271,6 +271,46 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:6 dead after KC-135 US refueling aircraft goes down in western Iraq",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T09:55:15.692Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "38322ebf52f8811f281189be6cc6224713f242f7",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Heightened security plans for 2026 Oscars amid war with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T09:55:15.692Z",
+      "event_type": "MOVED",
+      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Expansive March storm ramping up, bringing snow, strong winds to millions",
+      "to_title": "Expansive March storm ramping up, bringing snow, strong winds to millions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T09:55:15.692Z",
+      "event_type": "MOVED",
+      "fingerprint": "21c59028ae919f1fbce8a1bba414f3790b4349b2",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming",
+      "to_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-15T09:55:15.692Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "38f5c0aebda190299342ad1b7595afba37b607eb",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter",
       "to_title": null
     }
   ]
