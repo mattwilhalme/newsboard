@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T19:43:04.183Z",
+  "generatedAt": "2026-03-16T20:08:13.090Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T20:14:13.560Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ba3a2e0c8b46a8f06b148b508c0160f8ac003728",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Willie Colón, salsa pioneer and activist, dies at 75"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T20:14:13.560Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "How an au pair affair and fetish website factored into double murder plot",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-21T21:27:55.053Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Cuban officials report an island-wide blackout",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:08:23.001Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:08:23.001Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "edeafe497859f4eb5cea27f2d3d6722771e91a3c",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 200 troops have been wounded, including 10 'seriously'",
       "to_title": null
     }
   ],
