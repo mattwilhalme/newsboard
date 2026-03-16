@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T23:18:56.615Z",
+  "generatedAt": "2026-03-16T23:48:18.475Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T15:19:37.901Z",
-      "event_type": "MOVED",
-      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Bodies of all 9 missing skiers recovered after deadly avalanche",
-      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T15:19:37.901Z",
-      "event_type": "MOVED",
-      "fingerprint": "ad133c6830672abf449a1bf1d596530d22959228",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Russia targets Ukraine with 345 drones and missiles, Zelenskyy says",
-      "to_title": "Russia targets Ukraine with 345 drones and missiles, Zelenskyy says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T15:19:37.901Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Retired Air Force major general missing: What we know about his disappearance",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T23:48:28.429Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ad2df521e6e71b122dd62fc4a53aec071b9b1b70",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Top Democrats refer Noem to DOJ for alleged perjury"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T23:48:28.429Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f4a1b24d1bea7595c00525e5ba537eee01840aba",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Top Democrats refer Noem to DOJ for perjury",
       "to_title": null
     }
   ],
