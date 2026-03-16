@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-16T08:05:46.576Z",
+  "generatedAt": "2026-03-16T09:12:48.456Z",
   "hours": 24,
   "events": [
     {
@@ -1001,6 +1001,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Airline CEOs demand Congress restore DHS funding and pay airport workers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T09:12:59.002Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d641b3192a417f04a7c39846bae06a59cbb27748",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Iran live updates: Dubai airport resumes some flights after drone-related fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T09:12:59.002Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "57f6055e7f17b955307e97f4d061a14dc7f57250",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump calls Strait of Hormuz 'something that we don't need'",
       "to_title": null
     }
   ]

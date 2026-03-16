@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T08:05:46.576Z",
+  "generatedAt": "2026-03-16T09:12:48.456Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Trump outlines new plan for tariffs after 'deeply disappointing' Supreme Court ruling",
-      "to_title": "Trump outlines new plan for tariffs after 'deeply disappointing' Supreme Court ruling"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "04887490ca31e4134fd476edc1089a970c9d105e",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:Supreme Court invalidates most of Trump's tariffs",
-      "to_title": "Related:Supreme Court invalidates most of Trump's tariffs"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T20:17:51.040Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Airline CEOs demand Congress restore DHS funding and pay airport workers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T09:12:59.002Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d641b3192a417f04a7c39846bae06a59cbb27748",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Iran live updates: Dubai airport resumes some flights after drone-related fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T09:12:59.002Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "57f6055e7f17b955307e97f4d061a14dc7f57250",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump calls Strait of Hormuz 'something that we don't need'",
       "to_title": null
     }
   ],
