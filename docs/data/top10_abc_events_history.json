@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T20:08:13.090Z",
+  "generatedAt": "2026-03-16T20:57:32.023Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T21:27:55.053Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Criminal negligence investigation launched into Sierra Nevada avalanche deaths"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T21:27:55.053Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d180458b0861e18d574ad6bd9a27f58bb8a174e8",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T23:39:54.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Criminal negligence investigation launched into Sierra Nevada avalanche deaths",
-      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T23:39:54.554Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Criminal negligence investigation launched into Sierra Nevada avalanche deaths",
-      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T23:39:54.554Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "60e34e21c8e9569edae1c6ae45bfbb1e4f1fcf2f",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Trump approves disaster assistance to DC to help with sewage spill into Potomac River"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T23:39:54.554Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f72f0fe654f72f40b6b6ebc527d0072917807a74",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Man who called 911 to report wife shot and intruder in home charged with her murder",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T03:46:58.179Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
-      "from_rank": 3,
-      "to_rank": 3,
-      "from_title": "Nor'easter to march up the East Coast, bringing significant snow",
-      "to_title": "Heavy snow, 60 mph wind gusts: What to expect from major nor'easter"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T03:46:58.179Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "04b4b4ce977cfad4095f775f9d9fe534d9b06888",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T03:46:58.179Z",
-      "event_type": "MOVED",
-      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Bodies of all 9 missing skiers recovered after deadly avalanche",
-      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T03:46:58.179Z",
-      "event_type": "MOVED",
-      "fingerprint": "91b3ba020a3940f3d76fb1bad471c8a94582bc16",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges",
-      "to_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T03:46:58.179Z",
-      "event_type": "MOVED",
-      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
-      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T03:46:58.179Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "60e34e21c8e9569edae1c6ae45bfbb1e4f1fcf2f",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Trump approves disaster assistance to DC to help with sewage spill into Potomac River",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e41c51cc9f39bb262f95102730e9fc4e33dc0fb1",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b0f205b300c736729b1ffe181517369cece816a8",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Majority of Americans disapprove of how Trump handling tariffs: ABC/Post/Ipsos poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "MOVED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling",
-      "to_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T05:11:07.534Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: 200 troops have been wounded, including 10 'seriously'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "06a25a0752cdee7701b8d7ae13ed7512c296bc7b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingJudge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "MOVED",
+      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
+      "to_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eb94a7d38ff5e5092ddfcffd45b95448e427c136",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Canada, France, Germany, Italy, UK issue statement warning about Israel-Lebanon escalation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ef52b996e4f2a11913216fb0feead2c810389b4d",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "More Iranian strikes reported across the region"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf993e6477a2fc01b3d5160a069ccba01abe6ac9",
+      "from_rank": 2,
+      "to_rank": 5,
+      "from_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer",
+      "to_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "MOVED",
+      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys",
+      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "MOVED",
+      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Afghan man dies in ICE custody one day after being detained",
+      "to_title": "Afghan man dies in ICE custody one day after being detained"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Numerous flights canceled as severe March storm continues",
+      "to_title": "Numerous flights canceled as severe March storm continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7675e61fc20f2f34f8870d2c458dc57184e831d4",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cdbe320241d46ec49f06e5d9ebec3cdb425559b1",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Retired Air Force major general missing: What we know about his disappearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9e047add775fcee105e3bb3be5fd31d0f12ee336",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Michael B. Jordan and Leonardo DiCaprio embrace after Jordan's Oscar win",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Astronomers discover what may be a new type of planet",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "What to know as war with Iran enters 3rd week",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T20:57:43.241Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "692324d3273c63fd62d64cfc02e4fdbaaa1ee6df",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Cuban officials report island-wide blackout",
       "to_title": null
     }
   ],
