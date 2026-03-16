@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-16T17:48:39.470Z",
+  "generatedAt": "2026-03-16T18:42:38.880Z",
   "hours": 24,
   "events": [
     {
@@ -1291,6 +1291,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "UF moves to deactivate College Republicans",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T18:42:49.945Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Afghan man dies in ICE custody one day after being detained"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T18:42:49.945Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b14795116bd9595fdd3d8120c837a1ed80ad8b21",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Cuban officials report an island-wide blackout"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T18:42:49.945Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c27c7f48e234e49d5161848f4c6f3eb1bf37ab31",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Afghan who died in ICE custody worked with US forces in Afghanistan, group says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T18:42:49.945Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3e4a797472cdb27de684df32c130d111fa01a475",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Biggest fire in Nebraska history is 0% contained",
       "to_title": null
     }
   ]
