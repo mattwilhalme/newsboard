@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T20:57:32.023Z",
+  "generatedAt": "2026-03-16T21:36:46.367Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "MOVED",
-      "fingerprint": "04b4b4ce977cfad4095f775f9d9fe534d9b06888",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
-      "to_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "MOVED",
-      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Bodies of all 9 missing skiers recovered after deadly avalanche",
-      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "MOVED",
-      "fingerprint": "91b3ba020a3940f3d76fb1bad471c8a94582bc16",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges",
-      "to_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "MOVED",
-      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
-      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3648652a5f0b4a18d6a77a989f6082dfc3860e3",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Investigators release photo of suspect in murder of 87-year-old",
-      "to_title": "Investigators release photo of suspect in murder of 87-year-old"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "MOVED",
-      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
-      "to_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "04887490ca31e4134fd476edc1089a970c9d105e",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Supreme Court invalidates most of Trump's tariffs",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T05:11:07.534Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ba3a2e0c8b46a8f06b148b508c0160f8ac003728",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Willie Colón, salsa pioneer and activist, dies at 75",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T12:27:17.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ad133c6830672abf449a1bf1d596530d22959228",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Russia targets Ukraine with 345 drones and missiles, Zelenskyy says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T12:27:17.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "91b3ba020a3940f3d76fb1bad471c8a94582bc16",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges",
-      "to_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T12:27:17.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
-      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T12:27:17.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3648652a5f0b4a18d6a77a989f6082dfc3860e3",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Investigators release photo of suspect in murder of 87-year-old",
-      "to_title": "Investigators release photo of suspect in murder of 87-year-old"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T12:27:17.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T13:26:46.699Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Cuban officials report island-wide blackout",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "MOVED",
+      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
+      "to_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4eefc3dc8def62ed3e7fd08b504ab058e28f3c0d",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Border Patrol Commander Greg Bovino expected to retire, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "90ce031415efd4af3adf11d24eb13547fa7a97b6",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "MOVED",
+      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
+      "from_rank": 7,
+      "to_rank": 4,
+      "from_title": "Afghan man dies in ICE custody one day after being detained",
+      "to_title": "Afghan man dies in ICE custody one day after being detained"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "MOVED",
+      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys",
+      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "Numerous flights canceled as severe March storm continues",
+      "to_title": "Numerous flights canceled as severe March storm continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "MOVED",
+      "fingerprint": "cdbe320241d46ec49f06e5d9ebec3cdb425559b1",
+      "from_rank": 10,
+      "to_rank": 7,
+      "from_title": "Retired Air Force major general missing: What we know about his disappearance",
+      "to_title": "Retired Air Force major general missing: What we know about his disappearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Astronomers discover what may be a new type of planet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "96623e087d8f416a2f2dad05caa1e835ec7e3dfb",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Susie Wiles diagnosed with breast cancer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "06a25a0752cdee7701b8d7ae13ed7512c296bc7b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingJudge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eb94a7d38ff5e5092ddfcffd45b95448e427c136",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Canada, France, Germany, Italy, UK issue statement warning about Israel-Lebanon escalation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ef52b996e4f2a11913216fb0feead2c810389b4d",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "More Iranian strikes reported across the region",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T21:36:56.317Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bf993e6477a2fc01b3d5160a069ccba01abe6ac9",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer",
       "to_title": null
     }
   ],
