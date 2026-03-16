@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T09:12:48.456Z",
+  "generatedAt": "2026-03-16T10:16:55.803Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "b0f205b300c736729b1ffe181517369cece816a8",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Majority of Americans disapprove of how Trump handling tariffs: ABC/Post/Ipsos poll",
-      "to_title": "Majority of Americans disapprove of how Trump handling tariffs: ABC/Post/Ipsos poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "9b49ced8b96fbc01edc602d3dce26a7d8c7f4668",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Parents of 764 victim file wrongful death lawsuit against Discord",
-      "to_title": "Parents of 764 victim file wrongful death lawsuit against Discord"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "a2687c4688b0f9f6db3a5ebbd49153d44cde0c91",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Northeast winter storm set to arrive Friday, just before possible weekend nor’easter",
-      "to_title": "Northeast winter storm set to arrive Friday, just before possible weekend nor’easter"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": 9,
-      "to_rank": 6,
-      "from_title": "How an au pair affair and fetish website factored into double murder plot",
-      "to_title": "How an au pair affair and fetish website factored into double murder plot"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "552c2ea675d8afc924007f158933b4c584b3e8ed",
-      "from_rank": 10,
-      "to_rank": 7,
-      "from_title": "Texas Republican faces allegations of affair with staffer who died by suicide",
-      "to_title": "Texas Republican faces allegations of affair with staffer who died by suicide"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T20:17:51.040Z",
-      "event_type": "MOVED",
-      "fingerprint": "fb33dc855876f442aa7fe27b986842108b81fb45",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll",
-      "to_title": "Americans oppose tactics ICE is using to enforce immigration laws by 2:1 margin: Poll"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T20:17:51.040Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Iran live updates: Trump calls Strait of Hormuz 'something that we don't need'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T10:17:06.692Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "What to know as war with Iran enters 3rd week"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T10:17:06.692Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T10:17:06.692Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f99aa514f830350b549413176ed5874b949489a4",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "In Illinois' Democratic primaries, generational change front and center"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T10:17:06.692Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4e7007268ca028ff0bdb64c15c9232e827ca7438",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Energy Secretary Wright says war with Iran 'will certainly' end in next few weeks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T10:17:06.692Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f14a05b495b81bc4a01c0c59d07e0a054165a2dc",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "100 million people under threat for severe weather as expansive March storm continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T10:17:06.692Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "500a58f0b828735bd924182d91d6882523f62817",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Closing arguments set in trial of children's book author charged with killinghusband",
       "to_title": null
     }
   ],
