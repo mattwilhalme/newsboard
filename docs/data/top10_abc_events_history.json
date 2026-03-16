@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T16:46:46.870Z",
+  "generatedAt": "2026-03-16T17:48:39.470Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "MOVED",
-      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
-      "to_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T04:21:40.631Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a2687c4688b0f9f6db3a5ebbd49153d44cde0c91",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Northeast winter storm set to arrive Friday, just before possible weekend nor’easter",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Over 40 million Americans on alert for winter storm conditions over the weekend"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "MOVED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Trump says he has signed order for new 10% tariff after Supreme Court ruling",
-      "to_title": "Trump says he has signed order for new 10% tariff after Supreme Court ruling"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "MOVED",
-      "fingerprint": "dc55f223c71f17ec56a0af611fcec98c003bd98c",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources",
-      "to_title": "Nancy Guthrie case may see resources scaled back as leads come up empty: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "MOVED",
-      "fingerprint": "d180458b0861e18d574ad6bd9a27f58bb8a174e8",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms",
-      "to_title": "Court clears way for Louisiana law requiring Ten Commandments in classrooms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "MOVED",
-      "fingerprint": "f88cfac66dfcb59569330c0ee2ce198b8875c4bd",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer",
-      "to_title": "Former 'Jersey Shore' star Snooki says she has cervical cancer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "MOVED",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "How an au pair affair and fetish website factored into double murder plot",
-      "to_title": "How an au pair affair and fetish website factored into double murder plot"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "MOVED",
-      "fingerprint": "f303e7c3c499e83312944c76dff00ae722ff7ca3",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "Former Prince Andrew arrested: What's next for King Charles' brother",
-      "to_title": "What's next for former Prince Andrew after arrest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "f303e7c3c499e83312944c76dff00ae722ff7ca3",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "Former Prince Andrew arrested: What's next for King Charles' brother",
-      "to_title": "What's next for former Prince Andrew after arrest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T12:01:51.890Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d31570de85041413670cea2ceecf7c5857f621ba",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Nancy Guthrie live updates: More than 1 suspect not ruled out, sheriff's office says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T13:07:17.228Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "308d4ec0f2c2e3b403a91708868b3749396a48a4",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "US captures record 11th gold medal at Winter Games"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-21T13:07:17.228Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f303e7c3c499e83312944c76dff00ae722ff7ca3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "What's next for former Prince Andrew after arrest",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-21T17:15:29.264Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Anne Hathaway wears ‘groundbreaking’ floral gown at 2026 Oscars",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d98c1a1e4359d9f13ea8acf9064d012796cce406",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says countries 'on the way'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bf993e6477a2fc01b3d5160a069ccba01abe6ac9",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "MOVED",
+      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys",
+      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c27c7f48e234e49d5161848f4c6f3eb1bf37ab31",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Afghan who died in ICE custody worked with US forces in Afghanistan, group says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Numerous flights canceled as severe March storm continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "MOVED",
+      "fingerprint": "638588ee74608a007132d1ed51d7f5e2794446bf",
+      "from_rank": 3,
+      "to_rank": 8,
+      "from_title": "Oscars after-party looks at the Vanity Fair silver carpet and more",
+      "to_title": "Oscars after-party looks at the Vanity Fair silver carpet and more"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "MOVED",
+      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "What to know as war with Iran enters 3rd week",
+      "to_title": "What to know as war with Iran enters 3rd week"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3e4a797472cdb27de684df32c130d111fa01a475",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Biggest fire in Nebraska history is 0% contained"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0419bbf8a7f9ae407065841803d0c5e6b00c9d06",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingWhite House chief of staff Susie Wiles diagnosed with breast cancer: Trump",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2e34c4d77090d23855358caed0dca9af9d2204e4",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Oscars 2026: Full winners list from the 98th Academy Awards",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b0d4c2edabcff5b759d46eaaf277872d25ddbb36",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3c48abbc1bdaf6383b0c7920d28126a861a6547b",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Biggest wildfire in Nebraska history continues to burn out of control",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T17:48:49.617Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "67ceea36d5cecf9b96a0b7df44c620166b8f943f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "UF moves to deactivate College Republicans",
       "to_title": null
     }
   ],
