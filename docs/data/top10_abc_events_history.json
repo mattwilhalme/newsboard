@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T06:55:52.352Z",
+  "generatedAt": "2026-03-16T08:05:46.576Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "MOVED",
-      "fingerprint": "86a2c3e13aac8c342c3e6a80d0a30be622edf4fa",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "How an au pair affair and fetish website factored into double murder plot",
-      "to_title": "How an au pair affair and fetish website factored into double murder plot"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-20T19:19:00.863Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6636cc051ec7463f89dbe37b27e8c15f45f7456c",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "US economy slowed more than expected at end of 2025",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-20T20:17:51.040Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breaking'One Battle After Another' wins the Oscar for best picture",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T08:05:56.844Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "500a58f0b828735bd924182d91d6882523f62817",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Closing arguments set in trial of children's book author charged with killinghusband"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T08:05:56.844Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6982cfdece3e5564c59fc3e12dd47c682038cf3c",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Airline CEOs demand Congress restore DHS funding and pay airport workers",
       "to_title": null
     }
   ],
