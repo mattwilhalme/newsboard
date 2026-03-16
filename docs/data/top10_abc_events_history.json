@@ -1,128 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-16T21:36:46.367Z",
+  "generatedAt": "2026-03-16T22:06:29.771Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T13:26:46.699Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T13:26:46.699Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0dcfa47a6f5548d9d4063196a2ae42c220d10724",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Heavy snow, 60 mph wind gusts: What to expect from major nor'easter",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:00:09.095Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:00:09.095Z",
-      "event_type": "MOVED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling",
-      "to_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:00:09.095Z",
-      "event_type": "MOVED",
-      "fingerprint": "04b4b4ce977cfad4095f775f9d9fe534d9b06888",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
-      "to_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:00:09.095Z",
-      "event_type": "MOVED",
-      "fingerprint": "6c6570f1c218a335fd8cbdabc4f038ba4480e603",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Bodies of all 9 missing skiers recovered after deadly avalanche",
-      "to_title": "Bodies of all 9 missing skiers recovered after deadly avalanche"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:00:09.095Z",
-      "event_type": "MOVED",
-      "fingerprint": "ad133c6830672abf449a1bf1d596530d22959228",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Russia targets Ukraine with 345 drones and missiles, Zelenskyy says",
-      "to_title": "Russia targets Ukraine with 345 drones and missiles, Zelenskyy says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:00:09.095Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "91b3ba020a3940f3d76fb1bad471c8a94582bc16",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "DOJ fires US attorney in Virginia unanimously appointed by federal judges",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:31:46.117Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4f097a463532f9b454a6caae07c81913c5793457",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, agency says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:31:46.117Z",
-      "event_type": "MOVED",
-      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
-      "to_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:31:46.117Z",
-      "event_type": "MOVED",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T14:31:46.117Z",
-      "event_type": "MOVED",
-      "fingerprint": "0d3a87628f523cec69a53b3c8a64fde4a9ab378b",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling",
-      "to_title": "Trump says he has signed order for new 15% tariff after Supreme Court ruling"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T14:31:46.117Z",
@@ -30001,6 +29881,126 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9c1903f6a7e368d2acbf9652c90a522c965bfcda",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Rubio orders US diplomats to push countries to act against Iran amid 'risk of attack'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5af938d8d69f1020242f7194a1badbcf8b5b900f",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: 200 US troops have been wounded, including 10 'seriously'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "4eefc3dc8def62ed3e7fd08b504ab058e28f3c0d",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Border Patrol Commander Greg Bovino expected to retire, sources say",
+      "to_title": "Border Patrol Commander Greg Bovino expected to retire, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "90ce031415efd4af3adf11d24eb13547fa7a97b6",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy",
+      "to_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Afghan man dies in ICE custody one day after being detained",
+      "to_title": "Afghan man dies in ICE custody one day after being detained"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys",
+      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Numerous flights canceled as severe March storm continues",
+      "to_title": "Numerous flights canceled as severe March storm continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "cdbe320241d46ec49f06e5d9ebec3cdb425559b1",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Retired Air Force major general missing: What we know about his disappearance",
+      "to_title": "Retired Air Force major general missing: What we know about his disappearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Astronomers discover what may be a new type of planet",
+      "to_title": "Astronomers discover what may be a new type of planet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "MOVED",
+      "fingerprint": "7675e61fc20f2f34f8870d2c458dc57184e831d4",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race",
+      "to_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-16T22:06:38.600Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "96623e087d8f416a2f2dad05caa1e835ec7e3dfb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Susie Wiles diagnosed with breast cancer",
       "to_title": null
     }
   ],
