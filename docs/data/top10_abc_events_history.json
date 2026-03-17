@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-17T21:51:11.356Z",
+  "generatedAt": "2026-03-17T22:21:17.074Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3d492b1674337852d4249c2a87d7d3b4ebd7a79c",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7a93af85a7b8272e5afde454bda66f4548676fa6",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "a8593df32d6cb42feee5d173a74a55f93c73598d",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "What we know about the man killed at Mar-a-Lago",
-      "to_title": "What we know about the man killed at Mar-a-Lago"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "27cee83fd0f38a2b5e306a65ab3ddae0e9a785f3",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "5edd758fecff53c3f630d485a86f350185b00224",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Largest nurses strike in New York City history ends as workers ratify contract",
-      "to_title": "Largest nurses strike in New York City history ends as workers ratify contract"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "32dfef69a36051ecc96e4519cc522603fc9eb34f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Apology after racial slur shouted during BAFTAs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d6c5318c9893de8a632a03741699598e17d0ef4f",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Blizzard live updates: Historic storm strikes with 3 inches an hour, thundersnow",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cbbf9fc53a23a53a09ca1b484d8468e556ee3485",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "US beats Canada for first men's hockey gold at the Olympics since 1980",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "63ad121e39f2afa89cf46add0192d2042f7beda9",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T13:52:56.325Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "28160b0ae4522ec67c90574cddd7edd71183a138",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "EU diplomats to meet Board of Peace director",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5f603fc7b236d7885c6bd860cc0391a8eface285",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "25 Mexican National Guard troops left dead in operation that killed cartel leader"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "428956090b0de3533319b58af592fe690aa4e7b7",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Stocks tumble after Trump ratchets up tariffs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "799349db3e58409ccdfe6f9a676b45de207ba8e9",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Murder trial of mom accused of killing husband with fentanyl to get underway",
-      "to_title": "Murder trial of mom accused of killing husband with fentanyl to get underway"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-23T15:32:16.255Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "How a green energy transition could impact international conflict",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8cb87077b59e41b9f3497f3b6b34b1c65f51119c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "More than a dozen Reaper drones have been lost in Iran operations, US officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "29144708720e809e096ca41eaaa6212c363f7560",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "50b924dd27ce8c532ab48d5e7a5be02c9e85888d",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Iran live updates: More than a dozen Reaper drones lost in combat",
+      "to_title": "Iran live updates: More than a dozen Reaper drones lost in combat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b012973bfff200b51901a0c2adca10a9b5b69320",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Cesar Chavez accused of abusing 'young women or minors,' UFW says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "a2816cf175529c30274f76bc78d454353704e668",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Chief Justice: 'Personally directed hostility is dangerous, and it's got to stop'",
+      "to_title": "Chief Justice: 'Personally directed hostility is dangerous, and it's got to stop'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "a650f38c643343042a06824f58a189addeaeb97b",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Video shows apparent meteor in Ohio, Pennsylvania",
+      "to_title": "Video shows apparent meteor in Ohio, Pennsylvania"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "1fdf59412b089ce720866d0fe58e2ce44b229790",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Groups push for release of DOGE deposition videos after judge's ruling",
+      "to_title": "Groups push for release of DOGE deposition videos after judge's ruling"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "bed0e53fb2fb90bb92a8d2287da44a740c344327",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "The US barely gets any oil through the Strait of Hormuz. So why are gas prices up?",
+      "to_title": "The US barely gets any oil through the Strait of Hormuz. So why are gas prices up?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "0725681fe6a2c1162f7934a411cb07d21a72cb59",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "US mayors issue stark warnings about future of vital Mississippi River",
+      "to_title": "US mayors issue stark warnings about future of vital Mississippi River"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "MOVED",
+      "fingerprint": "e625298a0f420263e3705c10b3f54142dbead5d9",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer",
+      "to_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "60163dfb46255cb9c55643f1b86ab851b4ef67c9",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e85c7ef7d18755a7535d90fdc8f9c98c6b92d968",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Humanitarian, aid workers reveal grim details as Lebanon crisis worsens",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T22:21:27.186Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "88eda68fffe6b0530aad1d6093380a3ff2d3e95c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Kate Middleton steps out with Irish Guards on St. Patrick's Day",
       "to_title": null
     }
   ],
