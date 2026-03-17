@@ -1,118 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-17T08:34:29.242Z",
+  "generatedAt": "2026-03-17T09:34:40.056Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:02:38.125Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": 6,
-      "to_rank": 6,
-      "from_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
-      "from_rank": 5,
-      "to_rank": 1,
-      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
-      "to_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": 6,
-      "to_rank": 2,
-      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "4f097a463532f9b454a6caae07c81913c5793457",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say",
-      "to_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "b6bd67fac5d270aaf4fbce7c45ee53c33d8a103b",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "US beats Canada for first men's hockey gold at the Olympics since 1980",
-      "to_title": "US beats Canada for first men's hockey gold at the Olympics since 1980"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "97103096b8a5ea04a57b29d98a37331894091782",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke",
-      "to_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:35:47.855Z",
-      "event_type": "MOVED",
-      "fingerprint": "e41c51cc9f39bb262f95102730e9fc4e33dc0fb1",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll",
-      "to_title": "Most Americans disapprove of Trump; don't trust Dems in Congress more: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:52:45.726Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dd8dc490649f813fb335a686ac8c08d4232a8c2c",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Severe winter storm live updates: Northeast braces for blizzard conditions"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:52:45.726Z",
-      "event_type": "MOVED",
-      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
-      "to_title": "Related:NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:52:45.726Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "94f6c6515bdc350384b324a1f102a9c367058f73",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
-      "to_title": "Related:NYC under blizzard warning as potentially historic nor'easter expected in Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:52:45.726Z",
-      "event_type": "MOVED",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS reverses decision to suspend TSA PreCheck and Global Entry due to shutdown"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T19:52:45.726Z",
@@ -30001,6 +29891,116 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "159e68e745d3ded0c3cc23f00637a49508ee4fec",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Gulf states report more attacks and tanker struck"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e4b41161f7aab63195b74492fd7413c01422282b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Could a global economy dependent on renewable energy see less war? Experts explain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
+      "from_rank": 9,
+      "to_rank": 4,
+      "from_title": "Numerous flights canceled as severe March storm continues",
+      "to_title": "Numerous flights canceled as severe March storm continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "MOVED",
+      "fingerprint": "b94fab91d07f8dbdee490509a84911dc099b257b",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Utah mom found guilty of fatally poisoning husband with fentanyl",
+      "to_title": "Utah mom found guilty of fatally poisoning husband with fentanyl"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "MOVED",
+      "fingerprint": "fbda85481ac4fbf5e5475ffccb31ca648d72d03a",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Bank of America reaches proposed, non-binding settlement in Jeffrey Epstein suit",
+      "to_title": "Bank of America reaches proposed, non-binding settlement in Jeffrey Epstein suit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "MOVED",
+      "fingerprint": "ad2df521e6e71b122dd62fc4a53aec071b9b1b70",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Top Democrats refer Noem to DOJ for alleged perjury",
+      "to_title": "Top Democrats refer Noem to DOJ for alleged perjury"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "MOVED",
+      "fingerprint": "70bf482f16bb091600c381537de4e33ae0d67028",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Hotter temperatures may push millions toward a more sedentary lifestyle, study finds",
+      "to_title": "Hotter temperatures may push millions toward a more sedentary lifestyle, study finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "MOVED",
+      "fingerprint": "2aad05f2ada0b6de66e0161818e6bbd63d328510",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Trump reveals Republican lawmaker's private health diagnosis",
+      "to_title": "Trump reveals Republican lawmaker's private health diagnosis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "MOVED",
+      "fingerprint": "90ce031415efd4af3adf11d24eb13547fa7a97b6",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy",
+      "to_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a578ee92a29e400be98dbacf02f7119098165334",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Ship struck off UAE coast; Israeli incursion in Lebanon escalates",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T09:34:50.003Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7675e61fc20f2f34f8870d2c458dc57184e831d4",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race",
       "to_title": null
     }
   ],
