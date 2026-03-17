@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-17T05:48:56.901Z",
+  "generatedAt": "2026-03-17T06:47:08.127Z",
   "hours": 24,
   "events": [
     {
@@ -1351,6 +1351,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Astronomers discover what may be a new type of planet",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T06:47:18.894Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "70bf482f16bb091600c381537de4e33ae0d67028",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Hotter temperatures may push millions toward a more sedentary lifestyle, study finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T06:47:18.894Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4eefc3dc8def62ed3e7fd08b504ab058e28f3c0d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Border Patrol Commander Greg Bovino expected to retire, sources say",
       "to_title": null
     }
   ]

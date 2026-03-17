@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-17T05:48:56.901Z",
+  "generatedAt": "2026-03-17T06:47:08.127Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T16:42:30.347Z",
-      "event_type": "MOVED",
-      "fingerprint": "2506e350eadf65fb40fdee8b484ecd666840d26f",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown",
-      "to_title": "DHS says it's suspending TSA PreCheck and Global Entry due to shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T16:42:30.347Z",
-      "event_type": "MOVED",
-      "fingerprint": "04b4b4ce977cfad4095f775f9d9fe534d9b06888",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
-      "to_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T16:42:30.347Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Astronomers discover what may be a new type of planet",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T06:47:18.894Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "70bf482f16bb091600c381537de4e33ae0d67028",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Hotter temperatures may push millions toward a more sedentary lifestyle, study finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T06:47:18.894Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4eefc3dc8def62ed3e7fd08b504ab058e28f3c0d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Border Patrol Commander Greg Bovino expected to retire, sources say",
       "to_title": null
     }
   ],
