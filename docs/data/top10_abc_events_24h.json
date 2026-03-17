@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-17T21:02:23.057Z",
+  "generatedAt": "2026-03-17T21:51:11.356Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
-      "to_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4eefc3dc8def62ed3e7fd08b504ab058e28f3c0d",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Border Patrol Commander Greg Bovino expected to retire, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "90ce031415efd4af3adf11d24eb13547fa7a97b6",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
-      "from_rank": 7,
-      "to_rank": 4,
-      "from_title": "Afghan man dies in ICE custody one day after being detained",
-      "to_title": "Afghan man dies in ICE custody one day after being detained"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys",
-      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Numerous flights canceled as severe March storm continues",
-      "to_title": "Numerous flights canceled as severe March storm continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "cdbe320241d46ec49f06e5d9ebec3cdb425559b1",
-      "from_rank": 10,
-      "to_rank": 7,
-      "from_title": "Retired Air Force major general missing: What we know about his disappearance",
-      "to_title": "Retired Air Force major general missing: What we know about his disappearance"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Astronomers discover what may be a new type of planet"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "96623e087d8f416a2f2dad05caa1e835ec7e3dfb",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Susie Wiles diagnosed with breast cancer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "06a25a0752cdee7701b8d7ae13ed7512c296bc7b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingJudge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "eb94a7d38ff5e5092ddfcffd45b95448e427c136",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Canada, France, Germany, Italy, UK issue statement warning about Israel-Lebanon escalation",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ef52b996e4f2a11913216fb0feead2c810389b4d",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "More Iranian strikes reported across the region",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bf993e6477a2fc01b3d5160a069ccba01abe6ac9",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T22:06:38.600Z",
@@ -1211,6 +1081,36 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Tim Cook talks Apple's 50th anniversary, future of AI and privacy",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:51:21.769Z",
+      "event_type": "MOVED",
+      "fingerprint": "e85c7ef7d18755a7535d90fdc8f9c98c6b92d968",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Humanitarian, aid workers reveal grim details as Lebanon crisis worsens",
+      "to_title": "Humanitarian, aid workers reveal grim details as Lebanon crisis worsens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:51:21.769Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bed0e53fb2fb90bb92a8d2287da44a740c344327",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "The US barely gets any oil through the Strait of Hormuz. So why are gas prices up?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:51:21.769Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "854ab8b3751e17f353460adaaea258e7e646bfd8",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "How a green energy transition could impact international conflict",
       "to_title": null
     }
   ]
