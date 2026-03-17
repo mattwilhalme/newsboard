@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-17T09:34:40.056Z",
+  "generatedAt": "2026-03-17T10:31:11.447Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:52:45.726Z",
-      "event_type": "MOVED",
-      "fingerprint": "4f097a463532f9b454a6caae07c81913c5793457",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say",
-      "to_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T19:52:45.726Z",
-      "event_type": "MOVED",
-      "fingerprint": "b6bd67fac5d270aaf4fbce7c45ee53c33d8a103b",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "US beats Canada for first men's hockey gold at the Olympics since 1980",
-      "to_title": "US beats Canada for first men's hockey gold at the Olympics since 1980"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-22T19:52:45.726Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T10:31:22.397Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "27d7c591b85ae1f49a57a124af83ecc2d5f37788",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel says Iran's security chief Ali Larijani dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T10:31:22.397Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "159e68e745d3ded0c3cc23f00637a49508ee4fec",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Gulf states report more attacks and tanker struck",
       "to_title": null
     }
   ],

@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-17T09:34:40.056Z",
+  "generatedAt": "2026-03-17T10:31:11.447Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "What to know as war with Iran enters 3rd week"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f99aa514f830350b549413176ed5874b949489a4",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "In Illinois' Democratic primaries, generational change front and center"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4e7007268ca028ff0bdb64c15c9232e827ca7438",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Energy Secretary Wright says war with Iran 'will certainly' end in next few weeks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f14a05b495b81bc4a01c0c59d07e0a054165a2dc",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "100 million people under threat for severe weather as expansive March storm continues",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "500a58f0b828735bd924182d91d6882523f62817",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Closing arguments set in trial of children's book author charged with killinghusband",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T12:00:15.524Z",
@@ -1481,6 +1421,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T10:31:22.397Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "27d7c591b85ae1f49a57a124af83ecc2d5f37788",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel says Iran's security chief Ali Larijani dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T10:31:22.397Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "159e68e745d3ded0c3cc23f00637a49508ee4fec",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Gulf states report more attacks and tanker struck",
       "to_title": null
     }
   ]
