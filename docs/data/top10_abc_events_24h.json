@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-17T06:47:08.127Z",
+  "generatedAt": "2026-03-17T07:44:52.082Z",
   "hours": 24,
   "events": [
     {
@@ -1371,6 +1371,46 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Border Patrol Commander Greg Bovino expected to retire, sources say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T07:45:02.405Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a578ee92a29e400be98dbacf02f7119098165334",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Ship struck off UAE coast; Israeli incursion in Lebanon escalates"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T07:45:02.405Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "035ce4867a27d78ea6be1c089e9256e979b15827",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Rubio orders US diplomats to push countries to act against Iran amid 'risk of attack'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T07:45:02.405Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9c1903f6a7e368d2acbf9652c90a522c965bfcda",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Rubio orders US diplomats to push countries to act against Iran amid 'risk of attack'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T07:45:02.405Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5af938d8d69f1020242f7194a1badbcf8b5b900f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
       "to_title": null
     }
   ]
