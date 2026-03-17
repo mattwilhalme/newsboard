@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-17T18:40:44.144Z",
+  "generatedAt": "2026-03-17T19:42:50.892Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T18:42:49.945Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Afghan man dies in ICE custody one day after being detained"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T18:42:49.945Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b14795116bd9595fdd3d8120c837a1ed80ad8b21",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Cuban officials report an island-wide blackout"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T18:42:49.945Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c27c7f48e234e49d5161848f4c6f3eb1bf37ab31",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Afghan who died in ICE custody worked with US forces in Afghanistan, group says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T18:42:49.945Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3e4a797472cdb27de684df32c130d111fa01a475",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Biggest fire in Nebraska history is 0% contained",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "edeafe497859f4eb5cea27f2d3d6722771e91a3c",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 200 troops have been wounded, including 10 'seriously'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "MOVED",
-      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Afghan man dies in ICE custody one day after being detained",
-      "to_title": "Afghan man dies in ICE custody one day after being detained"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "MOVED",
-      "fingerprint": "9e047add775fcee105e3bb3be5fd31d0f12ee336",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Michael B. Jordan and Leonardo DiCaprio embrace after Jordan's Oscar win",
-      "to_title": "Michael B. Jordan and Leonardo DiCaprio embrace after Jordan's Oscar win"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Astronomers discover what may be a new type of planet"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "MOVED",
-      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources",
-      "to_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "692324d3273c63fd62d64cfc02e4fdbaaa1ee6df",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Cuban officials report island-wide blackout"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d98c1a1e4359d9f13ea8acf9064d012796cce406",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says countries 'on the way'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "638588ee74608a007132d1ed51d7f5e2794446bf",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Oscars after-party looks at the Vanity Fair silver carpet and more",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b14795116bd9595fdd3d8120c837a1ed80ad8b21",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Cuban officials report an island-wide blackout",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T20:08:23.001Z",
@@ -1361,6 +1231,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Kate Middleton steps out with shamrocks for St. Patrick's Day parade",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T19:43:01.075Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0725681fe6a2c1162f7934a411cb07d21a72cb59",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "US mayors issue stark warnings about future of vital Mississippi River"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T19:43:01.075Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "15ae38bc5b7e6c0aa1b9182e89d59890389484cb",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Groups fight for release of DOGE deposition videos after judge orders them taken down"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T19:43:01.075Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b94fab91d07f8dbdee490509a84911dc099b257b",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Utah mom found guilty of fatally poisoning husband with fentanyl",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T19:43:01.075Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "413c4cb8812b15ae07875ec3dc90e931d7eb5cf2",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Mississippi River mayors warn AI, fuel costs and drought are straining key waterway",
       "to_title": null
     }
   ]
