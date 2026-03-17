@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-17T17:47:07.898Z",
+  "generatedAt": "2026-03-17T18:40:44.144Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:31:50.687Z",
-      "event_type": "MOVED",
-      "fingerprint": "63ad121e39f2afa89cf46add0192d2042f7beda9",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke",
-      "to_title": "Gov. Shapiro blasts Trump’s tariff policy after Supreme Court rebuke"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:31:50.687Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3ef06472ea245d67889bf164337ef8a75366848d",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Severe winter storm live updates: 'The worst is yet to come,' NY Gov. Hochul says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:31:50.687Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "56cb8ac40f326d7413d44b938e9956aa14d8aad5",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:NYC under blizzard warning as potentially historic nor'easter expected in Northeast",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:31:50.687Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1d9df7bb1efc58f610d4738e597c8e1b88439848",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Man shot, killed by Secret Service outside of Mar-a-Lago, officials say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:31:50.687Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bf72ce490b6361d212c7a43666cfef6770d38629",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "US sailor medically evacuated from nuclear submarine near Greenland: Official",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:46:52.433Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5edd758fecff53c3f630d485a86f350185b00224",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Largest nurses strike in New York City history ends as workers ratify contract"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-23T02:46:52.433Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Bank of America reaches proposed, non-binding settlement in Jeffrey Epstein suit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T18:40:54.796Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "413c4cb8812b15ae07875ec3dc90e931d7eb5cf2",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Mississippi River mayors warn AI, fuel costs and drought are straining key waterway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T18:40:54.796Z",
+      "event_type": "MOVED",
+      "fingerprint": "e625298a0f420263e3705c10b3f54142dbead5d9",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer",
+      "to_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T18:40:54.796Z",
+      "event_type": "MOVED",
+      "fingerprint": "403e03619137b926863b6eb1c729529c811c5d77",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Tim Cook talks Apple's 50th anniversary, future of AI and privacy",
+      "to_title": "Tim Cook talks Apple's 50th anniversary, future of AI and privacy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T18:40:54.796Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "88eda68fffe6b0530aad1d6093380a3ff2d3e95c",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Kate Middleton steps out with Irish Guards on St. Patrick's Day"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T18:40:54.796Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "177ff4e5351f47374a0d9fb5f0bb90b1f55e39d6",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Senate is expected to take up the SAVE America Act this week. Here's what to know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T18:40:54.796Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "df876a8be7e41f9168784813412f3cfe3aede170",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Kate Middleton steps out with shamrocks for St. Patrick's Day parade",
       "to_title": null
     }
   ],
