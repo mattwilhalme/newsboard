@@ -1,158 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-17T20:22:46.460Z",
+  "generatedAt": "2026-03-17T21:02:23.057Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "06a25a0752cdee7701b8d7ae13ed7512c296bc7b",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingJudge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
-      "to_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "eb94a7d38ff5e5092ddfcffd45b95448e427c136",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Canada, France, Germany, Italy, UK issue statement warning about Israel-Lebanon escalation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef52b996e4f2a11913216fb0feead2c810389b4d",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "More Iranian strikes reported across the region"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "bf993e6477a2fc01b3d5160a069ccba01abe6ac9",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer",
-      "to_title": "White House chief of staff Susie Wiles says she has been diagnosed with breast cancer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
-      "from_rank": 3,
-      "to_rank": 6,
-      "from_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys",
-      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Afghan man dies in ICE custody one day after being detained",
-      "to_title": "Afghan man dies in ICE custody one day after being detained"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Numerous flights canceled as severe March storm continues",
-      "to_title": "Numerous flights canceled as severe March storm continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7675e61fc20f2f34f8870d2c458dc57184e831d4",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cdbe320241d46ec49f06e5d9ebec3cdb425559b1",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Retired Air Force major general missing: What we know about his disappearance"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9e047add775fcee105e3bb3be5fd31d0f12ee336",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Michael B. Jordan and Leonardo DiCaprio embrace after Jordan's Oscar win",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Astronomers discover what may be a new type of planet",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "What to know as war with Iran enters 3rd week",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "692324d3273c63fd62d64cfc02e4fdbaaa1ee6df",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Cuban officials report island-wide blackout",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T21:36:56.317Z",
@@ -1251,6 +1101,116 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Mississippi River mayors warn AI, fuel costs and drought are straining key waterway",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "50b924dd27ce8c532ab48d5e7a5be02c9e85888d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: More than a dozen Reaper drones lost in combat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a2816cf175529c30274f76bc78d454353704e668",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Chief Justice: 'Personally directed hostility is dangerous, and it's got to stop'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "MOVED",
+      "fingerprint": "a650f38c643343042a06824f58a189addeaeb97b",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Video shows apparent meteor in Ohio, Pennsylvania",
+      "to_title": "Video shows apparent meteor in Ohio, Pennsylvania"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1fdf59412b089ce720866d0fe58e2ce44b229790",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Groups push for release of DOGE deposition videos after judge's ruling"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "MOVED",
+      "fingerprint": "854ab8b3751e17f353460adaaea258e7e646bfd8",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "How a green energy transition could impact international conflict",
+      "to_title": "How a green energy transition could impact international conflict"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "MOVED",
+      "fingerprint": "e85c7ef7d18755a7535d90fdc8f9c98c6b92d968",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Humanitarian, aid workers reveal grim details as Lebanon crisis worsens",
+      "to_title": "Humanitarian, aid workers reveal grim details as Lebanon crisis worsens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "MOVED",
+      "fingerprint": "0725681fe6a2c1162f7934a411cb07d21a72cb59",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "US mayors issue stark warnings about future of vital Mississippi River",
+      "to_title": "US mayors issue stark warnings about future of vital Mississippi River"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "MOVED",
+      "fingerprint": "e625298a0f420263e3705c10b3f54142dbead5d9",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer",
+      "to_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e493d06bce74cba3e0964addf2dc43a25ce66549",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says US doesn't 'need' NATO allies for Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "15ae38bc5b7e6c0aa1b9182e89d59890389484cb",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Groups fight for release of DOGE deposition videos after judge orders them taken down",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T21:02:33.214Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "403e03619137b926863b6eb1c729529c811c5d77",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Tim Cook talks Apple's 50th anniversary, future of AI and privacy",
       "to_title": null
     }
   ]
