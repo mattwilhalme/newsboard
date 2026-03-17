@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-17T22:57:09.914Z",
+  "generatedAt": "2026-03-17T23:29:39.652Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d492b1674337852d4249c2a87d7d3b4ebd7a79c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know",
-      "to_title": "Eli Lilly launches new weight-loss drug Zepbound KwikPen: What to know"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T15:32:16.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "7a93af85a7b8272e5afde454bda66f4548676fa6",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats",
-      "to_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-23T15:32:16.255Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Kate Middleton steps out with Irish Guards on St. Patrick's Day",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T23:29:49.332Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "90e33f4ae1ce230f766d48a5f85b12e92bf69c73",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran confirms death of security chief Ali Larijani"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T23:29:49.332Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "50b924dd27ce8c532ab48d5e7a5be02c9e85888d",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: More than a dozen Reaper drones lost in combat",
       "to_title": null
     }
   ],
