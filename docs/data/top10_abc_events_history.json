@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-17T15:47:41.924Z",
+  "generatedAt": "2026-03-17T16:49:00.278Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T22:01:04.952Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e03b5d2f0c124b6cd4bb8c744dd701d9c65d8742",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel during operation to capture him"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-22T22:01:04.952Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0c484c59bc346eef5423d03940185c1e7d7b4cc2",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Mexican army kills leader of powerful Jalisco New Generation Cartel, official says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:31:50.687Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a8593df32d6cb42feee5d173a74a55f93c73598d",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "What we know about the man killed at Mar-a-Lago"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T02:31:50.687Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "93c8d726a97cbc4178286241da3c1d363813b670",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Man shot, killed by Secret Service outside of Mar-a-Lago, officials say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-23T02:31:50.687Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Hotter temperatures may push millions toward a more sedentary lifestyle, study finds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T16:49:12.775Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e493d06bce74cba3e0964addf2dc43a25ce66549",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says US doesn't 'need' NATO allies for Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T16:49:12.775Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "60163dfb46255cb9c55643f1b86ab851b4ef67c9",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T16:49:12.775Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "29144708720e809e096ca41eaaa6212c363f7560",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-17T16:49:12.775Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "893e8810df1b896742f848731fe97260dcad0aa0",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Israel says Iran's security chief Ali Larijani dead",
       "to_title": null
     }
   ],
