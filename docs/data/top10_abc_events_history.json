@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-18T20:31:59.092Z",
+  "generatedAt": "2026-03-18T21:08:06.620Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:26:38.335Z",
-      "event_type": "MOVED",
-      "fingerprint": "44e5c143d9dbd0f49156df0d1574f7754444ead8",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "What to know about Mexico violence as president offers reassurances",
-      "to_title": "What to know about Mexico violence as president offers reassurances"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:26:38.335Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "676546b34d2732b8bc3a26b42fb748acdf6885c5",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Motive probed in fatal Mar-a-Lago shooting of armed man as Trump speaks out"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T00:26:38.335Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Gabbard questioned on whether Iran posed 'imminent nuclear threat'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T21:08:15.209Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T21:08:15.209Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a506566f9c9a2b32cf5939d73dd24d9a84eba5ab",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Woman arrested in 2011 cold case murder",
       "to_title": null
     }
   ],
