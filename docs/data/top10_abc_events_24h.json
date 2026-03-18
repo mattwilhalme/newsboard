@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-18T19:56:33.179Z",
+  "generatedAt": "2026-03-18T20:31:59.092Z",
   "hours": 24,
   "events": [
     {
@@ -1221,6 +1221,76 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Iran live updates: Iran orders evacuation of Gulf energy assets",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T20:32:09.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f4c50c134ff2fd02e81d18e408e255dfbc2c6e53",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Iran hits world's largest liquefied natural gas terminal in Qatar"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T20:32:09.673Z",
+      "event_type": "MOVED",
+      "fingerprint": "143ebe01fb4cbdf3ca4d747c2e74e9913c3432aa",
+      "from_rank": 6,
+      "to_rank": 3,
+      "from_title": "'I shouldn't have said that': Mullin expresses regret for comments about Alex Pretti",
+      "to_title": "'I shouldn't have said that': Mullin expresses regret for comments about Alex Pretti"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T20:32:09.673Z",
+      "event_type": "MOVED",
+      "fingerprint": "bb4a6a708bd90afcb771d2c4a6319c0c2cab58bc",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Fed holds interest rates steady in 1st move since Iran war spiked oil prices",
+      "to_title": "Fed holds interest rates steady in 1st move since Iran war spiked oil prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T20:32:09.673Z",
+      "event_type": "MOVED",
+      "fingerprint": "92e8ff63863de8026cc79eafe0b7be1af22c28a2",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain",
+      "to_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T20:32:09.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bca18e2aa28b8a2c1cfddee36fb6c4a981656f52",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T20:32:09.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "33407ebefa3275c50da9cff417f56f7962b84fe2",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Iran hits world's largest LNG terminal in Qatar",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T20:32:09.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "28ea14fa0c48e779cb9cd0c72722abd16f08e956",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Gabbard questioned on whether Iran posed 'imminent nuclear threat'",
       "to_title": null
     }
   ]
