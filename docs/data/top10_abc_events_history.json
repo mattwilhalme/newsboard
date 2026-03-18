@@ -1,118 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-18T21:49:16.223Z",
+  "generatedAt": "2026-03-18T22:23:06.203Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:26:38.335Z",
-      "event_type": "MOVED",
-      "fingerprint": "44811dbae916aabde7c13425abe1e9795ff06dde",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "BAFTAs face controversy over obscene outbursts during show",
-      "to_title": "BAFTAs face controversy over obscene outbursts during show"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:26:38.335Z",
-      "event_type": "MOVED",
-      "fingerprint": "6fb525f3dd5f8589fc816c4715d8eb453de0d1b5",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner",
-      "to_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:26:38.335Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "044347dbbb7239c46b2bfc2ac2c899ccf7b653e1",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:US embassy alerts Americans in Mexico to shelter in place",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:26:38.335Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9176cbc0fec9c39dbc3d4cdbe3a00f20492527e7",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:56:32.804Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "64a8012c1ddc7fbda4ac1685195681afbdd7c427",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Trump speaks out as motive of armed intruder killed at Mar-a-Lago probed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T00:56:32.804Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "676546b34d2732b8bc3a26b42fb748acdf6885c5",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Motive probed in fatal Mar-a-Lago shooting of armed man as Trump speaks out",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T01:03:10.708Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2c3e0537d81510304ec654878dc45b6e3ff85377",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Lord Peter Mandelson arrested amid Epstein files fallout"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T01:03:10.708Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2964cb0e71a9072575356c4040c2027383b56313",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Peter Mandelson arrested on suspicion of misconduct in public office",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T03:43:18.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "2c3e0537d81510304ec654878dc45b6e3ff85377",
-      "from_rank": 10,
-      "to_rank": 4,
-      "from_title": "Lord Peter Mandelson arrested amid Epstein files fallout",
-      "to_title": "Lord Peter Mandelson arrested amid Epstein files fallout"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T03:43:18.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "6fb525f3dd5f8589fc816c4715d8eb453de0d1b5",
-      "from_rank": 9,
-      "to_rank": 6,
-      "from_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner",
-      "to_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T03:43:18.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "8942ee22e3d36bdcb8800a5d8c61c576e4c56e27",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph",
-      "to_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T03:43:18.223Z",
@@ -30001,6 +29891,116 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Woman arrested in 2011 cold case murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8e51fb13a0c788815d5effda76c629bca78bf430",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran hits world's largest liquefied natural gas terminal in Qatar"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3f6ee48aaa540356100c5293d885d9432244f226",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:US, allied radar sites in Middle East struck at least 10 times: Visual analysis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "MOVED",
+      "fingerprint": "bca18e2aa28b8a2c1cfddee36fb6c4a981656f52",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'",
+      "to_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "MOVED",
+      "fingerprint": "180845825ada0735adc6821eb22c277635a36321",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "'I can no longer stay silent': Dolores Huerta alleges sexual assault by Cesar Chavez",
+      "to_title": "'I can no longer stay silent': Dolores Huerta alleges sexual assault by Cesar Chavez"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8cfb28425444a662ca23bd2c2a5e0e34770a175c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "A first-hand look at Israel's Arrow air defense system: Reporter's notebook"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder",
+      "to_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "MOVED",
+      "fingerprint": "b6e26ebd65140c001656f8557b81ae3af62b65b3",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "These states could see northern lights display due to a moderate geomagnetic storm",
+      "to_title": "These states could see northern lights display due to a moderate geomagnetic storm"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "MOVED",
+      "fingerprint": "bb4a6a708bd90afcb771d2c4a6319c0c2cab58bc",
+      "from_rank": 4,
+      "to_rank": 10,
+      "from_title": "Fed holds interest rates steady in 1st move since Iran war spiked oil prices",
+      "to_title": "Fed holds interest rates steady in 1st move since Iran war spiked oil prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d65fd5320d0ff8474864946ad1dda684198fa788",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "US, allied radar sites in Middle East struck at least 10 times: Visual analysis",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f4c50c134ff2fd02e81d18e408e255dfbc2c6e53",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Iran hits world's largest liquefied natural gas terminal in Qatar",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T22:23:17.207Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9c414c6974c40fc09f702689c7c5d9a9b9183f3e",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Israel warned residents to flee a Beirut building. An hour later it was gone.",
       "to_title": null
     }
   ],
