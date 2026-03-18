@@ -1,108 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-18T09:31:43.479Z",
+  "generatedAt": "2026-03-18T10:32:16.609Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T17:43:05.736Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f085e253f2e11b020c4cb1baf5da1230d859313",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Blizzard live updates: Monster storm dropping 3 inches of snow per hour",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T17:43:05.736Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "428956090b0de3533319b58af592fe690aa4e7b7",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Stocks tumble after Trump ratchets up tariffs",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T17:43:05.736Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7a93af85a7b8272e5afde454bda66f4548676fa6",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Rubio goes to Caribbean to assert US interests after Venezuela strikes, Iran threats",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T17:43:05.736Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "785990824b7e4eaed47054178237dc51e4b2699f",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Protests resurging across Iranian universities as families mourn massacre victims",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T17:43:05.736Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a8593df32d6cb42feee5d173a74a55f93c73598d",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "What we know about the man killed at Mar-a-Lago",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T17:43:05.736Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4ca1595850d2bc12b1e6afbe3b407027995ca4d0",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "BBC apologizes after racial slur shouted at BAFTAs",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "43d4867bab294d85140701e688074877ae5d6bad",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingNick Reiner pleads not guilty in stabbing deaths of Rob and Michele Reiner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bd2f377ed6ed9794bde5165de7a5c2349f4f8e0f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "US embassy alerts Americans in Mexico to shelter in place"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "750860cf1bca9927dd2b117da7ed67b201eeeb41",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:25 Mexican National Guard troops left dead in operation that killed cartel leader"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "8942ee22e3d36bdcb8800a5d8c61c576e4c56e27",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph",
-      "to_title": "Blizzard live updates: Snow totals top 2 feet as wind gusts reach 80 mph"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-23T18:42:56.096Z",
@@ -30001,6 +29901,106 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "The US barely gets any oil through the Strait of Hormuz. So why are gas prices up?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e65b7d2fa2210766bfcf72d7204ea10437b5ca47",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran targets Gulf states; 6 killed in Israeli strike on Beirut"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5784f33e8d61106686f7afb7905233ca226d2e86",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:More than a dozen Reaper drones have been lost in Iran operations, US officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f3b34a967b4692e3f4bdbc8f740055625f592dda",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Gabbard testifies on Capitol Hill amid questions about Iran war, Kent's resignation"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd5db6baeef1ac16ab9629c6c0317df25fc83aea",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Fed to make interest rate decision for 1st time since war with Iran spiked oil prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "MOVED",
+      "fingerprint": "e4223339f39470fc0124638f3899b2ed15b81f62",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Healthy eating may help keep the brain younger, study suggests",
+      "to_title": "Healthy eating may help keep the brain younger, study suggests"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "MOVED",
+      "fingerprint": "29144708720e809e096ca41eaaa6212c363f7560",
+      "from_rank": 2,
+      "to_rank": 8,
+      "from_title": "Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'",
+      "to_title": "Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8cb87077b59e41b9f3497f3b6b34b1c65f51119c",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "More than a dozen Reaper drones have been lost in Iran operations, US officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "90e33f4ae1ce230f766d48a5f85b12e92bf69c73",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran confirms death of security chief Ali Larijani",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7bab54dc4b044d1d183998fbf0af19db05f564f4",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Fed set to adjust interest rates for 1st time since war with Iran spiked oil prices",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T10:32:26.902Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "06af7a1927e24de1bcfe0f91606a0e6c7f0245f1",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Judge strikes down law mandating schools display the Ten Commandments",
       "to_title": null
     }
   ],
