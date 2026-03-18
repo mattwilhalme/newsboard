@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-18T10:32:16.609Z",
+  "generatedAt": "2026-03-18T11:29:19.678Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6fb525f3dd5f8589fc816c4715d8eb453de0d1b5",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Nick Reiner pleads not guilty in stabbing deaths of parents Rob and Michele Reiner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2964cb0e71a9072575356c4040c2027383b56313",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Peter Mandelson arrested on suspicion of misconduct in public office"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "8be45b5902cb44bb66f4ded3719f4125f994437b",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "BBC apologizes after airing racial slurs in 2026 BAFTAs broadcast",
-      "to_title": "BBC apologizes after airing racial slurs in 2026 BAFTAs broadcast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9176cbc0fec9c39dbc3d4cdbe3a00f20492527e7",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Lindsey Vonn shares how her leg was saved from amputation after Olympics crash"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-23T18:42:56.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "e957f5f6d9a84a64034a7074caf34eb08fbd2c03",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "Judge permanently blocks release of final report on Trump classified documents probe",
-      "to_title": "Judge permanently blocks release of final report on Trump classified documents probe"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-23T18:42:56.096Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Judge strikes down law mandating schools display the Ten Commandments",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T11:29:29.969Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7e9ae27e9f55639973c0eefbf6d8bc6fa4fbf12b",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Macy’s sees strong holiday sales, upbeat signs from revamped stores amid Q4 outlook"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T11:29:29.969Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1313a99fc390822f4ff13c0812d1b45b515d0dc2",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "U.S. falls short again in WBC final as Venezuela stuns star-studded roster"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T11:29:29.969Z",
+      "event_type": "MOVED",
+      "fingerprint": "e4223339f39470fc0124638f3899b2ed15b81f62",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Healthy eating may help keep the brain younger, study suggests",
+      "to_title": "Healthy eating may help keep the brain younger, study suggests"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T11:29:29.969Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "29144708720e809e096ca41eaaa6212c363f7560",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-18T11:29:29.969Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a2816cf175529c30274f76bc78d454353704e668",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Chief Justice: 'Personally directed hostility is dangerous, and it's got to stop'",
       "to_title": null
     }
   ],
