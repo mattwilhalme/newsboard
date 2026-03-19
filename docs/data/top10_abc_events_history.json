@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-19T15:29:50.671Z",
+  "generatedAt": "2026-03-19T16:32:59.848Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T14:44:55.898Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "eb6687849693b0010bbb6964b5cc3efc46ebd4af",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "US military seizes 3rd ship in Indian Ocean linked to Venezuela"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T14:44:55.898Z",
-      "event_type": "MOVED",
-      "fingerprint": "8a493c1475377db643d48dcb6fc15c65ed02c569",
-      "from_rank": 5,
-      "to_rank": 9,
-      "from_title": "Texas Rep. Tony Gonzales appears to pursue late staffer in explicit text messages",
-      "to_title": "Texas Rep. Tony Gonzales appears to pursue late staffer in explicit text messages"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T14:44:55.898Z",
-      "event_type": "MOVED",
-      "fingerprint": "c76eb49e9132266611249ed7e166ebf733e62ce8",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says",
-      "to_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T14:44:55.898Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "64eef3596e0572b538e76ce14cecf047d6c11fe8",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "4 years into Russian invasion, key sticking points on Ukraine peace deal remain",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T14:44:55.898Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Mullin nomination to be DHS secretary narrowly clears Senate committee",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T16:33:10.279Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4eb0615c3bc4fb677c9b8067aa4fa844ca8d2c6e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T16:33:10.279Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T16:33:10.279Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8a0115ca2b466640400f17f385aaae8ecaf2ffde",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US has less clear picture of Iranian leadership positions: Gabbard",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T16:33:10.279Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d330719e9ba1ab389d2d460175e9ee13d1338875",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "House Oversight committee to depose Epstein’s longtime lawyer",
       "to_title": null
     }
   ],
