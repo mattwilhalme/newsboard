@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-19T19:31:23.474Z",
+  "generatedAt": "2026-03-19T20:03:54.151Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T19:56:41.757Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "33407ebefa3275c50da9cff417f56f7962b84fe2",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Iran hits world's largest LNG terminal in Qatar"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T19:56:41.757Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6ea9aa4039ed4cdf503f195a69fe98b4ca65459b",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Iran orders evacuation of Gulf energy assets",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-18T20:32:09.673Z",
@@ -1132,6 +1112,16 @@
       "to_rank": null,
       "from_title": "Related:Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T20:04:04.533Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
+      "from_rank": 2,
+      "to_rank": 2,
+      "from_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, Source says",
+      "to_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, source says"
     }
   ]
 }

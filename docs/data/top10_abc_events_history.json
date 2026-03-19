@@ -1,18 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-19T19:31:23.474Z",
+  "generatedAt": "2026-03-19T20:03:54.151Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T15:42:10.858Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6e7ce81483d9ed2505ef94e5f4994aedcbd19ba2",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "How to watch Trump's State of the Union address"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T15:42:10.858Z",
@@ -30002,6 +29992,16 @@
       "to_rank": null,
       "from_title": "Related:Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T20:04:04.533Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
+      "from_rank": 2,
+      "to_rank": 2,
+      "from_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, Source says",
+      "to_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, source says"
     }
   ],
   "error": "No Top 10 events yet"
