@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-19T21:24:37.475Z",
+  "generatedAt": "2026-03-19T21:54:07.297Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T18:40:41.818Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "38d618dbf616c4cf60e9c0205379300ccac064bd",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Trump rejects reports top military adviser warned of Iran-related risks to US troops",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T19:39:41.175Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cba70ec4859eb2fa849dc3c6e5fb01e087234689",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Louvre director resigns months after $102 million jewel heist"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T19:39:41.175Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "96a1a98d0e29f318b87b97895f7a331729343c1a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Louvre director resigns months after jewel heist",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T20:51:47.366Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d18337d9faa371f34367672dd4b1709f31c026d7",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Immigration is Trump's best and worst issue: ABC News/Washington Post/Ipsos poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T20:51:47.366Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f115e74c178eb61d2977d1059f696552cd32229a",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Spanberger to hit on affordability in Democrats' State of the Union response"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T20:51:47.366Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "MOVED",
+      "fingerprint": "8a656e68f3f83b8977c141d0c096f55411f8612d",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Spanish police find body of missing University of Alabama student Jimmy Gracey",
+      "to_title": "Spanish police find body of missing University of Alabama student Jimmy Gracey"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Pentagon seeking $200B more for Iran war, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b7f81ad6f4775542f38145175196d81d1b1a449f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pentagon seeking $200B more for Iran war, official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "22130b860d08ff11df0f73f277e06e032269b16c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "ABC shelves Taylor Frankie Paul's season of 'The Bachelorette'",
       "to_title": null
     }
   ],

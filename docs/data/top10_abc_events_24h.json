@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-19T21:24:37.475Z",
+  "generatedAt": "2026-03-19T21:54:07.297Z",
   "hours": 24,
   "events": [
     {
@@ -1181,6 +1181,56 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "MOVED",
+      "fingerprint": "8a656e68f3f83b8977c141d0c096f55411f8612d",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Spanish police find body of missing University of Alabama student Jimmy Gracey",
+      "to_title": "Spanish police find body of missing University of Alabama student Jimmy Gracey"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Pentagon seeking $200B more for Iran war, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b7f81ad6f4775542f38145175196d81d1b1a449f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pentagon seeking $200B more for Iran war, official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:54:18.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "22130b860d08ff11df0f73f277e06e032269b16c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "ABC shelves Taylor Frankie Paul's season of 'The Bachelorette'",
       "to_title": null
     }
   ]
