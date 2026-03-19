@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-19T03:17:48.403Z",
+  "generatedAt": "2026-03-19T05:06:45.242Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T10:04:07.303Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "290a0bf35feffcf16500734c93c47eb1c84ff69e",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "'We have preserved Ukraine': Zelenskyy marks 4 years of Russia's war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T10:04:07.303Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b30270f3cb303c0d2d6617dd012b894624116361",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "How to watch Trump's 2026 State of the Union address and what to know"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T10:04:07.303Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Fed holds interest rates steady in 1st move since Iran war spiked oil prices",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T05:06:55.847Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3d93ebf233cfde3f43c2d6a63b289f7ef168c8d",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Former counterterrorism official under investigation over alleged leaks: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T05:06:55.847Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4245589de5b855eb0031b6332eb10ff2c13c10f4",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Former counterterrorism under investigation over alleged leaks: Sources",
       "to_title": null
     }
   ],
