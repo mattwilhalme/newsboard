@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-19T20:53:18.629Z",
+  "generatedAt": "2026-03-19T21:24:37.475Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T18:40:41.818Z",
-      "event_type": "MOVED",
-      "fingerprint": "9cc61aa7321533736610f50ced835c0631b4fbf8",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71",
-      "to_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T18:40:41.818Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "16b84e87bc81d4fc3542b6d94344fc3ec3ab1583",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "American tourist says violence over Mexican drug lord's killing came without warning"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T18:40:41.818Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c4648c9af95628efd6736a8192b7ecbf3f864e00",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "State of the Union: Trump expected to tout achievements ahead of midterms",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T18:40:41.818Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:24:47.324Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f76233b54f65291b6f673bb027e1fe39dacf106f",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Federal arts panel approves commemorative gold coin design with Trump's image"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:24:47.324Z",
+      "event_type": "MOVED",
+      "fingerprint": "c81f9c0759c49f2ad29161fb8906df9d48a69596",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Nearly 10% of Affordable Care Act enrollees opted to forego insurance, poll finds",
+      "to_title": "Nearly 10% of Affordable Care Act enrollees opted to forego insurance, poll finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T21:24:47.324Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Dangerous, unprecedented heat wave hits the West",
       "to_title": null
     }
   ],
