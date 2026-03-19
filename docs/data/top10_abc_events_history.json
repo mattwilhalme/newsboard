@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-19T18:32:08.561Z",
+  "generatedAt": "2026-03-19T19:31:23.474Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T15:42:10.858Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9cc61aa7321533736610f50ced835c0631b4fbf8",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T15:42:10.858Z",
-      "event_type": "MOVED",
-      "fingerprint": "c76eb49e9132266611249ed7e166ebf733e62ce8",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says",
-      "to_title": "2 Missouri deputies fatally shot, 2 injured as suspect opens fire, sheriff says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T15:42:10.858Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T19:31:33.544Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, Source says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T19:31:33.544Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ef606420212f83f1ebf212b84d683eeaf5127425",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels",
       "to_title": null
     }
   ],
