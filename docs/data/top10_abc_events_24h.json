@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-19T12:06:01.225Z",
+  "generatedAt": "2026-03-19T13:41:39.993Z",
   "hours": 24,
   "events": [
     {
@@ -1261,6 +1261,156 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "'I shouldn't have said that': Mullin expresses regret for comments about Alex Pretti",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5889ebf3075bdeb6116970f70d8924e379bab73b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: End of the war to be 'at the president's choosing,' Hegseth says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a9a3648053a351907935e7ea8359370b9e2474bd",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Oil and gas prices surge as Iran escalates strikes on Gulf refineries"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "038b27b4b6de409d576fca9b02fde6f68af5c3c1",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Gabbard faces 2nd day of questions on Iran war, worldwide threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "MOVED",
+      "fingerprint": "81fbb15c6f1159366331cd8c15026bc02aa96097",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field",
+      "to_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "MOVED",
+      "fingerprint": "d55fdc6820f5e70df26b5cee1a31389cb05945b7",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing",
+      "to_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c81f9c0759c49f2ad29161fb8906df9d48a69596",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Nearly 10% of Affordable Care Act enrollees opted to forego insurance, poll finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder",
+      "to_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "MOVED",
+      "fingerprint": "d330719e9ba1ab389d2d460175e9ee13d1338875",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "House Oversight committee to depose Epstein’s longtime lawyer",
+      "to_title": "House Oversight committee to depose Epstein’s longtime lawyer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "MOVED",
+      "fingerprint": "e3d93ebf233cfde3f43c2d6a63b289f7ef168c8d",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Former counterterrorism official under investigation over alleged leaks: Sources",
+      "to_title": "Former counterterrorism official under investigation over alleged leaks: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "92e8ff63863de8026cc79eafe0b7be1af22c28a2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "afa4562be11a295f54fb7b396adc4653056660cd",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Hegseth to address war with Iran Thursday morning",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0e71b4b65bec7e0f70144b99fe1e01c2c953e158",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "1 in 10 ACA enrollees dropped coverage due to rising health care costs, poll finds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d65fd5320d0ff8474864946ad1dda684198fa788",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "US, allied radar sites in Middle East struck at least 10 times: Visual analysis",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bca18e2aa28b8a2c1cfddee36fb6c4a981656f52",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-19T13:41:50.139Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8cfb28425444a662ca23bd2c2a5e0e34770a175c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "A first-hand look at Israel's Arrow air defense system: Reporter's notebook",
       "to_title": null
     }
   ]
