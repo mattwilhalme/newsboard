@@ -1,128 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-19T23:48:53.741Z",
+  "generatedAt": "2026-03-20T00:04:13.684Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T20:51:47.366Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "16b84e87bc81d4fc3542b6d94344fc3ec3ab1583",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "American tourist says violence over Mexican drug lord's killing came without warning",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T20:51:47.366Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cba70ec4859eb2fa849dc3c6e5fb01e087234689",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Louvre director resigns months after $102 million jewel heist",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T20:51:47.366Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6e7ce81483d9ed2505ef94e5f4994aedcbd19ba2",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "How to watch Trump's State of the Union address",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T21:23:32.651Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Martin Short's daughter Katherine Short dies at 42"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T21:23:32.651Z",
-      "event_type": "MOVED",
-      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
-      "to_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T21:23:32.651Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9cc61aa7321533736610f50ced835c0631b4fbf8",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "'Lizzie McGuire' stars remember Robert Carradine after his death at 71",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T21:59:50.026Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f7fbdda6625af95106caca61a37da679e62525d7",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Exclusive: No. 2 House Democrat to skip Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T21:59:50.026Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f84a8e8381055535cf5e622cc9b75e7b489d686d",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "SOTU: Trump speech comes at uncertain, even perilous, moment for presidency: ANALYSIS",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T23:03:45.722Z",
-      "event_type": "MOVED",
-      "fingerprint": "f7fbdda6625af95106caca61a37da679e62525d7",
-      "from_rank": 6,
-      "to_rank": 1,
-      "from_title": "Exclusive: No. 2 House Democrat to skip Trump's State of the Union address",
-      "to_title": "Exclusive: No. 2 House Democrat to skip Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T23:03:45.722Z",
-      "event_type": "MOVED",
-      "fingerprint": "4e023bd886e8052f0ca334f12f4471d33ae05edf",
-      "from_rank": 5,
-      "to_rank": 2,
-      "from_title": "Trump State of the Union updates: Erika Kirk among guests invited to attend speech",
-      "to_title": "Trump State of the Union updates: Erika Kirk among guests invited to attend speech"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T23:03:45.722Z",
-      "event_type": "MOVED",
-      "fingerprint": "d18337d9faa371f34367672dd4b1709f31c026d7",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Immigration is Trump's best and worst issue: ABC News/Washington Post/Ipsos poll",
-      "to_title": "Immigration is Trump's best and worst issue: ABC News/Washington Post/Ipsos poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-24T23:03:45.722Z",
-      "event_type": "MOVED",
-      "fingerprint": "53cfb88cf47f22ff8ceafcd5b544e01cedc6bb94",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Savannah Guthrie announces new reward for Nancy Guthrie: 'Somebody knows'",
-      "to_title": "Savannah Guthrie announces new reward for Nancy Guthrie: 'Somebody knows'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-24T23:03:45.722Z",
@@ -30001,6 +29881,126 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Nearly 10% of Affordable Care Act enrollees opted to forego insurance, poll finds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d1d82771264f89e4b4c3c3e7a1e0192eb08f44b9",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, source says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6de6dc1202f8ade3f00f77b7d74e7c8fc3874ea",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education",
+      "to_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "8a656e68f3f83b8977c141d0c096f55411f8612d",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Spanish police find body of missing University of Alabama student Jimmy Gracey",
+      "to_title": "Spanish police find body of missing University of Alabama student Jimmy Gracey"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Pentagon seeking $200B more for Iran war, official says",
+      "to_title": "Pentagon seeking $200B more for Iran war, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "f20cfc8cbb487b925d3b7f664b608cf7cdd7142c",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Mullin's nomination to be DHS secretary narrowly clears Senate committee",
+      "to_title": "Mullin's nomination to be DHS secretary narrowly clears Senate committee"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "af11bd00415293bd7dc6918fb86fe480477e4365",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Gabbard doubles down on deferring to Trump on whether Iran posed 'imminent threat'",
+      "to_title": "Gabbard doubles down on deferring to Trump on whether Iran posed 'imminent threat'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "d55fdc6820f5e70df26b5cee1a31389cb05945b7",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing",
+      "to_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "cd977e5778f745591768de571c92a7762de80fd1",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Details of landmark WNBA salary verbal agreement that could make sports history",
+      "to_title": "Details of landmark WNBA salary verbal agreement that could make sports history"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "MOVED",
+      "fingerprint": "f76233b54f65291b6f673bb027e1fe39dacf106f",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Federal arts panel approves commemorative gold coin design with Trump's image",
+      "to_title": "Federal arts panel approves commemorative gold coin design with Trump's image"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "27fd8b6bebaf507c8170a22af947f87004e5b6e5",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: F-35 believed to have been struck by Iranian fire, source says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T00:04:23.475Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dangerous, unprecedented heat wave hits the West",
       "to_title": null
     }
   ],
