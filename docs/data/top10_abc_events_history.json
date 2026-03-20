@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-20T10:23:01.907Z",
+  "generatedAt": "2026-03-20T11:01:50.107Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T00:07:51.453Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4e023bd886e8052f0ca334f12f4471d33ae05edf",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Trump State of the Union updates: Erika Kirk among guests invited to attend speech",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T00:07:51.453Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "53ad5b2013625bd2e1e647f310e00a5c6c039196",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "How to watch Trump's 2026 State of the Union address live tonight",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3e6fde9c000d3fff7f84afde78f7e51178ea88e2",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump State of the Union updates: Trump talks tariffs, immigration in speech"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0e7789351ac88c33b3a2d817cad31e0165489ce5",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Fact-checking Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f7fbdda6625af95106caca61a37da679e62525d7",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Exclusive: No. 2 House Democrat to skip Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c4648c9af95628efd6736a8192b7ecbf3f864e00",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "State of the Union: Trump expected to tout achievements ahead of midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "15dc5cd3da194bcbd31c0927d4e872eb97675a70",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Iran looms large over State of the Union: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T02:56:20.973Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Details of landmark WNBA salary verbal agreement that could make sports history",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "503aa0cddbfd62f345728e1b78cd16ce91f081d8",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Multiple waves' of unauthorized drones spotted over strategic US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
+      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "0306cf4f74d3df22707048af876413175a6ece38",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Pentagon plans to keep National Guard in DC into 2029, 2 US officials say",
+      "to_title": "Pentagon plans to keep National Guard in DC into 2029, 2 US officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6de6dc1202f8ade3f00f77b7d74e7c8fc3874ea",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education",
+      "to_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "7b267dd6b11ea7ae256470c98bf0da30cae08a6f",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Police confirm body of James ‘Jimmy’ Gracey found",
+      "to_title": "Police confirm body of James ‘Jimmy’ Gracey found"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Pentagon seeking $200B more for Iran war, official says",
+      "to_title": "Pentagon seeking $200B more for Iran war, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "27491306fdc90fcf23995fe56068a9ba058082cc",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez",
+      "to_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "af11bd00415293bd7dc6918fb86fe480477e4365",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Gabbard doubles down on deferring to Trump on whether Iran posed 'imminent threat'",
       "to_title": null
     }
   ],

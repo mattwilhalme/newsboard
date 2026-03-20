@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-20T10:23:01.907Z",
+  "generatedAt": "2026-03-20T11:01:50.107Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "MOVED",
-      "fingerprint": "e3d93ebf233cfde3f43c2d6a63b289f7ef168c8d",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Former counterterrorism official under investigation over alleged leaks: Sources",
-      "to_title": "Former counterterrorism official under investigation over alleged leaks: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "MOVED",
-      "fingerprint": "d65fd5320d0ff8474864946ad1dda684198fa788",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "US, allied radar sites in Middle East struck at least 10 times: Visual analysis",
-      "to_title": "US, allied radar sites in Middle East struck at least 10 times: Visual analysis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "143ebe01fb4cbdf3ca4d747c2e74e9913c3432aa",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "'I shouldn't have said that': Mullin expresses regret for comments about Alex Pretti",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T13:41:50.139Z",
@@ -1091,6 +1051,86 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Details of landmark WNBA salary verbal agreement that could make sports history",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "503aa0cddbfd62f345728e1b78cd16ce91f081d8",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Multiple waves' of unauthorized drones spotted over strategic US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
+      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "0306cf4f74d3df22707048af876413175a6ece38",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Pentagon plans to keep National Guard in DC into 2029, 2 US officials say",
+      "to_title": "Pentagon plans to keep National Guard in DC into 2029, 2 US officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6de6dc1202f8ade3f00f77b7d74e7c8fc3874ea",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education",
+      "to_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "7b267dd6b11ea7ae256470c98bf0da30cae08a6f",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Police confirm body of James ‘Jimmy’ Gracey found",
+      "to_title": "Police confirm body of James ‘Jimmy’ Gracey found"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Pentagon seeking $200B more for Iran war, official says",
+      "to_title": "Pentagon seeking $200B more for Iran war, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "27491306fdc90fcf23995fe56068a9ba058082cc",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez",
+      "to_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:02:00.621Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "af11bd00415293bd7dc6918fb86fe480477e4365",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Gabbard doubles down on deferring to Trump on whether Iran posed 'imminent threat'",
       "to_title": null
     }
   ]
