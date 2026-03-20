@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-20T20:20:09.116Z",
+  "generatedAt": "2026-03-20T20:54:41.741Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T14:17:24.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "d397aaaa387ece5000e0df0b009b847973496c13",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC",
-      "to_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T14:17:24.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T16:22:40.215Z",
-      "event_type": "MOVED",
-      "fingerprint": "4af48b28e1f78ab22d35877f52d7fc156c455e4b",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Snowstorm pushes through Northeast with days of melting expected to follow",
-      "to_title": "Snowstorm pushes through Northeast with days of melting expected to follow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T16:22:40.215Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7da0b878ec3216bfa3d2d039d8c7c3972f2ae45c",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "For Guthrie family 'the not knowing is the hardest part,' expert says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T16:22:40.215Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T16:22:40.215Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "62e5d59082d25329fef05e4e3864874977b13f90",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Road to the 2026 Oscars: What to know about the 98th Academy Awards"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T16:22:40.215Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "60acac883c55c709001a5cf63a3c5d345281a70b",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Key takeaways from Trump's State of the Union address",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T16:22:40.215Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Chuck Norris, action star and martial artist, dies at 86",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:54:52.507Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1cb45d6ac76183f9008396f773fde50728b43bbe",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Senate once again fails to advance DHS funding bill"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:54:52.507Z",
+      "event_type": "MOVED",
+      "fingerprint": "233b2c38f5f006234a3e7582363b3a5a2567e1ff",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse",
+      "to_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:54:52.507Z",
+      "event_type": "MOVED",
+      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
+      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:54:52.507Z",
+      "event_type": "MOVED",
+      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
+      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:54:52.507Z",
+      "event_type": "MOVED",
+      "fingerprint": "f4e1eeb2e1d5181c21d5b971bff4b9403dda8805",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86",
+      "to_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:54:52.507Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "College student shot, killed while walking with her friends",
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:54:52.507Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
       "to_title": null
     }
   ],
