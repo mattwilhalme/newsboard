@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-20T15:53:06.097Z",
+  "generatedAt": "2026-03-20T16:28:36.458Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T05:52:03.542Z",
-      "event_type": "MOVED",
-      "fingerprint": "0bd8da855990951b25d22de4ee2fa5381d766de7",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "American tourist describes wave of violence after Mexican cartel boss killing",
-      "to_title": "American tourist describes wave of violence after Mexican cartel boss killing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T05:52:03.542Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Martin Short's daughter Katherine Short dies at 42"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T05:52:03.542Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0924840710a9bcd0fc52287174a4d4a70916f943",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Iran looms large over Trump's State of the Union address: ANALYSIS",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T05:52:03.542Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c0a3fe8613ef2241f7a4aceed2b2448bc54c42c0",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "State of the Union: Texas flooding hero recognized",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T05:52:03.542Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Federal arts panel approves commemorative gold coin design with Trump's image",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "College student shot, killed while walking with her friends",
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "MOVED",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "829115b21466683f75016cfc28aeb238922764c4",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Friend speaks after Kouri Richins found guilty of murdering husband: Exclusive"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "189e286f009a8fd36f9db6a3f1935951ba8767fc",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’",
       "to_title": null
     }
   ],

@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-20T15:53:06.097Z",
+  "generatedAt": "2026-03-20T16:28:36.458Z",
   "hours": 24,
   "events": [
     {
@@ -1131,6 +1131,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Federal arts panel approves commemorative gold coin design with Trump's image",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "College student shot, killed while walking with her friends",
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "MOVED",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "829115b21466683f75016cfc28aeb238922764c4",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Friend speaks after Kouri Richins found guilty of murdering husband: Exclusive"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T16:28:46.367Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "189e286f009a8fd36f9db6a3f1935951ba8767fc",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’",
       "to_title": null
     }
   ]
