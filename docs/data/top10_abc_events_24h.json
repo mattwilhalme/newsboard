@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-20T22:04:31.795Z",
+  "generatedAt": "2026-03-20T22:42:15.834Z",
   "hours": 24,
   "events": [
     {
@@ -1281,6 +1281,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T22:42:25.551Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "02182b49b0fcf2995c10e503e6b06a4f0b6422a5",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Suit claims negligence in death of ex-Yankees player's son at Costa Rican resort"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T22:42:25.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
+      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T22:42:25.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "f4e1eeb2e1d5181c21d5b971bff4b9403dda8805",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86",
+      "to_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T22:42:25.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "College student shot, killed while walking with her friends",
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T22:42:25.551Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Surfer speaks out after shark attack",
       "to_title": null
     }
   ]
