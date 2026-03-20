@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-20T14:09:01.580Z",
+  "generatedAt": "2026-03-20T15:01:26.391Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "MOVED",
-      "fingerprint": "d18337d9faa371f34367672dd4b1709f31c026d7",
-      "from_rank": 3,
-      "to_rank": 9,
-      "from_title": "Immigration is Trump's best and worst issue: ABC News/Washington Post/Ipsos poll",
-      "to_title": "Immigration is Trump's best and worst issue: ABC News/Washington Post/Ipsos poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "MOVED",
-      "fingerprint": "53cfb88cf47f22ff8ceafcd5b544e01cedc6bb94",
-      "from_rank": 4,
-      "to_rank": 10,
-      "from_title": "Savannah Guthrie announces new reward for Nancy Guthrie: 'Somebody knows'",
-      "to_title": "Savannah Guthrie announces new reward for Nancy Guthrie: 'Somebody knows'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fbced5f59d03cf4dc701240f27fe6398cef139e8",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Trump State of the Union updates: President to address the nation at key moment",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "164de14f70fbd365f4d8271cb68e4dc93ebc7c2a",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Exclusive: No. 2 House Democrat to skip Trump's State of the Union address",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Martin Short's daughter Katherine Short dies at 42",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ae185d6706bb497d7533eac3d4855b2f7e56312f",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Brief snowstorm could dump another inch of snow in the Northeast",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0bd8da855990951b25d22de4ee2fa5381d766de7",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "American tourist describes wave of violence after Mexican cartel boss killing",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cba70ec4859eb2fa849dc3c6e5fb01e087234689",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Louvre director resigns months after $102 million jewel heist",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T02:56:20.973Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "91d27edc45a41475846478a197bf461aba7a3b09",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Ukraine and Russia ravaged by 4 years of full-scale war without an ending in sight",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T04:50:29.133Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f782b98d35b469aaaad714b1389a6aca95a259e2",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump State of the Union updates: Trump spars with Dems, touts economy"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T04:50:29.133Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0924840710a9bcd0fc52287174a4d4a70916f943",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Iran looms large over Trump's State of the Union address: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T04:50:29.133Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c0a3fe8613ef2241f7a4aceed2b2448bc54c42c0",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "State of the Union: Texas flooding hero recognized"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T04:50:29.133Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T04:50:29.133Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "'Multiple waves' of unauthorized drones spotted over strategic US Air Force base",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d1e6059cb14b91d24ccf71f0edd0a225a6212967",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingAction star Chuck Norris dies at 86"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "MOVED",
+      "fingerprint": "d1d82771264f89e4b4c3c3e7a1e0192eb08f44b9",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic",
+      "to_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f844ca3db3ad19ea671e95a66f1fe36f2872e4c0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Trump blasts NATO allies as 'COWARDS' over Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "MOVED",
+      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
+      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
+      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "MOVED",
+      "fingerprint": "7b267dd6b11ea7ae256470c98bf0da30cae08a6f",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Police confirm body of James ‘Jimmy’ Gracey found",
+      "to_title": "Police confirm body of James ‘Jimmy’ Gracey found"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "MOVED",
+      "fingerprint": "27491306fdc90fcf23995fe56068a9ba058082cc",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez",
+      "to_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "189e286f009a8fd36f9db6a3f1935951ba8767fc",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, source says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0306cf4f74d3df22707048af876413175a6ece38",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Pentagon plans to keep National Guard in DC into 2029, 2 US officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d6de6dc1202f8ade3f00f77b7d74e7c8fc3874ea",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:01:36.894Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Pentagon seeking $200B more for Iran war, official says",
       "to_title": null
     }
   ],
