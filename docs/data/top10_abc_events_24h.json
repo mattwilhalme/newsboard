@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-20T15:01:26.391Z",
+  "generatedAt": "2026-03-20T15:53:06.097Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T15:30:01.444Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8a0115ca2b466640400f17f385aaae8ecaf2ffde",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US has less clear picture of Iranian leadership positions: Gabbard"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T15:30:01.444Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f20cfc8cbb487b925d3b7f664b608cf7cdd7142c",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Mullin's nomination to be DHS secretary narrowly clears Senate committee"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T15:30:01.444Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7d74392098144cf691e3e607dd7915b861728c8e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Hegseth acknowledges $200B funding ask, saying it could 'move'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T15:30:01.444Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "081bfe635eafc910761c216b0e03b0ff6a9eb9de",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Mullin nomination to be DHS secretary narrowly clears Senate committee",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T16:33:10.279Z",
@@ -1021,6 +981,156 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Pentagon seeking $200B more for Iran war, official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "de2f656e066b114270936a12feac5ed8669c6562",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "2,200 more Marines, 3 Navy ships likely headed to Middle East: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7a53c6403239be75aada46b4326dc5a7af34c93e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump blasts NATO allies as 'COWARDS' over Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "MOVED",
+      "fingerprint": "d1d82771264f89e4b4c3c3e7a1e0192eb08f44b9",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic",
+      "to_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a4041995ca99bbb407f272200873c0aae626720",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Chuck Norris, action star and martial artist, dies at 86"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "MOVED",
+      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
+      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
+      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Surfer speaks out after shark attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "MOVED",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "MOVED",
+      "fingerprint": "189e286f009a8fd36f9db6a3f1935951ba8767fc",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’",
+      "to_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d1e6059cb14b91d24ccf71f0edd0a225a6212967",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingAction star Chuck Norris dies at 86",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f844ca3db3ad19ea671e95a66f1fe36f2872e4c0",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump blasts NATO allies as 'COWARDS' over Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7b267dd6b11ea7ae256470c98bf0da30cae08a6f",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Police confirm body of James ‘Jimmy’ Gracey found",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "27491306fdc90fcf23995fe56068a9ba058082cc",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T15:53:16.727Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f76233b54f65291b6f673bb027e1fe39dacf106f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Federal arts panel approves commemorative gold coin design with Trump's image",
       "to_title": null
     }
   ]
