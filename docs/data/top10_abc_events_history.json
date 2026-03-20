@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-20T19:54:27.156Z",
+  "generatedAt": "2026-03-20T20:20:09.116Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T11:26:14.254Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T11:26:14.254Z",
-      "event_type": "MOVED",
-      "fingerprint": "f394dd5ad43a22480be4ea8c757a80921cc344cf",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "What to expect during Casey Means' surgeon general confirmation hearing",
-      "to_title": "What to expect during Casey Means' surgeon general confirmation hearing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T11:26:14.254Z",
-      "event_type": "MOVED",
-      "fingerprint": "d397aaaa387ece5000e0df0b009b847973496c13",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC",
-      "to_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T11:26:14.254Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Martin Short's daughter Katherine Short dies at 42",
-      "to_title": "Martin Short's daughter Katherine Short dies at 42"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T11:26:14.254Z",
-      "event_type": "MOVED",
-      "fingerprint": "8aef8e3b2f1e5b64f346594c09f41ec003d84788",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Colombian authorities investigate bullet holes found on American Airlines plane",
-      "to_title": "Colombian authorities investigate bullet holes found on American Airlines plane"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T11:26:14.254Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2ccbbfd49b207086a3c05a426dc8dbcbaebb76e7",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "US Air Force stealth fighters land in Israel, official says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b2cc72a5044df2274c7e93165e5ff8d6154f4dd7",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Trump warns Iran is retooling weapons program in State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "60acac883c55c709001a5cf63a3c5d345281a70b",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "Key takeaways from Trump's State of the Union address",
-      "to_title": "Key takeaways from Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4af48b28e1f78ab22d35877f52d7fc156c455e4b",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Snowstorm pushes through Northeast with days of melting expected to follow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "588cea3e5c9ba4506dbce4dba62c3c4070343948",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Trump awards Medals of Honor to 2 military pilots during State of the Union",
-      "to_title": "Trump awards Medals of Honor to 2 military pilots during State of the Union"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "d3e4a9dead7b13bb894de93b3fd30fcd65232a08",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say",
-      "to_title": "DOJ appears to have withheld some Trump-related Epstein files, House Democrats say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "d397aaaa387ece5000e0df0b009b847973496c13",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC",
-      "to_title": "US child, teen obesity rates reach record high while adult trends appear to slow: CDC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a9114439a58a8239fe347311ac05a47fed80a7ad",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Martin Short's daughter Katherine Short dies at 42",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T13:14:17.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8aef8e3b2f1e5b64f346594c09f41ec003d84788",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Colombian authorities investigate bullet holes found on American Airlines plane",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T14:17:24.673Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "MOVED",
+      "fingerprint": "7a53c6403239be75aada46b4326dc5a7af34c93e",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Trump blasts NATO allies as 'COWARDS' over Strait of Hormuz",
+      "to_title": "Iran live updates: Trump blasts NATO allies as 'COWARDS' over Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dff6d920bc826982911190a3e075f385d8d4427a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:2,200 more Marines, 3 Navy ships likely headed to Middle East: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "233b2c38f5f006234a3e7582363b3a5a2567e1ff",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "MOVED",
+      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
+      "from_rank": 7,
+      "to_rank": 4,
+      "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
+      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "MOVED",
+      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
+      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f4e1eeb2e1d5181c21d5b971bff4b9403dda8805",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "College student shot, killed while walking with her friends",
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
+      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "MOVED",
+      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Surfer speaks out after shark attack",
+      "to_title": "Surfer speaks out after shark attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9063f440398fa623f9f0d6f0ccdfe343e7460841",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingDangerous flooding on Oahu prompts evacuations, warning of possible dam collapse",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de2f656e066b114270936a12feac5ed8669c6562",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "2,200 more Marines, 3 Navy ships likely headed to Middle East: Officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d1d82771264f89e4b4c3c3e7a1e0192eb08f44b9",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T20:20:19.721Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2a4041995ca99bbb407f272200873c0aae626720",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Chuck Norris, action star and martial artist, dies at 86",
       "to_title": null
     }
   ],
