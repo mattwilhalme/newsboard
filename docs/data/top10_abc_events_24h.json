@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-20T16:28:36.458Z",
+  "generatedAt": "2026-03-20T17:11:02.823Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T16:33:10.279Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4eb0615c3bc4fb677c9b8067aa4fa844ca8d2c6e",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T16:33:10.279Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Dangerous, unprecedented heat wave hits the West"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T16:33:10.279Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8a0115ca2b466640400f17f385aaae8ecaf2ffde",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US has less clear picture of Iranian leadership positions: Gabbard",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T16:33:10.279Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d330719e9ba1ab389d2d460175e9ee13d1338875",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "House Oversight committee to depose Epstein’s longtime lawyer",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T17:36:18.214Z",
@@ -1171,6 +1131,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T17:11:13.852Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T17:11:13.852Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
+      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T17:11:13.852Z",
+      "event_type": "MOVED",
+      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Surfer speaks out after shark attack",
+      "to_title": "Surfer speaks out after shark attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T17:11:13.852Z",
+      "event_type": "MOVED",
+      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Dangerous, unprecedented heat wave hits the West",
+      "to_title": "Dangerous, unprecedented heat wave hits the West"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T17:11:13.852Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "829115b21466683f75016cfc28aeb238922764c4",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Friend speaks after Kouri Richins found guilty of murdering husband: Exclusive",
       "to_title": null
     }
   ]
