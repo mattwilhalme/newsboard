@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-20T11:01:50.107Z",
+  "generatedAt": "2026-03-20T11:40:18.365Z",
   "hours": 24,
   "events": [
     {
@@ -1131,6 +1131,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Gabbard doubles down on deferring to Trump on whether Iran posed 'imminent threat'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:40:29.212Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T11:40:29.212Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "503aa0cddbfd62f345728e1b78cd16ce91f081d8",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "'Multiple waves' of unauthorized drones spotted over strategic US Air Force base",
       "to_title": null
     }
   ]
