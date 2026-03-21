@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-20T23:40:32.429Z",
+  "generatedAt": "2026-03-20T23:59:23.834Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T18:40:34.763Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0771067d7dd41bd1552cebf6627518f31ab4cd65",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "6 in 10 women could have at least one cardiovascular disease risk factor by 2050"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T18:40:34.763Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b2cc72a5044df2274c7e93165e5ff8d6154f4dd7",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Trump warns Iran is retooling weapons program in State of the Union address",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T18:40:34.763Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Surfer speaks out after shark attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T23:59:34.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c44ca8c8ed6fb00bd2e48604a3b90aa029a32be0",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Actor Chuck Norris honored by co-stars after his death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-20T23:59:34.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f4e1eeb2e1d5181c21d5b971bff4b9403dda8805",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86",
       "to_title": null
     }
   ],
