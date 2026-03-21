@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-21T13:01:47.752Z",
+  "generatedAt": "2026-03-21T13:49:43.884Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T21:26:23.746Z",
-      "event_type": "MOVED",
-      "fingerprint": "0e7789351ac88c33b3a2d817cad31e0165489ce5",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Fact-checking Trump's State of the Union address",
-      "to_title": "Fact-checking Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T21:26:23.746Z",
-      "event_type": "MOVED",
-      "fingerprint": "fec1cd7569c2148d7a52206e125c48b1f5c31dd9",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Here's how Trump's remaining tariffs could affect prices, according to experts",
-      "to_title": "Here's how Trump's remaining tariffs could affect prices, according to experts"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T21:26:23.746Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "2,200 more Marines, 3 Navy ships likely headed to Middle East: Officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T13:49:53.861Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f04874f934a8dca5a7af6cdefb477c13b2c99c31",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says he is considering 'winding down’ Iran military efforts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T13:49:53.861Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d68dac253eae1e8d22d167a3f5ab6fea519b1126",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Israeli-US strikes against Iran will 'increase significantly'",
       "to_title": null
     }
   ],
