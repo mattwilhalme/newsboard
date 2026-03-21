@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-21T22:32:08.206Z",
+  "generatedAt": "2026-03-21T22:55:24.362Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T05:43:30.608Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b7376252937ec5e501c4607c05944b02c276a676",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "At least 6 FBI agents who worked on Trump classified documents case fired: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T05:43:30.608Z",
-      "event_type": "MOVED",
-      "fingerprint": "756059cd2bb213c054626b50947686df33313d29",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "ICE not being deployed to polling places for midterms, state officials told: Sources",
-      "to_title": "ICE not being deployed to polling places for midterms, state officials told: Sources"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-26T05:43:30.608Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Surfer speaks out after shark attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T22:55:34.740Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cd3ce8e93203538711dc693b2aa75e540b0a225d",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Dozens injured after missile strikes on 2 Israeli cities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T22:55:34.740Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8bd7238bb6ba7c1f68ef0055f6ec649081d5cb2f",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again",
       "to_title": null
     }
   ],
