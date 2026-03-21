@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-21T16:18:10.277Z",
+  "generatedAt": "2026-03-21T16:51:17.458Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T16:28:46.367Z",
-      "event_type": "MOVED",
-      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "College student shot, killed while walking with her friends",
-      "to_title": "College student shot, killed while walking with her friends"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T16:28:46.367Z",
-      "event_type": "MOVED",
-      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Dangerous, unprecedented heat wave hits the West",
-      "to_title": "Dangerous, unprecedented heat wave hits the West"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T16:28:46.367Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "829115b21466683f75016cfc28aeb238922764c4",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Friend speaks after Kouri Richins found guilty of murdering husband: Exclusive"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T16:28:46.367Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "189e286f009a8fd36f9db6a3f1935951ba8767fc",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-20T17:11:13.852Z",
@@ -921,6 +881,76 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T16:51:27.831Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "342fe3d3051f7bda7ac111cacd98be64a7e334a3",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Flash flood warning extended for Hawaii's Oahu island over threat to Wahiawa Dam"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T16:51:27.831Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "71cbd2c862f4f66cc167f4cf626cfb314ef4e1a1",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Body camera footage of Justin Timberlake's DWI arrest released"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T16:51:27.831Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8f5956da59f51c78c6b1b3bb82366f7531fe22f0",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "'Buffy' stars react to Nicholas Brendon's death at 54"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T16:51:27.831Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "College student shot, killed while walking with her friends",
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T16:51:27.831Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "985b63aac16f2863946436efd4e2ffb16e6f4f7d",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "More than 230 people rescued amid dangerous flooding on Hawaii's Oahu island",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T16:51:27.831Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "97e7f31854faf15f89c70bdc3f40d9d3cb47eb55",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Body camera footage from Justin Timberlake's 2024 DWI arrest released",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T16:51:27.831Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1cce87b4f19c2cf3a22831e67e38b46bfd4cd9da",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'Buffy The Vampire Slayer' star Nicholas Brendon dead at 54",
       "to_title": null
     }
   ]
