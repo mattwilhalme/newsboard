@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-21T23:17:34.903Z",
+  "generatedAt": "2026-03-21T23:44:00.471Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T05:43:30.608Z",
-      "event_type": "MOVED",
-      "fingerprint": "b830e7cebab8109054e4f2ece141cf5f721b36f3",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Epstein hid trove of evidence for over a decade, documents suggest",
-      "to_title": "Epstein hid trove of evidence for over a decade, documents suggest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T05:43:30.608Z",
-      "event_type": "MOVED",
-      "fingerprint": "44ec9fe1e14d335aef5d983c21f54cd3fcb3a857",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "D4vd target of grand jury investigation into teen's death, court filings confirm",
-      "to_title": "D4vd target of grand jury investigation into teen's death, court filings confirm"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-26T05:43:30.608Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T23:44:10.449Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1093c11c31427843efafa7e90937251c63d60c13",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "What to know about Hawaii flooding: 230 rescued; 'catastrophic' damage could cost $1B"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T23:44:10.449Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "679e3d9b27f80d65fb898ccf3abf774e1becd1d6",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Flash flood warning extended for Hawaii's Oahu Island",
       "to_title": null
     }
   ],
