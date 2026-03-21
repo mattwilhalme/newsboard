@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-21T16:51:17.458Z",
+  "generatedAt": "2026-03-21T17:15:33.881Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T17:11:13.852Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T17:11:13.852Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
-      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T17:11:13.852Z",
-      "event_type": "MOVED",
-      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Surfer speaks out after shark attack",
-      "to_title": "Surfer speaks out after shark attack"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T17:11:13.852Z",
-      "event_type": "MOVED",
-      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Dangerous, unprecedented heat wave hits the West",
-      "to_title": "Dangerous, unprecedented heat wave hits the West"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T17:11:13.852Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "829115b21466683f75016cfc28aeb238922764c4",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Friend speaks after Kouri Richins found guilty of murdering husband: Exclusive",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-20T19:24:45.472Z",
@@ -951,6 +901,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Buffy The Vampire Slayer' star Nicholas Brendon dead at 54",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T17:15:44.202Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8bd7238bb6ba7c1f68ef0055f6ec649081d5cb2f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T17:15:44.202Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "342fe3d3051f7bda7ac111cacd98be64a7e334a3",
+      "from_rank": 4,
+      "to_rank": 4,
+      "from_title": "Flash flood warning extended for Hawaii's Oahu island over threat to Wahiawa Dam",
+      "to_title": "Flash flood warning extended for Hawaii's Oahu Island over threat to Wahiawa Dam"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T17:15:44.202Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f04874f934a8dca5a7af6cdefb477c13b2c99c31",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says he is considering 'winding down' Iran military efforts",
       "to_title": null
     }
   ]
