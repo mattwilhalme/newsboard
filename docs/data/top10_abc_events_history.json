@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-21T02:05:23.817Z",
+  "generatedAt": "2026-03-21T04:13:32.177Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T19:44:35.243Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fd4e0e324418bee8ebebc6527bb20f227e589252",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "What do the remaining tariffs mean for prices? Experts explain",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T19:44:35.243Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0e76b081ed87f41e45f39c410f85d672b705daa1",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "What to expect as Casey Means' surgeon general confirmation hearing begins",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:08:05.740Z",
-      "event_type": "MOVED",
-      "fingerprint": "8d488ff5ccf054ace85a8dcce57adbd4301412a8",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Casey Means indicates support of vaccines, but stops short of recommending",
-      "to_title": "Casey Means indicates support of vaccines, but stops short of recommending"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:08:05.740Z",
-      "event_type": "MOVED",
-      "fingerprint": "df8d13dd309d325ff6737d1d465e88515542de7b",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "National Center for Missing & Exploited Children on Guthrie family's donation",
-      "to_title": "National Center for Missing & Exploited Children on Guthrie family's donation"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T20:08:05.740Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T04:13:42.238Z",
+      "event_type": "MOVED",
+      "fingerprint": "c44ca8c8ed6fb00bd2e48604a3b90aa029a32be0",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "Actor Chuck Norris honored by co-stars after his death",
+      "to_title": "Actor Chuck Norris honored by co-stars after his death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T04:13:42.238Z",
+      "event_type": "MOVED",
+      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
+      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T04:13:42.238Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7907d92cbfc1959a9a26f051515ce8d0f48f5345",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T04:13:42.238Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "02182b49b0fcf2995c10e503e6b06a4f0b6422a5",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Suit claims negligence in death of ex-Yankees player's son at Costa Rican resort",
       "to_title": null
     }
   ],
