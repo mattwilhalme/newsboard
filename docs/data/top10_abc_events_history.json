@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-21T04:13:32.177Z",
+  "generatedAt": "2026-03-21T05:14:07.205Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:08:05.740Z",
-      "event_type": "MOVED",
-      "fingerprint": "00c859af5fd606e277266257e6184a12e0692547",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "GOP stays competitive in midterms despite Trump's negative ratings: Poll",
-      "to_title": "GOP stays competitive in midterms despite Trump's negative ratings: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "13911f7fe78e2862df85bcbc93dbcdd7498295dd",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Epstein hid trove of evidence from investigators for over a decade, documents suggest"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T20:54:18.305Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Suit claims negligence in death of ex-Yankees player's son at Costa Rican resort",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T05:14:17.350Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "985b63aac16f2863946436efd4e2ffb16e6f4f7d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "More than 230 people rescued amid dangerous flooding on Hawaii's Oahu island"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T05:14:17.350Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "233b2c38f5f006234a3e7582363b3a5a2567e1ff",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse",
       "to_title": null
     }
   ],
