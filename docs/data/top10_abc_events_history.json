@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-21T11:00:05.598Z",
+  "generatedAt": "2026-03-21T11:28:41.469Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "MOVED",
-      "fingerprint": "0e7789351ac88c33b3a2d817cad31e0165489ce5",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Fact-checking Trump's State of the Union address",
-      "to_title": "Fact-checking Trump's State of the Union address"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "MOVED",
-      "fingerprint": "fec1cd7569c2148d7a52206e125c48b1f5c31dd9",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Here's how Trump's remaining tariffs could affect prices, according to experts",
-      "to_title": "Here's how Trump's remaining tariffs could affect prices, according to experts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "MOVED",
-      "fingerprint": "9227ca6fb54f199acc74b2af852d5fc24db21628",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump's State of the Union speech short on plans, especially on Iran: ANALYSIS",
-      "to_title": "Trump's State of the Union speech short on plans, especially on Iran: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5134d6db511dd3bf564a432abdba67caf219621d",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Surgeon general nominee Casey Means stops short of recommending certain vaccines"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "MOVED",
-      "fingerprint": "df8d13dd309d325ff6737d1d465e88515542de7b",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "National Center for Missing & Exploited Children on Guthrie family's donation",
-      "to_title": "National Center for Missing & Exploited Children on Guthrie family's donation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "MOVED",
-      "fingerprint": "00c859af5fd606e277266257e6184a12e0692547",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "GOP stays competitive in midterms despite Trump's negative ratings: Poll",
-      "to_title": "GOP stays competitive in midterms despite Trump's negative ratings: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "MOVED",
-      "fingerprint": "bdd9d1f0405cddf49c8b58785a9a1523ac38636f",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees",
-      "to_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8d488ff5ccf054ace85a8dcce57adbd4301412a8",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Casey Means indicates support of vaccines, but stops short of recommending",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T20:54:18.305Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0771067d7dd41bd1552cebf6627518f31ab4cd65",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "6 in 10 women could have at least one cardiovascular disease risk factor by 2050",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T21:26:23.746Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c01c6961bbd73ea5027c30504f7b449abfbd9d71",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingCuba says 4 killed, 6 hurt on US-registered boat in 'confrontation' off Cuba's coast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T21:26:23.746Z",
-      "event_type": "MOVED",
-      "fingerprint": "13911f7fe78e2862df85bcbc93dbcdd7498295dd",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Epstein hid trove of evidence from investigators for over a decade, documents suggest",
-      "to_title": "Epstein hid trove of evidence from investigators for over a decade, documents suggest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T21:26:23.746Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0d32bda3b4e9d9175c06b48269ca1726c3e7510a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:Larry Summers to step down from Harvard amid Epstein scrutiny"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T21:26:23.746Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "668e777930bc241ff321f630dbee06cb0ae60938",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Cuba says 4 killed, 6 hurt on US-registered boat in 'confrontation' off Cuba's coast"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T21:26:23.746Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d68dac253eae1e8d22d167a3f5ab6fea519b1126",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Israeli-US strikes against Iran will 'increase significantly'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0f511c035412053781f614b5c13f29cf9ca0c14d",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Attacks on Middle East energy sites deepen threat to US economy, analysts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "MOVED",
+      "fingerprint": "600dbf93826aa150a52e425ea8fe56a70cf2f08c",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "DOJ asks judge to drop charges against 2 officers in Breonna Taylor case",
+      "to_title": "DOJ asks judge to drop charges against 2 officers in Breonna Taylor case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "MOVED",
+      "fingerprint": "1cb45d6ac76183f9008396f773fde50728b43bbe",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Senate once again fails to advance DHS funding bill",
+      "to_title": "Senate once again fails to advance DHS funding bill"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "MOVED",
+      "fingerprint": "985b63aac16f2863946436efd4e2ffb16e6f4f7d",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "More than 230 people rescued amid dangerous flooding on Hawaii's Oahu island",
+      "to_title": "More than 230 people rescued amid dangerous flooding on Hawaii's Oahu island"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "MOVED",
+      "fingerprint": "c44ca8c8ed6fb00bd2e48604a3b90aa029a32be0",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Actor Chuck Norris honored by co-stars after his death",
+      "to_title": "Actor Chuck Norris honored by co-stars after his death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "MOVED",
+      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
+      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "MOVED",
+      "fingerprint": "7907d92cbfc1959a9a26f051515ce8d0f48f5345",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia",
+      "to_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "MOVED",
+      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "College student shot, killed while walking with her friends",
+      "to_title": "College student shot, killed while walking with her friends"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1cce87b4f19c2cf3a22831e67e38b46bfd4cd9da",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "'Buffy The Vampire Slayer' star Nicholas Brendon dead at 54"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa5f125eb0df6fe00150d596b2d850fbf2376eac",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Attacks on Middle East energy sites deepen threat to US economy, analysts say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7a53c6403239be75aada46b4326dc5a7af34c93e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump blasts NATO allies as 'COWARDS' over Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T11:28:51.541Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de2f656e066b114270936a12feac5ed8669c6562",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "2,200 more Marines, 3 Navy ships likely headed to Middle East: Officials",
       "to_title": null
     }
   ],
