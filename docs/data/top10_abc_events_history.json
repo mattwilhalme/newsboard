@@ -1,18 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-21T13:49:43.884Z",
+  "generatedAt": "2026-03-21T14:15:57.152Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-25T21:26:23.746Z",
-      "event_type": "MOVED",
-      "fingerprint": "bdd9d1f0405cddf49c8b58785a9a1523ac38636f",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees",
-      "to_title": "Rock & Roll Hall of Fame reveals list of 2026 nominees"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-25T21:26:23.746Z",
@@ -30002,6 +29992,16 @@
       "to_rank": null,
       "from_title": "Iran live updates: Israeli-US strikes against Iran will 'increase significantly'",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-21T14:16:07.818Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "f04874f934a8dca5a7af6cdefb477c13b2c99c31",
+      "from_rank": 1,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Trump says he is considering 'winding down’ Iran military efforts",
+      "to_title": "Iran live updates: Trump says he is considering 'winding down' Iran military efforts"
     }
   ],
   "error": "No Top 10 events yet"
