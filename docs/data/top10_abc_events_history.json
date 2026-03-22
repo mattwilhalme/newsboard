@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-22T19:30:34.451Z",
+  "generatedAt": "2026-03-22T19:49:40.353Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T16:35:17.865Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b83e10798ed7bf39e1f307bfc921a7f2247387ed",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Hillary Clinton facing questions from House Oversight Committee in Epstein probe"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T16:35:17.865Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2ef632c355af0353baf8f8c95ff6fa9bcda7e60c",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Memorial services for Rev. Jesse Jackson begin in Chicago as family calls for 'unity'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-26T16:35:17.865Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T19:49:49.853Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "66ef0a6a5182386665f9b937dc061104a980d59a",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Record temperatures bake the West as heat sickens hundreds at air show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T19:49:49.853Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52b83c2fb91c0d353c82096ca257504a214d2e51",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "400 treated for heat-related illness at Arizona airshow as record temps bake the West",
       "to_title": null
     }
   ],

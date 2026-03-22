@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-22T19:30:34.451Z",
+  "generatedAt": "2026-03-22T19:49:40.353Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T19:36:30.940Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c8cda89d5dbfc0c2a1dfba3ef7b8fdc69cde4928",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingRobert Mueller, former FBI director and special counsel, dies at 81"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T19:36:30.940Z",
-      "event_type": "MOVED",
-      "fingerprint": "8bd7238bb6ba7c1f68ef0055f6ec649081d5cb2f",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again",
-      "to_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T19:36:30.940Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "679e3d9b27f80d65fb898ccf3abf774e1becd1d6",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Flash flood warning extended for Hawaii's Oahu Island"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T19:36:30.940Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Surfer speaks out after shark attack"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T19:36:30.940Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0f511c035412053781f614b5c13f29cf9ca0c14d",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Attacks on Middle East energy sites deepen threat to US economy, analysts say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T19:36:30.940Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "342fe3d3051f7bda7ac111cacd98be64a7e334a3",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Flash flood warning extended for Hawaii's Oahu Island over threat to Wahiawa Dam",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T19:36:30.940Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "College student shot, killed while walking with her friends",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-21T20:39:03.038Z",
@@ -851,6 +781,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T19:49:49.853Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "66ef0a6a5182386665f9b937dc061104a980d59a",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Record temperatures bake the West as heat sickens hundreds at air show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T19:49:49.853Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52b83c2fb91c0d353c82096ca257504a214d2e51",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "400 treated for heat-related illness at Arizona airshow as record temps bake the West",
       "to_title": null
     }
   ]
