@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-22T09:42:08.434Z",
+  "generatedAt": "2026-03-22T10:02:02.569Z",
   "hours": 24,
   "events": [
     {
@@ -871,6 +871,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump threatens Iran's power plants if strait not opened in 2 days",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T10:02:12.372Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f036c70b48097a31d16065a583e1209edd1965d4",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Nonprofits, unions and airports rally to feed TSA officers as shutdown drags"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T10:02:12.372Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "58b44402ae60d78bcaa8226b8fa58a7dcf720199",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "For airline travelers, the shutdown answer is simple: Pay TSA officers",
       "to_title": null
     }
   ]
