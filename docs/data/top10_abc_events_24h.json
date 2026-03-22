@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-22T02:31:35.075Z",
+  "generatedAt": "2026-03-22T04:34:56.687Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T04:13:42.238Z",
-      "event_type": "MOVED",
-      "fingerprint": "c44ca8c8ed6fb00bd2e48604a3b90aa029a32be0",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "Actor Chuck Norris honored by co-stars after his death",
-      "to_title": "Actor Chuck Norris honored by co-stars after his death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T04:13:42.238Z",
-      "event_type": "MOVED",
-      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
-      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T04:13:42.238Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7907d92cbfc1959a9a26f051515ce8d0f48f5345",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T04:13:42.238Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "02182b49b0fcf2995c10e503e6b06a4f0b6422a5",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Suit claims negligence in death of ex-Yankees player's son at Costa Rican resort",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-21T05:14:17.350Z",
@@ -891,6 +851,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "For airline passengers, the shutdown answer is simple: Pay TSA officers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T04:35:06.841Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "595d18d211063e1b6dbe1458a1130806eb00e997",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "6 injured after floor collapses at wedding venue"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T04:35:06.841Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Surfer speaks out after shark attack",
       "to_title": null
     }
   ]
