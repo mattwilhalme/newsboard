@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-22T09:01:32.233Z",
+  "generatedAt": "2026-03-22T09:42:08.434Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T11:05:23.075Z",
-      "event_type": "MOVED",
-      "fingerprint": "9079743144d419710ab4d300e7fd4f85ce396f56",
-      "from_rank": 1,
-      "to_rank": 8,
-      "from_title": "Cuba says 4 killed on Florida-registered speedboat were attempting 'infiltration'",
-      "to_title": "Cuba says 4 killed on Florida-registered speedboat were attempting 'infiltration'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T11:05:23.075Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "34ca9fb4f198e38dfe5f18a0d18f8a04c911de30",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Daylight saving time 2026: When to 'spring forward' and more"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-26T11:05:23.075Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Surfer speaks out after shark attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T09:42:20.186Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df1d8029f29d91243fbd1f6d346d6a4d8fb66dbb",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran vows to respond if Trump strikes Iran's power plants"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-22T09:42:20.186Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9dac70513d8d946d6f291a848044d514ae0c035f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump threatens Iran's power plants if strait not opened in 2 days",
       "to_title": null
     }
   ],
