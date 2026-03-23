@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-23T11:35:40.227Z",
+  "generatedAt": "2026-03-23T12:08:55.029Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T21:51:23.306Z",
-      "event_type": "MOVED",
-      "fingerprint": "31d28148965e84e6971c74f246ab0b3f322fa740",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "College professor placed on leave amid investigation into her 'abhorrent remarks'",
-      "to_title": "College professor placed on leave amid investigation into her 'abhorrent remarks'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-26T21:51:23.306Z",
-      "event_type": "MOVED",
-      "fingerprint": "fa2d90b488de3551da53d415cc61747412a6cef9",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Hilary Knight calls Trump call with men's hockey team a 'learning moment'",
-      "to_title": "Hilary Knight calls Trump call with men's hockey team a 'learning moment'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-26T22:21:22.163Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "1-ton meteor streaks across Texas sky before breaking up in a fireball: NASA",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T12:09:05.796Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "91fdf7d70816df5d65e871d0640e0724466dc05f",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Ground stop in place at Newark Airport"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T12:09:05.796Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8738c21735b9819b7ac098f80fdc054656833fdb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Global economy faces ‘major, major threat’: IEA",
       "to_title": null
     }
   ],
