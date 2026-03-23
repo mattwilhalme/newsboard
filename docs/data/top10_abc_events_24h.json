@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-23T19:29:40.249Z",
+  "generatedAt": "2026-03-23T20:04:33.249Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T19:49:49.853Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "66ef0a6a5182386665f9b937dc061104a980d59a",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Record temperatures bake the West as heat sickens hundreds at air show"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T19:49:49.853Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "52b83c2fb91c0d353c82096ca257504a214d2e51",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "400 treated for heat-related illness at Arizona airshow as record temps bake the West",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T20:37:08.472Z",
@@ -1341,6 +1321,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:04:43.613Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:04:43.613Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a01266daac3324b8e6e6ec13a97492e5906370d7",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump doesn't rule out immigration enforcement at airports after ICE agents deployed",
       "to_title": null
     }
   ]

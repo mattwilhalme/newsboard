@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-23T19:29:40.249Z",
+  "generatedAt": "2026-03-23T20:04:33.249Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T10:55:14.950Z",
-      "event_type": "MOVED",
-      "fingerprint": "0c3fd98f0b02ef92f8dde2fef617cffe9db8c99a",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Top Democrats accuse Bondi and DOJ of Epstein files 'cover-up'",
-      "to_title": "Top Democrats accuse Bondi and DOJ of Epstein files 'cover-up'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T10:55:14.950Z",
-      "event_type": "MOVED",
-      "fingerprint": "6632b6f02dd6cb3f05a404808671e8a27ee64f67",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Columbia student detained by DHS released after Mamdani speaks to Trump",
-      "to_title": "Columbia student detained by DHS released after Mamdani speaks to Trump"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T10:55:14.950Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:04:43.613Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:04:43.613Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a01266daac3324b8e6e6ec13a97492e5906370d7",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump doesn't rule out immigration enforcement at airports after ICE agents deployed",
       "to_title": null
     }
   ],
