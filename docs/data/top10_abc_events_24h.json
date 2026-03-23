@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-23T20:04:33.249Z",
+  "generatedAt": "2026-03-23T20:52:15.925Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T20:37:08.472Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5c92c78e8e3f8320757bfd93c78817cf9394539c",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "1-ton meteor streaks across Texas sky before breaking up in a fireball: NASA"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T20:37:08.472Z",
-      "event_type": "MOVED",
-      "fingerprint": "1093c11c31427843efafa7e90937251c63d60c13",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "What to know about Hawaii flooding: 230 rescued; 'catastrophic' damage could cost $1B",
-      "to_title": "What to know about Hawaii flooding: 230 rescued; 'catastrophic' damage could cost $1B"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T20:37:08.472Z",
-      "event_type": "MOVED",
-      "fingerprint": "7ee16a3c3af05670186f6143d7dc6bda7eca09c5",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Robert Mueller, former FBI director and special counsel, dies at 81",
-      "to_title": "Robert Mueller, former FBI director and special counsel, dies at 81"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T20:37:08.472Z",
-      "event_type": "MOVED",
-      "fingerprint": "71cbd2c862f4f66cc167f4cf626cfb314ef4e1a1",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Body camera footage of Justin Timberlake's DWI arrest released",
-      "to_title": "Body camera footage of Justin Timberlake's DWI arrest released"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T20:37:08.472Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8f5956da59f51c78c6b1b3bb82366f7531fe22f0",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Buffy' stars react to Nicholas Brendon's death at 54",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T23:33:19.743Z",
@@ -1341,6 +1291,66 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Trump doesn't rule out immigration enforcement at airports after ICE agents deployed",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:52:27.605Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f222f77842c6958fd678c1b6b59c4e4ad7c41da9",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Supreme Court appears likely to set limits on mail-in ballots"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:52:27.605Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b44b82f5f71e69bf12993a65649188ade215dac4",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Senate set to vote on confirming Sen. Markwayne Mullin as DHS secretary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:52:27.605Z",
+      "event_type": "MOVED",
+      "fingerprint": "00c208e2c8625598272b1731f06fc7a0f5925e92",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Dwayne Johnson transforms into Maui in live-action 'Moana' trailer",
+      "to_title": "Dwayne Johnson transforms into Maui in live-action 'Moana' trailer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:52:27.605Z",
+      "event_type": "MOVED",
+      "fingerprint": "c571458fac3abc42a3fbf5eb878e7932a0edb364",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Undocumented immigrant arrested in killing of college student: DHS",
+      "to_title": "Undocumented immigrant arrested in killing of college student: DHS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:52:27.605Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b99506c854b415f4851cef7383cdb6f7ff3e53fe",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Dow soars 1,000 points as Trump claims talks held with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T20:52:27.605Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4d765bc586350f60414359bf6d54fd89f8e03166",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots",
       "to_title": null
     }
   ]
