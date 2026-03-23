@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-23T21:55:36.071Z",
+  "generatedAt": "2026-03-23T22:23:55.284Z",
   "hours": 24,
   "events": [
     {
@@ -1501,6 +1501,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Undocumented immigrant arrested in killing of college student: DHS",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "16090524443b9c8da93c81616f5b9e698afcb8b4",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Tips to find airport security wait times amid TSA staffing shortages"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "MOVED",
+      "fingerprint": "e8242ba375a490e44504a548a0ce1263d5de7812",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Schumer says DHS funding talks 'constructive'",
+      "to_title": "Schumer says DHS funding talks 'constructive'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "MOVED",
+      "fingerprint": "b44b82f5f71e69bf12993a65649188ade215dac4",
+      "from_rank": 9,
+      "to_rank": 6,
+      "from_title": "Senate set to vote on confirming Sen. Markwayne Mullin as DHS secretary",
+      "to_title": "Senate set to vote on confirming Sen. Markwayne Mullin as DHS secretary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "MOVED",
+      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
+      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "MOVED",
+      "fingerprint": "8b4ab6a2a0750885ca6e8da30924c269f216c2de",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport",
+      "to_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "MOVED",
+      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
+      "to_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "MOVED",
+      "fingerprint": "e476ca82e488acfb4268cf9477c58370a66ec7bf",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "'Superman' star and Oscar-nominated actress Valerie Perrine dies",
+      "to_title": "'Superman' star and Oscar-nominated actress Valerie Perrine dies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-23T22:24:05.441Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd746a17e69036afa19a2e9dc9a06b450ca95bc8",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "LA28 unveils California-inspired superbloom branding for Olympic, Paralympic Games",
       "to_title": null
     }
   ]
