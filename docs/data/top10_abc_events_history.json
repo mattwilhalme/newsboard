@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-24T10:30:34.319Z",
+  "generatedAt": "2026-03-24T11:26:49.680Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T17:49:27.285Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8f77e98cde486406d54e6495cc61f77126185ff3",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingBill Clinton denies knowledge of Epstein's crimes in House committee deposition"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T17:49:27.285Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T17:49:27.285Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T11:27:00.276Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a36ba828374618f7332d74f0993b0caa177a3323",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T11:27:00.276Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7a26c5f7b989228b21dc3b170ec9ee845a011982",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Damage in Tel Aviv region after Iranian attack, authorities say",
       "to_title": null
     }
   ],

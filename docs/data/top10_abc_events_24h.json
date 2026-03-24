@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-24T10:30:34.319Z",
+  "generatedAt": "2026-03-24T11:26:49.680Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T10:47:07.321Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e57c4536c0cc44e2efce4f51bc6f740a2255c5a5",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Dozens injured, 2 pilots dead in ground collision at LaGuardia; airport closed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T10:47:07.321Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4d765bc586350f60414359bf6d54fd89f8e03166",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T10:47:07.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "43dc4edb33185d1df773d3198eee1bee47ac13f4",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police",
-      "to_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T10:47:07.321Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4b1d5468981b6156018ad65b3325860dff2ea678",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "LaGuardia Airport shut down after plane collides with vehicle, killing 2",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T10:47:07.321Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f920c29e7cf788b376aeb8f97f4fad24e019f819",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Transportation Secretary Duffy says ICE agents are trained and can assist TSA",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T11:35:50.123Z",
@@ -1441,6 +1391,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T11:27:00.276Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a36ba828374618f7332d74f0993b0caa177a3323",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T11:27:00.276Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7a26c5f7b989228b21dc3b170ec9ee845a011982",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Damage in Tel Aviv region after Iranian attack, authorities say",
       "to_title": null
     }
   ]
