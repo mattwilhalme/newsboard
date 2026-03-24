@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-24T17:42:55.798Z",
+  "generatedAt": "2026-03-24T18:40:54.722Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T19:47:00.990Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a2b0d1de10ce860499ca51438b032567593fd9b3",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "NASA revamps Artemis moon landing program to reduce flight gaps and risk",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T20:41:47.990Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2f7e7eeefc45d90dbc858289e6626486d9b15aee",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Anthropic says latest Pentagon contract doesn't alleviate concerns as deadline nears"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T20:41:47.990Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5b8e87cba0efcb73c6d57511acd8a24da5d79e5b",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Man misidentified by Cuban officials as being involved in boat shootout speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T20:41:47.990Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bc8bd05d2c38e6ab979a4501ec279d8d4a94619a",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Over half of Americans say health care, vacation, new car are unaffordable: Poll",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T20:41:47.990Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5547e784c517f70200b34f80caa05dfd9815fad7",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "30 more people charged in connection with Minnesota church incident: DOJ",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cdb91724d08cf68204dd5899442e6992b9f04c84",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingTrump says US government will 'immediately cease' use of Anthropic AI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
-      "to_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "c096b8ce093727582e953c0d4b12c2b5c52ba0e4",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
-      "to_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fe981d894b192b48757c36690de57e278014169c",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Trump says US government will 'immediately cease' use of Anthropic AI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "4893aba22e15c58dd008782573a60a95c3442b02",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island",
-      "to_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "4378c7312945a2295b07d1930bc11002410d8833",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks",
-      "to_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "584112dde8af0e568c13960f4140ad45a6e81e33",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away",
-      "to_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "9f83dd9892bc15eddaf4f1de91e7cda8afa62db6",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Transgender youths are targeted in Scouting America changes pushed by the Pentagon",
-      "to_title": "Transgender youths are targeted in Scouting America changes pushed by the Pentagon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T21:39:29.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "775cc148ae77d1b46d8efeec1b05c3ced219202a",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "How the horrifying murders of 4 teen girls were solved",
-      "to_title": "How the horrifying murders of 4 teen girls were solved"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T21:39:29.112Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0cead5ee9c04e78665b125821bb67b8f3e22ff37",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "LaGuardia crash: 1 of the 2 killed pilots ID'd"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3a956c8badf1b9beb6c9778d56b144e668f2dcf3",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Part of 82nd Airborne Division headed to Middle East, Source says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d20354eaa413f59665dd014e61bd564f8a2ac70",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "American held by Taliban for over a year released",
+      "to_title": "American held by Taliban for over a year released"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "1721fae70e4d2cfb06f620ef2ab8d92affceeca3",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Potential DHS funding deal taking shape, but roadblocks still ahead",
+      "to_title": "Potential DHS funding deal taking shape, but roadblocks still ahead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c4d24a02b8168fed51c95e3ea0eeafa99c34b7c",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
+      "to_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "40604bf84c417149bcaa7c51f71356ca44fec7bc",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "2 kids, 1 adult hurt in stabbing at middle school: Sheriff",
+      "to_title": "2 kids, 1 adult hurt in stabbing at middle school: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "cb8da6c7146af5cf32c1f45b42042a28dc4c79f6",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "'American Idol' judges dish on season 9's 1st live show",
+      "to_title": "'American Idol' judges dish on season 9's 1st live show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
+      "from_rank": 10,
+      "to_rank": 8,
+      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
+      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a37e40baca421c0c9fabb64b3d4fc7de80b511aa",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "03361a4781754ce138b8674d685b3830efdfe04f",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Quadruple amputee cornhole pro accused of murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4591ccbf2c1104bbb4f9b11720338e47336f85e3",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Questions swirl about status of peace talks as Trump touts progress, Iran pushes back",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a36ba828374618f7332d74f0993b0caa177a3323",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c6bf2f2ae238accd4a000a6a0e43d78c7047be3b",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump says US and Iran have 'major points of agreement,' including no nuclear weapons",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T18:41:05.185Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "90dcfc5bc34007f77928346d47ba11d25b0c8196",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Deadly LaGuardia crash: Passenger believes pilots 'saved many lives'",
       "to_title": null
     }
   ],
