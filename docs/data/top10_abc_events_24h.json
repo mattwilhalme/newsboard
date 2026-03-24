@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-24T04:28:46.981Z",
+  "generatedAt": "2026-03-24T05:44:39.506Z",
   "hours": 24,
   "events": [
     {
@@ -1591,6 +1591,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Superman' star and Oscar-nominated actress Valerie Perrine dies",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "f131b1fad683c4ada3be05f6872327127a0ac1e0",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Iran denies any talks with US following Trump's remarks",
+      "to_title": "Iran live updates: Iran denies any talks with US following Trump's remarks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1b8b2fd05588e6b0ef37fedb8a80d9ee446752a8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "US Park Police officer shot in Washington, DC",
+      "to_title": "US Park Police officer shot in Washington, DC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
+      "from_rank": 8,
+      "to_rank": 4,
+      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
+      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "8b4ab6a2a0750885ca6e8da30924c269f216c2de",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport",
+      "to_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "MOVED",
+      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
+      "to_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd746a17e69036afa19a2e9dc9a06b450ca95bc8",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "LA28 unveils California-inspired superbloom branding for Olympic, Paralympic Games"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c6bf2f2ae238accd4a000a6a0e43d78c7047be3b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump says US and Iran have 'major points of agreement,' including no nuclear weapons",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T05:44:49.255Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "67169ef65848b7faf121fed96e80e655db70e381",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "What to know as war with Iran enters its 4th week",
       "to_title": null
     }
   ]
