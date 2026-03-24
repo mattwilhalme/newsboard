@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-24T21:01:44.534Z",
+  "generatedAt": "2026-03-24T21:36:08.413Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:03:12.772Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "57e2464b55f170ed1ae62caa0797213f8ac527fc",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Luigi Mangione case: Ruling that took death penalty off table won't be appealed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:03:12.772Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:03:12.772Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c096b8ce093727582e953c0d4b12c2b5c52ba0e4",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:35:47.511Z",
-      "event_type": "MOVED",
-      "fingerprint": "4378c7312945a2295b07d1930bc11002410d8833",
-      "from_rank": 7,
-      "to_rank": 2,
-      "from_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks",
-      "to_title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:35:47.511Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b507746a5177336cb8c53a24b13126ac879c23c7",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:Protests persist at Iranian colleges and raise tensions as US military threat looms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:35:47.511Z",
-      "event_type": "MOVED",
-      "fingerprint": "57e2464b55f170ed1ae62caa0797213f8ac527fc",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "Luigi Mangione case: Ruling that took death penalty off table won't be appealed",
-      "to_title": "Luigi Mangione case: Ruling that took death penalty off table won't be appealed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:35:47.511Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7257c7fbbfa99c3475696b33471e371ffef5522e",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Trump orders US govt to cut ties with Anthropic; Hegseth declares supply chain 'risk'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:35:47.511Z",
-      "event_type": "MOVED",
-      "fingerprint": "47040d48d2414bd4067895779340bdfcdbef8e38",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Paramount and Warner Bros. Discovery announce deal",
-      "to_title": "Paramount and Warner Bros. Discovery announce deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T23:35:47.511Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Singer-songwriter Neil Sedaka dies at 86"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T23:35:47.511Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b256cb58db374b025489619fb98e1940bc3954a7",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:82nd Airborne ground forces set to deploy to Middle East: Source"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "MOVED",
+      "fingerprint": "85c2390b95fb32690d6b193363d58edfbd412839",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Trump says he's 'pretty much not happy' with any deal to reopen DHS",
+      "to_title": "Trump says he's 'pretty much not happy' with any deal to reopen DHS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d20354eaa413f59665dd014e61bd564f8a2ac70",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "American held by Taliban for over a year released",
+      "to_title": "American held by Taliban for over a year released"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cec6f549adb623800e80d0a07d6b882ce2ef832a",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "New Mexico jury finds Meta violated consumer protection law at trial about child safety"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "MOVED",
+      "fingerprint": "a37e40baca421c0c9fabb64b3d4fc7de80b511aa",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’",
+      "to_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "MOVED",
+      "fingerprint": "609bd38f203100026bfa5937c4e14818dd375d58",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Epic Games lays off more than 1,000 amid slowing Fortnite engagement",
+      "to_title": "Epic Games lays off more than 1,000 amid slowing Fortnite engagement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "MOVED",
+      "fingerprint": "95a2d7b2bfce25ba07f4882af92f32e1a53bcc23",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Jay-Z reflects on now-dismissed sexual assault claims: 'I was really heartbroken'",
+      "to_title": "Jay-Z reflects on now-dismissed sexual assault claims: 'I was really heartbroken'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bccdadcc7f634d69f8ad3584a34599785950f492",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Questions swirl about status of peace talks as Trump touts progress, Iran pushes back",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T21:36:18.817Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8d9eefca317793925fd3294e1fbbdc71e7806de2",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Supreme Court poised to let Trump turn away asylum seekers at border",
       "to_title": null
     }
   ],
