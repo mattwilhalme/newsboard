@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-24T08:32:56.743Z",
+  "generatedAt": "2026-03-24T09:33:22.721Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T16:25:59.404Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "50957296d012c64d15e416ee72d8b9bd2e32761a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Rubio to visit Israel, Vance to meet Omanis on Iran, says 'no chance' of lengthy war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T16:25:59.404Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "584112dde8af0e568c13960f4140ad45a6e81e33",
-      "from_rank": 5,
-      "to_rank": 5,
-      "from_title": "Nancy Guthrie latest: Sheriff investigating ring camera from 2.5 miles away",
-      "to_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T16:25:59.404Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b8239357f0111c851049d2fa91840852bb83c523",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Vance to meet with Omanis on Iran, says 'no chance' of yearslong war if US strikes",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T17:04:15.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3f089d6636335c9b91ca0d9fb0cb41690415879a",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Bill Clinton facing questions from House Oversight Committee in its Epstein probe"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T17:04:15.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a2b0d1de10ce860499ca51438b032567593fd9b3",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "NASA revamps Artemis moon landing program to reduce flight gaps and risk"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T17:04:15.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "179c33bc5011ef2a66b57a8be14b79fefdeda7d0",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources",
-      "to_title": "Pro-Trump attorneys push EO that would give Trump wide power over elections: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T17:04:15.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e1baa4f01e5264ba7a535b1ed931df9ab79e0ea9",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Bill Clinton faces questions from House Oversight Committee in its Epstein probe",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T17:04:15.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "971abdb45915e63b478b69ad503ba34cc2990b15",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Top Mideast commander briefs Trump on military options on Iran: Exclusive",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T17:49:27.285Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iran denies any talks with US following Trump's remarks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9c4d24a02b8168fed51c95e3ea0eeafa99c34b7c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "US Park Police officer shot in Washington, DC",
+      "to_title": "US Park Police officer shot in Washington, DC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
+      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
+      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "16090524443b9c8da93c81616f5b9e698afcb8b4",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Tips to find airport security wait times amid TSA staffing shortages",
+      "to_title": "Tips to find airport security wait times amid TSA staffing shortages"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "e8242ba375a490e44504a548a0ce1263d5de7812",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Schumer says DHS funding talks 'constructive'",
+      "to_title": "Schumer says DHS funding talks 'constructive'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "8b4ab6a2a0750885ca6e8da30924c269f216c2de",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport",
+      "to_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
       "to_title": null
     }
   ],

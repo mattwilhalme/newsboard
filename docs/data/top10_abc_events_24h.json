@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-24T08:32:56.743Z",
+  "generatedAt": "2026-03-24T09:33:22.721Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T08:55:54.113Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "42af09d18f4bba35c5b8e820a8ecf96482c91238",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump's 48-hour deadline to expire Monday evening"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T08:55:54.113Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "423edd67a73d38c7a2781cc96844ef01f6551679",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "State Dept. says Americans should 'exercise increased caution'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T09:57:00.174Z",
@@ -1541,6 +1521,86 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iran denies any talks with US following Trump's remarks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9c4d24a02b8168fed51c95e3ea0eeafa99c34b7c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "US Park Police officer shot in Washington, DC",
+      "to_title": "US Park Police officer shot in Washington, DC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
+      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
+      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "16090524443b9c8da93c81616f5b9e698afcb8b4",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Tips to find airport security wait times amid TSA staffing shortages",
+      "to_title": "Tips to find airport security wait times amid TSA staffing shortages"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "e8242ba375a490e44504a548a0ce1263d5de7812",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Schumer says DHS funding talks 'constructive'",
+      "to_title": "Schumer says DHS funding talks 'constructive'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "8b4ab6a2a0750885ca6e8da30924c269f216c2de",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport",
+      "to_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T09:33:33.086Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
       "to_title": null
     }
   ]
