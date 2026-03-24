@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-24T19:40:53.362Z",
+  "generatedAt": "2026-03-24T20:08:53.077Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T20:04:43.613Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T20:04:43.613Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a01266daac3324b8e6e6ec13a97492e5906370d7",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Trump doesn't rule out immigration enforcement at airports after ICE agents deployed",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T20:52:27.605Z",
@@ -1251,6 +1231,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Quadruple amputee cornhole pro accused of murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T20:09:03.398Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "80b2e4f48dc276bda75c3d6b5655c46eff9d4140",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Delta Air Lines suspends specialty services for members of Congress amid shutdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T20:09:03.398Z",
+      "event_type": "MOVED",
+      "fingerprint": "1721fae70e4d2cfb06f620ef2ab8d92affceeca3",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Potential DHS funding deal taking shape, but roadblocks still ahead",
+      "to_title": "Potential DHS funding deal taking shape, but roadblocks still ahead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T20:09:03.398Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c4d24a02b8168fed51c95e3ea0eeafa99c34b7c",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
+      "to_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T20:09:03.398Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cb8da6c7146af5cf32c1f45b42042a28dc4c79f6",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "'American Idol' judges dish on season 9's 1st live show",
       "to_title": null
     }
   ]
