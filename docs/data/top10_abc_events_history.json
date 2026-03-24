@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-24T14:46:36.675Z",
+  "generatedAt": "2026-03-24T15:49:49.054Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T19:08:17.458Z",
-      "event_type": "MOVED",
-      "fingerprint": "c096b8ce093727582e953c0d4b12c2b5c52ba0e4",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
-      "to_title": "Related:Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T19:08:17.458Z",
-      "event_type": "MOVED",
-      "fingerprint": "4893aba22e15c58dd008782573a60a95c3442b02",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island",
-      "to_title": "DOJ reposts purported photo of Howard Lutnick on Epstein's island"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T19:08:17.458Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Miley Cyrus reflects on 'Hannah Montana' legacy, 20th anniversary special",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T15:49:59.273Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3d20354eaa413f59665dd014e61bd564f8a2ac70",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "American held by Taliban for over a year released"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T15:49:59.273Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "03c553b5f10f3a3826a3e52c3af193969f3583d4",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "American held captive in Afghanistan released, Taliban says",
       "to_title": null
     }
   ],
