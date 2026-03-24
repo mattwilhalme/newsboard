@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-24T07:44:11.026Z",
+  "generatedAt": "2026-03-24T08:32:56.743Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T15:51:37.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f17a40e5c098a657a870d4f682cb8901b8a3ef82",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Hillary Clinton after Epstein deposition says she was asked about UFOs, 'Pizzagate'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T15:51:37.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "261f367f3c4032662328e864819990642569e58b",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Anthropic won't bend to Pentagon on AI safeguards",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T16:25:59.404Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "What to know as war with Iran enters its 4th week",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T08:33:07.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7a26c5f7b989228b21dc3b170ec9ee845a011982",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Damage in Tel Aviv region after Iranian attack, authorities say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T08:33:07.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f131b1fad683c4ada3be05f6872327127a0ac1e0",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran denies any talks with US following Trump's remarks",
       "to_title": null
     }
   ],
