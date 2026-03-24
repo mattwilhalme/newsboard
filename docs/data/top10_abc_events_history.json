@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-24T15:49:49.054Z",
+  "generatedAt": "2026-03-24T16:46:32.757Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T19:08:17.458Z",
-      "event_type": "MOVED",
-      "fingerprint": "50957296d012c64d15e416ee72d8b9bd2e32761a",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Rubio to visit Israel, Vance to meet Omanis on Iran, says 'no chance' of lengthy war",
-      "to_title": "Rubio to visit Israel, Vance to meet Omanis on Iran, says 'no chance' of lengthy war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T19:08:17.458Z",
-      "event_type": "MOVED",
-      "fingerprint": "bc8bd05d2c38e6ab979a4501ec279d8d4a94619a",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Over half of Americans say health care, vacation, new car are unaffordable: Poll",
-      "to_title": "Over half of Americans say health care, vacation, new car are unaffordable: Poll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-27T19:08:17.458Z",
-      "event_type": "MOVED",
-      "fingerprint": "584112dde8af0e568c13960f4140ad45a6e81e33",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away",
-      "to_title": "Nancy Guthrie latest: Sheriff investigating Ring camera from 2.5 miles away"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-27T19:08:17.458Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "American held captive in Afghanistan released, Taliban says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T16:46:43.775Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "40604bf84c417149bcaa7c51f71356ca44fec7bc",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "2 kids, 1 adult hurt in stabbing at middle school: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T16:46:43.775Z",
+      "event_type": "MOVED",
+      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
+      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T16:46:43.775Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e8242ba375a490e44504a548a0ce1263d5de7812",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Schumer says DHS funding talks 'constructive'",
       "to_title": null
     }
   ],
