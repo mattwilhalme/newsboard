@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-24T12:03:45.084Z",
+  "generatedAt": "2026-03-24T13:46:30.120Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T12:09:05.796Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "91fdf7d70816df5d65e871d0640e0724466dc05f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Ground stop in place at Newark Airport"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T12:09:05.796Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8738c21735b9819b7ac098f80fdc054656833fdb",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Global economy faces ‘major, major threat’: IEA",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5ca9c376a5503ea76f523893a19b58a2073bba29",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says 'very good' Iran talks, hints at 'total resolution'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1372ad781a8df237c4cf5209510326871b0f305f",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Ground stop briefly in place, control tower evacuated at Newark Airport"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "MOVED",
-      "fingerprint": "5d91954cf5fd4ac404369b23955056b290167e9b",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "State Department launches effort to counter cyberattacks, AI risks from Iran, others",
-      "to_title": "State Department launches effort to counter cyberattacks, AI risks from Iran, others"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "MOVED",
-      "fingerprint": "43dc4edb33185d1df773d3198eee1bee47ac13f4",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police",
-      "to_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "MOVED",
-      "fingerprint": "4d765bc586350f60414359bf6d54fd89f8e03166",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots",
-      "to_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "MOVED",
-      "fingerprint": "67169ef65848b7faf121fed96e80e655db70e381",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "What to know as war with Iran enters its 4th week",
-      "to_title": "What to know as war with Iran enters its 4th week"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "MOVED",
-      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "College student shot, killed while walking with her friends",
-      "to_title": "College student shot, killed while walking with her friends"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8738c21735b9819b7ac098f80fdc054656833fdb",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Global economy faces ‘major, major threat’: IEA"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a499fd02608ada842f43309af5e71f089a00b10f",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingTrump says US postponing attacks on Iranian energy facilities, citing 'productive' talks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7669e923bda464bc8cc0db0a07be446b13adce83",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Democrat Beshear lashes into Vance in Ohio, escalating tensions ahead of 2028",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "91fdf7d70816df5d65e871d0640e0724466dc05f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Ground stop in place at Newark Airport",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T14:46:14.800Z",
@@ -1331,6 +1201,136 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Damage in Tel Aviv region after Iranian attack, authorities say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0976a879d89d6573669a79c26fdac9337c68f6f0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingAmerican held captive in Afghanistan released, Taliban says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "MOVED",
+      "fingerprint": "a36ba828374618f7332d74f0993b0caa177a3323",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks",
+      "to_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "MOVED",
+      "fingerprint": "1b8b2fd05588e6b0ef37fedb8a80d9ee446752a8",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons",
+      "to_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "90dcfc5bc34007f77928346d47ba11d25b0c8196",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Deadly LaGuardia crash: Passenger believes pilots 'saved many lives'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c4d24a02b8168fed51c95e3ea0eeafa99c34b7c",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
+      "to_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "US Park Police officer shot in Washington, DC",
+      "to_title": "US Park Police officer shot in Washington, DC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "MOVED",
+      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
+      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "MOVED",
+      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
+      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "MOVED",
+      "fingerprint": "e8242ba375a490e44504a548a0ce1263d5de7812",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Schumer says DHS funding talks 'constructive'",
+      "to_title": "Schumer says DHS funding talks 'constructive'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "692768ede17359fd87ded277ddd5d012e45ee830",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Miley Cyrus reflects on 'Hannah Montana' legacy, 20th anniversary special"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "16090524443b9c8da93c81616f5b9e698afcb8b4",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Tips to find airport security wait times amid TSA staffing shortages",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b4ab6a2a0750885ca6e8da30924c269f216c2de",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-24T13:46:40.838Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd746a17e69036afa19a2e9dc9a06b450ca95bc8",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "LA28 unveils California-inspired superbloom branding for Olympic, Paralympic Games",
       "to_title": null
     }
   ]
