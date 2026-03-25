@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-25T05:16:04.009Z",
+  "generatedAt": "2026-03-25T06:16:53.594Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T07:45:53.954Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fc23988ac7fee6e5a257a8a067ba9ca73ce67b23",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingIsrael launches preemptive strike against Iran, Israeli officials say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T07:45:53.954Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0b42095b034d923c4e43fae5b7b5a53d23ba1738",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: US and Israel launch joint strike in Iran, US official says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T07:45:53.954Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c06a8048758e3b32baf960c1f9008e56d391cddd",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Related:Trump says he hasn't made a final decision on Iran, 'not happy' with current talks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T07:58:11.979Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f69d6d95fea9864f9fff254f6f59994a7f36ccb5",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says 'major combat operations' have begun in Iran"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T07:58:11.979Z",
@@ -30002,6 +29962,46 @@
       "to_rank": null,
       "from_title": "New Mexico jury finds Meta violated consumer protection law at trial about child safety",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T06:17:03.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "eb105f07822799f15d271108fedbf7b9bd9bb7c7",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Breonna Taylor's mother criticizes DOJ's request to dismiss charges against officers",
+      "to_title": "Breonna Taylor's mother criticizes DOJ's request to dismiss charges against officers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T06:17:03.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "2cfa3bacfe728135383039bb52687d94e08a4bba",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Wife testifies during trial of doctor accused of trying to kill her on hiking trail",
+      "to_title": "Wife testifies during trial of doctor accused of trying to kill her on hiking trail"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T06:17:03.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
+      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T06:17:03.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "66f4eb887939e18585ec1790225bc100e50acabe",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "New Mexico jury says Meta harms children's mental health and safety, violating state law",
+      "to_title": "New Mexico jury says Meta harms children's mental health and safety, violating state law"
     }
   ],
   "error": "No Top 10 events yet"
