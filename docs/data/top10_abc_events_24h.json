@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-25T14:02:25.856Z",
+  "generatedAt": "2026-03-25T15:13:08.551Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T14:46:46.646Z",
-      "event_type": "MOVED",
-      "fingerprint": "a36ba828374618f7332d74f0993b0caa177a3323",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks",
-      "to_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T14:46:46.646Z",
-      "event_type": "MOVED",
-      "fingerprint": "1b8b2fd05588e6b0ef37fedb8a80d9ee446752a8",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons",
-      "to_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T14:46:46.646Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "03c553b5f10f3a3826a3e52c3af193969f3583d4",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "American held captive in Afghanistan released, Taliban says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T14:46:46.646Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a37e40baca421c0c9fabb64b3d4fc7de80b511aa",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T14:46:46.646Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0976a879d89d6573669a79c26fdac9337c68f6f0",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingAmerican held captive in Afghanistan released, Taliban says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T14:46:46.646Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "692768ede17359fd87ded277ddd5d012e45ee830",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Miley Cyrus reflects on 'Hannah Montana' legacy, 20th anniversary special",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-24T15:49:59.273Z",
@@ -1331,6 +1271,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "NASA announces $20 billion accelerated plan to build moon base",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T15:13:19.150Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eb6f4297a28cf10f6d380b510c66cf42ec32e02b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Savannah Guthrie speaks out in 1st interview since her mom's abduction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T15:13:19.150Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "17d30b40d4b4294adacdfbb21415f85895fa8674",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "'We are in agony': Savannah Guthrie gives 1st interview since mom's abduction",
       "to_title": null
     }
   ]
