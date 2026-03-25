@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-25T09:06:24.913Z",
+  "generatedAt": "2026-03-25T10:06:12.423Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T08:29:19.951Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7257c7fbbfa99c3475696b33471e371ffef5522e",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Trump orders US govt to cut ties with Anthropic; Hegseth declares supply chain 'risk'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T08:29:19.951Z",
-      "event_type": "MOVED",
-      "fingerprint": "506365b0321d72f9e104c03e927edd31b6668bf7",
-      "from_rank": 2,
-      "to_rank": 6,
-      "from_title": "President Donald Trump floats 'friendly takeover' of Cuba",
-      "to_title": "President Donald Trump floats 'friendly takeover' of Cuba"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T08:29:19.951Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "82nd Airborne ground forces set to deploy to Middle East: Source",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T10:06:20.817Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c68cc0b3251343fac521f3d529c7082c1ac9b3d5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US sent Iran 15-point plan to end war, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T10:06:20.817Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bca9c917a8275ed22da5f28780ab0c8c04e8226b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Up to 1,500 troops to deploy to Middle East, source says",
       "to_title": null
     }
   ],

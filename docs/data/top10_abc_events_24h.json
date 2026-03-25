@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-25T09:06:24.913Z",
+  "generatedAt": "2026-03-25T10:06:12.423Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9c4d24a02b8168fed51c95e3ea0eeafa99c34b7c",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "US Park Police officer shot in Washington, DC",
-      "to_title": "US Park Police officer shot in Washington, DC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "MOVED",
-      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
-      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "MOVED",
-      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
-      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "MOVED",
-      "fingerprint": "16090524443b9c8da93c81616f5b9e698afcb8b4",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Tips to find airport security wait times amid TSA staffing shortages",
-      "to_title": "Tips to find airport security wait times amid TSA staffing shortages"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "MOVED",
-      "fingerprint": "e8242ba375a490e44504a548a0ce1263d5de7812",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Schumer says DHS funding talks 'constructive'",
-      "to_title": "Schumer says DHS funding talks 'constructive'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "MOVED",
-      "fingerprint": "8b4ab6a2a0750885ca6e8da30924c269f216c2de",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport",
-      "to_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T09:33:33.086Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-24T11:27:00.276Z",
@@ -1401,6 +1321,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "82nd Airborne ground forces set to deploy to Middle East: Source",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T10:06:20.817Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c68cc0b3251343fac521f3d529c7082c1ac9b3d5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US sent Iran 15-point plan to end war, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T10:06:20.817Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bca9c917a8275ed22da5f28780ab0c8c04e8226b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Up to 1,500 troops to deploy to Middle East, source says",
       "to_title": null
     }
   ]
