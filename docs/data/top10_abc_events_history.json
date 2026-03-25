@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-25T10:06:12.423Z",
+  "generatedAt": "2026-03-25T11:03:56.355Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T08:29:19.951Z",
-      "event_type": "MOVED",
-      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Singer-songwriter Neil Sedaka dies at 86",
-      "to_title": "Singer-songwriter Neil Sedaka dies at 86"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T08:29:19.951Z",
-      "event_type": "MOVED",
-      "fingerprint": "4950d8ac42648dde4a055b475c74aaf508142d07",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Electrolyte supplements are everywhere. Who benefits from them and when?",
-      "to_title": "Electrolyte supplements are everywhere. Who benefits from them and when?"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T08:29:19.951Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Up to 1,500 troops to deploy to Middle East, source says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T11:04:06.751Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dd604c5dfe10948c7697bf98cb38659449963166",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran insists no negotiations as US sends peace plan"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T11:04:06.751Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c68cc0b3251343fac521f3d529c7082c1ac9b3d5",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US sent Iran 15-point plan to end war, sources say",
       "to_title": null
     }
   ],
