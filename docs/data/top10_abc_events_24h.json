@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-25T15:13:08.551Z",
+  "generatedAt": "2026-03-25T16:23:09.888Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T15:49:59.273Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3d20354eaa413f59665dd014e61bd564f8a2ac70",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "American held by Taliban for over a year released"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T15:49:59.273Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "03c553b5f10f3a3826a3e52c3af193969f3583d4",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "American held captive in Afghanistan released, Taliban says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-24T16:46:43.775Z",
@@ -1291,6 +1271,56 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "'We are in agony': Savannah Guthrie gives 1st interview since mom's abduction",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T16:23:20.240Z",
+      "event_type": "MOVED",
+      "fingerprint": "96605d43e63d1c3471242e8d478d106c199a90e4",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Stephen Colbert and son will co-write a 'Lord of the Rings' movie",
+      "to_title": "Stephen Colbert and son will co-write a 'Lord of the Rings' movie"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T16:23:20.240Z",
+      "event_type": "MOVED",
+      "fingerprint": "cd00bb6df509cc0f7d5888152077c1fdb0fe73c9",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Deadly LaGuardia Airport crash: Runway safety system 'did not alert,' NTSB says",
+      "to_title": "Deadly LaGuardia Airport crash: Runway safety system 'did not alert,' NTSB says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T16:23:20.240Z",
+      "event_type": "MOVED",
+      "fingerprint": "85c2390b95fb32690d6b193363d58edfbd412839",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Trump says he's 'pretty much not happy' with any deal to reopen DHS",
+      "to_title": "Trump says he's 'pretty much not happy' with any deal to reopen DHS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T16:23:20.240Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6e046dbd808141ddf19d750bece7ff8ba3170af4",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Scientists now have a better understanding of how domesticated dogs spread globally"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T16:23:20.240Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "66f4eb887939e18585ec1790225bc100e50acabe",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "New Mexico jury says Meta harms children's mental health and safety, violating state law",
       "to_title": null
     }
   ]
