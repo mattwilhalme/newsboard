@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-25T18:32:43.248Z",
+  "generatedAt": "2026-03-25T19:29:42.612Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T11:37:29.113Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a4996b974f2c1c995b8636e19fd8a653426f58be",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T11:37:29.113Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ae3d2a7d0a82ff7225323060b11f9bca9f71dffe",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Trump warns of potential US casualties in Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T11:37:29.113Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T11:37:29.113Z",
-      "event_type": "MOVED",
-      "fingerprint": "506365b0321d72f9e104c03e927edd31b6668bf7",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "President Donald Trump floats 'friendly takeover' of Cuba",
-      "to_title": "President Donald Trump floats 'friendly takeover' of Cuba"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T11:37:29.113Z",
-      "event_type": "MOVED",
-      "fingerprint": "7257c7fbbfa99c3475696b33471e371ffef5522e",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Trump orders US govt to cut ties with Anthropic; Hegseth declares supply chain 'risk'",
-      "to_title": "Trump orders US govt to cut ties with Anthropic; Hegseth declares supply chain 'risk'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T11:37:29.113Z",
-      "event_type": "MOVED",
-      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Singer-songwriter Neil Sedaka dies at 86",
-      "to_title": "Singer-songwriter Neil Sedaka dies at 86"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T11:37:29.113Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 arrested in connection with London arson attack on Jewish charity's ambulances",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T19:29:53.793Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e22b6eef0f5fe1e26b4d46167341ff8fc3f1514f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Jury finds YouTube, Meta negligent in landmark social media trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T19:29:53.793Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1dd54818b73da25b0cfbc392791a8fe22ed07bd2",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran rejects US peace proposal, sets 5 conditions, state TV says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T19:29:53.793Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "128e73d02143ef35a394b4463dfbdc7009926862",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Rihanna shooting suspect pleads not guilty"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T19:29:53.793Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e12d35b8b984f1927bebce5184beb04af044f713",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingJury finds Meta and YouTube negligent in landmark social media addiction trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T19:29:53.793Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dd604c5dfe10948c7697bf98cb38659449963166",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran insists no negotiations as US sends peace plan",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T19:29:53.793Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c1e7dd772190d4692487e0ce1d85db1f87071b67",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Rihanna shooting suspect pleads not guilty",
       "to_title": null
     }
   ],
