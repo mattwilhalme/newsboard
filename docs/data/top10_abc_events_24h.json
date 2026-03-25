@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-25T17:32:57.921Z",
+  "generatedAt": "2026-03-25T18:32:43.248Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4591ccbf2c1104bbb4f9b11720338e47336f85e3",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Questions swirl about status of peace talks as Trump touts progress, Iran pushes back"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "a36ba828374618f7332d74f0993b0caa177a3323",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks",
-      "to_title": "Iran live updates: Iranian missiles damage Tel Aviv amid reported peace talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c6bf2f2ae238accd4a000a6a0e43d78c7047be3b",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump says US and Iran have 'major points of agreement,' including no nuclear weapons"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d20354eaa413f59665dd014e61bd564f8a2ac70",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "American held by Taliban for over a year released",
-      "to_title": "American held by Taliban for over a year released"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "90dcfc5bc34007f77928346d47ba11d25b0c8196",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Deadly LaGuardia crash: Passenger believes pilots 'saved many lives'",
-      "to_title": "Deadly LaGuardia crash: Passenger believes pilots 'saved many lives'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1721fae70e4d2cfb06f620ef2ab8d92affceeca3",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Potential DHS funding deal taking shape, but roadblocks still ahead"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "9c4d24a02b8168fed51c95e3ea0eeafa99c34b7c",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
-      "to_title": "As Trump blocks asylum seekers, Supreme Court to decide if US must review claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cb8da6c7146af5cf32c1f45b42042a28dc4c79f6",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "'American Idol' judges dish on season 9's 1st live show"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
-      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1b8b2fd05588e6b0ef37fedb8a80d9ee446752a8",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "US Park Police officer shot in Washington, DC",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a37e40baca421c0c9fabb64b3d4fc7de80b511aa",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-24T18:41:05.185Z",
@@ -1411,6 +1281,116 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Trump says he's 'pretty much not happy' with any deal to reopen DHS",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e12d35b8b984f1927bebce5184beb04af044f713",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingJury finds Meta and YouTube negligent in landmark social media addiction trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "MOVED",
+      "fingerprint": "eb6f4297a28cf10f6d380b510c66cf42ec32e02b",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Savannah Guthrie speaks out in 1st interview since her mom's abduction",
+      "to_title": "Savannah Guthrie speaks out in 1st interview since her mom's abduction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "MOVED",
+      "fingerprint": "44345f8259509a0b9ff313bf9e483225b5258a82",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Supreme Court deals blow to music industry fight against illegal downloads",
+      "to_title": "Supreme Court deals blow to music industry fight against illegal downloads"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d5789b364a7d794ae8c8473e6a48b77594052b07",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "First lady Melania Trump enters White House summit with walking, talking robot"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "MOVED",
+      "fingerprint": "c05fd2fc0e96b69b4d690f68a5bb63cccf8ea4a2",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Venezuelan migrant sues Trump administration over deportation to CECOT mega-prison",
+      "to_title": "Venezuelan migrant sues Trump administration over deportation to CECOT mega-prison"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2946c431b37c1e09efc54a4c73c4b1372be096fd",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Boy receiving Citizen Honor Award for shielding classmate during school shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c1e7dd772190d4692487e0ce1d85db1f87071b67",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Rihanna shooting suspect pleads not guilty"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "06715b129c40f4a03a23a42b3b0940770014b37b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingJury returns verdict in landmark social media trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "76e8b036c6c70dc5bc6f170ba6956de4a9eeb213",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:Significant storm heading toward Middle East amid Iran war, forecasts show",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2cfa3bacfe728135383039bb52687d94e08a4bba",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Wife testifies during trial of doctor accused of trying to kill her on hiking trail",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-25T18:32:53.137Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6497706359516a7b3c3efb971acb0d08fdb77a39",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "2 arrested in connection with London arson attack on Jewish charity's ambulances",
       "to_title": null
     }
   ]
