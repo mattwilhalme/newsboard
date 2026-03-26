@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T10:38:20.524Z",
+  "generatedAt": "2026-03-26T11:34:15.402Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "MOVED",
-      "fingerprint": "075ffbb6093db8d0731a6f8dc4d867a7d58563bb",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation",
-      "to_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ae3d2a7d0a82ff7225323060b11f9bca9f71dffe",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Trump warns of potential US casualties in Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Singer-songwriter Neil Sedaka dies at 86",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "506365b0321d72f9e104c03e927edd31b6668bf7",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "President Donald Trump floats 'friendly takeover' of Cuba",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "587f07ee7635674ec0909edc074955c8951a5ca8",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Paramount announces $110B deal to buy Warner Bros. Discovery",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T20:23:43.106Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Ousted Venezuelan President Nicholas Maduro set to return to Manhattan federal court",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T11:34:26.117Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4a263be65fbd2513fadaad3e82bc57c98d8545f5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump renews Iran threats, urges deal 'before it is too late'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T11:34:26.117Z",
+      "event_type": "MOVED",
+      "fingerprint": "63fcb49d19acfe26bad4add5ff0f31a8fbdd286e",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Conservatives gather for CPAC as MAGA fights over Iran war",
+      "to_title": "Conservatives gather for CPAC as MAGA fights over Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T11:34:26.117Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a460a63b7e3be2b32ef3700a617718702f613015",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "UN peacekeepers in Lebanon fired upon 20 times amid Israel-Hezbollah fight: Official"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T11:34:26.117Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4ca24af66001ffa56b4c0fe9e4adfb5abc5dc64c",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says Iran negotiating, claims leaders 'afraid' to be killed",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T11:34:26.117Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6ab837687d7d0cf6502486ea2758b5a6ae04a3e1",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "In Lebanon, a brewing disaster that could outlast the war in Iran",
       "to_title": null
     }
   ],
