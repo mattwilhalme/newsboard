@@ -1,108 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T08:39:46.708Z",
+  "generatedAt": "2026-03-26T09:44:19.546Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T16:45:54.833Z",
-      "event_type": "MOVED",
-      "fingerprint": "506365b0321d72f9e104c03e927edd31b6668bf7",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "President Donald Trump floats 'friendly takeover' of Cuba",
-      "to_title": "President Donald Trump floats 'friendly takeover' of Cuba"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T16:45:54.833Z",
-      "event_type": "MOVED",
-      "fingerprint": "587f07ee7635674ec0909edc074955c8951a5ca8",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Paramount announces $110B deal to buy Warner Bros. Discovery",
-      "to_title": "Paramount announces $110B deal to buy Warner Bros. Discovery"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T16:45:54.833Z",
-      "event_type": "MOVED",
-      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
-      "to_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T16:45:54.833Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "be02661de2d797ce3aee295961241513fb478e3f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Former MLB pitcher sentenced to life in prison without parole for shooting in-laws",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T18:54:40.054Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8680076b3355f6ed5698a87d0a1ac2eab4d7b3a7",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Most Republicans support strike as Dems demand answers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T18:54:40.054Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a4996b974f2c1c995b8636e19fd8a653426f58be",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "564a3bd99edbbb1ed77227602c9f6d78d1ad1ed3",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Trump says new call for regime change in Iran justified by 'imminent threats' to US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0ae660144f71af077fd55f3f7060c8ab89f56b2a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "MAGA backlash erupts over Iran attack"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "MOVED",
-      "fingerprint": "8680076b3355f6ed5698a87d0a1ac2eab4d7b3a7",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "Most Republicans support strike as Dems demand answers",
-      "to_title": "Most Republicans support strike as Dems demand answers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "MOVED",
-      "fingerprint": "d953de4fbfd7770ffd720ca43c8d2ef8b325820c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons",
-      "to_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T19:14:35.629Z",
@@ -30001,6 +29901,106 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Supreme Court deals blow to music industry fight against illegal downloads",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4ca24af66001ffa56b4c0fe9e4adfb5abc5dc64c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says Iran negotiating, claims leaders 'afraid' to be killed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6ab837687d7d0cf6502486ea2758b5a6ae04a3e1",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "In Lebanon, a brewing disaster that could outlast the war in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "63fcb49d19acfe26bad4add5ff0f31a8fbdd286e",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Conservatives gather for CPAC as MAGA fights over Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2095495a14d0e990be2d7a02fe95d57511bb7f55",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Wind power will continue to grow, despite Trump's attempts to halt it: Experts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "829d261e4e221d9c0bfd4b97bf9ee8d6f75ef438",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Ousted Venezuelan President Nicholas Maduro set to return to Manhattan federal court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "372ea1f7d4ce7389c5c1d08cee14d199a6b34699",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "US-Iran conflict hands China's Xi upper hand ahead of Trump meeting: Experts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "13ed61ddc5c1b00963c48912172ad15533b544dd",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Days from recess, Democrats and Republicans blame each other for TSA chaos",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "55b1ccb1483a2071023a5b2c9bafa3939773ccef",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: 'Not getting enough answers,' key House committee GOP chair says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "be3945f65828556bcf6fdb77aad7ba494a07fba9",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Cuban president says Raúl Castro involved in US talks that are in early stages",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T09:44:29.210Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "38ea1e45d7121a35a66af545063e84ccbb2af214",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "DOJ to pay ex-Trump adviser Michael Flynn $1M to settle lawsuit: Sources",
       "to_title": null
     }
   ],
