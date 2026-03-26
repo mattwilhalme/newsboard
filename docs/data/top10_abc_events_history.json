@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-25T23:56:07.388Z",
+  "generatedAt": "2026-03-26T01:28:58.729Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T14:43:51.371Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "10bfbfe27525f64890cd5c49302ed31407e8c3b4",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingPresident Trump announces 'major combat operations' in Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T14:43:51.371Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0713b0e5b020b5efc36a2a2def662374cba51af8",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Iran says death toll in strike on elementary school rises to 57",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T14:43:51.371Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "07e529c933cd579ef01cfc43a94b75fe5bc5fc81",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Senate should return to Washington and vote on war powers resolution, Sen. Tim Kaine says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T14:57:16.887Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "38e1e96f8446c030f78d76dc701289176d43c07b",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingPresident Trump calls for regime change in Iran after launching military operation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T14:57:16.887Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a618cb83de9e8c326738d2707289b502950c45d3",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingPresident Trump calls for regime change after launching military operation in Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "MOVED",
-      "fingerprint": "cae0559feb377df44dce6cd8aba574c1d85e496e",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Announcing 'major' US operation, Trump calls for regime change",
-      "to_title": "Iran live updates: Announcing 'major' US operation, Trump calls for regime change"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "MOVED",
-      "fingerprint": "a4996b974f2c1c995b8636e19fd8a653426f58be",
-      "from_rank": 5,
-      "to_rank": 2,
-      "from_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran",
-      "to_title": "'Serious moment': Reactions pour in from Congress after Trump strikes Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ae3d2a7d0a82ff7225323060b11f9bca9f71dffe",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump warns of potential US casualties in Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "MOVED",
-      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
-      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "MOVED",
-      "fingerprint": "075ffbb6093db8d0731a6f8dc4d867a7d58563bb",
-      "from_rank": 8,
-      "to_rank": 5,
-      "from_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation",
-      "to_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "MOVED",
-      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
-      "from_rank": 9,
-      "to_rank": 6,
-      "from_title": "Singer-songwriter Neil Sedaka dies at 86",
-      "to_title": "Singer-songwriter Neil Sedaka dies at 86"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "MOVED",
-      "fingerprint": "506365b0321d72f9e104c03e927edd31b6668bf7",
-      "from_rank": 10,
-      "to_rank": 7,
-      "from_title": "President Donald Trump floats 'friendly takeover' of Cuba",
-      "to_title": "President Donald Trump floats 'friendly takeover' of Cuba"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "587f07ee7635674ec0909edc074955c8951a5ca8",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Paramount announces $110B deal to buy Warner Bros. Discovery"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T15:19:23.586Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Army extends maximum recruitment age to 42",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "372ea1f7d4ce7389c5c1d08cee14d199a6b34699",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "US-Iran conflict hands China's Xi upper hand ahead of Trump meeting: Experts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ea5317dd2c71237eac5794ad4678563dbb231520",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:With some 2,000 ships stranded, Iran claims it's easing grip on Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "13ed61ddc5c1b00963c48912172ad15533b544dd",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Days from recess, Democrats and Republicans blame each other for TSA chaos"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "55b1ccb1483a2071023a5b2c9bafa3939773ccef",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Iran live updates: 'Not getting enough answers,' key House committee GOP chair says",
+      "to_title": "Iran live updates: 'Not getting enough answers,' key House committee GOP chair says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "be3945f65828556bcf6fdb77aad7ba494a07fba9",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Cuban president says Raúl Castro involved in US talks that are in early stages"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "38ea1e45d7121a35a66af545063e84ccbb2af214",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "DOJ to pay ex-Trump adviser Michael Flynn $1M to settle lawsuit: Sources",
+      "to_title": "DOJ to pay ex-Trump adviser Michael Flynn $1M to settle lawsuit: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "1a6527f9f27378c5d5fbefb7c5858566cb90f8a1",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Philippines declares national emergency as Asia risks energy crisis amid Iran war",
+      "to_title": "Philippines declares national emergency as Asia risks energy crisis amid Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "31b8b3177138de5b5319b6eff2f80c738565dc01",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Jury decides YouTube, Meta should pay $6 million in damages in landmark trial",
+      "to_title": "Jury decides YouTube, Meta should pay $6 million in damages in landmark trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "44345f8259509a0b9ff313bf9e483225b5258a82",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Supreme Court deals blow to music industry fight against illegal downloads",
+      "to_title": "Supreme Court deals blow to music industry fight against illegal downloads"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "d5789b364a7d794ae8c8473e6a48b77594052b07",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "First lady Melania Trump enters White House summit with walking, talking robot",
+      "to_title": "First lady Melania Trump enters White House summit with walking, talking robot"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "23fda7f9396e788f187d61b54af5f744bcfbd8fe",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "With some 2,000 ships stranded, Iran claims its easing grip on Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2946c431b37c1e09efc54a4c73c4b1372be096fd",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Boy receiving Citizen Honor Award for shielding classmate during school shooting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6e046dbd808141ddf19d750bece7ff8ba3170af4",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Scientists now have a better understanding of how domesticated dogs spread globally",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T01:29:08.645Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "72f15cedfbd3a7b78a3d889565ab55ccbf1c5a19",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "USPS seeks temporary 8% charge on Priority Mail",
       "to_title": null
     }
   ],
