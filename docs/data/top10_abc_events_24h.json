@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-26T23:05:29.548Z",
+  "generatedAt": "2026-03-26T23:46:27.785Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T23:22:58.779Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1a6527f9f27378c5d5fbefb7c5858566cb90f8a1",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Philippines declares national emergency as Asia risks energy crisis amid Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T23:22:58.779Z",
-      "event_type": "MOVED",
-      "fingerprint": "31b8b3177138de5b5319b6eff2f80c738565dc01",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Jury decides YouTube, Meta should pay $6 million in damages in landmark trial",
-      "to_title": "Jury decides YouTube, Meta should pay $6 million in damages in landmark trial"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T23:22:58.779Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "eb6f4297a28cf10f6d380b510c66cf42ec32e02b",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Savannah Guthrie speaks out in 1st interview since her mom's abduction",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-25T23:56:16.830Z",
@@ -1281,6 +1251,96 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: Trump extends deadline to make deal with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4a0f01aee75e0642fa3cc14a7077f14aa56dfca8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingTrump says he'll sign order directing DHS to pay TSA workers as shutdown drags on"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "672e2124c2332df1f265bd6fe553d62b2275f211",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Houston airport has become a symbol for the shutdown's impacts on air travel"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "MOVED",
+      "fingerprint": "9cbb55d1e45fa0b429865d6243cbce06fa73032c",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Trump's signature will be added to US currency, Treasury says",
+      "to_title": "Trump's signature will be added to US currency, Treasury says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "MOVED",
+      "fingerprint": "b5be828b9436b3ab87e6d90d4b611da9d41cbaa0",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Trump slams NATO for refusing assistance with Iran",
+      "to_title": "Iran live updates: Trump slams NATO for refusing assistance with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "MOVED",
+      "fingerprint": "0e7530974dfb32fa7a7a3170614a929b09fcdb60",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "American Airlines flight attendant reported missing in Colombia: Officials",
+      "to_title": "American Airlines flight attendant reported missing in Colombia: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "08a968da4b139bf38628e4f3a6f9f1da0b882a62",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Transgender women cannot participate in female Olympic events, IOC says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "df4d0ebe29150e5267c5b6e24f26936d84f2a7a7",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump extends deadline 2nd time for Iran to open the Strait of Hormuz amid talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5a552ffcef7f3ceeb2a2a01164854be10293e994",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump envoy Witkoff reveals more details of US negotiations with Iran prior to war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T23:46:37.603Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bae71d1943b8819648ae5c6b835eeaa503dee276",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Dad’s social media plea to save his son’s life goes viral",
       "to_title": null
     }
   ]
