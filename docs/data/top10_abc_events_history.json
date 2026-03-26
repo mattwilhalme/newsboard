@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T14:00:26.430Z",
+  "generatedAt": "2026-03-26T15:09:37.413Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T21:43:11.065Z",
-      "event_type": "MOVED",
-      "fingerprint": "d953de4fbfd7770ffd720ca43c8d2ef8b325820c",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons",
-      "to_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T21:43:11.065Z",
-      "event_type": "MOVED",
-      "fingerprint": "075ffbb6093db8d0731a6f8dc4d867a7d58563bb",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation",
-      "to_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T21:43:11.065Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fa639956beb2c46b4c879565b7c64511240fd504",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Bill Clinton blasts Republicans for deposing Hillary, says 'I did nothing wrong'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T21:54:07.409Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d31ef2847348fc39d6c43f560962a737efd61821",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump confirms Iranian Supreme Leader Ali Khamenei is dead"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T21:54:07.409Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "578908548efcf87ff89f72f0431c16b116c826b5",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Israeli officials say Iranian supreme leader believed dead",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "98b11cf649c0b3bdb22e3bba62841329d7d3ca18",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "67645ff98dad42f065fc486d35b9ec4fe107da76",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
-      "to_title": "Iranian officials claim school hit during US-Israeli army strikes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
-      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "8680076b3355f6ed5698a87d0a1ac2eab4d7b3a7",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Most Republicans support strike as Dems demand answers",
-      "to_title": "Most Republicans support strike as Dems demand answers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "8213bce6353036a22c05431db0c607078147702c",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran",
-      "to_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "a149adaf16c7bc4784b7cc623e9be4e7f8468ead",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "US and Israeli strikes on Iran could rattle oil markets",
-      "to_title": "US and Israeli strikes on Iran could rattle oil markets"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "d953de4fbfd7770ffd720ca43c8d2ef8b325820c",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons",
-      "to_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:11:59.201Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "075ffbb6093db8d0731a6f8dc4d867a7d58563bb",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T22:40:13.835Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "First lady Melania Trump enters White House summit with walking, talking robot",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "MOVED",
+      "fingerprint": "64c3c5b57a305f81cba94b3e4e71d5644fba0df0",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "FBI investigates video taking responsibility for possible explosive device at AF base",
+      "to_title": "FBI investigates video taking responsibility for possible explosive device at AF base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "MOVED",
+      "fingerprint": "63fcb49d19acfe26bad4add5ff0f31a8fbdd286e",
+      "from_rank": 4,
+      "to_rank": 2,
+      "from_title": "Conservatives gather for CPAC as MAGA fights over Iran war",
+      "to_title": "Conservatives gather for CPAC as MAGA fights over Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e7f38373003ee72ee0d8bc42884c3460359059b1",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "MOVED",
+      "fingerprint": "d53d8e5085393f6463dae684820e537156eabdbf",
+      "from_rank": 7,
+      "to_rank": 4,
+      "from_title": "Bill Maher will win Kennedy Center's Mark Twain humor prize after White House denial",
+      "to_title": "Bill Maher will win Kennedy Center's Mark Twain humor prize after White House denial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "MOVED",
+      "fingerprint": "bae71d1943b8819648ae5c6b835eeaa503dee276",
+      "from_rank": 8,
+      "to_rank": 5,
+      "from_title": "Dad’s social media plea to save his son’s life goes viral",
+      "to_title": "Dad’s social media plea to save his son’s life goes viral"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "MOVED",
+      "fingerprint": "2095495a14d0e990be2d7a02fe95d57511bb7f55",
+      "from_rank": 9,
+      "to_rank": 6,
+      "from_title": "Wind power will continue to grow, despite Trump's attempts to halt it: Experts",
+      "to_title": "Wind power will continue to grow, despite Trump's attempts to halt it: Experts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "08a968da4b139bf38628e4f3a6f9f1da0b882a62",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Transgender women cannot participate in female Olympic events, IOC says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "MOVED",
+      "fingerprint": "db554ac9601377108756018ba366986e491406b7",
+      "from_rank": 10,
+      "to_rank": 8,
+      "from_title": "Ousted Venezuelan President Nicolas Maduro set to return to Manhattan federal court",
+      "to_title": "Ousted Venezuelan President Nicolas Maduro set to return to Manhattan federal court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "MOVED",
+      "fingerprint": "4a263be65fbd2513fadaad3e82bc57c98d8545f5",
+      "from_rank": 1,
+      "to_rank": 9,
+      "from_title": "Iran live updates: Trump renews Iran threats, urges deal 'before it is too late'",
+      "to_title": "Iran live updates: Trump renews Iran threats, urges deal 'before it is too late'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b477a078c563facf05295d21d70de61e80c7b686",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Trump says Iran 'begging' for a deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ea5317dd2c71237eac5794ad4678563dbb231520",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:With some 2,000 ships stranded, Iran claims it's easing grip on Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4b001d7355d64d67c6cb711c31fd93d705bb76dd",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Savannah Guthrie questions if mom's abduction is because of her: 'Too much to bear'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T15:09:47.446Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a460a63b7e3be2b32ef3700a617718702f613015",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "UN peacekeepers in Lebanon fired upon 20 times amid Israel-Hezbollah fight: Official",
       "to_title": null
     }
   ],
