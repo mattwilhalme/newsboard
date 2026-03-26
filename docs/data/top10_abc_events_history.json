@@ -1,108 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T19:41:49.531Z",
+  "generatedAt": "2026-03-26T20:50:45.169Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T14:34:31.591Z",
-      "event_type": "MOVED",
-      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
-      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T14:34:31.591Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a149adaf16c7bc4784b7cc623e9be4e7f8468ead",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "US and Israeli strikes on Iran could rattle oil markets",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d758c4c82417d3d8884391e2ddf96e6572f1500f",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breaking3 US service members killed, 5 wounded, CENTCOM says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "25dce0a270ca7a3c4283c7814c760669aec31752",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: 3 US service members killed, 5 wounded, CENTCOM says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "adce3178a161e7f67cbcf9b6844015ef9dc32afd",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "3 US service members killed, 5 wounded, CENTCOM says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "20e1f6455399eb009af31545cbe84e6f34c049a5",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran forms interim leadership council, state TV reports"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "MOVED",
-      "fingerprint": "83c58515e1a3ce4d3c25b8e45d7e38574194cc88",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets",
-      "to_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "MOVED",
-      "fingerprint": "98b11cf649c0b3bdb22e3bba62841329d7d3ca18",
-      "from_rank": 3,
-      "to_rank": 6,
-      "from_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says",
-      "to_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "MOVED",
-      "fingerprint": "564a3bd99edbbb1ed77227602c9f6d78d1ad1ed3",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Trump says new call for regime change in Iran justified by 'imminent threats' to US",
-      "to_title": "Trump says new call for regime change in Iran justified by 'imminent threats' to US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T15:14:35.370Z",
-      "event_type": "MOVED",
-      "fingerprint": "67645ff98dad42f065fc486d35b9ec4fe107da76",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
-      "to_title": "Iranian officials claim school hit during US-Israeli army strikes"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-01T15:14:35.370Z",
@@ -30001,6 +29901,106 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Wind power will continue to grow, despite Trump's attempts to halt it: Experts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "73ac994df0a89070a03a89b930995ef5577ee436",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump extends deadline to make deal with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "MOVED",
+      "fingerprint": "010683ff4c63ac8eb6c4704cccc88dc76744ff4d",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case",
+      "to_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "MOVED",
+      "fingerprint": "e7f38373003ee72ee0d8bc42884c3460359059b1",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her",
+      "to_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "MOVED",
+      "fingerprint": "c5a5f79ca56bee8e5bed298700337d8fa69a122e",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "Man arrested in 1990 'Lovers' Lane' cold case murders: police",
+      "to_title": "Man arrested in 1990 'Lovers' Lane' cold case murders: police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "MOVED",
+      "fingerprint": "bae71d1943b8819648ae5c6b835eeaa503dee276",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "Dad’s social media plea to save his son’s life goes viral",
+      "to_title": "Dad’s social media plea to save his son’s life goes viral"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0e7530974dfb32fa7a7a3170614a929b09fcdb60",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "American Airlines flight attendant reported missing in Colombia: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "16c9fea96856c2d0a478ccfbe301f685579a5433",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Wall Street falls to its worst drop since the Iran war as the Nasdaq sinks 10% below its record"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4a263be65fbd2513fadaad3e82bc57c98d8545f5",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump renews Iran threats, urges deal 'before it is too late'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c0966142ca4c7f3a2b088e2cf8b5be4c4089f518",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "2 charged in connection with alleged explosive device at MacDill Air Force Base: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T20:50:54.792Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "63fcb49d19acfe26bad4add5ff0f31a8fbdd286e",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Conservatives gather for CPAC as MAGA fights over Iran war",
       "to_title": null
     }
   ],
