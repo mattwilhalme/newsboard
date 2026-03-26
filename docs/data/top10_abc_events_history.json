@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T15:09:37.413Z",
+  "generatedAt": "2026-03-26T16:22:11.322Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:40:13.835Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "597f52b865118e4c7ecc7276a12569c02d2c5e48",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Iran strike was Pentagon's 1st use of 1-way drones, CENTCOM says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T22:40:13.835Z",
-      "event_type": "MOVED",
-      "fingerprint": "3c8f561878c47352922e867d9136ca560f5fdc82",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "US-Israeli operation against Iran was in the works for months, IDF says",
-      "to_title": "US-Israeli operation against Iran was in the works for months, IDF says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T22:40:13.835Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "UN peacekeepers in Lebanon fired upon 20 times amid Israel-Hezbollah fight: Official",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T16:22:22.001Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "99cf04909a18d55b540cf1df2891113a38ea80ac",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Trump says Iran has a chance to 'chart a new path forward'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T16:22:22.001Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b477a078c563facf05295d21d70de61e80c7b686",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Trump says Iran 'begging' for a deal",
       "to_title": null
     }
   ],
