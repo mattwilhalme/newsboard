@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T09:44:19.546Z",
+  "generatedAt": "2026-03-26T10:38:20.524Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a149adaf16c7bc4784b7cc623e9be4e7f8468ead",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "US and Israeli strikes on Iran could rattle oil markets"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T19:14:35.629Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8213bce6353036a22c05431db0c607078147702c",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T19:14:35.629Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "DOJ to pay ex-Trump adviser Michael Flynn $1M to settle lawsuit: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T10:38:30.779Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "db554ac9601377108756018ba366986e491406b7",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Ousted Venezuelan President Nicolas Maduro set to return to Manhattan federal court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T10:38:30.779Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "829d261e4e221d9c0bfd4b97bf9ee8d6f75ef438",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Ousted Venezuelan President Nicholas Maduro set to return to Manhattan federal court",
       "to_title": null
     }
   ],

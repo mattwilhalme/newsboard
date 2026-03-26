@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-26T09:44:19.546Z",
+  "generatedAt": "2026-03-26T10:38:20.524Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T10:06:20.817Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c68cc0b3251343fac521f3d529c7082c1ac9b3d5",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US sent Iran 15-point plan to end war, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T10:06:20.817Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bca9c917a8275ed22da5f28780ab0c8c04e8226b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Up to 1,500 troops to deploy to Middle East, source says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-25T11:04:06.751Z",
@@ -1161,6 +1141,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "DOJ to pay ex-Trump adviser Michael Flynn $1M to settle lawsuit: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T10:38:30.779Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "db554ac9601377108756018ba366986e491406b7",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Ousted Venezuelan President Nicolas Maduro set to return to Manhattan federal court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T10:38:30.779Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "829d261e4e221d9c0bfd4b97bf9ee8d6f75ef438",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Ousted Venezuelan President Nicholas Maduro set to return to Manhattan federal court",
       "to_title": null
     }
   ]
