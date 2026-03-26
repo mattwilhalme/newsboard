@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-26T20:50:45.169Z",
+  "generatedAt": "2026-03-26T21:21:24.092Z",
   "hours": 24,
   "events": [
     {
@@ -1311,6 +1311,56 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Conservatives gather for CPAC as MAGA fights over Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T21:21:34.380Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df4d0ebe29150e5267c5b6e24f26936d84f2a7a7",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump extends deadline 2nd time for Iran to open the Strait of Hormuz amid talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T21:21:34.380Z",
+      "event_type": "MOVED",
+      "fingerprint": "5a552ffcef7f3ceeb2a2a01164854be10293e994",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Trump envoy Witkoff reveals more details of US negotiations with Iran prior to war",
+      "to_title": "Trump envoy Witkoff reveals more details of US negotiations with Iran prior to war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T21:21:34.380Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c2f9a357c34866b65e6112090b584610eebab302",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Wall Street falls to worst drop since the Iran war as Nasdaq sinks 10% below record"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T21:21:34.380Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b71aad8eee846ddb0830748e84f6ed0655b59a68",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump denies he's 'desperate' to make deal, insists Iran is 'begging' for one",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T21:21:34.380Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "16c9fea96856c2d0a478ccfbe301f685579a5433",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Wall Street falls to its worst drop since the Iran war as the Nasdaq sinks 10% below its record",
       "to_title": null
     }
   ]
