@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T01:28:58.729Z",
+  "generatedAt": "2026-03-26T04:15:23.285Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "be02661de2d797ce3aee295961241513fb478e3f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Former MLB pitcher sentenced to life in prison without parole for shooting in-laws"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "38e1e96f8446c030f78d76dc701289176d43c07b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingPresident Trump calls for regime change in Iran after launching military operation",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0ba1495a3eb01673ba49e725104216700710fd40",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Rubio made rounds to Gang of 8 Friday after classified briefing last week",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b61ace0fe2e77195bc1376e7ed567a72cb7297cd",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "China condemns US-Israeli attack on Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T15:19:23.586Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8213bce6353036a22c05431db0c607078147702c",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Trump warns of potential US casualties in 'massive ongoing operation' in Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T16:45:54.833Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d953de4fbfd7770ffd720ca43c8d2ef8b325820c",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Trump threatens 'certain death' to Iranian guard who don't 'lay down' weapons"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T16:45:54.833Z",
-      "event_type": "MOVED",
-      "fingerprint": "075ffbb6093db8d0731a6f8dc4d867a7d58563bb",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation",
-      "to_title": "'David's Sling' and 'Arrow': 2 of Israel's defenses against Iranian retaliation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-02-28T16:45:54.833Z",
-      "event_type": "MOVED",
-      "fingerprint": "f4ff4fecda873fb055317a0a4976bf035507c878",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Singer-songwriter Neil Sedaka dies at 86",
-      "to_title": "Singer-songwriter Neil Sedaka dies at 86"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-02-28T16:45:54.833Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "USPS seeks temporary 8% charge on Priority Mail",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "64c3c5b57a305f81cba94b3e4e71d5644fba0df0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "FBI investigates video taking responsibility for possible explosive device at AF base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "MOVED",
+      "fingerprint": "13ed61ddc5c1b00963c48912172ad15533b544dd",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Days from recess, Democrats and Republicans blame each other for TSA chaos",
+      "to_title": "Days from recess, Democrats and Republicans blame each other for TSA chaos"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "MOVED",
+      "fingerprint": "55b1ccb1483a2071023a5b2c9bafa3939773ccef",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Iran live updates: 'Not getting enough answers,' key House committee GOP chair says",
+      "to_title": "Iran live updates: 'Not getting enough answers,' key House committee GOP chair says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "MOVED",
+      "fingerprint": "be3945f65828556bcf6fdb77aad7ba494a07fba9",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Cuban president says Raúl Castro involved in US talks that are in early stages",
+      "to_title": "Cuban president says Raúl Castro involved in US talks that are in early stages"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "MOVED",
+      "fingerprint": "38ea1e45d7121a35a66af545063e84ccbb2af214",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "DOJ to pay ex-Trump adviser Michael Flynn $1M to settle lawsuit: Sources",
+      "to_title": "DOJ to pay ex-Trump adviser Michael Flynn $1M to settle lawsuit: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "MOVED",
+      "fingerprint": "1a6527f9f27378c5d5fbefb7c5858566cb90f8a1",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Philippines declares national emergency as Asia risks energy crisis amid Iran war",
+      "to_title": "Philippines declares national emergency as Asia risks energy crisis amid Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "MOVED",
+      "fingerprint": "31b8b3177138de5b5319b6eff2f80c738565dc01",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Jury decides YouTube, Meta should pay $6 million in damages in landmark trial",
+      "to_title": "Jury decides YouTube, Meta should pay $6 million in damages in landmark trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-26T04:15:33.630Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "44345f8259509a0b9ff313bf9e483225b5258a82",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Supreme Court deals blow to music industry fight against illegal downloads",
       "to_title": null
     }
   ],
