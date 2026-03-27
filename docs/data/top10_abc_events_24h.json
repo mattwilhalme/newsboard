@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-27T21:48:48.693Z",
+  "generatedAt": "2026-03-27T22:17:37.594Z",
   "hours": 24,
   "events": [
     {
@@ -1451,6 +1451,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Agent on Jill Biden detail shoots self in leg",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T22:17:47.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "ac3ea9f7e3d606c32a1895d87e0cf52bbb17bfb6",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Using US ground troops against Iran could prove very costly, retired generals say",
+      "to_title": "Using US ground troops against Iran could prove very costly, retired generals say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T22:17:47.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "eeaa5d1e47be1f200b4ff102077492d203f03893",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Related:Iran live updates: More than 300 American troops wounded in Iran war",
+      "to_title": "Related:Iran live updates: More than 300 American troops wounded in Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T22:17:47.010Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T22:17:47.010Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cfa6c47d6545fe050833d25f5876b219c1f0e61f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingTiger Woods charged with DUI after rollover crash in Florida: Sheriff",
       "to_title": null
     }
   ]
