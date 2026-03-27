@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-26T23:46:27.785Z",
+  "generatedAt": "2026-03-27T00:05:46.107Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T16:48:49.585Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fba336c19afcfb6807ffa69e57d27e49257b1fc1",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "2 dead in Austin bar mass shooting, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T16:48:49.585Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d758c4c82417d3d8884391e2ddf96e6572f1500f",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breaking3 US service members killed, 5 wounded, CENTCOM says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T16:48:49.585Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e2a02fa13bb851c8e8680bb2083bc5832f215a1b",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Israel reports 9 dead, 49 injured in 'missile barrage'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T16:48:49.585Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "adce3178a161e7f67cbcf9b6844015ef9dc32afd",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "3 US service members killed, 5 wounded, CENTCOM says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T17:04:26.288Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4bb560118b07a4d813fdf9522e54127e2d5db408",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Schiff on Iran strikes: ‘The president broke his promise to the American people’"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T17:04:26.288Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6fb8350924d2985cafedf1df856a0e08fa58d7e8",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Intelligence pinpointed Khamenei in Tehran compound ahead of strike"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T17:04:26.288Z",
-      "event_type": "MOVED",
-      "fingerprint": "83c58515e1a3ce4d3c25b8e45d7e38574194cc88",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets",
-      "to_title": "Warning for Americans in Bahrain after Iran strikes Dubai and other Gulf targets"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T17:04:26.288Z",
-      "event_type": "MOVED",
-      "fingerprint": "98b11cf649c0b3bdb22e3bba62841329d7d3ca18",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says",
-      "to_title": "Ayatollah Ali Khamenei, Iran's supreme leader, is dead, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-01T17:04:26.288Z",
-      "event_type": "MOVED",
-      "fingerprint": "67645ff98dad42f065fc486d35b9ec4fe107da76",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Iranian officials claim school hit during US-Israeli army strikes",
-      "to_title": "Iranian officials claim school hit during US-Israeli army strikes"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-01T17:04:26.288Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Dad’s social media plea to save his son’s life goes viral",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "686718ed93737f669c319a559575b565c4cb396c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Judge temporairly blocks Pentagon's 'supply chain risk' designation for Anthropic"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "MOVED",
+      "fingerprint": "9cbb55d1e45fa0b429865d6243cbce06fa73032c",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Trump's signature will be added to US currency, Treasury says",
+      "to_title": "Trump's signature will be added to US currency, Treasury says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "MOVED",
+      "fingerprint": "b5be828b9436b3ab87e6d90d4b611da9d41cbaa0",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Iran live updates: Trump slams NATO for refusing assistance with Iran",
+      "to_title": "Iran live updates: Trump slams NATO for refusing assistance with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "MOVED",
+      "fingerprint": "1848d9828620caf63f15c6f589a1a8bb4a044d18",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "FBI agent behind Fulton County ballot seizure warrant does not have to testify",
+      "to_title": "FBI agent behind Fulton County ballot seizure warrant does not have to testify"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "MOVED",
+      "fingerprint": "010683ff4c63ac8eb6c4704cccc88dc76744ff4d",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case",
+      "to_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "MOVED",
+      "fingerprint": "e7f38373003ee72ee0d8bc42884c3460359059b1",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her",
+      "to_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "MOVED",
+      "fingerprint": "c5a5f79ca56bee8e5bed298700337d8fa69a122e",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Man arrested in 1990 'Lovers' Lane' cold case murders: police",
+      "to_title": "Man arrested in 1990 'Lovers' Lane' cold case murders: police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "MOVED",
+      "fingerprint": "0e7530974dfb32fa7a7a3170614a929b09fcdb60",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "American Airlines flight attendant reported missing in Colombia: Officials",
+      "to_title": "American Airlines flight attendant reported missing in Colombia: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T00:05:56.778Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "08a968da4b139bf38628e4f3a6f9f1da0b882a62",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Transgender women cannot participate in female Olympic events, IOC says",
       "to_title": null
     }
   ],
