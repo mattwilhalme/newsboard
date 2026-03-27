@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-27T15:13:02.116Z",
+  "generatedAt": "2026-03-27T16:08:11.008Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T11:10:22.700Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d6efda0ae96d10484cbdaeb1ccb5f347617a6600",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Hegseth to hold Pentagon briefing Monday morning"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T11:10:22.700Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "37419a13735ab305234740bed33e198904c684cb",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: 'We will not negotiate with the United States': Iranian official",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T11:46:17.629Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f6ef89c04fa4da0425edbab81e8b3a30fed0be59",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US says 3 F-15s shot down by friendly fire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T11:46:17.629Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d6efda0ae96d10484cbdaeb1ccb5f347617a6600",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Hegseth to hold Pentagon briefing Monday morning",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T12:03:42.205Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "689b44877ee3f511b3a73fded8cbb0a9b6383de9",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T12:03:42.205Z",
-      "event_type": "MOVED",
-      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
-      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T12:03:42.205Z",
-      "event_type": "MOVED",
-      "fingerprint": "8003e9dc104f77e6318ce0db414a03e9a2530442",
-      "from_rank": 10,
-      "to_rank": 8,
-      "from_title": "Stars shine on Actor Awards red carpet: See the fashion",
-      "to_title": "Stars shine on Actor Awards red carpet: See the fashion"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T12:03:42.205Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Russian man jailed in UK for assault witnessed on video by Barron Trump",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T16:08:21.549Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "176de49e0115fd27a52848d42811343e71336d5e",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "With mom still missing, Savannah Guthrie says, 'I will not let them take my joy'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T16:08:21.549Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "be075093c03ddf18ec0f1ec9db56a25ce36260ce",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T16:08:21.549Z",
+      "event_type": "MOVED",
+      "fingerprint": "263774489e9fc83d308878156860fb62680d11d7",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "House panel seeks testimony from investigators who took evidence from Epstein's home",
+      "to_title": "House panel seeks testimony from investigators who took evidence from Epstein's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T16:08:21.549Z",
+      "event_type": "MOVED",
+      "fingerprint": "7586a631ab4f8b926fe14b1bce4d20331fd7083c",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America",
+      "to_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T16:08:21.549Z",
+      "event_type": "MOVED",
+      "fingerprint": "9cbb55d1e45fa0b429865d6243cbce06fa73032c",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Trump's signature will be added to US currency, Treasury says",
+      "to_title": "Trump's signature will be added to US currency, Treasury says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T16:08:21.549Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "38ba6124c4b138944350b25941c48e2a156ab096",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Savannah Guthrie pleads for answers: 'We need someone to tell the truth'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T16:08:21.549Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2791b98e29b75c54919e6e291a2bd6f5ebf5719c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Gilgo Beach suspect Rex Heuermann could change his plea to guilty: Sources",
       "to_title": null
     }
   ],
