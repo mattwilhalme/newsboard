@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-27T20:23:32.980Z",
+  "generatedAt": "2026-03-27T21:02:14.435Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T14:12:50.456Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8003e9dc104f77e6318ce0db414a03e9a2530442",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Stars shine on Actor Awards red carpet: See the fashion",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T14:12:50.456Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "59306fcc6e9584ab16bca340aa96cddde365db3b",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Iran live updates: 4th US service member dies from injuries",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T14:12:50.456Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8c11f1cce452cc4a47091ce2d9d0e88858d1e9bd",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Iran's 'war on Americans has become our retribution,' Hegseth says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T15:01:34.396Z",
-      "event_type": "MOVED",
-      "fingerprint": "827ff65a87fbfd45a73cd6e75db1301b7241644a",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: 'We didn’t start this war but … we are finishing it,' Hegseth says",
-      "to_title": "Iran live updates: 'We didn't start this war but … we are finishing it,' Hegseth says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T15:01:34.396Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "827ff65a87fbfd45a73cd6e75db1301b7241644a",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: 'We didn’t start this war but … we are finishing it,' Hegseth says",
-      "to_title": "Iran live updates: 'We didn't start this war but … we are finishing it,' Hegseth says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T15:01:34.396Z",
-      "event_type": "MOVED",
-      "fingerprint": "8b996cfcea31e74e7ab6f9ff75bc1abe866df287",
-      "from_rank": 5,
-      "to_rank": 2,
-      "from_title": "Department of Homeland Security warns of potential attacks amid Iran operation",
-      "to_title": "Department of Homeland Security warns of potential attacks amid Iran operation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T15:01:34.396Z",
-      "event_type": "MOVED",
-      "fingerprint": "cc43ae3a7eed51f915769da3d40d83b139e88bc7",
-      "from_rank": 6,
-      "to_rank": 3,
-      "from_title": "Trump acknowledges US deaths in Iran operation, says more are 'likely'",
-      "to_title": "Trump acknowledges US deaths in Iran operation, says more are 'likely'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T15:01:34.396Z",
-      "event_type": "MOVED",
-      "fingerprint": "eb685b0f0966843a87e75080ecc6e93ecedb8a6a",
-      "from_rank": 7,
-      "to_rank": 4,
-      "from_title": "House primaries in Texas, North Carolina use partisan redrawn maps",
-      "to_title": "House primaries in Texas, North Carolina use partisan redrawn maps"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T15:01:34.396Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "What's driving a surge in mortgage rates amid the Iran war?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eab1e04d1f7d520214fda8dfcc166a58dd2790f5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "House Republicans reject Senate DHS funding bill, Trump signs memo to pay TSA workers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "69efaf85329713636236bf63cbbf07aee3cf1d31",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Dow closes down nearly 800 points as Iran war hits one-month mark"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "MOVED",
+      "fingerprint": "be075093c03ddf18ec0f1ec9db56a25ce36260ce",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder",
+      "to_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "MOVED",
+      "fingerprint": "28c163c8d9d6446d9bd8548e1831e3f918ce4501",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Iran live updates: More than 300 American troops wounded in Iran war",
+      "to_title": "Iran live updates: More than 300 American troops wounded in Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "MOVED",
+      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
+      "to_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "MOVED",
+      "fingerprint": "5acf5eba83de3c485b18bffea2307e9e46354f98",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "3 killed, 2 injured in Hawaii helicopter tour crash",
+      "to_title": "3 killed, 2 injured in Hawaii helicopter tour crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "35a1613e38db96bf671c9b080d293e735f123ee1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingHouse Republicans reject Senate-passed bill to fund most of DHS except ICE",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T21:02:24.472Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "176de49e0115fd27a52848d42811343e71336d5e",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "With mom still missing, Savannah Guthrie says, 'I will not let them take my joy'",
       "to_title": null
     }
   ],
