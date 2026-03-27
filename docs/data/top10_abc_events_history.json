@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-27T23:28:14.402Z",
+  "generatedAt": "2026-03-27T23:54:16.345Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T15:51:48.213Z",
-      "event_type": "MOVED",
-      "fingerprint": "8eb06b5da3a1510fb852b2d611af9972fa093468",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Oil prices surge after Iran attack",
-      "to_title": "Oil prices surge after Iran attack"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T15:51:48.213Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T15:51:48.213Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingTiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T23:54:25.449Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4f25c3715dc7a03bad072cf408c353270dab322c",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "2 students on school bus killed in crash during field trip: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T23:54:25.449Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1f72dd35aa401cc0168b5d73fb3f757a021649e9",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Firefighter speaks out after rescuers save woman from cliff above Pacific Ocean",
       "to_title": null
     }
   ],
