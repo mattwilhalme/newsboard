@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-27T17:10:08.438Z",
+  "generatedAt": "2026-03-27T18:03:40.716Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T13:22:24.715Z",
-      "event_type": "MOVED",
-      "fingerprint": "689b44877ee3f511b3a73fded8cbb0a9b6383de9",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb",
-      "to_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T13:22:24.715Z",
-      "event_type": "MOVED",
-      "fingerprint": "e1866aca74e4d52d2d1367dc87c3533e18488247",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule",
-      "to_title": "Thousands risk losing access to HIV drugs in Florida under new emergency rule"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T13:22:24.715Z",
-      "event_type": "MOVED",
-      "fingerprint": "8003e9dc104f77e6318ce0db414a03e9a2530442",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Stars shine on Actor Awards red carpet: See the fashion",
-      "to_title": "Stars shine on Actor Awards red carpet: See the fashion"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T13:22:24.715Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
-      "to_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T13:22:24.715Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T18:03:50.651Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T18:03:50.651Z",
+      "event_type": "MOVED",
+      "fingerprint": "be075093c03ddf18ec0f1ec9db56a25ce36260ce",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder",
+      "to_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T18:03:50.651Z",
+      "event_type": "MOVED",
+      "fingerprint": "5acf5eba83de3c485b18bffea2307e9e46354f98",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "3 killed, 2 injured in Hawaii helicopter tour crash",
+      "to_title": "3 killed, 2 injured in Hawaii helicopter tour crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-27T18:03:50.651Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a364bfc87cd1093cb24d15f24b3d3f4ee8092564",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iranian hackers allegedly breach FBI Director Patel’s personal emails: Sources",
       "to_title": null
     }
   ],
