@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-28T20:34:49.093Z",
+  "generatedAt": "2026-03-28T21:01:21.162Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a924e05128677c302cadaae9a1a507275ef1ed34",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 6 US service members killed, CENTCOM says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "196252893ef2f028597dd5106b7f04f2ddf1791b",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:US-Israeli strikes on Iran: What's been hit so far during the operation"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T21:22:45.483Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Persistent heat, dangerous wildfire conditions could impact these parts of the US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T21:01:30.998Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ccd1e4876a45381e31d24aab12cafb9581078107",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: 9 paramedics killed Saturday in Israeli strikes on Lebanon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T21:01:30.998Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a8437aad25236adf40b9f7922907bcdf782792af",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Israel says it killed 2 senior Hezbollah officials",
       "to_title": null
     }
   ],
