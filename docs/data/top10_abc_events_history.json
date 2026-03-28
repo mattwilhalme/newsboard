@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-28T17:18:01.842Z",
+  "generatedAt": "2026-03-28T17:50:02.339Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T19:40:02.300Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8eb06b5da3a1510fb852b2d611af9972fa093468",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Oil prices surge after Iran attack",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "f304bb69dc571dbc5093c8305dc21ab291378e3a",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff",
-      "to_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ed0831bf73be8f8e48881bebde3110edb96d5acd",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "addf91e0331be70072322287e01986f277dd90d0",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Pentagon, Trump warn more US troops likely to die in Iran operation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9d2bbbacf92a68eeae00d55fddaa87105118f983",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "How to talk to children about conflict, war after attack on Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "8706a7a3cd01c7f238397813bf589794fe550a5c",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Christina Applegate shares struggles with past abuse, eating disorder",
-      "to_title": "Christina Applegate shares struggles with past abuse, eating disorder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "eb685b0f0966843a87e75080ecc6e93ecedb8a6a",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "House primaries in Texas, North Carolina use partisan redrawn maps",
-      "to_title": "House primaries in Texas, North Carolina use partisan redrawn maps"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c975bb3294d5d1a550a80441543c064c9bbf2c9a",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Zendaya, Tom Holland are married, stylist claims: A relationship timeline"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b98b89c6784dc4a99cc4769ee775a5481b2c9b32",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "DHS warns of potential attacks after Iran strikes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d56d8b471bb8a5cdd7a03822e074fcd2f2bc2d4f",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran operation could last weeks, Trump tells ABC News",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d449870ae44fa25625891467dddfc30105070f8c",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Hegseth defends US attack on Iran as 'our retribution'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8b996cfcea31e74e7ab6f9ff75bc1abe866df287",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Department of Homeland Security warns of potential attacks amid Iran operation",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "62ac9ad55a6b9ca34ae9c5d7e67a39c158ed847c",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Stocks mixed after Iran attack",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T20:51:09.798Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T21:22:45.483Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ecdbec84cdd9bb413579c204d047f85c96f70342",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "'No Kings' protesters rally in cities, towns across the country"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
+      "from_rank": 5,
+      "to_rank": 2,
+      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
+      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "a8437aad25236adf40b9f7922907bcdf782792af",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Israel says it killed 2 senior Hezbollah officials",
+      "to_title": "Iran live updates: Israel says it killed 2 senior Hezbollah officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5fbf7c8d37f102afdb87be29701e0764e15479e4",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Persistent heat, fire danger possible this weekend for 47 million Americans"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "Police thwart 'terror attack' in Paris, officials say",
+      "to_title": "Police thwart 'terror attack' in Paris, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "4f25c3715dc7a03bad072cf408c353270dab322c",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "2 students on school bus killed in crash during field trip: Authorities",
+      "to_title": "2 students on school bus killed in crash during field trip: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "dadd70517bd0da24a23931b3d96168de443353e4",
+      "from_rank": 10,
+      "to_rank": 8,
+      "from_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash",
+      "to_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "be075093c03ddf18ec0f1ec9db56a25ce36260ce",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "63a891e9ac7b9b449ec5a6350701417f927dcedd",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "UFC brings cage-match bout to the White House"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4e1cfb1cd60959f3bd0bc41a9fff59df30533a76",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Where things stand 1 month into the war with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ac3ea9f7e3d606c32a1895d87e0cf52bbb17bfb6",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Using US ground troops against Iran could prove very costly, retired generals say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "06ad3d88b1c89f348c86da2fd27633d71cf6482a",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "'No Kings' protesters set to rally in cities and towns across the country Saturday",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T17:50:12.912Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b3fc08761059b8b00111b6eea3fc4aea30149866",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Persistent heat, dangerous wildfire conditions could impact these parts of the US",
       "to_title": null
     }
   ],
