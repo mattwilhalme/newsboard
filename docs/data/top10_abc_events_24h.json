@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-28T07:56:30.316Z",
+  "generatedAt": "2026-03-28T08:33:18.221Z",
   "hours": 24,
   "events": [
     {
@@ -1381,6 +1381,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Henry Lee, famed forensic scientist who testified in the OJ Simpson trial, dies at 87",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T08:33:28.304Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8348daa4f617d71bf9f0c772da349258b1250e52",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "5 dead after train and van collide in Mississippi"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T08:33:28.304Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "142d0d0dfe319233a561b9f25583617b7f914b65",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dow closes down 790 points as Iran war continues",
       "to_title": null
     }
   ]

@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-28T07:56:30.316Z",
+  "generatedAt": "2026-03-28T08:33:18.221Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T18:01:09.928Z",
-      "event_type": "MOVED",
-      "fingerprint": "d449870ae44fa25625891467dddfc30105070f8c",
-      "from_rank": 6,
-      "to_rank": 3,
-      "from_title": "Hegseth defends US attack on Iran as 'our retribution'",
-      "to_title": "Hegseth defends US attack on Iran as 'our retribution'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T18:01:09.928Z",
-      "event_type": "MOVED",
-      "fingerprint": "8b996cfcea31e74e7ab6f9ff75bc1abe866df287",
-      "from_rank": 7,
-      "to_rank": 4,
-      "from_title": "Department of Homeland Security warns of potential attacks amid Iran operation",
-      "to_title": "Department of Homeland Security warns of potential attacks amid Iran operation"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T18:01:09.928Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Henry Lee, famed forensic scientist who testified in the OJ Simpson trial, dies at 87",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T08:33:28.304Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8348daa4f617d71bf9f0c772da349258b1250e52",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "5 dead after train and van collide in Mississippi"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T08:33:28.304Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "142d0d0dfe319233a561b9f25583617b7f914b65",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dow closes down 790 points as Iran war continues",
       "to_title": null
     }
   ],
