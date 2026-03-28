@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-28T09:08:34.136Z",
+  "generatedAt": "2026-03-28T09:53:16.405Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8bfeba366ded702540a33c2bfc29c818cf7e3b4c",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump administration to face questions about seizure of Fulton County ballots"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7586a631ab4f8b926fe14b1bce4d20331fd7083c",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "MOVED",
-      "fingerprint": "2791b98e29b75c54919e6e291a2bd6f5ebf5719c",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Gilgo Beach suspect Rex Heuermann could change his plea to guilty: Sources",
-      "to_title": "Gilgo Beach suspect Rex Heuermann could change his plea to guilty: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "MOVED",
-      "fingerprint": "9cbb55d1e45fa0b429865d6243cbce06fa73032c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump's signature will be added to US currency, Treasury says",
-      "to_title": "Trump's signature will be added to US currency, Treasury says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "MOVED",
-      "fingerprint": "e7f38373003ee72ee0d8bc42884c3460359059b1",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her",
-      "to_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "MOVED",
-      "fingerprint": "b5be828b9436b3ab87e6d90d4b611da9d41cbaa0",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Iran live updates: Trump slams NATO for refusing assistance with Iran",
-      "to_title": "Iran live updates: Trump slams NATO for refusing assistance with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "MOVED",
-      "fingerprint": "010683ff4c63ac8eb6c4704cccc88dc76744ff4d",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case",
-      "to_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "686718ed93737f669c319a559575b565c4cb396c",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Judge temporairly blocks Pentagon's 'supply chain risk' designation for Anthropic",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T09:35:09.180Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1848d9828620caf63f15c6f589a1a8bb4a044d18",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "FBI agent behind Fulton County ballot seizure warrant does not have to testify",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-27T10:29:38.539Z",
@@ -1401,6 +1311,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Dow closes down 790 points as Iran war continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4e1cfb1cd60959f3bd0bc41a9fff59df30533a76",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Where things stand 1 month into the war with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "MOVED",
+      "fingerprint": "ac3ea9f7e3d606c32a1895d87e0cf52bbb17bfb6",
+      "from_rank": 7,
+      "to_rank": 3,
+      "from_title": "Using US ground troops against Iran could prove very costly, retired generals say",
+      "to_title": "Using US ground troops against Iran could prove very costly, retired generals say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "MOVED",
+      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
+      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "MOVED",
+      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "06ad3d88b1c89f348c86da2fd27633d71cf6482a",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "'No Kings' protesters set to rally in cities and towns across the country Saturday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "MOVED",
+      "fingerprint": "f0fd23f72e97424917455400a995d86f2d3434b1",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Judge dismisses charges against ex-Louisville police officers in Breonna Taylor case",
+      "to_title": "Judge dismisses charges against ex-Louisville police officers in Breonna Taylor case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "MOVED",
+      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
+      "to_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "MOVED",
+      "fingerprint": "4f25c3715dc7a03bad072cf408c353270dab322c",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "2 students on school bus killed in crash during field trip: Authorities",
+      "to_title": "2 students on school bus killed in crash during field trip: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "MOVED",
+      "fingerprint": "dadd70517bd0da24a23931b3d96168de443353e4",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash",
+      "to_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "be075093c03ddf18ec0f1ec9db56a25ce36260ce",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T09:53:24.929Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8348daa4f617d71bf9f0c772da349258b1250e52",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "5 dead after train and van collide in Mississippi",
       "to_title": null
     }
   ]
