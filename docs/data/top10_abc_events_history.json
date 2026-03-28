@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-28T22:31:16.752Z",
+  "generatedAt": "2026-03-28T23:00:46.603Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "MOVED",
-      "fingerprint": "f304bb69dc571dbc5093c8305dc21ab291378e3a",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff",
-      "to_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed0831bf73be8f8e48881bebde3110edb96d5acd",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before",
-      "to_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "MOVED",
-      "fingerprint": "addf91e0331be70072322287e01986f277dd90d0",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Pentagon, Trump warn more US troops likely to die in Iran operation",
-      "to_title": "Pentagon, Trump warn more US troops likely to die in Iran operation"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T21:22:45.483Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: Israel says it killed 2 senior Hezbollah officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T23:00:57.472Z",
+      "event_type": "MOVED",
+      "fingerprint": "dadd70517bd0da24a23931b3d96168de443353e4",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash",
+      "to_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T23:00:57.472Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a1682943dcfe012c0784e5a1045f3a40c5b1966c",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "UConn coach Auriemma rips NCAA over double-regional format in March Madness"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T23:00:57.472Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4f25c3715dc7a03bad072cf408c353270dab322c",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "2 students on school bus killed in crash during field trip: Authorities",
       "to_title": null
     }
   ],
