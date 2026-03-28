@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-28T16:03:04.844Z",
+  "generatedAt": "2026-03-28T16:48:16.631Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T16:08:21.549Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "176de49e0115fd27a52848d42811343e71336d5e",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "With mom still missing, Savannah Guthrie says, 'I will not let them take my joy'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T16:08:21.549Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "be075093c03ddf18ec0f1ec9db56a25ce36260ce",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T16:08:21.549Z",
-      "event_type": "MOVED",
-      "fingerprint": "263774489e9fc83d308878156860fb62680d11d7",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "House panel seeks testimony from investigators who took evidence from Epstein's home",
-      "to_title": "House panel seeks testimony from investigators who took evidence from Epstein's home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T16:08:21.549Z",
-      "event_type": "MOVED",
-      "fingerprint": "7586a631ab4f8b926fe14b1bce4d20331fd7083c",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America",
-      "to_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T16:08:21.549Z",
-      "event_type": "MOVED",
-      "fingerprint": "9cbb55d1e45fa0b429865d6243cbce06fa73032c",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Trump's signature will be added to US currency, Treasury says",
-      "to_title": "Trump's signature will be added to US currency, Treasury says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T16:08:21.549Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "38ba6124c4b138944350b25941c48e2a156ab096",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Savannah Guthrie pleads for answers: 'We need someone to tell the truth'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T16:08:21.549Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2791b98e29b75c54919e6e291a2bd6f5ebf5719c",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Gilgo Beach suspect Rex Heuermann could change his plea to guilty: Sources",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-27T17:10:19.339Z",
@@ -1081,6 +1011,36 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Judge dismisses charges against ex-Louisville police officers in Breonna Taylor case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T16:48:26.465Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Police thwart 'terror attack' in Paris, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T16:48:26.465Z",
+      "event_type": "MOVED",
+      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T16:48:26.465Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
       "to_title": null
     }
   ]

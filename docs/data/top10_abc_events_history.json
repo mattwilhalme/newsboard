@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-28T16:03:04.844Z",
+  "generatedAt": "2026-03-28T16:48:16.631Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T19:40:02.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "689b44877ee3f511b3a73fded8cbb0a9b6383de9",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb",
-      "to_title": "Colorectal cancer screening lags in adults 45 to 49 as diagnosis rates climb"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T19:40:02.300Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b577cc138086f54f68a1393bcc2af9e46d2dd5c",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest",
-      "to_title": "Shia LaBeouf addresses New Orleans Mardi Gras arrest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T19:40:02.300Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ac72abc9f35bf04b252389986986b8afd43b933f",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran operation could last weeks, Trump tells ABC News",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T19:40:02.300Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Judge dismisses charges against ex-Louisville police officers in Breonna Taylor case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T16:48:26.465Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Police thwart 'terror attack' in Paris, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T16:48:26.465Z",
+      "event_type": "MOVED",
+      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T16:48:26.465Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
       "to_title": null
     }
   ],
