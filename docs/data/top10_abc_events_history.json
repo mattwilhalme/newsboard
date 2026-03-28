@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-28T11:23:14.138Z",
+  "generatedAt": "2026-03-28T11:49:14.047Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T19:40:02.300Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d56d8b471bb8a5cdd7a03822e074fcd2f2bc2d4f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran operation could last weeks, Trump tells ABC News"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T19:40:02.300Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f304bb69dc571dbc5093c8305dc21ab291378e3a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T19:40:02.300Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "5 dead after train and van collide in Mississippi",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T11:49:24.456Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a8437aad25236adf40b9f7922907bcdf782792af",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel says it killed 2 senior Hezbollah officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T11:49:24.456Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "28c163c8d9d6446d9bd8548e1831e3f918ce4501",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: More than 300 American troops wounded in Iran war",
       "to_title": null
     }
   ],
