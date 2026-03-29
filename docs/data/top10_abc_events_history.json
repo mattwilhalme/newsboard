@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-29T10:04:15.044Z",
+  "generatedAt": "2026-03-29T10:50:10.324Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "MOVED",
-      "fingerprint": "196252893ef2f028597dd5106b7f04f2ddf1791b",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Related:US-Israeli strikes on Iran: What's been hit so far during the operation",
-      "to_title": "Related:US-Israeli strikes on Iran: What's been hit so far during the operation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "05066c790926c29e95d34ea1088a1d696eac12a7",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Most Americans do not support latest Iran strikes, 3 polls find"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed0831bf73be8f8e48881bebde3110edb96d5acd",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before",
-      "to_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "MOVED",
-      "fingerprint": "f304bb69dc571dbc5093c8305dc21ab291378e3a",
-      "from_rank": 3,
-      "to_rank": 6,
-      "from_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff",
-      "to_title": "Iran wasn't preparing to launch preemptive strike, WH told congressional staff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "MOVED",
-      "fingerprint": "addf91e0331be70072322287e01986f277dd90d0",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Pentagon, Trump warn more US troops likely to die in Iran operation",
-      "to_title": "Pentagon, Trump warn more US troops likely to die in Iran operation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "MOVED",
-      "fingerprint": "c975bb3294d5d1a550a80441543c064c9bbf2c9a",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Zendaya, Tom Holland are married, stylist claims: A relationship timeline",
-      "to_title": "Zendaya, Tom Holland are married, stylist claims: A relationship timeline"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T21:55:59.173Z",
@@ -30002,6 +29942,66 @@
       "to_rank": 2,
       "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
       "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T10:50:20.621Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5deb15470a95a7a3bb19ad0478834ecb1a0a7e89",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Record number of lawmakers retiring from Congress ahead of midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T10:50:20.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
+      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T10:50:20.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fbf7c8d37f102afdb87be29701e0764e15479e4",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Persistent heat, fire danger possible this weekend for 47 million Americans",
+      "to_title": "Persistent heat, fire danger possible this weekend for 47 million Americans"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T10:50:20.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Police thwart 'terror attack' in Paris, officials say",
+      "to_title": "Police thwart 'terror attack' in Paris, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T10:50:20.621Z",
+      "event_type": "MOVED",
+      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T10:50:20.621Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dadd70517bd0da24a23931b3d96168de443353e4",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
