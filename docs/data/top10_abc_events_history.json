@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-29T05:02:30.722Z",
+  "generatedAt": "2026-03-29T06:16:30.687Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "MOVED",
-      "fingerprint": "8706a7a3cd01c7f238397813bf589794fe550a5c",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Christina Applegate shares struggles with past abuse, eating disorder",
-      "to_title": "Christina Applegate shares struggles with past abuse, eating disorder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5b6a7dd98a6a47e26d8d98eaac14562768ae3e30",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US 'very nearly under threat,' Trump says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:22:45.483Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "eb685b0f0966843a87e75080ecc6e93ecedb8a6a",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "House primaries in Texas, North Carolina use partisan redrawn maps",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T21:55:59.173Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "'No Kings' protesters rally in cities, towns across the country",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T06:16:41.970Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4548145bd89302cc0d74f88ee1bad8e0ebbc7a83",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: IDF launches 'widespread' strikes in Tehran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T06:16:41.970Z",
+      "event_type": "MOVED",
+      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
+      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T06:16:41.970Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ccd1e4876a45381e31d24aab12cafb9581078107",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: 9 paramedics killed Saturday in Israeli strikes on Lebanon",
       "to_title": null
     }
   ],
