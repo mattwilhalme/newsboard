@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-28T23:34:47.243Z",
+  "generatedAt": "2026-03-28T23:59:17.096Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T23:54:25.449Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4f25c3715dc7a03bad072cf408c353270dab322c",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "2 students on school bus killed in crash during field trip: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T23:54:25.449Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1f72dd35aa401cc0168b5d73fb3f757a021649e9",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Firefighter speaks out after rescuers save woman from cliff above Pacific Ocean",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T01:03:21.558Z",
@@ -701,6 +681,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "2 students on school bus killed in crash during field trip: Authorities",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T23:59:27.495Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-28T23:59:27.495Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ecdbec84cdd9bb413579c204d047f85c96f70342",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "'No Kings' protesters rally in cities, towns across the country",
       "to_title": null
     }
   ]
