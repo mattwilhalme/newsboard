@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-29T15:07:07.625Z",
+  "generatedAt": "2026-03-29T15:46:16.964Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T15:42:16.658Z",
-      "event_type": "MOVED",
-      "fingerprint": "06ad3d88b1c89f348c86da2fd27633d71cf6482a",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "'No Kings' protesters set to rally in cities and towns across the country Saturday",
-      "to_title": "'No Kings' protesters set to rally in cities and towns across the country Saturday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T15:42:16.658Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
-      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T15:42:16.658Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b3fc08761059b8b00111b6eea3fc4aea30149866",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Persistent heat, dangerous wildfire conditions could impact these parts of the US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T15:42:16.658Z",
-      "event_type": "MOVED",
-      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
-      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T15:42:16.658Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f0fd23f72e97424917455400a995d86f2d3434b1",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Judge dismisses charges against ex-Louisville police officers in Breonna Taylor case",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T16:48:26.465Z",
@@ -601,6 +551,66 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Scalise: ‘We’re having a lot of conversations’ on possibility of ground troops",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:46:27.697Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e463190eec310372a2a70ad1118461b4a6ee629d",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Sen. Van Hollen says Democrats are 'not holding up' DHS funding"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:46:27.697Z",
+      "event_type": "MOVED",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
+      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:46:27.697Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b21a54178f06cf5bd18ab17306c957f4bebcfb03",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Iran war has caused 'internal strife' within Iranian diaspora: Rep. Ansari"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:46:27.697Z",
+      "event_type": "MOVED",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
+      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:46:27.697Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:46:27.697Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5fbf7c8d37f102afdb87be29701e0764e15479e4",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Persistent heat, fire danger possible this weekend for 47 million Americans",
       "to_title": null
     }
   ]
