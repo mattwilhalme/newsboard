@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-29T08:05:21.062Z",
+  "generatedAt": "2026-03-29T08:56:53.026Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9515dfc14eb42fbfebe1d25a6c467c334ffc61a8",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breaking6 US service members killed in operation against Iran, CENTCOM says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-02T21:55:59.173Z",
-      "event_type": "MOVED",
-      "fingerprint": "a924e05128677c302cadaae9a1a507275ef1ed34",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: 6 US service members killed, CENTCOM says",
-      "to_title": "Iran live updates: 6 US service members killed, CENTCOM says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-02T21:55:59.173Z",
@@ -30002,6 +29982,26 @@
       "to_rank": null,
       "from_title": "Iran live updates: 9 paramedics killed Saturday in Israeli strikes on Lebanon",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T08:57:03.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "4548145bd89302cc0d74f88ee1bad8e0ebbc7a83",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: IDF launches 'widespread' strikes in Tehran",
+      "to_title": "Iran live updates: IDF launches 'widespread' strikes in Tehran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T08:57:03.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
+      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
     }
   ],
   "error": "No Top 10 events yet"

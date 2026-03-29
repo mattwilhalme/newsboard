@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-29T08:05:21.062Z",
+  "generatedAt": "2026-03-29T08:56:53.026Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T08:33:28.304Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8348daa4f617d71bf9f0c772da349258b1250e52",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "5 dead after train and van collide in Mississippi"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T08:33:28.304Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "142d0d0dfe319233a561b9f25583617b7f914b65",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Dow closes down 790 points as Iran war continues",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T09:53:24.929Z",
@@ -472,6 +452,26 @@
       "to_rank": null,
       "from_title": "Iran live updates: 9 paramedics killed Saturday in Israeli strikes on Lebanon",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T08:57:03.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "4548145bd89302cc0d74f88ee1bad8e0ebbc7a83",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: IDF launches 'widespread' strikes in Tehran",
+      "to_title": "Iran live updates: IDF launches 'widespread' strikes in Tehran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T08:57:03.086Z",
+      "event_type": "MOVED",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
+      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
     }
   ]
 }
