@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-29T14:44:39.749Z",
+  "generatedAt": "2026-03-29T15:07:07.625Z",
   "hours": 24,
   "events": [
     {
@@ -581,6 +581,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Pope Leo rejects claims that God justifies war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:07:17.714Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e83d9ad74b88b7357fdf7198f4a667e4bead9a7b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Scalise on troops in Iran: 'A lot of conversations about what could happen next'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T15:07:17.714Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7d553a8f24b55016ebb8b915317e5691e9904e3e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Scalise: ‘We’re having a lot of conversations’ on possibility of ground troops",
       "to_title": null
     }
   ]
