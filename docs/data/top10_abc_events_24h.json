@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-29T11:18:06.405Z",
+  "generatedAt": "2026-03-29T11:47:31.317Z",
   "hours": 24,
   "events": [
     {
@@ -462,6 +462,26 @@
       "to_rank": null,
       "from_title": "UFC brings cage-match bout to the White House",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T11:47:41.790Z",
+      "event_type": "MOVED",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
+      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T11:47:41.790Z",
+      "event_type": "MOVED",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
+      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
     }
   ]
 }
