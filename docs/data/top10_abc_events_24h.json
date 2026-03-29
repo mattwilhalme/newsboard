@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-29T17:53:45.165Z",
+  "generatedAt": "2026-03-29T18:24:31.766Z",
   "hours": 24,
   "events": [
     {
@@ -441,6 +441,36 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Persistent heat, fire danger possible this weekend for 47 million Americans",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T18:24:42.775Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9eb1bb6d820d7c9ad73eaab082b5101d052e30e0",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Fire danger weather continues in the Great Plains as record heat bakes the Southwest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T18:24:42.775Z",
+      "event_type": "MOVED",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
+      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T18:24:42.775Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Police thwart 'terror attack' in Paris, officials say",
       "to_title": null
     }
   ]
