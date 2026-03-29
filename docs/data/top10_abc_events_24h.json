@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-29T10:50:10.324Z",
+  "generatedAt": "2026-03-29T11:18:06.405Z",
   "hours": 24,
   "events": [
     {
@@ -421,6 +421,46 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T11:18:16.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T11:18:16.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7b626f57d3679db7cf7960cbc161f84fd165445a",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Pope Leo rejects claims that God justifies war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T11:18:16.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5deb15470a95a7a3bb19ad0478834ecb1a0a7e89",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Record number of lawmakers retiring from Congress ahead of midterms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T11:18:16.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "63a891e9ac7b9b449ec5a6350701417f927dcedd",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "UFC brings cage-match bout to the White House",
       "to_title": null
     }
   ]
