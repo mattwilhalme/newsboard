@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-29T19:45:38.705Z",
+  "generatedAt": "2026-03-29T20:03:58.651Z",
   "hours": 24,
   "events": [
     {
@@ -471,6 +471,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Police thwart 'terror attack' in Paris, officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T20:04:09.613Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f06c41b51cce08d0cbb75365d133dea94dbe196e",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Fire danger rises in the Plains and Rockies, while the Southwest bakes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-29T20:04:09.613Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9eb1bb6d820d7c9ad73eaab082b5101d052e30e0",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Fire danger weather continues in the Great Plains as record heat bakes the Southwest",
       "to_title": null
     }
   ]
