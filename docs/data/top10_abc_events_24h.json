@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T16:40:42.056Z",
+  "generatedAt": "2026-03-30T17:37:06.118Z",
   "hours": 24,
   "events": [
     {
@@ -531,6 +531,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Thieves steal paintings by Renoir, Cézanne and Matisse from Italian private museum",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T17:37:15.250Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f056c22306efa90e26c1dfcbda94352332046da5",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T17:37:15.250Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "678c790dd104d89640631cd1564b5b78d9174107",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Olivia Munn shares health update after breast cancer battle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T17:37:15.250Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f46980ca2c8e2bb75b40aa5267aac55057e31453",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump threatens Iran infrastructure strikes if talks fail",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T17:37:15.250Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d2be28779c5c67769a5d9694c645f7b01ae3566a",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Olivia Munn says free test helped find her breast cancer despite no symptoms",
       "to_title": null
     }
   ]
