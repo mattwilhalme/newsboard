@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T17:37:06.118Z",
+  "generatedAt": "2026-03-30T18:37:41.147Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T18:24:42.775Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9eb1bb6d820d7c9ad73eaab082b5101d052e30e0",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Fire danger weather continues in the Great Plains as record heat bakes the Southwest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T18:24:42.775Z",
-      "event_type": "MOVED",
-      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
-      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T18:24:42.775Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Police thwart 'terror attack' in Paris, officials say",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-29T20:04:09.613Z",
@@ -571,6 +541,76 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Olivia Munn says free test helped find her breast cancer despite no symptoms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T18:37:52.137Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a2fd84c3a28d6c47cc27bde102e15b77e6a29bba",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "15-year-old boy allegedly shoots teacher at his high school: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T18:37:52.137Z",
+      "event_type": "MOVED",
+      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
+      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T18:37:52.137Z",
+      "event_type": "MOVED",
+      "fingerprint": "bdf5a6afdc7b537486d4e4de01521c353b47a3fd",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Escaping the Middle East: Inside the rush to evacuate",
+      "to_title": "Escaping the Middle East: Inside the rush to evacuate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T18:37:52.137Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c1b0389fa72a43927fef161c09fb141343827149",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Police searching for child left unattended in running vehicle that was then stolen"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T18:37:52.137Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Air Canada CEO will retire this year after English-only crash message criticized",
+      "to_title": "Air Canada CEO will retire this year after English-only crash message criticized"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T18:37:52.137Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T18:37:52.137Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
       "to_title": null
     }
   ]
