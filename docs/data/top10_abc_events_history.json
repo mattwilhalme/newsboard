@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-30T06:12:20.207Z",
+  "generatedAt": "2026-03-30T08:02:02.793Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T08:56:58.162Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2af42304b9263261fa9dc6330f336cc64af2b827",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Jalisco cartel leader buried in golden casket"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T08:56:58.162Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ed0831bf73be8f8e48881bebde3110edb96d5acd",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Trump contradicts US intelligence on Iran, doesn't address regime change as before",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T08:56:58.162Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4aa0862c6b3e42384a810527685c7112857f9ebe",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "How to talk with kids about US, Israel strikes on Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T10:11:26.950Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "59b25c83603068ad526b0ef702204a881a0e7007",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran war live updates: Israelis to 'advance' in Lebanon amid Hezbollah strikes"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T10:11:26.950Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Iran live updates: Pakistan announces US-Iran talks 'in coming days'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bd0b9a0fc57e57942d7d2f77667b5b2656191c65",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump touts 'big day' in Iran with 'many' strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9b242f6abc254898b300ce461194cfcc10a19cd1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Scalise on troops in Iran: 'A lot of conversations about what could happen next'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e83d9ad74b88b7357fdf7198f4a667e4bead9a7b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Scalise on troops in Iran: 'A lot of conversations about what could happen next'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cba0fca66356e6d33c5175e1dcebc6f1283b6b8c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pakistan announces US-Iran talks 'in coming days'",
       "to_title": null
     }
   ],

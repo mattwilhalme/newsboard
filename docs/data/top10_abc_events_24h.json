@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T06:12:20.207Z",
+  "generatedAt": "2026-03-30T08:02:02.793Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T06:16:41.970Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4548145bd89302cc0d74f88ee1bad8e0ebbc7a83",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: IDF launches 'widespread' strikes in Tehran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T06:16:41.970Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
-      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T06:16:41.970Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ccd1e4876a45381e31d24aab12cafb9581078107",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Iran live updates: 9 paramedics killed Saturday in Israeli strikes on Lebanon",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-29T08:57:03.086Z",
@@ -581,6 +551,46 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Iran live updates: Pakistan announces US-Iran talks 'in coming days'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bd0b9a0fc57e57942d7d2f77667b5b2656191c65",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump touts 'big day' in Iran with 'many' strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9b242f6abc254898b300ce461194cfcc10a19cd1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Scalise on troops in Iran: 'A lot of conversations about what could happen next'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e83d9ad74b88b7357fdf7198f4a667e4bead9a7b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Scalise on troops in Iran: 'A lot of conversations about what could happen next'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T08:02:13.959Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cba0fca66356e6d33c5175e1dcebc6f1283b6b8c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pakistan announces US-Iran talks 'in coming days'",
       "to_title": null
     }
   ]
