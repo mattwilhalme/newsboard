@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-30T23:06:23.266Z",
+  "generatedAt": "2026-03-30T23:50:06.704Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fea3c8e01e6d8d3751ef2a39b9c901cb8ca171e6",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Noem faces grilling on Capitol Hill over ICE operations and Iran threat",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0079d1874c55172f637b5a499c31dca547be8612",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Iran live updates: US ramps up strikes as American death toll rises",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T19:10:35.191Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d3e06285ccaf4880bd5b59911bf4d24b77ceec99",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Father of suspected school shooter convicted of murder"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T19:10:35.191Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Broadway and film actor Mary Beth Hurt dies at 79",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T23:50:17.495Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "438d43ec1f7ef2bee9f1e336fc2f436cbea2a6c9",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "What to know about 'fireball season' as the number of visible meteors peaks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T23:50:17.495Z",
+      "event_type": "MOVED",
+      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
+      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T23:50:17.495Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Air Canada CEO will retire this year after English-only crash message criticized",
       "to_title": null
     }
   ],
