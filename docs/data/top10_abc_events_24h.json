@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T09:25:23.238Z",
+  "generatedAt": "2026-03-30T10:45:21.723Z",
   "hours": 24,
   "events": [
     {
@@ -571,6 +571,56 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Pakistan announces US-Iran talks 'in coming days'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T10:45:32.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bdf5a6afdc7b537486d4e4de01521c353b47a3fd",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Escaping the Middle East: Inside the rush to evacuate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T10:45:32.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T10:45:32.406Z",
+      "event_type": "MOVED",
+      "fingerprint": "2b07a719379e6cfca4112aeeee64229d803effb8",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "TSA officers still calling out sick after Trump's directive to pay them",
+      "to_title": "TSA officers still calling out sick after Trump's directive to pay them"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T10:45:32.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e463190eec310372a2a70ad1118461b4a6ee629d",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Sen. Van Hollen says Democrats are 'not holding up' DHS funding",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T10:45:32.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
       "to_title": null
     }
   ]
