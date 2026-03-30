@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T12:41:53.064Z",
+  "generatedAt": "2026-03-30T14:13:02.665Z",
   "hours": 24,
   "events": [
     {
@@ -521,6 +521,56 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump touts 'big day' in Iran with 'many' strikes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T14:13:13.623Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T14:13:13.623Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bfa56d2a14429506e1d8b96bc041e7195b6dfe9b",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Olivia Munn says free test found her breast cancer despite no symptoms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T14:13:13.623Z",
+      "event_type": "MOVED",
+      "fingerprint": "17543a870e0b4be6cfb3909091b448cf4a64695a",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "UConn beats Notre Dame 70-52 to secure 25th women's Final Four appearance",
+      "to_title": "UConn beats Notre Dame 70-52 to secure 25th women's Final Four appearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T14:13:13.623Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b21a54178f06cf5bd18ab17306c957f4bebcfb03",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Iran war has caused 'internal strife' within Iranian diaspora: Rep. Ansari",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T14:13:13.623Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
       "to_title": null
     }
   ]
