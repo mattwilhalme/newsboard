@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-30T21:08:45.594Z",
+  "generatedAt": "2026-03-30T21:56:33.762Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T17:31:35.906Z",
-      "event_type": "MOVED",
-      "fingerprint": "0079d1874c55172f637b5a499c31dca547be8612",
-      "from_rank": 2,
-      "to_rank": 10,
-      "from_title": "Iran live updates: US ramps up strikes as American death toll rises",
-      "to_title": "Iran live updates: US ramps up strikes as American death toll rises"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T17:31:35.906Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b6503e4e570de4e7307090fed4d997659d10aed9",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingJury convicts suspected Georgia school shooter's father of murder",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d16e65b50ff928a2ee0b5c2a76f5efcdd9e8aaaf",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump slams Spain, UK over Iran war cooperation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "86631f86200b00c0b147eec6add3450c70b75bd0",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Related:Stocks tumble as Iran War escalates",
-      "to_title": "Related:Stocks tumble as Iran war escalates"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "86631f86200b00c0b147eec6add3450c70b75bd0",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Related:Stocks tumble as Iran War escalates",
-      "to_title": "Related:Stocks tumble as Iran war escalates"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "8f633b54190696313d2c75588faf2f102b1305ab",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Suspected school shooter's father convicted of murder",
-      "to_title": "Suspected school shooter's father convicted of murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fcf44e63b45462be789f7f25fc2f84117c6926b",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Trump says 'too late' for talks with Iran, warns US has munitions to fight 'forever'",
-      "to_title": "Trump says 'too late' for talks with Iran, warns US has munitions to fight 'forever'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "332a216b7d7e97d2aacb192d1686b858a01f4bc9",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Noem declines to retract 'domestic terrorism' comments about Pretti in Senate hearing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "2b494feb1e1967b4caf6485792a3c0c28c90d3bf",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Passenger speaks out after United Airlines flight evacuated at LAX",
-      "to_title": "Passenger speaks out after United Airlines flight evacuated at LAX"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "56fb6fe0e37e5a42fa279919763e92a6a2583d21",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Christina Applegate talks battle with MS: 'I hate it'",
-      "to_title": "Christina Applegate talks battle with MS: 'I hate it'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "ebdc33cb96a45e8031631829d291539f0fa84213",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Hillary Clinton told House panel, 'I've given the same answers over and over again'",
-      "to_title": "Hillary Clinton told House panel, 'I've given the same answers over and over again'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "9ea7f9ae649c3dac6538406341c68ceede0a7ccd",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis",
-      "to_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T18:09:33.202Z",
-      "event_type": "MOVED",
-      "fingerprint": "372c19af1e7ac7e362e84ad44d45fceffdaff211",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms",
-      "to_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T18:09:33.202Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Celine Dion announces Paris comeback concerts amid stiff-person syndrome battle",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bbd6a9718767f35bad66370050faa41efdc4fd76",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump urging Congress to cut recess short to end DHS shutdown, White House says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c6d03d98d217e8cdff2f45d64bce24f3fa4cf316",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:TSA officers receive their 1st paychecks in weeks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "c6a7bdc4bd634f98ea3761817178ac3efb6cec1b",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI",
+      "to_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "a2fd84c3a28d6c47cc27bde102e15b77e6a29bba",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "15-year-old boy allegedly shoots teacher at his high school: Sheriff",
+      "to_title": "15-year-old boy allegedly shoots teacher at his high school: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "f056c22306efa90e26c1dfcbda94352332046da5",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace",
+      "to_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "0f44443b6580c7bea6770fb15b9bb2dc87d213b4",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "'Gut punch': Why Wall Street is raising recession odds amid the Iran war",
+      "to_title": "'Gut punch': Why Wall Street is raising recession odds amid the Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "82a388b0e8f7a2db7af86c238d7cf34cc21ca790",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Celine Dion says she's returning to live concerts",
+      "to_title": "Celine Dion says she's returning to live concerts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
+      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Air Canada CEO will retire this year after English-only crash message criticized",
+      "to_title": "Air Canada CEO will retire this year after English-only crash message criticized"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f64a2b3ed9e5d4a817cd0b94380e6aa1feb89932",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "52-year-old elephant returned safely after escaping zoo enclosure"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aadf05bb51d9304e314ce440e1e95f1ed530881a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "TSA officers receive their 1st paychecks in weeks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "678c790dd104d89640631cd1564b5b78d9174107",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Olivia Munn shares health update after breast cancer battle",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T21:56:42.871Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6ce087fedae5dd4beb7684f8a30218c2ad47f967",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Broadway and film actor Mary Beth Hurt dies at 79",
       "to_title": null
     }
   ],
