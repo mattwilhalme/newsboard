@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T04:17:46.813Z",
+  "generatedAt": "2026-03-30T06:12:20.207Z",
   "hours": 24,
   "events": [
     {
@@ -561,6 +561,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T06:12:30.355Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cba0fca66356e6d33c5175e1dcebc6f1283b6b8c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Pakistan announces US-Iran talks 'in coming days'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T06:12:30.355Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9b55172d3d0cea06a64fdff23febe498daf44dfe",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Pakistan announces US-Iran talks 'in coming days'",
       "to_title": null
     }
   ]
