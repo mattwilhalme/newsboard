@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-30T15:42:19.046Z",
+  "generatedAt": "2026-03-30T16:40:42.056Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "MOVED",
-      "fingerprint": "ebdc33cb96a45e8031631829d291539f0fa84213",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Hillary Clinton told House panel, 'I've given the same answers over and over again'",
-      "to_title": "Hillary Clinton told House panel, 'I've given the same answers over and over again'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "21617556d9f470fac9f49cfe4bcec78a953ec25e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran war live updates: Trump touts 'virtually unlimited' supply of US munitions",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a41eea39bf7685de05023a8c132e12bd5b074ee9",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Travel updates for Americans in the Middle East amid disruptions from strikes by Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T14:07:56.572Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e7fd24ddba48f197757157f3f2187188668ef417",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran war live updates: Trump says 'too late' to talk to Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T14:07:56.572Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "56fb6fe0e37e5a42fa279919763e92a6a2583d21",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Christina Applegate talks battle with MS: 'I hate it'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T14:07:56.572Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2d607c1feb8a36c78f349da8cc2b313ce0931912",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Thousands stranded in Middle East amid Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T14:07:56.572Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7d991cae5169fa4a1c191f67451fd258417512df",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran war live updates: US closes embassies in Saudi Arabia, Kuwait amid attacks",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T14:07:56.572Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "UConn beats Notre Dame 70-52 to secure 25th women's Final Four appearance",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "96a44aa2ef7eb055e3139257bb7b1d9654906bab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump says US talking to 'more reasonable' Iranian regime, Rubio declines to say who"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "MOVED",
+      "fingerprint": "f46980ca2c8e2bb75b40aa5267aac55057e31453",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Trump threatens Iran infrastructure strikes if talks fail",
+      "to_title": "Iran live updates: Trump threatens Iran infrastructure strikes if talks fail"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "MOVED",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
+      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Air Canada CEO will retire this year after English-only crash message criticized"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "MOVED",
+      "fingerprint": "2b07a719379e6cfca4112aeeee64229d803effb8",
+      "from_rank": 5,
+      "to_rank": 9,
+      "from_title": "TSA officers still calling out sick after Trump's directive to pay them",
+      "to_title": "TSA officers still calling out sick after Trump's directive to pay them"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9b242f6abc254898b300ce461194cfcc10a19cd1",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Scalise on troops in Iran: 'A lot of conversations about what could happen next'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dbd6a19e8c7219bf0eda87876a9619a85e4cc516",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Thieves steal paintings by Renoir, Cézanne and Matisse from Italian private museum",
       "to_title": null
     }
   ],

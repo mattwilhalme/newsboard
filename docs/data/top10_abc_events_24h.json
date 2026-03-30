@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T15:42:19.046Z",
+  "generatedAt": "2026-03-30T16:40:42.056Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:46:27.697Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e463190eec310372a2a70ad1118461b4a6ee629d",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Sen. Van Hollen says Democrats are 'not holding up' DHS funding"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:46:27.697Z",
-      "event_type": "MOVED",
-      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
-      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:46:27.697Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b21a54178f06cf5bd18ab17306c957f4bebcfb03",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Iran war has caused 'internal strife' within Iranian diaspora: Rep. Ansari"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:46:27.697Z",
-      "event_type": "MOVED",
-      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
-      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:46:27.697Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:46:27.697Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5fbf7c8d37f102afdb87be29701e0764e15479e4",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Persistent heat, fire danger possible this weekend for 47 million Americans",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-29T18:24:42.775Z",
@@ -521,6 +461,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "UConn beats Notre Dame 70-52 to secure 25th women's Final Four appearance",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "96a44aa2ef7eb055e3139257bb7b1d9654906bab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump says US talking to 'more reasonable' Iranian regime, Rubio declines to say who"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "MOVED",
+      "fingerprint": "f46980ca2c8e2bb75b40aa5267aac55057e31453",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Trump threatens Iran infrastructure strikes if talks fail",
+      "to_title": "Iran live updates: Trump threatens Iran infrastructure strikes if talks fail"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "MOVED",
+      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
+      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Air Canada CEO will retire this year after English-only crash message criticized"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "MOVED",
+      "fingerprint": "2b07a719379e6cfca4112aeeee64229d803effb8",
+      "from_rank": 5,
+      "to_rank": 9,
+      "from_title": "TSA officers still calling out sick after Trump's directive to pay them",
+      "to_title": "TSA officers still calling out sick after Trump's directive to pay them"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9b242f6abc254898b300ce461194cfcc10a19cd1",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Scalise on troops in Iran: 'A lot of conversations about what could happen next'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T16:40:52.225Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dbd6a19e8c7219bf0eda87876a9619a85e4cc516",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Thieves steal paintings by Renoir, Cézanne and Matisse from Italian private museum",
       "to_title": null
     }
   ]
