@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-30T18:37:41.147Z",
+  "generatedAt": "2026-03-30T19:40:00.047Z",
   "hours": 24,
   "events": [
     {
@@ -611,6 +611,86 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aadf05bb51d9304e314ce440e1e95f1ed530881a",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "TSA officers receive their 1st paychecks in weeks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "MOVED",
+      "fingerprint": "96a44aa2ef7eb055e3139257bb7b1d9654906bab",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Trump says US talking to 'more reasonable' Iranian regime, Rubio declines to say who",
+      "to_title": "Trump says US talking to 'more reasonable' Iranian regime, Rubio declines to say who"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "MOVED",
+      "fingerprint": "f056c22306efa90e26c1dfcbda94352332046da5",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace",
+      "to_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "MOVED",
+      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
+      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "MOVED",
+      "fingerprint": "bdf5a6afdc7b537486d4e4de01521c353b47a3fd",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Escaping the Middle East: Inside the rush to evacuate",
+      "to_title": "Escaping the Middle East: Inside the rush to evacuate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "MOVED",
+      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Air Canada CEO will retire this year after English-only crash message criticized",
+      "to_title": "Air Canada CEO will retire this year after English-only crash message criticized"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "MOVED",
+      "fingerprint": "678c790dd104d89640631cd1564b5b78d9174107",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Olivia Munn shares health update after breast cancer battle",
+      "to_title": "Olivia Munn shares health update after breast cancer battle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T19:40:10.242Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2b07a719379e6cfca4112aeeee64229d803effb8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "TSA officers still calling out sick after Trump's directive to pay them",
       "to_title": null
     }
   ]
