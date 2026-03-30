@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-30T14:13:02.665Z",
+  "generatedAt": "2026-03-30T15:42:19.046Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T11:40:04.830Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "59b25c83603068ad526b0ef702204a881a0e7007",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran war live updates: Israelis to 'advance' in Lebanon amid Hezbollah strikes",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T12:01:23.925Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7a5c31d1fce139763f35f08b79cc17b4e379ff1d",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Target reports declining sales but some positives"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T12:01:23.925Z",
-      "event_type": "MOVED",
-      "fingerprint": "2af42304b9263261fa9dc6330f336cc64af2b827",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Jalisco cartel leader buried in golden casket",
-      "to_title": "Jalisco cartel leader buried in golden casket"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T12:01:23.925Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "baeb55789cf25e3bcd99edbdf774ec846a3d31e2",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Pentagon, Trump warn more US troops likely to die",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7d991cae5169fa4a1c191f67451fd258417512df",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran war live updates: US closes embassies in Saudi Arabia, Kuwait amid attacks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "89084cfbae86ceb491e4605a8f73e946685e8aa0",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Noem to face 2 days of grilling on Capitol Hill over ICE operations and Iran threat"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "MOVED",
-      "fingerprint": "45eb71bb7c05105a788566648958573267b7f755",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Trump administration's mixed messaging on war with Iran: ANALYSIS",
-      "to_title": "Trump administration's mixed messaging on war with Iran: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "MOVED",
-      "fingerprint": "9ea7f9ae649c3dac6538406341c68ceede0a7ccd",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis",
-      "to_title": "North Carolina primaries launch battle to replace retiring GOP Sen. Thom Tillis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T13:15:11.428Z",
-      "event_type": "MOVED",
-      "fingerprint": "372c19af1e7ac7e362e84ad44d45fceffdaff211",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms",
-      "to_title": "Texas Senate primary gives glimpse of messaging, infighting heading into midterms"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T13:15:11.428Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "MOVED",
+      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
+      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "MOVED",
+      "fingerprint": "bdf5a6afdc7b537486d4e4de01521c353b47a3fd",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Escaping the Middle East: Inside the rush to evacuate",
+      "to_title": "Escaping the Middle East: Inside the rush to evacuate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "MOVED",
+      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
+      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d2be28779c5c67769a5d9694c645f7b01ae3566a",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Olivia Munn says free test helped find her breast cancer despite no symptoms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dbd6a19e8c7219bf0eda87876a9619a85e4cc516",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Thieves steal paintings by Renoir, Cézanne and Matisse from Italian private museum"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f166c1ec9371147e5e74079c98e1235470ede70b",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Spain closes airspace to US planes involved in war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f06c41b51cce08d0cbb75365d133dea94dbe196e",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Fire danger rises in the Plains and Rockies, while the Southwest bakes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bfa56d2a14429506e1d8b96bc041e7195b6dfe9b",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Olivia Munn says free test found her breast cancer despite no symptoms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-30T15:42:30.030Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "17543a870e0b4be6cfb3909091b448cf4a64695a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "UConn beats Notre Dame 70-52 to secure 25th women's Final Four appearance",
       "to_title": null
     }
   ],
