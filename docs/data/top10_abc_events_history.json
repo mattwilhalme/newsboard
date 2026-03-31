@@ -1,108 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-31T13:57:00.408Z",
+  "generatedAt": "2026-03-31T14:58:36.456Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T03:57:17.145Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "64e599d811b065388e9febdf5de5f09b48184af0",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "North Carolina 2026 live primary results: Cooper, Whatley projected to win"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T03:57:17.145Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "70af1902eb5bd4888f51b247dad8115da9a50382",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T03:57:17.145Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3872adb916b7de9ee307b87d199ae39023ea596b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Pentagon IDs 4 American troops killed in Kuwait",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T03:57:17.145Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f5946d4934d62d7ac9b781ccc9999cbe5447a860",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: US embassies 'under direct attack,' Rubio says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T03:57:17.145Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d88cf3d938d745f4df2336a52bbdd80398ff2c8c",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "After US-Israel attack that killed Khamenei, who is running Iran now?",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T03:57:17.145Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c07c69c5cc92c2744e3d9bdc1c1fd63da8a75e16",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "North Carolina 2026 live primary election results",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T03:57:17.145Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "99f207bee589d4bd64f23daa65969696a7e72813",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Arkansas 2026 primary live election results",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T05:08:13.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "1c0500653ee87a904ee8a98afe199476892572b1",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Largest US military base in Middle East hit by missile, Qatar says",
-      "to_title": "Iran live updates: Largest US military base in Middle East hit by missile, Qatar says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T05:08:13.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "c9236e2a38c4f8ae3a511c058316bb62e95fca13",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:Pentagon IDs 4 American troops killed in Kuwait",
-      "to_title": "Related:Pentagon IDs 4 American troops killed in Kuwait"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T05:08:13.639Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "51c2cd9d3cc1ef7eab4bcdc773fe9e987730c3f9",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Texas 2026 live primary election results: Cornyn and Paxton headed to runoff"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-04T05:08:13.639Z",
@@ -30001,6 +29901,106 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Ukraine marks anniversary of Bucha atrocities",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "52024cf347a7ee72228dc4f106dd1502e118085f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingSupreme Court rules against Colorado law banning 'conversion therapy' for minors"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "MOVED",
+      "fingerprint": "0adea9d2f02fc09b018b4bc087d2e93bbf95a5ce",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Israel and Gulf states report new Iranian strikes, tanker hit",
+      "to_title": "Iran live updates: Israel and Gulf states report new Iranian strikes, tanker hit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "MOVED",
+      "fingerprint": "759d1df58290e66ea27ced8cb4b0ac1a3f18071c",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock",
+      "to_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4fe2df4b2540ff4aeade1e98e12cf1837af9a856",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Tiger Woods had 2 hydrocodone pills with him at time of rollover crash: Documents"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "MOVED",
+      "fingerprint": "0ad37265b9d60665e88bbb26f63e9a121b732787",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US",
+      "to_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2bf612219708b34e4c9c25c230236e6892b8cb7e",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "King Charles, Queen Camilla to attend White House banquet: Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "MOVED",
+      "fingerprint": "ff6a755dbf1cf08880ebace2f37779d571dd208d",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race",
+      "to_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1aa7745f53f4d22e3ef9e554f58989564c505ffc",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Tiger Woods had 'bloodshot and glassy' eyes after crash, Court docs say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b0608692bdf6881d79f24393bcfbb2aa720b6808",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "King Charles, Queen Camilla to visit US at Trump's invitation: Palace",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T14:58:47.437Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2867a0e2c009a6ca432f7da355f35fc4b312a51a",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "US Marine detained after explosive round discovered in airport luggage: Police",
       "to_title": null
     }
   ],
