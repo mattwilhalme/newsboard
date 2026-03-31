@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-31T23:21:36.761Z",
+  "generatedAt": "2026-03-31T23:55:02.007Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T23:50:17.495Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "438d43ec1f7ef2bee9f1e336fc2f436cbea2a6c9",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "What to know about 'fireball season' as the number of visible meteors peaks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T23:50:17.495Z",
-      "event_type": "MOVED",
-      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
-      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T23:50:17.495Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Air Canada CEO will retire this year after English-only crash message criticized",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T01:05:40.428Z",
@@ -1331,6 +1301,106 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Tiger Woods had 2 hydrocodone pills with him at time of rollover crash: Documents",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3717d51cecfcdfed4c613685c0d7ab3cd6dd42f",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says Iran doesn't need to make a deal for US to leave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f07fecf86a0e4b41b1083af171327ba52e43d71d",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "70eda7e68a3487c554a3ee01bf632eb101e05bb0",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "MOVED",
+      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Administration must restore legal status for thousands of immigrants, judge rules",
+      "to_title": "Administration must restore legal status for thousands of immigrants, judge rules"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "MOVED",
+      "fingerprint": "430900def831d15628dd31936a1e3fd6a11a12bd",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Court denies bid from families of Boeing 737 Max crash victims to reopen case",
+      "to_title": "Court denies bid from families of Boeing 737 Max crash victims to reopen case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "MOVED",
+      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
+      "to_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "MOVED",
+      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
+      "to_title": "Who are the astronauts on the Artemis II mission to the moon?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "28e87b1983f10447dd3f283701d2510e1ac91ce8",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump thinks Strait will 'automatically open' when US leaves",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "93be1dde2a85086ed80b63fa9d9f2c251f89430a",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "DHS needs to get funded to 'ensure' a safe World Cup, official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T23:55:10.836Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "24f8a16a1f407cdad240727f409e7469b6530ed3",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Army says pilots who did flyby outside Kid Rock's home have been suspended",
       "to_title": null
     }
   ]
