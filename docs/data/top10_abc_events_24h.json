@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-31T22:06:45.486Z",
+  "generatedAt": "2026-03-31T22:50:49.594Z",
   "hours": 24,
   "events": [
     {
@@ -1141,6 +1141,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Artemis II mission to the moon: By the numbers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Administration must restore legal status for thousands of immigrants, judge rules"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "93be1dde2a85086ed80b63fa9d9f2c251f89430a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "DHS needs to get funded to 'ensure' a safe World Cup, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "430900def831d15628dd31936a1e3fd6a11a12bd",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Court denies bid from families of Boeing 737 Max crash victims to reopen case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "MOVED",
+      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
+      "to_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "MOVED",
+      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
+      "to_title": "Who are the astronauts on the Artemis II mission to the moon?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0d4b261b4871de57e91b3f3e962536e4773001af",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "'Construction has to stop!': Federal judge halts White House ballroom construction",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aadbe644c700d50c4e8ed4a6c3ddc5da4feefe2f",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "DOJ told judge emails suggest Maxwell arranged women for Prince Andrew",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T22:51:01.880Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ed652408543f48873daf2f9c8544863403b1a4bf",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Supreme Court rules against Colorado law banning 'conversion therapy' for minors",
       "to_title": null
     }
   ]
