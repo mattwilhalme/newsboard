@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-31T16:05:28.897Z",
+  "generatedAt": "2026-03-31T17:13:43.574Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T05:08:13.639Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7c0f977fb4d4373c15afb1f02adf77536d781131",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "US military assists Ecuador in 1st land operation against cartels: Source"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T05:08:13.639Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "50dec5186e5e8b59ae66783d55bc1f312b3cc11b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingUS Military carries out 1st land operation against cartels in Ecuador: SOUTHCOM",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-04T05:08:13.639Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingSupreme Court rules against Colorado law banning 'conversion therapy' for minors",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T17:13:53.614Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "28e87b1983f10447dd3f283701d2510e1ac91ce8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump thinks Strait will 'automatically open' when US leaves"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T17:13:53.614Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0adea9d2f02fc09b018b4bc087d2e93bbf95a5ce",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Israel and Gulf states report new Iranian strikes, tanker hit",
       "to_title": null
     }
   ],
