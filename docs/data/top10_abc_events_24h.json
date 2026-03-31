@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-31T17:13:43.574Z",
+  "generatedAt": "2026-03-31T18:07:51.651Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T17:37:15.250Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f056c22306efa90e26c1dfcbda94352332046da5",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T17:37:15.250Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "678c790dd104d89640631cd1564b5b78d9174107",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Olivia Munn shares health update after breast cancer battle"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T17:37:15.250Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f46980ca2c8e2bb75b40aa5267aac55057e31453",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump threatens Iran infrastructure strikes if talks fail",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T17:37:15.250Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d2be28779c5c67769a5d9694c645f7b01ae3566a",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Olivia Munn says free test helped find her breast cancer despite no symptoms",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-30T18:37:52.137Z",
@@ -1271,6 +1231,76 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Iran live updates: Israel and Gulf states report new Iranian strikes, tanker hit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T18:08:02.511Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7c5adb14314e6c3a5c181fb6ffe44be8d96c975d",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Army suspends Apache pilots who hovered outside Kid Rock's home: Source"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T18:08:02.511Z",
+      "event_type": "MOVED",
+      "fingerprint": "759d1df58290e66ea27ced8cb4b0ac1a3f18071c",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock",
+      "to_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T18:08:02.511Z",
+      "event_type": "MOVED",
+      "fingerprint": "4fe2df4b2540ff4aeade1e98e12cf1837af9a856",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Tiger Woods had 2 hydrocodone pills with him at time of rollover crash: Documents",
+      "to_title": "Tiger Woods had 2 hydrocodone pills with him at time of rollover crash: Documents"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T18:08:02.511Z",
+      "event_type": "MOVED",
+      "fingerprint": "0ad37265b9d60665e88bbb26f63e9a121b732787",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US",
+      "to_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T18:08:02.511Z",
+      "event_type": "MOVED",
+      "fingerprint": "2bf612219708b34e4c9c25c230236e6892b8cb7e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "King Charles, Queen Camilla to attend White House banquet: Trump",
+      "to_title": "King Charles, Queen Camilla to attend White House banquet: Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T18:08:02.511Z",
+      "event_type": "MOVED",
+      "fingerprint": "ff6a755dbf1cf08880ebace2f37779d571dd208d",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race",
+      "to_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T18:08:02.511Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "98771fbbdde6a89d7bb84968ab2b0edf9166bb8e",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Army says it's reviewing helicopters flying low and hovering near Kid Rock's home",
       "to_title": null
     }
   ]
