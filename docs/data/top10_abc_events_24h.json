@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-31T12:02:42.670Z",
+  "generatedAt": "2026-03-31T13:57:00.408Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T12:42:02.049Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f46980ca2c8e2bb75b40aa5267aac55057e31453",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump threatens Iran infrastructure strikes if talks fail"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T12:42:02.049Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bd0b9a0fc57e57942d7d2f77667b5b2656191c65",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump touts 'big day' in Iran with 'many' strikes",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-30T14:13:13.623Z",
@@ -1251,6 +1231,116 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Israel, Gulf states report new Iranian strikes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1aa7745f53f4d22e3ef9e554f58989564c505ffc",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Tiger Woods had 'bloodshot and glassy' eyes after crash, Court docs say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "MOVED",
+      "fingerprint": "0ad37265b9d60665e88bbb26f63e9a121b732787",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US",
+      "to_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b0608692bdf6881d79f24393bcfbb2aa720b6808",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "King Charles, Queen Camilla to visit US at Trump's invitation: Palace"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "MOVED",
+      "fingerprint": "ff6a755dbf1cf08880ebace2f37779d571dd208d",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race",
+      "to_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "MOVED",
+      "fingerprint": "2867a0e2c009a6ca432f7da355f35fc4b312a51a",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "US Marine detained after explosive round discovered in airport luggage: Police",
+      "to_title": "US Marine detained after explosive round discovered in airport luggage: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d80fc1d1af5e2836c3c5eb4ee3ba77c991951b50",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Artemis II moon mission guide: How to watch, who are the astronauts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a07646ff3bd023cbd19d6c6dfb177866cf903ab2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "DeSantis signs bill to rename airport after Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a30515c7e039edc0ecb4e65cbff517dbdc9ae6e4",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Florida Gov. DeSantis signs bill to rename Palm Beach airport after Trump",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bbd6a9718767f35bad66370050faa41efdc4fd76",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Trump urging Congress to cut recess short to end DHS shutdown, White House says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "438d43ec1f7ef2bee9f1e336fc2f436cbea2a6c9",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "What to know about 'fireball season' as the number of visible meteors peaks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T13:57:10.669Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "67fcc6d924255e997c073fba5d6856a42976d6d5",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Ukraine marks anniversary of Bucha atrocities",
       "to_title": null
     }
   ]
