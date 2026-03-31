@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-31T14:58:36.456Z",
+  "generatedAt": "2026-03-31T16:05:28.897Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T05:08:13.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "64e599d811b065388e9febdf5de5f09b48184af0",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "North Carolina 2026 live primary results: Cooper, Whatley projected to win",
-      "to_title": "North Carolina 2026 live primary results: Cooper, Whatley projected to win"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T05:08:13.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "70af1902eb5bd4888f51b247dad8115da9a50382",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race",
-      "to_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-04T05:08:13.639Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "US Marine detained after explosive round discovered in airport luggage: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T16:05:37.971Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ed652408543f48873daf2f9c8544863403b1a4bf",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Supreme Court rules against Colorado law banning 'conversion therapy' for minors"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T16:05:37.971Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52024cf347a7ee72228dc4f106dd1502e118085f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSupreme Court rules against Colorado law banning 'conversion therapy' for minors",
       "to_title": null
     }
   ],

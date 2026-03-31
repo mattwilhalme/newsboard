@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-31T14:58:36.456Z",
+  "generatedAt": "2026-03-31T16:05:28.897Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "MOVED",
-      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
-      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "MOVED",
-      "fingerprint": "bdf5a6afdc7b537486d4e4de01521c353b47a3fd",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Escaping the Middle East: Inside the rush to evacuate",
-      "to_title": "Escaping the Middle East: Inside the rush to evacuate"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "MOVED",
-      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
-      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d2be28779c5c67769a5d9694c645f7b01ae3566a",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Olivia Munn says free test helped find her breast cancer despite no symptoms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dbd6a19e8c7219bf0eda87876a9619a85e4cc516",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Thieves steal paintings by Renoir, Cézanne and Matisse from Italian private museum"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f166c1ec9371147e5e74079c98e1235470ede70b",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Spain closes airspace to US planes involved in war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f06c41b51cce08d0cbb75365d133dea94dbe196e",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Fire danger rises in the Plains and Rockies, while the Southwest bakes",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bfa56d2a14429506e1d8b96bc041e7195b6dfe9b",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Olivia Munn says free test found her breast cancer despite no symptoms",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "17543a870e0b4be6cfb3909091b448cf4a64695a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "UConn beats Notre Dame 70-52 to secure 25th women's Final Four appearance",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-30T16:40:52.225Z",
@@ -1391,6 +1301,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "US Marine detained after explosive round discovered in airport luggage: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T16:05:37.971Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ed652408543f48873daf2f9c8544863403b1a4bf",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Supreme Court rules against Colorado law banning 'conversion therapy' for minors"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T16:05:37.971Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52024cf347a7ee72228dc4f106dd1502e118085f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSupreme Court rules against Colorado law banning 'conversion therapy' for minors",
       "to_title": null
     }
   ]
