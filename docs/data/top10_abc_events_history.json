@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-31T19:26:38.581Z",
+  "generatedAt": "2026-03-31T20:03:35.216Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T13:37:47.006Z",
-      "event_type": "MOVED",
-      "fingerprint": "70af1902eb5bd4888f51b247dad8115da9a50382",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race",
-      "to_title": "Arkansas 2026 live primary election results: Cotton projected to win GOP Senate race"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T13:37:47.006Z",
-      "event_type": "MOVED",
-      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile",
-      "to_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-04T13:37:47.006Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DeSantis signs bill to rename airport after Trump",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T20:03:45.120Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "24f8a16a1f407cdad240727f409e7469b6530ed3",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Army says pilots who did flyby outside Kid Rock's home have been suspended"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T20:03:45.120Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d13d07b81288ce206aa8df6625e0789246264679",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Army suspends helicopter pilots who did a flyby outside Kid Rock's home: Sources",
       "to_title": null
     }
   ],
