@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-03-31T06:59:09.346Z",
+  "generatedAt": "2026-03-31T08:09:31.755Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T08:02:13.959Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bd0b9a0fc57e57942d7d2f77667b5b2656191c65",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump touts 'big day' in Iran with 'many' strikes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T08:02:13.959Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9b242f6abc254898b300ce461194cfcc10a19cd1",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Scalise on troops in Iran: 'A lot of conversations about what could happen next'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T08:02:13.959Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e83d9ad74b88b7357fdf7198f4a667e4bead9a7b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Scalise on troops in Iran: 'A lot of conversations about what could happen next'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T08:02:13.959Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cba0fca66356e6d33c5175e1dcebc6f1283b6b8c",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Pakistan announces US-Iran talks 'in coming days'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-30T10:45:32.406Z",
@@ -1081,6 +1041,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Eric Dane's final TV performance teased in new 'Euphoria' trailer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T08:09:42.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a05069cc1951b48ca837d48b97d175209f464df",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Japan deploys its first long-range missiles"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T08:09:42.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "21c7e34b51b2667a8ce22e3a92b1f955df126f9d",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Eric Dane appears in new 'Euphoria' trailer",
       "to_title": null
     }
   ]
