@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-03-31T10:17:26.806Z",
+  "generatedAt": "2026-03-31T11:14:41.083Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T23:57:53.786Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "99f207bee589d4bd64f23daa65969696a7e72813",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Arkansas 2026 primary live election results"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-03T23:57:53.786Z",
-      "event_type": "MOVED",
-      "fingerprint": "4c000e0dadee79e7115e2bf87530a1553bb6fbbb",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Iran will 'spread the pain' with more attacks on US Middle East allies, analysts say",
-      "to_title": "Iran will 'spread the pain' with more attacks on US Middle East allies, analysts say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-03T23:57:53.786Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Gas prices soar past $4 a gallon average in US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T11:14:51.443Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0adea9d2f02fc09b018b4bc087d2e93bbf95a5ce",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel and Gulf states report new Iranian strikes, tanker hit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-03-31T11:14:51.443Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "76b0249a9c2c265dc3ee5e9b0fcc3095750bc287",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Israel, Gulf states report new Iranian strikes",
       "to_title": null
     }
   ],
