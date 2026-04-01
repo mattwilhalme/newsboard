@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T07:55:20.969Z",
+  "generatedAt": "2026-04-01T08:55:22.121Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T22:55:47.615Z",
-      "event_type": "MOVED",
-      "fingerprint": "85bc91e1c6199bdaaf484a637708e9733aad64c2",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says",
-      "to_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T22:55:47.615Z",
-      "event_type": "MOVED",
-      "fingerprint": "e7ec9621d0f5a6b368a647784188a2fabcbf3e09",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Florida service member killed in Kuwait was the 'life of the party,' family says",
-      "to_title": "Florida service member killed in Kuwait was the 'life of the party,' family says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T22:55:47.615Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0d4584397224d650c856a2306f41637bb381bbd3",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Lou Holtz, legendary Notre Dame college football coach, dies at 89"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T22:55:47.615Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d117fba6b697ab775b3d597b0e9c3340e5fe539",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Takeaways from the first primaries of the 2026 election cycle",
-      "to_title": "Takeaways from the first primaries of the 2026 election cycle"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T22:55:47.615Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1adb83d8abd88ba64f0aec2d76a1982e7c19a6fb",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "House Dems press Noem on immigration enforcement efforts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T22:55:47.615Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bd7cf082ebbf375a619a0f8c04e970d6b3cf9ae9",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Senate voting on Iran war powers resolution",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T22:55:47.615Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "da97939204f6e755b232e829aa03ec53f1016e4e",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Noem testifies before House committee after grilling from senators",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-04T22:55:47.615Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DHS funding and the World Cup",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a36ab2d179e5b59dca51712c94a3eb9d37a2d8bb",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Artemis II launch: A look back at prior missions to the moon including Apollo 8"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "032a1e25df025b94cd264625a6d1eec9c9fd9f0d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Artemis II mission to the moon: By the numbers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "MOVED",
+      "fingerprint": "f07fecf86a0e4b41b1083af171327ba52e43d71d",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended",
+      "to_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "MOVED",
+      "fingerprint": "70eda7e68a3487c554a3ee01bf632eb101e05bb0",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case",
+      "to_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "MOVED",
+      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Administration must restore legal status for thousands of immigrants, judge rules",
+      "to_title": "Administration must restore legal status for thousands of immigrants, judge rules"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
       "to_title": null
     }
   ],

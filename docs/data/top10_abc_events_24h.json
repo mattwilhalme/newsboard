@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-01T07:55:20.969Z",
+  "generatedAt": "2026-04-01T08:55:22.121Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T08:09:42.638Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2a05069cc1951b48ca837d48b97d175209f464df",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Japan deploys its first long-range missiles"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T08:09:42.638Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "21c7e34b51b2667a8ce22e3a92b1f955df126f9d",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Eric Dane appears in new 'Euphoria' trailer",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T09:17:50.589Z",
@@ -1501,6 +1481,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DHS funding and the World Cup",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a36ab2d179e5b59dca51712c94a3eb9d37a2d8bb",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Artemis II launch: A look back at prior missions to the moon including Apollo 8"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "032a1e25df025b94cd264625a6d1eec9c9fd9f0d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Artemis II mission to the moon: By the numbers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "MOVED",
+      "fingerprint": "f07fecf86a0e4b41b1083af171327ba52e43d71d",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended",
+      "to_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "MOVED",
+      "fingerprint": "70eda7e68a3487c554a3ee01bf632eb101e05bb0",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case",
+      "to_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "MOVED",
+      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Administration must restore legal status for thousands of immigrants, judge rules",
+      "to_title": "Administration must restore legal status for thousands of immigrants, judge rules"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T08:55:32.237Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
       "to_title": null
     }
   ]
