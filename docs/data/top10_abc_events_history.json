@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T04:25:44.664Z",
+  "generatedAt": "2026-04-01T06:11:17.262Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "MOVED",
-      "fingerprint": "da97939204f6e755b232e829aa03ec53f1016e4e",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Noem testifies before House committee after grilling from senators",
-      "to_title": "Noem testifies before House committee after grilling from senators"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "MOVED",
-      "fingerprint": "9615110f5e44d7a1e0bf91227baf3407fdeaa8c7",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile",
-      "to_title": "As war with Iran stretches on, concerns rise over US interceptor stockpile"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8f7a46d6a33136702ca6756028a42f7f12eafe9e",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Nancy Guthrie latest: Recovered glove is dead-end"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6e9dde47e952af0ed61123dc036de4fd70d65f43",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Iowa soldier killed in Kuwait remembered by family as ‘smart and kind’",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-04T21:55:04.901Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Taylor Swift faces trademark infringement lawsuit over 'Showgirl' album",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T06:11:27.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
+      "to_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T06:11:27.185Z",
+      "event_type": "MOVED",
+      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
+      "to_title": "Who are the astronauts on the Artemis II mission to the moon?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T06:11:27.185Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f4b6ad40501294664b8b156c85475a9d26bb5c51",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "DHS funding and the World Cup"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T06:11:27.185Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "430900def831d15628dd31936a1e3fd6a11a12bd",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Court denies bid from families of Boeing 737 Max crash victims to reopen case",
       "to_title": null
     }
   ],
