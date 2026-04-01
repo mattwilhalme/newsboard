@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T19:18:57.722Z",
+  "generatedAt": "2026-04-01T20:05:48.271Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:08:22.138Z",
-      "event_type": "MOVED",
-      "fingerprint": "f165a0e3325da1006728692e4950e528ee600e60",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared",
-      "to_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:08:22.138Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "681291bf8cb8e87903a6de575e5753bbbf69c5e4",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "American woman speaks out after escaping Middle East amid Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:08:22.138Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "396094f35d920619ab18e6cee979927e5c520cef",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "bfb262821de513c43044677181037fcbdfdaeca4",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS",
-      "to_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d7073f016a0a760af1fa7c8d65122f9860933935",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Trump fires DHS secretary Kristi Noem, replaces her with Sen. Markwayne Mullin"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "d92c15848051c9c35cd00edd6ce49f6c763b3e2b",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says",
-      "to_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "070ebbcd13a72055bf640d799fe7d240f44a666a",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "House fails to adopt Iran war powers resolution"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
-      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": "Britney Spears arrested in California"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T21:50:56.554Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "13f846046ae5b8ea92a4d9b2297e3a5cda8be243",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Johnson, Thune announce plan to end DHS shutdown 'in the coming days'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "MOVED",
+      "fingerprint": "7d6c5d0e553cc4b96959c7bcea6b1f4387b5fed3",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Trump is considering withdrawing US from NATO",
+      "to_title": "Iran live updates: Trump is considering withdrawing US from NATO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "MOVED",
+      "fingerprint": "dd2f2470dc305fc3b835007e9fa3baf3c52d2d37",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Supreme Court appears skeptical of Trump's case to end birthright citizenship",
+      "to_title": "Supreme Court appears skeptical of Trump's case to end birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "MOVED",
+      "fingerprint": "58f34d35d67a4fb93c21f77f10fcf33c67874c0e",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Luigi Mangione's federal trial pushed from September to October",
+      "to_title": "Luigi Mangione's federal trial pushed from September to October"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "MOVED",
+      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
+      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "MOVED",
+      "fingerprint": "cfd5fe59095f59d80651881d754788c3f4e8d1f2",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Trump to address nation with 'important update' on Iran",
+      "to_title": "Trump to address nation with 'important update' on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "MOVED",
+      "fingerprint": "6113c25511a5b298440d1a45f532d9a593595801",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea",
+      "to_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "MOVED",
+      "fingerprint": "2c1afdbdf9972f87af77c3f6e3a3419a219ff618",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Iran war timeline: 1 month of escalating strikes, broadening conflict",
+      "to_title": "Iran war timeline: 1 month of escalating strikes, broadening conflict"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T20:05:59.273Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eac2f76d5f0aef7e0ace840b5efe13d33730f80e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "King Charles III to address Congress on April 28, leaders say",
       "to_title": null
     }
   ],
