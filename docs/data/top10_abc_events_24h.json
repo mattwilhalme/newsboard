@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-01T16:06:30.391Z",
+  "generatedAt": "2026-04-01T17:10:41.994Z",
   "hours": 24,
   "events": [
     {
@@ -1791,6 +1791,146 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Luigi Mangione back in court to try to push back federal trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "81658023eecc35eb94af648f36baa39f781df7e5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Justices question administration's 'quirky' arguments in birthright citizenship case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4757922fc1e60a15b9364672472077d35081c81e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump rails against birthright citizenship after attending Supreme Court arguments"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "6a35e75e690e5c1d2119c3f51316e2e24893b713",
+      "from_rank": 6,
+      "to_rank": 3,
+      "from_title": "Artemis II live updates: Weather favorable for launch today, forecast shows",
+      "to_title": "Artemis II live updates: Weather favorable for launch today, forecast shows"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7d6c5d0e553cc4b96959c7bcea6b1f4387b5fed3",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump is considering withdrawing US from NATO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "58f34d35d67a4fb93c21f77f10fcf33c67874c0e",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "Luigi Mangione's federal trial pushed from September to October",
+      "to_title": "Luigi Mangione's federal trial pushed from September to October"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
+      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "cfd5fe59095f59d80651881d754788c3f4e8d1f2",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Trump to address nation with 'important update' on Iran",
+      "to_title": "Trump to address nation with 'important update' on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "6113c25511a5b298440d1a45f532d9a593595801",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea",
+      "to_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
+      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eac2f76d5f0aef7e0ace840b5efe13d33730f80e",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "King Charles III to address Congress on April 28, leaders say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f788e71fbaac5a7e3d955a90caaf7cdcb354b8e8",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump, in historic first, attends Supreme Court arguments on birthright citizenship",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "089dea53f01ba779b2175f92b7f6af424ee4119f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "What to know about SCOTUS hearing on Trump's bid to end birthright citizenship",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "517b3c4902f96618132030a5b31d09b0d194a669",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "SCOTUS hears birthright citizenship arguments",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T17:10:52.010Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a44e9d4bb82b64242bc72f120f2e146eb1602d95",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: As Iran continues attacks, Trump says 'ceasefire' requested",
       "to_title": null
     }
   ]
