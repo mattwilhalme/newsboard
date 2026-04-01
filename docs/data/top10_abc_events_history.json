@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T18:03:35.581Z",
+  "generatedAt": "2026-04-01T19:18:57.722Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T20:42:08.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Gen-Z identical twins model civility as political foes",
-      "to_title": "Gen-Z identical twins model civility as political foes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T20:42:08.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "f165a0e3325da1006728692e4950e528ee600e60",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared",
-      "to_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T20:42:08.933Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9abe45c849efe119c21c0191bd9f289a77f3a1c4",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingTrump fires DHS Sec. Kristi Noem, appoints Sen. Markwayne Mullin",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T20:42:08.933Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5e16731ac2da8ad1880e15e39ba757587b58563a",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Noem's testimony on contracts 'false,' Democratic senator claims",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T20:42:08.933Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "69db55a71ab3f7d3e7242cfcaa6c831ad1095da5",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "No chance asteroid will slam into the moon in 2032, NASA says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:08:22.138Z",
-      "event_type": "MOVED",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
-      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:08:22.138Z",
-      "event_type": "MOVED",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": "Britney Spears arrested in California"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:08:22.138Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Gen-Z identical twins model civility as political foes",
-      "to_title": "Gen-Z identical twins model civility as political foes"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T21:08:22.138Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Justices question administration's 'quirky' arguments in birthright citizenship case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4df8b33063f5c37ca2e26e3964cbe61ca8298931",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingArtemis II astronauts on board Orion crew module"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6911cb79990455af2ff25989611e089456e7cc67",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Artemis II mission to the moon: By the numbers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "MOVED",
+      "fingerprint": "7d6c5d0e553cc4b96959c7bcea6b1f4387b5fed3",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Trump is considering withdrawing US from NATO",
+      "to_title": "Iran live updates: Trump is considering withdrawing US from NATO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "MOVED",
+      "fingerprint": "dd2f2470dc305fc3b835007e9fa3baf3c52d2d37",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "Supreme Court appears skeptical of Trump's case to end birthright citizenship",
+      "to_title": "Supreme Court appears skeptical of Trump's case to end birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2c1afdbdf9972f87af77c3f6e3a3419a219ff618",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Iran war timeline: 1 month of escalating strikes, broadening conflict"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4757922fc1e60a15b9364672472077d35081c81e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump rails against birthright citizenship after attending Supreme Court arguments",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6a35e75e690e5c1d2119c3f51316e2e24893b713",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Weather favorable for launch today, forecast shows",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T19:19:08.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
       "to_title": null
     }
   ],
