@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T20:05:48.271Z",
+  "generatedAt": "2026-04-01T21:00:29.803Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Gen-Z identical twins model civility as political foes",
-      "to_title": "Gen-Z identical twins model civility as political foes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "f165a0e3325da1006728692e4950e528ee600e60",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared",
-      "to_title": "Nancy Guthrie latest: Person who left DNA on recovered glove has been cleared"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "MOVED",
-      "fingerprint": "681291bf8cb8e87903a6de575e5753bbbf69c5e4",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "American woman speaks out after escaping Middle East amid Iran war",
-      "to_title": "American woman speaks out after escaping Middle East amid Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "69db55a71ab3f7d3e7242cfcaa6c831ad1095da5",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "No chance asteroid will slam into the moon in 2032, NASA says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T21:50:56.554Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "446c2fdb170441098e0c03c393aef5fbd79c85c1",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Trump fires DHS secretary Kristi Noem, replaces her with Sen. Markwayne Mullin",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T21:50:56.554Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "King Charles III to address Congress on April 28, leaders say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T21:00:40.746Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2fe113490a118a111e17b169a04abc8747aa1326",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Artemis II live updates: NASA troubleshooting flight termination system issue"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T21:00:40.746Z",
+      "event_type": "MOVED",
+      "fingerprint": "13f846046ae5b8ea92a4d9b2297e3a5cda8be243",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Johnson, Thune announce plan to end DHS shutdown 'in the coming days'",
+      "to_title": "Johnson, Thune announce plan to end DHS shutdown 'in the coming days'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T21:00:40.746Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "032a1e25df025b94cd264625a6d1eec9c9fd9f0d",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Artemis II mission to the moon: By the numbers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T21:00:40.746Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4df8b33063f5c37ca2e26e3964cbe61ca8298931",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingArtemis II astronauts on board Orion crew module",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T21:00:40.746Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6911cb79990455af2ff25989611e089456e7cc67",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Artemis II mission to the moon: By the numbers",
       "to_title": null
     }
   ],
