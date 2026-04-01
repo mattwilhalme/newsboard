@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-01T08:55:22.121Z",
+  "generatedAt": "2026-04-01T10:01:19.998Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "76b0249a9c2c265dc3ee5e9b0fcc3095750bc287",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Israel, Gulf states report new Iranian strikes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0ad37265b9d60665e88bbb26f63e9a121b732787",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ff6a755dbf1cf08880ebace2f37779d571dd208d",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "a30515c7e039edc0ecb4e65cbff517dbdc9ae6e4",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "Florida Gov. DeSantis signs bill to rename Palm Beach airport after Trump",
-      "to_title": "Florida Gov. DeSantis signs bill to rename Palm Beach airport after Trump"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "2867a0e2c009a6ca432f7da355f35fc4b312a51a",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "US Marine detained after explosive round discovered in airport luggage: Police",
-      "to_title": "US Marine detained after explosive round discovered in airport luggage: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "bbd6a9718767f35bad66370050faa41efdc4fd76",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Trump urging Congress to cut recess short to end DHS shutdown, White House says",
-      "to_title": "Trump urging Congress to cut recess short to end DHS shutdown, White House says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "c6a7bdc4bd634f98ea3761817178ac3efb6cec1b",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI",
-      "to_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "98771fbbdde6a89d7bb84968ab2b0edf9166bb8e",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Army says it's reviewing helicopters flying low and hovering near Kid Rock's home",
-      "to_title": "Army says it's reviewing helicopters flying low and hovering near Kid Rock's home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "950e00370a180a796d7a97378029a47424857e69",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Gas prices soar past $4 a gallon average in US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f056c22306efa90e26c1dfcbda94352332046da5",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "aadf05bb51d9304e314ce440e1e95f1ed530881a",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "TSA officers receive their 1st paychecks in weeks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f64a2b3ed9e5d4a817cd0b94380e6aa1feb89932",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "52-year-old elephant returned safely after escaping zoo enclosure",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T09:17:50.589Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2a05069cc1951b48ca837d48b97d175209f464df",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Japan deploys its first long-range missiles",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T10:17:37.005Z",
@@ -1551,6 +1421,176 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "60bf52e25ea1a0cf4a4bfff0ca69776cd7d21495",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "White House signals it seeks a diplomatic solution in Iran: Experts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f17bd7a60f41a2b7fe41d2fccb5901a2dcdea64f",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump touts talks with hardline Iranian leader, but says 'we know where he lives'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "MOVED",
+      "fingerprint": "705e6f1d19da143e4f5734ddd0a7c17452d9ea17",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Missile fire injures 14 people in Israel, emergency service says",
+      "to_title": "Iran live updates: Missile fire injures 14 people in Israel, emergency service says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ee1690ea16037f84d67f28e3ddeb8cc566cc5bfb",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Supreme Court hears Trump bid to end birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "638d52ea2647b98b316f2571ea892a5fa1cf5752",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
+      "from_rank": 3,
+      "to_rank": 7,
+      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
+      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6fa932bf79afb45799e80ef4387531e72f6cd12f",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Hiker's dog lost in forest rescued by helicopter after strangers fund search"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9c182ef6aa6447508622c7fe1d365b628924c193",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "What life will be like for Artemis II astronauts inside the tiny Orion spacecraft"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "MOVED",
+      "fingerprint": "97902f3fdc279dca89b71da73fa96d4f82e79ac3",
+      "from_rank": 4,
+      "to_rank": 10,
+      "from_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest",
+      "to_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "564ed9e7c2f0afa0dbb60edf10807f65cd5b3a30",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump touts talks with hardline Iranian leader, but says 'we know where he lives'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a36ab2d179e5b59dca51712c94a3eb9d37a2d8bb",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Artemis II launch: A look back at prior missions to the moon including Apollo 8",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "032a1e25df025b94cd264625a6d1eec9c9fd9f0d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Artemis II mission to the moon: By the numbers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f07fecf86a0e4b41b1083af171327ba52e43d71d",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "70eda7e68a3487c554a3ee01bf632eb101e05bb0",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Administration must restore legal status for thousands of immigrants, judge rules",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T10:01:30.922Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e01440303ae1adcc5dcfcebef200d7202dd426a5",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Russian military plane crashes killing 29 people",
       "to_title": null
     }
   ]
