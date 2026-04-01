@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-01T10:01:19.998Z",
+  "generatedAt": "2026-04-01T11:06:27.840Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "759d1df58290e66ea27ced8cb4b0ac1a3f18071c",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "MOVED",
-      "fingerprint": "0ad37265b9d60665e88bbb26f63e9a121b732787",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US",
-      "to_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "MOVED",
-      "fingerprint": "ff6a755dbf1cf08880ebace2f37779d571dd208d",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race",
-      "to_title": "With no Musk, voters see 'less intense and noisy' Wisconsin Supreme Court race"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "MOVED",
-      "fingerprint": "a30515c7e039edc0ecb4e65cbff517dbdc9ae6e4",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Florida Gov. DeSantis signs bill to rename Palm Beach airport after Trump",
-      "to_title": "Florida Gov. DeSantis signs bill to rename Palm Beach airport after Trump"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "MOVED",
-      "fingerprint": "2867a0e2c009a6ca432f7da355f35fc4b312a51a",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "US Marine detained after explosive round discovered in airport luggage: Police",
-      "to_title": "US Marine detained after explosive round discovered in airport luggage: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "MOVED",
-      "fingerprint": "bbd6a9718767f35bad66370050faa41efdc4fd76",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Trump urging Congress to cut recess short to end DHS shutdown, White House says",
-      "to_title": "Trump urging Congress to cut recess short to end DHS shutdown, White House says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "67fcc6d924255e997c073fba5d6856a42976d6d5",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Ukraine marks anniversary of Bucha atrocities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c6a7bdc4bd634f98ea3761817178ac3efb6cec1b",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T10:17:37.005Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "950e00370a180a796d7a97378029a47424857e69",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Gas prices soar past $4 a gallon average in US",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T11:14:51.443Z",
@@ -1591,6 +1501,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Russian military plane crashes killing 29 people",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3de1c445cc919a981b8705ce5dc61f73ad2d516c",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Window for launch opens today"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "MOVED",
+      "fingerprint": "ee1690ea16037f84d67f28e3ddeb8cc566cc5bfb",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Supreme Court hears Trump bid to end birthright citizenship",
+      "to_title": "Supreme Court hears Trump bid to end birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "MOVED",
+      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
+      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "MOVED",
+      "fingerprint": "638d52ea2647b98b316f2571ea892a5fa1cf5752",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US",
+      "to_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
+      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "MOVED",
+      "fingerprint": "6fa932bf79afb45799e80ef4387531e72f6cd12f",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Hiker's dog lost in forest rescued by helicopter after strangers fund search",
+      "to_title": "Hiker's dog lost in forest rescued by helicopter after strangers fund search"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c182ef6aa6447508622c7fe1d365b628924c193",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "What life will be like for Artemis II astronauts inside the tiny Orion spacecraft",
+      "to_title": "What life will be like for Artemis II astronauts inside the tiny Orion spacecraft"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T11:06:38.308Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "97902f3fdc279dca89b71da73fa96d4f82e79ac3",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest",
       "to_title": null
     }
   ]
