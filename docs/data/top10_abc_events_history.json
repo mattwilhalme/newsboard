@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T14:57:57.193Z",
+  "generatedAt": "2026-04-01T16:06:30.391Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "21db40927b32f45a03fe1d2f18acf747cd8f292c",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "House Oversight Committee votes to subpoena Bondi over Epstein investigation",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0d4584397224d650c856a2306f41637bb381bbd3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Lou Holtz, legendary Notre Dame college football coach, dies at 89",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:04:12.011Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9abe45c849efe119c21c0191bd9f289a77f3a1c4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingTrump fires DHS Sec. Kristi Noem, appoints Sen. Markwayne Mullin"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:04:12.011Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5e16731ac2da8ad1880e15e39ba757587b58563a",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Noem's testimony on contracts 'false,' Democratic senator claims"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:04:12.011Z",
-      "event_type": "MOVED",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": "Britney Spears arrested in California"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:04:12.011Z",
-      "event_type": "MOVED",
-      "fingerprint": "8e2f0dea0516880cb1d8f741f35c094745974538",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "House primed to vote on Iran war powers resolution",
-      "to_title": "House primed to vote on Iran war powers resolution"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:04:12.011Z",
-      "event_type": "MOVED",
-      "fingerprint": "d92c15848051c9c35cd00edd6ce49f6c763b3e2b",
-      "from_rank": 1,
-      "to_rank": 5,
-      "from_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says",
-      "to_title": "Iran live updates: US torpedo attack on Iran warship 'an atrocity' minister says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T19:04:12.011Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T19:04:12.011Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "517b3c4902f96618132030a5b31d09b0d194a669",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "SCOTUS hears birthright citizenship arguments"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a44e9d4bb82b64242bc72f120f2e146eb1602d95",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: As Iran continues attacks, Trump says 'ceasefire' requested"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6a35e75e690e5c1d2119c3f51316e2e24893b713",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Weather favorable for launch today, forecast shows"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "58f34d35d67a4fb93c21f77f10fcf33c67874c0e",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Luigi Mangione's federal trial pushed from September to October"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6be823600e63cbd18931fa20b011596c62390f99",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "SCOTUS birthright citizenship arguments underway",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "59179ce08d45246becb0eea763384501303ed759",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says Iran's 'new regime president' asked for ceasefire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3de1c445cc919a981b8705ce5dc61f73ad2d516c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Window for launch opens today",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T16:06:40.657Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7b23a54589535bf3efe02117c133f228a4fc54ba",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Luigi Mangione back in court to try to push back federal trial",
       "to_title": null
     }
   ],
