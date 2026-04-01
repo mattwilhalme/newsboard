@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T22:24:12.456Z",
+  "generatedAt": "2026-04-01T23:02:40.938Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T23:31:47.597Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "df70053a225dde23923cad7962e2af014dc867bf",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "House GOP leadership asks Rep. Tony Gonzales to drop reelection bid"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T23:31:47.597Z",
-      "event_type": "MOVED",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": "Britney Spears arrested in California"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T23:31:47.597Z",
-      "event_type": "MOVED",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
-      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T23:31:47.597Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Gen-Z identical twins model civility as political foes",
-      "to_title": "Gen-Z identical twins model civility as political foes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T23:31:47.597Z",
-      "event_type": "MOVED",
-      "fingerprint": "681291bf8cb8e87903a6de575e5753bbbf69c5e4",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "American woman speaks out after escaping Middle East amid Iran war",
-      "to_title": "American woman speaks out after escaping Middle East amid Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T23:31:47.597Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "69db55a71ab3f7d3e7242cfcaa6c831ad1095da5",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "No chance asteroid will slam into the moon in 2032, NASA says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T23:31:47.597Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "446c2fdb170441098e0c03c393aef5fbd79c85c1",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Trump fires DHS secretary Kristi Noem, replaces her with Sen. Markwayne Mullin",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T23:31:47.597Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T23:02:51.345Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2068be465b13ff59d9bb17fcf9e7c0691b55e971",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Artemis II crew lifts off, crosses boundary into space"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T23:02:51.345Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6911cb79990455af2ff25989611e089456e7cc67",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Artemis II mission to the moon: By the numbers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T23:02:51.345Z",
+      "event_type": "MOVED",
+      "fingerprint": "7d6c5d0e553cc4b96959c7bcea6b1f4387b5fed3",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Trump is considering withdrawing US from NATO",
+      "to_title": "Iran live updates: Trump is considering withdrawing US from NATO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T23:02:51.345Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cfd5fe59095f59d80651881d754788c3f4e8d1f2",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump to address nation with 'important update' on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T23:02:51.345Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c29d9f26c130c87a8ccc3a4090dda0c912408006",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: NASA closeout crew departs launch pad",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T23:02:51.345Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8e2e0ce341fa5f10a83f134ba4e0b582bb044cff",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Johnson, Thune announce plan to end DHS shutdown but could face long road",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T23:02:51.345Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "831ad33a40273146a984975017a37bef8158fc1e",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump to address nation on Iran",
       "to_title": null
     }
   ],
