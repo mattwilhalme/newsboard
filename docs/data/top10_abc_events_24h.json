@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-01T17:10:41.994Z",
+  "generatedAt": "2026-04-01T18:03:35.581Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T17:13:53.614Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "28e87b1983f10447dd3f283701d2510e1ac91ce8",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump thinks Strait will 'automatically open' when US leaves"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T17:13:53.614Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0adea9d2f02fc09b018b4bc087d2e93bbf95a5ce",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: Israel and Gulf states report new Iranian strikes, tanker hit",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T18:08:02.511Z",
@@ -1931,6 +1911,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Iran live updates: As Iran continues attacks, Trump says 'ceasefire' requested",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T18:03:45.652Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dd2f2470dc305fc3b835007e9fa3baf3c52d2d37",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Supreme Court appears skeptical of Trump's case to end birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T18:03:45.652Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "81658023eecc35eb94af648f36baa39f781df7e5",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Justices question administration's 'quirky' arguments in birthright citizenship case",
       "to_title": null
     }
   ]

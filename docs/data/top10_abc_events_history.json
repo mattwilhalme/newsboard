@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T17:10:41.994Z",
+  "generatedAt": "2026-04-01T18:03:35.581Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T20:42:08.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
-      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T20:42:08.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": "Britney Spears arrested in California"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T20:42:08.933Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Iran live updates: As Iran continues attacks, Trump says 'ceasefire' requested",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T18:03:45.652Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dd2f2470dc305fc3b835007e9fa3baf3c52d2d37",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Supreme Court appears skeptical of Trump's case to end birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T18:03:45.652Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "81658023eecc35eb94af648f36baa39f781df7e5",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Justices question administration's 'quirky' arguments in birthright citizenship case",
       "to_title": null
     }
   ],
