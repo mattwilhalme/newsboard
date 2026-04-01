@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T13:48:51.824Z",
+  "generatedAt": "2026-04-01T14:57:57.193Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T14:53:50.559Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "85bc91e1c6199bdaaf484a637708e9733aad64c2",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "US killed Iranian leader behind Trump assassination plot, Hegseth says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T15:39:37.033Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b4723e5bf563c7e129896e6b1a4c8cb4bb6af9a1",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Israel hits Beirut with strikes as Iran's proxy force in Lebanon opens up a 2nd front"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T15:39:37.033Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Britney Spears arrested in California"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T15:39:37.033Z",
-      "event_type": "MOVED",
-      "fingerprint": "396094f35d920619ab18e6cee979927e5c520cef",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says",
-      "to_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T15:39:37.033Z",
-      "event_type": "MOVED",
-      "fingerprint": "7eb2ba702bff243cb774344c1a29463626f42155",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Building where US troops were killed was largely unfortified: Officials",
-      "to_title": "Building where US troops were killed was largely unfortified: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T15:39:37.033Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Gen-Z identical twins model civility as political foes",
-      "to_title": "Gen-Z identical twins model civility as political foes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T15:39:37.033Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1755574acb2c42e46aaa5ead0f10c786c1fdba7a",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Pentagon identifies all 6 American troops killed in Kuwait amid Iran war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T15:39:37.033Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "23913c46f8c1cc87165b11ee8d8fe8806948f8d2",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "DHS puts man on 'worst of the worst' list, removes him after questioning",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b44551fc6883fb24f710892d4e34f97cc4ac17b3",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8e2f0dea0516880cb1d8f741f35c094745974538",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "House primed to vote on Iran war powers resolution"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "MOVED",
-      "fingerprint": "396094f35d920619ab18e6cee979927e5c520cef",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says",
-      "to_title": "Charter flights set to return stranded Americans amid Iran war, State Dept. says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "MOVED",
-      "fingerprint": "7eb2ba702bff243cb774344c1a29463626f42155",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Building where US troops were killed was largely unfortified: Officials",
-      "to_title": "Building where US troops were killed was largely unfortified: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "MOVED",
-      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Gen-Z identical twins model civility as political foes",
-      "to_title": "Gen-Z identical twins model civility as political foes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "69db55a71ab3f7d3e7242cfcaa6c831ad1095da5",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "No chance asteroid will slam into the moon in 2032, NASA says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-05T17:41:38.416Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b4723e5bf563c7e129896e6b1a4c8cb4bb6af9a1",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Israel hits Beirut with strikes as Iran's proxy force in Lebanon opens up a 2nd front",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-05T17:41:38.416Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "What life will be like for Artemis II astronauts inside the tiny Orion spacecraft",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f788e71fbaac5a7e3d955a90caaf7cdcb354b8e8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump, in historic first, attends Supreme Court arguments on birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "089dea53f01ba779b2175f92b7f6af424ee4119f",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "What to know about SCOTUS hearing on Trump's bid to end birthright citizenship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6be823600e63cbd18931fa20b011596c62390f99",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "SCOTUS birthright citizenship arguments underway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "MOVED",
+      "fingerprint": "59179ce08d45246becb0eea763384501303ed759",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Trump says Iran's 'new regime president' asked for ceasefire",
+      "to_title": "Iran live updates: Trump says Iran's 'new regime president' asked for ceasefire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cfd5fe59095f59d80651881d754788c3f4e8d1f2",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Trump to address nation with 'important update' on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "MOVED",
+      "fingerprint": "3de1c445cc919a981b8705ce5dc61f73ad2d516c",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Artemis II live updates: Window for launch opens today",
+      "to_title": "Artemis II live updates: Window for launch opens today"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7b23a54589535bf3efe02117c133f228a4fc54ba",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Luigi Mangione back in court to try to push back federal trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "MOVED",
+      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
+      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "MOVED",
+      "fingerprint": "6113c25511a5b298440d1a45f532d9a593595801",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea",
+      "to_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
+      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "367d8813bf050d8e72509a85f345d6ca5fe3513c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:White House signals it seeks a diplomatic solution in Iran: Experts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ed086d0d700adff7398cacbf5d32813e225c5263",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Luigi Mangione returning to court to try to delay federal trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ee1690ea16037f84d67f28e3ddeb8cc566cc5bfb",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Supreme Court hears Trump bid to end birthright citizenship",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6fa932bf79afb45799e80ef4387531e72f6cd12f",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Hiker's dog lost in forest rescued by helicopter after strangers fund search",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T14:58:07.253Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "97902f3fdc279dca89b71da73fa96d4f82e79ac3",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest",
       "to_title": null
     }
   ],
