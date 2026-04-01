@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-01T01:21:53.627Z",
+  "generatedAt": "2026-04-01T04:25:44.664Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T20:19:34.230Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2fc349e4f3fae25a665cf5c9499f9ed4f212bc43",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Senate to vote on Iran war powers resolution"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T20:19:34.230Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2d5b4dba4006ec7546f1cf060e627329d613d914",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Senate to vote on Democrats' Iran war powers resolution",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T20:19:34.230Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "69aef01cfb644d7d2cb98aadcbebbc48c4af1874",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Recall of frozen food products expanded to over 30 million pounds",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:23:16.893Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bd7cf082ebbf375a619a0f8c04e970d6b3cf9ae9",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Senate voting on Iran war powers resolution"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:23:16.893Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2fc349e4f3fae25a665cf5c9499f9ed4f212bc43",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Senate to vote on Iran war powers resolution",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e7ec9621d0f5a6b368a647784188a2fabcbf3e09",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Florida service member killed in Kuwait was the 'life of the party,' family says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "MOVED",
-      "fingerprint": "bd7cf082ebbf375a619a0f8c04e970d6b3cf9ae9",
-      "from_rank": 9,
-      "to_rank": 5,
-      "from_title": "Senate voting on Iran war powers resolution",
-      "to_title": "Senate voting on Iran war powers resolution"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "21db40927b32f45a03fe1d2f18acf747cd8f292c",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "House Oversight Committee votes to subpoena Bondi over Epstein investigation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-04T21:55:04.901Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d117fba6b697ab775b3d597b0e9c3340e5fe539",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Takeaways from the first primaries of the 2026 election cycle",
-      "to_title": "Takeaways from the first primaries of the 2026 election cycle"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-04T21:55:04.901Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "97902f3fdc279dca89b71da73fa96d4f82e79ac3",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest",
+      "to_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "f07fecf86a0e4b41b1083af171327ba52e43d71d",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended",
+      "to_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "70eda7e68a3487c554a3ee01bf632eb101e05bb0",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case",
+      "to_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Administration must restore legal status for thousands of immigrants, judge rules",
+      "to_title": "Administration must restore legal status for thousands of immigrants, judge rules"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "430900def831d15628dd31936a1e3fd6a11a12bd",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Court denies bid from families of Boeing 737 Max crash victims to reopen case",
+      "to_title": "Court denies bid from families of Boeing 737 Max crash victims to reopen case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
+      "to_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
+      "to_title": "Who are the astronauts on the Artemis II mission to the moon?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-01T04:25:53.519Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "22d35d319ea5e57f61ab5009be5a135178d467ff",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Taylor Swift faces trademark infringement lawsuit over 'Showgirl' album",
       "to_title": null
     }
   ],
