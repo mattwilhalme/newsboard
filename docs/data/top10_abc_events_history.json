@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T17:34:26.723Z",
+  "generatedAt": "2026-04-02T19:33:04.663Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "62d2e9df5aad387e64927ee7a6d0133bef0fa022",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Jobs report shows US unexpectedly lost jobs in February",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d995ea5293faf196670aff9efb38f407d7eadf31",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Dow drops 650 points as Iran war sends oil prices surging",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T17:05:59.277Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f0ad81a73edb98d3659b20fbf7e4fe496ff877bb",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T17:05:59.277Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8209818c03f212e37560729b9b0ecdaecc4d7aca",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Jobs report shows surprise losses as markets roil, gas prices surge",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c3c807413c6707b7f5145ca61353112476af21e5",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Israel batters suburbs of Beirut, targeting Hezbollah amid war with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "MOVED",
-      "fingerprint": "bec56b49e1ad7b558bd5917211a7b740adcad3dc",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "US sinking of Iranian ship raises questions of legality",
-      "to_title": "US sinking of Iranian ship raises questions of legality"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f80afb1f9eeced5ca9edaaee056c39324891eea4",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Former Presidents Clinton, Obama and Biden honor Jesse Jackson at Friday service"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "MOVED",
-      "fingerprint": "f0ad81a73edb98d3659b20fbf7e4fe496ff877bb",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report",
-      "to_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1886b9b18e84a5b11ccba81a13cd8797f52a4444",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "MOVED",
-      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
-      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "64799bdee09827537f84bc3c4dc9fb14e2b54a0d",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:How much is the war with Iran costing the US?",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T18:31:26.085Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e9f72f018b98b187b781db3c3d62e7f604322f7e",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T18:31:26.085Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump says he'll sign order to pay all DHS employees as shutdown continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1b4f11e875273f828ba4ff9bd27c091a034be187",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew awakened for day 2 of mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2fb351f5f9b8d471782ff605d1efdd2a4e51e27",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Senators demand answers from Hegseth over reported defense investment inquiry",
+      "to_title": "Senators demand answers from Hegseth over reported defense investment inquiry"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "MOVED",
+      "fingerprint": "2fac401831397bad16042b8b209c185a3b8b1259",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech",
+      "to_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "MOVED",
+      "fingerprint": "6b138a56a6ea8d188791e8d910d7c5e12dc42ba6",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem",
+      "to_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "43722e4cae1e01cb6f88ae1977693d05cb72a43a",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Suspect arrested in killing of 7-month-old baby shot in stroller, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9143ce449ba61081753541edd73fe9755098c9a9",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Stocks dip after Trump says war will continue"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4ae6f5f7b417c32d577750354a7c361068e6a0cf",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump says he'll sign order to pay all DHS workers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "69ee99afc2285db9bd9b76f4eebf9ec2bee4336a",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52814fc5c1e68185dcf23fd391ef29f133503d87",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Stocks tick lower after Trump vows to hit Iran 'extremely hard' in coming weeks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T19:33:15.479Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f46140d8e42b534684c57d99f3299f89ed4d1991",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "4.6 magnitude earthquake rattles California",
       "to_title": null
     }
   ],
