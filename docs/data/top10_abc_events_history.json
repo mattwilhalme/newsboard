@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T00:05:55.493Z",
+  "generatedAt": "2026-04-02T03:23:55.506Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0acd6703d2a45041bcf93a4060c83f4539648360",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "MOVED",
-      "fingerprint": "df70053a225dde23923cad7962e2af014dc867bf",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "House GOP leadership asks Rep. Tony Gonzales to drop reelection bid",
-      "to_title": "House GOP leadership asks Rep. Tony Gonzales to drop reelection bid"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "MOVED",
-      "fingerprint": "80547ff95a8c1d97c97682c0d6e6dbc41a62e424",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Israel bombards Beirut with strikes as conflict with Iran widens",
-      "to_title": "Israel bombards Beirut with strikes as conflict with Iran widens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "645a48d89d4b8a50e03806216efc413fa969f403",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "This is how much ice Antarctica has lost over the last 30 years"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "MOVED",
-      "fingerprint": "69db55a71ab3f7d3e7242cfcaa6c831ad1095da5",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "No chance asteroid will slam into the moon in 2032, NASA says",
-      "to_title": "No chance asteroid will slam into the moon in 2032, NASA says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "MOVED",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": "Britney Spears arrested in California"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d7073f016a0a760af1fa7c8d65122f9860933935",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump fires DHS secretary Kristi Noem, replaces her with Sen. Markwayne Mullin",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "070ebbcd13a72055bf640d799fe7d240f44a666a",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "House fails to adopt Iran war powers resolution",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c9598ec299ad4d22bd01a4219bfc4c3cdc54847e",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Antarctica has lost ice 10 times the size of Los Angeles over the last 30 years",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T02:50:48.489Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a9644715ebff8596e716c85e0f6a5eafe6cb5794",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Gen-Z identical twins model civility as political foes",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T05:31:18.237Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T05:31:18.237Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "df70053a225dde23923cad7962e2af014dc867bf",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "House GOP leadership asks Rep. Tony Gonzales to drop reelection bid",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T07:08:12.776Z",
-      "event_type": "MOVED",
-      "fingerprint": "10300115f85a439bd3b2fda7b0461584ceb68fc3",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Trump offers immunity or 'guaranteed death' to Iranian forces",
-      "to_title": "Iran live updates: Trump offers immunity or 'guaranteed death' to Iranian forces"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T07:08:12.776Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "08693de11858c834be45ebefa80410a069e9f085",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Hegseth says US has enough munitions to continue Iran war 'as long as we need to'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T07:08:12.776Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T07:08:12.776Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran war timeline: 1 month of escalating strikes, broadening conflict",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3a7d4ad5fe57c28093224a2d615d7252ebe66683",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says US objectives in Iran 'nearing completion'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "97e02b6bf48306099cdbbc38ddcd998bf3a522a8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump tells nation that Iran is no longer a threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a64170dd15a33f645a0b52bedb5ed3800e349980",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew enters high Earth orbit, are in 'great spirits'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7c945c69eac6fd98a91f1751938fe9e3212e7a7a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Trump has discussed removing Pam Bondi as attorney general, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "MOVED",
+      "fingerprint": "8e2e0ce341fa5f10a83f134ba4e0b582bb044cff",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Johnson, Thune announce plan to end DHS shutdown but could face long road",
+      "to_title": "Johnson, Thune announce plan to end DHS shutdown but could face long road"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "MOVED",
+      "fingerprint": "08c5c660353969d508517ff290209241cb829b2e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case",
+      "to_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "MOVED",
+      "fingerprint": "16f1cf4d42c932e6183a369f6262af95b3de8357",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Quadruple amputee cornhole champion acted in self-defense in fatal shooting: Attorney",
+      "to_title": "Quadruple amputee cornhole champion acted in self-defense in fatal shooting: Attorney"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "MOVED",
+      "fingerprint": "0db9bd87665ff75f4aee326df1e1aed4fbb934d7",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Luigi Mangione's state trial pushed to September, federal trial pushed to October",
+      "to_title": "Luigi Mangione's state trial pushed to September, federal trial pushed to October"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "MOVED",
+      "fingerprint": "613a1d3b5d6fc0de15a7f35d3e704d2e1966fe03",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say",
+      "to_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d742d30b37774c0d3fbae38d1bcd7c474da0adde",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew lifts off, crosses boundary into space",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "62a658de753e8f7d3dc148a8998c403226c2d2dc",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:How NASA plans on keeping astronauts safe during Artemis II moon mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7d6c5d0e553cc4b96959c7bcea6b1f4387b5fed3",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump is considering withdrawing US from NATO",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cfd5fe59095f59d80651881d754788c3f4e8d1f2",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Trump to address nation with 'important update' on Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T03:24:05.546Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0b4888bf6e10492ecd77287ab53e821ad69ad723",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Woman allegedly throws substance on former Fleetwood Mac member: Sources",
       "to_title": null
     }
   ],
