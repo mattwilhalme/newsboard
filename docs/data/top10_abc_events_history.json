@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T15:46:50.025Z",
+  "generatedAt": "2026-04-02T16:41:27.534Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "6ffec152a979054a3f23777417a0e51aed5ea60e",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Trump says 'no deal with Iran except unconditional surrender'",
-      "to_title": "Iran live updates: Trump says 'no deal with Iran except unconditional surrender'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "64799bdee09827537f84bc3c4dc9fb14e2b54a0d",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:How much is the war with Iran costing the US?",
-      "to_title": "Related:How much is the war with Iran costing the US?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "DOJ releases previously withheld FBI reports about allegation against Trump",
-      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "62d2e9df5aad387e64927ee7a6d0133bef0fa022",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Jobs report shows US unexpectedly lost jobs in February"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d995ea5293faf196670aff9efb38f407d7eadf31",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Dow drops 650 points as Iran war sends oil prices surging"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "e9f72f018b98b187b781db3c3d62e7f604322f7e",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service",
-      "to_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T15:52:40.223Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
+      "from_rank": 1,
+      "to_rank": 1,
+      "from_title": "Trump says he’ll sign order to pay all DHS employees as shutdown continues",
+      "to_title": "Trump says he'll sign order to pay all DHS employees as shutdown continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2fac401831397bad16042b8b209c185a3b8b1259",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6b138a56a6ea8d188791e8d910d7c5e12dc42ba6",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "MOVED",
+      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
+      "to_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "187ea02d9e9f8b1967f67a4c7245b5957f569e10",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "163d445f53722aea9bd7910acd678379d57c1761",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "The AI industry is all in for the 2026 midterms with government regulations looming",
       "to_title": null
     }
   ],

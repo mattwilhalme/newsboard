@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-02T15:46:50.025Z",
+  "generatedAt": "2026-04-02T16:41:27.534Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "517b3c4902f96618132030a5b31d09b0d194a669",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "SCOTUS hears birthright citizenship arguments"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a44e9d4bb82b64242bc72f120f2e146eb1602d95",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran live updates: As Iran continues attacks, Trump says 'ceasefire' requested"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6a35e75e690e5c1d2119c3f51316e2e24893b713",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Weather favorable for launch today, forecast shows"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "58f34d35d67a4fb93c21f77f10fcf33c67874c0e",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Luigi Mangione's federal trial pushed from September to October"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6be823600e63cbd18931fa20b011596c62390f99",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "SCOTUS birthright citizenship arguments underway",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "59179ce08d45246becb0eea763384501303ed759",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says Iran's 'new regime president' asked for ceasefire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3de1c445cc919a981b8705ce5dc61f73ad2d516c",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Window for launch opens today",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7b23a54589535bf3efe02117c133f228a4fc54ba",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Luigi Mangione back in court to try to push back federal trial",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T17:10:52.010Z",
@@ -1421,6 +1341,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
+      "from_rank": 1,
+      "to_rank": 1,
+      "from_title": "Trump says he’ll sign order to pay all DHS employees as shutdown continues",
+      "to_title": "Trump says he'll sign order to pay all DHS employees as shutdown continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2fac401831397bad16042b8b209c185a3b8b1259",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6b138a56a6ea8d188791e8d910d7c5e12dc42ba6",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "MOVED",
+      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
+      "to_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "187ea02d9e9f8b1967f67a4c7245b5957f569e10",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T16:41:37.963Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "163d445f53722aea9bd7910acd678379d57c1761",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "The AI industry is all in for the 2026 midterms with government regulations looming",
       "to_title": null
     }
   ]
