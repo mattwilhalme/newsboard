@@ -1,158 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-02T14:51:22.425Z",
+  "generatedAt": "2026-04-02T15:46:50.025Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f788e71fbaac5a7e3d955a90caaf7cdcb354b8e8",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump, in historic first, attends Supreme Court arguments on birthright citizenship"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "089dea53f01ba779b2175f92b7f6af424ee4119f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "What to know about SCOTUS hearing on Trump's bid to end birthright citizenship"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6be823600e63cbd18931fa20b011596c62390f99",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "SCOTUS birthright citizenship arguments underway"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "MOVED",
-      "fingerprint": "59179ce08d45246becb0eea763384501303ed759",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Iran live updates: Trump says Iran's 'new regime president' asked for ceasefire",
-      "to_title": "Iran live updates: Trump says Iran's 'new regime president' asked for ceasefire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cfd5fe59095f59d80651881d754788c3f4e8d1f2",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Trump to address nation with 'important update' on Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "MOVED",
-      "fingerprint": "3de1c445cc919a981b8705ce5dc61f73ad2d516c",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Artemis II live updates: Window for launch opens today",
-      "to_title": "Artemis II live updates: Window for launch opens today"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7b23a54589535bf3efe02117c133f228a4fc54ba",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Luigi Mangione back in court to try to push back federal trial"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "MOVED",
-      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
-      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "MOVED",
-      "fingerprint": "6113c25511a5b298440d1a45f532d9a593595801",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea",
-      "to_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "MOVED",
-      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
-      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "367d8813bf050d8e72509a85f345d6ca5fe3513c",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:White House signals it seeks a diplomatic solution in Iran: Experts",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ed086d0d700adff7398cacbf5d32813e225c5263",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Luigi Mangione returning to court to try to delay federal trial",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ee1690ea16037f84d67f28e3ddeb8cc566cc5bfb",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Supreme Court hears Trump bid to end birthright citizenship",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6fa932bf79afb45799e80ef4387531e72f6cd12f",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Hiker's dog lost in forest rescued by helicopter after strangers fund search",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T14:58:07.253Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "97902f3fdc279dca89b71da73fa96d4f82e79ac3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T16:06:40.657Z",
@@ -1441,6 +1291,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Quadruple amputee cornhole champion acted in self-defense in fatal shooting: Attorney",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump says he’ll sign order to pay all DHS employees as shutdown continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cf5b5b40c2c32d78a7e7c072b57f60700fade59e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks tick lower after Trump vows to hit Iran 'extremely hard' in coming weeks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "69ee99afc2285db9bd9b76f4eebf9ec2bee4336a",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon",
+      "to_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2fb351f5f9b8d471782ff605d1efdd2a4e51e27",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Senators demand answers from Hegseth over reported defense investment inquiry",
+      "to_title": "Senators demand answers from Hegseth over reported defense investment inquiry"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "187ea02d9e9f8b1967f67a4c7245b5957f569e10",
+      "from_rank": 2,
+      "to_rank": 5,
+      "from_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat",
+      "to_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "7c945c69eac6fd98a91f1751938fe9e3212e7a7a",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Trump has discussed removing Pam Bondi as attorney general, sources say",
+      "to_title": "Trump has discussed removing Pam Bondi as attorney general, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
+      "to_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "271f39ae5440f6e3ed39ff4e52e130509b9e4996",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Josh Allen, Hailee Steinfeld announce birth of 1st child"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "163d445f53722aea9bd7910acd678379d57c1761",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "The AI industry is all in for the 2026 midterms with government regulations looming",
+      "to_title": "The AI industry is all in for the 2026 midterms with government regulations looming"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "08c5c660353969d508517ff290209241cb829b2e",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case",
+      "to_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9715ecc7e2fd64a117723004735f99b8206cb582",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingStocks tumble after Trump vows to hit Iran 'extremely hard'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8528db15a2d64540c7303c73a1cd0999aa24413c",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump tells nation that Iran is no longer a threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "613a1d3b5d6fc0de15a7f35d3e704d2e1966fe03",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say",
       "to_title": null
     }
   ]

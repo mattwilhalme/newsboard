@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T14:51:22.425Z",
+  "generatedAt": "2026-04-02T15:46:50.025Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T13:44:45.412Z",
-      "event_type": "MOVED",
-      "fingerprint": "0acd6703d2a45041bcf93a4060c83f4539648360",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones",
-      "to_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T13:44:45.412Z",
-      "event_type": "MOVED",
-      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
-      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T13:44:45.412Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4827def75d72ae5565f40db8f7702dbc7c966d02",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Bryan Pata murder case ends in mistrial 20 years after football star’s killing",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T13:44:45.412Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Britney Spears arrested in California",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8602eafec0f442e7786508c4cc2ac71b994afb15",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingJobs report shows US unexpectedly lost jobs in February"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6ffec152a979054a3f23777417a0e51aed5ea60e",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says 'no deal with Iran except unconditional surrender'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "64799bdee09827537f84bc3c4dc9fb14e2b54a0d",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:How much is the war with Iran costing the US?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "MOVED",
-      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
-      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d6140d6a529528bdfd0dd5983e0e98c33a6a35fe",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Britney Spears arrested in California"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9da3066b4d59ed5ddde0f6bbd9c0d1763b28314c",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingJobs report shows U.S. unexpectedly lost jobs in February",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1a21862e975e1a2361014f51e90d57d633168f14",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: US ramping up strikes on Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "08693de11858c834be45ebefa80410a069e9f085",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Related:Hegseth says US has enough munitions to continue Iran war 'as long as we need to'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T14:26:51.724Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0acd6703d2a45041bcf93a4060c83f4539648360",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "US, Gulf states requesting Ukrainian interceptors to down Iranian drones",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T15:52:40.223Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Quadruple amputee cornhole champion acted in self-defense in fatal shooting: Attorney",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump says he’ll sign order to pay all DHS employees as shutdown continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cf5b5b40c2c32d78a7e7c072b57f60700fade59e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks tick lower after Trump vows to hit Iran 'extremely hard' in coming weeks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "69ee99afc2285db9bd9b76f4eebf9ec2bee4336a",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon",
+      "to_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2fb351f5f9b8d471782ff605d1efdd2a4e51e27",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Senators demand answers from Hegseth over reported defense investment inquiry",
+      "to_title": "Senators demand answers from Hegseth over reported defense investment inquiry"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "187ea02d9e9f8b1967f67a4c7245b5957f569e10",
+      "from_rank": 2,
+      "to_rank": 5,
+      "from_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat",
+      "to_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "7c945c69eac6fd98a91f1751938fe9e3212e7a7a",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Trump has discussed removing Pam Bondi as attorney general, sources say",
+      "to_title": "Trump has discussed removing Pam Bondi as attorney general, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
+      "to_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "271f39ae5440f6e3ed39ff4e52e130509b9e4996",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Josh Allen, Hailee Steinfeld announce birth of 1st child"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "163d445f53722aea9bd7910acd678379d57c1761",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "The AI industry is all in for the 2026 midterms with government regulations looming",
+      "to_title": "The AI industry is all in for the 2026 midterms with government regulations looming"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "MOVED",
+      "fingerprint": "08c5c660353969d508517ff290209241cb829b2e",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case",
+      "to_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9715ecc7e2fd64a117723004735f99b8206cb582",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingStocks tumble after Trump vows to hit Iran 'extremely hard'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8528db15a2d64540c7303c73a1cd0999aa24413c",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump tells nation that Iran is no longer a threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T15:46:59.914Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "613a1d3b5d6fc0de15a7f35d3e704d2e1966fe03",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say",
       "to_title": null
     }
   ],
