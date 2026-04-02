@@ -1,178 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-02T09:45:52.669Z",
+  "generatedAt": "2026-04-02T10:38:50.653Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "60bf52e25ea1a0cf4a4bfff0ca69776cd7d21495",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "White House signals it seeks a diplomatic solution in Iran: Experts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f17bd7a60f41a2b7fe41d2fccb5901a2dcdea64f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Trump touts talks with hardline Iranian leader, but says 'we know where he lives'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "MOVED",
-      "fingerprint": "705e6f1d19da143e4f5734ddd0a7c17452d9ea17",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Missile fire injures 14 people in Israel, emergency service says",
-      "to_title": "Iran live updates: Missile fire injures 14 people in Israel, emergency service says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ee1690ea16037f84d67f28e3ddeb8cc566cc5bfb",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Supreme Court hears Trump bid to end birthright citizenship"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "638d52ea2647b98b316f2571ea892a5fa1cf5752",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "MOVED",
-      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
-      "from_rank": 3,
-      "to_rank": 7,
-      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
-      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6fa932bf79afb45799e80ef4387531e72f6cd12f",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Hiker's dog lost in forest rescued by helicopter after strangers fund search"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9c182ef6aa6447508622c7fe1d365b628924c193",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "What life will be like for Artemis II astronauts inside the tiny Orion spacecraft"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "MOVED",
-      "fingerprint": "97902f3fdc279dca89b71da73fa96d4f82e79ac3",
-      "from_rank": 4,
-      "to_rank": 10,
-      "from_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest",
-      "to_title": "Tiger Woods says he will step away and 'seek treatment' following car crash arrest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "564ed9e7c2f0afa0dbb60edf10807f65cd5b3a30",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump touts talks with hardline Iranian leader, but says 'we know where he lives'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a36ab2d179e5b59dca51712c94a3eb9d37a2d8bb",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Artemis II launch: A look back at prior missions to the moon including Apollo 8",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "032a1e25df025b94cd264625a6d1eec9c9fd9f0d",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Artemis II mission to the moon: By the numbers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f07fecf86a0e4b41b1083af171327ba52e43d71d",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Hegseth says pilots who did flyby outside Kid Rock's home are no longer suspended",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "70eda7e68a3487c554a3ee01bf632eb101e05bb0",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Administration must restore legal status for thousands of immigrants, judge rules",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e01440303ae1adcc5dcfcebef200d7202dd426a5",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Russian military plane crashes killing 29 people",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T11:06:38.308Z",
@@ -1711,6 +1541,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Luigi Mangione's state trial pushed to September, federal trial pushed to October",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "187ea02d9e9f8b1967f67a4c7245b5957f569e10",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "69ee99afc2285db9bd9b76f4eebf9ec2bee4336a",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c2fb351f5f9b8d471782ff605d1efdd2a4e51e27",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Senators demand answers from Hegseth over reported defense investment inquiry"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "MOVED",
+      "fingerprint": "163d445f53722aea9bd7910acd678379d57c1761",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "The AI industry is all in for the 2026 midterms with government regulations looming",
+      "to_title": "The AI industry is all in for the 2026 midterms with government regulations looming"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "MOVED",
+      "fingerprint": "7c945c69eac6fd98a91f1751938fe9e3212e7a7a",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Trump has discussed removing Pam Bondi as attorney general, sources say",
+      "to_title": "Trump has discussed removing Pam Bondi as attorney general, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "MOVED",
+      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
+      "to_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "00db10840d13327decb9c1d9ca45e2ad52ee42aa",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Israel, UAE, Saudi Arabia report drone and missile attacks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a64170dd15a33f645a0b52bedb5ed3800e349980",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew enters high Earth orbit, are in 'great spirits'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T10:39:01.361Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8e2e0ce341fa5f10a83f134ba4e0b582bb044cff",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Johnson, Thune announce plan to end DHS shutdown but could face long road",
       "to_title": null
     }
   ]
