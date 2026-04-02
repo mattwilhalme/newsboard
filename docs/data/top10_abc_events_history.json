@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T16:41:27.534Z",
+  "generatedAt": "2026-04-02T17:34:26.723Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "How a rising football star's life was cut short",
-      "to_title": "How a rising football star's life was cut short"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8602eafec0f442e7786508c4cc2ac71b994afb15",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingJobs report shows US unexpectedly lost jobs in February",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T15:52:40.223Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bfb262821de513c43044677181037fcbdfdaeca4",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "'Going to be practical': Sen. Markwayne Mullin on being named to replace Noem at DHS",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8209818c03f212e37560729b9b0ecdaecc4d7aca",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Jobs report shows surprise losses as markets roil, gas prices surge"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "MOVED",
-      "fingerprint": "e9f72f018b98b187b781db3c3d62e7f604322f7e",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service",
-      "to_title": "Former Presidents Clinton, Obama and Biden to honor Jesse Jackson at Friday service"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "How a rising football star's life was cut short",
-      "to_title": "How a rising football star's life was cut short"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "MOVED",
-      "fingerprint": "6397dde1575e0130d1b51c4c3d3bdcd41638b235",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer",
-      "to_title": "Rep. Tony Gonzales drops reelection bid after admitting relationship with staffer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d21ac6082108ec1cd4eca71c7d7f0e20948cf5b5",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "'Harry Potter' stars Daniel Radcliffe, Tom Felton reunite on Broadway"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T16:25:32.471Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "35f6a3ec0c0a301f3a7b8f747a2b71d0de84bdbf",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Analysis of GLP-1 drugs suggests people who stopped using regained 60% of weight lost"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T16:25:32.471Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "The AI industry is all in for the 2026 midterms with government regulations looming",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4ae6f5f7b417c32d577750354a7c361068e6a0cf",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump says he'll sign order to pay all DHS workers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e2389f503df4611f4b5176a3f427228c9475c6bc",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "MOVED",
+      "fingerprint": "6b138a56a6ea8d188791e8d910d7c5e12dc42ba6",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem",
+      "to_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "52814fc5c1e68185dcf23fd391ef29f133503d87",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Stocks tick lower after Trump vows to hit Iran 'extremely hard' in coming weeks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f46140d8e42b534684c57d99f3299f89ed4d1991",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "4.6 magnitude earthquake rattles California"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump says he'll sign order to pay all DHS employees as shutdown continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cf5b5b40c2c32d78a7e7c072b57f60700fade59e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Stocks tick lower after Trump vows to hit Iran 'extremely hard' in coming weeks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7c945c69eac6fd98a91f1751938fe9e3212e7a7a",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Trump has discussed removing Pam Bondi as attorney general, sources say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T17:34:38.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "08c5c660353969d508517ff290209241cb829b2e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case",
       "to_title": null
     }
   ],
