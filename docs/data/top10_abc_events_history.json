@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T23:04:19.474Z",
+  "generatedAt": "2026-04-02T23:48:23.539Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "bec56b49e1ad7b558bd5917211a7b740adcad3dc",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "US sinking of Iranian ship raises questions of legality",
-      "to_title": "US sinking of Iranian ship raises questions of legality"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "1886b9b18e84a5b11ccba81a13cd8797f52a4444",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app",
-      "to_title": "Trapped skier speaks out after wife helps locate him with 'Find My' app"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "How a rising football star's life was cut short",
-      "to_title": "How a rising football star's life was cut short"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "1ef1bb133417b36e5d4239e5288493a491daa809",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together",
-      "to_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "07bc5cb9b84e4f3c236f8eb783e67d26f50db586",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Six Flags to sell 7 of its parks across US, Canada",
-      "to_title": "Six Flags to sell 7 of its parks across US, Canada"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "975db4a2bd63418d4b967e91c36a2884b6578480",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Jobs report shows US lost jobs in February"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c3c807413c6707b7f5145ca61353112476af21e5",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Israel batters suburbs of Beirut, targeting Hezbollah amid war with Iran",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T21:06:14.974Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingBlake Lively's lawsuit against Justin Baldoni gutted by judge",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:48:34.170Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b2c5550f677e194f573226aaf4fffe4639c6acc0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Justice Department says Trump can keep his presidential records"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:48:34.170Z",
+      "event_type": "MOVED",
+      "fingerprint": "2ef915b5927b0bb25023aa4c300842ac63df1f47",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Hegseth ousts Army Chief of Staff Gen. Randy George",
+      "to_title": "Hegseth ousts Army Chief of Staff Gen. Randy George"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:48:34.170Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in",
+      "to_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:48:34.170Z",
+      "event_type": "MOVED",
+      "fingerprint": "5378b4a9953882b1a0ef41c7189b9348f92cc3c2",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges",
+      "to_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:48:34.170Z",
+      "event_type": "MOVED",
+      "fingerprint": "535d19f21125ce938ad2e6b56cdd7f661bd4499d",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals",
+      "to_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:48:34.170Z",
+      "event_type": "MOVED",
+      "fingerprint": "e2389f503df4611f4b5176a3f427228c9475c6bc",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'",
+      "to_title": "Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:48:34.170Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c2fb351f5f9b8d471782ff605d1efdd2a4e51e27",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Senators demand answers from Hegseth over reported defense investment inquiry",
       "to_title": null
     }
   ],
