@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-02T06:44:47.545Z",
+  "generatedAt": "2026-04-02T07:52:53.881Z",
   "hours": 24,
   "events": [
     {
@@ -1721,6 +1721,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Woman allegedly throws substance on former Fleetwood Mac member: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T07:53:04.199Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "00db10840d13327decb9c1d9ca45e2ad52ee42aa",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel, UAE, Saudi Arabia report drone and missile attacks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T07:53:04.199Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3a7d4ad5fe57c28093224a2d615d7252ebe66683",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says US objectives in Iran 'nearing completion'",
       "to_title": null
     }
   ]
