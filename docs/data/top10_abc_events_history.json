@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T21:58:47.863Z",
+  "generatedAt": "2026-04-02T22:32:44.031Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T20:47:54.000Z",
-      "event_type": "MOVED",
-      "fingerprint": "1ef1bb133417b36e5d4239e5288493a491daa809",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together",
-      "to_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T20:47:54.000Z",
-      "event_type": "MOVED",
-      "fingerprint": "07bc5cb9b84e4f3c236f8eb783e67d26f50db586",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Six Flags to sell 7 of its parks across US, Canada",
-      "to_title": "Six Flags to sell 7 of its parks across US, Canada"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T20:47:54.000Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Baby in stroller killed in NYC shooting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T22:32:54.174Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7e5029fcf0aff7c07d5f0973c5ed2ed18312cd9a",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Abducted journalist underwent kidnap training"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T22:32:54.174Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9aaa553e68e86da96c5a71ffde9479c1826222d0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Stocks close mixed after Trump vows continued war",
       "to_title": null
     }
   ],

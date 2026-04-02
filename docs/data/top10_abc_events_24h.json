@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-02T21:58:47.863Z",
+  "generatedAt": "2026-04-02T22:32:44.031Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T22:24:23.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c29d9f26c130c87a8ccc3a4090dda0c912408006",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Artemis II live updates: NASA closeout crew departs launch pad"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T22:24:23.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3dec91b18381062a82f73e60291731df34f1187c",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "'Off the charts': Iran war drives near-record fuel surcharges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T22:24:23.407Z",
-      "event_type": "MOVED",
-      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
-      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T22:24:23.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1a0ccd2287ba68563602795c0562c1bc0b680c0c",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: NASA resolves flight termination issue, closes 2nd hatch",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T22:24:23.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6113c25511a5b298440d1a45f532d9a593595801",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Rescuers give up hope for the humpback whale stranded in the Baltic Sea",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T23:02:51.345Z",
@@ -1491,6 +1441,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Baby in stroller killed in NYC shooting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T22:32:54.174Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7e5029fcf0aff7c07d5f0973c5ed2ed18312cd9a",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Abducted journalist underwent kidnap training"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T22:32:54.174Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9aaa553e68e86da96c5a71ffde9479c1826222d0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Stocks close mixed after Trump vows continued war",
       "to_title": null
     }
   ]
