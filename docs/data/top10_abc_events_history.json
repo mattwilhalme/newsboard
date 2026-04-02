@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T22:32:44.031Z",
+  "generatedAt": "2026-04-02T23:04:19.474Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T20:47:54.000Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b6aafea0913f6422895672f3b8a5211641d394f9",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingUS believes Russia is providing Iran intelligence, sources say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T20:47:54.000Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "205cd65dff52d3407cf12e8b2aaa6624881698d9",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Three presidents honor Jesse Jackson in Chicago",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T20:47:54.000Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "975db4a2bd63418d4b967e91c36a2884b6578480",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Jobs report shows US lost jobs in February",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b07e1288a27d50029fa2b07f4ba1d34311e8fad2",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Obama honors Jesse Jackson's 'legacy of hope'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "47a2e89168502d0b79d70c65c55710fdba00eb55",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: US believes Russia is providing Iran intelligence, sources say",
-      "to_title": "Iran live updates: US believes Russia is providing Iran intelligence, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "830352180982849f99fcdd23b5904d613942a998",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Former University of Michigan coach Sherrone Moore takes plea deal",
-      "to_title": "Former University of Michigan coach Sherrone Moore takes plea deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:06:14.974Z",
-      "event_type": "MOVED",
-      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "DOJ releases previously withheld FBI reports about allegation against Trump",
-      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T21:06:14.974Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Stocks close mixed after Trump vows continued war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:04:29.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "5ca3b3fad839160e3f17a78cdfc8e75492b5e76f",
+      "from_rank": 6,
+      "to_rank": 1,
+      "from_title": "Artemis II live updates: Crucial translunar injection burn is a 'go'",
+      "to_title": "Artemis II live updates: Crucial translunar injection burn is a 'go'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:04:29.551Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e429d6649878657cbade5fbe90497df87088c8be",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Judge dismisses much of Blake Lively's lawsuit against Justin Baldoni"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:04:29.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "2ef915b5927b0bb25023aa4c300842ac63df1f47",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Hegseth ousts Army Chief of Staff Gen. Randy George",
+      "to_title": "Hegseth ousts Army Chief of Staff Gen. Randy George"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:04:29.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in",
+      "to_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:04:29.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "5378b4a9953882b1a0ef41c7189b9348f92cc3c2",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges",
+      "to_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:04:29.551Z",
+      "event_type": "MOVED",
+      "fingerprint": "535d19f21125ce938ad2e6b56cdd7f661bd4499d",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals",
+      "to_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T23:04:29.551Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b3d3510e65c795d65c102b8a2181e059623dd58a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingBlake Lively's lawsuit against Justin Baldoni gutted by judge",
       "to_title": null
     }
   ],
