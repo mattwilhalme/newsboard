@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-02T20:05:40.745Z",
+  "generatedAt": "2026-04-02T20:50:49.083Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T19:49:32.189Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a7a755cec640d9a2dca7e38366edd365488247",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "How a rising football star's life was cut short",
-      "to_title": "How a rising football star's life was cut short"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T19:49:32.189Z",
-      "event_type": "MOVED",
-      "fingerprint": "f0ad81a73edb98d3659b20fbf7e4fe496ff877bb",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report",
-      "to_title": "US lost 92,000 jobs as markets roil, gas prices surge: Report"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T19:49:32.189Z",
-      "event_type": "MOVED",
-      "fingerprint": "1ef1bb133417b36e5d4239e5288493a491daa809",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together",
-      "to_title": "‘Harry Potter’ stars reunite again on Broadway 15 years after last movie together"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T19:49:32.189Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "07bc5cb9b84e4f3c236f8eb783e67d26f50db586",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Six Flags to sell 7 of its parks across US, Canada"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T19:49:32.189Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b75493161d9ca64b1a80d864cc3aa107673811eb",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Dow falls 650 points as Iran war hikes oil prices"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T19:49:32.189Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6ffec152a979054a3f23777417a0e51aed5ea60e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says 'no deal with Iran except unconditional surrender'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T19:49:32.189Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Stocks dip after Trump says war will continue",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T20:50:59.065Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c95e5cee3c5209af30d00c09ca80572479389b0d",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump slaps 100% tariff on some pharmaceutical drugs via executive order"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T20:50:59.065Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b61f21231c9fa4c8d30445ab4e6ef082a36619e9",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crucial trans-lunar injection burn is a 'go'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T20:50:59.065Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "12396b903bedbc047a24bd562d9f25dc68b8e96c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says US blew up 3 big Iranian bridges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T20:50:59.065Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Trump says he'll sign order to pay all DHS employees as shutdown continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T20:50:59.065Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1b4f11e875273f828ba4ff9bd27c091a034be187",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew awakened for day 2 of mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-02T20:50:59.065Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2fac401831397bad16042b8b209c185a3b8b1259",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech",
       "to_title": null
     }
   ],
