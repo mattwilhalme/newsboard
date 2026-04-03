@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-03T17:51:15.848Z",
+  "generatedAt": "2026-04-03T18:29:18.573Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:25:34.482Z",
-      "event_type": "MOVED",
-      "fingerprint": "830352180982849f99fcdd23b5904d613942a998",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Former University of Michigan coach Sherrone Moore takes plea deal",
-      "to_title": "Former University of Michigan coach Sherrone Moore takes plea deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:25:34.482Z",
-      "event_type": "MOVED",
-      "fingerprint": "6d75ee967da269e500df6863d7d8ef8f08a28597",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "Harry Styles drops cinematic 'American Girls' music video",
-      "to_title": "Harry Styles drops cinematic 'American Girls' music video"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:25:34.482Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7cf381e8e313e4af25f7a30bd8d414c990035be8",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Faith leaders seek access to ICE detention centers during Lent and Ramadan",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:47:21.907Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "640da592d640937acb41ddb175a4c2fafa78ae26",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Severe weather continues to churn as death toll from US storms reaches 8"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:47:21.907Z",
-      "event_type": "MOVED",
-      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
-      "to_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-07T20:47:21.907Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Italy coach out after losing World Cup qualifier",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T18:29:29.502Z",
+      "event_type": "MOVED",
+      "fingerprint": "f50e31a81df3ecf52ccf6cdc05dc0b33d2e082d6",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "US fighter jet down in Iran: 1 crew member rescued as search continues, officials say",
+      "to_title": "US fighter jet down in Iran: 1 crew member rescued as search continues, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T18:29:29.502Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6ea26935d1e13e882a5c211d9c607e2a8130c671",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Trump says US could open Strait of Hormuz, seize oil"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T18:29:29.502Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7c1c555a51d4cfb9fbcd642566d2a47b3321d99e",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "United Airlines raises checked bag fees: What travelers should know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T18:29:29.502Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c3401be742144116002add2887e34af8e8848caf",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingOne crew member aboard the downed fighter jet has been rescued: US official",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T18:29:29.502Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2bb134712360bee500081c87e067c4619bdb85f8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Some TSA officers say they're still hurting after receiving backpay",
       "to_title": null
     }
   ],
