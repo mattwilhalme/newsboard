@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-03T19:54:50.763Z",
+  "generatedAt": "2026-04-03T20:24:30.840Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T23:47:54.159Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "640da592d640937acb41ddb175a4c2fafa78ae26",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Severe weather continues to churn as death toll from US storms reaches 8",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T02:14:49.354Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2af337adb774ed3e4038a8132d6ff042400ec95a",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T02:14:49.354Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "United Airlines raises checked bag fees: What travelers should know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T20:24:40.447Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bd388cad74243495946f0d544a08a4e2a3c0b942",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: A-10 aircraft also crashes in Persian Gulf region, pilot safe"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T20:24:40.447Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ccb12ed2e153b717ca8ac3535a968054b0a67e0c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Iran continues to fire dozens of missiles, drones toward Gulf",
       "to_title": null
     }
   ],
