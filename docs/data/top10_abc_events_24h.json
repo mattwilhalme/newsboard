@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-03T18:29:18.573Z",
+  "generatedAt": "2026-04-03T19:54:50.763Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fd0ae5ce18f35608dc611b3f8acc0aace6c3067d",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump says he'll sign order to pay all DHS employees as shutdown continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1b4f11e875273f828ba4ff9bd27c091a034be187",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Crew awakened for day 2 of mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "MOVED",
-      "fingerprint": "c2fb351f5f9b8d471782ff605d1efdd2a4e51e27",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Senators demand answers from Hegseth over reported defense investment inquiry",
-      "to_title": "Senators demand answers from Hegseth over reported defense investment inquiry"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "MOVED",
-      "fingerprint": "2fac401831397bad16042b8b209c185a3b8b1259",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech",
-      "to_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "MOVED",
-      "fingerprint": "6b138a56a6ea8d188791e8d910d7c5e12dc42ba6",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem",
-      "to_title": "DHS inspector general probing contracts handled by ex-Secretary Kristi Noem"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "43722e4cae1e01cb6f88ae1977693d05cb72a43a",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Suspect arrested in killing of 7-month-old baby shot in stroller, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9143ce449ba61081753541edd73fe9755098c9a9",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Stocks dip after Trump says war will continue"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4ae6f5f7b417c32d577750354a7c361068e6a0cf",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Trump says he'll sign order to pay all DHS workers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "69ee99afc2285db9bd9b76f4eebf9ec2bee4336a",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "52814fc5c1e68185dcf23fd391ef29f133503d87",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Stocks tick lower after Trump vows to hit Iran 'extremely hard' in coming weeks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T19:33:15.479Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f46140d8e42b534684c57d99f3299f89ed4d1991",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "4.6 magnitude earthquake rattles California",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T20:05:50.947Z",
@@ -1621,6 +1491,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Some TSA officers say they're still hurting after receiving backpay",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ccb12ed2e153b717ca8ac3535a968054b0a67e0c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Iran continues to fire dozens of missiles, drones toward Gulf"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0a60a736acb374ffe0f2555341d43d76b115f434",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "2 airlines raise baggage fees: What to know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6ea26935d1e13e882a5c211d9c607e2a8130c671",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump says US could open Strait of Hormuz, seize oil",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7c1c555a51d4cfb9fbcd642566d2a47b3321d99e",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "United Airlines raises checked bag fees: What travelers should know",
       "to_title": null
     }
   ]

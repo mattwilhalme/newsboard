@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-03T18:29:18.573Z",
+  "generatedAt": "2026-04-03T19:54:50.763Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T20:47:21.907Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c5b6d8ebf8fad5ca4d0838ca6a327c3381170ee6",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "4 dead after suspected tornadoes in Michigan; millions under alert for severe weather",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T21:01:13.175Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1beace128b129a47928c2aaa02a253badb98aac2",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Trump attends dignified transfer of 6 fallen service members killed in Kuwait"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T21:01:13.175Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0d4cb988893e9c244aec184b86c00b5a5c804b20",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump to attend dignified transfer of 6 fallen service members killed in Kuwait",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T23:47:54.159Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "42a6298f06302936e69f2075a8d17a6f7e4664eb",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "At least 8 dead as severe weather continues across US"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-07T23:47:54.159Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Some TSA officers say they're still hurting after receiving backpay",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ccb12ed2e153b717ca8ac3535a968054b0a67e0c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Iran continues to fire dozens of missiles, drones toward Gulf"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0a60a736acb374ffe0f2555341d43d76b115f434",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "2 airlines raise baggage fees: What to know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6ea26935d1e13e882a5c211d9c607e2a8130c671",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump says US could open Strait of Hormuz, seize oil",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T19:55:00.365Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7c1c555a51d4cfb9fbcd642566d2a47b3321d99e",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "United Airlines raises checked bag fees: What travelers should know",
       "to_title": null
     }
   ],
