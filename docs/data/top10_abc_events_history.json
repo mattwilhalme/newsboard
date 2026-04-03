@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-03T12:33:56.884Z",
+  "generatedAt": "2026-04-03T13:47:19.404Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T23:32:24.859Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "35e1681f09ab297f708270227c42f0fbc2375dee",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingUS was operating in area of elementary school ahead of deadly strike: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T00:56:44.495Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6450eb6da062018360814974dcdf11200462bd71",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 27,000 Americans have returned to US from Middle East"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T00:56:44.495Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8644e71ffdfd9487c774fc8e95e58765fd9549ca",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:US was operating in area of Iran elementary school ahead of deadly strike: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T00:56:44.495Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "02a534c0caccf46f73067e8650145ca250ac3bdf",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "FDA vaccine chief Dr. Vinay Prasad to leave agency next month"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-07T00:56:44.495Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "From stunning Earth views to toilet fix, Artemis II crew talks to ABC News from space",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T13:47:28.843Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9f967fc275fecd54e7fe75a11c41577f3ef6e311",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Jobs report shows strong hiring in March, despite oil shock set off by Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T13:47:28.843Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "761f44529b405ab108e9297cb9d374fa212bdc3c",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says US could open Strait of Hormuz, seize oil"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T13:47:28.843Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1a486efecdcf954dc67dc2f07ec61f905e69895f",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Jobs report set to offer key gauge of economy amid war with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T13:47:28.843Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c1b8605811c7088e481829046cc3c719a68456eb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says US blew up 3 of Iran's 'big bridges'",
       "to_title": null
     }
   ],
