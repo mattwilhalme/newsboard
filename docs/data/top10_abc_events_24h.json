@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-03T15:55:07.921Z",
+  "generatedAt": "2026-04-03T16:29:27.951Z",
   "hours": 24,
   "events": [
     {
@@ -1461,6 +1461,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Justice Department says Trump can keep his presidential records",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7be8cc0896855e0c54b0a23ff875de6fc80d4e06",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "710db27d27f9b33b8a4cbe5d25c1212ed0896076",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Mom and teenage son help save neighbor from house fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "af0e2489d33b3e335731c98f9a0baf81333e1cde",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "White House asks for record-breaking $1.5 trillion for defense in 2027 budget request",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3b6ff0bda8268967067b551daa17b280e5c18414",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "'I kicked the door in': Neighbor recounts rescue after teen spots house fire",
       "to_title": null
     }
   ]

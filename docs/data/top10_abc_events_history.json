@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-03T15:55:07.921Z",
+  "generatedAt": "2026-04-03T16:29:27.951Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T11:26:16.944Z",
-      "event_type": "MOVED",
-      "fingerprint": "434bb5d2965e9de5fb2642220237ea0436d20546",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Acetaminophen use fell among pregnant women after White House linked drug to autism",
-      "to_title": "Acetaminophen use fell among pregnant women after White House linked drug to autism"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T13:14:39.465Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0e1d82a71f7249a7f9e24969a1497b31923722cd",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Iran says no unconditional surrender, apologizes to neighbors"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T13:14:39.465Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a928daa1acffb64766c3f1b9e64b7a635047670e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran’s president says there’ll be no unconditional surrender",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-07T15:17:17.687Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7cf381e8e313e4af25f7a30bd8d414c990035be8",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Faith leaders seek access to ICE detention centers during Lent and Ramadan"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-07T15:17:17.687Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Justice Department says Trump can keep his presidential records",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7be8cc0896855e0c54b0a23ff875de6fc80d4e06",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "710db27d27f9b33b8a4cbe5d25c1212ed0896076",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Mom and teenage son help save neighbor from house fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "af0e2489d33b3e335731c98f9a0baf81333e1cde",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "White House asks for record-breaking $1.5 trillion for defense in 2027 budget request",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T16:29:38.315Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3b6ff0bda8268967067b551daa17b280e5c18414",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "'I kicked the door in': Neighbor recounts rescue after teen spots house fire",
       "to_title": null
     }
   ],
