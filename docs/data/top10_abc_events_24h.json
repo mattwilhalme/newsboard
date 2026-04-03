@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-03T06:47:15.837Z",
+  "generatedAt": "2026-04-03T07:50:37.274Z",
   "hours": 24,
   "events": [
     {
@@ -1441,6 +1441,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Much of Lively's lawsuit against Baldoni dismissed",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T07:50:47.035Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7e9178e62d6e9c14bfe151109bf24ab1c4c909ae",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "From stunning Earth views to toilet fix, Artemis II crew talks to ABC News from space"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T07:50:47.035Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a2ba2bf9c792cb6524275b969bbd9ddca732da93",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Artemis II crew talks to ABC News from space: Their journey so far and what's ahead",
       "to_title": null
     }
   ]
