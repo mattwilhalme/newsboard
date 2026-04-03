@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-03T22:50:08.182Z",
+  "generatedAt": "2026-04-03T23:22:25.203Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Police in Norway investigate explosion outside US Embassy in Oslo"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "MOVED",
-      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit",
-      "to_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T14:33:00.037Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: Trump's national security team gathered after US planes hit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T23:22:35.184Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d0c259d5b09adb418ed7c03fb054e64963c7b77c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "2 US jets downed by Iranian fire; search and rescue mission for 1 crew member"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T23:22:35.184Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f50e31a81df3ecf52ccf6cdc05dc0b33d2e082d6",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "US fighter jet down in Iran: 1 crew member rescued as search continues, officials say",
       "to_title": null
     }
   ],

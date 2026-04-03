@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-03T22:50:08.182Z",
+  "generatedAt": "2026-04-03T23:22:25.203Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "5ca3b3fad839160e3f17a78cdfc8e75492b5e76f",
-      "from_rank": 6,
-      "to_rank": 1,
-      "from_title": "Artemis II live updates: Crucial translunar injection burn is a 'go'",
-      "to_title": "Artemis II live updates: Crucial translunar injection burn is a 'go'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e429d6649878657cbade5fbe90497df87088c8be",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Judge dismisses much of Blake Lively's lawsuit against Justin Baldoni"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "2ef915b5927b0bb25023aa4c300842ac63df1f47",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Hegseth ousts Army Chief of Staff Gen. Randy George",
-      "to_title": "Hegseth ousts Army Chief of Staff Gen. Randy George"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in",
-      "to_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "5378b4a9953882b1a0ef41c7189b9348f92cc3c2",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges",
-      "to_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "535d19f21125ce938ad2e6b56cdd7f661bd4499d",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals",
-      "to_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b3d3510e65c795d65c102b8a2181e059623dd58a",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingBlake Lively's lawsuit against Justin Baldoni gutted by judge",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T23:48:34.170Z",
@@ -1311,6 +1241,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: Trump's national security team gathered after US planes hit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T23:22:35.184Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d0c259d5b09adb418ed7c03fb054e64963c7b77c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "2 US jets downed by Iranian fire; search and rescue mission for 1 crew member"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T23:22:35.184Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f50e31a81df3ecf52ccf6cdc05dc0b33d2e082d6",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "US fighter jet down in Iran: 1 crew member rescued as search continues, officials say",
       "to_title": null
     }
   ]
