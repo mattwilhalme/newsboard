@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-03T01:04:46.978Z",
+  "generatedAt": "2026-04-03T03:52:47.964Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:41:36.765Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d1f84f213c60f33e08345f83373a280e62837c95",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Obama honors Jesse Jackson's 'legacy of hope' at a time when it's 'hard to hope'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:41:36.765Z",
-      "event_type": "MOVED",
-      "fingerprint": "830352180982849f99fcdd23b5904d613942a998",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Former University of Michigan coach Sherrone Moore takes plea deal",
-      "to_title": "Former University of Michigan coach Sherrone Moore takes plea deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:41:36.765Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cf3643cafbb5ab77f91111bee9cc2de1a225e156",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Severe weather threat, including tornadoes, continues for millions of Americans"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-06T21:41:36.765Z",
-      "event_type": "MOVED",
-      "fingerprint": "beeb272e7c8554014b47a06e841e9d9b55e33a2f",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "DOJ releases previously withheld FBI reports about allegation against Trump",
-      "to_title": "DOJ releases previously withheld FBI reports about allegation against Trump"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-06T21:41:36.765Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Iran live updates: Trump says US blew up 3 big Iranian bridges",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T03:52:58.350Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2bb134712360bee500081c87e067c4619bdb85f8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Some TSA officers say they're still hurting after receiving backpay"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T03:52:58.350Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f655b487589f74e2e6f52d12922ca171caf16c36",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Much of Lively's lawsuit against Baldoni dismissed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T03:52:58.350Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e429d6649878657cbade5fbe90497df87088c8be",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Judge dismisses much of Blake Lively's lawsuit against Justin Baldoni",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-03T03:52:58.350Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7e5029fcf0aff7c07d5f0973c5ed2ed18312cd9a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Abducted journalist underwent kidnap training",
       "to_title": null
     }
   ],
