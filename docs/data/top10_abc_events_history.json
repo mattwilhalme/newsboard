@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-04T13:18:37.658Z",
+  "generatedAt": "2026-04-04T14:03:03.132Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T16:22:06.691Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a381377009094f55a76dab0ad8a5389a00251a4f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T16:22:06.691Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "26c01ca76108a5a2bcbfb3095fc2d8ff81baddb2",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Retired admiral says regime change discussion in Iran is 'very much alive'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T17:40:31.887Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8546f64d7509a3c772037619e95e7b84503e13ba",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Iran live updates: Assembly expert says majority want Khamenei's son as next leader"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T17:40:31.887Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "faafd1be29341fc27917865c0a7f30dd967eb44d",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump warns Iran may face 'complete destruction and certain death'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T17:57:29.856Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 airlines raise baggage fees: What to know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-04T14:03:12.969Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bd2c3d33c54c3c56791915bc32ed126f17268225",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Search for missing US crew member enters 2nd day"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-04T14:03:12.969Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1c33305022c2f9f5a0df1e1701cc681b57148300",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Astronauts closer to the moon than Earth, NASA says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-04T14:03:12.969Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bc34a1f44e63863f1fa603cb0cc68317bf01ccf6",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump's national security team gathered after US warplanes hit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-04T14:03:12.969Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "67efbe57667933e7bfc2743c46e6a2c709a069c1",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Astronauts nearly halfway to the moon, NASA says",
       "to_title": null
     }
   ],
