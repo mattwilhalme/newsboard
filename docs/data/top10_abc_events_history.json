@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-04T01:13:50.920Z",
+  "generatedAt": "2026-04-04T03:44:50.651Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bf9dc077a452c591e48b74181b66f261b887ed94",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump wants Iranian leaders who will not 'threaten Americans': Waltz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T14:33:00.037Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cc4ac2746036b78eceb6e2b509bd29c3c91edfc8",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Ukraine’s low-cost drones draw US, Gulf interest, but wartime ban blocks sales",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T14:33:00.037Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "'You look amazing': Artemis II crew talks to ABC News on the way to the moon",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-04T03:45:01.002Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "67efbe57667933e7bfc2743c46e6a2c709a069c1",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Astronauts nearly halfway to the moon, NASA says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-04T03:45:01.002Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "74a571ae4309705702b7c7f6279a9351ad49e06e",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Stunning new photos show Earth from Orion capsule",
       "to_title": null
     }
   ],
