@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-05T00:02:56.170Z",
+  "generatedAt": "2026-04-05T03:33:38.456Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T18:30:02.392Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "393abda08187175ed42151466336e5861fe6d68a",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Terrorism task force investigating after device thrown during NYC protest: FBI",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b81516c6f31bd2a701fa50d6caca2fd77a707593",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Assembly of Experts back Khamenei’s son as next leader"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "MOVED",
-      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
-      "from_rank": 8,
-      "to_rank": 3,
-      "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
-      "to_title": "Police say improvised explosive device was thrown at NYC mayor's home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "MOVED",
-      "fingerprint": "cc02f084a1102403eb52d734b78db8309163fc81",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Police in Norway investigate explosion outside US Embassy in Oslo",
-      "to_title": "Police in Norway investigate explosion outside US Embassy in Oslo"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "MOVED",
-      "fingerprint": "6ad9070810758f1b486bc8e62090cc13e2ed9ed4",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit",
-      "to_title": "Trump warns of imminent action against Cuba at 'Shield of Americas' summit"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "MOVED",
-      "fingerprint": "42a6298f06302936e69f2075a8d17a6f7e4664eb",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "At least 8 dead as severe weather continues across US",
-      "to_title": "At least 8 dead as severe weather continues across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "MOVED",
-      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
-      "to_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "MOVED",
-      "fingerprint": "2af337adb774ed3e4038a8132d6ff042400ec95a",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms",
-      "to_title": "DOJ appeals rulings that blocked Trump orders targeting major law firms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0de7e107e8db317879e8e1f9940538c21721ed45",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "KC airport evacuated after potential threat"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9999215cae955f0fd32650e4dd663bf8d13bbbd7",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Country's Assembly of Experts want Khamenei's son as next leader",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T19:00:03.103Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9fcd2a303b3bf928b9bc847fcd0729959c797b9e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Daylight saving time 2026: What to know",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T20:50:45.400Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d42fc30806c74ab3f3c5ab09794fc1650ac23c37",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US service member dies from injuries suffered in Iranian attack"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-08T20:50:45.400Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b81516c6f31bd2a701fa50d6caca2fd77a707593",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Assembly of Experts back Khamenei’s son as next leader",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-08T21:52:17.922Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Mom and teenage son help save neighbor from house fire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1647c5a5e7766ee8dde08909d64e2a8e66661a01",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Search for missing US crew member intensifies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "1c33305022c2f9f5a0df1e1701cc681b57148300",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Artemis II live updates: Astronauts closer to the moon than Earth, NASA says",
+      "to_title": "Artemis II live updates: Astronauts closer to the moon than Earth, NASA says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "1df018e6cc8d5280ac47544370231d3dada472a2",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Millions of eyedrops sold at major pharmacies and stores voluntarily recalled",
+      "to_title": "Millions of eyedrops sold at major pharmacies and stores voluntarily recalled"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0c1dd4ab336df9c4855c809307f1ab88efa59be3",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b8f7a5cd285668637e8d9006a3e64fdcaf7ad641",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "'Something you expect from the movies': Small plane lands on Pennsylvania highway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "96cff39f7e6e3225f261c824be8551eed7118e19",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "UConn reaches third national title game in four seasons"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "5c5a10c1302fd164c50d409552b4df85cb148529",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial",
+      "to_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "42d91b1438601e21771182dbed2a86aedec9f085",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "What to know about the A-10 and F-15E, the 2 American planes downed by Iranian fire",
+      "to_title": "What to know about the A-10 and F-15E, the 2 American planes downed by Iranian fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "f6cd33a4778f48ef388f0e2ca939408864107838",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Auriemma apologizes after exchange with Staley in UConn loss",
+      "to_title": "Auriemma apologizes after exchange with Staley in UConn loss"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bd2c3d33c54c3c56791915bc32ed126f17268225",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Search for missing US crew member enters 2nd day",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7be8cc0896855e0c54b0a23ff875de6fc80d4e06",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "348c9f3f08b757030e1964cd0833abadc4536f3f",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Palestinian babies separated from parents at start of war, reunited after 2 years",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T03:33:49.232Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0a60a736acb374ffe0f2555341d43d76b115f434",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "2 airlines raise baggage fees: What to know",
       "to_title": null
     }
   ],
