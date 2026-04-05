@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-05T22:18:16.099Z",
+  "generatedAt": "2026-04-05T22:55:43.512Z",
   "hours": 24,
   "events": [
     {
@@ -941,6 +941,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T22:55:53.882Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ded3a27eeda9a4caf7442e2aaa152fbe4af0d360",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "UCLA storms past South Carolina to claim its 1st NCAA women's basketball title"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T22:55:53.882Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "647eae3f8573a7a257a490a01124f85011d38578",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Pope Leo marks first Easter as pontiff with call for hope amid global conflicts",
       "to_title": null
     }
   ]
