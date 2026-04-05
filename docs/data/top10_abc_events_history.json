@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-05T09:54:46.037Z",
+  "generatedAt": "2026-04-05T10:24:42.140Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T04:26:50.611Z",
-      "event_type": "MOVED",
-      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
-      "to_title": "Police say improvised explosive device was thrown at NYC mayor's home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T04:26:50.611Z",
-      "event_type": "MOVED",
-      "fingerprint": "a381377009094f55a76dab0ad8a5389a00251a4f",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'",
-      "to_title": "Former Joint Chiefs chair says regime change is a 'very difficult undertaking'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T04:26:50.611Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Crews making progress containing Southern California wildfire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T10:24:52.425Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6901d2042c665b6facab8a8e17186157e577d028",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US destroyed 2 stuck C-130s during rescue mission, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T10:24:52.425Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "12247de0edb7edd19af519cb94e63cf895eb7c20",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: 2nd US airman rescued from Iran after F-15 shot down",
       "to_title": null
     }
   ],
