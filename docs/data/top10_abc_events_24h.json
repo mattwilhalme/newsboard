@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-05T20:49:43.531Z",
+  "generatedAt": "2026-04-05T21:19:32.686Z",
   "hours": 24,
   "events": [
     {
@@ -921,6 +921,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Child migrant allegedly abused in federal custody",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T21:19:42.631Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "078c0319e1cfa3cc58f950e10255d3d54b902870",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Astronauts engaged in final day of prep before lunar flyby"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T21:19:42.631Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6f0e9d0843dc6fe3038e359fdea0c7f191c5a199",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby",
       "to_title": null
     }
   ]
