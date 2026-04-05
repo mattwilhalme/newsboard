@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-05T08:25:41.935Z",
+  "generatedAt": "2026-04-05T09:06:01.038Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T02:04:24.976Z",
-      "event_type": "MOVED",
-      "fingerprint": "42a6298f06302936e69f2075a8d17a6f7e4664eb",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "At least 8 dead as severe weather continues across US",
-      "to_title": "At least 8 dead as severe weather continues across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T02:04:24.976Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "172b66c38c554dc52ebee8f4d864497659116bf5",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "'Not what we voted for': Some MAGA voices warn that Iran backlash will only intensify",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T04:26:50.611Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "490f63793800ee3ca1d015a9287e6e38ea0090be",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "US military strikes alleged drug boat in the Eastern Pacific, killing 6: SOUTHCOM"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T04:26:50.611Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4e0d6c5b393d2524fd1d95cfd4d195c56aa0355f",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T04:26:50.611Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Auriemma apologizes after exchange with Staley in UConn loss",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "0c1dd4ab336df9c4855c809307f1ab88efa59be3",
+      "from_rank": 9,
+      "to_rank": 5,
+      "from_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials",
+      "to_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "861776cc46ed61d1de867c4436bc87f81ffbd767",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Choirs seek to protect a musical tradition little changed since Queen Elizabeth I",
+      "to_title": "Choirs seek to protect a musical tradition little changed since Queen Elizabeth I"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "174bb3e34ce8f1e11d1055d0cde170ceb2aada89",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Child migrant allegedly abused in federal custody"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5adb9a0d83f1093eedd96304b3d8d7037cb6f1bc",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Crews making progress containing Southern California wildfire",
       "to_title": null
     }
   ],

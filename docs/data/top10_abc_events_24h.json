@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-05T08:25:41.935Z",
+  "generatedAt": "2026-04-05T09:06:01.038Z",
   "hours": 24,
   "events": [
     {
@@ -551,6 +551,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Auriemma apologizes after exchange with Staley in UConn loss",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "0c1dd4ab336df9c4855c809307f1ab88efa59be3",
+      "from_rank": 9,
+      "to_rank": 5,
+      "from_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials",
+      "to_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "MOVED",
+      "fingerprint": "861776cc46ed61d1de867c4436bc87f81ffbd767",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Choirs seek to protect a musical tradition little changed since Queen Elizabeth I",
+      "to_title": "Choirs seek to protect a musical tradition little changed since Queen Elizabeth I"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "174bb3e34ce8f1e11d1055d0cde170ceb2aada89",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Child migrant allegedly abused in federal custody"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T09:06:09.645Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5adb9a0d83f1093eedd96304b3d8d7037cb6f1bc",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Crews making progress containing Southern California wildfire",
       "to_title": null
     }
   ]
