@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-05T17:20:59.832Z",
+  "generatedAt": "2026-04-05T17:54:27.137Z",
   "hours": 24,
   "events": [
     {
@@ -881,6 +881,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "3 killed as winds topple tree on Easter egg hunt",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8314724213f6e9eae8e8915855fdbdef032a5c66",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says 'we're blowing up' Iran if no peace deal in 48 hours"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6f0e9d0843dc6fe3038e359fdea0c7f191c5a199",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5fd0c863e1f383b7dad4bd93b9787f9e349f95f9",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Missing F-15 airman rescued in 'daring' raid, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "938efe4ac0a95eb8a07d6cada67a5feaaf3885e5",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Astronauts expected to enter lunar sphere of influence",
       "to_title": null
     }
   ]

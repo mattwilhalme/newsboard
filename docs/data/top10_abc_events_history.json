@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-05T17:20:59.832Z",
+  "generatedAt": "2026-04-05T17:54:27.137Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:57:44.373Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a541a65331366e9fbb8d57b5a394283352f19990",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Mojtaba Khamenei chosen as Iran's next supreme leader, Iranian state media reports",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T10:57:44.373Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f13b648fae66c03a66adb805aa5db5b4fddbf23b",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Police say improvised explosive device was thrown at NYC mayor's home",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T13:18:11.896Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed075b0769ee00deb5d1d73d513f2c48c5359b99",
-      "from_rank": 8,
-      "to_rank": 5,
-      "from_title": "Pennsylvania state trooper fatally shot, authorities say",
-      "to_title": "Pennsylvania state trooper fatally shot, authorities say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T13:18:11.896Z",
-      "event_type": "MOVED",
-      "fingerprint": "4e0d6c5b393d2524fd1d95cfd4d195c56aa0355f",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police",
-      "to_title": "Rihanna's Los Angeles mansion struck by gunfire, woman arrested: Police"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T13:18:11.896Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "3 killed as winds topple tree on Easter egg hunt",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8314724213f6e9eae8e8915855fdbdef032a5c66",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says 'we're blowing up' Iran if no peace deal in 48 hours"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6f0e9d0843dc6fe3038e359fdea0c7f191c5a199",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5fd0c863e1f383b7dad4bd93b9787f9e349f95f9",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Missing F-15 airman rescued in 'daring' raid, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-05T17:54:37.344Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "938efe4ac0a95eb8a07d6cada67a5feaaf3885e5",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Astronauts expected to enter lunar sphere of influence",
       "to_title": null
     }
   ],
