@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-06T22:40:09.636Z",
+  "generatedAt": "2026-04-06T23:09:41.096Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T22:55:53.882Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ded3a27eeda9a4caf7442e2aaa152fbe4af0d360",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "UCLA storms past South Carolina to claim its 1st NCAA women's basketball title"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T22:55:53.882Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "647eae3f8573a7a257a490a01124f85011d38578",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Pope Leo marks first Easter as pontiff with call for hope amid global conflicts",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-06T02:26:31.723Z",
@@ -1251,6 +1231,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "JPMorgan CEO: Iran war could reignite inflation and keep Fed rates higher for longer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f52238113d9010bcc1ff99125693d05c6bdd1fde",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingArtemis II crew enters planned communications blackout"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e3d6d1a6320a8abbf17fdd0bda4309ec7e42a81b",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Immigrant toddler was sexually abused while in custody, lawyer says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e5cc7cc0027c8f581afa3d59f8f8480166fd8a5d",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Many congressional Democrats call Trump's threats to blow up Iran 'unhinged'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "MOVED",
+      "fingerprint": "c0ccaa41e7f5ac9bf3229322f0419de5ef7bdf3c",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Iran live updates: Trump says Iranian people have asked US to 'keep bombing'",
+      "to_title": "Iran live updates: Trump says Iranian people have asked US to 'keep bombing'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "MOVED",
+      "fingerprint": "b6e00dc6553265642aabbf456ade4372e7c1e5d6",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities",
+      "to_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "MOVED",
+      "fingerprint": "8f0c03fea405d9c3c10da3c485ea7f2323b49e64",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges",
+      "to_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "MOVED",
+      "fingerprint": "c79360be2696ba49e8504ff8bcce491ac281d379",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Strangers raise over $76,000 for delivery driver who went above and beyond",
+      "to_title": "Strangers raise over $76,000 for delivery driver who went above and beyond"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "MOVED",
+      "fingerprint": "d17ad83a2da8d25acfd51b4fb269ef55aae58e57",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Passenger gives birth on flight from Jamaica to New York",
+      "to_title": "Passenger gives birth on flight from Jamaica to New York"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34ea74eb83becd082aa3d1003266b11a08e14c8e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew begins lunar flyby after breaking distance record",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "944b435df33a33bbefea6a5f4e4ee175ce4ebb0a",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Trump shares dramatic new details about aviator's rescue in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T23:09:51.062Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cfbb8d49854df110fbc0899f48013a0e6f9252e6",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Final trailer for 'The Devil Wears Prada 2' features new song by Lady Gaga, Doechii",
       "to_title": null
     }
   ]
