@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-06T20:50:21.741Z",
+  "generatedAt": "2026-04-06T21:26:10.633Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T21:19:42.631Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "078c0319e1cfa3cc58f950e10255d3d54b902870",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Astronauts engaged in final day of prep before lunar flyby"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T21:19:42.631Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f0e9d0843dc6fe3038e359fdea0c7f191c5a199",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-05T22:55:53.882Z",
@@ -1111,6 +1091,46 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingArtemis II crew begins historic lunar flyby",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T21:26:21.248Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dc1ab4f69a1977b3ff692131f19a66ff4180a54a",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "American woman missing at sea after going overboard on dinghy in the Bahamas: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T21:26:21.248Z",
+      "event_type": "MOVED",
+      "fingerprint": "c0ccaa41e7f5ac9bf3229322f0419de5ef7bdf3c",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Trump says Iranian people have asked US to 'keep bombing'",
+      "to_title": "Iran live updates: Trump says Iranian people have asked US to 'keep bombing'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T21:26:21.248Z",
+      "event_type": "MOVED",
+      "fingerprint": "8f0c03fea405d9c3c10da3c485ea7f2323b49e64",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges",
+      "to_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T21:26:21.248Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3999e8e269300f95a30a4f1375a021cab7fb380a",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Melissa Gilbert says husband Timothy Busfield 'will be exonerated'",
       "to_title": null
     }
   ]
