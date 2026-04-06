@@ -1,108 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-06T13:56:01.611Z",
+  "generatedAt": "2026-04-06T15:33:41.610Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:48:13.843Z",
-      "event_type": "MOVED",
-      "fingerprint": "4d3e324aa9be7d5360d84c79b6dd7e1287197875",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "'Unprecedented': Anthropic sues Trump administration after clash over AI use",
-      "to_title": "'Unprecedented': Anthropic sues Trump administration after clash over AI use"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:48:13.843Z",
-      "event_type": "MOVED",
-      "fingerprint": "00d8acaa9aa93246d201adad25655c0fb69763ac",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Pentagon IDs 7th US service member killed in Iran war",
-      "to_title": "Pentagon IDs 7th US service member killed in Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:48:13.843Z",
-      "event_type": "MOVED",
-      "fingerprint": "1b89eae29d8a16defb57dbfcb9a12ce3a12908e8",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Travis Kelce's expected retirement decision revealed",
-      "to_title": "Travis Kelce's expected retirement decision revealed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:48:13.843Z",
-      "event_type": "MOVED",
-      "fingerprint": "40291e6417e074cea111303a0de80b4c1c19b01d",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Suspect identified in shooting at Rihanna’s Los Angeles home",
-      "to_title": "Suspect identified in shooting at Rihanna’s Los Angeles home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:48:13.843Z",
-      "event_type": "MOVED",
-      "fingerprint": "c44aa534e5915e6e24884bff0a25dcab71443cc6",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "'ISIS-inspired terrorism' suspected after bombs thrown outside NYC mayor's home",
-      "to_title": "'ISIS-inspired terrorism' suspected after bombs thrown outside NYC mayor's home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T19:48:13.843Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7331fd01788f6d2eee90c9bccac3951655010289",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Venezuelan family says they lost their home, jobs after being detained for 2 months",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T20:05:33.389Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a5abc608a94ceebe3d4fdb66ec45fbf1ef129f07",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says ships in Strait of Hormuz need to 'show some guts'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T20:05:33.389Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "02124b67a7e131063df3278835d33695ebf9cc1c",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says he's 'nowhere near' decision on ground operation",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T20:50:39.809Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "87bd0c8c3cb4b99740e99f82019a93b24712233b",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "PA state trooper died 'doing what he dedicated his life to': Governor"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T20:50:39.809Z",
-      "event_type": "MOVED",
-      "fingerprint": "1b89eae29d8a16defb57dbfcb9a12ce3a12908e8",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Travis Kelce's expected retirement decision revealed",
-      "to_title": "Travis Kelce's expected retirement decision revealed"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T20:50:39.809Z",
@@ -30001,6 +29901,106 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Police car chases result in 8 deaths around US in less than a week",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8f0c03fea405d9c3c10da3c485ea7f2323b49e64",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a7d3780e657a59988ba40ccda69b36bcbcd9da2e",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew awake and preparing for today's lunar flyby"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "MOVED",
+      "fingerprint": "3999e8e269300f95a30a4f1375a021cab7fb380a",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Melissa Gilbert says husband Timothy Busfield 'will be exonerated'",
+      "to_title": "Melissa Gilbert says husband Timothy Busfield 'will be exonerated'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "MOVED",
+      "fingerprint": "db3a77255b1e80db70d01214eac7c906ac4c1d44",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Ukraine outshoots Russia in cross-border drone war for 1st time, March data suggests",
+      "to_title": "Ukraine outshoots Russia in cross-border drone war for 1st time, March data suggests"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "MOVED",
+      "fingerprint": "201c3b4f2351cef09971179f79312aae775d2097",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Gray whale that swam 20 miles up Washington state river found dead",
+      "to_title": "Gray whale that swam 20 miles up Washington state river found dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "MOVED",
+      "fingerprint": "ffb1c53ca8c0c6ce0a14d5de40cb8f9bc210849f",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Seoul spy agency: Fair to view teen daughter of North Korean leader Kim as his heir",
+      "to_title": "Seoul spy agency: Fair to view teen daughter of North Korean leader Kim as his heir"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "32c5c745121fa61da8380d715f817e114094c0ca",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Samsung is discontinuing its texting app"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b28f26ec9f31f54a39e7225fa45f33a3a5287193",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew prepares for lunar flyby on Monday",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ded3a27eeda9a4caf7442e2aaa152fbe4af0d360",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "UCLA storms past South Carolina to claim its 1st NCAA women's basketball title",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T15:33:52.469Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "317ba6d19d212122cae83707ea546a0c9a2a34a3",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "30 evacuated after cruise ship hits Fiji reef",
       "to_title": null
     }
   ],
