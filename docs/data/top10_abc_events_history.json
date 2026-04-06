@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-06T16:27:31.589Z",
+  "generatedAt": "2026-04-06T17:15:06.389Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "MOVED",
-      "fingerprint": "00d8acaa9aa93246d201adad25655c0fb69763ac",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Pentagon IDs 7th US service member killed in Iran war",
-      "to_title": "Pentagon IDs 7th US service member killed in Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "MOVED",
-      "fingerprint": "87bd0c8c3cb4b99740e99f82019a93b24712233b",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "PA state trooper died 'doing what he dedicated his life to': Governor",
-      "to_title": "PA state trooper died 'doing what he dedicated his life to': Governor"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "MOVED",
-      "fingerprint": "1b89eae29d8a16defb57dbfcb9a12ce3a12908e8",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Travis Kelce's expected retirement decision revealed",
-      "to_title": "Travis Kelce's expected retirement decision revealed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cd1590866a045cdfe8472db20166b76c4d62e394",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says war is 'going to be a short-term excursion'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7f9ac39a1639af149fe8c705da5fcbcf3204f8cf",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran may be activating sleeper cells outside the country, alert says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4d3e324aa9be7d5360d84c79b6dd7e1287197875",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "'Unprecedented': Anthropic sues Trump administration after clash over AI use",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ef22b3f551fbb2ecb312e7e7086ca2c8229a714f",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Teacher dies in student prank gone wrong, family supports dropping charges",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "40291e6417e074cea111303a0de80b4c1c19b01d",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Suspect identified in shooting at Rihanna’s Los Angeles home",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:16:53.630Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0dd8e7f0e2cba7893b3c526ced70131db07d9f48",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "How to watch and stream the 2026 Oscars",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7f9ac39a1639af149fe8c705da5fcbcf3204f8cf",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:Iran may be activating sleeper cells outside the country, alert says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "MOVED",
-      "fingerprint": "5a37e3c8a24f37e9d0f0287e3a2fe15e4f687d97",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Wyoming governor signs 'fetal heartbeat' abortion ban into law",
-      "to_title": "Wyoming governor signs 'fetal heartbeat' abortion ban into law"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "MOVED",
-      "fingerprint": "8378074a9e24fb8905d9cfa9b792d768f2730945",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Thune says no to filibuster changes even after Trump's threats about SAVE America Act",
-      "to_title": "Thune says no to filibuster changes even after Trump's threats about SAVE America Act"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "MOVED",
-      "fingerprint": "9304bf17d895588168f8c2114bff7b1389dfb541",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Trump dismisses soaring gas prices as 'a little glitch' of Iran war",
-      "to_title": "Trump dismisses soaring gas prices as 'a little glitch' of Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "MOVED",
-      "fingerprint": "00d8acaa9aa93246d201adad25655c0fb69763ac",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Pentagon IDs 7th US service member killed in Iran war",
-      "to_title": "Pentagon IDs 7th US service member killed in Iran war"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T22:50:57.595Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Samsung is discontinuing its texting app",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "72391be74702cf4f327467e415c441dbe8faad82",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says Americans against war with Iran are 'foolish'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e312eca97d8c62709af6e7304d1a909b2c3f34d4",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "What we know about the 45-day ceasefire proposal for war with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e451edf0f6599b686c3049605a1ebfe6e9cd2bc0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump holds news conference on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "MOVED",
+      "fingerprint": "8f0c03fea405d9c3c10da3c485ea7f2323b49e64",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges",
+      "to_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "MOVED",
+      "fingerprint": "a7d3780e657a59988ba40ccda69b36bcbcd9da2e",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Artemis II live updates: Crew awake and preparing for today's lunar flyby",
+      "to_title": "Artemis II live updates: Crew awake and preparing for today's lunar flyby"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "MOVED",
+      "fingerprint": "3999e8e269300f95a30a4f1375a021cab7fb380a",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Melissa Gilbert says husband Timothy Busfield 'will be exonerated'",
+      "to_title": "Melissa Gilbert says husband Timothy Busfield 'will be exonerated'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7a174d4995a2742c7f0ce3ac3eb4658865072525",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Atlanta Dream acquire 2-time WNBA All-Star Angel Reese from Chicago Sky"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "MOVED",
+      "fingerprint": "db3a77255b1e80db70d01214eac7c906ac4c1d44",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Ukraine outshoots Russia in cross-border drone war for 1st time, March data suggests",
+      "to_title": "Ukraine outshoots Russia in cross-border drone war for 1st time, March data suggests"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "MOVED",
+      "fingerprint": "53bdd0da39765226687278f71021b5c1481dd1b9",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "UCLA women's basketball coach talks historic 1st NCAA title",
+      "to_title": "UCLA women's basketball coach talks historic 1st NCAA title"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "MOVED",
+      "fingerprint": "ffb1c53ca8c0c6ce0a14d5de40cb8f9bc210849f",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Seoul spy agency: Fair to view teen daughter of North Korean leader Kim as his heir",
+      "to_title": "Seoul spy agency: Fair to view teen daughter of North Korean leader Kim as his heir"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d45aac993ae1ed4ea9ef335beff06e1d2fc4a97e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump to hold news conference on airman rescue as his deadline for Iran looms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "77d2a1e8b47818db704a52a7ad8a10e9bb6fbd85",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: IRGC says Strait of Hormuz will 'never' revert to pre-war state",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "201c3b4f2351cef09971179f79312aae775d2097",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Gray whale that swam 20 miles up Washington state river found dead",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T17:15:17.063Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c31e2c34b181fc5744ce2d8281279d40f8baaac1",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Atlanta Dream acquire Angel Reese from Chicago Sky",
       "to_title": null
     }
   ],
