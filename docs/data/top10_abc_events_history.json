@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-06T17:15:06.389Z",
+  "generatedAt": "2026-04-06T18:06:56.025Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "MOVED",
-      "fingerprint": "87bd0c8c3cb4b99740e99f82019a93b24712233b",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "PA state trooper died 'doing what he dedicated his life to': Governor",
-      "to_title": "PA state trooper died 'doing what he dedicated his life to': Governor"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "MOVED",
-      "fingerprint": "1b89eae29d8a16defb57dbfcb9a12ce3a12908e8",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Travis Kelce's expected retirement decision revealed",
-      "to_title": "Travis Kelce's expected retirement decision revealed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "40291e6417e074cea111303a0de80b4c1c19b01d",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Suspect identified in shooting at Rihanna’s Los Angeles home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T22:50:57.595Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d03f1f8a1dbd1799e33170379bf78fb281fd1033",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "What to know about Mojtaba Khamenei, Iran's next supreme leader",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T22:50:57.595Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Atlanta Dream acquire Angel Reese from Chicago Sky",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T18:07:06.216Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5469bd67393bec399b81d17b88bf2f0694970246",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says Iran 'can be taken out in one night'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T18:07:06.216Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f97720d067e64576f1e9f2760a178527efb30bfa",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew sets record for farthest humans traveled from Earth"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T18:07:06.216Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "72391be74702cf4f327467e415c441dbe8faad82",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says Americans against war with Iran are 'foolish'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T18:07:06.216Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a7d3780e657a59988ba40ccda69b36bcbcd9da2e",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew awake and preparing for today's lunar flyby",
       "to_title": null
     }
   ],
