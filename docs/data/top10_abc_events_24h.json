@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-06T11:37:53.147Z",
+  "generatedAt": "2026-04-06T12:36:14.022Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:59:08.511Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5fd0c863e1f383b7dad4bd93b9787f9e349f95f9",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Missing F-15 airman rescued in 'daring' raid, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:59:08.511Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6901d2042c665b6facab8a8e17186157e577d028",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US destroyed 2 stuck C-130s during rescue mission, official says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-05T14:32:45.572Z",
@@ -671,6 +651,96 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Casualties reported from missile strikes in Israel",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3999e8e269300f95a30a4f1375a021cab7fb380a",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Melissa Gilbert says husband Timothy Busfield 'will be exonerated'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "db3a77255b1e80db70d01214eac7c906ac4c1d44",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Ukraine outshoots Russia in cross-border drone war for 1st time, March data suggests",
+      "to_title": "Ukraine outshoots Russia in cross-border drone war for 1st time, March data suggests"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ffb1c53ca8c0c6ce0a14d5de40cb8f9bc210849f",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Seoul spy agency: Fair to view teen daughter of North Korean leader Kim as his heir"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ded3a27eeda9a4caf7442e2aaa152fbe4af0d360",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "UCLA storms past South Carolina to claim its 1st NCAA women's basketball title"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "201c3b4f2351cef09971179f79312aae775d2097",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Gray whale that swam 20 miles up Washington state river found dead",
+      "to_title": "Gray whale that swam 20 miles up Washington state river found dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "6e22d352cbdf5e43d31cf6be6fa07eea90b7d55c",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Jeffries 'thankful' US airman was rescued but criticizes 'reckless and costly war'",
+      "to_title": "Jeffries 'thankful' US airman was rescued but criticizes 'reckless and costly war'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "31d9dd5f868858beea6cd1acd4ec82da6b48ed51",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Seoul spy agency says it's fair to view teen daughter of N. Korean leader as his heir",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ee11fb8c267d2d0a14f30100f92609dcfd4a9751",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Rep. Turner says he doesn’t think ground troops necessary to reopen Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T12:36:24.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f174e7405ef3faa3f4a0124fe99eed2f3f501a41",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Police car chases result in 8 deaths around US in less than a week",
       "to_title": null
     }
   ]
