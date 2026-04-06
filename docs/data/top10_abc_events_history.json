@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-06T09:49:26.852Z",
+  "generatedAt": "2026-04-06T10:45:42.594Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T18:01:38.859Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0f0d1b3a5186445bc603818f42b06ed3ba72fedf",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Stocks tumble worldwide as oil prices soar above $95"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-09T18:01:38.859Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0dd8e7f0e2cba7893b3c526ced70131db07d9f48",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "How to watch and stream the 2026 Oscars"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-09T18:01:38.859Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T10:45:53.111Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "01080630d1c08ec8209abe062082b62c96c09753",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: IRGC says Strait of Hormuz will 'never' revert to pre-war state"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-06T10:45:53.111Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e6181eb6347b3a584f64dc28bbc1b126d4905427",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Casualties reported from missile strikes in Israel",
       "to_title": null
     }
   ],
