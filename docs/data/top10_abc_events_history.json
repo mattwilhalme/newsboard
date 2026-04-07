@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T14:14:43.940Z",
+  "generatedAt": "2026-04-07T15:45:45.181Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "0dcd28c00b3c610dd0c83687c082e6b33b6182cf",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother",
-      "to_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "32e2b20821d4c63bab460de2a2049d47212f2b9c",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Inflation held steady in February before war with Iran sent gas prices surging",
-      "to_title": "Inflation held steady in February before war with Iran sent gas prices surging"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "79a167e9e1d52f4c80189f6356e62c62a0dd1663",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up",
-      "to_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6cf941bf29eeedfdadf745123d22cacc4adbbae2",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Why are authorities finally searching Epstein's ranch in New Mexico?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Trump administration opens investigation into Arizona’s 2020 election results",
-      "to_title": "Trump administration opens investigation into Arizona’s 2020 election results"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca37d9fb3de1a4c523556a8af07fb18f1ab92b42",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Teen charged in teacher’s death from prank gone wrong speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "MOVED",
-      "fingerprint": "ef5c16b361c70e3ac4382e8bd361e4c989f4fe52",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Many military members may get care at vulnerable hospitals: Analysis",
-      "to_title": "Many military members may get care at vulnerable hospitals: Analysis"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T17:13:08.798Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Artemis II live updates: Trump calls crew after lunar flyby: 'You've made history'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T15:45:55.320Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74ab7849f70d622901cb11fa38268640b33853f6",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Kanye West denied entry to UK, Wireless Festival canceled"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T15:45:55.320Z",
+      "event_type": "MOVED",
+      "fingerprint": "17ba1ac61bbc342b8b765583826e7ef68ec1a254",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views",
+      "to_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T15:45:55.320Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b6e00dc6553265642aabbf456ade4372e7c1e5d6",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T15:45:55.320Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ca0bc271d3f3a66cc7acbeb0d217dc93289dad4f",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Vance says he wants to help Orbán in Hungarian leader's reelection bid"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T15:45:55.320Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "447de08a247f87c22886deb7e414caa3f8c216e9",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "UK government blocks rapper Ye from entering Britain to headline festival",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T15:45:55.320Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d38b2636433c4a598318a0b551130ad976d4df57",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "1 gunman shot dead outside Israeli consulate in Istanbul, 2 other gunmen injured",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T15:45:55.320Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3c95d1a58c70e09039b8d2e62141e9125b2ea6d2",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Vance visits Hungary ahead of election that threatens Orbán's hold on power",
       "to_title": null
     }
   ],
