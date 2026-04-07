@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-07T21:58:03.243Z",
+  "generatedAt": "2026-04-07T22:37:30.223Z",
   "hours": 24,
   "events": [
     {
@@ -1921,6 +1921,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T22:37:39.264Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9479427f67aac1d70cb288c8898e8343fadb1df5",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: After Trump's 'civilization' threat, Iran warns 'heavier' attacks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T22:37:39.264Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d5818ef945e50ac244ec6b29ba86ae5cd98ab18c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Pakistan asks Trump for deadline extension on Iran threat",
       "to_title": null
     }
   ]
