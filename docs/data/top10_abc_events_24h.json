@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-07T20:25:41.492Z",
+  "generatedAt": "2026-04-07T21:09:54.175Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T20:50:32.520Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "34ea74eb83becd082aa3d1003266b11a08e14c8e",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Crew begins lunar flyby after breaking distance record"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T20:50:32.520Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1878c86158ff4d3be36242de7856adcc87dc1c42",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingArtemis II crew begins historic lunar flyby",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-06T21:26:21.248Z",
@@ -1791,6 +1771,66 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T21:10:04.290Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7d93e7ea320c1329220c9f818cacb841c60204af",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "'That is not who we are': Some Republicans break with Trump over Iran threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T21:10:04.290Z",
+      "event_type": "MOVED",
+      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
+      "to_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T21:10:04.290Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "53b46f5e5e9b034be2efa115729dcc97613d03b3",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Todd Blanche shrugs off suggestion Trump will 'pressure' him to target opponents"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T21:10:04.290Z",
+      "event_type": "MOVED",
+      "fingerprint": "134d77e54dd5009de561d3a25ead6ce8ede56f89",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know",
+      "to_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T21:10:04.290Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5205a0a6594bd669e1703441751ed6076d19edb8",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Trump ally Sen. Ron Johnson breaks with president over Iran threats",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T21:10:04.290Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c6c9f1416d996d106bcb8a9286f3a245d31a6cd5",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "1 person charged, another detained after rapper Offset shot in Florida, officials say",
       "to_title": null
     }
   ]
