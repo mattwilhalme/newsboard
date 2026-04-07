@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T22:37:30.223Z",
+  "generatedAt": "2026-04-07T23:23:25.238Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T06:06:16.829Z",
-      "event_type": "MOVED",
-      "fingerprint": "e0f26e38c92cf10941ebc1e12bfcc2bad162f39a",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "New person of interest identified in case of girl who disappeared in 1984",
-      "to_title": "New person of interest identified in case of girl who disappeared in 1984"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T06:06:16.829Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ae3cff9dd8d790d9f6104488b83113d560166659",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Why authorities are finally searching Epstein's ranch in New Mexico",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T06:06:16.829Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "da2af0ab3a9afb10f9150c9cbdacd42630081ced",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "US struggles to evacuate personnel from facilities under fire in Iraq: Officials",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T07:12:10.719Z",
-      "event_type": "MOVED",
-      "fingerprint": "f5cb43a4d262a011f3f1cc5755b594c08283e8ec",
-      "from_rank": 3,
-      "to_rank": 1,
-      "from_title": "Iran live updates: US senators told Iran war cost $11.3B in first 6 days",
-      "to_title": "Iran live updates: US senators told Iran war cost $11.3B in first 6 days"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T07:12:10.719Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dcbe6e433d4854984913d5068385267aeeb9a835",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Strikes between Israel and Hezbollah ramp up as evacuation notice issued for Beirut"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T07:12:10.719Z",
-      "event_type": "MOVED",
-      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
-      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T07:12:10.719Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8bb0d497ba6392064e6c223e1cd229275c7eb8ca",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "12-year-old girl dies days after collapsing following fight near school bus stop"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T07:12:10.719Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5133f378883bda25530b8ee379d449b0459336c8",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Strikes between Israel and Hezbollah ramp up as evacuation notice issued for Beirut",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T07:12:10.719Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e0f26e38c92cf10941ebc1e12bfcc2bad162f39a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "New person of interest identified in case of girl who disappeared in 1984",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T10:07:58.994Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b9a8695ef09b80df7ed1e87b9ad5082831ff1fa4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 3 more ships set afire by 'unknown' projectiles in Persian Gulf"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T10:07:58.994Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f5cb43a4d262a011f3f1cc5755b594c08283e8ec",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US senators told Iran war cost $11.3B in first 6 days",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T10:59:22.132Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d951fb2c92f4ea62dc7520e3adfcb796cc417a4a",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Celebrity chef resigns from iconic Danish restaurant Noma after abuse allegations"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T10:59:22.132Z",
-      "event_type": "MOVED",
-      "fingerprint": "632ab76b56d505d9035048faabc93905d112c154",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'",
-      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T10:59:22.132Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Iran live updates: Pakistan asks Trump for deadline extension on Iran threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ab005229389041b486de1d68e0ca52b45d514cda",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingTrump agrees to 'suspend the bombing' for two weeks if Iran opens Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "24023d992f3767620314247f6416abdd845a6642",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump considering Pakistani PM's request he extend Iran deadline, White House says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "MOVED",
+      "fingerprint": "0437331d48b93f8b05ca17588fe34927a0f5fe2a",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "As bombings escalate and the regime hangs on, some Iranians say they are in limbo",
+      "to_title": "As bombings escalate and the regime hangs on, some Iranians say they are in limbo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "MOVED",
+      "fingerprint": "d972d0539fecf06a2bf20036857ce1e1b8bf3ae7",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "FBI on scene of ICE-involved shooting in Patterson, California",
+      "to_title": "FBI on scene of ICE-involved shooting in Patterson, California"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "MOVED",
+      "fingerprint": "9f609f62e00dbf1c8e47cedc93aa29c5ea710d2e",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "ICE releases newlywed wife of Army soldier, arrested at military base",
+      "to_title": "ICE releases newlywed wife of Army soldier, arrested at military base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "MOVED",
+      "fingerprint": "8ed382b9eb0051772688657916436ceade60fbce",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Abducted American journalist to be released, Iran-backed group says",
+      "to_title": "Abducted American journalist to be released, Iran-backed group says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "MOVED",
+      "fingerprint": "7d93e7ea320c1329220c9f818cacb841c60204af",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "'That is not who we are': Some Republicans break with Trump over Iran threats",
+      "to_title": "'That is not who we are': Some Republicans break with Trump over Iran threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "MOVED",
+      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
+      "to_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "MOVED",
+      "fingerprint": "74ab7849f70d622901cb11fa38268640b33853f6",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Kanye West denied entry to UK, Wireless Festival canceled",
+      "to_title": "Kanye West denied entry to UK, Wireless Festival canceled"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "53b46f5e5e9b034be2efa115729dcc97613d03b3",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Todd Blanche shrugs off suggestion Trump will 'pressure' him to target opponents"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e8ae474123ebeb209881c3e4ec45f5f37ba0aee3",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump considering Pakistani PM's request he extend Iran deadline, White House says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9479427f67aac1d70cb288c8898e8343fadb1df5",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: After Trump's 'civilization' threat, Iran warns 'heavier' attacks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T23:23:36.336Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd45607bea037f3aa91219139de3038f61fb898a",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'",
       "to_title": null
     }
   ],
