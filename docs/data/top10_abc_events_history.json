@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T19:42:31.635Z",
+  "generatedAt": "2026-04-07T20:25:41.492Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T21:23:30.825Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "baeb74feda1125ac696d66db738f581e79b55ef8",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Massie raises Iran war concerns as Trump visits his Kentucky district"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T21:23:30.825Z",
-      "event_type": "MOVED",
-      "fingerprint": "ca37d9fb3de1a4c523556a8af07fb18f1ab92b42",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Teen charged in teacher’s death from prank gone wrong speaks out",
-      "to_title": "Teen charged in teacher’s death from prank gone wrong speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T21:23:30.825Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "113973160fd58a76a18bf8a8f9116af23c483856",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "TSA officer callouts up since start of shutdown, DHS reactivates Global Entry"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T21:23:30.825Z",
-      "event_type": "MOVED",
-      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Trump administration opens investigation into Arizona’s 2020 election results",
-      "to_title": "Trump administration opens investigation into Arizona’s 2020 election results"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T21:23:30.825Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "79a167e9e1d52f4c80189f6356e62c62a0dd1663",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T21:23:30.825Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ef5c16b361c70e3ac4382e8bd361e4c989f4fe52",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Many military members may get care at vulnerable hospitals: Analysis",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6dc9cc1e27900ed1e835c9dbe96acba65777c71f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Trump says US has 'won' war but needs to 'finish the job'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "MOVED",
-      "fingerprint": "0dcd28c00b3c610dd0c83687c082e6b33b6182cf",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother",
-      "to_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "MOVED",
-      "fingerprint": "73702a68d2111039f1aeb607f59891ef722ee31f",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Survivor of deadly Kuwait drone attack speaks out from hospital",
-      "to_title": "Survivor of deadly Kuwait drone attack speaks out from hospital"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "da2af0ab3a9afb10f9150c9cbdacd42630081ced",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "US struggles to evacuate personnel from facilities under fire in Iraq: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca3c6f8a2c348da70d57c3b837407d90ab50e28f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Invasive giant reptile is thriving in Florida's climate, invading its ecosystem"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "501556cb7f978e83d69495ced9b79679dbb80dac",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Iran says it won't use missile warhead lighter than 1 ton",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "113973160fd58a76a18bf8a8f9116af23c483856",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "TSA officer callouts up since start of shutdown, DHS reactivates Global Entry",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T22:17:17.207Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Trump administration opens investigation into Arizona’s 2020 election results",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T23:35:58.888Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "632ab76b56d505d9035048faabc93905d112c154",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T23:35:58.888Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Who are the alleged victims of Gilgo Beach suspect Rex Heuermann?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d5818ef945e50ac244ec6b29ba86ae5cd98ab18c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Pakistan asks Trump for deadline extension on Iran threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "331cb115afce91705c97d733417968c50119b709",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d972d0539fecf06a2bf20036857ce1e1b8bf3ae7",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "FBI on scene of ICE-involved shooting in Patterson, California"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9f609f62e00dbf1c8e47cedc93aa29c5ea710d2e",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "ICE releases newlywed wife of Army soldier, arrested at military base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "MOVED",
+      "fingerprint": "8ed382b9eb0051772688657916436ceade60fbce",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Abducted American journalist to be released, Iran-backed group says",
+      "to_title": "Abducted American journalist to be released, Iran-backed group says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "MOVED",
+      "fingerprint": "5205a0a6594bd669e1703441751ed6076d19edb8",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Trump ally Sen. Ron Johnson breaks with president over Iran threats",
+      "to_title": "Trump ally Sen. Ron Johnson breaks with president over Iran threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "MOVED",
+      "fingerprint": "134d77e54dd5009de561d3a25ead6ce8ede56f89",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know",
+      "to_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c6c9f1416d996d106bcb8a9286f3a245d31a6cd5",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "1 person charged, another detained after rapper Offset shot in Florida, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd45607bea037f3aa91219139de3038f61fb898a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9f431bf8298912e42c23f5b19a11e628e994cf53",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump's deadline nears for Iran to open Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e5cc7cc0027c8f581afa3d59f8f8480166fd8a5d",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Many congressional Democrats call Trump's threats to blow up Iran 'unhinged'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bdec7057b7332e09752ac53e3efad94edac3e6d6",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew exits lunar sphere of influence",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f531ab9d456e79c64504bf500efe6db8effcdae3",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "ICE arrests newlywed wife of Army soldier at military base",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T20:25:50.162Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "17ba1ac61bbc342b8b765583826e7ef68ec1a254",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views",
       "to_title": null
     }
   ],
