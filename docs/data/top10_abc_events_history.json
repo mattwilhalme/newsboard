@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T15:45:45.181Z",
+  "generatedAt": "2026-04-07T16:41:43.449Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e05dd0232d5217dae97e4a4ba11a99008015afeb",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "House Oversight Committee to depose Epstein's longtime accountant",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T17:13:08.798Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "99eda5eeba093fce6e4a2a6e15882e6e6ce809f5",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T18:05:28.217Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d68281bc6d75f83ae379f5acc2dd080069182dac",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingFBI warns Iran aspired to attack California with drones in retaliation for war"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T18:05:28.217Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Vance visits Hungary ahead of election that threatens Orbán's hold on power",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T16:41:54.827Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5205a0a6594bd669e1703441751ed6076d19edb8",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Trump ally Sen. Ron Johnson breaks with president over Iran threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T16:41:54.827Z",
+      "event_type": "MOVED",
+      "fingerprint": "74ab7849f70d622901cb11fa38268640b33853f6",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Kanye West denied entry to UK, Wireless Festival canceled",
+      "to_title": "Kanye West denied entry to UK, Wireless Festival canceled"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T16:41:54.827Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7b0ef5f79c3a66ee067ff3e211e4bb090da18d1c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "After SCOTUS presidential immunity ruling, Trump wields it broadly in push for power",
       "to_title": null
     }
   ],
