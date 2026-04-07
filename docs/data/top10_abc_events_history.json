@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T16:41:43.449Z",
+  "generatedAt": "2026-04-07T17:41:38.145Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T18:05:28.217Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9ee20e07bc33dc941c7aa173fecec5c8ba15629a",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Trump says there’s 'practically nothing left to target' in Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T18:05:28.217Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ae3cff9dd8d790d9f6104488b83113d560166659",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Why authorities are finally searching Epstein's ranch in New Mexico"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T18:05:28.217Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "111453c1c43f8c0d76924147dac21cd622207bc0",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says there’s 'practically nothing left to target' in Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T18:05:28.217Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f963f953db47cfdfae00289b1ade0efae14e048e",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Large US special ops force needed on ground to seize Iran's uranium, experts say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T18:05:28.217Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6cf941bf29eeedfdadf745123d22cacc4adbbae2",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Why are authorities finally searching Epstein's ranch in New Mexico?",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "MOVED",
-      "fingerprint": "79a167e9e1d52f4c80189f6356e62c62a0dd1663",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up",
-      "to_title": "Trump to visit northern Kentucky as MAGA proxy battle against Thomas Massie heats up"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "MOVED",
-      "fingerprint": "ae3cff9dd8d790d9f6104488b83113d560166659",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Why authorities are finally searching Epstein's ranch in New Mexico",
-      "to_title": "Why authorities are finally searching Epstein's ranch in New Mexico"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "MOVED",
-      "fingerprint": "32e2b20821d4c63bab460de2a2049d47212f2b9c",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Inflation held steady in February before war with Iran sent gas prices surging",
-      "to_title": "Inflation held steady in February before war with Iran sent gas prices surging"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:08:27.512Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d68281bc6d75f83ae379f5acc2dd080069182dac",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingFBI warns Iran aspired to attack California with drones in retaliation for war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:50:25.763Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "501556cb7f978e83d69495ced9b79679dbb80dac",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Iran says it won't use missile warhead lighter than 1 ton"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:50:25.763Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5bff45072a57bff2721b7b57fd5b5e1f83fd3f6c",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "New person of interest identified over 40 years after 8-year-old girl went missing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T19:50:25.763Z",
-      "event_type": "MOVED",
-      "fingerprint": "d2d806afef7fdf9f8419393f2cb9b39100af4c3f",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Trump administration opens investigation into Arizona’s 2020 election results",
-      "to_title": "Trump administration opens investigation into Arizona’s 2020 election results"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T19:50:25.763Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "After SCOTUS presidential immunity ruling, Trump wields it broadly in push for power",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b963c1c2888f1b93fbcbf0b5a75b6d738f8b3b14",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingAbducted American journalist to be freed: Hezbollah Brigades"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd45607bea037f3aa91219139de3038f61fb898a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9f431bf8298912e42c23f5b19a11e628e994cf53",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump's deadline nears for Iran to open Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e5cc7cc0027c8f581afa3d59f8f8480166fd8a5d",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Many congressional Democrats call Trump's threats to blow up Iran 'unhinged'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "MOVED",
+      "fingerprint": "fc5ea33170890527a07a69e5473380a39138c0c0",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Artemis II live updates: NASA shares Orion crew's stunning images of moon, Earth",
+      "to_title": "Artemis II live updates: NASA shares Orion crew's stunning images of moon, Earth"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "MOVED",
+      "fingerprint": "f531ab9d456e79c64504bf500efe6db8effcdae3",
+      "from_rank": 3,
+      "to_rank": 7,
+      "from_title": "ICE arrests newlywed wife of Army soldier at military base",
+      "to_title": "ICE arrests newlywed wife of Army soldier at military base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "MOVED",
+      "fingerprint": "74ab7849f70d622901cb11fa38268640b33853f6",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Kanye West denied entry to UK, Wireless Festival canceled",
+      "to_title": "Kanye West denied entry to UK, Wireless Festival canceled"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "MOVED",
+      "fingerprint": "17ba1ac61bbc342b8b765583826e7ef68ec1a254",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views",
+      "to_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "MOVED",
+      "fingerprint": "b6e00dc6553265642aabbf456ade4372e7c1e5d6",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities",
+      "to_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0d81fb98a12050f7bb6f659e633e70690c55e889",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump threatens 'a whole civilization will die tonight'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5428e068f4087524716b7f249ed00b653b7a935d",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump's threats against Iran could be war crimes if carried out, some experts say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bfdaf310a635967c7eaf99c07b62e50e1111e1c1",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T17:41:50.408Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ca0bc271d3f3a66cc7acbeb0d217dc93289dad4f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Vance says he wants to help Orbán in Hungarian leader's reelection bid",
       "to_title": null
     }
   ],
