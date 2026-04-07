@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T11:38:29.655Z",
+  "generatedAt": "2026-04-07T12:42:08.523Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T13:47:56.227Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f12701cd3c7cfbd5ee57bdf98d85494690ee9d92",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Towering lava fountains of Hawaii's Kilauea volcano trigger park and highway closures",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T14:36:59.122Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "111453c1c43f8c0d76924147dac21cd622207bc0",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says there’s ‘practically nothing left to target’ in Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T14:36:59.122Z",
-      "event_type": "MOVED",
-      "fingerprint": "99eda5eeba093fce6e4a2a6e15882e6e6ce809f5",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home",
-      "to_title": "Woman charged with attempted murder in shooting at Rihanna's Los Angeles home"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T14:36:59.122Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0dcd28c00b3c610dd0c83687c082e6b33b6182cf",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T14:36:59.122Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b99686aa3e574214a7031652a77c3748afa809ec",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran launches 'most strikes yet'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T14:36:59.122Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f12ca9120b4c0fba7207329758da4e1eb4a04f6d",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "At least 2 dead as 45 tornado warnings remain across 7 states",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T15:30:25.051Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "111453c1c43f8c0d76924147dac21cd622207bc0",
-      "from_rank": 1,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Trump says there’s ‘practically nothing left to target’ in Iran",
-      "to_title": "Iran live updates: Trump says there’s 'practically nothing left to target' in Iran"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T15:30:25.051Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Artemis II live updates: Trump calls crew after lunar flyby: 'You've made history'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T12:42:19.041Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0d81fb98a12050f7bb6f659e633e70690c55e889",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump threatens 'a whole civilization will die tonight'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T12:42:19.041Z",
+      "event_type": "MOVED",
+      "fingerprint": "421880f179380645578d2d4bf6a16ef9cfdf2512",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "In battleground Wisconsin, voters could grow liberal majority on state Supreme Court",
+      "to_title": "In battleground Wisconsin, voters could grow liberal majority on state Supreme Court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T12:42:19.041Z",
+      "event_type": "MOVED",
+      "fingerprint": "bfdaf310a635967c7eaf99c07b62e50e1111e1c1",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike",
+      "to_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T12:42:19.041Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c95d1a58c70e09039b8d2e62141e9125b2ea6d2",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Vance visits Hungary ahead of election that threatens Orbán's hold on power",
+      "to_title": "Vance visits Hungary ahead of election that threatens Orbán's hold on power"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T12:42:19.041Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "31ef5c457477d11307bc85bd04d79d069d6acdf7",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Trump calls crew after lunar flyby: 'You've made history'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T12:42:19.041Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "18736c953f83f29a83931457088e2657054da741",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: As Trump's deadline for deal looms, strikes continue across Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T12:42:19.041Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6b2e00a2b3bbcaa31f20aadd73a763b58ce126b3",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Rapper Offset hospitalized after being shot in Florida",
       "to_title": null
     }
   ],
