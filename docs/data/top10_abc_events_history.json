@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T18:38:30.979Z",
+  "generatedAt": "2026-04-07T19:42:31.635Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T20:54:53.407Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e0f26e38c92cf10941ebc1e12bfcc2bad162f39a",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "New person of interest identified in case of girl who disappeared in 1984"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-11T20:54:53.407Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5bff45072a57bff2721b7b57fd5b5e1f83fd3f6c",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "New person of interest identified over 40 years after 8-year-old girl went missing",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-11T21:23:30.825Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T19:42:43.133Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "134d77e54dd5009de561d3a25ead6ce8ede56f89",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-07T19:42:43.133Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0ea9176ba487386fb79dae4072f9445a5894bed9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Who are the alleged victims of Gilgo Beach suspect Rex Heuermann?",
       "to_title": null
     }
   ],
