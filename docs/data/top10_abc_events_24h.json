@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-08T18:54:57.609Z",
+  "generatedAt": "2026-04-08T19:54:57.917Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T19:42:43.133Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "134d77e54dd5009de561d3a25ead6ce8ede56f89",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T19:42:43.133Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0ea9176ba487386fb79dae4072f9445a5894bed9",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Who are the alleged victims of Gilgo Beach suspect Rex Heuermann?",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T20:25:50.162Z",
@@ -1251,6 +1231,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran live updates: Lebanon not included in ceasefire deal, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon",
+      "to_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire",
+      "to_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "158f1f9470016e2d669b3087bc2ca91b14ccc3a1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
       "to_title": null
     }
   ]

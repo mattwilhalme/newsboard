@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T18:54:57.609Z",
+  "generatedAt": "2026-04-08T19:54:57.917Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:59:25.440Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T20:39:17.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "58bcdfdb889ee71f0f582ef0ecc8bb3ef6ddb1fb",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Dow closes down 700 points as global oil prices top $100 a barrel"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T20:39:17.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "86214532d644c3b692a3ad9a201afe88f6a42161",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Old Dominion suspected gunman ID'd as ex-Army National Guard member: FBI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T20:39:17.602Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3488412646e3a436aedf039358db98017863564b",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Has public opinion on the US striking Iran shifted since the war started?"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T20:39:17.602Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran live updates: Lebanon not included in ceasefire deal, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon",
+      "to_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "MOVED",
+      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire",
+      "to_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T19:55:06.871Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "158f1f9470016e2d669b3087bc2ca91b14ccc3a1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
       "to_title": null
     }
   ],
