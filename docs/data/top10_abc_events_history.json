@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T17:49:30.269Z",
+  "generatedAt": "2026-04-08T18:54:57.609Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T18:30:45.019Z",
-      "event_type": "MOVED",
-      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
-      "to_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T18:30:45.019Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b45072af6370f32b5e66d7c9aba11b80892e6a70",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Ukraine awaits White House sign-off on drone deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T18:30:45.019Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4247c0362976ec1e7df3493171b08f27941d72a6",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingOfficials respond to reports of active shooter at synagogue in Michigan, sheriff says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T18:30:45.019Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5f58c7abac63afd80ccc800ede253e67070961a8",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Related:In Iran fight, US scrambles to adapt in its 1st major drone war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T18:30:45.019Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9cdde53b6ae6b25df34cb9423e4d8e67c967cf2c",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Jack Osbourne honors late father Ozzy Osbourne by naming baby after him",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:27:00.829Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "450bc7933fac882d800f6a44b6b96ce9fa3f8e45",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingSuspect dead, guard injured after truck ramming incident at Michigan synagogue, sheriff says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:27:00.829Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5113856d46a82c57ce8b5dd478ff0712f5ef5f7d",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingSuspect dead after shooting, vehicle ramming incident at Michigan synagogue, sources say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:59:25.440Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b7cd2708d4b94a76ec42464108f5ea1e2ef95133",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "1 dead, 2 injured, following shooting at Old Dominion University, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:59:25.440Z",
-      "event_type": "MOVED",
-      "fingerprint": "1ab5ee48308f178d49334960d44a3c7132875424",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars",
-      "to_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:59:25.440Z",
-      "event_type": "MOVED",
-      "fingerprint": "c563677d33647b2a59314081ef289f190678146b",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources",
-      "to_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:59:25.440Z",
-      "event_type": "MOVED",
-      "fingerprint": "8b0a45c2a29e980fa57425c6979e971ab92a897c",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Jack Osbourne names newborn daughter after dad Ozzy",
-      "to_title": "Jack Osbourne names newborn daughter after dad Ozzy"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:59:25.440Z",
-      "event_type": "MOVED",
-      "fingerprint": "090d6ff55b0a53e28108ab618710a3f1fe1e30a9",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Google overhauls its Maps app, adding in more AI features to help people get around",
-      "to_title": "Google overhauls its Maps app, adding in more AI features to help people get around"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T19:59:25.440Z",
-      "event_type": "MOVED",
-      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
-      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T19:59:25.440Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Jury deliberating in trial of doctor accused of trying to kill wife during hike",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "158f1f9470016e2d669b3087bc2ca91b14ccc3a1",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breaking'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "MOVED",
+      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire",
+      "to_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "MOVED",
+      "fingerprint": "fd5e78cec9dc1f0b4b022c76cb7275db10b5afee",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women",
+      "to_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "15fd209303529314ae6877d7c4a6649e34813d1f",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "'Momentary relief': World leaders react to US-Iran ceasefire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "MOVED",
+      "fingerprint": "0644b9a0e765577b89f977f92115bf4814034a24",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "Possible 2028 Dem presidential hopefuls head to National Action Network convention",
+      "to_title": "Possible 2028 Dem presidential hopefuls head to National Action Network convention"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "MOVED",
+      "fingerprint": "8d23af8adab223abc68a75090a2062e8041be993",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Husband of woman reported missing in Bahamas after going overboard speaks out",
+      "to_title": "Husband of woman reported missing in Bahamas after going overboard speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "MOVED",
+      "fingerprint": "e9717fddbd807cbd55f298f44941b23bb5228c18",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "How the last-minute deal between Trump and Iran unfolded",
+      "to_title": "How the last-minute deal between Trump and Iran unfolded"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "MOVED",
+      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
+      "to_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "MOVED",
+      "fingerprint": "85fca49f19a4fced462472f23ae9c7f7c60e2aa0",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "'Jeopardy!' champion wins over $500K in 18-day victory streak",
+      "to_title": "'Jeopardy!' champion wins over $500K in 18-day victory streak"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "07db2ab878587a92fc0c1ee4e8a4bbb0107a7d59",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "'Ketamine Queen' set to be sentenced in Matthew Perry's overdose death",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9f609f62e00dbf1c8e47cedc93aa29c5ea710d2e",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "ICE releases newlywed wife of Army soldier, arrested at military base",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T18:55:08.031Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "59d775602713b48fd79dcf9fc63806e63da019be",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Iran live updates: Lebanon not included in ceasefire deal, Trump says",
       "to_title": null
     }
   ],
