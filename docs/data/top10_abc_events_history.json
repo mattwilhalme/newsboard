@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-07T23:59:10.149Z",
+  "generatedAt": "2026-04-08T02:30:46.582Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T10:59:22.132Z",
-      "event_type": "MOVED",
-      "fingerprint": "73702a68d2111039f1aeb607f59891ef722ee31f",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Survivor of deadly Kuwait drone attack speaks out from hospital",
-      "to_title": "Survivor of deadly Kuwait drone attack speaks out from hospital"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T10:59:22.132Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0dcd28c00b3c610dd0c83687c082e6b33b6182cf",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Dems call for probe into 'troubling pattern' of legal wins for Pam Bondi's brother",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0c4ddd16fd83d6df41599320d1e360c5098ab534",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 3 more ships set afire in Persian Gulf"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a58599b0693c89cb3f3d3790132bc019ea15df28",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b9a8695ef09b80df7ed1e87b9ad5082831ff1fa4",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: 3 more ships set afire by 'unknown' projectiles in Persian Gulf",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T11:33:33.810Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "632ab76b56d505d9035048faabc93905d112c154",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "95acb548a4996bd8e6df046087d7c20561ca4d7e",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: New supreme leader to issue 1st message, state media says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8a1e37ca63e982926ddc67f844f64209d920a13f",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Oil prices surge and stocks fall as Iran escalates shipping attacks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
-      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "c563677d33647b2a59314081ef289f190678146b",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources",
-      "to_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "860ff6735f331fb965f84325f5780d0492018587",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Hacker accessed FBI server that included Epstein files in 2023, files suggest",
-      "to_title": "Hacker accessed FBI server that included Epstein files in 2023, files suggest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
-      "to_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "d951fb2c92f4ea62dc7520e3adfcb796cc417a4a",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Celebrity chef resigns from iconic Danish restaurant Noma after abuse allegations",
-      "to_title": "Celebrity chef resigns from iconic Danish restaurant Noma after abuse allegations"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T13:47:35.589Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bb9861065ac02abbc0eb2ca7fc817663149f3931",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US, Iran agree to 2-week ceasefire tied to strait reopening"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "938b42a4a68c6452f219851fc3dfda15eb123f30",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Jury deliberating in trial of doctor accused of trying to kill wife during hike"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5d81fde3a3cbacb16ba805eaf8f509456235e867",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Judge questions DOJ's push to deport Abrego Garcia while his criminal case is pending"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "MOVED",
+      "fingerprint": "0437331d48b93f8b05ca17588fe34927a0f5fe2a",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "As bombings escalate and the regime hangs on, some Iranians say they are in limbo",
+      "to_title": "As bombings escalate and the regime hangs on, some Iranians say they are in limbo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "MOVED",
+      "fingerprint": "d972d0539fecf06a2bf20036857ce1e1b8bf3ae7",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "FBI on scene of ICE-involved shooting in Patterson, California",
+      "to_title": "FBI on scene of ICE-involved shooting in Patterson, California"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "MOVED",
+      "fingerprint": "9f609f62e00dbf1c8e47cedc93aa29c5ea710d2e",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "ICE releases newlywed wife of Army soldier, arrested at military base",
+      "to_title": "ICE releases newlywed wife of Army soldier, arrested at military base"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e67baa1b70822a2abb7ece31c534297e510a017e",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Abducted American journalist Shelly Kittleson released, US says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "MOVED",
+      "fingerprint": "7d93e7ea320c1329220c9f818cacb841c60204af",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "'That is not who we are': Some Republicans break with Trump over Iran threats",
+      "to_title": "'That is not who we are': Some Republicans break with Trump over Iran threats"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "MOVED",
+      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
+      "to_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ab005229389041b486de1d68e0ca52b45d514cda",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingTrump agrees to 'suspend the bombing' for two weeks if Iran opens Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8ed382b9eb0051772688657916436ceade60fbce",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Abducted American journalist to be released, Iran-backed group says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "74ab7849f70d622901cb11fa38268640b33853f6",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Kanye West denied entry to UK, Wireless Festival canceled",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T02:30:57.837Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "53b46f5e5e9b034be2efa115729dcc97613d03b3",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Todd Blanche shrugs off suggestion Trump will 'pressure' him to target opponents",
       "to_title": null
     }
   ],
