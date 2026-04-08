@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T11:18:05.510Z",
+  "generatedAt": "2026-04-08T12:06:54.357Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T15:39:05.400Z",
-      "event_type": "MOVED",
-      "fingerprint": "de47debc567ac39fe2ea4d32d81d6879d8de8cc2",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities",
-      "to_title": "Married couple in their 80s dead after tornado strikes Indiana home: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T15:39:05.400Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8a1e37ca63e982926ddc67f844f64209d920a13f",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Oil prices surge and stocks fall as Iran escalates shipping attacks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T15:39:05.400Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "99cf40561be80ecaf56fc33c31f9bf6c2f201dcd",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Oscars host Conan O'Brien on how he's keeping the show fresh and funny",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T15:39:05.400Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8bb0d497ba6392064e6c223e1cd229275c7eb8ca",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "12-year-old girl dies days after collapsing following fight near school bus stop",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T16:41:07.668Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump says US to help with Strait of Hormuz after ceasefire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T12:07:04.443Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0538d2c96bb11015ea5dea05cc7b31141c9a8605",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Live Updates:Iran's president 'reaffirmed' participation in peace talks, Pakistan PM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T12:07:04.443Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "234de480d962dc8cd00f3631d790c973ec9de69c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "How last-minute deal between Trump, Iran unfolded"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T12:07:04.443Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f7fa11d5e43c92353fa266ddcfb8fd4e58619c80",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump suggests 'joint venture' with Iran in Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T12:07:04.443Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d339b6f7d563092b8fbff16668c45ec260f77205",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:How the last-minute deal between Trump and Iran unfolded",
       "to_title": null
     }
   ],
