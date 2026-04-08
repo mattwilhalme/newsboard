@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T14:01:30.974Z",
+  "generatedAt": "2026-04-08T15:19:14.489Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T17:34:27.321Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5f58c7abac63afd80ccc800ede253e67070961a8",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:In Iran fight, US scrambles to adapt in its 1st major drone war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T17:34:27.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "1ab5ee48308f178d49334960d44a3c7132875424",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars",
-      "to_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T17:34:27.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "c563677d33647b2a59314081ef289f190678146b",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources",
-      "to_title": "ISIS-inspired teens considered other targets before Gracie Mansion protest: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T17:34:27.321Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9cdde53b6ae6b25df34cb9423e4d8e67c967cf2c",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Jack Osbourne honors late father Ozzy Osbourne by naming baby after him"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T17:34:27.321Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Judge questions DOJ's push to deport Abrego Garcia while his criminal case is pending",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T15:19:25.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "59d775602713b48fd79dcf9fc63806e63da019be",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Lebanon not included in ceasefire deal, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T15:19:25.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T15:19:25.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a311632e0cf452fcf38dae6c12d4be519e28a992",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US achieved 3 military objectives assigned by Trump, Caine says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T15:19:25.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b5d941009f9ecf073314b69ff7402eaf411a7518",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Dow soars more than 1,200 points after US-Iran ceasefire",
       "to_title": null
     }
   ],
