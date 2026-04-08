@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T15:19:14.489Z",
+  "generatedAt": "2026-04-08T16:40:49.047Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T17:34:27.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "090d6ff55b0a53e28108ab618710a3f1fe1e30a9",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Google overhauls its Maps app, adding in more AI features to help people get around",
-      "to_title": "Google overhauls its Maps app, adding in more AI features to help people get around"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T17:34:27.321Z",
-      "event_type": "MOVED",
-      "fingerprint": "af2517aee16774530e86a0d24f225fcc7433a028",
-      "from_rank": 5,
-      "to_rank": 9,
-      "from_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert",
-      "to_title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T17:34:27.321Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Dow soars more than 1,200 points after US-Iran ceasefire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T16:40:59.125Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd5e78cec9dc1f0b4b022c76cb7275db10b5afee",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T16:40:59.125Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "82842d9f9ebe8b02baf18bcdf2e864d40e63d838",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Gilgo Beach suspect returning to court, may admit to crimes: Sources",
       "to_title": null
     }
   ],
