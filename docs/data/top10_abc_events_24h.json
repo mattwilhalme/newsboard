@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-08T10:16:37.975Z",
+  "generatedAt": "2026-04-08T11:18:05.510Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "18736c953f83f29a83931457088e2657054da741",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: As Trump's deadline for deal looms, strikes continue across Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bfdaf310a635967c7eaf99c07b62e50e1111e1c1",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "53d21fe93bd269f9a531eff5e9bcade465880227",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Vance to visit Hungary ahead of election that threatens Orbán's hold on power",
-      "to_title": "Vance to visit Hungary ahead of election that threatens Orbán's hold on power"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "31ef5c457477d11307bc85bd04d79d069d6acdf7",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Artemis II live updates: Trump calls crew after lunar flyby: 'You've made history'",
-      "to_title": "Artemis II live updates: Trump calls crew after lunar flyby: 'You've made history'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bd5b2ec1b886bb7533bed8fb1e91832a7047d8c3",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: IDF tells Iranians to avoid railways until Tuesday night",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5c8bfab71ec30a0f4b79386eb068bd76221d8f60",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Shots fired at Indianapolis city councilman's home after vote on proposed data center",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T11:38:40.067Z",
@@ -1441,6 +1381,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'That is not who we are': Some Republicans break with Trump over Iran threats",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T11:18:16.117Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f7fa11d5e43c92353fa266ddcfb8fd4e58619c80",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump suggests 'joint venture' with Iran in Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T11:18:16.117Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4fe53b9952d214bc5a23e12521dd5a1b9bb984bc",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says US to help with Strait of Hormuz after ceasefire",
       "to_title": null
     }
   ]

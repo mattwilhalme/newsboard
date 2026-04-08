@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T10:16:37.975Z",
+  "generatedAt": "2026-04-08T11:18:05.510Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T15:39:05.400Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1ab5ee48308f178d49334960d44a3c7132875424",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Conan O'Brien says it's a 'running battle' to prep for the Oscars"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T15:39:05.400Z",
-      "event_type": "MOVED",
-      "fingerprint": "d951fb2c92f4ea62dc7520e3adfcb796cc417a4a",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Celebrity chef resigns from iconic Danish restaurant Noma after abuse allegations",
-      "to_title": "Celebrity chef resigns from iconic Danish restaurant Noma after abuse allegations"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T15:39:05.400Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'That is not who we are': Some Republicans break with Trump over Iran threats",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T11:18:16.117Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f7fa11d5e43c92353fa266ddcfb8fd4e58619c80",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump suggests 'joint venture' with Iran in Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T11:18:16.117Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4fe53b9952d214bc5a23e12521dd5a1b9bb984bc",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says US to help with Strait of Hormuz after ceasefire",
       "to_title": null
     }
   ],
