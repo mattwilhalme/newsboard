@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T20:33:25.328Z",
+  "generatedAt": "2026-04-08T21:27:30.418Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T21:06:13.613Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "450bc7933fac882d800f6a44b6b96ce9fa3f8e45",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingSuspect dead, guard injured after truck ramming incident at Michigan synagogue, sheriff says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T21:46:51.739Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "79b9082939fda95653650c2aca34201760d90b20",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Suspect dead after ramming truck into Detroit-area synagogue: Sheriff"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T21:46:51.739Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "How the last-minute deal between Trump and Iran unfolded",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T21:27:41.244Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9fecfc9cc5612740834fa6e987a9d3fd8141612c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Amid Artemis II mission, why did it take the US so long to return to the moon?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T21:27:41.244Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
       "to_title": null
     }
   ],
