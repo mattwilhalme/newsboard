@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T02:30:46.582Z",
+  "generatedAt": "2026-04-08T05:01:46.497Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "MOVED",
-      "fingerprint": "a58599b0693c89cb3f3d3790132bc019ea15df28",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'",
-      "to_title": "In Massie's Kentucky district, Trump attacks GOP congressman as 'disloyal to America'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-12T13:47:35.589Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0c4ddd16fd83d6df41599320d1e360c5098ab534",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: 3 more ships set afire in Persian Gulf",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-12T13:47:35.589Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Todd Blanche shrugs off suggestion Trump will 'pressure' him to target opponents",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T05:01:56.680Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d339b6f7d563092b8fbff16668c45ec260f77205",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:How the last-minute deal between Trump and Iran unfolded"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-08T05:01:56.680Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "24023d992f3767620314247f6416abdd845a6642",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump considering Pakistani PM's request he extend Iran deadline, White House says",
       "to_title": null
     }
   ],
