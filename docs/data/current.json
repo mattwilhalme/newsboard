@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-04-09T00:05:19.364Z",
+  "generatedAt": "2026-04-09T03:24:57.919Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:05:25.986Z",
+      "updatedAt": "2026-04-09T03:25:04.773Z",
       "error": null,
-      "runId": "abc_2026-04-09T00-05-19-479Z",
+      "runId": "abc_2026-04-09T03-24-58-033Z",
       "since": "2026-04-09T00:05:19.364Z",
       "item": {
         "title": "Trump suggests US, Iran could work together to remove 'nuclear dust'",
@@ -21,9 +21,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:05:36.505Z",
+      "updatedAt": "2026-04-09T03:25:16.817Z",
       "error": null,
-      "runId": "cbs_2026-04-09T00-05-29-198Z",
+      "runId": "cbs_2026-04-09T03-25-08-076Z",
       "since": "2026-04-08T11:18:05.510Z",
       "item": {
         "title": "Iran accuses U.S. of violating ceasefire amid Israeli attacks on Lebanon",
@@ -35,16 +35,16 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:05:44.405Z",
+      "updatedAt": "2026-04-09T03:25:23.279Z",
       "error": null,
-      "runId": "usat1_2026-04-09T00-05-36-742Z",
-      "since": "2026-04-08T17:49:30.269Z",
+      "runId": "usat1_2026-04-09T03-25-17-123Z",
+      "since": "2026-04-09T03:24:57.919Z",
       "item": {
-        "title": "US-Iran ceasefire faces tests, JD Vance to lead in-person peace talks",
-        "url": "https://usatoday.com/story/news/world/2026/04/08/iran-war-ceasefire-strait-hormuz-trump-updates--live/89509782007",
-        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/04/08/USAT/89515772007-20260408-t-072628-z-72599750-rc-2-ukkawyvqq-rtrmadp-3-irancrisislebanonisrael.JPG?auto=webp&crop=3279%2C1845%2Cx0%2Cy0&format=pjpg&height=242&width=430",
+        "title": "America barely uses Middle East oil. So why did gas prices rise?",
+        "url": "https://usatoday.com/story/money/2026/04/08/does-us-get-oil-from-middle-east/89521086007",
+        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/04/08/USAT/89521478007-usatsi-28677071-168410240-lowres.jpg?auto=webp&crop=1759%2C990%2Cx0%2Cy0&format=pjpg&height=242&width=430",
         "imgAlt": null,
-        "dek": "President Trump announced a two-week ceasefire with Iran contingent on the reopening of the Strait of Hormuz. See what’s next in peace talks.",
+        "dek": "If the United States buys so little oil from the Persian Gulf, why would a war in the region cause gas prices here to spike?",
         "breakingLabel": null,
         "breakingHeadline": null,
         "breakingUrl": null,
@@ -54,29 +54,29 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:05:50.129Z",
+      "updatedAt": "2026-04-09T03:25:29.334Z",
       "error": null,
-      "runId": "nbc_2026-04-09T00-05-44-706Z",
-      "since": "2026-04-08T14:01:30.974Z",
+      "runId": "nbc_2026-04-09T03-25-23-589Z",
+      "since": "2026-04-09T03:24:57.919Z",
       "item": {
-        "title": "Live updates: Iran war ceasefire begins, though some new attacks hit Gulf; Trump and Netanyahu say Lebanon not included in ceasefire",
-        "url": "https://nbcnews.com/world/iran/live-blog/live-updates-iran-war-ceasefire-trump-hormuz-israel-lebanon-rcna267205",
+        "title": "Israel launches sprawling attacks on Lebanon after Iran ceasefire was declared",
+        "url": "https://nbcnews.com/world/lebanon/lebanon-israel-attack-iran-ceasefire-hezbollah-rcna267260",
         "imgUrl": null,
-        "breakingLabel": "Breaking News",
-        "breakingHeadline": "Inside Scoop: With the U.S.-Iran truce, what will the 'new normal' be in the Middle East — and at the pump?",
-        "breakingUrl": "https://nbcnews.com/politics/donald-trump/scoop-newsletter-us-vs-iran-vs-israel-vs-lebanon-rcna267346",
+        "breakingLabel": null,
+        "breakingHeadline": null,
+        "breakingUrl": null,
         "slotKey": "579270cafa55",
-        "contentType": "live"
+        "contentType": "news"
       }
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:05:56.808Z",
+      "updatedAt": "2026-04-09T03:25:36.284Z",
       "error": null,
-      "runId": "cnn1_2026-04-09T00-05-50-296Z",
+      "runId": "cnn1_2026-04-09T03-25-29-556Z",
       "since": "2026-04-08T05:01:46.497Z",
       "item": {
-        "title": "US and Iran's fragile ceasefire is being tested as Iranian official alleges infractions Show all",
+        "title": "US and Iran's fragile ceasefire tested as Iranian official alleges infractions Show all",
         "url": "https://cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire",
         "imgUrl": null,
         "slotKey": "e75971db9693",
@@ -84,18 +84,24 @@
       }
     },
     "guardian1": {
-      "ok": false,
-      "updatedAt": "2026-04-09T00:05:19.364Z",
-      "error": "StorageApiError: Bad Gateway",
-      "runId": null,
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-04-09T03:25:40.970Z",
+      "error": null,
+      "runId": "guardian1_2026-04-09T03-25-36-465Z",
+      "since": "2026-04-09T03:24:57.919Z",
+      "item": {
+        "title": "Red Cross ‘outraged’ as Israeli strikes on Lebanon kill at least 254; strait of Hormuz impasse continues",
+        "url": "https://theguardian.com/world/live/2026/apr/09/iran-war-ceasefire-live-strait-of-hormuz-israel-strikes-middle-east-crisis-latest-news",
+        "imgUrl": null,
+        "slotKey": "b80da2377db9",
+        "contentType": "live"
+      }
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:06:56.107Z",
+      "updatedAt": "2026-04-09T03:25:58.225Z",
       "error": null,
-      "runId": "ap1_2026-04-09T00-06-46-551Z",
+      "runId": "ap1_2026-04-09T03-25-41-144Z",
       "since": "2026-04-08T05:01:46.497Z",
       "item": {
         "title": "Iran accuses US of violating parts of deal framework, says ceasefire is ‘unreasonable’",
@@ -107,9 +113,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:07:03.872Z",
+      "updatedAt": "2026-04-09T03:26:08.408Z",
       "error": null,
-      "runId": "latimes1_2026-04-09T00-06-56-355Z",
+      "runId": "latimes1_2026-04-09T03-25-58-756Z",
       "since": "2026-04-09T00:05:19.364Z",
       "item": {
         "title": "The new LACMA is divisive. It’s also ambitious, disorienting — and radically alive",
@@ -121,13 +127,13 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:07:12.259Z",
+      "updatedAt": "2026-04-09T03:26:17.970Z",
       "error": null,
-      "runId": "npr1_2026-04-09T00-07-04-082Z",
-      "since": "2026-04-08T21:27:30.418Z",
+      "runId": "npr1_2026-04-09T03-26-08-647Z",
+      "since": "2026-04-09T03:24:57.919Z",
       "item": {
-        "title": "What has the U.S. war with Iran accomplished?",
-        "url": "https://npr.org/2026/04/08/nx-s1-5771492/iran-war-goals-unmet-ceasefire-strait-hormuz-trump",
+        "title": "A fragile U.S.-Iran ceasefire shows cracks as attacks continue across the region",
+        "url": "https://npr.org/2026/04/08/nx-s1-5777291/iran-war-updates",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
@@ -135,26 +141,26 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:07:17.486Z",
+      "updatedAt": "2026-04-09T03:26:23.211Z",
       "error": null,
-      "runId": "bbc1_2026-04-09T00-07-12-481Z",
-      "since": "2026-04-09T00:05:19.364Z",
+      "runId": "bbc1_2026-04-09T03-26-18-183Z",
+      "since": "2026-04-09T03:24:57.919Z",
       "item": {
-        "title": "Analysis: Ceasefire means respite for civilians, but it might not last long",
-        "url": "https://bbc.com/news/articles/c62l597wl0yo",
+        "title": "Israel and Hezbollah in Lebanon exchange strikes as fragile US-Iran ceasefire under strain",
+        "url": "https://bbc.com/news/live/clyeg3224d9t",
         "imgUrl": null,
         "slotKey": "b890b46a9e6c",
-        "contentType": "news"
+        "contentType": "live"
       }
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:07:23.682Z",
+      "updatedAt": "2026-04-09T03:26:29.974Z",
       "error": null,
-      "runId": "fox1_2026-04-09T00-07-17-641Z",
+      "runId": "fox1_2026-04-09T03-26-23-373Z",
       "since": "2026-04-08T16:40:49.047Z",
       "item": {
-        "title": "Vance issues blunt warning to Iran as US demands ceasefire compliance",
+        "title": "Iran ceasefire strained as Hezbollah claims responsibility for rocket attacks",
         "url": "https://foxnews.com/live-news/trump-us-iran-war-ceasefire-strait-hormuz-israel-live-updates-04-08-2026",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
@@ -163,9 +169,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-04-09T00:07:33.684Z",
+      "updatedAt": "2026-04-09T03:26:39.097Z",
       "error": null,
-      "runId": "yahoo1_2026-04-09T00-07-23-853Z",
+      "runId": "yahoo1_2026-04-09T03-26-30-165Z",
       "since": "2026-04-09T00:05:19.364Z",
       "item": {
         "title": "Iranian control of Strait of Hormuz sparks 1st ceasefire standoff",
