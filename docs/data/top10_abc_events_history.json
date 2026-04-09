@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-08T23:41:37.759Z",
+  "generatedAt": "2026-04-09T00:05:19.364Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T10:29:39.543Z",
-      "event_type": "MOVED",
-      "fingerprint": "d45939894224f2c238e6c188172bfb34a2d9ac87",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Iran live updates: Rescue effort underway after US refueling aircraft crashes in Iraq",
-      "to_title": "Iran live updates: Rescue effort underway after US refueling aircraft crashes in Iraq"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T10:29:39.543Z",
-      "event_type": "MOVED",
-      "fingerprint": "102d26d886db0dc66708af2f79ba18601587d299",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "How geofencing technology cracked the case of a woman who vanished",
-      "to_title": "How geofencing technology cracked the case of a woman who vanished"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T10:29:39.543Z",
-      "event_type": "MOVED",
-      "fingerprint": "cb7747cb59e7dac55e3dc54ebca11e23f1d2b998",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Teen girl's harrowing journey with measles highlights how serious the virus can be",
-      "to_title": "Teen girl's harrowing journey with measles highlights how serious the virus can be"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T10:29:39.543Z",
-      "event_type": "MOVED",
-      "fingerprint": "58bcdfdb889ee71f0f582ef0ecc8bb3ef6ddb1fb",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Dow closes down 700 points as global oil prices top $100 a barrel",
-      "to_title": "Dow closes down 700 points as global oil prices top $100 a barrel"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T10:29:39.543Z",
-      "event_type": "MOVED",
-      "fingerprint": "3488412646e3a436aedf039358db98017863564b",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Has public opinion on the US striking Iran shifted since the war started?",
-      "to_title": "Has public opinion on the US striking Iran shifted since the war started?"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-13T10:29:39.543Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Criminal investigation opened on woman missing, going overboard in Bahamas: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T00:05:28.980Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "33ffb28554f7b321688fe2b3e98d1bfed6c7e2b0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump suggests US, Iran could work together to remove 'nuclear dust'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T00:05:28.980Z",
+      "event_type": "MOVED",
+      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon",
+      "to_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T00:05:28.980Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5ec8b817aa7f5eedc1d4a9422d0f7052755de945",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Criminal investigation opened on woman missing, going overboard in Bahamas: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T00:05:28.980Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52dffaa7a5f63d5e80fe57a48ddcf702f90cc98a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingCriminal investigation opened on woman missing, going overboard in Bahamas: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T00:05:28.980Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "36e62035e1c4ae93c50c2d15ad6761a94609b1df",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "White House says Iran 'backed down' to Trump in agreeing to ceasefire",
       "to_title": null
     }
   ],
