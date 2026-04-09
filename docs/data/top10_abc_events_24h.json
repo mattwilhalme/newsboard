@@ -1,118 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-09T20:31:30.169Z",
+  "generatedAt": "2026-04-09T21:26:40.797Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "153c58e80d1a5152c788e047290c78870ced277a",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Dow closes up more than 1,300 points after US-Iran ceasefire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "MOVED",
-      "fingerprint": "8d23af8adab223abc68a75090a2062e8041be993",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Husband of woman reported missing in Bahamas after going overboard speaks out",
-      "to_title": "Husband of woman reported missing in Bahamas after going overboard speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "MOVED",
-      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
-      "to_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "MOVED",
-      "fingerprint": "85fca49f19a4fced462472f23ae9c7f7c60e2aa0",
-      "from_rank": 10,
-      "to_rank": 8,
-      "from_title": "'Jeopardy!' champion wins over $500K in 18-day victory streak",
-      "to_title": "'Jeopardy!' champion wins over $500K in 18-day victory streak"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca43e2a639b703ff447ae434999034cb9e0b5b9a",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Two MLB players get 7-game suspensions following Angels-Braves brawl"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3c559ebfde7c4f77ca81a3250eef6189988411fb",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Jim Whittaker, first American to climb Everest, dies at 97"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0644b9a0e765577b89f977f92115bf4814034a24",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Possible 2028 Dem presidential hopefuls head to National Action Network convention",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e9717fddbd807cbd55f298f44941b23bb5228c18",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "How the last-minute deal between Trump and Iran unfolded",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T21:27:41.244Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9fecfc9cc5612740834fa6e987a9d3fd8141612c",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Amid Artemis II mission, why did it take the US so long to return to the moon?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T21:27:41.244Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T22:07:29.639Z",
@@ -1181,6 +1071,116 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Trump suggests US, Iran could work together to remove 'nuclear dust'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "MOVED",
+      "fingerprint": "4d624d789fddc5fa632bf4b92ed5f672493704ed",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Husband of woman reported missing in Bahamas arrested",
+      "to_title": "Husband of woman reported missing in Bahamas arrested"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8d0aed053c74285e0c4868baeb418b1a235074a6",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Suspect in real estate agent's murder was spotted by witness at the scene: Court docs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "MOVED",
+      "fingerprint": "33ede73b02e2336d73bed93da636556d0e1d3624",
+      "from_rank": 8,
+      "to_rank": 5,
+      "from_title": "Michael J. Fox reassures fans after death scare: 'I'm ok'",
+      "to_title": "Michael J. Fox reassures fans after death scare: 'I'm ok'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "MOVED",
+      "fingerprint": "ca0152018ea699ebffc7fd39f05549e98d76fb73",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "How a Bounty paper towel linked Gilgo Beach murder victim to Rex Heuermann: DA",
+      "to_title": "How a Bounty paper towel linked Gilgo Beach murder victim to Rex Heuermann: DA"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3640671b7b5ed8a79b2a205763495e26c60c492f",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "DOJ probing NFL over potential antitrust violations in TV deals, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "MOVED",
+      "fingerprint": "0a27840183b2147e82452d4d357a9baa65d891b4",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "These species are now listed as endangered due to climate change",
+      "to_title": "These species are now listed as endangered due to climate change"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "MOVED",
+      "fingerprint": "f046af9ca3c414be50d66d9bb9a82a59468a84f7",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "What riders can expect when Disney World’s Big Thunder Mountain reopens",
+      "to_title": "What riders can expect when Disney World’s Big Thunder Mountain reopens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4a5d0303fcb9f378dcd9173bbae1c7cb05d46671",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Group says family was deported without due process"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c52d2aab2c13818a63663336ad3df4c26e5e36a6",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Search and rescue mission underway in deadly parking garage collapse",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fb2d424a794932c5019cad9c9e1cde9821232691",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Hawaii at risk of flooding, while dry conditions raise fire danger in the Northeast",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T21:26:51.823Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6559a4d5d026f173d8259481d8618ec4fbe453c8",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Settlement in ship crash into Baltimore bridge",
       "to_title": null
     }
   ]
