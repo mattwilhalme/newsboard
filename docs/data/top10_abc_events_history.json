@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-09T22:57:09.137Z",
+  "generatedAt": "2026-04-09T23:36:21.079Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T21:53:35.870Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "102d26d886db0dc66708af2f79ba18601587d299",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "How geofencing technology cracked the case of a woman who vanished"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T21:53:35.870Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3fbefecc64281af7a4fb6313e8315e613b751c24",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingJudge blocks DOJ subpoenas involving Fed Chair Jerome Powell",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T21:53:35.870Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "79f7a5fe4f3c134ba551c7ab335d6d1fb343ac01",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "A 'little excursion' or 'war'? It's 'both,' Trump says: ANALYSIS",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-13T21:53:35.870Z",
@@ -30002,6 +29972,36 @@
       "to_rank": null,
       "from_title": "What riders can expect when Disney World’s Big Thunder Mountain reopens",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T23:36:30.717Z",
+      "event_type": "MOVED",
+      "fingerprint": "d922207f0cd2e26c183fb4379ba30c27c2d7909b",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Trump says Iran 'better not' collect Strait of Hormuz toll",
+      "to_title": "Iran live updates: Trump says Iran 'better not' collect Strait of Hormuz toll"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T23:36:30.717Z",
+      "event_type": "MOVED",
+      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
+      "to_title": "Why Artemis II crew will lose communication with mission control during reentry"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T23:36:30.717Z",
+      "event_type": "MOVED",
+      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
+      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
     }
   ],
   "error": "No Top 10 events yet"
