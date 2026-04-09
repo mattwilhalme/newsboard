@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-09T19:39:40.621Z",
+  "generatedAt": "2026-04-09T20:31:30.169Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T19:55:06.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon",
-      "to_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T19:55:06.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire",
-      "to_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T19:55:06.871Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T19:55:06.871Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "158f1f9470016e2d669b3087bc2ca91b14ccc3a1",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breaking'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T20:33:35.521Z",
@@ -1191,6 +1151,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Doctor accused of trying to kill wife on hike found guilty of attempted manslaughter",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T20:31:40.032Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T20:31:40.032Z",
+      "event_type": "MOVED",
+      "fingerprint": "3a25c796bc83beaf8c4dc996a3605d0b31db5b65",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Iran says Hormuz is open to all ships that coordinate with Tehran",
+      "to_title": "Iran live updates: Iran says Hormuz is open to all ships that coordinate with Tehran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T20:31:40.032Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ed045d170df849fa7711dfa0e38fafdc78dc633f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump suggests US, Iran could work together to remove 'nuclear dust'",
       "to_title": null
     }
   ]
