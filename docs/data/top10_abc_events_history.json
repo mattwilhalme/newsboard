@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-09T14:31:52.881Z",
+  "generatedAt": "2026-04-09T16:09:19.886Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T17:05:31.136Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "05d1ad72eb58ec389f588a9d2dc443b91f5dc34e",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "6 dead after KC-135 US refueling aircraft goes down in western Iraq",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T17:05:31.136Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e5f1a69be34035e2ced84880c1ac68f8c3ce2634",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "US economy expanded at 0.7% in 4th quarter",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T17:51:15.677Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "79f7a5fe4f3c134ba551c7ab335d6d1fb343ac01",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "A 'little excursion' or 'war'? It's 'both,' Trump says: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T17:51:15.677Z",
-      "event_type": "MOVED",
-      "fingerprint": "60524528f6615ce646ac7775a55054dbeca9fb49",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: 2,200 Marines headed to Middle East",
-      "to_title": "Iran live updates: 2,200 Marines headed to Middle East"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-13T17:51:15.677Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Democratic presidential prospects flock to NY",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T16:09:29.852Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ca0152018ea699ebffc7fd39f05549e98d76fb73",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "How a Bounty paper towel linked Gilgo Beach murder victim to Rex Heuermann: DA"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T16:09:29.852Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "848370e92abadf973bc85941f77c555c45d2ebfe",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Walt Disney World's Big Thunder Mountain Railroad reopening in May: All the details"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T16:09:29.852Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ec90183603fda8bc89f933128eca8c60052d026a",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "UK and Norway led military operation to deter Russian submarines in the N. Atlantic",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-09T16:09:29.852Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "faf9fb2da866c131efc898dffa49fade4ebc6197",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Space historians explain why it took the US more than 50 years to return to the moon",
       "to_title": null
     }
   ],
