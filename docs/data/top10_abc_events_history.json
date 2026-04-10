@@ -1,168 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-10T12:34:02.994Z",
+  "generatedAt": "2026-04-10T13:59:05.603Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T18:55:23.383Z",
-      "event_type": "MOVED",
-      "fingerprint": "3e0cf5a398045e29549890bef88d5afef7c48468",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Additional images recovered from cameras at Nancy Guthrie's home: Sources",
-      "to_title": "Additional images recovered from cameras at Nancy Guthrie's home: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T18:55:23.383Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e54751eef9ff4b0202c1ef67302a2cfb7d98bd73",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Motive still under investigation in synagogue attack as fuller timeline emerges",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T20:37:21.777Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "82c6c395979fb1ed4e65d3b80f8dc93640ce2ea5",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Judge partially backs Democrat Kennedy Center trustee in lawsuit over renaming"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T20:37:21.777Z",
-      "event_type": "MOVED",
-      "fingerprint": "38f5c0aebda190299342ad1b7595afba37b607eb",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter",
-      "to_title": "Feds arrest man who allegedly sold gun to Old Dominion shooter"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T20:37:21.777Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b9e55871b3956fac2f23b93d7bbb57760131f04d",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Cuba, US confirm high-level negotiations after Trump predicts regime's fall",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T22:39:33.310Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Expansive March storm ramping up, bringing snow, strong winds to millions"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T22:39:33.310Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "21c59028ae919f1fbce8a1bba414f3790b4349b2",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T22:39:33.310Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5b8244a5150f5ce652e86120d64d39879ae0f324",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Cross-country storm gearing up to bring snow, strong winds for the weekend",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-14T22:39:33.310Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "82c6c395979fb1ed4e65d3b80f8dc93640ce2ea5",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Judge partially backs Democrat Kennedy Center trustee in lawsuit over renaming",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T04:16:56.327Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9e9c50f86d817c369bb92d85fdd7291b65333ce1",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Pentagon identifies 6 Air Force airmen killed in KC-135 refueling aircraft crash"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T04:16:56.327Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cab82bc7d63d35762c47929691f4716786544f09",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Trump calls on other countries to assist in Strait of Hormuz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T04:16:56.327Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9275fb59c6251d88fed93883bfa99afbce303a5f",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump calls on other countries to assist in Strait of Hormuz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T04:16:56.327Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f46a04e3e45fddabeaaedfb025388598395a428",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:6 dead after KC-135 US refueling aircraft goes down in western Iraq",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T09:55:15.692Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "38322ebf52f8811f281189be6cc6224713f242f7",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Heightened security plans for 2026 Oscars amid war with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T09:55:15.692Z",
-      "event_type": "MOVED",
-      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Expansive March storm ramping up, bringing snow, strong winds to millions",
-      "to_title": "Expansive March storm ramping up, bringing snow, strong winds to millions"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T09:55:15.692Z",
-      "event_type": "MOVED",
-      "fingerprint": "21c59028ae919f1fbce8a1bba414f3790b4349b2",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming",
-      "to_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-15T09:55:15.692Z",
@@ -30001,6 +29841,166 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump blasts MAGA influencers over Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a3585388df563784623950e15386105fdd0d7ff7",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingMarch inflation report shows prices surged after oil shock set off by Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e934af3c411c02ddf2563d3350788019cdd9e173",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Vance heads to Islamabad for Iran talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a3ef9130345a7acb1f1c745e624d72866a708638",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Vance heads to Islamabad for Iran talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1d90b2d83f5d4d73a9d8a402382a14aa3c313baf",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran says 10-point plan to be basis for talks, rejects ceasefire enabling rearmament"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "MOVED",
+      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
+      "from_rank": 2,
+      "to_rank": 5,
+      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
+      "to_title": "Why Artemis II crew will lose communication with mission control during reentry"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "MOVED",
+      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
+      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "57dd8c68d76f7ed5a8628bec61872d301a129d74",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Teen’s parents issue plea for kidney donor, a surprise neighbor responds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "MOVED",
+      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Secret Service trainee accused of spying on roommate with hidden camera",
+      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "MOVED",
+      "fingerprint": "1bb667ef787a15657b9e778e2b9924a9c7d5dc46",
+      "from_rank": 6,
+      "to_rank": 10,
+      "from_title": "Family calls for body camera footage release as officer faces manslaughter charge",
+      "to_title": "Family calls for body camera footage release as officer faces manslaughter charge"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d922207f0cd2e26c183fb4379ba30c27c2d7909b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says Iran 'better not' collect Strait of Hormuz toll",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "19d457f94e922f26b8641e3163218e60758c5ed4",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Prices surged in March after oil shock set off by Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4d624d789fddc5fa632bf4b92ed5f672493704ed",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Husband of woman reported missing in Bahamas arrested",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1b461e7863e46e25576b3491434681c0b5255dcb",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Teen with kidney disease finds donor living minutes away",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "149f3a295e6705bb21a4a9f0d846eee25dabbdfc",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "How a son turned against his mother after she was convicted in his stepdad's murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T13:59:15.319Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd8b0a68ceac02dd04fe4db4611eb38a1cbdb88b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Stefano Gabbana out as Dolce & Gabbana chairman",
       "to_title": null
     }
   ],
