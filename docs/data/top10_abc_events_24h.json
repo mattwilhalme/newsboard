@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-10T00:07:09.423Z",
+  "generatedAt": "2026-04-10T03:38:46.043Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d0db70e2cedb86b36656963edce11b33599a75cb",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Doctor accused of trying to kill wife on hike found guilty of attempted manslaughter"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "da9da12154de12a761409306acb58d369dc427c0",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Husband arrested after woman reported missing, went overboard in Bahamas: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "faf9fb2da866c131efc898dffa49fade4ebc6197",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Space historians explain why it took the US more than 50 years to return to the moon",
-      "to_title": "Space historians explain why it took the US more than 50 years to return to the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
-      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "fd5e78cec9dc1f0b4b022c76cb7275db10b5afee",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women",
-      "to_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "a22376957d376c0ae6e094e0ca3ca1c9b1b19f8a",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Student speaks out after train clips school bus in incident caught on camera",
-      "to_title": "Student speaks out after train clips school bus in incident caught on camera"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "ca43e2a639b703ff447ae434999034cb9e0b5b9a",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Two MLB players get 7-game suspensions following Angels-Braves brawl",
-      "to_title": "Two MLB players get 7-game suspensions following Angels-Braves brawl"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5ec8b817aa7f5eedc1d4a9422d0f7052755de945",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Criminal investigation opened on woman missing, going overboard in Bahamas: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "85fca49f19a4fced462472f23ae9c7f7c60e2aa0",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Jeopardy!' champion wins over $500K in 18-day victory streak",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T06:56:07.920Z",
@@ -982,6 +892,26 @@
       "to_rank": 3,
       "from_title": "Melania Trump declares 'I am not Epstein's victim'",
       "to_title": "Melania Trump declares 'I am not Epstein's victim'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T03:38:56.698Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T03:38:56.698Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ca0152018ea699ebffc7fd39f05549e98d76fb73",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "How a Bounty paper towel linked Gilgo Beach murder victim to Rex Heuermann: DA",
+      "to_title": null
     }
   ]
 }

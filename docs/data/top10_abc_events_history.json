@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-10T00:07:09.423Z",
+  "generatedAt": "2026-04-10T03:38:46.043Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T21:53:35.870Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "05d1ad72eb58ec389f588a9d2dc443b91f5dc34e",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "6 dead after KC-135 US refueling aircraft goes down in western Iraq",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-13T21:53:35.870Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dac0cd5f1bf8877975379e627b6685c60e73079a",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "ROTC students subdued and killed Old Dominion University gunman, officials say",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-13T22:49:24.472Z",
@@ -30002,6 +29982,26 @@
       "to_rank": 3,
       "from_title": "Melania Trump declares 'I am not Epstein's victim'",
       "to_title": "Melania Trump declares 'I am not Epstein's victim'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T03:38:56.698Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T03:38:56.698Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ca0152018ea699ebffc7fd39f05549e98d76fb73",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "How a Bounty paper towel linked Gilgo Beach murder victim to Rex Heuermann: DA",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
