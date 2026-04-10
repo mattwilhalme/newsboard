@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-10T13:59:05.603Z",
+  "generatedAt": "2026-04-10T14:51:41.232Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T14:32:04.119Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3a25c796bc83beaf8c4dc996a3605d0b31db5b65",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Iran says Hormuz is open to all ships that coordinate with Tehran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T14:32:04.119Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5675d49841228350cd450cc879fea71cc829021a",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "US filings for jobless aid jump to 219,000"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T14:32:04.119Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e046a2fae2c832a9b8bcbd235a4adcf7934a1357",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump vows 'bigger, and better' Iran attacks if deal not reached",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T14:32:04.119Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0c493e1acf9a4f0a5f4adfa196ff20d8ac5b3617",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Democratic presidential prospects flock to NY",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T16:09:29.852Z",
@@ -1091,6 +1051,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Stefano Gabbana out as Dolce & Gabbana chairman",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "e934af3c411c02ddf2563d3350788019cdd9e173",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Vance heads to Islamabad for Iran talks",
+      "to_title": "Iran live updates: Vance heads to Islamabad for Iran talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "688ca40732845b19961de70405acc8301a107051",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Prices surged in March after major oil shock: BLS inflation report"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
+      "from_rank": 5,
+      "to_rank": 3,
+      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
+      "to_title": "Why Artemis II crew will lose communication with mission control during reentry"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Trump blasts MAGA influencers who have split with him over Iran",
+      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
+      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "57dd8c68d76f7ed5a8628bec61872d301a129d74",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "Teen’s parents issue plea for kidney donor, a surprise neighbor responds",
+      "to_title": "Teen’s parents issue plea for kidney donor, a surprise neighbor responds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "Secret Service trainee accused of spying on roommate with hidden camera",
+      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "MOVED",
+      "fingerprint": "1bb667ef787a15657b9e778e2b9924a9c7d5dc46",
+      "from_rank": 10,
+      "to_rank": 8,
+      "from_title": "Family calls for body camera footage release as officer faces manslaughter charge",
+      "to_title": "Family calls for body camera footage release as officer faces manslaughter charge"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "43163adf52b4b5a1829d38fb779286d545c3f3ab",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Husband of woman missing in Bahamas arrested"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a3585388df563784623950e15386105fdd0d7ff7",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingMarch inflation report shows prices surged after oil shock set off by Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a3ef9130345a7acb1f1c745e624d72866a708638",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Vance heads to Islamabad for Iran talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T14:51:51.325Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1d90b2d83f5d4d73a9d8a402382a14aa3c313baf",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran says 10-point plan to be basis for talks, rejects ceasefire enabling rearmament",
       "to_title": null
     }
   ]
