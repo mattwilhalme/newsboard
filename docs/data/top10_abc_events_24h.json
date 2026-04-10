@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-10T23:02:39.842Z",
+  "generatedAt": "2026-04-10T23:48:21.527Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T23:36:30.717Z",
-      "event_type": "MOVED",
-      "fingerprint": "d922207f0cd2e26c183fb4379ba30c27c2d7909b",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Trump says Iran 'better not' collect Strait of Hormuz toll",
-      "to_title": "Iran live updates: Trump says Iran 'better not' collect Strait of Hormuz toll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T23:36:30.717Z",
-      "event_type": "MOVED",
-      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
-      "to_title": "Why Artemis II crew will lose communication with mission control during reentry"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T23:36:30.717Z",
-      "event_type": "MOVED",
-      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
-      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T03:38:56.698Z",
@@ -1411,6 +1381,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T23:48:31.368Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a409144dd882d6cfa15925e9d63b59f5027c585",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Israel says it 'refused to discuss ceasefire' with Hezbollah"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T23:48:31.368Z",
+      "event_type": "MOVED",
+      "fingerprint": "b099bec86e1f8544fb6d4d9bdc2dae4ee1269f88",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Trump says top priority of Iran talks: No nuclear weapon",
+      "to_title": "Trump says top priority of Iran talks: No nuclear weapon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T23:48:31.368Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ff01c1ce81793608e63b8ec40aa270d9c9ee5fc8",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Lebanon, Israel to meet for talks Tuesday in DC, Lebanon says",
       "to_title": null
     }
   ]

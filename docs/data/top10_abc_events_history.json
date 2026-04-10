@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-10T23:02:39.842Z",
+  "generatedAt": "2026-04-10T23:48:21.527Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T03:32:25.330Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ccdae0c134f718495476102b4ce0441e4ae43a3e",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Oscars 2026: Full winners list from the 98th Academy Awards",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T03:32:25.330Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d88b113cd43c351e95c316169f7a89b5b8336294",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Oscars 2026: Stylish red carpet fashion, beauty looks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T03:32:25.330Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bdffe3a2f88f62dc45084ea87e154791b30f2a89",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Iran live updates: CENTCOM calls Iranian claims US targeted Gulf countries a 'lie'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T03:32:25.330Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T23:48:31.368Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a409144dd882d6cfa15925e9d63b59f5027c585",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Israel says it 'refused to discuss ceasefire' with Hezbollah"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T23:48:31.368Z",
+      "event_type": "MOVED",
+      "fingerprint": "b099bec86e1f8544fb6d4d9bdc2dae4ee1269f88",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Trump says top priority of Iran talks: No nuclear weapon",
+      "to_title": "Trump says top priority of Iran talks: No nuclear weapon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T23:48:31.368Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ff01c1ce81793608e63b8ec40aa270d9c9ee5fc8",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Lebanon, Israel to meet for talks Tuesday in DC, Lebanon says",
       "to_title": null
     }
   ],
