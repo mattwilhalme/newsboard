@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-10T18:10:32.137Z",
+  "generatedAt": "2026-04-10T19:12:32.028Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T19:47:50.057Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bb9e96cad344825743363fc79ef652c782415f2e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Charges dropped against teens in prank case that led to teacher's death",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T20:41:50.579Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6497002ffffc7c458ba9f1e31481e812bdde713f",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Lindsey Vonn not ready to discuss her future in ski racing as she recovers from Olympic crash"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T20:41:50.579Z",
-      "event_type": "MOVED",
-      "fingerprint": "483af1f1a5be3fb66751670a9aa2d732a80f03df",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Everything to know about the 98th Academy Awards",
-      "to_title": "Everything to know about the 98th Academy Awards"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T20:41:50.579Z",
-      "event_type": "MOVED",
-      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Expansive March storm ramping up, bringing snow, strong winds to millions",
-      "to_title": "Expansive March storm ramping up, bringing snow, strong winds to millions"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T20:41:50.579Z",
-      "event_type": "MOVED",
-      "fingerprint": "21c59028ae919f1fbce8a1bba414f3790b4349b2",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming",
-      "to_title": "Judge partially backs Kennedy Center trustee in lawsuit over renaming"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T20:41:50.579Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "817ea687d74ac4db42001b8fe300c441fbb10c24",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Zelenskyy says Ukraine is waiting on US, Russia to set next round of talks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T21:37:31.563Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f14a05b495b81bc4a01c0c59d07e0a054165a2dc",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "100 million people under threat for severe weather as expansive March storm continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T21:37:31.563Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e70404f9f4520f4738c724217ccb6421e7420665",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Expansive March storm ramping up, bringing snow, strong winds to millions",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-15T22:24:01.515Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "45bb72dce089c8275409d8ac1a7e1c2b1b5e8f49",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Oscars 2026 live updates: Rose Byrne, Jessie Buckley and more walk the red carpet"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-15T22:24:01.515Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Melania Trump adviser on her Epstein statement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement",
+      "to_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "590b3e79cea9dea193d9b862e97d9449f344d360",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'",
+      "to_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74303592f0f826a3e382f9fa849da7b572d07e4d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "BAFTA releases findings of investigation into racial slur incident"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "0f5dba12dc5a4093dba167e089250e826417255e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Judges hear arguments over legality of new Trump administration tariffs",
+      "to_title": "Judges hear arguments over legality of new Trump administration tariffs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
+      "to_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Secret Service trainee accused of spying on roommate with hidden camera",
+      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "43163adf52b4b5a1829d38fb779286d545c3f3ab",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Husband of woman missing in Bahamas arrested"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Trump blasts MAGA influencers who have split with him over Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d861cc2745ea6b80ac1eaf060e75eb940f1ce80e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Prices surged in March amid Iran war",
       "to_title": null
     }
   ],

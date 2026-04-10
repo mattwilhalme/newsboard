@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-10T18:10:32.137Z",
+  "generatedAt": "2026-04-10T19:12:32.028Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c52d2aab2c13818a63663336ad3df4c26e5e36a6",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Search and rescue mission underway in deadly parking garage collapse"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4d624d789fddc5fa632bf4b92ed5f672493704ed",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Husband of woman reported missing in Bahamas arrested"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f046af9ca3c414be50d66d9bb9a82a59468a84f7",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "What riders can expect when Disney World’s Big Thunder Mountain reopens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fb2d424a794932c5019cad9c9e1cde9821232691",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Hawaii at risk of flooding, while dry conditions raise fire danger in the Northeast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "MOVED",
-      "fingerprint": "d0db70e2cedb86b36656963edce11b33599a75cb",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Doctor accused of trying to kill wife on hike found guilty of attempted manslaughter",
-      "to_title": "Doctor accused of trying to kill wife on hike found guilty of attempted manslaughter"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a4a8491e2e86afd6fbfd658b4701845cb9055e76",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "1 dead, 2 missing after under-construction parking garage partially collapses: Mayor",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "96b6bfaaa2eedb5c0c372808966ef03b14087dcc",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Husband of woman reported missing after going overboard in Bahamas arrested: Police",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "848370e92abadf973bc85941f77c555c45d2ebfe",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Walt Disney World's Big Thunder Mountain Railroad reopening in May: All the details",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "094a2c97a7300dfb86a376d7d021845e66448a65",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Wife remembers husband who died saving kids from rip current",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T19:39:50.842Z",
@@ -1321,6 +1231,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Melania Trump adviser on her Epstein statement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement",
+      "to_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "590b3e79cea9dea193d9b862e97d9449f344d360",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'",
+      "to_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74303592f0f826a3e382f9fa849da7b572d07e4d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "BAFTA releases findings of investigation into racial slur incident"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "0f5dba12dc5a4093dba167e089250e826417255e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Judges hear arguments over legality of new Trump administration tariffs",
+      "to_title": "Judges hear arguments over legality of new Trump administration tariffs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
+      "to_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "MOVED",
+      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Secret Service trainee accused of spying on roommate with hidden camera",
+      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "43163adf52b4b5a1829d38fb779286d545c3f3ab",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Husband of woman missing in Bahamas arrested"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Trump blasts MAGA influencers who have split with him over Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T19:12:41.126Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d861cc2745ea6b80ac1eaf060e75eb940f1ce80e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Prices surged in March amid Iran war",
       "to_title": null
     }
   ]
