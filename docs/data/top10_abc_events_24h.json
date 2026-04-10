@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-10T17:29:46.922Z",
+  "generatedAt": "2026-04-10T18:10:32.137Z",
   "hours": 24,
   "events": [
     {
@@ -1191,6 +1191,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Prices surged in March amid Iran war",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "590b3e79cea9dea193d9b862e97d9449f344d360",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d5c82d4184a688c622471a5e6c245f1b45e48569",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew preparing for reentry on last day in space"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "05afbbbe00b97fb0381ab7a0708b4fe328cf1929",
+      "from_rank": 2,
+      "to_rank": 5,
+      "from_title": "Documents reveal letter from Charlie Kirk's alleged killer",
+      "to_title": "Documents reveal letter from Charlie Kirk's alleged killer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "0f5dba12dc5a4093dba167e089250e826417255e",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "Judges hear arguments over legality of new Trump administration tariffs",
+      "to_title": "Judges hear arguments over legality of new Trump administration tariffs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Trump blasts MAGA influencers who have split with him over Iran",
+      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Secret Service trainee accused of spying on roommate with hidden camera",
+      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
+      "to_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d861cc2745ea6b80ac1eaf060e75eb940f1ce80e",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Prices surged in March amid Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "57dd8c68d76f7ed5a8628bec61872d301a129d74",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Teen’s parents issue plea for kidney donor, a surprise neighbor responds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-10T18:10:42.442Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a8727b3c64b4d579bde39e3b96e6572b9dde4134",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Melania Trump adviser on her Epstein statement",
       "to_title": null
     }
   ]
