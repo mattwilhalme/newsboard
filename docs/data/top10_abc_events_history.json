@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-10T23:48:21.527Z",
+  "generatedAt": "2026-04-11T01:02:27.357Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T03:32:25.330Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7989bbe292f650153ae72ba342a07d0666864df3",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "2 DOGE staffers say 'no' regrets for people losing income: Depositions",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T03:32:25.330Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "817ea687d74ac4db42001b8fe300c441fbb10c24",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Zelenskyy says Ukraine is waiting on US, Russia to set next round of talks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T05:31:52.912Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2e34c4d77090d23855358caed0dca9af9d2204e4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Oscars 2026: Full winners list from the 98th Academy Awards"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T05:31:52.912Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ffa92f85c8d74d390764110a165753b0195e2408",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breaking'One Battle After Another' wins the Oscar for best picture",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T08:05:56.844Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "500a58f0b828735bd924182d91d6882523f62817",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Closing arguments set in trial of children's book author charged with killinghusband"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T08:05:56.844Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6982cfdece3e5564c59fc3e12dd47c682038cf3c",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Airline CEOs demand Congress restore DHS funding and pay airport workers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T09:12:59.002Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d641b3192a417f04a7c39846bae06a59cbb27748",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Iran live updates: Dubai airport resumes some flights after drone-related fire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T09:12:59.002Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "57f6055e7f17b955307e97f4d061a14dc7f57250",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump calls Strait of Hormuz 'something that we don't need'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T10:17:06.692Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Lebanon, Israel to meet for talks Tuesday in DC, Lebanon says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "850df97979e38f7ce6e342d8fdffec2f79dd90c1",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew splashes down in Pacific Ocean after historic mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "055c12b2e0c7c0e44c78bd7a5d03d6d8740fcb33",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Husband of woman missing in Bahamas awaiting charging decision after arrest: Attorney"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "MOVED",
+      "fingerprint": "fad439e0471900fe7b76c1ff00019d2e6eb5deb0",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO",
+      "to_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "MOVED",
+      "fingerprint": "590b3e79cea9dea193d9b862e97d9449f344d360",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'",
+      "to_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "53d5213743ed25770554bd10eb95239c0c1d14da",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew suited up, preparing for reentry in historic mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T01:02:37.689Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e44311726b7764e939f324ac8999e77a62d178af",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Judges appear skeptical of legal challenge to Trump's 10% tariff",
       "to_title": null
     }
   ],
