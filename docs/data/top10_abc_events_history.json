@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-11T22:23:18.031Z",
+  "generatedAt": "2026-04-11T22:58:27.884Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T18:42:49.945Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c27c7f48e234e49d5161848f4c6f3eb1bf37ab31",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Afghan who died in ICE custody worked with US forces in Afghanistan, group says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T18:42:49.945Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3e4a797472cdb27de684df32c130d111fa01a475",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Biggest fire in Nebraska history is 0% contained",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T19:43:14.063Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Crew returns to Houston, makes 1st appearance since return from historic mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T22:58:37.306Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "80c762378f8a4b1be5b2b623fbd9ee19314982a1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: High-stakes US-Iran-Pakistan talks continue"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T22:58:37.306Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "42aa9291ffc57617551a010248904f0a5c64a4d4",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: US-Iran-Pakistan trilateral talks ongoing, White House says",
       "to_title": null
     }
   ],

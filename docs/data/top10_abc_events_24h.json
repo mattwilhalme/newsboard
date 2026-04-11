@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-11T22:23:18.031Z",
+  "generatedAt": "2026-04-11T22:58:27.884Z",
   "hours": 24,
   "events": [
     {
@@ -851,6 +851,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Crew returns to Houston, makes 1st appearance since return from historic mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T22:58:37.306Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "80c762378f8a4b1be5b2b623fbd9ee19314982a1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: High-stakes US-Iran-Pakistan talks continue"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T22:58:37.306Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "42aa9291ffc57617551a010248904f0a5c64a4d4",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: US-Iran-Pakistan trilateral talks ongoing, White House says",
       "to_title": null
     }
   ]
