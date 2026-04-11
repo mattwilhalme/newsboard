@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-11T01:02:27.357Z",
+  "generatedAt": "2026-04-11T03:43:24.359Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "What to know as war with Iran enters 3rd week"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f99aa514f830350b549413176ed5874b949489a4",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "In Illinois' Democratic primaries, generational change front and center"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4e7007268ca028ff0bdb64c15c9232e827ca7438",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Energy Secretary Wright says war with Iran 'will certainly' end in next few weeks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f14a05b495b81bc4a01c0c59d07e0a054165a2dc",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "100 million people under threat for severe weather as expansive March storm continues",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T10:17:06.692Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "500a58f0b828735bd924182d91d6882523f62817",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Closing arguments set in trial of children's book author charged with killinghusband",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T12:00:15.524Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b0d4c2edabcff5b759d46eaaf277872d25ddbb36",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T12:00:15.524Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d641b3192a417f04a7c39846bae06a59cbb27748",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Iran live updates: Dubai airport resumes some flights after drone-related fire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T14:42:52.931Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "28f83d36f48ab40d22e200e13f7676f0efbd1cd1",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Amy Madigan opens up about winning 1st Oscar at the age of 75"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T14:42:52.931Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f898942b09e8f469b7b9a5358e872d176ec21c66",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Michael B. Jordan delivers emotional speech after best actor Oscar win"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T14:42:52.931Z",
-      "event_type": "MOVED",
-      "fingerprint": "c0a03b0aa5469d6999d3674c5a96920c3552a5d1",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "See the boldest, brightest 2026 Oscars red carpet looks",
-      "to_title": "See the boldest, brightest 2026 Oscars red carpet looks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T14:42:52.931Z",
-      "event_type": "MOVED",
-      "fingerprint": "1eb1a35fbc5524e7aa13b9a9c3298eaf74e4f563",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Anne Hathaway wears ‘groundbreaking’ floral gown at 2026 Oscars",
-      "to_title": "Anne Hathaway wears ‘groundbreaking’ floral gown at 2026 Oscars"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T14:42:52.931Z",
-      "event_type": "MOVED",
-      "fingerprint": "b0d4c2edabcff5b759d46eaaf277872d25ddbb36",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon",
-      "to_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T14:42:52.931Z",
-      "event_type": "MOVED",
-      "fingerprint": "3c48abbc1bdaf6383b0c7920d28126a861a6547b",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Biggest wildfire in Nebraska history continues to burn out of control",
-      "to_title": "Biggest wildfire in Nebraska history continues to burn out of control"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T14:42:52.931Z",
-      "event_type": "MOVED",
-      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "What to know as war with Iran enters 3rd week",
-      "to_title": "What to know as war with Iran enters 3rd week"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T14:42:52.931Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Judges appear skeptical of legal challenge to Trump's 10% tariff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2cfad9fee9771d9ab7b50008dbdb22084d7ce9ab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Artemis II live updates: Crew successfully completes 10-day mission around the moon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98aaa790274db27686714fc152f8ba8cd053ece9",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "e934af3c411c02ddf2563d3350788019cdd9e173",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Vance heads to Islamabad for Iran talks",
+      "to_title": "Iran live updates: Vance heads to Islamabad for Iran talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "New renderings released for Trump's proposed 'triumphal arch'",
+      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "0e3d532395adf55fa94266b82dbfae6aa9853ba8",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "FAA looks to unconventional source for new air traffic controllers: Gamers",
+      "to_title": "FAA looks to unconventional source for new air traffic controllers: Gamers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "055c12b2e0c7c0e44c78bd7a5d03d6d8740fcb33",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Husband of woman missing in Bahamas awaiting charging decision after arrest: Attorney",
+      "to_title": "Husband of woman missing in Bahamas awaiting charging decision after arrest: Attorney"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "MOVED",
+      "fingerprint": "fad439e0471900fe7b76c1ff00019d2e6eb5deb0",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO",
+      "to_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8d2461d0d48fba4eec7ea4a70f7000475f7c94ad",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Prince Harry sued by charity he co-founded"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "850df97979e38f7ce6e342d8fdffec2f79dd90c1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew splashes down in Pacific Ocean after historic mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2a409144dd882d6cfa15925e9d63b59f5027c585",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Israel says it 'refused to discuss ceasefire' with Hezbollah",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b099bec86e1f8544fb6d4d9bdc2dae4ee1269f88",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Trump says top priority of Iran talks: No nuclear weapon",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a8727b3c64b4d579bde39e3b96e6572b9dde4134",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Melania Trump adviser on her Epstein statement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T03:43:34.440Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "590b3e79cea9dea193d9b862e97d9449f344d360",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'",
       "to_title": null
     }
   ],
