@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-11T10:09:27.274Z",
+  "generatedAt": "2026-04-11T10:56:43.364Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "MOVED",
-      "fingerprint": "71132a3cedf5779286b2c8cad6868fb13d4df1c1",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "Prices expected to have surged in March after oil shock set off by Iran war",
-      "to_title": "Prices expected to have surged in March after oil shock set off by Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "196a7853a385b7dd8c6c78d4f8c8793e8c526f09",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Facebook, WhatsApp should remove accounts that defraud users, Manhattan DA says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "MOVED",
-      "fingerprint": "1bb667ef787a15657b9e778e2b9924a9c7d5dc46",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Family calls for body camera footage release as officer faces manslaughter charge",
-      "to_title": "Family calls for body camera footage release as officer faces manslaughter charge"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "149f3a295e6705bb21a4a9f0d846eee25dabbdfc",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "How a son turned against his mother after she was convicted in his stepdad's murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "MOVED",
-      "fingerprint": "8d0aed053c74285e0c4868baeb418b1a235074a6",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Suspect in real estate agent's murder was spotted by witness at the scene: Court docs",
-      "to_title": "Suspect in real estate agent's murder was spotted by witness at the scene: Court docs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "916f64cf39e03967b3a3663d5f196a14406d215a",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Trump blasts MAGA influencers over Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "33ede73b02e2336d73bed93da636556d0e1d3624",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Michael J. Fox reassures fans after death scare: 'I'm ok'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Trump blasts MAGA influencers who have split with him over Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0ba2adfe7e51ee1c8d69c1c4768f2f6b08542ad6",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Hip-hop pioneer Afrika Bambaataa dies at age 68",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T11:38:11.817Z",
@@ -1581,6 +1491,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: Vance heads to Islamabad for Iran talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T10:56:53.772Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6d7e5cc20549fe7a21d90ecbe17ba7f284f0fd94",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Vance and Pakistani PM hold bilateral meeting in Islamabad"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T10:56:53.772Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "69c3d8ba0e2a402c5c395e8fc6aeae77c54992d7",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Pakistan says US officials have landed in Islamabad for Iran talks",
       "to_title": null
     }
   ]

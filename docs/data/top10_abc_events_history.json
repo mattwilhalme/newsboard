@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-11T10:09:27.274Z",
+  "generatedAt": "2026-04-11T10:56:43.364Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T15:47:40.505Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9943760d86f96d72587d69ac49ae9f0e0a9f994d",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Oscars 2026 recap: The biggest winners and best moments"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T15:47:40.505Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T15:47:40.505Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: Vance heads to Islamabad for Iran talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T10:56:53.772Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6d7e5cc20549fe7a21d90ecbe17ba7f284f0fd94",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Vance and Pakistani PM hold bilateral meeting in Islamabad"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T10:56:53.772Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "69c3d8ba0e2a402c5c395e8fc6aeae77c54992d7",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Pakistan says US officials have landed in Islamabad for Iran talks",
       "to_title": null
     }
   ],
