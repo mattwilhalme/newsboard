@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-11T08:02:54.664Z",
+  "generatedAt": "2026-04-11T08:58:42.798Z",
   "hours": 24,
   "events": [
     {
@@ -1621,6 +1621,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T08:58:55.726Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "69c3d8ba0e2a402c5c395e8fc6aeae77c54992d7",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Pakistan says US officials have landed in Islamabad for Iran talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T08:58:55.726Z",
+      "event_type": "MOVED",
+      "fingerprint": "98aaa790274db27686714fc152f8ba8cd053ece9",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations",
+      "to_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T08:58:55.726Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e934af3c411c02ddf2563d3350788019cdd9e173",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Vance heads to Islamabad for Iran talks",
       "to_title": null
     }
   ]
