@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-11T17:22:18.833Z",
+  "generatedAt": "2026-04-11T18:28:57.085Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T16:46:57.170Z",
-      "event_type": "MOVED",
-      "fingerprint": "2e34c4d77090d23855358caed0dca9af9d2204e4",
-      "from_rank": 1,
-      "to_rank": 5,
-      "from_title": "Oscars 2026: Full winners list from the 98th Academy Awards",
-      "to_title": "Oscars 2026: Full winners list from the 98th Academy Awards"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T16:46:57.170Z",
-      "event_type": "MOVED",
-      "fingerprint": "b0d4c2edabcff5b759d46eaaf277872d25ddbb36",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon",
-      "to_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T16:46:57.170Z",
-      "event_type": "MOVED",
-      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources",
-      "to_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T16:46:57.170Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "What to know as war with Iran enters 3rd week"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T16:46:57.170Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T18:29:07.237Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "42aa9291ffc57617551a010248904f0a5c64a4d4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US-Iran-Pakistan trilateral talks ongoing, White House says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T18:29:07.237Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "34f35d87f53256ee14d32c80255a2443ef73d7b5",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T18:29:07.237Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9b1092e81e1c2f52a130a111676d75ab3e1e41a4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US-Iran peace talks in Islamabad have started, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T18:29:07.237Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0e3d532395adf55fa94266b82dbfae6aa9853ba8",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "FAA looks to unconventional source for new air traffic controllers: Gamers",
       "to_title": null
     }
   ],
