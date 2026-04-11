@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-11T11:26:36.543Z",
+  "generatedAt": "2026-04-11T11:53:43.676Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T15:47:40.505Z",
-      "event_type": "MOVED",
-      "fingerprint": "1eb1a35fbc5524e7aa13b9a9c3298eaf74e4f563",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Anne Hathaway wears ‘groundbreaking’ floral gown at 2026 Oscars",
-      "to_title": "Anne Hathaway wears ‘groundbreaking’ floral gown at 2026 Oscars"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T15:47:40.505Z",
-      "event_type": "MOVED",
-      "fingerprint": "b0d4c2edabcff5b759d46eaaf277872d25ddbb36",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon",
-      "to_title": "Iran live updates: IDF begins 'targeted' ground operations in southern Lebanon"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T15:47:40.505Z",
@@ -30002,6 +29982,26 @@
       "to_rank": 2,
       "from_title": "Artemis II live updates: Crew successfully completes 10-day mission around the moon",
       "to_title": "Artemis II live updates: Crew successfully completes 10-day mission around the moon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T11:53:53.950Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "18fdbd91bc7502372edef5c3a7846fd5ba21e2a8",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "9-year-old found locked in utility van since 2024"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T11:53:53.950Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8d2461d0d48fba4eec7ea4a70f7000475f7c94ad",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Prince Harry sued by charity he co-founded",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"

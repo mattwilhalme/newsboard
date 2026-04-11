@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-11T11:26:36.543Z",
+  "generatedAt": "2026-04-11T11:53:43.676Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "MOVED",
-      "fingerprint": "71132a3cedf5779286b2c8cad6868fb13d4df1c1",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Prices expected to have surged in March after oil shock set off by Iran war",
-      "to_title": "Prices expected to have surged in March after oil shock set off by Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "MOVED",
-      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
-      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "MOVED",
-      "fingerprint": "196a7853a385b7dd8c6c78d4f8c8793e8c526f09",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Facebook, WhatsApp should remove accounts that defraud users, Manhattan DA says",
-      "to_title": "Facebook, WhatsApp should remove accounts that defraud users, Manhattan DA says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "MOVED",
-      "fingerprint": "4d624d789fddc5fa632bf4b92ed5f672493704ed",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Husband of woman reported missing in Bahamas arrested",
-      "to_title": "Husband of woman reported missing in Bahamas arrested"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "MOVED",
-      "fingerprint": "149f3a295e6705bb21a4a9f0d846eee25dabbdfc",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "How a son turned against his mother after she was convicted in his stepdad's murder",
-      "to_title": "How a son turned against his mother after she was convicted in his stepdad's murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8d0aed053c74285e0c4868baeb418b1a235074a6",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Suspect in real estate agent's murder was spotted by witness at the scene: Court docs",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T12:34:14.165Z",
@@ -1532,6 +1462,26 @@
       "to_rank": 2,
       "from_title": "Artemis II live updates: Crew successfully completes 10-day mission around the moon",
       "to_title": "Artemis II live updates: Crew successfully completes 10-day mission around the moon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T11:53:53.950Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "18fdbd91bc7502372edef5c3a7846fd5ba21e2a8",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "9-year-old found locked in utility van since 2024"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T11:53:53.950Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8d2461d0d48fba4eec7ea4a70f7000475f7c94ad",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Prince Harry sued by charity he co-founded",
+      "to_title": null
     }
   ]
 }
