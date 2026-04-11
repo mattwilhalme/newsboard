@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-11T22:58:27.884Z",
+  "generatedAt": "2026-04-11T23:33:57.855Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "edeafe497859f4eb5cea27f2d3d6722771e91a3c",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: 200 troops have been wounded, including 10 'seriously'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "MOVED",
-      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Afghan man dies in ICE custody one day after being detained",
-      "to_title": "Afghan man dies in ICE custody one day after being detained"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T19:43:14.063Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Iran live updates: US-Iran-Pakistan trilateral talks ongoing, White House says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T23:34:07.817Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-11T23:34:07.817Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d08bd72025890a5a5424f1ae50fbdf22a1052527",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Artemis II live updates: Crew makes 1st appearance since return from moon mission",
       "to_title": null
     }
   ],
