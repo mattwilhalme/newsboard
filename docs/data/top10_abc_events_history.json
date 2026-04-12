@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-12T03:41:02.848Z",
+  "generatedAt": "2026-04-12T05:39:02.878Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "692324d3273c63fd62d64cfc02e4fdbaaa1ee6df",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Cuban officials report island-wide blackout"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d98c1a1e4359d9f13ea8acf9064d012796cce406",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says countries 'on the way'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T19:43:14.063Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Iran live updates: High-stakes US-Iran-Pakistan talks continue",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T05:39:13.037Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0dab15c54e9491190a1a303eade96fca1ccd0503",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Trump takes the spotlight at UFC 327 in Miami"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T05:39:13.037Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "18fdbd91bc7502372edef5c3a7846fd5ba21e2a8",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "9-year-old found locked in utility van since 2024",
       "to_title": null
     }
   ],
