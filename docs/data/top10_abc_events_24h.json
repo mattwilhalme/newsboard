@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T10:32:12.529Z",
+  "generatedAt": "2026-04-12T11:11:58.860Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T10:56:53.772Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6d7e5cc20549fe7a21d90ecbe17ba7f284f0fd94",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Vance and Pakistani PM hold bilateral meeting in Islamabad"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T10:56:53.772Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "69c3d8ba0e2a402c5c395e8fc6aeae77c54992d7",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: Pakistan says US officials have landed in Islamabad for Iran talks",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-11T11:26:47.095Z",
@@ -501,6 +481,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "9-year-old found locked in utility van since 2024",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T11:12:09.950Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b4e2198a076d7d3f6a07a596799739230a1ad384",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran blames Washington for failure at talks, citing 'trust'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T11:12:09.950Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cd928358535cffd3f733549217cf538fb96e5095",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: No deal with Iran after 21 hours of negotiations, Vance says",
       "to_title": null
     }
   ]
