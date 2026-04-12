@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T22:52:31.739Z",
+  "generatedAt": "2026-04-12T23:23:19.589Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T22:58:37.306Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "80c762378f8a4b1be5b2b623fbd9ee19314982a1",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: High-stakes US-Iran-Pakistan talks continue"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T22:58:37.306Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "42aa9291ffc57617551a010248904f0a5c64a4d4",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: US-Iran-Pakistan trilateral talks ongoing, White House says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-11T23:34:07.817Z",
@@ -581,6 +561,56 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T23:23:29.689Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d2bcc6fa8a696813e07635ba166a66047e568cef",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "2 gunmen at large after 8 people shot in Virginia Beach, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T23:23:29.689Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8df2d03347c30c1b91305c55fb8dcd634c6a66d0",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Rory McIlroy goes back-to-back at the Masters to join Nicklaus, Faldo and Tiger"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T23:23:29.689Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement",
+      "to_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T23:23:29.689Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b86d4cf2aad527c0f2f980899a7d4f7c58bbe08f",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "8 people injured in shooting between 2 groups near Virginia Beach waterfront: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T23:23:29.689Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2da3c78c75e8b7713b2e87ca454af166b5971d42",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Sergio Garcia breaks driver, gets code-of-conduct warning, a first at Masters",
       "to_title": null
     }
   ]
