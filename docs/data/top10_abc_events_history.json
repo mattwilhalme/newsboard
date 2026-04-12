@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-12T21:44:08.278Z",
+  "generatedAt": "2026-04-12T22:06:10.090Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:06:38.600Z",
-      "event_type": "MOVED",
-      "fingerprint": "cdbe320241d46ec49f06e5d9ebec3cdb425559b1",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Retired Air Force major general missing: What we know about his disappearance",
-      "to_title": "Retired Air Force major general missing: What we know about his disappearance"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:06:38.600Z",
-      "event_type": "MOVED",
-      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Astronomers discover what may be a new type of planet",
-      "to_title": "Astronomers discover what may be a new type of planet"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:06:38.600Z",
-      "event_type": "MOVED",
-      "fingerprint": "7675e61fc20f2f34f8870d2c458dc57184e831d4",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race",
-      "to_title": "Leonardo DiCaprio hugs Michael B. Jordan after best actor Oscar race"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:06:38.600Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:06:38.600Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "96623e087d8f416a2f2dad05caa1e835ec7e3dfb",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Susie Wiles diagnosed with breast cancer",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:50:57.470Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fbda85481ac4fbf5e5475ffccb31ca648d72d03a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Bank of America reaches proposed, non-binding settlement in Jeffrey Epstein suit"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T22:50:57.470Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingHungarian Prime Minister Viktor Orbán concedes defeat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:06:20.675Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b86d4cf2aad527c0f2f980899a7d4f7c58bbe08f",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "8 people injured in shooting between 2 groups near Virginia Beach waterfront: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:06:20.675Z",
+      "event_type": "MOVED",
+      "fingerprint": "213549d9f1f44a3282b770882ef2e78a3d4b71b2",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says",
+      "to_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:06:20.675Z",
+      "event_type": "MOVED",
+      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission",
+      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:06:20.675Z",
+      "event_type": "MOVED",
+      "fingerprint": "98aaa790274db27686714fc152f8ba8cd053ece9",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations",
+      "to_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:06:20.675Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "New renderings released for Trump's proposed 'triumphal arch'",
+      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:06:20.675Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34f35d87f53256ee14d32c80255a2443ef73d7b5",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran",
       "to_title": null
     }
   ],
