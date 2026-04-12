@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-12T15:50:21.731Z",
+  "generatedAt": "2026-04-12T16:22:59.504Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9e047add775fcee105e3bb3be5fd31d0f12ee336",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Michael B. Jordan and Leonardo DiCaprio embrace after Jordan's Oscar win",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Astronomers discover what may be a new type of planet",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "814187e68fafcc398f2700e39ddeafa2b4fecf6a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "What to know as war with Iran enters 3rd week",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T20:57:43.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "692324d3273c63fd62d64cfc02e4fdbaaa1ee6df",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Cuban officials report island-wide blackout",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "da6cca9264a722dda21857347e0f5e0e6fb7d409",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'",
-      "to_title": "Iran live updates: 200 US troops have been wounded, including 10 'seriously'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4eefc3dc8def62ed3e7fd08b504ab058e28f3c0d",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Border Patrol Commander Greg Bovino expected to retire, sources say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T21:36:56.317Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump takes the spotlight at UFC 327 in Miami",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T16:23:09.232Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0b5312f9749fa5b9757efc4f187ac0440e1ed5f9",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Shooting inside Chick-fil-A in New Jersey leaves several people injured: Governor"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T16:23:09.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "167521f2c3c75f3f723440b321c9c788163746ee",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Slashing suspect shot at Grand Central subway station in New York, police say",
+      "to_title": "Slashing suspect shot at Grand Central subway station in New York, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T16:23:09.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "98aaa790274db27686714fc152f8ba8cd053ece9",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations",
+      "to_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T16:23:09.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "New renderings released for Trump's proposed 'triumphal arch'",
+      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T16:23:09.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "34f35d87f53256ee14d32c80255a2443ef73d7b5",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran",
+      "to_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T16:23:09.232Z",
+      "event_type": "MOVED",
+      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement",
+      "to_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T16:23:09.232Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "055c12b2e0c7c0e44c78bd7a5d03d6d8740fcb33",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Husband of woman missing in Bahamas awaiting charging decision after arrest: Attorney",
       "to_title": null
     }
   ],
