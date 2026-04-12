@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-12T00:03:26.088Z",
+  "generatedAt": "2026-04-12T03:41:02.848Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "MOVED",
-      "fingerprint": "9e047add775fcee105e3bb3be5fd31d0f12ee336",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Michael B. Jordan and Leonardo DiCaprio embrace after Jordan's Oscar win",
-      "to_title": "Michael B. Jordan and Leonardo DiCaprio embrace after Jordan's Oscar win"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dc1ed260ee4760df57ecd8bc3067a5a80ee1c936",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Astronomers discover what may be a new type of planet"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T19:43:14.063Z",
-      "event_type": "MOVED",
-      "fingerprint": "e7b4c8efcef01b2ee48c2cd1641f546f6a92d70d",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources",
-      "to_title": "Some GOP donors plot shadow 'draft Rubio' 2028 effort as his star rises: Sources"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T19:43:14.063Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Artemis II live updates: Crew makes 1st appearance since return from moon mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T03:41:13.444Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cd928358535cffd3f733549217cf538fb96e5095",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: No deal with Iran after 21 hours of negotiations, Vance says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T03:41:13.444Z",
+      "event_type": "MOVED",
+      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission",
+      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T03:41:13.444Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "80c762378f8a4b1be5b2b623fbd9ee19314982a1",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: High-stakes US-Iran-Pakistan talks continue",
       "to_title": null
     }
   ],

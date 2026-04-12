@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T00:03:26.088Z",
+  "generatedAt": "2026-04-12T03:41:02.848Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "850df97979e38f7ce6e342d8fdffec2f79dd90c1",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Crew splashes down in Pacific Ocean after historic mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "055c12b2e0c7c0e44c78bd7a5d03d6d8740fcb33",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Husband of woman missing in Bahamas awaiting charging decision after arrest: Attorney"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "MOVED",
-      "fingerprint": "fad439e0471900fe7b76c1ff00019d2e6eb5deb0",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO",
-      "to_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "MOVED",
-      "fingerprint": "590b3e79cea9dea193d9b862e97d9449f344d360",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'",
-      "to_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "53d5213743ed25770554bd10eb95239c0c1d14da",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Crew suited up, preparing for reentry in historic mission",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T01:02:37.689Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e44311726b7764e939f324ac8999e77a62d178af",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Judges appear skeptical of legal challenge to Trump's 10% tariff",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-11T03:43:34.440Z",
@@ -711,6 +631,36 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Artemis II live updates: Crew makes 1st appearance since return from moon mission",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T03:41:13.444Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cd928358535cffd3f733549217cf538fb96e5095",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: No deal with Iran after 21 hours of negotiations, Vance says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T03:41:13.444Z",
+      "event_type": "MOVED",
+      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission",
+      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T03:41:13.444Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "80c762378f8a4b1be5b2b623fbd9ee19314982a1",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: High-stakes US-Iran-Pakistan talks continue",
       "to_title": null
     }
   ]
