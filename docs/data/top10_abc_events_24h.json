@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T19:14:25.918Z",
+  "generatedAt": "2026-04-12T19:54:55.289Z",
   "hours": 24,
   "events": [
     {
@@ -561,6 +561,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T19:55:05.095Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9d5d2417dfab05712386ae8263e1fb79db319824",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Hungarian Prime Minister Viktor Orbán concedes defeat after 'painful' election result"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T19:55:05.095Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "167521f2c3c75f3f723440b321c9c788163746ee",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Slashing suspect shot at Grand Central subway station in New York, police say",
       "to_title": null
     }
   ]
