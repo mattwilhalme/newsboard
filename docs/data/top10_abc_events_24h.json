@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T18:27:31.848Z",
+  "generatedAt": "2026-04-12T19:14:25.918Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T18:29:07.237Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "42aa9291ffc57617551a010248904f0a5c64a4d4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US-Iran-Pakistan trilateral talks ongoing, White House says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T18:29:07.237Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "34f35d87f53256ee14d32c80255a2443ef73d7b5",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T18:29:07.237Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9b1092e81e1c2f52a130a111676d75ab3e1e41a4",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US-Iran peace talks in Islamabad have started, Trump says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-11T18:29:07.237Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0e3d532395adf55fa94266b82dbfae6aa9853ba8",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "FAA looks to unconventional source for new air traffic controllers: Gamers",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-11T20:55:00.464Z",
@@ -581,6 +541,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Shooting inside Chick-fil-A in New Jersey leaves several people injured: Governor",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T19:14:34.650Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2da3c78c75e8b7713b2e87ca454af166b5971d42",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Sergio Garcia breaks driver, gets code-of-conduct warning, a first at Masters"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T19:14:34.650Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
       "to_title": null
     }
   ]

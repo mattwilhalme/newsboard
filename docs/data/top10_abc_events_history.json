@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-12T18:27:31.848Z",
+  "generatedAt": "2026-04-12T19:14:25.918Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "912f647f68e3ffc56943471b6485b0dfb3bcd6e0",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys",
-      "to_title": "Oscars winner Amy Madigan shares what she thought of host Conan O'Brien's Gladys"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Numerous flights canceled as severe March storm continues",
-      "to_title": "Numerous flights canceled as severe March storm continues"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T21:36:56.317Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Shooting inside Chick-fil-A in New Jersey leaves several people injured: Governor",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T19:14:34.650Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2da3c78c75e8b7713b2e87ca454af166b5971d42",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Sergio Garcia breaks driver, gets code-of-conduct warning, a first at Masters"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T19:14:34.650Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
       "to_title": null
     }
   ],
