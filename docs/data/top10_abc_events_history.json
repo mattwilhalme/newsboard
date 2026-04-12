@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-12T22:06:10.090Z",
+  "generatedAt": "2026-04-12T22:52:31.739Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:50:57.470Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f4a1b24d1bea7595c00525e5ba537eee01840aba",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Top Democrats refer Noem to DOJ for perjury"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:50:57.470Z",
-      "event_type": "MOVED",
-      "fingerprint": "4eefc3dc8def62ed3e7fd08b504ab058e28f3c0d",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Border Patrol Commander Greg Bovino expected to retire, sources say",
-      "to_title": "Border Patrol Commander Greg Bovino expected to retire, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:50:57.470Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2aad05f2ada0b6de66e0161818e6bbd63d328510",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Trump reveals Republican lawmaker's private health diagnosis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T22:50:57.470Z",
-      "event_type": "MOVED",
-      "fingerprint": "90ce031415efd4af3adf11d24eb13547fa7a97b6",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy",
-      "to_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T22:50:57.470Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "38d4c45b968f5d5ba8685757e7efdd006bd8722a",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Hungarian Prime Minister Orbán ejected after 16 years, in European electoral earthquake"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "114b71bdb251a2b09c788661051f74a5eea7e671",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "California Rep. Eric Swalwell faces growing calls from fellow Democrats to resign"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9d5d2417dfab05712386ae8263e1fb79db319824",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Hungarian Prime Minister Viktor Orbán concedes defeat after 'painful' election result",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "98aaa790274db27686714fc152f8ba8cd053ece9",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations",
       "to_title": null
     }
   ],

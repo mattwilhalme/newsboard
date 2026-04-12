@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T22:06:10.090Z",
+  "generatedAt": "2026-04-12T22:52:31.739Z",
   "hours": 24,
   "events": [
     {
@@ -541,6 +541,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "38d4c45b968f5d5ba8685757e7efdd006bd8722a",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Hungarian Prime Minister Orbán ejected after 16 years, in European electoral earthquake"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "114b71bdb251a2b09c788661051f74a5eea7e671",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "California Rep. Eric Swalwell faces growing calls from fellow Democrats to resign"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9d5d2417dfab05712386ae8263e1fb79db319824",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Hungarian Prime Minister Viktor Orbán concedes defeat after 'painful' election result",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T22:52:40.656Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "98aaa790274db27686714fc152f8ba8cd053ece9",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations",
       "to_title": null
     }
   ]
