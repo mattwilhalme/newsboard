@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T17:02:30.895Z",
+  "generatedAt": "2026-04-12T17:46:27.020Z",
   "hours": 24,
   "events": [
     {
@@ -561,6 +561,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Husband of woman missing in Bahamas awaiting charging decision after arrest: Attorney",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T17:46:37.758Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "213549d9f1f44a3282b770882ef2e78a3d4b71b2",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T17:46:37.758Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0b5312f9749fa5b9757efc4f187ac0440e1ed5f9",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Shooting inside Chick-fil-A in New Jersey leaves several people injured: Governor",
       "to_title": null
     }
   ]

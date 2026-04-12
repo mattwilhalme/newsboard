@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-12T17:02:30.895Z",
+  "generatedAt": "2026-04-12T17:46:27.020Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "90ce031415efd4af3adf11d24eb13547fa7a97b6",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Judge temporarily blocks RFK Jr.'s efforts to reshape childhood vaccine policy"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-16T21:36:56.317Z",
-      "event_type": "MOVED",
-      "fingerprint": "200eccb1309e5cbfaccfc0e515bed4c483b7264b",
-      "from_rank": 7,
-      "to_rank": 4,
-      "from_title": "Afghan man dies in ICE custody one day after being detained",
-      "to_title": "Afghan man dies in ICE custody one day after being detained"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-16T21:36:56.317Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Husband of woman missing in Bahamas awaiting charging decision after arrest: Attorney",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T17:46:37.758Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "213549d9f1f44a3282b770882ef2e78a3d4b71b2",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T17:46:37.758Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0b5312f9749fa5b9757efc4f187ac0440e1ed5f9",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Shooting inside Chick-fil-A in New Jersey leaves several people injured: Governor",
       "to_title": null
     }
   ],
