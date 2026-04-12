@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T13:41:51.297Z",
+  "generatedAt": "2026-04-12T14:25:35.543Z",
   "hours": 24,
   "events": [
     {
@@ -461,6 +461,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: No deal with Iran after 21 hours of negotiations, Vance says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T14:25:45.669Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bdf2eaddb0fc1d97f71656f63dfdcaf7399dc3f6",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: President Trump says US Navy will blockade Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-12T14:25:45.669Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b4e2198a076d7d3f6a07a596799739230a1ad384",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Tehran blames Washington for failure at talks, citing 'trust'",
       "to_title": null
     }
   ]
