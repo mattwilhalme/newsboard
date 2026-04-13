@@ -21,6 +21,7 @@ import {
 
 const DATA_DIR = path.join("docs", "data");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
+const CACHE_PATH = path.join("cache.json");
 const TOP10_ABC_HISTORY_PATH = path.join(DATA_DIR, "top10_abc_history.json");
 const TOP10_ABC_EVENTS_HISTORY_PATH = path.join(DATA_DIR, "top10_abc_events_history.json");
 const TOP10_ABC_LATEST_PATH = path.join(DATA_DIR, "top10_abc_latest.json");
@@ -30,6 +31,9 @@ const SUPABASE_SCREENSHOT_BUCKET = process.env.SUPABASE_SCREENSHOT_BUCKET || "sc
 const TOP10_SOURCE_ID = "abc1";
 const TOP10_HISTORY_CAP = Number(process.env.TOP10_HISTORY_CAP || 336);
 const TOP10_EVENTS_CAP = Number(process.env.TOP10_EVENTS_CAP || 3000);
+const SCRAPE_TIMEOUT_MS = Number(process.env.SCRAPE_TIMEOUT_MS || 90000);
+const SCRAPE_CONCURRENCY = Math.max(1, Number(process.env.SCRAPE_CONCURRENCY || 3));
+const USE_CACHE_JSON = process.env.USE_CACHE_JSON !== "0";
 
 const SOURCES = Object.fromEntries(
   SOURCE_REGISTRY.map((s) => [s.id, { id: s.id, name: s.name, homeUrl: s.home_url }]),
@@ -224,6 +228,31 @@ function readJSONIfExists(p, fallback) {
   } catch {
     return fallback;
   }
+}
+
+function resultFromCacheSource(source) {
+  if (!source || typeof source !== "object") return null;
+  return {
+    ok: Boolean(source.ok),
+    updatedAt: source.updated_at || source?.last?.fetchedAt || null,
+    error: source?.last?.error || null,
+    runId: source?.last?.runId || null,
+    item: source?.item || null,
+  };
+}
+
+function loadHeroResultsFromCache() {
+  const cache = readJSONIfExists(CACHE_PATH, null);
+  const sources = cache?.sources;
+  if (!sources || typeof sources !== "object") return null;
+
+  const results = {};
+  for (const sourceId of Object.keys(SOURCES)) {
+    const mapped = resultFromCacheSource(sources[sourceId]);
+    if (!mapped) return null;
+    results[sourceId] = mapped;
+  }
+  return results;
 }
 
 function hoursToMs(hours) {
@@ -470,7 +499,12 @@ function currentSinceFromHistory(history, sourceKey, currentUrl) {
 
 async function safeScrape(label, fn, generatedAt) {
   try {
-    const res = await fn();
+    const res = await Promise.race([
+      fn(),
+      new Promise((_, reject) => {
+        setTimeout(() => reject(new Error(`${label} timed out after ${SCRAPE_TIMEOUT_MS}ms`)), SCRAPE_TIMEOUT_MS);
+      }),
+    ]);
     if (res?.item) {
       res.item.contentType = inferContentType({ url: res.item.url, title: res.item.title });
     }
@@ -479,6 +513,24 @@ async function safeScrape(label, fn, generatedAt) {
     console.error(`❌ ${label} hero scrape failed`, err);
     return { ok: false, error: String(err), updatedAt: generatedAt, item: null };
   }
+}
+
+async function runScrapeBatch(entries, generatedAt) {
+  const results = {};
+  let nextIndex = 0;
+
+  async function worker() {
+    while (nextIndex < entries.length) {
+      const currentIndex = nextIndex;
+      nextIndex += 1;
+      const entry = entries[currentIndex];
+      results[entry.key] = await safeScrape(entry.label, entry.fn, generatedAt);
+    }
+  }
+
+  const workerCount = Math.min(SCRAPE_CONCURRENCY, entries.length);
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+  return results;
 }
 
 function inferContentType({ url, title }) {
@@ -587,6 +639,7 @@ async function loadTimelineEventsFromSupabase(sb, hours = 12) {
 
 async function run() {
   console.log("🗞️ Newsboard hero scrape starting…");
+  console.log(`🧵 Scrape concurrency=${SCRAPE_CONCURRENCY}, timeout=${SCRAPE_TIMEOUT_MS}ms`);
 
   ensureDir(DATA_DIR);
 
@@ -597,8 +650,39 @@ async function run() {
   if (supabase) console.log("🧩 Supabase enabled: inserting hero_runs");
   else console.log("🧩 Supabase not configured (SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing)");
 
-  const abc1 = await safeScrape("ABC", scrapeABCHero, generatedAt);
+  let scrapeResults = null;
+  let usedCacheResults = false;
+  if (USE_CACHE_JSON) {
+    scrapeResults = loadHeroResultsFromCache();
+    if (scrapeResults) {
+      usedCacheResults = true;
+      console.log("📦 Using hero results from cache.json for docs/data build");
+    } else {
+      console.warn("⚠️ USE_CACHE_JSON is enabled but cache.json is missing or incomplete; falling back to live hero scrapes.");
+    }
+  }
+
+  if (!scrapeResults) {
+    const liveResults = await runScrapeBatch([
+      { key: "abc1", label: "ABC", fn: scrapeABCHero },
+      { key: "cbs1", label: "CBS", fn: scrapeCBSHero },
+      { key: "usat1", label: "USA Today", fn: scrapeUSATHero },
+      { key: "nbc1", label: "NBC", fn: scrapeNBCHero },
+      { key: "cnn1", label: "CNN", fn: scrapeCNNHero },
+      { key: "guardian1", label: "The Guardian", fn: scrapeGuardianHero },
+      { key: "ap1", label: "Associated Press", fn: scrapeAPHero },
+      { key: "latimes1", label: "Los Angeles Times", fn: scrapeLATimesHero },
+      { key: "npr1", label: "NPR", fn: scrapeNPRHero },
+      { key: "bbc1", label: "BBC", fn: scrapeBBCHero },
+      { key: "fox1", label: "Fox News", fn: scrapeFoxHero },
+      { key: "yahoo1", label: "Yahoo News", fn: scrapeWPHero },
+    ], generatedAt);
+    scrapeResults = liveResults;
+  }
+
   const abcTop10Raw = await safeScrape("ABC Top 10", scrapeABCTop10, generatedAt);
+
+  const abc1 = scrapeResults.abc1;
   const abcTop10 = {
     sourceId: TOP10_SOURCE_ID,
     observedAt: abcTop10Raw?.observedAt || generatedAt,
@@ -607,21 +691,30 @@ async function run() {
     error: abcTop10Raw?.error || null,
     items: Array.isArray(abcTop10Raw?.items) ? abcTop10Raw.items : [],
   };
-  const cbs1 = await safeScrape("CBS", scrapeCBSHero, generatedAt);
-  const usat1 = await safeScrape("USA Today", scrapeUSATHero, generatedAt);
-  const nbc1 = await safeScrape("NBC", scrapeNBCHero, generatedAt);
-  const cnn1 = await safeScrape("CNN", scrapeCNNHero, generatedAt);
-  const guardian1 = await safeScrape("The Guardian", scrapeGuardianHero, generatedAt);
-  const ap1 = await safeScrape("Associated Press", scrapeAPHero, generatedAt);
-  const latimes1 = await safeScrape("Los Angeles Times", scrapeLATimesHero, generatedAt);
-  const npr1 = await safeScrape("NPR", scrapeNPRHero, generatedAt);
-  const bbc1 = await safeScrape("BBC", scrapeBBCHero, generatedAt);
-  const fox1 = await safeScrape("Fox News", scrapeFoxHero, generatedAt);
-  const yahoo1 = await safeScrape("Yahoo News", scrapeWPHero, generatedAt);
+  const cbs1 = scrapeResults.cbs1;
+  const usat1 = scrapeResults.usat1;
+  const nbc1 = scrapeResults.nbc1;
+  const cnn1 = scrapeResults.cnn1;
+  const guardian1 = scrapeResults.guardian1;
+  const ap1 = scrapeResults.ap1;
+  const latimes1 = scrapeResults.latimes1;
+  const npr1 = scrapeResults.npr1;
+  const bbc1 = scrapeResults.bbc1;
+  const fox1 = scrapeResults.fox1;
+  const yahoo1 = scrapeResults.yahoo1;
 
   if (supabase) {
+    for (const s of Object.values(SOURCES)) {
+      try {
+        await upsertSourceRow(supabase, s);
+      } catch (err) {
+        console.warn(`⚠️ source upsert skipped (${s.id}): ${compactSupabaseError(err)}`);
+      }
+    }
+  }
+
+  if (supabase && !usedCacheResults) {
     const sbWrites = [
-      ...Object.values(SOURCES).map((s) => ({ label: `sources.${s.id}`, fn: () => upsertSourceRow(supabase, s) })),
       { label: "hero_runs.abc1", fn: () => insertHeroRun(supabase, "abc1", abc1, observedAt) },
       { label: "hero_runs.cbs1", fn: () => insertHeroRun(supabase, "cbs1", cbs1, observedAt) },
       { label: "hero_runs.usat1", fn: () => insertHeroRun(supabase, "usat1", usat1, observedAt) },
@@ -680,6 +773,31 @@ async function run() {
       });
     } catch (err) {
       console.warn(`⚠️ top10 Supabase write skipped: ${compactSupabaseError(err)}`);
+    }
+  } else if (supabase) {
+    console.log("📦 Skipping duplicate hero_runs writes because cache.json already came from server refresh");
+
+    try {
+      await withSupabaseRetry("insert top10_runs/items", async () => {
+        const currRun = await insertTop10RunAndItems(supabase, abcTop10);
+        if (!currRun) return;
+        const prevRun = await fetchPreviousTop10Run(supabase, TOP10_SOURCE_ID, String(currRun.observed_at || abcTop10.observedAt));
+        const currItems = await fetchTop10ItemsForRun(supabase, currRun.id);
+        await insertTop10Events(
+          supabase,
+          prevRun,
+          { ...currRun, items: currItems }
+        );
+      });
+    } catch (err) {
+      console.warn(`⚠️ top10 Supabase write skipped: ${compactSupabaseError(err)}`);
+    }
+
+    const top10HeadlineResult = await insertTop10HeadlineEvents(supabase, abcTop10);
+    if (top10HeadlineResult.ok) {
+      console.log(`Top10 ABC inserted headline_events: ${top10HeadlineResult.inserted}`);
+    } else {
+      console.error(`Top10 ABC insert failed: ${top10HeadlineResult.error || "unknown error"}`);
     }
   }
 
