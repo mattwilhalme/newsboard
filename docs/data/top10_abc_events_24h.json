@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-12T23:58:24.368Z",
+  "generatedAt": "2026-04-13T02:31:00.120Z",
   "hours": 24,
   "events": [
     {
@@ -591,6 +591,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Sergio Garcia breaks driver, gets code-of-conduct warning, a first at Masters",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bd0098546404d11ac69109526f8066e04a4a2c25",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Rep. Eric Swalwell suspends campaign for governor amid sexual assault allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "794d7c88c6d048b4c67bb1e2a28773e63aafe9b9",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Britney Spears voluntarily checks into treatment facility after DUI arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6ab9787415c0802f4dbd57677fe4aae57efe27fd",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Woman accused of stalking and attacking Fleetwood Mac's Lindsey Buckingham arrested"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "MOVED",
+      "fingerprint": "213549d9f1f44a3282b770882ef2e78a3d4b71b2",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says",
+      "to_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "MOVED",
+      "fingerprint": "d2bcc6fa8a696813e07635ba166a66047e568cef",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "2 gunmen at large after 8 people shot in Virginia Beach, police say",
+      "to_title": "2 gunmen at large after 8 people shot in Virginia Beach, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "MOVED",
+      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission",
+      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "New renderings released for Trump's proposed 'triumphal arch'",
+      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "MOVED",
+      "fingerprint": "8df2d03347c30c1b91305c55fb8dcd634c6a66d0",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Rory McIlroy goes back-to-back at the Masters to join Nicklaus, Faldo and Tiger",
+      "to_title": "Rory McIlroy goes back-to-back at the Masters to join Nicklaus, Faldo and Tiger"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "38d4c45b968f5d5ba8685757e7efdd006bd8722a",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Hungarian Prime Minister Orbán ejected after 16 years, in European electoral earthquake",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "114b71bdb251a2b09c788661051f74a5eea7e671",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "California Rep. Eric Swalwell faces growing calls from fellow Democrats to resign",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T02:31:10.584Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement",
       "to_title": null
     }
   ]
