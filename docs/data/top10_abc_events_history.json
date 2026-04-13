@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-13T22:33:31.598Z",
+  "generatedAt": "2026-04-13T23:28:15.199Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T23:57:24.639Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e4223339f39470fc0124638f3899b2ed15b81f62",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Healthy eating may help keep the brain younger, study suggests"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T23:57:24.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "a2816cf175529c30274f76bc78d454353704e668",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Chief Justice: 'Personally directed hostility is dangerous, and it's got to stop'",
-      "to_title": "Chief Justice: 'Personally directed hostility is dangerous, and it's got to stop'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-17T23:57:24.639Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Mexican migrant is 47th person to die in ICE custody during current administration",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T23:28:18.172Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8bf4507adc78d868310030d1cadc442e48af2862",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Swalwell says he plans to resign from Congress amid sexual assault allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T23:28:18.172Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2357420d3486e740d0c3b93d97d8aaef410b5997",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSwalwell says he plans to resign from Congress amid sexual assault allegations",
       "to_title": null
     }
   ],
