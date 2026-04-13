@@ -1,168 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-13T15:42:25.095Z",
+  "generatedAt": "2026-04-13T18:53:07.538Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T15:47:52.170Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "70bf482f16bb091600c381537de4e33ae0d67028",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Hotter temperatures may push millions toward a more sedentary lifestyle, study finds",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T16:49:12.775Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e493d06bce74cba3e0964addf2dc43a25ce66549",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says US doesn't 'need' NATO allies for Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T16:49:12.775Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "60163dfb46255cb9c55643f1b86ab851b4ef67c9",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T16:49:12.775Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "29144708720e809e096ca41eaaa6212c363f7560",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T16:49:12.775Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "893e8810df1b896742f848731fe97260dcad0aa0",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Israel says Iran's security chief Ali Larijani dead",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T17:47:18.373Z",
-      "event_type": "MOVED",
-      "fingerprint": "b94fab91d07f8dbdee490509a84911dc099b257b",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Utah mom found guilty of fatally poisoning husband with fentanyl",
-      "to_title": "Utah mom found guilty of fatally poisoning husband with fentanyl"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T17:47:18.373Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e625298a0f420263e3705c10b3f54142dbead5d9",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T17:47:18.373Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "df876a8be7e41f9168784813412f3cfe3aede170",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Kate Middleton steps out with shamrocks for St. Patrick's Day parade"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T17:47:18.373Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bf0b6db9acd9f2b4d98308d0032f73843218ca1d",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Numerous flights canceled as severe March storm continues",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T17:47:18.373Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fbda85481ac4fbf5e5475ffccb31ca648d72d03a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Bank of America reaches proposed, non-binding settlement in Jeffrey Epstein suit",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T18:40:54.796Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "413c4cb8812b15ae07875ec3dc90e931d7eb5cf2",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Mississippi River mayors warn AI, fuel costs and drought are straining key waterway"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T18:40:54.796Z",
-      "event_type": "MOVED",
-      "fingerprint": "e625298a0f420263e3705c10b3f54142dbead5d9",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer",
-      "to_title": "Miley Cyrus returns for 'Hannah Montana 20th Anniversary Special' trailer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T18:40:54.796Z",
-      "event_type": "MOVED",
-      "fingerprint": "403e03619137b926863b6eb1c729529c811c5d77",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Tim Cook talks Apple's 50th anniversary, future of AI and privacy",
-      "to_title": "Tim Cook talks Apple's 50th anniversary, future of AI and privacy"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T18:40:54.796Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "88eda68fffe6b0530aad1d6093380a3ff2d3e95c",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Kate Middleton steps out with Irish Guards on St. Patrick's Day"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T18:40:54.796Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "177ff4e5351f47374a0d9fb5f0bb90b1f55e39d6",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Senate is expected to take up the SAVE America Act this week. Here's what to know",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-17T18:40:54.796Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "df876a8be7e41f9168784813412f3cfe3aede170",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Kate Middleton steps out with shamrocks for St. Patrick's Day parade",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-17T19:43:01.075Z",
@@ -30001,6 +29841,166 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 gunmen at large after 8 people shot in Virginia Beach, police say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dfd0193619a4604527cebb130717a4decf3386d5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump takes down image from social media that depicted him as Jesus-like figure"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "9f0d96817b586ab49f208a88aa38e5becfe6ed47",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Pope Leo responds to Trump’s criticism, saying he has 'no fear' of US administration",
+      "to_title": "Pope Leo responds to Trump's criticism, saying he has 'no fear' of US administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "9f0d96817b586ab49f208a88aa38e5becfe6ed47",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Pope Leo responds to Trump’s criticism, saying he has 'no fear' of US administration",
+      "to_title": "Pope Leo responds to Trump's criticism, saying he has 'no fear' of US administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cf82a3ad0829a0e902ffbc725137a8bc8f9cc6e8",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Pope making first papal visit to Algeria to launch Africa trip, honor St. Augustine"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c7a4d482f826697a6e737eb204d2e131b485cdb4",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Stepbrother charged with murder, sex abuse in teen girl's cruise ship death: DOJ"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "69a02d6d04b1b0e9ec949ec9df7d76c92fc508b4",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Iran live updates: US blockade of Iran's Strait of Hormuz ports to begin Monday",
+      "to_title": "Iran live updates: US blockade of Iran's Strait of Hormuz ports to begin Monday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a783f3a7e88b0b67768e46244c5451cf15de7d8",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Latest on disappearance of American woman reported overboard in the Bahamas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3330a79b7f8879bbfff68cbe587c358d3b94e983",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Mexican migrant is 47th person to die in ICE custody during current administration"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "89048804ddde90cf587859d7e51fa1e9868537df",
+      "from_rank": 3,
+      "to_rank": 8,
+      "from_title": "Judge throws out Trump's $10B lawsuit against WSJ over Epstein reporting",
+      "to_title": "Judge throws out Trump's $10B lawsuit against WSJ over Epstein reporting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "c3f4f92b731604231f23ee16a40b4c21e2c6e700",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Masters champion Rory McIlroy celebrates 2nd win with touching tribute to his family",
+      "to_title": "Masters champion Rory McIlroy celebrates 2nd win with touching tribute to his family"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "45d6142894472b10bab292c33fd0f419b9efa794",
+      "from_rank": 5,
+      "to_rank": 10,
+      "from_title": "NASA administrator previews moon base, Mars missions after Artemis II",
+      "to_title": "NASA administrator previews moon base, Mars missions after Artemis II"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de36c2ed2c812a367872bec111fc489cb5deb059",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Pope making first papal visit to Algeria to launch Africa trip, honor St. Augustine",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cc5b3effa6c7b3e7ca87c4311a3cfbd5c59cac45",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Congress returning from 2-week recess as Iran debate rages and members face expulsion",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d3e483a895badc5098e78d405891c4af90dc6d37",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "OpenAI CEO's home struck by gunfire, days after Molotov cocktail attack: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bd0098546404d11ac69109526f8066e04a4a2c25",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Rep. Eric Swalwell suspends campaign for governor amid sexual assault allegations",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-13T18:53:17.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "794d7c88c6d048b4c67bb1e2a28773e63aafe9b9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Britney Spears voluntarily checks into treatment facility after DUI arrest",
       "to_title": null
     }
   ],
