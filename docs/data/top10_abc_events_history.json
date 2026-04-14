@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-14T05:40:53.779Z",
+  "generatedAt": "2026-04-14T07:12:36.019Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T11:29:29.969Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7e9ae27e9f55639973c0eefbf6d8bc6fa4fbf12b",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Macy’s sees strong holiday sales, upbeat signs from revamped stores amid Q4 outlook"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T11:29:29.969Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1313a99fc390822f4ff13c0812d1b45b515d0dc2",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "U.S. falls short again in WBC final as Venezuela stuns star-studded roster"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T11:29:29.969Z",
-      "event_type": "MOVED",
-      "fingerprint": "e4223339f39470fc0124638f3899b2ed15b81f62",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Healthy eating may help keep the brain younger, study suggests",
-      "to_title": "Healthy eating may help keep the brain younger, study suggests"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T11:29:29.969Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "29144708720e809e096ca41eaaa6212c363f7560",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T11:29:29.969Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a2816cf175529c30274f76bc78d454353704e668",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Chief Justice: 'Personally directed hostility is dangerous, and it's got to stop'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T13:52:32.114Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b753b16cbc073438784b2e482b1796dd0ac87743",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "WNBA and players union reach an agreement in principle on a transformational new CBA"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T13:52:32.114Z",
-      "event_type": "MOVED",
-      "fingerprint": "b012973bfff200b51901a0c2adca10a9b5b69320",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Cesar Chavez accused of abusing 'young women or minors,' UFW says",
-      "to_title": "Cesar Chavez accused of abusing 'young women or minors,' UFW says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-18T13:52:32.114Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Latest on disappearance of American woman reported overboard in the Bahamas",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T07:12:39.077Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d39143afeb2baddd9b5f9cf628d7acc2f604a566",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US proposes 20-year suspension on Iranian uranium enrichment"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T07:12:39.077Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ab7cc28c247247cc413b8e8659b9fc122e29dc5b",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:How the US Navy could enforce a blockade of Iran's ports in the Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T07:12:39.077Z",
+      "event_type": "MOVED",
+      "fingerprint": "0039217e5e4a911d6b6427482a73cb9f867ec360",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Police release husband of woman missing after going overboard in Bahamas",
+      "to_title": "Police release husband of woman missing after going overboard in Bahamas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T07:12:39.077Z",
+      "event_type": "MOVED",
+      "fingerprint": "9b8a472737a1a48c7bb107bc32ffa703aee2b00a",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "GOP Rep. Tony Gonzales says he's stepping down from Congress",
+      "to_title": "GOP Rep. Tony Gonzales says he's stepping down from Congress"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T07:12:39.077Z",
+      "event_type": "MOVED",
+      "fingerprint": "8bf4507adc78d868310030d1cadc442e48af2862",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "Swalwell says he plans to resign from Congress amid sexual assault allegations",
+      "to_title": "Swalwell says he plans to resign from Congress amid sexual assault allegations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T07:12:39.077Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "391bfc2ee2b573a7393b87ed1716317546f4d1e7",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Swalwell exit and Trump endorsement opens path for Dems in California governor race",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T07:12:39.077Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bd0098546404d11ac69109526f8066e04a4a2c25",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Rep. Eric Swalwell suspends campaign for governor amid sexual assault allegations",
       "to_title": null
     }
   ],
