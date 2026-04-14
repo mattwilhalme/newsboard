@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-14T21:00:11.419Z",
+  "generatedAt": "2026-04-14T21:56:30.334Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T19:56:41.757Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6ea9aa4039ed4cdf503f195a69fe98b4ca65459b",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Iran orders evacuation of Gulf energy assets",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T20:32:09.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f4c50c134ff2fd02e81d18e408e255dfbc2c6e53",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Iran hits world's largest liquefied natural gas terminal in Qatar"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T20:32:09.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "143ebe01fb4cbdf3ca4d747c2e74e9913c3432aa",
-      "from_rank": 6,
-      "to_rank": 3,
-      "from_title": "'I shouldn't have said that': Mullin expresses regret for comments about Alex Pretti",
-      "to_title": "'I shouldn't have said that': Mullin expresses regret for comments about Alex Pretti"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T20:32:09.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "bb4a6a708bd90afcb771d2c4a6319c0c2cab58bc",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Fed holds interest rates steady in 1st move since Iran war spiked oil prices",
-      "to_title": "Fed holds interest rates steady in 1st move since Iran war spiked oil prices"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T20:32:09.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "92e8ff63863de8026cc79eafe0b7be1af22c28a2",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain",
-      "to_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T20:32:09.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bca18e2aa28b8a2c1cfddee36fb6c4a981656f52",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T20:32:09.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "33407ebefa3275c50da9cff417f56f7962b84fe2",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Iran hits world's largest LNG terminal in Qatar",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T20:32:09.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "28ea14fa0c48e779cb9cd0c72722abd16f08e956",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Gabbard questioned on whether Iran posed 'imminent nuclear threat'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T21:08:15.209Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T21:08:15.209Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a506566f9c9a2b32cf5939d73dd24d9a84eba5ab",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Woman arrested in 2011 cold case murder",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T22:23:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8e51fb13a0c788815d5effda76c629bca78bf430",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Iran hits world's largest liquefied natural gas terminal in Qatar"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T22:23:17.207Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3f6ee48aaa540356100c5293d885d9432244f226",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:US, allied radar sites in Middle East struck at least 10 times: Visual analysis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-18T22:23:17.207Z",
-      "event_type": "MOVED",
-      "fingerprint": "bca18e2aa28b8a2c1cfddee36fb6c4a981656f52",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'",
-      "to_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-18T22:23:17.207Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Phil Collins and Billy Idol among the 2026 Rock and Roll Hall of Fame inductees",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2fcb7ccc1d1f898f5a2ab7f667e5dd62a5c25c01",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Nearly 400 US service members wounded in war, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "58421692202b3693f3b3417c890730a3c68582de",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran war triggered most severe oil shock ever, the International Energy Agency says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "MOVED",
+      "fingerprint": "6744ecb41e0428e41c7a6e39a177d3bef1f2ee17",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania",
+      "to_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "MOVED",
+      "fingerprint": "26369ac48cd288311d84f946b6db493bebd473c8",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison",
+      "to_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "MOVED",
+      "fingerprint": "f2fee9fbe60dae9650a596cb43b1c299b59439b0",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "50 million people on alert for severe weather from Texas to Michigan",
+      "to_title": "50 million people on alert for severe weather from Texas to Michigan"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "MOVED",
+      "fingerprint": "bd8dcc45616456673489c000d36c6078bdc0e34e",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Husband of woman missing in Bahamas: 'I'm not leaving'",
+      "to_title": "Husband of woman missing in Bahamas: 'I'm not leaving'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "MOVED",
+      "fingerprint": "ffaed87258bb02fe7fe13477b06758f75c763eb0",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "What a top airline CEO says about state of airfare prices",
+      "to_title": "What a top airline CEO says about state of airfare prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8b13b89481e59df445a7892ecc79291bc8c36428",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "7-Eleven expects to close hundreds of its stores in North America this year"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "be80fbe1c65ceedde2983c6ffe9affc34d661699",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Fluoride in drinking water has no negative effect on IQ or cognitive function: Study"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d39143afeb2baddd9b5f9cf628d7acc2f604a566",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US proposes 20-year suspension on Iranian uranium enrichment",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ab7cc28c247247cc413b8e8659b9fc122e29dc5b",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:How the US Navy could enforce a blockade of Iran's ports in the Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "844ea3c7bac04378207ae84cab22d9f34f602623",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Appeals court halts contempt inquiry into removal of Venezuelans to El Salvador",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-14T21:56:33.661Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6f845617f57709c187fbdd1d4ddc404e7e7fbf65",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Prince Harry, Meghan in Australia for 1st visit since leaving royal roles",
       "to_title": null
     }
   ],
