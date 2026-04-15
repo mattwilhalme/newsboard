@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-15T19:55:14.454Z",
+  "generatedAt": "2026-04-15T20:39:43.701Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6744ecb41e0428e41c7a6e39a177d3bef1f2ee17",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "MOVED",
-      "fingerprint": "26369ac48cd288311d84f946b6db493bebd473c8",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison",
-      "to_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "MOVED",
-      "fingerprint": "bd8dcc45616456673489c000d36c6078bdc0e34e",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Husband of woman missing in Bahamas: 'I'm not leaving'",
-      "to_title": "Husband of woman missing in Bahamas: 'I'm not leaving'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "MOVED",
-      "fingerprint": "ffaed87258bb02fe7fe13477b06758f75c763eb0",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "What a top airline CEO says about state of airfare prices",
-      "to_title": "What a top airline CEO says about state of airfare prices"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "MOVED",
-      "fingerprint": "6f845617f57709c187fbdd1d4ddc404e7e7fbf65",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Prince Harry, Meghan in Australia for 1st visit since leaving royal roles",
-      "to_title": "Prince Harry, Meghan in Australia for 1st visit since leaving royal roles"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "MOVED",
-      "fingerprint": "c7a4d482f826697a6e737eb204d2e131b485cdb4",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Stepbrother charged with murder, sex abuse in teen girl's cruise ship death: DOJ",
-      "to_title": "Stepbrother charged with murder, sex abuse in teen girl's cruise ship death: DOJ"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9fa1e145ff3cd1fe7b454ad98459314676319068",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Phil Collins and Billy Idol among the 2026 Rock and Roll Hall of Fame inductees",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-14T21:56:33.661Z",
@@ -1201,6 +1131,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Prosecutors turned away from Fed renovation site",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T20:39:46.672Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "af0a8db9d3175ac7f36191c2e5a260e634e5a6a6",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Live Nation illegally monopolized the market for tickets, jury finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T20:39:46.672Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f323f7b918140da398e5937bff9c01a1fe3aa97c",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "S&P 500 closes at record high as US-Iran ceasefire continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T20:39:46.672Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ac12d81f1350121b42d73fa6fc29fd4cce1f2b87",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingLive Nation illegally monopolized the market for tickets, jury finds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T20:39:46.672Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cecdc08bff0861111cb43322b95424dd34a72286",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "S&P 500 hits record high as US-Iran ceasefire continues",
       "to_title": null
     }
   ]
