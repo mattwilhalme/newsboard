@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-15T14:05:17.644Z",
+  "generatedAt": "2026-04-15T15:17:50.614Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "MOVED",
-      "fingerprint": "e3d93ebf233cfde3f43c2d6a63b289f7ef168c8d",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Former counterterrorism official under investigation over alleged leaks: Sources",
-      "to_title": "Former counterterrorism official under investigation over alleged leaks: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "MOVED",
-      "fingerprint": "d65fd5320d0ff8474864946ad1dda684198fa788",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "US, allied radar sites in Middle East struck at least 10 times: Visual analysis",
-      "to_title": "US, allied radar sites in Middle East struck at least 10 times: Visual analysis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T11:02:08.375Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "143ebe01fb4cbdf3ca4d747c2e74e9913c3432aa",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "'I shouldn't have said that': Mullin expresses regret for comments about Alex Pretti",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5889ebf3075bdeb6116970f70d8924e379bab73b",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: End of the war to be 'at the president's choosing,' Hegseth says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a9a3648053a351907935e7ea8359370b9e2474bd",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Oil and gas prices surge as Iran escalates strikes on Gulf refineries"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "038b27b4b6de409d576fca9b02fde6f68af5c3c1",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Gabbard faces 2nd day of questions on Iran war, worldwide threats"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "MOVED",
-      "fingerprint": "81fbb15c6f1159366331cd8c15026bc02aa96097",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field",
-      "to_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "MOVED",
-      "fingerprint": "d55fdc6820f5e70df26b5cee1a31389cb05945b7",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing",
-      "to_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c81f9c0759c49f2ad29161fb8906df9d48a69596",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Nearly 10% of Affordable Care Act enrollees opted to forego insurance, poll finds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "MOVED",
-      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder",
-      "to_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "MOVED",
-      "fingerprint": "d330719e9ba1ab389d2d460175e9ee13d1338875",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "House Oversight committee to depose Epstein’s longtime lawyer",
-      "to_title": "House Oversight committee to depose Epstein’s longtime lawyer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "MOVED",
-      "fingerprint": "e3d93ebf233cfde3f43c2d6a63b289f7ef168c8d",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Former counterterrorism official under investigation over alleged leaks: Sources",
-      "to_title": "Former counterterrorism official under investigation over alleged leaks: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "92e8ff63863de8026cc79eafe0b7be1af22c28a2",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T13:41:50.139Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Powerball going international in effort to build larger jackpots",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5854367a95b62cadabb90dd8e01c31cc160af713",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "6bd997b842078efa110a561ff54fbb0cb057dce1",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Tehran threatens Red Sea transits if US blockade continues",
+      "to_title": "Iran live updates: Tehran threatens Red Sea transits if US blockade continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b05259a34773b60aee2704be9ef0605553a1c3ba",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "High school principal takes down would-be shooter, hailed as hero"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "de45ef634a0d5d34f4bf0c9e8afed800cd16c151",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police",
+      "to_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0c362df7d09b7af366449707e7a32272552b3d30",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Average tax refund is $3,400, an 11% increase from last year: Treasury Dept"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "3908773adbbd06caf6847870a61e3788524c367a",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts",
+      "to_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "6744ecb41e0428e41c7a6e39a177d3bef1f2ee17",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania",
+      "to_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c015178c386122ecdb23d88165cb30eb940bbd8c",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Gas station clerk speaks out after foiling alleged kidnapping"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "a6a16200fde344bc15a8a9cffeefdbe6e6183e49",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Woman accuses former Rep. Eric Swalwell of raping her in 2018",
+      "to_title": "Woman accuses former Rep. Eric Swalwell of raping her in 2018"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "c3e0aaad0623f4732df984aba276177be14f819b",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "4 dead in Turkey after student opens fire",
+      "to_title": "4 dead in Turkey after student opens fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d09d6cb4d4933b32f7a2a0578e00948d114b73ca",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Cadaver dogs helping with search for American woman missing in Bahamas, police say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c992d81a396387299a4ec62f58be389638eac5fc",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Ahead of the deadline, 53 million filers used new Trump tax exemptions, Treasury says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ad441302f11ab96fb85756cb59a4a2c93a5250ae",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "DOJ moves to vacate convictions of Proud Boys, Oath Keepers from Jan. 6",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T15:17:53.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6b88039b5b80ec24085196075a13172e828a9e02",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "UN nuclear chief urges strict Iran checks",
       "to_title": null
     }
   ],
