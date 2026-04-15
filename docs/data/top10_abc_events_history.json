@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-15T10:16:32.947Z",
+  "generatedAt": "2026-04-15T11:19:59.335Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T09:29:42.744Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3ac0c0b68d4785f5db4f49ac90a3a2c307537a84",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T09:29:42.744Z",
-      "event_type": "MOVED",
-      "fingerprint": "d55fdc6820f5e70df26b5cee1a31389cb05945b7",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing",
-      "to_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T09:29:42.744Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Pope heads to Cameroon as fighting pauses",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T11:20:02.610Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fc7ce92fedd825d80271e9e6c474255273f417b8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says war 'very close to over'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T11:20:02.610Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "16158ad7d4545076e57a6c6365aba96511bed292",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US blockade 'fully implemented' CENTCOM commander says",
       "to_title": null
     }
   ],
