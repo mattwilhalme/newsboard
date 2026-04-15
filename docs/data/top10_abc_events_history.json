@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-15T11:19:59.335Z",
+  "generatedAt": "2026-04-15T12:10:31.738Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T09:29:42.744Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0e71b4b65bec7e0f70144b99fe1e01c2c953e158",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "1 in 10 ACA enrollees dropped coverage due to rising health care costs, poll finds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T09:29:42.744Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d330719e9ba1ab389d2d460175e9ee13d1338875",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "House Oversight committee to depose Epstein’s longtime lawyer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T09:29:42.744Z",
-      "event_type": "MOVED",
-      "fingerprint": "e3d93ebf233cfde3f43c2d6a63b289f7ef168c8d",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Former counterterrorism official under investigation over alleged leaks: Sources",
-      "to_title": "Former counterterrorism official under investigation over alleged leaks: Sources"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T09:29:42.744Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: US blockade 'fully implemented' CENTCOM commander says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T12:10:34.944Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c3e0aaad0623f4732df984aba276177be14f819b",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "4 dead in Turkey after student opens fire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T12:10:34.944Z",
+      "event_type": "MOVED",
+      "fingerprint": "6b88039b5b80ec24085196075a13172e828a9e02",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "UN nuclear chief urges strict Iran checks",
+      "to_title": "UN nuclear chief urges strict Iran checks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T12:10:34.944Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8072581e829f4a904c86b301651c1a02f7e6cdbf",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Ye postpones show as French authorities seek ban",
       "to_title": null
     }
   ],
