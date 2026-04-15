@@ -1,168 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-15T18:46:23.148Z",
+  "generatedAt": "2026-04-15T19:55:14.454Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T16:33:10.279Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Dangerous, unprecedented heat wave hits the West"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T16:33:10.279Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8a0115ca2b466640400f17f385aaae8ecaf2ffde",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US has less clear picture of Iranian leadership positions: Gabbard",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T16:33:10.279Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d330719e9ba1ab389d2d460175e9ee13d1338875",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "House Oversight committee to depose Epstein’s longtime lawyer",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Pentagon seeking $200B more for Iran war, official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef606420212f83f1ebf212b84d683eeaf5127425",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a27fe6dff21d370360146065424d2b014c6733f3",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Oil and gas prices surge as Iran escalates strikes on Gulf refineries"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "af11bd00415293bd7dc6918fb86fe480477e4365",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Gabbard doubles down on deferring to Trump on whether Iran posed 'imminent threat'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "MOVED",
-      "fingerprint": "d55fdc6820f5e70df26b5cee1a31389cb05945b7",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing",
-      "to_title": "'I will follow the law,' Bondi says after Dems storm out of Epstein files briefing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "MOVED",
-      "fingerprint": "92e8ff63863de8026cc79eafe0b7be1af22c28a2",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain",
-      "to_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4eb0615c3bc4fb677c9b8067aa4fa844ca8d2c6e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a9a3648053a351907935e7ea8359370b9e2474bd",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Oil and gas prices surge as Iran escalates strikes on Gulf refineries",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "038b27b4b6de409d576fca9b02fde6f68af5c3c1",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Gabbard faces 2nd day of questions on Iran war, worldwide threats",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T17:36:18.214Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "81fbb15c6f1159366331cd8c15026bc02aa96097",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T19:31:33.544Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, Source says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T19:31:33.544Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ef606420212f83f1ebf212b84d683eeaf5127425",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Japan, 5 European countries condemn Iranian attacks on vessels",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T20:04:04.533Z",
-      "event_type": "TITLE_UPDATED",
-      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
-      "from_rank": 2,
-      "to_rank": 2,
-      "from_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, Source says",
-      "to_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, source says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T20:53:29.160Z",
@@ -30001,6 +29841,166 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Gas station clerk helps save 16-year-old girl in alleged kidnapping",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ac12d81f1350121b42d73fa6fc29fd4cce1f2b87",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingLive Nation illegally monopolized the market for tickets, jury finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "49f63deef1c26748dc3ee880759c760a78eebcb2",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Sanctioned ships cross the Strait of Hormuz toward Tehran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "MOVED",
+      "fingerprint": "5854367a95b62cadabb90dd8e01c31cc160af713",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say",
+      "to_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cecdc08bff0861111cb43322b95424dd34a72286",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "S&P 500 hits record high as US-Iran ceasefire continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3ffa1655cef3dc297c20619652c96cfe1802fdba",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Trump shares image of Jesus embracing him, continues to lash out at Pope Leo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "MOVED",
+      "fingerprint": "b05259a34773b60aee2704be9ef0605553a1c3ba",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "High school principal takes down would-be shooter, hailed as hero",
+      "to_title": "High school principal takes down would-be shooter, hailed as hero"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "MOVED",
+      "fingerprint": "de45ef634a0d5d34f4bf0c9e8afed800cd16c151",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police",
+      "to_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "MOVED",
+      "fingerprint": "3908773adbbd06caf6847870a61e3788524c367a",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts",
+      "to_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "11237844efa15b6705065b54601cb5f832f8412d",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Gas station clerk helps save 16-year-old girl in alleged kidnapping"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ae8c69dbdfcc187dc881b9440a31a517dd388748",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Large chunk of ice crashes through house"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f8a6babea78ec9ab75b0720e018f8a3803b4cb5f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Leavitt denies US requested ceasefire extension",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b5df3f9ce14a4016ccc8e8020f19820cedd11055",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "S&P 500 hits record high as US-Iran ceasefire enters second week",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "85af750e502dbcff4900360d650a10a238fc0ae8",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Over 53M people claimed at least 1 Trump tax cut: Treasury Dept",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6744ecb41e0428e41c7a6e39a177d3bef1f2ee17",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f21252168237a9d34c336cd598a089547494f623",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "‘Jeopardy!’ champion wins over $640K in 23rd-straight win",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T19:55:17.493Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2c4c2a67b136ac208ba7768dbbc4144ca6627068",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Prosecutors turned away from Fed renovation site",
       "to_title": null
     }
   ],
