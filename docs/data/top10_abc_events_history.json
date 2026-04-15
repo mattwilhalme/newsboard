@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-15T08:57:59.907Z",
+  "generatedAt": "2026-04-15T10:16:32.947Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T07:15:04.119Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3c5bc97c4212df9a1bae9077fbf99e17311c8134",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'I'm totally shocked': Woman arrested in 2011 cold case murder",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T09:29:42.744Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "44b9d21c15c8aeb5b6b78723675568b8029217ef",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Hegseth to address war with Iran Thursday morning"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T09:29:42.744Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "No adverse IQ effect from fluoridated water: Study",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T10:16:35.956Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8072581e829f4a904c86b301651c1a02f7e6cdbf",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Ye postpones show as French authorities seek ban"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T10:16:35.956Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b690b6f2659f18ec9b4f027316e4604535b50084",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Pope heads to Cameroon as fighting pauses",
       "to_title": null
     }
   ],
