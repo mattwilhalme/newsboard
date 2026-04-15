@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-15T21:36:26.258Z",
+  "generatedAt": "2026-04-15T22:25:48.466Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2fcb7ccc1d1f898f5a2ab7f667e5dd62a5c25c01",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Nearly 400 US service members wounded in war, official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "58421692202b3693f3b3417c890730a3c68582de",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran war triggered most severe oil shock ever, the International Energy Agency says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "6744ecb41e0428e41c7a6e39a177d3bef1f2ee17",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania",
-      "to_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "26369ac48cd288311d84f946b6db493bebd473c8",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison",
-      "to_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "f2fee9fbe60dae9650a596cb43b1c299b59439b0",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "50 million people on alert for severe weather from Texas to Michigan",
-      "to_title": "50 million people on alert for severe weather from Texas to Michigan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "bd8dcc45616456673489c000d36c6078bdc0e34e",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Husband of woman missing in Bahamas: 'I'm not leaving'",
-      "to_title": "Husband of woman missing in Bahamas: 'I'm not leaving'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "ffaed87258bb02fe7fe13477b06758f75c763eb0",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "What a top airline CEO says about state of airfare prices",
-      "to_title": "What a top airline CEO says about state of airfare prices"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8b13b89481e59df445a7892ecc79291bc8c36428",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "7-Eleven expects to close hundreds of its stores in North America this year"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "be80fbe1c65ceedde2983c6ffe9affc34d661699",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Fluoride in drinking water has no negative effect on IQ or cognitive function: Study"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d39143afeb2baddd9b5f9cf628d7acc2f604a566",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US proposes 20-year suspension on Iranian uranium enrichment",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ab7cc28c247247cc413b8e8659b9fc122e29dc5b",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:How the US Navy could enforce a blockade of Iran's ports in the Strait of Hormuz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "844ea3c7bac04378207ae84cab22d9f34f602623",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Appeals court halts contempt inquiry into removal of Venezuelans to El Salvador",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f845617f57709c187fbdd1d4ddc404e7e7fbf65",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Prince Harry, Meghan in Australia for 1st visit since leaving royal roles",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T00:09:11.494Z",
@@ -1171,6 +1041,106 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "S&P 500 hits record high as US-Iran ceasefire continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "206fa8fcd7c6b42fab99d44ce46dde9cf8c5559e",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Meow, meow': Pilots scolded after animal noises heard on ATC frequency"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "MOVED",
+      "fingerprint": "5854367a95b62cadabb90dd8e01c31cc160af713",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say",
+      "to_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "MOVED",
+      "fingerprint": "f323f7b918140da398e5937bff9c01a1fe3aa97c",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "S&P 500 closes at record high as US-Iran ceasefire continues",
+      "to_title": "S&P 500 closes at record high as US-Iran ceasefire continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ffe5e2b4e15e4adcb30a3121a35bb0ad040a128d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Tylenol during pregnancy has no link to autism, large study finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "MOVED",
+      "fingerprint": "3ffa1655cef3dc297c20619652c96cfe1802fdba",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Trump shares image of Jesus embracing him, continues to lash out at Pope Leo",
+      "to_title": "Trump shares image of Jesus embracing him, continues to lash out at Pope Leo"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "MOVED",
+      "fingerprint": "b05259a34773b60aee2704be9ef0605553a1c3ba",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "High school principal takes down would-be shooter, hailed as hero",
+      "to_title": "High school principal takes down would-be shooter, hailed as hero"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cc5bbad4108e5fb9e8b15f5ad9f62116774200dc",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Aircraft carrier breaks record since Vietnam War"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de45ef634a0d5d34f4bf0c9e8afed800cd16c151",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3908773adbbd06caf6847870a61e3788524c367a",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T22:25:51.734Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ae8c69dbdfcc187dc881b9440a31a517dd388748",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Large chunk of ice crashes through house",
       "to_title": null
     }
   ]
