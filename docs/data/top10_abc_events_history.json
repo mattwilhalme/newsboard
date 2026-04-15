@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-15T15:17:50.614Z",
+  "generatedAt": "2026-04-15T16:18:18.129Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "afa4562be11a295f54fb7b396adc4653056660cd",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Hegseth to address war with Iran Thursday morning",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0e71b4b65bec7e0f70144b99fe1e01c2c953e158",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "1 in 10 ACA enrollees dropped coverage due to rising health care costs, poll finds",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d65fd5320d0ff8474864946ad1dda684198fa788",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "US, allied radar sites in Middle East struck at least 10 times: Visual analysis",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bca18e2aa28b8a2c1cfddee36fb6c4a981656f52",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Gabbard avoids answering whether Iran posed an 'imminent threat'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T13:41:50.139Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "UN nuclear chief urges strict Iran checks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "85af750e502dbcff4900360d650a10a238fc0ae8",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Over 53M people claimed at least 1 Trump tax cut: Treasury Dept"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a876f0762ee63b1f4db343271c166130836004ab",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "9 killed in Turkey's 2nd school shooting in 2 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0c362df7d09b7af366449707e7a32272552b3d30",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Average tax refund is $3,400, an 11% increase from last year: Treasury Dept",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c3e0aaad0623f4732df984aba276177be14f819b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "4 dead in Turkey after student opens fire",
       "to_title": null
     }
   ],

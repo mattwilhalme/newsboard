@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-15T15:17:50.614Z",
+  "generatedAt": "2026-04-15T16:18:18.129Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ffaed87258bb02fe7fe13477b06758f75c763eb0",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "What a top airline CEO says about state of airfare prices"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "MOVED",
-      "fingerprint": "9b8a472737a1a48c7bb107bc32ffa703aee2b00a",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "GOP Rep. Tony Gonzales says he's stepping down from Congress",
-      "to_title": "GOP Rep. Tony Gonzales says he's stepping down from Congress"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "12d146c68e14b7d432bd05688510ee59ff5216eb",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Prince Harry, Meghan kick off 4-day Australia visit"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "MOVED",
-      "fingerprint": "c7a4d482f826697a6e737eb204d2e131b485cdb4",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Stepbrother charged with murder, sex abuse in teen girl's cruise ship death: DOJ",
-      "to_title": "Stepbrother charged with murder, sex abuse in teen girl's cruise ship death: DOJ"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9fa1e145ff3cd1fe7b454ad98459314676319068",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Phil Collins and Billy Idol among the 2026 Rock and Roll Hall of Fame inductees"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b93f7ab7249aaf88d2105bfcd46fa09708ed7b74",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Southwest CEO Bob Jordan warns airfares could rise, shares best time to book",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2aaf51427f45bfc8e6122fcc93f4eb8571c1293c",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Los Angeles schools avoid a strike as a last-minute deal is reached with staff",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T15:39:59.563Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5ae437bb4423d12e11d477ece79f86ea797ae77b",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Prince Harry and Meghan arrive in Australia for a low-key, privately funded visit",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-14T16:46:07.689Z",
@@ -1021,6 +941,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "UN nuclear chief urges strict Iran checks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "85af750e502dbcff4900360d650a10a238fc0ae8",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Over 53M people claimed at least 1 Trump tax cut: Treasury Dept"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a876f0762ee63b1f4db343271c166130836004ab",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "9 killed in Turkey's 2nd school shooting in 2 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0c362df7d09b7af366449707e7a32272552b3d30",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Average tax refund is $3,400, an 11% increase from last year: Treasury Dept",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T16:18:21.406Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c3e0aaad0623f4732df984aba276177be14f819b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "4 dead in Turkey after student opens fire",
       "to_title": null
     }
   ]
