@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-15T16:18:18.129Z",
+  "generatedAt": "2026-04-15T17:35:35.739Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T13:41:50.139Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8cfb28425444a662ca23bd2c2a5e0e34770a175c",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "A first-hand look at Israel's Arrow air defense system: Reporter's notebook",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T14:34:50.141Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7d74392098144cf691e3e607dd7915b861728c8e",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Hegseth acknowledges $200B funding ask, saying it could 'move'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T14:34:50.141Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "081bfe635eafc910761c216b0e03b0ff6a9eb9de",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Mullin nomination to be DHS secretary narrowly clears Senate committee"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T14:34:50.141Z",
-      "event_type": "MOVED",
-      "fingerprint": "038b27b4b6de409d576fca9b02fde6f68af5c3c1",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Gabbard faces 2nd day of questions on Iran war, worldwide threats",
-      "to_title": "Gabbard faces 2nd day of questions on Iran war, worldwide threats"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T14:34:50.141Z",
-      "event_type": "MOVED",
-      "fingerprint": "92e8ff63863de8026cc79eafe0b7be1af22c28a2",
-      "from_rank": 10,
-      "to_rank": 6,
-      "from_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain",
-      "to_title": "Family seeks help finding 20-year-old University of Alabama student missing in Spain"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-19T14:34:50.141Z",
-      "event_type": "MOVED",
-      "fingerprint": "81fbb15c6f1159366331cd8c15026bc02aa96097",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field",
-      "to_title": "Iran targets Gulf countries' energy infrastructure after Israeli strike on gas field"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-19T14:34:50.141Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "4 dead in Turkey after student opens fire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T17:35:38.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b753711c496f054018d1565ddbe172d95eaab14e",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "'Jeopardy!' champion Jamie Ding now a top-5 consecutive winner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T17:35:38.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "11237844efa15b6705065b54601cb5f832f8412d",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Gas station clerk helps save 16-year-old girl in alleged kidnapping"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T17:35:38.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2c4c2a67b136ac208ba7768dbbc4144ca6627068",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Prosecutors turned away from Fed renovation site"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T17:35:38.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c015178c386122ecdb23d88165cb30eb940bbd8c",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Gas station clerk speaks out after foiling alleged kidnapping",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T17:35:38.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a6a16200fde344bc15a8a9cffeefdbe6e6183e49",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Woman accuses former Rep. Eric Swalwell of raping her in 2018",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T17:35:38.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a876f0762ee63b1f4db343271c166130836004ab",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "9 killed in Turkey's 2nd school shooting in 2 days",
       "to_title": null
     }
   ],
