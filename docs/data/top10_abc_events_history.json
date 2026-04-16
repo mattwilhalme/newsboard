@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-16T11:19:55.662Z",
+  "generatedAt": "2026-04-16T12:13:58.141Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:01:36.894Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "189e286f009a8fd36f9db6a3f1935951ba8767fc",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:01:36.894Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9bd16a1e4d913897fa218594cb9bcade8130dfce",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: F-35 believed to have been struck by Iranian fire, source says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:01:36.894Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0306cf4f74d3df22707048af876413175a6ece38",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Pentagon plans to keep National Guard in DC into 2029, 2 US officials say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:01:36.894Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d6de6dc1202f8ade3f00f77b7d74e7c8fc3874ea",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Treasury taking over federal student loans amid dismantling of Dept. of Education",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:01:36.894Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c09b388e6f199a585009bd14339e5dff91f69d34",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Pentagon seeking $200B more for Iran war, official says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "de2f656e066b114270936a12feac5ed8669c6562",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "2,200 more Marines, 3 Navy ships likely headed to Middle East: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7a53c6403239be75aada46b4326dc5a7af34c93e",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump blasts NATO allies as 'COWARDS' over Strait of Hormuz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "MOVED",
-      "fingerprint": "d1d82771264f89e4b4c3c3e7a1e0192eb08f44b9",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic",
-      "to_title": "US targets mine-laying vessels in the Strait of Hormuz amid disruption of oil traffic"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2a4041995ca99bbb407f272200873c0aae626720",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Chuck Norris, action star and martial artist, dies at 86"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "MOVED",
-      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
-      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed3498bae307eb6b14b0576f6ba568f18f02f617",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs",
-      "to_title": "TSA workers pushed to the brink as DHS shutdown forces some to get 2nd jobs"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Surfer speaks out after shark attack"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "MOVED",
-      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Dangerous, unprecedented heat wave hits the West",
-      "to_title": "Dangerous, unprecedented heat wave hits the West"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "College student shot, killed while walking with her friends"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:53:16.727Z",
-      "event_type": "MOVED",
-      "fingerprint": "189e286f009a8fd36f9db6a3f1935951ba8767fc",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’",
-      "to_title": "BTS returns from hiatus with highly anticipated 5th album ‘Arirang’"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-20T15:53:16.727Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Related:Iran-linked ships seem to be using 'spoofing' to break Strait of Hormuz blockade",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "42552d47b4c72bd8ff504f534c08085198904924",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Live Updates:Lebanon's president seeks to 'halt' escalation, as Israel continues strikes in country’s south"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "95ae3a6855f8e21c0c34a20a4c647e49c0089906",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "How 'ship spoofing' can undermine US blockade"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5ddd6eb5e7c5e2124b71b536b647038767d8e2bf",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "What does the US blockade of Iran shipping mean for gas prices?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "22f692a28178202ef1e196871dfd1021efdb322c",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Gilgo Beach murders: How 'meticulous' Rex Heuermann tried to plan the 'perfect crime'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "MOVED",
+      "fingerprint": "accb8384f8654a13cd285f12f5ff859ff668db32",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Justice Sotomayor apologizes to Kavanaugh for public criticism of immigration opinion",
+      "to_title": "Justice Sotomayor apologizes to Kavanaugh for public criticism of immigration opinion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4946bdc89fc076ab20e2793fa1d1e5c7c2afafe6",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Europe has 'maybe 6 weeks of jet fuel left,' energy agency head says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "MOVED",
+      "fingerprint": "6a211a3ce214297ff2d54f4a8c675059f4d09c2b",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "DHS employee killed while walking her dog in Atlanta shooting spree",
+      "to_title": "DHS employee killed while walking her dog in Atlanta shooting spree"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "MOVED",
+      "fingerprint": "6d7de11e5e328350b2fa06c3f9f350026a0b74ec",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Husband of American woman missing in Bahamas leaves islands, attorney says",
+      "to_title": "Husband of American woman missing in Bahamas leaves islands, attorney says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "64bb818673529682d6dafcb9240eec360c1b0c45",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "American held in Zanzibar after partner's death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1e233f64125464221141a6c55060e33ac3b3832a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Hegseth to offer remarks on Iran amid US blockade",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "367d6b4df7895e3f417b1b363af52524743047a7",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:What to know about 'ship spoofing' by Iran-linked vessel to breach the US blockade",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2626b60de304b2cd2214f877adcc7fc45ccd0c85",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Gilgo Beach murders: How Rex Heuermann tried to plan the 'perfect crime'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a0aeeb7f1491e8fcda8e09cd5ea63b0334644d4b",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "1st 90-degree day for NYC, Philly and DC as severe weather hits Midwest and Plains",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "af0a8db9d3175ac7f36191c2e5a260e634e5a6a6",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Live Nation illegally monopolized the market for tickets, jury finds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T12:14:01.337Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ffe5e2b4e15e4adcb30a3121a35bb0ad040a128d",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Tylenol during pregnancy has no link to autism, large study finds",
       "to_title": null
     }
   ],
