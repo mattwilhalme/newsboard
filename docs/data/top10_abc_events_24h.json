@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-15T23:09:29.538Z",
+  "generatedAt": "2026-04-15T23:58:34.260Z",
   "hours": 24,
   "events": [
     {
@@ -1241,6 +1241,116 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Gas station clerk helps save 16-year-old girl in alleged kidnapping",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6a211a3ce214297ff2d54f4a8c675059f4d09c2b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "DHS employee killed while walking her dog in Atlanta shooting spree"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "accb8384f8654a13cd285f12f5ff859ff668db32",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Justice Sotomayor apologizes to Kavanaugh for public criticism of immigration opinion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "a0aeeb7f1491e8fcda8e09cd5ea63b0334644d4b",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "1st 90-degree day for NYC, Philly and DC as severe weather hits Midwest and Plains",
+      "to_title": "1st 90-degree day for NYC, Philly and DC as severe weather hits Midwest and Plains"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "af0a8db9d3175ac7f36191c2e5a260e634e5a6a6",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Live Nation illegally monopolized the market for tickets, jury finds",
+      "to_title": "Live Nation illegally monopolized the market for tickets, jury finds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "49f63deef1c26748dc3ee880759c760a78eebcb2",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "Iran live updates: Sanctioned ships cross the Strait of Hormuz toward Tehran",
+      "to_title": "Iran live updates: Sanctioned ships cross the Strait of Hormuz toward Tehran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "5854367a95b62cadabb90dd8e01c31cc160af713",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say",
+      "to_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "cc5bbad4108e5fb9e8b15f5ad9f62116774200dc",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Aircraft carrier breaks record since Vietnam War",
+      "to_title": "Aircraft carrier breaks record since Vietnam War"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "51e5ec2d1b80fd5c0962656af8500ba41439a068",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "S&P 500 closes at new record as ceasefire holds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "206fa8fcd7c6b42fab99d44ce46dde9cf8c5559e",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "'Meow, meow': Pilots scolded after animal noises heard on ATC frequency",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f323f7b918140da398e5937bff9c01a1fe3aa97c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "S&P 500 closes at record high as US-Iran ceasefire continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-15T23:58:37.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b05259a34773b60aee2704be9ef0605553a1c3ba",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "High school principal takes down would-be shooter, hailed as hero",
       "to_title": null
     }
   ]
