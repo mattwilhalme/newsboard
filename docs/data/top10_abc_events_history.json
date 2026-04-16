@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-16T22:01:46.164Z",
+  "generatedAt": "2026-04-16T22:54:28.903Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T05:14:17.350Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "233b2c38f5f006234a3e7582363b3a5a2567e1ff",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T11:28:51.541Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d68dac253eae1e8d22d167a3f5ab6fea519b1126",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Israeli-US strikes against Iran will 'increase significantly'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T11:28:51.541Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0f511c035412053781f614b5c13f29cf9ca0c14d",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Attacks on Middle East energy sites deepen threat to US economy, analysts say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T11:28:51.541Z",
-      "event_type": "MOVED",
-      "fingerprint": "600dbf93826aa150a52e425ea8fe56a70cf2f08c",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "DOJ asks judge to drop charges against 2 officers in Breonna Taylor case",
-      "to_title": "DOJ asks judge to drop charges against 2 officers in Breonna Taylor case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T11:28:51.541Z",
-      "event_type": "MOVED",
-      "fingerprint": "1cb45d6ac76183f9008396f773fde50728b43bbe",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Senate once again fails to advance DHS funding bill",
-      "to_title": "Senate once again fails to advance DHS funding bill"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T11:28:51.541Z",
-      "event_type": "MOVED",
-      "fingerprint": "985b63aac16f2863946436efd4e2ffb16e6f4f7d",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "More than 230 people rescued amid dangerous flooding on Hawaii's Oahu island",
-      "to_title": "More than 230 people rescued amid dangerous flooding on Hawaii's Oahu island"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-21T11:28:51.541Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Pope's brother's home gets false bomb threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:54:32.032Z",
+      "event_type": "MOVED",
+      "fingerprint": "80d2482ea22887f83bf78147e35c77c8db43dc70",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "'We came back as best friends': Artemis II crew reflects on historic moon mission",
+      "to_title": "'We came back as best friends': Artemis II crew reflects on historic moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:54:32.032Z",
+      "event_type": "MOVED",
+      "fingerprint": "b03344d6d80768069b0db31bc6c0abf9edb526d8",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources",
+      "to_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:54:32.032Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f6dfccb5f884c48ac6551a4e61df6b37bf45d2ca",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "If Spirit Airlines liquidates, here's what experts say it could mean for travelers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:54:32.032Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d03880ec2fe78e0e3400ddc59b27016e50b76ec7",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Influencer family of 10 speaks out after hit-and-run crash with 3-week-old in car"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:54:32.032Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b1f9c9268424ad4aacbd50c78107c31475fc947f",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Panel gives initial approval to Trump's 'triumphal arch' but asks for revisions",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:54:32.032Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f112c6c08462bfd63bfc5fbe0db007887c84c2c0",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "'Top Gun 3' announced at Cinemacon with Tom Cruise returning",
       "to_title": null
     }
   ],
