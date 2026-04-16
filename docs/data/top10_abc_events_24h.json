@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-16T17:14:23.708Z",
+  "generatedAt": "2026-04-16T18:20:09.876Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T17:35:38.662Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b753711c496f054018d1565ddbe172d95eaab14e",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "'Jeopardy!' champion Jamie Ding now a top-5 consecutive winner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T17:35:38.662Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "11237844efa15b6705065b54601cb5f832f8412d",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Gas station clerk helps save 16-year-old girl in alleged kidnapping"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T17:35:38.662Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2c4c2a67b136ac208ba7768dbbc4144ca6627068",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Prosecutors turned away from Fed renovation site"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T17:35:38.662Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c015178c386122ecdb23d88165cb30eb940bbd8c",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Gas station clerk speaks out after foiling alleged kidnapping",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T17:35:38.662Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a6a16200fde344bc15a8a9cffeefdbe6e6183e49",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Woman accuses former Rep. Eric Swalwell of raping her in 2018",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T17:35:38.662Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a876f0762ee63b1f4db343271c166130836004ab",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "9 killed in Turkey's 2nd school shooting in 2 days",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T18:46:26.222Z",
@@ -1621,6 +1561,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Husband of American woman missing in Bahamas leaves islands, attorney says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c5736ca6c7de625a52a11137b0604b6e8d114f3",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Israel and Lebanon agree to 10-day ceasefire, Trump says",
+      "to_title": "Iran live updates: Israel and Lebanon agree to 10-day ceasefire, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "MOVED",
+      "fingerprint": "34ca521036cb32283e40d1f64fd07a7157035067",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Related:Iran-linked ships seem to be using 'spoofing' to break Strait of Hormuz blockade",
+      "to_title": "Related:Iran-linked ships seem to be using 'spoofing' to break Strait of Hormuz blockade"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f51df629cbaeaacb5992c1481245eb57bc2041cd",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "ICE agent charged with 2 counts of felony assault in Minneapolis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9309b818de6a54f02c1d901df900627415426413",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Prince Harry says Princess Diana's death made him want out of royal role"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "MOVED",
+      "fingerprint": "aa52e8c33857f37542c2e7e4b0bf88b6a6912610",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Former NBA player Damon Jones requests change-of-plea hearing in gambling case",
+      "to_title": "Former NBA player Damon Jones requests change-of-plea hearing in gambling case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "MOVED",
+      "fingerprint": "22f692a28178202ef1e196871dfd1021efdb322c",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Gilgo Beach murders: How 'meticulous' Rex Heuermann tried to plan the 'perfect crime'",
+      "to_title": "Gilgo Beach murders: How 'meticulous' Rex Heuermann tried to plan the 'perfect crime'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0093048297d2f47436e4802a89ed7604e2489780",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingICE agent charged with 2 counts of felony assault in Minneapolis",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T18:20:12.855Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6a211a3ce214297ff2d54f4a8c675059f4d09c2b",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "DHS employee killed while walking her dog in Atlanta shooting spree",
       "to_title": null
     }
   ]
