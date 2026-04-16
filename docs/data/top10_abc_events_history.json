@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-16T10:07:11.794Z",
+  "generatedAt": "2026-04-16T11:19:55.662Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:01:36.894Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1c1290ebd9fd9b1f4cb263f145e23b237fcabb61",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Dangerous, unprecedented heat wave hits the West"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T15:01:36.894Z",
-      "event_type": "MOVED",
-      "fingerprint": "27491306fdc90fcf23995fe56068a9ba058082cc",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez",
-      "to_title": "Dolores Huerta speaks out about alleged abuse by Cesar Chavez"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-20T15:01:36.894Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Discovery solves mystery of Shakespeare's house",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T11:19:58.976Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "367d6b4df7895e3f417b1b363af52524743047a7",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:What to know about 'ship spoofing' by Iran-linked vessel to breach the US blockade"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T11:19:58.976Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34ca521036cb32283e40d1f64fd07a7157035067",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran-linked ships seem to be using 'spoofing' to break Strait of Hormuz blockade",
       "to_title": null
     }
   ],

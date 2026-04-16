@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-16T10:07:11.794Z",
+  "generatedAt": "2026-04-16T11:19:55.662Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T10:16:35.956Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8072581e829f4a904c86b301651c1a02f7e6cdbf",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Ye postpones show as French authorities seek ban"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T10:16:35.956Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b690b6f2659f18ec9b4f027316e4604535b50084",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Pope heads to Cameroon as fighting pauses",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T11:20:02.610Z",
@@ -1431,6 +1411,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Discovery solves mystery of Shakespeare's house",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T11:19:58.976Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "367d6b4df7895e3f417b1b363af52524743047a7",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:What to know about 'ship spoofing' by Iran-linked vessel to breach the US blockade"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T11:19:58.976Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34ca521036cb32283e40d1f64fd07a7157035067",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran-linked ships seem to be using 'spoofing' to break Strait of Hormuz blockade",
       "to_title": null
     }
   ]
