@@ -1,168 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-16T19:41:56.062Z",
+  "generatedAt": "2026-04-16T20:31:09.008Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T22:42:25.551Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "02182b49b0fcf2995c10e503e6b06a4f0b6422a5",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Suit claims negligence in death of ex-Yankees player's son at Costa Rican resort"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T22:42:25.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
-      "to_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T22:42:25.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "f4e1eeb2e1d5181c21d5b971bff4b9403dda8805",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86",
-      "to_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T22:42:25.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "College student shot, killed while walking with her friends",
-      "to_title": "College student shot, killed while walking with her friends"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T22:42:25.551Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Surfer speaks out after shark attack",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T23:59:34.493Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c44ca8c8ed6fb00bd2e48604a3b90aa029a32be0",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Actor Chuck Norris honored by co-stars after his death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-20T23:59:34.493Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f4e1eeb2e1d5181c21d5b971bff4b9403dda8805",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Chuck Norris remembered by his 'Expendables' co-stars and more after his death at 86",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T02:05:33.374Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "600dbf93826aa150a52e425ea8fe56a70cf2f08c",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "DOJ asks judge to drop charges against 2 officers in Breonna Taylor case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T02:05:33.374Z",
-      "event_type": "MOVED",
-      "fingerprint": "1cb45d6ac76183f9008396f773fde50728b43bbe",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Senate once again fails to advance DHS funding bill",
-      "to_title": "Senate once again fails to advance DHS funding bill"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T02:05:33.374Z",
-      "event_type": "MOVED",
-      "fingerprint": "233b2c38f5f006234a3e7582363b3a5a2567e1ff",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse",
-      "to_title": "Dangerous flooding on Oahu prompts evacuations, warning of possible dam collapse"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T02:05:33.374Z",
-      "event_type": "MOVED",
-      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
-      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T02:05:33.374Z",
-      "event_type": "MOVED",
-      "fingerprint": "02182b49b0fcf2995c10e503e6b06a4f0b6422a5",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Suit claims negligence in death of ex-Yankees player's son at Costa Rican resort",
-      "to_title": "Suit claims negligence in death of ex-Yankees player's son at Costa Rican resort"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T02:05:33.374Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "15a3c1fb581b89b0659c79cc81210e62b287884e",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "'Multiple waves' of unauthorized drones recently spotted over US Air Force base",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T04:13:42.238Z",
-      "event_type": "MOVED",
-      "fingerprint": "c44ca8c8ed6fb00bd2e48604a3b90aa029a32be0",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "Actor Chuck Norris honored by co-stars after his death",
-      "to_title": "Actor Chuck Norris honored by co-stars after his death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T04:13:42.238Z",
-      "event_type": "MOVED",
-      "fingerprint": "fcaf68be55863f4e46541898d91fe53dd64fd95f",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "What Kouri Richins' friend says she saw in murder's aftermath",
-      "to_title": "What Kouri Richins' friend says she saw in murder's aftermath"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T04:13:42.238Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7907d92cbfc1959a9a26f051515ce8d0f48f5345",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-21T04:13:42.238Z",
@@ -30001,6 +29841,166 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Former NBA player Damon Jones requests change-of-plea hearing in gambling case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b03344d6d80768069b0db31bc6c0abf9edb526d8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "80d2482ea22887f83bf78147e35c77c8db43dc70",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "'We came back as best friends': Artemis II crew reflects on historic moon mission"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ff98867f2a3b24bbc4911fea64c27b989b0dc2c2",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump nominates Dr. Erica Schwartz as new CDC director"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "d7f4e7655b0a90a711e2fbb7c775d805923cfdae",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says",
+      "to_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "630836cb8a2b3043b6d00965429bab136cd6a9d9",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Former Virginia Lt. Gov. Justin Fairfax killed wife, self in their home: Police",
+      "to_title": "Former Virginia Lt. Gov. Justin Fairfax killed wife, self in their home: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8b1007565389e9ff061ab57247e4973250a1daca",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "b1f9c9268424ad4aacbd50c78107c31475fc947f",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Panel gives initial approval to Trump's 'triumphal arch' but asks for revisions",
+      "to_title": "Panel gives initial approval to Trump's 'triumphal arch' but asks for revisions"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f112c6c08462bfd63bfc5fbe0db007887c84c2c0",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "'Top Gun 3' announced at Cinemacon with Tom Cruise returning"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "MOVED",
+      "fingerprint": "9309b818de6a54f02c1d901df900627415426413",
+      "from_rank": 5,
+      "to_rank": 9,
+      "from_title": "Prince Harry says Princess Diana's death made him want out of royal role",
+      "to_title": "Prince Harry says Princess Diana's death made him want out of royal role"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c5fb43d39effa1526c7f6aa14f4cc8ff6a2717e5",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Pope's brother's home gets false bomb threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3e31a06e0fc74177b26e2868a76fab0090358acd",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingFBI analyzing DNA recovered from Nancy Guthrie's home: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f51df629cbaeaacb5992c1481245eb57bc2041cd",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "ICE agent charged with 2 counts of felony assault in Minneapolis",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5ddd6eb5e7c5e2124b71b536b647038767d8e2bf",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "What does the US blockade of Iran shipping mean for gas prices?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "22f692a28178202ef1e196871dfd1021efdb322c",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Gilgo Beach murders: How 'meticulous' Rex Heuermann tried to plan the 'perfect crime'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b39388a9a3f4aebb8ff85c3b8410eb764c9bb42a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Late actor returns to movie screens in AI-generated role",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T20:31:12.294Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "19594cc1a10d4ae5eea9d3f27ad95019b1b2d27a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "7-month-old dies after being left in hot car",
       "to_title": null
     }
   ],
