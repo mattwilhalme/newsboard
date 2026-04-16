@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-16T21:14:15.492Z",
+  "generatedAt": "2026-04-16T22:01:46.164Z",
   "hours": 24,
   "events": [
     {
@@ -1601,6 +1601,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "7-month-old dies after being left in hot car",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:01:49.356Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d5a2eb8ed6565238e9db24d0827d78f14fb47c71",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "RFK Jr. spars with Democrats over shot policies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-16T22:01:49.356Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c5fb43d39effa1526c7f6aa14f4cc8ff6a2717e5",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Pope's brother's home gets false bomb threat",
       "to_title": null
     }
   ]
