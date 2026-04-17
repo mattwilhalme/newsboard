@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-17T13:57:49.572Z",
+  "generatedAt": "2026-04-17T14:54:22.030Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "66947c25ff45da6d1f94767e6e170fe1cc5864a2",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Senate once again fails to advance DHS funding bill"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "7ee16a3c3af05670186f6143d7dc6bda7eca09c5",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Robert Mueller, former FBI director and special counsel, dies at 81",
-      "to_title": "Robert Mueller, former FBI director and special counsel, dies at 81"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "8bd7238bb6ba7c1f68ef0055f6ec649081d5cb2f",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again",
-      "to_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "679e3d9b27f80d65fb898ccf3abf774e1becd1d6",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Flash flood warning extended for Hawaii's Oahu Island",
-      "to_title": "Flash flood warning extended for Hawaii's Oahu Island"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "600dbf93826aa150a52e425ea8fe56a70cf2f08c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "DOJ asks judge to drop charges against 2 officers in Breonna Taylor case",
-      "to_title": "DOJ asks judge to drop charges against 2 officers in Breonna Taylor case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "71cbd2c862f4f66cc167f4cf626cfb314ef4e1a1",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Body camera footage of Justin Timberlake's DWI arrest released",
-      "to_title": "Body camera footage of Justin Timberlake's DWI arrest released"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "c6749c2d80bd5412f6670656963b42d9d7a70fcb",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "For airline passengers, the shutdown answer is simple: Pay TSA officers",
-      "to_title": "For airline passengers, the shutdown answer is simple: Pay TSA officers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "7907d92cbfc1959a9a26f051515ce8d0f48f5345",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia",
-      "to_title": "Trump admin seeks to move ahead with removing Abrego Garcia to Liberia"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T20:58:18.959Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Surfer speaks out after shark attack",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T22:55:34.740Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cd3ce8e93203538711dc693b2aa75e540b0a225d",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran live updates: Dozens injured after missile strikes on 2 Israeli cities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T22:55:34.740Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8bd7238bb6ba7c1f68ef0055f6ec649081d5cb2f",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran says its Natanz nuclear facility was targeted again",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T23:44:10.449Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1093c11c31427843efafa7e90937251c63d60c13",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "What to know about Hawaii flooding: 230 rescued; 'catastrophic' damage could cost $1B"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T23:44:10.449Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "679e3d9b27f80d65fb898ccf3abf774e1becd1d6",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Flash flood warning extended for Hawaii's Oahu Island",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T02:31:45.463Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9dac70513d8d946d6f291a848044d514ae0c035f",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump threatens Iran's power plants if strait not opened in 2 days"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T02:31:45.463Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Trump nominates Dr. Erica Schwartz as new CDC director",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "43c49a4ac06cb39b028fa63cabe979e33bcaa38a",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran 'fully' opens the Strait of Hormuz, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dab23c6fcdfc0118854ef473d9fa0748402e4f45",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks surge and oil prices plunge after Iran says Strait of Hormuz is open"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3e06c3d13388ae6069fa2cfe9afb93fe7014d931",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "As redistricting measure vote looms, Obama weighs in: Exclusive"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "MOVED",
+      "fingerprint": "45c064c9fded25df204c61176e89048667df5ef4",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Artemis II astronauts detail 'intense' reentry in interview with ABC News' David Muir",
+      "to_title": "Artemis II astronauts detail 'intense' reentry in interview with ABC News' David Muir"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "MOVED",
+      "fingerprint": "cee37e8a1a7d06b485b4ca99de62905a36791f7f",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "House approves short-term FISA spy powers extension amid GOP infighting",
+      "to_title": "House approves short-term FISA spy powers extension amid GOP infighting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9e382b1a79e0b5530d1590cfef0a005f81bc2e46",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "MOVED",
+      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
+      "to_title": "Singer D4vd arrested after teen found dead in his Tesla: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "MOVED",
+      "fingerprint": "b03344d6d80768069b0db31bc6c0abf9edb526d8",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources",
+      "to_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "MOVED",
+      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
+      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "MOVED",
+      "fingerprint": "2c035d65aadfcdbf46de6b8ab59e7a7824c68dfc",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Zookeeper shares update on Punch the monkey, whether he has a girlfriend",
+      "to_title": "Zookeeper shares update on Punch the monkey, whether he has a girlfriend"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1f1f9c64dc01a9ad357cdbeb531dcdd4c23bbcbd",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingIran 'fully' opens Strait of Hormuz, President Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9b05e663c2405cc945d62387ab543cac383d30cd",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Exclusive: Barack Obama calls for Virginians to vote for redistricting in new video",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9e8f3964e2044c9eb23e634068665bc4f888123d",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "DNA proves remains found in the Columbia River are of a family missing since 1958",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T14:54:24.921Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f71b94facb3cceaa17085459cb047c96b98fcab8",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Washington steps up scrutiny of prediction markets",
       "to_title": null
     }
   ],
