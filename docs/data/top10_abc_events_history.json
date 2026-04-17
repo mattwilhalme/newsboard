@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-17T15:47:22.775Z",
+  "generatedAt": "2026-04-17T16:40:30.172Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T02:31:45.463Z",
-      "event_type": "MOVED",
-      "fingerprint": "7ee16a3c3af05670186f6143d7dc6bda7eca09c5",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Robert Mueller, former FBI director and special counsel, dies at 81",
-      "to_title": "Robert Mueller, former FBI director and special counsel, dies at 81"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T02:31:45.463Z",
-      "event_type": "MOVED",
-      "fingerprint": "d05cd2a178ffe97ae876860662a5681c666a4ad7",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Trump threatens to put ICE agents in airports starting Monday amid DHS shutdown",
-      "to_title": "Trump threatens to put ICE agents in airports starting Monday amid DHS shutdown"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T02:31:45.463Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Washington steps up scrutiny of prediction markets",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T16:40:33.525Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "56ce37c1f700c15b86dda1e8cc28f0c4e65d10c9",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Congress approves short-term FISA spy powers extension amid GOP infighting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T16:40:33.525Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cee37e8a1a7d06b485b4ca99de62905a36791f7f",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "House approves short-term FISA spy powers extension amid GOP infighting",
       "to_title": null
     }
   ],
