@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-17T08:59:07.081Z",
+  "generatedAt": "2026-04-17T10:16:03.486Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T17:45:07.230Z",
-      "event_type": "MOVED",
-      "fingerprint": "c44ca8c8ed6fb00bd2e48604a3b90aa029a32be0",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Actor Chuck Norris honored by co-stars after his death",
-      "to_title": "Actor Chuck Norris honored by co-stars after his death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-21T17:45:07.230Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1cb45d6ac76183f9008396f773fde50728b43bbe",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Senate once again fails to advance DHS funding bill",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-21T19:36:30.940Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "If Spirit Airlines liquidates, here's what experts say it could mean for travelers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T10:16:06.425Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3739aeec6a870dc4089451b8468a783a481b0660",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "How a Las Vegas showgirl vanished right before her big show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T10:16:06.425Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b1007565389e9ff061ab57247e4973250a1daca",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis",
       "to_title": null
     }
   ],
