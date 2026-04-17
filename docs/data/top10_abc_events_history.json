@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-17T19:42:35.906Z",
+  "generatedAt": "2026-04-17T20:27:09.612Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T10:02:12.372Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "58b44402ae60d78bcaa8226b8fa58a7dcf720199",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "For airline travelers, the shutdown answer is simple: Pay TSA officers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T13:53:11.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8bc36f0e88de00721bc1e077e4830c065d5e9627",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "GOP Sen. Tillis says objectives of Iran war unclear: 'It's a real problem'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T13:53:11.922Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T20:27:12.804Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4d6739297d9c10068e0e5718fff97322560a7332",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T20:27:12.804Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dab23c6fcdfc0118854ef473d9fa0748402e4f45",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Stocks surge and oil prices plunge after Iran says Strait of Hormuz is open",
       "to_title": null
     }
   ],
