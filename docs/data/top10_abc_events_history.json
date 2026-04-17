@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-17T22:52:10.308Z",
+  "generatedAt": "2026-04-17T23:29:31.169Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T19:30:44.177Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "df1d8029f29d91243fbd1f6d346d6a4d8fb66dbb",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Iran live updates: Tehran vows to respond if Trump strikes Iran's power plants"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T19:30:44.177Z",
-      "event_type": "MOVED",
-      "fingerprint": "1093c11c31427843efafa7e90937251c63d60c13",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "What to know about Hawaii flooding: 230 rescued; 'catastrophic' damage could cost $1B",
-      "to_title": "What to know about Hawaii flooding: 230 rescued; 'catastrophic' damage could cost $1B"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T19:30:44.177Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "$13 train fare spikes to $150 for World Cup fans attending matches in New Jersey",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T23:29:34.195Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "08fc89136b78fe0d91831c16866a016040ce1122",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Millions under threat of severe weather, including tornadoes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T23:29:34.195Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a498b59d11de3ff21f5db10648a0bdb85f9666d4",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Millions under severe weather threat following destructive storms",
       "to_title": null
     }
   ],
