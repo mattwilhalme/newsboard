@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-17T18:32:39.775Z",
+  "generatedAt": "2026-04-17T19:42:35.906Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T02:31:45.463Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c6749c2d80bd5412f6670656963b42d9d7a70fcb",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "For airline passengers, the shutdown answer is simple: Pay TSA officers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T04:35:06.841Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "595d18d211063e1b6dbe1458a1130806eb00e997",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "6 injured after floor collapses at wedding venue"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T04:35:06.841Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "060134c8d474208c0912fdef666574a154602688",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Surfer speaks out after shark attack",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T09:42:20.186Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "df1d8029f29d91243fbd1f6d346d6a4d8fb66dbb",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Tehran vows to respond if Trump strikes Iran's power plants"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T09:42:20.186Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9dac70513d8d946d6f291a848044d514ae0c035f",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump threatens Iran's power plants if strait not opened in 2 days",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T10:02:12.372Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f036c70b48097a31d16065a583e1209edd1965d4",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Nonprofits, unions and airports rally to feed TSA officers as shutdown drags"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T10:02:12.372Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Zookeeper shares update on Punch the monkey, whether he has a girlfriend",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T19:42:38.919Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T19:42:38.919Z",
+      "event_type": "MOVED",
+      "fingerprint": "9e382b1a79e0b5530d1590cfef0a005f81bc2e46",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands",
+      "to_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T19:42:38.919Z",
+      "event_type": "MOVED",
+      "fingerprint": "3e06c3d13388ae6069fa2cfe9afb93fe7014d931",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "As redistricting measure vote looms, Obama weighs in: Exclusive",
+      "to_title": "As redistricting measure vote looms, Obama weighs in: Exclusive"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T19:42:38.919Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6dc98cb4c9d93450fa1784bc3550b94592a722a8",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "What to know about the high school 'senior assassin' water gun game"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T19:42:38.919Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "45c064c9fded25df204c61176e89048667df5ef4",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Artemis II astronauts detail 'intense' reentry in interview with ABC News' David Muir",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T19:42:38.919Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
       "to_title": null
     }
   ],
