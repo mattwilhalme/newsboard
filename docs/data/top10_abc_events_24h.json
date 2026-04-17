@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-17T21:10:22.046Z",
+  "generatedAt": "2026-04-17T22:01:06.842Z",
   "hours": 24,
   "events": [
     {
@@ -1061,6 +1061,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "579273e1814883bef9efb93cdec25bcc8e76f7e2",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says 'could' still be differences to work out with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a498b59d11de3ff21f5db10648a0bdb85f9666d4",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Millions under severe weather threat following destructive storms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "42dd17d482c87fa4465d3ea08c24d066d2553411",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Facebook to remove imposter accounts tied to immigration scams, DA's office says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting",
+      "to_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "9e382b1a79e0b5530d1590cfef0a005f81bc2e46",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands",
+      "to_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "1ec545dc250b64726f9d3ee0da9f447d4eddc13f",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open",
+      "to_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "6dc98cb4c9d93450fa1784bc3550b94592a722a8",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "What to know about the high school 'senior assassin' water gun game",
+      "to_title": "What to know about the high school 'senior assassin' water gun game"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "MOVED",
+      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
+      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "43c49a4ac06cb39b028fa63cabe979e33bcaa38a",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran 'fully' opens the Strait of Hormuz, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3fdb2c9c062a69a487f2fb0d8ade8a961978ebfa",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Zookeeper shares update on Punch the monkey",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-17T22:01:09.933Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "def329159d329506f45b19b7426e3695d463f7cf",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "$13 train fare spikes to $150 for World Cup fans attending matches in New Jersey",
       "to_title": null
     }
   ]
