@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-18T15:39:06.061Z",
+  "generatedAt": "2026-04-18T16:08:43.599Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T07:58:34.148Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e1190cc1c424f98a4aab3c475b11c2a2b4f706af",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Iran live updates: State Dept. says Americans should 'exercise increased caution'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T08:55:54.113Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "42af09d18f4bba35c5b8e820a8ecf96482c91238",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump's 48-hour deadline to expire Monday evening"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T08:55:54.113Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 soldiers injured in encounter with brown bear",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T16:08:46.527Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6f9e1c9d2320782ec5832059c7f01daaf9bd79f5",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Pope Leo says 'not in my interest at all' to debate Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T16:08:46.527Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34dd59b3050b364b9f9b56afc98593e3bdd09e41",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Pope Leo says 'not my interest at all' to debate Trump",
       "to_title": null
     }
   ],
