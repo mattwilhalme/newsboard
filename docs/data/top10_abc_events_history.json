@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-18T10:09:55.621Z",
+  "generatedAt": "2026-04-18T11:00:21.645Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T05:50:25.592Z",
-      "event_type": "MOVED",
-      "fingerprint": "66ef0a6a5182386665f9b937dc061104a980d59a",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Record temperatures bake the West as heat sickens hundreds at air show",
-      "to_title": "Record temperatures bake the West as heat sickens hundreds at air show"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T05:50:25.592Z",
-      "event_type": "MOVED",
-      "fingerprint": "8bc36f0e88de00721bc1e077e4830c065d5e9627",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "GOP Sen. Tillis says objectives of Iran war unclear: 'It's a real problem'",
-      "to_title": "GOP Sen. Tillis says objectives of Iran war unclear: 'It's a real problem'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T05:50:25.592Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iran pushes back on Trump's claims about agreement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:00:24.603Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5ad068cd218221b4a08d76c2f7a2a774d96c02e8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Strait of Hormuz returns to 'previous state,' Iranian TV reports"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:00:24.603Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0ef07b8e05c7aa82003c8b6609e07383dc9832bc",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports",
       "to_title": null
     }
   ],

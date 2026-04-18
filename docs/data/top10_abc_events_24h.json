@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-18T10:09:55.621Z",
+  "generatedAt": "2026-04-18T11:00:21.645Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T10:16:06.425Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3739aeec6a870dc4089451b8468a783a481b0660",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "How a Las Vegas showgirl vanished right before her big show"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T10:16:06.425Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8b1007565389e9ff061ab57247e4973250a1daca",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-17T11:16:33.335Z",
@@ -1041,6 +1021,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iran pushes back on Trump's claims about agreement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:00:24.603Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5ad068cd218221b4a08d76c2f7a2a774d96c02e8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Strait of Hormuz returns to 'previous state,' Iranian TV reports"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:00:24.603Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0ef07b8e05c7aa82003c8b6609e07383dc9832bc",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports",
       "to_title": null
     }
   ]
