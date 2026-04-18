@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-17T23:29:31.169Z",
+  "generatedAt": "2026-04-18T00:05:50.529Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T19:30:44.177Z",
-      "event_type": "MOVED",
-      "fingerprint": "7ee16a3c3af05670186f6143d7dc6bda7eca09c5",
-      "from_rank": 4,
-      "to_rank": 8,
-      "from_title": "Robert Mueller, former FBI director and special counsel, dies at 81",
-      "to_title": "Robert Mueller, former FBI director and special counsel, dies at 81"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-22T19:30:44.177Z",
-      "event_type": "MOVED",
-      "fingerprint": "71cbd2c862f4f66cc167f4cf626cfb314ef4e1a1",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Body camera footage of Justin Timberlake's DWI arrest released",
-      "to_title": "Body camera footage of Justin Timberlake's DWI arrest released"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-22T19:30:44.177Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Millions under severe weather threat following destructive storms",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T00:05:53.605Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eb9773fee61caa4e3207e41b3d29e825035bdac5",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Iranian official says Trump's claims are 'false'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T00:05:53.605Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "579273e1814883bef9efb93cdec25bcc8e76f7e2",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says 'could' still be differences to work out with Iran",
       "to_title": null
     }
   ],
