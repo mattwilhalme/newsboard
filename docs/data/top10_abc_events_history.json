@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-18T11:00:21.645Z",
+  "generatedAt": "2026-04-18T11:40:02.385Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T05:50:25.592Z",
-      "event_type": "MOVED",
-      "fingerprint": "67169ef65848b7faf121fed96e80e655db70e381",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "What to know as war with Iran enters its 4th week",
-      "to_title": "What to know as war with Iran enters its 4th week"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T05:50:25.592Z",
-      "event_type": "MOVED",
-      "fingerprint": "e1190cc1c424f98a4aab3c475b11c2a2b4f706af",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Iran live updates: State Dept. says Americans should 'exercise increased caution'",
-      "to_title": "Iran live updates: State Dept. says Americans should 'exercise increased caution'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T05:50:25.592Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:40:05.865Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f64fc6d647338f11de3f158f980afe3dcb156bce",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran reasserts control over Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:40:05.865Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5ad068cd218221b4a08d76c2f7a2a774d96c02e8",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Strait of Hormuz returns to 'previous state,' Iranian TV reports",
       "to_title": null
     }
   ],

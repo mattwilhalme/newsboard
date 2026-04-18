@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-18T11:00:21.645Z",
+  "generatedAt": "2026-04-18T11:40:02.385Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T11:16:33.335Z",
-      "event_type": "MOVED",
-      "fingerprint": "d7f4e7655b0a90a711e2fbb7c775d805923cfdae",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says",
-      "to_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T11:16:33.335Z",
-      "event_type": "MOVED",
-      "fingerprint": "ff98867f2a3b24bbc4911fea64c27b989b0dc2c2",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Trump nominates Dr. Erica Schwartz as new CDC director",
-      "to_title": "Trump nominates Dr. Erica Schwartz as new CDC director"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T11:16:33.335Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9e8f3964e2044c9eb23e634068665bc4f888123d",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "DNA proves remains found in the Columbia River are of a family missing since 1958"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T11:16:33.335Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T11:16:33.335Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3739aeec6a870dc4089451b8468a783a481b0660",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "How a Las Vegas showgirl vanished right before her big show",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T11:16:33.335Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "00218a4e058ee278ec33eb2c27e0fe7d01797dbd",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Parents of 2-year-old girl who died from fentanyl overdose charged with murder",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-17T13:57:58.105Z",
@@ -1041,6 +981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:40:05.865Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f64fc6d647338f11de3f158f980afe3dcb156bce",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran reasserts control over Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T11:40:05.865Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5ad068cd218221b4a08d76c2f7a2a774d96c02e8",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Strait of Hormuz returns to 'previous state,' Iranian TV reports",
       "to_title": null
     }
   ]
