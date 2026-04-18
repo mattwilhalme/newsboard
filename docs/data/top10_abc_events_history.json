@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-18T22:06:17.484Z",
+  "generatedAt": "2026-04-18T22:52:38.040Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T10:47:07.321Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4b1d5468981b6156018ad65b3325860dff2ea678",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "LaGuardia Airport shut down after plane collides with vehicle, killing 2",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T10:47:07.321Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f920c29e7cf788b376aeb8f97f4fad24e019f819",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Transportation Secretary Duffy says ICE agents are trained and can assist TSA",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T11:35:50.123Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a499fd02608ada842f43309af5e71f089a00b10f",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingTrump says US postponing attacks on Iranian energy facilities, citing 'productive' talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T11:35:50.123Z",
-      "event_type": "MOVED",
-      "fingerprint": "e57c4536c0cc44e2efce4f51bc6f740a2255c5a5",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Dozens injured, 2 pilots dead in ground collision at LaGuardia; airport closed",
-      "to_title": "Dozens injured, 2 pilots dead in ground collision at LaGuardia; airport closed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T11:35:50.123Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5d91954cf5fd4ac404369b23955056b290167e9b",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "State Department launches effort to counter cyberattacks, AI risks from Iran, others"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T11:35:50.123Z",
-      "event_type": "MOVED",
-      "fingerprint": "4d765bc586350f60414359bf6d54fd89f8e03166",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots",
-      "to_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T11:35:50.123Z",
-      "event_type": "MOVED",
-      "fingerprint": "67169ef65848b7faf121fed96e80e655db70e381",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "What to know as war with Iran enters its 4th week",
-      "to_title": "What to know as war with Iran enters its 4th week"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T11:35:50.123Z",
-      "event_type": "MOVED",
-      "fingerprint": "4bbf72e57ffbbdab02a7810dad28599b3934c08f",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "College student shot, killed while walking with her friends",
-      "to_title": "College student shot, killed while walking with her friends"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T11:35:50.123Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b8c03cc996102311eb9811b4914e8313a708a1de",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran threatens to mine 'entire Persian Gulf'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T11:35:50.123Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4654c841beb0a1b1221521c22fc43ce96acf3eb6",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Appeals court allows White House ballroom construction to continue for now"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "MOVED",
+      "fingerprint": "6f9e1c9d2320782ec5832059c7f01daaf9bd79f5",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Pope Leo says 'not in my interest at all' to debate Trump",
+      "to_title": "Pope Leo says 'not in my interest at all' to debate Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "MOVED",
+      "fingerprint": "880a6f4f8712b7f4ddfdfa114eb8de528490b411",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Severe weather threat, flooding continue as life-threatening storms pass through East",
+      "to_title": "Severe weather threat, flooding continue as life-threatening storms pass through East"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "MOVED",
+      "fingerprint": "0ceca88760e3ef0af5a7e0e41f822828bfc801fc",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources",
+      "to_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "MOVED",
+      "fingerprint": "e2517e33a0a53e33d623e2b4043f6ed345abdb20",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3",
+      "to_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "MOVED",
+      "fingerprint": "b1c2e10d3c662e6d3663d10631dcccb7c9fd69ae",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000",
+      "to_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "MOVED",
+      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
+      "to_title": "Singer D4vd arrested after teen found dead in his Tesla: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "MOVED",
+      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
+      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T22:52:40.935Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting",
       "to_title": null
     }
   ],
