@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-18T23:23:52.190Z",
+  "generatedAt": "2026-04-18T23:58:10.522Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T23:29:34.195Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "08fc89136b78fe0d91831c16866a016040ce1122",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Millions under threat of severe weather, including tornadoes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T23:29:34.195Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a498b59d11de3ff21f5db10648a0bdb85f9666d4",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Millions under severe weather threat following destructive storms",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-18T00:05:53.605Z",
@@ -731,6 +711,46 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T23:58:13.793Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "979e461f34a64f2286b45563f097948692370433",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Skydiver slams into Virginia Tech scoreboard, dangles by parachute"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T23:58:13.793Z",
+      "event_type": "MOVED",
+      "fingerprint": "e2517e33a0a53e33d623e2b4043f6ed345abdb20",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3",
+      "to_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T23:58:13.793Z",
+      "event_type": "MOVED",
+      "fingerprint": "b1c2e10d3c662e6d3663d10631dcccb7c9fd69ae",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000",
+      "to_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T23:58:13.793Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
       "to_title": null
     }
   ]
