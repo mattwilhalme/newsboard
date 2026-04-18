@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-18T08:32:55.825Z",
+  "generatedAt": "2026-04-18T09:29:47.518Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cee37e8a1a7d06b485b4ca99de62905a36791f7f",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "House approves short-term FISA spy powers extension amid GOP infighting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
-      "to_title": "Singer D4vd arrested after teen found dead in his Tesla: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "9dcc68e61c795fc666d811dba7ace76ffb5ec8a9",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Acting ICE Director Todd Lyons leaving agency",
-      "to_title": "Acting ICE Director Todd Lyons leaving agency"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "b03344d6d80768069b0db31bc6c0abf9edb526d8",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources",
-      "to_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "ff98867f2a3b24bbc4911fea64c27b989b0dc2c2",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Trump nominates Dr. Erica Schwartz as new CDC director",
-      "to_title": "Trump nominates Dr. Erica Schwartz as new CDC director"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "d7f4e7655b0a90a711e2fbb7c775d805923cfdae",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says",
-      "to_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "8b1007565389e9ff061ab57247e4973250a1daca",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis",
-      "to_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f6dfccb5f884c48ac6551a4e61df6b37bf45d2ca",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "If Spirit Airlines liquidates, here's what experts say it could mean for travelers",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-17T10:16:06.425Z",
@@ -1101,6 +1021,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T09:29:50.563Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0ef07b8e05c7aa82003c8b6609e07383dc9832bc",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T09:29:50.563Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f6be31728545d1ef990d778d28b6746684f28e70",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran pushes back on Trump's claims about agreement",
       "to_title": null
     }
   ]

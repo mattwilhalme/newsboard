@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-18T08:32:55.825Z",
+  "generatedAt": "2026-04-18T09:29:47.518Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T05:50:25.592Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3a16423b827efd478e6fbc7f2074ad7107782371",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "LaGuardia Airport closed following collision between Air Canada plane and vehicle"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T05:50:25.592Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "43dc4edb33185d1df773d3198eee1bee47ac13f4",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T05:50:25.592Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T09:29:50.563Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0ef07b8e05c7aa82003c8b6609e07383dc9832bc",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-18T09:29:50.563Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f6be31728545d1ef990d778d28b6746684f28e70",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran pushes back on Trump's claims about agreement",
       "to_title": null
     }
   ],
