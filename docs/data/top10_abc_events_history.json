@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-19T15:10:20.169Z",
+  "generatedAt": "2026-04-19T15:54:18.095Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T17:33:43.169Z",
-      "event_type": "MOVED",
-      "fingerprint": "c571458fac3abc42a3fbf5eb878e7932a0edb364",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Undocumented immigrant arrested in killing of college student: DHS",
-      "to_title": "Undocumented immigrant arrested in killing of college student: DHS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T17:33:43.169Z",
-      "event_type": "MOVED",
-      "fingerprint": "b06308cf830da37d6775ca2b8613690755e7ba74",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "OnlyFans owner Leo Radvinsky dies after cancer battle",
-      "to_title": "OnlyFans owner Leo Radvinsky dies after cancer battle"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T17:33:43.169Z",
-      "event_type": "MOVED",
-      "fingerprint": "11b8f154bc75d51001bbdd1fb7f04c9020728c15",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "23 oil and gas sites targeted since beginning of Iran conflict, experts say",
-      "to_title": "23 oil and gas sites targeted since beginning of Iran conflict, experts say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T17:33:43.169Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T15:54:21.136Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "984318282175fa57294084633eb6636a0b214495",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Waltz defends Trump’s threat to bomb ‘every single power plant’ in Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T15:54:21.136Z",
+      "event_type": "MOVED",
+      "fingerprint": "588659b7ac9ca99c1fff600fc9c44ceb494ba927",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Trump announces new round of talks in Islamabad",
+      "to_title": "Iran live updates: Trump announces new round of talks in Islamabad"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T15:54:21.136Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3ed5fa020087e16b1a9dd0ca270b6d9055de3940",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump and Iran claim the Strait of Hormuz is 'completely open.' Here’s what we know",
       "to_title": null
     }
   ],
