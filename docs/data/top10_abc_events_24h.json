@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-19T18:29:55.169Z",
+  "generatedAt": "2026-04-19T19:25:57.430Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T19:09:01.553Z",
-      "event_type": "MOVED",
-      "fingerprint": "0ceca88760e3ef0af5a7e0e41f822828bfc801fc",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources",
-      "to_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T19:09:01.553Z",
-      "event_type": "MOVED",
-      "fingerprint": "e2517e33a0a53e33d623e2b4043f6ed345abdb20",
-      "from_rank": 7,
-      "to_rank": 5,
-      "from_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3",
-      "to_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T19:09:01.553Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b1c2e10d3c662e6d3663d10631dcccb7c9fd69ae",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T19:09:01.553Z",
-      "event_type": "MOVED",
-      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
-      "to_title": "Singer D4vd arrested after teen found dead in his Tesla: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T19:09:01.553Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "08fc89136b78fe0d91831c16866a016040ce1122",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Millions under threat of severe weather, including tornadoes",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-18T19:52:33.298Z",
@@ -751,6 +701,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "At least 3 University of Iowa students injured in shooting near campus: Official",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T19:26:00.239Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0028e5f9485afdb7ec30b6634c8b63e4fcccbf93",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Freeze alerts issued as temperatures plunge in the East after summer-like spell"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T19:26:00.239Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "880a6f4f8712b7f4ddfdfa114eb8de528490b411",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Severe weather threat, flooding continue as life-threatening storms pass through East",
       "to_title": null
     }
   ]

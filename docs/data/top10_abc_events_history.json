@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-19T18:29:55.169Z",
+  "generatedAt": "2026-04-19T19:25:57.430Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T17:33:43.169Z",
-      "event_type": "MOVED",
-      "fingerprint": "43dc4edb33185d1df773d3198eee1bee47ac13f4",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police",
-      "to_title": "Jewish volunteer ambulances set on fire in London investigated as hate crime: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T17:33:43.169Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "653104d86977cca36ba2b224fc21af0cffaab332",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says Iran agreed to not have nuclear weapon",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T17:33:43.169Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "At least 3 University of Iowa students injured in shooting near campus: Official",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T19:26:00.239Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0028e5f9485afdb7ec30b6634c8b63e4fcccbf93",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Freeze alerts issued as temperatures plunge in the East after summer-like spell"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T19:26:00.239Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "880a6f4f8712b7f4ddfdfa114eb8de528490b411",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Severe weather threat, flooding continue as life-threatening storms pass through East",
       "to_title": null
     }
   ],
