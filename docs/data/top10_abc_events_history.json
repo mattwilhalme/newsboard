@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-19T05:17:58.272Z",
+  "generatedAt": "2026-04-19T06:56:36.656Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a499fd02608ada842f43309af5e71f089a00b10f",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingTrump says US postponing attacks on Iranian energy facilities, citing 'productive' talks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7669e923bda464bc8cc0db0a07be446b13adce83",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Democrat Beshear lashes into Vance in Ohio, escalating tensions ahead of 2028",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T13:47:35.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "91fdf7d70816df5d65e871d0640e0724466dc05f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Ground stop in place at Newark Airport",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T14:46:14.800Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2995e2f23b394f0dabd6f9aed9fc648a84fbcdcf",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "LaGuardia Airport crash: Plane was traveling 93-105 mph at time of ground collision"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T14:46:14.800Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b06308cf830da37d6775ca2b8613690755e7ba74",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "OnlyFans owner Leo Radvinsky dies after cancer battle"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T14:46:14.800Z",
-      "event_type": "MOVED",
-      "fingerprint": "1372ad781a8df237c4cf5209510326871b0f305f",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Ground stop briefly in place, control tower evacuated at Newark Airport",
-      "to_title": "Ground stop briefly in place, control tower evacuated at Newark Airport"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T14:46:14.800Z",
-      "event_type": "MOVED",
-      "fingerprint": "5d91954cf5fd4ac404369b23955056b290167e9b",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "State Department launches effort to counter cyberattacks, AI risks from Iran, others",
-      "to_title": "State Department launches effort to counter cyberattacks, AI risks from Iran, others"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T14:46:14.800Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T06:56:39.786Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "10e76eb79b20809f4693dbd530a0cb0049e24497",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "North Korea test-launches 'multiple' ballistic missiles, South Korea says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T06:56:39.786Z",
+      "event_type": "MOVED",
+      "fingerprint": "4654c841beb0a1b1221521c22fc43ce96acf3eb6",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Appeals court allows White House ballroom construction to continue for now",
+      "to_title": "Appeals court allows White House ballroom construction to continue for now"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T06:56:39.786Z",
+      "event_type": "MOVED",
+      "fingerprint": "6f9e1c9d2320782ec5832059c7f01daaf9bd79f5",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Pope Leo says 'not in my interest at all' to debate Trump",
+      "to_title": "Pope Leo says 'not in my interest at all' to debate Trump"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T06:56:39.786Z",
+      "event_type": "MOVED",
+      "fingerprint": "e8dc6726caa3bf8948cedd82bcc78e83506bc453",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army",
+      "to_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T06:56:39.786Z",
+      "event_type": "MOVED",
+      "fingerprint": "880a6f4f8712b7f4ddfdfa114eb8de528490b411",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Severe weather threat, flooding continue as life-threatening storms pass through East",
+      "to_title": "Severe weather threat, flooding continue as life-threatening storms pass through East"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T06:56:39.786Z",
+      "event_type": "MOVED",
+      "fingerprint": "979e461f34a64f2286b45563f097948692370433",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Skydiver slams into Virginia Tech scoreboard, dangles by parachute",
+      "to_title": "Skydiver slams into Virginia Tech scoreboard, dangles by parachute"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T06:56:39.786Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "139bfa225b197872a40b30bdf526893cecde1599",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "North Korea launches multiple short-range ballistic missiles toward sea",
       "to_title": null
     }
   ],
