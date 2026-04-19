@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-19T12:44:19.693Z",
+  "generatedAt": "2026-04-19T14:31:23.829Z",
   "hours": 24,
   "events": [
     {
@@ -711,6 +711,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Police investigating potential shooting near University of Iowa, campus says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T14:31:27.156Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "588659b7ac9ca99c1fff600fc9c44ceb494ba927",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump announces new round of talks in Islamabad"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T14:31:27.156Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "529b9cfc7f0a206de35cf7bf4852170fb07c87b4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iranian leader vows 'new defeats' for US",
       "to_title": null
     }
   ]
