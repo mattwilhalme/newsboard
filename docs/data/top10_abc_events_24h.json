@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-19T09:05:50.683Z",
+  "generatedAt": "2026-04-19T09:59:36.308Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T09:29:50.563Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0ef07b8e05c7aa82003c8b6609e07383dc9832bc",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T09:29:50.563Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f6be31728545d1ef990d778d28b6746684f28e70",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran pushes back on Trump's claims about agreement",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-18T11:00:24.603Z",
@@ -731,6 +711,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T09:59:39.721Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "529b9cfc7f0a206de35cf7bf4852170fb07c87b4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iranian leader vows 'new defeats' for US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T09:59:39.721Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fa6903d892b30fd46d79969650dcb04391cb42dc",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Multiple' people injured in shooting near University of Iowa, campus and police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T09:59:39.721Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c9b535d649b9cf876cf9c35bb2faefbf8da68e5c",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Tehran reviewing US proposal as it reasserts control over strait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T09:59:39.721Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1e74dff1e678a44215ab72b243685257cf49a8f4",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Police investigating potential shooting near University of Iowa, campus says",
       "to_title": null
     }
   ]
