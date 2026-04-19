@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-19T17:05:45.987Z",
+  "generatedAt": "2026-04-19T17:51:22.278Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T17:33:43.169Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "00c208e2c8625598272b1731f06fc7a0f5925e92",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Dwayne Johnson transforms into Maui in live-action 'Moana' trailer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-23T17:33:43.169Z",
-      "event_type": "MOVED",
-      "fingerprint": "4d765bc586350f60414359bf6d54fd89f8e03166",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots",
-      "to_title": "Supreme Court weighs RNC bid to disqualify late-arriving mail ballots"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-23T17:33:43.169Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Trump and Iran claim the Strait of Hormuz is 'completely open.' Here’s what we know",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T17:51:25.725Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ac81eb9ff1c76ace2c35250bdfe9a51b0484fc01",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "5 injured, one critically, in shooting near University of Iowa campus, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-19T17:51:25.725Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7723577182b9e65c13a207f5e745f33293f28e26",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "At least 3 University of Iowa students injured in shooting near campus: Official",
       "to_title": null
     }
   ],
