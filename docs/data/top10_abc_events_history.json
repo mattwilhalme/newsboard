@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-20T19:24:30.641Z",
+  "generatedAt": "2026-04-20T20:10:34.284Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "MOVED",
-      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
-      "to_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1b8b2fd05588e6b0ef37fedb8a80d9ee446752a8",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "US Park Police officer shot in Washington, DC",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T17:43:05.602Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a37e40baca421c0c9fabb64b3d4fc7de80b511aa",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T18:41:05.185Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0cead5ee9c04e78665b125821bb67b8f3e22ff37",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "LaGuardia crash: 1 of the 2 killed pilots ID'd"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-24T18:41:05.185Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T20:10:37.907Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e2d10a382fbb8804599f43734db7bf274453209a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks close lower and oil prices rise as US-Iran ceasefire uncertain before deadline"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T20:10:37.907Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c271eb1e026110cf1bc12eff769562e1f4c9e35b",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Two Southwest planes came dangerously close in Nashville, had to take evasive action"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T20:10:37.907Z",
+      "event_type": "MOVED",
+      "fingerprint": "8e50e17244c1ff30a431d62ee1512091aa18b635",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Meryl Streep talks Anna Wintour: 'She's such a good sport'",
+      "to_title": "Meryl Streep talks Anna Wintour: 'She's such a good sport'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T20:10:37.907Z",
+      "event_type": "MOVED",
+      "fingerprint": "51b415bf2353f9e36656d62301bf2db1d5cc80e2",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say",
+      "to_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T20:10:37.907Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1be6be42bdd0caf2e6278e8e1fbfe9db6a43289d",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Stocks dip and oil prices rise as US-Iran ceasefire uncertain before deadline",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T20:10:37.907Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9c8e77588af8da5d115938e1bfd04e2063992a8c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "8 children fatally shot in Louisiana domestic violence incident: Police",
       "to_title": null
     }
   ],
