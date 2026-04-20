@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-20T22:39:15.629Z",
+  "generatedAt": "2026-04-20T23:27:38.201Z",
   "hours": 24,
   "events": [
     {
@@ -1311,6 +1311,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T23:27:41.695Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "274bb294da3411dd812b85255bc59f29a83526ac",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Labor Secretary Chavez-DeRemer leaving amid investigation into alleged misconduct"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T23:27:41.695Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dee7aacc9d7fe7da59c1ba633c679f3549a8ee58",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Mexico's president demands answers after deaths of 2 US Embassy staffers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T23:27:41.695Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6f4a011ac87ab17d544480b3547585a561eb629e",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Labor Secretary Lori Chavez-DeRemer leaving Trump administration, White House says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T23:27:41.695Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "996b998045076fe2e57aa41d33305a9a26771285",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News",
       "to_title": null
     }
   ]
