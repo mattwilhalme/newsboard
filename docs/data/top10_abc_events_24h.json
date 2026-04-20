@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-20T12:57:19.618Z",
+  "generatedAt": "2026-04-20T14:46:01.798Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T14:31:27.156Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "588659b7ac9ca99c1fff600fc9c44ceb494ba927",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump announces new round of talks in Islamabad"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T14:31:27.156Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "529b9cfc7f0a206de35cf7bf4852170fb07c87b4",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iranian leader vows 'new defeats' for US",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-19T15:10:23.013Z",
@@ -801,6 +781,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US funding helps Cyprus upgrade military bases",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6af1894048f2cc20ac37d7aced449fa64b89c68a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks dip and oil prices rise as Iran war enters eighth week"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "996b998045076fe2e57aa41d33305a9a26771285",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "dfa864d8da50474f81f0c89e999bee879d208942",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "What to know as war with Iran stretches into week 8",
+      "to_title": "What to know as war with Iran stretches into week 8"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c8e77588af8da5d115938e1bfd04e2063992a8c",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "8 children fatally shot in Louisiana domestic violence incident: Police",
+      "to_title": "8 children fatally shot in Louisiana domestic violence incident: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "a06464cf715c89e3ad17e7ad82c247b168dd10b3",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock",
+      "to_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "a5ce9b25a53643cf0a835ea3cb4c3484d74900eb",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast",
+      "to_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "ce6a5e0ee49b77d55d08468df5d675753cb6918d",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X",
+      "to_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "1e911c8724ea01fe1757ddd545964385c4eabcbf",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Wildfire survivors who lost homes could face another blow on settlement payouts",
+      "to_title": "Wildfire survivors who lost homes could face another blow on settlement payouts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2fdbe8226a9bbb79576560b24afd964c6bcf21c",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "With no end in sight to their deployment, National Guard troops roam Washington",
+      "to_title": "With no end in sight to their deployment, National Guard troops roam Washington"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "37740cb2bc25d53b42b539407940d981e33dff18",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Canada's PM calls economic ties with US a weakness that must be corrected",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fa9180add06ee8833c1edb0be6d0f51495d62798",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US, allies kick off combat drills with Philippines",
       "to_title": null
     }
   ]

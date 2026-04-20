@@ -1,118 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-20T12:57:19.618Z",
+  "generatedAt": "2026-04-20T14:46:01.798Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T02:11:22.291Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b44b82f5f71e69bf12993a65649188ade215dac4",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Senate set to vote on confirming Sen. Markwayne Mullin as DHS secretary",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T02:11:22.291Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e476ca82e488acfb4268cf9477c58370a66ec7bf",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Superman' star and Oscar-nominated actress Valerie Perrine dies",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "f131b1fad683c4ada3be05f6872327127a0ac1e0",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Iran denies any talks with US following Trump's remarks",
-      "to_title": "Iran live updates: Iran denies any talks with US following Trump's remarks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1b8b2fd05588e6b0ef37fedb8a80d9ee446752a8",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Trump says US and Iran have 'major points of agreement,' including no nuclear weapons"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fa1a0d64db6c2fa8db57e6bd808ca69b0c5f605",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "US Park Police officer shot in Washington, DC",
-      "to_title": "US Park Police officer shot in Washington, DC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
-      "from_rank": 8,
-      "to_rank": 4,
-      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
-      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "8b4ab6a2a0750885ca6e8da30924c269f216c2de",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport",
-      "to_title": "Plane traveling 93-105 mph at time of ground collision at LaGuardia Airport"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "df9270aa64647c3de0562545b898b43ca89ac111",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws",
-      "to_title": "'Fertile territory': Trump says ICE agents at airports can enforce immigration laws"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fd746a17e69036afa19a2e9dc9a06b450ca95bc8",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "LA28 unveils California-inspired superbloom branding for Olympic, Paralympic Games"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c6bf2f2ae238accd4a000a6a0e43d78c7047be3b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Trump says US and Iran have 'major points of agreement,' including no nuclear weapons",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T05:44:49.255Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "67169ef65848b7faf121fed96e80e655db70e381",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "What to know as war with Iran enters its 4th week",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-24T08:33:07.638Z",
@@ -30001,6 +29891,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US funding helps Cyprus upgrade military bases",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6af1894048f2cc20ac37d7aced449fa64b89c68a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Stocks dip and oil prices rise as Iran war enters eighth week"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "996b998045076fe2e57aa41d33305a9a26771285",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "dfa864d8da50474f81f0c89e999bee879d208942",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "What to know as war with Iran stretches into week 8",
+      "to_title": "What to know as war with Iran stretches into week 8"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c8e77588af8da5d115938e1bfd04e2063992a8c",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "8 children fatally shot in Louisiana domestic violence incident: Police",
+      "to_title": "8 children fatally shot in Louisiana domestic violence incident: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "a06464cf715c89e3ad17e7ad82c247b168dd10b3",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock",
+      "to_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "a5ce9b25a53643cf0a835ea3cb4c3484d74900eb",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast",
+      "to_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "ce6a5e0ee49b77d55d08468df5d675753cb6918d",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X",
+      "to_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "1e911c8724ea01fe1757ddd545964385c4eabcbf",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Wildfire survivors who lost homes could face another blow on settlement payouts",
+      "to_title": "Wildfire survivors who lost homes could face another blow on settlement payouts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "c2fdbe8226a9bbb79576560b24afd964c6bcf21c",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "With no end in sight to their deployment, National Guard troops roam Washington",
+      "to_title": "With no end in sight to their deployment, National Guard troops roam Washington"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "37740cb2bc25d53b42b539407940d981e33dff18",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Canada's PM calls economic ties with US a weakness that must be corrected",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T14:46:04.816Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fa9180add06ee8833c1edb0be6d0f51495d62798",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US, allies kick off combat drills with Philippines",
       "to_title": null
     }
   ],
