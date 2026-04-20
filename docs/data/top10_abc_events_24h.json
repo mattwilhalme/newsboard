@@ -1,188 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-20T14:46:01.798Z",
+  "generatedAt": "2026-04-20T15:59:30.247Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ad40ef7ed21bb0d1d3e22744a55d445d7dd49eea",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump tells ABC News peace agreement for Iran 'will happen one way or another'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "MOVED",
-      "fingerprint": "588659b7ac9ca99c1fff600fc9c44ceb494ba927",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Trump announces new round of talks in Islamabad",
-      "to_title": "Iran live updates: Trump announces new round of talks in Islamabad"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3ed5fa020087e16b1a9dd0ca270b6d9055de3940",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump and Iran claim the Strait of Hormuz is 'completely open.' Here’s what we know"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7723577182b9e65c13a207f5e745f33293f28e26",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "At least 3 University of Iowa students injured in shooting near campus: Official"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "MOVED",
-      "fingerprint": "10e76eb79b20809f4693dbd530a0cb0049e24497",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "North Korea test-launches 'multiple' ballistic missiles, South Korea says",
-      "to_title": "North Korea test-launches 'multiple' ballistic missiles, South Korea says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "MOVED",
-      "fingerprint": "e8dc6726caa3bf8948cedd82bcc78e83506bc453",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army",
-      "to_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a369ff4249733f9b93b48f9b76e103e9cdd84eeb",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "FBI, DOJ scrambling to rebuild after being depleted by resignations and firings"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d58a6ceae2a912d182b3768846a861785082bd96",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "GOP plans big spending to keep Ohio Senate seat; bribery scandal adds challenge"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "MOVED",
-      "fingerprint": "880a6f4f8712b7f4ddfdfa114eb8de528490b411",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Severe weather threat, flooding continue as life-threatening storms pass through East",
-      "to_title": "Severe weather threat, flooding continue as life-threatening storms pass through East"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "MOVED",
-      "fingerprint": "979e461f34a64f2286b45563f097948692370433",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Skydiver slams into Virginia Tech scoreboard, dangles by parachute",
-      "to_title": "Skydiver slams into Virginia Tech scoreboard, dangles by parachute"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6c8243194ff6d77b9fe003c30db612c131cb37f1",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump tells ABC News he thinks he can trust the Iranians",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fa6903d892b30fd46d79969650dcb04391cb42dc",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "'Multiple' people injured in shooting near University of Iowa, campus and police say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4654c841beb0a1b1221521c22fc43ce96acf3eb6",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Appeals court allows White House ballroom construction to continue for now",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f9e1c9d2320782ec5832059c7f01daaf9bd79f5",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Pope Leo says 'not in my interest at all' to debate Trump",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:10:23.013Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e2517e33a0a53e33d623e2b4043f6ed345abdb20",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:54:21.136Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "984318282175fa57294084633eb6636a0b214495",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Waltz defends Trump’s threat to bomb ‘every single power plant’ in Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:54:21.136Z",
-      "event_type": "MOVED",
-      "fingerprint": "588659b7ac9ca99c1fff600fc9c44ceb494ba927",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Trump announces new round of talks in Islamabad",
-      "to_title": "Iran live updates: Trump announces new round of talks in Islamabad"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T15:54:21.136Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3ed5fa020087e16b1a9dd0ca270b6d9055de3940",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Trump and Iran claim the Strait of Hormuz is 'completely open.' Here’s what we know",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-19T17:51:25.725Z",
@@ -891,6 +711,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US, allies kick off combat drills with Philippines",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "a06464cf715c89e3ad17e7ad82c247b168dd10b3",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock",
+      "to_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "320ad886aeb71cb49f935333f1bf70fb64a6cc81",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Skydiver speaks out after stadium scoreboard crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "51b415bf2353f9e36656d62301bf2db1d5cc80e2",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "9c8e77588af8da5d115938e1bfd04e2063992a8c",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "8 children fatally shot in Louisiana domestic violence incident: Police",
+      "to_title": "8 children fatally shot in Louisiana domestic violence incident: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "a5ce9b25a53643cf0a835ea3cb4c3484d74900eb",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast",
+      "to_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "MOVED",
+      "fingerprint": "ce6a5e0ee49b77d55d08468df5d675753cb6918d",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X",
+      "to_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dfa864d8da50474f81f0c89e999bee879d208942",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "What to know as war with Iran stretches into week 8",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T15:59:33.410Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c2fdbe8226a9bbb79576560b24afd964c6bcf21c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "With no end in sight to their deployment, National Guard troops roam Washington",
       "to_title": null
     }
   ]
