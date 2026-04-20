@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-20T21:56:30.204Z",
+  "generatedAt": "2026-04-20T22:39:15.629Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T19:41:03.217Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "40604bf84c417149bcaa7c51f71356ca44fec7bc",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "2 kids, 1 adult hurt in stabbing at middle school: Sheriff",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T19:41:03.217Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5a519f3553327e3c9b59257f7a93ab4b48e353f6",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Senate confirms Sen. Markwayne Mullin as DHS secretary",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T19:41:03.217Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "03361a4781754ce138b8674d685b3830efdfe04f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Quadruple amputee cornhole pro accused of murder",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T20:09:03.398Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "80b2e4f48dc276bda75c3d6b5655c46eff9d4140",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Delta Air Lines suspends specialty services for members of Congress amid shutdown"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-24T20:09:03.398Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Two Southwest planes came dangerously close in Nashville, had to take evasive action",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T22:39:18.693Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e9118ffbed99f05da51007413d78984a04903464",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Motive sought in fatal shooting of 8 children as police give timeline of massacre"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T22:39:18.693Z",
+      "event_type": "MOVED",
+      "fingerprint": "996b998045076fe2e57aa41d33305a9a26771285",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News",
+      "to_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T22:39:18.693Z",
+      "event_type": "MOVED",
+      "fingerprint": "a06464cf715c89e3ad17e7ad82c247b168dd10b3",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock",
+      "to_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T22:39:18.693Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "51b415bf2353f9e36656d62301bf2db1d5cc80e2",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say",
       "to_title": null
     }
   ],
