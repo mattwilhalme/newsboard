@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-20T17:07:27.322Z",
+  "generatedAt": "2026-04-20T18:09:53.852Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T17:51:25.725Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ac81eb9ff1c76ace2c35250bdfe9a51b0484fc01",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "5 injured, one critically, in shooting near University of Iowa campus, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T17:51:25.725Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7723577182b9e65c13a207f5e745f33293f28e26",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "At least 3 University of Iowa students injured in shooting near campus: Official",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-19T19:26:00.239Z",
@@ -941,6 +921,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2e244d7e36f00a853b8e016bcd7404063862bad2",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingSinger D4vd charged with murder in 'brutal and horrific' death of teen: DA"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "MOVED",
+      "fingerprint": "d673ddb44a54c6e388171d0ac8ac6443faa0f33c",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Iran live updates: Trump says Israel 'never talked' him into war with Iran",
+      "to_title": "Iran live updates: Trump says Israel 'never talked' him into war with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "574e3f603a9e397a93eb01c30449b4ed37d85ff8",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Related:Stocks dip as US-Iran ceasefire uncertain before deadline"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "MOVED",
+      "fingerprint": "ff1e802823c72619662107bf762fb5e6ae6a9105",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "2 dead after gunfire breaks out during 'planned fight' between juveniles: Police",
+      "to_title": "2 dead after gunfire breaks out during 'planned fight' between juveniles: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "MOVED",
+      "fingerprint": "996b998045076fe2e57aa41d33305a9a26771285",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News",
+      "to_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "MOVED",
+      "fingerprint": "a06464cf715c89e3ad17e7ad82c247b168dd10b3",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock",
+      "to_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8e50e17244c1ff30a431d62ee1512091aa18b635",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Meryl Streep talks Anna Wintour: 'She's such a good sport'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "MOVED",
+      "fingerprint": "51b415bf2353f9e36656d62301bf2db1d5cc80e2",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say",
+      "to_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1be6be42bdd0caf2e6278e8e1fbfe9db6a43289d",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Stocks dip and oil prices rise as US-Iran ceasefire uncertain before deadline",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "66c4c49a57d46b0202a42896e65461cd050bbe40",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Meryl Streep talks Anna Wintour, 'Devil Wears Prada 2' and more",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-20T18:09:57.201Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1c6d5f7b88187e6d6dbd748973e956738c91a7a8",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Charges expected to be filed Monday against D4vd in alleged murder of teen: Sources",
       "to_title": null
     }
   ]
