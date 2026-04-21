@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-21T22:59:40.916Z",
+  "generatedAt": "2026-04-21T23:38:59.399Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T23:27:41.695Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "274bb294da3411dd812b85255bc59f29a83526ac",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Labor Secretary Chavez-DeRemer leaving amid investigation into alleged misconduct"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T23:27:41.695Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dee7aacc9d7fe7da59c1ba633c679f3549a8ee58",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Mexico's president demands answers after deaths of 2 US Embassy staffers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T23:27:41.695Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f4a011ac87ab17d544480b3547585a561eb629e",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Labor Secretary Lori Chavez-DeRemer leaving Trump administration, White House says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T23:27:41.695Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "996b998045076fe2e57aa41d33305a9a26771285",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "'I don't understand': Daughter of woman missing in Bahamas speaks to ABC News",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-21T03:42:49.261Z",
@@ -1021,6 +981,56 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump announces he's extending ceasefire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "939c1b47d801adc11cd12affc1854f5a4abbd2ba",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "RFK Jr. says NIH cuts are 'painful,' defends firing of former CDC director"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "c41e693d81a550e63f63b780e38cfe88b4b80edb",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Stepbrother pleads not guilty to murder, sex abuse charges in cruise ship death",
+      "to_title": "Stepbrother pleads not guilty to murder, sex abuse charges in cruise ship death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "42501d5849ad9f1e0c133ed39bb134a63d2e94bf",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Gunman in Mexican tourist site shooting influenced by violent acts in US: Officials",
+      "to_title": "Gunman in Mexican tourist site shooting influenced by violent acts in US: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "58688841ece1ef773e4d077142e47fdcc9a5e032",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Embattled Democratic Rep. Sheila Cherfilus-McCormick resigns from Congress",
+      "to_title": "Embattled Democratic Rep. Sheila Cherfilus-McCormick resigns from Congress"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e5c2baa6b1cedc018c1b5aaef5652ea8c7a9840a",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "FAA investigating extremely close call between 2 Southwest planes",
       "to_title": null
     }
   ]

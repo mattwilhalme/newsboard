@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-21T22:59:40.916Z",
+  "generatedAt": "2026-04-21T23:38:59.399Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T18:32:53.137Z",
-      "event_type": "MOVED",
-      "fingerprint": "44345f8259509a0b9ff313bf9e483225b5258a82",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Supreme Court deals blow to music industry fight against illegal downloads",
-      "to_title": "Supreme Court deals blow to music industry fight against illegal downloads"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T18:32:53.137Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d5789b364a7d794ae8c8473e6a48b77594052b07",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "First lady Melania Trump enters White House summit with walking, talking robot"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T18:32:53.137Z",
-      "event_type": "MOVED",
-      "fingerprint": "c05fd2fc0e96b69b4d690f68a5bb63cccf8ea4a2",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Venezuelan migrant sues Trump administration over deportation to CECOT mega-prison",
-      "to_title": "Venezuelan migrant sues Trump administration over deportation to CECOT mega-prison"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T18:32:53.137Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2946c431b37c1e09efc54a4c73c4b1372be096fd",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Boy receiving Citizen Honor Award for shielding classmate during school shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T18:32:53.137Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c1e7dd772190d4692487e0ce1d85db1f87071b67",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Rihanna shooting suspect pleads not guilty"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-25T18:32:53.137Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Trump announces he's extending ceasefire",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "939c1b47d801adc11cd12affc1854f5a4abbd2ba",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "RFK Jr. says NIH cuts are 'painful,' defends firing of former CDC director"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "c41e693d81a550e63f63b780e38cfe88b4b80edb",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Stepbrother pleads not guilty to murder, sex abuse charges in cruise ship death",
+      "to_title": "Stepbrother pleads not guilty to murder, sex abuse charges in cruise ship death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "42501d5849ad9f1e0c133ed39bb134a63d2e94bf",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Gunman in Mexican tourist site shooting influenced by violent acts in US: Officials",
+      "to_title": "Gunman in Mexican tourist site shooting influenced by violent acts in US: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "58688841ece1ef773e4d077142e47fdcc9a5e032",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Embattled Democratic Rep. Sheila Cherfilus-McCormick resigns from Congress",
+      "to_title": "Embattled Democratic Rep. Sheila Cherfilus-McCormick resigns from Congress"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T23:39:02.641Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e5c2baa6b1cedc018c1b5aaef5652ea8c7a9840a",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "FAA investigating extremely close call between 2 Southwest planes",
       "to_title": null
     }
   ],
