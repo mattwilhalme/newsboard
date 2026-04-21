@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-21T10:43:07.930Z",
+  "generatedAt": "2026-04-21T11:46:36.166Z",
   "hours": 24,
   "events": [
     {
@@ -1311,6 +1311,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "D4vd charged with murdering 14-year-old girl: 'Brutal and horrific'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T11:46:39.746Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7c3158e26037529035b6ea8163ad84216fa37dee",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says Iran violated ceasefire 'multiple times'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T11:46:39.746Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5ad7b4bc436456086c3c64daa3e7208b38bf9ff4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran won't negotiate 'under threat of force,' ambassador says",
       "to_title": null
     }
   ]
