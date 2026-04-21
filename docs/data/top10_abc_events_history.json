@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-21T11:46:36.166Z",
+  "generatedAt": "2026-04-21T12:49:11.325Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T23:18:31.631Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3d20354eaa413f59665dd014e61bd564f8a2ac70",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "American held by Taliban for over a year released",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T23:18:31.631Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a37e40baca421c0c9fabb64b3d4fc7de80b511aa",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Miley Cyrus on working with her dad, Dolly Parton on ‘Hannah Montana’",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-24T23:18:31.631Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "609bd38f203100026bfa5937c4e14818dd375d58",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Epic Games lays off more than 1,000 amid slowing Fortnite engagement",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-25T01:00:32.418Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iran won't negotiate 'under threat of force,' ambassador says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T12:49:14.489Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e5c2baa6b1cedc018c1b5aaef5652ea8c7a9840a",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "FAA investigating extremely close call between 2 Southwest planes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T12:49:14.489Z",
+      "event_type": "MOVED",
+      "fingerprint": "0bde5a7aa5c34be0f6236a0579874157622c5cb1",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police",
+      "to_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T12:49:14.489Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e9118ffbed99f05da51007413d78984a04903464",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Motive sought in fatal shooting of 8 children as police give timeline of massacre",
       "to_title": null
     }
   ],
