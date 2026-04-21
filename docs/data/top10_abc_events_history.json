@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-21T15:50:22.209Z",
+  "generatedAt": "2026-04-21T16:46:06.446Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T09:06:35.660Z",
-      "event_type": "MOVED",
-      "fingerprint": "2cfa3bacfe728135383039bb52687d94e08a4bba",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Wife testifies during trial of doctor accused of trying to kill her on hiking trail",
-      "to_title": "Wife testifies during trial of doctor accused of trying to kill her on hiking trail"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T09:06:35.660Z",
-      "event_type": "MOVED",
-      "fingerprint": "4469b38ac5406c1997903eb76a28947e31986d83",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting",
-      "to_title": "Quadruple amputee cornhole champion facing murder charges in fatal shooting"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-25T09:06:35.660Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Jennifer Hudson returns to 'American Idol' as a mentor, guest judge",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T16:46:09.452Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c762639b2a13a2eced23fbf4fddefcac66be3213",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Trump's Fed chair nominee Kevin Warsh testifies before Congress amid Powell probe"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-21T16:46:09.452Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0bde5a7aa5c34be0f6236a0579874157622c5cb1",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police",
       "to_title": null
     }
   ],
