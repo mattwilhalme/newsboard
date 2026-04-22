@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-22T17:45:49.192Z",
+  "generatedAt": "2026-04-22T18:49:07.367Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T01:29:08.645Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "72f15cedfbd3a7b78a3d889565ab55ccbf1c5a19",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "USPS seeks temporary 8% charge on Priority Mail",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T04:15:33.630Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "64c3c5b57a305f81cba94b3e4e71d5644fba0df0",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "FBI investigates video taking responsibility for possible explosive device at AF base"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-26T04:15:33.630Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Baby Asian elephant makes National Zoo debut on Earth Day",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T18:49:10.382Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d60696e42cb7434c250fb1173f204c47aa35bf82",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran has 'thousands' of missiles and drones left"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T18:49:10.382Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "62c05431be068d78701f8ecc0cc906718599127c",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: IRGC says it seized 2 vessels in Strait of Hormuz",
       "to_title": null
     }
   ],
