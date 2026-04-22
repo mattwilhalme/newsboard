@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-21T23:38:59.399Z",
+  "generatedAt": "2026-04-22T00:07:45.831Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T18:32:53.137Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "06715b129c40f4a03a23a42b3b0940770014b37b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingJury returns verdict in landmark social media trial",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T18:32:53.137Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "76e8b036c6c70dc5bc6f170ba6956de4a9eeb213",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Related:Significant storm heading toward Middle East amid Iran war, forecasts show",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-25T18:32:53.137Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "FAA investigating extremely close call between 2 Southwest planes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T00:07:49.153Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d035464c9fa2a237c30039dc52f29c7fe4806b80",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:How the 2nd round of Islamabad talks fell apart (for now)"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T00:07:49.153Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "54604730b387dfe89236cd9d1daeb58bb6586496",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran war has become political baggage for Vance: ANALYSIS",
       "to_title": null
     }
   ],
