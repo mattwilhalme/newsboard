@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-22T14:23:38.513Z",
+  "generatedAt": "2026-04-22T15:48:03.873Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-25T23:56:16.830Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c889fa5c5ee57aeeb5c161aaefcffc322d411112",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Army extends maximum recruitment age to 42",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T01:29:08.645Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "372ea1f7d4ce7389c5c1d08cee14d199a6b34699",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "US-Iran conflict hands China's Xi upper hand ahead of Trump meeting: Experts"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-26T01:29:08.645Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Virginia passes congressional map redraw that will favor Democrats, AP projects",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T15:48:07.032Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dd4a5ca628d8e875675ee21864eb2475ee3cf56d",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "How individuals can make a difference in the climate fight"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T15:48:07.032Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "626134c584b13900b6c4e8d1b9da06db654f3b65",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Earth Day 2026: What you can do to promote conservation, climate action",
       "to_title": null
     }
   ],
