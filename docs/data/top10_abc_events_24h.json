@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-22T18:49:07.367Z",
+  "generatedAt": "2026-04-22T19:56:50.236Z",
   "hours": 24,
   "events": [
     {
@@ -831,6 +831,76 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: IRGC says it seized 2 vessels in Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T19:56:53.327Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dfd2e1534c7a80e697895a5058c129f940b39494",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran war: Trump's pattern of setting unenforced deadlines"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T19:56:53.327Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "38d78525135c6f5a58d3d15558c736080d329378",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Iran has 'thousands' of missiles and drones left"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T19:56:53.327Z",
+      "event_type": "MOVED",
+      "fingerprint": "7f6b56f8b0477d7ea0c537f5235705cb2d95d29d",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Ghislaine Maxwell again asks judge to vacate her sex trafficking conviction",
+      "to_title": "Ghislaine Maxwell again asks judge to vacate her sex trafficking conviction"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T19:56:53.327Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "54f474c4f2bdb9c5389afea9272c8cb65f2de570",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "2 dead, at least 19 injured following chemical leak at industrial plant"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T19:56:53.327Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d60696e42cb7434c250fb1173f204c47aa35bf82",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran has 'thousands' of missiles and drones left",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T19:56:53.327Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d035464c9fa2a237c30039dc52f29c7fe4806b80",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:How the 2nd round of Islamabad talks fell apart (for now)",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T19:56:53.327Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dd4a5ca628d8e875675ee21864eb2475ee3cf56d",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "How individuals can make a difference in the climate fight",
       "to_title": null
     }
   ]
