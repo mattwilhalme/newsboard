@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-22T20:48:01.978Z",
+  "generatedAt": "2026-04-22T21:41:04.113Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T09:44:29.210Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "63fcb49d19acfe26bad4add5ff0f31a8fbdd286e",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Conservatives gather for CPAC as MAGA fights over Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T09:44:29.210Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2095495a14d0e990be2d7a02fe95d57511bb7f55",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Wind power will continue to grow, despite Trump's attempts to halt it: Experts"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-26T09:44:29.210Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Brian Hooker's attorney speaks out on wife's disappearance in Bahamas",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T21:41:07.187Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b8b6d1da685b84910149c509cc3a8d7c04552fbe",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump says Iran's government is 'seriously fractured’ after praising its new leaders"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T21:41:07.187Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dfd2e1534c7a80e697895a5058c129f940b39494",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran war: Trump's pattern of setting unenforced deadlines",
       "to_title": null
     }
   ],

@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-22T20:48:01.978Z",
+  "generatedAt": "2026-04-22T21:41:04.113Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b2f85ebccc49007863c4748bc45b2de173761bb5",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump announces he's extending ceasefire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "81e9d5d20e21d9b0ee8078754420c417041fdd48",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "What does the standoff over Trump's Fed chair nominee mean for interest rates?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "MOVED",
-      "fingerprint": "bfaddb133390bfbb6f393c82fa24db878d722ec2",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Residents remember heroic pilot's final act",
-      "to_title": "Residents remember heroic pilot's final act"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "MOVED",
-      "fingerprint": "65ca5fdc1986924c35bc126fbec4e033a78c980a",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Hegseth ends mandatory flu vaccine for US military, says shot is now optional",
-      "to_title": "Hegseth ends mandatory flu vaccine for US military, says shot is now optional"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c5229118242c6e85ef80c7fd25029e029eb32be6",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingPresident Trump extends ceasefire with Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "79f1d9c91f4194304f8f64802d6debd015b52436",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Southern Poverty Law Center says it's facing Justice Department probe",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-21T22:11:53.800Z",
@@ -791,6 +731,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Brian Hooker's attorney speaks out on wife's disappearance in Bahamas",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T21:41:07.187Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b8b6d1da685b84910149c509cc3a8d7c04552fbe",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump says Iran's government is 'seriously fractured’ after praising its new leaders"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T21:41:07.187Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dfd2e1534c7a80e697895a5058c129f940b39494",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran war: Trump's pattern of setting unenforced deadlines",
       "to_title": null
     }
   ]
