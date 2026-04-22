@@ -1,108 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-22T10:24:27.260Z",
+  "generatedAt": "2026-04-22T11:37:11.009Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4514ba4f06833751e2630e89e7e13cb59482746b",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump's Fed chair nominee Kevin Warsh to testify before Congress amid Powell probe"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5e72000346bbc196af6a29121e1d2fcac546bcd1",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "In Virginia redistricting election, 4 House seats at stake as voters go to the polls"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "MOVED",
-      "fingerprint": "0bde5a7aa5c34be0f6236a0579874157622c5cb1",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police",
-      "to_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "MOVED",
-      "fingerprint": "9c2a8792154c2ad7d33cb2a1ee6ccc7ef5209be9",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Climate extremes may quietly be pushing heart disease rates higher: Study",
-      "to_title": "Climate extremes may quietly be pushing heart disease rates higher: Study"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d898ac7a564bc6522124c5702b1b9f5beb750c67",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Purdue Pharma to be sentenced in opioids case, allowing settlement money to flow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b5593601e46c4f77c1b97663cc106574b750c78d",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "British royals lead celebrations for late Queen Elizabeth II's 100th birthday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "311580aa6b740ebeffbfba3bb0161eb1061ed39e",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Apple CEO Tim Cook is stepping down, John Ternus set to replace him",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "274bb294da3411dd812b85255bc59f29a83526ac",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Labor Secretary Chavez-DeRemer leaving amid investigation into alleged misconduct",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dee7aacc9d7fe7da59c1ba633c679f3549a8ee58",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Mexico's president demands answers after deaths of 2 US Embassy staffers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7136d14eea7cce6a2d1030586e737f1bec34b1e8",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "D4vd charged with murdering 14-year-old girl: 'Brutal and horrific'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-21T11:46:39.746Z",
@@ -1121,6 +1021,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Game of chicken': What to know about the standoff over Trump's Fed chair nominee",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T11:37:14.536Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "62c05431be068d78701f8ecc0cc906718599127c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: IRGC says it seized 2 vessels in Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T11:37:14.536Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "787886b56e16d73be73fe1f530d46621490d1d69",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Ships attacked in Strait of Hormuz after Trump ceasefire extension",
       "to_title": null
     }
   ]
