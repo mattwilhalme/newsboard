@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-22T19:56:50.236Z",
+  "generatedAt": "2026-04-22T20:48:01.978Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T09:44:29.210Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4ca24af66001ffa56b4c0fe9e4adfb5abc5dc64c",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says Iran negotiating, claims leaders 'afraid' to be killed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T09:44:29.210Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6ab837687d7d0cf6502486ea2758b5a6ae04a3e1",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "In Lebanon, a brewing disaster that could outlast the war in Iran"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-26T09:44:29.210Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "How individuals can make a difference in the climate fight",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T20:48:05.234Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "77d0c3a033c649ffffff16e9362587d69c5e35c7",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Kalshi suspends 3 congressional candidates for betting on their own races"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T20:48:05.234Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fb16f9e1fb5fb887ec3a73983c02fa72927d1400",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Brian Hooker's attorney speaks out on wife's disappearance in Bahamas",
       "to_title": null
     }
   ],
