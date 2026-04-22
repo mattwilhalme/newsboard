@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-22T15:48:03.873Z",
+  "generatedAt": "2026-04-22T16:46:59.367Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T01:29:08.645Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ea5317dd2c71237eac5794ad4678563dbb231520",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:With some 2,000 ships stranded, Iran claims it's easing grip on Strait of Hormuz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T01:29:08.645Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "13ed61ddc5c1b00963c48912172ad15533b544dd",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Days from recess, Democrats and Republicans blame each other for TSA chaos"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-26T01:29:08.645Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Earth Day 2026: What you can do to promote conservation, climate action",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T16:47:02.427Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dab8ae4e6ea917fdc72f2209ee6d27f33c51dc73",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Baby Asian elephant makes National Zoo debut on Earth Day"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T16:47:02.427Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "42501d5849ad9f1e0c133ed39bb134a63d2e94bf",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Gunman in Mexican tourist site shooting influenced by violent acts in US: Officials",
       "to_title": null
     }
   ],
