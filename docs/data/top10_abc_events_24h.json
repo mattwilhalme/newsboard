@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-22T21:41:04.113Z",
+  "generatedAt": "2026-04-22T22:31:55.014Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T22:11:53.800Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "80686775dc031ede13f981ac042ffe3404be3324",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump announces he's extending ceasefire indefinitely"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T22:11:53.800Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b2f85ebccc49007863c4748bc45b2de173761bb5",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump announces he's extending ceasefire",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-21T23:39:02.641Z",
@@ -751,6 +731,86 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran war: Trump's pattern of setting unenforced deadlines",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "50ab4de0be193d7cc4c6f323df6ec2383b1f4487",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Graham says blockade will stay in place, even expand globally"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0a3271e5844abfeddf33c860bd46bd06d77fa59d",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "MOVED",
+      "fingerprint": "eb3ad00208b506f4c0e05098ce808da517816373",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Georgia Democratic Rep. David Scott dies at 80",
+      "to_title": "Georgia Democratic Rep. David Scott dies at 80"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "871070b3244201049d68b6da0e301e8b72aa364a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Earth Day 2026: What it's like to live in a car-free town in America"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "MOVED",
+      "fingerprint": "77d0c3a033c649ffffff16e9362587d69c5e35c7",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Kalshi suspends 3 congressional candidates for betting on their own races",
+      "to_title": "Kalshi suspends 3 congressional candidates for betting on their own races"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "38d78525135c6f5a58d3d15558c736080d329378",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Iran has 'thousands' of missiles and drones left",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "64ba8beb2978b6ccd72d5da410ac737c73441182",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Seafarer trapped on the Strait of Hormuz: 'There is no safe place here'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-22T22:31:58.065Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "80f76ff2d70c15ce45298e0da6c5960094b27ab6",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Texas court interpreter detained by ICE says she's been 'treated like a criminal'",
       "to_title": null
     }
   ]
