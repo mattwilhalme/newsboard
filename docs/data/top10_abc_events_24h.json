@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-23T21:27:07.308Z",
+  "generatedAt": "2026-04-23T22:08:33.786Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T21:41:07.187Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b8b6d1da685b84910149c509cc3a8d7c04552fbe",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump says Iran's government is 'seriously fractured’ after praising its new leaders"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T21:41:07.187Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dfd2e1534c7a80e697895a5058c129f940b39494",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran war: Trump's pattern of setting unenforced deadlines",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-22T22:31:58.065Z",
@@ -1331,6 +1311,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "State-licensed medical marijuana reclassified as less dangerous drug",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "68901c8141302303df7482fac9851dd2ae2a1afe",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says no 'time pressure' to secure deal with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "387c17b997b1b3ee3092f721dbaf58f016a88071",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Teen charged in Synagogue attack plot to 'kill as many Jews as possible': Prosecutors"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "18307654e1abc3a377c7eb537f8bcf877f2a80de",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "1 dead, 5 suspects in custody in shooting at Mall of Louisiana: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "MOVED",
+      "fingerprint": "57da92e24363becf070b850c1b7ffb4f61879d41",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Michelle Rust disappearance: Husband charged with murder 24 years later",
+      "to_title": "Michelle Rust disappearance: Husband charged with murder 24 years later"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "MOVED",
+      "fingerprint": "7b4fb56e57f2ba0e5b8f8bf2d7028928f7d02d99",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Ex-police officer arrested in mass shooting plot: Investigators",
+      "to_title": "Ex-police officer arrested in mass shooting plot: Investigators"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "MOVED",
+      "fingerprint": "372d69e04cd31ce8d4d55f6da08a42b839af63e8",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Executions of protesters in Iran surge since start of war, human rights groups say",
+      "to_title": "Executions of protesters in Iran surge since start of war, human rights groups say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "01626a2baceb1c3490add3be67ce7595a5ce6cd3",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump orders Navy to 'shoot,' 'kill' boats putting mines in strait",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52aa073473a24ec7a90b2d28cb96bc3f0a5c7202",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "1 dead, multiple people hurt in Louisiana mall shooting, suspect at large: Officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T22:08:36.956Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b7850810a769a1601f7d493c08beb5138a8506d",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Nicole 'Snooki' Polizzi opens up about cervical cancer diagnosis",
       "to_title": null
     }
   ]
