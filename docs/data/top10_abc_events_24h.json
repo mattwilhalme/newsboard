@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-23T07:30:51.198Z",
+  "generatedAt": "2026-04-23T09:14:20.921Z",
   "hours": 24,
   "events": [
     {
@@ -971,6 +971,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 dead, at least 19 injured following chemical leak at industrial plant",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T09:14:24.087Z",
+      "event_type": "MOVED",
+      "fingerprint": "f15086c42c922dd292d790bfd60b7def27d6b31b",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Iran live updates: CENTCOM says 31 vessels turned back during blockade",
+      "to_title": "Iran live updates: CENTCOM says 31 vessels turned back during blockade"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T09:14:24.087Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f4c1ac803b4295b3b835e7b1abd2e84c05726ad0",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:What we know about why face-to-face talks with Iran fell through"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T09:14:24.087Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef5c0a81fab604c40795ce68e7a1a3815e056d3e",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says",
+      "to_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T09:14:24.087Z",
+      "event_type": "MOVED",
+      "fingerprint": "b8b6d1da685b84910149c509cc3a8d7c04552fbe",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Trump says Iran's government is 'seriously fractured’ after praising its new leaders",
+      "to_title": "Trump says Iran's government is 'seriously fractured’ after praising its new leaders"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T09:14:24.087Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aef249ca2805f391340cb2a8a54de7710d5eda77",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "2 trains collide in Denmark, leaving 4 people critically injured"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T09:14:24.087Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e078dd14549b8ce062b041a1bb3b54775c9edaa4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "What we know about why face-to-face talks with Iran fell through",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T09:14:24.087Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0aaaf24d5efdc4578eeccc252a9934697c1a36f7",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "2 trains collide in Denmark, prompting a massive emergency response",
       "to_title": null
     }
   ]
