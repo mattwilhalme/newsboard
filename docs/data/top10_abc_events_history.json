@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-23T22:08:33.786Z",
+  "generatedAt": "2026-04-23T23:04:48.383Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T10:29:38.539Z",
-      "event_type": "MOVED",
-      "fingerprint": "010683ff4c63ac8eb6c4704cccc88dc76744ff4d",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case",
-      "to_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T10:29:38.539Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "672e2124c2332df1f265bd6fe553d62b2275f211",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Houston airport has become a symbol for the shutdown's impacts on air travel",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T10:29:38.539Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0e7530974dfb32fa7a7a3170614a929b09fcdb60",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "American Airlines flight attendant reported missing in Colombia: Officials",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T11:15:13.073Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d8ee7a02ec75dfce84c8e8d168035cec2519cf40",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Senate passes bill to fund all parts of DHS except for ICE and parts of CBP"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T11:15:13.073Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dcdf81b3b61102b8b06d7a9ea64e26c6d399388f",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran live updates: Why Trump says he extended Iran deadline"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T11:15:13.073Z",
-      "event_type": "MOVED",
-      "fingerprint": "8bfeba366ded702540a33c2bfc29c818cf7e3b4c",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Trump administration to face questions about seizure of Fulton County ballots",
-      "to_title": "Trump administration to face questions about seizure of Fulton County ballots"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T11:15:13.073Z",
-      "event_type": "MOVED",
-      "fingerprint": "7586a631ab4f8b926fe14b1bce4d20331fd7083c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America",
-      "to_title": "'Public health crisis': Experts weigh the stakes of youth gambling in America"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T11:15:13.073Z",
-      "event_type": "MOVED",
-      "fingerprint": "2791b98e29b75c54919e6e291a2bd6f5ebf5719c",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Gilgo Beach suspect Rex Heuermann could change his plea to guilty: Sources",
-      "to_title": "Gilgo Beach suspect Rex Heuermann could change his plea to guilty: Sources"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-27T11:15:13.073Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Nicole 'Snooki' Polizzi opens up about cervical cancer diagnosis",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c565f5f2c5bf68037983f57fe110b761452c4e57",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bf801ea10b159d29ac98d323068cef8533904a19",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says expect higher gas prices 'for a little while'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5b05614bf6a9dccc99939ffcab0acf7a16f48767",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6551358c56138dac7834c80823123bfa32e0e680",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "1 dead, 5 suspects in custody in shooting at Mall of Louisiana: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c92a19f30a528f11dbe4ea3769ae12d5cd245db8",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "68901c8141302303df7482fac9851dd2ae2a1afe",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says no 'time pressure' to secure deal with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "387c17b997b1b3ee3092f721dbaf58f016a88071",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Teen charged in Synagogue attack plot to 'kill as many Jews as possible': Prosecutors",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T23:04:51.314Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "18307654e1abc3a377c7eb537f8bcf877f2a80de",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "1 dead, 5 suspects in custody in shooting at Mall of Louisiana: Officials",
       "to_title": null
     }
   ],
