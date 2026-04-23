@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-23T11:49:09.468Z",
+  "generatedAt": "2026-04-23T12:49:42.445Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T12:44:59.314Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "809bdfb4ca22694498a014063f311a2bb5f0303d",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "RFK Jr. says he won’t commit to backing CDC director's vaccine guidance"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T12:44:59.314Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "939c1b47d801adc11cd12affc1854f5a4abbd2ba",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "RFK Jr. says NIH cuts are 'painful,' defends firing of former CDC director",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-22T14:23:41.685Z",
@@ -1031,6 +1011,76 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "259e09609da7c50e0f24d672e5bb999b8d323836",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "State-licensed medical marijuana reclassified as less dangerous drug"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "c5ac3dbaf6547a61db908579ca069cc25428845d",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Lebanon 'no longer a pawn,' president says ahead of new Israel talks in Washington",
+      "to_title": "Lebanon 'no longer a pawn,' president says ahead of new Israel talks in Washington"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "3a1d370f237da30997ce4e03a85b55ec48ba627b",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Senate Republicans greenlight ICE and CBP budget blueprint",
+      "to_title": "Senate Republicans greenlight ICE and CBP budget blueprint"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "00fec8c30dcf5320aeff730eb31893f4c6d02546",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Retrial begins for former sheriff's deputy charged with murder of Casey Goodson, Jr.",
+      "to_title": "Retrial begins for former sheriff's deputy charged with murder of Casey Goodson, Jr."
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef5c0a81fab604c40795ce68e7a1a3815e056d3e",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says",
+      "to_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "2a76b489f18bef026f5251073f5b3e8667b3c8b4",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dog walker's discovery of skull leads to remains of 3 young children, police say",
+      "to_title": "Dog walker's discovery of skull leads to remains of 3 young children, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2458f0897b89e4168bd72f992f28bf01442e7330",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump administration may send Afghans who aided US forces to Congo",
       "to_title": null
     }
   ]

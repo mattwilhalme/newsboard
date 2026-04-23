@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-23T11:49:09.468Z",
+  "generatedAt": "2026-04-23T12:49:42.445Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T19:41:59.345Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d9b7e3791948e4e5bfa40b0af73848fa43639ac5",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "With some 2,000 ships stranded, Iran claims it's easing grip on Strait of Hormuz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T19:41:59.345Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2095495a14d0e990be2d7a02fe95d57511bb7f55",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Wind power will continue to grow, despite Trump's attempts to halt it: Experts",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T20:50:54.792Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "73ac994df0a89070a03a89b930995ef5577ee436",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump extends deadline to make deal with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T20:50:54.792Z",
-      "event_type": "MOVED",
-      "fingerprint": "010683ff4c63ac8eb6c4704cccc88dc76744ff4d",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case",
-      "to_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T20:50:54.792Z",
-      "event_type": "MOVED",
-      "fingerprint": "e7f38373003ee72ee0d8bc42884c3460359059b1",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her",
-      "to_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T20:50:54.792Z",
-      "event_type": "MOVED",
-      "fingerprint": "c5a5f79ca56bee8e5bed298700337d8fa69a122e",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Man arrested in 1990 'Lovers' Lane' cold case murders: police",
-      "to_title": "Man arrested in 1990 'Lovers' Lane' cold case murders: police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-26T20:50:54.792Z",
-      "event_type": "MOVED",
-      "fingerprint": "bae71d1943b8819648ae5c6b835eeaa503dee276",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "Dad’s social media plea to save his son’s life goes viral",
-      "to_title": "Dad’s social media plea to save his son’s life goes viral"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-26T20:50:54.792Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "259e09609da7c50e0f24d672e5bb999b8d323836",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "State-licensed medical marijuana reclassified as less dangerous drug"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "c5ac3dbaf6547a61db908579ca069cc25428845d",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Lebanon 'no longer a pawn,' president says ahead of new Israel talks in Washington",
+      "to_title": "Lebanon 'no longer a pawn,' president says ahead of new Israel talks in Washington"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "3a1d370f237da30997ce4e03a85b55ec48ba627b",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Senate Republicans greenlight ICE and CBP budget blueprint",
+      "to_title": "Senate Republicans greenlight ICE and CBP budget blueprint"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "00fec8c30dcf5320aeff730eb31893f4c6d02546",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Retrial begins for former sheriff's deputy charged with murder of Casey Goodson, Jr.",
+      "to_title": "Retrial begins for former sheriff's deputy charged with murder of Casey Goodson, Jr."
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef5c0a81fab604c40795ce68e7a1a3815e056d3e",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says",
+      "to_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "MOVED",
+      "fingerprint": "2a76b489f18bef026f5251073f5b3e8667b3c8b4",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dog walker's discovery of skull leads to remains of 3 young children, police say",
+      "to_title": "Dog walker's discovery of skull leads to remains of 3 young children, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T12:49:45.525Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2458f0897b89e4168bd72f992f28bf01442e7330",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump administration may send Afghans who aided US forces to Congo",
       "to_title": null
     }
   ],
