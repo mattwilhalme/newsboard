@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-23T05:57:18.711Z",
+  "generatedAt": "2026-04-23T07:30:51.198Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T07:17:52.468Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6a5f90ddbc5018b25648506781cae8da5ecc4ec0",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says Iran is 'starving for cash' amid US blockade"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T07:17:52.468Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "80686775dc031ede13f981ac042ffe3404be3324",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump announces he's extending ceasefire indefinitely",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-22T10:24:30.389Z",
@@ -901,6 +881,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Baby girl found abandoned in stroller in Times Square, search underway for father",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f15086c42c922dd292d790bfd60b7def27d6b31b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: CENTCOM says 31 vessels turned back during blockade"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "14d58fb36ec5451915c6e404a6d1d531b67819e5",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "D4vd murder case: Teen's cause of death released in medical examiner report"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0aaaf24d5efdc4578eeccc252a9934697c1a36f7",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "2 trains collide in Denmark, prompting a massive emergency response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "MOVED",
+      "fingerprint": "0a3271e5844abfeddf33c860bd46bd06d77fa59d",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says",
+      "to_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ca5f6486c3be449c3503bfe55b47f66789a5fd8d",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "MrBeast's company sued over alleged sexual harassment, wrongful termination"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d60696e42cb7434c250fb1173f204c47aa35bf82",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran has 'thousands' of missiles and drones left",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eb3ad00208b506f4c0e05098ce808da517816373",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Georgia Democratic Rep. David Scott dies at 80",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "871070b3244201049d68b6da0e301e8b72aa364a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Earth Day 2026: What it's like to live in a car-free town in America",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-23T07:30:54.293Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "54f474c4f2bdb9c5389afea9272c8cb65f2de570",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "2 dead, at least 19 injured following chemical leak at industrial plant",
       "to_title": null
     }
   ]
