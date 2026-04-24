@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-24T21:05:07.270Z",
+  "generatedAt": "2026-04-24T21:58:40.938Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T03:43:32.050Z",
-      "event_type": "MOVED",
-      "fingerprint": "4f25c3715dc7a03bad072cf408c353270dab322c",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "2 students on school bus killed in crash during field trip: Authorities",
-      "to_title": "2 students on school bus killed in crash during field trip: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T03:43:32.050Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dadd70517bd0da24a23931b3d96168de443353e4",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T03:43:32.050Z",
-      "event_type": "MOVED",
-      "fingerprint": "d77da4b3678bf2642d74369f8b0998c9cc3e4415",
-      "from_rank": 5,
-      "to_rank": 10,
-      "from_title": "Henry Lee, famed forensic scientist who testified in the OJ Simpson trial, dies at 87",
-      "to_title": "Henry Lee, famed forensic scientist who testified in the OJ Simpson trial, dies at 87"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T03:43:32.050Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "eab1e04d1f7d520214fda8dfcc166a58dd2790f5",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "House Republicans reject Senate DHS funding bill, Trump signs memo to pay TSA workers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T03:43:32.050Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "69efaf85329713636236bf63cbbf07aee3cf1d31",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Dow closes down nearly 800 points as Iran war hits one-month mark",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T03:43:32.050Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5acf5eba83de3c485b18bffea2307e9e46354f98",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "3 killed, 2 injured in Hawaii helicopter tour crash",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T05:14:42.960Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
-      "from_rank": 4,
-      "to_rank": 1,
-      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
-      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T05:14:42.960Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "28c163c8d9d6446d9bd8548e1831e3f918ce4501",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: More than 300 American troops wounded in Iran war"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T05:14:42.960Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DOJ dropping criminal probe of Fed Chair Powell",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aa6949eb4704829d046ff9b8dc6055bd9d7f75ff",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Who is running Iran right now? Trump, security officials offer different accounts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4342d359325604058e2d5687723e65a9ce138d2e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "MOVED",
+      "fingerprint": "aae86f2e7f02942180b4ba914d90f771d9864248",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city",
+      "to_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "MOVED",
+      "fingerprint": "8c7234390b46bebca6ecf04b725a421f46a4652b",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "How Michael Jackson's son felt seeing his cousin play the pop legend",
+      "to_title": "How Michael Jackson's son felt seeing his cousin play the pop legend"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3e58cd4603bf1f4632d0b4fecc21fbac1794a594",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "68eb6ebcfa32856727c21f90d6b97f114955c130",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f2f2ab9f025c1cd9c54e0b7a3c3be84ddda4b161",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Who is running Iran right now? Trump, security officials offer different accounts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T21:58:43.971Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a5f6fbe81a9ca1facb62009c6fb8569f5ce2390d",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "17-year-old girl killed in shooting at Louisiana mall, 17-year-old suspect in custody",
       "to_title": null
     }
   ],
