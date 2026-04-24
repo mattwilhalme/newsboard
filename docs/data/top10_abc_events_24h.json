@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-24T19:30:29.417Z",
+  "generatedAt": "2026-04-24T20:09:43.072Z",
   "hours": 24,
   "events": [
     {
@@ -1171,6 +1171,96 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Person linked to missing USF doctoral students in custody: Sheriff's office",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c399ad2ac8c27633ca96b17acb8e061a3ab36461",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "17-year-old girl identified as victim killed in shooting at Mall of Louisiana"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "MOVED",
+      "fingerprint": "aae86f2e7f02942180b4ba914d90f771d9864248",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city",
+      "to_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c06c705ae39b05cd683653f58e052b16afb193e9",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Prince Jackson discusses his father's legacy and highly anticipated biopic 'Michael'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "MOVED",
+      "fingerprint": "042e452073bbbf22c3f6a5d13742117b14f18706",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Ex-assistant to fired Michigan coach speaks out",
+      "to_title": "Ex-assistant to fired Michigan coach speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "MOVED",
+      "fingerprint": "54032696a3eeec4423af9c7fdea74a7a31022eae",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly",
+      "to_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "34f7cc8f2ab6f6508d7be4cb231d32bad71e8352",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "DOJ dropping criminal probe of Fed Chair Powell"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bb6bc761b5aa661fb0594e5b7713486f6aca92ed",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "DOJ dropping criminal probe of Fed Chair Jerome Powell amid pressure from senators",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "af4e6e8d8780db970be82d3dc4f2ce7b044ef120",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T20:09:46.196Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8f266aec881735df92e64060c138232c05162fd8",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Firefighters brace for 'dynamic' wildfire changes",
       "to_title": null
     }
   ]
