@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-24T17:38:34.684Z",
+  "generatedAt": "2026-04-24T18:28:25.590Z",
   "hours": 24,
   "events": [
     {
@@ -1191,6 +1191,66 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "FDA issues vouchers to help fast track review of potential psychedelic medications",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T18:28:28.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "54032696a3eeec4423af9c7fdea74a7a31022eae",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly",
+      "to_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T18:28:28.589Z",
+      "event_type": "MOVED",
+      "fingerprint": "af4e6e8d8780db970be82d3dc4f2ce7b044ef120",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'",
+      "to_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T18:28:28.589Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "831f15d8b153772244cb638c394d12d9132e2a63",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "What it really costs to raise a child in 2026"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T18:28:28.589Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8f266aec881735df92e64060c138232c05162fd8",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Firefighters brace for 'dynamic' wildfire changes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T18:28:28.589Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cdbc390328bde22d000d7537beaa1b8e2278c969",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Firefighters brace for 'dynamic' changes as Georgia wildfires continue to spread",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T18:28:28.589Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dcf712fdfb6bf2f68f3f8c5626e68ba4163a97a3",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Soldier who bet on Maduro removal appears in court",
       "to_title": null
     }
   ]
