@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-24T02:39:07.132Z",
+  "generatedAt": "2026-04-24T05:24:28.780Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T11:58:59.313Z",
-      "event_type": "MOVED",
-      "fingerprint": "e7f38373003ee72ee0d8bc42884c3460359059b1",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her",
-      "to_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T11:58:59.313Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "010683ff4c63ac8eb6c4704cccc88dc76744ff4d",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Ousted Venezuelan President Maduro returns to court, judge says he won't dismiss case",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T13:07:13.120Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bdcffc31f1016642b461930ead5ac1603581c17a",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Russian man jailed in UK for assault witnessed on video by Barron Trump"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T13:07:13.120Z",
-      "event_type": "MOVED",
-      "fingerprint": "9cbb55d1e45fa0b429865d6243cbce06fa73032c",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Trump's signature will be added to US currency, Treasury says",
-      "to_title": "Trump's signature will be added to US currency, Treasury says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-27T13:07:13.120Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Why expected No. 1 pick Fernando Mendoza won't be at the NFL Draft",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T05:24:31.797Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf801ea10b159d29ac98d323068cef8533904a19",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Iran live updates: Trump says expect higher gas prices 'for a little while'",
+      "to_title": "Iran live updates: Trump says expect higher gas prices 'for a little while'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T05:24:31.797Z",
+      "event_type": "MOVED",
+      "fingerprint": "c565f5f2c5bf68037983f57fe110b761452c4e57",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal",
+      "to_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T05:24:31.797Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a4be34914fe9f571ec70b1c886c598550744e92b",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "China to send giant pandas to Atlanta again"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T05:24:31.797Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ae2638e49c9959575772f54cc1061bb5ebe44c3d",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Warner Bros. shareholders approve Paramount bid",
       "to_title": null
     }
   ],
