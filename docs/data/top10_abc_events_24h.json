@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-24T15:45:01.097Z",
+  "generatedAt": "2026-04-24T16:41:50.723Z",
   "hours": 24,
   "events": [
     {
@@ -1141,6 +1141,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Ex-officer arrested in mass shooting plot: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cdbc390328bde22d000d7537beaa1b8e2278c969",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Firefighters brace for 'dynamic' changes as Georgia wildfires continue to spread"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "54032696a3eeec4423af9c7fdea74a7a31022eae",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "MOVED",
+      "fingerprint": "c24ff608eb4144a64fdd7436f6c90dc58d41560e",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "FDA issues vouchers to help fast track review of potential psychedelic medications",
+      "to_title": "FDA issues vouchers to help fast track review of potential psychedelic medications"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "MOVED",
+      "fingerprint": "af4e6e8d8780db970be82d3dc4f2ce7b044ef120",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'",
+      "to_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dcf712fdfb6bf2f68f3f8c5626e68ba4163a97a3",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Soldier who bet on Maduro removal appears in court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5b05614bf6a9dccc99939ffcab0acf7a16f48767",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "11d0c30fe482aecda240c722f94f3fed26c8a41a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "A massive, unstable ice block stalls Everest climbers at base camp",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T16:41:53.610Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "566eb10fba5140fff87a97332fe91d6d2fd8e0e7",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "DOJ arrests soldier who bet on Maduro's removal",
       "to_title": null
     }
   ]
