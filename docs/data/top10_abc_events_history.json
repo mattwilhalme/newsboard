@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-24T07:16:19.335Z",
+  "generatedAt": "2026-04-24T09:14:30.095Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T13:07:13.120Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e7f38373003ee72ee0d8bc42884c3460359059b1",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Too much to bear': Savannah Guthrie questions if mom's abduction is because of her",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T14:18:17.881Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "28c163c8d9d6446d9bd8548e1831e3f918ce4501",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran live updates: More than 300 American troops wounded in Iran war"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-27T14:18:17.881Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Warner Bros. shareholders approve Paramount bid",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T09:14:33.374Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "11d0c30fe482aecda240c722f94f3fed26c8a41a",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "A massive, unstable ice block stalls Everest climbers at base camp"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T09:14:33.374Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c4cdb8dbcc8f6e7ed7836ad7cbf08c590198a9b7",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Prince Louis jumps off boat in new video celebrating 8th birthday",
       "to_title": null
     }
   ],
