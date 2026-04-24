@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-24T18:28:25.590Z",
+  "generatedAt": "2026-04-24T19:30:29.417Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T21:48:58.617Z",
-      "event_type": "MOVED",
-      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
-      "to_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T21:48:58.617Z",
-      "event_type": "MOVED",
-      "fingerprint": "1f72dd35aa401cc0168b5d73fb3f757a021649e9",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Firefighter speaks out after rescuers save woman from cliff above Pacific Ocean",
-      "to_title": "Firefighter speaks out after rescuers save woman from cliff above Pacific Ocean"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-27T21:48:58.617Z",
-      "event_type": "MOVED",
-      "fingerprint": "5acf5eba83de3c485b18bffea2307e9e46354f98",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "3 killed, 2 injured in Hawaii helicopter tour crash",
-      "to_title": "3 killed, 2 injured in Hawaii helicopter tour crash"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-27T21:48:58.617Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Soldier who bet on Maduro removal appears in court",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T19:30:32.270Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ceedb9b8559b3b636b7e7ce9b99871ea9713ed29",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "1 missing doctoral student found dead, other still missing: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T19:30:32.270Z",
+      "event_type": "MOVED",
+      "fingerprint": "596edd6df267ad9f59df76867fb346b6dd5a0dac",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement",
+      "to_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T19:30:32.270Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a9e4f096b76bcbc659a711ec43f01973b357b37e",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Person linked to missing USF doctoral students in custody: Sheriff's office",
       "to_title": null
     }
   ],
