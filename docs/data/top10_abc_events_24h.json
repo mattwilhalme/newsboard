@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-24T11:48:24.581Z",
+  "generatedAt": "2026-04-24T12:48:56.398Z",
   "hours": 24,
   "events": [
     {
@@ -1021,6 +1021,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "China to send giant pandas to Atlanta again",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a50bb652c7947b9176802f23ad22a4babc570539",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Hegseth says 'blockade is growing and going global'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "MOVED",
+      "fingerprint": "042e452073bbbf22c3f6a5d13742117b14f18706",
+      "from_rank": 6,
+      "to_rank": 2,
+      "from_title": "Ex-assistant to fired Michigan coach speaks out",
+      "to_title": "Ex-assistant to fired Michigan coach speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2743aa0cdd53c95950f93d7b149df09fd914fddb",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Tornado rips through northwest Oklahoma amid line of severe storms across Plains"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "MOVED",
+      "fingerprint": "54b9a998f2f34f2b59c36af1c05e5b08c0037aa5",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "D4vd murder case: A timeline of the investigation into 14-year-old girl's death",
+      "to_title": "D4vd murder case: A timeline of the investigation into 14-year-old girl's death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "MOVED",
+      "fingerprint": "c565f5f2c5bf68037983f57fe110b761452c4e57",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal",
+      "to_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "MOVED",
+      "fingerprint": "5b05614bf6a9dccc99939ffcab0acf7a16f48767",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'",
+      "to_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "MOVED",
+      "fingerprint": "6551358c56138dac7834c80823123bfa32e0e680",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "1 dead, 5 suspects in custody in shooting at Mall of Louisiana: Police",
+      "to_title": "1 dead, 5 suspects in custody in shooting at Mall of Louisiana: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bf801ea10b159d29ac98d323068cef8533904a19",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says expect higher gas prices 'for a little while'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-24T12:48:59.318Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "57da92e24363becf070b850c1b7ffb4f61879d41",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Michelle Rust disappearance: Husband charged with murder 24 years later",
       "to_title": null
     }
   ]
