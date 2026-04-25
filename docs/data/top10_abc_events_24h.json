@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-25T16:03:40.774Z",
+  "generatedAt": "2026-04-25T16:58:30.888Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cdbc390328bde22d000d7537beaa1b8e2278c969",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Firefighters brace for 'dynamic' changes as Georgia wildfires continue to spread"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "54032696a3eeec4423af9c7fdea74a7a31022eae",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "MOVED",
-      "fingerprint": "c24ff608eb4144a64fdd7436f6c90dc58d41560e",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "FDA issues vouchers to help fast track review of potential psychedelic medications",
-      "to_title": "FDA issues vouchers to help fast track review of potential psychedelic medications"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "MOVED",
-      "fingerprint": "af4e6e8d8780db970be82d3dc4f2ce7b044ef120",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'",
-      "to_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dcf712fdfb6bf2f68f3f8c5626e68ba4163a97a3",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Soldier who bet on Maduro removal appears in court"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5b05614bf6a9dccc99939ffcab0acf7a16f48767",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "11d0c30fe482aecda240c722f94f3fed26c8a41a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "A massive, unstable ice block stalls Everest climbers at base camp",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "566eb10fba5140fff87a97332fe91d6d2fd8e0e7",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "DOJ arrests soldier who bet on Maduro's removal",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-24T17:38:37.853Z",
@@ -711,6 +631,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Ex-assistant to fired Michigan coach speaks out",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:58:33.911Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6d739c733dd1b79d824b19a08aee0a1383f206cd",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingPresident Trump cancels Witkoff, Kushner trip to Islamabad for peace talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:58:33.911Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4508d64676a123b5301b626c972b258384373810",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Almost 50 million Americans on alert for severe weather outbreak in Plains, Midwest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:58:33.911Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "68eb6ebcfa32856727c21f90d6b97f114955c130",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:58:33.911Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aae86f2e7f02942180b4ba914d90f771d9864248",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city",
       "to_title": null
     }
   ]
