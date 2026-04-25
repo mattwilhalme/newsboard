@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-25T18:09:55.234Z",
+  "generatedAt": "2026-04-25T19:12:00.516Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T16:48:26.465Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Police thwart 'terror attack' in Paris, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T16:48:26.465Z",
-      "event_type": "MOVED",
-      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
-      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T16:48:26.465Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T17:50:12.912Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ecdbec84cdd9bb413579c204d047f85c96f70342",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "'No Kings' protesters rally in cities, towns across the country"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T17:50:12.912Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
-      "from_rank": 5,
-      "to_rank": 2,
-      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
-      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T17:50:12.912Z",
-      "event_type": "MOVED",
-      "fingerprint": "a8437aad25236adf40b9f7922907bcdf782792af",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Israel says it killed 2 senior Hezbollah officials",
-      "to_title": "Iran live updates: Israel says it killed 2 senior Hezbollah officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T17:50:12.912Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5fbf7c8d37f102afdb87be29701e0764e15479e4",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Persistent heat, fire danger possible this weekend for 47 million Americans"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T17:50:12.912Z",
-      "event_type": "MOVED",
-      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
-      "from_rank": 7,
-      "to_rank": 5,
-      "from_title": "Police thwart 'terror attack' in Paris, officials say",
-      "to_title": "Police thwart 'terror attack' in Paris, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T17:50:12.912Z",
-      "event_type": "MOVED",
-      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
-      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T17:50:12.912Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Georgia wildfires: New details revealed in possible causes of blazes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "21cac8bf5fec25a7091042f5bfc677ebaa9854f4",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "2 police officers shot at Chicago hospital: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "MOVED",
+      "fingerprint": "60dad7c943dd76091fe00d4d6f14feab42da0f06",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Judge orders Trump, DOJ to justify why president's $10B IRS lawsuit should proceed",
+      "to_title": "Judge orders Trump, DOJ to justify why president's $10B IRS lawsuit should proceed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "MOVED",
+      "fingerprint": "596edd6df267ad9f59df76867fb346b6dd5a0dac",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement",
+      "to_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "MOVED",
+      "fingerprint": "cb7ff297852dd301f62e71f77953cbd785abf5a6",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Americans are unhappy about the economy and reeling from high prices: Polls",
+      "to_title": "Americans are unhappy about the economy and reeling from high prices: Polls"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2d3f516e1a4e0867ccce2b51336fd0286c969eed",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Almost 50 million on alert for severe weather outbreak in parts of US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "MOVED",
+      "fingerprint": "8c7234390b46bebca6ecf04b725a421f46a4652b",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "How Michael Jackson's son felt seeing his cousin play the pop legend",
+      "to_title": "How Michael Jackson's son felt seeing his cousin play the pop legend"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "MOVED",
+      "fingerprint": "3e58cd4603bf1f4632d0b4fecc21fbac1794a594",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance",
+      "to_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4508d64676a123b5301b626c972b258384373810",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Almost 50 million Americans on alert for severe weather outbreak in Plains, Midwest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T19:12:03.567Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "54032696a3eeec4423af9c7fdea74a7a31022eae",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly",
       "to_title": null
     }
   ],
