@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-25T21:53:02.959Z",
+  "generatedAt": "2026-04-25T22:23:15.451Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T17:50:12.912Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b3fc08761059b8b00111b6eea3fc4aea30149866",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Persistent heat, dangerous wildfire conditions could impact these parts of the US",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T21:01:30.998Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ccd1e4876a45381e31d24aab12cafb9581078107",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Iran live updates: 9 paramedics killed Saturday in Israeli strikes on Lebanon"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T21:01:30.998Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Almost 50 million on alert for severe weather outbreak in parts of US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T22:23:18.806Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f9944d5cf1625413b6dee4ebc479d338f53f05c6",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T22:23:18.806Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "21cac8bf5fec25a7091042f5bfc677ebaa9854f4",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "2 police officers shot at Chicago hospital: Officials",
       "to_title": null
     }
   ],

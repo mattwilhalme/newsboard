@@ -1,88 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-25T21:53:02.959Z",
+  "generatedAt": "2026-04-25T22:23:15.451Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "aa6949eb4704829d046ff9b8dc6055bd9d7f75ff",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Who is running Iran right now? Trump, security officials offer different accounts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4342d359325604058e2d5687723e65a9ce138d2e",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "MOVED",
-      "fingerprint": "aae86f2e7f02942180b4ba914d90f771d9864248",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city",
-      "to_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "MOVED",
-      "fingerprint": "8c7234390b46bebca6ecf04b725a421f46a4652b",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "How Michael Jackson's son felt seeing his cousin play the pop legend",
-      "to_title": "How Michael Jackson's son felt seeing his cousin play the pop legend"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3e58cd4603bf1f4632d0b4fecc21fbac1794a594",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "68eb6ebcfa32856727c21f90d6b97f114955c130",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f2f2ab9f025c1cd9c54e0b7a3c3be84ddda4b161",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Who is running Iran right now? Trump, security officials offer different accounts",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T21:58:43.971Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a5f6fbe81a9ca1facb62009c6fb8569f5ce2390d",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "17-year-old girl killed in shooting at Louisiana mall, 17-year-old suspect in custody",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-25T03:22:21.918Z",
@@ -511,6 +431,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Almost 50 million on alert for severe weather outbreak in parts of US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T22:23:18.806Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f9944d5cf1625413b6dee4ebc479d338f53f05c6",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T22:23:18.806Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "21cac8bf5fec25a7091042f5bfc677ebaa9854f4",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "2 police officers shot at Chicago hospital: Officials",
       "to_title": null
     }
   ]
