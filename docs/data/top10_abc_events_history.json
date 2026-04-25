@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-25T15:26:14.041Z",
+  "generatedAt": "2026-04-25T16:03:40.774Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T09:53:24.929Z",
-      "event_type": "MOVED",
-      "fingerprint": "f0fd23f72e97424917455400a995d86f2d3434b1",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Judge dismisses charges against ex-Louisville police officers in Breonna Taylor case",
-      "to_title": "Judge dismisses charges against ex-Louisville police officers in Breonna Taylor case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T09:53:24.929Z",
-      "event_type": "MOVED",
-      "fingerprint": "dccbcf4580936fd3143aeba1f9c809dde35a92d2",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails",
-      "to_title": "Iranian hackers allegedly breached FBI Director Patel’s personal emails"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T09:53:24.929Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "1 missing doctoral student found dead, other still missing: Sheriff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:03:43.848Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4e3156970b5ab952ab5dff914464de1b465b75f5",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Georgia wildfires: New details revealed in possible causes of blazes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:03:43.848Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "042e452073bbbf22c3f6a5d13742117b14f18706",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Ex-assistant to fired Michigan coach speaks out",
       "to_title": null
     }
   ],

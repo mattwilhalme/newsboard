@@ -1,108 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-25T15:26:14.041Z",
+  "generatedAt": "2026-04-25T16:03:40.774Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bb6bc761b5aa661fb0594e5b7713486f6aca92ed",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "DOJ dropping criminal probe of Fed Chair Jerome Powell amid pressure from senators"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "596edd6df267ad9f59df76867fb346b6dd5a0dac",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "MOVED",
-      "fingerprint": "042e452073bbbf22c3f6a5d13742117b14f18706",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "Ex-assistant to fired Michigan coach speaks out",
-      "to_title": "Ex-assistant to fired Michigan coach speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "MOVED",
-      "fingerprint": "5b05614bf6a9dccc99939ffcab0acf7a16f48767",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'",
-      "to_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "af4e6e8d8780db970be82d3dc4f2ce7b044ef120",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "566eb10fba5140fff87a97332fe91d6d2fd8e0e7",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "DOJ arrests soldier who bet on Maduro's removal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f93d99547ddb239a584fffd1c553b187f4e9b517",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "DOJ expected to drop criminal probe of fed chair amid pressure from senators: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "77d2c0dc78a03fa1952e0b692aab2c34cf993c13",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Rob Reiner's son Jake Reiner speaks out: 'My living nightmare'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c565f5f2c5bf68037983f57fe110b761452c4e57",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T15:45:04.395Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a031c2b7ad9976c0370c8eb264cfee06113fefee",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Ex-officer arrested in mass shooting plot: Police",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-24T16:41:53.610Z",
@@ -791,6 +691,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "1 missing doctoral student found dead, other still missing: Sheriff",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:03:43.848Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4e3156970b5ab952ab5dff914464de1b465b75f5",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Georgia wildfires: New details revealed in possible causes of blazes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T16:03:43.848Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "042e452073bbbf22c3f6a5d13742117b14f18706",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Ex-assistant to fired Michigan coach speaks out",
       "to_title": null
     }
   ]
