@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-25T11:14:21.288Z",
+  "generatedAt": "2026-04-25T11:56:55.794Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T08:33:28.304Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "142d0d0dfe319233a561b9f25583617b7f914b65",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Dow closes down 790 points as Iran war continues",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T09:53:24.929Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4e1cfb1cd60959f3bd0bc41a9fff59df30533a76",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Where things stand 1 month into the war with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T09:53:24.929Z",
-      "event_type": "MOVED",
-      "fingerprint": "ac3ea9f7e3d606c32a1895d87e0cf52bbb17bfb6",
-      "from_rank": 7,
-      "to_rank": 3,
-      "from_title": "Using US ground troops against Iran could prove very costly, retired generals say",
-      "to_title": "Using US ground troops against Iran could prove very costly, retired generals say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-28T09:53:24.929Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
-      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-28T09:53:24.929Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "What it really costs to raise a child in 2026",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "68eb6ebcfa32856727c21f90d6b97f114955c130",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f2f2ab9f025c1cd9c54e0b7a3c3be84ddda4b161",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Who is running Iran right now? Trump, security officials offer different accounts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa6949eb4704829d046ff9b8dc6055bd9d7f75ff",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Who is running Iran right now? Trump, security officials offer different accounts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4342d359325604058e2d5687723e65a9ce138d2e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks",
       "to_title": null
     }
   ],

@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-25T11:14:21.288Z",
+  "generatedAt": "2026-04-25T11:56:55.794Z",
   "hours": 24,
   "events": [
     {
@@ -931,6 +931,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "What it really costs to raise a child in 2026",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "68eb6ebcfa32856727c21f90d6b97f114955c130",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f2f2ab9f025c1cd9c54e0b7a3c3be84ddda4b161",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Who is running Iran right now? Trump, security officials offer different accounts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa6949eb4704829d046ff9b8dc6055bd9d7f75ff",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Who is running Iran right now? Trump, security officials offer different accounts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-25T11:56:58.810Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4342d359325604058e2d5687723e65a9ce138d2e",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Witkoff, Kushner to travel to Islamabad Saturday for peace talks",
       "to_title": null
     }
   ]
