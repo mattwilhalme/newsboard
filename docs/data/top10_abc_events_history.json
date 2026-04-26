@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-26T06:28:42.009Z",
+  "generatedAt": "2026-04-26T08:02:45.942Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T10:50:20.621Z",
-      "event_type": "MOVED",
-      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
-      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T10:50:20.621Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dadd70517bd0da24a23931b3d96168de443353e4",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Authorities ID 2 of 3 people killed in Hawaii helicopter tour crash",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T11:18:16.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T11:18:16.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7b626f57d3679db7cf7960cbc161f84fd165445a",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Pope Leo rejects claims that God justifies war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T11:18:16.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5deb15470a95a7a3bb19ad0478834ecb1a0a7e89",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Record number of lawmakers retiring from Congress ahead of midterms",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T11:18:16.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "63a891e9ac7b9b449ec5a6350701417f927dcedd",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "UFC brings cage-match bout to the White House",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T11:47:41.790Z",
-      "event_type": "MOVED",
-      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
-      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T11:47:41.790Z",
-      "event_type": "MOVED",
-      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
-      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7d553a8f24b55016ebb8b915317e5691e9904e3e",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Scalise: ‘We’re having a lot of conversations’ on possibility of ground troops"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6084222d42ae021f4c3445ee18882a4a762f4567",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: IDF launches 'widespread' strikes in Tehran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "5d1584a6829b09dbc2ab934937fc5324cd201fcf",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Why a record number of Republicans are retiring ahead of the midterms",
-      "to_title": "Why a record number of Republicans are retiring ahead of the midterms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
-      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "3b4d3c2a06fb9e1d7514514003d893f94ae1e612",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate",
-      "to_title": "House passes short-term DHS funding bill; top Dem says 'dead on arrival' in Senate"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-29T14:44:49.517Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingTrump, first lady removed by security after incident at White House Correspondents' Association Dinner",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0d86c7c609ca99f624b3b5d1932b4cfb03608beb",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "WHCA dinner shooting live updates: Suspect armed with multiple guns and knives"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6fbf25ac3d10335dd667e1459b36c6c9d69170fa",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:'Absolute chaos': Gunman charges WH Correspondents' Dinner checkpoint"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ce3cda1e46d1c0d41f3710d7a7e5a4b476ed5125",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Iranian FM expected to return to Islamabad, travel to Russia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "MOVED",
+      "fingerprint": "f9944d5cf1625413b6dee4ebc479d338f53f05c6",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital",
+      "to_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "MOVED",
+      "fingerprint": "cb7ff297852dd301f62e71f77953cbd785abf5a6",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Americans are unhappy about the economy and reeling from high prices: Polls",
+      "to_title": "Americans are unhappy about the economy and reeling from high prices: Polls"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "MOVED",
+      "fingerprint": "1b22d6835eda09a8e8713e1ee42d64ea94327daf",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Roommate charged with murder of 2 USF doctoral students: Sheriff",
+      "to_title": "Roommate charged with murder of 2 USF doctoral students: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "MOVED",
+      "fingerprint": "60dad7c943dd76091fe00d4d6f14feab42da0f06",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Judge orders Trump, DOJ to justify why president's $10B IRS lawsuit should proceed",
+      "to_title": "Judge orders Trump, DOJ to justify why president's $10B IRS lawsuit should proceed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "MOVED",
+      "fingerprint": "596edd6df267ad9f59df76867fb346b6dd5a0dac",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement",
+      "to_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "MOVED",
+      "fingerprint": "8c7234390b46bebca6ecf04b725a421f46a4652b",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "How Michael Jackson's son felt seeing his cousin play the pop legend",
+      "to_title": "How Michael Jackson's son felt seeing his cousin play the pop legend"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "MOVED",
+      "fingerprint": "3e58cd4603bf1f4632d0b4fecc21fbac1794a594",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance",
+      "to_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a548193eac292c826f88f78b0436a6b8b7fd33e1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "'Absolute chaos': Gunman charges WH Correspondents' Dinner checkpoint",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e558220fbab46f9048eb6a771cc017b548a3b6ef",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump cancels Witkoff, Kushner trip to Islamabad for peace talks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T08:02:49.200Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ede177c6fa1d4d6c1148e1075e8ed6ee0712a28f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "27 million Americans on alert for severe weather",
       "to_title": null
     }
   ],
