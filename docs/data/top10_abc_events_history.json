@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-26T20:55:51.686Z",
+  "generatedAt": "2026-04-26T21:32:23.867Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "MOVED",
-      "fingerprint": "bdf5a6afdc7b537486d4e4de01521c353b47a3fd",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Escaping the Middle East: Inside the rush to evacuate",
-      "to_title": "Escaping the Middle East: Inside the rush to evacuate"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T15:42:30.030Z",
-      "event_type": "MOVED",
-      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
-      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-30T15:42:30.030Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "'Absolute chaos': Gunman charges WH correspondents' dinner checkpoint",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T21:32:26.587Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "47a7cbdd9336885863e093ca4f4573c1ab215e2d",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Iranian FM will meet with Putin in Russia, official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T21:32:26.587Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ce3cda1e46d1c0d41f3710d7a7e5a4b476ed5125",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iranian FM expected to return to Islamabad, travel to Russia",
       "to_title": null
     }
   ],
