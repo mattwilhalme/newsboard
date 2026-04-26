@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-26T15:26:10.472Z",
+  "generatedAt": "2026-04-26T16:04:51.071Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T21:51:11.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "f06c41b51cce08d0cbb75365d133dea94dbe196e",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Fire danger rises in the Plains and Rockies, while the Southwest bakes",
-      "to_title": "Fire danger rises in the Plains and Rockies, while the Southwest bakes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T21:51:11.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "977cf371c774a0073777e95c8bc39a0286eafd71",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "'No Kings' protests draw large crowds in cities, towns across US",
-      "to_title": "'No Kings' protests draw large crowds in cities, towns across US"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-29T21:51:11.639Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T16:04:54.178Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "382bec024c774819cd6448b20b090a5126052342",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "WHCA dinner shooting live updates: Suspect planned to target multiple people"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T16:04:54.178Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "653e35870eb7896467fa5e431511b02a1dd7a710",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "WHCA dinner shooting live updates: Suspect referenced targeting admin officials",
       "to_title": null
     }
   ],
