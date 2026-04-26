@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-26T10:07:29.189Z",
+  "generatedAt": "2026-04-26T11:02:06.774Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:07:17.714Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e83d9ad74b88b7357fdf7198f4a667e4bead9a7b",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Scalise on troops in Iran: 'A lot of conversations about what could happen next'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T15:07:17.714Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7d553a8f24b55016ebb8b915317e5691e9904e3e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Scalise: ‘We’re having a lot of conversations’ on possibility of ground troops",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-29T15:46:27.697Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T11:02:10.109Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "92c394cf3409e84c18ac57052b9c0c386404ad29",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Investigators working on scene after Arkansas State University shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T11:02:10.109Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "842e03de952ccacfe6cf29fcd3cc02da81d8fac2",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "1 injured in Arkansas State University shooting, campus says",
       "to_title": null
     }
   ],

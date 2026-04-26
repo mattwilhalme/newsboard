@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-26T10:07:29.189Z",
+  "generatedAt": "2026-04-26T11:02:06.774Z",
   "hours": 24,
   "events": [
     {
@@ -721,6 +721,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T11:02:10.109Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "92c394cf3409e84c18ac57052b9c0c386404ad29",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Investigators working on scene after Arkansas State University shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T11:02:10.109Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "842e03de952ccacfe6cf29fcd3cc02da81d8fac2",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "1 injured in Arkansas State University shooting, campus says",
       "to_title": null
     }
   ]
