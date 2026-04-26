@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-26T09:12:44.937Z",
+  "generatedAt": "2026-04-26T10:07:29.189Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fbf7c8d37f102afdb87be29701e0764e15479e4",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Persistent heat, fire danger possible this weekend for 47 million Americans",
-      "to_title": "Persistent heat, fire danger possible this weekend for 47 million Americans"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "255821cd7ac368332a743511b3e84bd3f8bbb5da",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Police thwart 'terror attack' in Paris, officials say",
-      "to_title": "Police thwart 'terror attack' in Paris, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "95e92e22808beee47820e10a8e909ebee2c2d2b0",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
-      "to_title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "a1682943dcfe012c0784e5a1045f3a40c5b1966c",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "UConn coach Auriemma rips NCAA over double-regional format in March Madness",
-      "to_title": "UConn coach Auriemma rips NCAA over double-regional format in March Madness"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "MOVED",
-      "fingerprint": "be075093c03ddf18ec0f1ec9db56a25ce36260ce",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder",
-      "to_title": "2nd wife's suspicions confirmed with ex-husband's arrest for murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4548145bd89302cc0d74f88ee1bad8e0ebbc7a83",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: IDF launches 'widespread' strikes in Tehran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-29T14:44:49.517Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7b626f57d3679db7cf7960cbc161f84fd165445a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Pope Leo rejects claims that God justifies war",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-29T15:07:17.714Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "27 million Americans on alert for severe weather",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T10:07:32.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "1b22d6835eda09a8e8713e1ee42d64ea94327daf",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Roommate charged with murder of 2 USF doctoral students: Sheriff",
+      "to_title": "Roommate charged with murder of 2 USF doctoral students: Sheriff"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T10:07:32.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "f9944d5cf1625413b6dee4ebc479d338f53f05c6",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital",
+      "to_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T10:07:32.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "cb7ff297852dd301f62e71f77953cbd785abf5a6",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Americans are unhappy about the economy and reeling from high prices: Polls",
+      "to_title": "Americans are unhappy about the economy and reeling from high prices: Polls"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T10:07:32.215Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "842e03de952ccacfe6cf29fcd3cc02da81d8fac2",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "1 injured in Arkansas State University shooting, campus says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T10:07:32.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "60dad7c943dd76091fe00d4d6f14feab42da0f06",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Judge orders Trump, DOJ to justify why president's $10B IRS lawsuit should proceed",
+      "to_title": "Judge orders Trump, DOJ to justify why president's $10B IRS lawsuit should proceed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T10:07:32.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "8c7234390b46bebca6ecf04b725a421f46a4652b",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "How Michael Jackson's son felt seeing his cousin play the pop legend",
+      "to_title": "How Michael Jackson's son felt seeing his cousin play the pop legend"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-26T10:07:32.215Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3e58cd4603bf1f4632d0b4fecc21fbac1794a594",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance",
       "to_title": null
     }
   ],
