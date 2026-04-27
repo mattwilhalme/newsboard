@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-27T11:17:25.350Z",
+  "generatedAt": "2026-04-27T12:55:46.402Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T20:25:51.224Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c1b0389fa72a43927fef161c09fb141343827149",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Police searching for child left unattended in running vehicle that was then stolen",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T20:25:51.224Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bdf5a6afdc7b537486d4e4de01521c353b47a3fd",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Escaping the Middle East: Inside the rush to evacuate",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T20:25:51.224Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f166c1ec9371147e5e74079c98e1235470ede70b",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Spain closes airspace to US planes involved in war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "MOVED",
-      "fingerprint": "aadf05bb51d9304e314ce440e1e95f1ed530881a",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "TSA officers receive their 1st paychecks in weeks",
-      "to_title": "TSA officers receive their 1st paychecks in weeks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c6a7bdc4bd634f98ea3761817178ac3efb6cec1b",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "MOVED",
-      "fingerprint": "a2fd84c3a28d6c47cc27bde102e15b77e6a29bba",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "15-year-old boy allegedly shoots teacher at his high school: Sheriff",
-      "to_title": "15-year-old boy allegedly shoots teacher at his high school: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "MOVED",
-      "fingerprint": "f056c22306efa90e26c1dfcbda94352332046da5",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace",
-      "to_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0f44443b6580c7bea6770fb15b9bb2dc87d213b4",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "'Gut punch': Why Wall Street is raising recession odds amid the Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "82a388b0e8f7a2db7af86c238d7cf34cc21ca790",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Celine Dion says she's returning to live concerts"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-30T21:08:55.516Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Inside the world’s biggest art heist: $500M of paintings stolen from Boston museum",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "21b1ed93871534040c9f9b8548ddd37578e0dae2",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "White House correspondents' dinner shooting suspect to be arraigned Monday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "MOVED",
+      "fingerprint": "9fb9232ecdb60fb7965372e6302e1bae60147207",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "Supreme Court debates 'geofence warrants' for cellphone data",
+      "to_title": "Supreme Court debates 'geofence warrants' for cellphone data"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f9944d5cf1625413b6dee4ebc479d338f53f05c6",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "MOVED",
+      "fingerprint": "5f3b91cccb73c0204d07e099c0f06102e705ee42",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "King Charles III, Queen Camilla state visit to proceed as planned after DC shooting",
+      "to_title": "King Charles III, Queen Camilla state visit to proceed as planned after DC shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "MOVED",
+      "fingerprint": "060b0ca799d26773caa14111243815974c28e593",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Prediction markets under pressure to stop insider trading",
+      "to_title": "Prediction markets under pressure to stop insider trading"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "89246b20aa58c3b41fdf3a84df4bbc6ed25c2b09",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Lake Superior wolves thrive as packs hunt moose"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "26efeafe35a6cb03bcb6c46ac8420753f321c0c0",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "WHCA dinner shooting live updates: Suspect descended 10 flights with duffel: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "999528bad7b39bb17036ec7e86a9bb4518ae6bfe",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "What we know about the suspect in the White House correspondents' dinner shooting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T12:55:49.460Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7fcd53116c451538163a7ae307ca0d6183e7ba1c",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "50 million people on alert for more severe weather in the Plains and Midwest",
       "to_title": null
     }
   ],
