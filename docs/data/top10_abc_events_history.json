@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-27T12:55:46.402Z",
+  "generatedAt": "2026-04-27T16:28:36.492Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7b6d476b62ac5a7446a9c8297fce1f715aaf6053",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingMichigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "96a44aa2ef7eb055e3139257bb7b1d9654906bab",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Trump says US talking to 'more reasonable' Iranian regime, Rubio declines to say who",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:08:55.516Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "27a985501dcdc0248fda68e180457c95dc458cbd",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Celine Dion announces Paris comeback concerts amid stiff-person syndrome battle",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bbd6a9718767f35bad66370050faa41efdc4fd76",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump urging Congress to cut recess short to end DHS shutdown, White House says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c6d03d98d217e8cdff2f45d64bce24f3fa4cf316",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:TSA officers receive their 1st paychecks in weeks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "c6a7bdc4bd634f98ea3761817178ac3efb6cec1b",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI",
-      "to_title": "Michigan synagogue attacker committed 'Hezbollah-inspired act of terrorism': FBI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "a2fd84c3a28d6c47cc27bde102e15b77e6a29bba",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "15-year-old boy allegedly shoots teacher at his high school: Sheriff",
-      "to_title": "15-year-old boy allegedly shoots teacher at his high school: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "f056c22306efa90e26c1dfcbda94352332046da5",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace",
-      "to_title": "Iran live updates: NATO intercepts Iranian missiles in Turkish airspace"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "0f44443b6580c7bea6770fb15b9bb2dc87d213b4",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "'Gut punch': Why Wall Street is raising recession odds amid the Iran war",
-      "to_title": "'Gut punch': Why Wall Street is raising recession odds amid the Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "82a388b0e8f7a2db7af86c238d7cf34cc21ca790",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Celine Dion says she's returning to live concerts",
-      "to_title": "Celine Dion says she's returning to live concerts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "cad8337a459f80e8ae29603f8c8a51d783b9c55a",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration",
-      "to_title": "Deaths of detainees in ICE custody surge under 2nd Trump administration"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "MOVED",
-      "fingerprint": "ae500a6f7d8df234309632551a0e78146781784c",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Air Canada CEO will retire this year after English-only crash message criticized",
-      "to_title": "Air Canada CEO will retire this year after English-only crash message criticized"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-30T21:56:42.871Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f64a2b3ed9e5d4a817cd0b94380e6aa1feb89932",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "52-year-old elephant returned safely after escaping zoo enclosure"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-30T21:56:42.871Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "50 million people on alert for more severe weather in the Plains and Midwest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7899e795aae4f47bf0e5d79c53bc59240cd2df68",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "White House correspondents' dinner shooting latest: Suspect to appear in court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "23a0682c699a339c637d9b4e41423f267049a3dc",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: US being 'humiliated' by Iran, German chancellor says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b0f50c97b70a55a2d3c822b7b4d71e510096f6c1",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "King Charles visit live updates: Charles will not see Prince Harry during US visit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "MOVED",
+      "fingerprint": "9fb9232ecdb60fb7965372e6302e1bae60147207",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Supreme Court debates 'geofence warrants' for cellphone data",
+      "to_title": "Supreme Court debates 'geofence warrants' for cellphone data"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8413b59deae44e1f0bd6b3992936593ae7b53c8d",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Eagles' final NFL Draft pick has never played organized football"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fa73a161059ce3f8d281f82fb5201e64e5091300",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Nedra Talley Ross of the Ronettes dies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f934e09d5f37e7d5c616b2837a8cc25dc6075beb",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Germany suspects Russia is behind Signal phishing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "21b1ed93871534040c9f9b8548ddd37578e0dae2",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "White House correspondents' dinner shooting suspect to be arraigned Monday",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c77ad53732c2d7f113f710617def686f425fe37b",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump to hold national security meeting Monday, officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f9944d5cf1625413b6dee4ebc479d338f53f05c6",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "1 officer killed, 1 in critical condition after shooting in Chicago hospital",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5f3b91cccb73c0204d07e099c0f06102e705ee42",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "King Charles III, Queen Camilla state visit to proceed as planned after DC shooting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "060b0ca799d26773caa14111243815974c28e593",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Prediction markets under pressure to stop insider trading",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-27T16:28:39.528Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "89246b20aa58c3b41fdf3a84df4bbc6ed25c2b09",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Lake Superior wolves thrive as packs hunt moose",
       "to_title": null
     }
   ],
