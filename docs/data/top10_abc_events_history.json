@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-28T11:16:59.694Z",
+  "generatedAt": "2026-04-28T13:01:40.185Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T20:55:34.318Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5d66ac988ae5ca5fa7d7105d94c46507abc5f542",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Dow soars as Trump suggests Iran war may end without reopening Strait of Hormuz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T20:55:34.318Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "759d1df58290e66ea27ced8cb4b0ac1a3f18071c",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T20:55:34.318Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "National Trust won't drop suit on Trump's ballroom",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T13:01:43.101Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ab145114911652f5c7b5e2b2d823d89dfd37818e",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "United Arab Emirates says it will leave OPEC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T13:01:43.101Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "241ef2d3fdc30d6e3484ac7ff33b7cc6628678bb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Pentagon can restrict journalists' access: Judge",
       "to_title": null
     }
   ],
