@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-28T00:07:06.644Z",
+  "generatedAt": "2026-04-28T04:03:26.304Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T17:13:53.614Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "28e87b1983f10447dd3f283701d2510e1ac91ce8",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump thinks Strait will 'automatically open' when US leaves"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T17:13:53.614Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0adea9d2f02fc09b018b4bc087d2e93bbf95a5ce",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: Israel and Gulf states report new Iranian strikes, tanker hit",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T18:08:02.511Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7c5adb14314e6c3a5c181fb6ffe44be8d96c975d",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Army suspends Apache pilots who hovered outside Kid Rock's home: Source"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T18:08:02.511Z",
-      "event_type": "MOVED",
-      "fingerprint": "759d1df58290e66ea27ced8cb4b0ac1a3f18071c",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock",
-      "to_title": "Gas prices top $4 a gallon as Iran war triggers global oil shock"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T18:08:02.511Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Man pleads guilty to 2002 death of Jam Master Jay",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T04:03:29.360Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1511a98f5c95e62682845851784f407726413a95",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "WHCA dinner shooting timeline: Suspect captured trying to get in"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T04:03:29.360Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "30327c4a25334dd904cab7924820bc31892f018f",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Pentagon can restrict journalists' access, make them be escorted for now: Court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T04:03:29.360Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e1e347d45aade2790bb3a752ce16f22358cee73a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "White House correspondents' dinner shooting: Timeline of chaos",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T04:03:29.360Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eba101d816b0388dc758723c11d824b9fd98996f",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Secret Service after-action review underway to examine security, possible lapses",
       "to_title": null
     }
   ],
