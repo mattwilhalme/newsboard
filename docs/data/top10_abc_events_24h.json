@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-28T09:09:04.717Z",
+  "generatedAt": "2026-04-28T11:16:59.694Z",
   "hours": 24,
   "events": [
     {
@@ -1291,6 +1291,126 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "American Airlines updates portable charger, battery policy for flights",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3bec67b84d12130122ab4a6e1fcd2a1790b079b5",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'America is my home': TPS holders face high stakes Supreme Court battle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a7d54e0f48707f9ef2af0c10b602ee9b5ca09665",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Man pleads guilty to plotting attack on a Taylor Swift concert in Vienna"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3eacdfea9c1dbd7bc3c947b5a6a949feb85a3301",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Judge tosses murder conviction for man who served 25 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c6ed3b49e194befbced3494a7005badf0b6313b8",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "King Charles to address a joint meeting of Congress"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "MOVED",
+      "fingerprint": "1a88a3e4315e1f9cb0e4e56c540f9eb9939c3c3f",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Baby on board: Paramedics help passenger give birth just before Delta flight lands",
+      "to_title": "Baby on board: Paramedics help passenger give birth just before Delta flight lands"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "MOVED",
+      "fingerprint": "de821d976f7c619f3f6c0c8698fec8c23c81d377",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Murder suspect allegedly asked ChatGPT about disposing of body: Court filing",
+      "to_title": "Murder suspect allegedly asked ChatGPT about disposing of body: Court filing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "241ef2d3fdc30d6e3484ac7ff33b7cc6628678bb",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Pentagon can restrict journalists' access: Judge"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b44f024e070657cceca2516b0d8468125602f07d",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Legal teams for Blake Lively and Justin Baldoni to meet ahead of trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "03f185b50330613d3d4105d2ec23ce3ddba42963",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "King Charles III visit live updates: Charles, Camilla view White House beehive",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "30327c4a25334dd904cab7924820bc31892f018f",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Pentagon can restrict journalists' access, make them be escorted for now: Court",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "17f712e18e5e9fd9230a2f67ecd8e28b5965901b",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Rare two-colored lobster caught by fishermen off Cape Cod donated to aquarium",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T11:17:02.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ca6aeba11755597938ffc3d44537b1d658352bde",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "National Trust won't drop suit on Trump's ballroom",
       "to_title": null
     }
   ]
