@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-28T22:16:32.119Z",
+  "generatedAt": "2026-04-28T23:13:52.711Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T04:25:53.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
-      "to_title": "Who are the astronauts on the Artemis II mission to the moon?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T04:25:53.519Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "22d35d319ea5e57f61ab5009be5a135178d467ff",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Taylor Swift faces trademark infringement lawsuit over 'Showgirl' album",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T06:11:27.185Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Soldier who wagered on Maduro pleads not guilty",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T23:13:55.626Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "891b05d954ffeb4a442150e3eda2847582badd1f",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:'Our collective strength' -- 4 takeaways from King Charles III's address to Congress"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T23:13:55.626Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "727c29d1daf929c9302fb95a33f150f8c96aafdc",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:King Charles addresses a joint meeting of Congress",
       "to_title": null
     }
   ],
