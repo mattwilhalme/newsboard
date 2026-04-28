@@ -1,208 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-28T13:01:40.185Z",
+  "generatedAt": "2026-04-28T17:15:06.968Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T20:55:34.318Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0ad37265b9d60665e88bbb26f63e9a121b732787",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "DHS shutdown fuels cybersecurity concerns as Iran-linked attacks continue across US",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T21:31:13.773Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0d4b261b4871de57e91b3f3e962536e4773001af",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "'Construction has to stop!': Federal judge halts White House ballroom construction"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T21:31:13.773Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Who are the astronauts on the Artemis II mission to the moon?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T21:31:13.773Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed652408543f48873daf2f9c8544863403b1a4bf",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Supreme Court rules against Colorado law banning 'conversion therapy' for minors",
-      "to_title": "Supreme Court rules against Colorado law banning 'conversion therapy' for minors"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T21:31:13.773Z",
-      "event_type": "MOVED",
-      "fingerprint": "24f8a16a1f407cdad240727f409e7469b6530ed3",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Army says pilots who did flyby outside Kid Rock's home have been suspended",
-      "to_title": "Army says pilots who did flyby outside Kid Rock's home have been suspended"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T21:31:13.773Z",
-      "event_type": "MOVED",
-      "fingerprint": "4fe2df4b2540ff4aeade1e98e12cf1837af9a856",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Tiger Woods had 2 hydrocodone pills with him at time of rollover crash: Documents",
-      "to_title": "Tiger Woods had 2 hydrocodone pills with him at time of rollover crash: Documents"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T21:31:13.773Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "da892d2cfef0bfaf1473321e641bcf8a327765ec",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Federal judge orders halt to White House ballroom construction",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T21:31:13.773Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "032a1e25df025b94cd264625a6d1eec9c9fd9f0d",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Artemis II mission to the moon: By the numbers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Administration must restore legal status for thousands of immigrants, judge rules"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "93be1dde2a85086ed80b63fa9d9f2c251f89430a",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "DHS needs to get funded to 'ensure' a safe World Cup, official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "430900def831d15628dd31936a1e3fd6a11a12bd",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Court denies bid from families of Boeing 737 Max crash victims to reopen case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "MOVED",
-      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
-      "to_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "MOVED",
-      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
-      "to_title": "Who are the astronauts on the Artemis II mission to the moon?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0d4b261b4871de57e91b3f3e962536e4773001af",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "'Construction has to stop!': Federal judge halts White House ballroom construction",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "aadbe644c700d50c4e8ed4a6c3ddc5da4feefe2f",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "DOJ told judge emails suggest Maxwell arranged women for Prince Andrew",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T22:51:01.880Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ed652408543f48873daf2f9c8544863403b1a4bf",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Supreme Court rules against Colorado law banning 'conversion therapy' for minors",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T23:21:46.594Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6b59d52812fbf79dbb1d88041837c6a28adbe69d",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingTiger Woods says he will step away and 'seek treatment' following car crash arrest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T23:21:46.594Z",
-      "event_type": "MOVED",
-      "fingerprint": "f17bd7a60f41a2b7fe41d2fccb5901a2dcdea64f",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Trump touts talks with hardline Iranian leader, but says 'we know where he lives'",
-      "to_title": "Trump touts talks with hardline Iranian leader, but says 'we know where he lives'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T23:21:46.594Z",
-      "event_type": "MOVED",
-      "fingerprint": "28e87b1983f10447dd3f283701d2510e1ac91ce8",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Trump thinks Strait will 'automatically open' when US leaves",
-      "to_title": "Iran live updates: Trump thinks Strait will 'automatically open' when US leaves"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-03-31T23:21:46.594Z",
-      "event_type": "MOVED",
-      "fingerprint": "638d52ea2647b98b316f2571ea892a5fa1cf5752",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US",
-      "to_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-03-31T23:21:46.594Z",
@@ -30001,6 +29801,206 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Pentagon can restrict journalists' access: Judge",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e49c4bc0f9a6d71ca54e14ee251c3ad4597ccd9d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "US gasoline prices hit highest level in 4 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5d0a1c0d57f9275ab4641fb6f7a89063c772bf7d",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Trump says Iran 'informed' US that it's in a 'state of collapse'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3a7470089f7b4f6683bd9274ea7d69e346aa4056",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "King Charles III visit live updates: Charles, Camilla welcomed at White House"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "150e6c1d4d85c40ea5de12dedbb377d89fe3e048",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "United Arab Emirates says it will leave OPEC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2256c04145f60ecfdf06c6e6b33db104d6041bc8",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Portrait emerges of White House correspondents' dinner suspect as intelligent, shy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "24d36759c76f8ee0c3ab8cd9b8fc418d1f75be49",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Damon Jones pleads guilty in gambling cases: 'I would like to sincerely apologize'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ed64f58c37b99bf30b77540888cb3465f431912b",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Hegseth and Kid Rock go for a ride in Army helicopters"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6184fcc2cb189cd7674cd4373d135f5ce2224497",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "64-year-old man arrested in connection to 1991 Northern California cold case murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d83c883fecf449ef585d6eaf10d289f21ff923a2",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "What to know about the Elon Musk versus Sam Altman trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c316cd1eeddaa97df524a322aca29d994dfbc6eb",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Ariana Grande reveals 8th album after weeks of teases"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "73d60b59b6fc742b1eb7ee429aaaae819f75c4dd",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Rubio dismisses Iran peace proposal, stresses nuclear issue",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1511a98f5c95e62682845851784f407726413a95",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "WHCA dinner shooting timeline: Suspect captured trying to get in",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3bec67b84d12130122ab4a6e1fcd2a1790b079b5",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "'America is my home': TPS holders face high stakes Supreme Court battle",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b32c8146e97a6eda87e0ea325cdf97ca4ead61a4",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Correspondents' dinner shooting suspect charged with attempted assassination of Trump",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a7d54e0f48707f9ef2af0c10b602ee9b5ca09665",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Man pleads guilty to plotting attack on a Taylor Swift concert in Vienna",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3eacdfea9c1dbd7bc3c947b5a6a949feb85a3301",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Judge tosses murder conviction for man who served 25 years",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c6ed3b49e194befbced3494a7005badf0b6313b8",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "King Charles to address a joint meeting of Congress",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1a88a3e4315e1f9cb0e4e56c540f9eb9939c3c3f",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Baby on board: Paramedics help passenger give birth just before Delta flight lands",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de821d976f7c619f3f6c0c8698fec8c23c81d377",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Murder suspect allegedly asked ChatGPT about disposing of body: Court filing",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-28T17:15:10.208Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ab145114911652f5c7b5e2b2d823d89dfd37818e",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "United Arab Emirates says it will leave OPEC",
       "to_title": null
     }
   ],
