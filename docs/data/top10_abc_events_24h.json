@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-29T22:37:39.700Z",
+  "generatedAt": "2026-04-29T23:34:05.381Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-28T23:13:55.626Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "891b05d954ffeb4a442150e3eda2847582badd1f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:'Our collective strength' -- 4 takeaways from King Charles III's address to Congress"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-28T23:13:55.626Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "727c29d1daf929c9302fb95a33f150f8c96aafdc",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:King Charles addresses a joint meeting of Congress",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-29T00:08:59.407Z",
@@ -1181,6 +1161,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "CDC warns additional measles cases in US are expected amid upcoming travel season",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7577f73e42eba6002238d4684eab3273dcfc0d66",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "954611ccb3a5752de3f32d15f3ed0dd64c20e394",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Alleged White House correspondents' dinner suspect took photo before attack: Feds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eaa409bdb3b7fe46a73e7b6eea16f5fe6d2e19c2",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "The South braces for more severe weather in the wake of destructive tornadoes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0e77b3b4943a9f9c8389116bad11f4d66c919b7b",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Truck driver who went missing in possible hijacking found dead: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "MOVED",
+      "fingerprint": "230d72d23076aa26318b0946ec5fe331e87c524f",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Fed chair Jerome Powell says he will stay on central bank's board after term expires",
+      "to_title": "Fed chair Jerome Powell says he will stay on central bank's board after term expires"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "73269453206fdb532f5e7af09bec566c8dd24ebc",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "5 things to know about the Supreme Court's landmark decision on the Voting Rights Act",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3640e5a2b8010e29e568c411cd02476d70ed2005",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Supreme Court limits Voting Rights Act in historic decision",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "567733a5741cf78014d1dc0686ba89d1ce53625a",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Florida legislature approves new congressional map that could give GOP 4 more seats",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T23:34:08.388Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cae040a045cc6411f987940b7b2415fa5db4f146",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Alleged White House correspondents' dinner suspect took photo before attack: Feds",
       "to_title": null
     }
   ]
