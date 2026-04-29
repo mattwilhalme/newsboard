@@ -1,118 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-29T00:08:56.404Z",
+  "generatedAt": "2026-04-29T04:02:09.066Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T08:55:32.237Z",
-      "event_type": "MOVED",
-      "fingerprint": "70eda7e68a3487c554a3ee01bf632eb101e05bb0",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case",
-      "to_title": "Penn must give Trump admin list of Jewish campus employees amid discrimination case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T08:55:32.237Z",
-      "event_type": "MOVED",
-      "fingerprint": "ca7d2e4ec954507f9dd158f48e7b0ffebf4daf5f",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Administration must restore legal status for thousands of immigrants, judge rules",
-      "to_title": "Administration must restore legal status for thousands of immigrants, judge rules"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T08:55:32.237Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a81553ac63e8534c2f66ca96d36e245791f616d2",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Dow closes up 1,000 points as Trump signals possible off-ramp from Iran war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T08:55:32.237Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ecf67f2b6740c1e3e242dad172343c02d4712ff8",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Who are the astronauts on the Artemis II mission to the moon?",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "60bf52e25ea1a0cf4a4bfff0ca69776cd7d21495",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "White House signals it seeks a diplomatic solution in Iran: Experts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f17bd7a60f41a2b7fe41d2fccb5901a2dcdea64f",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Trump touts talks with hardline Iranian leader, but says 'we know where he lives'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "MOVED",
-      "fingerprint": "705e6f1d19da143e4f5734ddd0a7c17452d9ea17",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Missile fire injures 14 people in Israel, emergency service says",
-      "to_title": "Iran live updates: Missile fire injures 14 people in Israel, emergency service says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ee1690ea16037f84d67f28e3ddeb8cc566cc5bfb",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Supreme Court hears Trump bid to end birthright citizenship"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "638d52ea2647b98b316f2571ea892a5fa1cf5752",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "On reopening the Strait of Hormuz, Trump tries to shift responsibility away from US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T10:01:30.922Z",
-      "event_type": "MOVED",
-      "fingerprint": "c2b2b6b5e9f9c3a86ab11b1aa9ad11a816c83953",
-      "from_rank": 3,
-      "to_rank": 7,
-      "from_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet",
-      "to_title": "Trump unveils presidential library plans with gold Trump statue, gifted jet"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T10:01:30.922Z",
@@ -30001,6 +29891,116 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "64-year-old man arrested in connection to 1991 Northern California cold case murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6208ab7b1dfe57d3bab7a35a2f31c08ef23a7b37",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:King Charles III visit live updates: Charles, Trump tout US-UK bond at state dinner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "685c1d9d2634c1420ae688c29c1dcb51d1f39b92",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Judge denies Scott Peterson's attempt to present new evidence in fight for freedom"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "84e638e784f4c0edb5a89c48ab0e313bd9d819bb",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Teen charged with killing stepsister on Carnival Cruise faces trial in June"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0cf45b19953dd23ae81fbb49d3e43fd478d7219d",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "New York City's first full casino with live table games opens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "MOVED",
+      "fingerprint": "45b672785a0b75a2121929652e1d98b5857fc6ee",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "James Comey indicted again, this time over seashell Instagram post",
+      "to_title": "James Comey indicted again, this time over seashell Instagram post"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "MOVED",
+      "fingerprint": "49c8abe46e37a2d9ab3bb82cbb37ceb875f0be57",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Iran live updates: Trump says Iran 'informed' US that it's in a 'state of collapse'",
+      "to_title": "Iran live updates: Trump says Iran 'informed' US that it's in a 'state of collapse'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "MOVED",
+      "fingerprint": "7303ff67ecde34750f9b72cbf3b8b84655328ff0",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Artemis III core rocket arrives at Kennedy Space Center",
+      "to_title": "Artemis III core rocket arrives at Kennedy Space Center"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f4438a96e6949acf175bbd47d5bac1cc4b0cd6ac",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:King Charles III visit live updates: Royals arrive for White House state dinner",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e49c4bc0f9a6d71ca54e14ee251c3ad4597ccd9d",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "US gasoline prices hit highest level in 4 years",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2256c04145f60ecfdf06c6e6b33db104d6041bc8",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Portrait emerges of White House correspondents' dinner suspect as intelligent, shy",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T04:02:12.259Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "11bad201041d48f452bebf8aa9b001bdcb667777",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "'The White Lotus' adds new name to its season 4 cast",
       "to_title": null
     }
   ],
