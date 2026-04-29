@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-29T16:15:29.590Z",
+  "generatedAt": "2026-04-29T17:52:39.061Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6a35e75e690e5c1d2119c3f51316e2e24893b713",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Weather favorable for launch today, forecast shows"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "58f34d35d67a4fb93c21f77f10fcf33c67874c0e",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Luigi Mangione's federal trial pushed from September to October"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6be823600e63cbd18931fa20b011596c62390f99",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "SCOTUS birthright citizenship arguments underway",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "59179ce08d45246becb0eea763384501303ed759",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says Iran's 'new regime president' asked for ceasefire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3de1c445cc919a981b8705ce5dc61f73ad2d516c",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Window for launch opens today",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T16:06:40.657Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7b23a54589535bf3efe02117c133f228a4fc54ba",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Luigi Mangione back in court to try to push back federal trial",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T17:10:52.010Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Fed expected to hold interest rates steady",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T17:52:42.099Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eba1d38495c618c05e4da856450e1a5ddde95216",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Former FBI Director James Comey makes initial court appearance"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T17:52:42.099Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ad8b8abc64638ff64ccdfb9068792fb0a8fcd8aa",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Iran live updates: Cost of war $25 billion so far, Pentagon says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T17:52:42.099Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "39ba2fcde3fdd367bd25355e7d78e26ab9504549",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "King Charles visit live updates: Charles, Camilla pay respects at 9/11 Memorial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T17:52:42.099Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "81c0509901712872d611bfa4137c1b9fcfd3c4bb",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Comey is expected to self-surrender to authorities today",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T17:52:42.099Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e87d0555605c6b57a36d169c96770c4a13137632",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says 'no more Mr. Nice Guy' if Iran refuses nuclear deal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T17:52:42.099Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ad38fd9e9043aa02e0fc3d8ce6f58caef7fe9a72",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "King Charles visit live updates: Charles, Camilla travel to New York City",
       "to_title": null
     }
   ],
