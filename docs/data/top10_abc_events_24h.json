@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-29T14:29:29.875Z",
+  "generatedAt": "2026-04-29T16:15:29.590Z",
   "hours": 24,
   "events": [
     {
@@ -1241,6 +1241,166 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Another Russian oil facility burns after attack",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "73269453206fdb532f5e7af09bec566c8dd24ebc",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "5 things to know about the Supreme Court's landmark decision on the Voting Rights Act"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5e0543c5f6a70a029bb3f91a919c072d65227a6f",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Supreme Court limits Voting Rights Act"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cae040a045cc6411f987940b7b2415fa5db4f146",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Alleged White House correspondents' dinner suspect took photo before attack: Feds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "MOVED",
+      "fingerprint": "81c0509901712872d611bfa4137c1b9fcfd3c4bb",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Comey is expected to self-surrender to authorities today",
+      "to_title": "Comey is expected to self-surrender to authorities today"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "76750fe17143204ba5d7c12320fe8526eca84a74",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Stabbing attack allegedly targeting Jewish community a 'terrorist incident': Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "MOVED",
+      "fingerprint": "e87d0555605c6b57a36d169c96770c4a13137632",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Iran live updates: Trump says 'no more Mr. Nice Guy' if Iran refuses nuclear deal",
+      "to_title": "Iran live updates: Trump says 'no more Mr. Nice Guy' if Iran refuses nuclear deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1d6f94c9a000f9df6b3c1a4040caca8f824ce697",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Hegseth faces lawmakers for first time since Iran war started"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "18771ce41297c60cda0434e13c3145048ea91bee",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Try these tips to save on gas as fuel prices soar"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5d8bee45d1861c9d04947a9f3d4ffdd3cbce4303",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "CDC warns additional measles cases in US are expected amid upcoming travel season"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8abb4019d4dcef107d92133cd9888f40ff95a72b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSupreme Court limits Voting Rights Act",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d0216bcf540b671ee4ef8315ed834791d0bdacf9",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Knife attack allegedly targets Jewish community in London, mayor says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "590ed7d8f3bcd2d8eb224f38bffdec2f0e62d538",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Hegseth to face lawmakers for first time since Iran war started",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "74f0f1027249a86c88894b6b00d0ff93275198e4",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Fed chair nominee Kevin Warsh advances to Senate confirmation vote",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "78c341d7dd8c7b779655a83f4c9e5651c34d22b2",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Supreme Court reviews Trump cancellation of Haitian, Syrian protected status",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "49def041e2180068a5509e083b73c90c531331dd",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump's image to appear on limited-edition passports for America's 250th",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T16:15:32.783Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "afe920781af1cb6545a47dfbc805421eb88bd76a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Fed expected to hold interest rates steady",
       "to_title": null
     }
   ]
