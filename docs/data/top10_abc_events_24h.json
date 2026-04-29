@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-29T21:35:48.060Z",
+  "generatedAt": "2026-04-29T22:37:39.700Z",
   "hours": 24,
   "events": [
     {
@@ -1161,6 +1161,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "King Charles visit live updates: Camilla meets Sarah Jessica Parker, Anna Wintour",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T22:37:42.785Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8ae0aac76290eb6682d380781d2919b266f92a8c",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "CDC sends out alert warning about additional measles cases amid upcoming travel"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-29T22:37:42.785Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5d8bee45d1861c9d04947a9f3d4ffdd3cbce4303",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "CDC warns additional measles cases in US are expected amid upcoming travel season",
       "to_title": null
     }
   ]
