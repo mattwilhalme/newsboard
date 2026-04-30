@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-30T11:17:04.906Z",
+  "generatedAt": "2026-04-30T12:58:32.133Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T12:07:14.915Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "142906166d89560c01f8f3d86c92b24a9a158413",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "King Charles III visit live updates: Charles, Camilla to visit New York City"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T12:07:14.915Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "255a310d77eabf5125cf16eb714c77f9c8a923bc",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Another Russian oil facility burns after attack"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T12:07:14.915Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "20231821616ae99fd304d05e5cc83ac2d35648ae",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "King Charles III visit live updates: Charles, Trump tout US-UK bond at state dinner",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T12:07:14.915Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4a11a260ae5a47d27b32f9d291e74909a0ff9f45",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "South Korean ex-President Yoon gets 7-year term",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-29T14:29:32.876Z",
@@ -1141,6 +1101,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "King Charles visit live updates: Charles meets with top business leaders",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a800a0b3f844a6b4ebac6ca97b7a83d95fe2093",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Khamenei says Iran will 'guard' nuclear, missile technologies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "07db0bb014f4eb918fcf99d8dadf21f0818d3211",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "US economy grows at solid pace to start 2026"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b87f89af910f2e1b55be9c156a209bf91b54a875",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Artemis II astronauts on their out-of-this-world mission: 'Adventure of a lifetime'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "MOVED",
+      "fingerprint": "a88b363f367638b73ee4cff95d80eaebc8210562",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "D4vd case: Prosecutors reveal 'horrifying' details of teen's alleged murder",
+      "to_title": "D4vd case: Prosecutors reveal 'horrifying' details of teen's alleged murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b8a97db9c1f1d2dfbd67b95c29470994de9063ab",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "King Charles III visit live updates: Charles, Camilla to visit Virginia on final day"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "MOVED",
+      "fingerprint": "1f29621a2b8e23704100959a7e100238a82a79f5",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "Senate Democrats press White House over loosened record-keeping policy",
+      "to_title": "Senate Democrats press White House over loosened record-keeping policy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "MOVED",
+      "fingerprint": "2512fbd8159a9c7477187db62fc244aad0073cfd",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Florida woman speaks out after her C-section was disputed in court hearing",
+      "to_title": "Florida woman speaks out after her C-section was disputed in court hearing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "MOVED",
+      "fingerprint": "89272843477e3da7aa60012e8973c5f173e87fa0",
+      "from_rank": 4,
+      "to_rank": 8,
+      "from_title": "Russia sets new record for drone, missile attacks on Ukraine in April",
+      "to_title": "Russia sets new record for drone, missile attacks on Ukraine in April"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "MOVED",
+      "fingerprint": "18c0b48326df2693e8ae248b127fe4967efd6734",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Blanche, asked about other postings of '86 47,' says 'every case is different'",
+      "to_title": "Blanche, asked about other postings of '86 47,' says 'every case is different'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "03f1cff41ceb94cf5d7855e67b6b6268ff90730a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Oil benchmark surges to highs not seen since 2022",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3586fe316701c09827008f0aa8a89081e5fce625",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "King Charles III visit live updates: Charles to visit Virginia on final day of trip",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7577f73e42eba6002238d4684eab3273dcfc0d66",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T12:58:35.236Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a2a3d22aeeac34cc3172879a1e173bf5aec4f73e",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Sheriff indicted after 2025 New Orleans jailbreak: Attorney general",
       "to_title": null
     }
   ]
