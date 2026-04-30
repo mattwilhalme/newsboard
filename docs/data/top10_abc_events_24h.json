@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-30T22:36:54.058Z",
+  "generatedAt": "2026-04-30T23:33:24.533Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T22:37:42.785Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8ae0aac76290eb6682d380781d2919b266f92a8c",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "CDC sends out alert warning about additional measles cases amid upcoming travel"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T22:37:42.785Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5d8bee45d1861c9d04947a9f3d4ffdd3cbce4303",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "CDC warns additional measles cases in US are expected amid upcoming travel season",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-29T23:34:08.388Z",
@@ -1321,6 +1301,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Man who swam with 5,500 crocodiles hopes to break Guinness World Record",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eeab431966bd97afcaec1d303a57c2ad76fcd812",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Ex-cellmate says he found suicide note from Jeffrey Epstein"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "91362e984a890dbe768e5b881a904c226b4fc25c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "5 injured in reported stabbing at high school, suspect in custody: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8898bbc154573841ac07d225f7516a3ac52858b0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Active ingredient in Ozempic shows early promise for treating alcohol use disorder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "MOVED",
+      "fingerprint": "137d0ec029f17e09403ab549d01c111976b3d555",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Britney Spears charged with DUI following March arrest",
+      "to_title": "Britney Spears charged with DUI following March arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "MOVED",
+      "fingerprint": "07abfc95885a80d14ebf0eb1ede5878277c4eaf1",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "House approves bill to fund DHS, ending record-long partial shutdown",
+      "to_title": "House approves bill to fund DHS, ending record-long partial shutdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a259e893ce0472183625daa12e7b39b8b0adf934",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "MOVED",
+      "fingerprint": "e81800cad947b2534739fe10a876ae3e28e717c0",
+      "from_rank": 3,
+      "to_rank": 7,
+      "from_title": "Camp Mystic says it won't reopen Texas camp this summer",
+      "to_title": "Camp Mystic says it won't reopen Texas camp this summer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "MOVED",
+      "fingerprint": "3c571125253f256c864c2334571aada92457e928",
+      "from_rank": 2,
+      "to_rank": 8,
+      "from_title": "FIFA boss says Iran will be at the World Cup and will play in the US",
+      "to_title": "FIFA boss says Iran will be at the World Cup and will play in the US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "MOVED",
+      "fingerprint": "9bdd9da9b3a0e877d045050234830a9e38b071a1",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "King Charles III, Queen Camilla conclude US state visit: See the biggest moments",
+      "to_title": "King Charles III, Queen Camilla conclude US state visit: See the biggest moments"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "43127d18f94a5b42d256655b6c36d287f34b1a11",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Trump nominates radiologist Dr. Nicole Saphier as surgeon general",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "87b2420bcf165e89dbf401d2637054ce3be3c39c",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump doubles down on '86' as mob term after Comey indictment",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "191d0a692c6a1e83bfb02a59a6c8152c963153c1",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Emily Blunt, Stanley Tucci honored with Hollywood Walk of Fame stars",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T23:33:27.699Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bd406df832f7d1aab7b1e7175b52a2531c5d6b5e",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Iran live updates: Senate fails to advance Iran War Powers Resolution for 6th time",
       "to_title": null
     }
   ]
