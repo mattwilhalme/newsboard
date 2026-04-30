@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-04-30T16:46:58.260Z",
+  "generatedAt": "2026-04-30T18:00:52.511Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T17:52:42.099Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "eba1d38495c618c05e4da856450e1a5ddde95216",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Former FBI Director James Comey makes initial court appearance"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T17:52:42.099Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ad8b8abc64638ff64ccdfb9068792fb0a8fcd8aa",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Iran live updates: Cost of war $25 billion so far, Pentagon says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T17:52:42.099Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "39ba2fcde3fdd367bd25355e7d78e26ab9504549",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "King Charles visit live updates: Charles, Camilla pay respects at 9/11 Memorial"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T17:52:42.099Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "81c0509901712872d611bfa4137c1b9fcfd3c4bb",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Comey is expected to self-surrender to authorities today",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T17:52:42.099Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e87d0555605c6b57a36d169c96770c4a13137632",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says 'no more Mr. Nice Guy' if Iran refuses nuclear deal",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-29T17:52:42.099Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ad38fd9e9043aa02e0fc3d8ce6f58caef7fe9a72",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "King Charles visit live updates: Charles, Camilla travel to New York City",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-29T19:04:16.039Z",
@@ -1151,6 +1091,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Maine Gov. Janet Mills suspends Senate campaign",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5dec7aff7f447be4bf1fd7a96e41e85186c4a20c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingHouse approves bill to fund DHS, ending record-long partial shutdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "43127d18f94a5b42d256655b6c36d287f34b1a11",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump nominates radiologist Dr. Nicole Saphier as surgeon general"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "MOVED",
+      "fingerprint": "87b2420bcf165e89dbf401d2637054ce3be3c39c",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Trump doubles down on '86' as mob term after Comey indictment",
+      "to_title": "Trump doubles down on '86' as mob term after Comey indictment"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ae4f56b0abf85cf77f7038fb95e210f81267cf84",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "King Charles III visit live updates: King, queen honor fallen soldiers in Virginia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9d6634d8f8963bde3dc37df5c830eaae6bae7b29",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "White House correspondents' shooting latest: Pirro says suspect fired shotgun"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "35c0f37852e78d08b02c673729747ef8a569dfb1",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Iran live updates: WH in 'active conversations' with Congress about authorizing war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "MOVED",
+      "fingerprint": "72494d820eec9b2718cfd9b140117276e8ae2d81",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "House Republicans narrowly approve blueprint to fund ICE, CBP",
+      "to_title": "House Republicans narrowly approve blueprint to fund ICE, CBP"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "MOVED",
+      "fingerprint": "b87f89af910f2e1b55be9c156a209bf91b54a875",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Artemis II astronauts on their out-of-this-world mission: 'Adventure of a lifetime'",
+      "to_title": "Artemis II astronauts on their out-of-this-world mission: 'Adventure of a lifetime'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "41ac065a1a75375d40262142b1fc237bb618967d",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "LIV Golf to lose funding from Saudi Arabia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8fed1de17e792bb7e418d7adb2ef9ee6f3fdecb4",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Blanche, asked about other postings of '86 47,' says 'every case is different'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a21a71632a6b2a20d76e967c78f2785fce3072ad",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "King Charles III visit live updates: Charles, Camilla say goodbye to Trumps",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ea056cf5a355f13ca9067f4b75a2351190fc2b16",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "White House correspondents' suspect will stay in custody, Pirro says he fired shotgun",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2a800a0b3f844a6b4ebac6ca97b7a83d95fe2093",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: Khamenei says Iran will 'guard' nuclear, missile technologies",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a88b363f367638b73ee4cff95d80eaebc8210562",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "D4vd case: Prosecutors reveal 'horrifying' details of teen's alleged murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T18:00:55.452Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2512fbd8159a9c7477187db62fc244aad0073cfd",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Florida woman speaks out after her C-section was disputed in court hearing",
       "to_title": null
     }
   ]
