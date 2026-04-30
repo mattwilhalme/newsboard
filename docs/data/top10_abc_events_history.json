@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-30T01:20:49.073Z",
+  "generatedAt": "2026-04-30T04:48:20.234Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T21:47:39.666Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8e2e0ce341fa5f10a83f134ba4e0b582bb044cff",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Johnson, Thune announce plan to end DHS shutdown but could face long road"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T21:47:39.666Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "831ad33a40273146a984975017a37bef8158fc1e",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump to address nation on Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T21:47:39.666Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0db9bd87665ff75f4aee326df1e1aed4fbb934d7",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Luigi Mangione's state trial pushed to September, federal trial pushed to October"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T21:47:39.666Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0b4888bf6e10492ecd77287ab53e821ad69ad723",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Woman allegedly throws substance on former Fleetwood Mac member: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T21:47:39.666Z",
-      "event_type": "MOVED",
-      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
-      "to_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T21:47:39.666Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2fe113490a118a111e17b169a04abc8747aa1326",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: NASA troubleshooting flight termination system issue",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T21:47:39.666Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "13f846046ae5b8ea92a4d9b2297e3a5cda8be243",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Johnson, Thune announce plan to end DHS shutdown 'in the coming days'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T21:47:39.666Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Alleged White House correspondents' dinner suspect took photo before attack: Feds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T04:48:23.745Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a88b363f367638b73ee4cff95d80eaebc8210562",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "D4vd case: Prosecutors reveal 'horrifying' details of teen's alleged murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T04:48:23.745Z",
+      "event_type": "MOVED",
+      "fingerprint": "eaa409bdb3b7fe46a73e7b6eea16f5fe6d2e19c2",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "The South braces for more severe weather in the wake of destructive tornadoes",
+      "to_title": "The South braces for more severe weather in the wake of destructive tornadoes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T04:48:23.745Z",
+      "event_type": "MOVED",
+      "fingerprint": "0e77b3b4943a9f9c8389116bad11f4d66c919b7b",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Truck driver who went missing in possible hijacking found dead: FBI",
+      "to_title": "Truck driver who went missing in possible hijacking found dead: FBI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T04:48:23.745Z",
+      "event_type": "MOVED",
+      "fingerprint": "7577f73e42eba6002238d4684eab3273dcfc0d66",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines",
+      "to_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T04:48:23.745Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "58e5ca4f96c7df71d5f97698dd682b600e6539a1",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Blanche asked about other postings of '86 47'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T04:48:23.745Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "954611ccb3a5752de3f32d15f3ed0dd64c20e394",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Alleged White House correspondents' dinner suspect took photo before attack: Feds",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T04:48:23.745Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8ae0aac76290eb6682d380781d2919b266f92a8c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "CDC sends out alert warning about additional measles cases amid upcoming travel",
       "to_title": null
     }
   ],
