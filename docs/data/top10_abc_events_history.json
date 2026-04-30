@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-30T15:10:09.836Z",
+  "generatedAt": "2026-04-30T16:46:58.260Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T09:46:03.074Z",
-      "event_type": "MOVED",
-      "fingerprint": "08c5c660353969d508517ff290209241cb829b2e",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case",
-      "to_title": "Ted Bundy 'without a doubt' killed teen, sheriff says, closing cold case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T09:46:03.074Z",
-      "event_type": "MOVED",
-      "fingerprint": "613a1d3b5d6fc0de15a7f35d3e704d2e1966fe03",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say",
-      "to_title": "'Senseless': 7-month-old baby in stroller killed in NYC shooting, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T09:46:03.074Z",
-      "event_type": "MOVED",
-      "fingerprint": "16f1cf4d42c932e6183a369f6262af95b3de8357",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Quadruple amputee cornhole champion acted in self-defense in fatal shooting: Attorney",
-      "to_title": "Quadruple amputee cornhole champion acted in self-defense in fatal shooting: Attorney"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T09:46:03.074Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0b912e6b48e361904e8fb6bb181ccd92a9b40101",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "How NASA plans on keeping astronauts safe during Artemis II moon mission",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T09:46:03.074Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0db9bd87665ff75f4aee326df1e1aed4fbb934d7",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Luigi Mangione's state trial pushed to September, federal trial pushed to October",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "187ea02d9e9f8b1967f67a4c7245b5957f569e10",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US Embassy tells Americans to leave Iraq, cites terror threat"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "69ee99afc2285db9bd9b76f4eebf9ec2bee4336a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Crew testing Orion systems, preparing for push toward Moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c2fb351f5f9b8d471782ff605d1efdd2a4e51e27",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Senators demand answers from Hegseth over reported defense investment inquiry"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "MOVED",
-      "fingerprint": "163d445f53722aea9bd7910acd678379d57c1761",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "The AI industry is all in for the 2026 midterms with government regulations looming",
-      "to_title": "The AI industry is all in for the 2026 midterms with government regulations looming"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "MOVED",
-      "fingerprint": "7c945c69eac6fd98a91f1751938fe9e3212e7a7a",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump has discussed removing Pam Bondi as attorney general, sources say",
-      "to_title": "Trump has discussed removing Pam Bondi as attorney general, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "MOVED",
-      "fingerprint": "179dc1400e31b83963973919ec3346af9242c25c",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury",
-      "to_title": "Warren calls for Education Department to 'rescind' student loan transfer to Treasury"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "00db10840d13327decb9c1d9ca45e2ad52ee42aa",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Israel, UAE, Saudi Arabia report drone and missile attacks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a64170dd15a33f645a0b52bedb5ed3800e349980",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Crew enters high Earth orbit, are in 'great spirits'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T10:39:01.361Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8e2e0ce341fa5f10a83f134ba4e0b582bb044cff",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Johnson, Thune announce plan to end DHS shutdown but could face long road",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T13:56:40.461Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Singer-songwriter David Allan Coe dies at 86",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "87b2420bcf165e89dbf401d2637054ce3be3c39c",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump doubles down on '86' as mob term after Comey indictment"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8fed1de17e792bb7e418d7adb2ef9ee6f3fdecb4",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Blanche, asked about other postings of '86 47,' says 'every case is different'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ea056cf5a355f13ca9067f4b75a2351190fc2b16",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "White House correspondents' suspect will stay in custody, Pirro says he fired shotgun"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "MOVED",
+      "fingerprint": "2a800a0b3f844a6b4ebac6ca97b7a83d95fe2093",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "Iran live updates: Khamenei says Iran will 'guard' nuclear, missile technologies",
+      "to_title": "Iran live updates: Khamenei says Iran will 'guard' nuclear, missile technologies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "72494d820eec9b2718cfd9b140117276e8ae2d81",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "House Republicans narrowly approve blueprint to fund ICE, CBP"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "MOVED",
+      "fingerprint": "b87f89af910f2e1b55be9c156a209bf91b54a875",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Artemis II astronauts on their out-of-this-world mission: 'Adventure of a lifetime'",
+      "to_title": "Artemis II astronauts on their out-of-this-world mission: 'Adventure of a lifetime'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "MOVED",
+      "fingerprint": "a88b363f367638b73ee4cff95d80eaebc8210562",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "D4vd case: Prosecutors reveal 'horrifying' details of teen's alleged murder",
+      "to_title": "D4vd case: Prosecutors reveal 'horrifying' details of teen's alleged murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "67e105e2aa6be043038189b99cae77687d99e80f",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Man who swam with 5,500 crocodiles hopes to break Guinness World Record"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "MOVED",
+      "fingerprint": "2512fbd8159a9c7477187db62fc244aad0073cfd",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "Florida woman speaks out after her C-section was disputed in court hearing",
+      "to_title": "Florida woman speaks out after her C-section was disputed in court hearing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "07db0bb014f4eb918fcf99d8dadf21f0818d3211",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "US economy grows at solid pace to start 2026",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d63840ec91b846f37ec90aae428add42e21baf20",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Brown shooting and murder of MIT professor were 'symbolic,' FBI concludes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "89272843477e3da7aa60012e8973c5f173e87fa0",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Russia sets new record for drone, missile attacks on Ukraine in April",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "18c0b48326df2693e8ae248b127fe4967efd6734",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Blanche, asked about other postings of '86 47,' says 'every case is different'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T16:47:01.387Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "811bc8bd9fbc594e08f40693eb653b91d1ca2d84",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Maine Gov. Janet Mills suspends Senate campaign",
       "to_title": null
     }
   ],
