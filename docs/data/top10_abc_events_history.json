@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-04-30T07:19:01.917Z",
+  "generatedAt": "2026-04-30T09:31:31.103Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:02:51.345Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2068be465b13ff59d9bb17fcf9e7c0691b55e971",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Artemis II crew lifts off, crosses boundary into space"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:02:51.345Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6911cb79990455af2ff25989611e089456e7cc67",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Artemis II mission to the moon: By the numbers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:02:51.345Z",
-      "event_type": "MOVED",
-      "fingerprint": "7d6c5d0e553cc4b96959c7bcea6b1f4387b5fed3",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Trump is considering withdrawing US from NATO",
-      "to_title": "Iran live updates: Trump is considering withdrawing US from NATO"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:02:51.345Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cfd5fe59095f59d80651881d754788c3f4e8d1f2",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Trump to address nation with 'important update' on Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:02:51.345Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c29d9f26c130c87a8ccc3a4090dda0c912408006",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: NASA closeout crew departs launch pad",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:02:51.345Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8e2e0ce341fa5f10a83f134ba4e0b582bb044cff",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Johnson, Thune announce plan to end DHS shutdown but could face long road",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:02:51.345Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "831ad33a40273146a984975017a37bef8158fc1e",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Trump to address nation on Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:47:39.600Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d742d30b37774c0d3fbae38d1bcd7c474da0adde",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Crew lifts off, crosses boundary into space"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-01T23:47:39.600Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "62a658de753e8f7d3dc148a8998c403226c2d2dc",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:How NASA plans on keeping astronauts safe during Artemis II moon mission"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-01T23:47:39.600Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Blanche asked about other postings of '86 47'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1f29621a2b8e23704100959a7e100238a82a79f5",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Senate Democrats press White House over loosened record-keeping policy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "89272843477e3da7aa60012e8973c5f173e87fa0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Russia sets new record for drone, missile attacks on Ukraine in April"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "MOVED",
+      "fingerprint": "2512fbd8159a9c7477187db62fc244aad0073cfd",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Florida woman speaks out after her C-section was disputed in court hearing",
+      "to_title": "Florida woman speaks out after her C-section was disputed in court hearing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "MOVED",
+      "fingerprint": "18c0b48326df2693e8ae248b127fe4967efd6734",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Blanche, asked about other postings of '86 47,' says 'every case is different'",
+      "to_title": "Blanche, asked about other postings of '86 47,' says 'every case is different'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "MOVED",
+      "fingerprint": "7577f73e42eba6002238d4684eab3273dcfc0d66",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines",
+      "to_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ee3b94e3ec16dd1783d884b1b27fb682f83273ab",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Iran live updates: US blockade stopped $6 billion in Iranian oil, Adm. Cooper says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eaa409bdb3b7fe46a73e7b6eea16f5fe6d2e19c2",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "The South braces for more severe weather in the wake of destructive tornadoes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0e77b3b4943a9f9c8389116bad11f4d66c919b7b",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Truck driver who went missing in possible hijacking found dead: FBI",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-04-30T09:31:34.167Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1db7b4b092f55c7f8127a78149dffbf61a443d2f",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says Iran just has to 'cry uncle' now",
       "to_title": null
     }
   ],
