@@ -1,118 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T16:11:11.240Z",
+  "generatedAt": "2026-05-01T17:14:02.084Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T05:28:35.790Z",
-      "event_type": "MOVED",
-      "fingerprint": "5378b4a9953882b1a0ef41c7189b9348f92cc3c2",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges",
-      "to_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T05:28:35.790Z",
-      "event_type": "MOVED",
-      "fingerprint": "535d19f21125ce938ad2e6b56cdd7f661bd4499d",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals",
-      "to_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T05:28:35.790Z",
-      "event_type": "MOVED",
-      "fingerprint": "e2389f503df4611f4b5176a3f427228c9475c6bc",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'",
-      "to_title": "Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T05:28:35.790Z",
-      "event_type": "MOVED",
-      "fingerprint": "c1b8605811c7088e481829046cc3c719a68456eb",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Iran live updates: Trump says US blew up 3 of Iran's 'big bridges'",
-      "to_title": "Iran live updates: Trump says US blew up 3 of Iran's 'big bridges'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T05:28:35.790Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ace38cb8b60a3c3f70b252c9aa73d43dacfdb339",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Crew headed to moon after critical translunar injection burn",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T05:28:35.790Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f655b487589f74e2e6f52d12922ca171caf16c36",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Much of Lively's lawsuit against Baldoni dismissed",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T07:50:47.035Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7e9178e62d6e9c14bfe151109bf24ab1c4c909ae",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "From stunning Earth views to toilet fix, Artemis II crew talks to ABC News from space"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T07:50:47.035Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a2ba2bf9c792cb6524275b969bbd9ddca732da93",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Artemis II crew talks to ABC News from space: Their journey so far and what's ahead",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1a486efecdcf954dc67dc2f07ec61f905e69895f",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Jobs report set to offer key gauge of economy amid war with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "2bb134712360bee500081c87e067c4619bdb85f8",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Some TSA officers say they're still hurting after receiving backpay",
-      "to_title": "Some TSA officers say they're still hurting after receiving backpay"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "b2c5550f677e194f573226aaf4fffe4639c6acc0",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Justice Department says Trump can keep his presidential records",
-      "to_title": "Justice Department says Trump can keep his presidential records"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T09:36:59.096Z",
@@ -30001,6 +29891,116 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "What South Carolina did to reign in its measles outbreak",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c9d6b3f575ac3a26884fe3a0ec7aa5fb8e972eaf",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingPresident Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "eab0f0d36844b11a8ec42366ca91c96767bcb8bf",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "2nd missing USF student's remains identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b198f0183c6bf23e517df7b89aea0a4d8adac10c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says he's 'not happy' after conversation with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "MOVED",
+      "fingerprint": "b865939065ac9d88b13f3a5bdb9b679c0c57dd65",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Person of interest in custody after 2 employees fatally shot in bank robbery",
+      "to_title": "Person of interest in custody after 2 employees fatally shot in bank robbery"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9911d3711c2d0497d5a023bb40cecc7d38a7c061",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Prince William, Kate introduce new member of royal family"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "MOVED",
+      "fingerprint": "91362e984a890dbe768e5b881a904c226b4fc25c",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "5 injured in reported stabbing at high school, suspect in custody: Police",
+      "to_title": "5 injured in reported stabbing at high school, suspect in custody: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "MOVED",
+      "fingerprint": "4ba802f9286483553d86a8520e913219af7dbc24",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "5 killed in Texas plane crash, officials say",
+      "to_title": "5 killed in Texas plane crash, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "86f7f0c73be41cb254fdbafbdf3064da2bb89166",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "The 60-day War Powers deadline is up on Friday. What could happen next?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e80527e6254f2c8f1de151a8978c3d02df98e8d6",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Republicans say they will defer to Trump on Iran war despite arrival of 60-day deadline",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bd406df832f7d1aab7b1e7175b52a2531c5d6b5e",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Iran live updates: Senate fails to advance Iran War Powers Resolution for 6th time",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T17:14:05.147Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2e0ef7a86775ea1ff79c511d14e89d2b884c86df",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Can this Swedish automaker change Americans' attitudes on EVs?",
       "to_title": null
     }
   ],
