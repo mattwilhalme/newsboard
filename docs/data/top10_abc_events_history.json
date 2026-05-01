@@ -1,108 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T18:12:28.071Z",
+  "generatedAt": "2026-05-01T19:39:18.684Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T13:47:28.843Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "761f44529b405ab108e9297cb9d374fa212bdc3c",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says US could open Strait of Hormuz, seize oil"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T13:47:28.843Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1a486efecdcf954dc67dc2f07ec61f905e69895f",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Jobs report set to offer key gauge of economy amid war with Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T13:47:28.843Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c1b8605811c7088e481829046cc3c719a68456eb",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says US blew up 3 of Iran's 'big bridges'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T14:31:55.959Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3408923162d28f414287e0648ca07e412d406339",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Artemis II live updates: Stunning new photos show Earth from Orion capsule"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T14:31:55.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "761f44529b405ab108e9297cb9d374fa212bdc3c",
-      "from_rank": 10,
-      "to_rank": 4,
-      "from_title": "Iran live updates: Trump says US could open Strait of Hormuz, seize oil",
-      "to_title": "Iran live updates: Trump says US could open Strait of Hormuz, seize oil"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T14:31:55.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "2bb134712360bee500081c87e067c4619bdb85f8",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Some TSA officers say they're still hurting after receiving backpay",
-      "to_title": "Some TSA officers say they're still hurting after receiving backpay"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T14:31:55.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "b2c5550f677e194f573226aaf4fffe4639c6acc0",
-      "from_rank": 5,
-      "to_rank": 9,
-      "from_title": "Justice Department says Trump can keep his presidential records",
-      "to_title": "Justice Department says Trump can keep his presidential records"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T14:31:55.959Z",
-      "event_type": "MOVED",
-      "fingerprint": "e2389f503df4611f4b5176a3f427228c9475c6bc",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'",
-      "to_title": "Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T14:31:55.959Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fe514902f178fad5bd4a8a1457c32ceb0cea7f30",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Artemis II live updates: Crew headed to moon after critical translunar injection burn",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T15:13:18.346Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "262fe7597724dcea1ab017ce93c2eb71ec051614",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingU.S. fighter jet appears to have been shot down by Iran, U.S. official says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T15:13:18.346Z",
@@ -30001,6 +29901,106 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "5 injured in reported stabbing at high school, suspect in custody: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e5295ec82f69291273eeda1907691ffb78e5c6ef",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump tells Congress hostilities 'have terminated'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "MOVED",
+      "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Trump announces 25% tariff on cars, trucks from EU",
+      "to_title": "Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "MOVED",
+      "fingerprint": "884bfb182bcbad3cfc090497350cbec704ab3863",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Body of Nahida Bristy, 2nd missing USF student, identified",
+      "to_title": "Body of Nahida Bristy, 2nd missing USF student, identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e528c526d7aa6cdf69191146e17cef5c08c51efe",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Spirit Airlines deal announcement expected today, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8a0fa3310c92ce51eb05608c2d6fabdda98137c2",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "18-year-old in custody after allegedly gunning down 2 people in bank robbery"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "137c59607877acab3d14b2a0d050a5eff9be6a29",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Queens home explosion caught on camera"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b198f0183c6bf23e517df7b89aea0a4d8adac10c",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says he's 'not happy' after conversation with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0cb133f7f5c2c1dd36a2dbbd74b06e79791fdd8f",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump says announcement expected today on Spirit Airlines deal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b865939065ac9d88b13f3a5bdb9b679c0c57dd65",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Person of interest in custody after 2 employees fatally shot in bank robbery",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T19:39:21.873Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4ba802f9286483553d86a8520e913219af7dbc24",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "5 killed in Texas plane crash, officials say",
       "to_title": null
     }
   ],
