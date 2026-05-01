@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-01T01:24:57.471Z",
+  "generatedAt": "2026-05-01T05:01:38.108Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-30T04:48:23.745Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a88b363f367638b73ee4cff95d80eaebc8210562",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "D4vd case: Prosecutors reveal 'horrifying' details of teen's alleged murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-30T04:48:23.745Z",
-      "event_type": "MOVED",
-      "fingerprint": "eaa409bdb3b7fe46a73e7b6eea16f5fe6d2e19c2",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "The South braces for more severe weather in the wake of destructive tornadoes",
-      "to_title": "The South braces for more severe weather in the wake of destructive tornadoes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-30T04:48:23.745Z",
-      "event_type": "MOVED",
-      "fingerprint": "0e77b3b4943a9f9c8389116bad11f4d66c919b7b",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Truck driver who went missing in possible hijacking found dead: FBI",
-      "to_title": "Truck driver who went missing in possible hijacking found dead: FBI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-30T04:48:23.745Z",
-      "event_type": "MOVED",
-      "fingerprint": "7577f73e42eba6002238d4684eab3273dcfc0d66",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines",
-      "to_title": "DC shooting prompts alarm about threat posed by attackers crossing state lines"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-30T04:48:23.745Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "58e5ca4f96c7df71d5f97698dd682b600e6539a1",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Blanche asked about other postings of '86 47'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-30T04:48:23.745Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "954611ccb3a5752de3f32d15f3ed0dd64c20e394",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Alleged White House correspondents' dinner suspect took photo before attack: Feds",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-30T04:48:23.745Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8ae0aac76290eb6682d380781d2919b266f92a8c",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "CDC sends out alert warning about additional measles cases amid upcoming travel",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-30T07:19:05.289Z",
@@ -1381,6 +1311,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "FIFA boss says Iran will be at the World Cup and will play in the US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T05:01:41.092Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2e84142afe060fb28c0dc43c713a05b07e9fd8ac",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Republicans say they will defer to Trump on Iran war despite arrival of 60-day deadline"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T05:01:41.092Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "41ac065a1a75375d40262142b1fc237bb618967d",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "LIV Golf to lose funding from Saudi Arabia",
       "to_title": null
     }
   ]

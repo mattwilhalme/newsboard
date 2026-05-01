@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T01:24:57.471Z",
+  "generatedAt": "2026-05-01T05:01:38.108Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T20:50:59.065Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1b4f11e875273f828ba4ff9bd27c091a034be187",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Crew awakened for day 2 of mission",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T20:50:59.065Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2fac401831397bad16042b8b209c185a3b8b1259",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran fires dozens of projectiles after Trump speech",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T21:24:34.176Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "FIFA boss says Iran will be at the World Cup and will play in the US",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T05:01:41.092Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2e84142afe060fb28c0dc43c713a05b07e9fd8ac",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Republicans say they will defer to Trump on Iran war despite arrival of 60-day deadline"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T05:01:41.092Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "41ac065a1a75375d40262142b1fc237bb618967d",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "LIV Golf to lose funding from Saudi Arabia",
       "to_title": null
     }
   ],
