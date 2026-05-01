@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T09:18:30.301Z",
+  "generatedAt": "2026-05-01T10:47:48.494Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T22:32:54.174Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7e5029fcf0aff7c07d5f0973c5ed2ed18312cd9a",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Abducted journalist underwent kidnap training"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T22:32:54.174Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9aaa553e68e86da96c5a71ffde9479c1826222d0",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Stocks close mixed after Trump vows continued war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "5ca3b3fad839160e3f17a78cdfc8e75492b5e76f",
-      "from_rank": 6,
-      "to_rank": 1,
-      "from_title": "Artemis II live updates: Crucial translunar injection burn is a 'go'",
-      "to_title": "Artemis II live updates: Crucial translunar injection burn is a 'go'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e429d6649878657cbade5fbe90497df87088c8be",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Judge dismisses much of Blake Lively's lawsuit against Justin Baldoni"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "2ef915b5927b0bb25023aa4c300842ac63df1f47",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Hegseth ousts Army Chief of Staff Gen. Randy George",
-      "to_title": "Hegseth ousts Army Chief of Staff Gen. Randy George"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T23:04:29.551Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Man charged with attempted murder after stabbings",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T10:47:51.767Z",
+      "event_type": "MOVED",
+      "fingerprint": "ba59bd20c451a9fd4f134604e002559f488fd2f6",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "After nearly 1,000 cases, how South Carolina officials beat back a measles outbreak",
+      "to_title": "After nearly 1,000 cases, how South Carolina officials beat back a measles outbreak"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T10:47:51.767Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "101c74e410f95afc0db98b4b12f2d7acf48ec0d8",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Regina Hicks' murder: Estranged husband convicted decades after body found in pond"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T10:47:51.767Z",
+      "event_type": "MOVED",
+      "fingerprint": "a259e893ce0472183625daa12e7b39b8b0adf934",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England",
+      "to_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T10:47:51.767Z",
+      "event_type": "MOVED",
+      "fingerprint": "8898bbc154573841ac07d225f7516a3ac52858b0",
+      "from_rank": 5,
+      "to_rank": 9,
+      "from_title": "Active ingredient in Ozempic shows early promise for treating alcohol use disorder",
+      "to_title": "Active ingredient in Ozempic shows early promise for treating alcohol use disorder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T10:47:51.767Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "72fcd489f679227a1e55277b7d2a802329397a2d",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Massive explosion at NYC home sends police officers flying",
       "to_title": null
     }
   ],
