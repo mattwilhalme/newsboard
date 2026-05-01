@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T20:32:41.416Z",
+  "generatedAt": "2026-05-01T21:30:16.977Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T15:13:18.346Z",
-      "event_type": "MOVED",
-      "fingerprint": "9f967fc275fecd54e7fe75a11c41577f3ef6e311",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Jobs report shows strong hiring in March, despite oil shock set off by Iran war",
-      "to_title": "Jobs report shows strong hiring in March, despite oil shock set off by Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T15:13:18.346Z",
-      "event_type": "MOVED",
-      "fingerprint": "2bb134712360bee500081c87e067c4619bdb85f8",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "Some TSA officers say they're still hurting after receiving backpay",
-      "to_title": "Some TSA officers say they're still hurting after receiving backpay"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T15:13:18.346Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "5 killed in Texas plane crash, officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T21:30:19.979Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "94ffb8e85cccca127c02181ea60877d479a736ac",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Are oil companies profiting from the Iran war? Experts explain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T21:30:19.979Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2d815b1da8ac086a19a066c2b8f33947105294f5",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "90-year-old TSA officer surprised with birthday party at airport",
       "to_title": null
     }
   ],
