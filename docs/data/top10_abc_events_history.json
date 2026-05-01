@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T11:47:37.921Z",
+  "generatedAt": "2026-05-01T12:45:10.138Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b3d3510e65c795d65c102b8a2181e059623dd58a",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingBlake Lively's lawsuit against Justin Baldoni gutted by judge",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:48:34.170Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b2c5550f677e194f573226aaf4fffe4639c6acc0",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Justice Department says Trump can keep his presidential records"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T23:48:34.170Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Active ingredient in Ozempic shows early promise for treating alcohol use disorder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T12:45:13.425Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "53497f831d4107dba5e9d25d86985a6dc1f4f54b",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "2 employees fatally shot in bank robbery, person of interest in custody: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T12:45:13.425Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "476ef8e410049051b9d665945801d6650e80d6b9",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "2 employees dead in Kentucky bank robbery, search for suspect continues: State police",
       "to_title": null
     }
   ],
