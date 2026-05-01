@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T17:14:02.084Z",
+  "generatedAt": "2026-05-01T18:12:28.071Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "2ef915b5927b0bb25023aa4c300842ac63df1f47",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Hegseth ousts Army Chief of Staff Gen. Randy George",
-      "to_title": "Hegseth ousts Army Chief of Staff Gen. Randy George"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in",
-      "to_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b2182d9fd6855d4cdae59dbcec1ff55ec8e16c50",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Family navigates 'grief' after deadly neighbor dispute rocks community"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5378b4a9953882b1a0ef41c7189b9348f92cc3c2",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T09:36:59.096Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "535d19f21125ce938ad2e6b56cdd7f661bd4499d",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T11:10:09.528Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "99e627d98c2207a0b424cb575e1e888436132752",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "'You look amazing': Artemis II crew talks to ABC News on the way to the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T11:10:09.528Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7e9178e62d6e9c14bfe151109bf24ab1c4c909ae",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "From stunning Earth views to toilet fix, Artemis II crew talks to ABC News from space",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T13:47:28.843Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9f967fc275fecd54e7fe75a11c41577f3ef6e311",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Jobs report shows strong hiring in March, despite oil shock set off by Iran war"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T13:47:28.843Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Can this Swedish automaker change Americans' attitudes on EVs?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "884bfb182bcbad3cfc090497350cbec704ab3863",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Body of Nahida Bristy, 2nd missing USF student, identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0cb133f7f5c2c1dd36a2dbbd74b06e79791fdd8f",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Trump says announcement expected today on Spirit Airlines deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "MOVED",
+      "fingerprint": "b865939065ac9d88b13f3a5bdb9b679c0c57dd65",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Person of interest in custody after 2 employees fatally shot in bank robbery",
+      "to_title": "Person of interest in custody after 2 employees fatally shot in bank robbery"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "MOVED",
+      "fingerprint": "9911d3711c2d0497d5a023bb40cecc7d38a7c061",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Prince William, Kate introduce new member of royal family",
+      "to_title": "Prince William, Kate introduce new member of royal family"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c9d6b3f575ac3a26884fe3a0ec7aa5fb8e972eaf",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingPresident Trump announces 25% tariff on cars, trucks from EU",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eab0f0d36844b11a8ec42366ca91c96767bcb8bf",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "2nd missing USF student's remains identified",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T18:12:31.012Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "91362e984a890dbe768e5b881a904c226b4fc25c",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "5 injured in reported stabbing at high school, suspect in custody: Police",
       "to_title": null
     }
   ],
