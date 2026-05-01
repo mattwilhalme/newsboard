@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T07:30:49.032Z",
+  "generatedAt": "2026-05-01T09:18:30.301Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T21:58:58.623Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "535d19f21125ce938ad2e6b56cdd7f661bd4499d",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T21:58:58.623Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5ca3b3fad839160e3f17a78cdfc8e75492b5e76f",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Crucial translunar injection burn is a 'go'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T21:58:58.623Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9aaa553e68e86da96c5a71ffde9479c1826222d0",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Stocks close mixed after Trump vows continued war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T21:58:58.623Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "20e15faba2fab23ffd182fa5108b00b860370b5c",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Hegseth asked Army Chief of Staff Gen. Randy George to step down: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T21:58:58.623Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c95e5cee3c5209af30d00c09ca80572479389b0d",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Trump slaps 100% tariff on some pharmaceutical drugs via executive order",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T21:58:58.623Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b61f21231c9fa4c8d30445ab4e6ef082a36619e9",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Crucial trans-lunar injection burn is a 'go'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T21:58:58.623Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "722bbc5eede9525ca93216639af5772b071cadc0",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Baby in stroller killed in NYC shooting",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T22:32:54.174Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Republicans say they will defer to Trump on Iran war despite arrival of 60-day deadline",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T09:18:33.152Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ba59bd20c451a9fd4f134604e002559f488fd2f6",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "After nearly 1,000 cases, how South Carolina officials beat back a measles outbreak"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T09:18:33.152Z",
+      "event_type": "MOVED",
+      "fingerprint": "07abfc95885a80d14ebf0eb1ede5878277c4eaf1",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "House approves bill to fund DHS, ending record-long partial shutdown",
+      "to_title": "House approves bill to fund DHS, ending record-long partial shutdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T09:18:33.152Z",
+      "event_type": "MOVED",
+      "fingerprint": "72fcd489f679227a1e55277b7d2a802329397a2d",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Massive explosion at NYC home sends police officers flying",
+      "to_title": "Massive explosion at NYC home sends police officers flying"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T09:18:33.152Z",
+      "event_type": "MOVED",
+      "fingerprint": "a259e893ce0472183625daa12e7b39b8b0adf934",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England",
+      "to_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T09:18:33.152Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "260c7dfd43be55a91b531452de21e84457d501cf",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Camp Mystic says it won't reopen this summer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T09:18:33.152Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e81800cad947b2534739fe10a876ae3e28e717c0",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Camp Mystic says it won't reopen Texas camp this summer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T09:18:33.152Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cb2708d60f882e92056ba900c53cc179f5b7244d",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Man charged with attempted murder after stabbings",
       "to_title": null
     }
   ],
