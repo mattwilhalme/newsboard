@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T10:47:48.494Z",
+  "generatedAt": "2026-05-01T11:47:37.921Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in",
-      "to_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "5378b4a9953882b1a0ef41c7189b9348f92cc3c2",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges",
-      "to_title": "Melissa Gilbert speaks out on husband Timothy Busfield's child sexual contact charges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-02T23:04:29.551Z",
-      "event_type": "MOVED",
-      "fingerprint": "535d19f21125ce938ad2e6b56cdd7f661bd4499d",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals",
-      "to_title": "Trump signs executive order slapping 100% tariffs on some pharmaceuticals"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-02T23:04:29.551Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Massive explosion at NYC home sends police officers flying",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T11:47:41.061Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2e0ef7a86775ea1ff79c511d14e89d2b884c86df",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Can this Swedish automaker change Americans' attitudes on EVs?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T11:47:41.061Z",
+      "event_type": "MOVED",
+      "fingerprint": "a259e893ce0472183625daa12e7b39b8b0adf934",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England",
+      "to_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-01T11:47:41.061Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8898bbc154573841ac07d225f7516a3ac52858b0",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Active ingredient in Ozempic shows early promise for treating alcohol use disorder",
       "to_title": null
     }
   ],
