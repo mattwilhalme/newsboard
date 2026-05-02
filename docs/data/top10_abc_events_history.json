@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-02T05:57:56.772Z",
+  "generatedAt": "2026-05-02T07:30:05.732Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f655b487589f74e2e6f52d12922ca171caf16c36",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Much of Lively's lawsuit against Baldoni dismissed",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f50e31a81df3ecf52ccf6cdc05dc0b33d2e082d6",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "US fighter jet down in Iran: 1 crew member rescued as search continues, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "MOVED",
-      "fingerprint": "7be8cc0896855e0c54b0a23ff875de6fc80d4e06",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request",
-      "to_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a571ae4309705702b7c7f6279a9351ad49e06e",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Artemis II live updates: Stunning new photos show Earth from Orion capsule",
-      "to_title": "Artemis II live updates: Stunning new photos show Earth from Orion capsule"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "MOVED",
-      "fingerprint": "99e627d98c2207a0b424cb575e1e888436132752",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "'You look amazing': Artemis II crew talks to ABC News on the way to the moon",
-      "to_title": "'You look amazing': Artemis II crew talks to ABC News on the way to the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1df018e6cc8d5280ac47544370231d3dada472a2",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Millions of eyedrops sold at major pharmacies and stores voluntarily recalled"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T17:51:26.191Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Spirit Airlines deal announcement expected today, Trump says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T07:30:08.765Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1af175143b1b5dd296affee1f49574721b048ed8",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingSpirit Airlines begins winding down operations, canceling all flights"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T07:30:08.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "d92f4bb40a734dcf2a73786169b47ca1743e1ddd",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Court issues nationwide order blocking distribution of abortion pill by mail",
+      "to_title": "Court issues nationwide order blocking distribution of abortion pill by mail"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T07:30:08.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "1929be4d19166afc2f1eadd5cc8d31e0b5a61f8a",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "US to withdraw 5,000 troops from Germany",
+      "to_title": "US to withdraw 5,000 troops from Germany"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T07:30:08.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "e5295ec82f69291273eeda1907691ffb78e5c6ef",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Trump tells Congress hostilities 'have terminated'",
+      "to_title": "Iran live updates: Trump tells Congress hostilities 'have terminated'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T07:30:08.765Z",
+      "event_type": "MOVED",
+      "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Trump announces 25% tariff on cars, trucks from EU",
+      "to_title": "Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T07:30:08.765Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "825ea687797007ba25a7abf9064c6f385838223d",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "What to know about Spirit Airlines amid reports airline preparing to cease operations",
       "to_title": null
     }
   ],
