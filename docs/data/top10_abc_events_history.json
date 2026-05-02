@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-02T07:30:05.732Z",
+  "generatedAt": "2026-05-02T08:51:36.425Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "MOVED",
-      "fingerprint": "710db27d27f9b33b8a4cbe5d25c1212ed0896076",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Mom and teenage son help save neighbor from house fire",
-      "to_title": "Mom and teenage son help save neighbor from house fire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cb7ba8f7d1cfdf813d220d315b4ff05934a2d23f",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Jobs report shows strong hiring in March"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T17:51:26.191Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "What to know about Spirit Airlines amid reports airline preparing to cease operations",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T08:51:39.649Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "81da6cfe3496de6bbf226213240c44b42bdf0000",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "What to know about Spirit Airlines as it says it is 'winding down all operations'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T08:51:39.649Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1af175143b1b5dd296affee1f49574721b048ed8",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSpirit Airlines begins winding down operations, canceling all flights",
       "to_title": null
     }
   ],
