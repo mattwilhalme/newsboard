@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-02T08:51:36.425Z",
+  "generatedAt": "2026-05-02T09:51:18.461Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T09:18:33.152Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ba59bd20c451a9fd4f134604e002559f488fd2f6",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "After nearly 1,000 cases, how South Carolina officials beat back a measles outbreak"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T09:18:33.152Z",
-      "event_type": "MOVED",
-      "fingerprint": "07abfc95885a80d14ebf0eb1ede5878277c4eaf1",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "House approves bill to fund DHS, ending record-long partial shutdown",
-      "to_title": "House approves bill to fund DHS, ending record-long partial shutdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T09:18:33.152Z",
-      "event_type": "MOVED",
-      "fingerprint": "72fcd489f679227a1e55277b7d2a802329397a2d",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Massive explosion at NYC home sends police officers flying",
-      "to_title": "Massive explosion at NYC home sends police officers flying"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T09:18:33.152Z",
-      "event_type": "MOVED",
-      "fingerprint": "a259e893ce0472183625daa12e7b39b8b0adf934",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England",
-      "to_title": "Wreckage of Coast Guard ship lost during WWI found off coast of England"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T09:18:33.152Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "260c7dfd43be55a91b531452de21e84457d501cf",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Camp Mystic says it won't reopen this summer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T09:18:33.152Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e81800cad947b2534739fe10a876ae3e28e717c0",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Camp Mystic says it won't reopen Texas camp this summer",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T09:18:33.152Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cb2708d60f882e92056ba900c53cc179f5b7244d",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Man charged with attempted murder after stabbings",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-01T10:47:51.767Z",
@@ -1101,6 +1031,66 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingSpirit Airlines begins winding down operations, canceling all flights",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "MOVED",
+      "fingerprint": "884bfb182bcbad3cfc090497350cbec704ab3863",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "Body of Nahida Bristy, 2nd missing USF student, identified",
+      "to_title": "Body of Nahida Bristy, 2nd missing USF student, identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "MOVED",
+      "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Trump announces 25% tariff on cars, trucks from EU",
+      "to_title": "Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e867db0be531fdf3aa8c13e0cbfd790b4b24197c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Prince William, Kate Middleton's daughter Princess Charlotte turns 11"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "787ce741f1bf228e23f75979f22af4e3bf497d07",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "NATO ally Romania reports increased rate of Russian drone incursions, fighter alerts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9914c654b46036fb1eeaf4a08bf3f79da0897b2f",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Are oil companies profiting from high prices amid the Iran war?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8a0fa3310c92ce51eb05608c2d6fabdda98137c2",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "18-year-old in custody after allegedly gunning down 2 people in bank robbery",
       "to_title": null
     }
   ]

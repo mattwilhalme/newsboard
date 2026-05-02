@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-02T08:51:36.425Z",
+  "generatedAt": "2026-05-02T09:51:18.461Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "MOVED",
-      "fingerprint": "2bb134712360bee500081c87e067c4619bdb85f8",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Some TSA officers say they're still hurting after receiving backpay",
-      "to_title": "Some TSA officers say they're still hurting after receiving backpay"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "MOVED",
-      "fingerprint": "dc0d268a8b3a326009927734b5d511dea3291c67",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "How a Florida mother of 4 lost her life after neighbor dispute turned deadly",
-      "to_title": "How a Florida mother of 4 lost her life after neighbor dispute turned deadly"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3b49f79e7cf88f3fb8bdada59b084389a6dd0684",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Over 3 million bottles of eye drops sold at CVS, Kroger, more voluntarily recalled",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9f967fc275fecd54e7fe75a11c41577f3ef6e311",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Jobs report shows strong hiring in March, despite oil shock set off by Iran war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:51:26.191Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7b03d714e2a2e0568d571deca74884cabbabb127",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Italy coach out after losing World Cup qualifier",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T18:29:29.502Z",
-      "event_type": "MOVED",
-      "fingerprint": "f50e31a81df3ecf52ccf6cdc05dc0b33d2e082d6",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "US fighter jet down in Iran: 1 crew member rescued as search continues, officials say",
-      "to_title": "US fighter jet down in Iran: 1 crew member rescued as search continues, officials say"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T18:29:29.502Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingSpirit Airlines begins winding down operations, canceling all flights",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "MOVED",
+      "fingerprint": "884bfb182bcbad3cfc090497350cbec704ab3863",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "Body of Nahida Bristy, 2nd missing USF student, identified",
+      "to_title": "Body of Nahida Bristy, 2nd missing USF student, identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "MOVED",
+      "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Trump announces 25% tariff on cars, trucks from EU",
+      "to_title": "Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e867db0be531fdf3aa8c13e0cbfd790b4b24197c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Prince William, Kate Middleton's daughter Princess Charlotte turns 11"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "787ce741f1bf228e23f75979f22af4e3bf497d07",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "NATO ally Romania reports increased rate of Russian drone incursions, fighter alerts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9914c654b46036fb1eeaf4a08bf3f79da0897b2f",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Are oil companies profiting from high prices amid the Iran war?",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T09:51:21.574Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8a0fa3310c92ce51eb05608c2d6fabdda98137c2",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "18-year-old in custody after allegedly gunning down 2 people in bank robbery",
       "to_title": null
     }
   ],
