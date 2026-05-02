@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-02T03:45:55.039Z",
+  "generatedAt": "2026-05-02T05:57:56.772Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T05:01:41.092Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2e84142afe060fb28c0dc43c713a05b07e9fd8ac",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Republicans say they will defer to Trump on Iran war despite arrival of 60-day deadline"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T05:01:41.092Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "41ac065a1a75375d40262142b1fc237bb618967d",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "LIV Golf to lose funding from Saudi Arabia",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-01T07:30:52.154Z",
@@ -1141,6 +1121,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US to withdraw 5,000 troops from Germany",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T05:57:59.736Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "825ea687797007ba25a7abf9064c6f385838223d",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "What to know about Spirit Airlines amid reports airline preparing to cease operations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T05:57:59.736Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e528c526d7aa6cdf69191146e17cef5c08c51efe",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Spirit Airlines deal announcement expected today, Trump says",
       "to_title": null
     }
   ]

@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-02T03:45:55.039Z",
+  "generatedAt": "2026-05-02T05:57:56.772Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0da015ec22003d8f5193e978b0cdcc027d84f7d3",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US jet appears to have been shot down by Iran, US official says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2ef915b5927b0bb25023aa4c300842ac63df1f47",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Hegseth ousts Army Chief of Staff Gen. Randy George",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T17:06:03.052Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US to withdraw 5,000 troops from Germany",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T05:57:59.736Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "825ea687797007ba25a7abf9064c6f385838223d",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "What to know about Spirit Airlines amid reports airline preparing to cease operations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T05:57:59.736Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e528c526d7aa6cdf69191146e17cef5c08c51efe",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Spirit Airlines deal announcement expected today, Trump says",
       "to_title": null
     }
   ],
