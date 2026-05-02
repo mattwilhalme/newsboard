@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-01T23:10:33.437Z",
+  "generatedAt": "2026-05-02T03:45:55.039Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T15:55:18.440Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b2182d9fd6855d4cdae59dbcec1ff55ec8e16c50",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Family navigates 'grief' after deadly neighbor dispute rocks community",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T15:55:18.440Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ed82ab2e0e1be6cfccdacb56ebe42dbf7b3be0ee",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Trump replacing Pam Bondi as attorney general, Todd Blanche to step in",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T15:55:18.440Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b2c5550f677e194f573226aaf4fffe4639c6acc0",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Justice Department says Trump can keep his presidential records",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T16:29:38.315Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7be8cc0896855e0c54b0a23ff875de6fc80d4e06",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T16:29:38.315Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "710db27d27f9b33b8a4cbe5d25c1212ed0896076",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Mom and teenage son help save neighbor from house fire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T16:29:38.315Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "af0e2489d33b3e335731c98f9a0baf81333e1cde",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "White House asks for record-breaking $1.5 trillion for defense in 2027 budget request",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T16:29:38.315Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3b6ff0bda8268967067b551daa17b280e5c18414",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "'I kicked the door in': Neighbor recounts rescue after teen spots house fire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c3401be742144116002add2887e34af8e8848caf",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingOne crew member aboard the downed fighter jet has been rescued: US official"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a571ae4309705702b7c7f6279a9351ad49e06e",
-      "from_rank": 7,
-      "to_rank": 3,
-      "from_title": "Artemis II live updates: Stunning new photos show Earth from Orion capsule",
-      "to_title": "Artemis II live updates: Stunning new photos show Earth from Orion capsule"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "MOVED",
-      "fingerprint": "99e627d98c2207a0b424cb575e1e888436132752",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "'You look amazing': Artemis II crew talks to ABC News on the way to the moon",
-      "to_title": "'You look amazing': Artemis II crew talks to ABC News on the way to the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3b49f79e7cf88f3fb8bdada59b084389a6dd0684",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Over 3 million bottles of eye drops sold at CVS, Kroger, more voluntarily recalled"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "MOVED",
-      "fingerprint": "9f967fc275fecd54e7fe75a11c41577f3ef6e311",
-      "from_rank": 3,
-      "to_rank": 7,
-      "from_title": "Jobs report shows strong hiring in March, despite oil shock set off by Iran war",
-      "to_title": "Jobs report shows strong hiring in March, despite oil shock set off by Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "MOVED",
-      "fingerprint": "2bb134712360bee500081c87e067c4619bdb85f8",
-      "from_rank": 4,
-      "to_rank": 8,
-      "from_title": "Some TSA officers say they're still hurting after receiving backpay",
-      "to_title": "Some TSA officers say they're still hurting after receiving backpay"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-03T17:06:03.052Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7b03d714e2a2e0568d571deca74884cabbabb127",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Italy coach out after losing World Cup qualifier"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-03T17:06:03.052Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Queens home explosion caught on camera",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d92f4bb40a734dcf2a73786169b47ca1743e1ddd",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Court issues nationwide order blocking distribution of abortion pill by mail"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1929be4d19166afc2f1eadd5cc8d31e0b5a61f8a",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "US to withdraw 5,000 troops from Germany"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "MOVED",
+      "fingerprint": "e5295ec82f69291273eeda1907691ffb78e5c6ef",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Trump tells Congress hostilities 'have terminated'",
+      "to_title": "Iran live updates: Trump tells Congress hostilities 'have terminated'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "MOVED",
+      "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Trump announces 25% tariff on cars, trucks from EU",
+      "to_title": "Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "MOVED",
+      "fingerprint": "e528c526d7aa6cdf69191146e17cef5c08c51efe",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Spirit Airlines deal announcement expected today, Trump says",
+      "to_title": "Spirit Airlines deal announcement expected today, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "MOVED",
+      "fingerprint": "9914c654b46036fb1eeaf4a08bf3f79da0897b2f",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Are oil companies profiting from high prices amid the Iran war?",
+      "to_title": "Are oil companies profiting from high prices amid the Iran war?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "MOVED",
+      "fingerprint": "884bfb182bcbad3cfc090497350cbec704ab3863",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Body of Nahida Bristy, 2nd missing USF student, identified",
+      "to_title": "Body of Nahida Bristy, 2nd missing USF student, identified"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "45da2eec0a7fa8a7c0dc6bf588aac14f7adc99b5",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Mom charged with involuntary manslaughter over teen son's alleged e-motorcycle crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "MOVED",
+      "fingerprint": "8a0fa3310c92ce51eb05608c2d6fabdda98137c2",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "18-year-old in custody after allegedly gunning down 2 people in bank robbery",
+      "to_title": "18-year-old in custody after allegedly gunning down 2 people in bank robbery"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8a7f9359eebaf1a759707890421c8d85fe832938",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "How a shocking 24-year-old cold case was solved"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "65c41092b2c6d01ef130fb20f4f1b4d7ed5518c2",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingCourt issues nationwide order blocking distribution of abortion pill by mail",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "eeab431966bd97afcaec1d303a57c2ad76fcd812",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Ex-cellmate says he found suicide note from Jeffrey Epstein",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "07111d3c293a7dcdad61fa51fa5fe0bc3c336864",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Ohio woman found in submerged Camaro: Ex convicted years later",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T03:45:58.582Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "301402d168865c9579dc100b0b409e7545cc63eb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US to withdraw 5,000 troops from Germany",
       "to_title": null
     }
   ],
