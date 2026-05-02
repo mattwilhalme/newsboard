@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-02T12:11:11.649Z",
+  "generatedAt": "2026-05-02T13:48:07.676Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T12:45:13.425Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "53497f831d4107dba5e9d25d86985a6dc1f4f54b",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "2 employees fatally shot in bank robbery, person of interest in custody: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-01T12:45:13.425Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "476ef8e410049051b9d665945801d6650e80d6b9",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "2 employees dead in Kentucky bank robbery, search for suspect continues: State police",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-01T14:08:41.028Z",
@@ -1042,6 +1022,56 @@
       "to_rank": 4,
       "from_title": "US to withdraw 5,000 troops from Germany",
       "to_title": "US to withdraw 5,000 troops from Germany"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T13:48:10.963Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "70f6ccf6b16342a6a1cac81fb714d8b71eaf3551",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "College football champion Indiana Hoosiers to visit White House this month: Source"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T13:48:10.963Z",
+      "event_type": "MOVED",
+      "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Trump announces 25% tariff on cars, trucks from EU",
+      "to_title": "Trump announces 25% tariff on cars, trucks from EU"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T13:48:10.963Z",
+      "event_type": "MOVED",
+      "fingerprint": "e867db0be531fdf3aa8c13e0cbfd790b4b24197c",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Prince William, Kate Middleton's daughter Princess Charlotte turns 11",
+      "to_title": "Prince William, Kate Middleton's daughter Princess Charlotte turns 11"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T13:48:10.963Z",
+      "event_type": "MOVED",
+      "fingerprint": "45da2eec0a7fa8a7c0dc6bf588aac14f7adc99b5",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Mom charged with involuntary manslaughter over teen son's alleged e-motorcycle crash",
+      "to_title": "Mom charged with involuntary manslaughter over teen son's alleged e-motorcycle crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-02T13:48:10.963Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "787ce741f1bf228e23f75979f22af4e3bf497d07",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "NATO ally Romania reports increased rate of Russian drone incursions, fighter alerts",
+      "to_title": null
     }
   ]
 }
