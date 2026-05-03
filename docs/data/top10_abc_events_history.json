@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-03T07:33:46.713Z",
+  "generatedAt": "2026-05-03T09:08:40.732Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T19:07:40.079Z",
-      "event_type": "MOVED",
-      "fingerprint": "1df018e6cc8d5280ac47544370231d3dada472a2",
-      "from_rank": 7,
-      "to_rank": 5,
-      "from_title": "Millions of eyedrops sold at major pharmacies and stores voluntarily recalled",
-      "to_title": "Millions of eyedrops sold at major pharmacies and stores voluntarily recalled"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T19:07:40.079Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c5a10c1302fd164c50d409552b4df85cb148529",
-      "from_rank": 10,
-      "to_rank": 6,
-      "from_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial",
-      "to_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-04T19:07:40.079Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iranian official says war with US will 'likely' resume",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T09:08:43.832Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "22c529e1f48fb15aab434019cb84214206f9bcab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel, Hezbollah exchange attacks as Trump mulls Iran offer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T09:08:43.832Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "544e4ab1cd638e2a5e3c18f60a854d12a557133b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Latest on Iran deal; US fast-tracks arms sales to Mideast partners",
       "to_title": null
     }
   ],

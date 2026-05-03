@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-03T07:33:46.713Z",
+  "generatedAt": "2026-05-03T09:08:40.732Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T08:51:39.649Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "81da6cfe3496de6bbf226213240c44b42bdf0000",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "What to know about Spirit Airlines as it says it is 'winding down all operations'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T08:51:39.649Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1af175143b1b5dd296affee1f49574721b048ed8",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingSpirit Airlines begins winding down operations, canceling all flights",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-02T09:51:21.574Z",
@@ -551,6 +531,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Iranian official says war with US will 'likely' resume",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T09:08:43.832Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "22c529e1f48fb15aab434019cb84214206f9bcab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Israel, Hezbollah exchange attacks as Trump mulls Iran offer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T09:08:43.832Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "544e4ab1cd638e2a5e3c18f60a854d12a557133b",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Latest on Iran deal; US fast-tracks arms sales to Mideast partners",
       "to_title": null
     }
   ]
