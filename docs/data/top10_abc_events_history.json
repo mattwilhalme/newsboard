@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-03T20:26:00.193Z",
+  "generatedAt": "2026-05-03T21:09:25.097Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T10:24:52.425Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "12247de0edb7edd19af519cb94e63cf895eb7c20",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: 2nd US airman rescued from Iran after F-15 shot down",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "647eae3f8573a7a257a490a01124f85011d38578",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Pope Leo marks first Easter as pontiff with call for hope amid global conflicts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cf1736c1ad7514e4318b5ce27b2ba78c7c7df59f",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Prince William, Kate and kids join royals for Easter service"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "MOVED",
-      "fingerprint": "0c1dd4ab336df9c4855c809307f1ab88efa59be3",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials",
-      "to_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-05T11:01:27.709Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "US to withdraw 5,000 troops from Germany: Pentagon",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "80aa9ae5c18921635fce5738349bace264c7092d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Wild temperature swing in the forecast as May gets underway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3fa55d97d126456dc04a83b98d4efc61e7231fcf",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "'The Devil Wears Prada 2' opens to $77M, tops box office"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b67f9e6ee0a366221af45b522126ced524a24de6",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "14bca72a2d583f34c50d0e88f5d62e38c53d29b4",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "‘The Devil Wears Prada’ struts to first place with $77 million debut",
       "to_title": null
     }
   ],

@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-03T20:26:00.193Z",
+  "generatedAt": "2026-05-03T21:09:25.097Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T20:51:40.886Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "28af495f8a70178644bdac7904a7c479c53f890c",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Supreme Court asked to restore access to mail-order abortion pill"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T20:51:40.886Z",
-      "event_type": "MOVED",
-      "fingerprint": "09263eb128991167c912e89ba4cbc64bd2c05689",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Iran live updates: Iranian official says war with US will 'likely' resume",
-      "to_title": "Iran live updates: Iranian official says war with US will 'likely' resume"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T20:51:40.886Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d92f4bb40a734dcf2a73786169b47ca1743e1ddd",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Court issues nationwide order blocking distribution of abortion pill by mail",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-02T22:07:38.228Z",
@@ -701,6 +671,46 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "US to withdraw 5,000 troops from Germany: Pentagon",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "80aa9ae5c18921635fce5738349bace264c7092d",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Wild temperature swing in the forecast as May gets underway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3fa55d97d126456dc04a83b98d4efc61e7231fcf",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "'The Devil Wears Prada 2' opens to $77M, tops box office"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b67f9e6ee0a366221af45b522126ced524a24de6",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:09:27.992Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "14bca72a2d583f34c50d0e88f5d62e38c53d29b4",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "‘The Devil Wears Prada’ struts to first place with $77 million debut",
       "to_title": null
     }
   ]
