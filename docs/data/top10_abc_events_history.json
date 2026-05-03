@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-02T23:56:14.227Z",
+  "generatedAt": "2026-05-03T02:01:42.025Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T16:52:44.911Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5c5a10c1302fd164c50d409552b4df85cb148529",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T16:52:44.911Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cb7ba8f7d1cfdf813d220d315b4ff05934a2d23f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Jobs report shows strong hiring in March",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T19:07:40.079Z",
-      "event_type": "MOVED",
-      "fingerprint": "bd2c3d33c54c3c56791915bc32ed126f17268225",
-      "from_rank": 4,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Search for missing US crew member enters 2nd day",
-      "to_title": "Iran live updates: Search for missing US crew member enters 2nd day"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T19:07:40.079Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0c1e76fd27935ada2540f40b90510c21dadb00bb",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:'No air defenses': Trump, Hegseth touted American dominance before jet was downed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T19:07:40.079Z",
-      "event_type": "MOVED",
-      "fingerprint": "7be8cc0896855e0c54b0a23ff875de6fc80d4e06",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request",
-      "to_title": "White House asks for record-breaking $1.5 trillion for defense in new budget request"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-04T19:07:40.079Z",
-      "event_type": "MOVED",
-      "fingerprint": "1c33305022c2f9f5a0df1e1701cc681b57148300",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "Artemis II live updates: Astronauts closer to the moon than Earth, NASA says",
-      "to_title": "Artemis II live updates: Astronauts closer to the moon than Earth, NASA says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-04T19:07:40.079Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Padres announce agreement to sell team",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T02:01:45.274Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "544e4ab1cd638e2a5e3c18f60a854d12a557133b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Latest on Iran deal; US fast-tracks arms sales to Mideast partners"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T02:01:45.274Z",
+      "event_type": "MOVED",
+      "fingerprint": "b67f9e6ee0a366221af45b522126ced524a24de6",
+      "from_rank": 5,
+      "to_rank": 2,
+      "from_title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner",
+      "to_title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T02:01:45.274Z",
+      "event_type": "MOVED",
+      "fingerprint": "cd7785ce1b9901f68846179028af2de88cb346e3",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights",
+      "to_title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T02:01:45.274Z",
+      "event_type": "MOVED",
+      "fingerprint": "28af495f8a70178644bdac7904a7c479c53f890c",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Supreme Court asked to restore access to mail-order abortion pill",
+      "to_title": "Supreme Court asked to restore access to mail-order abortion pill"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T02:01:45.274Z",
+      "event_type": "MOVED",
+      "fingerprint": "1743f4aad39bb0f2ad3eeb10e693fc0e9f853160",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "US to withdraw 5,000 troops from Germany: Pentagon",
+      "to_title": "US to withdraw 5,000 troops from Germany: Pentagon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T02:01:45.274Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "09263eb128991167c912e89ba4cbc64bd2c05689",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iranian official says war with US will 'likely' resume",
       "to_title": null
     }
   ],
