@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-03T16:00:58.752Z",
+  "generatedAt": "2026-05-03T16:59:20.866Z",
   "hours": 24,
   "events": [
     {
@@ -621,6 +621,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Mom charged with involuntary manslaughter over teen son's alleged e-motorcycle crash",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "07cbe75d651859b7a7f4173163bc782db0589643",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "US service members go missing during military exercise in Morocco"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "MOVED",
+      "fingerprint": "b67f9e6ee0a366221af45b522126ced524a24de6",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner",
+      "to_title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "MOVED",
+      "fingerprint": "cd7785ce1b9901f68846179028af2de88cb346e3",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights",
+      "to_title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "14bca72a2d583f34c50d0e88f5d62e38c53d29b4",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "‘The Devil Wears Prada’ struts to first place with $77 million debut"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d2cc70183d4f37cecdcb95fa427c5222e0e9d890",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "2 US service members missing after military exercises in Morocco",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "28af495f8a70178644bdac7904a7c479c53f890c",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Supreme Court asked to restore access to mail-order abortion pill",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T16:59:23.965Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1743f4aad39bb0f2ad3eeb10e693fc0e9f853160",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "US to withdraw 5,000 troops from Germany: Pentagon",
       "to_title": null
     }
   ]
