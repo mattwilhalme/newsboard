@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-03T21:09:25.097Z",
+  "generatedAt": "2026-05-03T21:59:45.172Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "MOVED",
-      "fingerprint": "23cfdf4921c104583c7885fd6c98cfe1399f86ae",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Aid groups warn Iran war is hindering food and medicine from reaching millions",
-      "to_title": "Aid groups warn Iran war is hindering food and medicine from reaching millions"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "MOVED",
-      "fingerprint": "b8f7a5cd285668637e8d9006a3e64fdcaf7ad641",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "'Something you expect from the movies': Small plane lands on Pennsylvania highway",
-      "to_title": "'Something you expect from the movies': Small plane lands on Pennsylvania highway"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c5a10c1302fd164c50d409552b4df85cb148529",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial",
-      "to_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "23fe06dd3a8568e2706f3b7ace67372bb7823538",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Michigan overpowers Arizona and reaches national title game with 91-73 win",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:01:27.709Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "861776cc46ed61d1de867c4436bc87f81ffbd767",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Choirs seek to protect a musical tradition little changed since Queen Elizabeth I",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:38:42.075Z",
-      "event_type": "MOVED",
-      "fingerprint": "938efe4ac0a95eb8a07d6cada67a5feaaf3885e5",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Artemis II live updates: Astronauts expected to enter lunar sphere of influence",
-      "to_title": "Artemis II live updates: Astronauts expected to enter lunar sphere of influence"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:38:42.075Z",
-      "event_type": "MOVED",
-      "fingerprint": "647eae3f8573a7a257a490a01124f85011d38578",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Pope Leo marks first Easter as pontiff with call for hope amid global conflicts",
-      "to_title": "Pope Leo marks first Easter as pontiff with call for hope amid global conflicts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T11:38:42.075Z",
-      "event_type": "MOVED",
-      "fingerprint": "cf1736c1ad7514e4318b5ce27b2ba78c7c7df59f",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Prince William, Kate and kids join royals for Easter service",
-      "to_title": "Prince William, Kate and kids join royals for Easter service"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-05T11:38:42.075Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "‘The Devil Wears Prada’ struts to first place with $77 million debut",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "afd1d9b91149733352788670ace14bedf2ae84c7",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "8 people arrested at protest during ICE arrest in Brooklyn, NYPD says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "07cbe75d651859b7a7f4173163bc782db0589643",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "US service members go missing during military exercise in Morocco",
+      "to_title": "US service members go missing during military exercise in Morocco"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student",
+      "to_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "80aa9ae5c18921635fce5738349bace264c7092d",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Wild temperature swing in the forecast as May gets underway",
+      "to_title": "Wild temperature swing in the forecast as May gets underway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "cd7785ce1b9901f68846179028af2de88cb346e3",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights",
+      "to_title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "3fa55d97d126456dc04a83b98d4efc61e7231fcf",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "'The Devil Wears Prada 2' opens to $77M, tops box office",
+      "to_title": "'The Devil Wears Prada 2' opens to $77M, tops box office"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "MOVED",
+      "fingerprint": "dda7a2a62df02f2155fb6e564e00341c622e5e86",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Shakira thrills crowd of 2 million with free concert on Brazil's Copacabana beach",
+      "to_title": "Shakira thrills crowd of 2 million with free concert on Brazil's Copacabana beach"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-03T21:59:48.442Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e867db0be531fdf3aa8c13e0cbfd790b4b24197c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Prince William, Kate Middleton's daughter Princess Charlotte turns 11",
       "to_title": null
     }
   ],
