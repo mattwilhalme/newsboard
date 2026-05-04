@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-04T09:12:30.260Z",
+  "generatedAt": "2026-05-04T11:20:07.472Z",
   "hours": 24,
   "events": [
     {
@@ -1121,6 +1121,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Police ask for help in fatal Texas shooting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T11:20:10.420Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5ea54b2983e3781d6796e897c43245e409b04fa1",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump's 'Project Freedom' begins Monday amid attacks in strait"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T11:20:10.420Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ece45dbe702a630ecad3b7a86be366ae1ba0ab8c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "At least 13 people injured in Oklahoma lake party shooting, area hospitals say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T11:20:10.420Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2b9ba5107e86edb6f0f91fe052d45f1f76509c3f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: UKMTO reports attacks on 2 ships in Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T11:20:10.420Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "01d421714780d1490249f61dca8499dd437fea8e",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "At least 10 people injured in Oklahoma lake party shooting, police say",
       "to_title": null
     }
   ]
