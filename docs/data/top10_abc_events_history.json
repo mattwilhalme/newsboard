@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-04T04:10:28.348Z",
+  "generatedAt": "2026-05-04T06:55:09.502Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef889dbf0ba7694faf387ad97b947bd2868b6e19",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Trump says 'we're blowing up' Iran if no peace deal in 48 hours"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "6e22d352cbdf5e43d31cf6be6fa07eea90b7d55c",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Jeffries 'thankful' US airman was rescued but criticizes 'reckless and costly war'",
-      "to_title": "Jeffries 'thankful' US airman was rescued but criticizes 'reckless and costly war'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "ee11fb8c267d2d0a14f30100f92609dcfd4a9751",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Rep. Turner says he doesn’t think ground troops necessary to reopen Strait of Hormuz",
-      "to_title": "Rep. Turner says he doesn’t think ground troops necessary to reopen Strait of Hormuz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "6f0e9d0843dc6fe3038e359fdea0c7f191c5a199",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby",
-      "to_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "647eae3f8573a7a257a490a01124f85011d38578",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Pope Leo marks first Easter as pontiff with call for hope amid global conflicts",
-      "to_title": "Pope Leo marks first Easter as pontiff with call for hope amid global conflicts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "cf1736c1ad7514e4318b5ce27b2ba78c7c7df59f",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Prince William, Kate and kids join royals for Easter service",
-      "to_title": "Prince William, Kate and kids join royals for Easter service"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "0c1dd4ab336df9c4855c809307f1ab88efa59be3",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials",
-      "to_title": "Man charged with impaired driving after car plows into crowd at La. parade: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "b8f7a5cd285668637e8d9006a3e64fdcaf7ad641",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "'Something you expect from the movies': Small plane lands on Pennsylvania highway",
-      "to_title": "'Something you expect from the movies': Small plane lands on Pennsylvania highway"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c5a10c1302fd164c50d409552b4df85cb148529",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial",
-      "to_title": "Blake Lively speaks out after court ruling ahead of Justin Baldoni trial"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8314724213f6e9eae8e8915855fdbdef032a5c66",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says 'we're blowing up' Iran if no peace deal in 48 hours",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T20:49:53.372Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "174bb3e34ce8f1e11d1055d0cde170ceb2aada89",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Child migrant allegedly abused in federal custody",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T21:19:42.631Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "078c0319e1cfa3cc58f950e10255d3d54b902870",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Artemis II live updates: Astronauts engaged in final day of prep before lunar flyby"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-05T21:19:42.631Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f0e9d0843dc6fe3038e359fdea0c7f191c5a199",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Astronauts awakened on final day of prep before lunar flyby",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-05T22:55:53.882Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Cornell University president accused of backing into student in confrontation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2b9ba5107e86edb6f0f91fe052d45f1f76509c3f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: UKMTO reports attacks on 2 ships in Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9d63a5d4dfd936b343419182766915ce30fbf7e8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Former NYC mayor Rudy Giuliani hospitalized in critical condition"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "MOVED",
+      "fingerprint": "ebc276e8162138f21aee8dd86ea20a2cca964793",
+      "from_rank": 5,
+      "to_rank": 3,
+      "from_title": "Pirro says evidence shows alleged correspondents' dinner attacker shot officer",
+      "to_title": "Pirro says evidence shows alleged correspondents' dinner attacker shot officer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "MOVED",
+      "fingerprint": "92a2bd60b80af26594c0a9959a393c89a3c22f76",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Cornell president claims 'harassment and intimidation' after parking lot clash",
+      "to_title": "Cornell president claims 'harassment and intimidation' after parking lot clash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "MOVED",
+      "fingerprint": "b2ecb0f7c06a22c301d3a99effb5d2956991da5b",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’",
+      "to_title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "MOVED",
+      "fingerprint": "afd1d9b91149733352788670ace14bedf2ae84c7",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "8 people arrested at protest during ICE arrest in Brooklyn, NYPD says",
+      "to_title": "8 people arrested at protest during ICE arrest in Brooklyn, NYPD says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "MOVED",
+      "fingerprint": "07cbe75d651859b7a7f4173163bc782db0589643",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "US service members go missing during military exercise in Morocco",
+      "to_title": "US service members go missing during military exercise in Morocco"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "MOVED",
+      "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student",
+      "to_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "MOVED",
+      "fingerprint": "80aa9ae5c18921635fce5738349bace264c7092d",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Wild temperature swing in the forecast as May gets underway",
+      "to_title": "Wild temperature swing in the forecast as May gets underway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4b9e5959cb93a9c255dce192399d4f827a9fff29",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Police ask for help in fatal Texas shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "69b7d63d4273c747304953d795a0bc649db724b6",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says US will guide ships out of Strait of Hormuz",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c5c1a839b0e5a7a33e621af3bb358cd429c9b335",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Transportation Secretary projects ‘immediate relief’ on gas prices once strait opens",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T06:55:12.480Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "11e0b1a26a29838607aa31db75c223b367311d77",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Rudy Giuliani hospitalized in critical condition: Spokesperson",
       "to_title": null
     }
   ],
