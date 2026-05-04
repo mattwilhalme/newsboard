@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-04T06:55:09.502Z",
+  "generatedAt": "2026-05-04T09:12:30.260Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-03T09:08:43.832Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "22c529e1f48fb15aab434019cb84214206f9bcab",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Israel, Hezbollah exchange attacks as Trump mulls Iran offer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-03T09:08:43.832Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "544e4ab1cd638e2a5e3c18f60a854d12a557133b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Latest on Iran deal; US fast-tracks arms sales to Mideast partners",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-03T11:58:39.772Z",
@@ -1021,6 +1001,126 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Rudy Giuliani hospitalized in critical condition: Spokesperson",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "01d421714780d1490249f61dca8499dd437fea8e",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "At least 10 people injured in Oklahoma lake party shooting, police say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "MOVED",
+      "fingerprint": "ebc276e8162138f21aee8dd86ea20a2cca964793",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Pirro says evidence shows alleged correspondents' dinner attacker shot officer",
+      "to_title": "Pirro says evidence shows alleged correspondents' dinner attacker shot officer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "MOVED",
+      "fingerprint": "92a2bd60b80af26594c0a9959a393c89a3c22f76",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Cornell president claims 'harassment and intimidation' after parking lot clash",
+      "to_title": "Cornell president claims 'harassment and intimidation' after parking lot clash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "be31814d052951204d7fc8078f191007101dc750",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Britney Spears set to be arraigned on DUI charge but doesn't have to appear in court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "MOVED",
+      "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student",
+      "to_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "MOVED",
+      "fingerprint": "80aa9ae5c18921635fce5738349bace264c7092d",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Wild temperature swing in the forecast as May gets underway",
+      "to_title": "Wild temperature swing in the forecast as May gets underway"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4913707c58f50643e9dc80c472d0c9f8e582176e",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Met Gala guests from Beyoncé to Nicole Kidman set to flaunt fashion as art"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "89851b5ab096911d0c4e7a61f5dd7646e865426c",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "8 arrested at protest during ICE arrest, NYPD says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b2ecb0f7c06a22c301d3a99effb5d2956991da5b",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "afd1d9b91149733352788670ace14bedf2ae84c7",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "8 people arrested at protest during ICE arrest in Brooklyn, NYPD says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "07cbe75d651859b7a7f4173163bc782db0589643",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "US service members go missing during military exercise in Morocco",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T09:12:33.288Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4b9e5959cb93a9c255dce192399d4f827a9fff29",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Police ask for help in fatal Texas shooting",
       "to_title": null
     }
   ]
