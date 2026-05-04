@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-03T23:30:21.577Z",
+  "generatedAt": "2026-05-04T00:14:00.742Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T23:56:17.314Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b67f9e6ee0a366221af45b522126ced524a24de6",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T23:56:17.314Z",
-      "event_type": "MOVED",
-      "fingerprint": "884bfb182bcbad3cfc090497350cbec704ab3863",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Body of Nahida Bristy, 2nd missing USF student, identified",
-      "to_title": "Body of Nahida Bristy, 2nd missing USF student, identified"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T23:56:17.314Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f3b083d3566ede8b1e407c706421e60596c61a5f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "1 dead after vehicle crashes into health club"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T23:56:17.314Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e6ac5736383b3c47e311626018e3e8a883d2c343",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Chinese pressure to exclude Taiwanese activists shuts down rights summit",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-02T23:56:17.314Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a7fb003944a57f20e6875adf56fea646fff68cf5",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Padres announce agreement to sell team",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-03T02:01:45.274Z",
@@ -881,6 +831,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T00:14:04.002Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d7a320cce0c72671fc1599e5f79548534d60d5b4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingRudy Giuliani hospitalized in critical condition: Spokesperson"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T00:14:04.002Z",
+      "event_type": "MOVED",
+      "fingerprint": "b2ecb0f7c06a22c301d3a99effb5d2956991da5b",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’",
+      "to_title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T00:14:04.002Z",
+      "event_type": "MOVED",
+      "fingerprint": "69b7d63d4273c747304953d795a0bc649db724b6",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Trump says US will guide ships out of Strait of Hormuz",
+      "to_title": "Iran live updates: Trump says US will guide ships out of Strait of Hormuz"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T00:14:04.002Z",
+      "event_type": "MOVED",
+      "fingerprint": "c5c1a839b0e5a7a33e621af3bb358cd429c9b335",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Transportation Secretary projects ‘immediate relief’ on gas prices once strait opens",
+      "to_title": "Transportation Secretary projects ‘immediate relief’ on gas prices once strait opens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-04T00:14:04.002Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "11e0b1a26a29838607aa31db75c223b367311d77",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Rudy Giuliani hospitalized in critical condition: Spokesperson",
       "to_title": null
     }
   ]
