@@ -1,158 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-05T19:51:13.436Z",
+  "generatedAt": "2026-05-05T20:48:58.549Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "MOVED",
-      "fingerprint": "f0ba8d4c866f26df14ac747f686723565e7ae88d",
-      "from_rank": 4,
-      "to_rank": 2,
-      "from_title": "Rudy Giuliani remains hospitalized in critical condition with pneumonia: Spokesperson",
-      "to_title": "Rudy Giuliani remains hospitalized in critical condition with pneumonia: Spokesperson"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "MOVED",
-      "fingerprint": "7c5fed32e4c51b4cd6c2070fee6b94b8a44b7b6e",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "United Airlines plane hits bakery truck during landing",
-      "to_title": "United Airlines plane hits bakery truck during landing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b3e5741d540fe36d5f5cbc04d3b5e5420898460b",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "What to know about cluster of suspected hantavirus cases aboard a cruise ship"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d06af3b0c4bfcea89326ee2dbd793e671a191bce",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Parents of baby boy who was 'born twice' speak out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "836c1ed80ac2177eb9bc67ac99bfccc4e63f7105",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Manhunt underway for veteran with survival training accused of trying to kill wife"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "aca06e32be3fbc5f6be51dcfbe5d5ace7bef45bf",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Millions bracing for whiplash temperatures across the country"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3355eef3b59c6342fa5733d670eae635a72211ae",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "At least 23 people injured in Oklahoma lake party shooting: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "MOVED",
-      "fingerprint": "02e3f990087f650b35da4a55a6b30e283ff05381",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "53-year-old Cameron Diaz becomes a mom of 3",
-      "to_title": "53-year-old Cameron Diaz becomes a mom of 3"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "52316f2ba5f419097b59d312cea03726a69cb420",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "SCOTUS restores full access to mifepristone"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "85d29123d6180d8babbd7ad40591a9a629dd27b0",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Supreme Court restores access to mail-order abortion pill mifepristone, for now",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8b584410cd01cbad34b17b084710de49845c317c",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Britney Spears pleads guilty in DUI case",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2e0b8b0613e28e99a011bd4b25ca24c6a4a0a33e",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Deadly hantavirus outbreak suspected aboard a cruise ship",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "'Deeply concerned': Search underway for missing Northern Kentucky University student",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cd2539cae637065130dce71c7a292f859e1e6e7b",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Princess Eugenie shares photo as she announces new pregnancy",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T20:01:54.482Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0d76be9143e6843ba0722b846df2b96d6de9785d",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Driver plows into group of people in German city",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-04T21:16:06.841Z",
@@ -1291,6 +1141,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Colorado braces for significant snowstorm",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "37ec91ab7e92d77131753cc298f6b0e596bd585d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "GOP aims to secure $1B for security-related aspects of White House ballroom project"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5de2239c7f030f351771c442e29fcfde2b73e0d5",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Rubio says operation Epic Fury is over"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8d038c8babcef9cad5989118eb5b105017ccc420",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Correspondents' dinner shooting suspect indicted by a grand jury on 4 counts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "MOVED",
+      "fingerprint": "4ab57ad8d3c09e003508863b7b02bdcf9e8d9429",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "Federal employee arrested in Trump threat",
+      "to_title": "Federal employee arrested in Trump threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "MOVED",
+      "fingerprint": "c1a6f59b088304a11b4b01fd61bc0ade1a026e3c",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Possible 'human-to-human' spread in suspected hantavirus outbreak aboard ship: WHO",
+      "to_title": "Possible 'human-to-human' spread in suspected hantavirus outbreak aboard ship: WHO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "MOVED",
+      "fingerprint": "f0e4421c0c6cbf6b7cbadd1989ceb0277b8196f4",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play",
+      "to_title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aa9ea2729f8d2b498527542e0a22be00eda3a937",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Driver filmed speeding toward kid on bike before arrest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "MOVED",
+      "fingerprint": "61a96dc32715a00adf763ce04c0311cc6eaa0737",
+      "from_rank": 5,
+      "to_rank": 9,
+      "from_title": "Met Gala 2026: See photos from inside the iconic event",
+      "to_title": "Met Gala 2026: See photos from inside the iconic event"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4bef9516c5e5bd35e9efaa5b223423b2f2f6acbc",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "2 dead, 3 injured in shooting at shopping center"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dc17e9bc399da1c5ac80bec8e2b93438bd0d20e6",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "2 killed in Caribbean strike on alleged 'narco-trafficking' boat, Pentagon says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "85a8304b3ec4d93387edd500a4a6bc79fe691e0f",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Woman arrested after driving on sidewalk toward child riding bike: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "58a3fd7f4aaceaa9bc27dee1cc9c2580728f7a71",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Tony Award nominations announced: See who made the list",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "35676a0425ea3d641dc144462e9d0f792950ff63",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says 'I'll let you know' if ceasefire is breached",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T20:49:01.757Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dc3f97a14b2ba05ef6b7fd596044afce3c120466",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Rubio announces new UNSC draft resolution to 'defend freedom of navigation' in Strait of Hormuz",
       "to_title": null
     }
   ]
