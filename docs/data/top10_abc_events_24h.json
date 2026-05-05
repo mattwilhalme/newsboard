@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-05T00:10:14.265Z",
+  "generatedAt": "2026-05-05T03:48:34.011Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T00:14:04.002Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d7a320cce0c72671fc1599e5f79548534d60d5b4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingRudy Giuliani hospitalized in critical condition: Spokesperson"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T00:14:04.002Z",
-      "event_type": "MOVED",
-      "fingerprint": "b2ecb0f7c06a22c301d3a99effb5d2956991da5b",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’",
-      "to_title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T00:14:04.002Z",
-      "event_type": "MOVED",
-      "fingerprint": "69b7d63d4273c747304953d795a0bc649db724b6",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Trump says US will guide ships out of Strait of Hormuz",
-      "to_title": "Iran live updates: Trump says US will guide ships out of Strait of Hormuz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T00:14:04.002Z",
-      "event_type": "MOVED",
-      "fingerprint": "c5c1a839b0e5a7a33e621af3bb358cd429c9b335",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Transportation Secretary projects ‘immediate relief’ on gas prices once strait opens",
-      "to_title": "Transportation Secretary projects ‘immediate relief’ on gas prices once strait opens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-04T00:14:04.002Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "11e0b1a26a29838607aa31db75c223b367311d77",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Rudy Giuliani hospitalized in critical condition: Spokesperson",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-04T04:10:31.354Z",
@@ -1391,6 +1341,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "SCOTUS restores full access to mifepristone",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T03:48:37.215Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "05c9316e3ff6c081268d8275eee2633000f588ea",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Federal prosecutors support unsealing purported Jeffrey Epstein suicide note"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T03:48:37.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "f01ebe5757eea2445846f1953bd5383307877486",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: UAE says it intercepted Iranian missiles and drones",
+      "to_title": "Iran live updates: UAE says it intercepted Iranian missiles and drones"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T03:48:37.215Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "29563cd54531fd6845c8f139309cd9f6189cc4b7",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "From Madonna to Cher and Beyoncé, all the must-see Met Gala looks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T03:48:37.215Z",
+      "event_type": "MOVED",
+      "fingerprint": "1eef0d390639c46d8acb24cf7070c9886ed1e46f",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Blake Lively and Justin Baldoni settle 'It Ends With Us' lawsuit",
+      "to_title": "Blake Lively and Justin Baldoni settle 'It Ends With Us' lawsuit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T03:48:37.215Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "35909fdf0416d3ed8ed00bf0b14cd4bdfdcf8290",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Met Gala 2026: Best red carpet looks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T03:48:37.215Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "73a3e9e72e3309c862fa7f0ede03b62353bde5c8",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "As US military goes full speed ahead on AI, how is it being used?",
       "to_title": null
     }
   ]
