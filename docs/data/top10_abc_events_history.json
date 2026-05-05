@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-05T21:47:15.859Z",
+  "generatedAt": "2026-05-05T22:41:18.903Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bfdaf310a635967c7eaf99c07b62e50e1111e1c1",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T10:40:45.014Z",
-      "event_type": "MOVED",
-      "fingerprint": "53d21fe93bd269f9a531eff5e9bcade465880227",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Vance to visit Hungary ahead of election that threatens Orbán's hold on power",
-      "to_title": "Vance to visit Hungary ahead of election that threatens Orbán's hold on power"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T10:40:45.014Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T22:41:22.257Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4f7aa5ea433afe0c2397f79948822d01f95b1851",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Jury finds NFL player Stefon Diggs not guilty on 2 criminal counts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T22:41:22.257Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "25f76cf9362b591e21386286c498da3c6d07ffd3",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Jury finds Stefon Diggs not guilty on 2 criminal counts",
       "to_title": null
     }
   ],
