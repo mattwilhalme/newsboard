@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-05T11:43:24.754Z",
+  "generatedAt": "2026-05-05T12:56:58.115Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T01:07:15.271Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b3f07d71aec51ac0d4f87186cc33e0bdad678bb1",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump's threats against Iran could be war crimes if carried out, some experts say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T01:07:15.271Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f531ab9d456e79c64504bf500efe6db8effcdae3",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "ICE arrests newlywed wife of Army soldier at military base"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T01:07:15.271Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Search for man accused of trying to kill wife",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T12:57:01.442Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "24a92b83593d2dd0b0940be8123963a52098f3a2",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Attacks on US below threshold of resuming fighting, Caine says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T12:57:01.442Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "81e275597aef0c46ac1d2f2d9394821747d469f1",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says Iran's highly enriched uranium 'not very valuable'",
       "to_title": null
     }
   ],
