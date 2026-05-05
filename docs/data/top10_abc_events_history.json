@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-05T08:27:03.677Z",
+  "generatedAt": "2026-05-05T10:18:30.589Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T22:40:20.146Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bab9340704ae82a4202f4ecc74d08dd2b0e5f449",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "JPMorgan CEO: Iran war could reignite inflation and keep Fed rates higher for longer",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f52238113d9010bcc1ff99125693d05c6bdd1fde",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingArtemis II crew enters planned communications blackout"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e3d6d1a6320a8abbf17fdd0bda4309ec7e42a81b",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Immigrant toddler was sexually abused while in custody, lawyer says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e5cc7cc0027c8f581afa3d59f8f8480166fd8a5d",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Many congressional Democrats call Trump's threats to blow up Iran 'unhinged'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "MOVED",
-      "fingerprint": "c0ccaa41e7f5ac9bf3229322f0419de5ef7bdf3c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Iran live updates: Trump says Iranian people have asked US to 'keep bombing'",
-      "to_title": "Iran live updates: Trump says Iranian people have asked US to 'keep bombing'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "MOVED",
-      "fingerprint": "b6e00dc6553265642aabbf456ade4372e7c1e5d6",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities",
-      "to_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "MOVED",
-      "fingerprint": "8f0c03fea405d9c3c10da3c485ea7f2323b49e64",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges",
-      "to_title": "Supreme Court vacates Steve Bannon contempt-of-Congress charges"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "MOVED",
-      "fingerprint": "c79360be2696ba49e8504ff8bcce491ac281d379",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Strangers raise over $76,000 for delivery driver who went above and beyond",
-      "to_title": "Strangers raise over $76,000 for delivery driver who went above and beyond"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "MOVED",
-      "fingerprint": "d17ad83a2da8d25acfd51b4fb269ef55aae58e57",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Passenger gives birth on flight from Jamaica to New York",
-      "to_title": "Passenger gives birth on flight from Jamaica to New York"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "34ea74eb83becd082aa3d1003266b11a08e14c8e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Crew begins lunar flyby after breaking distance record",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "944b435df33a33bbefea6a5f4e4ee175ce4ebb0a",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Trump shares dramatic new details about aviator's rescue in Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:09:51.062Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cfbb8d49854df110fbc0899f48013a0e6f9252e6",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Final trailer for 'The Devil Wears Prada 2' features new song by Lady Gaga, Doechii",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:52:21.422Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cd50beb7426f52ad77c1749cf9189f9d0c953a6e",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingArtemis II crew regains communication with Earth"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-06T23:52:21.422Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "88f291d93b67c83c43c23a7d0d853a82ccbbcb81",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:From the Earth to the Moon and back: A look at the stages of the Artemis II journey"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-06T23:52:21.422Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Iran live updates: UAE says it intercepted Iranian missiles and drones",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b24e21b920d50a19d2fd0d98dd396239c069003e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Immigrants targeted by scams amid Trump administration's deportation push"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f0e4421c0c6cbf6b7cbadd1989ceb0277b8196f4",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9f24c829b672aaf6614d9411c6f2dea35378b288",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Indiana state Senate races are a test of Trump's endorsement, redistricting vote"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "29563cd54531fd6845c8f139309cd9f6189cc4b7",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "From Madonna to Cher and Beyoncé, all the must-see Met Gala looks",
+      "to_title": "From Madonna to Cher and Beyoncé, all the must-see Met Gala looks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3fdfa0707f67b93553b95d539a71006ce3d95be6",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "3 dead in suspected hantavirus outbreak aboard a cruise ship: What to know"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "031c2439b11f441c8abab3fd49d3ea9c9fdb5004",
+      "from_rank": 2,
+      "to_rank": 7,
+      "from_title": "Secret Service officers exchange gunfire with armed suspect near White House: USSS",
+      "to_title": "Secret Service officers exchange gunfire with armed suspect near White House: USSS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "05c9316e3ff6c081268d8275eee2633000f588ea",
+      "from_rank": 3,
+      "to_rank": 8,
+      "from_title": "Federal prosecutors support unsealing purported Jeffrey Epstein suicide note",
+      "to_title": "Federal prosecutors support unsealing purported Jeffrey Epstein suicide note"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "MOVED",
+      "fingerprint": "5bd1e6b15bc174945b1f1efb5b1b4fedd4c02026",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Newly released shots from Artemis II moon mission show Milky Way galaxy, star trails",
+      "to_title": "Newly released shots from Artemis II moon mission show Milky Way galaxy, star trails"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5dd09bf0e4a43769ac9fd9270f085c8045fb435f",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Search for man accused of trying to kill wife"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1eef0d390639c46d8acb24cf7070c9886ed1e46f",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Blake Lively and Justin Baldoni settle 'It Ends With Us' lawsuit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2425379a0b9094a26229269e36d70c72acae3c57",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Man wanted for attempted murder after allegedly shooting wife then fleeing into woods",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b584410cd01cbad34b17b084710de49845c317c",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Britney Spears pleads guilty in DUI case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34ed72d9c5c6cd80274f99dbd661ec64cd12a6cc",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "United Airlines plane hits bakery truck during landing",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-05T10:18:33.715Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6da34682758fe953b5ca50403b6774a3f481bd3c",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Doris Fisher, co-founder of Gap chain, dies at 94",
       "to_title": null
     }
   ],
