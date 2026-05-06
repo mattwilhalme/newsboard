@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-06T17:11:28.313Z",
+  "generatedAt": "2026-05-06T18:58:49.826Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T18:08:01.742Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "58a3fd7f4aaceaa9bc27dee1cc9c2580728f7a71",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Tony Award nominations announced: See who made the list"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T18:08:01.742Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e76cd934d44d70a469e24368475361cd144c9569",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Daniel Radcliffe, Luke Evans, Rose Byrne lead 2026 Tony nominations",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-05T19:51:16.883Z",
@@ -1111,6 +1091,106 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Is California at risk of a gasoline shortage amid the Iran war? Experts explain",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ef419a67f1019e7fb011eadba0211b43a8fcbdeb",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Confirmed hantavirus cases linked to suspected cluster rises to 5, WHO says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "MOVED",
+      "fingerprint": "0547ff927c7d548fdbc5750f591a80507930154b",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Ted Turner, cable television pioneer and CNN founder, dies at 87",
+      "to_title": "Ted Turner, cable television pioneer and CNN founder, dies at 87"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4ec78656126193bc0a8efa6cc07662848c9c5b1e",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "New images show shooting near National Mall that injured teenage bystander"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2e3785e71690332d9d27853edc956bbe829b2b26",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Apple's $250 million class-action settlement paves way for payouts to iPhone owners"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4fffae702a4691c99af03adac5e54f05f5f46ef1",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Princess Kate steps out ahead of 1st solo international trip since cancer diagnosis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "MOVED",
+      "fingerprint": "058c0778ceb4d35dce47a2f18c6487ee48b4315d",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Is California at risk of a gasoline shortage?",
+      "to_title": "Is California at risk of a gasoline shortage?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5ea68a31f230b367aa9d2d0996921f2deaa20cef",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "3 evacuated off cruise ship with suspected hantavirus cluster, WHO says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e2de21aaf15546570789676b3f91538b25f407b0",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Texas man federally charged in Secret Service-involved shooting near National Mall",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "87c7065c9f8ed1c8827a3cbdafe09a446c28107a",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Utz recalls Zapp's, Dirty potato chip brands due to possible salmonella contamination",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T18:58:52.983Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c4b24d1d4f0aa44bdad1a104d0fbc01708198b71",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Prince Harry and Meghan Markle's son Archie turns 7",
       "to_title": null
     }
   ]
