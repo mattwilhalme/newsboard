@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-06T07:26:28.539Z",
+  "generatedAt": "2026-05-06T09:41:15.404Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T14:14:55.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "17ba1ac61bbc342b8b765583826e7ef68ec1a254",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views",
-      "to_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T14:14:55.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "bfdaf310a635967c7eaf99c07b62e50e1111e1c1",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike",
-      "to_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T14:14:55.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "3c95d1a58c70e09039b8d2e62141e9125b2ea6d2",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Vance visits Hungary ahead of election that threatens Orbán's hold on power",
-      "to_title": "Vance visits Hungary ahead of election that threatens Orbán's hold on power"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T14:14:55.201Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "421880f179380645578d2d4bf6a16ef9cfdf2512",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "In battleground Wisconsin, voters could grow liberal majority on state Supreme Court",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T14:14:55.201Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "31ef5c457477d11307bc85bd04d79d069d6acdf7",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Trump calls crew after lunar flyby: 'You've made history'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T15:45:55.320Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "74ab7849f70d622901cb11fa38268640b33853f6",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Kanye West denied entry to UK, Wireless Festival canceled"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T15:45:55.320Z",
-      "event_type": "MOVED",
-      "fingerprint": "17ba1ac61bbc342b8b765583826e7ef68ec1a254",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views",
-      "to_title": "In Georgia runoff election to replace MTG, 2 veterans pitch opposing Iran war views"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T15:45:55.320Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b6e00dc6553265642aabbf456ade4372e7c1e5d6",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Michigan woman falls overboard in Bahamas, remains missing: Authorities"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T15:45:55.320Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca0bc271d3f3a66cc7acbeb0d217dc93289dad4f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Vance says he wants to help Orbán in Hungarian leader's reelection bid"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T15:45:55.320Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "447de08a247f87c22886deb7e414caa3f8c216e9",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "UK government blocks rapper Ye from entering Britain to headline festival",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T15:45:55.320Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d38b2636433c4a598318a0b551130ad976d4df57",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "1 gunman shot dead outside Israeli consulate in Istanbul, 2 other gunmen injured",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T15:45:55.320Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3c95d1a58c70e09039b8d2e62141e9125b2ea6d2",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Vance visits Hungary ahead of election that threatens Orbán's hold on power",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T16:41:54.827Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5205a0a6594bd669e1703441751ed6076d19edb8",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Trump ally Sen. Ron Johnson breaks with president over Iran threats"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T16:41:54.827Z",
-      "event_type": "MOVED",
-      "fingerprint": "74ab7849f70d622901cb11fa38268640b33853f6",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Kanye West denied entry to UK, Wireless Festival canceled",
-      "to_title": "Kanye West denied entry to UK, Wireless Festival canceled"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T16:41:54.827Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7b0ef5f79c3a66ee067ff3e211e4bb090da18d1c",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "After SCOTUS presidential immunity ruling, Trump wields it broadly in push for power",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T17:41:50.408Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 2,
       "to_rank": null,
       "from_title": "Indiana senator who defied Trump over redistricting loses reelection bid, AP projects",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "72a159782f91ff33034c35f6c629a892a5cbcc5a",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live update: Pakistan PM thanks Trump for pausing 'Project Freedom'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e96f3213db9d631ce792ca950c0aa8c463bad2fd",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Lutnick to be questioned over Epstein relationship before House Oversight Committee"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b93aaa2b07c100fc0d5b1f4c4f9118ec93056a46",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Kash Patel says FBI 'kept out' out of Nancy Guthrie investigation for first 4 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "MOVED",
+      "fingerprint": "f279c5113dac7768528c9da434e81eb47212d926",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Trump candidates beat at least 5 of 7 Indiana incumbents who opposed redistricting",
+      "to_title": "Trump candidates beat at least 5 of 7 Indiana incumbents who opposed redistricting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "MOVED",
+      "fingerprint": "70682b7803c0c416693d7c1101d57abb99e78614",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Ramaswamy will win Ohio GOP primary for governor, ABC News projects",
+      "to_title": "Ramaswamy will win Ohio GOP primary for governor, ABC News projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f7c0913f3fb9ca03a7595b0a8a53a112ebb56555",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "New battery aims to prevent some child deaths. Is it the solution?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "MOVED",
+      "fingerprint": "be08ca6567c6e9c6bcb8971e1c8f88fa5725a02b",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years",
+      "to_title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c4b24d1d4f0aa44bdad1a104d0fbc01708198b71",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Prince Harry and Meghan Markle's son Archie turns 7"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cfa286cac060950085481e5fb1f59d2e34fc2d72",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Popular Italian food brand sued for 'tomato fraud'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "78d14995a41f7a56e4995c9599cf527f579fc7d6",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live update: Trump says 'Project Freedom' in Strait of Hormuz paused",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "22251544fd04f60fa79a49c324a326b3a09ff4ec",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "FDA withdraws publication of COVID, shingles vaccine research findings",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5a681a819b67c4804f6429993122dd3a29167a2d",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Coast Guard seeking owner of sailboat moored near missing woman's yacht",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa9ea2729f8d2b498527542e0a22be00eda3a937",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Driver filmed speeding toward kid on bike before arrest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "61a96dc32715a00adf763ce04c0311cc6eaa0737",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Met Gala 2026: See photos from inside the iconic event",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T09:41:18.422Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5b37e181f0865794ebcdc643f5c8b9197e18e148",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "New video shows United flight truck during landing",
       "to_title": null
     }
   ],
