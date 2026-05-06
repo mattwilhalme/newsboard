@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-06T18:58:49.826Z",
+  "generatedAt": "2026-05-06T20:22:38.475Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:10:04.290Z",
-      "event_type": "MOVED",
-      "fingerprint": "134d77e54dd5009de561d3a25ead6ce8ede56f89",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know",
-      "to_title": "Alleged Rex Heuermann Gilgo Beach victims: What we know"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:10:04.290Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5205a0a6594bd669e1703441751ed6076d19edb8",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Trump ally Sen. Ron Johnson breaks with president over Iran threats",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:10:04.290Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c6c9f1416d996d106bcb8a9286f3a245d31a6cd5",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "1 person charged, another detained after rapper Offset shot in Florida, officials say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:58:14.340Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e8ae474123ebeb209881c3e4ec45f5f37ba0aee3",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump considering Pakistani PM's request he extend Iran deadline, White House says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:58:14.340Z",
-      "event_type": "MOVED",
-      "fingerprint": "d5818ef945e50ac244ec6b29ba86ae5cd98ab18c",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Pakistan asks Trump for deadline extension on Iran threat",
-      "to_title": "Iran live updates: Pakistan asks Trump for deadline extension on Iran threat"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:58:14.340Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fd45607bea037f3aa91219139de3038f61fb898a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:58:14.340Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0437331d48b93f8b05ca17588fe34927a0f5fe2a",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "As bombings escalate and the regime hangs on, some Iranians say they are in limbo"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:58:14.340Z",
-      "event_type": "MOVED",
-      "fingerprint": "d972d0539fecf06a2bf20036857ce1e1b8bf3ae7",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "FBI on scene of ICE-involved shooting in Patterson, California",
-      "to_title": "FBI on scene of ICE-involved shooting in Patterson, California"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T21:58:14.340Z",
-      "event_type": "MOVED",
-      "fingerprint": "9f609f62e00dbf1c8e47cedc93aa29c5ea710d2e",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "ICE releases newlywed wife of Army soldier, arrested at military base",
-      "to_title": "ICE releases newlywed wife of Army soldier, arrested at military base"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T21:58:14.340Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Prince Harry and Meghan Markle's son Archie turns 7",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c0915ec9f9c2cd0e391067c514ed799b8d584866",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says no deadline for Iran to make a deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "79e14f47a2e235b2651d8e8b9ca8ae31afbfab53",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "CNN founder Ted Turner dies at 87"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ecc108c136c2179e327475256b1f395ab7fb4dfc",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "New search warrant in Kristin Smart case, decades after 19-year-old disappeared"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "MOVED",
+      "fingerprint": "2e3785e71690332d9d27853edc956bbe829b2b26",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Apple's $250 million class-action settlement paves way for payouts to iPhone owners",
+      "to_title": "Apple's $250 million class-action settlement paves way for payouts to iPhone owners"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "103554d5efc2b631d957d744e9e74847a33a3e65",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Golden Tempo is not running in the Preakness"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b6e84249ae85b62f3c49bb709deab45e9fd82755",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump threatens 'the bombing starts' if Iran doesn't make a deal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0547ff927c7d548fdbc5750f591a80507930154b",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Ted Turner, cable television pioneer and CNN founder, dies at 87",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4fffae702a4691c99af03adac5e54f05f5f46ef1",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Princess Kate steps out ahead of 1st solo international trip since cancer diagnosis",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T20:22:41.531Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c0a81c355eca1b3128a5ae86d64d5e99c3f3db47",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Former FedEx driver sentenced to death",
       "to_title": null
     }
   ],
