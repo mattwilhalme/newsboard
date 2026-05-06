@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-06T11:30:36.642Z",
+  "generatedAt": "2026-05-06T13:17:12.420Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T17:41:50.408Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5428e068f4087524716b7f249ed00b653b7a935d",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Trump's threats against Iran could be war crimes if carried out, some experts say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T17:41:50.408Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bfdaf310a635967c7eaf99c07b62e50e1111e1c1",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Closing arguments expected in trial of doctor accused of trying to kill wife on hike",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T17:41:50.408Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ca0bc271d3f3a66cc7acbeb0d217dc93289dad4f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Vance says he wants to help Orbán in Hungarian leader's reelection bid",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T18:38:41.544Z",
-      "event_type": "MOVED",
-      "fingerprint": "fd45607bea037f3aa91219139de3038f61fb898a",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'",
-      "to_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T18:38:41.544Z",
-      "event_type": "MOVED",
-      "fingerprint": "9f431bf8298912e42c23f5b19a11e628e994cf53",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Trump's deadline nears for Iran to open Strait of Hormuz",
-      "to_title": "Iran live updates: Trump's deadline nears for Iran to open Strait of Hormuz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T18:38:41.544Z",
-      "event_type": "MOVED",
-      "fingerprint": "e5cc7cc0027c8f581afa3d59f8f8480166fd8a5d",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Many congressional Democrats call Trump's threats to blow up Iran 'unhinged'",
-      "to_title": "Many congressional Democrats call Trump's threats to blow up Iran 'unhinged'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T18:38:41.544Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "3 people waiting for evacuation from cruise ship with suspected hantavirus outbreak",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T13:17:15.574Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b6e84249ae85b62f3c49bb709deab45e9fd82755",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump threatens 'the bombing starts' if Iran doesn't make a deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T13:17:15.574Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cb01df7911c982dc870f7ba1a5aca2e6757ad4fa",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "This new battery is designed to prevent some child deaths"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T13:17:15.574Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c0a81c355eca1b3128a5ae86d64d5e99c3f3db47",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Former FedEx driver sentenced to death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T13:17:15.574Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "dfda7ea3d49f3c24b8e5b39748ed57267055cd78",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Pakistan PM thanks Trump for pausing commercial ship escorts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T13:17:15.574Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "555ec47cf8a64159ed35b0d0ea9253d2e78f1972",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "This new battery is designed to prevent child deaths",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T13:17:15.574Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cfa286cac060950085481e5fb1f59d2e34fc2d72",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Popular Italian food brand sued for 'tomato fraud'",
       "to_title": null
     }
   ],
