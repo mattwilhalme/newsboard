@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-05T23:33:08.345Z",
+  "generatedAt": "2026-05-06T01:14:47.747Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T00:10:17.566Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8b584410cd01cbad34b17b084710de49845c317c",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Britney Spears pleads guilty in DUI case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T00:10:17.566Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6da34682758fe953b5ca50403b6774a3f481bd3c",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Doris Fisher, co-founder of Gap chain, dies at 94"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T00:10:17.566Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ed9e3815e6c2aa1959e55f133bad5a1a1e3b07d3",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "What to know about a suspected deadly hantavirus outbreak aboard a cruise ship",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T00:10:17.566Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "52316f2ba5f419097b59d312cea03726a69cb420",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "SCOTUS restores full access to mifepristone",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-05T03:48:37.215Z",
@@ -1081,6 +1041,126 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "GOP aims to secure $1B for security-related aspects of White House ballroom project",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "MOVED",
+      "fingerprint": "78d14995a41f7a56e4995c9599cf527f579fc7d6",
+      "from_rank": 4,
+      "to_rank": 1,
+      "from_title": "Iran live update: Trump says 'Project Freedom' in Strait of Hormuz paused",
+      "to_title": "Iran live update: Trump says 'Project Freedom' in Strait of Hormuz paused"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "20b41dd41718124ed9ac404c89349619846ad7c3",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Indiana senator who defied Trump over redistricting loses reelection bid, AP projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "70682b7803c0c416693d7c1101d57abb99e78614",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Ramaswamy will win Ohio GOP primary for governor, ABC News projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "MOVED",
+      "fingerprint": "22251544fd04f60fa79a49c324a326b3a09ff4ec",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "FDA withdraws publication of COVID, shingles vaccine research findings",
+      "to_title": "FDA withdraws publication of COVID, shingles vaccine research findings"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5a681a819b67c4804f6429993122dd3a29167a2d",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Coast Guard seeking owner of sailboat moored near missing woman's yacht"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "MOVED",
+      "fingerprint": "be08ca6567c6e9c6bcb8971e1c8f88fa5725a02b",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years",
+      "to_title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "MOVED",
+      "fingerprint": "76d5ea50abe91e539845ff21bb58e6ec9644d473",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "3 people waiting for evacuation from cruise ship with suspected hantavirus outbreak",
+      "to_title": "3 people waiting for evacuation from cruise ship with suspected hantavirus outbreak"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5b37e181f0865794ebcdc643f5c8b9197e18e148",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "New video shows United flight truck during landing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5d231b7804ba377e3cb1774624e25715df2b0e18",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Coast Guard seeking info from public on missing woman in the Bahamas",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4f7aa5ea433afe0c2397f79948822d01f95b1851",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Jury finds NFL player Stefon Diggs not guilty on 2 criminal counts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8d038c8babcef9cad5989118eb5b105017ccc420",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Correspondents' dinner shooting suspect indicted by a grand jury on 4 counts",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T01:14:51.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4bef9516c5e5bd35e9efaa5b223423b2f2f6acbc",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "2 dead, 3 injured in shooting at shopping center",
       "to_title": null
     }
   ]
