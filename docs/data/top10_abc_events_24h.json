@@ -1,148 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-06T20:22:38.475Z",
+  "generatedAt": "2026-05-06T21:37:44.513Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "37ec91ab7e92d77131753cc298f6b0e596bd585d",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "GOP aims to secure $1B for security-related aspects of White House ballroom project"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5de2239c7f030f351771c442e29fcfde2b73e0d5",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Rubio says operation Epic Fury is over"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8d038c8babcef9cad5989118eb5b105017ccc420",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Correspondents' dinner shooting suspect indicted by a grand jury on 4 counts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "MOVED",
-      "fingerprint": "4ab57ad8d3c09e003508863b7b02bdcf9e8d9429",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Federal employee arrested in Trump threat",
-      "to_title": "Federal employee arrested in Trump threat"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "MOVED",
-      "fingerprint": "c1a6f59b088304a11b4b01fd61bc0ade1a026e3c",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Possible 'human-to-human' spread in suspected hantavirus outbreak aboard ship: WHO",
-      "to_title": "Possible 'human-to-human' spread in suspected hantavirus outbreak aboard ship: WHO"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "MOVED",
-      "fingerprint": "f0e4421c0c6cbf6b7cbadd1989ceb0277b8196f4",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play",
-      "to_title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "aa9ea2729f8d2b498527542e0a22be00eda3a937",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Driver filmed speeding toward kid on bike before arrest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "MOVED",
-      "fingerprint": "61a96dc32715a00adf763ce04c0311cc6eaa0737",
-      "from_rank": 5,
-      "to_rank": 9,
-      "from_title": "Met Gala 2026: See photos from inside the iconic event",
-      "to_title": "Met Gala 2026: See photos from inside the iconic event"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4bef9516c5e5bd35e9efaa5b223423b2f2f6acbc",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "2 dead, 3 injured in shooting at shopping center"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dc17e9bc399da1c5ac80bec8e2b93438bd0d20e6",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "2 killed in Caribbean strike on alleged 'narco-trafficking' boat, Pentagon says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "85a8304b3ec4d93387edd500a4a6bc79fe691e0f",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Woman arrested after driving on sidewalk toward child riding bike: Police",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "58a3fd7f4aaceaa9bc27dee1cc9c2580728f7a71",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Tony Award nominations announced: See who made the list",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "35676a0425ea3d641dc144462e9d0f792950ff63",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says 'I'll let you know' if ceasefire is breached",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T20:49:01.757Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dc3f97a14b2ba05ef6b7fd596044afce3c120466",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Rubio announces new UNSC draft resolution to 'defend freedom of navigation' in Strait of Hormuz",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-05T21:47:18.954Z",
@@ -1151,6 +1011,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Former FedEx driver sentenced to death",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T21:37:47.774Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2ff584b52db19035fc2985f99101f4073c8f6e80",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Confirmed hantavirus cases linked to suspected cluster rise to 5, WHO says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T21:37:47.774Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ef419a67f1019e7fb011eadba0211b43a8fcbdeb",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Confirmed hantavirus cases linked to suspected cluster rises to 5, WHO says",
       "to_title": null
     }
   ]
