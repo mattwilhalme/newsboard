@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-06T01:14:47.747Z",
+  "generatedAt": "2026-05-06T04:46:21.004Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T14:14:55.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "7b0ef5f79c3a66ee067ff3e211e4bb090da18d1c",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "After SCOTUS presidential immunity ruling, Trump wields it broadly in push for power",
-      "to_title": "After SCOTUS presidential immunity ruling, Trump wields it broadly in push for power"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T14:14:55.201Z",
-      "event_type": "MOVED",
-      "fingerprint": "d38b2636433c4a598318a0b551130ad976d4df57",
-      "from_rank": 3,
-      "to_rank": 7,
-      "from_title": "1 gunman shot dead outside Israeli consulate in Istanbul, 2 other gunmen injured",
-      "to_title": "1 gunman shot dead outside Israeli consulate in Istanbul, 2 other gunmen injured"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-07T14:14:55.201Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 dead, 3 injured in shooting at shopping center",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T04:46:24.479Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f279c5113dac7768528c9da434e81eb47212d926",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump candidates beat at least 5 of 7 Indiana incumbents who opposed redistricting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T04:46:24.479Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "20b41dd41718124ed9ac404c89349619846ad7c3",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Indiana senator who defied Trump over redistricting loses reelection bid, AP projects",
       "to_title": null
     }
   ],

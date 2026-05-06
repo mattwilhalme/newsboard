@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-06T01:14:47.747Z",
+  "generatedAt": "2026-05-06T04:46:21.004Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T03:48:37.215Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "05c9316e3ff6c081268d8275eee2633000f588ea",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Federal prosecutors support unsealing purported Jeffrey Epstein suicide note"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T03:48:37.215Z",
-      "event_type": "MOVED",
-      "fingerprint": "f01ebe5757eea2445846f1953bd5383307877486",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Iran live updates: UAE says it intercepted Iranian missiles and drones",
-      "to_title": "Iran live updates: UAE says it intercepted Iranian missiles and drones"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T03:48:37.215Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "29563cd54531fd6845c8f139309cd9f6189cc4b7",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "From Madonna to Cher and Beyoncé, all the must-see Met Gala looks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T03:48:37.215Z",
-      "event_type": "MOVED",
-      "fingerprint": "1eef0d390639c46d8acb24cf7070c9886ed1e46f",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Blake Lively and Justin Baldoni settle 'It Ends With Us' lawsuit",
-      "to_title": "Blake Lively and Justin Baldoni settle 'It Ends With Us' lawsuit"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T03:48:37.215Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "35909fdf0416d3ed8ed00bf0b14cd4bdfdcf8290",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Met Gala 2026: Best red carpet looks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-05T03:48:37.215Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "73a3e9e72e3309c862fa7f0ede03b62353bde5c8",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "As US military goes full speed ahead on AI, how is it being used?",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-05T08:27:06.969Z",
@@ -1161,6 +1101,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "2 dead, 3 injured in shooting at shopping center",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T04:46:24.479Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f279c5113dac7768528c9da434e81eb47212d926",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump candidates beat at least 5 of 7 Indiana incumbents who opposed redistricting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T04:46:24.479Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "20b41dd41718124ed9ac404c89349619846ad7c3",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Indiana senator who defied Trump over redistricting loses reelection bid, AP projects",
       "to_title": null
     }
   ]
