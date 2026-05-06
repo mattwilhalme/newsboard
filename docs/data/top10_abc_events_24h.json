@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-06T13:17:12.420Z",
+  "generatedAt": "2026-05-06T15:39:02.827Z",
   "hours": 24,
   "events": [
     {
@@ -1111,6 +1111,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Popular Italian food brand sued for 'tomato fraud'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T15:39:06.314Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0547ff927c7d548fdbc5750f591a80507930154b",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Ted Turner, cable television pioneer and CNN founder, dies at 87"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T15:39:06.314Z",
+      "event_type": "MOVED",
+      "fingerprint": "5ea68a31f230b367aa9d2d0996921f2deaa20cef",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "3 evacuated off cruise ship with suspected hantavirus cluster, WHO says",
+      "to_title": "3 evacuated off cruise ship with suspected hantavirus cluster, WHO says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T15:39:06.314Z",
+      "event_type": "MOVED",
+      "fingerprint": "e96f3213db9d631ce792ca950c0aa8c463bad2fd",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Lutnick to be questioned over Epstein relationship before House Oversight Committee",
+      "to_title": "Lutnick to be questioned over Epstein relationship before House Oversight Committee"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T15:39:06.314Z",
+      "event_type": "MOVED",
+      "fingerprint": "b93aaa2b07c100fc0d5b1f4c4f9118ec93056a46",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Kash Patel says FBI 'kept out' out of Nancy Guthrie investigation for first 4 days",
+      "to_title": "Kash Patel says FBI 'kept out' out of Nancy Guthrie investigation for first 4 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T15:39:06.314Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "711bd5accca725987cfb09ce25cc6a34c4e6aa37",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Is California at risk of a gasoline shortage amid the Iran war? Experts explain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T15:39:06.314Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f279c5113dac7768528c9da434e81eb47212d926",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump candidates beat at least 5 of 7 Indiana incumbents who opposed redistricting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-06T15:39:06.314Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "be08ca6567c6e9c6bcb8971e1c8f88fa5725a02b",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years",
       "to_title": null
     }
   ]
