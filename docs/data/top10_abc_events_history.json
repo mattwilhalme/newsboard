@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-07T13:13:35.723Z",
+  "generatedAt": "2026-05-07T15:39:25.062Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T15:19:25.243Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b5d941009f9ecf073314b69ff7402eaf411a7518",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Dow soars more than 1,200 points after US-Iran ceasefire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T16:40:59.125Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fd5e78cec9dc1f0b4b022c76cb7275db10b5afee",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T16:40:59.125Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "82842d9f9ebe8b02baf18bcdf2e864d40e63d838",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Gilgo Beach suspect returning to court, may admit to crimes: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T17:49:40.438Z",
-      "event_type": "MOVED",
-      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire",
-      "to_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T17:49:40.438Z",
-      "event_type": "MOVED",
-      "fingerprint": "fd5e78cec9dc1f0b4b022c76cb7275db10b5afee",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women",
-      "to_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T17:49:40.438Z",
-      "event_type": "MOVED",
-      "fingerprint": "0644b9a0e765577b89f977f92115bf4814034a24",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Possible 2028 Dem presidential hopefuls head to National Action Network convention",
-      "to_title": "Possible 2028 Dem presidential hopefuls head to National Action Network convention"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T17:49:40.438Z",
-      "event_type": "MOVED",
-      "fingerprint": "07db2ab878587a92fc0c1ee4e8a4bbb0107a7d59",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "'Ketamine Queen' set to be sentenced in Matthew Perry's overdose death",
-      "to_title": "'Ketamine Queen' set to be sentenced in Matthew Perry's overdose death"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T17:49:40.438Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Rubio faces challenge in Pope Leo meeting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T15:39:28.311Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "04ad488bb6a621ca9d3969170f19f81231567885",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Blake Lively's attorneys speak out about settlement with Justin Baldoni"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T15:39:28.311Z",
+      "event_type": "MOVED",
+      "fingerprint": "0b53dcbeb2c8f9182efd2dc3f6463042c8e4580e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Officials in Arizona, Georgia monitoring some hantavirus cruise ship passengers in US",
+      "to_title": "Officials in Arizona, Georgia monitoring some hantavirus cruise ship passengers in US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T15:39:28.311Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b608617020ddcd92a3b4844ecc7d3d6b32f3916b",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Many Medicare enrollees can get GLP-1 drugs for $50 starting in July"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T15:39:28.311Z",
+      "event_type": "MOVED",
+      "fingerprint": "a244aecd16b3fe9c6287644fd8ee1ecabaced30b",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Dozens of Ukrainian drones target Moscow, mayor says, amid overnight attack on Russia",
+      "to_title": "Dozens of Ukrainian drones target Moscow, mayor says, amid overnight attack on Russia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T15:39:28.311Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa1cabd930acfd8ad677ad301173c2eaa6b9a6e8",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "What to know about potential US-Iran agreement",
+      "to_title": "What to know about potential US-Iran agreement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T15:39:28.311Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "927d03d090b46434ed473c8a7187ec114ee8f3c8",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Judge denies request to force FBI to return seized 2020 Fulton County ballots",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T15:39:28.311Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "08112b1e349d3a212a5c74c8fb8d36cfe43ae722",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US jobless claim applications rise to 200,000",
       "to_title": null
     }
   ],
