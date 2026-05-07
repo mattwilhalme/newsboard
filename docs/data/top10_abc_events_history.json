@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-06T23:29:25.547Z",
+  "generatedAt": "2026-05-07T00:14:21.960Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T23:23:36.336Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "53b46f5e5e9b034be2efa115729dcc97613d03b3",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Todd Blanche shrugs off suggestion Trump will 'pressure' him to target opponents"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T23:23:36.336Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e8ae474123ebeb209881c3e4ec45f5f37ba0aee3",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Trump considering Pakistani PM's request he extend Iran deadline, White House says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T23:23:36.336Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9479427f67aac1d70cb288c8898e8343fadb1df5",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: After Trump's 'civilization' threat, Iran warns 'heavier' attacks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-07T23:23:36.336Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fd45607bea037f3aa91219139de3038f61fb898a",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Trump, hours until deadline, threatens Iran's 'whole civilization will die tonight'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T02:30:57.837Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bb9861065ac02abbc0eb2ca7fc817663149f3931",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US, Iran agree to 2-week ceasefire tied to strait reopening"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T02:30:57.837Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "938b42a4a68c6452f219851fc3dfda15eb123f30",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Jury deliberating in trial of doctor accused of trying to kill wife during hike"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T02:30:57.837Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5d81fde3a3cbacb16ba805eaf8f509456235e867",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Judge questions DOJ's push to deport Abrego Garcia while his criminal case is pending"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T02:30:57.837Z",
-      "event_type": "MOVED",
-      "fingerprint": "0437331d48b93f8b05ca17588fe34927a0f5fe2a",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "As bombings escalate and the regime hangs on, some Iranians say they are in limbo",
-      "to_title": "As bombings escalate and the regime hangs on, some Iranians say they are in limbo"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T02:30:57.837Z",
-      "event_type": "MOVED",
-      "fingerprint": "d972d0539fecf06a2bf20036857ce1e1b8bf3ae7",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "FBI on scene of ICE-involved shooting in Patterson, California",
-      "to_title": "FBI on scene of ICE-involved shooting in Patterson, California"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T02:30:57.837Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "What to know about recalled potato chips sold nationwide",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "927d03d090b46434ed473c8a7187ec114ee8f3c8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Judge denies request to force FBI to return seized 2020 Fulton County ballots"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "c0915ec9f9c2cd0e391067c514ed799b8d584866",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Trump says no deadline for Iran to make a deal",
+      "to_title": "Iran live updates: Trump says no deadline for Iran to make a deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "2ff584b52db19035fc2985f99101f4073c8f6e80",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Confirmed hantavirus cases linked to suspected cluster rise to 5, WHO says",
+      "to_title": "Confirmed hantavirus cases linked to suspected cluster rise to 5, WHO says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "79e14f47a2e235b2651d8e8b9ca8ae31afbfab53",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "CNN founder Ted Turner dies at 87",
+      "to_title": "CNN founder Ted Turner dies at 87"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "159035b11f1de11ed5f2fcf39449b5fe582780bb",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Trump defends $400M price tag for White House ballroom construction project",
+      "to_title": "Trump defends $400M price tag for White House ballroom construction project"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "4ec78656126193bc0a8efa6cc07662848c9c5b1e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "New images show shooting near National Mall that injured teenage bystander",
+      "to_title": "New images show shooting near National Mall that injured teenage bystander"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "2e3785e71690332d9d27853edc956bbe829b2b26",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Apple's $250 million class-action settlement paves way for payouts to iPhone owners",
+      "to_title": "Apple's $250 million class-action settlement paves way for payouts to iPhone owners"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "MOVED",
+      "fingerprint": "ecc108c136c2179e327475256b1f395ab7fb4dfc",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "New search warrant in Kristin Smart case, decades after 19-year-old disappeared",
+      "to_title": "New search warrant in Kristin Smart case, decades after 19-year-old disappeared"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T00:14:25.519Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "058c0778ceb4d35dce47a2f18c6487ee48b4315d",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Is California at risk of a gasoline shortage?",
       "to_title": null
     }
   ],
