@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-07T04:07:18.000Z",
+  "generatedAt": "2026-05-07T06:50:48.973Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T10:16:48.946Z",
-      "event_type": "MOVED",
-      "fingerprint": "9f609f62e00dbf1c8e47cedc93aa29c5ea710d2e",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "ICE releases newlywed wife of Army soldier, arrested at military base",
-      "to_title": "ICE releases newlywed wife of Army soldier, arrested at military base"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T10:16:48.946Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0af196a9ed8ad010d0d8466a9039d8ab9b5c2c7b",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Republican projected to win Georgia runoff to replace MTG"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T10:16:48.946Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Golden Tempo is not running in the Preakness",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T06:50:52.035Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "096a70a27c04264593cf15432993bf2aede636ab",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Feds raid 'open-air drug market near Los Angeles' MacArthur Park"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T06:50:52.035Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0f1878af843f1aa10eaed4fa8f48db5b64d01a4e",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Over 2 dozen charged in federal drug operation at Los Angeles' MacArthur Park: DOJ",
       "to_title": null
     }
   ],
