@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-07T19:11:05.115Z",
+  "generatedAt": "2026-05-07T20:39:12.801Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca43e2a639b703ff447ae434999034cb9e0b5b9a",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Two MLB players get 7-game suspensions following Angels-Braves brawl"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3c559ebfde7c4f77ca81a3250eef6189988411fb",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Jim Whittaker, first American to climb Everest, dies at 97"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5e6dd6034db7c41cf4a6beb0f1f88e6c3e53b5cf",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Stocks soar and oil prices plunge after US-Iran ceasefire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0644b9a0e765577b89f977f92115bf4814034a24",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Possible 2028 Dem presidential hopefuls head to National Action Network convention",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T20:33:35.521Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e9717fddbd807cbd55f298f44941b23bb5228c18",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "How the last-minute deal between Trump and Iran unfolded",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T21:27:41.244Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9fecfc9cc5612740834fa6e987a9d3fd8141612c",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Amid Artemis II mission, why did it take the US so long to return to the moon?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T21:27:41.244Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "28df5c2ff39f140adf6849acaa3424f9eb885de0",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Artemis II live updates: Weather for splashdown looks mild, monitoring for rain",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T22:07:29.639Z",
-      "event_type": "MOVED",
-      "fingerprint": "8d23af8adab223abc68a75090a2062e8041be993",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Husband of woman reported missing in Bahamas after going overboard speaks out",
-      "to_title": "Husband of woman reported missing in Bahamas after going overboard speaks out"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T22:07:29.639Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "What to know about potential US-Iran agreement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e8ea96c6b6707d5c000b5d5831f443a22c079197",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "MOVED",
+      "fingerprint": "8edf541432cd5345c520a04eb9278d41f00e9dad",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "DHS, USSS say $1B for White House ballroom would also fund 'other critical missions'",
+      "to_title": "DHS, USSS say $1B for White House ballroom would also fund 'other critical missions'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "304893daa2ee3b20e0700d57779dc73f6f0b758d",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Tennessee passes new congressional map that splits its only majority-Black district"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "MOVED",
+      "fingerprint": "83f85c4fcd435ae7912d3be29945b0f46b795254",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Iran live updates: US waiting for Iran response to possible MoU, officials say",
+      "to_title": "Iran live updates: US waiting for Iran response to possible MoU, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "MOVED",
+      "fingerprint": "b6421298f9b202810b698627a9dc4016073295bd",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Man with weapon arrested near former Prince Andrew's home",
+      "to_title": "Man with weapon arrested near former Prince Andrew's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "MOVED",
+      "fingerprint": "539da2254b4ba60a164ae7ee09df5b6a59025a8a",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Medicare to start offering weight loss drugs for $50 per month",
+      "to_title": "Medicare to start offering weight loss drugs for $50 per month"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "59c8b923e5ee5462a4f78030f8981e91d1612797",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Tennessee lawmakers pass US House map carving up majority-Black district in Memphis",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T20:39:16.108Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a244aecd16b3fe9c6287644fd8ee1ecabaced30b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dozens of Ukrainian drones target Moscow, mayor says, amid overnight attack on Russia",
       "to_title": null
     }
   ],
