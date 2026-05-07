@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-07T06:50:48.973Z",
+  "generatedAt": "2026-05-07T09:21:39.052Z",
   "hours": 24,
   "events": [
     {
@@ -1091,6 +1091,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Over 2 dozen charged in federal drug operation at Los Angeles' MacArthur Park: DOJ",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T09:21:42.240Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "51a926a2f0bdc5f5f80c4b50ee8de410addb6d11",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: US waiting for Iran response to possible MoU, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T09:21:42.240Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "933a2308f09bac8f7a0ceb563cbf3e8dda418db8",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump says no deadline for Iran to make a deal",
       "to_title": null
     }
   ]

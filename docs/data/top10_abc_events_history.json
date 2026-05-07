@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-07T06:50:48.973Z",
+  "generatedAt": "2026-05-07T09:21:39.052Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T10:16:48.946Z",
-      "event_type": "MOVED",
-      "fingerprint": "938b42a4a68c6452f219851fc3dfda15eb123f30",
-      "from_rank": 3,
-      "to_rank": 8,
-      "from_title": "Jury deliberating in trial of doctor accused of trying to kill wife during hike",
-      "to_title": "Jury deliberating in trial of doctor accused of trying to kill wife during hike"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T10:16:48.946Z",
-      "event_type": "MOVED",
-      "fingerprint": "5d81fde3a3cbacb16ba805eaf8f509456235e867",
-      "from_rank": 4,
-      "to_rank": 9,
-      "from_title": "Judge questions DOJ's push to deport Abrego Garcia while his criminal case is pending",
-      "to_title": "Judge questions DOJ's push to deport Abrego Garcia while his criminal case is pending"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T10:16:48.946Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Over 2 dozen charged in federal drug operation at Los Angeles' MacArthur Park: DOJ",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T09:21:42.240Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "51a926a2f0bdc5f5f80c4b50ee8de410addb6d11",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: US waiting for Iran response to possible MoU, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T09:21:42.240Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "933a2308f09bac8f7a0ceb563cbf3e8dda418db8",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: Trump says no deadline for Iran to make a deal",
       "to_title": null
     }
   ],
