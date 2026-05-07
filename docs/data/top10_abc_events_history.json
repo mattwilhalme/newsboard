@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-07T22:41:30.089Z",
+  "generatedAt": "2026-05-07T23:35:53.947Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T23:00:07.246Z",
-      "event_type": "MOVED",
-      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon",
-      "to_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T23:00:07.246Z",
-      "event_type": "MOVED",
-      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
-      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T23:00:07.246Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Medicare to start offering weight loss drugs for $50 per month",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T23:35:57.071Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d9eda2fb5afa06c65ade2e7072b665cad23170c6",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Man arrested near former Prince Andrew's home"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-07T23:35:57.071Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b6421298f9b202810b698627a9dc4016073295bd",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Man with weapon arrested near former Prince Andrew's home",
       "to_title": null
     }
   ],
