@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-08T06:18:57.118Z",
+  "generatedAt": "2026-05-08T08:02:27.670Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T06:50:52.035Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "096a70a27c04264593cf15432993bf2aede636ab",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Feds raid 'open-air drug market near Los Angeles' MacArthur Park"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T06:50:52.035Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0f1878af843f1aa10eaed4fa8f48db5b64d01a4e",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Over 2 dozen charged in federal drug operation at Los Angeles' MacArthur Park: DOJ",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-07T09:21:42.240Z",
@@ -971,6 +951,86 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Hantavirus live updates: 2 infected patients in isolation in Dutch hospitals",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "MOVED",
+      "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
+      "to_title": "Trade court says Trump's 10% global tariffs are unlawful"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "MOVED",
+      "fingerprint": "e8ea96c6b6707d5c000b5d5831f443a22c079197",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson",
+      "to_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "718abf552ed02a3b56a47bbb3532708edb6a380b",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Jake Reiner discusses death of parents Rob and Michelle Reiner in return to podcast",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e14204d8a9b5a9e09fb2df8acaee2af2bc69de01",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Lawyers for Blake Lively, Justin Baldoni speak out as settlement details revealed",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T08:02:31.122Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d9eda2fb5afa06c65ade2e7072b665cad23170c6",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Man arrested near former Prince Andrew's home",
       "to_title": null
     }
   ]
