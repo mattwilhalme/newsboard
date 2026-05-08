@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-08T18:21:33.095Z",
+  "generatedAt": "2026-05-08T19:51:29.233Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f046af9ca3c414be50d66d9bb9a82a59468a84f7",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "What riders can expect when Disney World’s Big Thunder Mountain reopens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T18:15:36.387Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fb2d424a794932c5019cad9c9e1cde9821232691",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Hawaii at risk of flooding, while dry conditions raise fire danger in the Northeast"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T18:15:36.387Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Usher, 'GMA' surprise mom who opened her home to over 300 foster kids",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T19:51:32.503Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8ad03c651f48f8581a404e0b47cbc6e690554205",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Many UFO sightings concentrated near active military sites, newly released files show"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T19:51:32.503Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7b4f8f2a5aab57f279139670092899cf03787615",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Pentagon begins release of decades of unresolved UFO files",
       "to_title": null
     }
   ],
