@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-08T01:23:46.302Z",
+  "generatedAt": "2026-05-08T04:28:56.285Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T23:41:48.052Z",
-      "event_type": "MOVED",
-      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon",
-      "to_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-08T23:41:48.052Z",
-      "event_type": "MOVED",
-      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
-      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-08T23:41:48.052Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Tennessee passes new congressional map that splits its only majority-Black district",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T04:28:59.646Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "344b64d0e89bb67e81c146968730bb639d402f03",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T04:28:59.646Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3da5cbf6c224051f50f994e64623720f75ac5fc2",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: 2 infected patients in isolation in Dutch hospitals",
       "to_title": null
     }
   ],
