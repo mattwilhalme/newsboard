@@ -1,148 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-08T17:04:55.585Z",
+  "generatedAt": "2026-05-08T18:21:33.095Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0ebaa767bbb86e6bfde4dfa117c8edbc5ccaee8d",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Hantavirus live updates: Dutch hospital confirms new hantavirus case"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fced14dbfcec71487987477798b32233429e506c",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:WHO says suspected hantavirus cluster 'is not the start of a COVID pandemic'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "MOVED",
-      "fingerprint": "37e74b6e73cfd443368d0dbc7f7359c54f7d491a",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "DOJ probing $2.6 billion in oil trades related to Iran war, sources say",
-      "to_title": "DOJ probing $2.6 billion in oil trades related to Iran war, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ff8bd9a66f755b2357f92d5bdaf41d331f5d20a8",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Blake Lively's lawyers speak out as Justin Baldoni settlement details revealed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8edf541432cd5345c520a04eb9278d41f00e9dad",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "DHS, USSS say $1B for White House ballroom would also fund 'other critical missions'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "83f85c4fcd435ae7912d3be29945b0f46b795254",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Iran live updates: US waiting for Iran response to possible MoU, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "MOVED",
-      "fingerprint": "92f9e0d2dc38d9a5e5da4b30a78063617feaa754",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "'Time to say goodbye,' Epstein allegedly wrote in purported suicide note",
-      "to_title": "'Time to say goodbye,' Epstein allegedly wrote in purported suicide note"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "539da2254b4ba60a164ae7ee09df5b6a59025a8a",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Medicare to start offering weight loss drugs for $50 per month"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "51a926a2f0bdc5f5f80c4b50ee8de410addb6d11",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: US waiting for Iran response to possible MoU, officials say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3feb8c0b3ea0984f26fa4def1b132323c305f357",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Lawsuits allege negligence by UPS , others before fiery, fatal November crash",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ec906025798b5ac9ee119883c527ca3ca6f927d0",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Mississippi tornadoes leave more than a dozen injured and trail of destruction",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "04ad488bb6a621ca9d3969170f19f81231567885",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Blake Lively's attorneys speak out about settlement with Justin Baldoni",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0b53dcbeb2c8f9182efd2dc3f6463042c8e4580e",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Officials in Arizona, Georgia monitoring some hantavirus cruise ship passengers in US",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T17:24:04.761Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b608617020ddcd92a3b4844ecc7d3d6b32f3916b",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Many Medicare enrollees can get GLP-1 drugs for $50 starting in July",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-07T19:11:08.291Z",
@@ -1181,6 +1041,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DOJ seeks to denaturalize man for spying for Cuba",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e88732668e67e4d6a422ebd670426fad1119e98b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: 2 New Jersey residents being monitored for hantavirus"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a5155d8efa2439e28972a107a9fea43b25020721",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Administration eyeing $400M settlement from TikTok for DC 'beautification': Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "MOVED",
+      "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
+      "to_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f57c97b50513cfee72015f35f0b7dae9523e519a",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "As Iran war continues, people across the US are feeling a strain from high gas prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d8388ad7e33473a5b83a4b93e486aa66695b5201",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Mom who helped hundreds of foster kids gets surprise of a lifetime on 'GMA'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "344b64d0e89bb67e81c146968730bb639d402f03",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c0272183ff598dd1eadf6a808194282f8186d411",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Virginia Supreme Court overturns Democrats' redistricting measure",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0310ab1d03fa38e47f5ba20863d8ba70603acf29",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Cuban official warns US on 'dangerous path' that could lead to 'bloodbath in Cuba'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T18:21:36.203Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aea5b4a125544b657c49a8d3993e63dbc15e1e2d",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Usher, 'GMA' surprise mom who opened her home to over 300 foster kids",
       "to_title": null
     }
   ]
