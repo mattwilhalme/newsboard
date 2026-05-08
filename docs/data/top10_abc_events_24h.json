@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-08T20:44:50.419Z",
+  "generatedAt": "2026-05-08T21:43:30.574Z",
   "hours": 24,
   "events": [
     {
@@ -1001,6 +1001,56 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Mom who helped hundreds of foster kids gets surprise of a lifetime on 'GMA'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bfacef3dacfb235be8eae7d9d3d559a4ab21fcfa",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump says 3-day ceasefire, prisoner swap to occur between Russia and Ukraine"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "35da3f74de7c014a7ea168c7207e0ab491728a5c",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Pentagon's declassified UFO files reveal sightings near military sites"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
+      "to_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8ad03c651f48f8581a404e0b47cbc6e690554205",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Many UFO sightings concentrated near active military sites, newly released files show",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f57c97b50513cfee72015f35f0b7dae9523e519a",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "As Iran war continues, people across the US are feeling a strain from high gas prices",
       "to_title": null
     }
   ]

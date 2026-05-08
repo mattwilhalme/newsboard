@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-08T20:44:50.419Z",
+  "generatedAt": "2026-05-08T21:43:30.574Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T19:39:50.842Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6559a4d5d026f173d8259481d8618ec4fbe453c8",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Settlement in ship crash into Baltimore bridge"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T19:39:50.842Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3f91cc897fd9556846541b618adfb046c23a3558",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Judges appear skeptical of arguments seeking to reduce Sean 'Diddy' Combs' sentence",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T19:39:50.842Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d0db70e2cedb86b36656963edce11b33599a75cb",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Doctor accused of trying to kill wife on hike found guilty of attempted manslaughter",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T20:31:40.032Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T20:31:40.032Z",
-      "event_type": "MOVED",
-      "fingerprint": "3a25c796bc83beaf8c4dc996a3605d0b31db5b65",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Iran says Hormuz is open to all ships that coordinate with Tehran",
-      "to_title": "Iran live updates: Iran says Hormuz is open to all ships that coordinate with Tehran"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T20:31:40.032Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Mom who helped hundreds of foster kids gets surprise of a lifetime on 'GMA'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bfacef3dacfb235be8eae7d9d3d559a4ab21fcfa",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump says 3-day ceasefire, prisoner swap to occur between Russia and Ukraine"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "35da3f74de7c014a7ea168c7207e0ab491728a5c",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Pentagon's declassified UFO files reveal sightings near military sites"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
+      "to_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8ad03c651f48f8581a404e0b47cbc6e690554205",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Many UFO sightings concentrated near active military sites, newly released files show",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T21:43:33.671Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f57c97b50513cfee72015f35f0b7dae9523e519a",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "As Iran war continues, people across the US are feeling a strain from high gas prices",
       "to_title": null
     }
   ],
