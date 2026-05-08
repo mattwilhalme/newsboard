@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-08T15:55:59.911Z",
+  "generatedAt": "2026-05-08T17:04:55.585Z",
   "hours": 24,
   "events": [
     {
@@ -1071,6 +1071,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Alleged cyberattack temporarily shuts down Canvas",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "224ff5178b2e047009547a31e691763f58b4b985",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Amid a suspected hantavirus cluster, here's what to know about the disease"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "MOVED",
+      "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
+      "to_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "MOVED",
+      "fingerprint": "c0272183ff598dd1eadf6a808194282f8186d411",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Virginia Supreme Court overturns Democrats' redistricting measure",
+      "to_title": "Virginia Supreme Court overturns Democrats' redistricting measure"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "MOVED",
+      "fingerprint": "7b4f8f2a5aab57f279139670092899cf03787615",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Pentagon begins release of decades of unresolved UFO files",
+      "to_title": "Pentagon begins release of decades of unresolved UFO files"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "MOVED",
+      "fingerprint": "a2afacfc4a520b70235b9a624c952a2b6e35138f",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "CDC researcher accused of stealing over $1 million in grant funding extradited to US",
+      "to_title": "CDC researcher accused of stealing over $1 million in grant funding extradited to US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "MOVED",
+      "fingerprint": "0310ab1d03fa38e47f5ba20863d8ba70603acf29",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Cuban official warns US on 'dangerous path' that could lead to 'bloodbath in Cuba'",
+      "to_title": "Cuban official warns US on 'dangerous path' that could lead to 'bloodbath in Cuba'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "MOVED",
+      "fingerprint": "17574f924caa1a6615d5a42b7d6550b4c15530ed",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
+      "to_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aea5b4a125544b657c49a8d3993e63dbc15e1e2d",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Usher, 'GMA' surprise mom who opened her home to over 300 foster kids"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "MOVED",
+      "fingerprint": "6df215f296a9b76c330164d9d48dc7ff92c0b592",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "How a police officer was found guilty of murdering Georgia teen",
+      "to_title": "How a police officer was found guilty of murdering Georgia teen"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "76e6a50a5f1711b31bc4cdfd764b2b9748aad88a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Judge says DOGE grant terminations are unlawful and 'troubling'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T17:04:58.683Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1d0bbb258a9fcb202e7ae5ff7396b6f3be4a92eb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "DOJ seeks to denaturalize man for spying for Cuba",
       "to_title": null
     }
   ]
