@@ -1,108 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-08T12:13:34.870Z",
+  "generatedAt": "2026-05-08T14:18:33.435Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "37e74b6e73cfd443368d0dbc7f7359c54f7d491a",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "DOJ probing $2.6 billion in oil trades related to Iran war, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "51a926a2f0bdc5f5f80c4b50ee8de410addb6d11",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: US waiting for Iran response to possible MoU, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ec906025798b5ac9ee119883c527ca3ca6f927d0",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Mississippi tornadoes leave more than a dozen injured and trail of destruction"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fa1cabd930acfd8ad677ad301173c2eaa6b9a6e8",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "What to know about potential US-Iran agreement"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "08112b1e349d3a212a5c74c8fb8d36cfe43ae722",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "US jobless claim applications rise to 200,000"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "83f85c4fcd435ae7912d3be29945b0f46b795254",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US waiting for Iran response to possible MoU, officials say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8872573f6f392e9af72ddbaf55125bb182d81257",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:What to know about potential US-Iran agreement",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "617be3b12e2a1d41d2729bd820255cf46a84a58b",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Tornadoes hit homes in Mississippi as severe weather threat continues in Southeast",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "096a70a27c04264593cf15432993bf2aede636ab",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Feds raid 'open-air drug market near Los Angeles' MacArthur Park",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T13:13:38.715Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ecb3e11e4ada9ed4f30b5a71468578d2de7cc711",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Rubio faces challenge in Pope Leo meeting",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-07T15:39:28.311Z",
@@ -991,6 +891,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "344b64d0e89bb67e81c146968730bb639d402f03",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response",
+      "to_title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cf97bb81ee2ce101223c9f443a0422c514ae6ec9",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Jobs report showed hiring slowed, but exceeded expectations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
+      "to_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "17574f924caa1a6615d5a42b7d6550b4c15530ed",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
+      "to_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final",
+      "to_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6df215f296a9b76c330164d9d48dc7ff92c0b592",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "How a police officer was found guilty of murdering Georgia teen"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links",
+      "to_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1aff59a19a1f0c59fc316cb1c6946f86565d7e6b",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Alleged cyberattack temporarily shuts down Canvas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5e51b94cc02d969c5689b3e41209012ac2a9578e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says without ceasefire, 'one big glow' will come out of Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2c40f8b09770a09037489fedfc0f097d0262758d",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump calls Iran strikes a 'love tap,' says ceasefire still in effect",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "76e6a50a5f1711b31bc4cdfd764b2b9748aad88a",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Judge says DOGE grant terminations are unlawful and 'troubling'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0785d3ac68a425fdfec08c484b43effaffa8632a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'Monster with a badge': How an officer was convicted in teen's shocking murder",
       "to_title": null
     }
   ]

@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-08T12:13:34.870Z",
+  "generatedAt": "2026-05-08T14:18:33.435Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T06:56:07.920Z",
-      "event_type": "MOVED",
-      "fingerprint": "faf9fb2da866c131efc898dffa49fade4ebc6197",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "Space historians explain why it took the US more than 50 years to return to the moon",
-      "to_title": "Space historians explain why it took the US more than 50 years to return to the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T06:56:07.920Z",
-      "event_type": "MOVED",
-      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
-      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T06:56:07.920Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fd5e78cec9dc1f0b4b022c76cb7275db10b5afee",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T06:56:07.920Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ca43e2a639b703ff447ae434999034cb9e0b5b9a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Two MLB players get 7-game suspensions following Angels-Braves brawl",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T08:16:11.816Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e046a2fae2c832a9b8bcbd235a4adcf7934a1357",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump vows 'bigger, and better' Iran attacks if deal not reached"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T08:16:11.816Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3da5747b9c0eec88660a0e59492c49677a4784ea",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Iran live updates: Oil tankers halted in Hormuz after Israeli strikes on Lebanon",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T09:43:38.865Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef25db7dcb6d970c7a42c05ca38bad7cf58d3dd4",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Diddy back in court to appeal criminal conviction"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T09:43:38.865Z",
-      "event_type": "MOVED",
-      "fingerprint": "927fe16468dd552c2866d956aea8bb3656cd17aa",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Will the US-Iran ceasefire bring down gas prices?",
-      "to_title": "Will the US-Iran ceasefire bring down gas prices?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T09:43:38.865Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0a27840183b2147e82452d4d357a9baa65d891b4",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "These species are now listed as endangered due to climate change"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T09:43:38.865Z",
-      "event_type": "MOVED",
-      "fingerprint": "094a2c97a7300dfb86a376d7d021845e66448a65",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Wife remembers husband who died saving kids from rip current",
-      "to_title": "Wife remembers husband who died saving kids from rip current"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T09:43:38.865Z",
-      "event_type": "MOVED",
-      "fingerprint": "faf9fb2da866c131efc898dffa49fade4ebc6197",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Space historians explain why it took the US more than 50 years to return to the moon",
-      "to_title": "Space historians explain why it took the US more than 50 years to return to the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T09:43:38.865Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a22376957d376c0ae6e094e0ca3ca1c9b1b19f8a",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Student speaks out after train clips school bus in incident caught on camera",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T09:43:38.865Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T11:41:52.616Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "344b64d0e89bb67e81c146968730bb639d402f03",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response",
+      "to_title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cf97bb81ee2ce101223c9f443a0422c514ae6ec9",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Jobs report showed hiring slowed, but exceeded expectations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
+      "to_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "17574f924caa1a6615d5a42b7d6550b4c15530ed",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
+      "to_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final",
+      "to_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6df215f296a9b76c330164d9d48dc7ff92c0b592",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "How a police officer was found guilty of murdering Georgia teen"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links",
+      "to_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1aff59a19a1f0c59fc316cb1c6946f86565d7e6b",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Alleged cyberattack temporarily shuts down Canvas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5e51b94cc02d969c5689b3e41209012ac2a9578e",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says without ceasefire, 'one big glow' will come out of Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2c40f8b09770a09037489fedfc0f097d0262758d",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump calls Iran strikes a 'love tap,' says ceasefire still in effect",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "76e6a50a5f1711b31bc4cdfd764b2b9748aad88a",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Judge says DOGE grant terminations are unlawful and 'troubling'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T14:18:36.470Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0785d3ac68a425fdfec08c484b43effaffa8632a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'Monster with a badge': How an officer was convicted in teen's shocking murder",
       "to_title": null
     }
   ],
