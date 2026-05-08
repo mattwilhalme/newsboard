@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-07T23:35:53.947Z",
+  "generatedAt": "2026-05-08T01:23:46.302Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "927d03d090b46434ed473c8a7187ec114ee8f3c8",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Judge denies request to force FBI to return seized 2020 Fulton County ballots"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "c0915ec9f9c2cd0e391067c514ed799b8d584866",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Trump says no deadline for Iran to make a deal",
-      "to_title": "Iran live updates: Trump says no deadline for Iran to make a deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "2ff584b52db19035fc2985f99101f4073c8f6e80",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Confirmed hantavirus cases linked to suspected cluster rise to 5, WHO says",
-      "to_title": "Confirmed hantavirus cases linked to suspected cluster rise to 5, WHO says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "79e14f47a2e235b2651d8e8b9ca8ae31afbfab53",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "CNN founder Ted Turner dies at 87",
-      "to_title": "CNN founder Ted Turner dies at 87"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "159035b11f1de11ed5f2fcf39449b5fe582780bb",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Trump defends $400M price tag for White House ballroom construction project",
-      "to_title": "Trump defends $400M price tag for White House ballroom construction project"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "4ec78656126193bc0a8efa6cc07662848c9c5b1e",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "New images show shooting near National Mall that injured teenage bystander",
-      "to_title": "New images show shooting near National Mall that injured teenage bystander"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "2e3785e71690332d9d27853edc956bbe829b2b26",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Apple's $250 million class-action settlement paves way for payouts to iPhone owners",
-      "to_title": "Apple's $250 million class-action settlement paves way for payouts to iPhone owners"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "MOVED",
-      "fingerprint": "ecc108c136c2179e327475256b1f395ab7fb4dfc",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "New search warrant in Kristin Smart case, decades after 19-year-old disappeared",
-      "to_title": "New search warrant in Kristin Smart case, decades after 19-year-old disappeared"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T00:14:25.519Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "058c0778ceb4d35dce47a2f18c6487ee48b4315d",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Is California at risk of a gasoline shortage?",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-07T04:07:21.034Z",
@@ -1061,6 +971,126 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Man with weapon arrested near former Prince Andrew's home",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "MOVED",
+      "fingerprint": "0a9b7c721a545b9f1c16e50384d39e3c2ae8b68f",
+      "from_rank": 3,
+      "to_rank": 1,
+      "from_title": "Iran live updates: US strikes Iran after 'unprovoked attacks' on warships",
+      "to_title": "Iran live updates: US strikes Iran after 'unprovoked attacks' on warships"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2c40f8b09770a09037489fedfc0f097d0262758d",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump calls Iran strikes a 'love tap,' says ceasefire still in effect"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "MOVED",
+      "fingerprint": "3da5cbf6c224051f50f994e64623720f75ac5fc2",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Hantavirus live updates: 2 infected patients in isolation in Dutch hospitals",
+      "to_title": "Hantavirus live updates: 2 infected patients in isolation in Dutch hospitals"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0310ab1d03fa38e47f5ba20863d8ba70603acf29",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Cuban official warns US on 'dangerous path' that could lead to 'bloodbath in Cuba'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "76e6a50a5f1711b31bc4cdfd764b2b9748aad88a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Judge says DOGE grant terminations are unlawful and 'troubling'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "MOVED",
+      "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
+      "to_title": "Trade court says Trump's 10% global tariffs are unlawful"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "MOVED",
+      "fingerprint": "718abf552ed02a3b56a47bbb3532708edb6a380b",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Jake Reiner discusses death of parents Rob and Michelle Reiner in return to podcast",
+      "to_title": "Jake Reiner discusses death of parents Rob and Michelle Reiner in return to podcast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "MOVED",
+      "fingerprint": "e14204d8a9b5a9e09fb2df8acaee2af2bc69de01",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Lawyers for Blake Lively, Justin Baldoni speak out as settlement details revealed",
+      "to_title": "Lawyers for Blake Lively, Justin Baldoni speak out as settlement details revealed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "MOVED",
+      "fingerprint": "e8ea96c6b6707d5c000b5d5831f443a22c079197",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson",
+      "to_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fced14dbfcec71487987477798b32233429e506c",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:WHO says suspected hantavirus cluster 'is not the start of a COVID pandemic'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8edf541432cd5345c520a04eb9278d41f00e9dad",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "DHS, USSS say $1B for White House ballroom would also fund 'other critical missions'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T01:23:49.455Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "304893daa2ee3b20e0700d57779dc73f6f0b758d",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Tennessee passes new congressional map that splits its only majority-Black district",
       "to_title": null
     }
   ]
