@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-08T09:48:54.879Z",
+  "generatedAt": "2026-05-08T11:01:10.418Z",
   "hours": 24,
   "events": [
     {
@@ -1071,6 +1071,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T11:01:13.890Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5e51b94cc02d969c5689b3e41209012ac2a9578e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says without ceasefire, 'one big glow' will come out of Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T11:01:13.890Z",
+      "event_type": "MOVED",
+      "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
+      "to_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T11:01:13.890Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "17574f924caa1a6615d5a42b7d6550b4c15530ed",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T11:01:13.890Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0785d3ac68a425fdfec08c484b43effaffa8632a",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "'Monster with a badge': How an officer was convicted in teen's shocking murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T11:01:13.890Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0a9b7c721a545b9f1c16e50384d39e3c2ae8b68f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US strikes Iran after 'unprovoked attacks' on warships",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T11:01:13.890Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aaaee9cda0b85fae6636d46052b835a730287ca7",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "What to watch for in high-stakes Trump-Xi meeting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T11:01:13.890Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
       "to_title": null
     }
   ]
