@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-08T08:02:27.670Z",
+  "generatedAt": "2026-05-08T09:48:54.879Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "da9da12154de12a761409306acb58d369dc427c0",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Husband arrested after woman reported missing, went overboard in Bahamas: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "faf9fb2da866c131efc898dffa49fade4ebc6197",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Space historians explain why it took the US more than 50 years to return to the moon",
-      "to_title": "Space historians explain why it took the US more than 50 years to return to the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "98cda2e46cb6fe4c995af1fd72f822739693389f",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death",
-      "to_title": "'Ketamine Queen' sentenced to 15 years in Matthew Perry's overdose death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "fd5e78cec9dc1f0b4b022c76cb7275db10b5afee",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women",
-      "to_title": "Gilgo Beach murders: Rex Heuermann admits to killing 8 women"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "a22376957d376c0ae6e094e0ca3ca1c9b1b19f8a",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Student speaks out after train clips school bus in incident caught on camera",
-      "to_title": "Student speaks out after train clips school bus in incident caught on camera"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T03:25:07.826Z",
-      "event_type": "MOVED",
-      "fingerprint": "ca43e2a639b703ff447ae434999034cb9e0b5b9a",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Two MLB players get 7-game suspensions following Angels-Braves brawl",
-      "to_title": "Two MLB players get 7-game suspensions following Angels-Braves brawl"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T03:25:07.826Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Man arrested near former Prince Andrew's home",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aaaee9cda0b85fae6636d46052b835a730287ca7",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "What to watch for in high-stakes Trump-Xi meeting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
+      "to_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final",
+      "to_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
+      "to_title": "Trade court says Trump's 10% global tariffs are unlawful"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links",
+      "to_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e8ea96c6b6707d5c000b5d5831f443a22c079197",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson",
       "to_title": null
     }
   ],

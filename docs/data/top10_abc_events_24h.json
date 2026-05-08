@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-08T08:02:27.670Z",
+  "generatedAt": "2026-05-08T09:48:54.879Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T09:21:42.240Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "51a926a2f0bdc5f5f80c4b50ee8de410addb6d11",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: US waiting for Iran response to possible MoU, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-07T09:21:42.240Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "933a2308f09bac8f7a0ceb563cbf3e8dda418db8",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Trump says no deadline for Iran to make a deal",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-07T11:24:30.329Z",
@@ -1031,6 +1011,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Man arrested near former Prince Andrew's home",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aaaee9cda0b85fae6636d46052b835a730287ca7",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "What to watch for in high-stakes Trump-Xi meeting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
+      "to_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final",
+      "to_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
+      "to_title": "Trade court says Trump's 10% global tariffs are unlawful"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links",
+      "to_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-08T09:48:57.842Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e8ea96c6b6707d5c000b5d5831f443a22c079197",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson",
       "to_title": null
     }
   ]
