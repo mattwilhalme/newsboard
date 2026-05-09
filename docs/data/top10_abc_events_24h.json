@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-09T20:59:32.877Z",
+  "generatedAt": "2026-05-09T21:46:13.548Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T21:43:33.671Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bfacef3dacfb235be8eae7d9d3d559a4ab21fcfa",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Trump says 3-day ceasefire, prisoner swap to occur between Russia and Ukraine"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T21:43:33.671Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "35da3f74de7c014a7ea168c7207e0ab491728a5c",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Pentagon's declassified UFO files reveal sightings near military sites"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T21:43:33.671Z",
-      "event_type": "MOVED",
-      "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
-      "to_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T21:43:33.671Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8ad03c651f48f8581a404e0b47cbc6e690554205",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Many UFO sightings concentrated near active military sites, newly released files show",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T21:43:33.671Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f57c97b50513cfee72015f35f0b7dae9523e519a",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "As Iran war continues, people across the US are feeling a strain from high gas prices",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-08T22:39:48.362Z",
@@ -651,6 +601,66 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "US military strike on alleged drug boat in the eastern Pacific kills 2",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "311f4e1a744609cd35a70d55258de24172ba11ca",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Possible boat explosion sends several to the hospital: Fire officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "395ae00c049a4a6805cd565ffcce2437ec6c7f53",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Pentagon releases declassified UFO files from various federal agencies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "793e2042a845509775af6ae5b8b055114899e250",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "'Full House' star shares health update amid cancer battle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "44245d8d6b7540673d5c52c0b45eaf65e57f44b4",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Possible boat explosion sends over a dozen people to the hospital: Fire officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "35da3f74de7c014a7ea168c7207e0ab491728a5c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Pentagon's declassified UFO files reveal sightings near military sites",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd9a0d2e93ab2ce875ab13eda309aa0cfb346e93",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Dave Coulier shares emotional health update after cancer battle",
       "to_title": null
     }
   ]

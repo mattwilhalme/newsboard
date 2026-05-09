@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-09T20:59:32.877Z",
+  "generatedAt": "2026-05-09T21:46:13.548Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T13:59:15.319Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a3585388df563784623950e15386105fdd0d7ff7",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingMarch inflation report shows prices surged after oil shock set off by Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T13:59:15.319Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e934af3c411c02ddf2563d3350788019cdd9e173",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Vance heads to Islamabad for Iran talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T13:59:15.319Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a3ef9130345a7acb1f1c745e624d72866a708638",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Vance heads to Islamabad for Iran talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T13:59:15.319Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1d90b2d83f5d4d73a9d8a402382a14aa3c313baf",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran says 10-point plan to be basis for talks, rejects ceasefire enabling rearmament"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T13:59:15.319Z",
-      "event_type": "MOVED",
-      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
-      "to_title": "Why Artemis II crew will lose communication with mission control during reentry"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T13:59:15.319Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T13:59:15.319Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "US military strike on alleged drug boat in the eastern Pacific kills 2",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "311f4e1a744609cd35a70d55258de24172ba11ca",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Possible boat explosion sends several to the hospital: Fire officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "395ae00c049a4a6805cd565ffcce2437ec6c7f53",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Pentagon releases declassified UFO files from various federal agencies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "793e2042a845509775af6ae5b8b055114899e250",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "'Full House' star shares health update amid cancer battle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "44245d8d6b7540673d5c52c0b45eaf65e57f44b4",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Possible boat explosion sends over a dozen people to the hospital: Fire officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "35da3f74de7c014a7ea168c7207e0ab491728a5c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Pentagon's declassified UFO files reveal sightings near military sites",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T21:46:16.728Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd9a0d2e93ab2ce875ab13eda309aa0cfb346e93",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Dave Coulier shares emotional health update after cancer battle",
       "to_title": null
     }
   ],
