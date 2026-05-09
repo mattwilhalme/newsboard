@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-09T16:06:38.620Z",
+  "generatedAt": "2026-05-09T17:08:50.609Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "MOVED",
-      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
-      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T11:38:11.817Z",
-      "event_type": "MOVED",
-      "fingerprint": "196a7853a385b7dd8c6c78d4f8c8793e8c526f09",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Facebook, WhatsApp should remove accounts that defraud users, Manhattan DA says",
-      "to_title": "Facebook, WhatsApp should remove accounts that defraud users, Manhattan DA says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T11:38:11.817Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T17:08:53.731Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1c023c985052fd8bf15c3a051ab2ce0336592081",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Iran live updates: 'We'll see what happens,' Trump says on Iran response to proposal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T17:08:53.731Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b5134526f55f16a154b9b7c48e6a4f6b22308bdd",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: 'We'll see what happens' Trump says on Iran's response to proposal",
       "to_title": null
     }
   ],
