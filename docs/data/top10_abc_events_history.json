@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-08T23:37:05.351Z",
+  "generatedAt": "2026-05-09T01:21:11.610Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T22:57:19.856Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d922207f0cd2e26c183fb4379ba30c27c2d7909b",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says Iran 'better not' collect Strait of Hormuz toll"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-09T22:57:19.856Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Why Artemis II crew will lose communication with mission control during reentry"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-09T22:57:19.856Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "How a police officer was found guilty of murdering Georgia teen",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T01:21:14.818Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7455754bf25f793b2d53ecf4cef44b52f008db55",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: 9 people across 6 states being monitored for hantavirus"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T01:21:14.818Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e88732668e67e4d6a422ebd670426fad1119e98b",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: 2 New Jersey residents being monitored for hantavirus",
       "to_title": null
     }
   ],
