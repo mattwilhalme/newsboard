@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-09T14:05:11.990Z",
+  "generatedAt": "2026-05-09T15:07:09.385Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "MOVED",
-      "fingerprint": "71132a3cedf5779286b2c8cad6868fb13d4df1c1",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "Prices expected to have surged in March after oil shock set off by Iran war",
-      "to_title": "Prices expected to have surged in March after oil shock set off by Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T10:47:15.018Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "196a7853a385b7dd8c6c78d4f8c8793e8c526f09",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Facebook, WhatsApp should remove accounts that defraud users, Manhattan DA says"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T10:47:15.018Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Frontier Airlines jet strikes individual on runway at Denver airport",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T15:07:12.709Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5373909ef12aabcd683a110ead58d54111546b77",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Spanish authorities preparing for M/V Hondius arrival"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T15:07:12.709Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ea21389ecec5dd8592659d1dd6d8e129010ab946",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: CDC tells US doctors be aware of imported hantavirus cases",
       "to_title": null
     }
   ],
