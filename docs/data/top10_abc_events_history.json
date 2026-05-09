@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-09T12:39:54.790Z",
+  "generatedAt": "2026-05-09T14:05:11.990Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T09:56:42.120Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3640671b7b5ed8a79b2a205763495e26c60c492f",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "DOJ probing NFL over potential antitrust violations in TV deals, sources say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T09:56:42.120Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4a5d0303fcb9f378dcd9173bbae1c7cb05d46671",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Group says family was deported without due process",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T10:47:15.018Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Hantavirus live updates: 9 people across 6 states being monitored for hantavirus",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T14:05:15.243Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a0672025074d8ce8f7852655afd0329c4712b12",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Frontier Airlines jet strikes person on runway at Denver airport: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T14:05:15.243Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "350c0f831a3a861fa63fdf596daa497d603ece62",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Frontier Airlines jet strikes individual on runway at Denver airport",
       "to_title": null
     }
   ],
