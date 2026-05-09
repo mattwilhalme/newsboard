@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-09T08:22:25.999Z",
+  "generatedAt": "2026-05-09T09:50:48.101Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T09:48:57.842Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "aaaee9cda0b85fae6636d46052b835a730287ca7",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "What to watch for in high-stakes Trump-Xi meeting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T09:48:57.842Z",
-      "event_type": "MOVED",
-      "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
-      "to_title": "David Attenborough, the excited but hushed voice of nature programs, turns 100"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T09:48:57.842Z",
-      "event_type": "MOVED",
-      "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final",
-      "to_title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T09:48:57.842Z",
-      "event_type": "MOVED",
-      "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Trade court says Trump's 10% global tariffs are unlawful",
-      "to_title": "Trade court says Trump's 10% global tariffs are unlawful"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T09:48:57.842Z",
-      "event_type": "MOVED",
-      "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links",
-      "to_title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-08T09:48:57.842Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e8ea96c6b6707d5c000b5d5831f443a22c079197",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-08T11:01:13.890Z",
@@ -1021,6 +961,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T09:50:51.318Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ea21389ecec5dd8592659d1dd6d8e129010ab946",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: CDC tells US doctors be aware of imported hantavirus cases"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T09:50:51.318Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7455754bf25f793b2d53ecf4cef44b52f008db55",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: 9 people across 6 states being monitored for hantavirus",
       "to_title": null
     }
   ]

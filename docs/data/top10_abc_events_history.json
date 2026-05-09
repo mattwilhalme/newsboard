@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-09T08:22:25.999Z",
+  "generatedAt": "2026-05-09T09:50:48.101Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T09:56:42.120Z",
-      "event_type": "MOVED",
-      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Trump blasts MAGA influencers who have split with him over Iran",
-      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T09:56:42.120Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0ba2adfe7e51ee1c8d69c1c4768f2f6b08542ad6",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Hip-hop pioneer Afrika Bambaataa dies at age 68"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T09:56:42.120Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T09:50:51.318Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ea21389ecec5dd8592659d1dd6d8e129010ab946",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: CDC tells US doctors be aware of imported hantavirus cases"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T09:50:51.318Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7455754bf25f793b2d53ecf4cef44b52f008db55",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: 9 people across 6 states being monitored for hantavirus",
       "to_title": null
     }
   ],
