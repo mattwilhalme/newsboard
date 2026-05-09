@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-09T20:05:18.383Z",
+  "generatedAt": "2026-05-09T20:59:32.877Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T12:34:14.165Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "71132a3cedf5779286b2c8cad6868fb13d4df1c1",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Prices expected to have surged in March after oil shock set off by Iran war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T12:34:14.165Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "196a7853a385b7dd8c6c78d4f8c8793e8c526f09",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Facebook, WhatsApp should remove accounts that defraud users, Manhattan DA says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T12:34:14.165Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "916f64cf39e03967b3a3663d5f196a14406d215a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Trump blasts MAGA influencers over Iran",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T13:59:15.319Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Trump says 3-day ceasefire, prisoner swap to occur between Russia and Ukraine",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T20:59:36.148Z",
+      "event_type": "MOVED",
+      "fingerprint": "35da3f74de7c014a7ea168c7207e0ab491728a5c",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Pentagon's declassified UFO files reveal sightings near military sites",
+      "to_title": "Pentagon's declassified UFO files reveal sightings near military sites"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T20:59:36.148Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd9a0d2e93ab2ce875ab13eda309aa0cfb346e93",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Dave Coulier shares emotional health update after cancer battle"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-09T20:59:36.148Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de780e60809251475422648cd55253caae613e72",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "US military strike on alleged drug boat in the eastern Pacific kills 2",
       "to_title": null
     }
   ],
