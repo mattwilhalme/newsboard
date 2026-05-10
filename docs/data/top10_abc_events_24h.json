@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-10T13:15:10.166Z",
+  "generatedAt": "2026-05-10T14:35:21.267Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T14:05:15.243Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2a0672025074d8ce8f7852655afd0329c4712b12",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Frontier Airlines jet strikes person on runway at Denver airport: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T14:05:15.243Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "350c0f831a3a861fa63fdf596daa497d603ece62",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Frontier Airlines jet strikes individual on runway at Denver airport",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-09T15:07:12.709Z",
@@ -661,6 +641,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "How Melody Lee is helping Mercedes-Benz reach its next generation of buyers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T14:35:24.293Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "59344b29a859e1eb033032e6cdd847e2a10f2a00",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran sends response to latest US proposal, state media says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T14:35:24.293Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ea8a94088702b5b8c697cd9d7b539c20938600b8",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: UAE, Kuwait report new drone interceptions",
       "to_title": null
     }
   ]

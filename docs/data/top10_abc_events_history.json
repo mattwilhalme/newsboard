@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-10T13:15:10.166Z",
+  "generatedAt": "2026-05-10T14:35:21.267Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T17:29:57.057Z",
-      "event_type": "MOVED",
-      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Secret Service trainee accused of spying on roommate with hidden camera",
-      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T17:29:57.057Z",
-      "event_type": "MOVED",
-      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction",
-      "to_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T17:29:57.057Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "How Melody Lee is helping Mercedes-Benz reach its next generation of buyers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T14:35:24.293Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "59344b29a859e1eb033032e6cdd847e2a10f2a00",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran sends response to latest US proposal, state media says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T14:35:24.293Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ea8a94088702b5b8c697cd9d7b539c20938600b8",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: UAE, Kuwait report new drone interceptions",
       "to_title": null
     }
   ],
