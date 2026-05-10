@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-10T14:35:21.267Z",
+  "generatedAt": "2026-05-10T15:35:13.334Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T15:07:12.709Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5373909ef12aabcd683a110ead58d54111546b77",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Hantavirus live updates: Spanish authorities preparing for M/V Hondius arrival"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T15:07:12.709Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ea21389ecec5dd8592659d1dd6d8e129010ab946",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Hantavirus live updates: CDC tells US doctors be aware of imported hantavirus cases",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-09T16:06:41.917Z",
@@ -661,6 +641,26 @@
       "from_rank": 4,
       "to_rank": null,
       "from_title": "Iran live updates: UAE, Kuwait report new drone interceptions",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T15:35:16.411Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0d7e33733f045509d95144524ea5686820db1da6",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Waltz: 'It is up to President Trump' to determine if Iran violated ceasefire"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T15:35:16.411Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f69c981200840888c236ab8a0d6430f64f8a7b3f",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks",
       "to_title": null
     }
   ]
