@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-10T08:32:19.871Z",
+  "generatedAt": "2026-05-10T09:58:42.422Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "43163adf52b4b5a1829d38fb779286d545c3f3ab",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Husband of woman missing in Bahamas arrested"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a3585388df563784623950e15386105fdd0d7ff7",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingMarch inflation report shows prices surged after oil shock set off by Iran war",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T14:51:51.325Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T09:58:45.985Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e1784576b691ccd2955f21ff3f7761ebe1830c78",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Evacuations begin after MV Hondius arrives in Canary Islands"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T09:58:45.985Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a90c6e25a5ae98dad1f22e638fa578cb98530eea",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: MV Hondius arrives off the coast of Tenerife",
       "to_title": null
     }
   ],

@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-10T08:32:19.871Z",
+  "generatedAt": "2026-05-10T09:58:42.422Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T09:50:51.318Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ea21389ecec5dd8592659d1dd6d8e129010ab946",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Hantavirus live updates: CDC tells US doctors be aware of imported hantavirus cases"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T09:50:51.318Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7455754bf25f793b2d53ecf4cef44b52f008db55",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Hantavirus live updates: 9 people across 6 states being monitored for hantavirus",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-09T14:05:15.243Z",
@@ -541,6 +521,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T09:58:45.985Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e1784576b691ccd2955f21ff3f7761ebe1830c78",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Evacuations begin after MV Hondius arrives in Canary Islands"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T09:58:45.985Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a90c6e25a5ae98dad1f22e638fa578cb98530eea",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: MV Hondius arrives off the coast of Tenerife",
       "to_title": null
     }
   ]
