@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-10T09:58:42.422Z",
+  "generatedAt": "2026-05-10T11:01:19.323Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a3ef9130345a7acb1f1c745e624d72866a708638",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Vance heads to Islamabad for Iran talks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1d90b2d83f5d4d73a9d8a402382a14aa3c313baf",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Iran says 10-point plan to be basis for talks, rejects ceasefire enabling rearmament",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T16:34:33.504Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "05afbbbe00b97fb0381ab7a0708b4fe328cf1929",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Documents reveal letter from Charlie Kirk's alleged killer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T16:34:33.504Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0f5dba12dc5a4093dba167e089250e826417255e",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Judges hear arguments over legality of new Trump administration tariffs"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T16:34:33.504Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Hantavirus live updates: MV Hondius arrives off the coast of Tenerife",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T11:01:22.457Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f8104e5862730f40d5e3adb851485363b3918b44",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Kuwaiti army intercepts 'hostile drones'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T11:01:22.457Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ba5aa01dd20bd2f6c9aa68a8b1df53ab319045e0",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "How Melody Lee is helping Mercedes-Benz reach its next generation of buyers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T11:01:22.457Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1c023c985052fd8bf15c3a051ab2ce0336592081",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: 'We'll see what happens,' Trump says on Iran response to proposal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T11:01:22.457Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2d5a5db8ee8aa0997aaa2ec9984294a9740a0363",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Katy Perry will perform at SoFi Stadium before first World Cup game in US",
       "to_title": null
     }
   ],
