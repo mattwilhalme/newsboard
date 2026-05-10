@@ -1,78 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-10T04:11:05.296Z",
+  "generatedAt": "2026-05-10T06:44:13.173Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "4875e7d00a29c5c2803951501013efbd71769993",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "Why Artemis II crew will lose communication with mission control during reentry",
-      "to_title": "Why Artemis II crew will lose communication with mission control during reentry"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "778a2162ce3e8fe2ab070757a16edc77bfb43006",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "Trump blasts MAGA influencers who have split with him over Iran",
-      "to_title": "Trump blasts MAGA influencers who have split with him over Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "1272a5dff1364947b6b7854dbae8056674dcdec1",
-      "from_rank": 7,
-      "to_rank": 5,
-      "from_title": "Melania Trump declares 'I am not Epstein's victim'",
-      "to_title": "Melania Trump declares 'I am not Epstein's victim'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "57dd8c68d76f7ed5a8628bec61872d301a129d74",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "Teen’s parents issue plea for kidney donor, a surprise neighbor responds",
-      "to_title": "Teen’s parents issue plea for kidney donor, a surprise neighbor responds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "07c58ed1b6db96aff07e1d782e314714814e9fc6",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "Secret Service trainee accused of spying on roommate with hidden camera",
-      "to_title": "Secret Service trainee accused of spying on roommate with hidden camera"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "MOVED",
-      "fingerprint": "1bb667ef787a15657b9e778e2b9924a9c7d5dc46",
-      "from_rank": 10,
-      "to_rank": 8,
-      "from_title": "Family calls for body camera footage release as officer faces manslaughter charge",
-      "to_title": "Family calls for body camera footage release as officer faces manslaughter charge"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T14:51:51.325Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "26b7a8e2221d78361c516c845377b45786b712b9",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "'Dad can finally rest': Elizabeth Fox Doerr's family reacts after her conviction"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T14:51:51.325Z",
@@ -30001,6 +29931,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Prince William, Kate step out at Buckingham Palace garden party",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T06:44:16.603Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a90c6e25a5ae98dad1f22e638fa578cb98530eea",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: MV Hondius arrives off the coast of Tenerife"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T06:44:16.603Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4c3b4cfb37e5be4599950303d59f6ce1ccf6c78d",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:What to know about Nebraska quarantine unit as it prepares for cruise ship passengers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T06:44:16.603Z",
+      "event_type": "MOVED",
+      "fingerprint": "f69c981200840888c236ab8a0d6430f64f8a7b3f",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks",
+      "to_title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T06:44:16.603Z",
+      "event_type": "MOVED",
+      "fingerprint": "1c023c985052fd8bf15c3a051ab2ce0336592081",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Iran live updates: 'We'll see what happens,' Trump says on Iran response to proposal",
+      "to_title": "Iran live updates: 'We'll see what happens,' Trump says on Iran response to proposal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T06:44:16.603Z",
+      "event_type": "MOVED",
+      "fingerprint": "311f4e1a744609cd35a70d55258de24172ba11ca",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Possible boat explosion sends several to the hospital: Fire officials",
+      "to_title": "Possible boat explosion sends several to the hospital: Fire officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T06:44:16.603Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5373909ef12aabcd683a110ead58d54111546b77",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: Spanish authorities preparing for M/V Hondius arrival",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T06:44:16.603Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "769e1d1f841197ce0bcb0e6ba83b2e9551314012",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
       "to_title": null
     }
   ],
