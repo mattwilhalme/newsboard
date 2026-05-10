@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-10T11:58:17.978Z",
+  "generatedAt": "2026-05-10T13:15:10.166Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T16:34:33.504Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1bb667ef787a15657b9e778e2b9924a9c7d5dc46",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Family calls for body camera footage release as officer faces manslaughter charge",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T16:34:33.504Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "43163adf52b4b5a1829d38fb779286d545c3f3ab",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Husband of woman missing in Bahamas arrested",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T17:29:57.057Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Pentagon releases declassified UFO files from various federal agencies",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T13:15:13.372Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8e742d13452162ac2139d5204e9a862a383990c2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "How Mercedes-Benz exec Melody Lee is making her voice heard"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T13:15:13.372Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ba5aa01dd20bd2f6c9aa68a8b1df53ab319045e0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "How Melody Lee is helping Mercedes-Benz reach its next generation of buyers",
       "to_title": null
     }
   ],

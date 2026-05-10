@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-10T11:58:17.978Z",
+  "generatedAt": "2026-05-10T13:15:10.166Z",
   "hours": 24,
   "events": [
     {
@@ -641,6 +641,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Pentagon releases declassified UFO files from various federal agencies",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T13:15:13.372Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8e742d13452162ac2139d5204e9a862a383990c2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "How Mercedes-Benz exec Melody Lee is making her voice heard"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T13:15:13.372Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ba5aa01dd20bd2f6c9aa68a8b1df53ab319045e0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "How Melody Lee is helping Mercedes-Benz reach its next generation of buyers",
       "to_title": null
     }
   ]
