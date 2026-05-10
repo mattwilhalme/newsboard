@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-10T18:36:05.824Z",
+  "generatedAt": "2026-05-10T19:44:22.307Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T17:29:57.057Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d861cc2745ea6b80ac1eaf060e75eb940f1ce80e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Prices surged in March amid Iran war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T18:10:42.442Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "590b3e79cea9dea193d9b862e97d9449f344d360",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Kamala Harris says she's 'thinking about' running for president again: 'I might'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T18:10:42.442Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T19:44:25.398Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7f7a59cdb93808ae7c85a989cc5b7af349dc14ab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Americans aboard MV Hondius have begun disembarking"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T19:44:25.398Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e1784576b691ccd2955f21ff3f7761ebe1830c78",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: Evacuations begin after MV Hondius arrives in Canary Islands",
       "to_title": null
     }
   ],

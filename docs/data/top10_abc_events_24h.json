@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-10T18:36:05.824Z",
+  "generatedAt": "2026-05-10T19:44:22.307Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T19:17:55.633Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b5bc0a71c74fcd175627830a5820e60b0a5f45b2",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:What to know about National Quarantine Unit prep for cruise passengers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-09T19:17:55.633Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4c3b4cfb37e5be4599950303d59f6ce1ccf6c78d",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-09T20:05:21.328Z",
@@ -561,6 +541,26 @@
       "from_rank": 3,
       "to_rank": null,
       "from_title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T19:44:25.398Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7f7a59cdb93808ae7c85a989cc5b7af349dc14ab",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Americans aboard MV Hondius have begun disembarking"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-10T19:44:25.398Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e1784576b691ccd2955f21ff3f7761ebe1830c78",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: Evacuations begin after MV Hondius arrives in Canary Islands",
       "to_title": null
     }
   ]
