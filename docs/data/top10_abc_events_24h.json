@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-11T21:39:47.211Z",
+  "generatedAt": "2026-05-11T22:39:03.449Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T22:10:52.217Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a22d67e30850c719fa6102d03e7402b56d3b2d92",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Hantavirus live updates: Americans aboard MV Hondius depart from Spain"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T22:10:52.217Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9a6e1d359a41cd39d972b6daa01ea324d815df44",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Hantavirus live updates: Americans aboard MV Hondius arrive at Tenerife airport",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-11T04:20:36.506Z",
@@ -871,6 +851,106 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Trump sounds off SCOTUS justices he appointed over tariff ruling",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "674f9896449b91091a5d90b7d9b515b7a0da03e6",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "California mayor accused of acting as illegal agent for China"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "MOVED",
+      "fingerprint": "49071dd0aa32b20c8878be59504bc2c6e38f9c21",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Brian Hooker's boat seized by Coast Guard after wife goes overboard in Bahamas",
+      "to_title": "Brian Hooker's boat seized by Coast Guard after wife goes overboard in Bahamas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8a3f45d324c107640db789f90ca5ce86bcfa8da7",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "FDA's approval of fruit-flavored vapes raises concerns among doctors, advocacy groups"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a89e5f7f9f366685fde25fb07c38e0a085ade02e",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Gun magazine found on Frontier flight, passengers forced to deplane"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "MOVED",
+      "fingerprint": "ad06e1d67a8a1044347c5a799b760bff0cacef9c",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Richard Simmons' house manager shares new details on his public retreat, death",
+      "to_title": "Richard Simmons' house manager shares new details on his public retreat, death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "MOVED",
+      "fingerprint": "cdd18a7800af542a26c7464b80ea10db7c6eec53",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Trump floats suspending the federal gas tax amid rising prices",
+      "to_title": "Trump floats suspending the federal gas tax amid rising prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "MOVED",
+      "fingerprint": "a8f94d9defd926201f5f0f35ebaf2aa1327e81e9",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Iran live updates: Trump says ceasefire is 'unbelievably weak'",
+      "to_title": "Iran live updates: Trump says ceasefire is 'unbelievably weak'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5e65178807b6c921eadc88e1a0df545c7f31a243",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Suspect at large after transgender college student stabbed to death in laundry room",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "54bf2985291b32c023463dc8ffaccc0c184db237",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "23-year-old walks at graduation nearly 2 years after being paralyzed",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T22:39:06.601Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1784e8e93c9d8129c703c7a5b4123dcfae6ce3f0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Family of FSU shooting victim files lawsuit alleging ChatGPT helped shooter",
       "to_title": null
     }
   ]
