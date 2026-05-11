@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-11T04:20:33.051Z",
+  "generatedAt": "2026-05-11T07:57:57.112Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T21:05:09.462Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fad439e0471900fe7b76c1ff00019d2e6eb5deb0",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Man arrested for throwing Molotov cocktail at home of OpenAI CEO"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T21:05:09.462Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "30a1075173631117667a643994d28af9c609f4f8",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingMan arrested after allegedly throwing Molotov cocktail at home of OpenAI CEO Sam Altman",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T21:53:11.078Z",
-      "event_type": "MOVED",
-      "fingerprint": "e934af3c411c02ddf2563d3350788019cdd9e173",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Vance heads to Islamabad for Iran talks",
-      "to_title": "Iran live updates: Vance heads to Islamabad for Iran talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-10T21:53:11.078Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0e3d532395adf55fa94266b82dbfae6aa9853ba8",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "FAA looks to unconventional source for new air traffic controllers: Gamers"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-10T21:53:11.078Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Russia accuses Ukraine of violating U.S.-brokered three-day truce",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "72a1741591a41e5e312ea30dd1bcb69daea7468e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Plane carrying Americans arrives in Nebraska"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9c2a3031ce549ec55dd3f05734de123dab4267c2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "US doctor who stepped up on MV Hondius opens up"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9847357fa11e85d8631a7ef18bd866f00a8b4fad",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: 1 American tests positive, another symptomatic, HHS says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f3c6129b080756788504f4229ff79c89acc2230a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Washington wins NBA draft lottery to pick first",
       "to_title": null
     }
   ],

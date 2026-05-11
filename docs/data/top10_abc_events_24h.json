@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-11T04:20:33.051Z",
+  "generatedAt": "2026-05-11T07:57:57.112Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T06:44:16.603Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a90c6e25a5ae98dad1f22e638fa578cb98530eea",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Hantavirus live updates: MV Hondius arrives off the coast of Tenerife"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T06:44:16.603Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4c3b4cfb37e5be4599950303d59f6ce1ccf6c78d",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:What to know about Nebraska quarantine unit as it prepares for cruise ship passengers"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T06:44:16.603Z",
-      "event_type": "MOVED",
-      "fingerprint": "f69c981200840888c236ab8a0d6430f64f8a7b3f",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks",
-      "to_title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T06:44:16.603Z",
-      "event_type": "MOVED",
-      "fingerprint": "1c023c985052fd8bf15c3a051ab2ce0336592081",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Iran live updates: 'We'll see what happens,' Trump says on Iran response to proposal",
-      "to_title": "Iran live updates: 'We'll see what happens,' Trump says on Iran response to proposal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T06:44:16.603Z",
-      "event_type": "MOVED",
-      "fingerprint": "311f4e1a744609cd35a70d55258de24172ba11ca",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Possible boat explosion sends several to the hospital: Fire officials",
-      "to_title": "Possible boat explosion sends several to the hospital: Fire officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T06:44:16.603Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5373909ef12aabcd683a110ead58d54111546b77",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Hantavirus live updates: Spanish authorities preparing for M/V Hondius arrival",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-10T06:44:16.603Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "769e1d1f841197ce0bcb0e6ba83b2e9551314012",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-10T09:58:45.985Z",
@@ -631,6 +561,46 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Russia accuses Ukraine of violating U.S.-brokered three-day truce",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "72a1741591a41e5e312ea30dd1bcb69daea7468e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Plane carrying Americans arrives in Nebraska"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9c2a3031ce549ec55dd3f05734de123dab4267c2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "US doctor who stepped up on MV Hondius opens up"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9847357fa11e85d8631a7ef18bd866f00a8b4fad",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: 1 American tests positive, another symptomatic, HHS says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-11T07:58:00.577Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f3c6129b080756788504f4229ff79c89acc2230a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Washington wins NBA draft lottery to pick first",
       "to_title": null
     }
   ]
