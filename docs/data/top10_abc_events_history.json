@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-12T15:15:10.321Z",
+  "generatedAt": "2026-05-12T17:25:12.737Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T20:24:59.393Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9d5d2417dfab05712386ae8263e1fb79db319824",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Hungarian Prime Minister Viktor Orbán concedes defeat after 'painful' election result",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T21:44:18.748Z",
-      "event_type": "MOVED",
-      "fingerprint": "bdf2eaddb0fc1d97f71656f63dfdcaf7399dc3f6",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: President Trump says US Navy will blockade Strait of Hormuz",
-      "to_title": "Iran live updates: President Trump says US Navy will blockade Strait of Hormuz"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T21:44:18.748Z",
-      "event_type": "MOVED",
-      "fingerprint": "5b94771152c0dbfbe8ada4820d2be32946347f0f",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "Related:GOP Sen. Johnson says Iran will be 'a long term project' after talks fail",
-      "to_title": "Related:GOP Sen. Johnson says Iran will be 'a long term project' after talks fail"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T21:44:18.748Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9d5d2417dfab05712386ae8263e1fb79db319824",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Hungarian Prime Minister Viktor Orbán concedes defeat after 'painful' election result"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T21:44:18.748Z",
-      "event_type": "MOVED",
-      "fingerprint": "213549d9f1f44a3282b770882ef2e78a3d4b71b2",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says",
-      "to_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T21:44:18.748Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission",
-      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T21:44:18.748Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4104ffd366f9c0d3424f86bc4d1912914807ee3b",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingHungarian Prime Minister Viktor Orbán concedes defeat",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:06:20.675Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b86d4cf2aad527c0f2f980899a7d4f7c58bbe08f",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "8 people injured in shooting between 2 groups near Virginia Beach waterfront: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:06:20.675Z",
-      "event_type": "MOVED",
-      "fingerprint": "213549d9f1f44a3282b770882ef2e78a3d4b71b2",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says",
-      "to_title": "1 dead, 6 injured in shooting at Chick-fil-A in New Jersey, prosecutor says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:06:20.675Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission",
-      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:06:20.675Z",
-      "event_type": "MOVED",
-      "fingerprint": "98aaa790274db27686714fc152f8ba8cd053ece9",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations",
-      "to_title": "Dems demand Rep. Eric Swalwell drop gov campaign after sexual assault allegations"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:06:20.675Z",
-      "event_type": "MOVED",
-      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "New renderings released for Trump's proposed 'triumphal arch'",
-      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:06:20.675Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "34f35d87f53256ee14d32c80255a2443ef73d7b5",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Pope Leo XIV blasts 'delusion of omnipotence' fueling US-Israeli war in Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:52:40.656Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "38d4c45b968f5d5ba8685757e7efdd006bd8722a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Hungarian Prime Minister Orbán ejected after 16 years, in European electoral earthquake"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-12T22:52:40.656Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "114b71bdb251a2b09c788661051f74a5eea7e671",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "California Rep. Eric Swalwell faces growing calls from fellow Democrats to resign"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-12T22:52:40.656Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Shooting near Harvard leaves 2 with life-threatening injuries, suspect ID'd",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "46660ef28327b0a89457520292a264a71f5aa3d4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingDr. Marty Makary intends to resign as FDA commissioner, sources say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "US household debt ticks up to new all-time high as inflation continues to rise"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "acc43be0cada7520a4241e34f710f41a6c94bf89",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Inflation jumps to its highest level in three years",
+      "to_title": "Inflation jumps to its highest level in three years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "9ea68391cc1f001ee719dc8ee2988eb4e5b6cf0e",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Trump is floating a gas tax holiday. What does that mean?",
+      "to_title": "Trump is floating a gas tax holiday. What does that mean?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "055411de52ff886176d68d720630ba95d415eb51",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "2 foreign companies, supervisor indicted in 2024 Baltimore bridge crash",
+      "to_title": "2 foreign companies, supervisor indicted in 2024 Baltimore bridge crash"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "7b7443fe24194d43639c1d6fa461d23d27821563",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta",
+      "to_title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "MOVED",
+      "fingerprint": "412b88602f79c9fd2bb01d4ff762001502a60ab0",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Passenger from hantavirus-stricken cruise ship speaks out from quarantine",
+      "to_title": "Passenger from hantavirus-stricken cruise ship speaks out from quarantine"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "934e133225939bf65cf67d831713639cab3f76d5",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Denver airport fatal collision was a suicide, man identified, officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "83befb5fc1576ec0775dbcb8016b41a5d3c49642",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "PCOS to now be called PMOS: Here’s why"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ef260083d8316f0c522b74fec640dda472db16db",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Family of Bonnie Tyler provides health update: 'seriously ill but stable'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cdd18a7800af542a26c7464b80ea10db7c6eec53",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump floats suspending the federal gas tax amid rising prices",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fe773d3cf7dbfd4f615979fac03de708e5124ae0",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Man accused of stealing Beyoncé’s unreleased music takes guilty plea",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c735ada9ccb075358d77b3e92f99bafdd16d4601",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Kash Patel set to testify on Capitol Hill amid controversies",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aad3936058aac90f1092ca402f63e1ef2e42e44b",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Online seller eBay rejects GameStop's $56 billion takeover offer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T17:25:15.960Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "372ec7d8eed4e9182e48ed46d1e0123aafe36208",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "PCOS gets new name to better reflect hormonal condition affecting women",
       "to_title": null
     }
   ],
