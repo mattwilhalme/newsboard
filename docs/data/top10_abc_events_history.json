@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-12T19:16:38.713Z",
+  "generatedAt": "2026-05-12T20:53:30.743Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T02:31:10.584Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c536ee55779f51c43c5b1906833581ec67598db",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission",
-      "to_title": "'Welcome home, Artemis': Crew celebrates historic 10-day moon mission"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T02:31:10.584Z",
-      "event_type": "MOVED",
-      "fingerprint": "ef9066ad1b9a028f73865f80e005bf84984d39c9",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "New renderings released for Trump's proposed 'triumphal arch'",
-      "to_title": "New renderings released for Trump's proposed 'triumphal arch'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T02:31:10.584Z",
-      "event_type": "MOVED",
-      "fingerprint": "8df2d03347c30c1b91305c55fb8dcd634c6a66d0",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Rory McIlroy goes back-to-back at the Masters to join Nicklaus, Faldo and Tiger",
-      "to_title": "Rory McIlroy goes back-to-back at the Masters to join Nicklaus, Faldo and Tiger"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T02:31:10.584Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "38d4c45b968f5d5ba8685757e7efdd006bd8722a",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Hungarian Prime Minister Orbán ejected after 16 years, in European electoral earthquake",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T02:31:10.584Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "114b71bdb251a2b09c788661051f74a5eea7e671",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "California Rep. Eric Swalwell faces growing calls from fellow Democrats to resign",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T02:31:10.584Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d6614f2a57c0f10340f071c27ced115ca2903bb5",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Melania Trump adviser speaks on what led to her surprise Epstein statement",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T07:29:11.540Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "69a02d6d04b1b0e9ec949ec9df7d76c92fc508b4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US blockade of Iran's Strait of Hormuz ports to begin Monday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-13T07:29:11.540Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d3e483a895badc5098e78d405891c4af90dc6d37",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "OpenAI CEO's home struck by gunfire, days after Molotov cocktail attack: Police"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-13T07:29:11.540Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "182d3e036fe5fb47687ff22337215fa22e095a25",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Hantavirus outbreak's unknown origins addressed by medical experts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "US household debt ticks up to new all-time high as inflation continues to rise",
+      "to_title": "US household debt ticks up to new all-time high as inflation continues to rise"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "832f03dbfefc5ca6cbc774c6837b47aedab96ce2",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Court temporarily pauses order that declared Trump's global 10% tariffs unlawful"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "MOVED",
+      "fingerprint": "ef260083d8316f0c522b74fec640dda472db16db",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Family of Bonnie Tyler provides health update: 'seriously ill but stable'",
+      "to_title": "Family of Bonnie Tyler provides health update: 'seriously ill but stable'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d237c3e48236888e7f6272ce77825508ecc0ee7e",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Savannah Bananas' Jackson Olson joins 'Dancing With the Stars' season 35"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d63f3e4d19074db63d75c89f6c3f001d3b65f030",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Hantavirus outbreak origin still a mystery, medical experts address theories",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "41a754618b7d2fc6caaae29719267351db002e52",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Dr. Marty Makary intends to resign as FDA commissioner: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T20:53:33.641Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "83befb5fc1576ec0775dbcb8016b41a5d3c49642",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "PCOS to now be called PMOS: Here’s why",
       "to_title": null
     }
   ],
