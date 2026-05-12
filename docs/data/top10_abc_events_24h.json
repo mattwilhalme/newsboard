@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-12T10:12:14.613Z",
+  "generatedAt": "2026-05-12T12:18:55.615Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T11:00:14.171Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "90e0b6a3963c04e453777163e6ba382541129df0",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Tehran 'serious' on talks as Trump rejects 'unacceptable' offer"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T11:00:14.171Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2affa1ac5f21d1b932454f4b572dcb01d623ec67",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Hantavirus live updates: American tests positive, another symptomatic, HHS says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T11:00:14.171Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a2454bce1b4cf92fe398a2e3b35d1b0f6777a0de",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Russia, Ukraine trade blame for continued fighting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T11:00:14.171Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "72a1741591a41e5e312ea30dd1bcb69daea7468e",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Hantavirus live updates: Plane carrying Americans arrives in Nebraska",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T11:00:14.171Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "41a8ce9ff7f25a0caadc923dfb4bbca132e299e4",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump calls Iran's latest response 'TOTALLY UNACCEPTABLE'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T11:00:14.171Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9c2a3031ce549ec55dd3f05734de123dab4267c2",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "US doctor who stepped up on MV Hondius opens up",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-11T13:50:52.810Z",
@@ -1121,6 +1061,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran live updates: Trump says ceasefire is 'unbelievably weak'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T12:18:58.601Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aad3936058aac90f1092ca402f63e1ef2e42e44b",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Online seller eBay rejects GameStop's $56 billion takeover offer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T12:18:58.601Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e5eb95e4ac8e3a9834d3bb65e95e7f3c4ecf18df",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Man arrested in Paris for allegedly planning terror attack"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T12:18:58.601Z",
+      "event_type": "MOVED",
+      "fingerprint": "372ec7d8eed4e9182e48ed46d1e0123aafe36208",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "PCOS gets new name to better reflect hormonal condition affecting women",
+      "to_title": "PCOS gets new name to better reflect hormonal condition affecting women"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T12:18:58.601Z",
+      "event_type": "MOVED",
+      "fingerprint": "ea808001b3fc4829b11099a253e6ae4492b7e2a3",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Shooting near Harvard leaves 2 with life-threatening injuries, suspect ID'd",
+      "to_title": "Shooting near Harvard leaves 2 with life-threatening injuries, suspect ID'd"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T12:18:58.601Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "603558f835ae0a3406bd1d78d6c6240e9e0e6dba",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump says Indiana Hoosiers QB called him before missing White House event",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T12:18:58.601Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "33ccdae0de47fec22c98a72f49e5fc760c162abb",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Supreme Court temporarily extends access to abortion pill mifepristone by mail",
       "to_title": null
     }
   ]
