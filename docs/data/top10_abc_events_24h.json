@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-12T07:37:27.325Z",
+  "generatedAt": "2026-05-12T10:12:14.613Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T07:58:00.577Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "72a1741591a41e5e312ea30dd1bcb69daea7468e",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Hantavirus live updates: Plane carrying Americans arrives in Nebraska"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T07:58:00.577Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9c2a3031ce549ec55dd3f05734de123dab4267c2",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "US doctor who stepped up on MV Hondius opens up"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T07:58:00.577Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9847357fa11e85d8631a7ef18bd866f00a8b4fad",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Hantavirus live updates: 1 American tests positive, another symptomatic, HHS says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-11T07:58:00.577Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f3c6129b080756788504f4229ff79c89acc2230a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Washington wins NBA draft lottery to pick first",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-11T11:00:14.171Z",
@@ -1021,6 +981,146 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Gun magazine found on Frontier flight, passengers forced to deplane",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "db869d6e7315fa6a3f991167326a760be1089c10",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Inflation report to show latest prices as fuel costs surge amid Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "9ea68391cc1f001ee719dc8ee2988eb4e5b6cf0e",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Trump is floating a gas tax holiday. What does that mean?",
+      "to_title": "Trump is floating a gas tax holiday. What does that mean?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cdd18a7800af542a26c7464b80ea10db7c6eec53",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump floats suspending the federal gas tax amid rising prices"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "7b7443fe24194d43639c1d6fa461d23d27821563",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta",
+      "to_title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c735ada9ccb075358d77b3e92f99bafdd16d4601",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Kash Patel set to testify on Capitol Hill amid controversies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "372ec7d8eed4e9182e48ed46d1e0123aafe36208",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "PCOS gets new name to better reflect hormonal condition affecting women"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "aefe34c039dfcda3e5aa12d888ee5509b5a743cf",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "California mayor charged with acting as illegal agent for China",
+      "to_title": "California mayor charged with acting as illegal agent for China"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "ea808001b3fc4829b11099a253e6ae4492b7e2a3",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Shooting near Harvard leaves 2 with life-threatening injuries, suspect ID'd",
+      "to_title": "Shooting near Harvard leaves 2 with life-threatening injuries, suspect ID'd"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "603558f835ae0a3406bd1d78d6c6240e9e0e6dba",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Trump says Indiana Hoosiers QB called him before missing White House event",
+      "to_title": "Trump says Indiana Hoosiers QB called him before missing White House event"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "MOVED",
+      "fingerprint": "33ccdae0de47fec22c98a72f49e5fc760c162abb",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "Supreme Court temporarily extends access to abortion pill mifepristone by mail",
+      "to_title": "Supreme Court temporarily extends access to abortion pill mifepristone by mail"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e72effd8cbef77048ccc4f1f0c074005254271ed",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:Trump floats suspending the federal gas tax amid rising prices",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "49071dd0aa32b20c8878be59504bc2c6e38f9c21",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Brian Hooker's boat seized by Coast Guard after wife goes overboard in Bahamas",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ad06e1d67a8a1044347c5a799b760bff0cacef9c",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Richard Simmons' house manager shares new details on his public retreat, death",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-12T10:12:17.638Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a8f94d9defd926201f5f0f35ebaf2aa1327e81e9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says ceasefire is 'unbelievably weak'",
       "to_title": null
     }
   ]
