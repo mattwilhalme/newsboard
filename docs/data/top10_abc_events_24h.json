@@ -1,158 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-13T20:59:28.639Z",
+  "generatedAt": "2026-05-13T22:14:06.915Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "799c40eb37865429d028a61cc38765cdacdb9d76",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump says 'I don't think about Americans' financial situation' in Iran negotiations"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4823593a2f77c926a8af607bfcbb29a75aca4a23",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Iran war has cost at least $29 billion, Pentagon official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "77b03ea70cf4b8ec9a2291b05b63906726181a5d",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "US Taiwan policy will be watched closely during Trump's China visit"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "MOVED",
-      "fingerprint": "182d3e036fe5fb47687ff22337215fa22e095a25",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Hantavirus outbreak's unknown origins addressed by medical experts",
-      "to_title": "Hantavirus outbreak's unknown origins addressed by medical experts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "20a15dd22c868e798974e50a044267e68a643137",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Conan O'Brien to return as Oscars host for the 3rd consecutive year"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "MOVED",
-      "fingerprint": "13c50350c5bfc758fa54dc1abc0afa5e2cd8ebbf",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Memphis Grizzlies player Brandon Clarke dead at the age of 29, team says",
-      "to_title": "Memphis Grizzlies player Brandon Clarke dead at the age of 29, team says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "MOVED",
-      "fingerprint": "784b57921e0acf08d5356e5ed2b99ff51142a3d1",
-      "from_rank": 2,
-      "to_rank": 7,
-      "from_title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus",
-      "to_title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "MOVED",
-      "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "US household debt ticks up to new all-time high as inflation continues to rise",
-      "to_title": "US household debt ticks up to new all-time high as inflation continues to rise"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ce9fe6ac2eea7a3c0f24eb9da0c43dbac0536a99",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "'Ted Lasso' star Cristo Fernández signs pro soccer contract"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "MOVED",
-      "fingerprint": "934e133225939bf65cf67d831713639cab3f76d5",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Denver airport fatal collision was a suicide, man identified, officials say",
-      "to_title": "Denver airport fatal collision was a suicide, man identified, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "412b88602f79c9fd2bb01d4ff762001502a60ab0",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Passenger from hantavirus-stricken cruise ship speaks out from quarantine",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "832f03dbfefc5ca6cbc774c6837b47aedab96ce2",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Court temporarily pauses order that declared Trump's global 10% tariffs unlawful",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "915d9d84f6e82e96376fea9087e518fe3bddbcbd",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "2 foreign companies, employee charged in deadly bridge crash",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ef260083d8316f0c522b74fec640dda472db16db",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Family of Bonnie Tyler provides health update: 'seriously ill but stable'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T22:04:00.360Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d237c3e48236888e7f6272ce77825508ecc0ee7e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Savannah Bananas' Jackson Olson joins 'Dancing With the Stars' season 35",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-12T23:07:23.259Z",
@@ -1311,6 +1161,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Asteroid to make close encounter with Earth",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T22:14:10.134Z",
+      "event_type": "MOVED",
+      "fingerprint": "80c5ed08b8bba408a97ab9529d063fd16e6d738e",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "Senate confirms Fed chair nominee Kevin Warsh, ending standoff over Powell probe",
+      "to_title": "Senate confirms Fed chair nominee Kevin Warsh, ending standoff over Powell probe"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T22:14:10.134Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "411db45c558732c503270cd7fe7914dd054e6120",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Mom sentenced to life without parole for fatally poisoning husband with fentanyl"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T22:14:10.134Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "34304c1688d34c57b2fdd16b5722c3bbb48984f9",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iran live updates: US intel assess Iran retains significant missile capability"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T22:14:10.134Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cfdc3c9ee2bbaedffc003910ee864bbc865e3b37",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingMom sentenced to life without parole for fatally poisoning husband",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T22:14:10.134Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "42dde5e2359383009556c18dd2be29f6b3873ee6",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Iran live updates: Senate again fails to advance war powers resolution",
       "to_title": null
     }
   ]
