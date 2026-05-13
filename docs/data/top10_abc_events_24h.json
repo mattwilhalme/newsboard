@@ -1,158 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-13T15:20:16.404Z",
+  "generatedAt": "2026-05-13T17:28:57.067Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "46660ef28327b0a89457520292a264a71f5aa3d4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingDr. Marty Makary intends to resign as FDA commissioner, sources say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "US household debt ticks up to new all-time high as inflation continues to rise"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "MOVED",
-      "fingerprint": "acc43be0cada7520a4241e34f710f41a6c94bf89",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "Inflation jumps to its highest level in three years",
-      "to_title": "Inflation jumps to its highest level in three years"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "MOVED",
-      "fingerprint": "9ea68391cc1f001ee719dc8ee2988eb4e5b6cf0e",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "Trump is floating a gas tax holiday. What does that mean?",
-      "to_title": "Trump is floating a gas tax holiday. What does that mean?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "MOVED",
-      "fingerprint": "055411de52ff886176d68d720630ba95d415eb51",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "2 foreign companies, supervisor indicted in 2024 Baltimore bridge crash",
-      "to_title": "2 foreign companies, supervisor indicted in 2024 Baltimore bridge crash"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "MOVED",
-      "fingerprint": "7b7443fe24194d43639c1d6fa461d23d27821563",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta",
-      "to_title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "MOVED",
-      "fingerprint": "412b88602f79c9fd2bb01d4ff762001502a60ab0",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Passenger from hantavirus-stricken cruise ship speaks out from quarantine",
-      "to_title": "Passenger from hantavirus-stricken cruise ship speaks out from quarantine"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "934e133225939bf65cf67d831713639cab3f76d5",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Denver airport fatal collision was a suicide, man identified, officials say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "83befb5fc1576ec0775dbcb8016b41a5d3c49642",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "PCOS to now be called PMOS: Here’s why"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef260083d8316f0c522b74fec640dda472db16db",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Family of Bonnie Tyler provides health update: 'seriously ill but stable'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cdd18a7800af542a26c7464b80ea10db7c6eec53",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Trump floats suspending the federal gas tax amid rising prices",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fe773d3cf7dbfd4f615979fac03de708e5124ae0",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Man accused of stealing Beyoncé’s unreleased music takes guilty plea",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c735ada9ccb075358d77b3e92f99bafdd16d4601",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Kash Patel set to testify on Capitol Hill amid controversies",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "aad3936058aac90f1092ca402f63e1ef2e42e44b",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Online seller eBay rejects GameStop's $56 billion takeover offer",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-12T17:25:15.960Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "372ec7d8eed4e9182e48ed46d1e0123aafe36208",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "PCOS gets new name to better reflect hormonal condition affecting women",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-12T19:16:41.889Z",
@@ -1341,6 +1191,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Trump says 'I don't think about Americans' financial situation' in Iran negotiations",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "42dde5e2359383009556c18dd2be29f6b3873ee6",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Senate again fails to advance war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "MOVED",
+      "fingerprint": "4b53530eb8740b4119193b4bab7324852a3ff76e",
+      "from_rank": 3,
+      "to_rank": 2,
+      "from_title": "Related:Iran war looms over Trump’s visit to Beijing: ANALYSIS",
+      "to_title": "Related:Iran war looms over Trump’s visit to Beijing: ANALYSIS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dd14c58d61c165e874c1cb7af4a527e059ca3f79",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Alex Murdaugh murder convictions overturned by South Carolina Supreme Court"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "MOVED",
+      "fingerprint": "18e0ae5a8204e1054506471a03ab5faa58a8063b",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Trump arrives in Beijing for high-stakes summit with Xi",
+      "to_title": "Trump arrives in Beijing for high-stakes summit with Xi"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b7e560b592e6abe61c6aa6df22a07681ca675df0",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "'Ciao Kate': Thousands greet Princess of Wales in Italy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f0604af72b8b664aca9079f679e7ca5b6a81a33f",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingAlex Murdaugh murder conviction overturned by South Carolina Supreme Court",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d3a1a7c13b9c8021c8f99d56b4c7d4446f5d1249",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says Iran will make a deal or be 'decimated'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-13T17:29:00.032Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ea7d936ea0d1a1e7c1f6f546749a023cb61630dc",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Kate Middleton makes 1st solo trip outside UK since cancer diagnosis",
       "to_title": null
     }
   ]
