@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-14T10:03:55.952Z",
+  "generatedAt": "2026-05-14T12:02:21.121Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "MOVED",
-      "fingerprint": "c7a4d482f826697a6e737eb204d2e131b485cdb4",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Stepbrother charged with murder, sex abuse in teen girl's cruise ship death: DOJ",
-      "to_title": "Stepbrother charged with murder, sex abuse in teen girl's cruise ship death: DOJ"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T19:59:59.178Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9fa1e145ff3cd1fe7b454ad98459314676319068",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Phil Collins and Billy Idol among the 2026 Rock and Roll Hall of Fame inductees",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-14T21:56:33.661Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Kouri Richins addresses court before being sentenced to life in prison",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T12:02:24.047Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "10f74c5172a5ea8a188713ecf83a8d527c348009",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Xi warns Trump that US and China will 'clash' if Taiwan is handled 'improperly'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T12:02:24.047Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6f0585c6600fe516bf382f4ab10c87877b97322a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump meets with Xi in Beijing at high-stakes summit",
       "to_title": null
     }
   ],

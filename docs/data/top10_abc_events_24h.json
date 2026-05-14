@@ -1,168 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-14T10:03:55.952Z",
+  "generatedAt": "2026-05-14T12:02:21.121Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d3a1a7c13b9c8021c8f99d56b4c7d4446f5d1249",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says Iran will make a deal or be 'decimated'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4b53530eb8740b4119193b4bab7324852a3ff76e",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran war looms over Trump’s visit to Beijing: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0641f08f17e373ffd8370132feaf20ccf349a93c",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Army cuts training as service is short billions of dollars"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "MOVED",
-      "fingerprint": "784b57921e0acf08d5356e5ed2b99ff51142a3d1",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus",
-      "to_title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e619edd55415fbd709e174ae3be345c211b42316",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "2nd person set to be sentenced in Matthew Perry's ketamine overdose"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "454605da74d91de50965d73c1138bbb234918fc9",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Utah mom Kouri Richins to be sentenced for fatally poisoning husband with fentanyl"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e0b2d27406891aff1b24a1bc258fd21cdf84f397",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "'I'm scared for my daughters': Pregnant Ecuadorian woman fighting deportation"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "MOVED",
-      "fingerprint": "55bdefe10890d569c5a10f4ad81f21dc0ed07c3a",
-      "from_rank": 3,
-      "to_rank": 8,
-      "from_title": "NC detective investigated in connection with 2004 homicide of 16-year-old boy",
-      "to_title": "NC detective investigated in connection with 2004 homicide of 16-year-old boy"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "MOVED",
-      "fingerprint": "799c40eb37865429d028a61cc38765cdacdb9d76",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Trump says 'I don't think about Americans' financial situation' in Iran negotiations",
-      "to_title": "Trump says 'I don't think about Americans' financial situation' in Iran negotiations"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "MOVED",
-      "fingerprint": "81336f2bbce83313846a4ca7900c2115a4690c2a",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Record number of immigration cases now ending in voluntary departure, report says",
-      "to_title": "Record number of immigration cases now ending in voluntary departure, report says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "77b03ea70cf4b8ec9a2291b05b63906726181a5d",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "US Taiwan policy will be watched closely during Trump's China visit",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "31d7e9398307d3fd7dfd0632b05aae3b219311cc",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Drug counselor who delivered fatal dose of ketamine to Matthew Perry to be sentenced",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fd4c88d485612d34347a961bd08a7ccd8fa28c40",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Jason Collins, NBA's first openly gay player, dies at 47 of brain tumor",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "fde670ac9323ded05d96262d20db4d17b312efe2",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Woman who published book on grief after husband’s death to be sentenced",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a38d731ef0d7b8fe2487568aa2197d2b291f61ce",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Princess Catherine takes her first solo trip abroad after cancer goes into remission",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-13T10:05:44.964Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9ff7886328dd3502d3b40ea22d4113eed0075d1c",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Hantavirus origin still unknown: Medical experts",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-13T12:20:24.496Z",
@@ -1211,6 +1051,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Kouri Richins addresses court before being sentenced to life in prison",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T12:02:24.047Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "10f74c5172a5ea8a188713ecf83a8d527c348009",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Xi warns Trump that US and China will 'clash' if Taiwan is handled 'improperly'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T12:02:24.047Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6f0585c6600fe516bf382f4ab10c87877b97322a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump meets with Xi in Beijing at high-stakes summit",
       "to_title": null
     }
   ]
