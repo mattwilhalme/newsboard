@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-14T20:08:36.156Z",
+  "generatedAt": "2026-05-14T21:22:30.671Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T11:20:02.610Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "16158ad7d4545076e57a6c6365aba96511bed292",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US blockade 'fully implemented' CENTCOM commander says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T12:10:34.944Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c3e0aaad0623f4732df984aba276177be14f819b",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "4 dead in Turkey after student opens fire"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T12:10:34.944Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Ghislaine Maxwell’s ex-boyfriend says he paid her $7.2M after their breakup",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T21:22:33.585Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5ac749559b17da277204aafeeba76bb9dc580d0d",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "There are going to be more shark sightings in the coming months, scientists say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T21:22:33.585Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "71154c78f77d1fadd13852ade214ba093320a7ab",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Man arrested in murder of transgender college student",
       "to_title": null
     }
   ],
