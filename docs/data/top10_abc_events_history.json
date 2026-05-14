@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-14T12:02:21.121Z",
+  "generatedAt": "2026-05-14T14:35:54.774Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2fcb7ccc1d1f898f5a2ab7f667e5dd62a5c25c01",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Nearly 400 US service members wounded in war, official says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "58421692202b3693f3b3417c890730a3c68582de",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran war triggered most severe oil shock ever, the International Energy Agency says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "6744ecb41e0428e41c7a6e39a177d3bef1f2ee17",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania",
-      "to_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "26369ac48cd288311d84f946b6db493bebd473c8",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison",
-      "to_title": "Young hacker behind major breach speaks out for 1st time, before reporting to prison"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "f2fee9fbe60dae9650a596cb43b1c299b59439b0",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "50 million people on alert for severe weather from Texas to Michigan",
-      "to_title": "50 million people on alert for severe weather from Texas to Michigan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "bd8dcc45616456673489c000d36c6078bdc0e34e",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Husband of woman missing in Bahamas: 'I'm not leaving'",
-      "to_title": "Husband of woman missing in Bahamas: 'I'm not leaving'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "MOVED",
-      "fingerprint": "ffaed87258bb02fe7fe13477b06758f75c763eb0",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "What a top airline CEO says about state of airfare prices",
-      "to_title": "What a top airline CEO says about state of airfare prices"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8b13b89481e59df445a7892ecc79291bc8c36428",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "7-Eleven expects to close hundreds of its stores in North America this year"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "be80fbe1c65ceedde2983c6ffe9affc34d661699",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Fluoride in drinking water has no negative effect on IQ or cognitive function: Study"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d39143afeb2baddd9b5f9cf628d7acc2f604a566",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: US proposes 20-year suspension on Iranian uranium enrichment",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ab7cc28c247247cc413b8e8659b9fc122e29dc5b",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:How the US Navy could enforce a blockade of Iran's ports in the Strait of Hormuz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "844ea3c7bac04378207ae84cab22d9f34f602623",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Appeals court halts contempt inquiry into removal of Venezuelans to El Salvador",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-14T21:56:33.661Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f845617f57709c187fbdd1d4ddc404e7e7fbf65",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Prince Harry, Meghan in Australia for 1st visit since leaving royal roles",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T00:09:11.494Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ad441302f11ab96fb85756cb59a4a2c93a5250ae",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "DOJ moves to vacate convictions of Proud Boys, Oath Keepers from Jan. 6"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T00:09:11.494Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Trump meets with Xi in Beijing at high-stakes summit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "448e223c95af35a4c455fa7624dfb59531552bca",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Dow crosses 50,000 as investors eye Trump-Xi summit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "MOVED",
+      "fingerprint": "12a0731e0cb3149ca4d54b71451f1ccb58f46846",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Appeals court to hear arguments over Trump's orders that sought to punish law firms",
+      "to_title": "Appeals court to hear arguments over Trump's orders that sought to punish law firms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "MOVED",
+      "fingerprint": "97af6d4329a3d704f062cecfbc11463ddf6d62aa",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Ghislaine Maxwell’s ex-boyfriend says he paid her $7.2M after their breakup",
+      "to_title": "Ghislaine Maxwell’s ex-boyfriend says he paid her $7.2M after their breakup"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cab373319b51d712eec7c159bd3ef8fbf6dcdbb9",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Streamer known as 'Chud the Builder' involved in shooting outside courthouse"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "05618d5b039ab6dd8e2824873442eddda6b2eb4f",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Several killed, 20 missing after 'barbaric' Russian strikes on Kyiv, Ukraine says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d00188c8d4a5e3a699a14259e4df31f252c92589",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: American who initially tested positive now tests negative"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "MOVED",
+      "fingerprint": "063b726bc04d1aac49bd9b556deb9c31b7949785",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
+      "to_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b662bf6b397986f5e7835913271ab75f9bebf06d",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "FIFA World Cup introduces its 1st halftime show: See who's performing"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "MOVED",
+      "fingerprint": "1589f1684174ec1222f44a6499654e633056fce1",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Researchers discover a new gigantic dinosaur species in Thailand",
+      "to_title": "Researchers discover a new gigantic dinosaur species in Thailand"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ec6f7e95d48681bacdd5cefc462d3eea3a09f646",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Vance says 'we have a lot of work to do' after Trump remark about Americans' finances",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3ed82222c381bcceed7dd6353b786386b5a1f7e1",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Russia hits Kyiv with drones and ballistic missiles, injuring at least 4",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c6fc5f7044137e5adf9cef5e6044750bebda2f5b",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: Americans in quarantine seen in good spirits",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5caf3604257ed64e801712cfa2fffc112c21fec0",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Dust storms and lightning kill at least 96 people in northern India",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T14:35:57.653Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6beee848b8ed08157161c9cbc6075343bfb6cc82",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Man to be executed for killing ex-girlfriend",
       "to_title": null
     }
   ],
