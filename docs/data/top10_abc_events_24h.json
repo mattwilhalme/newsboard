@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-14T07:51:37.100Z",
+  "generatedAt": "2026-05-14T10:03:55.952Z",
   "hours": 24,
   "events": [
     {
@@ -1091,6 +1091,126 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Remains of 2nd missing US soldier recovered",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6f0585c6600fe516bf382f4ab10c87877b97322a",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump meets with Xi in Beijing at high-stakes summit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "12a0731e0cb3149ca4d54b71451f1ccb58f46846",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Appeals court to hear arguments over Trump's orders that sought to punish law firms"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "MOVED",
+      "fingerprint": "ec6f7e95d48681bacdd5cefc462d3eea3a09f646",
+      "from_rank": 2,
+      "to_rank": 4,
+      "from_title": "Vance says 'we have a lot of work to do' after Trump remark about Americans' finances",
+      "to_title": "Vance says 'we have a lot of work to do' after Trump remark about Americans' finances"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "MOVED",
+      "fingerprint": "3ed82222c381bcceed7dd6353b786386b5a1f7e1",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Russia hits Kyiv with drones and ballistic missiles, injuring at least 4",
+      "to_title": "Russia hits Kyiv with drones and ballistic missiles, injuring at least 4"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "063b726bc04d1aac49bd9b556deb9c31b7949785",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5caf3604257ed64e801712cfa2fffc112c21fec0",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Dust storms and lightning kill at least 96 people in northern India"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1589f1684174ec1222f44a6499654e633056fce1",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Researchers discover a new gigantic dinosaur species in Thailand"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "721ba8440b82d62a39dadc6790eeb3ea86c02ab4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump meeting with Xi in Beijing at high-stakes summit",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cab373319b51d712eec7c159bd3ef8fbf6dcdbb9",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Streamer known as 'Chud the Builder' involved in shooting outside courthouse",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "34304c1688d34c57b2fdd16b5722c3bbb48984f9",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Iran live updates: US intel assess Iran retains significant missile capability",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4d48d33e0469e63ea8e5bcf60deb8196ebe4e3d0",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Allegiant Air, Sun Country complete merger, creating larger budget airline",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-14T10:03:59.007Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c4f3ec9c6dec142ab201e9efa60b51c94568596b",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Kouri Richins addresses court before being sentenced to life in prison",
       "to_title": null
     }
   ]
