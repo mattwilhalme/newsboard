@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-15T10:42:03.230Z",
+  "generatedAt": "2026-05-15T12:24:44.403Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T19:55:17.493Z",
-      "event_type": "MOVED",
-      "fingerprint": "b05259a34773b60aee2704be9ef0605553a1c3ba",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "High school principal takes down would-be shooter, hailed as hero",
-      "to_title": "High school principal takes down would-be shooter, hailed as hero"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T19:55:17.493Z",
-      "event_type": "MOVED",
-      "fingerprint": "de45ef634a0d5d34f4bf0c9e8afed800cd16c151",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police",
-      "to_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T19:55:17.493Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "There are going to be more shark sightings in the coming months, scientists say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T12:24:47.506Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "97a1ad4aab3ea29843aae77ffc94e07ef6ffd033",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Inside the shocking murder of Kay Parsons: Lies, secrets and a deadly affair"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T12:24:47.506Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "41bee428bfeecb44d58f76bd117b1314d52b829b",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Shakira and Burna Boy release official 2026 FIFA World Cup Anthem, 'Dai Dai'",
       "to_title": null
     }
   ],

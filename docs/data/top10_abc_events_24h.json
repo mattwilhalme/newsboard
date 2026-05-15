@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-15T10:42:03.230Z",
+  "generatedAt": "2026-05-15T12:24:44.403Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-14T12:02:24.047Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "10f74c5172a5ea8a188713ecf83a8d527c348009",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Xi warns Trump that US and China will 'clash' if Taiwan is handled 'improperly'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-14T12:02:24.047Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6f0585c6600fe516bf382f4ab10c87877b97322a",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Trump meets with Xi in Beijing at high-stakes summit",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-14T14:35:57.653Z",
@@ -1041,6 +1021,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "There are going to be more shark sightings in the coming months, scientists say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T12:24:47.506Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "97a1ad4aab3ea29843aae77ffc94e07ef6ffd033",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Inside the shocking murder of Kay Parsons: Lies, secrets and a deadly affair"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T12:24:47.506Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "41bee428bfeecb44d58f76bd117b1314d52b829b",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Shakira and Burna Boy release official 2026 FIFA World Cup Anthem, 'Dai Dai'",
       "to_title": null
     }
   ]
