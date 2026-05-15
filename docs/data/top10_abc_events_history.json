@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-14T23:33:56.628Z",
+  "generatedAt": "2026-05-15T01:26:37.505Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T14:05:20.625Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e06e2dfe596773253124535ad17ac78cfd3c607f",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "New details released on King Charles, Queen Camilla's US state visit",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T14:05:20.625Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "10c89f5265dac521f060fd859d0568a6772735e3",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Powerball going international in effort to build larger jackpots",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5854367a95b62cadabb90dd8e01c31cc160af713",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "MOVED",
-      "fingerprint": "6bd997b842078efa110a561ff54fbb0cb057dce1",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Tehran threatens Red Sea transits if US blockade continues",
-      "to_title": "Iran live updates: Tehran threatens Red Sea transits if US blockade continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b05259a34773b60aee2704be9ef0605553a1c3ba",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "High school principal takes down would-be shooter, hailed as hero"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "MOVED",
-      "fingerprint": "de45ef634a0d5d34f4bf0c9e8afed800cd16c151",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police",
-      "to_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0c362df7d09b7af366449707e7a32272552b3d30",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Average tax refund is $3,400, an 11% increase from last year: Treasury Dept"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "MOVED",
-      "fingerprint": "3908773adbbd06caf6847870a61e3788524c367a",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts",
-      "to_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "MOVED",
-      "fingerprint": "6744ecb41e0428e41c7a6e39a177d3bef1f2ee17",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania",
-      "to_title": "Family seeks answers after influencer Ashlee Jenae dies on vacation in Tanzania"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c015178c386122ecdb23d88165cb30eb940bbd8c",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Gas station clerk speaks out after foiling alleged kidnapping"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "MOVED",
-      "fingerprint": "a6a16200fde344bc15a8a9cffeefdbe6e6183e49",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "Woman accuses former Rep. Eric Swalwell of raping her in 2018",
-      "to_title": "Woman accuses former Rep. Eric Swalwell of raping her in 2018"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "MOVED",
-      "fingerprint": "c3e0aaad0623f4732df984aba276177be14f819b",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "4 dead in Turkey after student opens fire",
-      "to_title": "4 dead in Turkey after student opens fire"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d09d6cb4d4933b32f7a2a0578e00948d114b73ca",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Cadaver dogs helping with search for American woman missing in Bahamas, police say",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T15:17:53.638Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c992d81a396387299a4ec62f58be389638eac5fc",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Ahead of the deadline, 53 million filers used new Trump tax exemptions, Treasury says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T15:17:53.638Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingSupreme Court preserves broad access to abortion drug mifepristone",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a0d59e23f095d02925265b8ff1317877f844481d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump and Xi set to hold 2nd round of talks ahead of high-stakes summit's conclusion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "be67a3ba3d35752c0cefaca377ebe3cf31dd7621",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Trump-Xi summit Day 1 takeaways: ANALYSIS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5145d55c103211481fe976e5ac084dcf96f040f6",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "CIA Director John Ratcliffe meets with top Cuban officials in Havana"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "MOVED",
+      "fingerprint": "d2a0872b5903adf532d919bb031266069a4f5cb1",
+      "from_rank": 1,
+      "to_rank": 4,
+      "from_title": "Supreme Court preserves broad access to abortion drug mifepristone",
+      "to_title": "Supreme Court preserves broad access to abortion drug mifepristone"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2a669264003e16fc3e6cf8d875d8302367373a0f",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Officer nearly shoots student playing with water gun in a senior game"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "MOVED",
+      "fingerprint": "17257ec061e6753581b3a235539d71bc79ecf540",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Tourist charged after allegedly throwing rock at endangered seal in Hawaii",
+      "to_title": "Tourist charged after allegedly throwing rock at endangered seal in Hawaii"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "MOVED",
+      "fingerprint": "24ab30067c4ce76b47c7f47c009db2f5c8749f6b",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Man having a heart attack on the side of the road saved by 3 teens",
+      "to_title": "Man having a heart attack on the side of the road saved by 3 teens"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "MOVED",
+      "fingerprint": "61b7ae1c55ffdea1dd0cb928db0a6fef2f16b10f",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Hantavirus live updates: 41 people under monitoring across US",
+      "to_title": "Hantavirus live updates: 41 people under monitoring across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "MOVED",
+      "fingerprint": "5ac749559b17da277204aafeeba76bb9dc580d0d",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "There are going to be more shark sightings in the coming months, scientists say",
+      "to_title": "There are going to be more shark sightings in the coming months, scientists say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "MOVED",
+      "fingerprint": "063b726bc04d1aac49bd9b556deb9c31b7949785",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
+      "to_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa5ff103b42c7ff2931575deac75ec3dc4f75cdf",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump-Xi summit Day 1 takeaways: ANALYSIS",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f90b1248313f5665fecb2d0f5d7f220bedfccba1",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Border Patrol chief Michael Banks is stepping down",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1589f1684174ec1222f44a6499654e633056fce1",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Researchers discover a new gigantic dinosaur species in Thailand",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T01:26:40.486Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1e31e308e00333ee39dd0b37b929792a83b4ed48",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "2 dead after small plane crashes into house",
       "to_title": null
     }
   ],
