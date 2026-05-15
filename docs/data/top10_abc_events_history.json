@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-15T21:44:54.511Z",
+  "generatedAt": "2026-05-15T22:40:08.420Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T08:55:03.211Z",
-      "event_type": "MOVED",
-      "fingerprint": "a0aeeb7f1491e8fcda8e09cd5ea63b0334644d4b",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "1st 90-degree day for NYC, Philly and DC as severe weather hits Midwest and Plains",
-      "to_title": "1st 90-degree day for NYC, Philly and DC as severe weather hits Midwest and Plains"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T08:55:03.211Z",
-      "event_type": "MOVED",
-      "fingerprint": "af0a8db9d3175ac7f36191c2e5a260e634e5a6a6",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Live Nation illegally monopolized the market for tickets, jury finds",
-      "to_title": "Live Nation illegally monopolized the market for tickets, jury finds"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-16T08:55:03.211Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Wife of US Army sergeant released after month in ICE custody",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T22:40:11.227Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5bdcce5ad2d5c3ec574701af648a6412736ca316",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Possible US indictment of Raul Castro: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T22:40:11.227Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c228d49c995e9d95c071d6e1cb98bfddc88135c0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "3 found dead in murder-suicide at Indiana home",
       "to_title": null
     }
   ],
