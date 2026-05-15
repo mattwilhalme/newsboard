@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-15T05:09:28.621Z",
+  "generatedAt": "2026-05-15T08:18:14.038Z",
   "hours": 24,
   "events": [
     {
@@ -1031,6 +1031,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T08:18:17.030Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4c5a32217d46f02953ccfaffa51f34335cf7fb4e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump and Xi end 2nd round of talks in high-stakes summit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T08:18:17.030Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3738b347d1b79b946a4113948504baeabb85d688",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump and Xi holding 2nd round of talks ahead of high-stakes summit's conclusion",
       "to_title": null
     }
   ]

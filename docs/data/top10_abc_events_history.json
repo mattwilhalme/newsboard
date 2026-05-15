@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-15T05:09:28.621Z",
+  "generatedAt": "2026-05-15T08:18:14.038Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T18:46:26.222Z",
-      "event_type": "MOVED",
-      "fingerprint": "de45ef634a0d5d34f4bf0c9e8afed800cd16c151",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police",
-      "to_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T18:46:26.222Z",
-      "event_type": "MOVED",
-      "fingerprint": "85af750e502dbcff4900360d650a10a238fc0ae8",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Over 53M people claimed at least 1 Trump tax cut: Treasury Dept",
-      "to_title": "Over 53M people claimed at least 1 Trump tax cut: Treasury Dept"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T18:46:26.222Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T08:18:17.030Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4c5a32217d46f02953ccfaffa51f34335cf7fb4e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump and Xi end 2nd round of talks in high-stakes summit"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T08:18:17.030Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3738b347d1b79b946a4113948504baeabb85d688",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump and Xi holding 2nd round of talks ahead of high-stakes summit's conclusion",
       "to_title": null
     }
   ],
