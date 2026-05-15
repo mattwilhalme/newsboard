@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-15T14:45:01.105Z",
+  "generatedAt": "2026-05-15T16:29:41.168Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T20:39:46.672Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "af0a8db9d3175ac7f36191c2e5a260e634e5a6a6",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Live Nation illegally monopolized the market for tickets, jury finds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T20:39:46.672Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f323f7b918140da398e5937bff9c01a1fe3aa97c",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "S&P 500 closes at record high as US-Iran ceasefire continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T20:39:46.672Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ac12d81f1350121b42d73fa6fc29fd4cce1f2b87",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingLive Nation illegally monopolized the market for tickets, jury finds",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T20:39:46.672Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cecdc08bff0861111cb43322b95424dd34a72286",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "S&P 500 hits record high as US-Iran ceasefire continues",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "206fa8fcd7c6b42fab99d44ce46dde9cf8c5559e",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "'Meow, meow': Pilots scolded after animal noises heard on ATC frequency"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "MOVED",
-      "fingerprint": "5854367a95b62cadabb90dd8e01c31cc160af713",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say",
-      "to_title": "Cadaver dogs sent to search for American woman missing in Bahamas, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "MOVED",
-      "fingerprint": "f323f7b918140da398e5937bff9c01a1fe3aa97c",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "S&P 500 closes at record high as US-Iran ceasefire continues",
-      "to_title": "S&P 500 closes at record high as US-Iran ceasefire continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ffe5e2b4e15e4adcb30a3121a35bb0ad040a128d",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Tylenol during pregnancy has no link to autism, large study finds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "MOVED",
-      "fingerprint": "3ffa1655cef3dc297c20619652c96cfe1802fdba",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Trump shares image of Jesus embracing him, continues to lash out at Pope Leo",
-      "to_title": "Trump shares image of Jesus embracing him, continues to lash out at Pope Leo"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "MOVED",
-      "fingerprint": "b05259a34773b60aee2704be9ef0605553a1c3ba",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "High school principal takes down would-be shooter, hailed as hero",
-      "to_title": "High school principal takes down would-be shooter, hailed as hero"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cc5bbad4108e5fb9e8b15f5ad9f62116774200dc",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Aircraft carrier breaks record since Vietnam War"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "de45ef634a0d5d34f4bf0c9e8afed800cd16c151",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Woman fatally shot by officers after slashing boy in Walmart shopping cart: Police",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3908773adbbd06caf6847870a61e3788524c367a",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Seoul court sentences US YouTuber to 6 months in jail over offensive stunts",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T22:25:51.734Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ae8c69dbdfcc187dc881b9440a31a517dd388748",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Large chunk of ice crashes through house",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-15T23:09:32.586Z",
-      "event_type": "MOVED",
-      "fingerprint": "49f63deef1c26748dc3ee880759c760a78eebcb2",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Sanctioned ships cross the Strait of Hormuz toward Tehran",
-      "to_title": "Iran live updates: Sanctioned ships cross the Strait of Hormuz toward Tehran"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-15T23:09:32.586Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Inside the shocking murder of Kay Parsons: Lies, secrets and a deadly affair",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4a832037c106faa7bbb6391b9956dd1d902f3afa",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Doctor from cruise ship who initially tested positive for hantavirus speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c5994b12c33b8e5245bf2f22744bce5acebbec24",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Hantavirus live updates: 41 people under monitoring across US"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "269742126c2979e9bbce1fb9606bf2461c145cc2",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Iraqi national charged with coordinating terror attacks that aimed to stop Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "MOVED",
+      "fingerprint": "c32629966dd0aaffbfed80c7a5647ece4ba232ea",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "How a suburban affair in Georgia led to murder",
+      "to_title": "How a suburban affair in Georgia led to murder"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5d519590064b261004b7dd610f6ab58aa794c6e2",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Trump won't commit to arms sale to Taiwan after stark warning from Xi"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "MOVED",
+      "fingerprint": "2a669264003e16fc3e6cf8d875d8302367373a0f",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Officer nearly shoots student playing with water gun in a senior game",
+      "to_title": "Officer nearly shoots student playing with water gun in a senior game"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "68fec07af002ed4df926405778fe3cd823306f1f",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Shakira and Burna Boy team up for official FIFA World Cup song"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "MOVED",
+      "fingerprint": "576b01ab151b77840a91edb705f8642c19af9391",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Iran live updates: Trump says Iran can strike deal or 'get annihilated'",
+      "to_title": "Iran live updates: Trump says Iran can strike deal or 'get annihilated'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "55db215ff8228196139ac05b3bc9bc49db15e10c",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Five die in cave-diving accident in the Maldives"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f5341517cedcd72a5cf6e22bf33d1412cf54e162",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Trump says he and Chinese President Xi Jinping feel 'very similar on Iran'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1e6d767184dd8890262b5c656f44d0f17a6b30b9",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump responds to Xi's 'Thucydides Trap' comment about America's decline",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa5ff103b42c7ff2931575deac75ec3dc4f75cdf",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump-Xi summit Day 1 takeaways: ANALYSIS",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "13bcebabe0cd29435a8ec1a088d4069d19192a44",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Death toll in attack on Kyiv apartment building now stands at 24",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "17257ec061e6753581b3a235539d71bc79ecf540",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Tourist charged after allegedly throwing rock at endangered seal in Hawaii",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-15T16:29:44.256Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "61b7ae1c55ffdea1dd0cb928db0a6fef2f16b10f",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: 41 people under monitoring across US",
       "to_title": null
     }
   ],
