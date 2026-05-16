@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-16T15:01:26.132Z",
+  "generatedAt": "2026-05-16T16:03:40.817Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T14:15:42.078Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d74375b208ef00344e2e1714a3bcca9e6593d6fa",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingFormer Virginia Lt. Gov. Justin Fairfax killed wife, self: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T14:15:42.078Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2968baf0fe3e59c8525730c8937d6101808d1e03",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Iran 'digging out' bombed weapons facilities, Hegseth says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T14:15:42.078Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "34ca521036cb32283e40d1f64fd07a7157035067",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Related:Iran-linked ships seem to be using 'spoofing' to break Strait of Hormuz blockade"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T14:15:42.078Z",
-      "event_type": "MOVED",
-      "fingerprint": "094d27488414fce44320e52ac817d447340bc1e4",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "'Massive' Russian attack on Ukraine kills 16, injures at least 100, Ukraine says",
-      "to_title": "'Massive' Russian attack on Ukraine kills 16, injures at least 100, Ukraine says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T14:15:42.078Z",
-      "event_type": "MOVED",
-      "fingerprint": "5ddd6eb5e7c5e2124b71b536b647038767d8e2bf",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "What does the US blockade of Iran shipping mean for gas prices?",
-      "to_title": "What does the US blockade of Iran shipping mean for gas prices?"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-16T14:15:42.078Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Hantavirus live updates: WHO hunts for source of virus",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T16:03:43.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "69a70560a02fd6bf96e6b6c1f1f3f8a61989ceeb",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days",
+      "to_title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T16:03:43.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "c7fe99eeab6bc1f3ea18ebe87635040d962968e6",
+      "from_rank": 6,
+      "to_rank": 5,
+      "from_title": "Maldives military diver dies while trying to recover scuba diving victims from cave",
+      "to_title": "Maldives military diver dies while trying to recover scuba diving victims from cave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T16:03:43.912Z",
+      "event_type": "MOVED",
+      "fingerprint": "624fe73a2d9e8e39ca963fcd7f4ca1f842b96e14",
+      "from_rank": 7,
+      "to_rank": 6,
+      "from_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
+      "to_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T16:03:43.912Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6383212123fc613972a817b979dac5744b13c913",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Humpback whale released after spectacular rescue effort found dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T16:03:43.912Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b68b17e996c5e52f15c088c61f4888238dcbc465",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "In Louisiana, Trump-endorsed candidate is challenging a GOP incumbent",
       "to_title": null
     }
   ],
