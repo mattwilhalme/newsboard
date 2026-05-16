@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-15T23:37:17.664Z",
+  "generatedAt": "2026-05-16T01:22:33.747Z",
   "hours": 24,
   "events": [
     {
@@ -1201,6 +1201,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Possible US indictment of Raul Castro: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T01:22:37.000Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "US Supreme Court denies Va. Dems' request on redistricting plan"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T01:22:37.000Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e16fa56a4d4cadc8f7fbb47970fdf5d3eb92dc19",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSupreme Court US Supreme Court denies Virginia Democrats' request on redistricting plan",
       "to_title": null
     }
   ]

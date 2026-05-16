@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-15T23:37:17.664Z",
+  "generatedAt": "2026-05-16T01:22:33.747Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T10:07:14.811Z",
-      "event_type": "MOVED",
-      "fingerprint": "6d7de11e5e328350b2fa06c3f9f350026a0b74ec",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Husband of American woman missing in Bahamas leaves islands, attorney says",
-      "to_title": "Husband of American woman missing in Bahamas leaves islands, attorney says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T10:07:14.811Z",
-      "event_type": "MOVED",
-      "fingerprint": "a0aeeb7f1491e8fcda8e09cd5ea63b0334644d4b",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "1st 90-degree day for NYC, Philly and DC as severe weather hits Midwest and Plains",
-      "to_title": "1st 90-degree day for NYC, Philly and DC as severe weather hits Midwest and Plains"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-16T10:07:14.811Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Possible US indictment of Raul Castro: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T01:22:37.000Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "US Supreme Court denies Va. Dems' request on redistricting plan"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T01:22:37.000Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e16fa56a4d4cadc8f7fbb47970fdf5d3eb92dc19",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingSupreme Court US Supreme Court denies Virginia Democrats' request on redistricting plan",
       "to_title": null
     }
   ],
