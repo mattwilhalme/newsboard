@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-16T12:12:10.586Z",
+  "generatedAt": "2026-05-16T14:00:05.049Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T12:24:47.506Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "97a1ad4aab3ea29843aae77ffc94e07ef6ffd033",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Inside the shocking murder of Kay Parsons: Lies, secrets and a deadly affair"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T12:24:47.506Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "41bee428bfeecb44d58f76bd117b1314d52b829b",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Shakira and Burna Boy release official 2026 FIFA World Cup Anthem, 'Dai Dai'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-15T14:45:04.171Z",
@@ -981,6 +961,46 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "DOJ to create $1.776B 'Truth and Justice Commission' to compensate allies: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T14:00:08.383Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c7fe99eeab6bc1f3ea18ebe87635040d962968e6",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Maldives military diver dies while trying to recover scuba diving victims from cave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T14:00:08.383Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "624fe73a2d9e8e39ca963fcd7f4ca1f842b96e14",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T14:00:08.383Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "84d3559811b682f9c55d3449a4d3dafb15169c5c",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "5 people, including mother and daughter, die during deep dive to Maldives cave",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T14:00:08.383Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6c515444c463504090adb4adb01d7d2901fdb7ce",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: WHO hunts for source of virus",
       "to_title": null
     }
   ]
