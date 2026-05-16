@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-16T07:07:58.700Z",
+  "generatedAt": "2026-05-16T08:59:10.927Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T12:14:01.337Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "42552d47b4c72bd8ff504f534c08085198904924",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Live Updates:Lebanon's president seeks to 'halt' escalation, as Israel continues strikes in country’s south"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T12:14:01.337Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "95ae3a6855f8e21c0c34a20a4c647e49c0089906",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "How 'ship spoofing' can undermine US blockade"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-16T12:14:01.337Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Remains of missing 6-year-old boy found",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T08:59:13.947Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ec69f93434311fa8c282776a94a9824b8d19424e",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Trump says Islamic State group leader was killed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T08:59:13.947Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f9864b3d706dbecd2c61f3cda623ae110429e689",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Islamic State group leader killed, Trump says",
       "to_title": null
     }
   ],
