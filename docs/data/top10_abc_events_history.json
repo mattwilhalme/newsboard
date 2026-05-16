@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-16T10:16:59.676Z",
+  "generatedAt": "2026-05-16T11:21:08.356Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T12:14:01.337Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1e233f64125464221141a6c55060e33ac3b3832a",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Hegseth to offer remarks on Iran amid US blockade",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T12:14:01.337Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "367d6b4df7895e3f417b1b363af52524743047a7",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:What to know about 'ship spoofing' by Iran-linked vessel to breach the US blockade",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-16T12:14:01.337Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Feds seek death penalty in murder of Israeli embassy staffers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T11:21:11.486Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "147898318bb831aad07b784ff88b5722c676956e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "DOJ to create 'Truth and Justice Commission' to compensate allies: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T11:21:11.486Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "211a7ee5b473bdf160cf0abd2ca45f2dce555c57",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "DOJ to create $1.776B 'Truth and Justice Commission' to compensate allies: Sources",
       "to_title": null
     }
   ],
