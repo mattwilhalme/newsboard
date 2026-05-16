@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-16T19:22:42.709Z",
+  "generatedAt": "2026-05-16T20:10:51.842Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T17:14:27.087Z",
-      "event_type": "MOVED",
-      "fingerprint": "22f692a28178202ef1e196871dfd1021efdb322c",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Gilgo Beach murders: How 'meticulous' Rex Heuermann tried to plan the 'perfect crime'",
-      "to_title": "Gilgo Beach murders: How 'meticulous' Rex Heuermann tried to plan the 'perfect crime'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T17:14:27.087Z",
-      "event_type": "MOVED",
-      "fingerprint": "6a211a3ce214297ff2d54f4a8c675059f4d09c2b",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "DHS employee killed while walking her dog in Atlanta shooting spree",
-      "to_title": "DHS employee killed while walking her dog in Atlanta shooting spree"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T17:14:27.087Z",
-      "event_type": "MOVED",
-      "fingerprint": "b39388a9a3f4aebb8ff85c3b8410eb764c9bb42a",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Late actor returns to movie screens in AI-generated role",
-      "to_title": "Late actor returns to movie screens in AI-generated role"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T17:14:27.087Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b8b2fa5de793ae22068a9064e941f938a0ec3b0c",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingIsrael and Lebanon agree to 10-day ceasefire, Trump says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-16T17:14:27.087Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "LIRR strike strands thousands of commuters",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T20:10:54.946Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5c45ec37523b7b294f1c931d3777a2793efc3e9d",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "8 wounded after driver plows into crowd in Italian city: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T20:10:54.946Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "414bffbb07767412923cf27eb4a392737f7b9818",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "US indictment of Raul Castro possible: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T20:10:54.946Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4de21580bc0679b21af17db30d3ad75f099f3909",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Driver plows into crowd in northern Italy, 8 injured: Officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T20:10:54.946Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5bdcce5ad2d5c3ec574701af648a6412736ca316",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Possible US indictment of Raul Castro: Sources",
       "to_title": null
     }
   ],
