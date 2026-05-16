@@ -1,148 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-16T01:22:33.747Z",
+  "generatedAt": "2026-05-16T04:44:33.572Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a0d59e23f095d02925265b8ff1317877f844481d",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump and Xi set to hold 2nd round of talks ahead of high-stakes summit's conclusion"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "be67a3ba3d35752c0cefaca377ebe3cf31dd7621",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Trump-Xi summit Day 1 takeaways: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5145d55c103211481fe976e5ac084dcf96f040f6",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "CIA Director John Ratcliffe meets with top Cuban officials in Havana"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "MOVED",
-      "fingerprint": "d2a0872b5903adf532d919bb031266069a4f5cb1",
-      "from_rank": 1,
-      "to_rank": 4,
-      "from_title": "Supreme Court preserves broad access to abortion drug mifepristone",
-      "to_title": "Supreme Court preserves broad access to abortion drug mifepristone"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2a669264003e16fc3e6cf8d875d8302367373a0f",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Officer nearly shoots student playing with water gun in a senior game"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "MOVED",
-      "fingerprint": "17257ec061e6753581b3a235539d71bc79ecf540",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Tourist charged after allegedly throwing rock at endangered seal in Hawaii",
-      "to_title": "Tourist charged after allegedly throwing rock at endangered seal in Hawaii"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "MOVED",
-      "fingerprint": "24ab30067c4ce76b47c7f47c009db2f5c8749f6b",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Man having a heart attack on the side of the road saved by 3 teens",
-      "to_title": "Man having a heart attack on the side of the road saved by 3 teens"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "MOVED",
-      "fingerprint": "61b7ae1c55ffdea1dd0cb928db0a6fef2f16b10f",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Hantavirus live updates: 41 people under monitoring across US",
-      "to_title": "Hantavirus live updates: 41 people under monitoring across US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "MOVED",
-      "fingerprint": "5ac749559b17da277204aafeeba76bb9dc580d0d",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "There are going to be more shark sightings in the coming months, scientists say",
-      "to_title": "There are going to be more shark sightings in the coming months, scientists say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "MOVED",
-      "fingerprint": "063b726bc04d1aac49bd9b556deb9c31b7949785",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
-      "to_title": "Iran live updates: US wants China to do more to end Iran war, Rubio says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "aa5ff103b42c7ff2931575deac75ec3dc4f75cdf",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Trump-Xi summit Day 1 takeaways: ANALYSIS",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f90b1248313f5665fecb2d0f5d7f220bedfccba1",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Border Patrol chief Michael Banks is stepping down",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1589f1684174ec1222f44a6499654e633056fce1",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Researchers discover a new gigantic dinosaur species in Thailand",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-15T01:26:40.486Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1e31e308e00333ee39dd0b37b929792a83b4ed48",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "2 dead after small plane crashes into house",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-15T05:09:31.770Z",
@@ -1221,6 +1081,56 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingSupreme Court US Supreme Court denies Virginia Democrats' request on redistricting plan",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T04:44:36.816Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f1a0315a9f94bb65eabd9edfde6f2af60c6cf2a7",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Feds seek death penalty in murder of Israeli embassy staffers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T04:44:36.816Z",
+      "event_type": "MOVED",
+      "fingerprint": "a6949ac13e6e5d95ef234d659ffc673739d0872f",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Slain transgender student suffered over 40 stab wounds: Documents",
+      "to_title": "Slain transgender student suffered over 40 stab wounds: Documents"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T04:44:36.816Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e50739d65b9d273e8ca5b968cf92025e4b9826b0",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Remains of missing 6-year-old boy found"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T04:44:36.816Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "14418849219e34ab83acdd985eac3e5b1dd79bfe",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Judge declares mistrial in Harvey Weinstein’s rape retrial after jury deadlocked",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-16T04:44:36.816Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c228d49c995e9d95c071d6e1cb98bfddc88135c0",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "3 found dead in murder-suicide at Indiana home",
       "to_title": null
     }
   ]
