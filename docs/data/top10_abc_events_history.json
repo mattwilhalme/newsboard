@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-17T21:33:43.272Z",
+  "generatedAt": "2026-05-17T22:30:30.783Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "9dcc68e61c795fc666d811dba7ace76ffb5ec8a9",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Acting ICE Director Todd Lyons leaving agency",
-      "to_title": "Acting ICE Director Todd Lyons leaving agency"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "b03344d6d80768069b0db31bc6c0abf9edb526d8",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources",
-      "to_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "ff98867f2a3b24bbc4911fea64c27b989b0dc2c2",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Trump nominates Dr. Erica Schwartz as new CDC director",
-      "to_title": "Trump nominates Dr. Erica Schwartz as new CDC director"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "d7f4e7655b0a90a711e2fbb7c775d805923cfdae",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says",
-      "to_title": "Iran live updates: US is 'very close' to deal with Iran, Trump says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "MOVED",
-      "fingerprint": "8b1007565389e9ff061ab57247e4973250a1daca",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis",
-      "to_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T08:59:09.954Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f6dfccb5f884c48ac6551a4e61df6b37bf45d2ca",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "If Spirit Airlines liquidates, here's what experts say it could mean for travelers",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T10:16:06.425Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3739aeec6a870dc4089451b8468a783a481b0660",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "How a Las Vegas showgirl vanished right before her big show"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T10:16:06.425Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8b1007565389e9ff061ab57247e4973250a1daca",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "ICE agent charged with allegedly pulling a gun on motorists in Minneapolis",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-17T11:16:33.335Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Ebola outbreak in Africa is 'public health emergency of international concern': WHO",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5157153847a398e3a2bac32078494e9c896b0038",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Midair collision between two jets at air show prompts Idaho Air Force base lockdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b0af024af807da4e3342d9c20ef10887c0baade8",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Random shootings reported in Austin, Texas; 2 suspects in custody, 1 at large"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "MOVED",
+      "fingerprint": "258aa98a13825a39f0524fb27a0b0a6040282440",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Ahead of Tuesday primary, GOP Rep. Massie says billionaires trying to 'buy' his seat",
+      "to_title": "Ahead of Tuesday primary, GOP Rep. Massie says billionaires trying to 'buy' his seat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "MOVED",
+      "fingerprint": "5bd4237293ce95fbdcf2c9db5a2ce7336b1e0269",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Iran live updates: Iran 'better get moving, FAST' and make a peace deal, Trump says",
+      "to_title": "Iran live updates: Iran 'better get moving, FAST' and make a peace deal, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "MOVED",
+      "fingerprint": "516c3244605ff2b2f90406a24a2575e3fb5ea272",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects",
+      "to_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "MOVED",
+      "fingerprint": "503e1dafa57a4af211e585a26af55bc43098062e",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Cuba grid collapse: The situation is growing more dire, experts say",
+      "to_title": "Cuba grid collapse: The situation is growing more dire, experts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9a556530104c81e40ceb7163bf56b8b95f7d7863",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Plains and the Midwest bracing for more severe weather, possible tornadoes",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T22:30:33.702Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ac4312620621d241d97abdca1799838d713107e3",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "China committed to not 'provide material support to Iran,' US trade rep says",
       "to_title": null
     }
   ],
