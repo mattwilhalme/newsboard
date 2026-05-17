@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-17T16:41:04.780Z",
+  "generatedAt": "2026-05-17T17:41:22.225Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T17:12:07.616Z",
-      "event_type": "MOVED",
-      "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
-      "from_rank": 3,
-      "to_rank": 2,
-      "from_title": "US Supreme Court denies Va. Dems' request on redistricting plan",
-      "to_title": "US Supreme Court denies Va. Dems' request on redistricting plan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T17:12:07.616Z",
-      "event_type": "MOVED",
-      "fingerprint": "69a70560a02fd6bf96e6b6c1f1f3f8a61989ceeb",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days",
-      "to_title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T17:12:07.616Z",
-      "event_type": "MOVED",
-      "fingerprint": "c7fe99eeab6bc1f3ea18ebe87635040d962968e6",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Maldives military diver dies while trying to recover scuba diving victims from cave",
-      "to_title": "Maldives military diver dies while trying to recover scuba diving victims from cave"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T17:12:07.616Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "57cdaa75f1bcae4c89d498c1de133c1f9cd848a2",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "LIRR workers go on strike after negotiations with MTA fail"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T17:12:07.616Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5bdcce5ad2d5c3ec574701af648a6412736ca316",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Possible US indictment of Raul Castro: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T17:12:07.616Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3a9545365c529dc036f26fec498771ed941a0157",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Possible US indictment of former Cuban president Raul Castro in coming days: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T17:12:07.616Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ec69f93434311fa8c282776a94a9824b8d19424e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Trump says Islamic State group leader was killed",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-16T18:07:46.354Z",
@@ -851,6 +781,106 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Rescue diver dies trying to recover scuba diving victims from cave",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "258aa98a13825a39f0524fb27a0b0a6040282440",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Ahead of Tuesday primary, GOP Rep. Massie says billionaires trying to 'buy' his seat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9a556530104c81e40ceb7163bf56b8b95f7d7863",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Plains and the Midwest bracing for more severe weather, possible tornadoes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "MOVED",
+      "fingerprint": "516c3244605ff2b2f90406a24a2575e3fb5ea272",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects",
+      "to_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "MOVED",
+      "fingerprint": "503e1dafa57a4af211e585a26af55bc43098062e",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Cuba grid collapse: The situation is growing more dire, experts say",
+      "to_title": "Cuba grid collapse: The situation is growing more dire, experts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "MOVED",
+      "fingerprint": "ac4312620621d241d97abdca1799838d713107e3",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "China committed to not 'provide material support to Iran,' US trade rep says",
+      "to_title": "China committed to not 'provide material support to Iran,' US trade rep says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "MOVED",
+      "fingerprint": "8b84d2510ac6225f80e11b40fb37693c77b0184f",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Ebola outbreak in Africa is 'public health emergency of international concern': WHO",
+      "to_title": "Ebola outbreak in Africa is 'public health emergency of international concern': WHO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d891161b11fb1f94f6c541c7001de1dc77b9dce",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Ukraine launches hundreds of drones in deadly attack targeting Russia, Moscow says",
+      "to_title": "Ukraine launches hundreds of drones in deadly attack targeting Russia, Moscow says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "MOVED",
+      "fingerprint": "4a2b97ce910547536dd9d91554e7899e40119b85",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Ronda Rousey stops Gina Carano with armbar 17 seconds into their double comeback bout",
+      "to_title": "Ronda Rousey stops Gina Carano with armbar 17 seconds into their double comeback bout"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c4e1c468c0fd81b50cc467d5fa436f5954ac496d",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Divers arrive in the Maldives to remap the search for the bodies of 4 Italian divers",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T17:41:25.246Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6383212123fc613972a817b979dac5744b13c913",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Humpback whale released after spectacular rescue effort found dead",
       "to_title": null
     }
   ]
