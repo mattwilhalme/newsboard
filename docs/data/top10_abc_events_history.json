@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-17T09:46:47.499Z",
+  "generatedAt": "2026-05-17T10:57:45.178Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T20:31:12.294Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "22f692a28178202ef1e196871dfd1021efdb322c",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Gilgo Beach murders: How 'meticulous' Rex Heuermann tried to plan the 'perfect crime'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-16T20:31:12.294Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b39388a9a3f4aebb8ff85c3b8410eb764c9bb42a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Late actor returns to movie screens in AI-generated role",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-16T20:31:12.294Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T10:57:48.050Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8212fa223cfe2ab3e5d490064444723e6bf5f2a2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "3 dead as vehicle strikes pedestrians in Oakland"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T10:57:48.050Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "414bffbb07767412923cf27eb4a392737f7b9818",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US indictment of Raul Castro possible: Sources",
       "to_title": null
     }
   ],

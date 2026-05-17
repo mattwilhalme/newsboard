@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-17T09:46:47.499Z",
+  "generatedAt": "2026-05-17T10:57:45.178Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T10:17:03.007Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "211a7ee5b473bdf160cf0abd2ca45f2dce555c57",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "DOJ to create $1.776B 'Truth and Justice Commission' to compensate allies: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T10:17:03.007Z",
-      "event_type": "MOVED",
-      "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "US Supreme Court denies Va. Dems' request on redistricting plan",
-      "to_title": "US Supreme Court denies Va. Dems' request on redistricting plan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T10:17:03.007Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b68b17e996c5e52f15c088c61f4888238dcbc465",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "In Louisiana, Trump-endorsed candidate is challenging a GOP incumbent"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T10:17:03.007Z",
-      "event_type": "MOVED",
-      "fingerprint": "69a70560a02fd6bf96e6b6c1f1f3f8a61989ceeb",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days",
-      "to_title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T10:17:03.007Z",
-      "event_type": "MOVED",
-      "fingerprint": "6c515444c463504090adb4adb01d7d2901fdb7ce",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Hantavirus live updates: WHO hunts for source of virus",
-      "to_title": "Hantavirus live updates: WHO hunts for source of virus"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T10:17:03.007Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "41c2e6c0a4f5d90ad1176211b2f42c853357e828",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Trump-Xi summit Day 2 takeaways: ANALYSIS",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T10:17:03.007Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f1a0315a9f94bb65eabd9edfde6f2af60c6cf2a7",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Feds seek death penalty in murder of Israeli embassy staffers",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-16T11:21:11.486Z",
@@ -831,6 +761,26 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T10:57:48.050Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8212fa223cfe2ab3e5d490064444723e6bf5f2a2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "3 dead as vehicle strikes pedestrians in Oakland"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T10:57:48.050Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "414bffbb07767412923cf27eb4a392737f7b9818",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "US indictment of Raul Castro possible: Sources",
       "to_title": null
     }
   ]
