@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-17T14:44:45.968Z",
+  "generatedAt": "2026-05-17T15:45:26.960Z",
   "hours": 24,
   "events": [
     {
@@ -851,6 +851,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "3 dead as vehicle strikes pedestrians in Oakland",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T15:45:30.109Z",
+      "event_type": "MOVED",
+      "fingerprint": "516c3244605ff2b2f90406a24a2575e3fb5ea272",
+      "from_rank": 4,
+      "to_rank": 3,
+      "from_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects",
+      "to_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T15:45:30.109Z",
+      "event_type": "MOVED",
+      "fingerprint": "503e1dafa57a4af211e585a26af55bc43098062e",
+      "from_rank": 5,
+      "to_rank": 4,
+      "from_title": "Cuba grid collapse: The situation is growing more dire, experts say",
+      "to_title": "Cuba grid collapse: The situation is growing more dire, experts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T15:45:30.109Z",
+      "event_type": "MOVED",
+      "fingerprint": "ac4312620621d241d97abdca1799838d713107e3",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "China committed to not 'provide material support to Iran,' US trade rep says",
+      "to_title": "China committed to not 'provide material support to Iran,' US trade rep says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T15:45:30.109Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c4e1c468c0fd81b50cc467d5fa436f5954ac496d",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Divers arrive in the Maldives to remap the search for the bodies of 4 Italian divers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T15:45:30.109Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bf3f7aa3dff10eab034ef74843ca3e41e31991e8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Rescue diver dies trying to recover scuba diving victims from cave",
       "to_title": null
     }
   ]
