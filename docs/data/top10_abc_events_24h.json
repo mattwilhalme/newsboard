@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-17T07:58:19.380Z",
+  "generatedAt": "2026-05-17T09:46:47.499Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T08:59:13.947Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ec69f93434311fa8c282776a94a9824b8d19424e",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Trump says Islamic State group leader was killed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T08:59:13.947Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f9864b3d706dbecd2c61f3cda623ae110429e689",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Islamic State group leader killed, Trump says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-16T10:17:03.007Z",
@@ -801,6 +781,56 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "8 wounded after driver plows into crowd in Italian city: Officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T09:46:50.340Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3d891161b11fb1f94f6c541c7001de1dc77b9dce",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Ukraine launches hundreds of drones in deadly attack targeting Russia, Moscow says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T09:46:50.340Z",
+      "event_type": "MOVED",
+      "fingerprint": "d1d91fba09ac2571f744108e9a5a4b27d5514b15",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Murdaugh murder retrial: Death penalty on table, prosecutors say",
+      "to_title": "Murdaugh murder retrial: Death penalty on table, prosecutors say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T09:46:50.340Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf3f7aa3dff10eab034ef74843ca3e41e31991e8",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "Rescue diver dies trying to recover scuba diving victims from cave",
+      "to_title": "Rescue diver dies trying to recover scuba diving victims from cave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T09:46:50.340Z",
+      "event_type": "MOVED",
+      "fingerprint": "6383212123fc613972a817b979dac5744b13c913",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Humpback whale released after spectacular rescue effort found dead",
+      "to_title": "Humpback whale released after spectacular rescue effort found dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T09:46:50.340Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "624fe73a2d9e8e39ca963fcd7f4ca1f842b96e14",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
       "to_title": null
     }
   ]
