@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-16T23:38:46.081Z",
+  "generatedAt": "2026-05-17T01:31:31.331Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T01:22:37.000Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "US Supreme Court denies Va. Dems' request on redistricting plan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T01:22:37.000Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e16fa56a4d4cadc8f7fbb47970fdf5d3eb92dc19",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingSupreme Court US Supreme Court denies Virginia Democrats' request on redistricting plan",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-16T04:44:36.816Z",
@@ -711,6 +691,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "US indictment of Raul Castro possible: Sources",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8b84d2510ac6225f80e11b40fb37693c77b0184f",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Ebola outbreak in Africa is 'public health emergency of international concern': WHO"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "d1d91fba09ac2571f744108e9a5a4b27d5514b15",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Murdaugh murder retrial: Death penalty on table, prosecutors say",
+      "to_title": "Murdaugh murder retrial: Death penalty on table, prosecutors say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "2fac09bdb58dcdf348af293e92b3c93f348224c7",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Firefighter killed, 10 injured as massive fire rips through lumber mill",
+      "to_title": "Firefighter killed, 10 injured as massive fire rips through lumber mill"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "5c45ec37523b7b294f1c931d3777a2793efc3e9d",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "8 wounded after driver plows into crowd in Italian city: Officials",
+      "to_title": "8 wounded after driver plows into crowd in Italian city: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "bf3f7aa3dff10eab034ef74843ca3e41e31991e8",
+      "from_rank": 9,
+      "to_rank": 8,
+      "from_title": "Rescue diver dies trying to recover scuba diving victims from cave",
+      "to_title": "Rescue diver dies trying to recover scuba diving victims from cave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "6383212123fc613972a817b979dac5744b13c913",
+      "from_rank": 10,
+      "to_rank": 9,
+      "from_title": "Humpback whale released after spectacular rescue effort found dead",
+      "to_title": "Humpback whale released after spectacular rescue effort found dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "MOVED",
+      "fingerprint": "624fe73a2d9e8e39ca963fcd7f4ca1f842b96e14",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
+      "to_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T01:31:34.671Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "US Supreme Court denies Va. Dems' request on redistricting plan",
       "to_title": null
     }
   ]
