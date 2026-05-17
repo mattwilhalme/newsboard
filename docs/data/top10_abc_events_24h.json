@@ -1,118 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-17T17:41:22.225Z",
+  "generatedAt": "2026-05-17T18:44:05.809Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "03c25937b0f83eb9ad9c01f6ce2858691835b9a9",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Murdaugh murder retrial: Prosecutors may pursue death penalty"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2fac09bdb58dcdf348af293e92b3c93f348224c7",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Firefighter killed, 10 injured as massive fire rips through lumber mill"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "MOVED",
-      "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "US Supreme Court denies Va. Dems' request on redistricting plan",
-      "to_title": "US Supreme Court denies Va. Dems' request on redistricting plan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "MOVED",
-      "fingerprint": "624fe73a2d9e8e39ca963fcd7f4ca1f842b96e14",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
-      "to_title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "MOVED",
-      "fingerprint": "c7fe99eeab6bc1f3ea18ebe87635040d962968e6",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Maldives military diver dies while trying to recover scuba diving victims from cave",
-      "to_title": "Maldives military diver dies while trying to recover scuba diving victims from cave"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ee6a6845d90444dbcd4775e22e0f95c9e7af2006",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "LIRR strike strands thousands of commuters"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "MOVED",
-      "fingerprint": "6383212123fc613972a817b979dac5744b13c913",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Humpback whale released after spectacular rescue effort found dead",
-      "to_title": "Humpback whale released after spectacular rescue effort found dead"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "MOVED",
-      "fingerprint": "a6949ac13e6e5d95ef234d659ffc673739d0872f",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Slain transgender student suffered over 40 stab wounds: Documents",
-      "to_title": "Slain transgender student suffered over 40 stab wounds: Documents"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "69a70560a02fd6bf96e6b6c1f1f3f8a61989ceeb",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "57cdaa75f1bcae4c89d498c1de133c1f9cd848a2",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "LIRR workers go on strike after negotiations with MTA fail",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-16T18:07:46.354Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c32629966dd0aaffbfed80c7a5647ece4ba232ea",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "How a suburban affair in Georgia led to murder",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-16T19:22:45.482Z",
@@ -881,6 +771,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Humpback whale released after spectacular rescue effort found dead",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T18:44:08.850Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5bd4237293ce95fbdcf2c9db5a2ce7336b1e0269",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Iran 'better get moving, FAST' and make a peace deal, Trump says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T18:44:08.850Z",
+      "event_type": "MOVED",
+      "fingerprint": "9a556530104c81e40ceb7163bf56b8b95f7d7863",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Plains and the Midwest bracing for more severe weather, possible tornadoes",
+      "to_title": "Plains and the Midwest bracing for more severe weather, possible tornadoes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T18:44:08.850Z",
+      "event_type": "MOVED",
+      "fingerprint": "516c3244605ff2b2f90406a24a2575e3fb5ea272",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects",
+      "to_title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T18:44:08.850Z",
+      "event_type": "MOVED",
+      "fingerprint": "503e1dafa57a4af211e585a26af55bc43098062e",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Cuba grid collapse: The situation is growing more dire, experts say",
+      "to_title": "Cuba grid collapse: The situation is growing more dire, experts say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T18:44:08.850Z",
+      "event_type": "MOVED",
+      "fingerprint": "ac4312620621d241d97abdca1799838d713107e3",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "China committed to not 'provide material support to Iran,' US trade rep says",
+      "to_title": "China committed to not 'provide material support to Iran,' US trade rep says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-17T18:44:08.850Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b84d2510ac6225f80e11b40fb37693c77b0184f",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Ebola outbreak in Africa is 'public health emergency of international concern': WHO",
       "to_title": null
     }
   ]
