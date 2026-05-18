@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-18T18:17:33.469Z",
+  "generatedAt": "2026-05-18T20:01:11.757Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T21:10:25.020Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3e06c3d13388ae6069fa2cfe9afb93fe7014d931",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "As redistricting measure vote looms, Obama weighs in: Exclusive",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T21:10:25.020Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "beda63ef0a4f6826c34761e2f519c2cb9f17c7a5",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "579273e1814883bef9efb93cdec25bcc8e76f7e2",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says 'could' still be differences to work out with Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a498b59d11de3ff21f5db10648a0bdb85f9666d4",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Millions under severe weather threat following destructive storms"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "42dd17d482c87fa4465d3ea08c24d066d2553411",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Facebook to remove imposter accounts tied to immigration scams, DA's office says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting",
-      "to_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "9e382b1a79e0b5530d1590cfef0a005f81bc2e46",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands",
-      "to_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "1ec545dc250b64726f9d3ee0da9f447d4eddc13f",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open",
-      "to_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "6dc98cb4c9d93450fa1784bc3550b94592a722a8",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "What to know about the high school 'senior assassin' water gun game",
-      "to_title": "What to know about the high school 'senior assassin' water gun game"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "MOVED",
-      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
-      "from_rank": 8,
-      "to_rank": 10,
-      "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
-      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "43c49a4ac06cb39b028fa63cabe979e33bcaa38a",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran 'fully' opens the Strait of Hormuz, Trump says",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3fdb2c9c062a69a487f2fb0d8ade8a961978ebfa",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Zookeeper shares update on Punch the monkey",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T22:01:09.933Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "def329159d329506f45b19b7426e3695d463f7cf",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "$13 train fare spikes to $150 for World Cup fans attending matches in New Jersey",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T23:29:34.195Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "08fc89136b78fe0d91831c16866a016040ce1122",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Millions under threat of severe weather, including tornadoes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T23:29:34.195Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a498b59d11de3ff21f5db10648a0bdb85f9666d4",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Millions under severe weather threat following destructive storms",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-18T00:05:53.605Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "House Oversight Committee to interview prison guard on duty when Epstein died",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a64a5bdb5b3f785731bc7e57bd40824fd57e90e4",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breakingActive shooter reported at Islamic Center of San Diego: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "260a56ebb4992ac7f9f41484efd26a60690da824",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Court dismisses Elon Musk's case against Sam Altman and OpenAI"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9d500bf61cf6a78c36f07c8e63b7cbadf7458e14",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says he's postponing strikes on Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74a48fd61be3101b6ce5942efb8f69ab31ff1ab8",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "50 million people brace for tornadoes in the Heartland"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "MOVED",
+      "fingerprint": "3a2adf4ef58dd5ebd7469d0d21e773722d96d3d9",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Family of teen killed on cruise ship speaks out",
+      "to_title": "Family of teen killed on cruise ship speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74acd95fb0f21908e8fb1bdc0b098d781f16c9f4",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "At least 1 American has tested positive for Ebola: CDC"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6eee3784597279afef9883bdf4becfe350c75043",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Climber who survived avalanche on Mount Everest speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "011c46c4fd5a365911bcf25792c74dac63f28a4a",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "ICE agent charged in nonfatal Minneapolis shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4c50c43181a4e0ab3b210f2b5d340a18afa637df",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingElon Musk loses suit against OpenAI and its chief executive, Sam Altman",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "052ff26e97cff1a2d1afe080e2b34e1c0c1a6b05",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Related:Iran live updates: National security meeting planned for Tuesday",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "25c23e250407afe7133373411938bf05b9136a2e",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Mangione state trial: Some evidence suppressed, key evidence allowed",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "78268d8ce0ea8bd7bd802ffc47b840158bcccfcb",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "LIRR strike: What to know about the rail workers' walkout",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "25efd3a44556e7e2c3f13496478ffe2fb4d52793",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Shakira acquitted of tax fraud in Spain",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d5ed1010c3426a7a5a513bdb4cb3d9b45483210a",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "CDC plans to restrict entry for non-American travelers from DRC due to Ebola outbreak",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T20:01:14.673Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5fdb563d13077666ecb612433c389dfe7629a9a6",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Bodies of 4 remaining divers located in Maldives, divers network says",
       "to_title": null
     }
   ],
