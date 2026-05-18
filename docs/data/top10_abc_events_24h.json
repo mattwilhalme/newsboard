@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-18T21:18:14.609Z",
+  "generatedAt": "2026-05-18T22:17:39.239Z",
   "hours": 24,
   "events": [
     {
@@ -931,6 +931,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "At least 1 American has tested positive for Ebola: CDC",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T22:17:42.128Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T22:17:42.128Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa89d6049141dbdbbb24035ebe776381dfca2c6a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking3 adults killed in shooting at Islamic Center of San Diego; 2 suspects dead: Police",
       "to_title": null
     }
   ]

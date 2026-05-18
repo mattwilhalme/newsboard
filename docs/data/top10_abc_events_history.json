@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-18T21:18:14.609Z",
+  "generatedAt": "2026-05-18T22:17:39.239Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T03:28:02.898Z",
-      "event_type": "MOVED",
-      "fingerprint": "1ec545dc250b64726f9d3ee0da9f447d4eddc13f",
-      "from_rank": 8,
-      "to_rank": 7,
-      "from_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open",
-      "to_title": "Stocks close higher and oil prices plunge after Iran says Strait of Hormuz is open"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T03:28:02.898Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting",
-      "to_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-18T03:28:02.898Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "At least 1 American has tested positive for Ebola: CDC",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T22:17:42.128Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T22:17:42.128Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "aa89d6049141dbdbbb24035ebe776381dfca2c6a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breaking3 adults killed in shooting at Islamic Center of San Diego; 2 suspects dead: Police",
       "to_title": null
     }
   ],
