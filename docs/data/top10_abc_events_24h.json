@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-18T20:01:11.757Z",
+  "generatedAt": "2026-05-18T21:18:14.609Z",
   "hours": 24,
   "events": [
     {
@@ -861,6 +861,76 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Bodies of 4 remaining divers located in Maldives, divers network says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T21:18:17.774Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "aa89d6049141dbdbbb24035ebe776381dfca2c6a",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "breaking3 adults killed in shooting at Islamic Center of San Diego; 2 suspects dead: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T21:18:17.774Z",
+      "event_type": "MOVED",
+      "fingerprint": "28a77d3dc95d7cb6956d532035bc0094df995614",
+      "from_rank": 7,
+      "to_rank": 5,
+      "from_title": "James Comey responds to indictment, Trump's 'anti-weaponization' fund for allies",
+      "to_title": "James Comey responds to indictment, Trump's 'anti-weaponization' fund for allies"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T21:18:17.774Z",
+      "event_type": "MOVED",
+      "fingerprint": "74a48fd61be3101b6ce5942efb8f69ab31ff1ab8",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "50 million people brace for tornadoes in the Heartland",
+      "to_title": "50 million people brace for tornadoes in the Heartland"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T21:18:17.774Z",
+      "event_type": "MOVED",
+      "fingerprint": "3a2adf4ef58dd5ebd7469d0d21e773722d96d3d9",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "Family of teen killed on cruise ship speaks out",
+      "to_title": "Family of teen killed on cruise ship speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T21:18:17.774Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8b10c5fdfbbdc04fff6a6b68f120a35973e46a94",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Ichikawa City Zoo says Punch, other monkeys are safe after enclosure breached"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T21:18:17.774Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a64a5bdb5b3f785731bc7e57bd40824fd57e90e4",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingActive shooter reported at Islamic Center of San Diego: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T21:18:17.774Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "74acd95fb0f21908e8fb1bdc0b098d781f16c9f4",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "At least 1 American has tested positive for Ebola: CDC",
       "to_title": null
     }
   ]
