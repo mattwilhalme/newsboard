@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-18T12:43:59.517Z",
+  "generatedAt": "2026-05-18T16:12:22.171Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T16:40:33.525Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "56ce37c1f700c15b86dda1e8cc28f0c4e65d10c9",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Congress approves short-term FISA spy powers extension amid GOP infighting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T16:40:33.525Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cee37e8a1a7d06b485b4ca99de62905a36791f7f",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "House approves short-term FISA spy powers extension amid GOP infighting",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "MOVED",
-      "fingerprint": "9e382b1a79e0b5530d1590cfef0a005f81bc2e46",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands",
-      "to_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "MOVED",
-      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
-      "to_title": "Singer D4vd arrested after teen found dead in his Tesla: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "MOVED",
-      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
-      "from_rank": 9,
-      "to_rank": 7,
-      "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
-      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3fdb2c9c062a69a487f2fb0d8ade8a961978ebfa",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Zookeeper shares update on Punch the monkey"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "def329159d329506f45b19b7426e3695d463f7cf",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "$13 train fare spikes to $150 for World Cup fans attending matches in New Jersey"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "beda63ef0a4f6826c34761e2f519c2cb9f17c7a5",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "56ce37c1f700c15b86dda1e8cc28f0c4e65d10c9",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Congress approves short-term FISA spy powers extension amid GOP infighting",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b03344d6d80768069b0db31bc6c0abf9edb526d8",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "FBI analyzing DNA recovered from Nancy Guthrie's home: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T18:32:43.082Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2c035d65aadfcdbf46de6b8ab59e7a7824c68dfc",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Zookeeper shares update on Punch the monkey, whether he has a girlfriend",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T19:42:38.919Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T19:42:38.919Z",
-      "event_type": "MOVED",
-      "fingerprint": "9e382b1a79e0b5530d1590cfef0a005f81bc2e46",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands",
-      "to_title": "Daughter of woman missing in Bahamas surprised to learn stepfather left the islands"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T19:42:38.919Z",
-      "event_type": "MOVED",
-      "fingerprint": "3e06c3d13388ae6069fa2cfe9afb93fe7014d931",
-      "from_rank": 3,
-      "to_rank": 5,
-      "from_title": "As redistricting measure vote looms, Obama weighs in: Exclusive",
-      "to_title": "As redistricting measure vote looms, Obama weighs in: Exclusive"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-17T19:42:38.919Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6dc98cb4c9d93450fa1784bc3550b94592a722a8",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "What to know about the high school 'senior assassin' water gun game"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-17T19:42:38.919Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Severe weather in store for Plains and the Midwest",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "28349df9bd0a2a89815d23a27fec1acf27a6297b",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump, in court filing, says he's dropping his $10B lawsuit against IRS"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a312c8d76f171e0a5e10fd4851a14557611aa3a2",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Iran live updates: Trump says 'TIME IS OF THE ESSENCE' for Iran deal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "25c23e250407afe7133373411938bf05b9136a2e",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Mangione state trial: Some evidence suppressed, key evidence allowed"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3a2adf4ef58dd5ebd7469d0d21e773722d96d3d9",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Family of teen killed on cruise ship speaks out"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "MOVED",
+      "fingerprint": "78268d8ce0ea8bd7bd802ffc47b840158bcccfcb",
+      "from_rank": 2,
+      "to_rank": 5,
+      "from_title": "LIRR strike: What to know about the rail workers' walkout",
+      "to_title": "LIRR strike: What to know about the rail workers' walkout"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "25efd3a44556e7e2c3f13496478ffe2fb4d52793",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Shakira acquitted of tax fraud in Spain"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "MOVED",
+      "fingerprint": "5fdb563d13077666ecb612433c389dfe7629a9a6",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Bodies of 4 remaining divers located in Maldives, divers network says",
+      "to_title": "Bodies of 4 remaining divers located in Maldives, divers network says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "MOVED",
+      "fingerprint": "9226c8137df4221ab2c35865ff53131465679756",
+      "from_rank": 3,
+      "to_rank": 8,
+      "from_title": "DRC Ebola outbreak affecting 'small number of Americans,' CDC says",
+      "to_title": "DRC Ebola outbreak affecting 'small number of Americans,' CDC says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "MOVED",
+      "fingerprint": "5157153847a398e3a2bac32078494e9c896b0038",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Midair collision between two jets at air show prompts Idaho Air Force base lockdown",
+      "to_title": "Midair collision between two jets at air show prompts Idaho Air Force base lockdown"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "MOVED",
+      "fingerprint": "86508ec190d26d6846a7ebf55ac8b64935d78f15",
+      "from_rank": 6,
+      "to_rank": 10,
+      "from_title": "House Oversight Committee to interview prison guard on duty when Epstein died",
+      "to_title": "House Oversight Committee to interview prison guard on duty when Epstein died"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ff6d05877d310e0a79b0bf248eeda7d1ec7b3131",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says 'TIME IS OF THE ESSENCE' for Iran deal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "88c7ff94b4bd39bf95feaa36a6ea32d9456b8093",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Judge to decide whether to throw out key evidence against Luigi Mangione",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "c3d64d8a6cb59c707d7ee6aa8c155af3044c1477",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Redistricting debate shifts as Republicans seek clean sweep of US House seats",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1ef2166b2cd6fb8234e1e78fcecde51b17fe1f19",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Hantavirus-stricken cruise ship arrives in the Netherlands",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T16:12:25.281Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "12499fb5d14e56fd0540889ee42d492ab536deb9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Nigeria, U.S. forces kill Islamic State militants",
       "to_title": null
     }
   ],
