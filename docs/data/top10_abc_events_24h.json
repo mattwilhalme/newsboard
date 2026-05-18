@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-17T23:32:43.571Z",
+  "generatedAt": "2026-05-18T01:31:29.879Z",
   "hours": 24,
   "events": [
     {
@@ -671,6 +671,26 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "China committed to not 'provide material support to Iran,' US trade rep says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T01:31:32.866Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7f0c75d44f86d2fb7ceb8afffb72b6895ecf0119",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "2 teens in custody in random shootings in Austin, Texas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-18T01:31:32.866Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b0af024af807da4e3342d9c20ef10887c0baade8",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Random shootings reported in Austin, Texas; 2 suspects in custody, 1 at large",
       "to_title": null
     }
   ]
