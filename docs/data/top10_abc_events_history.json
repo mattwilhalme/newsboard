@@ -1,138 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-19T08:50:27.451Z",
+  "generatedAt": "2026-05-19T11:49:26.767Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T14:59:18.464Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting",
-      "to_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T14:59:18.464Z",
-      "event_type": "MOVED",
-      "fingerprint": "beda63ef0a4f6826c34761e2f519c2cb9f17c7a5",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'",
-      "to_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T14:59:18.464Z",
-      "event_type": "MOVED",
-      "fingerprint": "42dd17d482c87fa4465d3ea08c24d066d2553411",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Facebook to remove imposter accounts tied to immigration scams, DA's office says",
-      "to_title": "Facebook to remove imposter accounts tied to immigration scams, DA's office says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T14:59:18.464Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0ca398b5c214c582a8ce8676ad30325c2a48e520",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "2 soldiers injured in encounter with brown bear",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:08:46.527Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6f9e1c9d2320782ec5832059c7f01daaf9bd79f5",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Pope Leo says 'not in my interest at all' to debate Trump"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:08:46.527Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "34dd59b3050b364b9f9b56afc98593e3bdd09e41",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Pope Leo says 'not my interest at all' to debate Trump",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:58:59.104Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c9b535d649b9cf876cf9c35bb2faefbf8da68e5c",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Tehran reviewing US proposal as it reasserts control over strait"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:58:59.104Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e2517e33a0a53e33d623e2b4043f6ed345abdb20",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:58:59.104Z",
-      "event_type": "MOVED",
-      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
-      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:58:59.104Z",
-      "event_type": "MOVED",
-      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting",
-      "to_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:58:59.104Z",
-      "event_type": "MOVED",
-      "fingerprint": "beda63ef0a4f6826c34761e2f519c2cb9f17c7a5",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'",
-      "to_title": "Jill Biden bid $35,000 for a chance to guest star on 'Heated Rivalry'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:58:59.104Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f64fc6d647338f11de3f158f980afe3dcb156bce",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Tehran reasserts control over Strait of Hormuz",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T16:58:59.104Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "42dd17d482c87fa4465d3ea08c24d066d2553411",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Facebook to remove imposter accounts tied to immigration scams, DA's office says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-18T19:09:01.553Z",
@@ -30001,6 +29871,136 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "ICE agent charged in nonfatal Minneapolis shooting",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5ee6ea49a07915839a8f7d10c159b448e71ccce7",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Pennsylvania primaries to set up key House races, midterm election battles"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9c5593c705aabfb3750651501cb83bd4773ae3b8",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Kentucky's GOP primary battle pits Massie against Trump-backed Gallrein"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "MOVED",
+      "fingerprint": "b374da06faba2d2ebff9ece9a1e30189932b71c2",
+      "from_rank": 8,
+      "to_rank": 4,
+      "from_title": "Iran live updates: Trump postpones Iran strikes, CENTCOM says blockade continues",
+      "to_title": "Iran live updates: Trump postpones Iran strikes, CENTCOM says blockade continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1b0eb9b1ca3bd703e114eae7ddc4c8a688ffe9ac",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Marine scientists discover record number of new species"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "MOVED",
+      "fingerprint": "17031124374c30b22172559c9367cd65b279532e",
+      "from_rank": 2,
+      "to_rank": 6,
+      "from_title": "Long Island Rail Road strike is over, New York Gov. Hochul says",
+      "to_title": "Long Island Rail Road strike is over, New York Gov. Hochul says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "MOVED",
+      "fingerprint": "526e209e08a373153fd7eb1f82cadfb4889b733b",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak",
+      "to_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "MOVED",
+      "fingerprint": "0dc35ae62fcb96983e66736938b048cb13d33cdb",
+      "from_rank": 3,
+      "to_rank": 8,
+      "from_title": "Mark Fuhrman, ex-detective in OJ Simpson murder trial, dies at 74",
+      "to_title": "Mark Fuhrman, ex-detective in OJ Simpson murder trial, dies at 74"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "MOVED",
+      "fingerprint": "e564e85a25068cc53d3689a39b0d3a6254bfd8af",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Former Hartford officer charged with manslaughter in fatal shooting of Stevie Jones",
+      "to_title": "Former Hartford officer charged with manslaughter in fatal shooting of Stevie Jones"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3513c60147038851affbd41a33541ae65fc56f11",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Home Depot profit falls but tops expectations"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1371ed9912694c086bdd8a2e3f857d5d485f5e7f",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "DOJ announces $1.7B 'Anti-Weaponization Fund' as part of Trump IRS lawsuit settlement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "74a48fd61be3101b6ce5942efb8f69ab31ff1ab8",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "50 million people brace for tornadoes in the Heartland",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "44e9fde812f6e8c010fdb6462c40d9b355e7be10",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Japanese zoo says viral monkey Punch safe after 2 people broke enclosure",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T11:49:29.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "042a3f1c495c48a40d7cd0e4e9b056db06e7f308",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Divers to try to recover bodies from Maldives cave",
       "to_title": null
     }
   ],
