@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-19T05:47:19.365Z",
+  "generatedAt": "2026-05-19T08:50:27.451Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T05:50:05.850Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "911df922ebd9e166fb34c6e710af255040d763bc",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "3 in custody in random shootings in Austin, Texas: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T05:50:05.850Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7f0c75d44f86d2fb7ceb8afffb72b6895ecf0119",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "2 teens in custody in random shootings in Austin, Texas",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-18T09:02:29.263Z",
@@ -1021,6 +1001,76 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "breakingLong Island Rail Road strike is over, New York Gov. Hochul says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T08:50:30.307Z",
+      "event_type": "MOVED",
+      "fingerprint": "526e209e08a373153fd7eb1f82cadfb4889b733b",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak",
+      "to_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T08:50:30.307Z",
+      "event_type": "MOVED",
+      "fingerprint": "1371ed9912694c086bdd8a2e3f857d5d485f5e7f",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "DOJ announces $1.7B 'Anti-Weaponization Fund' as part of Trump IRS lawsuit settlement",
+      "to_title": "DOJ announces $1.7B 'Anti-Weaponization Fund' as part of Trump IRS lawsuit settlement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T08:50:30.307Z",
+      "event_type": "MOVED",
+      "fingerprint": "74a48fd61be3101b6ce5942efb8f69ab31ff1ab8",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "50 million people brace for tornadoes in the Heartland",
+      "to_title": "50 million people brace for tornadoes in the Heartland"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T08:50:30.307Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "b374da06faba2d2ebff9ece9a1e30189932b71c2",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump postpones Iran strikes, CENTCOM says blockade continues"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T08:50:30.307Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "042a3f1c495c48a40d7cd0e4e9b056db06e7f308",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Divers to try to recover bodies from Maldives cave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T08:50:30.307Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9d500bf61cf6a78c36f07c8e63b7cbadf7458e14",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says he's postponing strikes on Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T08:50:30.307Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "011c46c4fd5a365911bcf25792c74dac63f28a4a",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "ICE agent charged in nonfatal Minneapolis shooting",
       "to_title": null
     }
   ]
