@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-19T01:33:44.917Z",
+  "generatedAt": "2026-05-19T05:47:19.365Z",
   "hours": 24,
   "events": [
     {
@@ -991,6 +991,36 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Climber who survived avalanche on Mount Everest speaks out",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T05:47:22.675Z",
+      "event_type": "MOVED",
+      "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead",
+      "to_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T05:47:22.675Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "17031124374c30b22172559c9367cd65b279532e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Long Island Rail Road strike is over, New York Gov. Hochul says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T05:47:22.675Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8abdc2e4f54f49e627a040e99bb4bb71eec6ac9a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingLong Island Rail Road strike is over, New York Gov. Hochul says",
       "to_title": null
     }
   ]

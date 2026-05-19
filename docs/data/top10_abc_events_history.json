@@ -1,38 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-19T01:33:44.917Z",
+  "generatedAt": "2026-05-19T05:47:19.365Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T09:29:50.563Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f6be31728545d1ef990d778d28b6746684f28e70",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Iran pushes back on Trump's claims about agreement",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T11:00:24.603Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5ad068cd218221b4a08d76c2f7a2a774d96c02e8",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Strait of Hormuz returns to 'previous state,' Iranian TV reports"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T11:00:24.603Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0ef07b8e05c7aa82003c8b6609e07383dc9832bc",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingStrait of Hormuz returns to 'previous state,' Iranian state TV reports",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-18T11:40:05.865Z",
@@ -30001,6 +29971,36 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Climber who survived avalanche on Mount Everest speaks out",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T05:47:22.675Z",
+      "event_type": "MOVED",
+      "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
+      "from_rank": 2,
+      "to_rank": 1,
+      "from_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead",
+      "to_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T05:47:22.675Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "17031124374c30b22172559c9367cd65b279532e",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Long Island Rail Road strike is over, New York Gov. Hochul says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T05:47:22.675Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8abdc2e4f54f49e627a040e99bb4bb71eec6ac9a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingLong Island Rail Road strike is over, New York Gov. Hochul says",
       "to_title": null
     }
   ],
