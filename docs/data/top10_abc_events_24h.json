@@ -1,158 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-19T14:21:21.653Z",
+  "generatedAt": "2026-05-19T17:22:59.169Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "28349df9bd0a2a89815d23a27fec1acf27a6297b",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Trump, in court filing, says he's dropping his $10B lawsuit against IRS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a312c8d76f171e0a5e10fd4851a14557611aa3a2",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Trump says 'TIME IS OF THE ESSENCE' for Iran deal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "25c23e250407afe7133373411938bf05b9136a2e",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Mangione state trial: Some evidence suppressed, key evidence allowed"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3a2adf4ef58dd5ebd7469d0d21e773722d96d3d9",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Family of teen killed on cruise ship speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "MOVED",
-      "fingerprint": "78268d8ce0ea8bd7bd802ffc47b840158bcccfcb",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "LIRR strike: What to know about the rail workers' walkout",
-      "to_title": "LIRR strike: What to know about the rail workers' walkout"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "25efd3a44556e7e2c3f13496478ffe2fb4d52793",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Shakira acquitted of tax fraud in Spain"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "MOVED",
-      "fingerprint": "5fdb563d13077666ecb612433c389dfe7629a9a6",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "Bodies of 4 remaining divers located in Maldives, divers network says",
-      "to_title": "Bodies of 4 remaining divers located in Maldives, divers network says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "MOVED",
-      "fingerprint": "9226c8137df4221ab2c35865ff53131465679756",
-      "from_rank": 3,
-      "to_rank": 8,
-      "from_title": "DRC Ebola outbreak affecting 'small number of Americans,' CDC says",
-      "to_title": "DRC Ebola outbreak affecting 'small number of Americans,' CDC says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "MOVED",
-      "fingerprint": "5157153847a398e3a2bac32078494e9c896b0038",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Midair collision between two jets at air show prompts Idaho Air Force base lockdown",
-      "to_title": "Midair collision between two jets at air show prompts Idaho Air Force base lockdown"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "MOVED",
-      "fingerprint": "86508ec190d26d6846a7ebf55ac8b64935d78f15",
-      "from_rank": 6,
-      "to_rank": 10,
-      "from_title": "House Oversight Committee to interview prison guard on duty when Epstein died",
-      "to_title": "House Oversight Committee to interview prison guard on duty when Epstein died"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ff6d05877d310e0a79b0bf248eeda7d1ec7b3131",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says 'TIME IS OF THE ESSENCE' for Iran deal",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "88c7ff94b4bd39bf95feaa36a6ea32d9456b8093",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Judge to decide whether to throw out key evidence against Luigi Mangione",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c3d64d8a6cb59c707d7ee6aa8c155af3044c1477",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Redistricting debate shifts as Republicans seek clean sweep of US House seats",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1ef2166b2cd6fb8234e1e78fcecde51b17fe1f19",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Hantavirus-stricken cruise ship arrives in the Netherlands",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T16:12:25.281Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "12499fb5d14e56fd0540889ee42d492ab536deb9",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Nigeria, U.S. forces kill Islamic State militants",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-18T18:17:36.374Z",
@@ -1061,6 +911,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Home Depot profit falls but tops expectations",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74b8305070488e532334333cb0bc3b142f8e0233",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "What to know about the San Diego Islamic Center shooting suspects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "MOVED",
+      "fingerprint": "cc1eb940e72f1fad1e59732ec2ca76625a5591b0",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Security guard at Islamic Center of San Diego hailed as a hero",
+      "to_title": "Security guard at Islamic Center of San Diego hailed as a hero"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7a0122635bc33848f4cec22d58c7ec295af2d497",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump endorses Ken Paxton over GOP incumbent John Cornyn in Texas Senate primary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "MOVED",
+      "fingerprint": "3a1510b886a30cf3449d8723c2d5444aaa0f4b48",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'We’re working on it': Secretary Robert F. Kennedy Jr. on Ebola, hantavirus response",
+      "to_title": "'We’re working on it': Secretary Robert F. Kennedy Jr. on Ebola, hantavirus response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "482e3c4cab3f814f74adf3c7dc89f58dd3788e3c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says he was 'an hour' away from striking Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ad94394adfc23b133c625a9e7fce421a60c02d63",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Doctor who survived Ebola said he knows the fear of being infected"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "MOVED",
+      "fingerprint": "5ee6ea49a07915839a8f7d10c159b448e71ccce7",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Pennsylvania primaries to set up key House races, midterm election battles",
+      "to_title": "Pennsylvania primaries to set up key House races, midterm election battles"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "86e9bd30fc25a42e15f672d309dd81ba2bd071ea",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "7-year-old saved by dad who saw signs of a stroke"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fbdf979348725fef37b6772bd074c9381e528a80",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:3 adults killed in shooting at Islamic Center of San Diego; both suspects dead",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3aafe9c8568bd58aaac43171d44e680cbd4749ae",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump isn’t on the ballot in Georgia, but he could decide Tuesday's races",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b374da06faba2d2ebff9ece9a1e30189932b71c2",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump postpones Iran strikes, CENTCOM says blockade continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9c5593c705aabfb3750651501cb83bd4773ae3b8",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Kentucky's GOP primary battle pits Massie against Trump-backed Gallrein",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f8886b269bb895da0d368478beac2d58b11eaf33",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Ebola outbreak sees 131 suspected deaths in DRC, officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "526e209e08a373153fd7eb1f82cadfb4889b733b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak",
       "to_title": null
     }
   ]

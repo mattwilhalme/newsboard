@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-19T14:21:21.653Z",
+  "generatedAt": "2026-05-19T17:22:59.169Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T22:52:40.935Z",
-      "event_type": "MOVED",
-      "fingerprint": "880a6f4f8712b7f4ddfdfa114eb8de528490b411",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Severe weather threat, flooding continue as life-threatening storms pass through East",
-      "to_title": "Severe weather threat, flooding continue as life-threatening storms pass through East"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T22:52:40.935Z",
-      "event_type": "MOVED",
-      "fingerprint": "0ceca88760e3ef0af5a7e0e41f822828bfc801fc",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources",
-      "to_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T22:52:40.935Z",
-      "event_type": "MOVED",
-      "fingerprint": "e2517e33a0a53e33d623e2b4043f6ed345abdb20",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3",
-      "to_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T22:52:40.935Z",
-      "event_type": "MOVED",
-      "fingerprint": "b1c2e10d3c662e6d3663d10631dcccb7c9fd69ae",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000",
-      "to_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T22:52:40.935Z",
-      "event_type": "MOVED",
-      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
-      "to_title": "Singer D4vd arrested after teen found dead in his Tesla: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T22:52:40.935Z",
-      "event_type": "MOVED",
-      "fingerprint": "83018bbaa0e52a2596db0835ce9c2eda1de93d9f",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "What happened to Vegas dancer Debbie Flores Narvaez",
-      "to_title": "What happened to Vegas dancer Debbie Flores Narvaez"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T22:52:40.935Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "3d7cd73b74096c2b2f139d0d21e62183a25e4774",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Alec Baldwin to face civil trial over alleged negligence in deadly 'Rust' shooting",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T23:23:55.246Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e8dc6726caa3bf8948cedd82bcc78e83506bc453",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T23:23:55.246Z",
-      "event_type": "MOVED",
-      "fingerprint": "880a6f4f8712b7f4ddfdfa114eb8de528490b411",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Severe weather threat, flooding continue as life-threatening storms pass through East",
-      "to_title": "Severe weather threat, flooding continue as life-threatening storms pass through East"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T23:23:55.246Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0ceca88760e3ef0af5a7e0e41f822828bfc801fc",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Supreme Court Justices Alito, Thomas not expected to retire this year: Sources",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T23:58:13.793Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "979e461f34a64f2286b45563f097948692370433",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Skydiver slams into Virginia Tech scoreboard, dangles by parachute"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T23:58:13.793Z",
-      "event_type": "MOVED",
-      "fingerprint": "e2517e33a0a53e33d623e2b4043f6ed345abdb20",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3",
-      "to_title": "Bear-suit luxury car scam ends in insurance fraud sentences for 3"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T23:58:13.793Z",
-      "event_type": "MOVED",
-      "fingerprint": "b1c2e10d3c662e6d3663d10631dcccb7c9fd69ae",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000",
-      "to_title": "Life jacket worn by Titanic survivor auctioned off for over $900,000"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-18T23:58:13.793Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b12c235639f38ed4e9ab2e1d0c442aadd0bb2c34",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Singer D4vd arrested after teen found dead in his Tesla: Police",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-19T05:18:01.478Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "139bfa225b197872a40b30bdf526893cecde1599",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "North Korea launches multiple short-range ballistic missiles toward sea"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-19T05:18:01.478Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Home Depot profit falls but tops expectations",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "74b8305070488e532334333cb0bc3b142f8e0233",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "What to know about the San Diego Islamic Center shooting suspects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "MOVED",
+      "fingerprint": "cc1eb940e72f1fad1e59732ec2ca76625a5591b0",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Security guard at Islamic Center of San Diego hailed as a hero",
+      "to_title": "Security guard at Islamic Center of San Diego hailed as a hero"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7a0122635bc33848f4cec22d58c7ec295af2d497",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Trump endorses Ken Paxton over GOP incumbent John Cornyn in Texas Senate primary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "MOVED",
+      "fingerprint": "3a1510b886a30cf3449d8723c2d5444aaa0f4b48",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "'We’re working on it': Secretary Robert F. Kennedy Jr. on Ebola, hantavirus response",
+      "to_title": "'We’re working on it': Secretary Robert F. Kennedy Jr. on Ebola, hantavirus response"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "482e3c4cab3f814f74adf3c7dc89f58dd3788e3c",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says he was 'an hour' away from striking Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ad94394adfc23b133c625a9e7fce421a60c02d63",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Doctor who survived Ebola said he knows the fear of being infected"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "MOVED",
+      "fingerprint": "5ee6ea49a07915839a8f7d10c159b448e71ccce7",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Pennsylvania primaries to set up key House races, midterm election battles",
+      "to_title": "Pennsylvania primaries to set up key House races, midterm election battles"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "86e9bd30fc25a42e15f672d309dd81ba2bd071ea",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "7-year-old saved by dad who saw signs of a stroke"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fbdf979348725fef37b6772bd074c9381e528a80",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:3 adults killed in shooting at Islamic Center of San Diego; both suspects dead",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3aafe9c8568bd58aaac43171d44e680cbd4749ae",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump isn’t on the ballot in Georgia, but he could decide Tuesday's races",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b374da06faba2d2ebff9ece9a1e30189932b71c2",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump postpones Iran strikes, CENTCOM says blockade continues",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9c5593c705aabfb3750651501cb83bd4773ae3b8",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Kentucky's GOP primary battle pits Massie against Trump-backed Gallrein",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f8886b269bb895da0d368478beac2d58b11eaf33",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Ebola outbreak sees 131 suspected deaths in DRC, officials say",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T17:23:02.342Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "526e209e08a373153fd7eb1f82cadfb4889b733b",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak",
       "to_title": null
     }
   ],
