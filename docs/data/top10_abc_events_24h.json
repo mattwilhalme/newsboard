@@ -1,28 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-19T22:12:37.626Z",
+  "generatedAt": "2026-05-19T23:23:34.110Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T22:17:42.128Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T22:17:42.128Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "aa89d6049141dbdbbb24035ebe776381dfca2c6a",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breaking3 adults killed in shooting at Islamic Center of San Diego; 2 suspects dead: Police",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-19T01:33:47.973Z",
@@ -931,6 +911,106 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Doctor who survived Ebola said he knows the fear of being infected",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "845c4a347873cb4d97efb7d14f7fda2e49a83332",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Massie, Gallrein vie for KY GOP House seat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "88accb5282da0b7a174025709f62cb6c486ede29",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Iran live updates: Senate narrowly votes to advance war powers resolution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "MOVED",
+      "fingerprint": "4a3df1730a3df81f63df10bc17ebedc3fd7f84f6",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Trump says White House ballroom will be a 'shield' as he shows off construction site",
+      "to_title": "Trump says White House ballroom will be a 'shield' as he shows off construction site"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "MOVED",
+      "fingerprint": "a014764051a04f4d9d9dc0e0d64e1a2920cd539d",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Vance, Blanche don't rule out Jan. 6 rioters getting 'anti-weaponization' payouts",
+      "to_title": "Vance, Blanche don't rule out Jan. 6 rioters getting 'anti-weaponization' payouts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "MOVED",
+      "fingerprint": "79893d2af14a8489e36d0d4cb2cf8096b36f9421",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Trump snubs GOP incumbent John Cornyn in Texas Senate primary",
+      "to_title": "Trump snubs GOP incumbent John Cornyn in Texas Senate primary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "MOVED",
+      "fingerprint": "1b0eb9b1ca3bd703e114eae7ddc4c8a688ffe9ac",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Marine scientists discover record number of new species",
+      "to_title": "Marine scientists discover record number of new species"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "MOVED",
+      "fingerprint": "f0cbf15f2f7652bd6785da001b48b018bae1da1e",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Maldives officials didn't know divers in fatal expedition planned to explore a cave",
+      "to_title": "Maldives officials didn't know divers in fatal expedition planned to explore a cave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "MOVED",
+      "fingerprint": "5d9048875a25a3aa86317de5b3b89d565ef165a9",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Justice Ketanji Brown Jackson warns Supreme Court 'perceived' as political",
+      "to_title": "Justice Ketanji Brown Jackson warns Supreme Court 'perceived' as political"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "5d974570692e9d9cb48240a5cc7bca75376a414b",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump sets new deadline for Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T23:23:37.239Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "86e9bd30fc25a42e15f672d309dd81ba2bd071ea",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "7-year-old saved by dad who saw signs of a stroke",
       "to_title": null
     }
   ]
