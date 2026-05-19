@@ -1,158 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-19T19:23:44.844Z",
+  "generatedAt": "2026-05-19T20:56:46.344Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a64a5bdb5b3f785731bc7e57bd40824fd57e90e4",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingActive shooter reported at Islamic Center of San Diego: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "260a56ebb4992ac7f9f41484efd26a60690da824",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Court dismisses Elon Musk's case against Sam Altman and OpenAI"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9d500bf61cf6a78c36f07c8e63b7cbadf7458e14",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says he's postponing strikes on Iran"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "74a48fd61be3101b6ce5942efb8f69ab31ff1ab8",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "50 million people brace for tornadoes in the Heartland"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "MOVED",
-      "fingerprint": "3a2adf4ef58dd5ebd7469d0d21e773722d96d3d9",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Family of teen killed on cruise ship speaks out",
-      "to_title": "Family of teen killed on cruise ship speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "74acd95fb0f21908e8fb1bdc0b098d781f16c9f4",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "At least 1 American has tested positive for Ebola: CDC"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6eee3784597279afef9883bdf4becfe350c75043",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Climber who survived avalanche on Mount Everest speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "011c46c4fd5a365911bcf25792c74dac63f28a4a",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "ICE agent charged in nonfatal Minneapolis shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4c50c43181a4e0ab3b210f2b5d340a18afa637df",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingElon Musk loses suit against OpenAI and its chief executive, Sam Altman",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "052ff26e97cff1a2d1afe080e2b34e1c0c1a6b05",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: National security meeting planned for Tuesday",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "25c23e250407afe7133373411938bf05b9136a2e",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Mangione state trial: Some evidence suppressed, key evidence allowed",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "78268d8ce0ea8bd7bd802ffc47b840158bcccfcb",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "LIRR strike: What to know about the rail workers' walkout",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "25efd3a44556e7e2c3f13496478ffe2fb4d52793",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Shakira acquitted of tax fraud in Spain",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d5ed1010c3426a7a5a513bdb4cb3d9b45483210a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "CDC plans to restrict entry for non-American travelers from DRC due to Ebola outbreak",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-18T20:01:14.673Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5fdb563d13077666ecb612433c389dfe7629a9a6",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Bodies of 4 remaining divers located in Maldives, divers network says",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-18T21:18:17.774Z",
@@ -1031,6 +881,126 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Pennsylvania primaries to set up key House races, midterm election battles",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "40eb3477182c77c871123adc9db9325b6fefeca1",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "San Diego Islamic Center shooting suspect apparently posted video of attack: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "MOVED",
+      "fingerprint": "e97d7eb262d7ce68dd2e7dc8dd5ee3a65244cae4",
+      "from_rank": 1,
+      "to_rank": 2,
+      "from_title": "Related:Security guard at Islamic Center of San Diego hailed as a hero",
+      "to_title": "Related:Security guard at Islamic Center of San Diego hailed as a hero"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a014764051a04f4d9d9dc0e0d64e1a2920cd539d",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Vance, Blanche don't rule out Jan. 6 rioters getting 'anti-weaponization' payouts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "79893d2af14a8489e36d0d4cb2cf8096b36f9421",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Trump snubs GOP incumbent John Cornyn in Texas Senate primary"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "5d974570692e9d9cb48240a5cc7bca75376a414b",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump sets new deadline for Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f0cbf15f2f7652bd6785da001b48b018bae1da1e",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Maldives officials didn't know divers in fatal expedition planned to explore a cave"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "MOVED",
+      "fingerprint": "5d9048875a25a3aa86317de5b3b89d565ef165a9",
+      "from_rank": 8,
+      "to_rank": 9,
+      "from_title": "Justice Ketanji Brown Jackson warns Supreme Court 'perceived' as political",
+      "to_title": "Justice Ketanji Brown Jackson warns Supreme Court 'perceived' as political"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "016436679c443bb414b1fb06032bbbff95322ac4",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "2 San Diego mosque shooting suspects dead: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2eb64ed9efa070619ecc79d6615c069e59279d60",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Acting AG Todd Blanche faces questions on $1.7 billion 'Anti-Weaponization Fund'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7a0122635bc33848f4cec22d58c7ec295af2d497",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump endorses Ken Paxton over GOP incumbent John Cornyn in Texas Senate primary",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "482e3c4cab3f814f74adf3c7dc89f58dd3788e3c",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says he was 'an hour' away from striking Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-19T20:56:49.538Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ad94394adfc23b133c625a9e7fce421a60c02d63",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Doctor who survived Ebola said he knows the fear of being infected",
       "to_title": null
     }
   ]
