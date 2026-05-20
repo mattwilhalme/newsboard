@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-20T08:46:41.141Z",
+  "generatedAt": "2026-05-20T11:38:08.636Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-19T08:50:30.307Z",
-      "event_type": "MOVED",
-      "fingerprint": "526e209e08a373153fd7eb1f82cadfb4889b733b",
-      "from_rank": 6,
-      "to_rank": 4,
-      "from_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak",
-      "to_title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-19T08:50:30.307Z",
-      "event_type": "MOVED",
-      "fingerprint": "1371ed9912694c086bdd8a2e3f857d5d485f5e7f",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "DOJ announces $1.7B 'Anti-Weaponization Fund' as part of Trump IRS lawsuit settlement",
-      "to_title": "DOJ announces $1.7B 'Anti-Weaponization Fund' as part of Trump IRS lawsuit settlement"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-19T08:50:30.307Z",
-      "event_type": "MOVED",
-      "fingerprint": "74a48fd61be3101b6ce5942efb8f69ab31ff1ab8",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "50 million people brace for tornadoes in the Heartland",
-      "to_title": "50 million people brace for tornadoes in the Heartland"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-19T08:50:30.307Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b374da06faba2d2ebff9ece9a1e30189932b71c2",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump postpones Iran strikes, CENTCOM says blockade continues"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-19T08:50:30.307Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "042a3f1c495c48a40d7cd0e4e9b056db06e7f308",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Divers to try to recover bodies from Maldives cave"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-19T08:50:30.307Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9d500bf61cf6a78c36f07c8e63b7cbadf7458e14",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says he's postponing strikes on Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-19T08:50:30.307Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "011c46c4fd5a365911bcf25792c74dac63f28a4a",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "ICE agent charged in nonfatal Minneapolis shooting",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-19T11:49:29.899Z",
@@ -1181,6 +1111,86 @@
       "from_rank": 8,
       "to_rank": null,
       "from_title": "Trump snubs GOP incumbent John Cornyn in Texas Senate primary",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "78ca161ae902eee03b3ba20a6ed1e76abdd2412e",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran threatens 'surprises,' broader war if fighting resumes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "29a27982b7cbebcb960b07cc759c89bd92c48788",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Memorial Day weekend travel: The busiest days to fly and drive"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "cd5526cc085d08c5399bec5b8148187e9fcc797e",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Ebola outbreak suspected death toll rises to 139 as WHO warns of risk of spread"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "MOVED",
+      "fingerprint": "4a3df1730a3df81f63df10bc17ebedc3fd7f84f6",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Trump says White House ballroom will be a 'shield' as he shows off construction site",
+      "to_title": "Trump says White House ballroom will be a 'shield' as he shows off construction site"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "MOVED",
+      "fingerprint": "a014764051a04f4d9d9dc0e0d64e1a2920cd539d",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "Vance, Blanche don't rule out Jan. 6 rioters getting 'anti-weaponization' payouts",
+      "to_title": "Vance, Blanche don't rule out Jan. 6 rioters getting 'anti-weaponization' payouts"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d72c842403aede5ae975a07029eecd2dac0c354a",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says war costs are 'peanuts,' Tehran threatens 'surprises'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f0cbf15f2f7652bd6785da001b48b018bae1da1e",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Maldives officials didn't know divers in fatal expedition planned to explore a cave",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T11:38:11.719Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "92d7a5f8abfc776c3637f09e87adb0b4e6567e39",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Justice Jackson warns Supreme Court 'perceived' as political",
       "to_title": null
     }
   ]
