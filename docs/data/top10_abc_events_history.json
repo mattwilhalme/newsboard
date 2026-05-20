@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-20T11:38:08.636Z",
+  "generatedAt": "2026-05-20T14:14:05.126Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "MOVED",
-      "fingerprint": "e8dc6726caa3bf8948cedd82bcc78e83506bc453",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army",
-      "to_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ce6a5e0ee49b77d55d08468df5d675753cb6918d",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1fd1f0d695327323b969d0d1b22bc7a922fe39fc",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Los Angeles woman arrested on Iranian arms trafficking charge"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "MOVED",
-      "fingerprint": "0028e5f9485afdb7ec30b6634c8b63e4fcccbf93",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Freeze alerts issued as temperatures plunge in the East after summer-like spell",
-      "to_title": "Freeze alerts issued as temperatures plunge in the East after summer-like spell"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0e04dad0b19a5b43e5d95006ea8e87c40a9c05a0",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says US Navy attacked and seized Iranian-flagged cargo ship",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a369ff4249733f9b93b48f9b76e103e9cdd84eeb",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "FBI, DOJ scrambling to rebuild after being depleted by resignations and firings",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d58a6ceae2a912d182b3768846a861785082bd96",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "GOP plans big spending to keep Ohio Senate seat; bribery scandal adds challenge",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T08:39:01.829Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "979e461f34a64f2286b45563f097948692370433",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Skydiver slams into Virginia Tech scoreboard, dangles by parachute",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T10:23:22.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3e2c9a576d9d2ef6595dc681609677b292fa410b",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Tehran has 'no plans' for new round of talks, spokesperson says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T10:23:22.255Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dfa864d8da50474f81f0c89e999bee879d208942",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "What to know as war with Iran stretches into week 8"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T10:23:22.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "ce6a5e0ee49b77d55d08468df5d675753cb6918d",
-      "from_rank": 8,
-      "to_rank": 6,
-      "from_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X",
-      "to_title": "French prosecutors summon Elon Musk over allegations of abuse images, deepfakes on X"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T10:23:22.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "37740cb2bc25d53b42b539407940d981e33dff18",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Canada's PM calls economic ties with US a weakness that must be corrected",
-      "to_title": "Canada's PM calls economic ties with US a weakness that must be corrected"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T10:23:22.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "1fd1f0d695327323b969d0d1b22bc7a922fe39fc",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Los Angeles woman arrested on Iranian arms trafficking charge",
-      "to_title": "Los Angeles woman arrested on Iranian arms trafficking charge"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T10:23:22.255Z",
-      "event_type": "MOVED",
-      "fingerprint": "e8dc6726caa3bf8948cedd82bcc78e83506bc453",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army",
-      "to_title": "2 soldiers in Alaska seriously injured in bear attack during training mission: Army"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-20T10:23:22.255Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Justice Jackson warns Supreme Court 'perceived' as political",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "237af0a244f9560cc9ee26315ac4be510d4443a7",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Trump-backed Gallrein beats Massie in Kentucky GOP primary, ABC News projects"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "893c5f7ed43214463ca0c2f746a797e82583f5de",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Justice Department expected to announce charges against Raul Castro"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bfbe5bb7e4afba31002234a37822bf622b6c8dd4",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Xi, Putin condemn 'treacherous' strikes, urge US to end Iran war"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "MOVED",
+      "fingerprint": "81a5edc04a040bf610349e780f27786bbff65480",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "San Diego shooting: Investigators probe suspects' potential extremism",
+      "to_title": "San Diego shooting: Investigators probe suspects' potential extremism"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3020bd57e52ec11c75b66b8eb7188d4d222edab6",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "The busiest days to fly and drive over Memorial Day weekend"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "MOVED",
+      "fingerprint": "78ca161ae902eee03b3ba20a6ed1e76abdd2412e",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Iran live updates: Tehran threatens 'surprises,' broader war if fighting resumes",
+      "to_title": "Iran live updates: Tehran threatens 'surprises,' broader war if fighting resumes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "34912cf8a5591b2190122c7f01d4c6b7d1ccdf94",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Nvidia earnings could pose latest test for AI and Wall Street"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "09b3ff162d2388b4281d0d192469fb07449bb17c",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "US doctor infected with Ebola arrives in Germany and is receiving 'specific care'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e0aaf59ec679091247d9f959fa48b71224be16fb",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Trump-backed Gallrein ousts Massie in Kentucky GOP primary, ABC News projects",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "29a27982b7cbebcb960b07cc759c89bd92c48788",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Memorial Day weekend travel: The busiest days to fly and drive",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "25909932ee9b0857906297b32f4418345bd2d135",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Woman dies after falling into New York City manhole",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cd5526cc085d08c5399bec5b8148187e9fcc797e",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Ebola outbreak suspected death toll rises to 139 as WHO warns of risk of spread",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4a3df1730a3df81f63df10bc17ebedc3fd7f84f6",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Trump says White House ballroom will be a 'shield' as he shows off construction site",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-20T14:14:08.080Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a014764051a04f4d9d9dc0e0d64e1a2920cd539d",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Vance, Blanche don't rule out Jan. 6 rioters getting 'anti-weaponization' payouts",
       "to_title": null
     }
   ],
