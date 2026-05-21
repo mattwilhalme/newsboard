@@ -1,148 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-21T13:58:22.873Z",
+  "generatedAt": "2026-05-21T16:39:39.780Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "237af0a244f9560cc9ee26315ac4be510d4443a7",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Trump-backed Gallrein beats Massie in Kentucky GOP primary, ABC News projects"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "893c5f7ed43214463ca0c2f746a797e82583f5de",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Justice Department expected to announce charges against Raul Castro"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bfbe5bb7e4afba31002234a37822bf622b6c8dd4",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Xi, Putin condemn 'treacherous' strikes, urge US to end Iran war"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "MOVED",
-      "fingerprint": "81a5edc04a040bf610349e780f27786bbff65480",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "San Diego shooting: Investigators probe suspects' potential extremism",
-      "to_title": "San Diego shooting: Investigators probe suspects' potential extremism"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "3020bd57e52ec11c75b66b8eb7188d4d222edab6",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "The busiest days to fly and drive over Memorial Day weekend"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "MOVED",
-      "fingerprint": "78ca161ae902eee03b3ba20a6ed1e76abdd2412e",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "Iran live updates: Tehran threatens 'surprises,' broader war if fighting resumes",
-      "to_title": "Iran live updates: Tehran threatens 'surprises,' broader war if fighting resumes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "34912cf8a5591b2190122c7f01d4c6b7d1ccdf94",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Nvidia earnings could pose latest test for AI and Wall Street"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "09b3ff162d2388b4281d0d192469fb07449bb17c",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "US doctor infected with Ebola arrives in Germany and is receiving 'specific care'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e0aaf59ec679091247d9f959fa48b71224be16fb",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Trump-backed Gallrein ousts Massie in Kentucky GOP primary, ABC News projects",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "29a27982b7cbebcb960b07cc759c89bd92c48788",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Memorial Day weekend travel: The busiest days to fly and drive",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "25909932ee9b0857906297b32f4418345bd2d135",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Woman dies after falling into New York City manhole",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cd5526cc085d08c5399bec5b8148187e9fcc797e",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Ebola outbreak suspected death toll rises to 139 as WHO warns of risk of spread",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4a3df1730a3df81f63df10bc17ebedc3fd7f84f6",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Trump says White House ballroom will be a 'shield' as he shows off construction site",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T14:14:08.080Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a014764051a04f4d9d9dc0e0d64e1a2920cd539d",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Vance, Blanche don't rule out Jan. 6 rioters getting 'anti-weaponization' payouts",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-20T17:31:35.477Z",
@@ -961,6 +821,176 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "DOJ announces charges against Raul Castro",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Former Epstein assistant tells House Oversight Committee he abused her for years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6d9b6bd49dd5428826848fc72ab4ff758fc38a9c",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Democrats release 2024 election autopsy report"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "56e1352df59497ac48dc0d1826062f8902d348c3",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "2026 Atlantic hurricane season will see below average tropical activity, NOAA says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "957561ddbeb3e040272697c27121befb9e78248f",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Child abuse case dismissed against former assistant principal over shooting"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "MOVED",
+      "fingerprint": "1d72c16b79d492cca68006ce8c71bfdedfe5a43e",
+      "from_rank": 1,
+      "to_rank": 5,
+      "from_title": "Iran live updates: Tehran issues Strait of Hormuz control map, Trump hints at strikes",
+      "to_title": "Iran live updates: Tehran issues Strait of Hormuz control map, Trump hints at strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "MOVED",
+      "fingerprint": "8bb843f056dd54464d73b18f44031fee03e09be6",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "What rising bond yields mean for mortgages and credit card rates",
+      "to_title": "What rising bond yields mean for mortgages and credit card rates"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "MOVED",
+      "fingerprint": "d01144ff8a94bae1dbcd9b274f4bfa984582c1f5",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "A novel approach to curtailing money in politics becomes law in Hawaii",
+      "to_title": "A novel approach to curtailing money in politics becomes law in Hawaii"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a991c7429188fe80fd8a1c8f196d36c1ced42b7c",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "75-year-old woman dies after physical altercation at Tim Hortons: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "11584d9f36e70a52158239d1656b4efd6168e8f7",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "New drug retatrutide shows dramatic weight loss in clinical trial"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "55ea2bcb398596cdfc5045d2249ea614dce678ea",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Vanessa Trump diagnosed with breast cancer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "49ddbf01a39fe850993a37c1bddb95aa1c8ca2b8",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Former Epstein assistant to appear before House committee",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4a978c4700c614fb743f3e205873ad66146f1150",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Democratic power players launch bipartisan effort to 'sabotage-proof' elections",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6afa1ff05b4fef78c154212361aefc17bc564d51",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Sinkhole shuts down runway at LaGuardia International Airport",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd54a43ff6c3539ded78206a888c86a2cddcba71",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "New weight loss drug shows promising results for Type 2 diabetes patients",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e9c4071d5e67abb2e1a41d98f017b1892634a638",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "'Get off your phones': Surgeon general advisory calls on kids to cut screen time",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b4c2b55c28effefb6512e4670cf8663efb8fd428",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Vanessa Trump says she has been diagnosed with breast cancer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T16:39:43.177Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "415e66290864c2af48f2232f9cad7bb4032ff702",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "DHS announces Ebola outbreak arrival restrictions",
       "to_title": null
     }
   ]
