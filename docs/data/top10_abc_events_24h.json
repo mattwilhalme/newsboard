@@ -1,78 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-21T20:19:33.828Z",
+  "generatedAt": "2026-05-21T21:54:04.949Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T21:25:34.875Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "558941634b92687066d4f6345cff8a7b332fcace",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Elon Musk-led SpaceX files publicly for stock listing amid AI ambitions"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T21:25:34.875Z",
-      "event_type": "MOVED",
-      "fingerprint": "19c1dee1ebd64dbb7fe70f9a7d84ae652b62a065",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Barney Frank, former Massachusetts congressman, dies at 86",
-      "to_title": "Barney Frank, former Massachusetts congressman, dies at 86"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T21:25:34.875Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ca74d7eae9c93624cfc119cfc1be4ab209a3c1a5",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Influencer allegedly plotted to kill pop singer in custody dispute: Prosecutors"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T21:25:34.875Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b4c104ea21810c9643a4dae3750c51bd3442d828",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Man arrested in young woman's 1986 cold case rape, murder"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T21:25:34.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bfbe5bb7e4afba31002234a37822bf622b6c8dd4",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Xi, Putin condemn 'treacherous' strikes, urge US to end Iran war",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T21:25:34.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "81a5edc04a040bf610349e780f27786bbff65480",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "San Diego shooting: Investigators probe suspects' potential extremism",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-20T21:25:34.875Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "50c397cc1fd668bb982818a9973982c69213ae71",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Police officer rushes to save choking toddler in incident caught on camera",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-20T22:50:44.124Z",
@@ -941,6 +871,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Vanessa Trump diagnosed with breast cancer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "MOVED",
+      "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
+      "from_rank": 5,
+      "to_rank": 3,
+      "from_title": "Former Epstein assistant tells House Oversight Committee he abused her for years",
+      "to_title": "Former Epstein assistant tells House Oversight Committee he abused her for years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2648e62aa96cbcbd277f204bc96793b06ec259f0",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Supreme Court narrowly spares 'intellectually disabled' man from execution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2e8122568841d3cbbab303d9cfbfe270c72aaf9a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Gas prices soar as millions of drivers set to hit the road for Memorial Day"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "20b95c13ac443ed410a3bfdffcdbedde99e9ec8e",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Artificial intelligence could eliminate thousands of jobs in New York City: Report"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f4687d26fb155329d267eeab11f341d8d4b19f7b",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "NFL player arrested for speeding in Georgia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "be3c7280e2c4366c62f69d101a9d86df6fa9ce89",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Commutes across US cities on the rise amid soaring gas prices",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "da5ddb20787057d828e5d70749e20d099d90d449",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "SCOTUS narrowly spares 'intellectually disabled' murderer from execution",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4a35a174cec80c1b3c1956d2180c94382ed57933",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'Emily in Paris' to end with upcoming season 6",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f38150442c13f7d6fc828818f1a05063ec6c0e19",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "AI could cut thousands of jobs in New York: Report",
       "to_title": null
     }
   ]

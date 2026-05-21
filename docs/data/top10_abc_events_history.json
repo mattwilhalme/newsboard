@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-21T20:19:33.828Z",
+  "generatedAt": "2026-05-21T21:54:04.949Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T07:19:49.051Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a06464cf715c89e3ad17e7ad82c247b168dd10b3",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "'Blind Side' actor Quinton Aaron opens up about stroke, marriage shock",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T07:19:49.051Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "faae63b2596e71d7e7a73ddb502dec03d15c2d1f",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Sandra Bullock, Nicole Kidman return as Owens sisters in 'Practical Magic 2' teaser",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4514ba4f06833751e2630e89e7e13cb59482746b",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump's Fed chair nominee Kevin Warsh to testify before Congress amid Powell probe"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5e72000346bbc196af6a29121e1d2fcac546bcd1",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "In Virginia redistricting election, 4 House seats at stake as voters go to the polls"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "MOVED",
-      "fingerprint": "0bde5a7aa5c34be0f6236a0579874157622c5cb1",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police",
-      "to_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "MOVED",
-      "fingerprint": "9c2a8792154c2ad7d33cb2a1ee6ccc7ef5209be9",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Climate extremes may quietly be pushing heart disease rates higher: Study",
-      "to_title": "Climate extremes may quietly be pushing heart disease rates higher: Study"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d898ac7a564bc6522124c5702b1b9f5beb750c67",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Purdue Pharma to be sentenced in opioids case, allowing settlement money to flow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b5593601e46c4f77c1b97663cc106574b750c78d",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "British royals lead celebrations for late Queen Elizabeth II's 100th birthday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T10:43:11.193Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "311580aa6b740ebeffbfba3bb0161eb1061ed39e",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Apple CEO Tim Cook is stepping down, John Ternus set to replace him",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-21T10:43:11.193Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Vanessa Trump diagnosed with breast cancer",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "MOVED",
+      "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
+      "from_rank": 5,
+      "to_rank": 3,
+      "from_title": "Former Epstein assistant tells House Oversight Committee he abused her for years",
+      "to_title": "Former Epstein assistant tells House Oversight Committee he abused her for years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2648e62aa96cbcbd277f204bc96793b06ec259f0",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Supreme Court narrowly spares 'intellectually disabled' man from execution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "2e8122568841d3cbbab303d9cfbfe270c72aaf9a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Gas prices soar as millions of drivers set to hit the road for Memorial Day"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "20b95c13ac443ed410a3bfdffcdbedde99e9ec8e",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Artificial intelligence could eliminate thousands of jobs in New York City: Report"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f4687d26fb155329d267eeab11f341d8d4b19f7b",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "NFL player arrested for speeding in Georgia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "be3c7280e2c4366c62f69d101a9d86df6fa9ce89",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Commutes across US cities on the rise amid soaring gas prices",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "da5ddb20787057d828e5d70749e20d099d90d449",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "SCOTUS narrowly spares 'intellectually disabled' murderer from execution",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4a35a174cec80c1b3c1956d2180c94382ed57933",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "'Emily in Paris' to end with upcoming season 6",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T21:54:07.900Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f38150442c13f7d6fc828818f1a05063ec6c0e19",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "AI could cut thousands of jobs in New York: Report",
       "to_title": null
     }
   ],
