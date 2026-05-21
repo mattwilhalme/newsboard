@@ -1,168 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-21T07:40:38.066Z",
+  "generatedAt": "2026-05-21T10:56:00.902Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "7136d14eea7cce6a2d1030586e737f1bec34b1e8",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "D4vd charged with murdering 14-year-old girl: 'Brutal and horrific'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "42fea181b3dc4568a5e758e9bc6639af1d8c00ae",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Justice Department demands 2024 election ballots from Wayne County, Michigan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "MOVED",
-      "fingerprint": "8e50e17244c1ff30a431d62ee1512091aa18b635",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Meryl Streep talks Anna Wintour: 'She's such a good sport'",
-      "to_title": "Meryl Streep talks Anna Wintour: 'She's such a good sport'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "MOVED",
-      "fingerprint": "51b415bf2353f9e36656d62301bf2db1d5cc80e2",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say",
-      "to_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "MOVED",
-      "fingerprint": "9c8e77588af8da5d115938e1bfd04e2063992a8c",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "8 children fatally shot in Louisiana domestic violence incident: Police",
-      "to_title": "8 children fatally shot in Louisiana domestic violence incident: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2e244d7e36f00a853b8e016bcd7404063862bad2",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingSinger D4vd charged with murder in 'brutal and horrific' death of teen: DA",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "574e3f603a9e397a93eb01c30449b4ed37d85ff8",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Related:Stocks dip as US-Iran ceasefire uncertain before deadline",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T19:24:37.421Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a5ce9b25a53643cf0a835ea3cb4c3484d74900eb",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Tsunami warning issued as 7.4 magnitude earthquake strikes off Japanese coast",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T20:10:37.907Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e2d10a382fbb8804599f43734db7bf274453209a",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Stocks close lower and oil prices rise as US-Iran ceasefire uncertain before deadline"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T20:10:37.907Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c271eb1e026110cf1bc12eff769562e1f4c9e35b",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Two Southwest planes came dangerously close in Nashville, had to take evasive action"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T20:10:37.907Z",
-      "event_type": "MOVED",
-      "fingerprint": "8e50e17244c1ff30a431d62ee1512091aa18b635",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Meryl Streep talks Anna Wintour: 'She's such a good sport'",
-      "to_title": "Meryl Streep talks Anna Wintour: 'She's such a good sport'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T20:10:37.907Z",
-      "event_type": "MOVED",
-      "fingerprint": "51b415bf2353f9e36656d62301bf2db1d5cc80e2",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say",
-      "to_title": "Iran escalates crackdown on dissent as arrests, executions surge, observers say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T20:10:37.907Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1be6be42bdd0caf2e6278e8e1fbfe9db6a43289d",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Stocks dip and oil prices rise as US-Iran ceasefire uncertain before deadline",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T20:10:37.907Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9c8e77588af8da5d115938e1bfd04e2063992a8c",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "8 children fatally shot in Louisiana domestic violence incident: Police",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T21:02:04.258Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "35e55a318063f484d56f03aee7a9d86cc78e0928",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingApple CEO Tim Cook is stepping down, John Ternus set to replace him"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-20T21:02:04.258Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9a2d2620b3ae374968ced8c63319e14219228403",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: 'Time is not my adversary,’ Trump says on securing deal"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-20T21:02:04.258Z",
@@ -30001,6 +29841,166 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Prosecutors reviewing death of 75-year-old woman involved in Tim Hortons altercation",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1d72c16b79d492cca68006ce8c71bfdedfe5a43e",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Tehran issues Strait of Hormuz control map, Trump hints at strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "49ddbf01a39fe850993a37c1bddb95aa1c8ca2b8",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Former Epstein assistant to appear before House committee"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4a978c4700c614fb743f3e205873ad66146f1150",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Democratic power players launch bipartisan effort to 'sabotage-proof' elections"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8bb843f056dd54464d73b18f44031fee03e09be6",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "What rising bond yields mean for mortgages and credit card rates"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d01144ff8a94bae1dbcd9b274f4bfa984582c1f5",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "A novel approach to curtailing money in politics becomes law in Hawaii"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e9c4071d5e67abb2e1a41d98f017b1892634a638",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "'Get off your phones': Surgeon general advisory calls on kids to cut screen time"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "MOVED",
+      "fingerprint": "a991c7429188fe80fd8a1c8f196d36c1ced42b7c",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "75-year-old woman dies after physical altercation at Tim Hortons: Police",
+      "to_title": "75-year-old woman dies after physical altercation at Tim Hortons: Police"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "MOVED",
+      "fingerprint": "b4c2b55c28effefb6512e4670cf8663efb8fd428",
+      "from_rank": 4,
+      "to_rank": 9,
+      "from_title": "Vanessa Trump says she has been diagnosed with breast cancer",
+      "to_title": "Vanessa Trump says she has been diagnosed with breast cancer"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4f420e2792308c8368110af1e134a988310f85d9",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "DOJ announces charges against Raul Castro"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "69b5926f8f98f7926e2c84d6f8dcec39e83b6a8a",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Elon Musk-led SpaceX files for stock listing",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "af2fb3d0333d7c330da2b09e37fd0209e70d7da1",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says he’s in 'no hurry' to make a peace deal with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "adbd75ba58473c973e66b8f72187a8eea750648e",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "James Comey seeks to delay his seashell trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6bf9333d6fe77571a9ca627bfd9e7ad1c963f9fe",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Man arrested 4 decades after young woman's rape, murder",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "a785c809dd28983cbccb7c4e6d64f6510bd9ddbd",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "DOJ indicts former Cuban leader Raul Castro",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f6c63712b8f5b0479620fe594494a0ccec8d2de4",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "US doctor infected with Ebola 'feels good' and is able to eat, colleague says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-21T10:56:03.905Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9ee0e13e162032b5deeaa692e868c8b6739be8ed",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Mom who drowned kids on beach sentenced",
       "to_title": null
     }
   ],
