@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-22T13:17:39.379Z",
+  "generatedAt": "2026-05-22T16:00:40.539Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-21T13:58:26.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "6afa1ff05b4fef78c154212361aefc17bc564d51",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "Sinkhole shuts down runway at LaGuardia International Airport",
-      "to_title": "Sinkhole shuts down runway at LaGuardia International Airport"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-21T13:58:26.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "fd54a43ff6c3539ded78206a888c86a2cddcba71",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "New weight loss drug shows promising results for Type 2 diabetes patients"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-21T13:58:26.096Z",
-      "event_type": "MOVED",
-      "fingerprint": "e9c4071d5e67abb2e1a41d98f017b1892634a638",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "'Get off your phones': Surgeon general advisory calls on kids to cut screen time",
-      "to_title": "'Get off your phones': Surgeon general advisory calls on kids to cut screen time"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-21T13:58:26.096Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "415e66290864c2af48f2232f9cad7bb4032ff702",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "DHS announces Ebola outbreak arrival restrictions"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-21T13:58:26.096Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a991c7429188fe80fd8a1c8f196d36c1ced42b7c",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "75-year-old woman dies after physical altercation at Tim Hortons: Police",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-21T13:58:26.096Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4f420e2792308c8368110af1e134a988310f85d9",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "DOJ announces charges against Raul Castro",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-21T16:39:43.177Z",
@@ -1201,6 +1141,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Supreme Court narrowly spares 'intellectually disabled' man from execution",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ac0b2f51859ab1b78592d8eb7d08bf174d35b4b5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ab2bff84dc10515917aa9476b04f638838d847c1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "89019fc69102ca8b461849209f41616656edff14",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Family of 1 San Diego mosque shooting suspect says they are ‘deeply sorry'",
+      "to_title": "Family of 1 San Diego mosque shooting suspect says they are 'deeply sorry'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "89019fc69102ca8b461849209f41616656edff14",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Family of 1 San Diego mosque shooting suspect says they are ‘deeply sorry'",
+      "to_title": "Family of 1 San Diego mosque shooting suspect says they are 'deeply sorry'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "64a6c4a09760022be77cfb89bf92aaf03b1f32b2",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Denny Hamlin, Brad Keselowski reflect on the loss of NASCAR legend Kyle Busch"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "e067da4cd707442f966a4f8f1bfeb1f78f1c890c",
+      "from_rank": 2,
+      "to_rank": 6,
+      "from_title": "Pentagon releases more declassified UFO files",
+      "to_title": "Pentagon releases more declassified UFO files"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "c69aca5c9805e4208698f1a22e9d2d72caf2ab48",
+      "from_rank": 3,
+      "to_rank": 7,
+      "from_title": "Dems demand answers from Treasury secretary on Trump's IRS settlement",
+      "to_title": "Dems demand answers from Treasury secretary on Trump's IRS settlement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "32960f5d282b180614dcd703d9c14ec800f4d8df",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Teacher's murder uncovers lies, an affair and a secret pregnancy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0bce490a884c8e80dee2d9f7eabf0d056ffb0de2",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Florida biologist fired over Charlie Kirk post after his death wins $485K settlement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Former Epstein assistant tells House Oversight Committee he abused her for years",
+      "to_title": "Former Epstein assistant tells House Oversight Committee he abused her for years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8d8cb9d6cdf828caf9469aea2b61c78ae723b7bc",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bbbcb1f1cae7e23b512a0a5d88415de6f52726bb",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "SpaceX hits series of problems while trying to launch bigger Starship",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e6a16a6ee77795406edd26c5617cec87d4786aaf",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d4820dafc91dfec48a4334c6cda330d512f06edd",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b65e73bd6a515d9c1d162b138ecd95c00164bd6",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Police seek witnesses in ex-Prince Andrew inquiry",
       "to_title": null
     }
   ]

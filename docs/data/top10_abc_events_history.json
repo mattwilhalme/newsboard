@@ -1,158 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-22T13:17:39.379Z",
+  "generatedAt": "2026-05-22T16:00:40.539Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "81e9d5d20e21d9b0ee8078754420c417041fdd48",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "What does the standoff over Trump's Fed chair nominee mean for interest rates?"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "MOVED",
-      "fingerprint": "bfaddb133390bfbb6f393c82fa24db878d722ec2",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Residents remember heroic pilot's final act",
-      "to_title": "Residents remember heroic pilot's final act"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "MOVED",
-      "fingerprint": "65ca5fdc1986924c35bc126fbec4e033a78c980a",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Hegseth ends mandatory flu vaccine for US military, says shot is now optional",
-      "to_title": "Hegseth ends mandatory flu vaccine for US military, says shot is now optional"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c5229118242c6e85ef80c7fd25029e029eb32be6",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingPresident Trump extends ceasefire with Iran",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T21:31:13.026Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "79f1d9c91f4194304f8f64802d6debd015b52436",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Southern Poverty Law Center says it's facing Justice Department probe",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T22:11:53.800Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "80686775dc031ede13f981ac042ffe3404be3324",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump announces he's extending ceasefire indefinitely"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T22:11:53.800Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b2f85ebccc49007863c4748bc45b2de173761bb5",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump announces he's extending ceasefire",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T23:39:02.641Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "939c1b47d801adc11cd12affc1854f5a4abbd2ba",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "RFK Jr. says NIH cuts are 'painful,' defends firing of former CDC director"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T23:39:02.641Z",
-      "event_type": "MOVED",
-      "fingerprint": "c41e693d81a550e63f63b780e38cfe88b4b80edb",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Stepbrother pleads not guilty to murder, sex abuse charges in cruise ship death",
-      "to_title": "Stepbrother pleads not guilty to murder, sex abuse charges in cruise ship death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T23:39:02.641Z",
-      "event_type": "MOVED",
-      "fingerprint": "42501d5849ad9f1e0c133ed39bb134a63d2e94bf",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Gunman in Mexican tourist site shooting influenced by violent acts in US: Officials",
-      "to_title": "Gunman in Mexican tourist site shooting influenced by violent acts in US: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T23:39:02.641Z",
-      "event_type": "MOVED",
-      "fingerprint": "58688841ece1ef773e4d077142e47fdcc9a5e032",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Embattled Democratic Rep. Sheila Cherfilus-McCormick resigns from Congress",
-      "to_title": "Embattled Democratic Rep. Sheila Cherfilus-McCormick resigns from Congress"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T23:39:02.641Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e5c2baa6b1cedc018c1b5aaef5652ea8c7a9840a",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "FAA investigating extremely close call between 2 Southwest planes",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T00:07:49.153Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d035464c9fa2a237c30039dc52f29c7fe4806b80",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:How the 2nd round of Islamabad talks fell apart (for now)"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T00:07:49.153Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "54604730b387dfe89236cd9d1daeb58bb6586496",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran war has become political baggage for Vance: ANALYSIS",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T03:39:41.583Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "40662eeee69bb856d6b0c26ced73b738744b88e7",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Patel responds to Atlantic report, says he's 'never been intoxicated on the job'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-22T03:39:41.583Z",
@@ -30001,6 +29851,156 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Supreme Court narrowly spares 'intellectually disabled' man from execution",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ac0b2f51859ab1b78592d8eb7d08bf174d35b4b5",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ab2bff84dc10515917aa9476b04f638838d847c1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "89019fc69102ca8b461849209f41616656edff14",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Family of 1 San Diego mosque shooting suspect says they are ‘deeply sorry'",
+      "to_title": "Family of 1 San Diego mosque shooting suspect says they are 'deeply sorry'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "TITLE_UPDATED",
+      "fingerprint": "89019fc69102ca8b461849209f41616656edff14",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "Family of 1 San Diego mosque shooting suspect says they are ‘deeply sorry'",
+      "to_title": "Family of 1 San Diego mosque shooting suspect says they are 'deeply sorry'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "64a6c4a09760022be77cfb89bf92aaf03b1f32b2",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Denny Hamlin, Brad Keselowski reflect on the loss of NASCAR legend Kyle Busch"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "e067da4cd707442f966a4f8f1bfeb1f78f1c890c",
+      "from_rank": 2,
+      "to_rank": 6,
+      "from_title": "Pentagon releases more declassified UFO files",
+      "to_title": "Pentagon releases more declassified UFO files"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "c69aca5c9805e4208698f1a22e9d2d72caf2ab48",
+      "from_rank": 3,
+      "to_rank": 7,
+      "from_title": "Dems demand answers from Treasury secretary on Trump's IRS settlement",
+      "to_title": "Dems demand answers from Treasury secretary on Trump's IRS settlement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "32960f5d282b180614dcd703d9c14ec800f4d8df",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Teacher's murder uncovers lies, an affair and a secret pregnancy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0bce490a884c8e80dee2d9f7eabf0d056ffb0de2",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Florida biologist fired over Charlie Kirk post after his death wins $485K settlement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "MOVED",
+      "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
+      "from_rank": 9,
+      "to_rank": 10,
+      "from_title": "Former Epstein assistant tells House Oversight Committee he abused her for years",
+      "to_title": "Former Epstein assistant tells House Oversight Committee he abused her for years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8d8cb9d6cdf828caf9469aea2b61c78ae723b7bc",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "bbbcb1f1cae7e23b512a0a5d88415de6f52726bb",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "SpaceX hits series of problems while trying to launch bigger Starship",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e6a16a6ee77795406edd26c5617cec87d4786aaf",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d4820dafc91dfec48a4334c6cda330d512f06edd",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T16:00:43.518Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8b65e73bd6a515d9c1d162b138ecd95c00164bd6",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Police seek witnesses in ex-Prince Andrew inquiry",
       "to_title": null
     }
   ],
