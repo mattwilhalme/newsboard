@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-22T00:01:59.397Z",
+  "generatedAt": "2026-05-22T04:19:31.049Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "MOVED",
-      "fingerprint": "d1165972f7bc7357f15ccc1d0fa15f52d6222885",
-      "from_rank": 5,
-      "to_rank": 4,
-      "from_title": "American woman missing in Bahamas: A timeline",
-      "to_title": "American woman missing in Bahamas: A timeline"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "MOVED",
-      "fingerprint": "e5c2baa6b1cedc018c1b5aaef5652ea8c7a9840a",
-      "from_rank": 6,
-      "to_rank": 5,
-      "from_title": "FAA investigating extremely close call between 2 Southwest planes",
-      "to_title": "FAA investigating extremely close call between 2 Southwest planes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "MOVED",
-      "fingerprint": "0bde5a7aa5c34be0f6236a0579874157622c5cb1",
-      "from_rank": 7,
-      "to_rank": 6,
-      "from_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police",
-      "to_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "9aebd971fbb5230891943eaffb47f1d6f1026ad3",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Jennifer Hudson returns to ‘American Idol’ 20 years later"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "79f1d9c91f4194304f8f64802d6debd015b52436",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "Southern Poverty Law Center says it's facing Justice Department probe"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "MOVED",
-      "fingerprint": "d898ac7a564bc6522124c5702b1b9f5beb750c67",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "Purdue Pharma to be sentenced in opioids case, allowing settlement money to flow",
-      "to_title": "Purdue Pharma to be sentenced in opioids case, allowing settlement money to flow"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7c3158e26037529035b6ea8163ad84216fa37dee",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says Iran violated ceasefire 'multiple times'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7c7a42314449cf3ccb512b4015a9f59fcc008133",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:As tensions escalate in the Strait of Hormuz, US and Iran both fire at ships",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4514ba4f06833751e2630e89e7e13cb59482746b",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Trump's Fed chair nominee Kevin Warsh to testify before Congress amid Powell probe",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T15:50:25.098Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e7308ba535f8108ec027b49c23f7e8aac854b0cc",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Jennifer Hudson returns to 'American Idol' as a mentor, guest judge",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T16:46:09.452Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c762639b2a13a2eced23fbf4fddefcac66be3213",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Trump's Fed chair nominee Kevin Warsh testifies before Congress amid Powell probe"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T16:46:09.452Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0bde5a7aa5c34be0f6236a0579874157622c5cb1",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "2 teens dead, 5 injured after gunfire breaks out during 'planned fight': Police",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T17:45:55.823Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8ee53d1f43ab63bff2e2d97f24c8a2cd80a92f71",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran war has become political baggage for Vance: ANALYSIS"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-21T17:45:55.823Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "593cecc57d55d60506b10ca5e9d4a852f76e4cd7",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:Iran live updates: Iran says Tehran negotiates 'with finger on trigger'"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-21T17:45:55.823Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "NFL player arrested for speeding in Georgia",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "21608cd1371af5d5ab51770bdd5820234f5d42f7",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "NASCAR community and beyond pays tribute to race car legend Kyle Busch"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4b1030c1a858cb0006d7c63fa16f87148483377b",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "661798e68b903d98733c61f3aa5cd88723217dbe",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Trump allies, Jan. 6 defendants lining up to apply for $1.7 billion fund"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8d8cb9d6cdf828caf9469aea2b61c78ae723b7bc",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "MOVED",
+      "fingerprint": "d4820dafc91dfec48a4334c6cda330d512f06edd",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government",
+      "to_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "MOVED",
+      "fingerprint": "4945fa92006ec6288f1e69bbeaf6575ac8d5a799",
+      "from_rank": 1,
+      "to_rank": 6,
+      "from_title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
+      "to_title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "MOVED",
+      "fingerprint": "02ca5d227d5be65600cd47fe5b129d7e3fde3658",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Democrats' 2024 election autopsy blames Biden campaign for failing to set up Harris",
+      "to_title": "Democrats' 2024 election autopsy blames Biden campaign for failing to set up Harris"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "MOVED",
+      "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Former Epstein assistant tells House Oversight Committee he abused her for years",
+      "to_title": "Former Epstein assistant tells House Oversight Committee he abused her for years"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "MOVED",
+      "fingerprint": "2648e62aa96cbcbd277f204bc96793b06ec259f0",
+      "from_rank": 6,
+      "to_rank": 9,
+      "from_title": "Supreme Court narrowly spares 'intellectually disabled' man from execution",
+      "to_title": "Supreme Court narrowly spares 'intellectually disabled' man from execution"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "MOVED",
+      "fingerprint": "2e8122568841d3cbbab303d9cfbfe270c72aaf9a",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "Gas prices soar as millions of drivers set to hit the road for Memorial Day",
+      "to_title": "Gas prices soar as millions of drivers set to hit the road for Memorial Day"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e6a16a6ee77795406edd26c5617cec87d4786aaf",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b11fb00bcb0c5cb3bd4b7ed73cf3c6a384a49766",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Father charged with manslaughter after 1-year-old found dead in vehicle: Authorities",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "3ff423f812652eab8f2d21c77e4e2e5a457faa81",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "We now know what the 2026 Atlantic hurricane season may look like",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T04:19:34.061Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0bce490a884c8e80dee2d9f7eabf0d056ffb0de2",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Florida biologist fired over Charlie Kirk post after his death wins $485K settlement",
       "to_title": null
     }
   ],
