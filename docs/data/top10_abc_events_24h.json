@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-22T04:19:31.049Z",
+  "generatedAt": "2026-05-22T07:56:38.811Z",
   "hours": 24,
   "events": [
     {
@@ -1021,6 +1021,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Florida biologist fired over Charlie Kirk post after his death wins $485K settlement",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "MOVED",
+      "fingerprint": "8d8cb9d6cdf828caf9469aea2b61c78ae723b7bc",
+      "from_rank": 4,
+      "to_rank": 1,
+      "from_title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland",
+      "to_title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ab2bff84dc10515917aa9476b04f638838d847c1",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "7156d0a91d7335a784973d2619ad21da9e1d95b5",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "SpaceX hits series of problems while trying to launch tries to launch bigger Starship"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e6a16a6ee77795406edd26c5617cec87d4786aaf",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "MOVED",
+      "fingerprint": "d4820dafc91dfec48a4334c6cda330d512f06edd",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government",
+      "to_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "21608cd1371af5d5ab51770bdd5820234f5d42f7",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "NASCAR community and beyond pays tribute to race car legend Kyle Busch",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4b1030c1a858cb0006d7c63fa16f87148483377b",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Related:NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-22T07:56:41.474Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4945fa92006ec6288f1e69bbeaf6575ac8d5a799",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
       "to_title": null
     }
   ]
