@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-23T09:25:03.961Z",
+  "generatedAt": "2026-05-23T10:49:56.801Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T00:11:50.708Z",
-      "event_type": "MOVED",
-      "fingerprint": "0a3271e5844abfeddf33c860bd46bd06d77fa59d",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says",
-      "to_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T00:11:50.708Z",
-      "event_type": "MOVED",
-      "fingerprint": "eb3ad00208b506f4c0e05098ce808da517816373",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Georgia Democratic Rep. David Scott dies at 80",
-      "to_title": "Georgia Democratic Rep. David Scott dies at 80"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T00:11:50.708Z",
-      "event_type": "MOVED",
-      "fingerprint": "871070b3244201049d68b6da0e301e8b72aa364a",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Earth Day 2026: What it's like to live in a car-free town in America",
-      "to_title": "Earth Day 2026: What it's like to live in a car-free town in America"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T00:11:50.708Z",
-      "event_type": "MOVED",
-      "fingerprint": "77d0c3a033c649ffffff16e9362587d69c5e35c7",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Kalshi suspends 3 congressional candidates for betting on their own races",
-      "to_title": "Kalshi suspends 3 congressional candidates for betting on their own races"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T00:11:50.708Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7f6b56f8b0477d7ea0c537f5235705cb2d95d29d",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Ghislaine Maxwell again asks judge to vacate her sex trafficking conviction",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-23T03:47:03.591Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Dozens dead in coal mine gas explosion in China",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T10:49:59.801Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3d6972c79f37fea72c09d1c36d76b816b971d7ef",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "82 dead, 9 trapped in coal mine accident in northern China: State media"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T10:49:59.801Z",
+      "event_type": "MOVED",
+      "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59",
+      "to_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T10:49:59.801Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "6.0 magnitude earthquake detected off Hawaii coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T10:49:59.801Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "de5fa5533b27ad16c71f3a93b506649acced6ffd",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "SpaceX launches its biggest, most beefed-up Starship yet on a test flight",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T10:49:59.801Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1a870a44b2141ed3caaba8c875ff31aef8ad3668",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "82 dead, 9 trapped in China coal mine accident",
       "to_title": null
     }
   ],
