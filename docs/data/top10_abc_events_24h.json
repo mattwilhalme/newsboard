@@ -1,58 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-22T23:35:49.507Z",
+  "generatedAt": "2026-05-23T01:27:26.237Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T00:02:02.799Z",
-      "event_type": "MOVED",
-      "fingerprint": "4945fa92006ec6288f1e69bbeaf6575ac8d5a799",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
-      "to_title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T00:02:02.799Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e6a16a6ee77795406edd26c5617cec87d4786aaf",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T00:02:02.799Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0bce490a884c8e80dee2d9f7eabf0d056ffb0de2",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Florida biologist fired over Charlie Kirk post after his death wins $485K settlement"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T00:02:02.799Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "66ab7a4cf2ef7dfad9a9ea970fd7be7df73e841c",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingNASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T00:02:02.799Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f4687d26fb155329d267eeab11f341d8d4b19f7b",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "NFL player arrested for speeding in Georgia",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-22T04:19:34.061Z",
@@ -1321,6 +1271,146 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "Trump says he won't attend Don Jr.'s wedding, will remain at the White House",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fd413ba017b016150b0cf205a8686231c844f464",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Evacuation orders issued for 40,000 people in California over explosion threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "MOVED",
+      "fingerprint": "de5fa5533b27ad16c71f3a93b506649acced6ffd",
+      "from_rank": 6,
+      "to_rank": 3,
+      "from_title": "SpaceX launches its biggest, most beefed-up Starship yet on a test flight",
+      "to_title": "SpaceX launches its biggest, most beefed-up Starship yet on a test flight"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "MOVED",
+      "fingerprint": "084993e1b4e972de8b3620d74eff98003ab0c008",
+      "from_rank": 7,
+      "to_rank": 4,
+      "from_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says",
+      "to_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "MOVED",
+      "fingerprint": "36e15ce3165a5ce8ed1a2e118ef945f710147fef",
+      "from_rank": 2,
+      "to_rank": 5,
+      "from_title": "Trump's 'Anti-Weaponization Fund' faces additional lawsuits",
+      "to_title": "Trump's 'Anti-Weaponization Fund' faces additional lawsuits"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "MOVED",
+      "fingerprint": "05681881febe17f56058ed7e27dde19f30ab8705",
+      "from_rank": 8,
+      "to_rank": 6,
+      "from_title": "Federal judge dismisses human smuggling case against Kilmar Abrego Garcia",
+      "to_title": "Federal judge dismisses human smuggling case against Kilmar Abrego Garcia"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "MOVED",
+      "fingerprint": "6a580c5dbc643174c64a77db8430d52f6c5857c5",
+      "from_rank": 9,
+      "to_rank": 7,
+      "from_title": "Family of woman who died after Tim Hortons altercation to view full video of incident",
+      "to_title": "Family of woman who died after Tim Hortons altercation to view full video of incident"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "MOVED",
+      "fingerprint": "12c94a7a03d0aa2a438db45ea88b1167bf824ba9",
+      "from_rank": 10,
+      "to_rank": 8,
+      "from_title": "Miley Cyrus receives star on Hollywood Walk of Fame",
+      "to_title": "Miley Cyrus receives star on Hollywood Walk of Fame"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "32960f5d282b180614dcd703d9c14ec800f4d8df",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Teacher's murder uncovers lies, an affair and a secret pregnancy"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1cbaf1bfa0347e06ad052b15bafd67232b5adfad",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "4 dead, 90 trapped in China coal mine accident"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "60c371a6fbe59f82f2579b92a50426138270b020",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingRapper Rob Base, known for 'It Takes Two,' dies at 59",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ac0b2f51859ab1b78592d8eb7d08bf174d35b4b5",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4945fa92006ec6288f1e69bbeaf6575ac8d5a799",
+      "from_rank": 4,
+      "to_rank": null,
+      "from_title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T01:27:29.362Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "563b149cebececb26841070b7ac33c736c07335a",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Evacuation orders issued in Calif. city over chemical tank: 'It fails or it blows up'",
       "to_title": null
     }
   ]
