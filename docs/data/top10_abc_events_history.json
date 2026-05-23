@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-23T01:27:26.237Z",
+  "generatedAt": "2026-05-23T05:01:21.536Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T23:29:32.064Z",
-      "event_type": "MOVED",
-      "fingerprint": "871070b3244201049d68b6da0e301e8b72aa364a",
-      "from_rank": 5,
-      "to_rank": 6,
-      "from_title": "Earth Day 2026: What it's like to live in a car-free town in America",
-      "to_title": "Earth Day 2026: What it's like to live in a car-free town in America"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T23:29:32.064Z",
-      "event_type": "MOVED",
-      "fingerprint": "77d0c3a033c649ffffff16e9362587d69c5e35c7",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "Kalshi suspends 3 congressional candidates for betting on their own races",
-      "to_title": "Kalshi suspends 3 congressional candidates for betting on their own races"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-22T23:29:32.064Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 5,
       "to_rank": null,
       "from_title": "Evacuation orders issued in Calif. city over chemical tank: 'It fails or it blows up'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T05:01:24.662Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98c1cec7a89cf289391d69985fe423858a1f34d2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "1 dead, dozens injured after shipyard explosion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T05:01:24.662Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "1cbaf1bfa0347e06ad052b15bafd67232b5adfad",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "4 dead, 90 trapped in China coal mine accident",
       "to_title": null
     }
   ],
