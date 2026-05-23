@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-23T07:36:10.712Z",
+  "generatedAt": "2026-05-23T09:25:03.961Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T23:29:32.064Z",
-      "event_type": "MOVED",
-      "fingerprint": "34010d1f0f698a06ec4c270b7e154646207a8b46",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Baby girl found abandoned in stroller in Times Square, search underway for father",
-      "to_title": "Baby girl found abandoned in stroller in Times Square, search underway for father"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T23:29:32.064Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "50ab4de0be193d7cc4c6f323df6ec2383b1f4487",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Iran live updates: Graham says blockade will stay in place, even expand globally",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T23:29:32.064Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "70a83311a389f7f6349d98a47e90947e5aadbeb3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "'Sassy' baby Asian elephant is National Zoo's newest star",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T00:11:50.708Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "adc698f5de89613bd7a41affd9e6e8737680c0e9",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Human remains belonging to multiple young children found in Memphis: Police"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-23T00:11:50.708Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "1 dead, dozens injured after shipyard explosion",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T09:25:06.949Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0f5358aa3d64a9900aa4f9a1b2485f0ab7474ea2",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Why travel restrictions may have unintended effects as US bars some amid Ebola"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T09:25:06.949Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1a870a44b2141ed3caaba8c875ff31aef8ad3668",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "82 dead, 9 trapped in China coal mine accident"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T09:25:06.949Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "05681881febe17f56058ed7e27dde19f30ab8705",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Federal judge dismisses human smuggling case against Kilmar Abrego Garcia",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T09:25:06.949Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "0c6e4211ef967cd48faf3e6a4bc1b660dd3c20f3",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dozens dead in coal mine gas explosion in China",
       "to_title": null
     }
   ],
