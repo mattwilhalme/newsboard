@@ -1,148 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-23T12:49:13.406Z",
+  "generatedAt": "2026-05-23T14:20:34.670Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "89019fc69102ca8b461849209f41616656edff14",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Family of 1 San Diego mosque shooting suspect says they are ‘deeply sorry'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e067da4cd707442f966a4f8f1bfeb1f78f1c890c",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Pentagon releases more declassified UFO files"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "c69aca5c9805e4208698f1a22e9d2d72caf2ab48",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Dems demand answers from Treasury secretary on Trump's IRS settlement",
-      "to_title": "Dems demand answers from Treasury secretary on Trump's IRS settlement"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "b25e34716dbf9ef42792d8b371b47d47a2c596e2",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Trump says he'll 'try' to make Don Jr.'s wedding this weekend but 'not good timing'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "8d8cb9d6cdf828caf9469aea2b61c78ae723b7bc",
-      "from_rank": 1,
-      "to_rank": 5,
-      "from_title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland",
-      "to_title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bbbcb1f1cae7e23b512a0a5d88415de6f52726bb",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "SpaceX hits series of problems while trying to launch bigger Starship"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "e6a16a6ee77795406edd26c5617cec87d4786aaf",
-      "from_rank": 6,
-      "to_rank": 7,
-      "from_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'",
-      "to_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "MOVED",
-      "fingerprint": "d4820dafc91dfec48a4334c6cda330d512f06edd",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government",
-      "to_title": "SCOTUS ruling allows lawsuits over property seized by Cuban government"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8b65e73bd6a515d9c1d162b138ecd95c00164bd6",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Police seek witnesses in ex-Prince Andrew inquiry"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "979b396e05bee2f2a685dda9cb26e61e96c026b1",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "NATO allies bewildered by Trump's about face on US troop moves in Europe",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4945fa92006ec6288f1e69bbeaf6575ac8d5a799",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "7156d0a91d7335a784973d2619ad21da9e1d95b5",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "SpaceX hits series of problems while trying to launch tries to launch bigger Starship",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "02ca5d227d5be65600cd47fe5b129d7e3fde3658",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Democrats' 2024 election autopsy blames Biden campaign for failing to set up Harris",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T13:17:42.308Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "2648e62aa96cbcbd277f204bc96793b06ec259f0",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Supreme Court narrowly spares 'intellectually disabled' man from execution",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-22T16:00:43.518Z",
@@ -1201,6 +1061,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "82 dead, 9 trapped in China coal mine accident",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
+      "from_rank": 10,
+      "to_rank": 2,
+      "from_title": "6.0 magnitude earthquake detected off Hawaii coast",
+      "to_title": "6.0 magnitude earthquake detected off Hawaii coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d6972c79f37fea72c09d1c36d76b816b971d7ef",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "82 dead, 9 trapped in coal mine accident in northern China: State media",
+      "to_title": "82 dead, 9 trapped in coal mine accident in northern China: State media"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59",
+      "to_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "084993e1b4e972de8b3620d74eff98003ab0c008",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says",
+      "to_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98c1cec7a89cf289391d69985fe423858a1f34d2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "1 dead, dozens injured after shipyard explosion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "36e15ce3165a5ce8ed1a2e118ef945f710147fef",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump's 'Anti-Weaponization Fund' faces additional lawsuits",
       "to_title": null
     }
   ]

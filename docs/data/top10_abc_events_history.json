@@ -1,68 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-23T12:49:13.406Z",
+  "generatedAt": "2026-05-23T14:20:34.670Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T03:47:03.591Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ef5c0a81fab604c40795ce68e7a1a3815e056d3e",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T03:47:03.591Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2458f0897b89e4168bd72f992f28bf01442e7330",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Trump administration may send Afghans who aided US forces to Congo"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T03:47:03.591Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "2a76b489f18bef026f5251073f5b3e8667b3c8b4",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Dog walker's discovery of skull leads to remains of 3 young children, police say"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T03:47:03.591Z",
-      "event_type": "MOVED",
-      "fingerprint": "0a3271e5844abfeddf33c860bd46bd06d77fa59d",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says",
-      "to_title": "Navy Secretary John Phelan leaving 'immediately,' Pentagon says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T03:47:03.591Z",
-      "event_type": "MOVED",
-      "fingerprint": "eb3ad00208b506f4c0e05098ce808da517816373",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Georgia Democratic Rep. David Scott dies at 80",
-      "to_title": "Georgia Democratic Rep. David Scott dies at 80"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T03:47:03.591Z",
-      "event_type": "MOVED",
-      "fingerprint": "871070b3244201049d68b6da0e301e8b72aa364a",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Earth Day 2026: What it's like to live in a car-free town in America",
-      "to_title": "Earth Day 2026: What it's like to live in a car-free town in America"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-23T03:47:03.591Z",
@@ -30001,6 +29941,66 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "82 dead, 9 trapped in China coal mine accident",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
+      "from_rank": 10,
+      "to_rank": 2,
+      "from_title": "6.0 magnitude earthquake detected off Hawaii coast",
+      "to_title": "6.0 magnitude earthquake detected off Hawaii coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "3d6972c79f37fea72c09d1c36d76b816b971d7ef",
+      "from_rank": 2,
+      "to_rank": 3,
+      "from_title": "82 dead, 9 trapped in coal mine accident in northern China: State media",
+      "to_title": "82 dead, 9 trapped in coal mine accident in northern China: State media"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59",
+      "to_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "MOVED",
+      "fingerprint": "084993e1b4e972de8b3620d74eff98003ab0c008",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says",
+      "to_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "98c1cec7a89cf289391d69985fe423858a1f34d2",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "1 dead, dozens injured after shipyard explosion"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T14:20:37.821Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "36e15ce3165a5ce8ed1a2e118ef945f710147fef",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Trump's 'Anti-Weaponization Fund' faces additional lawsuits",
       "to_title": null
     }
   ],
