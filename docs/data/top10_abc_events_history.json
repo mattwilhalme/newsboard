@@ -1,88 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-23T17:42:18.567Z",
+  "generatedAt": "2026-05-23T19:52:09.247Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T07:30:54.293Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "871070b3244201049d68b6da0e301e8b72aa364a",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Earth Day 2026: What it's like to live in a car-free town in America",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T07:30:54.293Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "54f474c4f2bdb9c5389afea9272c8cb65f2de570",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "2 dead, at least 19 injured following chemical leak at industrial plant",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T09:14:24.087Z",
-      "event_type": "MOVED",
-      "fingerprint": "f15086c42c922dd292d790bfd60b7def27d6b31b",
-      "from_rank": 3,
-      "to_rank": 1,
-      "from_title": "Iran live updates: CENTCOM says 31 vessels turned back during blockade",
-      "to_title": "Iran live updates: CENTCOM says 31 vessels turned back during blockade"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T09:14:24.087Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "f4c1ac803b4295b3b835e7b1abd2e84c05726ad0",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Related:What we know about why face-to-face talks with Iran fell through"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T09:14:24.087Z",
-      "event_type": "MOVED",
-      "fingerprint": "ef5c0a81fab604c40795ce68e7a1a3815e056d3e",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says",
-      "to_title": "US Army sergeant’s wife faces deportation to Mexico, attorney says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T09:14:24.087Z",
-      "event_type": "MOVED",
-      "fingerprint": "b8b6d1da685b84910149c509cc3a8d7c04552fbe",
-      "from_rank": 2,
-      "to_rank": 4,
-      "from_title": "Trump says Iran's government is 'seriously fractured’ after praising its new leaders",
-      "to_title": "Trump says Iran's government is 'seriously fractured’ after praising its new leaders"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T09:14:24.087Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "aef249ca2805f391340cb2a8a54de7710d5eda77",
-      "from_rank": null,
-      "to_rank": 8,
-      "from_title": null,
-      "to_title": "2 trains collide in Denmark, leaving 4 people critically injured"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T09:14:24.087Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e078dd14549b8ce062b041a1bb3b54775c9edaa4",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "What we know about why face-to-face talks with Iran fell through",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-23T09:14:24.087Z",
@@ -30001,6 +29921,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "1 dead, dozens injured after shipyard explosion",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8e3155dbd33d60c5cf83359ddbc1d46c278606c0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Evacuation orders issued for 50,000 people in California over explosion threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "222e70807c1a585fe562a906dc9bf1a765b3a36b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Subway surfer' killed, another critically injured in Manhattan"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e03520e17262ac957f197814dff6f97670a0d0e9",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "NASCAR legend Kyle Busch's family reveals his cause of death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "MOVED",
+      "fingerprint": "0f5358aa3d64a9900aa4f9a1b2485f0ab7474ea2",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Why travel restrictions may have unintended effects as US bars some amid Ebola",
+      "to_title": "Why travel restrictions may have unintended effects as US bars some amid Ebola"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "MOVED",
+      "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
+      "from_rank": 4,
+      "to_rank": 8,
+      "from_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59",
+      "to_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd413ba017b016150b0cf205a8686231c844f464",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Evacuation orders issued for 40,000 people in California over explosion threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4bd7172713404d40e8144035ebfe7208815664c8",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Teen dead, 18-year-old critical after 'subway surfing' over Manhattan bridge: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "084993e1b4e972de8b3620d74eff98003ab0c008",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says",
       "to_title": null
     }
   ],

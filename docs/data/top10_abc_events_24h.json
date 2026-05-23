@@ -1,318 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-23T17:42:18.567Z",
+  "generatedAt": "2026-05-23T19:52:09.247Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ce0186c3f08dd1d54a889e65e74f6a1342a53ac9",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingTulsi Gabbard resigning as director of national intelligence: Source"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "ac0b2f51859ab1b78592d8eb7d08bf174d35b4b5",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'",
-      "to_title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "51bd5c53ca348b139911d8e9a314b579a90dc06a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Administration issues directive requiring green card applicants to apply outside US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5544981c3eb188d7bf305bfc56f1f78023e0aa52",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Denny Hamlin, Brad Keselowski speak out after NASCAR great Kyle Busch's sudden death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "26d3fb6186b5b68cb06cc5da57f03a3f6c7b84db",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "DRC Ebola outbreak 'spreading rapidly' with almost 750 suspected cases, WHO says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "MOVED",
-      "fingerprint": "89019fc69102ca8b461849209f41616656edff14",
-      "from_rank": 3,
-      "to_rank": 6,
-      "from_title": "Family of 1 San Diego mosque shooting suspect says they are 'deeply sorry'",
-      "to_title": "Family of 1 San Diego mosque shooting suspect says they are 'deeply sorry'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d396b61120b0610d901107700a98006b6fb0f3bd",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Trump says he won't attend Don Jr.'s wedding, will remain at the White House"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a4d8912b8da95a226625ab0058be27916a583fcf",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Police dashcam video shows Britney Spears' arrest"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a47bea1f2b12dc987d34fb0b3ef176610e0e5944",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Gas prices near 4-year high ahead of Memorial Day"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ab2bff84dc10515917aa9476b04f638838d847c1",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Related:Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b25e34716dbf9ef42792d8b371b47d47a2c596e2",
-      "from_rank": 4,
-      "to_rank": null,
-      "from_title": "Trump says he'll 'try' to make Don Jr.'s wedding this weekend but 'not good timing'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "64a6c4a09760022be77cfb89bf92aaf03b1f32b2",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "Denny Hamlin, Brad Keselowski reflect on the loss of NASCAR legend Kyle Busch",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "e067da4cd707442f966a4f8f1bfeb1f78f1c890c",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Pentagon releases more declassified UFO files",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c69aca5c9805e4208698f1a22e9d2d72caf2ab48",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Dems demand answers from Treasury secretary on Trump's IRS settlement",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0bce490a884c8e80dee2d9f7eabf0d056ffb0de2",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Florida biologist fired over Charlie Kirk post after his death wins $485K settlement",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T17:58:46.112Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Former Epstein assistant tells House Oversight Committee he abused her for years",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "4ff2143764ab0e014dff48c236fb03a281395920",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingFederal judge dismisses Tennessee criminal case against Kilmar Abrego Garcia"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "084993e1b4e972de8b3620d74eff98003ab0c008",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "5544981c3eb188d7bf305bfc56f1f78023e0aa52",
-      "from_rank": 4,
-      "to_rank": 3,
-      "from_title": "Denny Hamlin, Brad Keselowski speak out after NASCAR great Kyle Busch's sudden death",
-      "to_title": "Denny Hamlin, Brad Keselowski speak out after NASCAR great Kyle Busch's sudden death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e6a16a6ee77795406edd26c5617cec87d4786aaf",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "a9ab27f793e29f5195948883a866388067433cab",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "Tulsi Gabbard resigning as director of national intelligence"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "ac0b2f51859ab1b78592d8eb7d08bf174d35b4b5",
-      "from_rank": 2,
-      "to_rank": 6,
-      "from_title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'",
-      "to_title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "26d3fb6186b5b68cb06cc5da57f03a3f6c7b84db",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "DRC Ebola outbreak 'spreading rapidly' with almost 750 suspected cases, WHO says",
-      "to_title": "DRC Ebola outbreak 'spreading rapidly' with almost 750 suspected cases, WHO says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "d396b61120b0610d901107700a98006b6fb0f3bd",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Trump says he won't attend Don Jr.'s wedding, will remain at the White House",
-      "to_title": "Trump says he won't attend Don Jr.'s wedding, will remain at the White House"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "MOVED",
-      "fingerprint": "51bd5c53ca348b139911d8e9a314b579a90dc06a",
-      "from_rank": 3,
-      "to_rank": 9,
-      "from_title": "Administration issues directive requiring green card applicants to apply outside US",
-      "to_title": "Administration issues directive requiring green card applicants to apply outside US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "35e18a1c46cd1a1dc45243de1c7b5cd00a30b72f",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Next Kilauea eruption could begin over Memorial weekend, USGS says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ce0186c3f08dd1d54a889e65e74f6a1342a53ac9",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "breakingTulsi Gabbard resigning as director of national intelligence: Source",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "89019fc69102ca8b461849209f41616656edff14",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Family of 1 San Diego mosque shooting suspect says they are 'deeply sorry'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "32960f5d282b180614dcd703d9c14ec800f4d8df",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Teacher's murder uncovers lies, an affair and a secret pregnancy",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a4d8912b8da95a226625ab0058be27916a583fcf",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Police dashcam video shows Britney Spears' arrest",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-22T19:45:16.241Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a47bea1f2b12dc987d34fb0b3ef176610e0e5944",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Gas prices near 4-year high ahead of Memorial Day",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-22T21:02:22.210Z",
@@ -1081,6 +771,86 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "1 dead, dozens injured after shipyard explosion",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8e3155dbd33d60c5cf83359ddbc1d46c278606c0",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Evacuation orders issued for 50,000 people in California over explosion threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "222e70807c1a585fe562a906dc9bf1a765b3a36b",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "'Subway surfer' killed, another critically injured in Manhattan"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e03520e17262ac957f197814dff6f97670a0d0e9",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "NASCAR legend Kyle Busch's family reveals his cause of death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "MOVED",
+      "fingerprint": "0f5358aa3d64a9900aa4f9a1b2485f0ab7474ea2",
+      "from_rank": 8,
+      "to_rank": 7,
+      "from_title": "Why travel restrictions may have unintended effects as US bars some amid Ebola",
+      "to_title": "Why travel restrictions may have unintended effects as US bars some amid Ebola"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "MOVED",
+      "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
+      "from_rank": 4,
+      "to_rank": 8,
+      "from_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59",
+      "to_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fd413ba017b016150b0cf205a8686231c844f464",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Evacuation orders issued for 40,000 people in California over explosion threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4bd7172713404d40e8144035ebfe7208815664c8",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Teen dead, 18-year-old critical after 'subway surfing' over Manhattan bridge: Police",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T19:52:12.267Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "084993e1b4e972de8b3620d74eff98003ab0c008",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says",
       "to_title": null
     }
   ]
