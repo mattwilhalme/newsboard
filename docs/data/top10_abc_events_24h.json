@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-23T05:01:21.536Z",
+  "generatedAt": "2026-05-23T07:36:10.712Z",
   "hours": 24,
   "events": [
     {
@@ -1291,6 +1291,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "4 dead, 90 trapped in China coal mine accident",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T07:36:13.924Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0c6e4211ef967cd48faf3e6a4bc1b660dd3c20f3",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dozens dead in coal mine gas explosion in China"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T07:36:13.924Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "98c1cec7a89cf289391d69985fe423858a1f34d2",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "1 dead, dozens injured after shipyard explosion",
       "to_title": null
     }
   ]

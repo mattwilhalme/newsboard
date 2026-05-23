@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-23T05:01:21.536Z",
+  "generatedAt": "2026-05-23T07:36:10.712Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T23:29:32.064Z",
-      "event_type": "MOVED",
-      "fingerprint": "7f6b56f8b0477d7ea0c537f5235705cb2d95d29d",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "Ghislaine Maxwell again asks judge to vacate her sex trafficking conviction",
-      "to_title": "Ghislaine Maxwell again asks judge to vacate her sex trafficking conviction"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-22T23:29:32.064Z",
-      "event_type": "MOVED",
-      "fingerprint": "54f474c4f2bdb9c5389afea9272c8cb65f2de570",
-      "from_rank": 8,
-      "to_rank": 9,
-      "from_title": "2 dead, at least 19 injured following chemical leak at industrial plant",
-      "to_title": "2 dead, at least 19 injured following chemical leak at industrial plant"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-22T23:29:32.064Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "4 dead, 90 trapped in China coal mine accident",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T07:36:13.924Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0c6e4211ef967cd48faf3e6a4bc1b660dd3c20f3",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Dozens dead in coal mine gas explosion in China"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-23T07:36:13.924Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "98c1cec7a89cf289391d69985fe423858a1f34d2",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "1 dead, dozens injured after shipyard explosion",
       "to_title": null
     }
   ],
