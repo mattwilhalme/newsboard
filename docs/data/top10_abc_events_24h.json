@@ -1,138 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-24T21:40:53.403Z",
+  "generatedAt": "2026-05-24T22:41:02.080Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "08bf5404a464874f201e87fd074a80e71bb1d7fb",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "breakingWhite House lawn cleared after apparent gunshots"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "MOVED",
-      "fingerprint": "5c5ac65180241198aa47740ad399ed11614a8fcc",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Trump says framework of Iran peace deal to be announced shortly",
-      "to_title": "Iran live updates: Trump says framework of Iran peace deal to be announced shortly"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "18e173596a6d605224a24256ea96ccf1fa47634a",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Trump says agreement includes Strait of Hormuz reopening"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "cbab915f3e6dfaa7aef32ce3a954df8e62d0c2f1",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "Rubio says there's been 'some progress' on Iran, possible 'news' in coming days"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "MOVED",
-      "fingerprint": "8e3155dbd33d60c5cf83359ddbc1d46c278606c0",
-      "from_rank": 2,
-      "to_rank": 5,
-      "from_title": "Evacuation orders issued for 50,000 people in California over explosion threat",
-      "to_title": "Evacuation orders issued for 50,000 people in California over explosion threat"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "MOVED",
-      "fingerprint": "e03520e17262ac957f197814dff6f97670a0d0e9",
-      "from_rank": 3,
-      "to_rank": 6,
-      "from_title": "NASCAR legend Kyle Busch's family reveals his cause of death",
-      "to_title": "NASCAR legend Kyle Busch's family reveals his cause of death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "MOVED",
-      "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
-      "from_rank": 4,
-      "to_rank": 7,
-      "from_title": "6.0 magnitude earthquake detected off Hawaii coast",
-      "to_title": "6.0 magnitude earthquake detected off Hawaii coast"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "MOVED",
-      "fingerprint": "222e70807c1a585fe562a906dc9bf1a765b3a36b",
-      "from_rank": 5,
-      "to_rank": 8,
-      "from_title": "'Subway surfer' killed, another critically injured in Manhattan",
-      "to_title": "'Subway surfer' killed, another critically injured in Manhattan"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "MOVED",
-      "fingerprint": "e1c6057dbe5880d58718fd67f0cd55ce0f765d61",
-      "from_rank": 6,
-      "to_rank": 9,
-      "from_title": "Good dog! More children’s hospitals turn to furry caregivers to help kids heal",
-      "to_title": "Good dog! More children’s hospitals turn to furry caregivers to help kids heal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "MOVED",
-      "fingerprint": "a0b780754af649943ea64840dc859fc042848889",
-      "from_rank": 7,
-      "to_rank": 10,
-      "from_title": "Trump's Justice Department scrubs its website of news releases about Jan. 6 defendants",
-      "to_title": "Trump's Justice Department scrubs its website of news releases about Jan. 6 defendants"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0f5358aa3d64a9900aa4f9a1b2485f0ab7474ea2",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Why travel restrictions may have unintended effects as US bars some amid Ebola",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T22:31:40.860Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1a870a44b2141ed3caaba8c875ff31aef8ad3668",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "82 dead, 9 trapped in China coal mine accident",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-23T23:34:12.449Z",
@@ -902,6 +772,36 @@
       "to_rank": null,
       "from_title": "Australia sees second fatal shark attack in a week",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T22:41:05.075Z",
+      "event_type": "MOVED",
+      "fingerprint": "08c6b63656d80b5f501ebfca5158addc37cc1e45",
+      "from_rank": 6,
+      "to_rank": 4,
+      "from_title": "Late pass sends Rosenqvist past Malukas for closest Indy 500 win in history",
+      "to_title": "Late pass sends Rosenqvist past Malukas for closest Indy 500 win in history"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T22:41:05.075Z",
+      "event_type": "MOVED",
+      "fingerprint": "9ddc30e9a626d1f096796ab85c4353fd2633cfc3",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says",
+      "to_title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T22:41:05.075Z",
+      "event_type": "MOVED",
+      "fingerprint": "ebd141cb5abb0885002a62fb80a7151ca1104993",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "19 injured in festival crowd stampede triggered by person running: Officials",
+      "to_title": "19 injured in festival crowd stampede triggered by person running: Officials"
     }
   ]
 }
