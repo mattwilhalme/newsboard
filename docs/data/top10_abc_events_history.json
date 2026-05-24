@@ -1,98 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-24T08:08:32.255Z",
+  "generatedAt": "2026-05-24T10:07:04.971Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T19:25:39.913Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "00fec8c30dcf5320aeff730eb31893f4c6d02546",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Retrial begins for former sheriff's deputy charged with murder of Casey Goodson, Jr.",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T19:25:39.913Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ca974eb31ed800160b88de923f80dff48872892f",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "Senate Republicans greenlight ICE and CBP budget blueprint amid lingering shutdown",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T19:25:39.913Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "5945a67f52528400f98dae2bf0af08ab8221efee",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Prince Louis celebrates 8th birthday with new photo, video",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T20:31:47.783Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6c0ea457fa783af9372f51ac56b516a48a16034c",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "10 hurt in shooting at mall in Louisiana, suspect at large: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T20:31:47.783Z",
-      "event_type": "MOVED",
-      "fingerprint": "01626a2baceb1c3490add3be67ce7595a5ce6cd3",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Iran live updates: Trump orders Navy to 'shoot,' 'kill' boats putting mines in strait",
-      "to_title": "Iran live updates: Trump orders Navy to 'shoot,' 'kill' boats putting mines in strait"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T20:31:47.783Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5456978d0cc0618b513dee0cfe62e99177ff7402",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Husband charged with murder in wife's 2002 disappearance denied bail"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T20:31:47.783Z",
-      "event_type": "MOVED",
-      "fingerprint": "7b4fb56e57f2ba0e5b8f8bf2d7028928f7d02d99",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Ex-police officer arrested in mass shooting plot: Investigators",
-      "to_title": "Ex-police officer arrested in mass shooting plot: Investigators"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T20:31:47.783Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c4cdb8dbcc8f6e7ed7836ad7cbf08c590198a9b7",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "Prince Louis jumps off boat in new video celebrating 8th birthday"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T20:31:47.783Z",
-      "event_type": "MOVED",
-      "fingerprint": "8cda453ce90f23f5fa0c95cd734149f6e5bb456b",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Why expected No. 1 pick Fernando Mendoza won't be at the NFL Draft",
-      "to_title": "Why expected No. 1 pick Fernando Mendoza won't be at the NFL Draft"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-23T20:31:47.783Z",
@@ -30001,6 +29911,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "82 dead, 9 trapped in China coal mine accident",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "54c3260b3148a428baab31403d255d7a306a0bcb",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Rubio says 'significant progress' made in Iran talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9ddc30e9a626d1f096796ab85c4353fd2633cfc3",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9f35130ae000586b0427980b920c508d7d0daeb3",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Powerful bomb explodes near railway track in Pakistan, killing at least 19 people"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "MOVED",
+      "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "6.0 magnitude earthquake detected off Hawaii coast",
+      "to_title": "6.0 magnitude earthquake detected off Hawaii coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8788ef95653dac253fc0649e829a5e49bc736e33",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "21 missing after Philippines building collapse"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4d4531bad28e445a10c0cbb4051244c8319ab7a9",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says deal 'largely negotiated,' includes strait reopening",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "272ac2dc49fefb4e97fd56a328c34a68059767a9",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Zelenskyy says intelligence indicates Russia could use hypersonic missile",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e1c6057dbe5880d58718fd67f0cd55ce0f765d61",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Good dog! More children’s hospitals turn to furry caregivers to help kids heal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "693d511376e1f7d59cb542b466f3899619a8ff42",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dozens possibly trapped after building collapse",
       "to_title": null
     }
   ],

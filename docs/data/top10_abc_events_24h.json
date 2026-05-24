@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-24T08:08:32.255Z",
+  "generatedAt": "2026-05-24T10:07:04.971Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T09:25:06.949Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "0f5358aa3d64a9900aa4f9a1b2485f0ab7474ea2",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Why travel restrictions may have unintended effects as US bars some amid Ebola"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T09:25:06.949Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1a870a44b2141ed3caaba8c875ff31aef8ad3668",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "82 dead, 9 trapped in China coal mine accident"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T09:25:06.949Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "05681881febe17f56058ed7e27dde19f30ab8705",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Federal judge dismisses human smuggling case against Kilmar Abrego Garcia",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-23T09:25:06.949Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "0c6e4211ef967cd48faf3e6a4bc1b660dd3c20f3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Dozens dead in coal mine gas explosion in China",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-23T10:49:59.801Z",
@@ -871,6 +831,96 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "82 dead, 9 trapped in China coal mine accident",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "54c3260b3148a428baab31403d255d7a306a0bcb",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Iran live updates: Rubio says 'significant progress' made in Iran talks"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9ddc30e9a626d1f096796ab85c4353fd2633cfc3",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "9f35130ae000586b0427980b920c508d7d0daeb3",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Powerful bomb explodes near railway track in Pakistan, killing at least 19 people"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "MOVED",
+      "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "6.0 magnitude earthquake detected off Hawaii coast",
+      "to_title": "6.0 magnitude earthquake detected off Hawaii coast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "8788ef95653dac253fc0649e829a5e49bc736e33",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "21 missing after Philippines building collapse"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4d4531bad28e445a10c0cbb4051244c8319ab7a9",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump says deal 'largely negotiated,' includes strait reopening",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "272ac2dc49fefb4e97fd56a328c34a68059767a9",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "Zelenskyy says intelligence indicates Russia could use hypersonic missile",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e1c6057dbe5880d58718fd67f0cd55ce0f765d61",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Good dog! More children’s hospitals turn to furry caregivers to help kids heal",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T10:07:08.069Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "693d511376e1f7d59cb542b466f3899619a8ff42",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Dozens possibly trapped after building collapse",
       "to_title": null
     }
   ]
