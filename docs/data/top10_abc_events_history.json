@@ -1,58 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-24T19:54:32.249Z",
+  "generatedAt": "2026-05-24T20:42:42.734Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T23:04:51.314Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c565f5f2c5bf68037983f57fe110b761452c4e57",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T23:04:51.314Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "bf801ea10b159d29ac98d323068cef8533904a19",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "Iran live updates: Trump says expect higher gas prices 'for a little while'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T23:04:51.314Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "5b05614bf6a9dccc99939ffcab0acf7a16f48767",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "Teen girl charged in conspiracy plot to 'kill as many Jews as possible'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T23:04:51.314Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "6551358c56138dac7834c80823123bfa32e0e680",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "1 dead, 5 suspects in custody in shooting at Mall of Louisiana: Police"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-23T23:04:51.314Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c92a19f30a528f11dbe4ea3769ae12d5cd245db8",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "DOJ arrests soldier who made $400,000 betting on Maduro's removal: Sources",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-23T23:04:51.314Z",
@@ -30001,6 +29951,56 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Several crises impede Ebola outbreak response",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T20:42:46.043Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f41c60a8f041c2fbabec0e9b97a82858e3986d01",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "19 injured in crowd stampede at South Carolina motorcycle festival"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T20:42:46.043Z",
+      "event_type": "MOVED",
+      "fingerprint": "d33fad86b443c3a812f1b8f96d66da46b2c90342",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Soggy Memorial Day weekend may not be a total washout in the Northeast and Midwest",
+      "to_title": "Soggy Memorial Day weekend may not be a total washout in the Northeast and Midwest"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T20:42:46.043Z",
+      "event_type": "MOVED",
+      "fingerprint": "9d830aa152494b5cba146cac08fa5a06a1cdc20f",
+      "from_rank": 6,
+      "to_rank": 7,
+      "from_title": "50,000 under evacuation orders in Southern Calif. over chemical tank explosion threat",
+      "to_title": "50,000 under evacuation orders in Southern Calif. over chemical tank explosion threat"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T20:42:46.043Z",
+      "event_type": "MOVED",
+      "fingerprint": "e03520e17262ac957f197814dff6f97670a0d0e9",
+      "from_rank": 7,
+      "to_rank": 8,
+      "from_title": "NASCAR legend Kyle Busch's family reveals his cause of death",
+      "to_title": "NASCAR legend Kyle Busch's family reveals his cause of death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-24T20:42:46.043Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ec855cb80f9e2c068a4b4d43599b06919c0fe805",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "9-story building under construction in the Philippines collapses; 21 missing",
       "to_title": null
     }
   ],
