@@ -1,29 +1,20 @@
 {
   "ok": true,
-  "generatedAt": "2026-05-25T06:15:56.861Z",
+  "generatedAt": "2026-05-25T10:52:36.218Z",
   "sources": {
     "abc1": {
-      "ok": true,
-      "updatedAt": "2026-05-25T06:14:22.040Z",
-      "error": null,
-      "runId": "abc_2026-05-25T06-14-14-872Z",
-      "since": "2026-05-25T06:15:56.861Z",
-      "item": {
-        "title": "Iran live updates: Peace deal a 'work in progress,' Rubio says",
-        "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio?id=133278077",
-        "imgUrl": null,
-        "contentType": "live",
-        "breakingLabel": null,
-        "breakingHeadline": null,
-        "breakingUrl": null,
-        "slotKey": "5be6806db8a5"
-      }
+      "ok": false,
+      "updatedAt": "2026-05-25T10:51:14.972Z",
+      "error": "Gateway Timeout",
+      "runId": "abc1_error_2026-05-25T10-51-14-972Z",
+      "since": null,
+      "item": null
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:14:29.782Z",
+      "updatedAt": "2026-05-25T10:51:19.853Z",
       "error": null,
-      "runId": "cbs_2026-05-25T06-14-22-576Z",
+      "runId": "cbs_2026-05-25T10-51-15-227Z",
       "since": "2026-05-24T05:43:52.571Z",
       "item": {
         "title": "U.S., Iran have agreed to broad principles of deal, Trump official says",
@@ -35,9 +26,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:14:36.668Z",
+      "updatedAt": "2026-05-25T10:51:27.289Z",
       "error": null,
-      "runId": "usat1_2026-05-25T06-14-30-283Z",
+      "runId": "usat1_2026-05-25T10-51-20-354Z",
       "since": "2026-05-25T01:54:48.965Z",
       "item": {
         "title": "California officials race to avoid chemical tank explosion, thousands evacuate",
@@ -54,13 +45,13 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:14:43.376Z",
+      "updatedAt": "2026-05-25T10:51:33.749Z",
       "error": null,
-      "runId": "nbc_2026-05-25T06-14-37-236Z",
-      "since": "2026-05-24T15:34:57.151Z",
+      "runId": "nbc_2026-05-25T10-51-27-884Z",
+      "since": "2026-05-25T10:52:36.218Z",
       "item": {
-        "title": "Trump says he won’t ‘rush’ into an Iran deal, softening hopes of an imminent agreement",
-        "url": "https://nbcnews.com/politics/politics-news/us-iran-officials-signal-progress-negotiations-fragile-ceasefire-war-rcna346636",
+        "title": "Iran says no deal ‘imminent’ despite progress in talks with U.S.",
+        "url": "https://nbcnews.com/world/iran/iran-deal-trump-talks-war-nuclear-hormuz-rubio-rcna346781",
         "imgUrl": null,
         "breakingLabel": null,
         "breakingHeadline": null,
@@ -71,13 +62,13 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:14:50.600Z",
+      "updatedAt": "2026-05-25T10:51:40.958Z",
       "error": null,
-      "runId": "cnn1_2026-05-25T06-14-43-722Z",
-      "since": "2026-05-24T17:39:02.029Z",
+      "runId": "cnn1_2026-05-25T10-51-34-132Z",
+      "since": "2026-05-25T10:52:36.218Z",
       "item": {
-        "title": "What's in the proposed deal that could end the US-Iran conflict? Show all",
-        "url": "https://cnn.com/2026/05/24/middleeast/iran-us-proposed-deal-wwk-intl",
+        "title": "Why the potential Iran deal may be almost as divisive as the war itself Show all",
+        "url": "https://cnn.com/2026/05/25/politics/trump-iran-war-deal-analysis",
         "imgUrl": null,
         "slotKey": "e75971db9693",
         "contentType": "news"
@@ -85,27 +76,27 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:14:55.237Z",
+      "updatedAt": "2026-05-25T10:51:46.653Z",
       "error": null,
-      "runId": "guardian1_2026-05-25T06-14-50-918Z",
-      "since": "2026-05-24T17:39:02.029Z",
+      "runId": "guardian1_2026-05-25T10-51-41-471Z",
+      "since": "2026-05-25T10:52:36.218Z",
       "item": {
-        "title": "US and Iran inch closer to peace deal as Trump faces criticism from GOP hawks",
-        "url": "https://theguardian.com/world/2026/may/24/iran-leader-and-security-council-still-need-to-approve-peace-deal-with-us",
+        "title": "Iran says progress made on many issues with US but warns deal not ‘imminent’",
+        "url": "https://theguardian.com/world/live/2026/may/25/iran-war-news-middle-east-crisis-oil-price-us-tehran-peace-talks-deal-strait-hormuz",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
-        "contentType": "news"
+        "contentType": "live"
       }
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:15:14.601Z",
+      "updatedAt": "2026-05-25T10:51:57.820Z",
       "error": null,
-      "runId": "ap1_2026-05-25T06-14-55-530Z",
-      "since": "2026-05-25T06:15:56.861Z",
+      "runId": "ap1_2026-05-25T10-51-47-128Z",
+      "since": "2026-05-25T10:52:36.218Z",
       "item": {
-        "title": "Oil prices fall after Trump says peace talks on Iran war are proceeding",
-        "url": "https://apnews.com/article/stocks-markets-iran-trump-oil-0b569925695e498e6fd7ece7b183e085",
+        "title": "What we know and don’t know about the emerging deal to end the Iran war",
+        "url": "https://apnews.com/article/iran-united-states-deal-explainer-war-b1659232611edc10808612e30647c17d",
         "imgUrl": null,
         "slotKey": "083847305a8b",
         "contentType": "news"
@@ -113,9 +104,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:15:23.449Z",
+      "updatedAt": "2026-05-25T10:52:06.109Z",
       "error": null,
-      "runId": "latimes1_2026-05-25T06-15-15-275Z",
+      "runId": "latimes1_2026-05-25T10-51-58-302Z",
       "since": "2026-05-23T01:27:26.237Z",
       "item": {
         "title": "Garden Grove chemical crisis: Live evacuation maps, closures and updates",
@@ -127,13 +118,13 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:15:32.706Z",
+      "updatedAt": "2026-05-25T10:52:15.001Z",
       "error": null,
-      "runId": "npr1_2026-05-25T06-15-23-792Z",
-      "since": "2026-05-24T22:41:02.080Z",
+      "runId": "npr1_2026-05-25T10-52-06-518Z",
+      "since": "2026-05-25T10:52:36.218Z",
       "item": {
-        "title": "California chemical tank has cracked, causing state of emergency, thousands to evacuate",
-        "url": "https://npr.org/2026/05/24/nx-s1-5833165/california-chemical-tank-malfunction-leak-explode-emergency-evacuate",
+        "title": "U.S.-Iran peace deal emerging, while war threats still loom",
+        "url": "https://npr.org/2026/05/25/nx-s1-5833690/u-s-iran-negotiations-updates",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
@@ -141,13 +132,13 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:15:37.182Z",
+      "updatedAt": "2026-05-25T10:52:19.870Z",
       "error": null,
-      "runId": "bbc1_2026-05-25T06-15-33-056Z",
-      "since": "2026-05-25T06:15:56.861Z",
+      "runId": "bbc1_2026-05-25T10-52-15-401Z",
+      "since": "2026-05-25T10:52:36.218Z",
       "item": {
-        "title": "Oil prices slide on hopes of US-Iran peace deal",
-        "url": "https://bbc.com/news/articles/c809m7g29r7o",
+        "title": "Deal with US not imminent, Iran says",
+        "url": "https://bbc.com/news/articles/cglpp2yk336o",
         "imgUrl": null,
         "slotKey": "b890b46a9e6c",
         "contentType": "news"
@@ -155,12 +146,12 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:15:44.440Z",
+      "updatedAt": "2026-05-25T10:52:26.744Z",
       "error": null,
-      "runId": "fox1_2026-05-25T06-15-37-491Z",
+      "runId": "fox1_2026-05-25T10-52-20-211Z",
       "since": "2026-05-24T16:38:33.498Z",
       "item": {
-        "title": "Critics have weighed in on rumored Iran deal— President Trump unleashes fiery response",
+        "title": "European country prepares to enter Strait of Hormuz with mission to clear mines",
         "url": "https://foxnews.com/live-news/trump-iran-peace-deal-hormuz-may-24",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
@@ -169,9 +160,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-05-25T06:15:54.855Z",
+      "updatedAt": "2026-05-25T10:52:34.404Z",
       "error": null,
-      "runId": "yahoo1_2026-05-25T06-15-44-793Z",
+      "runId": "yahoo1_2026-05-25T10-52-27-323Z",
       "since": "2026-05-17T14:44:45.968Z",
       "item": {
         "title": "About Our Ads",
