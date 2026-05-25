@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-25T17:59:53.429Z",
+  "generatedAt": "2026-05-25T19:45:42.442Z",
   "hours": 24,
   "events": [
     {
@@ -562,6 +562,36 @@
       "to_rank": null,
       "from_title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says",
       "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T19:45:45.378Z",
+      "event_type": "MOVED",
+      "fingerprint": "0b9efd96a7f2066c96aef4904bef495467efb940",
+      "from_rank": 5,
+      "to_rank": 3,
+      "from_title": "California chemical tank no longer under threat of catastrophic explosion: Officials",
+      "to_title": "California chemical tank no longer under threat of catastrophic explosion: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T19:45:45.378Z",
+      "event_type": "MOVED",
+      "fingerprint": "ffed7afe77c122889c36544c1d79da6790faefb3",
+      "from_rank": 3,
+      "to_rank": 4,
+      "from_title": "Hiker rescued after being stuck in crevice for hours",
+      "to_title": "Hiker rescued after being stuck in crevice for hours"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T19:45:45.378Z",
+      "event_type": "MOVED",
+      "fingerprint": "ee7f1e3ddea453fda7f3342e251a74849c40b8d6",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "DOJ filing invokes weekend White House shooting in ballroom case",
+      "to_title": "DOJ filing invokes weekend White House shooting in ballroom case"
     }
   ]
 }
