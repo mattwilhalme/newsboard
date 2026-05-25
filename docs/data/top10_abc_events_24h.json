@@ -1,68 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-25T20:54:36.361Z",
+  "generatedAt": "2026-05-25T22:01:09.924Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T21:40:56.371Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ebd141cb5abb0885002a62fb80a7151ca1104993",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "19 injured in festival crowd stampede triggered by person running: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T21:40:56.371Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "08c6b63656d80b5f501ebfca5158addc37cc1e45",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Late pass sends Rosenqvist past Malukas for closest Indy 500 win in history"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T21:40:56.371Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d62c78c102b601997b19437450def432d7ab95ce",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Rainy Memorial Day weekend forecast for much of US"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T21:40:56.371Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "f41c60a8f041c2fbabec0e9b97a82858e3986d01",
-      "from_rank": 5,
-      "to_rank": null,
-      "from_title": "19 injured in crowd stampede at South Carolina motorcycle festival",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T21:40:56.371Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "d33fad86b443c3a812f1b8f96d66da46b2c90342",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Soggy Memorial Day weekend may not be a total washout in the Northeast and Midwest",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T21:40:56.371Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "c77938eab59a809d7abca6d767c7446670751433",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Australia sees second fatal shark attack in a week",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-24T22:41:05.075Z",
@@ -542,6 +482,26 @@
       "to_rank": 5,
       "from_title": "DOJ filing invokes weekend White House shooting in ballroom case",
       "to_title": "DOJ filing invokes weekend White House shooting in ballroom case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T22:01:12.943Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fe2fdbc6d3e4cf8370e3493ac101049877bc38f4",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Woman killed by patio umbrella while dining at lakeside restaurant: Coroner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T22:01:12.943Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "afd422678e44b0a6c74de24113196e0e646889af",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service",
+      "to_title": null
     }
   ]
 }

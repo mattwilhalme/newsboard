@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-25T20:54:36.361Z",
+  "generatedAt": "2026-05-25T22:01:09.924Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "54032696a3eeec4423af9c7fdea74a7a31022eae",
-      "from_rank": null,
-      "to_rank": 7,
-      "from_title": null,
-      "to_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T16:41:53.610Z",
-      "event_type": "MOVED",
-      "fingerprint": "c24ff608eb4144a64fdd7436f6c90dc58d41560e",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "FDA issues vouchers to help fast track review of potential psychedelic medications",
-      "to_title": "FDA issues vouchers to help fast track review of potential psychedelic medications"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-24T16:41:53.610Z",
@@ -30002,6 +29982,26 @@
       "to_rank": 5,
       "from_title": "DOJ filing invokes weekend White House shooting in ballroom case",
       "to_title": "DOJ filing invokes weekend White House shooting in ballroom case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T22:01:12.943Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "fe2fdbc6d3e4cf8370e3493ac101049877bc38f4",
+      "from_rank": null,
+      "to_rank": 8,
+      "from_title": null,
+      "to_title": "Woman killed by patio umbrella while dining at lakeside restaurant: Coroner"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T22:01:12.943Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "afd422678e44b0a6c74de24113196e0e646889af",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service",
+      "to_title": null
     }
   ],
   "error": "No Top 10 events yet"
