@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-25T13:53:46.363Z",
+  "generatedAt": "2026-05-25T16:14:20.763Z",
   "hours": 24,
   "events": [
     {
@@ -551,6 +551,116 @@
       "from_rank": 1,
       "to_rank": null,
       "from_title": "Iran live updates: Peace deal a 'work in progress,' Rubio says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f773c81eeb07a62310f490b274004535281ff24a",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Forest ranger details dramatic cave rescue of man stuck in crevice"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "ee7f1e3ddea453fda7f3342e251a74849c40b8d6",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "DOJ filing invokes weekend White House shooting in ballroom case"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "545c5d9bf435b4625eccbb7019030df52443f58a",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "Chemical tank in Southern California no longer under threat of explosion: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "MOVED",
+      "fingerprint": "f3b3b3045ccbb2966c7a96c5e50f0a5144d8a3d8",
+      "from_rank": 3,
+      "to_rank": 6,
+      "from_title": "Pope calls for robust regulation of AI in manifesto",
+      "to_title": "Pope calls for robust regulation of AI in manifesto"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "MOVED",
+      "fingerprint": "7d9abd4d3aa3b669de4748c61442af08e7c13fa0",
+      "from_rank": 4,
+      "to_rank": 7,
+      "from_title": "Rep. Suozzi calls on Republicans to 'stand up' to stop 'anti-weaponization fund'",
+      "to_title": "Rep. Suozzi calls on Republicans to 'stand up' to stop 'anti-weaponization fund'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "MOVED",
+      "fingerprint": "afd422678e44b0a6c74de24113196e0e646889af",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service",
+      "to_title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "MOVED",
+      "fingerprint": "9ddc30e9a626d1f096796ab85c4353fd2633cfc3",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says",
+      "to_title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "MOVED",
+      "fingerprint": "ebd141cb5abb0885002a62fb80a7151ca1104993",
+      "from_rank": 8,
+      "to_rank": 10,
+      "from_title": "19 injured in festival crowd stampede triggered by person running: Officials",
+      "to_title": "19 injured in festival crowd stampede triggered by person running: Officials"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "08c6b63656d80b5f501ebfca5158addc37cc1e45",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Late pass sends Rosenqvist past Malukas for closest Indy 500 win in history",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9d830aa152494b5cba146cac08fa5a06a1cdc20f",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "50,000 under evacuation orders in Southern Calif. over chemical tank explosion threat",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T16:14:23.947Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "e03520e17262ac957f197814dff6f97670a0d0e9",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "NASCAR legend Kyle Busch's family reveals his cause of death",
       "to_title": null
     }
   ]
