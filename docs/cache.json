@@ -5,53 +5,71 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:51:14.972Z",
-      "ok": false,
-      "stale": true,
-      "item": null,
-      "last": {
-        "runId": "abc1_error_2026-05-25T10-51-14-972Z",
-        "ok": false,
-        "error": "Gateway Timeout",
-        "fetchedAt": "2026-05-25T10:51:14.972Z",
-        "shot": null
-      },
-      "history": [],
-      "archive": []
-    },
-    "cbs1": {
-      "id": "cbs1",
-      "name": "CBS News",
-      "home_url": "https://www.cbsnews.com/",
-      "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:51:19.853Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:52:14.701Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "U.S., Iran have agreed to broad principles of deal, Trump official says",
-        "url": "https://cbsnews.com/live-updates/iran-war-trump-us-peace-talks-strait-of-hormuz-control",
+        "title": "Iran live updates: Trump says Iran deal critics 'know nothing' of potential agreement",
+        "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio?id=133278077",
         "imgUrl": null,
-        "slotKey": "4d6f70f0b663",
-        "contentType": "live"
+        "contentType": "live",
+        "breakingLabel": null,
+        "breakingHeadline": null,
+        "breakingUrl": null,
+        "slotKey": "5be6806db8a5"
       },
       "last": {
-        "runId": "cbs_2026-05-25T10-51-15-227Z",
+        "runId": "abc_2026-05-25T13-52-06-848Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:51:19.853Z",
+        "fetchedAt": "2026-05-25T13:52:14.701Z",
         "shot": {
-          "object_path": "screenshots/cbs1/2026/05/25/cbs_2026-05-25T10-51-15-227Z.jpg",
+          "object_path": "screenshots/abc1/2026/05/25/abc_2026-05-25T13-52-06-848Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cbs_2026-05-25T10-51-15-227Z",
-          "html": "/archive/cbs_2026-05-25T10-51-15-227Z.html",
-          "json": "/archive/cbs_2026-05-25T10-51-15-227Z.json"
+          "runId": "abc_2026-05-25T13-52-06-848Z",
+          "html": "/archive/abc_2026-05-25T13-52-06-848Z.html",
+          "json": "/archive/abc_2026-05-25T13-52-06-848Z.json"
+        }
+      ]
+    },
+    "cbs1": {
+      "id": "cbs1",
+      "name": "CBS News",
+      "home_url": "https://www.cbsnews.com/",
+      "kind": "hero",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:52:19.957Z",
+      "ok": true,
+      "stale": false,
+      "item": {
+        "title": "Iran says obstacles remain, but acknowledges deal taking shape with U.S.",
+        "url": "https://cbsnews.com/live-updates/iran-us-war-trump-deal-obstacles-remain",
+        "imgUrl": null,
+        "slotKey": "4d6f70f0b663",
+        "contentType": "live"
+      },
+      "last": {
+        "runId": "cbs_2026-05-25T13-52-15-426Z",
+        "ok": true,
+        "error": null,
+        "fetchedAt": "2026-05-25T13:52:19.957Z",
+        "shot": {
+          "object_path": "screenshots/cbs1/2026/05/25/cbs_2026-05-25T13-52-15-426Z.jpg",
+          "shot_url": null
+        }
+      },
+      "history": [],
+      "archive": [
+        {
+          "runId": "cbs_2026-05-25T13-52-15-426Z",
+          "html": "/archive/cbs_2026-05-25T13-52-15-426Z.html",
+          "json": "/archive/cbs_2026-05-25T13-52-15-426Z.json"
         }
       ]
     },
@@ -60,16 +78,16 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:51:27.289Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:52:26.561Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "California officials race to avoid chemical tank explosion, thousands evacuate",
-        "url": "https://usatoday.com/story/news/california/2026/05/24/california-chemical-tank-evacuations-explosion/90242259007",
-        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/05/24/USAT/90242288007-20260524-t-002931-z-152325745-rc-2-yela-9-qlqd-rtrmadp-3-californiachemicalgardengrove.JPG?auto=webp&crop=4999%2C2813%2Cx0%2Cy562&format=pjpg&height=242&width=430",
+        "title": "Showers, thunderstorms may disrupt Memorial Day plans in the East",
+        "url": "https://usatoday.com/story/news/weather/2026/05/24/memorial-day-weather-forecast-united-states/90243483007",
+        "imgUrl": "https://usatoday.com/gcdn/authoring/authoring-images/2026/05/24/USAT/90246148007-monday-outlook.png?auto=webp&crop=1629%2C917%2Cx0%2Cy166&format=pjpg&height=242&width=430",
         "imgAlt": null,
-        "dek": "Thousands are under evacuation orders in California as officials work to cool off an overheating chemical tank at risk of exploding.",
+        "dek": "Memorial Day may bring rain to parts of the eastern United States, with hot and dry weather likely across most of the West.",
         "breakingLabel": null,
         "breakingHeadline": null,
         "breakingUrl": null,
@@ -77,21 +95,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-05-25T10-51-20-354Z",
+        "runId": "usat1_2026-05-25T13-52-20-698Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:51:27.289Z",
+        "fetchedAt": "2026-05-25T13:52:26.561Z",
         "shot": {
-          "object_path": "screenshots/usat1/2026/05/25/usat1_2026-05-25T10-51-20-354Z.jpg",
+          "object_path": "screenshots/usat1/2026/05/25/usat1_2026-05-25T13-52-20-698Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "usat1_2026-05-25T10-51-20-354Z",
-          "html": "/archive/usat1_2026-05-25T10-51-20-354Z.html",
-          "json": "/archive/usat1_2026-05-25T10-51-20-354Z.json"
+          "runId": "usat1_2026-05-25T13-52-20-698Z",
+          "html": "/archive/usat1_2026-05-25T13-52-20-698Z.html",
+          "json": "/archive/usat1_2026-05-25T13-52-20-698Z.json"
         }
       ]
     },
@@ -100,36 +118,36 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:51:33.749Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:52:33.262Z",
       "ok": true,
       "stale": false,
       "item": {
         "title": "Iran says no deal ‘imminent’ despite progress in talks with U.S.",
         "url": "https://nbcnews.com/world/iran/iran-deal-trump-talks-war-nuclear-hormuz-rubio-rcna346781",
         "imgUrl": null,
-        "breakingLabel": null,
-        "breakingHeadline": null,
-        "breakingUrl": null,
+        "breakingLabel": "Breaking News",
+        "breakingHeadline": "Morning Rundown: U.S. and Iran play down hopes of imminent deal, race to stop chemical tank explosion, and Pope Leo’s AI warning",
+        "breakingUrl": "https://nbcnews.com/news/us-news/fake-ice-agents-rise-status-us-iran-peace-deal-morning-rundown-rcna346683",
         "slotKey": "579270cafa55",
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc_2026-05-25T10-51-27-884Z",
+        "runId": "nbc_2026-05-25T13-52-27-256Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:51:33.749Z",
+        "fetchedAt": "2026-05-25T13:52:33.262Z",
         "shot": {
-          "object_path": "screenshots/nbc1/2026/05/25/nbc_2026-05-25T10-51-27-884Z.jpg",
+          "object_path": "screenshots/nbc1/2026/05/25/nbc_2026-05-25T13-52-27-256Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "nbc_2026-05-25T10-51-27-884Z",
-          "html": "/archive/nbc_2026-05-25T10-51-27-884Z.html",
-          "json": "/archive/nbc_2026-05-25T10-51-27-884Z.json"
+          "runId": "nbc_2026-05-25T13-52-27-256Z",
+          "html": "/archive/nbc_2026-05-25T13-52-27-256Z.html",
+          "json": "/archive/nbc_2026-05-25T13-52-27-256Z.json"
         }
       ]
     },
@@ -138,8 +156,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:51:40.958Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:52:41.239Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -150,21 +168,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cnn1_2026-05-25T10-51-34-132Z",
+        "runId": "cnn1_2026-05-25T13-52-33-919Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:51:40.958Z",
+        "fetchedAt": "2026-05-25T13:52:41.239Z",
         "shot": {
-          "object_path": "screenshots/cnn1/2026/05/25/cnn1_2026-05-25T10-51-34-132Z.jpg",
+          "object_path": "screenshots/cnn1/2026/05/25/cnn1_2026-05-25T13-52-33-919Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-05-25T10-51-34-132Z",
-          "html": "/archive/cnn1_2026-05-25T10-51-34-132Z.html",
-          "json": "/archive/cnn1_2026-05-25T10-51-34-132Z.json"
+          "runId": "cnn1_2026-05-25T13-52-33-919Z",
+          "html": "/archive/cnn1_2026-05-25T13-52-33-919Z.html",
+          "json": "/archive/cnn1_2026-05-25T13-52-33-919Z.json"
         }
       ]
     },
@@ -173,33 +191,33 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:51:46.653Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:52:45.999Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Iran says progress made on many issues with US but warns deal not ‘imminent’",
+        "title": "Trump suggests countries in region should sign Abraham accords recognising Israel under any deal",
         "url": "https://theguardian.com/world/live/2026/may/25/iran-war-news-middle-east-crisis-oil-price-us-tehran-peace-talks-deal-strait-hormuz",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "live"
       },
       "last": {
-        "runId": "guardian1_2026-05-25T10-51-41-471Z",
+        "runId": "guardian1_2026-05-25T13-52-41-820Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:51:46.653Z",
+        "fetchedAt": "2026-05-25T13:52:45.999Z",
         "shot": {
-          "object_path": "screenshots/guardian1/2026/05/25/guardian1_2026-05-25T10-51-41-471Z.jpg",
+          "object_path": "screenshots/guardian1/2026/05/25/guardian1_2026-05-25T13-52-41-820Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "guardian1_2026-05-25T10-51-41-471Z",
-          "html": "/archive/guardian1_2026-05-25T10-51-41-471Z.html",
-          "json": "/archive/guardian1_2026-05-25T10-51-41-471Z.json"
+          "runId": "guardian1_2026-05-25T13-52-41-820Z",
+          "html": "/archive/guardian1_2026-05-25T13-52-41-820Z.html",
+          "json": "/archive/guardian1_2026-05-25T13-52-41-820Z.json"
         }
       ]
     },
@@ -208,8 +226,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:51:57.820Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:53:06.266Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -220,21 +238,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-05-25T10-51-47-128Z",
+        "runId": "ap1_2026-05-25T13-52-46-557Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:51:57.820Z",
+        "fetchedAt": "2026-05-25T13:53:06.266Z",
         "shot": {
-          "object_path": "screenshots/ap1/2026/05/25/ap1_2026-05-25T10-51-47-128Z.jpg",
+          "object_path": "screenshots/ap1/2026/05/25/ap1_2026-05-25T13-52-46-557Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "ap1_2026-05-25T10-51-47-128Z",
-          "html": "/archive/ap1_2026-05-25T10-51-47-128Z.html",
-          "json": "/archive/ap1_2026-05-25T10-51-47-128Z.json"
+          "runId": "ap1_2026-05-25T13-52-46-557Z",
+          "html": "/archive/ap1_2026-05-25T13-52-46-557Z.html",
+          "json": "/archive/ap1_2026-05-25T13-52-46-557Z.json"
         }
       ]
     },
@@ -243,8 +261,8 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:52:06.109Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:53:14.238Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -255,21 +273,21 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "latimes1_2026-05-25T10-51-58-302Z",
+        "runId": "latimes1_2026-05-25T13-53-07-180Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:52:06.109Z",
+        "fetchedAt": "2026-05-25T13:53:14.238Z",
         "shot": {
-          "object_path": "screenshots/latimes1/2026/05/25/latimes1_2026-05-25T10-51-58-302Z.jpg",
+          "object_path": "screenshots/latimes1/2026/05/25/latimes1_2026-05-25T13-53-07-180Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "latimes1_2026-05-25T10-51-58-302Z",
-          "html": "/archive/latimes1_2026-05-25T10-51-58-302Z.html",
-          "json": "/archive/latimes1_2026-05-25T10-51-58-302Z.json"
+          "runId": "latimes1_2026-05-25T13-53-07-180Z",
+          "html": "/archive/latimes1_2026-05-25T13-53-07-180Z.html",
+          "json": "/archive/latimes1_2026-05-25T13-53-07-180Z.json"
         }
       ]
     },
@@ -278,33 +296,33 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:52:15.001Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:53:25.118Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "U.S.-Iran peace deal emerging, while war threats still loom",
+        "title": "A U.S.-Iran peace deal is emerging, while war threats still loom",
         "url": "https://npr.org/2026/05/25/nx-s1-5833690/u-s-iran-negotiations-updates",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-05-25T10-52-06-518Z",
+        "runId": "npr1_2026-05-25T13-53-14-794Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:52:15.001Z",
+        "fetchedAt": "2026-05-25T13:53:25.118Z",
         "shot": {
-          "object_path": "screenshots/npr1/2026/05/25/npr1_2026-05-25T10-52-06-518Z.jpg",
+          "object_path": "screenshots/npr1/2026/05/25/npr1_2026-05-25T13-53-14-794Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "npr1_2026-05-25T10-52-06-518Z",
-          "html": "/archive/npr1_2026-05-25T10-52-06-518Z.html",
-          "json": "/archive/npr1_2026-05-25T10-52-06-518Z.json"
+          "runId": "npr1_2026-05-25T13-53-14-794Z",
+          "html": "/archive/npr1_2026-05-25T13-53-14-794Z.html",
+          "json": "/archive/npr1_2026-05-25T13-53-14-794Z.json"
         }
       ]
     },
@@ -313,8 +331,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:52:19.870Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:53:30.345Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -325,21 +343,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-05-25T10-52-15-401Z",
+        "runId": "bbc1_2026-05-25T13-53-25-691Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:52:19.870Z",
+        "fetchedAt": "2026-05-25T13:53:30.345Z",
         "shot": {
-          "object_path": "screenshots/bbc1/2026/05/25/bbc1_2026-05-25T10-52-15-401Z.jpg",
+          "object_path": "screenshots/bbc1/2026/05/25/bbc1_2026-05-25T13-53-25-691Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "bbc1_2026-05-25T10-52-15-401Z",
-          "html": "/archive/bbc1_2026-05-25T10-52-15-401Z.html",
-          "json": "/archive/bbc1_2026-05-25T10-52-15-401Z.json"
+          "runId": "bbc1_2026-05-25T13-53-25-691Z",
+          "html": "/archive/bbc1_2026-05-25T13-53-25-691Z.html",
+          "json": "/archive/bbc1_2026-05-25T13-53-25-691Z.json"
         }
       ]
     },
@@ -348,33 +366,33 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:52:26.744Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:53:36.881Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "European country prepares to enter Strait of Hormuz with mission to clear mines",
-        "url": "https://foxnews.com/live-news/trump-iran-peace-deal-hormuz-may-24",
+        "title": "Trump teases 'unparalleled World Coalition' in post about Middle East, Iran negotiations",
+        "url": "https://foxnews.com/live-news/iran-war-news-trump-strait-hormuz-blockade-ceasefire-peace-deal-may-25",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
         "contentType": "live"
       },
       "last": {
-        "runId": "fox1_2026-05-25T10-52-20-211Z",
+        "runId": "fox1_2026-05-25T13-53-30-917Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:52:26.744Z",
+        "fetchedAt": "2026-05-25T13:53:36.881Z",
         "shot": {
-          "object_path": "screenshots/fox1/2026/05/25/fox1_2026-05-25T10-52-20-211Z.jpg",
+          "object_path": "screenshots/fox1/2026/05/25/fox1_2026-05-25T13-53-30-917Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "fox1_2026-05-25T10-52-20-211Z",
-          "html": "/archive/fox1_2026-05-25T10-52-20-211Z.html",
-          "json": "/archive/fox1_2026-05-25T10-52-20-211Z.json"
+          "runId": "fox1_2026-05-25T13-53-30-917Z",
+          "html": "/archive/fox1_2026-05-25T13-53-30-917Z.html",
+          "json": "/archive/fox1_2026-05-25T13-53-30-917Z.json"
         }
       ]
     },
@@ -383,8 +401,8 @@
       "name": "Yahoo News",
       "home_url": "https://news.yahoo.com/",
       "kind": "hero",
-      "created_at": "2026-05-25T10:50:04.878Z",
-      "updated_at": "2026-05-25T10:52:34.404Z",
+      "created_at": "2026-05-25T13:52:03.983Z",
+      "updated_at": "2026-05-25T13:53:43.504Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -395,21 +413,21 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-05-25T10-52-27-323Z",
+        "runId": "yahoo1_2026-05-25T13-53-37-542Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-05-25T10:52:34.404Z",
+        "fetchedAt": "2026-05-25T13:53:43.504Z",
         "shot": {
-          "object_path": "screenshots/yahoo1/2026/05/25/yahoo1_2026-05-25T10-52-27-323Z.jpg",
+          "object_path": "screenshots/yahoo1/2026/05/25/yahoo1_2026-05-25T13-53-37-542Z.jpg",
           "shot_url": null
         }
       },
       "history": [],
       "archive": [
         {
-          "runId": "yahoo1_2026-05-25T10-52-27-323Z",
-          "html": "/archive/yahoo1_2026-05-25T10-52-27-323Z.html",
-          "json": "/archive/yahoo1_2026-05-25T10-52-27-323Z.json"
+          "runId": "yahoo1_2026-05-25T13-53-37-542Z",
+          "html": "/archive/yahoo1_2026-05-25T13-53-37-542Z.html",
+          "json": "/archive/yahoo1_2026-05-25T13-53-37-542Z.json"
         }
       ]
     }

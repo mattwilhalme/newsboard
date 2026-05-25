@@ -1,98 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-25T10:52:36.218Z",
+  "generatedAt": "2026-05-25T13:53:46.363Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "MOVED",
-      "fingerprint": "54c3260b3148a428baab31403d255d7a306a0bcb",
-      "from_rank": 2,
-      "to_rank": 1,
-      "from_title": "Iran live updates: Rubio says 'significant progress' made in Iran talks",
-      "to_title": "Iran live updates: Rubio says 'significant progress' made in Iran talks"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "MOVED",
-      "fingerprint": "afd422678e44b0a6c74de24113196e0e646889af",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service",
-      "to_title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ec855cb80f9e2c068a4b4d43599b06919c0fe805",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "9-story building under construction in the Philippines collapses; 21 missing"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "MOVED",
-      "fingerprint": "a0b780754af649943ea64840dc859fc042848889",
-      "from_rank": 9,
-      "to_rank": 8,
-      "from_title": "Trump's Justice Department scrubs its website of news releases about Jan. 6 defendants",
-      "to_title": "Trump's Justice Department scrubs its website of news releases about Jan. 6 defendants"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "e1c6057dbe5880d58718fd67f0cd55ce0f765d61",
-      "from_rank": null,
-      "to_rank": 9,
-      "from_title": null,
-      "to_title": "Good dog! More children’s hospitals turn to furry caregivers to help kids heal"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c77938eab59a809d7abca6d767c7446670751433",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Australia sees second fatal shark attack in a week"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "9f35130ae000586b0427980b920c508d7d0daeb3",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "Powerful bomb explodes near railway track in Pakistan, killing at least 19 people",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "6.0 magnitude earthquake detected off Hawaii coast",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-24T11:39:25.765Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8788ef95653dac253fc0649e829a5e49bc736e33",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "21 missing after Philippines building collapse",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-24T16:38:36.481Z",
@@ -621,6 +531,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Subway surfer' killed, another critically injured in Manhattan",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T13:53:49.727Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a30f36d2b2c9dd49018b5d2d2bbda7e4de22d361",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says Iran deal critics 'know nothing' of potential agreement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T13:53:49.727Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "74866b63c43af3bd6e7aff4d536ce3387325e5b2",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Peace deal a 'work in progress,' Rubio says",
       "to_title": null
     }
   ]

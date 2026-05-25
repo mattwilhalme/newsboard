@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-25T10:52:36.218Z",
+  "generatedAt": "2026-05-25T13:53:46.363Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T12:48:59.318Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bf801ea10b159d29ac98d323068cef8533904a19",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump says expect higher gas prices 'for a little while'",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T12:48:59.318Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "57da92e24363becf070b850c1b7ffb4f61879d41",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Michelle Rust disappearance: Husband charged with murder 24 years later",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-24T14:24:19.935Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "'Subway surfer' killed, another critically injured in Manhattan",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T13:53:49.727Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a30f36d2b2c9dd49018b5d2d2bbda7e4de22d361",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: Trump says Iran deal critics 'know nothing' of potential agreement"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-25T13:53:49.727Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "74866b63c43af3bd6e7aff4d536ce3387325e5b2",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Peace deal a 'work in progress,' Rubio says",
       "to_title": null
     }
   ],
