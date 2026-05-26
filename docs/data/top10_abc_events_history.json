@@ -1,28 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-26T22:43:11.664Z",
+  "generatedAt": "2026-05-26T23:50:07.094Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-25T19:12:03.567Z",
-      "event_type": "MOVED",
-      "fingerprint": "3e58cd4603bf1f4632d0b4fecc21fbac1794a594",
-      "from_rank": 9,
-      "to_rank": 10,
-      "from_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance",
-      "to_title": "Soldier who made $400K betting on Maduro's removal makes 1st court appearance"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-25T19:12:03.567Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4508d64676a123b5301b626c972b258384373810",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Almost 50 million Americans on alert for severe weather outbreak in Plains, Midwest",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-25T19:12:03.567Z",
@@ -30001,6 +29981,26 @@
       "from_rank": 7,
       "to_rank": null,
       "from_title": "CDC asks staff to volunteer to help with Ebola screenings at airports amid outbreak",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T23:50:10.126Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "0a2ed4daaf0553008b806c1fef90fc8969f5126c",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Son of Mango clothing founder steps down after arrest related to father's death"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T23:50:10.126Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "27148b354a75bfad4bb424c554b194f30b0a10e6",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "USMNT announces World Cup roster: See who will compete",
       "to_title": null
     }
   ],
