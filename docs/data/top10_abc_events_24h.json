@@ -1,38 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-26T19:38:10.418Z",
+  "generatedAt": "2026-05-26T21:18:29.874Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-25T19:45:45.378Z",
-      "event_type": "MOVED",
-      "fingerprint": "0b9efd96a7f2066c96aef4904bef495467efb940",
-      "from_rank": 5,
-      "to_rank": 3,
-      "from_title": "California chemical tank no longer under threat of catastrophic explosion: Officials",
-      "to_title": "California chemical tank no longer under threat of catastrophic explosion: Officials"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-25T19:45:45.378Z",
-      "event_type": "MOVED",
-      "fingerprint": "ffed7afe77c122889c36544c1d79da6790faefb3",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "Hiker rescued after being stuck in crevice for hours",
-      "to_title": "Hiker rescued after being stuck in crevice for hours"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-25T19:45:45.378Z",
-      "event_type": "MOVED",
-      "fingerprint": "ee7f1e3ddea453fda7f3342e251a74849c40b8d6",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "DOJ filing invokes weekend White House shooting in ballroom case",
-      "to_title": "DOJ filing invokes weekend White House shooting in ballroom case"
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-25T22:01:12.943Z",
@@ -711,6 +681,116 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Judge grants Comey's request to delay trial",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "4dacbf9338850874a8180564e323e411d38d025f",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Fatalities confirmed after chemical tank ruptures at pulp and paper mill"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "27148b354a75bfad4bb424c554b194f30b0a10e6",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "USMNT announces World Cup roster: See who will compete"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "MOVED",
+      "fingerprint": "2e90f26da27d9eb74f8b6ef06eea62829ff333a8",
+      "from_rank": 5,
+      "to_rank": 6,
+      "from_title": "Iran live updates: Iran's internet blackout partially lifted",
+      "to_title": "Iran live updates: Iran's internet blackout partially lifted"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "093d677e9216fd0a41af2eef8e8b932c5514ec2a",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "CDC asks staff to volunteer to help with Ebola screenings at airports amid outbreak"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "06158e13cfc66a216a14c935033adfb910c0ed30",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "'Toy Story 5' gets final trailer, Bad Bunny joins film's voice cast"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d9e62a137e8a5c89176698fe637ef259f0883849",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Ruling temporarily blocks Mahmoud Khalil's removal"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "50d6a15c34abc8caed665338c8d737188b8bbbfd",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Fatalities confirmed after chemical tank ruptures at Washington state facility",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fa5f7ed5804ce83b0b6cd34a0b9eea56938192f1",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Ebola outbreak could become 'the deadliest on record,' IRC warns",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f40c6ed69df5262a55e487cac35f46ec914669ee",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "Couple details encounter with 'one of the most dangerous' sharks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d9bd1d50345710283f38fc9aabbbe94839edf276",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "2026 AMAs host Queen Latifah brings partner, son to red carpet",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T21:18:32.899Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "cb2ca640d14094f8673b7c7f0a8f45c4670dfa85",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Federal court blocks Alabama redistricting effort",
       "to_title": null
     }
   ]
