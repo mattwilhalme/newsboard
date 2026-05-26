@@ -1,148 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-05-26T08:10:30.735Z",
+  "generatedAt": "2026-05-26T14:18:35.012Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T18:28:28.589Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "8f266aec881735df92e64060c138232c05162fd8",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Firefighters brace for 'dynamic' wildfire changes"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T18:28:28.589Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "cdbc390328bde22d000d7537beaa1b8e2278c969",
-      "from_rank": 7,
-      "to_rank": null,
-      "from_title": "Firefighters brace for 'dynamic' changes as Georgia wildfires continue to spread",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T18:28:28.589Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "dcf712fdfb6bf2f68f3f8c5626e68ba4163a97a3",
-      "from_rank": 10,
-      "to_rank": null,
-      "from_title": "Soldier who bet on Maduro removal appears in court",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T19:30:32.270Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "ceedb9b8559b3b636b7e7ce9b99871ea9713ed29",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "1 missing doctoral student found dead, other still missing: Sheriff"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T19:30:32.270Z",
-      "event_type": "MOVED",
-      "fingerprint": "596edd6df267ad9f59df76867fb346b6dd5a0dac",
-      "from_rank": 2,
-      "to_rank": 3,
-      "from_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement",
-      "to_title": "Rob Reiner's son Jake Reiner speaks out in heartbreaking statement"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T19:30:32.270Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "a9e4f096b76bcbc659a711ec43f01973b357b37e",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "Person linked to missing USF doctoral students in custody: Sheriff's office",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c399ad2ac8c27633ca96b17acb8e061a3ab36461",
-      "from_rank": null,
-      "to_rank": 4,
-      "from_title": null,
-      "to_title": "17-year-old girl identified as victim killed in shooting at Mall of Louisiana"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "MOVED",
-      "fingerprint": "aae86f2e7f02942180b4ba914d90f771d9864248",
-      "from_rank": 4,
-      "to_rank": 5,
-      "from_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city",
-      "to_title": "Enid, Oklahoma, surveys damage after massive tornado tears through city"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c06c705ae39b05cd683653f58e052b16afb193e9",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "Prince Jackson discusses his father's legacy and highly anticipated biopic 'Michael'"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "MOVED",
-      "fingerprint": "042e452073bbbf22c3f6a5d13742117b14f18706",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Ex-assistant to fired Michigan coach speaks out",
-      "to_title": "Ex-assistant to fired Michigan coach speaks out"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "MOVED",
-      "fingerprint": "54032696a3eeec4423af9c7fdea74a7a31022eae",
-      "from_rank": 7,
-      "to_rank": 8,
-      "from_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly",
-      "to_title": "'Jeopardy!' champion Jamie Ding reveals his secret to buzzing in quickly"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "34f7cc8f2ab6f6508d7be4cb231d32bad71e8352",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "DOJ dropping criminal probe of Fed Chair Powell"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "bb6bc761b5aa661fb0594e5b7713486f6aca92ed",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "DOJ dropping criminal probe of Fed Chair Jerome Powell amid pressure from senators",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-24T20:09:46.196Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "af4e6e8d8780db970be82d3dc4f2ce7b044ef120",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Patriots coach Mike Vrabel says his recent actions have not met his 'standard'",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-24T20:09:46.196Z",
@@ -30001,6 +29861,146 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "19 injured in festival crowd stampede triggered by person running: Officials",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6e27df96b1a2a006af108a3fdf257933cc7a54ad",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US conducts 'self-defense' strikes, Rubio says Strait will re-open"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1bca68eecc9393da558e7da9ab8aa55daf7edafb",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Texas Senate runoff tests Trump's influence"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "MOVED",
+      "fingerprint": "963a8efda83deaea70d656b5091f82c949e2028f",
+      "from_rank": 4,
+      "to_rank": 5,
+      "from_title": "3 men wanted in connection with US athlete burglaries arrested in Argentina",
+      "to_title": "3 men wanted in connection with US athlete burglaries arrested in Argentina"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "6b4008325b32bc8709dfe7c6603771941168f507",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Billy Idol shares inspiring message at 2026 AMAs"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "698d4bd0caf2abf08045c9bda199881b8d819900",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "4 dead, 5 hurt in a crash between a train and a school bus, Belgian officials say"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "MOVED",
+      "fingerprint": "5ecf754dff939acebfc464d8f990e5002c37bf46",
+      "from_rank": 5,
+      "to_rank": 8,
+      "from_title": "Evacuation zone shrinks after 'worst-case scenario' of chemical tank blast averted",
+      "to_title": "Evacuation zone shrinks after 'worst-case scenario' of chemical tank blast averted"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c427f362130a36252af3afa04871d93fb71cb560",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Oil giant BP ousts chairman over 'conduct'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f3ce7f9754336302d28233fd14a6345c7c7a07a5",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "North Korea launches ballistic missiles over sea"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d21bb97d88e28f46bf86fb4fc55f9de4a57d7557",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US forces conduct 'self-defense' strikes in Iran, CENTCOM says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ffed7afe77c122889c36544c1d79da6790faefb3",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Hiker rescued after being stuck in crevice for hours",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ee7f1e3ddea453fda7f3342e251a74849c40b8d6",
+      "from_rank": 7,
+      "to_rank": null,
+      "from_title": "DOJ filing invokes weekend White House shooting in ballroom case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d4541e772fd81878fca06395ef77978417d9dc5c",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "HS students take 100-year-old veteran to prom",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "7d9abd4d3aa3b669de4748c61442af08e7c13fa0",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Rep. Suozzi calls on Republicans to 'stand up' to stop 'anti-weaponization fund'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T14:18:37.987Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fe2fdbc6d3e4cf8370e3493ac101049877bc38f4",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Woman killed by patio umbrella while dining at lakeside restaurant: Coroner",
       "to_title": null
     }
   ],
