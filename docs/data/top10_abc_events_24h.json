@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-25T23:13:49.478Z",
+  "generatedAt": "2026-05-26T00:17:37.417Z",
   "hours": 24,
   "events": [
     {
@@ -491,6 +491,46 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "Pope calls for robust regulation of AI in manifesto",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T00:17:40.454Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d21bb97d88e28f46bf86fb4fc55f9de4a57d7557",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US forces conduct 'self-defense' strikes in Iran, CENTCOM says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T00:17:40.454Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d4541e772fd81878fca06395ef77978417d9dc5c",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "HS students take 100-year-old veteran to prom"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T00:17:40.454Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8c7c0c00f22bfb24a299ca278318171cb75368b5",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: Trump honors troops killed in Iran war during Memorial Day remarks",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-26T00:17:40.454Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "6822917bdcefbfe038b7f11773c606c14edb13f9",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "100-year-old veteran attends 1st prom 82 years after missing his own",
       "to_title": null
     }
   ]
