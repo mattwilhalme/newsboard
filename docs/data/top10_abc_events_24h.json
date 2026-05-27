@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-27T06:12:57.927Z",
+  "generatedAt": "2026-05-27T10:21:26.947Z",
   "hours": 24,
   "events": [
     {
@@ -871,6 +871,66 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "'Toy Story 5' gets final trailer, Bad Bunny joins film's voice cast",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T10:21:29.852Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a128b5627a0de86ae0a2e999b353178842d613a8",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Lawyer says tourist accused of hurling rock at Hawaiian monk seal has been threatened"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T10:21:29.852Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "621ca2701a5f7509f4fd994fef134673c635258c",
+      "from_rank": null,
+      "to_rank": 9,
+      "from_title": null,
+      "to_title": "Iran live updates: Vance 'extremely hopeful' Tehran will disavow nuclear weapons"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T10:21:29.852Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c6997de61946e7cc7bef9350eb6793529e91fbdc",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Matthew Perry's assistant to be sentenced"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T10:21:29.852Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "33c2edf92cc79b78f2fbec97fbc1ea5bc492fbbd",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Trump says Walter Reed medical exam went ‘perfectly’",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T10:21:29.852Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2e90f26da27d9eb74f8b6ef06eea62829ff333a8",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Iran live updates: Iran's internet blackout partially lifted",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T10:21:29.852Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "d9e62a137e8a5c89176698fe637ef259f0883849",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Ruling temporarily blocks Mahmoud Khalil's removal",
       "to_title": null
     }
   ]
