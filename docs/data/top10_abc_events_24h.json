@@ -1,48 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-26T23:50:07.094Z",
+  "generatedAt": "2026-05-27T01:56:04.749Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-26T00:17:40.454Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d21bb97d88e28f46bf86fb4fc55f9de4a57d7557",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Iran live updates: US forces conduct 'self-defense' strikes in Iran, CENTCOM says"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-26T00:17:40.454Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d4541e772fd81878fca06395ef77978417d9dc5c",
-      "from_rank": null,
-      "to_rank": 6,
-      "from_title": null,
-      "to_title": "HS students take 100-year-old veteran to prom"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-26T00:17:40.454Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "8c7c0c00f22bfb24a299ca278318171cb75368b5",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "Iran live updates: Trump honors troops killed in Iran war during Memorial Day remarks",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-26T00:17:40.454Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "6822917bdcefbfe038b7f11773c606c14edb13f9",
-      "from_rank": 6,
-      "to_rank": null,
-      "from_title": "100-year-old veteran attends 1st prom 82 years after missing his own",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-26T04:38:57.655Z",
@@ -851,6 +811,56 @@
       "from_rank": 6,
       "to_rank": null,
       "from_title": "USMNT announces World Cup roster: See who will compete",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T01:56:07.732Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "85aad70f7e279227da1fb4709ecbef6a2a1a01de",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Texas GOP Senate runoff: Trump-backed Paxton projected to beat Cornyn"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T01:56:07.732Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "1879c1a65da0178eee80216dc557edb3c8c103eb",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "9 employees missing, 1 fatality after chemical tank ruptures at pulp and paper mill"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T01:56:07.732Z",
+      "event_type": "MOVED",
+      "fingerprint": "ffc76888a60287fc64cb8a554030029bbaedf81f",
+      "from_rank": 1,
+      "to_rank": 3,
+      "from_title": "NASA reveals new details on plan to build a base on the moon",
+      "to_title": "NASA reveals new details on plan to build a base on the moon"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T01:56:07.732Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4dacbf9338850874a8180564e323e411d38d025f",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "Fatalities confirmed after chemical tank ruptures at pulp and paper mill",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-27T01:56:07.732Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "ceb1043baa5897ae1d597f9cc4e23f35c61ac0bf",
+      "from_rank": 3,
+      "to_rank": null,
+      "from_title": "South Carolina Senate effectively kills proposed congressional map backed by Trump",
       "to_title": null
     }
   ]
