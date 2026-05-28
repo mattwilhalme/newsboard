@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-27T23:54:59.699Z",
+  "generatedAt": "2026-05-28T01:50:34.146Z",
   "hours": 24,
   "events": [
     {
@@ -801,6 +801,136 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Owner of residence dubbed the 'Trump House' dies after being beaten outside home",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "f2665aba759440c1793aa1a4ba6bccf9cf31ae63",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: US conducts new airstrikes in southern Iran, US official says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "d433907a8499fba120ee3cd08e6087006db3a1d7",
+      "from_rank": null,
+      "to_rank": 2,
+      "from_title": null,
+      "to_title": "Related:'I don't care about the midterms': Trump says he's in no rush to reach deal with Iran"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "3b95d45e28eeb72f8482c001eaaebac5f690f49c",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "DOJ launches criminal probe into E. Jean Carroll: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a2f8c60b73b7655513f745fe788ed7c72a012ae2",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Jill Biden says she thought Joe Biden was having a stroke during 2024 debate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "MOVED",
+      "fingerprint": "f50cc018c66ac2ccc1c7840ac1a404b626f18bd0",
+      "from_rank": 3,
+      "to_rank": 5,
+      "from_title": "Financial app for managing Trump Accounts set to launch Thursday",
+      "to_title": "Financial app for managing Trump Accounts set to launch Thursday"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "MOVED",
+      "fingerprint": "82cda6cccdf3bb6ea48f50b873381bbff6d451ce",
+      "from_rank": 4,
+      "to_rank": 6,
+      "from_title": "Cruise ship killing: Stepbrother can stay out of jail",
+      "to_title": "Cruise ship killing: Stepbrother can stay out of jail"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "MOVED",
+      "fingerprint": "4ec798609a99018da79354a1475ccd91a7ff2096",
+      "from_rank": 5,
+      "to_rank": 7,
+      "from_title": "Lynette Hooker search: Coast Guard wants to send US divers to Bahamas",
+      "to_title": "Lynette Hooker search: Coast Guard wants to send US divers to Bahamas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "MOVED",
+      "fingerprint": "b856154ffb0c18bc0c6e7d1e35ff7a3b64825111",
+      "from_rank": 6,
+      "to_rank": 8,
+      "from_title": "Beloved dad killed in chemical tank rupture: 'We are so heartbroken'",
+      "to_title": "Beloved dad killed in chemical tank rupture: 'We are so heartbroken'"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "MOVED",
+      "fingerprint": "fa090913c7a7896a2f2de62ccdc6bafabb27f90f",
+      "from_rank": 7,
+      "to_rank": 9,
+      "from_title": "Google employee charged with using inside information to make $1M on Polymarket",
+      "to_title": "Google employee charged with using inside information to make $1M on Polymarket"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b344c1c0df4b68fb90cb46f18f1a18ffe0bc9a63",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "breakingUS conducts new airstrikes in southern Iran, US official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "2f7e54db64254fc992d65dab863aedce1ba4511b",
+      "from_rank": 2,
+      "to_rank": null,
+      "from_title": "'I don't care about the midterms': Trump says he's in no rush to reach deal with Iran",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "86b3136dd667eac57b896cb0ea079c0b9bb4b0a5",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Mullin says ICE detainees can 'go back to their country' amid alleged hunger strike",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T01:50:37.183Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "9d95af2d571e24235b7fbf51a346a9cdc3161640",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Genetic genealogy leads to murder charges in 1993 cold case",
       "to_title": null
     }
   ]
