@@ -1,178 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-05-28T01:50:34.146Z",
+  "generatedAt": "2026-05-28T09:59:44.774Z",
   "hours": 24,
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T01:56:07.732Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "85aad70f7e279227da1fb4709ecbef6a2a1a01de",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Texas GOP Senate runoff: Trump-backed Paxton projected to beat Cornyn"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T01:56:07.732Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "1879c1a65da0178eee80216dc557edb3c8c103eb",
-      "from_rank": null,
-      "to_rank": 2,
-      "from_title": null,
-      "to_title": "9 employees missing, 1 fatality after chemical tank ruptures at pulp and paper mill"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T01:56:07.732Z",
-      "event_type": "MOVED",
-      "fingerprint": "ffc76888a60287fc64cb8a554030029bbaedf81f",
-      "from_rank": 1,
-      "to_rank": 3,
-      "from_title": "NASA reveals new details on plan to build a base on the moon",
-      "to_title": "NASA reveals new details on plan to build a base on the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T01:56:07.732Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "4dacbf9338850874a8180564e323e411d38d025f",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "Fatalities confirmed after chemical tank ruptures at pulp and paper mill",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T01:56:07.732Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "ceb1043baa5897ae1d597f9cc4e23f35c61ac0bf",
-      "from_rank": 3,
-      "to_rank": null,
-      "from_title": "South Carolina Senate effectively kills proposed congressional map backed by Trump",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "c0fce1fc9a98067661cd4284bc884ecefb9bc38f",
-      "from_rank": null,
-      "to_rank": 1,
-      "from_title": null,
-      "to_title": "Biden sues DOJ to block release of audio recordings tied to special counsel probe"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "MOVED",
-      "fingerprint": "85aad70f7e279227da1fb4709ecbef6a2a1a01de",
-      "from_rank": 1,
-      "to_rank": 2,
-      "from_title": "Texas GOP Senate runoff: Trump-backed Paxton projected to beat Cornyn",
-      "to_title": "Texas GOP Senate runoff: Trump-backed Paxton projected to beat Cornyn"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "dbe9da04bc79ead6943a248404ec4c59285166f8",
-      "from_rank": null,
-      "to_rank": 3,
-      "from_title": null,
-      "to_title": "1 dead, 9 missing after chemical tank ruptures at pulp and paper mill"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "MOVED",
-      "fingerprint": "ffc76888a60287fc64cb8a554030029bbaedf81f",
-      "from_rank": 3,
-      "to_rank": 4,
-      "from_title": "NASA reveals new details on plan to build a base on the moon",
-      "to_title": "NASA reveals new details on plan to build a base on the moon"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "d7885fdf66ee7d95c12d3e3dea29682ab7c2425f",
-      "from_rank": null,
-      "to_rank": 5,
-      "from_title": null,
-      "to_title": "ICE detainees are dying by suicide at an 'alarming' rate, an AP investigation finds"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "MOVED",
-      "fingerprint": "33c2edf92cc79b78f2fbec97fbc1ea5bc492fbbd",
-      "from_rank": 4,
-      "to_rank": 6,
-      "from_title": "Trump says Walter Reed medical exam went ‘perfectly’",
-      "to_title": "Trump says Walter Reed medical exam went ‘perfectly’"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "MOVED",
-      "fingerprint": "6c04047266910986eb27a467ef8a87d8c4d6af68",
-      "from_rank": 5,
-      "to_rank": 7,
-      "from_title": "Construction underway on UFC Octagon at White House for Flag Day fights",
-      "to_title": "Construction underway on UFC Octagon at White House for Flag Day fights"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "MOVED",
-      "fingerprint": "0a2ed4daaf0553008b806c1fef90fc8969f5126c",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "Son of Mango clothing founder steps down after arrest related to father's death",
-      "to_title": "Son of Mango clothing founder steps down after arrest related to father's death"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "MOVED",
-      "fingerprint": "2e90f26da27d9eb74f8b6ef06eea62829ff333a8",
-      "from_rank": 7,
-      "to_rank": 9,
-      "from_title": "Iran live updates: Iran's internet blackout partially lifted",
-      "to_title": "Iran live updates: Iran's internet blackout partially lifted"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "1879c1a65da0178eee80216dc557edb3c8c103eb",
-      "from_rank": 2,
-      "to_rank": null,
-      "from_title": "9 employees missing, 1 fatality after chemical tank ruptures at pulp and paper mill",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "b1261aadcd1d7cd49ee740ac43f134a12198eb07",
-      "from_rank": 8,
-      "to_rank": null,
-      "from_title": "Woman loses thousands to scammer using suspected AI to mimic daughter's voice",
-      "to_title": null
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-05-27T06:13:01.940Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "06158e13cfc66a216a14c935033adfb910c0ed30",
-      "from_rank": 9,
-      "to_rank": null,
-      "from_title": "'Toy Story 5' gets final trailer, Bad Bunny joins film's voice cast",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-05-27T10:21:29.852Z",
@@ -931,6 +761,156 @@
       "from_rank": 9,
       "to_rank": null,
       "from_title": "Genetic genealogy leads to murder charges in 1993 cold case",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "c82b0d29876b27eac8779067ccc1fc26d826ce8d",
+      "from_rank": null,
+      "to_rank": 1,
+      "from_title": null,
+      "to_title": "Iran live updates: IRGC claims attack on US airbase after Bandar Abbas strikes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "a07a9ed7f5f1084170d7aeb43f0a7a5ee79c1fc8",
+      "from_rank": null,
+      "to_rank": 3,
+      "from_title": null,
+      "to_title": "Is AI to blame for hiring woes faced by college graduates?"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "506c31d4b81e1dd18f9a281b6d5e4f3a4712b746",
+      "from_rank": null,
+      "to_rank": 4,
+      "from_title": null,
+      "to_title": "Inside the race to quell prediction markets' insider trading woes"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "e148d2574007ac0a90d9453d954595c62c6b81b7",
+      "from_rank": null,
+      "to_rank": 5,
+      "from_title": null,
+      "to_title": "CIA officer accused of defrauding gov't had $40M in gold bars in home: Feds"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dacd73c06c1659f21058566980b2812598cf9d30",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Teen summer jobs hit historic lows as fewer employers hire seasonal workers"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "bdc382a779ee1bb9d7a780e67ed2c0de57524425",
+      "from_rank": null,
+      "to_rank": 7,
+      "from_title": null,
+      "to_title": "Think it's hot now? The next five years will smash records, UN says"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "MOVED",
+      "fingerprint": "3b95d45e28eeb72f8482c001eaaebac5f690f49c",
+      "from_rank": 3,
+      "to_rank": 8,
+      "from_title": "DOJ launches criminal probe into E. Jean Carroll: Sources",
+      "to_title": "DOJ launches criminal probe into E. Jean Carroll: Sources"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "MOVED",
+      "fingerprint": "a2f8c60b73b7655513f745fe788ed7c72a012ae2",
+      "from_rank": 4,
+      "to_rank": 9,
+      "from_title": "Jill Biden says she thought Joe Biden was having a stroke during 2024 debate",
+      "to_title": "Jill Biden says she thought Joe Biden was having a stroke during 2024 debate"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "MOVED",
+      "fingerprint": "4ec798609a99018da79354a1475ccd91a7ff2096",
+      "from_rank": 7,
+      "to_rank": 10,
+      "from_title": "Lynette Hooker search: Coast Guard wants to send US divers to Bahamas",
+      "to_title": "Lynette Hooker search: Coast Guard wants to send US divers to Bahamas"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f2665aba759440c1793aa1a4ba6bccf9cf31ae63",
+      "from_rank": 1,
+      "to_rank": null,
+      "from_title": "Iran live updates: US conducts new airstrikes in southern Iran, US official says",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "f50cc018c66ac2ccc1c7840ac1a404b626f18bd0",
+      "from_rank": 5,
+      "to_rank": null,
+      "from_title": "Financial app for managing Trump Accounts set to launch Thursday",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "82cda6cccdf3bb6ea48f50b873381bbff6d451ce",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Cruise ship killing: Stepbrother can stay out of jail",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "b856154ffb0c18bc0c6e7d1e35ff7a3b64825111",
+      "from_rank": 8,
+      "to_rank": null,
+      "from_title": "Beloved dad killed in chemical tank rupture: 'We are so heartbroken'",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "fa090913c7a7896a2f2de62ccdc6bafabb27f90f",
+      "from_rank": 9,
+      "to_rank": null,
+      "from_title": "Google employee charged with using inside information to make $1M on Polymarket",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-05-28T09:59:47.866Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "409c6725ae58187c9d0d81db553121cad5db3c56",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "White House says Americans in Africa exposed to Ebola will be sent to Kenya facility",
       "to_title": null
     }
   ]
