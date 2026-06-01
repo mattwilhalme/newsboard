@@ -5,8 +5,8 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:19.190Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:50.816Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -17,10 +17,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "abc1_2026-06-01T23-06-19-190Z",
+        "runId": "abc1_2026-06-01T23-27-50-816Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:19.190Z"
+        "fetchedAt": "2026-06-01T23:27:50.816Z"
       },
       "history": [],
       "archive": []
@@ -30,16 +30,22 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:20.855Z",
-      "ok": false,
-      "stale": true,
-      "item": null,
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:52.245Z",
+      "ok": true,
+      "stale": false,
+      "item": {
+        "title": "CBS News | Breaking news, top stories & today's latest headlines",
+        "url": "https://cbsnews.com/",
+        "imgUrl": null,
+        "slotKey": "4d6f70f0b663",
+        "contentType": "news"
+      },
       "last": {
-        "runId": "cbs1_2026-06-01T23-06-20-855Z",
-        "ok": false,
-        "error": "cbs1: headline not found",
-        "fetchedAt": "2026-06-01T23:06:20.855Z"
+        "runId": "cbs1_2026-06-01T23-27-52-245Z",
+        "ok": true,
+        "error": null,
+        "fetchedAt": "2026-06-01T23:27:52.245Z"
       },
       "history": [],
       "archive": []
@@ -49,8 +55,8 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:21.134Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:52.616Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -61,10 +67,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-06-01T23-06-21-134Z",
+        "runId": "usat1_2026-06-01T23-27-52-616Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:21.134Z"
+        "fetchedAt": "2026-06-01T23:27:52.616Z"
       },
       "history": [],
       "archive": []
@@ -74,16 +80,22 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:21.550Z",
-      "ok": false,
-      "stale": true,
-      "item": null,
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:52.894Z",
+      "ok": true,
+      "stale": false,
+      "item": {
+        "title": "[object Object]",
+        "url": "https://nbcnews.com/world/iran/iran-suspends-talks-us-israel-attacks-lebanon-rcna347865",
+        "imgUrl": null,
+        "slotKey": "579270cafa55",
+        "contentType": "news"
+      },
       "last": {
-        "runId": "nbc1_2026-06-01T23-06-21-550Z",
-        "ok": false,
-        "error": "nbc1: headline not found",
-        "fetchedAt": "2026-06-01T23:06:21.550Z"
+        "runId": "nbc1_2026-06-01T23-27-52-894Z",
+        "ok": true,
+        "error": null,
+        "fetchedAt": "2026-06-01T23:27:52.894Z"
       },
       "history": [],
       "archive": []
@@ -93,22 +105,22 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:22.201Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:53.683Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "function imageLoadError(img) { const fallbackImage = '/media/sites/cnn/cnn-fallback-image.jpg'; img.removeAttribute('onerror'); img.src = fallbackImage; let element = img.previousElementSibling; while (element && element.tagName === 'SOURCE') { element.srcset = fallbackImage; // If we fall back to a JPG, drop any format-specific <source type>. element.removeAttribute('type'); element = element.previousElementSibling; } img.dataset.imgCssVars?.split(',').forEach((property) => { img.style.removeProperty(property); }); } • For Subscribers CNN",
-        "url": "https://cnn.com/all-access/series/ebola?source=growth_sub-acq_web_20260603_hp-card",
+        "title": "• For Subscribers Sarah Silbiger for CNN",
+        "url": "https://cnn.com/2026/06/01/politics/josh-shapiro-pennsylvania-2028-israel",
         "imgUrl": null,
         "slotKey": "e75971db9693",
         "contentType": "news"
       },
       "last": {
-        "runId": "cnn1_2026-06-01T23-06-22-201Z",
+        "runId": "cnn1_2026-06-01T23-27-53-683Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:22.201Z"
+        "fetchedAt": "2026-06-01T23:27:53.683Z"
       },
       "history": [],
       "archive": []
@@ -118,8 +130,8 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:22.853Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:54.519Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -130,10 +142,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-06-01T23-06-22-853Z",
+        "runId": "guardian1_2026-06-01T23-27-54-519Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:22.853Z"
+        "fetchedAt": "2026-06-01T23:27:54.519Z"
       },
       "history": [],
       "archive": []
@@ -143,8 +155,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:23.092Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:55.053Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -155,10 +167,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-06-01T23-06-23-092Z",
+        "runId": "ap1_2026-06-01T23-27-55-053Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:23.092Z"
+        "fetchedAt": "2026-06-01T23:27:55.053Z"
       },
       "history": [],
       "archive": []
@@ -168,8 +180,8 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:23.542Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:55.453Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -180,10 +192,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-06-01T23-06-23-542Z",
+        "runId": "latimes1_2026-06-01T23-27-55-453Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:23.542Z"
+        "fetchedAt": "2026-06-01T23:27:55.453Z"
       },
       "history": [],
       "archive": []
@@ -193,8 +205,8 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:23.798Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:55.818Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -205,10 +217,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-06-01T23-06-23-798Z",
+        "runId": "npr1_2026-06-01T23-27-55-818Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:23.798Z"
+        "fetchedAt": "2026-06-01T23:27:55.818Z"
       },
       "history": [],
       "archive": []
@@ -218,8 +230,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:24.325Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:56.198Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -230,10 +242,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-06-01T23-06-24-325Z",
+        "runId": "bbc1_2026-06-01T23-27-56-198Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:24.325Z"
+        "fetchedAt": "2026-06-01T23:27:56.198Z"
       },
       "history": [],
       "archive": []
@@ -243,8 +255,8 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:24.523Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:56.486Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -255,10 +267,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-06-01T23-06-24-523Z",
+        "runId": "fox1_2026-06-01T23-27-56-486Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:24.523Z"
+        "fetchedAt": "2026-06-01T23:27:56.486Z"
       },
       "history": [],
       "archive": []
@@ -268,8 +280,8 @@
       "name": "Yahoo News",
       "home_url": "https://news.yahoo.com/",
       "kind": "hero",
-      "created_at": "2026-06-01T23:06:19.190Z",
-      "updated_at": "2026-06-01T23:06:24.768Z",
+      "created_at": "2026-06-01T23:27:50.816Z",
+      "updated_at": "2026-06-01T23:27:56.822Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -280,10 +292,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-06-01T23-06-24-768Z",
+        "runId": "yahoo1_2026-06-01T23-27-56-822Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-01T23:06:24.768Z"
+        "fetchedAt": "2026-06-01T23:27:56.822Z"
       },
       "history": [],
       "archive": []
