@@ -666,10 +666,16 @@ function logSourceGuardrail() {
 }
 
 async function withBrowser(fn, opts = {}) {
-  const browser = await chromium.launch({
+  const launchOptions = {
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  };
+  const browserChannel = String(process.env.PLAYWRIGHT_BROWSER_CHANNEL || "").trim();
+  const executablePath = String(process.env.PLAYWRIGHT_EXECUTABLE_PATH || "").trim();
+  if (browserChannel) launchOptions.channel = browserChannel;
+  if (executablePath) launchOptions.executablePath = executablePath;
+
+  const browser = await chromium.launch(launchOptions);
 
   const context = await browser.newContext({
     viewport: opts.mobile ? { width: 390, height: 844 } : { width: 1280, height: 720 },
@@ -3280,9 +3286,15 @@ async function scrapeWPHero(opts = {}) {
         if (!url || !isYahooHost(url)) return false;
         const u = parsed(url);
         const p = String(u?.pathname || "");
+        const hay = `${p} ${String(url || "")}`.toLowerCase();
+        if (/\/(about|privacy|legal|policies|notices|member-center|account|subscriptions)\b/i.test(p)) return false;
+        if (/\b(our-ads|about-our-ads|adchoices|advertising|privacy-dashboard|privacy-controls)\b/i.test(hay)) return false;
         if (!/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(p) && !/^\/news\/articles\//i.test(p)) return false;
         if (/^\/(search|news|finance|sports|entertainment|lifestyle|mail|weather|video|autos)\/?$/i.test(p)) return false;
         return true;
+      }
+      function isNonNewsTitle(title) {
+        return /\b(about our ads|privacy policy|terms of service|advertise with us|ad choices)\b/i.test(String(title || ""));
       }
       function numFromYlk(ylk, key) {
         const m = String(ylk || "").match(new RegExp(`(?:^|;)${key}:(\\\\d+)`));
@@ -3374,7 +3386,7 @@ async function scrapeWPHero(opts = {}) {
             clean(a.querySelector("span")?.textContent || "") ||
             clean(a.getAttribute("aria-label") || "") ||
             clean(a.textContent || "");
-          if (!url || !title || !isStoryUrl(url)) return null;
+          if (!url || !title || !isStoryUrl(url) || isNonNewsTitle(title)) return null;
           const rect = a.getBoundingClientRect?.();
           const topY = Number.isFinite(rect?.top) ? rect.top : NaN;
           const docIdx = docIndexByAnchor.has(a) ? docIndexByAnchor.get(a) : NaN;
@@ -3403,7 +3415,7 @@ async function scrapeWPHero(opts = {}) {
                 const row = JSON.parse(rowRaw);
                 const url = abs(row?.url || "");
                 const title = clean(row?.title || "");
-                if (url && title && isStoryUrl(url)) {
+                if (url && title && isStoryUrl(url) && !isNonNewsTitle(title)) {
                   return {
                     ok: true,
                     title,

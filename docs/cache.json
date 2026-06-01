@@ -359,19 +359,13 @@
       "kind": "hero",
       "created_at": "2026-05-28T13:53:05.265Z",
       "updated_at": "2026-05-28T13:54:46.503Z",
-      "ok": true,
-      "stale": false,
-      "item": {
-        "title": "About Our Ads",
-        "url": "https://legal.yahoo.com/us/en/yahoo/privacy/adinfo/index.html",
-        "imgUrl": null,
-        "slotKey": "c41bbb14e91d",
-        "contentType": "news"
-      },
+      "ok": false,
+      "stale": true,
+      "item": null,
       "last": {
         "runId": "yahoo1_2026-05-28T13-54-40-555Z",
-        "ok": true,
-        "error": null,
+        "ok": false,
+        "error": "Filtered non-news Yahoo link",
         "fetchedAt": "2026-05-28T13:54:46.503Z"
       },
       "history": [],
@@ -381,7 +375,8 @@
           "html": "/archive/yahoo1_2026-05-28T13-54-40-555Z.html",
           "json": "/archive/yahoo1_2026-05-28T13-54-40-555Z.json"
         }
-      ]
+      ],
+      "error": "Filtered non-news Yahoo link"
     }
   }
 }

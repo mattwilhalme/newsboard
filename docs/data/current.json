@@ -168,18 +168,12 @@
       }
     },
     "yahoo1": {
-      "ok": true,
+      "ok": false,
       "updatedAt": "2026-05-28T13:54:46.503Z",
-      "error": null,
+      "error": "Filtered non-news Yahoo link",
       "runId": "yahoo1_2026-05-28T13-54-40-555Z",
       "since": "2026-05-17T14:44:45.968Z",
-      "item": {
-        "title": "About Our Ads",
-        "url": "https://legal.yahoo.com/us/en/yahoo/privacy/adinfo/index.html",
-        "imgUrl": null,
-        "slotKey": "c41bbb14e91d",
-        "contentType": "news"
-      }
+      "item": null
     }
   }
 }

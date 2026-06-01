@@ -18,11 +18,18 @@ function isStoryUrl(url) {
     const u = new URL(String(url || ""));
     if (!/(^|\.)yahoo\.com$/i.test(u.hostname)) return false;
     const p = String(u.pathname || "");
+    const hay = `${p} ${String(url || "")}`.toLowerCase();
+    if (/\/(about|privacy|legal|policies|notices|member-center|account|subscriptions)\b/i.test(p)) return false;
+    if (/\b(our-ads|about-our-ads|adchoices|advertising|privacy-dashboard|privacy-controls)\b/i.test(hay)) return false;
     if (!/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(p) && !/^\/news\/articles\//i.test(p)) return false;
     return true;
   } catch {
     return false;
   }
+}
+
+function isNonNewsTitle(title) {
+  return /\b(about our ads|privacy policy|terms of service|advertise with us|ad choices)\b/i.test(String(title || ""));
 }
 
 function scoreCandidate(c) {
@@ -69,7 +76,7 @@ function extractTopStoryFromHtml(html) {
         normalizeSpaces($(anchor).find("span").first().text()) ||
         normalizeSpaces($(anchor).attr("aria-label")) ||
         normalizeSpaces($(anchor).text());
-      if (!url || !title || !isStoryUrl(url)) return;
+      if (!url || !title || !isStoryUrl(url) || isNonNewsTitle(title)) return;
 
       const candidate = {
         url,
@@ -132,6 +139,9 @@ function run() {
 
   const notBlocked = detectBlocked({ httpStatus: 200, pageTitle: "Yahoo" });
   assert(notBlocked.blocked === false, "Expected non-blocked case to be false");
+  assert(isStoryUrl("https://news.yahoo.com/world/article/is-trump-about-to-go-to-war-with-iran-204654148.html"), "Expected Yahoo article URL to pass");
+  assert(!isStoryUrl("https://news.yahoo.com/about/our-ads/"), "Expected About Our Ads URL to be rejected");
+  assert(isNonNewsTitle("About Our Ads"), "Expected About Our Ads title to be rejected");
 
   console.log("Yahoo scraper tests passed.");
   console.log(`Top story: ${top.title} -> ${top.url}`);

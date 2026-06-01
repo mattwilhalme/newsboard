@@ -337,11 +337,6 @@
       cursor:pointer;
     }
     .linkbtn:hover{ border-color: rgba(37,99,235,.45); color: var(--blue2); }
-    .rewindBtn{
-      border-color: rgba(37,99,235,.35);
-      color: var(--blue2);
-      font-weight:700;
-    }
     .momentConfig{
       display:grid;
       gap:10px;
@@ -835,127 +830,6 @@
       padding:12px;
       margin-bottom:12px;
     }
-    .rewindControls{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:flex-end;
-      gap:8px;
-      margin:10px 0;
-    }
-    .rewindField{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      min-width:180px;
-    }
-    .rewindInput{
-      border:1px solid var(--line);
-      background:var(--card);
-      color:var(--text);
-      font-size:12px;
-      padding:7px 9px;
-      border-radius:8px;
-    }
-    .rewindFeedback{
-      margin:6px 0 10px;
-      min-height:18px;
-    }
-    .rewindGallery{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .rewindSelectorGrid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
-      gap:10px;
-    }
-    .rewindCard{
-      border:1px solid var(--line);
-      border-radius:10px;
-      background:var(--card);
-      overflow:hidden;
-      cursor:pointer;
-      padding:0;
-      text-align:left;
-    }
-    .rewindThumb{
-      width:100%;
-      aspect-ratio:16 / 9;
-      object-fit:cover;
-      display:block;
-      background:#0f1113;
-    }
-    .rewindMeta{
-      padding:8px;
-      display:flex;
-      flex-direction:column;
-      gap:3px;
-      font-size:12px;
-    }
-    .rewindSource{ font-weight:700; color:var(--text); }
-    .rewindTime{ color:var(--muted); }
-    .rewindKind{
-      display:inline-flex;
-      width:max-content;
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:2px 7px;
-      font-size:10px;
-      font-weight:700;
-      color:var(--muted);
-      background:var(--chip);
-      text-transform:uppercase;
-      letter-spacing:.2px;
-    }
-    .rewindSourceRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      margin:10px 0;
-    }
-    .rewindSourceBtn{
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:5px 10px;
-      background:var(--chip);
-      color:var(--text);
-      font-size:11px;
-      cursor:pointer;
-    }
-    .rewindSourceBtn.active{
-      border-color:var(--blue);
-      background:rgba(24,96,214,.08);
-      color:var(--blue);
-      font-weight:700;
-    }
-    .rewindCard.active{
-      border-color:var(--blue);
-      box-shadow:0 0 0 1px rgba(24,96,214,.25) inset;
-    }
-    .rewindSkel{
-      border:1px solid var(--line);
-      border-radius:10px;
-      background:var(--card);
-      overflow:hidden;
-    }
-    .rewindSkelImg{
-      width:100%;
-      aspect-ratio:16 / 9;
-      background:linear-gradient(90deg, #eceff3 0%, #f5f7fb 50%, #eceff3 100%);
-      background-size:200% 100%;
-      animation:rewindPulse 1.1s ease-in-out infinite;
-    }
-    .rewindSkelMeta{
-      height:48px;
-      background:linear-gradient(90deg, #f5f7fb 0%, #eceff3 50%, #f5f7fb 100%);
-      background-size:200% 100%;
-      animation:rewindPulse 1.1s ease-in-out infinite;
-    }
-    @keyframes rewindPulse{
-      0%{ background-position: 200% 0; }
-      100%{ background-position: -200% 0; }
-    }
     .labsHeader{
       margin-bottom:10px;
       padding-bottom:8px;
@@ -1245,9 +1119,6 @@
         padding:6px 8px;
         min-width:38px;
       }
-      .rewindSelectorGrid{
-        grid-template-columns:1fr 1fr;
-      }
     }
     @media (max-width: 700px){
       #drawer-data,
@@ -1536,7 +1407,7 @@
       <div class="historyList">
         <div class="aboutCard">
           <h3 class="aboutTitle">About NewsBoard</h3>
-          <p class="aboutText">NewsBoard is a newsroom tool for quickly checking the lead story or centerpiece across major news sites. It tracks homepage changes over time, making it easy to see what moved, when headlines or links shifted, and to rewind the front page to review editorial decisions and recreate breaking news moments.</p>
+          <p class="aboutText">NewsBoard is a newsroom tool for quickly checking the lead story or centerpiece across major news sites. It tracks homepage changes over time, making it easy to see what moved, when headlines or links shifted, and to review editorial decisions around breaking news moments.</p>
         </div>
         <button id="menu-go-overview" class="btn" type="button">Overview</button>
         <button id="menu-go-data" class="btn" type="button">Data</button>
@@ -1569,7 +1440,7 @@
     </div>
     <div class="drawerBody">
       <div class="momentConfig">
-        <h3 id="moment-anchor-title" class="momentTitle">Select a story to rewind.</h3>
+        <h3 id="moment-anchor-title" class="momentTitle">Select a story to review.</h3>
         <div id="moment-anchor-meta" class="momentMeta">—</div>
         <div class="momentRow">
           <label class="tiny" for="moment-lookback">Lookback</label>
@@ -1928,7 +1799,6 @@
       el.textContent = String(text || "");
     }
 
-    let _shotLightbox = null;
     function stopMomentAutoplay(){
       if (momentState?.autoTimer) {
         clearInterval(momentState.autoTimer);
@@ -1947,8 +1817,6 @@
       momentStatusText = String(text || "");
       const el = $("moment-status");
       if (el) el.textContent = momentStatusText;
-      const detailsEl = $("source-rewind-status");
-      if (detailsEl) detailsEl.textContent = momentStatusText;
     }
 
     function ensureMomentSnapshotDiffs(frames){
@@ -1995,7 +1863,7 @@
       if (!frames.length) {
         const empty = document.createElement("div");
         empty.className = "momentEmpty";
-        empty.textContent = "Run rewind to build a moment.";
+        empty.textContent = "Run to build a moment.";
         host.appendChild(empty);
         return;
       }
@@ -2094,7 +1962,7 @@
             <span>${escapeHtml(frame?.source_name || sourceLabel(frame?.source_id || "", null))} · ${escapeHtml(frame?.type === "snapshot" ? "snapshot" : (frame?.kind || "headline"))}</span>
             <span>${escapeHtml(fmtTime(frame?.ts))}</span>
           </div>
-          <div>${escapeHtml(frame?.type === "snapshot" ? (frame?.hero?.title || "Snapshot") : (frame?.title || "Screenshot"))}</div>
+          <div>${escapeHtml(frame?.type === "snapshot" ? (frame?.hero?.title || "Snapshot") : (frame?.title || "Headline"))}</div>
         `;
         row.addEventListener("click", () => {
           stopMomentAutoplay();
@@ -2133,9 +2001,6 @@
 
       renderMomentFrame();
       renderMomentList();
-      if (!isNarrowLayout() && selectedDetailsTab === "rewind" && selectedSourceDataId === momentState.sourceId) {
-        renderSourceDataPanel(selectedSourceDataId);
-      }
     }
 
     function jumpMomentToTs(ts){
@@ -2371,56 +2236,6 @@
         btn.setAttribute("aria-selected", active ? "true" : "false");
       }
       if (selectedSourceDataId) renderSourceDataPanel(selectedSourceDataId);
-    }
-
-    function openRewindFromSource(sourceId){
-      const id = String(sourceId || "").trim();
-      if (!id) {
-        showToast("Open Details on a source first");
-        return;
-      }
-      const currentSources = latestDrawerPayload?.sources || {};
-      const normalizedHistory = latestDrawerPayload?.normalizedHistory || { sources: {} };
-      const src = currentSources?.[id] || {};
-      const entries = Array.isArray(normalizedHistory?.sources?.[id]?.entries)
-        ? normalizedHistory.sources[id].entries
-        : [];
-
-      let fallbackEntry = null;
-      let fallbackTsMs = -1;
-      for (const entry of entries) {
-        const entryTs = Date.parse(String(entry?.lastSeenAt || entry?.firstSeenAt || ""));
-        const entryTsMs = Number.isFinite(entryTs) ? entryTs : -1;
-        if (entryTsMs > fallbackTsMs) {
-          fallbackTsMs = entryTsMs;
-          fallbackEntry = entry;
-        }
-      }
-
-      const url = src?.item?.url || fallbackEntry?.url || "";
-      const title = src?.item?.title || fallbackEntry?.title || "";
-      const t0 = src?.updatedAt || fallbackEntry?.lastSeenAt || fallbackEntry?.firstSeenAt || null;
-
-      if (!url) {
-        showToast("No story available to rewind");
-        return;
-      }
-      if (!isNarrowLayout()) {
-        setSourceDataOpen(true, id);
-        setDetailsTab("changes");
-        momentState.sourceId = String(id || "abc1");
-        momentState.url = normalizeUrlForStory(url || "");
-        momentState.title = String(title || "").trim();
-        momentState.t0 = t0 || null;
-        momentState.startEarliest = true;
-        stopMomentAutoplay();
-        setMomentStatus("Building rewind...");
-        renderSourceDataPanel(id);
-        runMomentBuild();
-        return;
-      }
-      openMomentDrawer({ sourceId: id, url, title, t0 });
-      setMomentStatus("Ready. Click Run to build frames.");
     }
 
     function setDataOpen(open){
@@ -5311,18 +5126,6 @@
 
     window.__clusterHarness = runClusteringHarness;
 
-    // Overview card click -> open source details.
-    document.addEventListener("click", (e) => {
-      const card = e.target && e.target.closest ? e.target.closest(".card[data-source-id]") : null;
-      if (!card) return;
-      if (card.classList.contains("dragging")) return;
-      if (e.target && e.target.closest && e.target.closest("a, button, input, select, label")) return;
-      const id = card.getAttribute("data-source-id");
-      if (!id) return;
-      setDetailsTab("changes");
-      setSourceDataOpen(true, id);
-    });
-
     // Copy/details handlers (URL not displayed)
     document.addEventListener("click", async (e) => {
       const btn = e.target && e.target.closest ? e.target.closest("button[data-action]") : null;
@@ -5364,7 +5167,7 @@
           momentState.t0 = ts || null;
           momentState.startEarliest = true;
           stopMomentAutoplay();
-          setMomentStatus("Building rewind...");
+          setMomentStatus("Building moment...");
           renderSourceDataPanel(sourceId);
           runMomentBuild();
           return;
@@ -6251,7 +6054,6 @@
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        if (_shotLightbox) _shotLightbox.close();
         stopMomentAutoplay();
         closeAllDrawers();
       }
