@@ -780,6 +780,94 @@ function defaultTitleReject(title) {
   );
 }
 
+function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/") {
+  const $ = cheerio.load(html || "");
+  const out = [];
+  const seen = new Set();
+
+  function pushCandidate(titleRaw, urlRaw) {
+    const title = stripHeadlineNoise(cleanText(titleRaw || ""));
+    const url = toAbsoluteUrl(urlRaw || "", sourceUrl);
+    if (!title || !url || seen.has(url)) return;
+    if (!/(^|\.)cbsnews\.com$/i.test(parseUrlSafe(url)?.hostname || "")) return;
+    if (/\/(video|videos|live|watch|account|privacy|terms)\b/i.test(url)) return;
+    if (defaultTitleReject(title)) return;
+    seen.add(url);
+    out.push({ title, url });
+  }
+
+  function visit(node) {
+    if (!node) return;
+    if (Array.isArray(node)) {
+      for (const item of node) visit(item);
+      return;
+    }
+    if (typeof node !== "object") return;
+    pushCandidate(node.headline || node.name || "", node.url || node["@id"] || node.mainEntityOfPage || "");
+    for (const v of Object.values(node)) visit(v);
+  }
+
+  $("script[type='application/ld+json']").each((_, el) => {
+    const raw = $(el).text() || "";
+    if (!raw.trim()) return;
+    try {
+      visit(JSON.parse(raw));
+    } catch {}
+  });
+
+  const top = out[0] || null;
+  if (!top) return null;
+  return { ...top, selector: "cbs_jsonld" };
+}
+
+function extractNbcFromNextData(html = "", sourceUrl = "https://www.nbcnews.com/") {
+  const $ = cheerio.load(html || "");
+  const nextRaw = $("#__NEXT_DATA__").text() || "";
+  if (!nextRaw.trim()) return null;
+
+  const seen = new Set();
+  const picks = [];
+
+  function normalizeNbcUrl(v) {
+    if (!v) return "";
+    if (typeof v === "string") return toAbsoluteUrl(v, sourceUrl);
+    if (typeof v === "object") return toAbsoluteUrl(v.primary || v.canonical || "", sourceUrl);
+    return "";
+  }
+
+  function visit(node) {
+    if (!node) return;
+    if (Array.isArray(node)) {
+      for (const item of node) visit(item);
+      return;
+    }
+    if (typeof node !== "object") return;
+
+    const headline = stripHeadlineNoise(cleanText(node.headline || node.name || ""));
+    const url = normalizeNbcUrl(node.url);
+    if (headline && url && !seen.has(url)) {
+      const u = parseUrlSafe(url);
+      const isNbc = /(^|\.)nbcnews\.com$/i.test(u?.hostname || "");
+      const isStoryPath = /-rcna\d+|\/live-blog\//i.test(url);
+      if (isNbc && isStoryPath && !defaultTitleReject(headline)) {
+        seen.add(url);
+        picks.push({ title: headline, url });
+      }
+    }
+    for (const v of Object.values(node)) visit(v);
+  }
+
+  try {
+    visit(JSON.parse(nextRaw));
+  } catch {
+    return null;
+  }
+
+  const top = picks[0] || null;
+  if (!top) return null;
+  return { ...top, selector: "nbc_next_data" };
+}
+
 function extractLeadFromHtml({
   html,
   sourceId,
@@ -845,19 +933,39 @@ function extractLeadFromHtml({
   };
 }
 
-async function scrapeHeroHttp({ sourceId, sourceUrl, selectors, hostPattern, urlAllow, titleReject }) {
+async function scrapeHeroHttp({ sourceId, sourceUrl, selectors, hostPattern, urlAllow, titleReject, customExtractor }) {
   const runId = makeRunId(sourceId);
   const fetchedAt = nowISO();
   const page = await fetchHomepageHtml(sourceUrl);
-  const extracted = extractLeadFromHtml({
-    html: page.html,
-    sourceId,
-    sourceUrl,
-    selectors,
-    hostPattern,
-    urlAllow,
-    titleReject,
-  });
+  let extracted = null;
+  if (typeof customExtractor === "function") {
+    const custom = customExtractor(page.html, sourceUrl);
+    if (custom?.title && custom?.url) {
+      extracted = {
+        ok: true,
+        error: null,
+        selectorUsed: custom.selector || "custom",
+        candidates: 1,
+        item: {
+          title: custom.title,
+          url: custom.url,
+          imgUrl: null,
+          slotKey: sha1(`${sourceId}|top`).slice(0, 12),
+        },
+      };
+    }
+  }
+  if (!extracted) {
+    extracted = extractLeadFromHtml({
+      html: page.html,
+      sourceId,
+      sourceUrl,
+      selectors,
+      hostPattern,
+      urlAllow,
+      titleReject,
+    });
+  }
   return {
     ok: Boolean(extracted.ok),
     error: extracted.error,
@@ -886,6 +994,7 @@ const HTTP_HERO_CONFIGS = {
   cbs1: {
     sourceUrl: "https://www.cbsnews.com/",
     hostPattern: /(^|\.)cbsnews\.com$/i,
+    customExtractor: extractCbsFromJsonLd,
     selectors: ["main h4.item__hed a[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
   usat1: {
@@ -896,11 +1005,24 @@ const HTTP_HERO_CONFIGS = {
   nbc1: {
     sourceUrl: "https://www.nbcnews.com/",
     hostPattern: /(^|\.)nbcnews\.com$/i,
+    customExtractor: extractNbcFromNextData,
     selectors: ["main a[href*='-rcna']", "main a[href*='/live-blog/']", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
   cnn1: {
     sourceUrl: "https://www.cnn.com/",
     hostPattern: /(^|\.)cnn\.com$/i,
+    urlAllow: (url) => {
+      const u = parseUrlSafe(url);
+      if (!u || !/(^|\.)cnn\.com$/i.test(u.hostname)) return false;
+      const path = String(u.pathname || "").toLowerCase();
+      if (/\/(account|all-access|subscriptions?|profiles?|newsletter|video)\b/.test(path)) return false;
+      return !defaultUrlAllow(url, /(^|\.)cnn\.com$/i) ? false : true;
+    },
+    titleReject: (title) => {
+      const t = String(title || "");
+      if (defaultTitleReject(t)) return true;
+      return /function\s+\w+\s*\(|\{|\}|;|onerror|srcset|img\.|dataset\./i.test(t);
+    },
     selectors: ["main h2 a[href], main h3 a[href]", ".container_lead-package a[href]", ".container_lead-plus-headlines a[href]"],
   },
   guardian1: {
