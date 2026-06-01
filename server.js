@@ -4,12 +4,12 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 import { chromium } from "playwright";
-import { getSupabaseAdmin, hasSupabaseAdmin, SUPABASE_SCREENSHOT_BUCKET, SUPABASE_SCREENSHOT_PUBLIC } from "./lib/supabaseClient.js";
-import { captureAndUploadScreenshot, recordScreenshotEvent, pruneOldScreenshots } from "./lib/screenshots.js";
+import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
 
 const app = express();
 app.use(express.json());
 app.use(express.static("."));
+let httpServer = null;
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -23,44 +23,6 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
-const SCREENSHOT_RETENTION_HOURS = 120;
-const REWIND_DEFAULT_LIMIT = 500;
-const REWIND_MAX_LIMIT = 500;
-const REWIND_DEFAULT_LOOKBACK_DAYS = 5;
-const REWIND_MIN_LOOKBACK_DAYS = 1;
-const REWIND_MAX_LOOKBACK_DAYS = 5;
-const REWIND_MAX_RANGE_MS = REWIND_MAX_LOOKBACK_DAYS * 24 * 60 * 60 * 1000;
-const DEBUG_SCREENSHOT = process.env.DEBUG_SCREENSHOT === "1";
-
-const DEFAULT_SCREENSHOT_PROFILE = {
-  viewportWidth: 1920,
-  viewportHeight: 1620,
-  scrollY: 0,
-  settleMs: 700,
-};
-
-const SCREENSHOT_PROFILES = {
-  // aliases
-  usatoday1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  lat1: { viewportHeight: 2250, scrollY: 300, settleMs: 900 },
-
-  // in-repo source IDs
-  abc1: { viewportHeight: 2025, scrollY: 250 },
-  cbs1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  usat1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  nbc1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  cnn1: { viewportHeight: 2250, scrollY: 700, settleMs: 900 },
-  guardian1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  ap1: { viewportHeight: 2700, scrollY: 0, settleMs: 900 },
-  latimes1: { viewportHeight: 2250, scrollY: 120, settleMs: 900 },
-  npr1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  bbc1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  fox1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  yahoo1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  // Backwards compatibility aliases
-  reuters1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-  wp1: { viewportHeight: 2250, scrollY: 0, settleMs: 900 },
-};
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
 
@@ -346,22 +308,6 @@ function storyFromHeadlineRow(row) {
     keywords,
     fingerprint: String(raw.fingerprint || "").trim() || makeFingerprint(canonical_url, title_norm),
     slot_rank,
-  };
-}
-
-function storyFromScreenshotRow(row) {
-  const raw = row?.raw && typeof row.raw === "object" ? row.raw : {};
-  const canonical_url = String(raw.canonical_url || "").trim() || normalizeUrl(row?.url || "");
-  const title_norm = String(raw.title_norm || "").trim() || normalizeTitle(row?.title || "");
-  return {
-    ...row,
-    raw,
-    canonical_url: canonical_url || null,
-    title_norm: title_norm || null,
-    keywords: Array.isArray(raw.keywords) && raw.keywords.length
-      ? raw.keywords.map((x) => String(x || "").trim()).filter(Boolean)
-      : extractKeywords(title_norm),
-    fingerprint: String(raw.fingerprint || "").trim() || makeFingerprint(canonical_url, title_norm),
   };
 }
 
@@ -742,41 +688,6 @@ async function withBrowser(fn, opts = {}) {
   }
 }
 
-function classifyScreenshotKind(prevItem, nextItem) {
-  const prevUrl = String(prevItem?.url || "");
-  const nextUrl = String(nextItem?.url || "");
-  const prevTitle = String(prevItem?.title || "");
-  const nextTitle = String(nextItem?.title || "");
-
-  if (!nextUrl) return "heartbeat";
-  if (!prevUrl || prevUrl !== nextUrl) return "new_url";
-  if (prevTitle !== nextTitle) return "new_headline";
-  return "heartbeat";
-}
-
-function screenshotProfileFor(sourceId) {
-  const id = String(sourceId || "").toLowerCase();
-  return {
-    ...DEFAULT_SCREENSHOT_PROFILE,
-    ...(SCREENSHOT_PROFILES[id] || {}),
-  };
-}
-
-async function captureTimelineShot(page, { sourceId, runId, tsIso, item }) {
-  if (!item) return null;
-  const profile = screenshotProfileFor(sourceId);
-  if (DEBUG_SCREENSHOT) {
-    console.log("[screenshot] source", sourceId, "profile", profile);
-  }
-  return await captureAndUploadScreenshot({
-    page,
-    sourceId,
-    runId,
-    tsIso,
-    profile: { ...profile, debug: DEBUG_SCREENSHOT },
-  });
-}
-
 async function archiveRun(page, runId, snapshot) {
   try {
     const htmlPath = path.join(ARCHIVE_DIR, `${runId}.html`);
@@ -1140,8 +1051,7 @@ async function scrapeABCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "abc1", runId, tsIso: fetchedAt, item });
-    const snapshot = { id: "abc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "ABC not found"), item, shot };
+    const snapshot = { id: "abc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "ABC not found"), item };
     const archive = await archiveRun(page, runId, snapshot);
     const pageTitle = await page.title().catch(() => null);
 
@@ -1152,7 +1062,6 @@ async function scrapeABCHero() {
       runId,
       archive,
       item,
-      shot,
       meta: {
         run_kind: "hero",
         profile: "desktop",
@@ -1403,11 +1312,10 @@ async function scrapeCBSHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "cbs1", runId, tsIso: fetchedAt, item });
-    const snapshot = { id: "cbs1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CBS not found"), item, shot };
+    const snapshot = { id: "cbs1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CBS not found"), item };
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
@@ -1905,7 +1813,6 @@ async function scrapeNBCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "nbc1", runId, tsIso: fetchedAt, item });
     const snapshotMeta = {
       selector_used: hero?.selector_used || null,
       quick_link_title: hero?.quick_link_title || null,
@@ -1922,7 +1829,6 @@ async function scrapeNBCHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "NBC not found"),
       item,
-      shot,
       meta: snapshotMeta,
     };
     const archive = await archiveRun(page, runId, snapshot);
@@ -1934,7 +1840,6 @@ async function scrapeNBCHero() {
       runId,
       archive,
       item,
-      shot,
       meta: snapshotMeta,
     };
   });
@@ -2123,11 +2028,10 @@ async function scrapeCNNHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "cnn1", runId, tsIso: fetchedAt, item });
-    const snapshot = { id: "cnn1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CNN not found"), item, shot };
+    const snapshot = { id: "cnn1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CNN not found"), item };
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
@@ -2278,7 +2182,6 @@ async function scrapeGuardianHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "guardian1", runId, tsIso: fetchedAt, item });
     const snapshotMeta = {
       selector_used: hero?.selector_used || null,
       boundaryY: Number.isFinite(Number(hero?.boundaryY)) ? Number(hero.boundaryY) : null,
@@ -2293,13 +2196,12 @@ async function scrapeGuardianHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "The Guardian not found"),
       item,
-      shot,
       meta: snapshotMeta,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot, meta: snapshotMeta };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, meta: snapshotMeta };
   });
 }
 
@@ -2503,7 +2405,6 @@ async function scrapeUSATHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "usat1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "usat1",
       fetchedAt,
@@ -2512,7 +2413,6 @@ async function scrapeUSATHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "USAT not found"),
       debug: hero?.debug || null,
-      shot,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
@@ -2524,7 +2424,6 @@ async function scrapeUSATHero() {
       runId,
       archive,
       item,
-      shot,
     };
   });
 }
@@ -2663,7 +2562,6 @@ async function scrapeAPHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "ap1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "ap1",
       fetchedAt,
@@ -2671,12 +2569,11 @@ async function scrapeAPHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "AP not found"),
       item,
-      shot,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
@@ -2825,7 +2722,6 @@ async function scrapeLATimesHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "latimes1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "latimes1",
       fetchedAt,
@@ -2833,12 +2729,11 @@ async function scrapeLATimesHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "LA Times not found"),
       item,
-      shot,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
@@ -2936,7 +2831,6 @@ async function scrapeNPRHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "npr1", runId, tsIso: fetchedAt, item });
     const snapshot = {
       id: "npr1",
       fetchedAt,
@@ -2944,12 +2838,11 @@ async function scrapeNPRHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "NPR not found"),
       item,
-      shot,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, shot };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
   });
 }
 
@@ -3116,7 +3009,6 @@ async function scrapeBBCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "bbc1", runId, tsIso: fetchedAt, item });
     const pageTitle = await page.title().catch(() => null);
     const snapshot = {
       id: "bbc1",
@@ -3125,7 +3017,6 @@ async function scrapeBBCHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "BBC not found"),
       item,
-      shot,
       meta: {
         run_kind: "hero",
         profile: "desktop",
@@ -3146,7 +3037,6 @@ async function scrapeBBCHero() {
       runId,
       archive,
       item,
-      shot,
       meta: snapshot.meta,
     };
   });
@@ -3316,7 +3206,6 @@ async function scrapeFoxHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "fox1", runId, tsIso: fetchedAt, item });
     const pageTitle = await page.title().catch(() => null);
     const snapshot = {
       id: "fox1",
@@ -3325,7 +3214,6 @@ async function scrapeFoxHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "Fox News not found"),
       item,
-      shot,
       meta: {
         run_kind: "hero",
         profile: "desktop",
@@ -3346,7 +3234,6 @@ async function scrapeFoxHero() {
       runId,
       archive,
       item,
-      shot,
       meta: snapshot.meta,
     };
   });
@@ -3575,7 +3462,6 @@ async function scrapeWPHero(opts = {}) {
       : null;
 
     const fetchedAt = nowISO();
-    const shot = await captureTimelineShot(page, { sourceId: "yahoo1", runId, tsIso: fetchedAt, item });
     const pageTitle = await page.title().catch(() => null);
     const snapshot = {
       id: "yahoo1",
@@ -3584,7 +3470,6 @@ async function scrapeWPHero(opts = {}) {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "Yahoo not found"),
       item,
-      shot,
       meta: {
         run_kind: "hero",
         profile: "desktop",
@@ -3606,7 +3491,6 @@ async function scrapeWPHero(opts = {}) {
       runId,
       archive,
       item,
-      shot,
       meta: snapshot.meta,
     };
   });
@@ -3637,10 +3521,6 @@ async function refreshSources({ id = "" } = {}) {
   if (id && !runList.length) {
     throw new Error(`Unknown source id: ${id}`);
   }
-  const pruneResult = await pruneOldScreenshots({ hours: SCREENSHOT_RETENTION_HOURS });
-  if ((pruneResult?.prunedRows || 0) > 0 || (pruneResult?.deletedObjects || 0) > 0) {
-    console.log(`Screenshot prune: rows=${pruneResult.prunedRows || 0}, storage_objects=${pruneResult.deletedObjects || 0}`);
-  }
   const skipped = SERVER_SOURCE_IDS.filter((sid) => !runList.includes(sid));
   const ran = [];
   const failed = [];
@@ -3666,7 +3546,6 @@ async function refreshSources({ id = "" } = {}) {
         updatedAt: nowISO(),
         runId: `${sid}_error_${new Date().toISOString().replace(/[:.]/g, "-")}`,
         item: null,
-        shot: null,
       };
       failed.push(sid);
     }
@@ -3704,7 +3583,6 @@ async function refreshSources({ id = "" } = {}) {
       hero_hash: heroHash,
       run_kind: "hero",
       has_item: Boolean(res?.item),
-      has_screenshot: Boolean(res?.shot?.object_path),
       content_type: res?.item?.contentType || inferContentType({ url: res?.item?.url, title: res?.item?.title }),
       breaking_label: res?.item?.breakingLabel || null,
       breaking_headline: res?.item?.breakingHeadline || null,
@@ -3771,37 +3649,6 @@ async function refreshSources({ id = "" } = {}) {
       }
     }
 
-    if (res?.item && res?.shot?.object_path) {
-      try {
-        const kind = classifyScreenshotKind(prevItem, res.item);
-        await recordScreenshotEvent({
-          ts: observedAtIso,
-          sourceId: sid,
-          runId: res.runId || "",
-          kind,
-          title: res.item?.title || null,
-          url: res.item?.url || null,
-          object_path: res.shot.object_path,
-          shot_url: res.shot.shot_url || null,
-          raw: enrichRawStory(
-            {
-              run_kind: "hero",
-              run_id: res?.runId || null,
-              kind,
-              profile: res?.meta?.profile || "desktop",
-              selector_used: res?.meta?.selector_used || null,
-              candidates: res?.meta?.candidates || null,
-              boundaryY: Number.isFinite(Number(res?.meta?.boundaryY)) ? Number(res.meta.boundaryY) : null,
-              topY: Number.isFinite(Number(res?.meta?.pickedTopY)) ? Number(res.meta.pickedTopY) : null,
-            },
-            { url: res.item?.url || null, title: res.item?.title || null, slotRank: 1 },
-          ),
-        });
-      } catch (err) {
-        console.warn(`screenshot_events insert failed (${sid}):`, String(err?.message || err));
-      }
-    }
-
     const nextItem = res?.item || prevItem || null;
 
     cache.sources[sid] = {
@@ -3815,7 +3662,6 @@ async function refreshSources({ id = "" } = {}) {
         ok: Boolean(res.ok),
         error: res.error || null,
         fetchedAt: observedAtIso,
-        shot: res.shot || null,
       },
     };
 
@@ -3870,205 +3716,34 @@ app.get("/api/timeline", async (req, res) => {
 
     const sb = getSupabaseAdmin();
     let q = sb
-      .from("screenshot_events")
-      .select("ts,source_id,kind,title,url,object_path,shot_url")
-      .gte("ts", cutoffIso)
-      .order("ts", { ascending: true });
+      .from("headline_events")
+      .select("observed_at,source_id,slot_key,title,url,raw")
+      .gte("observed_at", cutoffIso)
+      .eq("slot_key", "hero:1")
+      .order("observed_at", { ascending: true })
+      .limit(10000);
 
     if (source) q = q.eq("source_id", source);
 
     const { data, error } = await q;
     if (error) throw error;
 
-    const events = Array.isArray(data) ? data.map((x) => ({ ...x })) : [];
-
-    if (!SUPABASE_SCREENSHOT_PUBLIC) {
-      const objectPaths = events.map((e) => e.object_path).filter(Boolean);
-      const uniquePaths = [...new Set(objectPaths)];
-      const signedByPath = new Map();
-
-      for (let i = 0; i < uniquePaths.length; i += 100) {
-        const batch = uniquePaths.slice(i, i + 100);
-        const { data: signed, error: signErr } = await sb.storage
-          .from(SUPABASE_SCREENSHOT_BUCKET)
-          .createSignedUrls(batch, 3600);
-        if (signErr) {
-          console.warn("timeline signed url generation failed:", signErr.message || signErr);
-          continue;
-        }
-        for (const row of signed || []) {
-          if (row?.path && row?.signedUrl) signedByPath.set(row.path, row.signedUrl);
-        }
-      }
-
-      for (const ev of events) {
-        ev.shot_url = signedByPath.get(ev.object_path) || null;
-      }
-    } else {
-      for (const ev of events) {
-        if (ev.shot_url) continue;
-        const pub = sb.storage.from(SUPABASE_SCREENSHOT_BUCKET).getPublicUrl(ev.object_path || "");
-        ev.shot_url = pub?.data?.publicUrl || null;
-      }
-    }
+    const events = Array.isArray(data) ? data.map((row) => ({
+      ts: row?.observed_at || null,
+      source_id: row?.source_id || null,
+      kind: row?.raw?.kind || "headline",
+      title: row?.title || null,
+      url: row?.url || null,
+    })) : [];
 
     res.json({
       ok: true,
       hours,
       generatedAt: nowISO(),
-      events: events.map((e) => ({
-        ts: e.ts,
-        source_id: e.source_id,
-        kind: e.kind,
-        title: e.title,
-        url: e.url,
-        shot_url: e.shot_url || null,
-      })),
+      events,
     });
   } catch (err) {
     res.status(500).json({ ok: false, error: String(err?.message || err) });
-  }
-});
-
-app.get("/api/rewind/screenshots", async (req, res) => {
-  try {
-    const sourceRaw = String(req.query?.source || "").trim();
-    const limitRaw = Number(req.query?.limit || REWIND_DEFAULT_LIMIT);
-    const lookbackRaw = Number(req.query?.lookback ?? REWIND_DEFAULT_LOOKBACK_DAYS);
-    const lookbackDays = Number.isFinite(lookbackRaw)
-      ? Math.max(REWIND_MIN_LOOKBACK_DAYS, Math.min(REWIND_MAX_LOOKBACK_DAYS, Math.floor(lookbackRaw)))
-      : REWIND_DEFAULT_LOOKBACK_DAYS;
-
-    const sourceId = canonicalServerSourceId(sourceRaw || "");
-    if (sourceRaw && (!sourceId || !SERVER_SOURCE_IDS.includes(sourceId))) {
-      return res.status(400).json({ ok: false, error: "Invalid source value." });
-    }
-
-    const limit = Number.isFinite(limitRaw)
-      ? Math.max(1, Math.min(REWIND_MAX_LIMIT, Math.floor(limitRaw)))
-      : REWIND_DEFAULT_LIMIT;
-
-    if (!hasSupabaseAdmin()) {
-      return res.status(503).json({ ok: false, error: "Supabase admin is not configured." });
-    }
-
-    const nowMs = Date.now();
-    const lookbackDate = new Date(nowMs - lookbackDays * 86400000);
-    const nowIso = new Date(nowMs).toISOString();
-    let startIso = lookbackDate.toISOString();
-    let endIso = nowIso;
-    let queryByCreatedAt = true;
-
-    // Backward-compatible legacy window support.
-    const startRaw = String(req.query?.start || "").trim();
-    const endRaw = String(req.query?.end || "").trim();
-    if (startRaw || endRaw) {
-      const startMs = Date.parse(startRaw);
-      const endMs = Date.parse(endRaw);
-      if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) {
-        return res.status(400).json({ ok: false, error: "Invalid start/end datetime." });
-      }
-      if (endMs <= startMs) {
-        return res.status(400).json({ ok: false, error: "End must be after start." });
-      }
-      const earliestAllowedMs = nowMs - REWIND_MAX_RANGE_MS;
-      if (startMs < earliestAllowedMs || endMs < earliestAllowedMs || startMs > nowMs || endMs > nowMs) {
-        return res.status(400).json({ ok: false, error: "Rewind is limited to the last 5 days." });
-      }
-      if ((endMs - startMs) > REWIND_MAX_RANGE_MS) {
-        return res.status(400).json({ ok: false, error: "Requested range exceeds 5 days." });
-      }
-      startIso = new Date(startMs).toISOString();
-      endIso = new Date(endMs).toISOString();
-      queryByCreatedAt = false;
-    }
-
-    const sb = getSupabaseAdmin();
-    const sourceIds = sourceId ? [sourceId] : [...SERVER_SOURCE_IDS];
-    const bySource = await Promise.all(sourceIds.map(async (sid) => {
-      let q = sb
-        .from("screenshot_events")
-        .select("ts,created_at,source_id,kind,title,url,object_path,shot_url")
-        .eq("source_id", sid)
-        .in("kind", ["new_url", "new_headline", "heartbeat"])
-        .limit(limit);
-
-      if (queryByCreatedAt) {
-        q = q
-          .gte("created_at", startIso)
-          .lte("created_at", endIso)
-          .order("created_at", { ascending: false });
-      } else {
-        q = q
-          .gte("ts", startIso)
-          .lte("ts", endIso)
-          .order("ts", { ascending: false });
-      }
-
-      const { data, error } = await q;
-      if (error) throw error;
-      return Array.isArray(data) ? data : [];
-    }));
-
-    let rows = bySource.flat().map((row) => ({ ...row }));
-    rows.sort((a, b) => {
-      const aMs = Date.parse(String(a?.created_at || a?.ts || ""));
-      const bMs = Date.parse(String(b?.created_at || b?.ts || ""));
-      return (Number.isFinite(bMs) ? bMs : 0) - (Number.isFinite(aMs) ? aMs : 0);
-    });
-    if (rows.length) {
-      if (!SUPABASE_SCREENSHOT_PUBLIC) {
-        const uniquePaths = [...new Set(rows.map((row) => row?.object_path).filter(Boolean))];
-        const signedByPath = new Map();
-        for (let i = 0; i < uniquePaths.length; i += 100) {
-          const batch = uniquePaths.slice(i, i + 100);
-          const { data: signedRows, error: signErr } = await sb.storage
-            .from(SUPABASE_SCREENSHOT_BUCKET)
-            .createSignedUrls(batch, 3600);
-          if (signErr) {
-            console.warn("rewind signed url generation failed:", signErr.message || signErr);
-            continue;
-          }
-          for (const signed of signedRows || []) {
-            if (signed?.path && signed?.signedUrl) signedByPath.set(signed.path, signed.signedUrl);
-          }
-        }
-        rows = rows.map((row) => ({
-          ...row,
-          shot_url: row?.shot_url || signedByPath.get(row?.object_path || "") || null,
-        }));
-      } else {
-        rows = rows.map((row) => {
-          if (row?.shot_url) return row;
-          const pub = sb.storage.from(SUPABASE_SCREENSHOT_BUCKET).getPublicUrl(row?.object_path || "");
-          return { ...row, shot_url: pub?.data?.publicUrl || null };
-        });
-      }
-    }
-
-    const items = rows
-      .filter((row) => row?.shot_url)
-      .map((row) => ({
-        ts: row?.ts || row?.created_at || null,
-        created_at: row?.created_at || null,
-        source_id: row?.source_id || null,
-        source_label: sourceNameById(row?.source_id || ""),
-        kind: row?.kind || "heartbeat",
-        title: row?.title || null,
-        url: row?.url || null,
-        shot_url: row?.shot_url || null,
-      }));
-
-    return res.json({
-      ok: true,
-      lookback: lookbackDays,
-      start: startIso,
-      end: endIso,
-      count: items.length,
-      items,
-    });
-  } catch (err) {
-    return res.status(500).json({ ok: false, error: String(err?.message || err) });
   }
 });
 
@@ -4086,7 +3761,6 @@ app.get("/api/moment/build", async (req, res) => {
     const selectedTitleRaw = String(req.query?.title || "").trim();
     const lookbackMinutesRaw = Number(req.query?.lookback_minutes ?? 120);
     const forwardMinutesRaw = Number(req.query?.forward_minutes ?? 30);
-    const includeScreenshots = parseBoolParam(req.query?.include_screenshots, true);
     const startEarliest = parseBoolParam(req.query?.start_earliest, true);
     const lookbackMinutes = Number.isFinite(lookbackMinutesRaw) ? Math.max(5, Math.min(12 * 60, Math.floor(lookbackMinutesRaw))) : 120;
     const forwardMinutes = Number.isFinite(forwardMinutesRaw) ? Math.max(0, Math.min(6 * 60, Math.floor(forwardMinutesRaw))) : 30;
@@ -4236,113 +3910,15 @@ app.get("/api/moment/build", async (req, res) => {
       })
       .sort((a, b) => parseIsoMs(a?.observed_at) - parseIsoMs(b?.observed_at));
 
-    let screenshotRows = [];
-    if (includeScreenshots) {
-      const { data: shotsRaw, error: shotsErr } = await sb
-        .from("screenshot_events")
-        .select("id,ts,source_id,kind,title,url,shot_url,object_path,raw")
-        .gte("ts", startAtIso)
-        .lte("ts", endAtIso)
-        .order("ts", { ascending: true })
-        .limit(1000);
-      if (shotsErr) {
-        const { data: shotsNoRaw, error: shotsNoRawErr } = await sb
-          .from("screenshot_events")
-          .select("id,ts,source_id,kind,title,url,shot_url,object_path")
-          .gte("ts", startAtIso)
-          .lte("ts", endAtIso)
-          .order("ts", { ascending: true })
-          .limit(1000);
-        if (shotsNoRawErr) throw shotsNoRawErr;
-        screenshotRows = Array.isArray(shotsNoRaw) ? shotsNoRaw : [];
-      } else {
-        screenshotRows = Array.isArray(shotsRaw) ? shotsRaw : [];
-      }
-
-      if (screenshotRows.length) {
-        if (!SUPABASE_SCREENSHOT_PUBLIC) {
-          const uniquePaths = [...new Set(screenshotRows.map((row) => row?.object_path).filter(Boolean))];
-          const signedByPath = new Map();
-          for (let i = 0; i < uniquePaths.length; i += 100) {
-            const batch = uniquePaths.slice(i, i + 100);
-            const { data: signedRows, error: signErr } = await sb.storage
-              .from(SUPABASE_SCREENSHOT_BUCKET)
-              .createSignedUrls(batch, 3600);
-            if (signErr) continue;
-            for (const signed of signedRows || []) {
-              if (signed?.path && signed?.signedUrl) signedByPath.set(signed.path, signed.signedUrl);
-            }
-          }
-          screenshotRows = screenshotRows.map((row) => ({
-            ...row,
-            shot_url: row?.shot_url || signedByPath.get(row?.object_path || "") || null,
-          }));
-        } else {
-          screenshotRows = screenshotRows.map((row) => {
-            if (row?.shot_url) return row;
-            const pub = sb.storage.from(SUPABASE_SCREENSHOT_BUCKET).getPublicUrl(row?.object_path || "");
-            return { ...row, shot_url: pub?.data?.publicUrl || null };
-          });
-        }
-      }
-    }
-
-    const shotsBySource = new Map();
-    for (const shotRaw of screenshotRows) {
-      const shot = storyFromScreenshotRow(shotRaw);
-      if (!shotsBySource.has(shot.source_id)) shotsBySource.set(shot.source_id, []);
-      shotsBySource.get(shot.source_id).push(shot);
-    }
-    for (const sourceShots of shotsBySource.values()) {
-      sourceShots.sort((a, b) => parseIsoMs(a?.ts) - parseIsoMs(b?.ts));
-    }
-
-    const frames = [];
-    const seenShots = new Set();
-    for (const hit of matchedHeadlines) {
-      const sourceShots = shotsBySource.get(hit.source_id) || [];
-      if (!sourceShots.length) continue;
-      const hitMs = parseIsoMs(hit.observed_at);
-      let picked = sourceShots.find((shot) => {
-        const ms = parseIsoMs(shot.ts);
-        return ms >= hitMs && ms <= hitMs + (20 * 60 * 1000);
-      }) || null;
-
-      if (!picked) {
-        let best = null;
-        let bestDelta = Number.POSITIVE_INFINITY;
-        for (const shot of sourceShots) {
-          const delta = Math.abs(parseIsoMs(shot.ts) - hitMs);
-          if (delta > 10 * 60 * 1000) continue;
-          if (delta < bestDelta) {
-            bestDelta = delta;
-            best = shot;
-          }
-        }
-        picked = best;
-      }
-
-      if (!picked) continue;
-      const shotKey = `${picked.source_id}|${picked.object_path || picked.id || picked.ts}`;
-      if (seenShots.has(shotKey)) continue;
-      seenShots.add(shotKey);
-
-      frames.push({
-        ts: picked.ts,
-        type: "screenshot",
-        source_id: picked.source_id,
-        source_name: sourceNameById(picked.source_id),
-        kind: picked.kind || "heartbeat",
-        title: picked.title || hit.title || null,
-        url: picked.url || hit.url || null,
-        shot_url: picked.shot_url || null,
-        match: {
-          headline_ts: hit.observed_at,
-          headline_title: hit.title || null,
-          headline_url: hit.url || null,
-        },
-      });
-    }
+    const frames = matchedHeadlines.map((hit) => ({
+      ts: hit.observed_at,
+      type: "headline",
+      source_id: hit.source_id,
+      source_name: sourceNameById(hit.source_id),
+      kind: hit?.raw?.kind || "headline",
+      title: hit.title || null,
+      url: hit.url || null,
+    }));
     frames.sort((a, b) => parseIsoMs(a?.ts) - parseIsoMs(b?.ts));
 
     return res.json({
@@ -4537,7 +4113,7 @@ async function main() {
 
   // Only start the HTTP server when this file is executed directly.
   if (process.argv[1] && process.argv[1].endsWith("server.js")) {
-    app.listen(PORT, () => console.log(`Newsboard server listening on http://localhost:${PORT}`));
+    httpServer = app.listen(PORT, () => console.log(`Newsboard server listening on http://localhost:${PORT}`));
   }
 }
 

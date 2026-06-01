@@ -5,7 +5,7 @@ A private newsroom tooling experiment that observes editorial decision changes o
 ## What it does
 
 - Scrapes front-page headlines from major publishers (currently ABC News and CBS News)
-- Stores snapshots of each scrape (HTML, PNG, JSON)
+- Stores snapshots of each scrape (HTML + JSON)
 - Computes diffs between runs to track headline additions, removals, rank changes, retitles, and slot changes
 - Displays current top headlines with freshness/status indicators
 - Provides an interactive history timeline of headline movement
@@ -14,7 +14,7 @@ A private newsroom tooling experiment that observes editorial decision changes o
 
 **Backend**
 - `server.js` - Node + Express server using Playwright for scraping
-- Archives every run to `/archive` with HTML, PNG, and JSON snapshots
+- Archives every run to `/archive` with HTML and JSON snapshots
 - Maintains `cache.json` as current state
 - Computes diffs between snapshots server-side
 
@@ -28,7 +28,7 @@ A private newsroom tooling experiment that observes editorial decision changes o
 
 - **Stability over cleverness** - DOM selectors are intentionally defensive
 - **Slot keys matter more than raw rank** - Tracks DOM position stability
-- **Diffs are the product** - Screenshots and HTML archives support analysis
+- **Diffs are the product** - Headline history and HTML archives support analysis
 - **Private by default** - No auth, no public exposure assumptions
 - **Editorial realism** - Headlines ranked as users see them
 
@@ -73,7 +73,7 @@ GitHub Actions verification:
 
 ## Glossary
 
-- **snapshot** - One scrape run (JSON + HTML + PNG)
+- **snapshot** - One scrape run (JSON + HTML)
 - **slotKey** - Hash representing DOM position identity
 - **diff** - Comparison between two snapshots
 - **retitle** - Same URL, changed headline text

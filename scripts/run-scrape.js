@@ -27,7 +27,6 @@ const TOP10_ABC_EVENTS_HISTORY_PATH = path.join(DATA_DIR, "top10_abc_events_hist
 const TOP10_ABC_LATEST_PATH = path.join(DATA_DIR, "top10_abc_latest.json");
 const TOP10_ABC_EVENTS_24H_PATH = path.join(DATA_DIR, "top10_abc_events_24h.json");
 const TIMELINE_HOURS = Number(process.env.TIMELINE_HOURS || 12);
-const SUPABASE_SCREENSHOT_BUCKET = process.env.SUPABASE_SCREENSHOT_BUCKET || "screenshots";
 const TOP10_SOURCE_ID = "abc1";
 const TOP10_HISTORY_CAP = Number(process.env.TOP10_HISTORY_CAP || 336);
 const TOP10_EVENTS_CAP = Number(process.env.TOP10_EVENTS_CAP || 3000);
@@ -213,12 +212,6 @@ function ensureDir(dir) {
 
 function writeJSON(filename, payload) {
   fs.writeFileSync(path.join(DATA_DIR, filename), JSON.stringify(payload, null, 2), "utf8");
-}
-
-function derivePublicShotUrl(objectPath) {
-  const base = String(process.env.SUPABASE_URL || "").replace(/\/+$/, "");
-  if (!base || !objectPath) return null;
-  return `${base}/storage/v1/object/public/${SUPABASE_SCREENSHOT_BUCKET}/${objectPath}`;
 }
 
 function readJSONIfExists(p, fallback) {
@@ -617,23 +610,20 @@ async function loadTimelineEventsFromSupabase(sb, hours = 12) {
   const cutoffIso = new Date(Date.now() - Math.max(1, Number(hours || 12)) * 60 * 60 * 1000).toISOString();
 
   const { data, error } = await sb
-    .from("screenshot_events")
-    .select("ts,source_id,kind,title,url,object_path,shot_url")
-    .gte("ts", cutoffIso)
-    .order("ts", { ascending: true })
+    .from("headline_events")
+    .select("observed_at,source_id,slot_key,title,url,raw")
+    .gte("observed_at", cutoffIso)
+    .eq("slot_key", "hero:1")
+    .order("observed_at", { ascending: true })
     .limit(10000);
   if (error) throw error;
 
   return (Array.isArray(data) ? data : []).map((row) => ({
-    ts: row.ts || null,
+    ts: row.observed_at || null,
     source_id: row.source_id || null,
-    kind: row.kind || "heartbeat",
+    kind: row?.raw?.kind || "headline",
     title: row.title || null,
     url: row.url || null,
-    object_path: row.object_path || null,
-    shot_url:
-      row.shot_url ||
-      derivePublicShotUrl(row.object_path || null),
   }));
 }
 
