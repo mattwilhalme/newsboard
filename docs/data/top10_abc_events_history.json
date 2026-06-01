@@ -1,48 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-01T17:39:39.272Z",
+  "generatedAt": "2026-06-01T18:31:13.990Z",
   "source_id": "abc1",
   "events": [
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-27T12:55:49.460Z",
-      "event_type": "MOVED",
-      "fingerprint": "5f3b91cccb73c0204d07e099c0f06102e705ee42",
-      "from_rank": 6,
-      "to_rank": 8,
-      "from_title": "King Charles III, Queen Camilla state visit to proceed as planned after DC shooting",
-      "to_title": "King Charles III, Queen Camilla state visit to proceed as planned after DC shooting"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-27T12:55:49.460Z",
-      "event_type": "MOVED",
-      "fingerprint": "060b0ca799d26773caa14111243815974c28e593",
-      "from_rank": 10,
-      "to_rank": 9,
-      "from_title": "Prediction markets under pressure to stop insider trading",
-      "to_title": "Prediction markets under pressure to stop insider trading"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-27T12:55:49.460Z",
-      "event_type": "ENTERED_TOP10",
-      "fingerprint": "89246b20aa58c3b41fdf3a84df4bbc6ed25c2b09",
-      "from_rank": null,
-      "to_rank": 10,
-      "from_title": null,
-      "to_title": "Lake Superior wolves thrive as packs hunt moose"
-    },
-    {
-      "source_id": "abc1",
-      "observed_at": "2026-04-27T12:55:49.460Z",
-      "event_type": "EXITED_TOP10",
-      "fingerprint": "26efeafe35a6cb03bcb6c46ac8420753f321c0c0",
-      "from_rank": 1,
-      "to_rank": null,
-      "from_title": "WHCA dinner shooting live updates: Suspect descended 10 flights with duffel: Sources",
-      "to_title": null
-    },
     {
       "source_id": "abc1",
       "observed_at": "2026-04-27T12:55:49.460Z",
@@ -30001,6 +29961,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Brian Hooker's devices leading to new areas of interest in Bahamas search",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dbeba16417b7b9f202ea0f44f3f4ab8c7f4c0a1e",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Serena Williams, mom of 2, is returning to pro tennis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "436fb99f05cdb97f41a7a7447067585e8f7a1810",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Officer seen punching woman during arrest charged"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8460c988f0ea8fef14d9a770bbff2b7a2d7a182f",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Serena Williams set to return to tennis at Queen's Club Championships",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4507079d28833b60d4318a60bf1bfc352e78d6f6",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Multiple victims dead, officer shot at home",
       "to_title": null
     }
   ],

@@ -1,6 +1,6 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-06-01T17:39:39.272Z",
+  "generatedAt": "2026-06-01T18:31:13.990Z",
   "hours": 24,
   "events": [
     {
@@ -201,6 +201,46 @@
       "from_rank": 10,
       "to_rank": null,
       "from_title": "Brian Hooker's devices leading to new areas of interest in Bahamas search",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "dbeba16417b7b9f202ea0f44f3f4ab8c7f4c0a1e",
+      "from_rank": null,
+      "to_rank": 6,
+      "from_title": null,
+      "to_title": "Serena Williams, mom of 2, is returning to pro tennis"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "ENTERED_TOP10",
+      "fingerprint": "436fb99f05cdb97f41a7a7447067585e8f7a1810",
+      "from_rank": null,
+      "to_rank": 10,
+      "from_title": null,
+      "to_title": "Officer seen punching woman during arrest charged"
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "8460c988f0ea8fef14d9a770bbff2b7a2d7a182f",
+      "from_rank": 6,
+      "to_rank": null,
+      "from_title": "Serena Williams set to return to tennis at Queen's Club Championships",
+      "to_title": null
+    },
+    {
+      "source_id": "abc1",
+      "observed_at": "2026-06-01T18:31:17.383Z",
+      "event_type": "EXITED_TOP10",
+      "fingerprint": "4507079d28833b60d4318a60bf1bfc352e78d6f6",
+      "from_rank": 10,
+      "to_rank": null,
+      "from_title": "Multiple victims dead, officer shot at home",
       "to_title": null
     }
   ]
