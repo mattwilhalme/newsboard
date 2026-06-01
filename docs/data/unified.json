@@ -1,5 +1,106 @@
 {
-  "ok": false,
-  "generatedAt": "2026-06-01T20:17:11.734Z",
-  "items": []
+  "ok": true,
+  "generatedAt": "2026-06-01T23:06:26.488Z",
+  "items": [
+    {
+      "source": "abc1",
+      "updatedAt": "2026-06-01T23:06:19.190Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "DOJ, amid uproar, says it will follow ruling that paused 'Anti-Weaponization Fund'",
+      "url": "https://abcnews.com/US/doj-abide-court-ruling-temporarily-paused-anti-weaponization/story?id=133493215",
+      "imgUrl": null,
+      "slotKey": "5be6806db8a5",
+      "contentType": "news"
+    },
+    {
+      "source": "usat1",
+      "updatedAt": "2026-06-01T23:06:21.134Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "Blockbuster NFL trade materializes for Patriots after monthslong wait",
+      "url": "https://usatoday.com/story/sports/nfl/patriots/2026/06/01/aj-brown-trade-details-eagles-patriots/90340369007",
+      "imgUrl": null,
+      "slotKey": "5fd21635ad69",
+      "contentType": "news"
+    },
+    {
+      "source": "cnn1",
+      "updatedAt": "2026-06-01T23:06:22.201Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "function imageLoadError(img) { const fallbackImage = '/media/sites/cnn/cnn-fallback-image.jpg'; img.removeAttribute('onerror'); img.src = fallbackImage; let element = img.previousElementSibling; while (element && element.tagName === 'SOURCE') { element.srcset = fallbackImage; // If we fall back to a JPG, drop any format-specific <source type>. element.removeAttribute('type'); element = element.previousElementSibling; } img.dataset.imgCssVars?.split(',').forEach((property) => { img.style.removeProperty(property); }); } • For Subscribers CNN",
+      "url": "https://cnn.com/all-access/series/ebola?source=growth_sub-acq_web_20260603_hp-card",
+      "imgUrl": null,
+      "slotKey": "e75971db9693",
+      "contentType": "news"
+    },
+    {
+      "source": "guardian1",
+      "updatedAt": "2026-06-01T23:06:22.853Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "Smart drug that strips cancer cells of ‘invisibility cloak’ can shrink tumours by 30%, trial shows",
+      "url": "https://theguardian.com/society/2026/jun/01/cancer-smart-drug-cells-invisibility-cloak-shrink-tumours-trial",
+      "imgUrl": null,
+      "slotKey": "b80da2377db9",
+      "contentType": "news"
+    },
+    {
+      "source": "ap1",
+      "updatedAt": "2026-06-01T23:06:23.092Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "Trump reconsidering $1.8 billion fund, AP source says, as Justice Department temporarily pauses it",
+      "url": "https://apnews.com/article/trump-justice-fund-jan6-capitol-riot-39b193211349b42e6218c5a1007785c9",
+      "imgUrl": null,
+      "slotKey": "083847305a8b",
+      "contentType": "news"
+    },
+    {
+      "source": "latimes1",
+      "updatedAt": "2026-06-01T23:06:23.542Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "The mystery behind Becerra leapfrogging over his rivals in California’s governor’s race",
+      "url": "https://latimes.com/california/story/2026-06-01/mystery-behind-becerra-leapfrogging-over-his-rivals-in-californias-governors-race",
+      "imgUrl": null,
+      "slotKey": "06617b56ef8d",
+      "contentType": "news"
+    },
+    {
+      "source": "npr1",
+      "updatedAt": "2026-06-01T23:06:23.798Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "Remote work — not AI — has sidelined recent college graduates, research finds",
+      "url": "https://npr.org/2026/06/01/nx-s1-5843076/remote-work-college-graduates-unemployment-ai",
+      "imgUrl": null,
+      "slotKey": "3f6d722bf103",
+      "contentType": "news"
+    },
+    {
+      "source": "bbc1",
+      "updatedAt": "2026-06-01T23:06:24.325Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "Lebanon says Hezbollah agrees reciprocal halt to attacks on Israel",
+      "url": "https://bbc.com/news/articles/c202rxp1z15o",
+      "imgUrl": null,
+      "slotKey": "b890b46a9e6c",
+      "contentType": "news"
+    },
+    {
+      "source": "fox1",
+      "updatedAt": "2026-06-01T23:06:24.523Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "US military attacks Iran in 'self-defense strikes' over weekend",
+      "url": "https://foxnews.com/world/us-military-attacks-iran-self-defense-strikes-over-weekend",
+      "imgUrl": null,
+      "slotKey": "6b38efbc88f8",
+      "contentType": "news"
+    },
+    {
+      "source": "yahoo1",
+      "updatedAt": "2026-06-01T23:06:24.768Z",
+      "since": "2026-06-01T23:06:26.488Z",
+      "title": "DOJ says it will stop work on $1.8 billion 'anti-weaponization fund'",
+      "url": "https://news.yahoo.com/news/politics/articles/doj-says-stop-1-8-194632058.html",
+      "imgUrl": null,
+      "slotKey": "c41bbb14e91d",
+      "contentType": "news"
+    }
+  ]
 }

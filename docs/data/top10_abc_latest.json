@@ -1,8 +1,8 @@
 {
   "source_id": "abc1",
-  "generatedAt": "2026-06-01T20:17:11.734Z",
-  "observedAt": "2026-06-01T20:17:11.734Z",
+  "generatedAt": "2026-06-01T23:06:26.488Z",
+  "observedAt": "2026-06-01T23:06:26.488Z",
   "ok": false,
-  "error": "Error: browserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+  "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
   "items": []
 }
