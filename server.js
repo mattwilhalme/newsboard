@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 import { chromium } from "playwright";
+import * as cheerio from "cheerio";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
 
 const app = express();
@@ -711,6 +712,246 @@ async function archiveRun(page, runId, snapshot) {
     return null;
   }
 }
+
+async function fetchHomepageHtml(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+    const resp = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+      signal: controller.signal,
+      headers: {
+        "user-agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+        accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      },
+    });
+    const html = await resp.text();
+    return {
+      ok: resp.ok,
+      status: resp.status,
+      finalUrl: resp.url || url,
+      html,
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function makeRunId(prefix = "src") {
+  return `${prefix}_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+}
+
+function toAbsoluteUrl(href, baseUrl) {
+  const raw = String(href || "").trim();
+  if (!raw) return "";
+  try {
+    return normalizeUrl(new URL(raw, baseUrl).toString());
+  } catch {
+    return "";
+  }
+}
+
+function pickHeadlineText($, el) {
+  const node = $(el);
+  const h = node.find("h1,h2,h3,h4").first();
+  const txt = stripHeadlineNoise(
+    cleanText(h.text() || node.attr("aria-label") || node.attr("title") || node.text() || ""),
+  );
+  return txt;
+}
+
+function defaultUrlAllow(url, hostPattern) {
+  const u = parseUrlSafe(url);
+  if (!u) return false;
+  if (hostPattern && !hostPattern.test(u.hostname)) return false;
+  const p = String(u.pathname || "").toLowerCase();
+  if (!p || p === "/" || p.length < 4) return false;
+  if (/\/(video|videos|live|search|account|privacy|terms|about|contact|advertis|newsletter|shop)\b/.test(p)) return false;
+  return true;
+}
+
+function defaultTitleReject(title) {
+  const t = String(title || "").toLowerCase();
+  return (
+    t.length < 12 ||
+    /\b(sign in|subscribe|watch live|about our ads|privacy policy|terms of service|advertise with us)\b/.test(t)
+  );
+}
+
+function extractLeadFromHtml({
+  html,
+  sourceId,
+  sourceUrl,
+  selectors = [],
+  hostPattern = null,
+  urlAllow = null,
+  titleReject = null,
+}) {
+  const $ = cheerio.load(html || "");
+  const seen = new Set();
+  const candidates = [];
+  let selectorUsed = null;
+
+  for (let i = 0; i < selectors.length; i += 1) {
+    const sel = selectors[i];
+    const matches = $(sel).toArray().slice(0, 20);
+    for (let j = 0; j < matches.length; j += 1) {
+      const el = matches[j];
+      const anchor = el.name === "a" ? $(el) : $(el).closest("a[href]").first().length ? $(el).closest("a[href]").first() : $(el).find("a[href]").first();
+      if (!anchor.length) continue;
+      const href = anchor.attr("href") || "";
+      const url = toAbsoluteUrl(href, sourceUrl);
+      if (!url) continue;
+      if ((urlAllow && !urlAllow(url)) || (!urlAllow && !defaultUrlAllow(url, hostPattern))) continue;
+
+      const title = pickHeadlineText($, el);
+      if (!title || (titleReject ? titleReject(title) : defaultTitleReject(title))) continue;
+      if (seen.has(url)) continue;
+      seen.add(url);
+
+      const score = (selectors.length - i) * 1000 - j * 10;
+      candidates.push({ title, url, score, selector: sel });
+    }
+  }
+
+  if (!candidates.length) {
+    const ogTitle = stripHeadlineNoise(cleanText($("meta[property='og:title']").attr("content") || ""));
+    const canonical = toAbsoluteUrl($("link[rel='canonical']").attr("href") || "", sourceUrl);
+    if (ogTitle && canonical && defaultUrlAllow(canonical, hostPattern) && !defaultTitleReject(ogTitle)) {
+      candidates.push({ title: ogTitle, url: canonical, score: 1, selector: "meta[og:title]+canonical" });
+    }
+  }
+
+  candidates.sort((a, b) => b.score - a.score);
+  const top = candidates[0] || null;
+  selectorUsed = top?.selector || null;
+  if (!top) {
+    return { ok: false, error: `${sourceId}: headline not found`, selectorUsed: null, candidates: 0, item: null };
+  }
+
+  return {
+    ok: true,
+    error: null,
+    selectorUsed,
+    candidates: candidates.length,
+    item: {
+      title: top.title,
+      url: top.url,
+      imgUrl: null,
+      slotKey: sha1(`${sourceId}|top`).slice(0, 12),
+    },
+  };
+}
+
+async function scrapeHeroHttp({ sourceId, sourceUrl, selectors, hostPattern, urlAllow, titleReject }) {
+  const runId = makeRunId(sourceId);
+  const fetchedAt = nowISO();
+  const page = await fetchHomepageHtml(sourceUrl);
+  const extracted = extractLeadFromHtml({
+    html: page.html,
+    sourceId,
+    sourceUrl,
+    selectors,
+    hostPattern,
+    urlAllow,
+    titleReject,
+  });
+  return {
+    ok: Boolean(extracted.ok),
+    error: extracted.error,
+    updatedAt: fetchedAt,
+    runId,
+    archive: null,
+    item: extracted.item,
+    meta: {
+      run_kind: "hero",
+      profile: "http",
+      final_url: page.finalUrl || sourceUrl,
+      http_status: page.status,
+      page_title: null,
+      selector_used: extracted.selectorUsed,
+      candidates: extracted.candidates,
+    },
+  };
+}
+
+const HTTP_HERO_CONFIGS = {
+  abc1: {
+    sourceUrl: "https://abcnews.com/",
+    hostPattern: /(^|\.)abcnews\.go\.com$|(^|\.)abcnews\.com$/i,
+    selectors: ["main [data-testid='prism-card'] a[data-testid='prism-linkbase'][href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+  },
+  cbs1: {
+    sourceUrl: "https://www.cbsnews.com/",
+    hostPattern: /(^|\.)cbsnews\.com$/i,
+    selectors: ["main h4.item__hed a[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+  },
+  usat1: {
+    sourceUrl: "https://www.usatoday.com/",
+    hostPattern: /(^|\.)usatoday\.com$/i,
+    selectors: ["main a[href*='/story/']", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+  },
+  nbc1: {
+    sourceUrl: "https://www.nbcnews.com/",
+    hostPattern: /(^|\.)nbcnews\.com$/i,
+    selectors: ["main a[href*='-rcna']", "main a[href*='/live-blog/']", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+  },
+  cnn1: {
+    sourceUrl: "https://www.cnn.com/",
+    hostPattern: /(^|\.)cnn\.com$/i,
+    selectors: ["main h2 a[href], main h3 a[href]", ".container_lead-package a[href]", ".container_lead-plus-headlines a[href]"],
+  },
+  guardian1: {
+    sourceUrl: "https://www.theguardian.com/us",
+    hostPattern: /(^|\.)theguardian\.com$/i,
+    selectors: ["main a[data-link-name*='group-0'][href]", "main a[href*='/live/']", "main .headline-text"],
+  },
+  ap1: {
+    sourceUrl: "https://apnews.com/",
+    hostPattern: /(^|\.)apnews\.com$/i,
+    selectors: ["main a[data-key='main-story'][href]", "main a.Link[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+  },
+  latimes1: {
+    sourceUrl: "https://www.latimes.com/",
+    hostPattern: /(^|\.)latimes\.com$/i,
+    selectors: ["main h1.promo-title a[href]", "main .promo-title a[href]", "main article h1 a[href]"],
+  },
+  npr1: {
+    sourceUrl: "https://www.npr.org/",
+    hostPattern: /(^|\.)npr\.org$/i,
+    selectors: ["main article a[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+  },
+  bbc1: {
+    sourceUrl: "https://www.bbc.com/news",
+    hostPattern: /(^|\.)bbc\.com$/i,
+    selectors: ["main a[data-testid='internal-link'][href*='/news/articles/']", "main a[href*='/news/live/']", "main h2 a[href], main h3 a[href]"],
+  },
+  fox1: {
+    sourceUrl: "https://www.foxnews.com/",
+    hostPattern: /(^|\.)foxnews\.com$/i,
+    selectors: ["main.main-content-primary article.story-1 a[href]", "main.main-content-primary article a[href]", "main h1 a[href], main h2 a[href]"],
+  },
+  yahoo1: {
+    sourceUrl: "https://news.yahoo.com/",
+    hostPattern: /(^|\.)yahoo\.com$/i,
+    selectors: ["a[data-ylk*='sec:strm'][data-ylk*='ct:story'][href]", "main a[data-ylk*='ct:story'][href]", "main a[href]"],
+    urlAllow: (url) => {
+      const u = parseUrlSafe(url);
+      if (!u || !/(^|\.)yahoo\.com$/i.test(u.hostname)) return false;
+      const p = String(u.pathname || "").toLowerCase();
+      const full = String(url || "").toLowerCase();
+      if (/\b(about-our-ads|our-ads|adchoices|privacy|legal|terms|account|member-center|subscriptions)\b/.test(full)) return false;
+      if (/^\/(search|news|finance|sports|entertainment|lifestyle|mail|weather|video|autos)\/?$/.test(p)) return false;
+      return /^\/[a-z0-9-]+\/[a-z0-9-]+/.test(p) || /^\/news\/articles\//.test(p);
+    },
+  },
+};
+
+const HERO_SCRAPERS_HTTP = Object.fromEntries(
+  Object.entries(HTTP_HERO_CONFIGS).map(([id, cfg]) => [id, () => scrapeHeroHttp({ sourceId: id, ...cfg })]),
+);
 
 function getSupabaseAdminOrNull() {
   if (!hasSupabaseAdmin()) return null;
@@ -3512,18 +3753,7 @@ async function scrapeWPHero(opts = {}) {
    Refresh / API
 --------------------------- */
 const HERO_SCRAPERS = {
-  abc1: scrapeABCHero,
-  cbs1: scrapeCBSHero,
-  usat1: scrapeUSATHero,
-  nbc1: scrapeNBCHero,
-  cnn1: scrapeCNNHero,
-  guardian1: scrapeGuardianHero,
-  ap1: scrapeAPHero,
-  latimes1: scrapeLATimesHero,
-  npr1: scrapeNPRHero,
-  bbc1: scrapeBBCHero,
-  fox1: scrapeFoxHero,
-  yahoo1: scrapeWPHero,
+  ...HERO_SCRAPERS_HTTP,
 };
 
 async function refreshSources({ id = "" } = {}) {

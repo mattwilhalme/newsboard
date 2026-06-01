@@ -33,6 +33,7 @@ const TOP10_EVENTS_CAP = Number(process.env.TOP10_EVENTS_CAP || 3000);
 const SCRAPE_TIMEOUT_MS = Number(process.env.SCRAPE_TIMEOUT_MS || 90000);
 const SCRAPE_CONCURRENCY = Math.max(1, Number(process.env.SCRAPE_CONCURRENCY || 3));
 const USE_CACHE_JSON = process.env.USE_CACHE_JSON !== "0";
+const ENABLE_TOP10 = process.env.ENABLE_TOP10 === "1";
 
 const SOURCES = Object.fromEntries(
   SOURCE_REGISTRY.map((s) => [s.id, { id: s.id, name: s.name, homeUrl: s.home_url }]),
@@ -670,7 +671,18 @@ async function run() {
     scrapeResults = liveResults;
   }
 
-  const abcTop10Raw = await safeScrape("ABC Top 10", scrapeABCTop10, generatedAt);
+  let abcTop10Raw = {
+    ok: false,
+    observedAt: generatedAt,
+    runId: null,
+    error: "Top10 scrape disabled (ENABLE_TOP10!=1)",
+    items: [],
+  };
+  if (ENABLE_TOP10) {
+    abcTop10Raw = await safeScrape("ABC Top 10", scrapeABCTop10, generatedAt);
+  } else {
+    console.log("⏭️ Skipping ABC Top10 scrape (ENABLE_TOP10!=1)");
+  }
 
   const abc1 = scrapeResults.abc1;
   const abcTop10 = {
