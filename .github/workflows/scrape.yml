@@ -2,11 +2,10 @@ name: Scrape + Publish (GitHub Pages)
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  PLAYWRIGHT_BROWSER_CHANNEL: chrome
 
 on:
   schedule:
-    - cron: "*/5 * * * *" # every 5 minutes
+    - cron: "*/10 * * * *" # every 10 minutes
   workflow_dispatch: {}
 
 permissions:
