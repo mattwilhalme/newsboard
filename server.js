@@ -825,9 +825,6 @@ function extractNbcFromNextData(html = "", sourceUrl = "https://www.nbcnews.com/
   const nextRaw = $("#__NEXT_DATA__").text() || "";
   if (!nextRaw.trim()) return null;
 
-  const seen = new Set();
-  const picks = [];
-
   function normalizeNbcUrl(v) {
     if (!v) return "";
     if (typeof v === "string") return toAbsoluteUrl(v, sourceUrl);
@@ -835,37 +832,85 @@ function extractNbcFromNextData(html = "", sourceUrl = "https://www.nbcnews.com/
     return "";
   }
 
-  function visit(node) {
-    if (!node) return;
-    if (Array.isArray(node)) {
-      for (const item of node) visit(item);
-      return;
-    }
-    if (typeof node !== "object") return;
-
-    const headline = stripHeadlineNoise(cleanText(node.headline || node.name || ""));
-    const url = normalizeNbcUrl(node.url);
-    if (headline && url && !seen.has(url)) {
-      const u = parseUrlSafe(url);
-      const isNbc = /(^|\.)nbcnews\.com$/i.test(u?.hostname || "");
-      const isStoryPath = /-rcna\d+|\/live-blog\//i.test(url);
-      if (isNbc && isStoryPath && !defaultTitleReject(headline)) {
-        seen.add(url);
-        picks.push({ title: headline, url });
-      }
-    }
-    for (const v of Object.values(node)) visit(v);
+  function asHeadlineItem(raw) {
+    if (!raw || typeof raw !== "object") return null;
+    const item = raw.item || raw;
+    const computed = raw.computedValues || item.computedValues || {};
+    const headline = stripHeadlineNoise(cleanText(
+      computed.headline ||
+      (Array.isArray(computed.headlineAlternatives) ? computed.headlineAlternatives[0]?.text : "") ||
+      item.headline ||
+      item.name ||
+      "",
+    ));
+    const url = normalizeNbcUrl(computed.url || item.url);
+    if (!headline || !url || defaultTitleReject(headline)) return null;
+    const u = parseUrlSafe(url);
+    if (!/(^|\.)nbcnews\.com$/i.test(u?.hostname || "")) return null;
+    if (!/-rcna\d+|\/live-blog\//i.test(url)) return null;
+    return { title: headline, url };
   }
 
   try {
-    visit(JSON.parse(nextRaw));
+    const parsed = JSON.parse(nextRaw);
+    const layouts =
+      parsed?.props?.pageProps?.initialState?.front?.curation?.layouts ||
+      parsed?.props?.initialState?.front?.curation?.layouts ||
+      [];
+
+    for (const layout of Array.isArray(layouts) ? layouts : []) {
+      const packages = Array.isArray(layout?.packages) ? layout.packages : [];
+      for (const pkg of packages) {
+        const items = Array.isArray(pkg?.items) ? pkg.items : [];
+        for (const rawItem of items) {
+          const picked = asHeadlineItem(rawItem);
+          if (picked) return { ...picked, selector: "nbc_next_data_ordered" };
+        }
+      }
+    }
   } catch {
     return null;
   }
+  return null;
+}
 
-  const top = picks[0] || null;
-  if (!top) return null;
-  return { ...top, selector: "nbc_next_data" };
+function extractCnnLeadFromDom(html = "", sourceUrl = "https://www.cnn.com/") {
+  const $ = cheerio.load(html || "");
+  const selectors = [
+    ".container.container_lead-package .container_lead-package__title-url[href]",
+    ".container.container_lead-package .container__item.container_lead-package__item a.container__link--type-article[href]",
+    ".container_lead-package a.container__title-url[href]",
+  ];
+  const seen = new Set();
+
+  function valid(url, title) {
+    const u = parseUrlSafe(url);
+    if (!u || !/(^|\.)cnn\.com$/i.test(u.hostname)) return false;
+    const p = String(u.pathname || "").toLowerCase();
+    if (/\/(account|all-access|subscriptions?|profiles?|newsletter|video)\b/.test(p)) return false;
+    if (!/^\/\d{4}\/\d{2}\/\d{2}\//.test(p)) return false;
+    if (/function\s+\w+\s*\(|\{|\}|;|onerror|srcset|img\.|dataset\./i.test(title)) return false;
+    return !defaultTitleReject(title);
+  }
+
+  for (const sel of selectors) {
+    const nodes = $(sel).toArray();
+    for (const el of nodes) {
+      const a = $(el);
+      const url = toAbsoluteUrl(a.attr("href") || "", sourceUrl);
+      const title = stripHeadlineNoise(cleanText(
+        a.find("h1,h2,h3,.container__title_url-text,.container__headline-text").first().text() ||
+        a.attr("data-zjs-container_name") ||
+        a.text() ||
+        "",
+      ));
+      if (!url || !title || seen.has(url)) continue;
+      seen.add(url);
+      if (!valid(url, title)) continue;
+      return { title, url, selector: sel };
+    }
+  }
+  return null;
 }
 
 function extractLeadFromHtml({
@@ -1011,18 +1056,7 @@ const HTTP_HERO_CONFIGS = {
   cnn1: {
     sourceUrl: "https://www.cnn.com/",
     hostPattern: /(^|\.)cnn\.com$/i,
-    urlAllow: (url) => {
-      const u = parseUrlSafe(url);
-      if (!u || !/(^|\.)cnn\.com$/i.test(u.hostname)) return false;
-      const path = String(u.pathname || "").toLowerCase();
-      if (/\/(account|all-access|subscriptions?|profiles?|newsletter|video)\b/.test(path)) return false;
-      return !defaultUrlAllow(url, /(^|\.)cnn\.com$/i) ? false : true;
-    },
-    titleReject: (title) => {
-      const t = String(title || "");
-      if (defaultTitleReject(t)) return true;
-      return /function\s+\w+\s*\(|\{|\}|;|onerror|srcset|img\.|dataset\./i.test(t);
-    },
+    customExtractor: extractCnnLeadFromDom,
     selectors: ["main h2 a[href], main h3 a[href]", ".container_lead-package a[href]", ".container_lead-plus-headlines a[href]"],
   },
   guardian1: {
