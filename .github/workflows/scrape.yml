@@ -35,6 +35,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Required for Playwright-driven publisher visits in CI runners.
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
       - name: Ensure docs dirs
         run: |
           mkdir -p docs
@@ -46,6 +50,11 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node server.js --refresh
+
+      # Stop here if every source failed, so we don't publish empty headlines.
+      - name: Validate scrape health
+        run: |
+          node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('cache.json','utf8')); const src=Object.values(c?.sources||{}); const ok=src.filter(s=>s?.ok).length; const total=src.length; console.log('scrape health:', { ok, total }); if (total===0 || ok===0) { console.error('All sources failed; aborting publish.'); process.exit(1); }"
 
       # Capture runner HTML/JSON for debugging (Guardian/CNN/Yahoo issues)
       - name: List archive outputs (debug)
