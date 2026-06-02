@@ -5,7 +5,7 @@ env:
 
 on:
   schedule:
-    - cron: "*/10 * * * *" # every 10 minutes
+    - cron: "3,17,34,47 * * * *" # hourly at :03, :17, :34, and :47
   workflow_dispatch: {}
 
 permissions:

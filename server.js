@@ -605,14 +605,14 @@ const SOURCE_REGISTRY = [
   { id: "cbs1", name: "CBS News", home_url: "https://www.cbsnews.com/" },
   { id: "usat1", name: "USA Today", home_url: "https://www.usatoday.com/" },
   { id: "nbc1", name: "NBC News", home_url: "https://www.nbcnews.com/" },
-  { id: "cnn1", name: "CNN", home_url: "https://www.cnn.com/" },
+  { id: "cnn1", name: "CNN", home_url: "https://lite.cnn.com/" },
   { id: "guardian1", name: "The Guardian", home_url: "https://www.theguardian.com/" },
   { id: "ap1", name: "Associated Press", home_url: "https://apnews.com/" },
   { id: "latimes1", name: "Los Angeles Times", home_url: "https://www.latimes.com/" },
   { id: "npr1", name: "NPR", home_url: "https://www.npr.org/" },
   { id: "bbc1", name: "BBC", home_url: "https://www.bbc.com/" },
   { id: "fox1", name: "Fox News", home_url: "https://www.foxnews.com/" },
-  { id: "yahoo1", name: "Yahoo News", home_url: "https://news.yahoo.com/" },
+  { id: "yahoo1", name: "Yahoo News", home_url: "https://www.yahoo.com/news/" },
 ];
 
 const SERVER_SOURCE_IDS = SOURCE_REGISTRY.map((s) => s.id);
@@ -641,7 +641,7 @@ function ensureCacheShape(cache) {
     c.sources.guardian1 = { ...c.sources.reuters1, id: "guardian1", name: "The Guardian", home_url: "https://www.theguardian.com/" };
   }
   if (c.sources.wp1 && !c.sources.yahoo1) {
-    c.sources.yahoo1 = { ...c.sources.wp1, id: "yahoo1", name: "Yahoo News", home_url: "https://news.yahoo.com/" };
+    c.sources.yahoo1 = { ...c.sources.wp1, id: "yahoo1", name: "Yahoo News", home_url: "https://www.yahoo.com/news/" };
   }
   delete c.sources.reuters1;
   delete c.sources.wp1;
@@ -713,17 +713,19 @@ async function archiveRun(page, runId, snapshot) {
   }
 }
 
-async function fetchHomepageHtml(url) {
+async function fetchHomepageHtml(url, opts = {}) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 20000);
   try {
+    const mobile = Boolean(opts?.mobile);
     const resp = await fetch(url, {
       method: "GET",
       redirect: "follow",
       signal: controller.signal,
       headers: {
-        "user-agent":
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+        "user-agent": mobile
+          ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
+          : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
         accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
       },
     });
@@ -918,9 +920,11 @@ function extractNbcFromNextData(html = "", sourceUrl = "https://www.nbcnews.com/
   return null;
 }
 
-function extractCnnLeadFromDom(html = "", sourceUrl = "https://www.cnn.com/") {
+function extractCnnLeadFromDom(html = "", sourceUrl = "https://lite.cnn.com/") {
   const $ = cheerio.load(html || "");
   const selectors = [
+    "main a[href^='/20']",
+    "a[href^='/20']",
     ".container.container_lead-package .container_lead-package__title-url[href]",
     ".container.container_lead-package .container__item.container_lead-package__item a.container__link--type-article[href]",
     ".container_lead-package a.container__title-url[href]",
@@ -933,6 +937,7 @@ function extractCnnLeadFromDom(html = "", sourceUrl = "https://www.cnn.com/") {
     const p = String(u.pathname || "").toLowerCase();
     if (/\/(account|all-access|subscriptions?|profiles?|newsletter|video)\b/.test(p)) return false;
     if (!/^\/\d{4}\/\d{2}\/\d{2}\//.test(p)) return false;
+    if (title.length > 240) return false;
     if (/function\s+\w+\s*\(|\{|\}|;|onerror|srcset|img\.|dataset\./i.test(title)) return false;
     return !defaultTitleReject(title);
   }
@@ -1022,10 +1027,10 @@ function extractLeadFromHtml({
   };
 }
 
-async function scrapeHeroHttp({ sourceId, sourceUrl, selectors, hostPattern, urlAllow, titleReject, customExtractor }) {
+async function scrapeHeroHttp({ sourceId, sourceUrl, selectors, hostPattern, urlAllow, titleReject, customExtractor, mobile = false }) {
   const runId = makeRunId(sourceId);
   const fetchedAt = nowISO();
-  const page = await fetchHomepageHtml(sourceUrl);
+  const page = await fetchHomepageHtml(sourceUrl, { mobile });
   let extracted = null;
   if (typeof customExtractor === "function") {
     const custom = customExtractor(page.html, sourceUrl);
@@ -1064,7 +1069,7 @@ async function scrapeHeroHttp({ sourceId, sourceUrl, selectors, hostPattern, url
     item: extracted.item,
     meta: {
       run_kind: "hero",
-      profile: "http",
+      profile: mobile ? "mobile-http" : "http",
       final_url: page.finalUrl || sourceUrl,
       http_status: page.status,
       page_title: null,
@@ -1093,15 +1098,17 @@ const HTTP_HERO_CONFIGS = {
   },
   nbc1: {
     sourceUrl: "https://www.nbcnews.com/",
+    mobile: true,
     hostPattern: /(^|\.)nbcnews\.com$/i,
     customExtractor: extractNbcFromNextData,
     selectors: ["main a[href*='-rcna']", "main a[href*='/live-blog/']", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
   cnn1: {
-    sourceUrl: "https://www.cnn.com/",
+    sourceUrl: "https://m.cnn.com/",
+    mobile: true,
     hostPattern: /(^|\.)cnn\.com$/i,
     customExtractor: extractCnnLeadFromDom,
-    selectors: ["main h2 a[href], main h3 a[href]", ".container_lead-package a[href]", ".container_lead-plus-headlines a[href]"],
+    selectors: ["main a[href^='/20']", "a[href^='/20']", "main h2 a[href], main h3 a[href]", ".container_lead-package a[href]", ".container_lead-plus-headlines a[href]"],
   },
   guardian1: {
     sourceUrl: "https://www.theguardian.com/us",
@@ -1134,7 +1141,8 @@ const HTTP_HERO_CONFIGS = {
     selectors: ["main.main-content-primary article.story-1 a[href]", "main.main-content-primary article a[href]", "main h1 a[href], main h2 a[href]"],
   },
   yahoo1: {
-    sourceUrl: "https://news.yahoo.com/",
+    sourceUrl: "https://www.yahoo.com/news/",
+    mobile: true,
     hostPattern: /(^|\.)yahoo\.com$/i,
     selectors: ["a[data-ylk*='sec:strm'][data-ylk*='ct:story'][href]", "main a[data-ylk*='ct:story'][href]", "main a[href]"],
     urlAllow: (url) => {
@@ -2289,7 +2297,7 @@ async function scrapeNBCHero() {
       item,
       meta: snapshotMeta,
     };
-  });
+  }, { mobile: true });
 }
 
 /* ---------------------------
@@ -2299,7 +2307,7 @@ async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
     const runId = `cnn1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://www.cnn.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.goto("https://m.cnn.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(1800);
 
     const hero = await page.evaluate(() => {
@@ -2311,7 +2319,7 @@ async function scrapeCNNHero() {
       }
       function abs(h) {
         try {
-          return new URL(h, "https://www.cnn.com").toString();
+          return new URL(h, "https://lite.cnn.com").toString();
         } catch {
           return null;
         }
@@ -2319,7 +2327,7 @@ async function scrapeCNNHero() {
 
       function isStoryUrl(url) {
         if (!url) return false;
-        if (!/^https?:\/\/(www\.)?cnn\.com\//i.test(url)) return false;
+        if (!/^https?:\/\/([^/]+\.)?cnn\.com\//i.test(url)) return false;
         if (/\/cnn-underscored(\/|$)/i.test(url)) return false;
         if (/\/(audio|videos?|profiles?|live-tv)(\/|$)/i.test(url)) return false;
         return true;
@@ -2330,6 +2338,24 @@ async function scrapeCNNHero() {
         if (!t || t.length < 12) return true;
         if (/^cnn underscored$/i.test(t)) return true;
         return false;
+      }
+
+      const liteCandidates = Array.from(document.querySelectorAll("main a[href^='/20'], a[href^='/20']"))
+        .map((a, idx) => {
+          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
+          const url = abs(a.getAttribute("href") || "");
+          if (!title || !url || isWeakTitle(title) || !isStoryUrl(url)) return null;
+          if (!/^https?:\/\/([^/]+\.)?cnn\.com\/\d{4}\/\d{2}\/\d{2}\//i.test(url)) return null;
+          const rect = a.getBoundingClientRect();
+          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+          return { title, url, topY, score: 1000 - idx };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
+
+      if (liteCandidates.length) {
+        const top = liteCandidates[0];
+        return { ok: true, title: top.title, url: top.url, selector_used: "cnn_lite_first_story" };
       }
 
       // Highest-priority exception: CNN sometimes promotes the lead as a zone title
@@ -2479,7 +2505,7 @@ async function scrapeCNNHero() {
     const archive = await archiveRun(page, runId, snapshot);
 
     return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  });
+  }, { mobile: true });
 }
 
 /* ---------------------------
@@ -3694,7 +3720,7 @@ async function scrapeWPHero(opts = {}) {
   return await withBrowser(async (page) => {
     const runId = `yahoo1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    const navResp = await page.goto("https://news.yahoo.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    const navResp = await page.goto("https://www.yahoo.com/news/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(2200);
 
     const hero = await page.evaluate(() => {
@@ -3925,7 +3951,7 @@ async function scrapeWPHero(opts = {}) {
       item,
       meta: {
         run_kind: "hero",
-        profile: "desktop",
+        profile: "mobile",
         final_url: page.url() || null,
         http_status: navResp?.status?.() ?? null,
         page_title: pageTitle || null,
@@ -3946,7 +3972,7 @@ async function scrapeWPHero(opts = {}) {
       item,
       meta: snapshot.meta,
     };
-  });
+  }, { mobile: true });
 }
 
 /* ---------------------------
