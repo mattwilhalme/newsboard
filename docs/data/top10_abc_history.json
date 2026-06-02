@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-02T09:17:31.053Z",
+  "generatedAt": "2026-06-02T12:55:18.554Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-03T09-08-40-841Z",
-      "observedAt": "2026-05-03T09:08:43.832Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Israel, Hezbollah exchange attacks as Trump mulls Iran offer",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-rubio-dismisses-iran-peace-proposal?id=132444768",
-          "fingerprint": "22c529e1f48fb15aab434019cb84214206f9bcab",
-          "related_links": [
-            {
-              "title": "IDF says it hit 120 Hezbollah targets in south Lebanon",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-rubio-dismisses-iran-peace-proposal?entryId=132610885&id=132444768"
-            },
-            {
-              "title": "45 ships turned back during blockade: CENTCOM",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-rubio-dismisses-iran-peace-proposal?entryId=132579466&id=132444768"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Golden Tempo wins Kentucky Derby, Cherie DeVaux becomes 1st woman to train its winner",
-          "url": "https://abcnews.com/Sports/wireStory/kentucky-derby-19-horses-after-puma-gets-scratched-132599129",
-          "fingerprint": "b67f9e6ee0a366221af45b522126ced524a24de6",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights",
-          "url": "https://abcnews.com/Business/airlines-reduce-cap-fares-spirit-travelers-rebook-cancelled/story?id=132598089",
-          "fingerprint": "cd7785ce1b9901f68846179028af2de88cb346e3",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Supreme Court asked to restore access to mail-order abortion pill",
-          "url": "https://abcnews.com/Politics/supreme-court-asked-restore-access-mail-order-abortion/story?id=132604063",
-          "fingerprint": "28af495f8a70178644bdac7904a7c479c53f890c",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "US to withdraw 5,000 troops from Germany: Pentagon",
-          "url": "https://abcnews.com/International/us-withdraw-5000-troops-germany/story?id=132587562",
-          "fingerprint": "1743f4aad39bb0f2ad3eeb10e693fc0e9f853160",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Body of Nahida Bristy, 2nd missing USF student, identified",
-          "url": "https://abcnews.com/US/2nd-missing-usf-students-remains-identified/story?id=132575052",
-          "fingerprint": "884bfb182bcbad3cfc090497350cbec704ab3863",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Trump announces 25% tariff on cars, trucks from EU",
-          "url": "https://abcnews.com/Politics/trump-announces-25-tariff-cars-trucks-eu/story?id=132576722",
-          "fingerprint": "de384c44c840ed5d8086057942047ef7e2f5caaf",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Prince William, Kate Middleton's daughter Princess Charlotte turns 11",
-          "url": "https://abcnews.com/GMA/Culture/prince-william-kate-middletons-daughter-princess-charlotte-turns/story?id=132567986",
-          "fingerprint": "e867db0be531fdf3aa8c13e0cbfd790b4b24197c",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Mom charged with involuntary manslaughter over teen son's alleged e-motorcycle crash",
-          "url": "https://abcnews.com/US/mother-charged-involuntary-manslaughter-teen-sons-alleged-motorcycle/story?id=132586911",
-          "fingerprint": "45da2eec0a7fa8a7c0dc6bf588aac14f7adc99b5",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "1 dead after vehicle crashes into health club",
-          "url": "https://abcnews.com/US/wireStory/1-person-dead-after-vehicle-crashes-oregon-health-132606300",
-          "fingerprint": "f3b083d3566ede8b1e407c706421e60596c61a5f",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-03T10-16-27-734Z",
       "observedAt": "2026-05-03T10:16:30.876Z",
@@ -26233,6 +26146,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-02T09:17:31.053Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-02T12:55:18.554Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
