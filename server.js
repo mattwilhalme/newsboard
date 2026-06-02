@@ -789,8 +789,11 @@ function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/")
     const title = stripHeadlineNoise(cleanText(titleRaw || ""));
     const url = toAbsoluteUrl(urlRaw || "", sourceUrl);
     if (!title || !url || seen.has(url)) return;
-    if (!/(^|\.)cbsnews\.com$/i.test(parseUrlSafe(url)?.hostname || "")) return;
+    const parsed = parseUrlSafe(url);
+    if (!/(^|\.)cbsnews\.com$/i.test(parsed?.hostname || "")) return;
+    if (String(parsed?.pathname || "") === "/") return;
     if (/\/(video|videos|live|watch|account|privacy|terms)\b/i.test(url)) return;
+    if (/cbs news \| breaking news, top stories/i.test(title)) return;
     if (defaultTitleReject(title)) return;
     seen.add(url);
     out.push({ title, url });
@@ -818,6 +821,47 @@ function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/")
   const top = out[0] || null;
   if (!top) return null;
   return { ...top, selector: "cbs_jsonld" };
+}
+
+function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/") {
+  const $ = cheerio.load(html || "");
+  const selectors = [
+    "#component-latest-news article.item a:has(h4.item__hed)",
+    "#component-latest-news h4.item__hed",
+    "article.item.item--type-updating_story a:has(h4.item__hed)",
+    "h4.item__hed",
+  ];
+  const seen = new Set();
+
+  for (const sel of selectors) {
+    const nodes = $(sel).toArray().slice(0, 24);
+    for (const el of nodes) {
+      const a = el.name === "a"
+        ? $(el)
+        : $(el).closest("a[href]").first().length
+          ? $(el).closest("a[href]").first()
+          : $(el).find("a[href]").first();
+      if (!a.length) continue;
+      const url = toAbsoluteUrl(a.attr("href") || "", sourceUrl);
+      const title = stripHeadlineNoise(cleanText(
+        a.find("h4.item__hed,h1,h2,h3,h4").first().text() ||
+        a.attr("aria-label") ||
+        a.text() ||
+        "",
+      ));
+      if (!url || !title || seen.has(url)) continue;
+      seen.add(url);
+
+      const u = parseUrlSafe(url);
+      if (!/(^|\.)cbsnews\.com$/i.test(u?.hostname || "")) continue;
+      if (String(u?.pathname || "") === "/") continue;
+      if (/\/(video|videos|watch|account|privacy|terms)\b/i.test(url)) continue;
+      if (/cbs news \| breaking news, top stories/i.test(title)) continue;
+      if (defaultTitleReject(title)) continue;
+      return { title, url, selector: sel };
+    }
+  }
+  return null;
 }
 
 function extractNbcFromNextData(html = "", sourceUrl = "https://www.nbcnews.com/") {
@@ -1039,7 +1083,7 @@ const HTTP_HERO_CONFIGS = {
   cbs1: {
     sourceUrl: "https://www.cbsnews.com/",
     hostPattern: /(^|\.)cbsnews\.com$/i,
-    customExtractor: extractCbsFromJsonLd,
+    customExtractor: (html, sourceUrl) => extractCbsLeadFromDom(html, sourceUrl) || extractCbsFromJsonLd(html, sourceUrl),
     selectors: ["main h4.item__hed a[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
   usat1: {
