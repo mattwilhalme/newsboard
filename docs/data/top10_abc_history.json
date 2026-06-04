@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-04T09:05:26.204Z",
+  "generatedAt": "2026-06-04T12:22:58.822Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-03T21-59-45-285Z",
-      "observedAt": "2026-05-03T21:59:48.442Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’",
-          "url": "https://abcnews.com/Politics/sen-reed-trumps-iran-strategy-dont-president-plan/story?id=132606684",
-          "fingerprint": "b2ecb0f7c06a22c301d3a99effb5d2956991da5b",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Iran live updates: Israel, Hezbollah exchange attacks as Trump mulls Iran offer",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-rubio-dismisses-iran-peace-proposal?id=132444768",
-          "fingerprint": "22c529e1f48fb15aab434019cb84214206f9bcab",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Transportation Secretary projects ‘immediate relief’ on gas prices once strait opens",
-          "url": "https://abcnews.com/Politics/transportation-secretary-duffy-projects-immediate-relief-gas-prices/story?id=132606676",
-          "fingerprint": "c5c1a839b0e5a7a33e621af3bb358cd429c9b335",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "8 people arrested at protest during ICE arrest in Brooklyn, NYPD says",
-          "url": "https://abcnews.com/US/8-people-arrested-protest-ice-arrest-brooklyn-nypd/story?id=132618968",
-          "fingerprint": "afd1d9b91149733352788670ace14bedf2ae84c7",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "US service members go missing during military exercise in Morocco",
-          "url": "https://abcnews.com/International/2-us-service-members-missing-morocco-multinational-military/story?id=132615417",
-          "fingerprint": "07cbe75d651859b7a7f4173163bc782db0589643",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "'Deeply concerned': Search underway for missing Northern Kentucky University student",
-          "url": "https://abcnews.com/US/deeply-concerned-search-underway-missing-northern-kentucky-university/story?id=132612105",
-          "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Wild temperature swing in the forecast as May gets underway",
-          "url": "https://abcnews.com/US/wild-temperature-swing-forecast-gets-underway/story?id=132616004",
-          "fingerprint": "80aa9ae5c18921635fce5738349bace264c7092d",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Airlines reduce, cap fares for Spirit travelers looking to rebook canceled flights",
-          "url": "https://abcnews.com/Business/airlines-reduce-cap-fares-spirit-travelers-rebook-cancelled/story?id=132598089",
-          "fingerprint": "cd7785ce1b9901f68846179028af2de88cb346e3",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "'The Devil Wears Prada 2' opens to $77M, tops box office",
-          "url": "https://abcnews.com/GMA/Culture/devil-wears-prada-2-opens-77m-tops-box/story?id=132620060",
-          "fingerprint": "3fa55d97d126456dc04a83b98d4efc61e7231fcf",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Shakira thrills crowd of 2 million with free concert on Brazil's Copacabana beach",
-          "url": "https://abcnews.com/Entertainment/wireStory/shakira-follow-madonna-lady-gaga-giving-huge-free-132604948",
-          "fingerprint": "dda7a2a62df02f2155fb6e564e00341c622e5e86",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-03T22-44-42-142Z",
       "observedAt": "2026-05-03T22:44:45.205Z",
@@ -25194,6 +25116,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-04T09:05:26.204Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-04T12:22:58.822Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
