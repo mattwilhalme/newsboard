@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-04T22:13:55.105Z",
+  "generatedAt": "2026-06-04T23:40:48.204Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-04T06-55-09-617Z",
-      "observedAt": "2026-05-04T06:55:12.480Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: UKMTO reports attacks on 2 ships in Strait of Hormuz",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "2b9ba5107e86edb6f0f91fe052d45f1f76509c3f",
-          "related_links": [
-            {
-              "title": "US Strait of Hormuz mission will violate ceasefire, Iran official says",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132627123&id=132626582"
-            },
-            {
-              "title": "Trump says Iran negotiations are going 'very well'",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132626917&id=132626582"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Former NYC mayor Rudy Giuliani hospitalized in critical condition",
-          "url": "https://abcnews.com/Politics/rudy-giuliani-hospitalized-critical-condition-spokesperson/story?id=132622123",
-          "fingerprint": "9d63a5d4dfd936b343419182766915ce30fbf7e8",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Pirro says evidence shows alleged correspondents' dinner attacker shot officer",
-          "url": "https://abcnews.com/Politics/pirro-evidence-alleged-correspondents-dinner-attacker-shot-secret/story?id=132615998",
-          "fingerprint": "ebc276e8162138f21aee8dd86ea20a2cca964793",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Cornell president claims 'harassment and intimidation' after parking lot clash",
-          "url": "https://abcnews.com/US/cornell-university-president-accused-backing-student-parking-lot/story?id=132618765",
-          "fingerprint": "92a2bd60b80af26594c0a9959a393c89a3c22f76",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Sen. Reed on Trump’s Iran strategy: ‘I don’t believe the president has a plan’",
-          "url": "https://abcnews.com/Politics/sen-reed-trumps-iran-strategy-dont-president-plan/story?id=132606684",
-          "fingerprint": "b2ecb0f7c06a22c301d3a99effb5d2956991da5b",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "8 people arrested at protest during ICE arrest in Brooklyn, NYPD says",
-          "url": "https://abcnews.com/US/8-people-arrested-protest-ice-arrest-brooklyn-nypd/story?id=132618968",
-          "fingerprint": "afd1d9b91149733352788670ace14bedf2ae84c7",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "US service members go missing during military exercise in Morocco",
-          "url": "https://abcnews.com/International/2-us-service-members-missing-morocco-multinational-military/story?id=132615417",
-          "fingerprint": "07cbe75d651859b7a7f4173163bc782db0589643",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "'Deeply concerned': Search underway for missing Northern Kentucky University student",
-          "url": "https://abcnews.com/US/deeply-concerned-search-underway-missing-northern-kentucky-university/story?id=132612105",
-          "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Wild temperature swing in the forecast as May gets underway",
-          "url": "https://abcnews.com/US/wild-temperature-swing-forecast-gets-underway/story?id=132616004",
-          "fingerprint": "80aa9ae5c18921635fce5738349bace264c7092d",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Police ask for help in fatal Texas shooting",
-          "url": "https://abcnews.com/US/wireStory/police-public-seek-suspects-texas-shooting-killed-2-132614440",
-          "fingerprint": "4b9e5959cb93a9c255dce192399d4f827a9fff29",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-04T09-12-30-369Z",
       "observedAt": "2026-05-04T09:12:33.288Z",
@@ -24839,6 +24752,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-04T22:13:55.105Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-04T23:40:48.204Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
