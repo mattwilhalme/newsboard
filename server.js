@@ -605,7 +605,7 @@ const SOURCE_REGISTRY = [
   { id: "cbs1", name: "CBS News", home_url: "https://www.cbsnews.com/" },
   { id: "usat1", name: "USA Today", home_url: "https://www.usatoday.com/" },
   { id: "nbc1", name: "NBC News", home_url: "https://www.nbcnews.com/" },
-  { id: "cnn1", name: "CNN", home_url: "https://lite.cnn.com/" },
+  { id: "cnn1", name: "CNN", home_url: "https://www.cnn.com/" },
   { id: "guardian1", name: "The Guardian", home_url: "https://www.theguardian.com/" },
   { id: "ap1", name: "Associated Press", home_url: "https://apnews.com/" },
   { id: "latimes1", name: "Los Angeles Times", home_url: "https://www.latimes.com/" },
@@ -679,7 +679,7 @@ async function withBrowser(fn, opts = {}) {
   const browser = await chromium.launch(launchOptions);
 
   const context = await browser.newContext({
-    viewport: opts.mobile ? { width: 390, height: 844 } : { width: 1280, height: 720 },
+    viewport: opts.viewport || (opts.mobile ? { width: 390, height: 844 } : { width: 1280, height: 720 }),
     userAgent: opts.mobile
       ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
       : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
@@ -920,48 +920,6 @@ function extractNbcFromNextData(html = "", sourceUrl = "https://www.nbcnews.com/
   return null;
 }
 
-function extractCnnLeadFromDom(html = "", sourceUrl = "https://lite.cnn.com/") {
-  const $ = cheerio.load(html || "");
-  const selectors = [
-    "main a[href^='/20']",
-    "a[href^='/20']",
-    ".container.container_lead-package .container_lead-package__title-url[href]",
-    ".container.container_lead-package .container__item.container_lead-package__item a.container__link--type-article[href]",
-    ".container_lead-package a.container__title-url[href]",
-  ];
-  const seen = new Set();
-
-  function valid(url, title) {
-    const u = parseUrlSafe(url);
-    if (!u || !/(^|\.)cnn\.com$/i.test(u.hostname)) return false;
-    const p = String(u.pathname || "").toLowerCase();
-    if (/\/(account|all-access|subscriptions?|profiles?|newsletter|video)\b/.test(p)) return false;
-    if (!/^\/\d{4}\/\d{2}\/\d{2}\//.test(p)) return false;
-    if (title.length > 240) return false;
-    if (/function\s+\w+\s*\(|\{|\}|;|onerror|srcset|img\.|dataset\./i.test(title)) return false;
-    return !defaultTitleReject(title);
-  }
-
-  for (const sel of selectors) {
-    const nodes = $(sel).toArray();
-    for (const el of nodes) {
-      const a = $(el);
-      const url = toAbsoluteUrl(a.attr("href") || "", sourceUrl);
-      const title = stripHeadlineNoise(cleanText(
-        a.find("h1,h2,h3,.container__title_url-text,.container__headline-text").first().text() ||
-        a.attr("data-zjs-container_name") ||
-        a.text() ||
-        "",
-      ));
-      if (!url || !title || seen.has(url)) continue;
-      seen.add(url);
-      if (!valid(url, title)) continue;
-      return { title, url, selector: sel };
-    }
-  }
-  return null;
-}
-
 function extractFoxLeadFromDom(html = "", sourceUrl = "https://www.foxnews.com/") {
   const $ = cheerio.load(html || "");
   const seenArticles = new Set();
@@ -1160,13 +1118,6 @@ const HTTP_HERO_CONFIGS = {
     hostPattern: /(^|\.)nbcnews\.com$/i,
     customExtractor: extractNbcFromNextData,
     selectors: ["main a[href*='-rcna']", "main a[href*='/live-blog/']", "main h1 a[href], main h2 a[href], main h3 a[href]"],
-  },
-  cnn1: {
-    sourceUrl: "https://m.cnn.com/",
-    mobile: true,
-    hostPattern: /(^|\.)cnn\.com$/i,
-    customExtractor: extractCnnLeadFromDom,
-    selectors: ["main a[href^='/20']", "a[href^='/20']", "main h2 a[href], main h3 a[href]", ".container_lead-package a[href]", ".container_lead-plus-headlines a[href]"],
   },
   guardian1: {
     sourceUrl: "https://www.theguardian.com/us",
@@ -2360,14 +2311,14 @@ async function scrapeNBCHero() {
 }
 
 /* ---------------------------
-   CNN (single top item) - lead-package container + title
+   CNN (single top item) - rendered small-browser homepage lead
 --------------------------- */
 async function scrapeCNNHero() {
   return await withBrowser(async (page) => {
     const runId = `cnn1_${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
-    await page.goto("https://m.cnn.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
-    await page.waitForTimeout(1800);
+    const navResp = await page.goto("https://www.cnn.com/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(2200);
 
     const hero = await page.evaluate(() => {
       function clean(s) {
@@ -2378,176 +2329,94 @@ async function scrapeCNNHero() {
       }
       function abs(h) {
         try {
-          return new URL(h, "https://lite.cnn.com").toString();
+          return new URL(h, "https://www.cnn.com").toString();
         } catch {
           return null;
         }
       }
-
+      function parsed(url) {
+        try {
+          return new URL(String(url || ""));
+        } catch {
+          return null;
+        }
+      }
       function isStoryUrl(url) {
-        if (!url) return false;
-        if (!/^https?:\/\/([^/]+\.)?cnn\.com\//i.test(url)) return false;
-        if (/\/cnn-underscored(\/|$)/i.test(url)) return false;
-        if (/\/(audio|videos?|profiles?|live-tv)(\/|$)/i.test(url)) return false;
+        const u = parsed(url);
+        if (!u || !/(^|\.)cnn\.com$/i.test(u.hostname)) return false;
+        const p = String(u.pathname || "").toLowerCase();
+        if (!/^\/\d{4}\/\d{2}\/\d{2}\//.test(p)) return false;
+        if (/\/(audio|videos?|profiles?|newsletter|account|live-tv|subscriptions?|access|cnn-underscored)(\/|$)/i.test(p)) return false;
         return true;
       }
-
       function isWeakTitle(title) {
         const t = clean(title || "");
         if (!t || t.length < 12) return true;
         if (/^cnn underscored$/i.test(t)) return true;
+        if (/^(watch|listen|subscribe|sign in|live tv)$/i.test(t)) return true;
         return false;
       }
-
-      const liteCandidates = Array.from(document.querySelectorAll("main a[href^='/20'], a[href^='/20']"))
-        .map((a, idx) => {
-          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-          const url = abs(a.getAttribute("href") || "");
-          if (!title || !url || isWeakTitle(title) || !isStoryUrl(url)) return null;
-          if (!/^https?:\/\/([^/]+\.)?cnn\.com\/\d{4}\/\d{2}\/\d{2}\//i.test(url)) return null;
-          const rect = a.getBoundingClientRect();
-          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
-          return { title, url, topY, score: 1000 - idx };
-        })
-        .filter(Boolean)
-        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
-
-      if (liteCandidates.length) {
-        const top = liteCandidates[0];
-        return { ok: true, title: top.title, url: top.url, selector_used: "cnn_lite_first_story" };
+      function titleFromAnchor(a) {
+        return clean(
+          a.querySelector("h1,h2,h3,.container__headline-text,.container__title-text,.container__title_url-text,.headline")?.textContent ||
+          a.getAttribute("aria-label") ||
+          a.textContent ||
+          "",
+        );
+      }
+      function selectorCandidates(sel, baseScore) {
+        return Array.from(document.querySelectorAll(sel))
+          .map((a, idx) => {
+            const url = abs(a.getAttribute("href") || "");
+            const title = titleFromAnchor(a);
+            if (!url || !title || isWeakTitle(title) || !isStoryUrl(url)) return null;
+            const rect = a.getBoundingClientRect?.();
+            const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+            const main = a.closest("main");
+            let score = baseScore - idx * 3;
+            if (main) score += 140;
+            if (a.closest(".container_lead-package,.container_lead-plus-headlines")) score += 220;
+            if (a.closest("[data-zone-label*='lead' i]")) score += 180;
+            if (a.querySelector("h1,h2,h3")) score += 80;
+            if (topY < 450) score += 160;
+            else if (topY < 900) score += 90;
+            else if (topY < 1500) score += 25;
+            score -= Math.min(260, topY / 8);
+            return { title, url, topY, selector: sel, score };
+          })
+          .filter(Boolean);
       }
 
-      // Highest-priority exception: CNN sometimes promotes the lead as a zone title
-      // anchor with rel="noopener". Prefer this over generic lead-package matches.
-      const explicitZoneLiveLead = Array.from(
-        document.querySelectorAll(
-          "a.zone__title-url[rel~='noopener'][href*='/live-news/'], h2.zone__title a.zone__title-url[href*='/live-news/']",
-        ),
-      )
-        .map((a) => {
-          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-          const url = abs(a.getAttribute("href") || "");
-          if (!title || !url || isWeakTitle(title) || !isStoryUrl(url)) return null;
-          const rect = a.getBoundingClientRect();
-          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
-          let score = 0;
-          if (a.matches("a.zone__title-url[rel~='noopener']")) score += 180;
-          if (a.closest(".zone[data-component-name='zone']")) score += 120;
-          if (a.closest(".layout-homepage__main")) score += 80;
-          if (topY < 1200) score += 40;
-          if (topY < 800) score += 25;
-          score -= Math.min(160, topY / 24);
-          return { title, url, topY, score };
-        })
-        .filter(Boolean)
-        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
-
-      if (explicitZoneLiveLead.length) {
-        const top = explicitZoneLiveLead[0];
-        return { ok: true, title: top.title, url: top.url, selector_used: "cnn_explicit_zone_live_lead" };
-      }
-
-      // Primary target: lead-package top headline URL text.
-      const primarySelectors = [
-        "h2.container__title_url-text.container_lead-package__title_url-text[data-editable='title']",
-        "h2.container__title_url-text.container_lead-plus-headlines__title_url-text[data-editable='title']",
-        "h2.zone__title[data-editable='title'] a.zone__title-url[href]",
-        "h2.zone__title a.zone__title-url[href]",
+      const selectors = [
+        ".container_lead-package a[href]",
+        ".container_lead-package__title-url[href]",
+        "[data-zone-label*='lead' i] a[href]",
+        "main a[href*='/2026/']",
+        "main a[href^='/2026/']",
+        "main a[href*='/2025/']",
+        "main a[href^='/2025/']",
+        "main a[href*='/20']",
+        "main a[href^='/20']",
       ];
-      for (const sel of primarySelectors) {
-        const node = document.querySelector(sel);
-        if (!node) continue;
-        const a = node.matches("a[href]") ? node : node.closest("a[href]");
-        const title = clean((a || node).textContent || "");
-        const href = a?.getAttribute("href") || node.getAttribute?.("href") || "";
-        const url = href ? abs(href) : null;
-        if (title && url && !isWeakTitle(title) && isStoryUrl(url)) return { ok: true, title, url };
-      }
-
-      // Exception: CNN homepage can surface the lead as a bare zone title link
-      // without stable data-editable attributes.
-      const zoneLiveLead = Array.from(document.querySelectorAll("h2.zone__title a.zone__title-url[href]"))
-        .map((a) => {
-          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-          const url = abs(a.getAttribute("href") || "");
-          if (!title || !url || isWeakTitle(title) || !isStoryUrl(url)) return null;
-          if (!/\/live-news\//i.test(url)) return null;
-          const rect = a.getBoundingClientRect();
-          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
-          let score = 0;
-          if (a.closest(".zone[data-component-name='zone']")) score += 120;
-          if (a.closest(".layout-homepage__main")) score += 80;
-          if (topY < 1200) score += 40;
-          if (topY < 800) score += 25;
-          score -= Math.min(160, topY / 24);
-          return { title, url, topY, score };
+      const candidates = selectors.flatMap((sel, idx) => selectorCandidates(sel, (selectors.length - idx) * 1000));
+      const seen = new Set();
+      const ranked = candidates
+        .filter((candidate) => {
+          if (seen.has(candidate.url)) return false;
+          seen.add(candidate.url);
+          return true;
         })
-        .filter(Boolean)
         .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
 
-      if (zoneLiveLead.length) {
-        const top = zoneLiveLead[0];
-        return { ok: true, title: top.title, url: top.url, selector_used: "cnn_zone_live_lead_exception" };
-      }
-
-      // New variation: top "zone" hero headline links.
-      const zoneCandidates = Array.from(
-        document.querySelectorAll("h2.zone__title[data-editable='title'] a.zone__title-url[href], h2.zone__title a.zone__title-url[href], a.zone__title-url[href]"),
-      )
-        .map((a) => {
-          const title = clean(a.textContent || a.getAttribute("aria-label") || "");
-          const url = abs(a.getAttribute("href") || "");
-          if (!title || !url || isWeakTitle(title) || !isStoryUrl(url)) return null;
-          const rect = a.getBoundingClientRect();
-          const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
-          let score = 0;
-          if (/\/live-news\//i.test(url)) score += 120;
-          if (/\/world\//i.test(url)) score += 25;
-          if (a.closest("[data-component-name='zone']")) score += 50;
-          if (a.closest("h2.zone__title")) score += 35;
-          if (topY < 1200) score += 35;
-          if (topY < 800) score += 20;
-          score -= Math.min(120, topY / 30);
-          return { title, url, topY, score };
-        })
-        .filter(Boolean)
-        .sort((a, b) => (b.score - a.score) || (a.topY - b.topY));
-
-      if (zoneCandidates.length) {
-        const top = zoneCandidates[0];
-        return { ok: true, title: top.title, url: top.url, selector_used: "cnn_zone_title_url" };
-      }
-
-      // Fallback: inspect lead-package / lead-plus-headlines containers.
-      const leadContainers = Array.from(document.querySelectorAll(
-        ".container.container_lead-package, .container.container_lead-plus-headlines",
-      ));
-      for (const container of leadContainers) {
-        const titleEl = container.querySelector(
-          "h2.container__title_url-text[data-editable='title'], h2.container__title-text[data-editable='title']",
-        );
-        const title = clean(
-          titleEl?.textContent || container.getAttribute("data-title") || container.getAttribute("data-collapsed-text") || "",
-        );
-        const a =
-          titleEl?.closest("a[href]") ||
-          container.querySelector("a.container__title-url[href], a[href*='/'][href]");
-        const href = a?.getAttribute("href") || "";
-        const url = href ? abs(href) : null;
-        if (title && url && !isWeakTitle(title) && isStoryUrl(url)) return { ok: true, title, url };
-      }
-
-      // Final fallback: use lead container attributes.
-      const lead = document.querySelector(".container.container_lead-plus-headlines, .container.container_lead-package");
-      if (lead) {
-        const title = clean(lead.getAttribute("data-title") || lead.getAttribute("data-collapsed-text") || "");
-        const a = lead.querySelector('a[href]');
-        const href = a?.getAttribute("href") || "";
-        const url = href ? abs(href) : null;
-        if (title && url && !isWeakTitle(title) && isStoryUrl(url)) return { ok: true, title, url };
-      }
-
-      return { ok: false, error: "CNN: headline not found" };
+      if (!ranked.length) return { ok: false, error: "CNN: headline not found", candidates: 0 };
+      const top = ranked[0];
+      return {
+        ok: true,
+        title: top.title,
+        url: top.url,
+        selector_used: top.selector,
+        candidates: ranked.length,
+      };
     });
 
     const item = hero?.ok
@@ -2556,15 +2425,41 @@ async function scrapeCNNHero() {
           url: normalizeUrl(hero.url),
           imgUrl: null,
           slotKey: sha1("cnn1|top").slice(0, 12),
+          contentType: "article",
         }
       : null;
 
     const fetchedAt = nowISO();
-    const snapshot = { id: "cnn1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CNN not found"), item };
+    const pageTitle = await page.title().catch(() => null);
+    const snapshot = {
+      id: "cnn1",
+      fetchedAt,
+      runId,
+      ok: Boolean(item),
+      error: item ? null : (hero?.error || "CNN not found"),
+      item,
+      meta: {
+        run_kind: "hero",
+        profile: "small-browser",
+        final_url: page.url() || null,
+        http_status: navResp?.status?.() ?? null,
+        page_title: pageTitle || null,
+        selector_used: hero?.selector_used || null,
+        candidates: Number.isFinite(Number(hero?.candidates)) ? Number(hero.candidates) : null,
+      },
+    };
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
-  }, { mobile: true });
+    return {
+      ok: Boolean(item),
+      error: snapshot.error,
+      updatedAt: fetchedAt,
+      runId,
+      archive,
+      item,
+      meta: snapshot.meta,
+    };
+  }, { viewport: { width: 820, height: 1000 } });
 }
 
 /* ---------------------------
@@ -4061,6 +3956,7 @@ async function scrapeWPHero(opts = {}) {
 --------------------------- */
 const HERO_SCRAPERS = {
   ...HERO_SCRAPERS_HTTP,
+  cnn1: scrapeCNNHero,
 };
 
 async function refreshSources({ id = "" } = {}) {
