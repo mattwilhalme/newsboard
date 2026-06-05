@@ -17,6 +17,34 @@ function cleanTitle(title) {
   return normalizeSpaces(String(title || "").replace(/\s*-\s*Fox News\s*$/i, ""));
 }
 
+function titleFromArticle($, el) {
+  const article = $(el).closest("article").first();
+  const selectors = [
+    ".info .title a[href]",
+    ".info h1 a[href], .info h2 a[href], .info h3 a[href]",
+    "header.info-header .title a[href]",
+    "h1.title a[href], h2.title a[href], h3.title a[href]",
+  ];
+
+  for (const sel of selectors) {
+    const headlineAnchor = article.find(sel).first();
+    if (!headlineAnchor.length) continue;
+    return {
+      title: normalizeSpaces(headlineAnchor.text()),
+      href: normalizeSpaces(headlineAnchor.attr("href")),
+    };
+  }
+
+  return { title: "", href: "" };
+}
+
+function isKickerOnlyTitle($, el, title) {
+  if ($(el).closest(".kicker,.kicker-text").length) return true;
+  const kickerTitle = normalizeSpaces($(el).closest("article").find(".kicker,.kicker-text").first().text());
+  if (kickerTitle && normalizeSpaces(title).toLowerCase() === kickerTitle.toLowerCase()) return true;
+  return /^\s*(TABLES TURNED|BREAKING NEWS|WATCH LIVE)\s*$/i.test(String(title || ""));
+}
+
 function isStoryUrl(url) {
   try {
     const u = new URL(String(url || ""));
@@ -63,7 +91,8 @@ function extractTopStoryFromHtml(html) {
     $(sel).each((_i, el) => {
       if (seen.has(el)) return;
       seen.add(el);
-      const href = $(el).attr("href") || "";
+      const articleHeadline = titleFromArticle($, el);
+      const href = articleHeadline.href || $(el).attr("href") || "";
       const url = toAbs(href);
       const img = $(el).find("img[alt]").first();
       const imgAlt = normalizeSpaces(img.attr("alt"));
@@ -74,7 +103,8 @@ function extractTopStoryFromHtml(html) {
         $(el).attr("aria-label") ||
         $(el).text(),
       );
-      const title = cleanTitle(imgAlt || textTitle);
+      const title = cleanTitle(articleHeadline.title || imgAlt || textTitle);
+      if (isKickerOnlyTitle($, el, title)) return;
       if (!url || !title || !isStoryUrl(url)) return;
       const candidate = {
         url,
@@ -108,6 +138,34 @@ function assert(condition, message) {
 }
 
 function run() {
+  const kickerHtml = `
+    <main class="main-content-primary">
+      <article class="article story-1">
+        <div class="m">
+          <a href="https://www.foxnews.com/politics/illinois-exodus-bessent-chicago-lawmaker">
+            <div class="kicker default"><span class="kicker-text">TABLES TURNED</span></div>
+          </a>
+        </div>
+        <div class="info">
+          <header class="info-header">
+            <h2 class="title">
+              <a href="https://www.foxnews.com/politics/illinois-exodus-bessent-chicago-lawmaker#&_intcmp=fnhpbt1,hp1bt">
+                Illinois exodus quip from Bessent leaves Chicago-area lawmaker fuming on camera
+              </a>
+            </h2>
+          </header>
+        </div>
+      </article>
+    </main>
+  `;
+  const kickerTop = extractTopStoryFromHtml(kickerHtml);
+  assert(kickerTop, "Expected a Fox News top story candidate from kicker fixture");
+  assert(
+    kickerTop.title === "Illinois exodus quip from Bessent leaves Chicago-area lawmaker fuming on camera",
+    `Expected real headline, got: ${kickerTop.title}`,
+  );
+  assert(kickerTop.title !== "TABLES TURNED", "Expected kicker text not to be used as title");
+
   const html = fs.readFileSync("fox-news.html", "utf8");
   const top = extractTopStoryFromHtml(html);
   assert(top, "Expected a Fox News top story candidate");

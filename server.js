@@ -3565,6 +3565,26 @@ async function scrapeFoxHero() {
       function cleanTitle(title) {
         return clean(String(title || "").replace(/\s*-\s*Fox News\s*$/i, ""));
       }
+      function titleFromArticle(a) {
+        const article = a.closest("article");
+        const headlineAnchor =
+          article?.querySelector(".info .title a[href]") ||
+          article?.querySelector(".info h1 a[href], .info h2 a[href], .info h3 a[href]") ||
+          article?.querySelector("header.info-header .title a[href]") ||
+          article?.querySelector("h1.title a[href], h2.title a[href], h3.title a[href]");
+
+        return {
+          title: clean(headlineAnchor?.textContent || ""),
+          href: clean(headlineAnchor?.getAttribute("href") || ""),
+        };
+      }
+      function isKickerOnlyTitle(a, title) {
+        if (a.closest(".kicker,.kicker-text")) return true;
+        const article = a.closest("article");
+        const kickerTitle = clean(article?.querySelector(".kicker,.kicker-text")?.textContent || "");
+        if (kickerTitle && clean(title).toLowerCase() === kickerTitle.toLowerCase()) return true;
+        return /^\s*(TABLES TURNED|BREAKING NEWS|WATCH LIVE)\s*$/i.test(String(title || ""));
+      }
       function scoreAnchor(a, title, url, imgSrc, imgDataSrc, topY, navLastIdx, docIdx) {
         let score = 0;
         if (a.closest("main.main-content-primary")) score += 90;
@@ -3619,7 +3639,8 @@ async function scrapeFoxHero() {
 
       const ranked = anchors
         .map((a) => {
-          const href = a.getAttribute("href") || "";
+          const articleHeadline = titleFromArticle(a);
+          const href = articleHeadline.href || a.getAttribute("href") || "";
           const url = href ? abs(href) : null;
           const img = a.querySelector("img[alt]");
           const imgAlt = clean(img?.getAttribute("alt") || "");
@@ -3633,7 +3654,8 @@ async function scrapeFoxHero() {
             a.textContent ||
             "",
           );
-          const title = cleanTitle(imgAlt || textTitle);
+          const title = cleanTitle(articleHeadline.title || imgAlt || textTitle);
+          if (isKickerOnlyTitle(a, title)) return null;
           if (!url || !title || !isStoryUrl(url)) return null;
           const rect = a.getBoundingClientRect?.();
           const topY = Number.isFinite(rect?.top) ? rect.top : NaN;

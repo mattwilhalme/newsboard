@@ -5,7 +5,7 @@ env:
 
 on:
   schedule:
-    - cron: "3,17,34,47 * * * *" # hourly at :03, :17, :34, and :47
+    - cron: "*/15 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: scrape-publish
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   scrape:
