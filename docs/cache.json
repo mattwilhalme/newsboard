@@ -5,22 +5,22 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:41.246Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:41.308Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "DOJ argues Trump could 'bulldoze' Statue of Liberty in White House ballroom hearing",
-        "url": "https://abcnews.com/US/appeals-court-hear-arguments-trumps-ballroom-plans-continue/story?id=133589066",
+        "title": "Iran's World Cup players granted visas to play in the US",
+        "url": "https://abcnews.com/US/irans-world-cup-players-granted-visas-play-us/story?id=133630621",
         "imgUrl": null,
         "slotKey": "5be6806db8a5",
         "contentType": "news"
       },
       "last": {
-        "runId": "abc1_2026-06-05T21-16-41-246Z",
+        "runId": "abc1_2026-06-05T21-28-41-308Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:41.246Z"
+        "fetchedAt": "2026-06-05T21:28:41.308Z"
       },
       "history": [],
       "archive": []
@@ -30,8 +30,8 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:42.328Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:42.788Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -42,10 +42,10 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "cbs1_2026-06-05T21-16-42-328Z",
+        "runId": "cbs1_2026-06-05T21-28-42-788Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:42.328Z"
+        "fetchedAt": "2026-06-05T21:28:42.788Z"
       },
       "history": [],
       "archive": []
@@ -55,8 +55,8 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:42.730Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:43.221Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -67,10 +67,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-06-05T21-16-42-730Z",
+        "runId": "usat1_2026-06-05T21-28-43-221Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:42.730Z"
+        "fetchedAt": "2026-06-05T21:28:43.221Z"
       },
       "history": [],
       "archive": []
@@ -80,8 +80,8 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:42.914Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:43.610Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -92,10 +92,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc1_2026-06-05T21-16-42-914Z",
+        "runId": "nbc1_2026-06-05T21-28-43-610Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:42.914Z"
+        "fetchedAt": "2026-06-05T21:28:43.610Z"
       },
       "history": [],
       "archive": []
@@ -103,24 +103,18 @@
     "cnn1": {
       "id": "cnn1",
       "name": "CNN",
-      "home_url": "https://lite.cnn.com/",
+      "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:43.516Z",
-      "ok": true,
-      "stale": false,
-      "item": {
-        "title": "When do candidate scandals actually matter?",
-        "url": "https://m.cnn.com/2026/06/05/politics/politicians-scandals-graham-platner-trump",
-        "imgUrl": null,
-        "slotKey": "e75971db9693",
-        "contentType": "news"
-      },
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:44.356Z",
+      "ok": false,
+      "stale": true,
+      "item": null,
       "last": {
-        "runId": "cnn1_2026-06-05T21-16-43-516Z",
-        "ok": true,
-        "error": null,
-        "fetchedAt": "2026-06-05T21:16:43.516Z"
+        "runId": "cnn1_error_2026-06-05T21-28-44-356Z",
+        "ok": false,
+        "error": "browserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+        "fetchedAt": "2026-06-05T21:28:44.356Z"
       },
       "history": [],
       "archive": []
@@ -130,22 +124,22 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:43.799Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:44.463Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Memo orders ICE to stop reporting deaths of newly released detainees",
-        "url": "https://theguardian.com/us-news/2026/jun/05/ice-deaths-data-memo",
+        "title": "Trump urges pick for top intelligence official to fire ‘a lot of people’",
+        "url": "https://theguardian.com/us-news/2026/jun/05/senate-blocks-surveillance-program-trump-bill-pulte",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-06-05T21-16-43-799Z",
+        "runId": "guardian1_2026-06-05T21-28-44-463Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:43.799Z"
+        "fetchedAt": "2026-06-05T21:28:44.463Z"
       },
       "history": [],
       "archive": []
@@ -155,8 +149,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:44.202Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:45.027Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -167,10 +161,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-06-05T21-16-44-202Z",
+        "runId": "ap1_2026-06-05T21-28-45-027Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:44.202Z"
+        "fetchedAt": "2026-06-05T21:28:45.027Z"
       },
       "history": [],
       "archive": []
@@ -180,8 +174,8 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:44.633Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:45.606Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -192,10 +186,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-06-05T21-16-44-633Z",
+        "runId": "latimes1_2026-06-05T21-28-45-606Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:44.633Z"
+        "fetchedAt": "2026-06-05T21:28:45.606Z"
       },
       "history": [],
       "archive": []
@@ -205,22 +199,22 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:44.919Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:46.009Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "I wrote about George Santos. Then he made a violent threat and lied about it",
-        "url": "https://npr.org/2026/06/04/nx-s1-5846966/george-santos-kalshi-threats",
+        "title": "After D.C.'s Reflecting Pool gets repainted, visitors ask: What changed?",
+        "url": "https://npr.org/2026/06/05/nx-s1-5847818/reflecting-pool-repaint-refill",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-06-05T21-16-44-919Z",
+        "runId": "npr1_2026-06-05T21-28-46-009Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:44.919Z"
+        "fetchedAt": "2026-06-05T21:28:46.009Z"
       },
       "history": [],
       "archive": []
@@ -230,8 +224,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:45.268Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:46.563Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -242,10 +236,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-06-05T21-16-45-268Z",
+        "runId": "bbc1_2026-06-05T21-28-46-563Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:45.268Z"
+        "fetchedAt": "2026-06-05T21:28:46.563Z"
       },
       "history": [],
       "archive": []
@@ -255,8 +249,8 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:45.761Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:47.082Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -267,10 +261,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-06-05T21-16-45-761Z",
+        "runId": "fox1_2026-06-05T21-28-47-082Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:45.761Z"
+        "fetchedAt": "2026-06-05T21:28:47.082Z"
       },
       "history": [],
       "archive": []
@@ -280,8 +274,8 @@
       "name": "Yahoo News",
       "home_url": "https://www.yahoo.com/news/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:16:41.246Z",
-      "updated_at": "2026-06-05T21:16:45.925Z",
+      "created_at": "2026-06-05T21:28:41.307Z",
+      "updated_at": "2026-06-05T21:28:47.430Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -292,10 +286,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-06-05T21-16-45-925Z",
+        "runId": "yahoo1_2026-06-05T21-28-47-430Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:16:45.925Z"
+        "fetchedAt": "2026-06-05T21:28:47.430Z"
       },
       "history": [],
       "archive": []
