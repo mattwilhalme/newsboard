@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-05T21:04:01.492Z",
+  "generatedAt": "2026-06-05T21:16:47.380Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-04T21-16-04-019Z",
-      "observedAt": "2026-05-04T21:16:06.841Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingBlake Lively and Justin Baldoni settle 'It Ends With Us' lawsuit",
-          "url": "https://abcnews.com/GMA/Culture/blake-lively-justin-baldoni-settle-ends-us-lawsuit/story?id=132648571",
-          "fingerprint": "b5e6c8abf5c8407ee6cef189093831ce8e581f86",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Trump stops short of saying Iran violated ceasefire: 'not heavy firing'",
-          "url": "https://abcnews.com/Politics/trump-stops-short-iran-violated-ceasefire-heavy-firing/story?id=132646036",
-          "fingerprint": "502f776e8e9ceb8982829b71fcc16a3f5775bb0d",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Related:Iran live updates: UAE says it intercepted Iranian missiles and drones",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "cd7109cc1e63ace342eb9804c44f5f44f1a189b2",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Man wanted for attempted murder after allegedly shooting wife then fleeing into woods",
-          "url": "https://abcnews.com/US/manhunt-underway-tennessee-veteran-extensive-survival-training-accused/story?id=132645176",
-          "fingerprint": "2425379a0b9094a26229269e36d70c72acae3c57",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "What to know about a suspected deadly hantavirus outbreak aboard a cruise ship",
-          "url": "https://abcnews.com/Health/deadly-hantavirus-outbreak-suspected-aboard-cruise-ship/story?id=132631359",
-          "fingerprint": "ed9e3815e6c2aa1959e55f133bad5a1a1e3b07d3",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Parents of baby boy who was 'born twice' speak out",
-          "url": "https://abcnews.com/GMA/Wellness/parents-baby-boy-born-speak/story?id=132628904",
-          "fingerprint": "d06af3b0c4bfcea89326ee2dbd793e671a191bce",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Rudy Giuliani remains hospitalized in critical condition with pneumonia: Spokesperson",
-          "url": "https://abcnews.com/Politics/rudy-giuliani-hospitalized-critical-condition-spokesperson/story?id=132622123",
-          "fingerprint": "f0ba8d4c866f26df14ac747f686723565e7ae88d",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "United Airlines plane hits bakery truck during landing",
-          "url": "https://abcnews.com/GMA/News/united-airlines-plane-hits-bakery-truck-landing/story?id=132628890",
-          "fingerprint": "34ed72d9c5c6cd80274f99dbd661ec64cd12a6cc",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Millions bracing for whiplash temperatures across the country",
-          "url": "https://abcnews.com/US/millions-store-whiplash-temperatures-sweeping-country/story?id=132630247",
-          "fingerprint": "aca06e32be3fbc5f6be51dcfbe5d5ace7bef45bf",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "At least 23 people injured in Oklahoma lake party shooting: Police",
-          "url": "https://abcnews.com/US/10-people-injured-oklahoma-lake-party-shooting-police/story?id=132627403",
-          "fingerprint": "3355eef3b59c6342fa5733d670eae635a72211ae",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-04T22-17-25-970Z",
       "observedAt": "2026-05-04T22:17:29.032Z",
@@ -24199,6 +24121,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-05T21:04:01.492Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-05T21:16:47.380Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
