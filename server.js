@@ -962,6 +962,64 @@ function extractCnnLeadFromDom(html = "", sourceUrl = "https://lite.cnn.com/") {
   return null;
 }
 
+function extractFoxLeadFromDom(html = "", sourceUrl = "https://www.foxnews.com/") {
+  const $ = cheerio.load(html || "");
+  const seenArticles = new Set();
+  const articleSelectors = [
+    "main.main-content-primary article.story-1",
+    "article.story-1",
+    "main.main-content-primary article[class*='story-']",
+    "main article[class*='story-']",
+  ];
+  const headlineSelectors = [
+    ".info .title a[href]",
+    ".info h1 a[href], .info h2 a[href], .info h3 a[href]",
+    "header.info-header .title a[href]",
+    "h1.title a[href], h2.title a[href], h3.title a[href]",
+  ];
+
+  function isFoxStoryUrl(url) {
+    const u = parseUrlSafe(url);
+    if (!u || !/(^|\.)foxnews\.com$/i.test(u.hostname)) return false;
+    const p = String(u.pathname || "").toLowerCase();
+    if (!/^\/[a-z0-9-]+\/[a-z0-9-]+/i.test(p)) return false;
+    if (/^\/(live|search|category|shows|video|fox-nation|weather|sports\/odds|person|about|newsletter|apps)(\/|$)/i.test(p)) return false;
+    return true;
+  }
+
+  function isKickerOnlyTitle(article, title) {
+    const normalizedTitle = cleanText(title).toLowerCase();
+    if (!normalizedTitle) return true;
+    const kickerTitle = cleanText(article.find(".kicker,.kicker-text").first().text()).toLowerCase();
+    if (kickerTitle && normalizedTitle === kickerTitle) return true;
+    return /^\s*(tables turned|breaking news|watch live)\s*$/i.test(String(title || ""));
+  }
+
+  for (const articleSel of articleSelectors) {
+    const articles = $(articleSel).toArray().slice(0, 24);
+    for (const articleEl of articles) {
+      if (seenArticles.has(articleEl)) continue;
+      seenArticles.add(articleEl);
+      const article = $(articleEl);
+
+      for (const headlineSel of headlineSelectors) {
+        const headlineAnchor = article.find(headlineSel).first();
+        if (!headlineAnchor.length) continue;
+
+        const title = stripHeadlineNoise(cleanText(
+          String(headlineAnchor.text() || "").replace(/\s*-\s*Fox News\s*$/i, ""),
+        ));
+        const url = toAbsoluteUrl(headlineAnchor.attr("href") || "", sourceUrl);
+        if (!title || !url || isKickerOnlyTitle(article, title)) continue;
+        if (!isFoxStoryUrl(url) || defaultTitleReject(title)) continue;
+        return { title, url, selector: `fox_dom:${articleSel} ${headlineSel}` };
+      }
+    }
+  }
+
+  return null;
+}
+
 function extractLeadFromHtml({
   html,
   sourceId,
@@ -1138,6 +1196,7 @@ const HTTP_HERO_CONFIGS = {
   fox1: {
     sourceUrl: "https://www.foxnews.com/",
     hostPattern: /(^|\.)foxnews\.com$/i,
+    customExtractor: extractFoxLeadFromDom,
     selectors: ["main.main-content-primary article.story-1 a[href]", "main.main-content-primary article a[href]", "main h1 a[href], main h2 a[href]"],
   },
   yahoo1: {

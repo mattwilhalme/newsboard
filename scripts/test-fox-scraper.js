@@ -45,6 +45,44 @@ function isKickerOnlyTitle($, el, title) {
   return /^\s*(TABLES TURNED|BREAKING NEWS|WATCH LIVE)\s*$/i.test(String(title || ""));
 }
 
+function extractFoxLeadFromDom(html, sourceUrl = "https://www.foxnews.com/") {
+  const $ = cheerio.load(html || "");
+  const seenArticles = new Set();
+  const articleSelectors = [
+    "main.main-content-primary article.story-1",
+    "article.story-1",
+    "main.main-content-primary article[class*='story-']",
+    "main article[class*='story-']",
+  ];
+  const headlineSelectors = [
+    ".info .title a[href]",
+    ".info h1 a[href], .info h2 a[href], .info h3 a[href]",
+    "header.info-header .title a[href]",
+    "h1.title a[href], h2.title a[href], h3.title a[href]",
+  ];
+
+  for (const articleSel of articleSelectors) {
+    const articles = $(articleSel).toArray().slice(0, 24);
+    for (const articleEl of articles) {
+      if (seenArticles.has(articleEl)) continue;
+      seenArticles.add(articleEl);
+      const article = $(articleEl);
+
+      for (const headlineSel of headlineSelectors) {
+        const headlineAnchor = article.find(headlineSel).first();
+        if (!headlineAnchor.length) continue;
+        const title = cleanTitle(headlineAnchor.text());
+        const url = toAbs(headlineAnchor.attr("href") || "", sourceUrl);
+        if (!title || !url || isKickerOnlyTitle($, articleEl, title)) continue;
+        if (!isStoryUrl(url)) continue;
+        return { title, url, selector: `fox_dom:${articleSel} ${headlineSel}` };
+      }
+    }
+  }
+
+  return null;
+}
+
 function isStoryUrl(url) {
   try {
     const u = new URL(String(url || ""));
@@ -159,12 +197,19 @@ function run() {
     </main>
   `;
   const kickerTop = extractTopStoryFromHtml(kickerHtml);
+  const kickerHttpTop = extractFoxLeadFromDom(kickerHtml);
   assert(kickerTop, "Expected a Fox News top story candidate from kicker fixture");
+  assert(kickerHttpTop, "Expected a Fox News HTTP top story candidate from kicker fixture");
   assert(
     kickerTop.title === "Illinois exodus quip from Bessent leaves Chicago-area lawmaker fuming on camera",
     `Expected real headline, got: ${kickerTop.title}`,
   );
+  assert(
+    kickerHttpTop.title === "Illinois exodus quip from Bessent leaves Chicago-area lawmaker fuming on camera",
+    `Expected HTTP extractor to use real headline, got: ${kickerHttpTop.title}`,
+  );
   assert(kickerTop.title !== "TABLES TURNED", "Expected kicker text not to be used as title");
+  assert(kickerHttpTop.title !== "TABLES TURNED", "Expected HTTP extractor not to use kicker text");
 
   const html = fs.readFileSync("fox-news.html", "utf8");
   const top = extractTopStoryFromHtml(html);
