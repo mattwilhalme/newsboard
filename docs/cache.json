@@ -5,8 +5,8 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:41.308Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:54.162Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -17,10 +17,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "abc1_2026-06-05T21-28-41-308Z",
+        "runId": "abc1_2026-06-05T21-42-54-162Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:41.308Z"
+        "fetchedAt": "2026-06-05T21:42:54.162Z"
       },
       "history": [],
       "archive": []
@@ -30,8 +30,8 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:42.788Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:55.479Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -42,10 +42,10 @@
         "contentType": "live"
       },
       "last": {
-        "runId": "cbs1_2026-06-05T21-28-42-788Z",
+        "runId": "cbs1_2026-06-05T21-42-55-479Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:42.788Z"
+        "fetchedAt": "2026-06-05T21:42:55.479Z"
       },
       "history": [],
       "archive": []
@@ -55,8 +55,8 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:43.221Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:56.068Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -67,10 +67,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-06-05T21-28-43-221Z",
+        "runId": "usat1_2026-06-05T21-42-56-068Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:43.221Z"
+        "fetchedAt": "2026-06-05T21:42:56.068Z"
       },
       "history": [],
       "archive": []
@@ -80,8 +80,8 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:43.610Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:56.337Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -92,10 +92,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc1_2026-06-05T21-28-43-610Z",
+        "runId": "nbc1_2026-06-05T21-42-56-337Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:43.610Z"
+        "fetchedAt": "2026-06-05T21:42:56.337Z"
       },
       "history": [],
       "archive": []
@@ -105,16 +105,16 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:44.356Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:56.976Z",
       "ok": false,
       "stale": true,
       "item": null,
       "last": {
-        "runId": "cnn1_error_2026-06-05T21-28-44-356Z",
+        "runId": "cnn1_error_2026-06-05T21-42-56-976Z",
         "ok": false,
         "error": "browserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
-        "fetchedAt": "2026-06-05T21:28:44.356Z"
+        "fetchedAt": "2026-06-05T21:42:56.976Z"
       },
       "history": [],
       "archive": []
@@ -124,8 +124,8 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:44.463Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:57.166Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -136,10 +136,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-06-05T21-28-44-463Z",
+        "runId": "guardian1_2026-06-05T21-42-57-166Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:44.463Z"
+        "fetchedAt": "2026-06-05T21:42:57.166Z"
       },
       "history": [],
       "archive": []
@@ -149,8 +149,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:45.027Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:57.686Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -161,10 +161,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-06-05T21-28-45-027Z",
+        "runId": "ap1_2026-06-05T21-42-57-686Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:45.027Z"
+        "fetchedAt": "2026-06-05T21:42:57.686Z"
       },
       "history": [],
       "archive": []
@@ -174,8 +174,8 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:45.606Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:58.109Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -186,10 +186,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-06-05T21-28-45-606Z",
+        "runId": "latimes1_2026-06-05T21-42-58-109Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:45.606Z"
+        "fetchedAt": "2026-06-05T21:42:58.109Z"
       },
       "history": [],
       "archive": []
@@ -199,8 +199,8 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:46.009Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:58.434Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -211,10 +211,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-06-05T21-28-46-009Z",
+        "runId": "npr1_2026-06-05T21-42-58-433Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:46.009Z"
+        "fetchedAt": "2026-06-05T21:42:58.434Z"
       },
       "history": [],
       "archive": []
@@ -224,8 +224,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:46.563Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:58.907Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -236,10 +236,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-06-05T21-28-46-563Z",
+        "runId": "bbc1_2026-06-05T21-42-58-907Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:46.563Z"
+        "fetchedAt": "2026-06-05T21:42:58.907Z"
       },
       "history": [],
       "archive": []
@@ -249,8 +249,8 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:47.082Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:59.160Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -261,10 +261,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-06-05T21-28-47-082Z",
+        "runId": "fox1_2026-06-05T21-42-59-160Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:47.082Z"
+        "fetchedAt": "2026-06-05T21:42:59.160Z"
       },
       "history": [],
       "archive": []
@@ -274,8 +274,8 @@
       "name": "Yahoo News",
       "home_url": "https://www.yahoo.com/news/",
       "kind": "hero",
-      "created_at": "2026-06-05T21:28:41.307Z",
-      "updated_at": "2026-06-05T21:28:47.430Z",
+      "created_at": "2026-06-05T21:42:54.162Z",
+      "updated_at": "2026-06-05T21:42:59.373Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -286,10 +286,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-06-05T21-28-47-430Z",
+        "runId": "yahoo1_2026-06-05T21-42-59-373Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-06-05T21:28:47.430Z"
+        "fetchedAt": "2026-06-05T21:42:59.373Z"
       },
       "history": [],
       "archive": []
