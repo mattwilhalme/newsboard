@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-05T13:45:46.243Z",
+  "generatedAt": "2026-06-05T16:22:11.573Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-04T17-03-16-877Z",
-      "observedAt": "2026-05-04T17:03:19.946Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: UAE says it's intercepting Iranian missiles and drones",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "325836139ed4261183b79f341c8463b99f0e1f36",
-          "related_links": [
-            {
-              "title": "UAE says it's intercepting Iranian missiles, drones",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132639644&id=132626582"
-            },
-            {
-              "title": "IRGC disputes that 2 US-flagged vessels transited Strait of Hormuz",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132639089&id=132626582"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Supreme Court restores access to mail-order abortion pill mifepristone, for now",
-          "url": "https://abcnews.com/Politics/supreme-court-restores-access-mail-order-abortion-pill/story?id=132636862",
-          "fingerprint": "85d29123d6180d8babbd7ad40591a9a629dd27b0",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Britney Spears pleads guilty in DUI case",
-          "url": "https://abcnews.com/GMA/Culture/britney-spears-expected-make-plea-dui-case/story?id=132628893",
-          "fingerprint": "8b584410cd01cbad34b17b084710de49845c317c",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Rudy Giuliani remains hospitalized in critical condition with pneumonia: Spokesperson",
-          "url": "https://abcnews.com/Politics/rudy-giuliani-hospitalized-critical-condition-spokesperson/story?id=132622123",
-          "fingerprint": "f0ba8d4c866f26df14ac747f686723565e7ae88d",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "United Airlines plane hits bakery truck during landing",
-          "url": "https://abcnews.com/GMA/Travel/united-airlines-plane-hits-bakery-truck-landing/story?id=132628890",
-          "fingerprint": "7c5fed32e4c51b4cd6c2070fee6b94b8a44b7b6e",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Deadly hantavirus outbreak suspected aboard a cruise ship",
-          "url": "https://abcnews.com/Health/deadly-hantavirus-outbreak-suspected-aboard-cruise-ship/story?id=132631359",
-          "fingerprint": "2e0b8b0613e28e99a011bd4b25ca24c6a4a0a33e",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "'Deeply concerned': Search underway for missing Northern Kentucky University student",
-          "url": "https://abcnews.com/US/deeply-concerned-search-underway-missing-northern-kentucky-university/story?id=132612105",
-          "fingerprint": "9da79be128167556f9bfa26547784889e99439f9",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "53-year-old Cameron Diaz becomes a mom of 3",
-          "url": "https://abcnews.com/GMA/Culture/cameron-diaz-benji-madden-announce-birth-3rd-child/story?id=132630831",
-          "fingerprint": "02e3f990087f650b35da4a55a6b30e283ff05381",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Princess Eugenie shares photo as she announces new pregnancy",
-          "url": "https://abcnews.com/GMA/Culture/princess-eugenie-expecting-3rd-child-husband-jack-brooksbank/story?id=132630827",
-          "fingerprint": "cd2539cae637065130dce71c7a292f859e1e6e7b",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Driver plows into group of people in German city",
-          "url": "https://abcnews.com/International/wireStory/driver-plows-group-people-german-city-leipzig-injuring-132639088",
-          "fingerprint": "0d76be9143e6843ba0722b846df2b96d6de9785d",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-04T18-26-01-707Z",
       "observedAt": "2026-05-04T18:26:04.762Z",
@@ -24439,6 +24352,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-05T13:45:46.243Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-05T16:22:11.573Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
