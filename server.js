@@ -2364,6 +2364,41 @@ async function scrapeCNNHero() {
           "",
         );
       }
+      function candidateFromAnchor(a, title, selector) {
+        if (!a) return null;
+        const url = abs(a.getAttribute("href") || "");
+        const pickedTitle = clean(title || titleFromAnchor(a));
+        if (!url || !pickedTitle || isWeakTitle(pickedTitle) || !isStoryUrl(url)) return null;
+        const rect = a.getBoundingClientRect?.();
+        const topY = (Number.isFinite(rect?.top) ? rect.top : 0) + (window.scrollY || 0);
+        return { title: pickedTitle, url, topY, selector };
+      }
+      function firstDirectLead() {
+        const titleSelectors = [
+          ".container_lead-plus-headlines .container__title-url[href] [data-editable='title']",
+          ".container_lead-plus-headlines .container__title_url-text[data-editable='title']",
+          ".container_lead-package .container__title-url[href] [data-editable='title']",
+          ".container_lead-package .container__title_url-text[data-editable='title']",
+        ];
+        for (const sel of titleSelectors) {
+          for (const el of Array.from(document.querySelectorAll(sel))) {
+            const candidate = candidateFromAnchor(el.closest("a[href]"), el.textContent, sel);
+            if (candidate) return candidate;
+          }
+        }
+
+        const selectedHeadlineSelectors = [
+          ".container_lead-plus-headlines__selected a[href] .container__headline-text[data-editable='headline']",
+          ".container_lead-plus-headlines .container__item:first-child a[href] .container__headline-text[data-editable='headline']",
+        ];
+        for (const sel of selectedHeadlineSelectors) {
+          for (const el of Array.from(document.querySelectorAll(sel))) {
+            const candidate = candidateFromAnchor(el.closest("a[href]"), el.textContent, sel);
+            if (candidate) return candidate;
+          }
+        }
+        return null;
+      }
       function selectorCandidates(sel, baseScore) {
         return Array.from(document.querySelectorAll(sel))
           .map((a, idx) => {
@@ -2387,9 +2422,22 @@ async function scrapeCNNHero() {
           .filter(Boolean);
       }
 
+      const directLead = firstDirectLead();
+      if (directLead) {
+        return {
+          ok: true,
+          title: directLead.title,
+          url: directLead.url,
+          selector_used: directLead.selector,
+          candidates: 1,
+        };
+      }
+
       const selectors = [
         ".container_lead-package a[href]",
         ".container_lead-package__title-url[href]",
+        ".container_lead-plus-headlines .container__title-url[href]",
+        ".container_lead-plus-headlines a[href]",
         "[data-zone-label*='lead' i] a[href]",
         "main a[href*='/2026/']",
         "main a[href^='/2026/']",
