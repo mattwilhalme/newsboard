@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-06T20:20:15.493Z",
+  "generatedAt": "2026-06-06T21:42:00.407Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-05T23-33-08-457Z",
-      "observedAt": "2026-05-05T23:33:11.257Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "FDA withdraws publication of COVID, shingles vaccine research findings",
-          "url": "https://abcnews.com/Health/fda-blocked-publication-covid-shingles-vaccine-research-findings/story?id=132687938",
-          "fingerprint": "22251544fd04f60fa79a49c324a326b3a09ff4ec",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Coast Guard seeking info from public on missing woman in the Bahamas",
-          "url": "https://abcnews.com/International/coast-guard-seeking-info-public-disappearance-lynette-hooker/story?id=132687693",
-          "fingerprint": "5d231b7804ba377e3cb1774624e25715df2b0e18",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years",
-          "url": "https://abcnews.com/Business/average-us-gas-prices-top-450-gallon-highest/story?id=132686910",
-          "fingerprint": "be08ca6567c6e9c6bcb8971e1c8f88fa5725a02b",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Iran live update: Trump says 'Project Freedom' in Strait of Hormuz paused",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "78d14995a41f7a56e4995c9599cf527f579fc7d6",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "3 people waiting for evacuation from cruise ship with suspected hantavirus outbreak",
-          "url": "https://abcnews.com/Health/suspected-hantavirus-outbreak-aboard-cruise-ship-human-human/story?id=132666459",
-          "fingerprint": "76d5ea50abe91e539845ff21bb58e6ec9644d473",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Jury finds NFL player Stefon Diggs not guilty on 2 criminal counts",
-          "url": "https://abcnews.com/GMA/Culture/jury-finds-stefon-diggs-not-guilty-2-criminal-counts/story?id=132687307",
-          "fingerprint": "4f7aa5ea433afe0c2397f79948822d01f95b1851",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Correspondents' dinner shooting suspect indicted by a grand jury on 4 counts",
-          "url": "https://abcnews.com/US/correspondents-dinner-shooting-suspect-indicted-grand-jury-4/story?id=132685789",
-          "fingerprint": "8d038c8babcef9cad5989118eb5b105017ccc420",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Driver filmed speeding toward kid on bike before arrest",
-          "url": "https://abcnews.com/US/driver-arrested-after-hit-kid-bike-police/story?id=132678195",
-          "fingerprint": "aa9ea2729f8d2b498527542e0a22be00eda3a937",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Met Gala 2026: See photos from inside the iconic event",
-          "url": "https://abcnews.com/GMA/Culture/met-gala-2026-behind-the-scenes-photos/story?id=132581975",
-          "fingerprint": "61a96dc32715a00adf763ce04c0311cc6eaa0737",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "2 dead, 3 injured in shooting at shopping center",
-          "url": "https://abcnews.com/US/texas-carrollton-koreatown-shopping-center-shooting/story?id=132682907",
-          "fingerprint": "4bef9516c5e5bd35e9efaa5b223423b2f2f6acbc",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-06T01-14-47-980Z",
       "observedAt": "2026-05-06T01:14:51.080Z",
@@ -23009,6 +22931,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-06T20:20:15.493Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-06T21:42:00.407Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
