@@ -1,15 +1,15 @@
 {
   "ok": true,
-  "generatedAt": "2026-06-06T17:23:55.315Z",
+  "generatedAt": "2026-06-06T18:51:35.356Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:43.729Z",
+      "updatedAt": "2026-06-06T18:51:13.903Z",
       "error": null,
-      "runId": "abc1_2026-06-06T17-23-43-729Z",
+      "runId": "abc1_2026-06-06T18-51-13-903Z",
       "since": "2026-06-06T17:23:55.315Z",
       "item": {
-        "title": "Trump pardons former Republican congressman who was convicted of insider trading",
+        "title": "Trump issues pardon to former GOP congressman convicted of insider trading",
         "url": "https://abcnews.com/Politics/trump-pardons-former-republican-rep-stephen-buyer-convicted/story?id=133649062",
         "imgUrl": null,
         "slotKey": "5be6806db8a5",
@@ -18,9 +18,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:45.095Z",
+      "updatedAt": "2026-06-06T18:51:15.850Z",
       "error": null,
-      "runId": "cbs1_2026-06-06T17-23-45-095Z",
+      "runId": "cbs1_2026-06-06T18-51-15-850Z",
       "since": "2026-06-06T15:54:52.183Z",
       "item": {
         "title": "Missing Auburn University student in Japan found dead, mother says",
@@ -32,9 +32,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:45.327Z",
+      "updatedAt": "2026-06-06T18:51:16.419Z",
       "error": null,
-      "runId": "usat1_2026-06-06T17-23-45-327Z",
+      "runId": "usat1_2026-06-06T18-51-16-419Z",
       "since": "2026-06-06T17:23:55.315Z",
       "item": {
         "title": "Trump pardons former Republican congressman. Why?",
@@ -46,9 +46,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:45.496Z",
+      "updatedAt": "2026-06-06T18:51:16.927Z",
       "error": null,
-      "runId": "nbc1_2026-06-06T17-23-45-496Z",
+      "runId": "nbc1_2026-06-06T18-51-16-927Z",
       "since": "2026-06-06T17:23:55.315Z",
       "item": {
         "title": "Why ceasefires haven’t stopped deadly strikes in Gaza, Lebanon or the Gulf",
@@ -60,9 +60,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:50.318Z",
+      "updatedAt": "2026-06-06T18:51:28.408Z",
       "error": null,
-      "runId": "cnn1_2026-06-06T17-23-46-711Z",
+      "runId": "cnn1_2026-06-06T18-51-24-318Z",
       "since": "2026-06-06T12:14:45.750Z",
       "item": {
         "title": "Cracks emerge in Trump's GOP",
@@ -74,9 +74,9 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:51.119Z",
+      "updatedAt": "2026-06-06T18:51:29.617Z",
       "error": null,
-      "runId": "guardian1_2026-06-06T17-23-51-119Z",
+      "runId": "guardian1_2026-06-06T18-51-29-617Z",
       "since": "2026-06-06T10:59:27.285Z",
       "item": {
         "title": "Blackouts, hyperinflation, dissent: Iran considers perilous prospect of peace",
@@ -88,9 +88,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:51.482Z",
+      "updatedAt": "2026-06-06T18:51:30.306Z",
       "error": null,
-      "runId": "ap1_2026-06-06T17-23-51-482Z",
+      "runId": "ap1_2026-06-06T18-51-30-306Z",
       "since": "2026-06-06T15:54:52.183Z",
       "item": {
         "title": "The World Cup poses an unprecedented security challenge at a fraught moment. Is the US ready?",
@@ -101,28 +101,22 @@
       }
     },
     "latimes1": {
-      "ok": true,
-      "updatedAt": "2026-06-06T17:23:51.857Z",
-      "error": null,
-      "runId": "latimes1_2026-06-06T17-23-51-857Z",
-      "since": "2026-06-06T15:54:52.183Z",
-      "item": {
-        "title": "Days of intense military training exercises at empty buildings have Southern California on edge",
-        "url": "https://latimes.com/california/story/2026-06-06/socal-neighborhood-military-training-pasadena-long-beach",
-        "imgUrl": null,
-        "slotKey": "06617b56ef8d",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-06-06T18:51:30.977Z",
+      "error": "latimes1: headline not found",
+      "runId": "latimes1_2026-06-06T18-51-30-977Z",
+      "since": null,
+      "item": null
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:52.191Z",
+      "updatedAt": "2026-06-06T18:51:31.225Z",
       "error": null,
-      "runId": "npr1_2026-06-06T17-23-52-190Z",
-      "since": "2026-06-06T15:54:52.183Z",
+      "runId": "npr1_2026-06-06T18-51-31-225Z",
+      "since": "2026-06-06T18:51:35.356Z",
       "item": {
-        "title": "Deported Filipino sailors say they were falsely linked to child sexual abuse material",
-        "url": "https://npr.org/2026/06/06/nx-s1-5835231/filipino-sailors-say-they-were-falsely-accused-of-possessing-child-porn-and-deported",
+        "title": "Global Health",
+        "url": "https://npr.org/sections/global-health",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
@@ -130,9 +124,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:52.540Z",
+      "updatedAt": "2026-06-06T18:51:31.740Z",
       "error": null,
-      "runId": "bbc1_2026-06-06T17-23-52-540Z",
+      "runId": "bbc1_2026-06-06T18-51-31-740Z",
       "since": "2026-06-06T12:14:45.750Z",
       "item": {
         "title": "Ukrainian drones target St Petersburg in attack Russia calls 'unprecedented'",
@@ -144,26 +138,26 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:52.785Z",
+      "updatedAt": "2026-06-06T18:51:32.154Z",
       "error": null,
-      "runId": "fox1_2026-06-06T17-23-52-785Z",
-      "since": "2026-06-06T17:23:55.315Z",
+      "runId": "fox1_2026-06-06T18-51-32-154Z",
+      "since": "2026-06-06T18:51:35.356Z",
       "item": {
-        "title": "Mother confirms son's death in Japan weeks after he walked away from parents",
-        "url": "https://foxnews.com/us/auburn-student-weston-higginbotham-found-dead-japan-after-weeklong-search-mom-confirms",
+        "title": "Retired general outlines exactly what US is trying to achieve in negotiations with Iran",
+        "url": "https://foxnews.com/live-news/iran-war-news-trump-latest-oil-prices-kuwait-bahrain-hormuz-june-6",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
-        "contentType": "news"
+        "contentType": "live"
       }
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-06-06T17:23:53.356Z",
+      "updatedAt": "2026-06-06T18:51:32.501Z",
       "error": null,
-      "runId": "yahoo1_2026-06-06T17-23-53-356Z",
+      "runId": "yahoo1_2026-06-06T18-51-32-500Z",
       "since": "2026-06-06T17:23:55.315Z",
       "item": {
-        "title": "Missing Auburn student found dead in Japan, family confirms",
+        "title": "Missing Auburn student found dead after weeklong search in Japan",
         "url": "https://yahoo.com/news/world/articles/missing-auburn-student-found-dead-in-japan-mother-says-155434170.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",

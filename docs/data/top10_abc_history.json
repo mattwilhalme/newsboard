@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-06T17:23:55.315Z",
+  "generatedAt": "2026-06-06T18:51:35.356Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-05T21-47-15-955Z",
-      "observedAt": "2026-05-05T21:47:18.954Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingFDA blocked publication of COVID, shingles vaccine research findings",
-          "url": "https://abcnews.com/Health/fda-blocked-publication-covid-shingles-vaccine-research-findings/story?id=132687938",
-          "fingerprint": "f1ba3da1e22a1099bb2ddbb4ce21e95da4ce167c",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Iran live updates: Rubio says operation Epic Fury is over",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "5de2239c7f030f351771c442e29fcfde2b73e0d5",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "3 people waiting for evacuation from cruise ship with suspected hantavirus outbreak",
-          "url": "https://abcnews.com/Health/suspected-hantavirus-outbreak-aboard-cruise-ship-human-human/story?id=132666459",
-          "fingerprint": "76d5ea50abe91e539845ff21bb58e6ec9644d473",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Jury finds Stefon Diggs not guilty on 2 criminal counts",
-          "url": "https://abcnews.com/GMA/Culture/jury-finds-stefon-diggs-not-guilty-2-criminal-counts/story?id=132687307",
-          "fingerprint": "25f76cf9362b591e21386286c498da3c6d07ffd3",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Correspondents' dinner shooting suspect indicted by a grand jury on 4 counts",
-          "url": "https://abcnews.com/US/correspondents-dinner-shooting-suspect-indicted-grand-jury-4/story?id=132685789",
-          "fingerprint": "8d038c8babcef9cad5989118eb5b105017ccc420",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "How Delta Air Lines is changing its snack, beverage service",
-          "url": "https://abcnews.com/GMA/Travel/delta-air-lines-snack-beverage/story?id=132664936",
-          "fingerprint": "b96ab1d5fbf2aba80f72807333ca59f384e1a6ce",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "GOP aims to secure $1B for security-related aspects of White House ballroom project",
-          "url": "https://abcnews.com/Politics/republicans-aim-secure-1-billion-security-related-aspects/story?id=132671558",
-          "fingerprint": "37ec91ab7e92d77131753cc298f6b0e596bd585d",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Driver filmed speeding toward kid on bike before arrest",
-          "url": "https://abcnews.com/US/driver-arrested-after-hit-kid-bike-police/story?id=132678195",
-          "fingerprint": "aa9ea2729f8d2b498527542e0a22be00eda3a937",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Met Gala 2026: See photos from inside the iconic event",
-          "url": "https://abcnews.com/GMA/Culture/met-gala-2026-behind-the-scenes-photos/story?id=132581975",
-          "fingerprint": "61a96dc32715a00adf763ce04c0311cc6eaa0737",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "2 dead, 3 injured in shooting at shopping center",
-          "url": "https://abcnews.com/US/texas-carrollton-koreatown-shopping-center-shooting/story?id=132682907",
-          "fingerprint": "4bef9516c5e5bd35e9efaa5b223423b2f2f6acbc",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-05T22-41-19-011Z",
       "observedAt": "2026-05-05T22:41:22.257Z",
@@ -23151,6 +23073,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-06T17:23:55.315Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-06T18:51:35.356Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
