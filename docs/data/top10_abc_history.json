@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-06T05:39:55.752Z",
+  "generatedAt": "2026-06-06T08:46:05.825Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-05T11-43-24-860Z",
-      "observedAt": "2026-05-05T11:43:27.885Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Trump says Iran's highly enriched uranium 'not very valuable'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "81e275597aef0c46ac1d2f2d9394821747d469f1",
-          "related_links": [
-            {
-              "title": "Hegseth, Caine to address reporters on Iran",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132664692&id=132626582"
-            },
-            {
-              "title": "South Korea to review Strait of Hormuz situation after reported attack: Ministry",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132664353&id=132626582"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "2 killed in Caribbean strike on alleged 'narco-trafficking' boat, Pentagon says",
-          "url": "https://abcnews.com/International/2-killed-caribbean-strike-alleged-narco-trafficking-boat/story?id=132663776",
-          "fingerprint": "dc17e9bc399da1c5ac80bec8e2b93438bd0d20e6",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Immigrants targeted by scams amid Trump administration's deportation push",
-          "url": "https://abcnews.com/US/fake-courtrooms-sham-hearings-immigrants-targeted-scams-amid/story?id=132638558",
-          "fingerprint": "b24e21b920d50a19d2fd0d98dd396239c069003e",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play",
-          "url": "https://abcnews.com/Politics/ohio-democrats-hope-trump-high-prices-put-governor/story?id=132636461",
-          "fingerprint": "f0e4421c0c6cbf6b7cbadd1989ceb0277b8196f4",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Indiana state Senate races are a test of Trump's endorsement, redistricting vote",
-          "url": "https://abcnews.com/Politics/indiana-state-senate-races-test-trumps-endorsements-voting/story?id=132636194",
-          "fingerprint": "9f24c829b672aaf6614d9411c6f2dea35378b288",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "From Madonna to Cher and Beyoncé, all the must-see Met Gala looks",
-          "url": "https://abcnews.com/GMA/Style/met-gala-2026-red-carpet-fashion/story?id=132581968",
-          "fingerprint": "29563cd54531fd6845c8f139309cd9f6189cc4b7",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "3 dead in suspected hantavirus outbreak aboard a cruise ship: What to know",
-          "url": "https://abcnews.com/Health/deadly-hantavirus-outbreak-suspected-aboard-cruise-ship/story?id=132631359",
-          "fingerprint": "3fdfa0707f67b93553b95d539a71006ce3d95be6",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Secret Service officers exchange gunfire with armed suspect near White House: USSS",
-          "url": "https://abcnews.com/US/secret-service-officers-exchange-gunfire-armed-suspect-white/story?id=132651102",
-          "fingerprint": "031c2439b11f441c8abab3fd49d3ea9c9fdb5004",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Newly released shots from Artemis II moon mission show Milky Way galaxy, star trails",
-          "url": "https://abcnews.com/US/nasa-releases-12000-images-historic-artemis-ii-moon/story?id=132644304",
-          "fingerprint": "5bd1e6b15bc174945b1f1efb5b1b4fedd4c02026",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Prosecutors support unsealing Epstein note",
-          "url": "https://abcnews.com/US/federal-prosecutors-support-unsealing-purported-jeffrey-epstein-suicide/story?id=132655074",
-          "fingerprint": "3ebeba51a253d690fd5bdcc927534752cf201e79",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-05T12-56-58-228Z",
       "observedAt": "2026-05-05T12:57:01.442Z",
@@ -23613,6 +23526,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-06T05:39:55.752Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-06T08:46:05.825Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
