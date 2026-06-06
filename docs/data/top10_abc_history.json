@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-06T12:14:45.750Z",
+  "generatedAt": "2026-06-06T14:19:37.528Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-05T18-07-58-751Z",
-      "observedAt": "2026-05-05T18:08:01.742Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Trump says 'I'll let you know' if ceasefire is breached",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "35676a0425ea3d641dc144462e9d0f792950ff63",
-          "related_links": [
-            {
-              "title": "Iran announces system to 'formalize' strait traffic mechanisms",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132681301&id=132626582"
-            },
-            {
-              "title": "3 US Navy Destroyers are in Persian Gulf, west of the Strait of Hormuz, officials say",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132681286&id=132626582"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Federal employee arrested in Trump threat",
-          "url": "https://abcnews.com/US/faa-employee-arrested-after-allegedly-work-computer-threaten/story?id=132674063",
-          "fingerprint": "4ab57ad8d3c09e003508863b7b02bdcf9e8d9429",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "2 killed in Caribbean strike on alleged 'narco-trafficking' boat, Pentagon says",
-          "url": "https://abcnews.com/International/2-killed-caribbean-strike-alleged-narco-trafficking-boat/story?id=132663776",
-          "fingerprint": "dc17e9bc399da1c5ac80bec8e2b93438bd0d20e6",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Possible 'human-to-human' spread in suspected hantavirus outbreak aboard ship: WHO",
-          "url": "https://abcnews.com/Health/suspected-hantavirus-outbreak-aboard-cruise-ship-human-human/story?id=132666459",
-          "fingerprint": "c1a6f59b088304a11b4b01fd61bc0ade1a026e3c",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "How Delta Air Lines is changing its snack, beverage service",
-          "url": "https://abcnews.com/GMA/Travel/delta-air-lines-snack-beverage/story?id=132664936",
-          "fingerprint": "b96ab1d5fbf2aba80f72807333ca59f384e1a6ce",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Immigrants targeted by scams amid Trump administration's deportation push",
-          "url": "https://abcnews.com/US/fake-courtrooms-sham-hearings-immigrants-targeted-scams-amid/story?id=132638558",
-          "fingerprint": "b24e21b920d50a19d2fd0d98dd396239c069003e",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Ohio Democrats hope Trump and high prices will put governor and U.S. Senate in play",
-          "url": "https://abcnews.com/Politics/ohio-democrats-hope-trump-high-prices-put-governor/story?id=132636461",
-          "fingerprint": "f0e4421c0c6cbf6b7cbadd1989ceb0277b8196f4",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "From Madonna to Cher and Beyoncé, all the must-see Met Gala looks",
-          "url": "https://abcnews.com/GMA/Style/met-gala-2026-red-carpet-fashion/story?id=132581968",
-          "fingerprint": "29563cd54531fd6845c8f139309cd9f6189cc4b7",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Tony Award nominations announced: See who made the list",
-          "url": "https://abcnews.com/GMA/Culture/2026-tony-award-nominations/story?id=132666511",
-          "fingerprint": "58a3fd7f4aaceaa9bc27dee1cc9c2580728f7a71",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Colorado braces for significant snowstorm",
-          "url": "https://abcnews.com/US/colorado-braces-significant-late-spring-snowstorm/story?id=132666341",
-          "fingerprint": "14e375e1235d4fc94e2b3f7e9924e09897d42f97",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-05T19-51-13-546Z",
       "observedAt": "2026-05-05T19:51:16.883Z",
@@ -23373,6 +23286,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-06T12:14:45.750Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-06T14:19:37.528Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
