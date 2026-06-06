@@ -6,7 +6,7 @@ env:
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -22,6 +22,9 @@ jobs:
     timeout-minutes: 12
 
     steps:
+      - name: Log run start
+        run: date -u +"run_start_utc=%Y-%m-%dT%H:%M:%SZ"
+
       - name: Checkout
         uses: actions/checkout@v5
         with:
@@ -88,7 +91,7 @@ jobs:
           SCRAPE_TIMEOUT_MS: 90000
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: node scripts/run-scrape.js
+        run: npm run scrape
 
       - name: Write Supabase public config for Pages
         env:
@@ -133,3 +136,7 @@ jobs:
           # Avoid non-fast-forward failures if something changed while we were scraping
           git pull --rebase
           git push
+
+      - name: Log run end
+        if: always()
+        run: date -u +"run_end_utc=%Y-%m-%dT%H:%M:%SZ"
