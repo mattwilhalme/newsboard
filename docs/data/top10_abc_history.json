@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-07T12:11:28.115Z",
+  "generatedAt": "2026-06-07T14:32:09.643Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-06T13-17-12-538Z",
-      "observedAt": "2026-05-06T13:17:15.574Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Trump threatens 'the bombing starts' if Iran doesn't make a deal",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "b6e84249ae85b62f3c49bb709deab45e9fd82755",
-          "related_links": [
-            {
-              "title": "Trump says 'bombing starts' if Iran does not agree to a deal",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132703179&id=132626582"
-            },
-            {
-              "title": "IRGC Navy thanks ship captains, owners for Strait of Hormuz 'cooperation'",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132702572&id=132626582"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "3 evacuated off cruise ship with suspected hantavirus cluster, WHO says",
-          "url": "https://abcnews.com/Health/3-evacuated-off-cruise-ship-suspected-hantavirus-cluster/story?id=132699628",
-          "fingerprint": "5ea68a31f230b367aa9d2d0996921f2deaa20cef",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Lutnick to be questioned over Epstein relationship before House Oversight Committee",
-          "url": "https://abcnews.com/Politics/howard-lutnick-set-questioned-relationship-jeffrey-epstein/story?id=132692258",
-          "fingerprint": "e96f3213db9d631ce792ca950c0aa8c463bad2fd",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Kash Patel says FBI 'kept out' out of Nancy Guthrie investigation for first 4 days",
-          "url": "https://abcnews.com/US/kash-patel-fbi-nancy-guthrie-investigation-4-days/story?id=132695893",
-          "fingerprint": "b93aaa2b07c100fc0d5b1f4c4f9118ec93056a46",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Trump candidates beat at least 5 of 7 Indiana incumbents who opposed redistricting",
-          "url": "https://abcnews.com/Politics/indiana-state-senator-defied-trump-redistricting-loses-reelection/story?id=132679737",
-          "fingerprint": "f279c5113dac7768528c9da434e81eb47212d926",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Ramaswamy will win Ohio GOP primary for governor, ABC News projects",
-          "url": "https://abcnews.com/Politics/ramaswamy-win-ohio-gop-primary-governor-abc-news/story?id=132680289",
-          "fingerprint": "70682b7803c0c416693d7c1101d57abb99e78614",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "This new battery is designed to prevent some child deaths",
-          "url": "https://abcnews.com/GMA/Family/new-battery-aims-prevent-child-deaths-solution/story?id=132670770",
-          "fingerprint": "cb01df7911c982dc870f7ba1a5aca2e6757ad4fa",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years",
-          "url": "https://abcnews.com/Business/average-us-gas-prices-top-450-gallon-highest/story?id=132686910",
-          "fingerprint": "be08ca6567c6e9c6bcb8971e1c8f88fa5725a02b",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Prince Harry and Meghan Markle's son Archie turns 7",
-          "url": "https://abcnews.com/GMA/Culture/prince-harry-meghan-markles-son-archie-turns-7/story?id=132685581",
-          "fingerprint": "c4b24d1d4f0aa44bdad1a104d0fbc01708198b71",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Former FedEx driver sentenced to death",
-          "url": "https://abcnews.com/US/wireStory/former-fedex-driver-sentenced-death-killing-7-year-132686811",
-          "fingerprint": "c0a81c355eca1b3128a5ae86d64d5e99c3f3db47",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-06T15-39-02-916Z",
       "observedAt": "2026-05-06T15:39:06.314Z",
@@ -22538,6 +22451,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-07T12:11:28.115Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-07T14:32:09.643Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
