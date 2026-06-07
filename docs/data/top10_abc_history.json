@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-07T14:32:09.643Z",
+  "generatedAt": "2026-06-07T15:56:40.681Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-06T15-39-02-916Z",
-      "observedAt": "2026-05-06T15:39:06.314Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Trump threatens 'the bombing starts' if Iran doesn't make a deal",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "b6e84249ae85b62f3c49bb709deab45e9fd82755",
-          "related_links": [
-            {
-              "title": "Iranian officials criticize negotiations with US",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132711289&id=132626582"
-            },
-            {
-              "title": "CENTCOM says it turned around 52 commercial vessels in blockade",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132710496&id=132626582"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Ted Turner, cable television pioneer and CNN founder, dies at 87",
-          "url": "https://abcnews.com/US/ted-turner-cable-television-pioneer-cnn-founder-dies/story?id=103319679",
-          "fingerprint": "0547ff927c7d548fdbc5750f591a80507930154b",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "3 evacuated off cruise ship with suspected hantavirus cluster, WHO says",
-          "url": "https://abcnews.com/Health/3-evacuated-off-cruise-ship-suspected-hantavirus-cluster/story?id=132699628",
-          "fingerprint": "5ea68a31f230b367aa9d2d0996921f2deaa20cef",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Lutnick to be questioned over Epstein relationship before House Oversight Committee",
-          "url": "https://abcnews.com/Politics/howard-lutnick-set-questioned-relationship-jeffrey-epstein/story?id=132692258",
-          "fingerprint": "e96f3213db9d631ce792ca950c0aa8c463bad2fd",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Kash Patel says FBI 'kept out' out of Nancy Guthrie investigation for first 4 days",
-          "url": "https://abcnews.com/US/kash-patel-fbi-nancy-guthrie-investigation-4-days/story?id=132695893",
-          "fingerprint": "b93aaa2b07c100fc0d5b1f4c4f9118ec93056a46",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Ramaswamy will win Ohio GOP primary for governor, ABC News projects",
-          "url": "https://abcnews.com/Politics/ramaswamy-win-ohio-gop-primary-governor-abc-news/story?id=132680289",
-          "fingerprint": "70682b7803c0c416693d7c1101d57abb99e78614",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "This new battery is designed to prevent some child deaths",
-          "url": "https://abcnews.com/GMA/Family/new-battery-aims-prevent-child-deaths-solution/story?id=132670770",
-          "fingerprint": "cb01df7911c982dc870f7ba1a5aca2e6757ad4fa",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Is California at risk of a gasoline shortage amid the Iran war? Experts explain",
-          "url": "https://abcnews.com/Business/california-risk-gasoline-shortage-amid-iran-war-experts/story?id=132666507",
-          "fingerprint": "711bd5accca725987cfb09ce25cc6a34c4e6aa37",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Prince Harry and Meghan Markle's son Archie turns 7",
-          "url": "https://abcnews.com/GMA/Culture/prince-harry-meghan-markles-son-archie-turns-7/story?id=132685581",
-          "fingerprint": "c4b24d1d4f0aa44bdad1a104d0fbc01708198b71",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Former FedEx driver sentenced to death",
-          "url": "https://abcnews.com/US/wireStory/former-fedex-driver-sentenced-death-killing-7-year-132686811",
-          "fingerprint": "c0a81c355eca1b3128a5ae86d64d5e99c3f3db47",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-06T17-11-28-413Z",
       "observedAt": "2026-05-06T17:11:31.419Z",
@@ -22458,6 +22371,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-07T14:32:09.643Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-07T15:56:40.681Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
