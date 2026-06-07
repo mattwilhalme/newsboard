@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-07T06:41:40.555Z",
+  "generatedAt": "2026-06-07T10:10:05.569Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-06T09-41-15-513Z",
-      "observedAt": "2026-05-06T09:41:18.422Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live update: Pakistan PM thanks Trump for pausing 'Project Freedom'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "72a159782f91ff33034c35f6c629a892a5cbcc5a",
-          "related_links": [
-            {
-              "title": "Pakistan PM thanks Trump for pausing 'Project Freedom'",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132699332&id=132626582"
-            },
-            {
-              "title": "China can play 'greater role' in resolving war, Wang tells Araghchi",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?entryId=132699136&id=132626582"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Lutnick to be questioned over Epstein relationship before House Oversight Committee",
-          "url": "https://abcnews.com/Politics/howard-lutnick-set-questioned-relationship-jeffrey-epstein/story?id=132692258",
-          "fingerprint": "e96f3213db9d631ce792ca950c0aa8c463bad2fd",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Kash Patel says FBI 'kept out' out of Nancy Guthrie investigation for first 4 days",
-          "url": "https://abcnews.com/US/kash-patel-fbi-nancy-guthrie-investigation-4-days/story?id=132695893",
-          "fingerprint": "b93aaa2b07c100fc0d5b1f4c4f9118ec93056a46",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Trump candidates beat at least 5 of 7 Indiana incumbents who opposed redistricting",
-          "url": "https://abcnews.com/Politics/indiana-state-senator-defied-trump-redistricting-loses-reelection/story?id=132679737",
-          "fingerprint": "f279c5113dac7768528c9da434e81eb47212d926",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Ramaswamy will win Ohio GOP primary for governor, ABC News projects",
-          "url": "https://abcnews.com/Politics/ramaswamy-win-ohio-gop-primary-governor-abc-news/story?id=132680289",
-          "fingerprint": "70682b7803c0c416693d7c1101d57abb99e78614",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "New battery aims to prevent some child deaths. Is it the solution?",
-          "url": "https://abcnews.com/GMA/Family/new-battery-aims-prevent-child-deaths-solution/story?id=132670770",
-          "fingerprint": "f7c0913f3fb9ca03a7595b0a8a53a112ebb56555",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "3 people waiting for evacuation from cruise ship with suspected hantavirus outbreak",
-          "url": "https://abcnews.com/Health/suspected-hantavirus-outbreak-aboard-cruise-ship-human-human/story?id=132666459",
-          "fingerprint": "76d5ea50abe91e539845ff21bb58e6ec9644d473",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Average US gas prices top $4.50 a gallon, the highest in nearly 4 years",
-          "url": "https://abcnews.com/Business/average-us-gas-prices-top-450-gallon-highest/story?id=132686910",
-          "fingerprint": "be08ca6567c6e9c6bcb8971e1c8f88fa5725a02b",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Prince Harry and Meghan Markle's son Archie turns 7",
-          "url": "https://abcnews.com/GMA/Culture/prince-harry-meghan-markles-son-archie-turns-7/story?id=132685581",
-          "fingerprint": "c4b24d1d4f0aa44bdad1a104d0fbc01708198b71",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Popular Italian food brand sued for 'tomato fraud'",
-          "url": "https://abcnews.com/GMA/Food/popular-italian-food-brand-accused-tomato-fraud-new/story?id=132678999",
-          "fingerprint": "cfa286cac060950085481e5fb1f59d2e34fc2d72",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-06T11-30-36-754Z",
       "observedAt": "2026-05-06T11:30:39.886Z",
@@ -22698,6 +22611,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-07T06:41:40.555Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-07T10:10:05.569Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
