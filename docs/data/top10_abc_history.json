@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-08T19:59:12.706Z",
+  "generatedAt": "2026-06-08T21:04:00.648Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-07T17-24-02-068Z",
-      "observedAt": "2026-05-07T17:24:04.761Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus live updates: Dutch hospital confirms new hantavirus case",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "0ebaa767bbb86e6bfde4dfa117c8edbc5ccaee8d",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:WHO says suspected hantavirus cluster 'is not the start of a COVID pandemic'",
-          "url": "https://abcnews.com/Health/start-covid-pandemic-suspected-hantavirus-cluster-cruise-ship/story?id=132741290",
-          "fingerprint": "fced14dbfcec71487987477798b32233429e506c",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "DOJ probing $2.6 billion in oil trades related to Iran war, sources say",
-          "url": "https://abcnews.com/US/doj-probing-26-billion-oil-trades-related-iran/story?id=132738007",
-          "fingerprint": "37e74b6e73cfd443368d0dbc7f7359c54f7d491a",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Blake Lively's lawyers speak out as Justin Baldoni settlement details revealed",
-          "url": "https://abcnews.com/GMA/Culture/blake-livelys-lawyers-issue-1st-statement-settlement-justin/story?id=132744548",
-          "fingerprint": "ff8bd9a66f755b2357f92d5bdaf41d331f5d20a8",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "DHS, USSS say $1B for White House ballroom would also fund 'other critical missions'",
-          "url": "https://abcnews.com/Politics/homeland-security-secret-service-1b-white-house-ballroom/story?id=132744829",
-          "fingerprint": "8edf541432cd5345c520a04eb9278d41f00e9dad",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Iran live updates: US waiting for Iran response to possible MoU, officials say",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "83f85c4fcd435ae7912d3be29945b0f46b795254",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "'Time to say goodbye,' Epstein allegedly wrote in purported suicide note",
-          "url": "https://abcnews.com/US/time-goodbye-epstein-allegedly-wrote-newly-released-purported/story?id=132725841",
-          "fingerprint": "92f9e0d2dc38d9a5e5da4b30a78063617feaa754",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Medicare to start offering weight loss drugs for $50 per month",
-          "url": "https://abcnews.com/GMA/Wellness/medicare-enrollees-glp-1-drugs-50-starting-july/story?id=132738089",
-          "fingerprint": "539da2254b4ba60a164ae7ee09df5b6a59025a8a",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Dozens of Ukrainian drones target Moscow, mayor says, amid overnight attack on Russia",
-          "url": "https://abcnews.com/International/dozens-ukrainian-drones-target-moscow-mayor-amid-overnight/story?id=132736145",
-          "fingerprint": "a244aecd16b3fe9c6287644fd8ee1ecabaced30b",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "What to know about potential US-Iran agreement",
-          "url": "https://abcnews.com/Politics/potential-us-iran-agreement/story?id=132727248",
-          "fingerprint": "fa1cabd930acfd8ad677ad301173c2eaa6b9a6e8",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-07T19-11-05-228Z",
       "observedAt": "2026-05-07T19:11:08.291Z",
@@ -21410,6 +21332,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-08T19:59:12.706Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-08T21:04:00.648Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
