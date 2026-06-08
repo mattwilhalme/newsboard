@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-08T17:22:13.258Z",
+  "generatedAt": "2026-06-08T18:08:35.074Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-07T11-24-27-475Z",
-      "observedAt": "2026-05-07T11:24:30.329Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: US waiting for Iran response to possible MoU, officials say",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "83f85c4fcd435ae7912d3be29945b0f46b795254",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:What to know about potential US-Iran agreement",
-          "url": "https://abcnews.com/Politics/potential-us-iran-agreement/story?id=132727248",
-          "fingerprint": "8872573f6f392e9af72ddbaf55125bb182d81257",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Lawsuits allege negligence by UPS , others before fiery, fatal November crash",
-          "url": "https://abcnews.com/US/lawsuits-allege-negligence-ups-fiery-fatal-november-crash/story?id=132720069",
-          "fingerprint": "3feb8c0b3ea0984f26fa4def1b132323c305f357",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Tornadoes hit homes in Mississippi as severe weather threat continues in Southeast",
-          "url": "https://abcnews.com/US/tornadoes-hit-homes-mississippi-severe-weather-threat-continues/story?id=132737705",
-          "fingerprint": "617be3b12e2a1d41d2729bd820255cf46a84a58b",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "'Time to say goodbye,' Epstein allegedly wrote in purported suicide note",
-          "url": "https://abcnews.com/US/time-goodbye-epstein-allegedly-wrote-newly-released-purported/story?id=132725841",
-          "fingerprint": "92f9e0d2dc38d9a5e5da4b30a78063617feaa754",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Officials in Arizona, Georgia monitoring some hantavirus cruise ship passengers in US",
-          "url": "https://abcnews.com/Health/3-evacuated-off-cruise-ship-suspected-hantavirus-cluster/story?id=132699628",
-          "fingerprint": "0b53dcbeb2c8f9182efd2dc3f6463042c8e4580e",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Judge denies request to force FBI to return seized 2020 Fulton County ballots",
-          "url": "https://abcnews.com/Politics/judge-denies-request-force-fbi-return-seized-2020/story?id=132727542",
-          "fingerprint": "927d03d090b46434ed473c8a7187ec114ee8f3c8",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Dozens of Ukrainian drones target Moscow, mayor says, amid overnight attack on Russia",
-          "url": "https://abcnews.com/International/dozens-ukrainian-drones-target-moscow-mayor-amid-overnight/story?id=132736145",
-          "fingerprint": "a244aecd16b3fe9c6287644fd8ee1ecabaced30b",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Feds raid 'open-air drug market near Los Angeles' MacArthur Park",
-          "url": "https://abcnews.com/US/2-dozen-charged-federal-drug-operation-los-angeles/story?id=132727466",
-          "fingerprint": "096a70a27c04264593cf15432993bf2aede636ab",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Rubio faces challenge in Pope Leo meeting",
-          "url": "https://abcnews.com/International/wireStory/rubio-faces-challenge-pope-leo-meeting-after-trumps-132734903",
-          "fingerprint": "ecb3e11e4ada9ed4f30b5a71468578d2de7cc711",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-07T13-13-35-807Z",
       "observedAt": "2026-05-07T13:13:38.715Z",
@@ -21623,6 +21545,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-08T17:22:13.258Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-08T18:08:35.074Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
