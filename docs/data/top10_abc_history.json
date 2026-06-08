@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-08T19:19:07.572Z",
+  "generatedAt": "2026-06-08T19:59:12.706Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-07T15-39-25-167Z",
-      "observedAt": "2026-05-07T15:39:28.311Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "DOJ probing $2.6 billion in oil trades related to Iran war, sources say",
-          "url": "https://abcnews.com/US/doj-probing-26-billion-oil-trades-related-iran/story?id=132738007",
-          "fingerprint": "37e74b6e73cfd443368d0dbc7f7359c54f7d491a",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Iran live updates: US waiting for Iran response to possible MoU, officials say",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "51a926a2f0bdc5f5f80c4b50ee8de410addb6d11",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Lawsuits allege negligence by UPS , others before fiery, fatal November crash",
-          "url": "https://abcnews.com/US/lawsuits-allege-negligence-ups-fiery-fatal-november-crash/story?id=132720069",
-          "fingerprint": "3feb8c0b3ea0984f26fa4def1b132323c305f357",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Mississippi tornadoes leave more than a dozen injured and trail of destruction",
-          "url": "https://abcnews.com/US/tornadoes-hit-homes-mississippi-severe-weather-threat-continues/story?id=132737705",
-          "fingerprint": "ec906025798b5ac9ee119883c527ca3ca6f927d0",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "'Time to say goodbye,' Epstein allegedly wrote in purported suicide note",
-          "url": "https://abcnews.com/US/time-goodbye-epstein-allegedly-wrote-newly-released-purported/story?id=132725841",
-          "fingerprint": "92f9e0d2dc38d9a5e5da4b30a78063617feaa754",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Blake Lively's attorneys speak out about settlement with Justin Baldoni",
-          "url": "https://abcnews.com/GMA/Culture/blake-livelys-lawyers-issue-1st-statement-settlement-justin/story?id=132744548",
-          "fingerprint": "04ad488bb6a621ca9d3969170f19f81231567885",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Officials in Arizona, Georgia monitoring some hantavirus cruise ship passengers in US",
-          "url": "https://abcnews.com/Health/3-evacuated-off-cruise-ship-suspected-hantavirus-cluster/story?id=132699628",
-          "fingerprint": "0b53dcbeb2c8f9182efd2dc3f6463042c8e4580e",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Many Medicare enrollees can get GLP-1 drugs for $50 starting in July",
-          "url": "https://abcnews.com/GMA/Wellness/medicare-enrollees-glp-1-drugs-50-starting-july/story?id=132738089",
-          "fingerprint": "b608617020ddcd92a3b4844ecc7d3d6b32f3916b",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Dozens of Ukrainian drones target Moscow, mayor says, amid overnight attack on Russia",
-          "url": "https://abcnews.com/International/dozens-ukrainian-drones-target-moscow-mayor-amid-overnight/story?id=132736145",
-          "fingerprint": "a244aecd16b3fe9c6287644fd8ee1ecabaced30b",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "What to know about potential US-Iran agreement",
-          "url": "https://abcnews.com/Politics/potential-us-iran-agreement/story?id=132727248",
-          "fingerprint": "fa1cabd930acfd8ad677ad301173c2eaa6b9a6e8",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-07T17-24-02-068Z",
       "observedAt": "2026-05-07T17:24:04.761Z",
@@ -21481,6 +21403,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-08T19:19:07.572Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-08T19:59:12.706Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
