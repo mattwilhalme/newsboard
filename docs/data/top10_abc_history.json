@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-09T04:50:07.828Z",
+  "generatedAt": "2026-06-09T08:39:55.477Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-07T23-35-54-058Z",
-      "observedAt": "2026-05-07T23:35:57.071Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus live updates: 2 infected patients in isolation in Dutch hospitals",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "3da5cbf6c224051f50f994e64623720f75ac5fc2",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:WHO says suspected hantavirus cluster 'is not the start of a COVID pandemic'",
-          "url": "https://abcnews.com/Health/start-covid-pandemic-suspected-hantavirus-cluster-cruise-ship/story?id=132741290",
-          "fingerprint": "fced14dbfcec71487987477798b32233429e506c",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Iran live updates: US strikes Iran after 'unprovoked attacks' on warships",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "0a9b7c721a545b9f1c16e50384d39e3c2ae8b68f",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Trade court says Trump's 10% global tariffs are unlawful",
-          "url": "https://abcnews.com/US/trade-court-trumps-10-global-tariffs-unlawful/story?id=132761523",
-          "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Jake Reiner discusses death of parents Rob and Michelle Reiner in return to podcast",
-          "url": "https://abcnews.com/GMA/News/jake-reiner-discusses-death-parents-rob-michelle-reiner/story?id=132747869",
-          "fingerprint": "718abf552ed02a3b56a47bbb3532708edb6a380b",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Lawyers for Blake Lively, Justin Baldoni speak out as settlement details revealed",
-          "url": "https://abcnews.com/GMA/Culture/blake-livelys-lawyers-issue-1st-statement-settlement-justin/story?id=132744548",
-          "fingerprint": "e14204d8a9b5a9e09fb2df8acaee2af2bc69de01",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Former sheriff's deputy convicted of reckless homicide in shooting of Casey Goodson",
-          "url": "https://abcnews.com/US/former-sheriffs-deputy-jason-meade-convicted-reckless-homicide/story?id=132719581",
-          "fingerprint": "e8ea96c6b6707d5c000b5d5831f443a22c079197",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "DHS, USSS say $1B for White House ballroom would also fund 'other critical missions'",
-          "url": "https://abcnews.com/Politics/homeland-security-secret-service-1b-white-house-ballroom/story?id=132744829",
-          "fingerprint": "8edf541432cd5345c520a04eb9278d41f00e9dad",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Tennessee passes new congressional map that splits its only majority-Black district",
-          "url": "https://abcnews.com/Politics/tennessee-passes-new-congressional-map-splits-states-majority/story?id=132753080",
-          "fingerprint": "304893daa2ee3b20e0700d57779dc73f6f0b758d",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Man arrested near former Prince Andrew's home",
-          "url": "https://abcnews.com/GMA/News/man-weapon-arrested-former-prince-andrews-home/story?id=132748964",
-          "fingerprint": "d9eda2fb5afa06c65ade2e7072b665cad23170c6",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-08T01-23-46-391Z",
       "observedAt": "2026-05-08T01:23:49.455Z",
@@ -21055,6 +20977,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-09T04:50:07.828Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-09T08:39:55.477Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
