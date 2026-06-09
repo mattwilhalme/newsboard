@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-09T17:32:00.546Z",
+  "generatedAt": "2026-06-09T18:20:19.859Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-08T09-48-54-984Z",
-      "observedAt": "2026-05-08T09:48:57.842Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: US strikes Iran after 'unprovoked attacks' on warships",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "0a9b7c721a545b9f1c16e50384d39e3c2ae8b68f",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Trump calls Iran strikes a 'love tap,' says ceasefire still in effect",
-          "url": "https://abcnews.com/Politics/trump-calls-iran-strikes-love-tap-ceasefire-effect/story?id=132762926",
-          "fingerprint": "2c40f8b09770a09037489fedfc0f097d0262758d",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "344b64d0e89bb67e81c146968730bb639d402f03",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Cuban official warns US on 'dangerous path' that could lead to 'bloodbath in Cuba'",
-          "url": "https://abcnews.com/International/cuban-foreign-minister-warns-us-dangerous-path-lead/story?id=132745941",
-          "fingerprint": "0310ab1d03fa38e47f5ba20863d8ba70603acf29",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Judge says DOGE grant terminations are unlawful and 'troubling'",
-          "url": "https://abcnews.com/Politics/judge-doge-grant-terminations-unlawful-troubling/story?id=132762412",
-          "fingerprint": "76e6a50a5f1711b31bc4cdfd764b2b9748aad88a",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "What to watch for in high-stakes Trump-Xi meeting",
-          "url": "https://abcnews.com/Politics/watch-high-stakes-trump-xi-meeting/story?id=132746582",
-          "fingerprint": "aaaee9cda0b85fae6636d46052b835a730287ca7",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
-          "url": "https://abcnews.com/Lifestyle/wireStory/david-attenborough-excited-hushed-voice-nature-programs-turns-132771244",
-          "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final",
-          "url": "https://abcnews.com/Sports/wireStory/fifa-triples-price-32970-best-tickets-world-cup-132768461",
-          "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Trade court says Trump's 10% global tariffs are unlawful",
-          "url": "https://abcnews.com/US/trade-court-trumps-10-global-tariffs-unlawful/story?id=132761523",
-          "fingerprint": "52debae46bfcd37579ba9f52d18b0b39d28fc07a",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links",
-          "url": "https://abcnews.com/International/wireStory/3-australian-women-back-syria-face-slavery-terrorism-132769725",
-          "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-08T11-01-10-523Z",
       "observedAt": "2026-05-08T11:01:13.890Z",
@@ -20700,6 +20622,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-09T17:32:00.546Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-09T18:20:19.859Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
