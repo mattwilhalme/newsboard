@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-09T18:20:19.859Z",
+  "generatedAt": "2026-06-09T20:35:09.969Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-08T11-01-10-523Z",
-      "observedAt": "2026-05-08T11:01:13.890Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Trump says without ceasefire, 'one big glow' will come out of Iran",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "5e51b94cc02d969c5689b3e41209012ac2a9578e",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Trump calls Iran strikes a 'love tap,' says ceasefire still in effect",
-          "url": "https://abcnews.com/Politics/trump-calls-iran-strikes-love-tap-ceasefire-effect/story?id=132762926",
-          "fingerprint": "2c40f8b09770a09037489fedfc0f097d0262758d",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "344b64d0e89bb67e81c146968730bb639d402f03",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Cuban official warns US on 'dangerous path' that could lead to 'bloodbath in Cuba'",
-          "url": "https://abcnews.com/International/cuban-foreign-minister-warns-us-dangerous-path-lead/story?id=132745941",
-          "fingerprint": "0310ab1d03fa38e47f5ba20863d8ba70603acf29",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Judge says DOGE grant terminations are unlawful and 'troubling'",
-          "url": "https://abcnews.com/Politics/judge-doge-grant-terminations-unlawful-troubling/story?id=132762412",
-          "fingerprint": "76e6a50a5f1711b31bc4cdfd764b2b9748aad88a",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "David Attenborough, the excited but hushed voice of nature programs, turns 100",
-          "url": "https://abcnews.com/Lifestyle/wireStory/david-attenborough-excited-hushed-voice-nature-programs-turns-132771244",
-          "fingerprint": "f89c1520985fe44dc88bfd88bd5127e51fce15cd",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
-          "url": "https://abcnews.com/US/visual-investigation-scores-online-resellers-ai-fool-customers/story?id=132762385",
-          "fingerprint": "17574f924caa1a6615d5a42b7d6550b4c15530ed",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "FIFA triples price to $32,970 for its best available tickets to the World Cup final",
-          "url": "https://abcnews.com/Sports/wireStory/fifa-triples-price-32970-best-tickets-world-cup-132768461",
-          "fingerprint": "e136212b8c73b00122dec8f98dcab9869461fd70",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "'Monster with a badge': How an officer was convicted in teen's shocking murder",
-          "url": "https://abcnews.com/US/monster-badge-officer-convicted-teens-shocking-murder/story?id=131930556",
-          "fingerprint": "0785d3ac68a425fdfec08c484b43effaffa8632a",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "3 Australian women back from Syria face slavery, terror charges over alleged IS links",
-          "url": "https://abcnews.com/International/wireStory/3-australian-women-back-syria-face-slavery-terrorism-132769725",
-          "fingerprint": "fa129cef83fa106d604118b64574e06465f0a951",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-08T12-13-34-988Z",
       "observedAt": "2026-05-08T12:13:38.095Z",
@@ -20629,6 +20551,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-09T18:20:19.859Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-09T20:35:09.969Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
