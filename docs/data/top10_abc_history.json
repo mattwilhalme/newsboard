@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-10T09:00:52.135Z",
+  "generatedAt": "2026-06-10T12:35:38.604Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-08T18-21-33-188Z",
-      "observedAt": "2026-05-08T18:21:36.203Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus live updates: 2 New Jersey residents being monitored for hantavirus",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "e88732668e67e4d6a422ebd670426fad1119e98b",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Amid a suspected hantavirus cluster, here's what to know about the disease",
-          "url": "https://abcnews.com/Health/hantavirus-amid-suspected-cluster-aboard-cruise-ship/story?id=132741560",
-          "fingerprint": "224ff5178b2e047009547a31e691763f58b4b985",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Administration eyeing $400M settlement from TikTok for DC 'beautification': Sources",
-          "url": "https://abcnews.com/US/trump-administration-eyeing-400m-settlement-tiktok-dc-beautification/story?id=132707914",
-          "fingerprint": "a5155d8efa2439e28972a107a9fea43b25020721",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Pentagon begins release of decades of unresolved UFO files",
-          "url": "https://abcnews.com/Politics/pentagon-begins-release-decades-unresolved-ufo-files/story?id=132780534",
-          "fingerprint": "7b4f8f2a5aab57f279139670092899cf03787615",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "CDC researcher accused of stealing over $1 million in grant funding extradited to US",
-          "url": "https://abcnews.com/US/cdc-researcher-accused-stealing-1-million-grant-funding/story?id=132764562",
-          "fingerprint": "a2afacfc4a520b70235b9a624c952a2b6e35138f",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "As Iran war continues, people across the US are feeling a strain from high gas prices",
-          "url": "https://abcnews.com/Politics/after-months-war-iran-people-us-feeling-strain/story?id=132760039",
-          "fingerprint": "f57c97b50513cfee72015f35f0b7dae9523e519a",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
-          "url": "https://abcnews.com/US/visual-investigation-scores-online-resellers-ai-fool-customers/story?id=132762385",
-          "fingerprint": "17574f924caa1a6615d5a42b7d6550b4c15530ed",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Mom who helped hundreds of foster kids gets surprise of a lifetime on 'GMA'",
-          "url": "https://abcnews.com/GMA/Family/usher-surprises-mom-opened-home-300-foster-kids/story?id=132774419",
-          "fingerprint": "d8388ad7e33473a5b83a4b93e486aa66695b5201",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "How a police officer was found guilty of murdering Georgia teen",
-          "url": "https://abcnews.com/US/monster-badge-officer-convicted-teens-shocking-murder/story?id=131930556",
-          "fingerprint": "6df215f296a9b76c330164d9d48dc7ff92c0b592",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-08T19-51-29-336Z",
       "observedAt": "2026-05-08T19:51:32.503Z",
@@ -20256,6 +20178,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-10T09:00:52.135Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-10T12:35:38.604Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
