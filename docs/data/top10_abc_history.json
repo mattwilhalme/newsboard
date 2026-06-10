@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-09T23:56:57.392Z",
+  "generatedAt": "2026-06-10T04:43:31.270Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-08T15-56-00-018Z",
-      "observedAt": "2026-05-08T15:56:03.197Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus live updates: CDC classifies outbreak as 'Level 3' emergency response",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "344b64d0e89bb67e81c146968730bb639d402f03",
-          "related_links": [
-            {
-              "title": "What is hantavirus and how does it spread?",
-              "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?entryId=132781582&id=132746955"
-            },
-            {
-              "title": "New hantavirus case reported in Spain",
-              "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?entryId=132780539&id=132746955"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Virginia Supreme Court overturns Democrats' redistricting measure",
-          "url": "https://abcnews.com/Politics/virginia-supreme-court-overturns-democrats-redistricting-measure/story?id=132782825",
-          "fingerprint": "c0272183ff598dd1eadf6a808194282f8186d411",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Pentagon begins release of decades of unresolved UFO files",
-          "url": "https://abcnews.com/Politics/pentagon-begins-release-decades-unresolved-ufo-files/story?id=132780534",
-          "fingerprint": "7b4f8f2a5aab57f279139670092899cf03787615",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "CDC researcher accused of stealing over $1 million in grant funding extradited to US",
-          "url": "https://abcnews.com/US/cdc-researcher-accused-stealing-1-million-grant-funding/story?id=132764562",
-          "fingerprint": "a2afacfc4a520b70235b9a624c952a2b6e35138f",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Cuban official warns US on 'dangerous path' that could lead to 'bloodbath in Cuba'",
-          "url": "https://abcnews.com/International/cuban-foreign-minister-warns-us-dangerous-path-lead/story?id=132745941",
-          "fingerprint": "0310ab1d03fa38e47f5ba20863d8ba70603acf29",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Scores of online resellers are using AI to pretend to be mom-and-pop stores",
-          "url": "https://abcnews.com/US/visual-investigation-scores-online-resellers-ai-fool-customers/story?id=132762385",
-          "fingerprint": "17574f924caa1a6615d5a42b7d6550b4c15530ed",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "How a police officer was found guilty of murdering Georgia teen",
-          "url": "https://abcnews.com/US/monster-badge-officer-convicted-teens-shocking-murder/story?id=131930556",
-          "fingerprint": "6df215f296a9b76c330164d9d48dc7ff92c0b592",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Judge says DOGE grant terminations are unlawful and 'troubling'",
-          "url": "https://abcnews.com/Politics/judge-doge-grant-terminations-unlawful-troubling/story?id=132762412",
-          "fingerprint": "76e6a50a5f1711b31bc4cdfd764b2b9748aad88a",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "DOJ seeks to denaturalize man for spying for Cuba",
-          "url": "https://abcnews.com/US/doj-seeks-denaturalize-former-diplomat-convicted-spying-cuba/story?id=132783125",
-          "fingerprint": "1d0bbb258a9fcb202e7ae5ff7396b6f3be4a92eb",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-08T17-04-55-701Z",
       "observedAt": "2026-05-08T17:04:58.683Z",
@@ -20407,6 +20320,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-09T23:56:57.392Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-10T04:43:31.270Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
