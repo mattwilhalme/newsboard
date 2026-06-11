@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-11T13:05:01.578Z",
+  "generatedAt": "2026-06-11T15:04:58.823Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-09T14-05-12-082Z",
-      "observedAt": "2026-05-09T14:05:15.243Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus live updates: CDC tells US doctors be aware of imported hantavirus cases",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "ea21389ecec5dd8592659d1dd6d8e129010ab946",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
-          "url": "https://abcnews.com/Health/nebraskas-national-quarantine-unit-prepares-bring-hantavirus-cruise/story?id=132794162",
-          "fingerprint": "4c3b4cfb37e5be4599950303d59f6ce1ccf6c78d",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Frontier Airlines jet strikes person on runway at Denver airport: Officials",
-          "url": "https://abcnews.com/US/frontier-airlines-jet-reports-striking-individual-walking-runway/story?id=132805804",
-          "fingerprint": "2a0672025074d8ce8f7852655afd0329c4712b12",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "US military strike on alleged drug boat in the eastern Pacific kills 2",
-          "url": "https://abcnews.com/US/wireStory/us-military-strike-alleged-drug-boat-eastern-pacific-132800486",
-          "fingerprint": "de780e60809251475422648cd55253caae613e72",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Pentagon's declassified UFO files reveal sightings near military sites",
-          "url": "https://abcnews.com/Politics/pentagon-begins-release-decades-unresolved-ufo-files/story?id=132780534",
-          "fingerprint": "35da3f74de7c014a7ea168c7207e0ab491728a5c",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Trump says 3-day ceasefire, prisoner swap to occur between Russia and Ukraine",
-          "url": "https://abcnews.com/International/trump-3-day-ceasefire-prisoner-swap-occur-russia/story?id=132793171",
-          "fingerprint": "bfacef3dacfb235be8eae7d9d3d559a4ab21fcfa",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "115 people sickened in norovirus outbreak on cruise ship: CDC",
-          "url": "https://abcnews.com/International/115-people-sickened-norovirus-outbreak-cruise-ship-cdc/story?id=132788971",
-          "fingerprint": "7d53a50c79294014340a6439557e350ac72e053d",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Katy Perry will perform at SoFi Stadium before first World Cup game in US",
-          "url": "https://abcnews.com/Entertainment/wireStory/katy-perry-perform-sofi-stadium-world-cup-game-132801167",
-          "fingerprint": "2d5a5db8ee8aa0997aaa2ec9984294a9740a0363",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Iran live updates: Rubio says US expects response from Iran on potential deal Friday",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "fd633b5dd5bd5b4c812458775cba932661ef2f18",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Prince William, Kate step out at Buckingham Palace garden party",
-          "url": "https://abcnews.com/GMA/Culture/prince-william-kate-middleton-step-buckingham-palace-garden/story?id=132792310",
-          "fingerprint": "f88fac5fce45d5806a1631fc2321e3b2283e0f41",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-09T15-07-09-493Z",
       "observedAt": "2026-05-09T15:07:12.709Z",
@@ -19333,6 +19255,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-11T13:05:01.578Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-11T15:04:58.823Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
