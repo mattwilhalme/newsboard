@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-12T23:02:39.127Z",
+  "generatedAt": "2026-06-12T23:23:34.564Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-10T11-01-19-427Z",
-      "observedAt": "2026-05-10T11:01:22.457Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus live updates: Evacuations begin after MV Hondius arrives in Canary Islands",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "e1784576b691ccd2955f21ff3f7761ebe1830c78",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
-          "url": "https://abcnews.com/Health/nebraskas-national-quarantine-unit-prepares-bring-hantavirus-cruise/story?id=132794162",
-          "fingerprint": "4c3b4cfb37e5be4599950303d59f6ce1ccf6c78d",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Hantavirus: American oncologist who became cruise ship's de facto head doctor speaks",
-          "url": "https://abcnews.com/Health/american-oncologist-cruise-ships-de-facto-head-doctor/story?id=132815895",
-          "fingerprint": "f69c981200840888c236ab8a0d6430f64f8a7b3f",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Iran live updates: Kuwaiti army intercepts 'hostile drones'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "f8104e5862730f40d5e3adb851485363b3918b44",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Possible boat explosion sends several to the hospital: Fire officials",
-          "url": "https://abcnews.com/US/boat-explosion-miami-sends-dozen-people-hospital-fire/story?id=132815455",
-          "fingerprint": "311f4e1a744609cd35a70d55258de24172ba11ca",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Frontier plane strikes person on Denver airport runway: Officials",
-          "url": "https://abcnews.com/US/frontier-airlines-jet-reports-striking-individual-walking-runway/story?id=132805804",
-          "fingerprint": "a0641cacd19c67f3bb0ed93e9a373a8a4b19537b",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Pentagon releases declassified UFO files from various federal agencies",
-          "url": "https://abcnews.com/Politics/pentagon-begins-release-decades-unresolved-ufo-files/story?id=132780534",
-          "fingerprint": "395ae00c049a4a6805cd565ffcce2437ec6c7f53",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "'Full House' star shares health update amid cancer battle",
-          "url": "https://abcnews.com/GMA/Culture/dave-coulier-shares-emotional-health-update-after-cancer/story?id=132811989",
-          "fingerprint": "793e2042a845509775af6ae5b8b055114899e250",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "115 people sickened in norovirus outbreak on cruise ship: CDC",
-          "url": "https://abcnews.com/International/115-people-sickened-norovirus-outbreak-cruise-ship-cdc/story?id=132788971",
-          "fingerprint": "7d53a50c79294014340a6439557e350ac72e053d",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "How Melody Lee is helping Mercedes-Benz reach its next generation of buyers",
-          "url": "https://abcnews.com/Business/female-exec-shaping-mercedes-benz-brand/story?id=132816137",
-          "fingerprint": "ba5aa01dd20bd2f6c9aa68a8b1df53ab319045e0",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-10T11-58-18-079Z",
       "observedAt": "2026-05-10T11:58:20.999Z",
@@ -18197,6 +18119,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-12T23:02:39.127Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-12T23:23:34.564Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
