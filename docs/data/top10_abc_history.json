@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-12T13:39:42.193Z",
+  "generatedAt": "2026-06-12T17:13:19.693Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-09T22-28-18-210Z",
-      "observedAt": "2026-05-09T22:28:21.237Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus live updates: Spanish authorities preparing for M/V Hondius arrival",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "5373909ef12aabcd683a110ead58d54111546b77",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
-          "url": "https://abcnews.com/Health/nebraskas-national-quarantine-unit-prepares-bring-hantavirus-cruise/story?id=132794162",
-          "fingerprint": "4c3b4cfb37e5be4599950303d59f6ce1ccf6c78d",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Possible boat explosion sends several to the hospital: Fire officials",
-          "url": "https://abcnews.com/US/boat-explosion-miami-sends-dozen-people-hospital-fire/story?id=132815455",
-          "fingerprint": "311f4e1a744609cd35a70d55258de24172ba11ca",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Iran live updates: 'We'll see what happens,' Trump says on Iran response to proposal",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "1c023c985052fd8bf15c3a051ab2ce0336592081",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Frontier plane strikes person on Denver airport runway: Officials",
-          "url": "https://abcnews.com/US/frontier-airlines-jet-reports-striking-individual-walking-runway/story?id=132805804",
-          "fingerprint": "a0641cacd19c67f3bb0ed93e9a373a8a4b19537b",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Pentagon releases declassified UFO files from various federal agencies",
-          "url": "https://abcnews.com/Politics/pentagon-begins-release-decades-unresolved-ufo-files/story?id=132780534",
-          "fingerprint": "395ae00c049a4a6805cd565ffcce2437ec6c7f53",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "'Full House' star shares health update amid cancer battle",
-          "url": "https://abcnews.com/GMA/Culture/dave-coulier-shares-emotional-health-update-after-cancer/story?id=132811989",
-          "fingerprint": "793e2042a845509775af6ae5b8b055114899e250",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "115 people sickened in norovirus outbreak on cruise ship: CDC",
-          "url": "https://abcnews.com/International/115-people-sickened-norovirus-outbreak-cruise-ship-cdc/story?id=132788971",
-          "fingerprint": "7d53a50c79294014340a6439557e350ac72e053d",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Katy Perry will perform at SoFi Stadium before first World Cup game in US",
-          "url": "https://abcnews.com/Entertainment/wireStory/katy-perry-perform-sofi-stadium-world-cup-game-132801167",
-          "fingerprint": "2d5a5db8ee8aa0997aaa2ec9984294a9740a0363",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Prince William, Kate step out at Buckingham Palace garden party",
-          "url": "https://abcnews.com/GMA/Culture/prince-william-kate-middleton-step-buckingham-palace-garden/story?id=132792310",
-          "fingerprint": "f88fac5fce45d5806a1631fc2321e3b2283e0f41",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-09T23-14-19-981Z",
       "observedAt": "2026-05-09T23:14:23.033Z",
@@ -18694,6 +18616,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-12T13:39:42.193Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-12T17:13:19.693Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
