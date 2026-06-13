@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-13T17:48:29.887Z",
+  "generatedAt": "2026-06-13T18:21:46.399Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-10T23-08-06-651Z",
-      "observedAt": "2026-05-10T23:08:09.941Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Trump calls Iran's latest response 'TOTALLY UNACCEPTABLE'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-ukmto-reports-attacks-2-ships?id=132626582",
-          "fingerprint": "41a8ce9ff7f25a0caadc923dfb4bbca132e299e4",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Waltz: 'It is up to President Trump' to determine if Iran violated ceasefire",
-          "url": "https://abcnews.com/Politics/waltz-president-trump-determine-iran-violated-ceasefire/story?id=132823506",
-          "fingerprint": "6febc7a42c5bebeaa69073e67509726403433e8a",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Hantavirus live updates: Americans aboard MV Hondius depart from Spain",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "a22d67e30850c719fa6102d03e7402b56d3b2d92",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Remains of US soldier who went missing during exercises in Morocco recovered",
-          "url": "https://abcnews.com/International/wireStory/remains-us-soldier-missing-military-exercises-morocco-recovered-132830709",
-          "fingerprint": "60cdf8439252b6cd4fa5fcb2fbe75aede52668a1",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Russia accuses Ukraine of violating U.S.-brokered three-day truce",
-          "url": "https://abcnews.com/International/wireStory/russia-accuses-ukraine-violating-us-brokered-day-truce-132823137",
-          "fingerprint": "64e2b814859cdb7d9dcc5569d374043e24eae475",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Possible boat explosion sends several to the hospital: Fire officials",
-          "url": "https://abcnews.com/US/boat-explosion-miami-sends-dozen-people-hospital-fire/story?id=132815455",
-          "fingerprint": "311f4e1a744609cd35a70d55258de24172ba11ca",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "What to know about Nebraska quarantine unit as it prepares for cruise ship passengers",
-          "url": "https://abcnews.com/Health/nebraskas-national-quarantine-unit-prepares-bring-hantavirus-cruise/story?id=132794162",
-          "fingerprint": "769e1d1f841197ce0bcb0e6ba83b2e9551314012",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Frontier plane strikes person on Denver airport runway: Officials",
-          "url": "https://abcnews.com/US/frontier-airlines-jet-reports-striking-individual-walking-runway/story?id=132805804",
-          "fingerprint": "a0641cacd19c67f3bb0ed93e9a373a8a4b19537b",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "How Mercedes-Benz exec Melody Lee is making her voice heard",
-          "url": "https://abcnews.com/Business/female-exec-shaping-mercedes-benz-brand/story?id=132816137",
-          "fingerprint": "8e742d13452162ac2139d5204e9a862a383990c2",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "'Full House' star shares health update amid cancer battle",
-          "url": "https://abcnews.com/GMA/Culture/dave-coulier-shares-emotional-health-update-after-cancer/story?id=132811989",
-          "fingerprint": "793e2042a845509775af6ae5b8b055114899e250",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-11T00-05-44-138Z",
       "observedAt": "2026-05-11T00:05:47.504Z",
@@ -17345,6 +17267,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-13T17:48:29.887Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-13T18:21:46.399Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
