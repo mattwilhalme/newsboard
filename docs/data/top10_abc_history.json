@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-15T17:11:36.429Z",
+  "generatedAt": "2026-06-15T18:46:07.319Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-13T00-13-37-771Z",
-      "observedAt": "2026-05-13T00:13:40.804Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "US Taiwan policy will be watched closely during Trump's China visit",
-          "url": "https://abcnews.com/Politics/us-taiwan-policy-watched-closely-trumps-china-visit/story?id=132851367",
-          "fingerprint": "77b03ea70cf4b8ec9a2291b05b63906726181a5d",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:What to know about Trump-Xi summit with trade, Taiwan and Iran on the agenda",
-          "url": "https://abcnews.com/International/wireStory/trump-xi-summit-trade-taiwan-iran-agenda-132866731",
-          "fingerprint": "ae14d1c267ea97f24f1594efca7e8abfefad1a0e",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Hantavirus outbreak's unknown origins addressed by medical experts",
-          "url": "https://abcnews.com/Health/hantavirus-outbreak-origin-mystery-medical-experts-address-theories/story?id=132881165",
-          "fingerprint": "182d3e036fe5fb47687ff22337215fa22e095a25",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Jason Collins, NBA's first openly gay player, dies at 47 of brain tumor",
-          "url": "https://abcnews.com/Sports/wireStory/jason-collins-nbas-openly-gay-player-dies-47-132900619",
-          "fingerprint": "fd4c88d485612d34347a961bd08a7ccd8fa28c40",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Record number of immigration cases now ending in voluntary departure, report says",
-          "url": "https://abcnews.com/US/record-number-immigration-cases-now-ending-voluntary-departure/story?id=132899797",
-          "fingerprint": "81336f2bbce83313846a4ca7900c2115a4690c2a",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Trump says 'I don't think about Americans' financial situation' in Iran negotiations",
-          "url": "https://abcnews.com/Politics/trump-americans-financial-situation-iran-negotiations/story?id=132891356",
-          "fingerprint": "799c40eb37865429d028a61cc38765cdacdb9d76",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Conan O'Brien to return as Oscars host for the 3rd consecutive year",
-          "url": "https://abcnews.com/GMA/Culture/conan-obrien-return-oscars-host-3rd-consecutive-year/story?id=132888198",
-          "fingerprint": "20a15dd22c868e798974e50a044267e68a643137",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "784b57921e0acf08d5356e5ed2b99ff51142a3d1",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "US household debt ticks up to new all-time high as inflation continues to rise",
-          "url": "https://abcnews.com/US/us-household-debt-ticks-new-high-inflation-continues/story?id=132881937",
-          "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Denver airport fatal collision was a suicide, man identified, officials say",
-          "url": "https://abcnews.com/US/denver-airport-fatal-collision-suicide-man-identified-officials/story?id=132885371",
-          "fingerprint": "934e133225939bf65cf67d831713639cab3f76d5",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-13T04-14-26-301Z",
       "observedAt": "2026-05-13T04:14:29.413Z",
@@ -15667,6 +15589,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-15T17:11:36.429Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-15T18:46:07.319Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
