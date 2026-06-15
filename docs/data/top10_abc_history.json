@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-15T16:38:17.993Z",
+  "generatedAt": "2026-06-15T17:11:36.429Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-12T23-07-20-113Z",
-      "observedAt": "2026-05-12T23:07:23.259Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingJason Collins, NBA's first openly gay player, dies from brain tumor at 47, family announces",
-          "url": "https://abcnews.com/Sports/wireStory/jason-collins-nbas-openly-gay-player-dies-47-132900619",
-          "fingerprint": "abba64f581c4b136418c59adcaa3aa25ae7c3740",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Trump says 'I don't think about Americans' financial situation' in Iran negotiations",
-          "url": "https://abcnews.com/Politics/trump-americans-financial-situation-iran-negotiations/story?id=132891356",
-          "fingerprint": "799c40eb37865429d028a61cc38765cdacdb9d76",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Related:Iran live updates: Iran war has cost at least $29 billion, Pentagon official says",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "4823593a2f77c926a8af607bfcbb29a75aca4a23",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "US Taiwan policy will be watched closely during Trump's China visit",
-          "url": "https://abcnews.com/Politics/us-taiwan-policy-watched-closely-trumps-china-visit/story?id=132851367",
-          "fingerprint": "77b03ea70cf4b8ec9a2291b05b63906726181a5d",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Hantavirus outbreak's unknown origins addressed by medical experts",
-          "url": "https://abcnews.com/Health/hantavirus-outbreak-origin-mystery-medical-experts-address-theories/story?id=132881165",
-          "fingerprint": "182d3e036fe5fb47687ff22337215fa22e095a25",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Conan O'Brien to return as Oscars host for the 3rd consecutive year",
-          "url": "https://abcnews.com/GMA/Culture/conan-obrien-return-oscars-host-3rd-consecutive-year/story?id=132888198",
-          "fingerprint": "20a15dd22c868e798974e50a044267e68a643137",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Memphis Grizzlies player Brandon Clarke dead at the age of 29, team says",
-          "url": "https://abcnews.com/US/memphis-grizzlies-player-brandon-clarke-dead-age-29/story?id=132890918",
-          "fingerprint": "13c50350c5bfc758fa54dc1abc0afa5e2cd8ebbf",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "784b57921e0acf08d5356e5ed2b99ff51142a3d1",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "US household debt ticks up to new all-time high as inflation continues to rise",
-          "url": "https://abcnews.com/US/us-household-debt-ticks-new-high-inflation-continues/story?id=132881937",
-          "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "'Ted Lasso' star Cristo Fernández signs pro soccer contract",
-          "url": "https://abcnews.com/GMA/Culture/ted-lasso-star-cristo-fernndez-signs-pro-soccer/story?id=132894955",
-          "fingerprint": "ce9fe6ac2eea7a3c0f24eb9da0c43dbac0536a99",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-13T00-13-37-771Z",
       "observedAt": "2026-05-13T00:13:40.804Z",
@@ -15738,6 +15660,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-15T16:38:17.993Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-15T17:11:36.429Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
