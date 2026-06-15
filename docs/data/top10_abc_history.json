@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-15T07:35:05.937Z",
+  "generatedAt": "2026-06-15T13:38:57.902Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-12T17-25-12-845Z",
-      "observedAt": "2026-05-12T17:25:15.960Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingDr. Marty Makary intends to resign as FDA commissioner, sources say",
-          "url": "https://abcnews.com/Health/dr-marty-makary-intends-resign-fda-commissioner-sources/story?id=132759639",
-          "fingerprint": "46660ef28327b0a89457520292a264a71f5aa3d4",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "US household debt ticks up to new all-time high as inflation continues to rise",
-          "url": "https://abcnews.com/US/us-household-debt-ticks-new-high-inflation-continues/story?id=132881937",
-          "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Inflation jumps to its highest level in three years",
-          "url": "https://abcnews.com/Business/inflation-report-show-latest-prices-fuel-costs-surge/story?id=132842452",
-          "fingerprint": "acc43be0cada7520a4241e34f710f41a6c94bf89",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Trump is floating a gas tax holiday. What does that mean?",
-          "url": "https://abcnews.com/Politics/trump-floating-gas-tax-holiday-amid-rising-fuel/story?id=132859509",
-          "fingerprint": "9ea68391cc1f001ee719dc8ee2988eb4e5b6cf0e",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "2 foreign companies, supervisor indicted in 2024 Baltimore bridge crash",
-          "url": "https://abcnews.com/US/2-foreign-companies-supervisor-indicted-2024-baltimore-bridge/story?id=132878612",
-          "fingerprint": "055411de52ff886176d68d720630ba95d415eb51",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Hantavirus live updates: 16 at facility in Nebraska, 2 at hospital in Atlanta",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "7b7443fe24194d43639c1d6fa461d23d27821563",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Passenger from hantavirus-stricken cruise ship speaks out from quarantine",
-          "url": "https://abcnews.com/GMA/News/mv-hondius-cruise-ship-passenger-speaks-quarantine-unit/story?id=132873763",
-          "fingerprint": "412b88602f79c9fd2bb01d4ff762001502a60ab0",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Denver airport fatal collision was a suicide, man identified, officials say",
-          "url": "https://abcnews.com/US/denver-airport-fatal-collision-suicide-man-identified-officials/story?id=132885371",
-          "fingerprint": "934e133225939bf65cf67d831713639cab3f76d5",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "PCOS to now be called PMOS: Here’s why",
-          "url": "https://abcnews.com/GMA/Wellness/pcos-gets-new-common-hormonal-issue-affecting-women/story?id=132860109",
-          "fingerprint": "83befb5fc1576ec0775dbcb8016b41a5d3c49642",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Family of Bonnie Tyler provides health update: 'seriously ill but stable'",
-          "url": "https://abcnews.com/GMA/Culture/singer-bonnie-tyler-medically-induced-coma-recovering-emergency/story?id=132757549",
-          "fingerprint": "ef260083d8316f0c522b74fec640dda472db16db",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-12T19-16-38-834Z",
       "observedAt": "2026-05-12T19:16:41.889Z",
@@ -16022,6 +15944,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-15T07:35:05.937Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-15T13:38:57.902Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
