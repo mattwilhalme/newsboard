@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-15T13:38:57.902Z",
+  "generatedAt": "2026-06-15T14:49:30.530Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-12T19-16-38-834Z",
-      "observedAt": "2026-05-12T19:16:41.889Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Hantavirus outbreak origin still a mystery, medical experts address theories",
-          "url": "https://abcnews.com/Health/hantavirus-outbreak-origin-mystery-medical-experts-address-theories/story?id=132881165",
-          "fingerprint": "d63f3e4d19074db63d75c89f6c3f001d3b65f030",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "784b57921e0acf08d5356e5ed2b99ff51142a3d1",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Passenger from hantavirus-stricken cruise ship speaks out from quarantine",
-          "url": "https://abcnews.com/GMA/News/mv-hondius-cruise-ship-passenger-speaks-quarantine-unit/story?id=132873763",
-          "fingerprint": "412b88602f79c9fd2bb01d4ff762001502a60ab0",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Memphis Grizzlies player Brandon Clarke dead at the age of 29, team says",
-          "url": "https://abcnews.com/US/memphis-grizzlies-player-brandon-clarke-dead-age-29/story?id=132890918",
-          "fingerprint": "13c50350c5bfc758fa54dc1abc0afa5e2cd8ebbf",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Dr. Marty Makary intends to resign as FDA commissioner: Sources",
-          "url": "https://abcnews.com/Health/dr-marty-makary-intends-resign-fda-commissioner-sources/story?id=132759639",
-          "fingerprint": "41a754618b7d2fc6caaae29719267351db002e52",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "US household debt ticks up to new all-time high as inflation continues to rise",
-          "url": "https://abcnews.com/US/us-household-debt-ticks-new-high-inflation-continues/story?id=132881937",
-          "fingerprint": "9745a258a7c5365c71bfd2b2e181173e2b544c4c",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "2 foreign companies, employee charged in deadly bridge crash",
-          "url": "https://abcnews.com/US/2-foreign-companies-supervisor-indicted-2024-baltimore-bridge/story?id=132878612",
-          "fingerprint": "915d9d84f6e82e96376fea9087e518fe3bddbcbd",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Denver airport fatal collision was a suicide, man identified, officials say",
-          "url": "https://abcnews.com/US/denver-airport-fatal-collision-suicide-man-identified-officials/story?id=132885371",
-          "fingerprint": "934e133225939bf65cf67d831713639cab3f76d5",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "PCOS to now be called PMOS: Here’s why",
-          "url": "https://abcnews.com/GMA/Wellness/pcos-gets-new-common-hormonal-issue-affecting-women/story?id=132860109",
-          "fingerprint": "83befb5fc1576ec0775dbcb8016b41a5d3c49642",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Family of Bonnie Tyler provides health update: 'seriously ill but stable'",
-          "url": "https://abcnews.com/GMA/Culture/singer-bonnie-tyler-medically-induced-coma-recovering-emergency/story?id=132757549",
-          "fingerprint": "ef260083d8316f0c522b74fec640dda472db16db",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-12T20-53-30-852Z",
       "observedAt": "2026-05-12T20:53:33.641Z",
@@ -15951,6 +15873,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-15T13:38:57.902Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-15T14:49:30.530Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
