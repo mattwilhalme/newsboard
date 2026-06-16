@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-16T16:06:32.808Z",
+  "generatedAt": "2026-06-16T17:06:42.355Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-13T20-59-28-730Z",
-      "observedAt": "2026-05-13T20:59:31.790Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingMom sentenced to life without parole for fatally poisoning husband",
-          "url": "https://abcnews.com/US/utah-mom-kouri-richins-set-sentenced-fatally-poisoning/story?id=132889104",
-          "fingerprint": "cfdc3c9ee2bbaedffc003910ee864bbc865e3b37",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Senate confirms Fed chair nominee Kevin Warsh, ending standoff over Powell probe",
-          "url": "https://abcnews.com/Business/senate-confirms-fed-chair-nominee-kevin-warsh-ending/story?id=132875814",
-          "fingerprint": "80c5ed08b8bba408a97ab9529d063fd16e6d738e",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Iran live updates: Senate again fails to advance war powers resolution",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "42dde5e2359383009556c18dd2be29f6b3873ee6",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Alex Murdaugh murder convictions overturned by South Carolina Supreme Court",
-          "url": "https://abcnews.com/US/alex-murdaugh-murder-conviction-overturned-south-carolina-supreme/story?id=132920595",
-          "fingerprint": "dd14c58d61c165e874c1cb7af4a527e059ca3f79",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Trump arrives in Beijing for high-stakes summit with Xi",
-          "url": "https://abcnews.com/Politics/trump-arrives-beijing-high-stakes-summit-xi/story?id=132910116",
-          "fingerprint": "18e0ae5a8204e1054506471a03ab5faa58a8063b",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Tomatoes, seafood and more: Why are these grocery prices soaring?",
-          "url": "https://abcnews.com/Business/tomatoes-seafood-grocery-prices-soaring/story?id=132919628",
-          "fingerprint": "90350cbee5321f96806a86a712fcb081ababfe6a",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Family of Ronald Greene reaches $4.8M settlement with Louisiana State Police: Sources",
-          "url": "https://abcnews.com/US/family-ronald-greene-reaches-tentative-48-million-settlement/story?id=132915581",
-          "fingerprint": "75ce515017b504e6cb46910ed377233f016e8c15",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Hantavirus live updates: Americans in quarantine seen in good spirits",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "c6fc5f7044137e5adf9cef5e6044750bebda2f5b",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "'Ciao Kate': Thousands greet Princess of Wales in Italy",
-          "url": "https://abcnews.com/GMA/Culture/princess-kate-makes-1st-solo-trip-uk-cancer/story?id=132910624",
-          "fingerprint": "b7e560b592e6abe61c6aa6df22a07681ca675df0",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Man sentenced to 2 years in Matthew Perry case",
-          "url": "https://abcnews.com/US/matthew-perry-ketamine-case-erik-fleming-dealer/story?id=132896890",
-          "fingerprint": "39ade47a20bc877365fdbecd51072d423a9b451b",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-13T22-14-07-024Z",
       "observedAt": "2026-05-13T22:14:10.134Z",
@@ -15099,6 +15021,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-16T16:06:32.808Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-16T17:06:42.355Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
