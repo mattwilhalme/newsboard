@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-16T10:29:48.632Z",
+  "generatedAt": "2026-06-16T15:20:01.488Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-13T15-20-16-514Z",
-      "observedAt": "2026-05-13T15:20:19.514Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingAlex Murdaugh murder conviction overturned by South Carolina Supreme Court",
-          "url": "https://abcnews.com/US/alex-murdaugh-murder-conviction-overturned-south-carolina-supreme/story?id=132920595",
-          "fingerprint": "f0604af72b8b664aca9079f679e7ca5b6a81a33f",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Trump arrives in Beijing for high-stakes summit with Xi",
-          "url": "https://abcnews.com/Politics/trump-arrives-beijing-high-stakes-summit-xi/story?id=132910116",
-          "fingerprint": "18e0ae5a8204e1054506471a03ab5faa58a8063b",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Related:Iran war looms over Trump’s visit to Beijing: ANALYSIS",
-          "url": "https://abcnews.com/Politics/iran-war-looms-trumps-visit-beijing-analysis/story?id=132851357",
-          "fingerprint": "4b53530eb8740b4119193b4bab7324852a3ff76e",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Iran live updates: Trump says Iran will make a deal or be 'decimated'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "d3a1a7c13b9c8021c8f99d56b4c7d4446f5d1249",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Family of Ronald Greene reaches $4.8M settlement with Louisiana State Police: Sources",
-          "url": "https://abcnews.com/US/family-ronald-greene-reaches-tentative-48-million-settlement/story?id=132915581",
-          "fingerprint": "75ce515017b504e6cb46910ed377233f016e8c15",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Army cuts training as service is short billions of dollars",
-          "url": "https://abcnews.com/Politics/army-cuts-training-service-short-billions-dollars/story?id=132898323",
-          "fingerprint": "0641f08f17e373ffd8370132feaf20ccf349a93c",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Hantavirus live updates: Patient in France presenting 'severe form' of virus",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "784b57921e0acf08d5356e5ed2b99ff51142a3d1",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Utah mom Kouri Richins to be sentenced for fatally poisoning husband with fentanyl",
-          "url": "https://abcnews.com/US/utah-mom-kouri-richins-set-sentenced-fatally-poisoning/story?id=132889104",
-          "fingerprint": "454605da74d91de50965d73c1138bbb234918fc9",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Kate Middleton makes 1st solo trip outside UK since cancer diagnosis",
-          "url": "https://abcnews.com/GMA/Culture/princess-kate-makes-1st-solo-trip-uk-cancer/story?id=132910624",
-          "fingerprint": "ea7d936ea0d1a1e7c1f6f546749a023cb61630dc",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "'I'm scared for my daughters': Pregnant Ecuadorian woman fighting deportation",
-          "url": "https://abcnews.com/US/im-scared-daughters-pregnant-ecuadorian-woman-fighting-deportation/story?id=132896320",
-          "fingerprint": "e0b2d27406891aff1b24a1bc258fd21cdf84f397",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-13T17-28-57-176Z",
       "observedAt": "2026-05-13T17:29:00.032Z",
@@ -15312,6 +15234,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-16T10:29:48.632Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-16T15:20:01.488Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
