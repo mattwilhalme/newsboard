@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-16T21:48:17.511Z",
+  "generatedAt": "2026-06-16T23:45:59.881Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-14T07-51-37-208Z",
-      "observedAt": "2026-05-14T07:51:40.295Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Trump meeting with Xi in Beijing at high-stakes summit",
-          "url": "https://abcnews.com/Politics/trump-arrives-beijing-high-stakes-summit-xi/story?id=132910116",
-          "fingerprint": "721ba8440b82d62a39dadc6790eeb3ea86c02ab4",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Vance says 'we have a lot of work to do' after Trump remark about Americans' finances",
-          "url": "https://abcnews.com/Politics/vance-lot-work-after-trumps-comments-americans-finances/story?id=132935682",
-          "fingerprint": "ec6f7e95d48681bacdd5cefc462d3eea3a09f646",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Ghislaine Maxwell’s ex-boyfriend says he paid her $7.2M after their breakup",
-          "url": "https://abcnews.com/Politics/ghislaine-maxwells-billionaire-boyfriend-paid-72m-after-breakup/story?id=132943699",
-          "fingerprint": "97af6d4329a3d704f062cecfbc11463ddf6d62aa",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Russia hits Kyiv with drones and ballistic missiles, injuring at least 4",
-          "url": "https://abcnews.com/International/wireStory/russia-hits-kyiv-drones-ballistic-missiles-injuring-4-132945979",
-          "fingerprint": "3ed82222c381bcceed7dd6353b786386b5a1f7e1",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Streamer known as 'Chud the Builder' involved in shooting outside courthouse",
-          "url": "https://abcnews.com/US/streamer-chud-builder-involved-shooting-courthouse-officials/story?id=132938312",
-          "fingerprint": "cab373319b51d712eec7c159bd3ef8fbf6dcdbb9",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Hantavirus live updates: Americans in quarantine seen in good spirits",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "c6fc5f7044137e5adf9cef5e6044750bebda2f5b",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Iran live updates: US intel assess Iran retains significant missile capability",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "34304c1688d34c57b2fdd16b5722c3bbb48984f9",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Allegiant Air, Sun Country complete merger, creating larger budget airline",
-          "url": "https://abcnews.com/Business/wireStory/allegiant-air-sun-country-complete-merger-creating-larger-132940770",
-          "fingerprint": "4d48d33e0469e63ea8e5bcf60deb8196ebe4e3d0",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Kouri Richins addresses court before being sentenced to life in prison",
-          "url": "https://abcnews.com/US/utah-mom-kouri-richins-set-sentenced-fatally-poisoning/story?id=132889104",
-          "fingerprint": "c4f3ec9c6dec142ab201e9efa60b51c94568596b",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Man to be executed for killing ex-girlfriend",
-          "url": "https://abcnews.com/US/wireStory/oklahoma-man-set-executed-killing-girlfriend-7-month-132949110",
-          "fingerprint": "6beee848b8ed08157161c9cbc6075343bfb6cc82",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-14T10-03-56-054Z",
       "observedAt": "2026-05-14T10:03:59.007Z",
@@ -14735,6 +14657,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-16T21:48:17.511Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-16T23:45:59.881Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
