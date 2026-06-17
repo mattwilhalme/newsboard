@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-17T13:58:03.484Z",
+  "generatedAt": "2026-06-17T14:10:33.250Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-14T16-32-20-039Z",
-      "observedAt": "2026-05-14T16:32:23.114Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Xi warns Trump that US and China will 'clash' if Taiwan is handled 'improperly'",
-          "url": "https://abcnews.com/Politics/trump-arrives-beijing-high-stakes-summit-xi/story?id=132910116",
-          "fingerprint": "10f74c5172a5ea8a188713ecf83a8d527c348009",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Dow crosses 50,000 as investors eye Trump-Xi summit",
-          "url": "https://abcnews.com/Business/dow-crosses-50000-investors-eye-trump-xi-summit/story?id=132960205",
-          "fingerprint": "448e223c95af35a4c455fa7624dfb59531552bca",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Man arrested in murder of transgender college student",
-          "url": "https://abcnews.com/US/man-arrested-murder-transgender-university-washington-student-police/story?id=132965009",
-          "fingerprint": "71154c78f77d1fadd13852ade214ba093320a7ab",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Hantavirus live updates: American who initially tested positive now tests negative",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "d00188c8d4a5e3a699a14259e4df31f252c92589",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Ghislaine Maxwell’s ex-boyfriend says he paid her $7.2M after their breakup",
-          "url": "https://abcnews.com/Politics/ghislaine-maxwells-billionaire-boyfriend-paid-72m-after-breakup/story?id=132943699",
-          "fingerprint": "97af6d4329a3d704f062cecfbc11463ddf6d62aa",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Dana Walden talks future of Disney",
-          "url": "https://abcnews.com/GMA/Culture/dana-walden-talks-future-disney/story?id=132892596",
-          "fingerprint": "ab3093cf9882583bf2b14b2e11f8f9af4318ef4a",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Researchers discover a new gigantic dinosaur species in Thailand",
-          "url": "https://abcnews.com/International/researchers-discover-new-gigantic-dinosaur-species-thailand/story?id=132895521",
-          "fingerprint": "1589f1684174ec1222f44a6499654e633056fce1",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Streamer known as 'Chud the Builder' involved in shooting outside courthouse",
-          "url": "https://abcnews.com/US/streamer-chud-builder-involved-shooting-courthouse-officials/story?id=132938312",
-          "fingerprint": "cab373319b51d712eec7c159bd3ef8fbf6dcdbb9",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "063b726bc04d1aac49bd9b556deb9c31b7949785",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Several killed, 20 missing after 'barbaric' Russian strikes on Kyiv, Ukraine says",
-          "url": "https://abcnews.com/International/russia-kills-kyiv-attack-zelenskyy-urges-global-response/story?id=132956408",
-          "fingerprint": "05618d5b039ab6dd8e2824873442eddda6b2eb4f",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-14T18-20-00-522Z",
       "observedAt": "2026-05-14T18:20:03.518Z",
@@ -14451,6 +14373,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-17T13:58:03.484Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-17T14:10:33.250Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
