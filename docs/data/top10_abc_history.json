@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-17T05:09:12.785Z",
+  "generatedAt": "2026-06-17T10:17:52.375Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-14T12-02-21-223Z",
-      "observedAt": "2026-05-14T12:02:24.047Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Xi warns Trump that US and China will 'clash' if Taiwan is handled 'improperly'",
-          "url": "https://abcnews.com/Politics/trump-arrives-beijing-high-stakes-summit-xi/story?id=132910116",
-          "fingerprint": "10f74c5172a5ea8a188713ecf83a8d527c348009",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Appeals court to hear arguments over Trump's orders that sought to punish law firms",
-          "url": "https://abcnews.com/US/appeals-court-hear-arguments-trumps-orders-sought-punish/story?id=132934892",
-          "fingerprint": "12a0731e0cb3149ca4d54b71451f1ccb58f46846",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Ghislaine Maxwell’s ex-boyfriend says he paid her $7.2M after their breakup",
-          "url": "https://abcnews.com/Politics/ghislaine-maxwells-billionaire-boyfriend-paid-72m-after-breakup/story?id=132943699",
-          "fingerprint": "97af6d4329a3d704f062cecfbc11463ddf6d62aa",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Vance says 'we have a lot of work to do' after Trump remark about Americans' finances",
-          "url": "https://abcnews.com/Politics/vance-lot-work-after-trumps-comments-americans-finances/story?id=132935682",
-          "fingerprint": "ec6f7e95d48681bacdd5cefc462d3eea3a09f646",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Russia hits Kyiv with drones and ballistic missiles, injuring at least 4",
-          "url": "https://abcnews.com/International/wireStory/russia-hits-kyiv-drones-ballistic-missiles-injuring-4-132945979",
-          "fingerprint": "3ed82222c381bcceed7dd6353b786386b5a1f7e1",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Hantavirus live updates: Americans in quarantine seen in good spirits",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "c6fc5f7044137e5adf9cef5e6044750bebda2f5b",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "063b726bc04d1aac49bd9b556deb9c31b7949785",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Dust storms and lightning kill at least 96 people in northern India",
-          "url": "https://abcnews.com/International/wireStory/dust-storms-lightning-kill-96-people-northern-india-132951420",
-          "fingerprint": "5caf3604257ed64e801712cfa2fffc112c21fec0",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Researchers discover a new gigantic dinosaur species in Thailand",
-          "url": "https://abcnews.com/International/researchers-discover-new-gigantic-dinosaur-species-thailand/story?id=132895521",
-          "fingerprint": "1589f1684174ec1222f44a6499654e633056fce1",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Man to be executed for killing ex-girlfriend",
-          "url": "https://abcnews.com/US/wireStory/oklahoma-man-set-executed-killing-girlfriend-7-month-132949110",
-          "fingerprint": "6beee848b8ed08157161c9cbc6075343bfb6cc82",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-14T14-35-54-894Z",
       "observedAt": "2026-05-14T14:35:57.653Z",
@@ -14593,6 +14515,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-17T05:09:12.785Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-17T10:17:52.375Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
