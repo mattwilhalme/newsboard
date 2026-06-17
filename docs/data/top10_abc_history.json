@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-17T19:49:25.746Z",
+  "generatedAt": "2026-06-17T22:10:07.029Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-15T12-24-44-510Z",
-      "observedAt": "2026-05-15T12:24:47.506Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Trump says he and Chinese President Xi Jinping feel 'very similar on Iran'",
-          "url": "https://abcnews.com/Politics/trump-xi-set-hold-2nd-round-talks-ahead/story?id=132938291",
-          "fingerprint": "f5341517cedcd72a5cf6e22bf33d1412cf54e162",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Trump responds to Xi's 'Thucydides Trap' comment about America's decline",
-          "url": "https://abcnews.com/Politics/trump-responds-xis-thucydides-trap-comment-americas-decline/story?id=132982009",
-          "fingerprint": "1e6d767184dd8890262b5c656f44d0f17a6b30b9",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Trump-Xi summit Day 1 takeaways: ANALYSIS",
-          "url": "https://abcnews.com/Politics/trump-xi-summit-day-1-takeaways-analysis/story?id=132963988",
-          "fingerprint": "aa5ff103b42c7ff2931575deac75ec3dc4f75cdf",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Death toll in attack on Kyiv apartment building now stands at 24",
-          "url": "https://abcnews.com/International/wireStory/death-toll-attack-kyiv-apartment-building-now-stands-132992721",
-          "fingerprint": "13bcebabe0cd29435a8ec1a088d4069d19192a44",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "CIA Director John Ratcliffe meets with top Cuban officials in Havana",
-          "url": "https://abcnews.com/International/cia-director-john-ratcliffe-meets-top-cuban-officials/story?id=132981976",
-          "fingerprint": "5145d55c103211481fe976e5ac084dcf96f040f6",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Takeaways from Fed Chair Jerome Powell's tenure as he steps down",
-          "url": "https://abcnews.com/Business/takeaways-fed-chair-jerome-powells-tenure-steps/story?id=132918698",
-          "fingerprint": "67c92d8f52ff8b6cf05167f8573bc4c7eacacb1c",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Officer nearly shoots student playing with water gun in a senior game",
-          "url": "https://abcnews.com/GMA/News/officer-shoots-student-playing-water-gun-senior-game/story?id=132977374",
-          "fingerprint": "2a669264003e16fc3e6cf8d875d8302367373a0f",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Inside the shocking murder of Kay Parsons: Lies, secrets and a deadly affair",
-          "url": "https://abcnews.com/US/inside-shocking-murder-kay-parsons-lies-secrets-deadly/story?id=131930792",
-          "fingerprint": "97a1ad4aab3ea29843aae77ffc94e07ef6ffd033",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Iran live updates: Trump says Iran can strike deal or 'get annihilated'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "576b01ab151b77840a91edb705f8642c19af9391",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Hantavirus live updates: 41 people under monitoring across US",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "61b7ae1c55ffdea1dd0cb928db0a6fef2f16b10f",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-15T14-45-01-212Z",
       "observedAt": "2026-05-15T14:45:04.171Z",
@@ -13741,6 +13663,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-17T19:49:25.746Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-17T22:10:07.029Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
