@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-17T16:08:29.751Z",
+  "generatedAt": "2026-06-17T16:19:43.359Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-14T21-22-30-775Z",
-      "observedAt": "2026-05-14T21:22:33.585Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Trump-Xi summit Day 1 takeaways: ANALYSIS",
-          "url": "https://abcnews.com/Politics/trump-xi-summit-day-1-takeaways-analysis/story?id=132963988",
-          "fingerprint": "aa5ff103b42c7ff2931575deac75ec3dc4f75cdf",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Xi warns Trump that US and China will 'clash' if Taiwan is handled 'improperly'",
-          "url": "https://abcnews.com/Politics/trump-arrives-beijing-high-stakes-summit-xi/story?id=132910116",
-          "fingerprint": "8fd927b37f0a7ef96ebf413e680f072ebd1c8b0c",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Border Patrol chief Michael Banks is stepping down",
-          "url": "https://abcnews.com/Politics/border-patrol-chief-michael-banks-stepping/story?id=132974855",
-          "fingerprint": "f90b1248313f5665fecb2d0f5d7f220bedfccba1",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Tourist charged after allegedly throwing rock at endangered seal in Hawaii",
-          "url": "https://abcnews.com/US/tourist-charged-after-allegedly-throwing-rock-endangered-seal/story?id=132969714",
-          "fingerprint": "17257ec061e6753581b3a235539d71bc79ecf540",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Man having a heart attack on the side of the road saved by 3 teens",
-          "url": "https://abcnews.com/GMA/News/florida-teens-speak-after-helping-man-experiencing-heart/story?id=132962364",
-          "fingerprint": "24ab30067c4ce76b47c7f47c009db2f5c8749f6b",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Dana Walden talks future of Disney",
-          "url": "https://abcnews.com/GMA/Culture/dana-walden-talks-future-disney/story?id=132892596",
-          "fingerprint": "ab3093cf9882583bf2b14b2e11f8f9af4318ef4a",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Hantavirus live updates: 41 people under monitoring across US",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "61b7ae1c55ffdea1dd0cb928db0a6fef2f16b10f",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "There are going to be more shark sightings in the coming months, scientists say",
-          "url": "https://abcnews.com/US/sharking-sightings-coming-months-scientists/story?id=132930369",
-          "fingerprint": "5ac749559b17da277204aafeeba76bb9dc580d0d",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Iran live updates: US wants China to do more to end Iran war, Rubio says",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "063b726bc04d1aac49bd9b556deb9c31b7949785",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Researchers discover a new gigantic dinosaur species in Thailand",
-          "url": "https://abcnews.com/International/researchers-discover-new-gigantic-dinosaur-species-thailand/story?id=132895521",
-          "fingerprint": "1589f1684174ec1222f44a6499654e633056fce1",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-14T22-35-53-660Z",
       "observedAt": "2026-05-14T22:35:56.426Z",
@@ -14238,6 +14160,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-17T16:08:29.751Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-17T16:19:43.359Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
