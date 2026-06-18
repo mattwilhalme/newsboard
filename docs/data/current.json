@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-06-18T12:39:59.973Z",
+  "generatedAt": "2026-06-18T13:53:55.918Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:45.839Z",
+      "updatedAt": "2026-06-18T13:53:38.958Z",
       "error": null,
-      "runId": "abc1_2026-06-18T12-39-45-839Z",
+      "runId": "abc1_2026-06-18T13-53-38-958Z",
       "since": "2026-06-18T11:15:55.418Z",
       "item": {
         "title": "Ukraine strikes Moscow oil refinery amid large-scale drone attack",
@@ -18,9 +18,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:46.970Z",
+      "updatedAt": "2026-06-18T13:53:40.753Z",
       "error": null,
-      "runId": "cbs1_2026-06-18T12-39-46-970Z",
+      "runId": "cbs1_2026-06-18T13-53-40-753Z",
       "since": "2026-06-18T11:15:55.418Z",
       "item": {
         "title": "Strait of Hormuz traffic ramps up in wake of U.S.-Iran deal signing",
@@ -32,9 +32,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:47.252Z",
+      "updatedAt": "2026-06-18T13:53:41.064Z",
       "error": null,
-      "runId": "usat1_2026-06-18T12-39-47-252Z",
+      "runId": "usat1_2026-06-18T13-53-41-064Z",
       "since": "2026-06-18T12:11:58.610Z",
       "item": {
         "title": "Trump keeps blowing up the Senate's plans, 'undermining' Republicans",
@@ -46,9 +46,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:47.488Z",
+      "updatedAt": "2026-06-18T13:53:41.557Z",
       "error": null,
-      "runId": "nbc1_2026-06-18T12-39-47-488Z",
+      "runId": "nbc1_2026-06-18T13-53-41-557Z",
       "since": "2026-06-18T11:15:55.418Z",
       "item": {
         "title": "Hegseth lashes out at NATO allies and announces a review of U.S. forces in Europe",
@@ -60,9 +60,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:54.138Z",
+      "updatedAt": "2026-06-18T13:53:48.447Z",
       "error": null,
-      "runId": "cnn1_2026-06-18T12-39-49-296Z",
+      "runId": "cnn1_2026-06-18T13-53-45-435Z",
       "since": "2026-06-18T09:24:44.023Z",
       "item": {
         "title": "Trump's Iran agreement may be flawed, but he's getting what he wants",
@@ -74,9 +74,9 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:55.372Z",
+      "updatedAt": "2026-06-18T13:53:49.517Z",
       "error": null,
-      "runId": "guardian1_2026-06-18T12-39-55-372Z",
+      "runId": "guardian1_2026-06-18T13-53-49-517Z",
       "since": "2026-06-18T12:26:45.882Z",
       "item": {
         "title": "Driver hailed for saving tourists from rip current at Louisiana beach: ‘I just locked in’",
@@ -88,35 +88,41 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:55.930Z",
+      "updatedAt": "2026-06-18T13:53:50.080Z",
       "error": null,
-      "runId": "ap1_2026-06-18T12-39-55-930Z",
-      "since": "2026-06-18T09:24:44.023Z",
+      "runId": "ap1_2026-06-18T13-53-50-080Z",
+      "since": "2026-06-18T13:53:55.918Z",
       "item": {
-        "title": "Vance, skeptical of foreign wars, becomes the face of Trump’s deal to end the war with Iran",
-        "url": "https://apnews.com/article/vance-iran-war-trump-republicans-ed8862d489b80023154188e223063cdd",
+        "title": "What’s in the deal between the US and Iran",
+        "url": "https://apnews.com/article/mou-transcript-iran-us-war-8576fbe2be1309977e903463fbf57ee6",
         "imgUrl": null,
         "slotKey": "083847305a8b",
         "contentType": "news"
       }
     },
     "latimes1": {
-      "ok": false,
-      "updatedAt": "2026-06-18T12:39:56.336Z",
-      "error": "latimes1: headline not found",
-      "runId": "latimes1_2026-06-18T12-39-56-336Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-06-18T13:53:50.578Z",
+      "error": null,
+      "runId": "latimes1_2026-06-18T13-53-50-578Z",
+      "since": "2026-06-18T13:53:55.918Z",
+      "item": {
+        "title": "What we know about air quality after massive Boyle Heights fire",
+        "url": "https://latimes.com/california/story/2026-06-18/what-we-know-about-air-quality",
+        "imgUrl": null,
+        "slotKey": "06617b56ef8d",
+        "contentType": "news"
+      }
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:56.401Z",
+      "updatedAt": "2026-06-18T13:53:50.950Z",
       "error": null,
-      "runId": "npr1_2026-06-18T12-39-56-401Z",
-      "since": "2026-06-18T09:24:44.023Z",
+      "runId": "npr1_2026-06-18T13-53-50-950Z",
+      "since": "2026-06-18T13:53:55.918Z",
       "item": {
-        "title": "Poll: Most Americans have the summer blues about Trump and the economy",
-        "url": "https://npr.org/2026/06/18/nx-s1-5861720/trump-economy-gas-prices-midterms-polling",
+        "title": "National Security",
+        "url": "https://npr.org/sections/national-security",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
@@ -124,9 +130,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:57.204Z",
+      "updatedAt": "2026-06-18T13:53:51.626Z",
       "error": null,
-      "runId": "bbc1_2026-06-18T12-39-57-204Z",
+      "runId": "bbc1_2026-06-18T13-53-51-626Z",
       "since": "2026-06-18T12:39:59.973Z",
       "item": {
         "title": "Moscow hit by largest Ukrainian attack since start of Russia's full-scale war",
@@ -138,9 +144,9 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:57.473Z",
+      "updatedAt": "2026-06-18T13:53:52.177Z",
       "error": null,
-      "runId": "fox1_2026-06-18T12-39-57-473Z",
+      "runId": "fox1_2026-06-18T13-53-52-177Z",
       "since": "2026-06-18T12:11:58.610Z",
       "item": {
         "title": "'Ringleader' of alleged UFC White House drone-and-sniper plot is a foreign national, DHS confirms",
@@ -152,13 +158,13 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-06-18T12:39:57.810Z",
+      "updatedAt": "2026-06-18T13:53:52.770Z",
       "error": null,
-      "runId": "yahoo1_2026-06-18T12-39-57-810Z",
-      "since": "2026-06-18T12:11:58.610Z",
+      "runId": "yahoo1_2026-06-18T13-53-52-770Z",
+      "since": "2026-06-18T13:53:55.918Z",
       "item": {
         "title": "Moscow hit by largest Ukrainian attack since the start of the war",
-        "url": "https://yahoo.com/news/world/articles/moscow-hit-largest-ukrainian-attack-094754771.html",
+        "url": "https://yahoo.com/news/world/articles/ukraine-strikes-moscow-oil-refinery-082536474.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
         "contentType": "news"
