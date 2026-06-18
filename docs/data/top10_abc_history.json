@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-18T00:02:29.965Z",
+  "generatedAt": "2026-06-18T04:59:27.705Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-15T16-29-41-274Z",
-      "observedAt": "2026-05-15T16:29:44.256Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Doctor from cruise ship who initially tested positive for hantavirus speaks out",
-          "url": "https://abcnews.com/US/american-doctor-initially-tested-positive-testing-shows-evidence/story?id=132996595",
-          "fingerprint": "4a832037c106faa7bbb6391b9956dd1d902f3afa",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Hantavirus live updates: 41 people under monitoring across US",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "c5994b12c33b8e5245bf2f22744bce5acebbec24",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Iraqi national charged with coordinating terror attacks that aimed to stop Iran war",
-          "url": "https://abcnews.com/US/iraqi-national-charged-coordinating-terror-attacks-aimed-stop/story?id=133002021",
-          "fingerprint": "269742126c2979e9bbce1fb9606bf2461c145cc2",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Powell ends term as Fed chair: Takeaways from his tenure",
-          "url": "https://abcnews.com/Business/takeaways-fed-chair-jerome-powells-tenure-steps/story?id=132918698",
-          "fingerprint": "3a8cd1943bf1641d121d61d883df0ceada6b1e62",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "How a suburban affair in Georgia led to murder",
-          "url": "https://abcnews.com/US/inside-shocking-murder-kay-parsons-lies-secrets-deadly/story?id=131930792",
-          "fingerprint": "c32629966dd0aaffbfed80c7a5647ece4ba232ea",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Trump won't commit to arms sale to Taiwan after stark warning from Xi",
-          "url": "https://abcnews.com/Politics/trump-xi-set-hold-2nd-round-talks-ahead/story?id=132938291",
-          "fingerprint": "5d519590064b261004b7dd610f6ab58aa794c6e2",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Officer nearly shoots student playing with water gun in a senior game",
-          "url": "https://abcnews.com/GMA/News/officer-shoots-student-playing-water-gun-senior-game/story?id=132977374",
-          "fingerprint": "2a669264003e16fc3e6cf8d875d8302367373a0f",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Shakira and Burna Boy team up for official FIFA World Cup song",
-          "url": "https://abcnews.com/GMA/Culture/shakira-burna-boy-team-official-fifa-world-cup/story?id=132995288",
-          "fingerprint": "68fec07af002ed4df926405778fe3cd823306f1f",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Iran live updates: Trump says Iran can strike deal or 'get annihilated'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "576b01ab151b77840a91edb705f8642c19af9391",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Five die in cave-diving accident in the Maldives",
-          "url": "https://abcnews.com/International/wireStory/authorities-search-waters-maldives-after-5-italians-killed-132994343",
-          "fingerprint": "55db215ff8228196139ac05b3bc9bc49db15e10c",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-15T18-08-18-036Z",
       "observedAt": "2026-05-15T18:08:20.929Z",
@@ -13599,6 +13521,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-18T00:02:29.965Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-18T04:59:27.705Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
