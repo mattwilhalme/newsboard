@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-18T21:37:32.487Z",
+  "generatedAt": "2026-06-18T23:24:33.169Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-16T15-01-26-238Z",
-      "observedAt": "2026-05-16T15:01:29.340Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "DOJ to create 'Truth and Justice Commission' to compensate allies: Sources",
-          "url": "https://abcnews.com/US/trump-administration-create-1776b-truth-justice-commission-compensate/story?id=133005480",
-          "fingerprint": "147898318bb831aad07b784ff88b5722c676956e",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Possible US indictment of former Cuban president Raul Castro in coming days: Sources",
-          "url": "https://abcnews.com/International/us-indictment-former-cuban-president-raul-castro-coming/story?id=133017373",
-          "fingerprint": "3a9545365c529dc036f26fec498771ed941a0157",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "US Supreme Court denies Va. Dems' request on redistricting plan",
-          "url": "https://abcnews.com/Politics/us-supreme-court-denies-virginia-democrats-request-override/story?id=133019449",
-          "fingerprint": "98113bca3fe7e5d0f7fe7aa8e68770e288df295d",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "In Louisiana, Trump-endorsed candidate is challenging a GOP incumbent",
-          "url": "https://abcnews.com/Politics/gop-sen-bill-cassidy-faces-trump-backed-challenger/story?id=132977846",
-          "fingerprint": "b68b17e996c5e52f15c088c61f4888238dcbc465",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "69a70560a02fd6bf96e6b6c1f1f3f8a61989ceeb",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Maldives military diver dies while trying to recover scuba diving victims from cave",
-          "url": "https://abcnews.com/International/5-dead-scuba-diving-accident-deep-underwater-cave/story?id=133010445",
-          "fingerprint": "c7fe99eeab6bc1f3ea18ebe87635040d962968e6",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "624fe73a2d9e8e39ca963fcd7f4ca1f842b96e14",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Slain transgender student suffered over 40 stab wounds: Documents",
-          "url": "https://abcnews.com/US/transgender-university-washington-student-stabbed-40-times-court/story?id=133001154",
-          "fingerprint": "a6949ac13e6e5d95ef234d659ffc673739d0872f",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "How a suburban affair in Georgia led to murder",
-          "url": "https://abcnews.com/US/inside-shocking-murder-kay-parsons-lies-secrets-deadly/story?id=131930792",
-          "fingerprint": "c32629966dd0aaffbfed80c7a5647ece4ba232ea",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Trump says Islamic State group leader was killed",
-          "url": "https://abcnews.com/US/wireStory/trump-islamic-state-group-leader-killed-joint-us-133026521",
-          "fingerprint": "ec69f93434311fa8c282776a94a9824b8d19424e",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-16T16-03-40-924Z",
       "observedAt": "2026-05-16T16:03:43.912Z",
@@ -12498,6 +12420,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-18T21:37:32.487Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-18T23:24:33.169Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
