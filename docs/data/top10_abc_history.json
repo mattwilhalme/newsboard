@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-18T09:24:44.023Z",
+  "generatedAt": "2026-06-18T11:15:55.418Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-15T19-53-42-693Z",
-      "observedAt": "2026-05-15T19:53:45.650Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Israel-Lebanon ceasefire extended for 45 days",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "69a70560a02fd6bf96e6b6c1f1f3f8a61989ceeb",
-          "related_links": [
-            {
-              "title": "Israel-Lebanon ceasefire extended for 45 days, State Department says",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?entryId=133012761&id=132837701"
-            },
-            {
-              "title": "Iran says it has not agreed on uranium enrichment terms with US",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?entryId=133007484&id=132837701"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Trump-Xi summit Day 2 takeaways: ANALYSIS",
-          "url": "https://abcnews.com/Politics/trump-xi-summit-day-2-takeaways-analysis/story?id=133001947",
-          "fingerprint": "41c2e6c0a4f5d90ad1176211b2f42c853357e828",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Judge declares mistrial in Harvey Weinstein’s rape retrial after jury deadlocked",
-          "url": "https://abcnews.com/Entertainment/wireStory/judge-declares-mistrial-harvey-weinsteins-rape-retrial-after-133008148",
-          "fingerprint": "14418849219e34ab83acdd985eac3e5b1dd79bfe",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Hantavirus live updates: WHO hunts for source of virus",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "6c515444c463504090adb4adb01d7d2901fdb7ce",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Slain transgender student suffered over 40 stab wounds: Documents",
-          "url": "https://abcnews.com/US/transgender-university-washington-student-stabbed-40-times-court/story?id=133001154",
-          "fingerprint": "a6949ac13e6e5d95ef234d659ffc673739d0872f",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "FBI Director Kash Patel took VIP snorkel trip around USS Arizona: Navy",
-          "url": "https://abcnews.com/US/fbi-director-kash-patel-vip-snorkel-trip-uss/story?id=132998624",
-          "fingerprint": "d37f18bf347ab26c41372938085e9ba6a2af1c8c",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Wife of US Army sergeant released after month in ICE custody",
-          "url": "https://abcnews.com/US/wife-us-army-sergeant-released-after-month-ice/story?id=133003504",
-          "fingerprint": "23447c7ea519ecf20bf917fa497b2655ae1be3a2",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "5 dead in scuba diving incident in deep underwater cave: Officials",
-          "url": "https://abcnews.com/International/5-dead-scuba-diving-accident-deep-underwater-cave/story?id=133010445",
-          "fingerprint": "5042859e3d8cc99ebcee5130b58d331c56bb03b0",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "How a suburban affair in Georgia led to murder",
-          "url": "https://abcnews.com/US/inside-shocking-murder-kay-parsons-lies-secrets-deadly/story?id=131930792",
-          "fingerprint": "c32629966dd0aaffbfed80c7a5647ece4ba232ea",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "3 found dead in murder-suicide at Indiana home",
-          "url": "https://abcnews.com/US/3-found-dead-murder-suicide-indiana-home/story?id=133007653",
-          "fingerprint": "c228d49c995e9d95c071d6e1cb98bfddc88135c0",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-15T20-47-14-817Z",
       "observedAt": "2026-05-15T20:47:17.797Z",
@@ -13457,6 +13370,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-18T09:24:44.023Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-18T11:15:55.418Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
