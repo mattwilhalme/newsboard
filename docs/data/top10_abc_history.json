@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-19T21:20:00.685Z",
+  "generatedAt": "2026-06-19T21:52:19.492Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-17T07-58-19-486Z",
-      "observedAt": "2026-05-17T07:58:22.631Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects",
-          "url": "https://abcnews.com/Politics/gop-sen-bill-cassidy-faces-trump-backed-challenger/story?id=132977846",
-          "fingerprint": "516c3244605ff2b2f90406a24a2575e3fb5ea272",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Cuba grid collapse: The situation is growing more dire, experts say",
-          "url": "https://abcnews.com/International/cuba-grid-collapse-situation-growing-dire-experts/story?id=133001706",
-          "fingerprint": "503e1dafa57a4af211e585a26af55bc43098062e",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "DOJ to create 'Truth and Justice Commission' to compensate allies: Sources",
-          "url": "https://abcnews.com/US/trump-administration-create-1776b-truth-justice-commission-compensate/story?id=133005480",
-          "fingerprint": "147898318bb831aad07b784ff88b5722c676956e",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Ebola outbreak in Africa is 'public health emergency of international concern': WHO",
-          "url": "https://abcnews.com/International/ebola-outbreak-africa-public-health-emergency-international-concern/story?id=133040670",
-          "fingerprint": "8b84d2510ac6225f80e11b40fb37693c77b0184f",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Murdaugh murder retrial: Death penalty on table, prosecutors say",
-          "url": "https://abcnews.com/US/alex-murdaugh-murder-retrial-prosecutors-pursue-death-penalty/story?id=133036985",
-          "fingerprint": "d1d91fba09ac2571f744108e9a5a4b27d5514b15",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Ronda Rousey stops Gina Carano with armbar 17 seconds into their double comeback bout",
-          "url": "https://abcnews.com/Sports/wireStory/ronda-rousey-stops-gina-carano-armbar-17-seconds-133044564",
-          "fingerprint": "4a2b97ce910547536dd9d91554e7899e40119b85",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Rescue diver dies trying to recover scuba diving victims from cave",
-          "url": "https://abcnews.com/International/5-dead-scuba-diving-accident-deep-underwater-cave/story?id=133010445",
-          "fingerprint": "bf3f7aa3dff10eab034ef74843ca3e41e31991e8",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Humpback whale released after spectacular rescue effort found dead",
-          "url": "https://abcnews.com/International/wireStory/humpback-whale-released-after-spectacular-rescue-effort-found-133032671",
-          "fingerprint": "6383212123fc613972a817b979dac5744b13c913",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Hantavirus live updates: Atlanta passengers relocate to Nebraska quarantine facility",
-          "url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands?id=132746955",
-          "fingerprint": "624fe73a2d9e8e39ca963fcd7f4ca1f842b96e14",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "US indictment of Raul Castro possible: Sources",
-          "url": "https://abcnews.com/International/us-indictment-former-cuban-president-raul-castro-coming/story?id=133017373",
-          "fingerprint": "414bffbb07767412923cf27eb4a392737f7b9818",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-17T09-46-47-613Z",
       "observedAt": "2026-05-17T09:46:50.340Z",
@@ -11646,6 +11568,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-19T21:20:00.685Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-19T21:52:19.492Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
