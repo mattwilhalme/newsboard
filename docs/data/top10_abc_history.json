@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-20T04:38:29.303Z",
+  "generatedAt": "2026-06-20T08:28:29.276Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-17T21-33-43-375Z",
-      "observedAt": "2026-05-17T21:33:46.213Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Top Judiciary Democrat Raskin blasts possible Trump-IRS settlement",
-          "url": "https://abcnews.com/Politics/top-judiciary-democrat-raskin-blasts-trump-irs-settlement/story?id=133046931",
-          "fingerprint": "6cff50099bfe44f84d69d719d9be15134e90781a",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:DOJ to create 'Truth and Justice Commission' to compensate allies: Sources",
-          "url": "https://abcnews.com/US/trump-administration-create-1776b-truth-justice-commission-compensate/story?id=133005480",
-          "fingerprint": "428a84b66d59e69e6225405f0dae90ecbab19e8a",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Ahead of Tuesday primary, GOP Rep. Massie says billionaires trying to 'buy' his seat",
-          "url": "https://abcnews.com/Politics/ahead-tuesday-primary-trump-target-massie-billionaires-buy/story?id=133046728",
-          "fingerprint": "258aa98a13825a39f0524fb27a0b0a6040282440",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Iran live updates: Iran 'better get moving, FAST' and make a peace deal, Trump says",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-peace-talks-baghaei?id=132837701",
-          "fingerprint": "5bd4237293ce95fbdcf2c9db5a2ce7336b1e0269",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Plains and the Midwest bracing for more severe weather, possible tornadoes",
-          "url": "https://abcnews.com/US/plains-midwest-bracing-severe-weather-tornadoes/story?id=133047210",
-          "fingerprint": "9a556530104c81e40ceb7163bf56b8b95f7d7863",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Cassidy defeated, Trump-backed Letlow and Fleming advance to runoff: AP projects",
-          "url": "https://abcnews.com/Politics/gop-sen-bill-cassidy-faces-trump-backed-challenger/story?id=132977846",
-          "fingerprint": "516c3244605ff2b2f90406a24a2575e3fb5ea272",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Cuba grid collapse: The situation is growing more dire, experts say",
-          "url": "https://abcnews.com/International/cuba-grid-collapse-situation-growing-dire-experts/story?id=133001706",
-          "fingerprint": "503e1dafa57a4af211e585a26af55bc43098062e",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "China committed to not 'provide material support to Iran,' US trade rep says",
-          "url": "https://abcnews.com/Politics/china-committed-provide-material-support-iran-us-trade/story?id=133046732",
-          "fingerprint": "ac4312620621d241d97abdca1799838d713107e3",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Ukraine launches hundreds of drones in deadly attack targeting Russia, Moscow says",
-          "url": "https://abcnews.com/International/ukraine-launches-hundreds-drones-deadly-attack-targeting-russia/story?id=133045819",
-          "fingerprint": "3d891161b11fb1f94f6c541c7001de1dc77b9dce",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Ronda Rousey stops Gina Carano with armbar 17 seconds into their double comeback bout",
-          "url": "https://abcnews.com/Sports/wireStory/ronda-rousey-stops-gina-carano-armbar-17-seconds-133044564",
-          "fingerprint": "4a2b97ce910547536dd9d91554e7899e40119b85",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-17T22-30-30-884Z",
       "observedAt": "2026-05-17T22:30:33.702Z",
@@ -10794,6 +10716,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-20T04:38:29.303Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-20T08:28:29.276Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
