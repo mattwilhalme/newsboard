@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-20T20:25:06.599Z",
+  "generatedAt": "2026-06-20T21:51:43.839Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-18T16-12-22-284Z",
-      "observedAt": "2026-05-18T16:12:25.281Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Trump, in court filing, says he's dropping his $10B lawsuit against IRS",
-          "url": "https://abcnews.com/US/trump-court-filings-plans-drop-10b-lawsuit-irs/story?id=133066043",
-          "fingerprint": "28349df9bd0a2a89815d23a27fec1acf27a6297b",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Iran live updates: Trump says 'TIME IS OF THE ESSENCE' for Iran deal",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-saudi-arabia-uae-condemn-fresh?id=133061203",
-          "fingerprint": "a312c8d76f171e0a5e10fd4851a14557611aa3a2",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Mangione state trial: Some evidence suppressed, key evidence allowed",
-          "url": "https://abcnews.com/US/judge-decide-throw-key-evidence-luigi-mangione/story?id=133018432",
-          "fingerprint": "25c23e250407afe7133373411938bf05b9136a2e",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Family of teen killed on cruise ship speaks out",
-          "url": "https://abcnews.com/US/anna-kepners-dad-speaks-stepbrother-awaits-trial-cruise/story?id=133057685",
-          "fingerprint": "3a2adf4ef58dd5ebd7469d0d21e773722d96d3d9",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "LIRR strike: What to know about the rail workers' walkout",
-          "url": "https://abcnews.com/US/lirr-strike-rail-workers-walkout/story?id=133049221",
-          "fingerprint": "78268d8ce0ea8bd7bd802ffc47b840158bcccfcb",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Shakira acquitted of tax fraud in Spain",
-          "url": "https://abcnews.com/GMA/Culture/shakira-acquitted-tax-fraud-spain/story?id=133071152",
-          "fingerprint": "25efd3a44556e7e2c3f13496478ffe2fb4d52793",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Bodies of 4 remaining divers located in Maldives, divers network says",
-          "url": "https://abcnews.com/International/bodies-4-divers-located-maldives-divers-network/story?id=133062657",
-          "fingerprint": "5fdb563d13077666ecb612433c389dfe7629a9a6",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "DRC Ebola outbreak affecting 'small number of Americans,' CDC says",
-          "url": "https://abcnews.com/International/drc-ebola-outbreak-affecting-small-number-americans-cdc/story?id=133061121",
-          "fingerprint": "9226c8137df4221ab2c35865ff53131465679756",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Midair collision between two jets at air show prompts Idaho Air Force base lockdown",
-          "url": "https://abcnews.com/US/air-show-crash-prompts-idaho-air-force-base/story?id=133055114",
-          "fingerprint": "5157153847a398e3a2bac32078494e9c896b0038",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "House Oversight Committee to interview prison guard on duty when Epstein died",
-          "url": "https://abcnews.com/US/house-oversight-committee-interview-prison-guard-duty-epstein/story?id=133019125",
-          "fingerprint": "86508ec190d26d6846a7ebf55ac8b64935d78f15",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-18T18-17-33-574Z",
       "observedAt": "2026-05-18T18:17:36.374Z",
@@ -10288,6 +10210,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-20T20:25:06.599Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-20T21:51:43.839Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
