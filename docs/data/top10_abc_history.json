@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-21T13:17:19.115Z",
+  "generatedAt": "2026-06-21T15:30:31.877Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-19T01-33-45-025Z",
-      "observedAt": "2026-05-19T01:33:47.973Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingLong Island Rail Road strike is over, New York Gov. Hochul says",
-          "url": "https://abcnews.com/US/long-island-rail-road-strike-new-york-gov/story?id=133091971",
-          "fingerprint": "8abdc2e4f54f49e627a040e99bb4bb71eec6ac9a",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "3 adults killed in shooting at Islamic Center of San Diego; both suspects dead",
-          "url": "https://abcnews.com/US/active-shooter-reported-islamic-center-san-diego-police/story?id=133081988",
-          "fingerprint": "df2ded008e6e588b473b652d2024fbfece9362e0",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Mark Fuhrman, ex-detective in OJ Simpson murder trial, dies at 74",
-          "url": "https://abcnews.com/US/wireStory/mark-fuhrman-former-la-police-detective-convicted-lying-133089071",
-          "fingerprint": "0dc35ae62fcb96983e66736938b048cb13d33cdb",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "DOJ announces $1.7B 'Anti-Weaponization Fund' as part of Trump IRS lawsuit settlement",
-          "url": "https://abcnews.com/US/trump-court-filings-plans-drop-10b-lawsuit-irs/story?id=133066043",
-          "fingerprint": "1371ed9912694c086bdd8a2e3f857d5d485f5e7f",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "50 million people brace for tornadoes in the Heartland",
-          "url": "https://abcnews.com/US/50-million-people-brace-tornadoes-heartland/story?id=133065125",
-          "fingerprint": "74a48fd61be3101b6ce5942efb8f69ab31ff1ab8",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "American doctor tests positive for Ebola in Democratic Republic of Congo outbreak",
-          "url": "https://abcnews.com/International/drc-ebola-outbreak-affecting-small-number-americans-cdc/story?id=133061121",
-          "fingerprint": "526e209e08a373153fd7eb1f82cadfb4889b733b",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Former Hartford officer charged with manslaughter in fatal shooting of Stevie Jones",
-          "url": "https://abcnews.com/US/former-hartford-police-officer-charged-manslaughter-fatal-shooting/story?id=133084581",
-          "fingerprint": "e564e85a25068cc53d3689a39b0d3a6254bfd8af",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Iran live updates: Trump says he's postponing strikes on Iran",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-saudi-arabia-uae-condemn-fresh?id=133061203",
-          "fingerprint": "9d500bf61cf6a78c36f07c8e63b7cbadf7458e14",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Japanese zoo says viral monkey Punch safe after 2 people broke enclosure",
-          "url": "https://abcnews.com/GMA/News/ichikawa-city-zoo-punch-monkeys-safe-after-2/story?id=133075455",
-          "fingerprint": "44e9fde812f6e8c010fdb6462c40d9b355e7be10",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "ICE agent charged in nonfatal Minneapolis shooting",
-          "url": "https://abcnews.com/US/ice-agent-charged-nonfatal-shooting-venezuelan-immigrant-minneapolis/story?id=133080644",
-          "fingerprint": "011c46c4fd5a365911bcf25792c74dac63f28a4a",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-19T05-47-19-475Z",
       "observedAt": "2026-05-19T05:47:22.675Z",
@@ -9862,6 +9784,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-21T13:17:19.115Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-21T15:30:31.877Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
