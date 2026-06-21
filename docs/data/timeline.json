@@ -1,260 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-06-21T02:02:43.943Z",
+  "generatedAt": "2026-06-21T07:03:53.775Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-06-20T15:09:29.482+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Russia strikes an apartment block in Ukraine's Kharkiv city, killing 1",
-      "url": "https://abcnews.com/International/wireStory/russia-strikes-apartment-block-ukraines-kharkiv-city-killing-134055037"
-    },
-    {
-      "ts": "2026-06-20T15:09:30.848+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Iran says it's closing Strait of Hormuz again as Hezbollah and Israel trade attacks",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting"
-    },
-    {
-      "ts": "2026-06-20T15:09:31.175+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Summer starts Sunday, June 21. Here's your (very hot) weather forecast",
-      "url": "https://usatoday.com/story/news/weather/2026/06/20/summer-2026-weather-forecast/90624644007"
-    },
-    {
-      "ts": "2026-06-20T15:09:31.359+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Iran closes Strait of Hormuz, state media says, after Israeli strikes in Lebanon",
-      "url": "https://nbcnews.com/world/iran/israel-continues-lebanon-strikes-fresh-ceasefire-rcna350952"
-    },
-    {
-      "ts": "2026-06-20T15:09:42.466+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "'This was not easy': Inside Trump's rush to ink Iran agreement",
-      "url": "https://cnn.com/2026/06/20/world/live-news/iran-war-trump-israel-lebanon"
-    },
-    {
-      "ts": "2026-06-20T15:09:43.526+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘It’s a big mistake’: Israelis feel betrayed and angry after Iran peace deal",
-      "url": "https://theguardian.com/world/2026/jun/20/israelis-betrayed-angry-after-iran-peace-deal-donald-trump"
-    },
-    {
-      "ts": "2026-06-20T15:09:43.939+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "US-Iran talks to begin Sunday in Switzerland but Tehran closes the strait over Lebanon fighting",
-      "url": "https://apnews.com/article/iran-us-israel-lebanon-hezbollah-june-20-2026-6e23fb5f37e23427dbfc2bc80c59bda8"
-    },
-    {
-      "ts": "2026-06-20T15:09:46.715+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "From YouTube to the multiplex: How low-budget horror films are beating big-budget studio bets",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-06-20/how-low-budget-movies-are-beating-hollywoods-most-expensive-bets"
-    },
-    {
-      "ts": "2026-06-20T15:09:47.051+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Shot by ICE and still in pain. LA detainee highlights gaps in DHS oversight",
-      "url": "https://npr.org/2026/06/20/nx-s1-5855064/richard-la-parias-ice-detention"
-    },
-    {
-      "ts": "2026-06-20T15:09:47.536+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Moscow oil refinery attack brings Russia's war with Ukraine closer to home",
-      "url": "https://bbc.com/news/articles/cp3xqkxp3x5o"
-    },
-    {
-      "ts": "2026-06-20T15:09:47.887+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "City could be America's longest-running experiment in democratic socialism",
-      "url": "https://foxnews.com/media/california-town-bet-big-socialism-coming-more-american-cities"
-    },
-    {
-      "ts": "2026-06-20T15:09:48.075+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump says Reflecting Pool was vandalized and law enforcement is investigating",
-      "url": "https://yahoo.com/news/politics/articles/trump-claims-reflecting-pool-vandalized-040600107.html"
-    },
-    {
-      "ts": "2026-06-20T17:07:35.33+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Kennedy Center board still considering closure and renovation, no programming set",
-      "url": "https://abcnews.com/Politics/kennedy-center-board-closure-renovation-programming-set/story?id=134051359"
-    },
-    {
-      "ts": "2026-06-20T17:07:36.69+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Iran says it's closing Strait of Hormuz again as Hezbollah and Israel trade attacks",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting"
-    },
-    {
-      "ts": "2026-06-20T17:07:36.953+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Iran will close Strait of Hormuz again amid Israeli attacks in Lebanon",
-      "url": "https://usatoday.com/story/news/politics/2026/06/20/us-iran-strait-of-hormuz-closed--live/90627193007"
-    },
-    {
-      "ts": "2026-06-20T17:07:37.255+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Iran says Strait of Hormuz is closed after Israeli strikes in Lebanon",
-      "url": "https://nbcnews.com/world/iran/israel-continues-lebanon-strikes-fresh-ceasefire-rcna350952"
-    },
-    {
-      "ts": "2026-06-20T17:07:48.049+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Iran says it's closing Strait of Hormuz, accusing US and Israel of violating truce",
-      "url": "https://cnn.com/2026/06/20/world/live-news/iran-war-trump-israel-lebanon"
-    },
-    {
-      "ts": "2026-06-20T17:07:49.12+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon",
-      "url": "https://theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire"
-    },
-    {
-      "ts": "2026-06-20T17:07:49.584+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "US-Iran talks begin Sunday in Switzerland as Tehran closes the strait over Lebanon fighting",
-      "url": "https://apnews.com/article/iran-us-israel-lebanon-hezbollah-june-20-2026-6e23fb5f37e23427dbfc2bc80c59bda8"
-    },
-    {
-      "ts": "2026-06-20T17:07:50.029+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "From YouTube to the multiplex: How low-budget horror films are beating big-budget studio bets",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-06-20/how-low-budget-movies-are-beating-hollywoods-most-expensive-bets"
-    },
-    {
-      "ts": "2026-06-20T17:07:50.3+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "A California man's case highlights gaps in care and oversight at DHS detention centers",
-      "url": "https://npr.org/2026/06/20/nx-s1-5855064/richard-la-parias-ice-detention"
-    },
-    {
-      "ts": "2026-06-20T17:07:50.724+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Moscow oil refinery attack brings Russia's war with Ukraine closer to home",
-      "url": "https://bbc.com/news/articles/cp3xqkxp3x5o"
-    },
-    {
-      "ts": "2026-06-20T17:07:51.122+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump reverses course on Iranian weapons White House launched operation to wipe out",
-      "url": "https://foxnews.com/politics/trump-says-iran-missiles-arent-problem-after-white-house-made-them-central-war-rationale"
-    },
-    {
-      "ts": "2026-06-20T17:07:51.323+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump says Reflecting Pool was vandalized and law enforcement is investigating",
-      "url": "https://yahoo.com/news/politics/articles/trump-claims-reflecting-pool-vandalized-040600107.html"
-    },
-    {
-      "ts": "2026-06-20T18:57:57.167+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Kennedy Center board still considering closure and renovation, no programming set",
-      "url": "https://abcnews.com/Politics/kennedy-center-board-closure-renovation-programming-set/story?id=134051359"
-    },
-    {
-      "ts": "2026-06-20T18:57:59.04+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Iran says it's closing Strait of Hormuz again as Hezbollah and Israel trade attacks",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting"
-    },
-    {
-      "ts": "2026-06-20T18:57:59.451+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Iran will close Strait of Hormuz again amid Israeli attacks in Lebanon",
-      "url": "https://usatoday.com/story/news/politics/2026/06/20/us-iran-strait-of-hormuz-closed--live/90627193007"
-    },
-    {
-      "ts": "2026-06-20T18:57:59.887+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Iran peace talks have been chaotic. But confusion has only grown since the MOU was signed.",
-      "url": "https://nbcnews.com/politics/white-house/us-iran-negotiations-chaotic-confusion-only-grown-mou-was-signed-rcna350926"
-    },
-    {
-      "ts": "2026-06-20T18:58:05.997+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Iran says it's closing Strait of Hormuz, accusing US and Israel of violating truce",
-      "url": "https://cnn.com/2026/06/20/world/live-news/iran-war-trump-israel-lebanon"
-    },
-    {
-      "ts": "2026-06-20T18:58:07.267+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon",
-      "url": "https://theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire"
-    },
-    {
-      "ts": "2026-06-20T18:58:07.866+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "US-Iran talks begin Sunday as Tehran closes the strait over Lebanon fighting",
-      "url": "https://apnews.com/article/iran-us-israel-lebanon-hezbollah-june-20-2026-6e23fb5f37e23427dbfc2bc80c59bda8"
-    },
-    {
-      "ts": "2026-06-20T18:58:08.451+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "From YouTube to the multiplex: How low-budget horror films are beating big-budget studio bets",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-06-20/how-low-budget-movies-are-beating-hollywoods-most-expensive-bets"
-    },
-    {
-      "ts": "2026-06-20T18:58:08.915+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Iran says Strait of Hormuz shut as US-Iran talks set for Sunday in Switzerland",
-      "url": "https://npr.org/2026/06/20/nx-s1-5865006/fighting-lebanon-despite-ceasefire"
-    },
-    {
-      "ts": "2026-06-20T18:58:09.512+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Moscow oil refinery attack brings Russia's war with Ukraine closer to home",
-      "url": "https://bbc.com/news/articles/cp3xqkxp3x5o"
-    },
-    {
-      "ts": "2026-06-20T18:58:10.073+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump reverses course on Iranian weapons White House launched operation to wipe out",
-      "url": "https://foxnews.com/politics/trump-says-iran-missiles-arent-problem-after-white-house-made-them-central-war-rationale"
-    },
-    {
-      "ts": "2026-06-20T18:58:10.423+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Tourists are flocking to DC's Reflecting Pool — and not for the view",
-      "url": "https://yahoo.com/news/us/articles/algae-peeling-blue-material-conspiracy-160040634.html"
-    },
     {
       "ts": "2026-06-20T20:24:38.607+00:00",
       "source_id": "abc1",
@@ -590,6 +338,90 @@
       "kind": "headline",
       "title": "Trump's fear of an economic collapse may undermine him in Iran talks",
       "url": "https://yahoo.com/finance/news/trumps-fears-about-economy-undercut-us-leverage-in-iran-talks-163341928.html"
+    },
+    {
+      "ts": "2026-06-21T07:03:36.379+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Trump continues war of words with Italy’s Meloni over G7 photo",
+      "url": "https://abcnews.com/Politics/trump-italian-pm-giorgia-meloni-feud-online-g7/story?id=134056785"
+    },
+    {
+      "ts": "2026-06-21T07:03:38.069+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "Vance heads to Switzerland for talks; Iran says it's closing Strait of Hormuz",
+      "url": "https://cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting"
+    },
+    {
+      "ts": "2026-06-21T07:03:38.39+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Green water, peeling paint. What's going on with the Reflecting Pool?",
+      "url": "https://usatoday.com/story/news/nation/2026/06/20/reflecting-pool-trump-controversy-explained/90627146007"
+    },
+    {
+      "ts": "2026-06-21T07:03:38.605+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "Iran peace talks have been chaotic. But confusion has only grown since the MOU was signed.",
+      "url": "https://nbcnews.com/politics/white-house/us-iran-negotiations-chaotic-confusion-only-grown-mou-was-signed-rcna350926"
+    },
+    {
+      "ts": "2026-06-21T07:03:48.369+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Vance arrives for US-Iran talks as fighting in Lebanon strains truce",
+      "url": "https://cnn.com/2026/06/21/world/live-news/iran-war-trump-israel-lebanon"
+    },
+    {
+      "ts": "2026-06-21T07:03:49.427+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Ueda inspires Japan to eliminate Tunisia in landmark 1,000th World Cup match",
+      "url": "https://theguardian.com/football/2026/jun/21/japan-tunisia-world-cup-group-f-match-report"
+    },
+    {
+      "ts": "2026-06-21T07:03:49.68+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "US Vice President JD Vance arrives in Switzerland to launch talks with Iran on its nuclear program",
+      "url": "https://apnews.com/article/iran-vance-trump-nuclear-negotiations-2edf9268aae550883252080014013963"
+    },
+    {
+      "ts": "2026-06-21T07:03:50.079+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Newsom and L.A. declare state of emergency as Boyle Heights fire continues spewing smoke across region",
+      "url": "https://latimes.com/business/story/2026-06-20/boyle-heights-fire-state-of-emergency"
+    },
+    {
+      "ts": "2026-06-21T07:03:50.435+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Iran says Strait of Hormuz shut as U.S.-Iran talks set for Sunday in Switzerland",
+      "url": "https://npr.org/2026/06/20/nx-s1-5865006/fighting-lebanon-despite-ceasefire"
+    },
+    {
+      "ts": "2026-06-21T07:03:50.917+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "US-Iran talks to begin in Switzerland as Tehran says it closed Strait of Hormuz",
+      "url": "https://bbc.com/news/articles/cwyekkwm1mmo"
+    },
+    {
+      "ts": "2026-06-21T07:03:51.19+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Trump warns of 'years in jail' after former Olympian, others arrested at newly refurbished Reflecting Pool",
+      "url": "https://foxnews.com/politics/former-olympian-among-charged-vandalizing-reflecting-pool-trump-vows-immediate-repairs-report"
+    },
+    {
+      "ts": "2026-06-21T07:03:51.371+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "Trump says vandals will force drainage of algae-plagued Reflecting Pool",
+      "url": "https://yahoo.com/news/us/articles/algae-peeling-blue-material-conspiracy-160040634.html"
     }
   ]
 }
