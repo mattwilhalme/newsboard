@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-22T22:14:41.697Z",
+  "generatedAt": "2026-06-22T23:53:44.807Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-20T19-42-13-006Z",
-      "observedAt": "2026-05-20T19:42:15.916Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "DOJ indicts former Cuban leader Raul Castro",
-          "url": "https://abcnews.com/Politics/justice-department-expected-announce-charges-raul-castro/story?id=133144411",
-          "fingerprint": "a785c809dd28983cbccb7c4e6d64f6510bd9ddbd",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "2 officers who defended Capitol on Jan. 6 sue to stop Trump's Anti-Weaponization Fund",
-          "url": "https://abcnews.com/US/2-officers-defended-capitol-jan-6-sue-stop/story?id=133151726",
-          "fingerprint": "0e21d916ea64b5f9ed5fb3a67506f400c0aad7ee",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Trump told Republican voters to reject Massie. They did: ANALYSIS",
-          "url": "https://abcnews.com/Politics/trump-told-republican-voters-reject-massie-analysis/story?id=133145046",
-          "fingerprint": "9eb1d2d9f66712066785c788c3c68647c80ecdff",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Iran live updates: Trump says he’s in 'no hurry' to make a peace deal with Iran",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-saudi-arabia-uae-condemn-fresh?id=133061203",
-          "fingerprint": "af2fb3d0333d7c330da2b09e37fd0209e70d7da1",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Barney Frank, former Massachusetts congressman, dies at 86",
-          "url": "https://abcnews.com/Politics/barney-frank-former-massachusetts-congressman-gay-rights-advocate/story?id=133150494",
-          "fingerprint": "19c1dee1ebd64dbb7fe70f9a7d84ae652b62a065",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Xi, Putin condemn 'treacherous' strikes, urge US to end Iran war",
-          "url": "https://abcnews.com/International/xi-putin-condemn-treacherous-strikes-urge-us-end/story?id=133145953",
-          "fingerprint": "bfbe5bb7e4afba31002234a37822bf622b6c8dd4",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "San Diego shooting: Investigators probe suspects' potential extremism",
-          "url": "https://abcnews.com/International/san-diego-shooting-investigators-probe-suspects-potential-extremism/story?id=133140228",
-          "fingerprint": "81a5edc04a040bf610349e780f27786bbff65480",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Police officer rushes to save choking toddler in incident caught on camera",
-          "url": "https://abcnews.com/GMA/News/police-officer-speaks-after-rescuing-choking-toddler-incident/story?id=133144059",
-          "fingerprint": "50c397cc1fd668bb982818a9973982c69213ae71",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "US doctor infected with Ebola 'feels good' and is able to eat, colleague says",
-          "url": "https://abcnews.com/International/ebola-outbreak-suspected-death-toll-rises-139-warns/story?id=133142454",
-          "fingerprint": "f6c63712b8f5b0479620fe594494a0ccec8d2de4",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Sinkhole shuts down LaGuardia runway",
-          "url": "https://abcnews.com/US/sinkhole-shuts-runway-laguardia-international-airport/story?id=133160132",
-          "fingerprint": "6029a693343d7177edb91275e340000ddab2d6cd",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-20T21-25-32-156Z",
       "observedAt": "2026-05-20T21:25:34.875Z",
@@ -8726,6 +8648,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-22T22:14:41.697Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-22T23:53:44.807Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
