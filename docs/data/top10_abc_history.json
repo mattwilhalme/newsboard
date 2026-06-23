@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-23T18:56:38.735Z",
+  "generatedAt": "2026-06-23T19:17:22.293Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-22T04-19-31-155Z",
-      "observedAt": "2026-05-22T04:19:34.061Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "NASCAR community and beyond pays tribute to race car legend Kyle Busch",
-          "url": "https://abcnews.com/GMA/Culture/nascar-community-pays-tribute-race-car-legend-kyle/story?id=133204069",
-          "fingerprint": "21608cd1371af5d5ab51770bdd5820234f5d42f7",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:NASCAR champion Kyle Busch dies at the age of 41: 'Sudden and tragic'",
-          "url": "https://abcnews.com/US/nascar-champion-kyle-busch-dies-age-41-sudden/story?id=133203673",
-          "fingerprint": "4b1030c1a858cb0006d7c63fa16f87148483377b",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Trump allies, Jan. 6 defendants lining up to apply for $1.7 billion fund",
-          "url": "https://abcnews.com/US/trump-allies-jan-6-defendants-lining-apply-17/story?id=133202234",
-          "fingerprint": "661798e68b903d98733c61f3aa5cd88723217dbe",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "In apparent reversal, Trump says he's sending 5,000 troops to Poland",
-          "url": "https://abcnews.com/Politics/apparent-reversal-trump-sending-5000-troops-poland/story?id=133203231",
-          "fingerprint": "8d8cb9d6cdf828caf9469aea2b61c78ae723b7bc",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "SCOTUS ruling allows lawsuits over property seized by Cuban government",
-          "url": "https://abcnews.com/Politics/scotus-ruling-allows-lawsuits-property-seized-cuban-government/story?id=133193193",
-          "fingerprint": "d4820dafc91dfec48a4334c6cda330d512f06edd",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
-          "url": "https://abcnews.com/Politics/republicans-eyeing-restrictions-trumps-anti-weaponization-fund-tossing/story?id=133181779",
-          "fingerprint": "4945fa92006ec6288f1e69bbeaf6575ac8d5a799",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Democrats' 2024 election autopsy blames Biden campaign for failing to set up Harris",
-          "url": "https://abcnews.com/Politics/democrats-release-2024-election-autopsy-report/story?id=133187401",
-          "fingerprint": "02ca5d227d5be65600cd47fe5b129d7e3fde3658",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Former Epstein assistant tells House Oversight Committee he abused her for years",
-          "url": "https://abcnews.com/US/former-epstein-assistant-house-committee/story?id=133153223",
-          "fingerprint": "93361e414c4f2001f8c1f88f3fe282237f22f90e",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Supreme Court narrowly spares 'intellectually disabled' man from execution",
-          "url": "https://abcnews.com/Politics/supreme-court-narrowly-spares-intellectually-disabled-murderer-execution/story?id=133187107",
-          "fingerprint": "2648e62aa96cbcbd277f204bc96793b06ec259f0",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Gas prices soar as millions of drivers set to hit the road for Memorial Day",
-          "url": "https://abcnews.com/GMA/Travel/high-gas-prices-affecting-us-commutes-cities/story?id=132848629",
-          "fingerprint": "2e8122568841d3cbbab303d9cfbfe270c72aaf9a",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-22T07-56-38-881Z",
       "observedAt": "2026-05-22T07:56:41.474Z",
@@ -7696,6 +7618,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-23T18:56:38.735Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-23T19:17:22.293Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
