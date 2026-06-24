@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-24T16:31:46.929Z",
+  "generatedAt": "2026-06-24T18:22:06.641Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-22T23-35-49-609Z",
-      "observedAt": "2026-05-22T23:35:52.498Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "breakingRapper Rob Base, known for 'It Takes Two,' dies at 59",
-          "url": "https://abcnews.com/GMA/Culture/rapper-rob-base-takes-dies-59-after-private/story?id=133238407",
-          "fingerprint": "60c371a6fbe59f82f2579b92a50426138270b020",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Trump's 'Anti-Weaponization Fund' faces additional lawsuits",
-          "url": "https://abcnews.com/US/trumps-anti-weaponization-fund-faces-2nd-federal-lawsuit/story?id=133228507",
-          "fingerprint": "36e15ce3165a5ce8ed1a2e118ef945f710147fef",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Trump lashes out at Republicans amid revolt over $1.8B 'Anti-Weaponization Fund'",
-          "url": "https://abcnews.com/Politics/trump-lashes-republicans-amid-revolt-18b-anti-weaponization/story?id=133220270",
-          "fingerprint": "ac0b2f51859ab1b78592d8eb7d08bf174d35b4b5",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Senate goes on break amid GOP plan to curtail Trump 'anti-weaponization' funding",
-          "url": "https://abcnews.com/Politics/republicans-eyeing-restrictions-trumps-anti-weaponization-fund-tossing/story?id=133181779",
-          "fingerprint": "4945fa92006ec6288f1e69bbeaf6575ac8d5a799",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Evacuation orders issued in Calif. city over chemical tank: 'It fails or it blows up'",
-          "url": "https://abcnews.com/US/evacuation-orders-issued-california-city-chemical-tank-fails/story?id=133234846",
-          "fingerprint": "563b149cebececb26841070b7ac33c736c07335a",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "SpaceX launches its biggest, most beefed-up Starship yet on a test flight",
-          "url": "https://abcnews.com/Technology/wireStory/spacex-launches-biggest-beefed-starship-test-flight-133238216",
-          "fingerprint": "de5fa5533b27ad16c71f3a93b506649acced6ffd",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "NASCAR great Kyle Busch was coughing up blood day before he died, 911 call says",
-          "url": "https://abcnews.com/US/nascar-great-kyle-busch-coughing-blood-day-died/story?id=133228671",
-          "fingerprint": "084993e1b4e972de8b3620d74eff98003ab0c008",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Federal judge dismisses human smuggling case against Kilmar Abrego Garcia",
-          "url": "https://abcnews.com/US/federal-judge-dismisses-tennessee-criminal-case-kilmar-abrego/story?id=133232491",
-          "fingerprint": "05681881febe17f56058ed7e27dde19f30ab8705",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Family of woman who died after Tim Hortons altercation to view full video of incident",
-          "url": "https://abcnews.com/US/family-indiana-woman-died-after-tim-hortons-altercation/story?id=133231558",
-          "fingerprint": "6a580c5dbc643174c64a77db8430d52f6c5857c5",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Miley Cyrus receives star on Hollywood Walk of Fame",
-          "url": "https://abcnews.com/GMA/Culture/miley-cyrus-receives-star-hollywood-walk-fame/story?id=133231270",
-          "fingerprint": "12c94a7a03d0aa2a438db45ea88b1167bf824ba9",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-23T01-27-26-339Z",
       "observedAt": "2026-05-23T01:27:29.362Z",
@@ -7057,6 +6979,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-24T16:31:46.929Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-24T18:22:06.641Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
