@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-25T21:17:40.846Z",
+  "generatedAt": "2026-06-25T23:02:03.417Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-23T19-52-09-359Z",
-      "observedAt": "2026-05-23T19:52:12.267Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Evacuation orders issued for 50,000 people in California over explosion threat",
-          "url": "https://abcnews.com/US/evacuation-orders-issued-california-city-chemical-tank-fails/story?id=133234846",
-          "fingerprint": "8e3155dbd33d60c5cf83359ddbc1d46c278606c0",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "6.0 magnitude earthquake detected off Hawaii coast",
-          "url": "https://abcnews.com/US/59-magnitude-earthquake-detected-off-hawaii-coast/story?id=133246693",
-          "fingerprint": "18179edc25dbbbe11e35cffbae40c4bfff731092",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "'Subway surfer' killed, another critically injured in Manhattan",
-          "url": "https://abcnews.com/US/teen-dead-18-year-critical-after-subway-surfing/story?id=133250510",
-          "fingerprint": "222e70807c1a585fe562a906dc9bf1a765b3a36b",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "NASCAR legend Kyle Busch's family reveals his cause of death",
-          "url": "https://abcnews.com/US/nascar-legend-kyle-buschs-family-reveals-cause-death/story?id=133253540",
-          "fingerprint": "e03520e17262ac957f197814dff6f97670a0d0e9",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Good dog! More children’s hospitals turn to furry caregivers to help kids heal",
-          "url": "https://abcnews.com/Lifestyle/wireStory/good-dog-childrens-hospitals-turn-furry-caregivers-kids-133247291",
-          "fingerprint": "e1c6057dbe5880d58718fd67f0cd55ce0f765d61",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Trump's Justice Department scrubs its website of news releases about Jan. 6 defendants",
-          "url": "https://abcnews.com/US/wireStory/trumps-justice-department-scrubs-website-news-releases-jan-133248135",
-          "fingerprint": "a0b780754af649943ea64840dc859fc042848889",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Why travel restrictions may have unintended effects as US bars some amid Ebola",
-          "url": "https://abcnews.com/Health/travel-restrictions-unintended-consequences-us-bars-visitors-amid/story?id=133181426",
-          "fingerprint": "0f5358aa3d64a9900aa4f9a1b2485f0ab7474ea2",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Rapper Rob Base, known for 'It Takes Two,' dies at 59",
-          "url": "https://abcnews.com/GMA/Culture/rapper-rob-base-takes-dies-59-after-private/story?id=133238407",
-          "fingerprint": "1388d19079bed066c76fbd331ca26d5c00e194bc",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Miley Cyrus receives star on Hollywood Walk of Fame",
-          "url": "https://abcnews.com/GMA/Culture/miley-cyrus-receives-star-hollywood-walk-fame/story?id=133231270",
-          "fingerprint": "12c94a7a03d0aa2a438db45ea88b1167bf824ba9",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "82 dead, 9 trapped in China coal mine accident",
-          "url": "https://abcnews.com/International/4-dead-90-trapped-coal-mine-accident-northern/story?id=133238116",
-          "fingerprint": "1a870a44b2141ed3caaba8c875ff31aef8ad3668",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-23T20-37-48-842Z",
       "observedAt": "2026-05-23T20:37:51.923Z",
@@ -6205,6 +6127,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-25T21:17:40.846Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-25T23:02:03.417Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
