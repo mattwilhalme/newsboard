@@ -1,176 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-06-26T00:21:56.748Z",
+  "generatedAt": "2026-06-26T04:54:35.616Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-06-25T12:32:03.037+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Passengers restrain pilot during apparent medical emergency on 'terrifying' flight",
-      "url": "https://abcnews.com/US/passengers-restrain-pilot-apparent-medical-emergency-terrifying-flight/story?id=134186861"
-    },
-    {
-      "ts": "2026-06-25T12:32:04.957+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Powerful back-to-back earthquakes kill at least 164 people in Venezuela",
-      "url": "https://cbsnews.com/news/7-1-magnitude-earthquake-venezuela-tsunami-advisory-puerto-rico-virgin-islands"
-    },
-    {
-      "ts": "2026-06-25T12:32:05.41+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "5 reasons why this El Niño is going to be a big deal",
-      "url": "https://usatoday.com/story/news/nation/2026/06/25/strong-el-nino-growing-2026/90608470007"
-    },
-    {
-      "ts": "2026-06-25T12:32:05.928+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Civil rights, moon landings and war wins: What Americans see as the country’s greatest achievements",
-      "url": "https://nbcnews.com/politics/politics-news/civil-rights-moon-landings-war-wins-americans-see-countrys-greatest-ac-rcna351598"
-    },
-    {
-      "ts": "2026-06-25T12:32:10.978+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Venezuela rocked by its strongest earthquake in a century",
-      "url": "https://cnn.com/2026/06/24/weather/live-news/venezuela-earthquake-puerto-rico-tsunami"
-    },
-    {
-      "ts": "2026-06-25T12:32:12.454+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘Degrading’: Why did a US fighter pilot avoid British trial after strangling a woman in England?",
-      "url": "https://theguardian.com/uk-news/ng-interactive/2026/jun/25/us-fighter-pilot-strangled-woman-england-why-military-trial"
-    },
-    {
-      "ts": "2026-06-25T12:32:12.858+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "At least 164 dead and 971 injured after powerful quakes rock Venezuela, acting president says",
-      "url": "https://apnews.com/article/venezuela-earthquake-caracas-rodriguez-aid-0a62e6fc9feb5202a750c4fbb11a6aec"
-    },
-    {
-      "ts": "2026-06-25T12:32:13.319+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "California’s ‘first partner’ targeted by Trump, Newsom says. Here is what we know about her career, finances",
-      "url": "https://latimes.com/california/story/2026-06-25/newsom-says-wife-is-target-of-trump-heres-what-we-know-of-her-finances"
-    },
-    {
-      "ts": "2026-06-25T12:32:13.736+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "The Americas",
-      "url": "https://npr.org/sections/latin-america"
-    },
-    {
-      "ts": "2026-06-25T12:32:14.445+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Oil price falls back to pre-Iran war levels",
-      "url": "https://bbc.com/news/articles/c0jy7d7wzv4o"
-    },
-    {
-      "ts": "2026-06-25T12:32:14.835+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Senate Republicans flip on Iran war powers vote after fiery meeting with Trump",
-      "url": "https://foxnews.com/politics/closed-door-outburst-turns-victory-trumps-iran-negotiations"
-    },
-    {
-      "ts": "2026-06-25T12:32:15.108+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Death toll rises again as powerful earthquakes rock Venezuela",
-      "url": "https://yahoo.com/news/world/live/venezuela-earthquakes-live-updates-at-least-164-dead-and-nearly-1000-injured-after-powerful-twin-tremors-065127841.html"
-    },
-    {
-      "ts": "2026-06-25T15:31:56.688+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Supreme Court allows Trump administration's cancellation of TPS for Haitians, Syrians",
-      "url": "https://abcnews.com/Politics/supreme-court-allows-trump-administrations-cancellation-tps-haitians/story?id=132122359"
-    },
-    {
-      "ts": "2026-06-25T15:31:58.131+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Supreme Court lets Trump strip deportation protections from Syrians, Haitians",
-      "url": "https://cbsnews.com/news/supreme-court-temporary-protected-status-syrians-haitians"
-    },
-    {
-      "ts": "2026-06-25T15:31:58.486+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Social Security change coming for 3.6 million beneficiaries",
-      "url": "https://usatoday.com/story/money/2026/06/24/social-security-direct-express-debit-cards/90677213007"
-    },
-    {
-      "ts": "2026-06-25T15:31:58.708+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Supreme Court allows Trump to remove protections from thousands of Haitian and Syrian immigrants",
-      "url": "https://nbcnews.com/politics/supreme-court/supreme-court-allows-trump-remove-protections-thousands-haitian-syrian-rcna263164"
-    },
-    {
-      "ts": "2026-06-25T15:32:13.652+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Supreme Court gives Trump major wins on two immigration cases",
-      "url": "https://cnn.com/2026/06/25/politics/live-news/supreme-court-issues-opinions"
-    },
-    {
-      "ts": "2026-06-25T15:32:14.852+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Venezuela capital hit by double earthquake as experts warn of high death toll",
-      "url": "https://theguardian.com/world/2026/jun/25/earthquake-venezuela-caracas-tremors-aftershocks"
-    },
-    {
-      "ts": "2026-06-25T15:32:15.213+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Supreme Court allows Trump administration to end legal protections for Haitians and Syrians",
-      "url": "https://apnews.com/article/immigration-supreme-court-haiti-syria-tps-1bbbf8115f984a0d53336656924e989d"
-    },
-    {
-      "ts": "2026-06-25T15:32:27.268+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Venezuela earthquake: Staggering destruction signals urgent warning for California",
-      "url": "https://latimes.com/world-nation/story/2026-06-24/venezuela-earthquake-staggering-destruction-is-urgent-warning-for-california"
-    },
-    {
-      "ts": "2026-06-25T15:32:27.618+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Trump can begin deportations of Syrian and Haitian TPS holders, Supreme Court says",
-      "url": "https://npr.org/2026/06/25/nx-s1-5844292/supreme-court-syrian-haitian-tps"
-    },
-    {
-      "ts": "2026-06-25T15:32:28.3+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Supreme Court allows Trump to restrict asylum seekers at border",
-      "url": "https://bbc.com/news/articles/c4g8ym422lko"
-    },
-    {
-      "ts": "2026-06-25T15:32:28.569+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "WATCH: Anna Paulina Luna leads House blockade over Trump's stalled voter ID push",
-      "url": "https://foxnews.com/politics/as-long-takes-trump-allies-freeze-house-floor-pressure-senate-voter-id-bill"
-    },
-    {
-      "ts": "2026-06-25T15:32:28.791+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Death toll could exceed 10,000 following powerful earthquakes in Venezuela",
-      "url": "https://yahoo.com/news/world/live/venezuela-earthquakes-live-updates-at-least-164-dead-and-nearly-1000-injured-after-powerful-twin-tremors-065127841.html"
-    },
     {
       "ts": "2026-06-25T17:36:36.27+00:00",
       "source_id": "abc1",
@@ -586,6 +418,90 @@
     },
     {
       "ts": "2026-06-26T00:21:53.182+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "Housing affordability bill moves to Trump after White House signing confusion",
+      "url": "https://yahoo.com/finance/economy/policy/article/housing-affordability-bill-is-headed-for-trumps-desk-starting-10-day-clock-for-him-to-sign-or-veto-175808277.html"
+    },
+    {
+      "ts": "2026-06-26T04:54:14.213+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "'It's completely out of bounds': Democrat launches Linda McMahon impeachment effort",
+      "url": "https://abcnews.com/Politics/completely-bounds-democrat-efforts-education-secretary-impeachment/story?id=134219766"
+    },
+    {
+      "ts": "2026-06-26T04:54:15.952+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "Cassidy says he passed a note to Witkoff during heated Trump meeting",
+      "url": "https://cbsnews.com/news/bill-cassidy-trump-senate-meeting-iran-vote-steve-witkoff"
+    },
+    {
+      "ts": "2026-06-26T04:54:16.445+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Giant Colorado River reservoir at risk of environmental catastrophe",
+      "url": "https://usatoday.com/story/news/nation/2026/06/25/why-lake-powell-risk-dead-pool/89557878007"
+    },
+    {
+      "ts": "2026-06-26T04:54:16.885+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "U.S. falls to Turkey 3-2 on goal in final seconds; Americans advance to round of 32 of World Cup anyway",
+      "url": "https://nbcnews.com/sports/soccer/live-blog/fifa-world-cup-games-2026-june-25-live-updates-rcna351748"
+    },
+    {
+      "ts": "2026-06-26T04:54:28.296+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Iran strikes cargo vessel in the Strait of Hormuz",
+      "url": "https://cnn.com/2026/06/25/middleeast/un-pauses-hormuz-evacuation-after-us-says-iran-behind-attack-intl-latam"
+    },
+    {
+      "ts": "2026-06-26T04:54:29.677+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "‘Degrading’: Why did a US fighter pilot avoid British trial after strangling a woman in England?",
+      "url": "https://theguardian.com/uk-news/ng-interactive/2026/jun/25/us-fighter-pilot-strangled-woman-england-why-military-trial"
+    },
+    {
+      "ts": "2026-06-26T04:54:30.28+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "Neighbors dig through Venezuela rubble to search for loved ones after 2 deadly earthquakes",
+      "url": "https://apnews.com/article/venezuela-caracas-guaira-earthquakes-dead-injured-missing-b07aff1cb886cfe616a0e89b3687b8b8"
+    },
+    {
+      "ts": "2026-06-26T04:54:30.765+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Rotting meat, foul smell at site of Boyle Heights warehouse fire",
+      "url": "https://latimes.com/california/story/2026-06-25/rotting-meat-foul-smell-at-site-of-boyle-heights-warehouse-fire"
+    },
+    {
+      "ts": "2026-06-26T04:54:31.095+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "The Americas",
+      "url": "https://npr.org/sections/latin-america"
+    },
+    {
+      "ts": "2026-06-26T04:54:31.601+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "Rescuers search rubble for survivors as Venezuela earthquakes kill at least 235",
+      "url": "https://bbc.com/news/articles/cjegdqw5d3yo"
+    },
+    {
+      "ts": "2026-06-26T04:54:31.849+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Trump issues fresh Iran update after IRGC drone strike on cargo ship in Strait of Hormuz",
+      "url": "https://foxnews.com/live-news/us-iran-peace-deal-nuclear-talks-israel-lebanon-conflict-june-25-2026"
+    },
+    {
+      "ts": "2026-06-26T04:54:32.07+00:00",
       "source_id": "yahoo1",
       "kind": "headline",
       "title": "Housing affordability bill moves to Trump after White House signing confusion",
