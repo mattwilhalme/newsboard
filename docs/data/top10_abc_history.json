@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-27T05:35:55.690Z",
+  "generatedAt": "2026-06-27T08:15:27.121Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-24T16-38-33-609Z",
-      "observedAt": "2026-05-24T16:38:36.481Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Rubio says 'significant progress' made in Iran talks",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-saudi-arabia-uae-condemn-fresh?id=133061203",
-          "fingerprint": "54c3260b3148a428baab31403d255d7a306a0bcb",
-          "related_links": [
-            {
-              "title": "Trump says his proposal Iran deal ‘the exact opposite’ of former President Obama’s",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-saudi-arabia-uae-condemn-fresh?entryId=133268212&id=133061203"
-            },
-            {
-              "title": "Trump posts AI image of US drone destroying Iranian ships after announcing ‘agreement’ with Iran",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-saudi-arabia-uae-condemn-fresh?entryId=133266062&id=133061203"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "Rep. Suozzi calls on Republicans to 'stand up' to stop 'anti-weaponization fund'",
-          "url": "https://abcnews.com/Politics/rep-suozzi-calls-republicans-stand-stop-anti-weaponization/story?id=133265112",
-          "fingerprint": "7d9abd4d3aa3b669de4748c61442af08e7c13fa0",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service",
-          "url": "https://abcnews.com/US/white-house-lawn-cleared-after-apparent-gunshots/story?id=133257965",
-          "fingerprint": "afd422678e44b0a6c74de24113196e0e646889af",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Russia launched Oreshnik ballistic missile in deadly Kyiv strikes, Zelenskyy says",
-          "url": "https://abcnews.com/International/russia-launches-severe-deadly-missile-attack-kyiv-zelenskyy/story?id=133263804",
-          "fingerprint": "9ddc30e9a626d1f096796ab85c4353fd2633cfc3",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "50,000 under evacuation orders in Southern Calif. over chemical tank explosion threat",
-          "url": "https://abcnews.com/US/evacuation-orders-issued-california-city-chemical-tank-fails/story?id=133234846",
-          "fingerprint": "9d830aa152494b5cba146cac08fa5a06a1cdc20f",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "NASCAR legend Kyle Busch's family reveals his cause of death",
-          "url": "https://abcnews.com/US/nascar-legend-kyle-buschs-family-reveals-cause-death/story?id=133253540",
-          "fingerprint": "e03520e17262ac957f197814dff6f97670a0d0e9",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "9-story building under construction in the Philippines collapses; 21 missing",
-          "url": "https://abcnews.com/International/wireStory/9-story-building-constructed-philippines-collapses-trapping-dozens-133261711",
-          "fingerprint": "ec855cb80f9e2c068a4b4d43599b06919c0fe805",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "'Subway surfer' killed, another critically injured in Manhattan",
-          "url": "https://abcnews.com/US/teen-dead-18-year-critical-after-subway-surfing/story?id=133250510",
-          "fingerprint": "222e70807c1a585fe562a906dc9bf1a765b3a36b",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Australia sees second fatal shark attack in a week",
-          "url": "https://abcnews.com/International/wireStory/spearfisher-mauled-great-barrier-reef-australias-fatal-shark-133264225",
-          "fingerprint": "c77938eab59a809d7abca6d767c7446670751433",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Several crises impede Ebola outbreak response",
-          "url": "https://abcnews.com/Health/wireStory/attacks-ebola-treatment-centers-problems-affecting-congos-outbreak-133266531",
-          "fingerprint": "e99229d2f2197d4fbf70bd9a14d5e39af127a585",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-24T17-39-02-135Z",
       "observedAt": "2026-05-24T17:39:05.446Z",
@@ -5237,6 +5150,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-27T05:35:55.690Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-27T08:15:27.121Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
