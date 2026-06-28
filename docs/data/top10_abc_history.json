@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-28T10:54:01.070Z",
+  "generatedAt": "2026-06-28T12:20:46.585Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-25T19-45-42-546Z",
-      "observedAt": "2026-05-25T19:45:45.378Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Trump honors troops killed in Iran war during Memorial Day remarks",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio?id=133278077",
-          "fingerprint": "8c7c0c00f22bfb24a299ca278318171cb75368b5",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Rubio says 'significant progress' made in Iran talks",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-saudi-arabia-uae-condemn-fresh?id=133061203",
-          "fingerprint": "6d0506abb3ae2532d042ed436c93b917e2746e2f",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "California chemical tank no longer under threat of catastrophic explosion: Officials",
-          "url": "https://abcnews.com/US/chemical-tank-southern-california-longer-threat-explosion-officials/story?id=133286870",
-          "fingerprint": "0b9efd96a7f2066c96aef4904bef495467efb940",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Hiker rescued after being stuck in crevice for hours",
-          "url": "https://abcnews.com/GMA/News/forest-ranger-details-dramatic-cave-rescue-man-stuck/story?id=133282665",
-          "fingerprint": "ffed7afe77c122889c36544c1d79da6790faefb3",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "DOJ filing invokes weekend White House shooting in ballroom case",
-          "url": "https://abcnews.com/US/doj-filing-invokes-weekend-white-house-shooting-ballroom/story?id=133279065",
-          "fingerprint": "ee7f1e3ddea453fda7f3342e251a74849c40b8d6",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Pope calls for robust regulation of AI in manifesto",
-          "url": "https://abcnews.com/International/wireStory/pope-calls-robust-regulation-ai-manifesto-ponders-future-133279924",
-          "fingerprint": "f3b3b3045ccbb2966c7a96c5e50f0a5144d8a3d8",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Rep. Suozzi calls on Republicans to 'stand up' to stop 'anti-weaponization fund'",
-          "url": "https://abcnews.com/Politics/rep-suozzi-calls-republicans-stand-stop-anti-weaponization/story?id=133265112",
-          "fingerprint": "7d9abd4d3aa3b669de4748c61442af08e7c13fa0",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Suspect dead, bystander wounded after gunfire near White House: Secret Service",
-          "url": "https://abcnews.com/US/white-house-lawn-cleared-after-apparent-gunshots/story?id=133257965",
-          "fingerprint": "afd422678e44b0a6c74de24113196e0e646889af",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Ebola outbreak in DRC, Uganda 'will get worse before it gets better,' WHO chief warns",
-          "url": "https://abcnews.com/International/ebola-outbreak-drc-uganda-worse-gets-chief/story?id=133287089",
-          "fingerprint": "59e5134145ec5a3f26df87b1ca34be72d3688baf",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "19 injured in festival crowd stampede triggered by person running: Officials",
-          "url": "https://abcnews.com/US/19-injured-crowd-stampede-south-carolina-motorcycle-festival/story?id=133270496",
-          "fingerprint": "ebd141cb5abb0885002a62fb80a7151ca1104993",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-25T20-54-36-480Z",
       "observedAt": "2026-05-25T20:54:39.305Z",
@@ -4162,6 +4084,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-28T10:54:01.070Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-28T12:20:46.585Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
