@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-29T01:39:37.726Z",
+  "generatedAt": "2026-06-29T07:02:45.142Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-26T19-38-10-527Z",
-      "observedAt": "2026-05-26T19:38:13.584Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Fatalities confirmed after chemical tank ruptures at Washington state facility",
-          "url": "https://abcnews.com/US/multiple-injuries-reported-chemical-explosion-facility-washington-state/story?id=133316638",
-          "fingerprint": "50d6a15c34abc8caed665338c8d737188b8bbbfd",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "South Carolina Senate effectively kills proposed congressional map backed by Trump",
-          "url": "https://abcnews.com/Politics/south-carolina-senate-effectively-kills-proposed-congressional-map/story?id=133321324",
-          "fingerprint": "ceb1043baa5897ae1d597f9cc4e23f35c61ac0bf",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Trump says Walter Reed medical exam went ‘perfectly’",
-          "url": "https://abcnews.com/US/trump-visit-walter-reed-tuesday-3rd-time-returning/story?id=133306805",
-          "fingerprint": "33c2edf92cc79b78f2fbec97fbc1ea5bc492fbbd",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Construction underway on UFC Octagon at White House for Flag Day fights",
-          "url": "https://abcnews.com/Politics/construction-underway-ufc-octagon-white-house-flag-day/story?id=133316489",
-          "fingerprint": "6c04047266910986eb27a467ef8a87d8c4d6af68",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Iran live updates: Iran's internet blackout partially lifted",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio?id=133278077",
-          "fingerprint": "2e90f26da27d9eb74f8b6ef06eea62829ff333a8",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Ebola outbreak could become 'the deadliest on record,' IRC warns",
-          "url": "https://abcnews.com/International/ebola-outbreak-risks-becoming-deadliest-record-irc-warns/story?id=133305446",
-          "fingerprint": "fa5f7ed5804ce83b0b6cd34a0b9eea56938192f1",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Couple details encounter with 'one of the most dangerous' sharks",
-          "url": "https://abcnews.com/GMA/News/couple-recounts-close-encounter-shark-kayaking/story?id=133307527",
-          "fingerprint": "f40c6ed69df5262a55e487cac35f46ec914669ee",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Woman loses thousands to scammer using suspected AI to mimic daughter's voice",
-          "url": "https://abcnews.com/GMA/News/woman-loses-thousands-scammer-suspected-ai-mimic-daughters/story?id=133307515",
-          "fingerprint": "b1261aadcd1d7cd49ee740ac43f134a12198eb07",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "2026 AMAs host Queen Latifah brings partner, son to red carpet",
-          "url": "https://abcnews.com/GMA/Culture/biggest-moments-2026-american-music-awards/story?id=133307112",
-          "fingerprint": "d9bd1d50345710283f38fc9aabbbe94839edf276",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Federal court blocks Alabama redistricting effort",
-          "url": "https://abcnews.com/Politics/federal-court-blocks-alabama-effort-gop-friendly-congressional/story?id=133314583",
-          "fingerprint": "cb2ca640d14094f8673b7c7f0a8f45c4670dfa85",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-26T21-18-29-989Z",
       "observedAt": "2026-05-26T21:18:32.899Z",
@@ -3514,6 +3436,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-29T01:39:37.726Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-29T07:02:45.142Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
