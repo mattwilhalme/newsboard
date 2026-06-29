@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-29T12:11:13.789Z",
+  "generatedAt": "2026-06-29T12:52:50.612Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-26T22-43-11-774Z",
-      "observedAt": "2026-05-26T22:43:14.753Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "NASA reveals new details on plan to build a base on the moon",
-          "url": "https://abcnews.com/Technology/nasa-reveals-new-details-plan-build-base-moon/story?id=133325738",
-          "fingerprint": "ffc76888a60287fc64cb8a554030029bbaedf81f",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Fatalities confirmed after chemical tank ruptures at pulp and paper mill",
-          "url": "https://abcnews.com/US/multiple-injuries-reported-chemical-explosion-facility-washington-state/story?id=133316638",
-          "fingerprint": "4dacbf9338850874a8180564e323e411d38d025f",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "South Carolina Senate effectively kills proposed congressional map backed by Trump",
-          "url": "https://abcnews.com/Politics/south-carolina-senate-effectively-kills-proposed-congressional-map/story?id=133321324",
-          "fingerprint": "ceb1043baa5897ae1d597f9cc4e23f35c61ac0bf",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Trump says Walter Reed medical exam went ‘perfectly’",
-          "url": "https://abcnews.com/US/trump-visit-walter-reed-tuesday-3rd-time-returning/story?id=133306805",
-          "fingerprint": "33c2edf92cc79b78f2fbec97fbc1ea5bc492fbbd",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Construction underway on UFC Octagon at White House for Flag Day fights",
-          "url": "https://abcnews.com/Politics/construction-underway-ufc-octagon-white-house-flag-day/story?id=133316489",
-          "fingerprint": "6c04047266910986eb27a467ef8a87d8c4d6af68",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "USMNT announces World Cup roster: See who will compete",
-          "url": "https://abcnews.com/GMA/Culture/us-mens-world-cup-roster-2026/story?id=133315353",
-          "fingerprint": "27148b354a75bfad4bb424c554b194f30b0a10e6",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Iran live updates: Iran's internet blackout partially lifted",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio?id=133278077",
-          "fingerprint": "2e90f26da27d9eb74f8b6ef06eea62829ff333a8",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Woman loses thousands to scammer using suspected AI to mimic daughter's voice",
-          "url": "https://abcnews.com/GMA/News/woman-loses-thousands-scammer-suspected-ai-mimic-daughters/story?id=133307515",
-          "fingerprint": "b1261aadcd1d7cd49ee740ac43f134a12198eb07",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "'Toy Story 5' gets final trailer, Bad Bunny joins film's voice cast",
-          "url": "https://abcnews.com/GMA/Culture/toy-story-5-gets-final-trailer-bad-bunny/story?id=133321328",
-          "fingerprint": "06158e13cfc66a216a14c935033adfb910c0ed30",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Ruling temporarily blocks Mahmoud Khalil's removal",
-          "url": "https://abcnews.com/US/appeals-court-ruling-prevent-mahmoud-khalils-removal-seeks/story?id=133324855",
-          "fingerprint": "d9e62a137e8a5c89176698fe637ef259f0883849",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-26T23-50-07-195Z",
       "observedAt": "2026-05-26T23:50:10.126Z",
@@ -3372,6 +3294,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-29T12:11:13.789Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-29T12:52:50.612Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
