@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-29T15:04:32.987Z",
+  "generatedAt": "2026-06-29T15:49:28.049Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-27T06-12-58-032Z",
-      "observedAt": "2026-05-27T06:13:01.940Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Biden sues DOJ to block release of audio recordings tied to special counsel probe",
-          "url": "https://abcnews.com/Politics/biden-sues-doj-block-release-audio-recordings-tied/story?id=133331055",
-          "fingerprint": "c0fce1fc9a98067661cd4284bc884ecefb9bc38f",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Texas GOP Senate runoff: Trump-backed Paxton projected to beat Cornyn",
-          "url": "https://abcnews.com/Politics/texas-senate-runoff-tests-trumps-influence/story?id=133079118",
-          "fingerprint": "85aad70f7e279227da1fb4709ecbef6a2a1a01de",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "1 dead, 9 missing after chemical tank ruptures at pulp and paper mill",
-          "url": "https://abcnews.com/US/multiple-injuries-reported-chemical-explosion-facility-washington-state/story?id=133316638",
-          "fingerprint": "dbe9da04bc79ead6943a248404ec4c59285166f8",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "NASA reveals new details on plan to build a base on the moon",
-          "url": "https://abcnews.com/Technology/nasa-reveals-new-details-plan-build-base-moon/story?id=133325738",
-          "fingerprint": "ffc76888a60287fc64cb8a554030029bbaedf81f",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "ICE detainees are dying by suicide at an 'alarming' rate, an AP investigation finds",
-          "url": "https://abcnews.com/US/wireStory/ice-detainees-dying-suicide-alarming-rate-ap-investigation-133335921",
-          "fingerprint": "d7885fdf66ee7d95c12d3e3dea29682ab7c2425f",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Trump says Walter Reed medical exam went ‘perfectly’",
-          "url": "https://abcnews.com/US/trump-visit-walter-reed-tuesday-3rd-time-returning/story?id=133306805",
-          "fingerprint": "33c2edf92cc79b78f2fbec97fbc1ea5bc492fbbd",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Construction underway on UFC Octagon at White House for Flag Day fights",
-          "url": "https://abcnews.com/Politics/construction-underway-ufc-octagon-white-house-flag-day/story?id=133316489",
-          "fingerprint": "6c04047266910986eb27a467ef8a87d8c4d6af68",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Son of Mango clothing founder steps down after arrest related to father's death",
-          "url": "https://abcnews.com/International/son-mango-clothing-retailer-founder-steps-after-arrest/story?id=133324089",
-          "fingerprint": "0a2ed4daaf0553008b806c1fef90fc8969f5126c",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Iran live updates: Iran's internet blackout partially lifted",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio?id=133278077",
-          "fingerprint": "2e90f26da27d9eb74f8b6ef06eea62829ff333a8",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Ruling temporarily blocks Mahmoud Khalil's removal",
-          "url": "https://abcnews.com/US/appeals-court-ruling-prevent-mahmoud-khalils-removal-seeks/story?id=133324855",
-          "fingerprint": "d9e62a137e8a5c89176698fe637ef259f0883849",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-27T10-21-27-050Z",
       "observedAt": "2026-05-27T10:21:29.852Z",
@@ -3159,6 +3081,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-29T15:04:32.987Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-29T15:49:28.049Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
