@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-29T16:24:20.876Z",
+  "generatedAt": "2026-06-29T16:27:08.294Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-27T13-54-42-156Z",
-      "observedAt": "2026-05-27T13:54:45.195Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Cornyn’s defeat leaves Republicans with a more vulnerable Senate nominee: ANALYSIS",
-          "url": "https://abcnews.com/Politics/cornyns-defeat-leaves-republicans-vulnerable-senate-nominee-analysis/story?id=133333431",
-          "fingerprint": "a896db1e5b29eff80fdaf4e807ea4bfa39d8a556",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:Texas GOP Senate runoff: Trump-backed Paxton projected to beat Cornyn",
-          "url": "https://abcnews.com/Politics/texas-senate-runoff-tests-trumps-influence/story?id=133079118",
-          "fingerprint": "2f7b5cbf5148aa54844fc564fc8beb4db45a43aa",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Biden sues DOJ to block release of audio recordings tied to special counsel probe",
-          "url": "https://abcnews.com/Politics/biden-sues-doj-block-release-audio-recordings-tied/story?id=133331055",
-          "fingerprint": "c0fce1fc9a98067661cd4284bc884ecefb9bc38f",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "1 dead, 9 missing after chemical tank ruptures at pulp and paper mill",
-          "url": "https://abcnews.com/US/multiple-injuries-reported-chemical-explosion-facility-washington-state/story?id=133316638",
-          "fingerprint": "dbe9da04bc79ead6943a248404ec4c59285166f8",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Laos cave operation locates 5 people, search group says, with 2 still missing",
-          "url": "https://abcnews.com/International/laos-cave-operation-rescues-5-people-search-group/story?id=133340194",
-          "fingerprint": "2f508be2b252795db592b2362fddd55d9f82d673",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Minneapolis police chief resigns after interfering with an investigation, mayor says",
-          "url": "https://abcnews.com/US/wireStory/minneapolis-police-chief-resigns-after-interfering-investigation-mayor-133336737",
-          "fingerprint": "a03b5ae57a53a6b88ad3b486f0a3d5e796df4641",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Ferrari's first electric vehicle met with market skepticism",
-          "url": "https://abcnews.com/Business/wireStory/ferraris-electric-vehicle-met-market-skepticism-133326710",
-          "fingerprint": "c6d34dc6dea29b5b42cb376d6b8786cbeb49c4f4",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "New guidelines could help millions more Americans get colon cancer testing",
-          "url": "https://abcnews.com/US/new-guidelines-millions-americans-colon-cancer-testing/story?id=133323435",
-          "fingerprint": "fac4cdceebb91a0a00685f5f38c005bb7b40b0ce",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "ICE detainees are dying by suicide at an 'alarming' rate, an AP investigation finds",
-          "url": "https://abcnews.com/US/wireStory/ice-detainees-dying-suicide-alarming-rate-ap-investigation-133335921",
-          "fingerprint": "d7885fdf66ee7d95c12d3e3dea29682ab7c2425f",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Lawyer says tourist accused of hurling rock at Hawaiian monk seal has been threatened",
-          "url": "https://abcnews.com/US/wireStory/lawyer-tourist-accused-hurling-rock-hawaiian-monk-seal-133335831",
-          "fingerprint": "a128b5627a0de86ae0a2e999b353178842d613a8",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-27T16-58-04-229Z",
       "observedAt": "2026-05-27T16:58:07.191Z",
@@ -3017,6 +2939,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-29T16:24:20.876Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-29T16:27:08.294Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
