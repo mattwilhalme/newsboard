@@ -1,86 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-29T18:32:56.255Z",
+  "generatedAt": "2026-06-29T20:30:30.521Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-05-28T01-50-34-249Z",
-      "observedAt": "2026-05-28T01:50:37.183Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: US conducts new airstrikes in southern Iran, US official says",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio?id=133278077",
-          "fingerprint": "f2665aba759440c1793aa1a4ba6bccf9cf31ae63",
-          "related_links": []
-        },
-        {
-          "rank": 2,
-          "title": "Related:'I don't care about the midterms': Trump says he's in no rush to reach deal with Iran",
-          "url": "https://abcnews.com/Politics/care-midterms-trump-makes-clear-rush-reach-deal/story?id=133357778",
-          "fingerprint": "d433907a8499fba120ee3cd08e6087006db3a1d7",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "DOJ launches criminal probe into E. Jean Carroll: Sources",
-          "url": "https://abcnews.com/US/doj-launches-criminal-probe-jean-carroll-sources/story?id=133367551",
-          "fingerprint": "3b95d45e28eeb72f8482c001eaaebac5f690f49c",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "Jill Biden says she thought Joe Biden was having a stroke during 2024 debate",
-          "url": "https://abcnews.com/Politics/jill-biden-thought-joe-biden-stroke-2024-debate/story?id=133364705",
-          "fingerprint": "a2f8c60b73b7655513f745fe788ed7c72a012ae2",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Financial app for managing Trump Accounts set to launch Thursday",
-          "url": "https://abcnews.com/Politics/financial-app-managing-trump-accounts-set-launch-thursday/story?id=133364506",
-          "fingerprint": "f50cc018c66ac2ccc1c7840ac1a404b626f18bd0",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Cruise ship killing: Stepbrother can stay out of jail",
-          "url": "https://abcnews.com/US/cruise-ship-killing-stepbrother-stay-jail-judge-rules/story?id=133343398",
-          "fingerprint": "82cda6cccdf3bb6ea48f50b873381bbff6d451ce",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Lynette Hooker search: Coast Guard wants to send US divers to Bahamas",
-          "url": "https://abcnews.com/International/lynette-hooker-search-coast-guard-bahamas-permission-send/story?id=133361403",
-          "fingerprint": "4ec798609a99018da79354a1475ccd91a7ff2096",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Beloved dad killed in chemical tank rupture: 'We are so heartbroken'",
-          "url": "https://abcnews.com/US/beloved-dad-killed-washington-state-chemical-tank-rupture/story?id=133345769",
-          "fingerprint": "b856154ffb0c18bc0c6e7d1e35ff7a3b64825111",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "Google employee charged with using inside information to make $1M on Polymarket",
-          "url": "https://abcnews.com/US/google-employee-charged-inside-information-make-1-million/story?id=133350018",
-          "fingerprint": "fa090913c7a7896a2f2de62ccdc6bafabb27f90f",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "White House says Americans in Africa exposed to Ebola will be sent to Kenya facility",
-          "url": "https://abcnews.com/Health/white-house-americans-africa-exposed-ebola-kenya-facility/story?id=133342755",
-          "fingerprint": "409c6725ae58187c9d0d81db553121cad5db3c56",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": "abc_top10_2026-05-28T09-59-44-881Z",
       "observedAt": "2026-05-28T09:59:47.866Z",
@@ -2724,6 +2646,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-29T18:32:56.255Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-29T20:30:30.521Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
