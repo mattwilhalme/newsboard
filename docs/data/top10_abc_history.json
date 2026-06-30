@@ -1,95 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-06-30T01:34:58.304Z",
+  "generatedAt": "2026-06-30T05:53:52.058Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": "abc_top10_2026-06-01T18-31-14-210Z",
-      "observedAt": "2026-06-01T18:31:17.383Z",
-      "ok": true,
-      "error": null,
-      "items": [
-        {
-          "rank": 1,
-          "title": "Iran live updates: Iran says crossing Lebanon, Gaza red lines means 'direct war'",
-          "url": "https://abcnews.com/International/live-updates/iran-live-updates-irgc-claims-airbase-attack-after?id=133475855",
-          "fingerprint": "f62b3afbf6b842b7f0344fb6581f847ea416c56b",
-          "related_links": [
-            {
-              "title": "Trump says talks with Iran are 'continuing' at 'rapid pace'",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-irgc-claims-airbase-attack-after?entryId=133491278&id=133475855"
-            },
-            {
-              "title": "Trump says he spoke with Netanyahu and Hezbollah, says they agreed to not 'attack' each other",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-irgc-claims-airbase-attack-after?entryId=133491159&id=133475855"
-            }
-          ]
-        },
-        {
-          "rank": 2,
-          "title": "2020 election denier Tina Peters released from prison",
-          "url": "https://abcnews.com/US/2020-election-denier-tina-peters-released-prison/story?id=133486271",
-          "fingerprint": "3e20708967adb736648c3c3dce6bd8b3019bf15a",
-          "related_links": []
-        },
-        {
-          "rank": 3,
-          "title": "Laos cave rescue workers report 'knocking sound' in search for last 2 missing people",
-          "url": "https://abcnews.com/International/laos-cave-rescue-workers-report-knocking-sound-search/story?id=133476803",
-          "fingerprint": "afe80d81305b4a85571afea97f535c03d19aa6bb",
-          "related_links": []
-        },
-        {
-          "rank": 4,
-          "title": "American who was exposed to hantavirus says he will remain in quarantine",
-          "url": "https://abcnews.com/Health/us-cruise-passenger-quarantining-hantavirus-remain-nebraska-full/story?id=133479918",
-          "fingerprint": "58cfc6fa8b9a94d9b7bc27a42141e04321525d54",
-          "related_links": []
-        },
-        {
-          "rank": 5,
-          "title": "Murder trial to get underway over deadly stabbing at Texas high school track meet",
-          "url": "https://abcnews.com/US/karmelo-anthonys-murder-trial-underway-texas-track-meet/story?id=133425722",
-          "fingerprint": "8444be9246185144e5ed7d8821c05c8c1aa771a5",
-          "related_links": []
-        },
-        {
-          "rank": 6,
-          "title": "Serena Williams, mom of 2, is returning to pro tennis",
-          "url": "https://abcnews.com/GMA/Culture/serena-williams-set-return-tennis-queens-club-championships/story?id=133485291",
-          "fingerprint": "dbeba16417b7b9f202ea0f44f3f4ab8c7f4c0a1e",
-          "related_links": []
-        },
-        {
-          "rank": 7,
-          "title": "Barry Manilow on losing his voice ahead of final tour: 'It was just too heavy for me'",
-          "url": "https://abcnews.com/GMA/Culture/barry-manilow-opens-losing-voice-lung-cancer-surgery/story?id=133433770",
-          "fingerprint": "49da269c6ab4db217dd35c8b49224791cdaecb83",
-          "related_links": []
-        },
-        {
-          "rank": 8,
-          "title": "Drone helps capture suspect in fatal shooting of Virginia sheriff's deputy",
-          "url": "https://abcnews.com/US/60000-reward-search-man-allegedly-shot-2-virginia/story?id=133469292",
-          "fingerprint": "368d150808945c441dcaa7703c1c4da0d3570def",
-          "related_links": []
-        },
-        {
-          "rank": 9,
-          "title": "TSA screenings begin at remote terminal in Boston",
-          "url": "https://abcnews.com/GMA/Travel/remote-airport-terminal-move-tsa-security-screenings/story?id=133106226",
-          "fingerprint": "6e659b576f94cbd0a8e4780069000385b4d966fe",
-          "related_links": []
-        },
-        {
-          "rank": 10,
-          "title": "Officer seen punching woman during arrest charged",
-          "url": "https://abcnews.com/US/former-north-carolina-officer-video-repeatedly-punching-woman/story?id=133486512",
-          "fingerprint": "436fb99f05cdb97f41a7a7447067585e8f7a1810",
-          "related_links": []
-        }
-      ]
-    },
     {
       "runId": null,
       "observedAt": "2026-06-01T20:17:11.734Z",
@@ -2431,6 +2344,13 @@
     {
       "runId": null,
       "observedAt": "2026-06-30T01:34:58.304Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-06-30T05:53:52.058Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
