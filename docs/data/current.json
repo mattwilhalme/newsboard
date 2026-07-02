@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-02T15:56:11.771Z",
+  "generatedAt": "2026-07-02T16:33:55.634Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:55:24.201Z",
+      "updatedAt": "2026-07-02T16:33:34.307Z",
       "error": null,
-      "runId": "abc1_2026-07-02T15-55-24-201Z",
+      "runId": "abc1_2026-07-02T16-33-34-307Z",
       "since": "2026-07-02T13:21:18.911Z",
       "item": {
         "title": "Hiring worse than expected in June amid elevated inflation",
@@ -17,24 +17,18 @@
       }
     },
     "cbs1": {
-      "ok": true,
-      "updatedAt": "2026-07-02T15:55:25.993Z",
-      "error": null,
-      "runId": "cbs1_2026-07-02T15-55-25-993Z",
-      "since": "2026-07-02T14:54:00.220Z",
-      "item": {
-        "title": "Security guard rescued from rubble 8 days after Venezuela earthquakes",
-        "url": "https://cbsnews.com/news/security-guard-rescued-venezuela-earthquake-rubble-8-days",
-        "imgUrl": null,
-        "slotKey": "4d6f70f0b663",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-07-02T16:33:35.413Z",
+      "error": "cbs1: headline not found",
+      "runId": "cbs1_2026-07-02T16-33-35-413Z",
+      "since": null,
+      "item": null
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:55:26.326Z",
+      "updatedAt": "2026-07-02T16:33:35.586Z",
       "error": null,
-      "runId": "usat1_2026-07-02T15-55-26-326Z",
+      "runId": "usat1_2026-07-02T16-33-35-586Z",
       "since": "2026-07-02T15:23:48.930Z",
       "item": {
         "title": "Sterilizing foreigners, dissolving the US. MAGA eyes birthright next steps",
@@ -46,13 +40,13 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:55:26.668Z",
+      "updatedAt": "2026-07-02T16:33:35.849Z",
       "error": null,
-      "runId": "nbc1_2026-07-02T15-55-26-668Z",
-      "since": "2026-07-02T14:10:04.780Z",
+      "runId": "nbc1_2026-07-02T16-33-35-849Z",
+      "since": "2026-07-02T16:33:55.634Z",
       "item": {
-        "title": "Supreme Court plots its own conservative path amid Trump challenges",
-        "url": "https://nbcnews.com/politics/supreme-court/supreme-court-plots-conservative-path-trump-challenges-rcna349676",
+        "title": "Inflation is making an appearance at holiday cookouts this year, survey finds",
+        "url": "https://nbcnews.com/data-graphics/average-cost-10-person-fourth-july-cookout-increased-nearly-3-2024-rcna352305",
         "imgUrl": null,
         "slotKey": "579270cafa55",
         "contentType": "news"
@@ -60,9 +54,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:05.138Z",
+      "updatedAt": "2026-07-02T16:33:47.869Z",
       "error": null,
-      "runId": "cnn1_2026-07-02T15-55-54-673Z",
+      "runId": "cnn1_2026-07-02T16-33-42-198Z",
       "since": "2026-07-02T13:21:18.911Z",
       "item": {
         "title": "The 9 Senate seats most likely to flip in 2026",
@@ -74,13 +68,13 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:07.399Z",
+      "updatedAt": "2026-07-02T16:33:50.699Z",
       "error": null,
-      "runId": "guardian1_2026-07-02T15-56-07-399Z",
-      "since": "2026-07-02T14:54:00.220Z",
+      "runId": "guardian1_2026-07-02T16-33-50-699Z",
+      "since": "2026-07-02T16:33:55.634Z",
       "item": {
-        "title": "Parts of eastern US to reach 115F as extreme heat scorches states over holiday weekend",
-        "url": "https://theguardian.com/environment/2026/jul/02/heatwave-eastern-us",
+        "title": "Trump hijacked US’s 250 anniversary to serve ‘political ideology and pet projects’, congressional report says",
+        "url": "https://theguardian.com/us-news/2026/jul/02/trump-hijacked-250-anniversary",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
@@ -88,9 +82,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:07.752Z",
+      "updatedAt": "2026-07-02T16:33:51.264Z",
       "error": null,
-      "runId": "ap1_2026-07-02T15-56-07-752Z",
+      "runId": "ap1_2026-07-02T16-33-51-264Z",
       "since": "2026-07-02T15:56:11.771Z",
       "item": {
         "title": "Finding freedom from the heat on July 4th will be a challenge in eastern US",
@@ -102,9 +96,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:08.197Z",
+      "updatedAt": "2026-07-02T16:33:51.694Z",
       "error": null,
-      "runId": "latimes1_2026-07-02T15-56-08-197Z",
+      "runId": "latimes1_2026-07-02T16-33-51-694Z",
       "since": "2026-07-02T13:21:18.911Z",
       "item": {
         "title": "Boyle Heights blaze choked parts of L.A. with astronomical soot pollution",
@@ -116,9 +110,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:08.440Z",
+      "updatedAt": "2026-07-02T16:33:52.035Z",
       "error": null,
-      "runId": "npr1_2026-07-02T15-56-08-440Z",
+      "runId": "npr1_2026-07-02T16-33-52-035Z",
       "since": "2026-07-02T15:23:48.930Z",
       "item": {
         "title": "The U.S. healthcare system is in crisis. A Supreme Court ruling could make things worse",
@@ -130,9 +124,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:08.756Z",
+      "updatedAt": "2026-07-02T16:33:52.360Z",
       "error": null,
-      "runId": "bbc1_2026-07-02T15-56-08-756Z",
+      "runId": "bbc1_2026-07-02T16-33-52-360Z",
       "since": "2026-07-02T14:10:04.780Z",
       "item": {
         "title": "Venezuela quake survivor pulled out alive after eight days",
@@ -144,9 +138,9 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:09.032Z",
+      "updatedAt": "2026-07-02T16:33:52.716Z",
       "error": null,
-      "runId": "fox1_2026-07-02T15-56-09-031Z",
+      "runId": "fox1_2026-07-02T16-33-52-716Z",
       "since": "2026-07-02T15:23:48.930Z",
       "item": {
         "title": "Mamdani sends internet into viral frenzy after telling NYers what to do in heat wave",
@@ -158,9 +152,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-07-02T15:56:09.203Z",
+      "updatedAt": "2026-07-02T16:33:53.013Z",
       "error": null,
-      "runId": "yahoo1_2026-07-02T15-56-09-203Z",
+      "runId": "yahoo1_2026-07-02T16-33-53-013Z",
       "since": "2026-07-02T15:56:11.771Z",
       "item": {
         "title": "'Night of horror': Ukrainian capital reels after Russia's 'most massive attack'",
