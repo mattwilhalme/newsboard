@@ -1,176 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-08T00:09:48.002Z",
+  "generatedAt": "2026-07-08T03:58:25.251Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-07-07T12:36:40.981+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Trump meets with NATO allies after year of upheaval: ANALYSIS",
-      "url": "https://abcnews.com/Politics/trump-meets-nato-allies-after-year-upheaval-analysis/story?id=134520967"
-    },
-    {
-      "ts": "2026-07-07T12:36:42.815+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "NATO summit in Turkey begins as Trump pushes for more defense spending",
-      "url": "https://cbsnews.com/news/nato-summit-begins-in-turkey-as-trump-pushes-for-more-defense-spending"
-    },
-    {
-      "ts": "2026-07-07T12:36:43.377+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "USA's World Cup ride ends with ugly loss against Belgium",
-      "url": "https://usatoday.com/story/sports/soccer/worldcup/2026/07/06/usa-belgium-world-cup-live-score-usmnt-lineups-watch-highlights/90817355007"
-    },
-    {
-      "ts": "2026-07-07T12:36:43.899+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "U.S. star Folarin Balogun went from the center of controversy to a nonfactor",
-      "url": "https://nbcnews.com/sports/soccer/us-folarin-balogun-belgium-fifa-world-cup-rcna353250"
-    },
-    {
-      "ts": "2026-07-07T12:36:49.189+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Woman alleges Maine Senate nominee Graham Platner raped her",
-      "url": "https://cnn.com/2026/07/06/us/graham-platner-racicot-allegation-maine-invs"
-    },
-    {
-      "ts": "2026-07-07T12:36:51.357+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Calls grow for Graham Platner to drop out after sexual assault allegation",
-      "url": "https://theguardian.com/us-news/2026/jul/06/graham-platner-assault-allegation"
-    },
-    {
-      "ts": "2026-07-07T12:36:52.054+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Democrats begin pulling Platner endorsements after Maine candidate faces sexual assault allegation",
-      "url": "https://apnews.com/article/graham-platner-maine-assault-senate-061e18bdd180928bbcd94b18a52f4ec9"
-    },
-    {
-      "ts": "2026-07-07T12:36:52.729+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Jennifer Siebel Newsom sought to redefine the role of first spouse. Now, she faces her biggest test",
-      "url": "https://latimes.com/california/story/2026-07-07/jennifer-siebel-newsom-sought-to-redefine-role-of-first-spouse-now-she-faces-her-biggest-test"
-    },
-    {
-      "ts": "2026-07-07T12:36:53.196+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Trump's NATO pressure campaign continues as summit begins",
-      "url": "https://npr.org/2026/07/07/nx-s1-5884055/trumps-nato-pressure-campaign-continues-as-summit-begins"
-    },
-    {
-      "ts": "2026-07-07T12:36:53.697+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Zelensky to press Nato for air defence systems after intense Russian strikes",
-      "url": "https://bbc.com/news/articles/c9d227e5zj6o"
-    },
-    {
-      "ts": "2026-07-07T12:36:54.02+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Judge recoils, accused Charlie Kirk assassin sits still as fatal gunshot rings out in court",
-      "url": "https://foxnews.com/us/charlie-kirk-family-comes-face-face-accused-assassin-first-time"
-    },
-    {
-      "ts": "2026-07-07T12:36:54.409+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump says new Marine One is too powerful for the White House lawn",
-      "url": "https://yahoo.com/news/articles/trump-details-plans-white-house-195457235.html"
-    },
-    {
-      "ts": "2026-07-07T15:34:20.191+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Trump meets with NATO allies after year of upheaval: ANALYSIS",
-      "url": "https://abcnews.com/Politics/trump-meets-nato-allies-after-year-upheaval-analysis/story?id=134520967"
-    },
-    {
-      "ts": "2026-07-07T15:34:21.684+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump lauds Erdogan, announces lifting sanctions as NATO summit begins",
-      "url": "https://cbsnews.com/news/nato-summit-begins-in-turkey-as-trump-pushes-for-more-defense-spending"
-    },
-    {
-      "ts": "2026-07-07T15:34:21.914+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Trump sports curse is back after USMNT's World Cup exit",
-      "url": "https://usatoday.com/story/sports/soccer/worldcup/2026/07/07/trump-sports-curse-usmnt-world-cup-loss-belgium/90829867007"
-    },
-    {
-      "ts": "2026-07-07T15:34:22.185+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "‘Overturn this’: Trump intervention casts a shadow over World Cup as U.S. crashes out",
-      "url": "https://nbcnews.com/world/europe/trump-world-cup-us-loses-belgium-balogun-rcna353274"
-    },
-    {
-      "ts": "2026-07-07T15:34:27.3+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Trump says US should control Greenland, repeats disappointment with NATO",
-      "url": "https://cnn.com/2026/07/07/world/live-news/nato-summit-trump"
-    },
-    {
-      "ts": "2026-07-07T15:34:28.287+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Half of Americans struggle to afford groceries and gas, exclusive poll finds",
-      "url": "https://theguardian.com/business/2026/jul/07/cost-of-living-poll-groceries-gas"
-    },
-    {
-      "ts": "2026-07-07T15:34:28.535+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "NATO unveils billions in arms deals to prove its firepower as Trump arrives in Ankara",
-      "url": "https://apnews.com/article/nato-defense-trump-contracts-spending-turkey-summit-bede50a5b5e734b9705ffb480463f7ce"
-    },
-    {
-      "ts": "2026-07-07T15:34:29.011+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "As L.A. struggles, these surprising communities are booming. What are they doing right?",
-      "url": "https://latimes.com/california/story/2026-07-07/as-la-struggles-these-surprising-communities-are-booming-what-are-they-doing-right"
-    },
-    {
-      "ts": "2026-07-07T15:34:29.295+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Trump's NATO pressure campaign continues as summit begins",
-      "url": "https://npr.org/2026/07/07/nx-s1-5884055/trumps-nato-pressure-campaign-continues-as-summit-begins"
-    },
-    {
-      "ts": "2026-07-07T15:34:29.579+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Marine Le Pen found guilty, but court clears way for presidential run if she wears tag",
-      "url": "https://bbc.com/news/articles/cly85qjg45no"
-    },
-    {
-      "ts": "2026-07-07T15:34:29.811+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Manhattan high-rise evacuated as officials warn of potential collapse",
-      "url": "https://foxnews.com/us/manhattan-high-rise-evacuated-officials-warn-potential-collapse"
-    },
-    {
-      "ts": "2026-07-07T15:34:29.975+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Storms flood homes and collapse roof in Northeast as threat now shifts south",
-      "url": "https://yahoo.com/news/weather-news/articles/dangerous-flash-flood-threat-escalates-100750636.html"
-    },
     {
       "ts": "2026-07-07T17:35:45.225+00:00",
       "source_id": "abc1",
@@ -589,6 +421,90 @@
       "source_id": "yahoo1",
       "kind": "headline",
       "title": "U.S. military launches new strikes against Iranian targets",
+      "url": "https://yahoo.com/news/world/articles/ml--iran-us-011240354.html"
+    },
+    {
+      "ts": "2026-07-08T03:57:55.508+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Vargas sends Switzerland to World Cup quarterfinals in shootout win over Colombia",
+      "url": "https://abcnews.com/Sports/wireStory/switzerland-colombia-headed-extra-time-after-0-0-134564708"
+    },
+    {
+      "ts": "2026-07-08T03:57:57.105+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "U.S. hits dozens of Iranian targets in retaliatory strikes after ship attacks",
+      "url": "https://cbsnews.com/live-updates/iran-us-war-strait-of-hormuz-trump-nato"
+    },
+    {
+      "ts": "2026-07-08T03:57:57.505+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "US launches strikes after accusing Iran of violating ceasefire",
+      "url": "https://usatoday.com/story/news/world/2026/07/07/us-iran-strikes-strait-hormuz-ceasefire/90840721007"
+    },
+    {
+      "ts": "2026-07-08T03:57:57.864+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "The Pentagon is running out of money",
+      "url": "https://nbcnews.com/politics/national-security/pentagon-running-money-rcna352232"
+    },
+    {
+      "ts": "2026-07-08T03:58:18.142+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Another woman alleges to CNN Platner was a violent boyfriend",
+      "url": "https://cnn.com/2026/07/07/us/graham-platner-lyndsey-fifield-allegations-invs"
+    },
+    {
+      "ts": "2026-07-08T03:58:19.536+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Bernie Sanders calls on Graham Platner to withdraw from Senate race amid sexual assault claims",
+      "url": "https://theguardian.com/us-news/2026/jul/07/bernie-sanders-graham-platner-maine-senate-race"
+    },
+    {
+      "ts": "2026-07-08T03:58:20.091+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "US launches strikes on Iran after 3 ships attacked in Strait of Hormuz; Bahrain and Kuwait targeted",
+      "url": "https://apnews.com/article/iran-us-israel-war-oil-july-8-2026-fee04dcea661c08de12c04914ff2751b"
+    },
+    {
+      "ts": "2026-07-08T03:58:20.656+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Burbank’s airport to get new $1.3-billion terminal soon (but you’ll still walk on tarmac)",
+      "url": "https://latimes.com/travel/story/2026-07-07/hollywood-burbank-airport-new-terminal-details"
+    },
+    {
+      "ts": "2026-07-08T03:58:21.053+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Heirs of 'odious' 169-year-old Supreme Court ruling see modern parallels",
+      "url": "https://npr.org/2026/07/07/g-s1-132164/supreme-court-birthright-citizenship-race-dred-scott"
+    },
+    {
+      "ts": "2026-07-08T03:58:21.545+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "US launches strikes on Iran after tankers hit in Strait of Hormuz",
+      "url": "https://bbc.com/news/articles/cwykq59jwpvo"
+    },
+    {
+      "ts": "2026-07-08T03:58:22.091+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Iran threatens 'crushing response' after major US strikes on key targets",
+      "url": "https://foxnews.com/live-news/us-iran-khamenei-funeral-july-7-2026"
+    },
+    {
+      "ts": "2026-07-08T03:58:22.387+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "U.S. launches new Iran strikes as Tehran vows 'decisive' response",
       "url": "https://yahoo.com/news/world/articles/ml--iran-us-011240354.html"
     }
   ]
