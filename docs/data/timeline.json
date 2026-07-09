@@ -1,176 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-09T08:08:19.637Z",
+  "generatedAt": "2026-07-09T11:19:31.458Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-07-08T21:21:01.678+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Judge orders Trump to pay E. Jean Carroll $5 million judgment",
-      "url": "https://abcnews.com/US/judge-orders-trump-pay-jean-carroll-5-million/story?id=134591703"
-    },
-    {
-      "ts": "2026-07-08T21:21:03.613+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "U.S. launches more strikes against Iran after Trump says ceasefire is \"over\"",
-      "url": "https://cbsnews.com/live-updates/us-iran-war-trump-says-ceasefire-over"
-    },
-    {
-      "ts": "2026-07-08T21:21:04.178+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Iran updates: US conducts strikes as Trump says ceasefire is 'over'",
-      "url": "https://usatoday.com/story/news/world/2026/07/08/trump-ceasefire-iran-nato-summit-ankara/90844389007"
-    },
-    {
-      "ts": "2026-07-08T21:21:04.697+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "U.S. military begins new strikes on Iran, U.S. Central Command says",
-      "url": "https://nbcnews.com/world/iran/live-blog/live-updates-iran-attacks-gulf-us-strikes-tehran-ships-hormuz-oil-rcna353439"
-    },
-    {
-      "ts": "2026-07-08T21:21:35.043+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "US conducting new strikes in Iran after Trump said ceasefire is 'over'",
-      "url": "https://cnn.com/2026/07/08/world/live-news/iran-war-nato-summit-ukraine-trump"
-    },
-    {
-      "ts": "2026-07-08T21:21:37.772+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘He did not deserve to die’: family of man fatally shot by ICE agent speaks out",
-      "url": "https://theguardian.com/us-news/2026/jul/08/texas-ice-shooting-victim-son"
-    },
-    {
-      "ts": "2026-07-08T21:21:38.506+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "US carries out another round of strikes on Iran after Trump says ceasefire is over",
-      "url": "https://apnews.com/article/iran-us-israel-war-oil-july-8-2026-fee04dcea661c08de12c04914ff2751b"
-    },
-    {
-      "ts": "2026-07-08T21:21:39.106+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "She had an L.A. taco stand empire. Now she’s charged in connection with her worker’s grisly death",
-      "url": "https://latimes.com/california/story/2026-07-08/ricos-tacos-naomi-murder-conspiracy-charges"
-    },
-    {
-      "ts": "2026-07-08T21:21:39.626+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "This factory was severely short on workers. Then it offered flexible work",
-      "url": "https://npr.org/2026/07/08/nx-s1-5876084/manufacturing-flexible-part-time-work"
-    },
-    {
-      "ts": "2026-07-08T21:21:40.423+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Bowen: For all his bluster, Trump has no better option than talks with Iran",
-      "url": "https://bbc.com/news/articles/cy8we3j14ndo"
-    },
-    {
-      "ts": "2026-07-08T21:21:40.83+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "US unleashes latest response to Iran's 'unjustified aggression,' vows to hold Tehran 'accountable'",
-      "url": "https://foxnews.com/live-news/trump-iran-war-peace-ended-israel-hormuz-july-8"
-    },
-    {
-      "ts": "2026-07-08T21:21:41.273+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "U.S. carries out another round of strikes on Iran after Trump declares ceasefire over",
-      "url": "https://yahoo.com/news/world/articles/ml--iran-us-031540401.html"
-    },
-    {
-      "ts": "2026-07-08T22:38:55.941+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Judge orders Trump to pay E. Jean Carroll $5 million judgment",
-      "url": "https://abcnews.com/US/judge-orders-trump-pay-jean-carroll-5-million/story?id=134591703"
-    },
-    {
-      "ts": "2026-07-08T22:38:57.241+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "U.S. launches more strikes against Iran after Trump says ceasefire is \"over\"",
-      "url": "https://cbsnews.com/live-updates/us-iran-war-trump-says-ceasefire-over"
-    },
-    {
-      "ts": "2026-07-08T22:38:57.536+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Judge orders Trump's $5.8 million to be paid to E. Jean Carroll",
-      "url": "https://usatoday.com/story/news/politics/2026/07/08/trump-e-jean-carroll-judgment/90848946007"
-    },
-    {
-      "ts": "2026-07-08T22:38:57.898+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "U.S. military begins new strikes on Iran over Strait of Hormuz, CENTCOM says",
-      "url": "https://nbcnews.com/world/iran/live-blog/live-updates-iran-attacks-gulf-us-strikes-tehran-ships-hormuz-oil-rcna353439"
-    },
-    {
-      "ts": "2026-07-08T22:39:27.133+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "US conducting new strikes in Iran after Trump said ceasefire is 'over'",
-      "url": "https://cnn.com/2026/07/08/world/live-news/iran-war-nato-summit-ukraine-trump"
-    },
-    {
-      "ts": "2026-07-08T22:39:28.909+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘He did not deserve to die’: family of man fatally shot by ICE agent speaks out",
-      "url": "https://theguardian.com/us-news/2026/jul/08/texas-ice-shooting-victim-son"
-    },
-    {
-      "ts": "2026-07-08T22:39:29.297+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "US carries out another round of strikes on Iran after Trump says ceasefire is over",
-      "url": "https://apnews.com/article/iran-us-israel-war-oil-july-8-2026-fee04dcea661c08de12c04914ff2751b"
-    },
-    {
-      "ts": "2026-07-08T22:39:29.73+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "She had an L.A. taco stand empire. Now she’s charged in connection with her worker’s grisly death",
-      "url": "https://latimes.com/california/story/2026-07-08/ricos-tacos-naomi-murder-conspiracy-charges"
-    },
-    {
-      "ts": "2026-07-08T22:39:30.058+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Should you sign your kids up for Trump Accounts? Four things to consider",
-      "url": "https://npr.org/2026/07/08/nx-s1-5884855/trump-accounts-what-to-know"
-    },
-    {
-      "ts": "2026-07-08T22:39:30.504+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Ukraine to get licence to produce Patriot missiles, Trump says",
-      "url": "https://bbc.com/news/articles/ce8klree690o"
-    },
-    {
-      "ts": "2026-07-08T22:39:31.029+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump issues severe threat to Tehran as US hammers Iran with more retaliatory strikes",
-      "url": "https://foxnews.com/live-news/trump-iran-war-peace-ended-israel-hormuz-july-8"
-    },
-    {
-      "ts": "2026-07-08T22:39:31.235+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump turns hostile toward Iran: Takeaways from a notable NATO summit",
-      "url": "https://yahoo.com/news/politics/articles/trump-warms-ukraine-gets-angry-182501337.html"
-    },
     {
       "ts": "2026-07-09T00:19:02.318+00:00",
       "source_id": "abc1",
@@ -422,6 +254,90 @@
       "kind": "headline",
       "title": "Trump to ask Supreme Court to reconsider birthright citizenship case",
       "url": "https://yahoo.com/news/politics/articles/trump-ask-supreme-court-rehear-223540597.html"
+    },
+    {
+      "ts": "2026-07-09T11:18:13.608+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Bonnie Tyler, singer of 'Total Eclipse of the Heart,' dies at 75",
+      "url": "https://abcnews.com/GMA/Culture/bonnie-tyler-singer-total-eclipse-heart-dies/story?id=134609025"
+    },
+    {
+      "ts": "2026-07-09T11:18:16.02+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "Iran says 14 killed in U.S. strikes ahead of Khamenei's burial",
+      "url": "https://cbsnews.com/live-updates/iran-us-war-trump-ceasefire-over-strait-of-hormuz-attacks"
+    },
+    {
+      "ts": "2026-07-09T11:18:16.584+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Bonnie Tyler, singer of 'Total Eclipse of the Heart', dies at 75",
+      "url": "https://usatoday.com/story/entertainment/celebrities/2026/07/09/bonnie-tyler-total-eclipse-of-the-heart-singer-dies/90858580007"
+    },
+    {
+      "ts": "2026-07-09T11:18:17.078+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "In Tehran, renewed U.S. hostilities don’t come as a surprise to many",
+      "url": "https://nbcnews.com/world/iran/tehran-renewed-us-hostilities-not-come-surprise-many-rcna353454"
+    },
+    {
+      "ts": "2026-07-09T11:19:17.802+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Graham Platner drops out of Senate race and takes aim at Democrats",
+      "url": "https://cnn.com/2026/07/08/politics/graham-platner-drops-out-maine-senate"
+    },
+    {
+      "ts": "2026-07-09T11:19:21.209+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Bonnie Tyler, 80s pop legend known for Total Eclipse of the Heart and more, dies aged 75",
+      "url": "https://theguardian.com/music/2026/jul/09/bonnie-tyler-80s-pop-legend-known-for-total-eclipse-of-the-heart-and-more-dies-aged-75"
+    },
+    {
+      "ts": "2026-07-09T11:19:22.912+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "New attacks raise questions about what comes next in the Iran war",
+      "url": "https://apnews.com/article/trump-iran-war-ceasefire-strikes-c45111ed270afa7dac285016ce07362f"
+    },
+    {
+      "ts": "2026-07-09T11:19:23.633+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "They’ve survived drunken riots and Dennis Rodman. But July 4th was too much for Newport Beach",
+      "url": "https://latimes.com/california/story/2026-07-09/newport-beach-survived-riots-rodman-july-fourth-chaos"
+    },
+    {
+      "ts": "2026-07-09T11:19:25.578+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "The Iran war has pushed some countries away from oil and toward clean energy",
+      "url": "https://npr.org/2026/07/09/nx-s1-5872786/iran-war-evs-solar-energy-transition"
+    },
+    {
+      "ts": "2026-07-09T11:19:26.316+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "Democrat Graham Platner suspends campaign for key US Senate race after assault allegation",
+      "url": "https://bbc.com/news/articles/c9v229434p2o"
+    },
+    {
+      "ts": "2026-07-09T11:19:26.771+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "US forces strike approximately 90 targets in Iran during latest military operation",
+      "url": "https://foxnews.com/live-news/trump-us-iran-war-strikes-strait-hormuz-july-9"
+    },
+    {
+      "ts": "2026-07-09T11:19:27.141+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "Secret Service urged Trump to use old Air Force One instead of Qatari jet, sources say",
+      "url": "https://yahoo.com/news/politics/articles/secret-urged-trump-old-air-041619468.html"
     }
   ]
 }
