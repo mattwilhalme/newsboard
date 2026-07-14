@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-14T04:14:14.006Z",
+  "generatedAt": "2026-07-14T06:37:55.874Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:13:38.792Z",
+      "updatedAt": "2026-07-14T06:37:35.570Z",
       "error": null,
-      "runId": "abc1_2026-07-14T04-13-38-792Z",
+      "runId": "abc1_2026-07-14T06-37-35-570Z",
       "since": "2026-07-13T22:33:07.897Z",
       "item": {
         "title": "Trump's Strait of Hormuz blockade erases last concession to Iran in preliminary deal",
@@ -18,23 +18,23 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:13:40.412Z",
+      "updatedAt": "2026-07-14T06:37:37.539Z",
       "error": null,
-      "runId": "cbs1_2026-07-14T04-13-40-412Z",
-      "since": "2026-07-13T17:35:06.739Z",
+      "runId": "cbs1_2026-07-14T06-37-37-539Z",
+      "since": "2026-07-14T06:37:55.874Z",
       "item": {
-        "title": "Darline Graham Nordone, Lindsey Graham's sister, appointed to fill Senate seat",
-        "url": "https://cbsnews.com/news/lindsey-graham-replacement-senate-south-carolina-governor",
+        "title": "U.S. wraps up 3rd night of Iran strikes as Trump vows to \"keep\" Strait of Hormuz",
+        "url": "https://cbsnews.com/live-updates/us-iran-war-trump-ceasefire-attacks-strait-of-hormuz",
         "imgUrl": null,
         "slotKey": "4d6f70f0b663",
-        "contentType": "news"
+        "contentType": "live"
       }
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:13:41.034Z",
+      "updatedAt": "2026-07-14T06:37:37.998Z",
       "error": null,
-      "runId": "usat1_2026-07-14T04-13-41-034Z",
+      "runId": "usat1_2026-07-14T06-37-37-998Z",
       "since": "2026-07-14T01:00:03.862Z",
       "item": {
         "title": "US launches third straight day of strikes on Iran",
@@ -46,13 +46,13 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:13:41.520Z",
+      "updatedAt": "2026-07-14T06:37:38.500Z",
       "error": null,
-      "runId": "nbc1_2026-07-14T04-13-41-520Z",
-      "since": "2026-07-14T04:14:14.006Z",
+      "runId": "nbc1_2026-07-14T06-37-38-500Z",
+      "since": "2026-07-14T06:37:55.874Z",
       "item": {
-        "title": "Lettuce or salad greens could be source of diarrhea-causing illness, Michigan health officials say",
-        "url": "https://nbcnews.com/health/health-news/michigan-cyclosporiasis-lettuce-salad-greens-rcna587395",
+        "title": "Judge says Trump admin tried to ‘manipulate the judicial process’ with its IRS settlement",
+        "url": "https://nbcnews.com/politics/donald-trump/judge-says-trump-administration-attempted-manipulate-judicial-process-rcna587321",
         "imgUrl": null,
         "slotKey": "579270cafa55",
         "contentType": "news"
@@ -60,35 +60,41 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:13:55.134Z",
+      "updatedAt": "2026-07-14T06:37:46.724Z",
       "error": null,
-      "runId": "cnn1_2026-07-14T04-13-50-791Z",
-      "since": "2026-07-13T22:33:07.897Z",
+      "runId": "cnn1_2026-07-14T06-37-43-575Z",
+      "since": "2026-07-14T06:37:55.874Z",
       "item": {
         "title": "US launches third night of strikes on Iran and reimposes naval blockade",
-        "url": "https://cnn.com/2026/07/13/world/live-news/iran-war-trump",
+        "url": "https://cnn.com/2026/07/14/world/live-news/iran-war-trump",
         "imgUrl": null,
         "slotKey": "e75971db9693",
         "contentType": "live"
       }
     },
     "guardian1": {
-      "ok": false,
-      "updatedAt": "2026-07-14T04:14:06.643Z",
-      "error": "fetch failed",
-      "runId": "guardian1_error_2026-07-14T04-14-06-643Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-07-14T06:37:48.234Z",
+      "error": null,
+      "runId": "guardian1_2026-07-14T06-37-48-234Z",
+      "since": "2026-07-13T23:31:35.013Z",
+      "item": {
+        "title": "ICE agents kill man in Maine as senator says victim not target of arrest",
+        "url": "https://theguardian.com/us-news/2026/jul/13/maine-ice-shooting-death",
+        "imgUrl": null,
+        "slotKey": "b80da2377db9",
+        "contentType": "news"
+      }
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:14:06.881Z",
+      "updatedAt": "2026-07-14T06:37:49.279Z",
       "error": null,
-      "runId": "ap1_2026-07-14T04-14-06-881Z",
-      "since": "2026-07-14T01:00:03.862Z",
+      "runId": "ap1_2026-07-14T06-37-49-279Z",
+      "since": "2026-07-14T06:37:55.874Z",
       "item": {
-        "title": "US attacks Iran and Tehran retaliates across the Middle East as both vie for control of strait",
-        "url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-13-2026-6c2c44cfdd089d6393d18fa5930ed620",
+        "title": "US attacks Iran and Tehran retaliates across the Middle East",
+        "url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-14-2026-abd060c55feea216625689e57d8f76be",
         "imgUrl": null,
         "slotKey": "083847305a8b",
         "contentType": "news"
@@ -96,9 +102,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:14:07.539Z",
+      "updatedAt": "2026-07-14T06:37:49.789Z",
       "error": null,
-      "runId": "latimes1_2026-07-14T04-14-07-539Z",
+      "runId": "latimes1_2026-07-14T06-37-49-789Z",
       "since": "2026-07-14T01:00:03.862Z",
       "item": {
         "title": "UC abruptly suspends plan to reconsider SAT in admissions",
@@ -110,9 +116,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:14:08.073Z",
+      "updatedAt": "2026-07-14T06:37:50.186Z",
       "error": null,
-      "runId": "npr1_2026-07-14T04-14-08-073Z",
+      "runId": "npr1_2026-07-14T06-37-50-186Z",
       "since": "2026-07-13T22:33:07.897Z",
       "item": {
         "title": "Trump's HHS abandons threat to withhold Medicare and Medicaid funding over trans care",
@@ -124,13 +130,13 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:14:08.940Z",
+      "updatedAt": "2026-07-14T06:37:50.936Z",
       "error": null,
-      "runId": "bbc1_2026-07-14T04-14-08-940Z",
-      "since": "2026-07-13T20:23:20.229Z",
+      "runId": "bbc1_2026-07-14T06-37-50-936Z",
+      "since": "2026-07-14T06:37:55.874Z",
       "item": {
-        "title": "UAE condemns Iran's 'brazen' attack on tankers as US launches fresh strikes",
-        "url": "https://bbc.com/news/articles/c8d2vn38dy1o",
+        "title": "Death toll from Bangkok bar fire rises to 30 as police probe safety lapses",
+        "url": "https://bbc.com/news/articles/clyxyzlp9p2o",
         "imgUrl": null,
         "slotKey": "b890b46a9e6c",
         "contentType": "news"
@@ -138,9 +144,9 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:14:09.499Z",
+      "updatedAt": "2026-07-14T06:37:51.447Z",
       "error": null,
-      "runId": "fox1_2026-07-14T04-14-09-499Z",
+      "runId": "fox1_2026-07-14T06-37-51-447Z",
       "since": "2026-07-14T04:14:14.006Z",
       "item": {
         "title": "President Trump issues warning about what Iran is going to face next",
@@ -152,9 +158,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-07-14T04:14:09.773Z",
+      "updatedAt": "2026-07-14T06:37:51.923Z",
       "error": null,
-      "runId": "yahoo1_2026-07-14T04-14-09-773Z",
+      "runId": "yahoo1_2026-07-14T06-37-51-923Z",
       "since": "2026-07-14T04:14:14.006Z",
       "item": {
         "title": "'Steam-cooker' heat dome will move east this week — and send humidity soaring",
