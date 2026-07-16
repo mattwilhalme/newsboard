@@ -1,428 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-15T23:39:44.266Z",
+  "generatedAt": "2026-07-16T03:32:02.099Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-07-15T12:56:10.076+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Canadian wildfire smoke descends on US, spreading from Great Lakes to New England",
-      "url": "https://abcnews.com/US/canadian-wildfire-smoke-descends-us-spreading-great-lakes/story?id=134774391"
-    },
-    {
-      "ts": "2026-07-15T12:56:11.598+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "U.S. announces new strikes on Iran as war intensifies",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-trump-strait-of-hormuz-persian-gulf-strikes"
-    },
-    {
-      "ts": "2026-07-15T12:56:11.978+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "US strikes Iran again as blockade escalates tensions: Live updates",
-      "url": "https://usatoday.com/story/news/world/2026/07/15/iran-war-updates-us-strikes-strait-hormuz--live/90922350007"
-    },
-    {
-      "ts": "2026-07-15T12:56:12.2+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "200 years of history and acrimony hang over Argentina’s clash with England",
-      "url": "https://nbcnews.com/sports/soccer/world-cup-semifinal-england-argentina-falklands-war-maradona-messi-rcna587252"
-    },
-    {
-      "ts": "2026-07-15T12:56:21.907+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Inside the 24-hour sprint to talk Trump out of tolling Hormuz",
-      "url": "https://cnn.com/2026/07/14/politics/trump-toll-strait-of-hormuz"
-    },
-    {
-      "ts": "2026-07-15T12:56:23.192+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Arrest of American who has given $1m in aid to Palestine prompts fears of ‘growing repression from Trump’",
-      "url": "https://theguardian.com/world/2026/jul/15/james-fergie-chambers-arrest-palestine-aid-trump"
-    },
-    {
-      "ts": "2026-07-15T12:56:23.624+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Trump administration orders ICE to suspend most vehicle stops after 2 deadly shootings",
-      "url": "https://apnews.com/article/maine-ice-shooting-man-killed-73681fcf59fceb8b43b198ccaec554d3"
-    },
-    {
-      "ts": "2026-07-15T12:56:24.205+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Inside the states’ case to block the Paramount-Warner Bros. merger",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-07-15/inside-states-case-to-block-paramount-warner-bros-merger"
-    },
-    {
-      "ts": "2026-07-15T12:56:24.56+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Democrats' witness opposing Todd Blanche's confirmation is more than an Epstein survivor",
-      "url": "https://npr.org/2026/07/15/nx-s1-5850397/jeffrey-epstein-todd-blanche-dani-bensky-survivor-victims-sexual-abuse-trafficking"
-    },
-    {
-      "ts": "2026-07-15T12:56:25.044+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Iran threatens to block more trade routes as US launches fresh strikes",
-      "url": "https://bbc.com/news/articles/c9323zgq6wvo"
-    },
-    {
-      "ts": "2026-07-15T12:56:25.506+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "US officially back at war with Iran amid heavy missile strikes",
-      "url": "https://foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026"
-    },
-    {
-      "ts": "2026-07-15T12:56:25.733+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Outbreak of foodborne parasite expands to more states as cases soar",
-      "url": "https://yahoo.com/news/us/articles/outbreak-diarrhea-parasite-expands-more-180849369.html"
-    },
-    {
-      "ts": "2026-07-15T13:58:26.42+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Canadian wildfire smoke descends on US, spreading from Great Lakes to New England",
-      "url": "https://abcnews.com/US/canadian-wildfire-smoke-descends-us-spreading-great-lakes/story?id=134774391"
-    },
-    {
-      "ts": "2026-07-15T13:58:28.274+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "U.S. announces new strikes on Iran as war intensifies",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-trump-strait-of-hormuz-persian-gulf-strikes"
-    },
-    {
-      "ts": "2026-07-15T13:58:28.868+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "US strikes Iran again as blockade escalates tensions: Live updates",
-      "url": "https://usatoday.com/story/news/world/2026/07/15/iran-war-updates-us-strikes-strait-hormuz--live/90922350007"
-    },
-    {
-      "ts": "2026-07-15T13:58:29.183+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump administration live updates: A.G. nominee Todd Blanche faces scrutiny at high-stakes Senate hearing",
-      "url": "https://nbcnews.com/politics/trump-administration/live-blog/trump-blanche-doj-clayton-congress-iran-ice-2026-midterm-live-updates-rcna587566"
-    },
-    {
-      "ts": "2026-07-15T13:58:36.971+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Attorney general pick Todd Blanche faces senators in confirmation hearing",
-      "url": "https://cnn.com/2026/07/15/politics/live-news/todd-blanche-confirmation-hearing"
-    },
-    {
-      "ts": "2026-07-15T13:58:38.37+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘They want to break our will’: Gaza flotilla activist tells of rape in Israeli detention",
-      "url": "https://theguardian.com/world/2026/jul/15/gaza-flotilla-activist-rape-complaint-israel-anna-liedtke"
-    },
-    {
-      "ts": "2026-07-15T13:58:38.952+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Trump administration orders ICE to suspend most vehicle stops after 2 deadly shootings",
-      "url": "https://apnews.com/article/maine-ice-shooting-man-killed-73681fcf59fceb8b43b198ccaec554d3"
-    },
-    {
-      "ts": "2026-07-15T13:58:39.682+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Inside the states’ case to block the Paramount-Warner Bros. merger",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-07-15/inside-states-case-to-block-paramount-warner-bros-merger"
-    },
-    {
-      "ts": "2026-07-15T13:58:40.004+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Democrats' witness opposing Todd Blanche's confirmation is more than an Epstein survivor",
-      "url": "https://npr.org/2026/07/15/nx-s1-5850397/jeffrey-epstein-todd-blanche-dani-bensky-survivor-victims-sexual-abuse-trafficking"
-    },
-    {
-      "ts": "2026-07-15T13:58:40.462+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Iran threatens to block more trade routes as US launches fresh strikes",
-      "url": "https://bbc.com/news/articles/c9323zgq6wvo"
-    },
-    {
-      "ts": "2026-07-15T13:58:40.826+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Iran threatens to throw world into deeper energy crisis with dire warning to the US and its allies",
-      "url": "https://foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026"
-    },
-    {
-      "ts": "2026-07-15T13:58:41.216+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Outbreak of foodborne parasite expands to more states as cases soar",
-      "url": "https://yahoo.com/news/us/articles/outbreak-diarrhea-parasite-expands-more-180849369.html"
-    },
-    {
-      "ts": "2026-07-15T14:59:00.471+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Blanche faces grilling on DOJ controversies",
-      "url": "https://abcnews.com/Politics/blanche-face-grilling-doj-controversies-seeks-confirmation-ag/story?id=134746132"
-    },
-    {
-      "ts": "2026-07-15T14:59:02.331+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "U.S. announces new strikes on Iran as war intensifies",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-trump-strait-of-hormuz-persian-gulf-strikes"
-    },
-    {
-      "ts": "2026-07-15T14:59:02.874+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "US strikes Iran again as blockade escalates tensions: Live updates",
-      "url": "https://usatoday.com/story/news/world/2026/07/15/iran-war-updates-us-strikes-strait-hormuz--live/90922350007"
-    },
-    {
-      "ts": "2026-07-15T14:59:03.224+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump administration live updates: AG nominee Todd Blanche faces scrutiny at high-stakes Senate hearing",
-      "url": "https://nbcnews.com/politics/trump-administration/live-blog/trump-blanche-doj-clayton-congress-iran-ice-2026-midterm-live-updates-rcna587566"
-    },
-    {
-      "ts": "2026-07-15T14:59:17.115+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "1 dead, 3 missing after boat carrying mourning family sinks near Alcatraz",
-      "url": "https://cnn.com/2026/07/14/us/san-francisco-boat-capsizes-alcatraz"
-    },
-    {
-      "ts": "2026-07-15T14:59:18.875+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘Fear, intimidation, violence’: calls mount to remove ICE from US streets after agents killed two men",
-      "url": "https://theguardian.com/us-news/2026/jul/15/remove-ice-us-streets-joan-sebastian-duran-guerrero-lorenzo-salgado-araujo"
-    },
-    {
-      "ts": "2026-07-15T14:59:19.681+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Trump administration orders ICE to suspend most vehicle stops after 2 deadly shootings",
-      "url": "https://apnews.com/article/maine-ice-shooting-man-killed-73681fcf59fceb8b43b198ccaec554d3"
-    },
-    {
-      "ts": "2026-07-15T14:59:20.271+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Inside the states’ case to block the Paramount-Warner Bros. merger: ‘Each side is taking risks’",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-07-15/inside-states-case-to-block-paramount-warner-bros-merger"
-    },
-    {
-      "ts": "2026-07-15T14:59:20.763+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Democrats' witness opposing Todd Blanche's confirmation is more than an Epstein survivor",
-      "url": "https://npr.org/2026/07/15/nx-s1-5850397/jeffrey-epstein-todd-blanche-dani-bensky-survivor-victims-sexual-abuse-trafficking"
-    },
-    {
-      "ts": "2026-07-15T14:59:21.419+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Iran threatens to block more trade routes as US launches fresh strikes",
-      "url": "https://bbc.com/news/articles/c9323zgq6wvo"
-    },
-    {
-      "ts": "2026-07-15T14:59:21.802+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Iran threatens to throw world into deeper energy crisis with dire warning to the US and its allies",
-      "url": "https://foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026"
-    },
-    {
-      "ts": "2026-07-15T14:59:22.189+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Outbreak of foodborne parasite expands to more states as cases soar",
-      "url": "https://yahoo.com/news/us/articles/outbreak-diarrhea-parasite-expands-more-180849369.html"
-    },
-    {
-      "ts": "2026-07-15T15:00:20.654+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Blanche faces grilling on DOJ controversies",
-      "url": "https://abcnews.com/Politics/blanche-face-grilling-doj-controversies-seeks-confirmation-ag/story?id=134746132"
-    },
-    {
-      "ts": "2026-07-15T15:00:21.361+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "U.S. announces new strikes on Iran as war intensifies",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-trump-strait-of-hormuz-persian-gulf-strikes"
-    },
-    {
-      "ts": "2026-07-15T15:00:21.814+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "US strikes Iran again as blockade escalates tensions: Live updates",
-      "url": "https://usatoday.com/story/news/world/2026/07/15/iran-war-updates-us-strikes-strait-hormuz--live/90922350007"
-    },
-    {
-      "ts": "2026-07-15T15:00:22.304+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump administration live updates: AG nominee Todd Blanche faces scrutiny at high-stakes Senate hearing",
-      "url": "https://nbcnews.com/politics/trump-administration/live-blog/trump-blanche-doj-clayton-congress-iran-ice-2026-midterm-live-updates-rcna587566"
-    },
-    {
-      "ts": "2026-07-15T15:00:34.094+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "1 dead, 3 missing after boat carrying mourning family sinks near Alcatraz",
-      "url": "https://cnn.com/2026/07/14/us/san-francisco-boat-capsizes-alcatraz"
-    },
-    {
-      "ts": "2026-07-15T15:00:35.974+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘Fear, intimidation, violence’: calls mount to remove ICE from US streets after agents killed two men",
-      "url": "https://theguardian.com/us-news/2026/jul/15/remove-ice-us-streets-joan-sebastian-duran-guerrero-lorenzo-salgado-araujo"
-    },
-    {
-      "ts": "2026-07-15T15:00:36.504+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "US reimposes blockade and steps up strikes as Iran threatens to halt Mideast energy exports",
-      "url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-15-2026-b7c592f269d822407dd6b5641602bf25"
-    },
-    {
-      "ts": "2026-07-15T15:00:37.093+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Inside the states’ case to block the Paramount-Warner Bros. merger: ‘Each side is taking risks’",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-07-15/inside-states-case-to-block-paramount-warner-bros-merger"
-    },
-    {
-      "ts": "2026-07-15T15:00:37.598+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Democrats' witness opposing Todd Blanche's confirmation is more than an Epstein survivor",
-      "url": "https://npr.org/2026/07/15/nx-s1-5850397/jeffrey-epstein-todd-blanche-dani-bensky-survivor-victims-sexual-abuse-trafficking"
-    },
-    {
-      "ts": "2026-07-15T15:00:38.346+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Iran threatens to block more trade routes as US launches fresh strikes",
-      "url": "https://bbc.com/news/articles/c9323zgq6wvo"
-    },
-    {
-      "ts": "2026-07-15T15:00:38.79+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Iran threatens to throw world into deeper energy crisis with dire warning to the US and its allies",
-      "url": "https://foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026"
-    },
-    {
-      "ts": "2026-07-15T15:00:39.245+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Outbreak of foodborne parasite expands to more states as cases soar",
-      "url": "https://yahoo.com/news/us/articles/outbreak-diarrhea-parasite-expands-more-180849369.html"
-    },
-    {
-      "ts": "2026-07-15T15:16:18.72+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Blanche faces grilling on DOJ controversies",
-      "url": "https://abcnews.com/Politics/blanche-face-grilling-doj-controversies-seeks-confirmation-ag/story?id=134746132"
-    },
-    {
-      "ts": "2026-07-15T15:16:20.057+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "U.S. announces new strikes on Iran as war intensifies",
-      "url": "https://cbsnews.com/live-updates/iran-us-war-trump-strait-of-hormuz-persian-gulf-strikes"
-    },
-    {
-      "ts": "2026-07-15T15:16:20.416+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "US strikes Iran again as blockade escalates tensions: Live updates",
-      "url": "https://usatoday.com/story/news/world/2026/07/15/iran-war-updates-us-strikes-strait-hormuz--live/90922350007"
-    },
-    {
-      "ts": "2026-07-15T15:16:20.633+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump administration live updates: AG nominee Todd Blanche faces scrutiny at high-stakes Senate hearing",
-      "url": "https://nbcnews.com/politics/trump-administration/live-blog/trump-blanche-doj-clayton-congress-iran-ice-2026-midterm-live-updates-rcna587566"
-    },
-    {
-      "ts": "2026-07-15T15:16:28.438+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "1 dead, 3 missing after boat carrying mourning family sinks near Alcatraz",
-      "url": "https://cnn.com/2026/07/14/us/san-francisco-boat-capsizes-alcatraz"
-    },
-    {
-      "ts": "2026-07-15T15:16:29.844+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "‘Fear, intimidation, violence’: calls mount to remove ICE from US streets after agents killed two men",
-      "url": "https://theguardian.com/us-news/2026/jul/15/remove-ice-us-streets-joan-sebastian-duran-guerrero-lorenzo-salgado-araujo"
-    },
-    {
-      "ts": "2026-07-15T15:16:30.235+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Trump administration orders ICE to suspend most vehicle stops after 2 deadly shootings",
-      "url": "https://apnews.com/article/maine-ice-shooting-man-killed-73681fcf59fceb8b43b198ccaec554d3"
-    },
-    {
-      "ts": "2026-07-15T15:16:30.75+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Inside the states’ case to block the Paramount-Warner Bros. merger: ‘Each side is taking risks’",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-07-15/inside-states-case-to-block-paramount-warner-bros-merger"
-    },
-    {
-      "ts": "2026-07-15T15:16:31.065+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Democrats' witness opposing Todd Blanche's confirmation is more than an Epstein survivor",
-      "url": "https://npr.org/2026/07/15/nx-s1-5850397/jeffrey-epstein-todd-blanche-dani-bensky-survivor-victims-sexual-abuse-trafficking"
-    },
-    {
-      "ts": "2026-07-15T15:16:31.407+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Iran threatens to block more trade routes as US launches fresh strikes",
-      "url": "https://bbc.com/news/articles/c9323zgq6wvo"
-    },
-    {
-      "ts": "2026-07-15T15:16:31.69+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Iran threatens to throw world into deeper energy crisis with dire warning to the US and its allies",
-      "url": "https://foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026"
-    },
-    {
-      "ts": "2026-07-15T15:16:31.865+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Outbreak of foodborne parasite expands to more states as cases soar",
-      "url": "https://yahoo.com/news/us/articles/outbreak-diarrhea-parasite-expands-more-180849369.html"
-    },
     {
       "ts": "2026-07-15T15:42:30.403+00:00",
       "source_id": "abc1",
@@ -1430,6 +1010,90 @@
       "kind": "headline",
       "title": "House Republicans unveil a $95 billion sequel to Trump's 'big beautiful bill'",
       "url": "https://yahoo.com/news/politics/articles/us--congress-budget-144515695.html"
+    },
+    {
+      "ts": "2026-07-16T03:31:34.154+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Canadian wildfire smoke descends on parts of US, including New York City",
+      "url": "https://abcnews.com/US/canadian-wildfire-smoke-descends-us-spreading-great-lakes/story?id=134774391"
+    },
+    {
+      "ts": "2026-07-16T03:31:35.789+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "U.S. disables ship for allegedly violating Iran blockade amid Strait of Hormuz feud",
+      "url": "https://cbsnews.com/live-updates/iran-us-war-trump-strait-of-hormuz-persian-gulf-strikes"
+    },
+    {
+      "ts": "2026-07-16T03:31:36.238+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Iran frees US citizen detained since 2024, Trump says",
+      "url": "https://usatoday.com/story/news/politics/2026/07/15/iran-frees-us-citizen-detained-2024/90937684007"
+    },
+    {
+      "ts": "2026-07-16T03:31:36.574+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "He was a young dad, working to give his daughter a stable life, before ICE killed him",
+      "url": "https://nbcnews.com/news/us-news/duran-guerrero-shot-ice-biddeford-maine-young-dad-rcna587557"
+    },
+    {
+      "ts": "2026-07-16T03:31:55.213+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Officials asked to turn over phones at White House as leak investigation intensifies",
+      "url": "https://cnn.com/2026/07/15/politics/susie-wiles-kash-patel-leak"
+    },
+    {
+      "ts": "2026-07-16T03:31:57.313+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "US attacks oil tanker in strait of Hormuz as strikes reported in Tehran",
+      "url": "https://theguardian.com/world/2026/jul/16/us-attacks-oil-tanker-strait-of-hormuz-iran-tehran-strikes"
+    },
+    {
+      "ts": "2026-07-16T03:31:57.716+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "US airstrikes hit northern Iran as it disables ship trying to run the blockade",
+      "url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-15-2026-b7c592f269d822407dd6b5641602bf25"
+    },
+    {
+      "ts": "2026-07-16T03:31:58.333+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Memorial at sea turns deadly when boat sinks, submerging mourners in San Francisco Bay",
+      "url": "https://latimes.com/california/story/2026-07-14/boat-emergency-near-alcatraz-sparks-rescue-effort-in-san-francisco-bay"
+    },
+    {
+      "ts": "2026-07-16T03:31:58.62+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Takeaways from Todd Blanche's confirmation hearing for attorney general",
+      "url": "https://npr.org/2026/07/15/nx-s1-5895105/todd-blanche-senate-confirmation-attorney-general-takeaways"
+    },
+    {
+      "ts": "2026-07-16T03:31:59.029+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "US launches fresh strikes on Iran as Trump warns Tehran it 'better behave'",
+      "url": "https://bbc.com/news/articles/c9323zgq6wvo"
+    },
+    {
+      "ts": "2026-07-16T03:31:59.39+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Iran's disturbing new Trump display sends chilling message to the US",
+      "url": "https://foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026"
+    },
+    {
+      "ts": "2026-07-16T03:31:59.629+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "U.S. and Iran trade fresh strikes as Tehran warns of 'existential war'",
+      "url": "https://yahoo.com/news/world/articles/us-strikes-iran-again-as-tehran-warns-of-existential-war-with-america-233825670.html"
     }
   ]
 }
