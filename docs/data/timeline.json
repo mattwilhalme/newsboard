@@ -1,512 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-24T01:04:57.376Z",
+  "generatedAt": "2026-07-24T04:28:39.239Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-07-23T13:09:52.787+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "House Judiciary issues criminal referral against Jack Smith over alleged perjury",
-      "url": "https://abcnews.com/Politics/house-judiciary-committee-chairman-jim-jordan-issues-criminal/story?id=135006808"
-    },
-    {
-      "ts": "2026-07-23T13:09:54.298+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Signs of U.S. military buildup as Iran attacks Jordan, Houthis hit ships",
-      "url": "https://cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-oil-prices-red-sea-houthis"
-    },
-    {
-      "ts": "2026-07-23T13:09:54.602+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Trump mocks Sen. Jon Ossoff, but flubs punchline at Georgia stop",
-      "url": "https://usatoday.com/story/news/politics/2026/07/22/donald-trump-jon-ossoff-midterms-elections-georgia-peewee-herman/91014454007"
-    },
-    {
-      "ts": "2026-07-23T13:09:54.937+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump says Saudi Arabia must normalize Israel ties before nuclear deal is approved",
-      "url": "https://nbcnews.com/world/middle-east/trump-saudi-arabia-normalize-israel-ties-nuclear-deal-rcna588859"
-    },
-    {
-      "ts": "2026-07-23T13:10:07.346+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Oil nears $100 as Red Sea attacks target tankers",
-      "url": "https://cnn.com/2026/07/23/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-07-23T13:10:08.438+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "US signs landmark nuclear deal with Saudi Arabia that could pave the way for domestic nuclear enrichment",
-      "url": "https://theguardian.com/us-news/2026/jul/22/trump-nuclear-agreement-saudi-arabia"
-    },
-    {
-      "ts": "2026-07-23T13:10:08.792+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "A new threat by Yemen’s Houthis could widen the Iran war and put another trade chokepoint at risk",
-      "url": "https://apnews.com/article/yemen-saudi-houthis-attack-shipping-red-sea-iran-6ee98d611669dc84953d2f2e15958bf9"
-    },
-    {
-      "ts": "2026-07-23T13:10:09.208+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Giant rats, bright green flies, putrid smells: Boyle Heights residents describe unbearable conditions",
-      "url": "https://latimes.com/california/story/2026-07-23/lineage-warehouse-boyle-heights-conditions"
-    },
-    {
-      "ts": "2026-07-23T13:10:09.618+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Amid a big hiring push, police experts question ICE officer vetting",
-      "url": "https://npr.org/2026/07/23/nx-s1-5903173/police-experts-question-ice-officer-vetting"
-    },
-    {
-      "ts": "2026-07-23T13:10:09.84+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Saudis must recognise Israel for nuclear deal, says Trump",
-      "url": "https://bbc.com/news/articles/cwye71yq8wwo"
-    },
-    {
-      "ts": "2026-07-23T13:10:10.068+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump admin shreds AOC's military merger claim as 'FALSE' in blistering post",
-      "url": "https://foxnews.com/politics/aoc-roasted-defense-bill-claim-gop-lawmaker-tells-stop-stoking-jew-hatred"
-    },
-    {
-      "ts": "2026-07-23T13:10:10.239+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Mideast oil producers step up plans to bypass the Strait of Hormuz",
-      "url": "https://yahoo.com/news/world/articles/mideast-oil-producers-step-plans-072947409.html"
-    },
-    {
-      "ts": "2026-07-23T14:10:14.137+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "House Judiciary issues criminal referral against Jack Smith over alleged perjury",
-      "url": "https://abcnews.com/Politics/house-judiciary-committee-chairman-jim-jordan-issues-criminal/story?id=135006808"
-    },
-    {
-      "ts": "2026-07-23T14:10:15.566+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump threatens Iran and Houthis amid signs of U.S. military buildup",
-      "url": "https://cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-oil-prices-red-sea-houthis"
-    },
-    {
-      "ts": "2026-07-23T14:10:15.95+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "‘You can’t say goodbye:’ Freed Cuban artist vows protests as US-Cuba deal",
-      "url": "https://usatoday.com/story/news/world/2026/07/23/cuba-luis-manuel-otero-alcantara-political-prisoner-interview/91001142007"
-    },
-    {
-      "ts": "2026-07-23T14:10:16.214+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump says Saudi Arabia must normalize Israel ties before nuclear deal is approved",
-      "url": "https://nbcnews.com/world/middle-east/trump-saudi-arabia-normalize-israel-ties-nuclear-deal-rcna588859"
-    },
-    {
-      "ts": "2026-07-23T14:10:20.526+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Oil tops $100 as Red Sea attack significantly escalates conflict",
-      "url": "https://cnn.com/2026/07/23/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-07-23T14:10:21.498+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Space datacenters proposed by Musk and Bezos ‘catastrophic’ for planet, experts warn",
-      "url": "https://theguardian.com/science/2026/jul/23/space-datacenters-bezos-blue-origin"
-    },
-    {
-      "ts": "2026-07-23T14:10:21.876+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Brent oil’s price briefly tops $100 per barrel, as Tesla and Alphabet drag Wall Street lower",
-      "url": "https://apnews.com/article/stocks-markets-iran-trump-ai-inflation-45b9165d6c518f5bea668b6ba7a89838"
-    },
-    {
-      "ts": "2026-07-23T14:10:22.292+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Giant rats, bright green flies, putrid smells: Boyle Heights residents describe unbearable conditions",
-      "url": "https://latimes.com/california/story/2026-07-23/lineage-warehouse-boyle-heights-conditions"
-    },
-    {
-      "ts": "2026-07-23T14:10:22.602+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Amid a big hiring push, police experts question ICE officer vetting",
-      "url": "https://npr.org/2026/07/23/nx-s1-5903173/police-experts-question-ice-officer-vetting"
-    },
-    {
-      "ts": "2026-07-23T14:10:23.012+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "'What was their crime?': BBC visits Iran school where strike killed 120 children",
-      "url": "https://bbc.com/news/articles/cewrx0ldlkko"
-    },
-    {
-      "ts": "2026-07-23T14:10:23.276+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Obama Center subcontractor suspends all operations, lays off dozens: 'Let’s just shut it down'",
-      "url": "https://foxnews.com/politics/final-death-blow-obama-center-subcontractor-shuts-down-amid-4m-fight-lays-off-25"
-    },
-    {
-      "ts": "2026-07-23T14:10:23.606+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "The biggest concern about the new U.S.-Saudi nuclear deal? Iran.",
-      "url": "https://yahoo.com/news/politics/articles/pandora-box-saudi-nuclear-pact-232524592.html"
-    },
-    {
-      "ts": "2026-07-23T15:25:06.335+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Global oil prices cross $100 a barrel as Iran war sends fuel prices surging",
-      "url": "https://abcnews.com/Business/global-oil-prices-cross-100-barrel-iran-war/story?id=135017063"
-    },
-    {
-      "ts": "2026-07-23T15:25:08.301+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "House again rebukes Trump on Iran, approving resolution to limit war powers",
-      "url": "https://cbsnews.com/news/house-trump-war-powers-vote"
-    },
-    {
-      "ts": "2026-07-23T15:25:08.688+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Exclusive: He protested Cuba's regime. Then he was forced to the US",
-      "url": "https://usatoday.com/story/news/world/2026/07/23/cuba-luis-manuel-otero-alcantara-political-prisoner-interview/91001142007"
-    },
-    {
-      "ts": "2026-07-23T15:25:09.307+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump says Saudi Arabia must normalize Israel ties before nuclear deal is approved",
-      "url": "https://nbcnews.com/world/middle-east/trump-saudi-arabia-normalize-israel-ties-nuclear-deal-rcna588859"
-    },
-    {
-      "ts": "2026-07-23T15:25:21.553+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Oil tops $100 as Red Sea attack significantly escalates conflict",
-      "url": "https://cnn.com/2026/07/23/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-07-23T15:25:23.132+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Space datacenters proposed by Musk and Bezos ‘catastrophic’ for planet, experts warn",
-      "url": "https://theguardian.com/science/2026/jul/23/space-datacenters-bezos-blue-origin"
-    },
-    {
-      "ts": "2026-07-23T15:25:23.756+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "House again passes resolution seeking to halt military action in Iran as some Republicans defect",
-      "url": "https://apnews.com/article/iran-congress-war-powers-resolution-vote-0ba2387a476fe08de0bfd6281adb9639"
-    },
-    {
-      "ts": "2026-07-23T15:25:24.369+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Giant rats, bright green flies, putrid smells: Unbearable conditions near Boyle Heights warehouse, residents say",
-      "url": "https://latimes.com/california/story/2026-07-23/lineage-warehouse-boyle-heights-conditions"
-    },
-    {
-      "ts": "2026-07-23T15:25:24.814+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Amid a big hiring push, police experts question ICE officer vetting",
-      "url": "https://npr.org/2026/07/23/nx-s1-5903173/police-experts-question-ice-officer-vetting"
-    },
-    {
-      "ts": "2026-07-23T15:25:25.452+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Saudis must recognise Israel for nuclear deal, says Trump",
-      "url": "https://bbc.com/news/articles/cwye71yq8wwo"
-    },
-    {
-      "ts": "2026-07-23T15:25:25.966+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump issues ultimatum to Iran if terror group continues attacks in key oil route",
-      "url": "https://foxnews.com/live-news/iran-war-trump-oil-prices-rising-07-23-26"
-    },
-    {
-      "ts": "2026-07-23T15:25:26.273+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump adds condition to nuclear deal with Saudi Arabia, throwing pact into doubt",
-      "url": "https://yahoo.com/news/politics/articles/trump-adds-condition-nuclear-deal-142319780.html"
-    },
-    {
-      "ts": "2026-07-23T15:34:48.583+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Global oil prices cross $100 as fuel prices rise",
-      "url": "https://abcnews.com/Business/global-oil-prices-cross-100-barrel-iran-war/story?id=135017063"
-    },
-    {
-      "ts": "2026-07-23T15:34:50.11+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "House again rebukes Trump on Iran, approving resolution to limit war powers",
-      "url": "https://cbsnews.com/news/house-trump-war-powers-vote"
-    },
-    {
-      "ts": "2026-07-23T15:34:50.667+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Exclusive: He protested Cuba's regime. Then he was forced to the US",
-      "url": "https://usatoday.com/story/news/world/2026/07/23/cuba-luis-manuel-otero-alcantara-political-prisoner-interview/91001142007"
-    },
-    {
-      "ts": "2026-07-23T15:34:51.007+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump says Saudi Arabia must normalize Israel ties before nuclear deal is approved",
-      "url": "https://nbcnews.com/world/middle-east/trump-saudi-arabia-normalize-israel-ties-nuclear-deal-rcna588859"
-    },
-    {
-      "ts": "2026-07-23T15:35:02.067+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Oil tops $100 as Red Sea attack significantly escalates conflict",
-      "url": "https://cnn.com/2026/07/23/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-07-23T15:35:03.705+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Space datacenters proposed by Musk and Bezos ‘catastrophic’ for planet, experts warn",
-      "url": "https://theguardian.com/science/2026/jul/23/space-datacenters-bezos-blue-origin"
-    },
-    {
-      "ts": "2026-07-23T15:35:04.584+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "House again passes resolution seeking to halt military action in Iran as some Republicans defect",
-      "url": "https://apnews.com/article/iran-congress-war-powers-resolution-vote-0ba2387a476fe08de0bfd6281adb9639"
-    },
-    {
-      "ts": "2026-07-23T15:35:05.119+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Giant rats, bright green flies, putrid smells: Unbearable conditions near Boyle Heights warehouse, residents say",
-      "url": "https://latimes.com/california/story/2026-07-23/lineage-warehouse-boyle-heights-conditions"
-    },
-    {
-      "ts": "2026-07-23T15:35:05.62+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Amid a big hiring push, police experts question ICE officer vetting",
-      "url": "https://npr.org/2026/07/23/nx-s1-5903173/police-experts-question-ice-officer-vetting"
-    },
-    {
-      "ts": "2026-07-23T15:35:07.352+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Saudis must recognise Israel for nuclear deal, says Trump",
-      "url": "https://bbc.com/news/articles/cwye71yq8wwo"
-    },
-    {
-      "ts": "2026-07-23T15:35:07.677+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump issues ultimatum to Iran if terror group continues attacks in key oil route",
-      "url": "https://foxnews.com/live-news/iran-war-trump-oil-prices-rising-07-23-26"
-    },
-    {
-      "ts": "2026-07-23T15:35:08.047+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump adds condition to nuclear deal with Saudi Arabia, throwing pact into doubt",
-      "url": "https://yahoo.com/news/politics/articles/trump-adds-condition-nuclear-deal-142319780.html"
-    },
-    {
-      "ts": "2026-07-23T15:57:45.343+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Global oil prices cross $100 a barrel as Iran war sends fuel prices surging",
-      "url": "https://abcnews.com/Business/global-oil-prices-cross-100-barrel-iran-war/story?id=135017063"
-    },
-    {
-      "ts": "2026-07-23T15:57:46.968+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "House again rebukes Trump on Iran, approving resolution to limit war powers",
-      "url": "https://cbsnews.com/news/house-trump-war-powers-vote"
-    },
-    {
-      "ts": "2026-07-23T15:57:47.494+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Exclusive: He protested Cuba's regime. Then he was forced to the US",
-      "url": "https://usatoday.com/story/news/world/2026/07/23/cuba-luis-manuel-otero-alcantara-political-prisoner-interview/91001142007"
-    },
-    {
-      "ts": "2026-07-23T15:57:47.84+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump says Saudi Arabia must normalize Israel ties before nuclear deal is approved",
-      "url": "https://nbcnews.com/world/middle-east/trump-saudi-arabia-normalize-israel-ties-nuclear-deal-rcna588859"
-    },
-    {
-      "ts": "2026-07-23T15:58:00.571+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Oil tops $100 as Red Sea attack significantly escalates conflict",
-      "url": "https://cnn.com/2026/07/23/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-07-23T15:58:02.27+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Space datacenters proposed by Musk and Bezos ‘catastrophic’ for planet, experts warn",
-      "url": "https://theguardian.com/science/2026/jul/23/space-datacenters-bezos-blue-origin"
-    },
-    {
-      "ts": "2026-07-23T15:58:02.778+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Brent oil tops $100 per barrel, as tumbles for Tesla and Alphabet yank Wall Street lower",
-      "url": "https://apnews.com/article/stocks-markets-iran-trump-ai-inflation-45b9165d6c518f5bea668b6ba7a89838"
-    },
-    {
-      "ts": "2026-07-23T15:58:03.389+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Giant rats, bright green flies, putrid smells: Unbearable conditions near Boyle Heights warehouse, residents say",
-      "url": "https://latimes.com/california/story/2026-07-23/lineage-warehouse-boyle-heights-conditions"
-    },
-    {
-      "ts": "2026-07-23T15:58:03.721+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Amid a big hiring push, police experts question ICE officer vetting",
-      "url": "https://npr.org/2026/07/23/nx-s1-5903173/police-experts-question-ice-officer-vetting"
-    },
-    {
-      "ts": "2026-07-23T15:58:04.32+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Saudis must recognise Israel for nuclear deal, says Trump",
-      "url": "https://bbc.com/news/articles/cwye71yq8wwo"
-    },
-    {
-      "ts": "2026-07-23T15:58:04.701+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump issues ultimatum to Iran if terror group continues attacks in key oil route",
-      "url": "https://foxnews.com/live-news/iran-war-trump-oil-prices-rising-07-23-26"
-    },
-    {
-      "ts": "2026-07-23T15:58:05.07+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump adds condition to nuclear deal with Saudi Arabia, throwing pact into doubt",
-      "url": "https://yahoo.com/news/politics/articles/trump-adds-condition-nuclear-deal-142319780.html"
-    },
-    {
-      "ts": "2026-07-23T16:23:31.399+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Global oil prices cross $100 a barrel as Iran war sends fuel prices surging",
-      "url": "https://abcnews.com/Business/global-oil-prices-cross-100-barrel-iran-war/story?id=135017063"
-    },
-    {
-      "ts": "2026-07-23T16:23:32.881+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "House again rebukes Trump on Iran, approving resolution to limit war powers",
-      "url": "https://cbsnews.com/news/house-trump-war-powers-vote"
-    },
-    {
-      "ts": "2026-07-23T16:23:33.211+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Exclusive: He protested Cuba's regime. Then he was forced to the US",
-      "url": "https://usatoday.com/story/news/world/2026/07/23/cuba-luis-manuel-otero-alcantara-political-prisoner-interview/91001142007"
-    },
-    {
-      "ts": "2026-07-23T16:23:33.461+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump says Saudi Arabia must normalize Israel ties before nuclear deal is approved",
-      "url": "https://nbcnews.com/world/middle-east/trump-saudi-arabia-normalize-israel-ties-nuclear-deal-rcna588859"
-    },
-    {
-      "ts": "2026-07-23T16:23:39.408+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Oil tops $100 as Red Sea attack significantly escalates conflict",
-      "url": "https://cnn.com/2026/07/23/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-07-23T16:23:41.283+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Space datacenters proposed by Musk and Bezos ‘catastrophic’ for planet, experts warn",
-      "url": "https://theguardian.com/science/2026/jul/23/space-datacenters-bezos-blue-origin"
-    },
-    {
-      "ts": "2026-07-23T16:23:41.74+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "House again passes resolution seeking to halt military action in Iran as some Republicans defect",
-      "url": "https://apnews.com/article/iran-congress-war-powers-resolution-vote-0ba2387a476fe08de0bfd6281adb9639"
-    },
-    {
-      "ts": "2026-07-23T16:23:42.183+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Giant rats, bright green flies, putrid smells: Unbearable conditions near Boyle Heights warehouse, residents say",
-      "url": "https://latimes.com/california/story/2026-07-23/lineage-warehouse-boyle-heights-conditions"
-    },
-    {
-      "ts": "2026-07-23T16:23:42.543+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Amid a big hiring push, police experts question ICE officer vetting",
-      "url": "https://npr.org/2026/07/23/nx-s1-5903173/police-experts-question-ice-officer-vetting"
-    },
-    {
-      "ts": "2026-07-23T16:23:43.168+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Saudis must recognise Israel for nuclear deal, says Trump",
-      "url": "https://bbc.com/news/articles/cwye71yq8wwo"
-    },
-    {
-      "ts": "2026-07-23T16:23:43.476+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump issues ultimatum to Iran if terror group continues attacks in key oil route",
-      "url": "https://foxnews.com/live-news/iran-war-trump-oil-prices-rising-07-23-26"
-    },
-    {
-      "ts": "2026-07-23T16:23:43.826+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump adds condition to nuclear deal with Saudi Arabia, throwing pact into doubt",
-      "url": "https://yahoo.com/news/politics/articles/trump-adds-condition-nuclear-deal-142319780.html"
-    },
     {
       "ts": "2026-07-23T17:03:21.044+00:00",
       "source_id": "abc1",
@@ -1262,6 +758,90 @@
       "kind": "headline",
       "title": "White House announces double-digit tariffs on more than 60 nations",
       "url": "https://yahoo.com/finance/economy/policy/article/trump-announces-next-phase-of-global-tariffs-affecting-994-of-us-imports-210032314.html"
+    },
+    {
+      "ts": "2026-07-24T04:28:17.76+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Multiple injured, 1 critically, after seaplane with 11 aboard crashes in Wash. state",
+      "url": "https://abcnews.com/US/multiple-injured-1-critically-after-seaplane-11-aboard/story?id=135041520"
+    },
+    {
+      "ts": "2026-07-24T04:28:19.227+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "U.S. carries out more Iran strikes as Trump threatens \"major military punishment\"",
+      "url": "https://cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-oil-prices-red-sea-houthis"
+    },
+    {
+      "ts": "2026-07-24T04:28:19.666+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Executing the elderly: Is it justice served or beneath our dignity?",
+      "url": "https://usatoday.com/story/news/nation/2026/07/23/executions-elderly-inmates-death-row/90948225007"
+    },
+    {
+      "ts": "2026-07-24T04:28:19.959+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "In the data center capital of the world, residents ask who the AI boom is helping",
+      "url": "https://nbcnews.com/tech/tech-news/virginia-data-center-alley-residents-ask-ai-boom-helps-rcna350369"
+    },
+    {
+      "ts": "2026-07-24T04:28:32.938+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "How Trump upended the Saudi nuclear deal less than 24 hours after its signing",
+      "url": "https://cnn.com/2026/07/23/politics/saudi-nuclear-deal-trump-conservatives"
+    },
+    {
+      "ts": "2026-07-24T04:28:34.269+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Donald Trump says decision on ‘massive attack’ against Iran is close",
+      "url": "https://theguardian.com/world/2026/jul/23/trump-says-he-is-close-to-decision-on-largest-yet-attack-on-iran"
+    },
+    {
+      "ts": "2026-07-24T04:28:34.717+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "Trump imposes new double-digit tariffs on 60 countries",
+      "url": "https://apnews.com/article/trump-tariffs-supreme-court-forced-labor-4ea091eeee3fa1bfbe55af3f482e6bc1"
+    },
+    {
+      "ts": "2026-07-24T04:28:35.171+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Homelessness has increased in L.A., dealing fresh setback to Mayor Karen Bass",
+      "url": "https://latimes.com/california/story/2026-07-23/homelessness-is-up-in-los-angeles-in-a-setback-to-mayor-karen-bass"
+    },
+    {
+      "ts": "2026-07-24T04:28:35.637+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Justice Dept. drops 'New York Times' subpoenas under pressure from judge",
+      "url": "https://npr.org/2026/07/23/nx-s1-5905732/nyt-subpoenas-trump-air-force-one-plane-qatar-security"
+    },
+    {
+      "ts": "2026-07-24T04:28:36.002+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "US imposes tariffs on dozens of trade partners, citing forced labour concerns",
+      "url": "https://bbc.com/news/articles/cvgj61j6l08o"
+    },
+    {
+      "ts": "2026-07-24T04:28:36.634+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "'Allahu Akbar' shouted as suspect carried out alleged antisemitic attacks: police",
+      "url": "https://foxnews.com/us/suspect-custody-2-men-found-stab-wounds-officials-call-antisemitic-attack"
+    },
+    {
+      "ts": "2026-07-24T04:28:36.843+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "The world's most critical financial market is flashing red about the Iran war",
+      "url": "https://yahoo.com/finance/economy/policy/articles/10-treasury-yield-jumps-highest-134239758.html"
     }
   ]
 }
