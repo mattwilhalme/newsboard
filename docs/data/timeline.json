@@ -1,260 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-27T00:10:02.685Z",
+  "generatedAt": "2026-07-27T04:25:45.388Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-07-26T12:14:49.511+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Police identify suspect after deadly Berlin pride vehicle crash",
-      "url": "https://abcnews.com/International/berlin-police-seek-21-year-after-vehicle-crashes/story?id=135095525"
-    },
-    {
-      "ts": "2026-07-26T12:14:51.236+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "ICE to target Haitians as Temporary Protected Status is set to end, sources say",
-      "url": "https://cbsnews.com/news/ice-haitian-migrants-arrest-deport-temporary-protected-status"
-    },
-    {
-      "ts": "2026-07-26T12:14:51.804+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Germany pledges justice over Berlin Pride attack after 1 killed, 16 injured",
-      "url": "https://usatoday.com/story/news/world/2026/07/26/berlin-pride-attack-germany/91054265007"
-    },
-    {
-      "ts": "2026-07-26T12:14:52.25+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Eyeing a ‘tough race’ and a new opponent, Susan Collins walks a fine line on Trump and MAGA",
-      "url": "https://nbcnews.com/politics/2026-election/eyeing-tough-race-new-opponent-susan-collins-walks-fine-line-trump-mag-rcna588993"
-    },
-    {
-      "ts": "2026-07-26T12:15:00.203+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Vance, Caine raised concerns about escalating war in Iran, sources say",
-      "url": "https://cnn.com/2026/07/25/politics/us-iran-strikes-operation"
-    },
-    {
-      "ts": "2026-07-26T12:15:01.816+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "RFK Jr urges Alzheimer’s screening but blunts key panel that could drive research",
-      "url": "https://theguardian.com/us-news/2026/jul/26/rfk-jr-alzheimers-us-preventive-services-task-force"
-    },
-    {
-      "ts": "2026-07-26T12:15:02.339+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Airstrikes have paused and talks are pressing forward. But can the US and Iran take the off-ramp?",
-      "url": "https://apnews.com/article/iran-war-trump-diplomacy-netanyahu-d491158a4c9a1d3429a87a6ed58f2f72"
-    },
-    {
-      "ts": "2026-07-26T12:15:02.833+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Why Paramount’s Warner Bros. deal suddenly looks less certain",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-07-25/paramount-warner-bros-deal-delay-midterms"
-    },
-    {
-      "ts": "2026-07-26T12:15:03.122+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Rage-giving, innovation and cuts: How public media has survived without federal funds",
-      "url": "https://npr.org/2026/07/26/nx-s1-5884022/pbs-npr-public-radio-tv-funding-trump"
-    },
-    {
-      "ts": "2026-07-26T12:15:03.689+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Israeli settlers set fire to mosques, cars and farm land in West Bank, Palestinians say",
-      "url": "https://bbc.com/news/articles/cjrv77gl4deo"
-    },
-    {
-      "ts": "2026-07-26T12:15:04.206+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump's meeting with world leader could decide next phase of Iran war",
-      "url": "https://foxnews.com/live-news/us-iran-peace-strait-hormuz-talks-strikes-hold-july-26"
-    },
-    {
-      "ts": "2026-07-26T12:15:04.566+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "'Mind-blowing' El Niño stuns scientists. Why they are so concerned.",
-      "url": "https://yahoo.com/news/science/articles/mind-blowing-el-ni-o-143450780.html"
-    },
-    {
-      "ts": "2026-07-26T14:12:21.308+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Police identify suspect after deadly Berlin pride vehicle crash",
-      "url": "https://abcnews.com/International/berlin-police-seek-21-year-after-vehicle-crashes/story?id=135095525"
-    },
-    {
-      "ts": "2026-07-26T14:12:23.092+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "ICE to target Haitians as Temporary Protected Status is set to end, sources say",
-      "url": "https://cbsnews.com/news/ice-haitian-migrants-arrest-deport-temporary-protected-status"
-    },
-    {
-      "ts": "2026-07-26T14:12:23.815+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Map shows where military bases delayed toxic PFAS cleanup",
-      "url": "https://usatoday.com/story/news/nation/2026/07/26/toxic-pfas-cleanup-forever-chemicals-delays-military-bases-map-data/91026055007"
-    },
-    {
-      "ts": "2026-07-26T14:12:24.096+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Manhunt underway for suspect with ‘Islamist’ ties after deadly Berlin Pride attack",
-      "url": "https://nbcnews.com/world/germany/manhunt-underway-suspect-islamist-ties-deadly-berlin-pride-attack-rcna589276"
-    },
-    {
-      "ts": "2026-07-26T14:12:33.916+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Vance, Caine raised concerns about escalating war in Iran, sources say",
-      "url": "https://cnn.com/2026/07/25/politics/us-iran-strikes-operation"
-    },
-    {
-      "ts": "2026-07-26T14:12:35.451+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Venezuelan men sue aviation firms who flew them to notorious Salvadorian jail",
-      "url": "https://theguardian.com/us-news/2026/jul/26/lawsuit-csi-aviation-globalx-cecot-deportation"
-    },
-    {
-      "ts": "2026-07-26T14:12:35.867+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Exclusive: In a Ukrainian bomb shelter, Laura Loomer explains shift on Russia’s war",
-      "url": "https://apnews.com/article/laura-loomer-trump-ukraine-russia-interview-101852f6deab17e1d8d215fdde675ee5"
-    },
-    {
-      "ts": "2026-07-26T14:12:36.405+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Has In-n-Out finally met its match? One California city is fighting drive-thrus",
-      "url": "https://latimes.com/california/story/2026-07-26/in-n-out-culver-city-drive-thru-ban"
-    },
-    {
-      "ts": "2026-07-26T14:12:36.852+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Rage-giving, innovation and cuts: How public media has survived without federal funds",
-      "url": "https://npr.org/2026/07/26/nx-s1-5884022/pbs-npr-public-radio-tv-funding-trump"
-    },
-    {
-      "ts": "2026-07-26T14:12:37.398+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Israeli settlers set fire to mosques, cars and farm land in West Bank, Palestinians say",
-      "url": "https://bbc.com/news/articles/cjrv77gl4deo"
-    },
-    {
-      "ts": "2026-07-26T14:12:37.802+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Massive oil tanker explosion reported in key oil route after hitting sea mine",
-      "url": "https://foxnews.com/live-news/us-iran-peace-strait-hormuz-talks-strikes-hold-july-26"
-    },
-    {
-      "ts": "2026-07-26T14:12:38.171+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "'Mind-blowing' El Niño stuns scientists. Why they are so concerned.",
-      "url": "https://yahoo.com/news/science/articles/mind-blowing-el-ni-o-143450780.html"
-    },
-    {
-      "ts": "2026-07-26T15:44:06.958+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "GOP Rep. Turner: 'Not a lot of options' for Trump in Iran",
-      "url": "https://abcnews.com/Politics/gop-rep-turner-lot-options-trump-iran/story?id=135095843"
-    },
-    {
-      "ts": "2026-07-26T15:44:08.713+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "ICE to target Haitians as Temporary Protected Status is set to end, sources say",
-      "url": "https://cbsnews.com/news/ice-haitian-migrants-arrest-deport-temporary-protected-status"
-    },
-    {
-      "ts": "2026-07-26T15:44:09.149+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Midwest, East Coast could see damaging winds, flash flooding this week",
-      "url": "https://usatoday.com/story/news/nation/2026/07/26/north-eastern-us-winds-flash-flooding/91055071007"
-    },
-    {
-      "ts": "2026-07-26T15:44:09.517+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Manhunt underway for suspect with ‘Islamist’ ties after deadly Berlin Pride attack",
-      "url": "https://nbcnews.com/world/germany/manhunt-underway-suspect-islamist-ties-deadly-berlin-pride-attack-rcna589276"
-    },
-    {
-      "ts": "2026-07-26T15:44:20.976+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Sources: Talk of escalating war raised concerns over munitions and casualties",
-      "url": "https://cnn.com/2026/07/25/politics/us-iran-strikes-operation"
-    },
-    {
-      "ts": "2026-07-26T15:44:22.55+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Firefighters in France battle to prevent huge blaze from approaching Bordeaux",
-      "url": "https://theguardian.com/world/2026/jul/26/firefighters-in-france-battle-to-prevent-huge-blaze-from-approaching-bordeaux"
-    },
-    {
-      "ts": "2026-07-26T15:44:22.969+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Exclusive: In a Ukrainian bomb shelter, Laura Loomer explains shift on Russia’s war",
-      "url": "https://apnews.com/article/laura-loomer-trump-ukraine-russia-interview-101852f6deab17e1d8d215fdde675ee5"
-    },
-    {
-      "ts": "2026-07-26T15:44:23.597+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Has In-n-Out finally met its match? One California city is fighting drive-thrus",
-      "url": "https://latimes.com/california/story/2026-07-26/in-n-out-culver-city-drive-thru-ban"
-    },
-    {
-      "ts": "2026-07-26T15:44:24+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Rage-giving, innovation and cuts: How public media has survived without federal funds",
-      "url": "https://npr.org/2026/07/26/nx-s1-5884022/pbs-npr-public-radio-tv-funding-trump"
-    },
-    {
-      "ts": "2026-07-26T15:44:24.512+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "What we know so far about the Berlin Pride ramming attack",
-      "url": "https://bbc.com/news/articles/cevmdxz4872o"
-    },
-    {
-      "ts": "2026-07-26T15:44:24.967+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Fauci's newly released COVID diaries reveal bizarre fixation on fame as pandemic deaths mounted",
-      "url": "https://foxnews.com/politics/fauci-newly-released-covid-diaries-reveal-bizarre-fixation-fame-pandemic-deaths-mounted"
-    },
-    {
-      "ts": "2026-07-26T15:44:25.331+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "'Mind-blowing' El Niño stuns scientists. Why they are so concerned.",
-      "url": "https://yahoo.com/news/science/articles/mind-blowing-el-ni-o-143450780.html"
-    },
     {
       "ts": "2026-07-26T17:12:37.13+00:00",
       "source_id": "abc1",
@@ -758,6 +506,90 @@
       "kind": "headline",
       "title": "Millions of eggs recalled as salmonella outbreak spreads to 17 states",
       "url": "https://yahoo.com/news/us/articles/millions-eggs-recalled-over-salmonella-154553796.html"
+    },
+    {
+      "ts": "2026-07-27T04:25:22.065+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "2 dead, 5 injured in shooting at Seattle Center during food festival: Officials",
+      "url": "https://abcnews.com/US/multiple-people-shot-seattle-center-police/story?id=135108867"
+    },
+    {
+      "ts": "2026-07-27T04:25:24.049+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "ICE to target Haitians as Temporary Protected Status is set to end, sources say",
+      "url": "https://cbsnews.com/news/ice-haitian-migrants-arrest-deport-temporary-protected-status"
+    },
+    {
+      "ts": "2026-07-27T04:25:24.668+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Midwest, East Coast could see damaging winds, flash flooding this week",
+      "url": "https://usatoday.com/story/news/nation/2026/07/26/north-eastern-us-winds-flash-flooding/91055071007"
+    },
+    {
+      "ts": "2026-07-27T04:25:24.987+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "‘Losing his magic’: Putin’s grip on Russia is tested by public unhappiness",
+      "url": "https://nbcnews.com/world/russia/losing-magic-putins-grip-russia-tested-public-unhappiness-rcna589280"
+    },
+    {
+      "ts": "2026-07-27T04:25:37.53+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "The longer the Iran war continues, the worse Trump's options",
+      "url": "https://cnn.com/2026/07/27/politics/trump-iran-war-strikes-strait-of-hormuz-analysis"
+    },
+    {
+      "ts": "2026-07-27T04:25:39.08+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Two dead in shootings at Bite of Seattle food festival, say authorities",
+      "url": "https://theguardian.com/world/2026/jul/27/bite-of-seattle-shooting-center-food-festival"
+    },
+    {
+      "ts": "2026-07-27T04:25:39.665+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "Pentagon’s official Iran war death toll no longer lists 4 troops killed during renewed fighting",
+      "url": "https://apnews.com/article/iran-war-casualty-count-pentagon-us-troops-4c578fc74746052627b1c87845fdc0d5"
+    },
+    {
+      "ts": "2026-07-27T04:25:40.251+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Massacre of 10 men in Zacatecas stuns Mexico",
+      "url": "https://latimes.com/world-nation/story/2026-07-26/massacre-of-10-men-in-zacatecas-stuns-mexico"
+    },
+    {
+      "ts": "2026-07-27T04:25:40.636+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "France and Spain fires force more than 300,000 to flee homes",
+      "url": "https://npr.org/2026/07/25/nx-s1-5907963/wildfires-spain-france-evacuations"
+    },
+    {
+      "ts": "2026-07-27T04:25:41.023+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "Macron calls crisis meeting as wildfires threaten Bordeaux and heatwave looms",
+      "url": "https://bbc.com/news/articles/c2350zlyy1yo"
+    },
+    {
+      "ts": "2026-07-27T04:25:41.38+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Iran escalates warnings to Ukraine after alleged attack adds new wrinkle to conflict",
+      "url": "https://foxnews.com/live-news/us-iran-peace-strait-hormuz-talks-strikes-hold-july-26"
+    },
+    {
+      "ts": "2026-07-27T04:25:41.688+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "2 people killed and at least 5 injured as gunfire erupts at Seattle food festival",
+      "url": "https://yahoo.com/news/us/articles/several-people-shot-near-seattles-023939066.html"
     }
   ]
 }
