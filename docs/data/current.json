@@ -1,40 +1,34 @@
 {
   "ok": true,
-  "generatedAt": "2026-08-02T16:10:58.220Z",
+  "generatedAt": "2026-08-02T17:40:41.585Z",
   "sources": {
     "abc1": {
-      "ok": true,
-      "updatedAt": "2026-08-02T16:10:36.670Z",
-      "error": null,
-      "runId": "abc1_2026-08-02T16-10-36-670Z",
-      "since": "2026-08-02T04:59:50.543Z",
-      "item": {
-        "title": "Police confirm 3 fatalities, 5 injuries after shooting at Idaho In-N-Out",
-        "url": "https://abcnews.com/US/police-respond-active-shooter-idaho-burger/story?id=135296367",
-        "imgUrl": null,
-        "slotKey": "5be6806db8a5",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-08-02T17:40:21.933Z",
+      "error": "abc1: headline not found",
+      "runId": "abc1_2026-08-02T17-40-21-933Z",
+      "since": null,
+      "item": null
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:38.397Z",
+      "updatedAt": "2026-08-02T17:40:23.166Z",
       "error": null,
-      "runId": "cbs1_2026-08-02T16-10-38-397Z",
-      "since": "2026-08-02T04:59:50.543Z",
+      "runId": "cbs1_2026-08-02T17-40-23-166Z",
+      "since": "2026-08-02T17:40:41.585Z",
       "item": {
-        "title": "Trump calls off attack on Iran subject to peace deal being \"rapidly\" reached",
-        "url": "https://cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-kuwait-jordan-air-base",
+        "title": "Trump admin. touts its transparency. Yet few Iran war details have been shared.",
+        "url": "https://cbsnews.com/news/trump-administration-iran-war-details-transparency",
         "imgUrl": null,
         "slotKey": "4d6f70f0b663",
-        "contentType": "live"
+        "contentType": "news"
       }
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:38.945Z",
+      "updatedAt": "2026-08-02T17:40:23.649Z",
       "error": null,
-      "runId": "usat1_2026-08-02T16-10-38-945Z",
+      "runId": "usat1_2026-08-02T17-40-23-648Z",
       "since": "2026-08-02T16:10:58.220Z",
       "item": {
         "title": "Dating has gotten too expensive. So singles are ‘infladating’",
@@ -46,9 +40,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:39.311Z",
+      "updatedAt": "2026-08-02T17:40:23.870Z",
       "error": null,
-      "runId": "nbc1_2026-08-02T16-10-39-311Z",
+      "runId": "nbc1_2026-08-02T17-40-23-870Z",
       "since": "2026-08-01T23:35:14.266Z",
       "item": {
         "title": "U.S. agrees to pause attacks on Iran subject to ‘rapidly’ making deal, Trump says",
@@ -60,9 +54,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:50.383Z",
+      "updatedAt": "2026-08-02T17:40:35.452Z",
       "error": null,
-      "runId": "cnn1_2026-08-02T16-10-45-796Z",
+      "runId": "cnn1_2026-08-02T17-40-31-269Z",
       "since": "2026-08-02T14:42:45.208Z",
       "item": {
         "title": "Inside Schumer's effort to stop Abdul El-Sayed's rise",
@@ -74,13 +68,13 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:51.690Z",
+      "updatedAt": "2026-08-02T17:40:36.811Z",
       "error": null,
-      "runId": "guardian1_2026-08-02T16-10-51-690Z",
-      "since": "2026-08-02T11:33:22.563Z",
+      "runId": "guardian1_2026-08-02T17-40-36-810Z",
+      "since": "2026-08-02T17:40:41.585Z",
       "item": {
-        "title": "Family to sue after woman released from ICE custody froze to death",
-        "url": "https://theguardian.com/us-news/2026/aug/02/ice-death-pittsburgh-daphy-michel-haiti",
+        "title": "Trump climbs down on Iran strikes in expectation of ‘rapidly’ reaching a deal",
+        "url": "https://theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
@@ -88,9 +82,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:52.407Z",
+      "updatedAt": "2026-08-02T17:40:37.180Z",
       "error": null,
-      "runId": "ap1_2026-08-02T16-10-52-407Z",
+      "runId": "ap1_2026-08-02T17-40-37-180Z",
       "since": "2026-08-02T11:33:22.563Z",
       "item": {
         "title": "Trump says he will order halt to Iran strikes after parameters reached for deal to end war",
@@ -101,24 +95,18 @@
       }
     },
     "latimes1": {
-      "ok": true,
-      "updatedAt": "2026-08-02T16:10:52.882Z",
-      "error": null,
-      "runId": "latimes1_2026-08-02T16-10-52-882Z",
-      "since": "2026-08-02T11:33:22.563Z",
-      "item": {
-        "title": "It’s been a summer of bad news for Mayor Bass. Can she reset the narrative?",
-        "url": "https://latimes.com/california/story/2026-08-02/its-been-summer-of-bad-news-for-mayor-bass-can-she-reset-narrative",
-        "imgUrl": null,
-        "slotKey": "06617b56ef8d",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-08-02T17:40:37.629Z",
+      "error": "latimes1: headline not found",
+      "runId": "latimes1_2026-08-02T17-40-37-629Z",
+      "since": null,
+      "item": null
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:53.193Z",
+      "updatedAt": "2026-08-02T17:40:37.775Z",
       "error": null,
-      "runId": "npr1_2026-08-02T16-10-53-193Z",
+      "runId": "npr1_2026-08-02T17-40-37-775Z",
       "since": "2026-08-02T14:42:45.208Z",
       "item": {
         "title": "What Cyclospora does inside the gut and how it gets there",
@@ -130,9 +118,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:53.797Z",
+      "updatedAt": "2026-08-02T17:40:38.305Z",
       "error": null,
-      "runId": "bbc1_2026-08-02T16-10-53-797Z",
+      "runId": "bbc1_2026-08-02T17-40-38-305Z",
       "since": "2026-08-02T04:59:50.543Z",
       "item": {
         "title": "Trump cancels Iran strikes subject to deal being made 'rapidly'",
@@ -144,27 +132,27 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:54.265Z",
+      "updatedAt": "2026-08-02T17:40:38.736Z",
       "error": null,
-      "runId": "fox1_2026-08-02T16-10-54-265Z",
-      "since": "2026-08-02T16:10:58.220Z",
+      "runId": "fox1_2026-08-02T17-40-38-736Z",
+      "since": "2026-08-02T17:40:41.585Z",
       "item": {
-        "title": "Iranian regime deeply divided over negotiations with US after Trump reverses course on strikes",
-        "url": "https://foxnews.com/live-news/trump-iran-war-israel-hormuz-august-2",
+        "title": "DHS chief under fire after immigration speech ignites backlash from conservatives",
+        "url": "https://foxnews.com/politics/trump-dhs-chief-fire-conservatives-immigration-speech-ignites-backlash",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
-        "contentType": "live"
+        "contentType": "news"
       }
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-08-02T16:10:54.686Z",
+      "updatedAt": "2026-08-02T17:40:38.996Z",
       "error": null,
-      "runId": "yahoo1_2026-08-02T16-10-54-686Z",
-      "since": "2026-08-02T16:10:58.220Z",
+      "runId": "yahoo1_2026-08-02T17-40-38-996Z",
+      "since": "2026-08-02T17:40:41.585Z",
       "item": {
-        "title": "Trump cuts Biden-era Medicare program despite pushing affordability",
-        "url": "https://yahoo.com/news/politics/articles/trump-slashes-medicare-drug-subsidies-100000735.html",
+        "title": "Iran's acting defense minister calls Trump's post on peace deal 'cognitive warfare'",
+        "url": "https://yahoo.com/news/politics/articles/as-trump-cites-progress-on-deal-to-end-war-iran-and-israel-remain-on-alert-124904828.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
         "contentType": "news"

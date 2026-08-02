@@ -5,22 +5,16 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.669Z",
-      "updated_at": "2026-08-02T16:10:36.670Z",
-      "ok": true,
-      "stale": false,
-      "item": {
-        "title": "Police confirm 3 fatalities, 5 injuries after shooting at Idaho In-N-Out",
-        "url": "https://abcnews.com/US/police-respond-active-shooter-idaho-burger/story?id=135296367",
-        "imgUrl": null,
-        "slotKey": "5be6806db8a5",
-        "contentType": "news"
-      },
+      "created_at": "2026-08-02T17:40:21.932Z",
+      "updated_at": "2026-08-02T17:40:21.933Z",
+      "ok": false,
+      "stale": true,
+      "item": null,
       "last": {
-        "runId": "abc1_2026-08-02T16-10-36-670Z",
-        "ok": true,
-        "error": null,
-        "fetchedAt": "2026-08-02T16:10:36.670Z"
+        "runId": "abc1_2026-08-02T17-40-21-933Z",
+        "ok": false,
+        "error": "abc1: headline not found",
+        "fetchedAt": "2026-08-02T17:40:21.933Z"
       },
       "history": [],
       "archive": []
@@ -30,22 +24,22 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:38.397Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:23.166Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Trump calls off attack on Iran subject to peace deal being \"rapidly\" reached",
-        "url": "https://cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-kuwait-jordan-air-base",
+        "title": "Trump admin. touts its transparency. Yet few Iran war details have been shared.",
+        "url": "https://cbsnews.com/news/trump-administration-iran-war-details-transparency",
         "imgUrl": null,
         "slotKey": "4d6f70f0b663",
-        "contentType": "live"
+        "contentType": "news"
       },
       "last": {
-        "runId": "cbs1_2026-08-02T16-10-38-397Z",
+        "runId": "cbs1_2026-08-02T17-40-23-166Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:38.397Z"
+        "fetchedAt": "2026-08-02T17:40:23.166Z"
       },
       "history": [],
       "archive": []
@@ -55,8 +49,8 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:38.945Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:23.649Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -67,10 +61,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-08-02T16-10-38-945Z",
+        "runId": "usat1_2026-08-02T17-40-23-648Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:38.945Z"
+        "fetchedAt": "2026-08-02T17:40:23.649Z"
       },
       "history": [],
       "archive": []
@@ -80,8 +74,8 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:39.311Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:23.870Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -92,10 +86,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc1_2026-08-02T16-10-39-311Z",
+        "runId": "nbc1_2026-08-02T17-40-23-870Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:39.311Z"
+        "fetchedAt": "2026-08-02T17:40:23.870Z"
       },
       "history": [],
       "archive": []
@@ -105,8 +99,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:50.383Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:35.452Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -117,17 +111,17 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cnn1_2026-08-02T16-10-45-796Z",
+        "runId": "cnn1_2026-08-02T17-40-31-269Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:50.383Z"
+        "fetchedAt": "2026-08-02T17:40:35.452Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-08-02T16-10-45-796Z",
-          "html": "/archive/cnn1_2026-08-02T16-10-45-796Z.html",
-          "json": "/archive/cnn1_2026-08-02T16-10-45-796Z.json"
+          "runId": "cnn1_2026-08-02T17-40-31-269Z",
+          "html": "/archive/cnn1_2026-08-02T17-40-31-269Z.html",
+          "json": "/archive/cnn1_2026-08-02T17-40-31-269Z.json"
         }
       ]
     },
@@ -136,22 +130,22 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:51.690Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:36.811Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Family to sue after woman released from ICE custody froze to death",
-        "url": "https://theguardian.com/us-news/2026/aug/02/ice-death-pittsburgh-daphy-michel-haiti",
+        "title": "Trump climbs down on Iran strikes in expectation of ‘rapidly’ reaching a deal",
+        "url": "https://theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-08-02T16-10-51-690Z",
+        "runId": "guardian1_2026-08-02T17-40-36-810Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:51.690Z"
+        "fetchedAt": "2026-08-02T17:40:36.811Z"
       },
       "history": [],
       "archive": []
@@ -161,8 +155,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:52.407Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:37.180Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -173,10 +167,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-08-02T16-10-52-407Z",
+        "runId": "ap1_2026-08-02T17-40-37-180Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:52.407Z"
+        "fetchedAt": "2026-08-02T17:40:37.180Z"
       },
       "history": [],
       "archive": []
@@ -186,22 +180,16 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:52.882Z",
-      "ok": true,
-      "stale": false,
-      "item": {
-        "title": "It’s been a summer of bad news for Mayor Bass. Can she reset the narrative?",
-        "url": "https://latimes.com/california/story/2026-08-02/its-been-summer-of-bad-news-for-mayor-bass-can-she-reset-narrative",
-        "imgUrl": null,
-        "slotKey": "06617b56ef8d",
-        "contentType": "news"
-      },
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:37.629Z",
+      "ok": false,
+      "stale": true,
+      "item": null,
       "last": {
-        "runId": "latimes1_2026-08-02T16-10-52-882Z",
-        "ok": true,
-        "error": null,
-        "fetchedAt": "2026-08-02T16:10:52.882Z"
+        "runId": "latimes1_2026-08-02T17-40-37-629Z",
+        "ok": false,
+        "error": "latimes1: headline not found",
+        "fetchedAt": "2026-08-02T17:40:37.629Z"
       },
       "history": [],
       "archive": []
@@ -211,8 +199,8 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:53.193Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:37.775Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -223,10 +211,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-08-02T16-10-53-193Z",
+        "runId": "npr1_2026-08-02T17-40-37-775Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:53.193Z"
+        "fetchedAt": "2026-08-02T17:40:37.775Z"
       },
       "history": [],
       "archive": []
@@ -236,8 +224,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:53.797Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:38.305Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -248,10 +236,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-08-02T16-10-53-797Z",
+        "runId": "bbc1_2026-08-02T17-40-38-305Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:53.797Z"
+        "fetchedAt": "2026-08-02T17:40:38.305Z"
       },
       "history": [],
       "archive": []
@@ -261,22 +249,22 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:54.265Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:38.736Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Iranian regime deeply divided over negotiations with US after Trump reverses course on strikes",
-        "url": "https://foxnews.com/live-news/trump-iran-war-israel-hormuz-august-2",
+        "title": "DHS chief under fire after immigration speech ignites backlash from conservatives",
+        "url": "https://foxnews.com/politics/trump-dhs-chief-fire-conservatives-immigration-speech-ignites-backlash",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
-        "contentType": "live"
+        "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-08-02T16-10-54-265Z",
+        "runId": "fox1_2026-08-02T17-40-38-736Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:54.265Z"
+        "fetchedAt": "2026-08-02T17:40:38.736Z"
       },
       "history": [],
       "archive": []
@@ -286,22 +274,22 @@
       "name": "Yahoo News",
       "home_url": "https://www.yahoo.com/news/",
       "kind": "hero",
-      "created_at": "2026-08-02T16:10:36.670Z",
-      "updated_at": "2026-08-02T16:10:54.686Z",
+      "created_at": "2026-08-02T17:40:21.933Z",
+      "updated_at": "2026-08-02T17:40:38.996Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Trump cuts Biden-era Medicare program despite pushing affordability",
-        "url": "https://yahoo.com/news/politics/articles/trump-slashes-medicare-drug-subsidies-100000735.html",
+        "title": "Iran's acting defense minister calls Trump's post on peace deal 'cognitive warfare'",
+        "url": "https://yahoo.com/news/politics/articles/as-trump-cites-progress-on-deal-to-end-war-iran-and-israel-remain-on-alert-124904828.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-08-02T16-10-54-686Z",
+        "runId": "yahoo1_2026-08-02T17-40-38-996Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T16:10:54.686Z"
+        "fetchedAt": "2026-08-02T17:40:38.996Z"
       },
       "history": [],
       "archive": []
