@@ -5,16 +5,22 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.932Z",
-      "updated_at": "2026-08-02T17:40:21.933Z",
-      "ok": false,
-      "stale": true,
-      "item": null,
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:18.053Z",
+      "ok": true,
+      "stale": false,
+      "item": {
+        "title": "Sen. Moreno calls for Rep. Max Miller to resign for allegedly abusing his daughter",
+        "url": "https://abcnews.com/Politics/sen-moreno-calls-rep-max-miller-resign-allegedly/story?id=135307603",
+        "imgUrl": null,
+        "slotKey": "5be6806db8a5",
+        "contentType": "news"
+      },
       "last": {
-        "runId": "abc1_2026-08-02T17-40-21-933Z",
-        "ok": false,
-        "error": "abc1: headline not found",
-        "fetchedAt": "2026-08-02T17:40:21.933Z"
+        "runId": "abc1_2026-08-02T19-24-18-053Z",
+        "ok": true,
+        "error": null,
+        "fetchedAt": "2026-08-02T19:24:18.053Z"
       },
       "history": [],
       "archive": []
@@ -24,8 +30,8 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:23.166Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:19.680Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -36,10 +42,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cbs1_2026-08-02T17-40-23-166Z",
+        "runId": "cbs1_2026-08-02T19-24-19-680Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:23.166Z"
+        "fetchedAt": "2026-08-02T19:24:19.680Z"
       },
       "history": [],
       "archive": []
@@ -49,22 +55,22 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:23.649Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:19.965Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Dating has gotten too expensive. So singles are ‘infladating’",
-        "url": "https://usatoday.com/story/life/health-wellness/2026/08/02/dateflation-infladating/91101593007",
+        "title": "RFK Jr. says to get measles vaccine and responds to Fauci's diary",
+        "url": "https://usatoday.com/story/news/politics/2026/08/02/rfk-jr-fauci-covid-19-measles-interview/91141370007",
         "imgUrl": null,
         "slotKey": "5fd21635ad69",
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-08-02T17-40-23-648Z",
+        "runId": "usat1_2026-08-02T19-24-19-965Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:23.649Z"
+        "fetchedAt": "2026-08-02T19:24:19.965Z"
       },
       "history": [],
       "archive": []
@@ -74,8 +80,8 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:23.870Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:20.227Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -86,10 +92,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc1_2026-08-02T17-40-23-870Z",
+        "runId": "nbc1_2026-08-02T19-24-20-227Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:23.870Z"
+        "fetchedAt": "2026-08-02T19:24:20.227Z"
       },
       "history": [],
       "archive": []
@@ -99,8 +105,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:35.452Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:29.687Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -111,17 +117,17 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cnn1_2026-08-02T17-40-31-269Z",
+        "runId": "cnn1_2026-08-02T19-24-25-525Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:35.452Z"
+        "fetchedAt": "2026-08-02T19:24:29.687Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-08-02T17-40-31-269Z",
-          "html": "/archive/cnn1_2026-08-02T17-40-31-269Z.html",
-          "json": "/archive/cnn1_2026-08-02T17-40-31-269Z.json"
+          "runId": "cnn1_2026-08-02T19-24-25-525Z",
+          "html": "/archive/cnn1_2026-08-02T19-24-25-525Z.html",
+          "json": "/archive/cnn1_2026-08-02T19-24-25-525Z.json"
         }
       ]
     },
@@ -130,22 +136,22 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:36.811Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:30.780Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Trump climbs down on Iran strikes in expectation of ‘rapidly’ reaching a deal",
+        "title": "Trump backs down on Iran strikes in expectation of ‘rapidly’ reaching a deal",
         "url": "https://theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-08-02T17-40-36-810Z",
+        "runId": "guardian1_2026-08-02T19-24-30-780Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:36.811Z"
+        "fetchedAt": "2026-08-02T19:24:30.780Z"
       },
       "history": [],
       "archive": []
@@ -155,8 +161,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:37.180Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:31.065Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -167,10 +173,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-08-02T17-40-37-180Z",
+        "runId": "ap1_2026-08-02T19-24-31-065Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:37.180Z"
+        "fetchedAt": "2026-08-02T19:24:31.065Z"
       },
       "history": [],
       "archive": []
@@ -180,16 +186,22 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:37.629Z",
-      "ok": false,
-      "stale": true,
-      "item": null,
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:31.557Z",
+      "ok": true,
+      "stale": false,
+      "item": {
+        "title": "It’s been a summer of bad news for Mayor Bass. Can she reset the narrative?",
+        "url": "https://latimes.com/california/story/2026-08-02/its-been-summer-of-bad-news-for-mayor-bass-can-she-reset-narrative",
+        "imgUrl": null,
+        "slotKey": "06617b56ef8d",
+        "contentType": "news"
+      },
       "last": {
-        "runId": "latimes1_2026-08-02T17-40-37-629Z",
-        "ok": false,
-        "error": "latimes1: headline not found",
-        "fetchedAt": "2026-08-02T17:40:37.629Z"
+        "runId": "latimes1_2026-08-02T19-24-31-557Z",
+        "ok": true,
+        "error": null,
+        "fetchedAt": "2026-08-02T19:24:31.557Z"
       },
       "history": [],
       "archive": []
@@ -199,22 +211,22 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:37.775Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:31.880Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "What Cyclospora does inside the gut and how it gets there",
-        "url": "https://npr.org/2026/08/02/nx-s1-5914624/cyclospora-michigan-infection-lettuce-parasite-outbreak",
+        "title": "Embedded: We Keep Us Safe",
+        "url": "https://npr.org/series/g-s1-124481/embedded-we-keep-us-safe",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-08-02T17-40-37-775Z",
+        "runId": "npr1_2026-08-02T19-24-31-879Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:37.775Z"
+        "fetchedAt": "2026-08-02T19:24:31.880Z"
       },
       "history": [],
       "archive": []
@@ -224,8 +236,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:38.305Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:32.583Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -236,10 +248,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-08-02T17-40-38-305Z",
+        "runId": "bbc1_2026-08-02T19-24-32-583Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:38.305Z"
+        "fetchedAt": "2026-08-02T19:24:32.583Z"
       },
       "history": [],
       "archive": []
@@ -249,22 +261,22 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:38.736Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:32.971Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "DHS chief under fire after immigration speech ignites backlash from conservatives",
-        "url": "https://foxnews.com/politics/trump-dhs-chief-fire-conservatives-immigration-speech-ignites-backlash",
+        "title": "Senator calls for congressman ex-son-in-law to resign days before ballot deadline amid abuse claims",
+        "url": "https://foxnews.com/politics/ohio-gop-family-feud-explodes-sen-bernie-moreno-calls-rep-max-miller-resign",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-08-02T17-40-38-736Z",
+        "runId": "fox1_2026-08-02T19-24-32-971Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:38.736Z"
+        "fetchedAt": "2026-08-02T19:24:32.971Z"
       },
       "history": [],
       "archive": []
@@ -274,8 +286,8 @@
       "name": "Yahoo News",
       "home_url": "https://www.yahoo.com/news/",
       "kind": "hero",
-      "created_at": "2026-08-02T17:40:21.933Z",
-      "updated_at": "2026-08-02T17:40:38.996Z",
+      "created_at": "2026-08-02T19:24:18.053Z",
+      "updated_at": "2026-08-02T19:24:33.247Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -286,10 +298,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-08-02T17-40-38-996Z",
+        "runId": "yahoo1_2026-08-02T19-24-33-247Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-02T17:40:38.996Z"
+        "fetchedAt": "2026-08-02T19:24:33.247Z"
       },
       "history": [],
       "archive": []

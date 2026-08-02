@@ -1,20 +1,26 @@
 {
   "ok": true,
-  "generatedAt": "2026-08-02T17:40:41.585Z",
+  "generatedAt": "2026-08-02T19:24:35.464Z",
   "sources": {
     "abc1": {
-      "ok": false,
-      "updatedAt": "2026-08-02T17:40:21.933Z",
-      "error": "abc1: headline not found",
-      "runId": "abc1_2026-08-02T17-40-21-933Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-08-02T19:24:18.053Z",
+      "error": null,
+      "runId": "abc1_2026-08-02T19-24-18-053Z",
+      "since": "2026-08-02T19:24:35.464Z",
+      "item": {
+        "title": "Sen. Moreno calls for Rep. Max Miller to resign for allegedly abusing his daughter",
+        "url": "https://abcnews.com/Politics/sen-moreno-calls-rep-max-miller-resign-allegedly/story?id=135307603",
+        "imgUrl": null,
+        "slotKey": "5be6806db8a5",
+        "contentType": "news"
+      }
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:23.166Z",
+      "updatedAt": "2026-08-02T19:24:19.680Z",
       "error": null,
-      "runId": "cbs1_2026-08-02T17-40-23-166Z",
+      "runId": "cbs1_2026-08-02T19-24-19-680Z",
       "since": "2026-08-02T17:40:41.585Z",
       "item": {
         "title": "Trump admin. touts its transparency. Yet few Iran war details have been shared.",
@@ -26,13 +32,13 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:23.649Z",
+      "updatedAt": "2026-08-02T19:24:19.965Z",
       "error": null,
-      "runId": "usat1_2026-08-02T17-40-23-648Z",
-      "since": "2026-08-02T16:10:58.220Z",
+      "runId": "usat1_2026-08-02T19-24-19-965Z",
+      "since": "2026-08-02T19:24:35.464Z",
       "item": {
-        "title": "Dating has gotten too expensive. So singles are ‘infladating’",
-        "url": "https://usatoday.com/story/life/health-wellness/2026/08/02/dateflation-infladating/91101593007",
+        "title": "RFK Jr. says to get measles vaccine and responds to Fauci's diary",
+        "url": "https://usatoday.com/story/news/politics/2026/08/02/rfk-jr-fauci-covid-19-measles-interview/91141370007",
         "imgUrl": null,
         "slotKey": "5fd21635ad69",
         "contentType": "news"
@@ -40,9 +46,9 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:23.870Z",
+      "updatedAt": "2026-08-02T19:24:20.227Z",
       "error": null,
-      "runId": "nbc1_2026-08-02T17-40-23-870Z",
+      "runId": "nbc1_2026-08-02T19-24-20-227Z",
       "since": "2026-08-01T23:35:14.266Z",
       "item": {
         "title": "U.S. agrees to pause attacks on Iran subject to ‘rapidly’ making deal, Trump says",
@@ -54,9 +60,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:35.452Z",
+      "updatedAt": "2026-08-02T19:24:29.687Z",
       "error": null,
-      "runId": "cnn1_2026-08-02T17-40-31-269Z",
+      "runId": "cnn1_2026-08-02T19-24-25-525Z",
       "since": "2026-08-02T14:42:45.208Z",
       "item": {
         "title": "Inside Schumer's effort to stop Abdul El-Sayed's rise",
@@ -68,12 +74,12 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:36.811Z",
+      "updatedAt": "2026-08-02T19:24:30.780Z",
       "error": null,
-      "runId": "guardian1_2026-08-02T17-40-36-810Z",
+      "runId": "guardian1_2026-08-02T19-24-30-780Z",
       "since": "2026-08-02T17:40:41.585Z",
       "item": {
-        "title": "Trump climbs down on Iran strikes in expectation of ‘rapidly’ reaching a deal",
+        "title": "Trump backs down on Iran strikes in expectation of ‘rapidly’ reaching a deal",
         "url": "https://theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
@@ -82,9 +88,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:37.180Z",
+      "updatedAt": "2026-08-02T19:24:31.065Z",
       "error": null,
-      "runId": "ap1_2026-08-02T17-40-37-180Z",
+      "runId": "ap1_2026-08-02T19-24-31-065Z",
       "since": "2026-08-02T11:33:22.563Z",
       "item": {
         "title": "Trump says he will order halt to Iran strikes after parameters reached for deal to end war",
@@ -95,22 +101,28 @@
       }
     },
     "latimes1": {
-      "ok": false,
-      "updatedAt": "2026-08-02T17:40:37.629Z",
-      "error": "latimes1: headline not found",
-      "runId": "latimes1_2026-08-02T17-40-37-629Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-08-02T19:24:31.557Z",
+      "error": null,
+      "runId": "latimes1_2026-08-02T19-24-31-557Z",
+      "since": "2026-08-02T11:33:22.563Z",
+      "item": {
+        "title": "It’s been a summer of bad news for Mayor Bass. Can she reset the narrative?",
+        "url": "https://latimes.com/california/story/2026-08-02/its-been-summer-of-bad-news-for-mayor-bass-can-she-reset-narrative",
+        "imgUrl": null,
+        "slotKey": "06617b56ef8d",
+        "contentType": "news"
+      }
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:37.775Z",
+      "updatedAt": "2026-08-02T19:24:31.880Z",
       "error": null,
-      "runId": "npr1_2026-08-02T17-40-37-775Z",
-      "since": "2026-08-02T14:42:45.208Z",
+      "runId": "npr1_2026-08-02T19-24-31-879Z",
+      "since": "2026-08-02T19:24:35.464Z",
       "item": {
-        "title": "What Cyclospora does inside the gut and how it gets there",
-        "url": "https://npr.org/2026/08/02/nx-s1-5914624/cyclospora-michigan-infection-lettuce-parasite-outbreak",
+        "title": "Embedded: We Keep Us Safe",
+        "url": "https://npr.org/series/g-s1-124481/embedded-we-keep-us-safe",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
@@ -118,9 +130,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:38.305Z",
+      "updatedAt": "2026-08-02T19:24:32.583Z",
       "error": null,
-      "runId": "bbc1_2026-08-02T17-40-38-305Z",
+      "runId": "bbc1_2026-08-02T19-24-32-583Z",
       "since": "2026-08-02T04:59:50.543Z",
       "item": {
         "title": "Trump cancels Iran strikes subject to deal being made 'rapidly'",
@@ -132,13 +144,13 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:38.736Z",
+      "updatedAt": "2026-08-02T19:24:32.971Z",
       "error": null,
-      "runId": "fox1_2026-08-02T17-40-38-736Z",
-      "since": "2026-08-02T17:40:41.585Z",
+      "runId": "fox1_2026-08-02T19-24-32-971Z",
+      "since": "2026-08-02T19:24:35.464Z",
       "item": {
-        "title": "DHS chief under fire after immigration speech ignites backlash from conservatives",
-        "url": "https://foxnews.com/politics/trump-dhs-chief-fire-conservatives-immigration-speech-ignites-backlash",
+        "title": "Senator calls for congressman ex-son-in-law to resign days before ballot deadline amid abuse claims",
+        "url": "https://foxnews.com/politics/ohio-gop-family-feud-explodes-sen-bernie-moreno-calls-rep-max-miller-resign",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
         "contentType": "news"
@@ -146,9 +158,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-08-02T17:40:38.996Z",
+      "updatedAt": "2026-08-02T19:24:33.247Z",
       "error": null,
-      "runId": "yahoo1_2026-08-02T17-40-38-996Z",
+      "runId": "yahoo1_2026-08-02T19-24-33-247Z",
       "since": "2026-08-02T17:40:41.585Z",
       "item": {
         "title": "Iran's acting defense minister calls Trump's post on peace deal 'cognitive warfare'",
