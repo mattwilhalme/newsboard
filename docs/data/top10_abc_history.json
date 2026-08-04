@@ -1,15 +1,8 @@
 {
   "ok": false,
-  "generatedAt": "2026-08-04T16:30:37.544Z",
+  "generatedAt": "2026-08-04T18:16:34.572Z",
   "source_id": "abc1",
   "runs": [
-    {
-      "runId": null,
-      "observedAt": "2026-07-15T04:15:48.855Z",
-      "ok": false,
-      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
-      "items": []
-    },
     {
       "runId": null,
       "observedAt": "2026-07-15T06:39:13.081Z",
@@ -2351,6 +2344,13 @@
     {
       "runId": null,
       "observedAt": "2026-08-04T16:30:37.544Z",
+      "ok": false,
+      "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
+      "items": []
+    },
+    {
+      "runId": null,
+      "observedAt": "2026-08-04T18:16:34.572Z",
       "ok": false,
       "error": "Top10 scrape disabled (ENABLE_TOP10!=1)",
       "items": []
