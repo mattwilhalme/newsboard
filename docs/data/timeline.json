@@ -1,260 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-08-12T04:57:16.926Z",
+  "generatedAt": "2026-08-12T06:24:26.925Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-08-11T17:34:13.162+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Former US Marine Robert Gilman released from detention in Russia",
-      "url": "https://abcnews.com/Politics/former-us-marine-robert-gilman-released-detention-russia/story?id=135549706"
-    },
-    {
-      "ts": "2026-08-11T17:34:14.55+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump secretly switched to different plane in Turkey amid Iran threat",
-      "url": "https://cbsnews.com/news/trump-secretly-switched-plane-turkey-air-force-one-iran-war-threat"
-    },
-    {
-      "ts": "2026-08-11T17:34:14.935+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Before Trump, Clinton took a decoy plane for safety. I was there",
-      "url": "https://usatoday.com/story/news/politics/2026/08/11/donald-trump-bill-clinton-switched-air-force-one-security/91254069007"
-    },
-    {
-      "ts": "2026-08-11T17:34:15.13+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "The Data Dive: Steve Kornacki on Wisconsin’s clash of Democratic ideologies",
-      "url": "https://nbcnews.com/politics/2026-election/watch-wisconsins-clash-democratic-ideologies-rcna591819"
-    },
-    {
-      "ts": "2026-08-11T17:34:26.854+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Trump hid in catering truck, moved to secret flight amid Iran threat last month",
-      "url": "https://cnn.com/2026/08/10/politics/trump-secretly-transferred-planes-security-concerns-af1"
-    },
-    {
-      "ts": "2026-08-11T17:34:27.994+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Trump reportedly hid in catering container to board secret flight in Turkey amid Iran threat",
-      "url": "https://theguardian.com/us-news/2026/aug/10/trump-secret-flight-nato-return"
-    },
-    {
-      "ts": "2026-08-11T17:34:28.497+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Trump told Ukraine it had no cards. Then Kyiv took the war to Russia",
-      "url": "https://apnews.com/projects/russia-ukraine-war-striking-russia-cards"
-    },
-    {
-      "ts": "2026-08-11T17:34:28.902+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "An accounting glitch caused nearly half of L.A.’s increase in the homeless count",
-      "url": "https://latimes.com/california/story/2026-08-11/accounting-glitch-caused-nearly-half-of-l-a-s-increase-in-homeless-count"
-    },
-    {
-      "ts": "2026-08-11T17:34:29.286+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "In Minnesota and Wisconsin, competitive primaries will again test power of progressive candidates",
-      "url": "https://npr.org/2026/08/11/nx-s1-5927455/minnesota-wisconsin-primaries-hong-dsa-crowley-lindell-craig-flanagan-trump"
-    },
-    {
-      "ts": "2026-08-11T17:34:29.584+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Russia using North Korean missiles to strike Ukraine, Zelensky says",
-      "url": "https://bbc.com/news/articles/c151dpzwnvxo"
-    },
-    {
-      "ts": "2026-08-11T17:34:30.095+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "NFL legend goes scorched earth on DiJonai Carrington following 'White privilege' claim",
-      "url": "https://foxnews.com/outkick-sports/former-nfl-mvp-boomer-esiason-goes-scorched-earth-dijonai-carrington-following-white-privilege-post"
-    },
-    {
-      "ts": "2026-08-11T17:34:30.328+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump boarded Air Force One in Turkey. Minutes later, he secretly switched planes.",
-      "url": "https://yahoo.com/news/politics/articles/contradicting-public-statements-trump-took-secret-flight-from-turkey-amid-iranian-threat-031824367.html"
-    },
-    {
-      "ts": "2026-08-11T17:35:27.437+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Former US Marine Robert Gilman released from detention in Russia",
-      "url": "https://abcnews.com/Politics/former-us-marine-robert-gilman-released-detention-russia/story?id=135549706"
-    },
-    {
-      "ts": "2026-08-11T17:35:28.924+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump secretly switched to different plane in Turkey amid Iran threat",
-      "url": "https://cbsnews.com/news/trump-secretly-switched-plane-turkey-air-force-one-iran-war-threat"
-    },
-    {
-      "ts": "2026-08-11T17:35:29.698+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Before Trump, Clinton took a decoy plane for safety. I was there",
-      "url": "https://usatoday.com/story/news/politics/2026/08/11/donald-trump-bill-clinton-switched-air-force-one-security/91254069007"
-    },
-    {
-      "ts": "2026-08-11T17:35:30.209+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "The Data Dive: Steve Kornacki on Wisconsin’s clash of Democratic ideologies",
-      "url": "https://nbcnews.com/politics/2026-election/watch-wisconsins-clash-democratic-ideologies-rcna591819"
-    },
-    {
-      "ts": "2026-08-11T17:35:41.781+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Trump hid in catering truck, moved to secret flight amid Iran threat last month",
-      "url": "https://cnn.com/2026/08/10/politics/trump-secretly-transferred-planes-security-concerns-af1"
-    },
-    {
-      "ts": "2026-08-11T17:35:43.331+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Trump reportedly hid in catering container to board secret flight in Turkey amid Iran threat",
-      "url": "https://theguardian.com/us-news/2026/aug/10/trump-secret-flight-nato-return"
-    },
-    {
-      "ts": "2026-08-11T17:35:44.726+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Trump told Ukraine it had no cards. Then Kyiv took the war to Russia",
-      "url": "https://apnews.com/projects/russia-ukraine-war-striking-russia-cards"
-    },
-    {
-      "ts": "2026-08-11T17:35:45.397+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "An accounting glitch caused nearly half of L.A.’s increase in the homeless count",
-      "url": "https://latimes.com/california/story/2026-08-11/accounting-glitch-caused-nearly-half-of-l-a-s-increase-in-homeless-count"
-    },
-    {
-      "ts": "2026-08-11T17:35:46.031+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "In Minnesota and Wisconsin, competitive primaries will again test power of progressive candidates",
-      "url": "https://npr.org/2026/08/11/nx-s1-5927455/minnesota-wisconsin-primaries-hong-dsa-crowley-lindell-craig-flanagan-trump"
-    },
-    {
-      "ts": "2026-08-11T17:35:46.865+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Russia using North Korean missiles to strike Ukraine, Zelensky says",
-      "url": "https://bbc.com/news/articles/c151dpzwnvxo"
-    },
-    {
-      "ts": "2026-08-11T17:35:47.419+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "NFL legend goes scorched earth on DiJonai Carrington following 'White privilege' claim",
-      "url": "https://foxnews.com/outkick-sports/former-nfl-mvp-boomer-esiason-goes-scorched-earth-dijonai-carrington-following-white-privilege-post"
-    },
-    {
-      "ts": "2026-08-11T17:35:47.746+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump boarded Air Force One in Turkey. Minutes later, he secretly switched planes.",
-      "url": "https://yahoo.com/news/politics/articles/contradicting-public-statements-trump-took-secret-flight-from-turkey-amid-iranian-threat-031824367.html"
-    },
-    {
-      "ts": "2026-08-11T17:39:08.906+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Former US Marine Robert Gilman released from detention in Russia",
-      "url": "https://abcnews.com/Politics/former-us-marine-robert-gilman-released-detention-russia/story?id=135549706"
-    },
-    {
-      "ts": "2026-08-11T17:39:09.622+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump secretly switched to different plane in Turkey amid Iran threat",
-      "url": "https://cbsnews.com/news/trump-secretly-switched-plane-turkey-air-force-one-iran-war-threat"
-    },
-    {
-      "ts": "2026-08-11T17:39:10.074+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Before Trump, Clinton took a decoy plane for safety. I was there",
-      "url": "https://usatoday.com/story/news/politics/2026/08/11/donald-trump-bill-clinton-switched-air-force-one-security/91254069007"
-    },
-    {
-      "ts": "2026-08-11T17:39:14.813+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "The Data Dive: Steve Kornacki on Wisconsin’s clash of Democratic ideologies",
-      "url": "https://nbcnews.com/politics/2026-election/watch-wisconsins-clash-democratic-ideologies-rcna591819"
-    },
-    {
-      "ts": "2026-08-11T17:39:24.698+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Trump hid in catering truck, moved to secret flight amid Iran threat last month",
-      "url": "https://cnn.com/2026/08/10/politics/trump-secretly-transferred-planes-security-concerns-af1"
-    },
-    {
-      "ts": "2026-08-11T17:39:25.897+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Trump reportedly hid in catering container to board secret flight in Turkey amid Iran threat",
-      "url": "https://theguardian.com/us-news/2026/aug/10/trump-secret-flight-nato-return"
-    },
-    {
-      "ts": "2026-08-11T17:39:26.296+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Trump told Ukraine it had no cards. Then Kyiv took the war to Russia",
-      "url": "https://apnews.com/projects/russia-ukraine-war-striking-russia-cards"
-    },
-    {
-      "ts": "2026-08-11T17:39:26.851+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "An accounting glitch caused nearly half of L.A.’s increase in the homeless count",
-      "url": "https://latimes.com/california/story/2026-08-11/accounting-glitch-caused-nearly-half-of-l-a-s-increase-in-homeless-count"
-    },
-    {
-      "ts": "2026-08-11T17:39:27.313+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "In Minnesota and Wisconsin, competitive primaries will again test power of progressive candidates",
-      "url": "https://npr.org/2026/08/11/nx-s1-5927455/minnesota-wisconsin-primaries-hong-dsa-crowley-lindell-craig-flanagan-trump"
-    },
-    {
-      "ts": "2026-08-11T17:39:27.708+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Russia using North Korean missiles to strike Ukraine, Zelensky says",
-      "url": "https://bbc.com/news/articles/c151dpzwnvxo"
-    },
-    {
-      "ts": "2026-08-11T17:39:27.982+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "NFL legend goes scorched earth on DiJonai Carrington following 'White privilege' claim",
-      "url": "https://foxnews.com/outkick-sports/former-nfl-mvp-boomer-esiason-goes-scorched-earth-dijonai-carrington-following-white-privilege-post"
-    },
-    {
-      "ts": "2026-08-11T17:39:28.177+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump boarded Air Force One in Turkey. Minutes later, he secretly switched planes.",
-      "url": "https://yahoo.com/news/politics/articles/contradicting-public-statements-trump-took-secret-flight-from-turkey-amid-iranian-threat-031824367.html"
-    },
     {
       "ts": "2026-08-11T18:31:59.288+00:00",
       "source_id": "abc1",
@@ -926,6 +674,90 @@
       "kind": "headline",
       "title": "Trump confirms he covertly left Air Force One as the plane flew on without him",
       "url": "https://yahoo.com/news/politics/articles/why-elaborate-ruse-trump-used-222019820.html"
+    },
+    {
+      "ts": "2026-08-12T06:24:14.054+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Dems may be divided on the future, but send clearer signal for new leaders: ANALYSIS",
+      "url": "https://abcnews.com/Politics/democrats-divided-partys-future-send-clearer-signal-new/story?id=135556297"
+    },
+    {
+      "ts": "2026-08-12T06:24:15.771+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "U.S. and Iran close to \"peace arrangement or a deal,\" Pakistan says",
+      "url": "https://cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-compensation-negotiation"
+    },
+    {
+      "ts": "2026-08-12T06:24:16.081+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "'I go by Secret Service': Trump explains Air Force One covert switch",
+      "url": "https://usatoday.com/story/news/politics/2026/08/11/trump-secret-service-air-force-one-turkey/91257573007"
+    },
+    {
+      "ts": "2026-08-12T06:24:16.391+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "Election live updates: Francesca Hong and David Crowley locked in too-close-to-call primary for Wisconsin governor",
+      "url": "https://nbcnews.com/politics/trump-administration/live-blog/trump-2026-primary-elections-congress-iran-live-updates-rcna591829"
+    },
+    {
+      "ts": "2026-08-12T06:24:21.334+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Democrats locked in tight Wisconsin governor's race",
+      "url": "https://cnn.com/2026/08/11/politics/live-news/elections-south-carolina-wisconsin"
+    },
+    {
+      "ts": "2026-08-12T06:24:22.494+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Trump’s Air Force One deception faces scrutiny over ‘decoy’ passengers",
+      "url": "https://theguardian.com/us-news/2026/aug/11/trump-air-force-one-deception-democrats"
+    },
+    {
+      "ts": "2026-08-12T06:24:22.889+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "Trump says Secret Service and the military wanted him off Air Force One in Turkey due to threat",
+      "url": "https://apnews.com/article/trump-secret-flight-turkey-iran-threats-d23a6454d1410cc8461368007db6ca25"
+    },
+    {
+      "ts": "2026-08-12T06:24:23.363+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "RFK Jr. and HUD secretary rip L.A. homeless agencies and endorse faith-based alternatives",
+      "url": "https://latimes.com/california/story/2026-08-11/trump-agency-heads-rip-la-homeless-agencies-endorse-faith-based-alternatives"
+    },
+    {
+      "ts": "2026-08-12T06:24:23.629+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Trump-backed Mike Lindell loses primary for Minnesota governor to Lisa Demuth",
+      "url": "https://npr.org/2026/08/11/nx-s1-5928394/2026-minnesota-governor-primary-election-lisa-demuth-mike-lindell"
+    },
+    {
+      "ts": "2026-08-12T06:24:24.113+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "Trump confirms he switched planes after Nato summit because of possible threat",
+      "url": "https://bbc.com/news/articles/c980r4wpl9lo"
+    },
+    {
+      "ts": "2026-08-12T06:24:24.423+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Progressives notch key wins across map as Hong race hangs in balance",
+      "url": "https://foxnews.com/politics/state-of-play-highly-watched-hong-race-remains-too-close-call-progressives-notch-key-primary-wins"
+    },
+    {
+      "ts": "2026-08-12T06:24:24.64+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "Trump-backed Mike Lindell loses GOP primary for Minnesota governor",
+      "url": "https://yahoo.com/news/politics/articles/lisa-demuth-wins-gop-primary-for-governor-will-face-amy-klobuchar-035400801.html"
     }
   ]
 }
