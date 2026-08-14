@@ -1,15 +1,15 @@
 {
   "ok": true,
-  "generatedAt": "2026-08-14T18:05:16.519Z",
+  "generatedAt": "2026-08-14T19:10:40.259Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:04:49.282Z",
+      "updatedAt": "2026-08-14T19:10:22.846Z",
       "error": null,
-      "runId": "abc1_2026-08-14T18-04-49-282Z",
+      "runId": "abc1_2026-08-14T19-10-22-846Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
-        "title": "Mangione pleads guilty in federal case, says he shot UnitedHealthcare CEO in the back",
+        "title": "Mangione pleads guilty in federal case, says he shot UnitedHealthcare CEO",
         "url": "https://abcnews.com/US/luigi-mangione-guilty-plea-expected-announced-friday-federal/story?id=135607454",
         "imgUrl": null,
         "slotKey": "5be6806db8a5",
@@ -18,9 +18,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:04:51.107Z",
+      "updatedAt": "2026-08-14T19:10:24.684Z",
       "error": null,
-      "runId": "cbs1_2026-08-14T18-04-51-107Z",
+      "runId": "cbs1_2026-08-14T19-10-24-684Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
         "title": "Luigi Mangione pleads guilty in federal case, admits shooting Brian Thompson",
@@ -32,9 +32,9 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:04:51.606Z",
+      "updatedAt": "2026-08-14T19:10:25.235Z",
       "error": null,
-      "runId": "usat1_2026-08-14T18-04-51-606Z",
+      "runId": "usat1_2026-08-14T19-10-25-235Z",
       "since": "2026-08-14T18:05:16.519Z",
       "item": {
         "title": "What's happening aboard the USS Abraham Lincoln?",
@@ -45,18 +45,24 @@
       }
     },
     "nbc1": {
-      "ok": false,
-      "updatedAt": "2026-08-14T18:04:52.049Z",
-      "error": "nbc1: headline not found",
-      "runId": "nbc1_2026-08-14T18-04-52-049Z",
-      "since": null,
-      "item": null
+      "ok": true,
+      "updatedAt": "2026-08-14T19:10:25.835Z",
+      "error": null,
+      "runId": "nbc1_2026-08-14T19-10-25-835Z",
+      "since": "2026-08-14T19:10:40.259Z",
+      "item": {
+        "title": "Mangione reveals new details in court about his plot to kill Brian Thompson",
+        "url": "https://nbcnews.com/news/us-news/luigi-mangione-guilty-plea-hearing-admits-investor-plot-kill-ceo-case-rcna592577",
+        "imgUrl": null,
+        "slotKey": "579270cafa55",
+        "contentType": "news"
+      }
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:08.507Z",
+      "updatedAt": "2026-08-14T19:10:32.569Z",
       "error": null,
-      "runId": "cnn1_2026-08-14T18-05-04-254Z",
+      "runId": "cnn1_2026-08-14T19-10-29-433Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
         "title": "'I shot Mr. Thompson, and he died,' Mangione says before guilty plea",
@@ -68,13 +74,13 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:09.953Z",
+      "updatedAt": "2026-08-14T19:10:33.838Z",
       "error": null,
-      "runId": "guardian1_2026-08-14T18-05-09-953Z",
-      "since": "2026-08-14T17:07:13.779Z",
+      "runId": "guardian1_2026-08-14T19-10-33-838Z",
+      "since": "2026-08-14T19:10:40.259Z",
       "item": {
-        "title": "Woman arrested after second world war memorial in DC vandalized",
-        "url": "https://theguardian.com/us-news/2026/aug/14/world-war-two-memorial-dc-vandalism",
+        "title": "Luigi Mangione pleads guilty to causing UnitedHealthcare CEO’s death in federal case",
+        "url": "https://theguardian.com/us-news/2026/aug/14/luigi-mangione-hearing-federal-case",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
@@ -82,9 +88,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:10.421Z",
+      "updatedAt": "2026-08-14T19:10:34.403Z",
       "error": null,
-      "runId": "ap1_2026-08-14T18-05-10-421Z",
+      "runId": "ap1_2026-08-14T19-10-34-403Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
         "title": "Luigi Mangione pleads guilty to federal stalking charges in the killing of UnitedHealthcare CEO",
@@ -96,9 +102,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:10.933Z",
+      "updatedAt": "2026-08-14T19:10:35.193Z",
       "error": null,
-      "runId": "latimes1_2026-08-14T18-05-10-933Z",
+      "runId": "latimes1_2026-08-14T19-10-35-193Z",
       "since": "2026-08-14T11:26:58.067Z",
       "item": {
         "title": "Californians split on proposed tax on billionaires, sour on voter ID requirement, poll shows",
@@ -110,13 +116,13 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:11.331Z",
+      "updatedAt": "2026-08-14T19:10:35.589Z",
       "error": null,
-      "runId": "npr1_2026-08-14T18-05-11-331Z",
-      "since": "2026-08-14T10:37:20.141Z",
+      "runId": "npr1_2026-08-14T19-10-35-589Z",
+      "since": "2026-08-14T19:10:40.259Z",
       "item": {
-        "title": "ICE uses controversial program to boost deportations. Here's how it works in 1 county",
-        "url": "https://npr.org/2026/08/14/nx-s1-5911838/ice-immigration-enforcement-local-police",
+        "title": "Mangione pleads guilty in federal court, leaving fate of state trial uncertain",
+        "url": "https://npr.org/2026/08/14/nx-s1-5930700/mangione-federal-charges-guilty-plea",
         "imgUrl": null,
         "slotKey": "3f6d722bf103",
         "contentType": "news"
@@ -124,13 +130,13 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:12.169Z",
+      "updatedAt": "2026-08-14T19:10:36.102Z",
       "error": null,
-      "runId": "bbc1_2026-08-14T18-05-12-169Z",
-      "since": "2026-08-14T17:07:13.779Z",
+      "runId": "bbc1_2026-08-14T19-10-36-102Z",
+      "since": "2026-08-14T19:10:40.259Z",
       "item": {
-        "title": "US aircraft carrier on way to relieve USS Lincoln after issues reported on board",
-        "url": "https://bbc.com/news/articles/c171yp5zdrxo",
+        "title": "'I shot Mr Thompson'- What it was like inside court as Mangione pleaded guilty",
+        "url": "https://bbc.com/news/articles/c4gkyez7195o",
         "imgUrl": null,
         "slotKey": "b890b46a9e6c",
         "contentType": "news"
@@ -138,26 +144,26 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:12.523Z",
+      "updatedAt": "2026-08-14T19:10:36.477Z",
       "error": null,
-      "runId": "fox1_2026-08-14T18-05-12-523Z",
-      "since": "2026-08-14T18:05:16.519Z",
+      "runId": "fox1_2026-08-14T19-10-36-477Z",
+      "since": "2026-08-14T19:10:40.259Z",
       "item": {
-        "title": "Luigi Mangione pleads guilty in federal court to UnitedHealthcare CEO assassination",
-        "url": "https://foxnews.com/us/luigi-mangione-pleads-guilty-federal-court-stalking-killing-unitedhealthcare-ceo-brian-thompson",
+        "title": "Slain UnitedHealthcare CEO's widow comes face to face with Luigi Mangione",
+        "url": "https://foxnews.com/live-news/accused-assassin-luigi-mangione-returns-to-court-as-plea-change-speculation-swirls",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
-        "contentType": "news"
+        "contentType": "live"
       }
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-08-14T18:05:12.868Z",
+      "updatedAt": "2026-08-14T19:10:36.771Z",
       "error": null,
-      "runId": "yahoo1_2026-08-14T18-05-12-868Z",
+      "runId": "yahoo1_2026-08-14T19-10-36-771Z",
       "since": "2026-08-14T17:07:13.779Z",
       "item": {
-        "title": "Trump orders Navy to return to older system of launching jets off aircraft carriers",
+        "title": "Trump orders Navy aircraft carrier launch reversal that could prove costly",
         "url": "https://yahoo.com/news/politics/articles/trump-orders-navy-return-older-000154121.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
