@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-08-14T17:07:13.779Z",
+  "generatedAt": "2026-08-14T18:05:16.519Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:06:31.137Z",
+      "updatedAt": "2026-08-14T18:04:49.282Z",
       "error": null,
-      "runId": "abc1_2026-08-14T17-06-31-137Z",
+      "runId": "abc1_2026-08-14T18-04-49-282Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
         "title": "Mangione pleads guilty in federal case, says he shot UnitedHealthcare CEO in the back",
@@ -18,9 +18,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:06:33.090Z",
+      "updatedAt": "2026-08-14T18:04:51.107Z",
       "error": null,
-      "runId": "cbs1_2026-08-14T17-06-33-090Z",
+      "runId": "cbs1_2026-08-14T18-04-51-107Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
         "title": "Luigi Mangione pleads guilty in federal case, admits shooting Brian Thompson",
@@ -32,37 +32,31 @@
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:06:33.490Z",
+      "updatedAt": "2026-08-14T18:04:51.606Z",
       "error": null,
-      "runId": "usat1_2026-08-14T17-06-33-490Z",
-      "since": "2026-08-14T17:07:13.779Z",
+      "runId": "usat1_2026-08-14T18-04-51-606Z",
+      "since": "2026-08-14T18:05:16.519Z",
       "item": {
-        "title": "Trump: 'There can be no greater insult' than WWII Memorial vandalism",
-        "url": "https://usatoday.com/story/news/state/washington-dc/2026/08/14/trump-blasts-animals-who-spray-painted-dcs-world-war-ii-memorial/91301541007",
+        "title": "What's happening aboard the USS Abraham Lincoln?",
+        "url": "https://usatoday.com/story/news/politics/2026/08/14/uss-abraham-lincoln-what-we-know/91301279007",
         "imgUrl": null,
         "slotKey": "5fd21635ad69",
         "contentType": "news"
       }
     },
     "nbc1": {
-      "ok": true,
-      "updatedAt": "2026-08-14T17:06:33.981Z",
-      "error": null,
-      "runId": "nbc1_2026-08-14T17-06-33-981Z",
-      "since": "2026-08-14T10:37:20.141Z",
-      "item": {
-        "title": "In an apparent shift, Vance says lowering oil prices is ‘goal No. 1’ of Iran war",
-        "url": "https://nbcnews.com/world/iran/low-oil-prices-trump-goal-iran-war-vance-blockade-economic-pressure-rcna592504",
-        "imgUrl": null,
-        "slotKey": "579270cafa55",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-08-14T18:04:52.049Z",
+      "error": "nbc1: headline not found",
+      "runId": "nbc1_2026-08-14T18-04-52-049Z",
+      "since": null,
+      "item": null
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:05.106Z",
+      "updatedAt": "2026-08-14T18:05:08.507Z",
       "error": null,
-      "runId": "cnn1_2026-08-14T17-06-59-017Z",
+      "runId": "cnn1_2026-08-14T18-05-04-254Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
         "title": "'I shot Mr. Thompson, and he died,' Mangione says before guilty plea",
@@ -74,9 +68,9 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:07.246Z",
+      "updatedAt": "2026-08-14T18:05:09.953Z",
       "error": null,
-      "runId": "guardian1_2026-08-14T17-07-07-246Z",
+      "runId": "guardian1_2026-08-14T18-05-09-953Z",
       "since": "2026-08-14T17:07:13.779Z",
       "item": {
         "title": "Woman arrested after second world war memorial in DC vandalized",
@@ -88,9 +82,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:07.718Z",
+      "updatedAt": "2026-08-14T18:05:10.421Z",
       "error": null,
-      "runId": "ap1_2026-08-14T17-07-07-718Z",
+      "runId": "ap1_2026-08-14T18-05-10-421Z",
       "since": "2026-08-14T16:03:02.511Z",
       "item": {
         "title": "Luigi Mangione pleads guilty to federal stalking charges in the killing of UnitedHealthcare CEO",
@@ -102,9 +96,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:08.475Z",
+      "updatedAt": "2026-08-14T18:05:10.933Z",
       "error": null,
-      "runId": "latimes1_2026-08-14T17-07-08-475Z",
+      "runId": "latimes1_2026-08-14T18-05-10-933Z",
       "since": "2026-08-14T11:26:58.067Z",
       "item": {
         "title": "Californians split on proposed tax on billionaires, sour on voter ID requirement, poll shows",
@@ -116,9 +110,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:09.081Z",
+      "updatedAt": "2026-08-14T18:05:11.331Z",
       "error": null,
-      "runId": "npr1_2026-08-14T17-07-09-081Z",
+      "runId": "npr1_2026-08-14T18-05-11-331Z",
       "since": "2026-08-14T10:37:20.141Z",
       "item": {
         "title": "ICE uses controversial program to boost deportations. Here's how it works in 1 county",
@@ -130,9 +124,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:09.592Z",
+      "updatedAt": "2026-08-14T18:05:12.169Z",
       "error": null,
-      "runId": "bbc1_2026-08-14T17-07-09-592Z",
+      "runId": "bbc1_2026-08-14T18-05-12-169Z",
       "since": "2026-08-14T17:07:13.779Z",
       "item": {
         "title": "US aircraft carrier on way to relieve USS Lincoln after issues reported on board",
@@ -144,26 +138,26 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:09.978Z",
+      "updatedAt": "2026-08-14T18:05:12.523Z",
       "error": null,
-      "runId": "fox1_2026-08-14T17-07-09-978Z",
-      "since": "2026-08-14T16:03:02.511Z",
+      "runId": "fox1_2026-08-14T18-05-12-523Z",
+      "since": "2026-08-14T18:05:16.519Z",
       "item": {
-        "title": "Luigi Mangione admits to killing UnitedHealthcare CEO, pleads guilty to federal charges",
-        "url": "https://foxnews.com/live-news/accused-assassin-luigi-mangione-returns-to-court-as-plea-change-speculation-swirls",
+        "title": "Luigi Mangione pleads guilty in federal court to UnitedHealthcare CEO assassination",
+        "url": "https://foxnews.com/us/luigi-mangione-pleads-guilty-federal-court-stalking-killing-unitedhealthcare-ceo-brian-thompson",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
-        "contentType": "live"
+        "contentType": "news"
       }
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-08-14T17:07:10.329Z",
+      "updatedAt": "2026-08-14T18:05:12.868Z",
       "error": null,
-      "runId": "yahoo1_2026-08-14T17-07-10-329Z",
+      "runId": "yahoo1_2026-08-14T18-05-12-868Z",
       "since": "2026-08-14T17:07:13.779Z",
       "item": {
-        "title": "Trump orders Navy aircraft carrier launch reversal that could prove costly",
+        "title": "Trump orders Navy to return to older system of launching jets off aircraft carriers",
         "url": "https://yahoo.com/news/politics/articles/trump-orders-navy-return-older-000154121.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
