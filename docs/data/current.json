@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-08-16T10:56:46.445Z",
+  "generatedAt": "2026-08-16T11:31:45.721Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:26.330Z",
+      "updatedAt": "2026-08-16T11:31:05.766Z",
       "error": null,
-      "runId": "abc1_2026-08-16T10-56-26-330Z",
+      "runId": "abc1_2026-08-16T11-31-05-766Z",
       "since": "2026-08-16T10:35:19.701Z",
       "item": {
         "title": "Hurricane Lala, a Category 1 storm, brings heavy rain, wind, flooding to Hawaii",
@@ -18,9 +18,9 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:28.094Z",
+      "updatedAt": "2026-08-16T11:31:07.221Z",
       "error": null,
-      "runId": "cbs1_2026-08-16T10-56-28-094Z",
+      "runId": "cbs1_2026-08-16T11-31-07-221Z",
       "since": "2026-08-16T04:18:28.499Z",
       "item": {
         "title": "One dead as Hurricane Lala lashes Hawaii's Big Island as a Category 1 storm",
@@ -31,24 +31,18 @@
       }
     },
     "usat1": {
-      "ok": true,
-      "updatedAt": "2026-08-16T10:56:28.765Z",
-      "error": null,
-      "runId": "usat1_2026-08-16T10-56-28-765Z",
-      "since": "2026-08-15T17:31:53.542Z",
-      "item": {
-        "title": "Can I ever retire? Probably not, half of workers say",
-        "url": "https://usatoday.com/story/money/personal-finance/2026/08/15/american-workers-fear-no-full-retirement/91277362007",
-        "imgUrl": null,
-        "slotKey": "5fd21635ad69",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-08-16T11:31:27.683Z",
+      "error": "This operation was aborted",
+      "runId": "usat1_error_2026-08-16T11-31-27-683Z",
+      "since": null,
+      "item": null
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:29.047Z",
+      "updatedAt": "2026-08-16T11:31:27.801Z",
       "error": null,
-      "runId": "nbc1_2026-08-16T10-56-29-047Z",
+      "runId": "nbc1_2026-08-16T11-31-27-801Z",
       "since": "2026-08-16T08:43:57.545Z",
       "item": {
         "title": "‘Chemtrails’ aren’t real. Why are so many states trying to ban weather modification anyway?",
@@ -60,9 +54,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:39.490Z",
+      "updatedAt": "2026-08-16T11:31:37.228Z",
       "error": null,
-      "runId": "cnn1_2026-08-16T10-56-35-802Z",
+      "runId": "cnn1_2026-08-16T11-31-33-636Z",
       "since": "2026-08-16T05:04:34.177Z",
       "item": {
         "title": "Vance and the Trump team keep moving the goalposts on Iran",
@@ -74,13 +68,13 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:40.642Z",
+      "updatedAt": "2026-08-16T11:31:38.249Z",
       "error": null,
-      "runId": "guardian1_2026-08-16T10-56-40-641Z",
-      "since": "2026-08-16T01:55:06.508Z",
+      "runId": "guardian1_2026-08-16T11-31-38-249Z",
+      "since": "2026-08-16T11:31:45.721Z",
       "item": {
-        "title": "Trump shows off article on lower drug prices that says Biden deserves credit, not him",
-        "url": "https://theguardian.com/us-news/2026/aug/15/trump-washington-post-drug-prices",
+        "title": "‘Massive’ Ukrainian drone attack on Russia kills at least six, says Moscow",
+        "url": "https://theguardian.com/world/2026/aug/16/ukrainian-drone-attack-on-russia-wildberries-warehouse-fire",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
@@ -88,9 +82,9 @@
     },
     "ap1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:40.996Z",
+      "updatedAt": "2026-08-16T11:31:38.781Z",
       "error": null,
-      "runId": "ap1_2026-08-16T10-56-40-996Z",
+      "runId": "ap1_2026-08-16T11-31-38-781Z",
       "since": "2026-08-15T22:34:39.518Z",
       "item": {
         "title": "US pulls last aircraft carrier in Asia as Trump focuses on Iran and the Western Hemisphere",
@@ -102,9 +96,9 @@
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:41.470Z",
+      "updatedAt": "2026-08-16T11:31:39.936Z",
       "error": null,
-      "runId": "latimes1_2026-08-16T10-56-41-470Z",
+      "runId": "latimes1_2026-08-16T11-31-39-936Z",
       "since": "2026-08-15T18:44:57.937Z",
       "item": {
         "title": "LATMG Streaming Now",
@@ -116,9 +110,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:41.866Z",
+      "updatedAt": "2026-08-16T11:31:40.346Z",
       "error": null,
-      "runId": "npr1_2026-08-16T10-56-41-866Z",
+      "runId": "npr1_2026-08-16T11-31-40-346Z",
       "since": "2026-08-16T09:59:22.280Z",
       "item": {
         "title": "Mental Health",
@@ -130,9 +124,9 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:42.498Z",
+      "updatedAt": "2026-08-16T11:31:40.929Z",
       "error": null,
-      "runId": "bbc1_2026-08-16T10-56-42-498Z",
+      "runId": "bbc1_2026-08-16T11-31-40-929Z",
       "since": "2026-08-15T21:53:33.753Z",
       "item": {
         "title": "Thousands displaced by deadly Indonesia earthquake as rescue efforts continue",
@@ -144,9 +138,9 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:42.818Z",
+      "updatedAt": "2026-08-16T11:31:41.482Z",
       "error": null,
-      "runId": "fox1_2026-08-16T10-56-42-818Z",
+      "runId": "fox1_2026-08-16T11-31-41-482Z",
       "since": "2026-08-16T10:56:46.445Z",
       "item": {
         "title": "Court filings detail former senator's affair with married bodyguard",
@@ -158,9 +152,9 @@
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-08-16T10:56:43.122Z",
+      "updatedAt": "2026-08-16T11:31:41.955Z",
       "error": null,
-      "runId": "yahoo1_2026-08-16T10-56-43-122Z",
+      "runId": "yahoo1_2026-08-16T11-31-41-955Z",
       "since": "2026-08-16T09:37:50.524Z",
       "item": {
         "title": "13-year-old girl calls 911 after being shot 4 times in Michigan rampage",
