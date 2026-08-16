@@ -5,8 +5,8 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:05.766Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:52:57.462Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -17,10 +17,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "abc1_2026-08-16T11-31-05-766Z",
+        "runId": "abc1_2026-08-16T11-52-57-462Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:05.766Z"
+        "fetchedAt": "2026-08-16T11:52:57.462Z"
       },
       "history": [],
       "archive": []
@@ -30,8 +30,8 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:07.221Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:52:59.011Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -42,10 +42,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cbs1_2026-08-16T11-31-07-221Z",
+        "runId": "cbs1_2026-08-16T11-52-59-011Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:07.221Z"
+        "fetchedAt": "2026-08-16T11:52:59.011Z"
       },
       "history": [],
       "archive": []
@@ -55,16 +55,22 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:27.683Z",
-      "ok": false,
-      "stale": true,
-      "item": null,
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:52:59.313Z",
+      "ok": true,
+      "stale": false,
+      "item": {
+        "title": "At 22, she's living with parents, saving money and seeing the world",
+        "url": "https://usatoday.com/story/money/personal-finance/2026/08/16/college-graduates-living-with-parents/91292634007",
+        "imgUrl": null,
+        "slotKey": "5fd21635ad69",
+        "contentType": "news"
+      },
       "last": {
-        "runId": "usat1_error_2026-08-16T11-31-27-683Z",
-        "ok": false,
-        "error": "This operation was aborted",
-        "fetchedAt": "2026-08-16T11:31:27.683Z"
+        "runId": "usat1_2026-08-16T11-52-59-313Z",
+        "ok": true,
+        "error": null,
+        "fetchedAt": "2026-08-16T11:52:59.313Z"
       },
       "history": [],
       "archive": []
@@ -74,8 +80,8 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:27.801Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:52:59.593Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -86,10 +92,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc1_2026-08-16T11-31-27-801Z",
+        "runId": "nbc1_2026-08-16T11-52-59-593Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:27.801Z"
+        "fetchedAt": "2026-08-16T11:52:59.593Z"
       },
       "history": [],
       "archive": []
@@ -99,8 +105,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:37.228Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:10.852Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -111,17 +117,17 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cnn1_2026-08-16T11-31-33-636Z",
+        "runId": "cnn1_2026-08-16T11-53-07-092Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:37.228Z"
+        "fetchedAt": "2026-08-16T11:53:10.852Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-08-16T11-31-33-636Z",
-          "html": "/archive/cnn1_2026-08-16T11-31-33-636Z.html",
-          "json": "/archive/cnn1_2026-08-16T11-31-33-636Z.json"
+          "runId": "cnn1_2026-08-16T11-53-07-092Z",
+          "html": "/archive/cnn1_2026-08-16T11-53-07-092Z.html",
+          "json": "/archive/cnn1_2026-08-16T11-53-07-092Z.json"
         }
       ]
     },
@@ -130,22 +136,22 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:38.249Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:11.981Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "‘Massive’ Ukrainian drone attack on Russia kills at least six, says Moscow",
-        "url": "https://theguardian.com/world/2026/aug/16/ukrainian-drone-attack-on-russia-wildberries-warehouse-fire",
+        "title": "US law to investigate foodborne illness outbreaks has been delayed for 15 years",
+        "url": "https://theguardian.com/us-news/2026/aug/16/us-law-foodborne-illness-delay",
         "imgUrl": null,
         "slotKey": "b80da2377db9",
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-08-16T11-31-38-249Z",
+        "runId": "guardian1_2026-08-16T11-53-11-981Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:38.249Z"
+        "fetchedAt": "2026-08-16T11:53:11.981Z"
       },
       "history": [],
       "archive": []
@@ -155,8 +161,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:38.781Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:12.338Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -167,10 +173,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-08-16T11-31-38-781Z",
+        "runId": "ap1_2026-08-16T11-53-12-338Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:38.781Z"
+        "fetchedAt": "2026-08-16T11:53:12.338Z"
       },
       "history": [],
       "archive": []
@@ -180,8 +186,8 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:39.936Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:12.807Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -192,10 +198,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-08-16T11-31-39-936Z",
+        "runId": "latimes1_2026-08-16T11-53-12-807Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:39.936Z"
+        "fetchedAt": "2026-08-16T11:53:12.807Z"
       },
       "history": [],
       "archive": []
@@ -205,8 +211,8 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:40.346Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:13.066Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -217,10 +223,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-08-16T11-31-40-346Z",
+        "runId": "npr1_2026-08-16T11-53-13-066Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:40.346Z"
+        "fetchedAt": "2026-08-16T11:53:13.066Z"
       },
       "history": [],
       "archive": []
@@ -230,8 +236,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:40.929Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:13.530Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -242,10 +248,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-08-16T11-31-40-929Z",
+        "runId": "bbc1_2026-08-16T11-53-13-530Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:40.929Z"
+        "fetchedAt": "2026-08-16T11:53:13.530Z"
       },
       "history": [],
       "archive": []
@@ -255,8 +261,8 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:41.482Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:13.737Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -267,10 +273,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-08-16T11-31-41-482Z",
+        "runId": "fox1_2026-08-16T11-53-13-737Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:41.482Z"
+        "fetchedAt": "2026-08-16T11:53:13.737Z"
       },
       "history": [],
       "archive": []
@@ -280,8 +286,8 @@
       "name": "Yahoo News",
       "home_url": "https://www.yahoo.com/news/",
       "kind": "hero",
-      "created_at": "2026-08-16T11:31:05.766Z",
-      "updated_at": "2026-08-16T11:31:41.955Z",
+      "created_at": "2026-08-16T11:52:57.462Z",
+      "updated_at": "2026-08-16T11:53:13.973Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -292,10 +298,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-08-16T11-31-41-955Z",
+        "runId": "yahoo1_2026-08-16T11-53-13-973Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-16T11:31:41.955Z"
+        "fetchedAt": "2026-08-16T11:53:13.973Z"
       },
       "history": [],
       "archive": []
