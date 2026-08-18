@@ -1,176 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-08-18T05:41:23.055Z",
+  "generatedAt": "2026-08-18T07:00:38.788Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-08-17T18:07:36.228+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Details of 911 call released in Hayden Panettiere's death",
-      "url": "https://abcnews.com/US/hayden-panettiere-dies-36/story?id=135698473"
-    },
-    {
-      "ts": "2026-08-17T18:07:37.661+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump threatens Oman, Iran war in stalemate as 60-day talks window ends",
-      "url": "https://cbsnews.com/live-updates/us-iran-war-deal-expired-strait-of-hormuz"
-    },
-    {
-      "ts": "2026-08-17T18:07:38.041+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Trump threatens to bomb US ally if it 'gets in the way' of Iran deal",
-      "url": "https://usatoday.com/story/news/politics/2026/08/17/trump-threatens-bomb-oman-iran-war-us-talks/91334335007"
-    },
-    {
-      "ts": "2026-08-17T18:07:38.288+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump alarms South Korea with call to scale back military drills and deference to Kim Jong Un",
-      "url": "https://nbcnews.com/world/asia/trump-military-exercises-south-korea-kim-jong-un-putin-china-rcna592867"
-    },
-    {
-      "ts": "2026-08-17T18:07:43.257+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Trump threatens to bomb Oman as US-Iran agreement expires",
-      "url": "https://cnn.com/2026/08/17/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-08-17T18:07:44.291+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Trump’s move to gut South Korea alliance is ‘inane, haphazard decision’, lawmakers say",
-      "url": "https://theguardian.com/us-news/2026/aug/17/trump-south-korea-alliance"
-    },
-    {
-      "ts": "2026-08-17T18:07:44.63+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "In Florida, Wasserman Schultz sparks a debate over what representation means in diverse districts",
-      "url": "https://apnews.com/article/midterms-florida-trump-debbie-wasserman-schultz-72997f3c390437a7f33dc4134736d324"
-    },
-    {
-      "ts": "2026-08-17T18:07:45.136+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Aging Californians aren’t leaving their longtime homes. It’s worsening the housing crisis",
-      "url": "https://latimes.com/california/story/2026-08-17/aging-californians-arent-moving-out-of-their-longtime-homes"
-    },
-    {
-      "ts": "2026-08-17T18:07:45.381+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Meta heads to court in a landmark trial about kids and social media addiction",
-      "url": "https://npr.org/2026/08/17/nx-s1-5930701/meta-trial-kids-social-media-addiction"
-    },
-    {
-      "ts": "2026-08-17T18:07:45.856+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Trump threatens to bomb US ally Oman if it 'gets in the way' over Iran deal",
-      "url": "https://bbc.com/news/articles/cy5dzk0ryzdo"
-    },
-    {
-      "ts": "2026-08-17T18:07:46.14+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Officials release preliminary autopsy findings in actress Hayden Panettiere’s death",
-      "url": "https://foxnews.com/live-news/hayden-panettiere-actress-death"
-    },
-    {
-      "ts": "2026-08-17T18:07:46.304+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Iran says it will launch an attack if the U.S. fails to reach peace deal within weeks",
-      "url": "https://yahoo.com/news/articles/iran-says-it-will-escalate-if-us-does-not-honour-deal-within-weeks-134114337.html"
-    },
-    {
-      "ts": "2026-08-17T18:54:15.016+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Actress Hayden Panettiere dies at 36, found in cardiac arrest",
-      "url": "https://abcnews.com/US/hayden-panettiere-dies-36/story?id=135698473"
-    },
-    {
-      "ts": "2026-08-17T18:54:17.103+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump threatens Oman, Iran war in stalemate as 60-day talks window ends",
-      "url": "https://cbsnews.com/live-updates/us-iran-war-deal-expired-strait-of-hormuz"
-    },
-    {
-      "ts": "2026-08-17T18:54:17.798+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Trump threatens to bomb US ally if it 'gets in the way' of Iran deal",
-      "url": "https://usatoday.com/story/news/politics/2026/08/17/trump-threatens-bomb-oman-iran-war-us-talks/91334335007"
-    },
-    {
-      "ts": "2026-08-17T18:54:18.373+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Trump says U.S. would handle Oman ‘easily’ if it interferes in talks on Strait of Hormuz",
-      "url": "https://nbcnews.com/politics/trump-administration/trump-bomb-oman-iran-strait-hormuz-rcna592971"
-    },
-    {
-      "ts": "2026-08-17T18:54:22.558+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Trump threatens to bomb Oman as US-Iran agreement expires",
-      "url": "https://cnn.com/2026/08/17/world/live-news/iran-war-trump"
-    },
-    {
-      "ts": "2026-08-17T18:54:23.696+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "US supreme court again rejects Trump’s bid to overturn E Jean Carroll verdict",
-      "url": "https://theguardian.com/us-news/2026/aug/17/trump-e-jean-carroll-appeal"
-    },
-    {
-      "ts": "2026-08-17T18:54:24.256+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "In Florida, Wasserman Schultz sparks a debate over what representation means in diverse districts",
-      "url": "https://apnews.com/article/midterms-florida-trump-debbie-wasserman-schultz-72997f3c390437a7f33dc4134736d324"
-    },
-    {
-      "ts": "2026-08-17T18:54:24.905+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Aging Californians aren’t leaving their longtime homes. It’s worsening the housing crisis",
-      "url": "https://latimes.com/california/story/2026-08-17/aging-californians-arent-moving-out-of-their-longtime-homes"
-    },
-    {
-      "ts": "2026-08-17T18:54:25.433+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "Meta heads to court in a landmark trial about kids and social media addiction",
-      "url": "https://npr.org/2026/08/17/nx-s1-5930701/meta-trial-kids-social-media-addiction"
-    },
-    {
-      "ts": "2026-08-17T18:54:25.932+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Trump threatens to bomb US ally Oman if it 'gets in the way' over Iran deal",
-      "url": "https://bbc.com/news/articles/cy5dzk0ryzdo"
-    },
-    {
-      "ts": "2026-08-17T18:54:26.361+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Officials release preliminary autopsy findings in actress Hayden Panettiere’s death",
-      "url": "https://foxnews.com/live-news/hayden-panettiere-actress-death"
-    },
-    {
-      "ts": "2026-08-17T18:54:26.775+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Details of 911 call released in Hayden Panettiere's death",
-      "url": "https://yahoo.com/entertainment/celebrity/articles/hayden-panettiere-dies-at-36-030552157.html"
-    },
     {
       "ts": "2026-08-17T19:36:32.817+00:00",
       "source_id": "abc1",
@@ -1933,6 +1765,90 @@
       "source_id": "yahoo1",
       "kind": "headline",
       "title": "Trump signals renewed contact with Kim Jong Un after criticizing South Korea",
+      "url": "https://yahoo.com/news/politics/articles/trump-says-us-scaling-back-223619733.html"
+    },
+    {
+      "ts": "2026-08-18T07:00:24.423+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Trump contradicts Vance, says nukes, not oil prices, No. 1 priority in Iran",
+      "url": "https://abcnews.com/Politics/trump-contradicts-vance-nukes-oil-prices-1-priority/story?id=135711978"
+    },
+    {
+      "ts": "2026-08-18T07:00:26.019+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "Trump threatens Oman, Iran war in stalemate as 60-day talks window ends",
+      "url": "https://cbsnews.com/live-updates/us-iran-war-deal-expired-strait-of-hormuz"
+    },
+    {
+      "ts": "2026-08-18T07:00:26.422+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Trump approval rating hits another low in new polling",
+      "url": "https://usatoday.com/story/news/politics/2026/08/17/president-trumps-approval-rating-slips-once-again-hitting-new-low/91342923007"
+    },
+    {
+      "ts": "2026-08-18T07:00:26.824+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "Russia is shipping explosives to Iran to bolster its missile, drone arsenal in U.S. war",
+      "url": "https://nbcnews.com/politics/national-security/russia-shipping-explosives-iran-bolster-missile-drone-arsenal-us-war-rcna592892"
+    },
+    {
+      "ts": "2026-08-18T07:00:31.926+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Georgia senator's jab at Trump aide draws White House fury",
+      "url": "https://cnn.com/2026/08/17/politics/ossoff-natalie-harp-trump"
+    },
+    {
+      "ts": "2026-08-18T07:00:33.009+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Trump dismisses USS Lincoln criticism and snaps at CNN reporter to ‘be quiet’",
+      "url": "https://theguardian.com/us-news/2026/aug/17/trump-uss-abraham-lincoln-strait-of-hormuz"
+    },
+    {
+      "ts": "2026-08-18T07:00:33.582+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "Trump threatens Oman as it works with Iran on a Strait of Hormuz deal",
+      "url": "https://apnews.com/article/iran-us-israel-lebanon-gaza-hormuz-august-17-2026-53ae10812e472a4e5bb228b9f318a5fc"
+    },
+    {
+      "ts": "2026-08-18T07:00:34.15+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Jeanie Buss contests family sale of Lakers ownership stake to Bob Iger, Joshua Kushner",
+      "url": "https://latimes.com/sports/lakers/story/2026-08-17/lakers-jeanie-buss-family-selling-ownership-stake"
+    },
+    {
+      "ts": "2026-08-18T07:00:34.617+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Part of a key firearms law lapsed following a federal court decision. What happens now?",
+      "url": "https://npr.org/2026/08/17/nx-s1-5935562/firearms-law-lapsed-federal-court-ruling"
+    },
+    {
+      "ts": "2026-08-18T07:00:34.996+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "IVF staff accused of misleading parents about sperm and egg donors in northern Cyprus",
+      "url": "https://bbc.com/news/articles/c75gv9xnr3po"
+    },
+    {
+      "ts": "2026-08-18T07:00:35.321+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Major university rocked by alleged massive frat house cocaine ring",
+      "url": "https://foxnews.com/us/penn-state-cocaine-bust-nets-14-arrests-over-alleged-pledge-coke-cutting-indoctrination-rituals"
+    },
+    {
+      "ts": "2026-08-18T07:00:35.631+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "Trump again praises Kim Jong Un after rebuking U.S. ally South Korea",
       "url": "https://yahoo.com/news/politics/articles/trump-says-us-scaling-back-223619733.html"
     }
   ]
