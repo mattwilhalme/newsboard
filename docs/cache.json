@@ -5,8 +5,8 @@
       "name": "ABC News",
       "home_url": "https://abcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:37.258Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:57:55.602Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -17,10 +17,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "abc1_2026-08-21T21-35-37-258Z",
+        "runId": "abc1_2026-08-21T21-57-55-602Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:37.258Z"
+        "fetchedAt": "2026-08-21T21:57:55.602Z"
       },
       "history": [],
       "archive": []
@@ -30,22 +30,16 @@
       "name": "CBS News",
       "home_url": "https://www.cbsnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:39.088Z",
-      "ok": true,
-      "stale": false,
-      "item": {
-        "title": "Iran touts its trade ties as U.S. turns from bombs to economic warfare",
-        "url": "https://cbsnews.com/live-updates/iran-war-trump-economic-crackdown",
-        "imgUrl": null,
-        "slotKey": "4d6f70f0b663",
-        "contentType": "live"
-      },
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:57:57.339Z",
+      "ok": false,
+      "stale": true,
+      "item": null,
       "last": {
-        "runId": "cbs1_2026-08-21T21-35-39-088Z",
-        "ok": true,
-        "error": null,
-        "fetchedAt": "2026-08-21T21:35:39.088Z"
+        "runId": "cbs1_2026-08-21T21-57-57-339Z",
+        "ok": false,
+        "error": "cbs1: headline not found",
+        "fetchedAt": "2026-08-21T21:57:57.339Z"
       },
       "history": [],
       "archive": []
@@ -55,22 +49,22 @@
       "name": "USA Today",
       "home_url": "https://www.usatoday.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:39.744Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:57:57.622Z",
       "ok": true,
       "stale": false,
       "item": {
-        "title": "Supreme Court keeps White House ballroom construction on track for now",
-        "url": "https://usatoday.com/story/news/politics/2026/08/21/supreme-court-trump-white-house-ballroom-construction/91307980007",
+        "title": "Hayden Panettiere death: Neutrogena responds, boyfriend breaks silence",
+        "url": "https://usatoday.com/story/entertainment/celebrities/2026/08/21/hayden-panettiere-death-cause-birthday-neutrogena-live-updates/91401839007",
         "imgUrl": null,
         "slotKey": "5fd21635ad69",
         "contentType": "news"
       },
       "last": {
-        "runId": "usat1_2026-08-21T21-35-39-744Z",
+        "runId": "usat1_2026-08-21T21-57-57-622Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:39.744Z"
+        "fetchedAt": "2026-08-21T21:57:57.622Z"
       },
       "history": [],
       "archive": []
@@ -80,8 +74,8 @@
       "name": "NBC News",
       "home_url": "https://www.nbcnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:40.081Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:57:58.248Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -92,10 +86,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "nbc1_2026-08-21T21-35-40-081Z",
+        "runId": "nbc1_2026-08-21T21-57-58-248Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:40.081Z"
+        "fetchedAt": "2026-08-21T21:57:58.248Z"
       },
       "history": [],
       "archive": []
@@ -105,8 +99,8 @@
       "name": "CNN",
       "home_url": "https://www.cnn.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:51.070Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:07.132Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -117,17 +111,17 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "cnn1_2026-08-21T21-35-47-185Z",
+        "runId": "cnn1_2026-08-21T21-58-03-611Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:51.070Z"
+        "fetchedAt": "2026-08-21T21:58:07.132Z"
       },
       "history": [],
       "archive": [
         {
-          "runId": "cnn1_2026-08-21T21-35-47-185Z",
-          "html": "/archive/cnn1_2026-08-21T21-35-47-185Z.html",
-          "json": "/archive/cnn1_2026-08-21T21-35-47-185Z.json"
+          "runId": "cnn1_2026-08-21T21-58-03-611Z",
+          "html": "/archive/cnn1_2026-08-21T21-58-03-611Z.html",
+          "json": "/archive/cnn1_2026-08-21T21-58-03-611Z.json"
         }
       ]
     },
@@ -136,8 +130,8 @@
       "name": "The Guardian",
       "home_url": "https://www.theguardian.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:52.546Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:08.306Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -148,10 +142,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "guardian1_2026-08-21T21-35-52-546Z",
+        "runId": "guardian1_2026-08-21T21-58-08-306Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:52.546Z"
+        "fetchedAt": "2026-08-21T21:58:08.306Z"
       },
       "history": [],
       "archive": []
@@ -161,8 +155,8 @@
       "name": "Associated Press",
       "home_url": "https://apnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:52.957Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:09.015Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -173,10 +167,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "ap1_2026-08-21T21-35-52-957Z",
+        "runId": "ap1_2026-08-21T21-58-09-015Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:52.957Z"
+        "fetchedAt": "2026-08-21T21:58:09.015Z"
       },
       "history": [],
       "archive": []
@@ -186,8 +180,8 @@
       "name": "Los Angeles Times",
       "home_url": "https://www.latimes.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:53.454Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:09.813Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -198,10 +192,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "latimes1_2026-08-21T21-35-53-454Z",
+        "runId": "latimes1_2026-08-21T21-58-09-813Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:53.454Z"
+        "fetchedAt": "2026-08-21T21:58:09.813Z"
       },
       "history": [],
       "archive": []
@@ -211,8 +205,8 @@
       "name": "NPR",
       "home_url": "https://www.npr.org/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.257Z",
-      "updated_at": "2026-08-21T21:35:53.834Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:10.146Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -223,10 +217,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "npr1_2026-08-21T21-35-53-834Z",
+        "runId": "npr1_2026-08-21T21-58-10-146Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:53.834Z"
+        "fetchedAt": "2026-08-21T21:58:10.146Z"
       },
       "history": [],
       "archive": []
@@ -236,8 +230,8 @@
       "name": "BBC",
       "home_url": "https://www.bbc.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.258Z",
-      "updated_at": "2026-08-21T21:35:54.645Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:10.571Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -248,10 +242,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "bbc1_2026-08-21T21-35-54-645Z",
+        "runId": "bbc1_2026-08-21T21-58-10-571Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:54.645Z"
+        "fetchedAt": "2026-08-21T21:58:10.571Z"
       },
       "history": [],
       "archive": []
@@ -261,8 +255,8 @@
       "name": "Fox News",
       "home_url": "https://www.foxnews.com/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.258Z",
-      "updated_at": "2026-08-21T21:35:54.983Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:10.919Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -273,10 +267,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "fox1_2026-08-21T21-35-54-983Z",
+        "runId": "fox1_2026-08-21T21-58-10-919Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:54.983Z"
+        "fetchedAt": "2026-08-21T21:58:10.919Z"
       },
       "history": [],
       "archive": []
@@ -286,8 +280,8 @@
       "name": "Yahoo News",
       "home_url": "https://www.yahoo.com/news/",
       "kind": "hero",
-      "created_at": "2026-08-21T21:35:37.258Z",
-      "updated_at": "2026-08-21T21:35:55.332Z",
+      "created_at": "2026-08-21T21:57:55.602Z",
+      "updated_at": "2026-08-21T21:58:11.274Z",
       "ok": true,
       "stale": false,
       "item": {
@@ -298,10 +292,10 @@
         "contentType": "news"
       },
       "last": {
-        "runId": "yahoo1_2026-08-21T21-35-55-332Z",
+        "runId": "yahoo1_2026-08-21T21-58-11-274Z",
         "ok": true,
         "error": null,
-        "fetchedAt": "2026-08-21T21:35:55.332Z"
+        "fetchedAt": "2026-08-21T21:58:11.274Z"
       },
       "history": [],
       "archive": []
