@@ -1,176 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-09-01T10:01:04.479Z",
+  "generatedAt": "2026-09-01T14:49:06.818Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-08-31T22:25:47.759+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "'Run, Run, Run': Grand Canyon flood survivor recounts race to safety",
-      "url": "https://abcnews.com/US/survivors-deadly-grand-canyon-flash-flood-ran-lives/story?id=136088451"
-    },
-    {
-      "ts": "2026-08-31T22:25:49.976+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "2 dead, about 15 missing after Grand Canyon hit by flash floods",
-      "url": "https://cbsnews.com/news/grand-canyon-national-park-flood-evacuation-helicopter-rescue-phantom-ranch"
-    },
-    {
-      "ts": "2026-08-31T22:25:50.82+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Divided Supreme Court greenlights Trump's White House ballroom construction",
-      "url": "https://usatoday.com/story/news/politics/2026/08/31/supreme-court-trump-ballroom-white-house-construction/91408224007"
-    },
-    {
-      "ts": "2026-08-31T22:25:51.395+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Pro-AI group launches new ads making the case for data centers",
-      "url": "https://nbcnews.com/politics/2026-election/-ai-group-jumps-data-center-fight-new-ads-aimed-reshaping-public-opini-rcna595198"
-    },
-    {
-      "ts": "2026-08-31T22:26:01.889+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Supreme Court allows White House ballroom construction to continue",
-      "url": "https://cnn.com/2026/08/31/politics/supreme-court-white-house-ballroom-trump"
-    },
-    {
-      "ts": "2026-08-31T22:26:03.165+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Trump threatens further action as US and Iran exchange fire in new flare-up",
-      "url": "https://theguardian.com/world/2026/aug/31/trump-threatens-further-action-us-iran-exchange-fire"
-    },
-    {
-      "ts": "2026-08-31T22:26:03.749+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "US military has no plans to send troops to the polls in November, top general says",
-      "url": "https://apnews.com/article/caine-hegseth-trump-military-polling-voting-elections-98a06a37abf19613a0922a7e9359e999"
-    },
-    {
-      "ts": "2026-08-31T22:26:04.317+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Simi Valley landfill gets rotting food from warehouse fire, raising odor complaints from neighbors",
-      "url": "https://latimes.com/california/story/2026-08-31/simi-valley-landfill-gets-rotting-food-from-warehouse-fire-raising-foul-odor-complaints-from-neighbors"
-    },
-    {
-      "ts": "2026-08-31T22:26:04.806+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "The U.S. sues Amazon again",
-      "url": "https://npr.org/2026/08/31/nx-s1-5950482/ftc-amazon-advertising-lawsuit"
-    },
-    {
-      "ts": "2026-08-31T22:26:05.455+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Nepal rescuers blast hillside in search of hydropower workers as families wait anxiously",
-      "url": "https://bbc.com/news/articles/c5ylvgq9q71o"
-    },
-    {
-      "ts": "2026-08-31T22:26:05.894+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "VP tells Senate hopeful 'keep my wife's name the hell out of your mouth'",
-      "url": "https://foxnews.com/politics/vance-unloads-el-sayed-after-usha-swipe-brutal-warning-way-out-your-league"
-    },
-    {
-      "ts": "2026-08-31T22:26:06.22+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump's White House ballroom can keep rising following 5-4 Supreme Court ruling",
-      "url": "https://yahoo.com/news/politics/articles/supreme-court-lets-trumps-white-200920150.html"
-    },
-    {
-      "ts": "2026-08-31T23:47:48.97+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "'Run, Run, Run': Grand Canyon flood survivor recounts race to safety",
-      "url": "https://abcnews.com/US/survivors-deadly-grand-canyon-flash-flood-ran-lives/story?id=136088451"
-    },
-    {
-      "ts": "2026-08-31T23:47:51.344+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "2 dead, about 15 missing after Grand Canyon hit by flash floods",
-      "url": "https://cbsnews.com/news/grand-canyon-national-park-flood-evacuation-helicopter-rescue-phantom-ranch"
-    },
-    {
-      "ts": "2026-08-31T23:47:52.065+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Divided Supreme Court greenlights Trump's White House ballroom construction",
-      "url": "https://usatoday.com/story/news/politics/2026/08/31/supreme-court-trump-ballroom-white-house-construction/91408224007"
-    },
-    {
-      "ts": "2026-08-31T23:47:52.447+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Army Secretary submits resignation to White House after tensions with Pete Hegseth",
-      "url": "https://nbcnews.com/politics/national-security/army-secretary-dan-driscoll-submits-resignation-white-house-rcna595437"
-    },
-    {
-      "ts": "2026-08-31T23:47:59.865+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Supreme Court allows White House ballroom construction to continue",
-      "url": "https://cnn.com/2026/08/31/politics/supreme-court-white-house-ballroom-trump"
-    },
-    {
-      "ts": "2026-08-31T23:48:01.099+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "US army secretary Dan Driscoll resigns over reported friction with Pete Hegseth",
-      "url": "https://theguardian.com/us-news/2026/aug/31/army-secretary-dan-driscoll-resigns"
-    },
-    {
-      "ts": "2026-08-31T23:48:01.887+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Army Secretary Dan Driscoll is stepping down after 18 months on the job, White House says",
-      "url": "https://apnews.com/article/driscoll-departure-army-secretary-hegseth-4853c46840a522911da5a510b01966d2"
-    },
-    {
-      "ts": "2026-08-31T23:48:02.537+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Teen girl who livestreamed San Diego mosque shooting faces murder charges, prosecutors say",
-      "url": "https://latimes.com/california/story/2026-08-31/teen-accused-of-livestreaming-san-diego-mosque-shooting-faces-murder-charges"
-    },
-    {
-      "ts": "2026-08-31T23:48:03.033+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "The U.S. sues Amazon again",
-      "url": "https://npr.org/2026/08/31/nx-s1-5950482/ftc-amazon-advertising-lawsuit"
-    },
-    {
-      "ts": "2026-08-31T23:48:03.922+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Nepal rescuers blast hillside in search of hydropower workers as families wait anxiously",
-      "url": "https://bbc.com/news/articles/c5ylvgq9q71o"
-    },
-    {
-      "ts": "2026-08-31T23:48:04.477+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Vance unloads on El-Sayed after Usha swipe with brutal warning",
-      "url": "https://foxnews.com/politics/vance-unloads-el-sayed-after-usha-swipe-brutal-warning-way-out-your-league"
-    },
-    {
-      "ts": "2026-08-31T23:48:04.861+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Grand Canyon flood survivors describe desperate race from 15-foot wall of water",
-      "url": "https://yahoo.com/news/weather-news/articles/survivors-deadly-grand-canyon-flash-191346014.html"
-    },
     {
       "ts": "2026-09-01T04:59:22.999+00:00",
       "source_id": "abc1",
@@ -334,6 +166,90 @@
     },
     {
       "ts": "2026-09-01T10:01:01.907+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "A principal's quick decision saved 900 students from Nepal's deadly floods",
+      "url": "https://yahoo.com/news/weather-news/articles/principal-nepal-evacuated-900-students-104915075.html"
+    },
+    {
+      "ts": "2026-09-01T14:48:49.992+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "2 dead, 1 missing after deadly Grand Canyon flash flood",
+      "url": "https://abcnews.com/US/2-dead-1-missing-after-deadly-grand-canyon/story?id=136108261"
+    },
+    {
+      "ts": "2026-09-01T14:48:51.91+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "Tankers attacked as Trump mulls new strikes in \"little war\" with Iran",
+      "url": "https://cbsnews.com/live-updates/iran-war-us-strikes-strait-of-hormuz-larak-island"
+    },
+    {
+      "ts": "2026-09-01T14:48:52.41+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "Meet 'Castle Breaker,' Iranian missile wreaking havoc in US war",
+      "url": "https://usatoday.com/story/news/politics/2026/08/31/castle-breaker-missile-havoc-iran-us-war/91496889007"
+    },
+    {
+      "ts": "2026-09-01T14:48:52.968+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "Whistleblower says USPS system Trump ordered for mail ballots is flawed and untested",
+      "url": "https://nbcnews.com/politics/elections/whistleblower-usps-systems-mail-ballots-flawed-rcna595361"
+    },
+    {
+      "ts": "2026-09-01T14:48:58.254+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Whistleblower warns new plans for mail ballot rules are hidden from the public",
+      "url": "https://cnn.com/2026/09/01/politics/usps-whistleblower-mail-ballot-rules-trump"
+    },
+    {
+      "ts": "2026-09-01T14:48:59.67+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "Judge tells jury in Lindsay Clancy trial to keep deliberating after deadlock",
+      "url": "https://theguardian.com/us-news/2026/sep/01/lindsay-clancy-jury-deliberating"
+    },
+    {
+      "ts": "2026-09-01T14:49:00.216+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "Postal Service work to comply with Trump’s executive order is rushed and sloppy, a whistleblower contends",
+      "url": "https://apnews.com/article/midterm-elections-postal-service-mail-voting-7f7cf4fdf2e9cf369ae96f96fbda03f2"
+    },
+    {
+      "ts": "2026-09-01T14:49:00.994+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Could a hurricane send floods to Southern California for Labor Day weekend?",
+      "url": "https://latimes.com/california/story/2026-09-01/could-hurricane-send-floods-to-socal-for-labor-day-weekend"
+    },
+    {
+      "ts": "2026-09-01T14:49:01.411+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Hindu pilgrims on an arduous trek are among Nepal's missing",
+      "url": "https://npr.org/2026/09/01/g-s1-141349/hindu-pilgrims-on-arduous-trek-among-nepals-missing"
+    },
+    {
+      "ts": "2026-09-01T14:49:02.336+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "Nepal death toll crosses 1,000 as rescuers race to find workers trapped in mud-filled tunnels",
+      "url": "https://bbc.com/news/articles/c5ylvgq9q71o"
+    },
+    {
+      "ts": "2026-09-01T14:49:02.746+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "World leader pledges support for Iran after weekend strikes escalate tensions with US",
+      "url": "https://foxnews.com/live-news/us-iran-war-news-trump-leader-latest-today-september-1"
+    },
+    {
+      "ts": "2026-09-01T14:49:03.109+00:00",
       "source_id": "yahoo1",
       "kind": "headline",
       "title": "A principal's quick decision saved 900 students from Nepal's deadly floods",
