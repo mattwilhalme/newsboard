@@ -1,260 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-09-03T05:00:45.376Z",
+  "generatedAt": "2026-09-03T09:41:42.220Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-09-02T19:29:27.713+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "‘Dancing With the Stars’ reveals new celeb cast and their pro partners",
-      "url": "https://abcnews.com/GMA/Culture/dancing-with-the-stars-season-35-celebrity-cast/story?id=136095657"
-    },
-    {
-      "ts": "2026-09-02T19:29:29.292+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Iran attacks Gulf states, accuses U.S. of bombing a wedding party",
-      "url": "https://cbsnews.com/live-updates/us-iran-war-trump-dismisses-diplomacy-tehran-says-wedding-hit-in-strike"
-    },
-    {
-      "ts": "2026-09-02T19:29:29.9+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "US to NATO allies: Be ready in case Putin attacks",
-      "url": "https://usatoday.com/story/news/world/2026/09/02/russia-putin-attack-nato-us-exclusive/91562464007"
-    },
-    {
-      "ts": "2026-09-02T19:29:30.272+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Colin Kaepernick believes Jay-Z has a ‘guilty conscience’ over deals with NFL and Target",
-      "url": "https://nbcnews.com/sports/nfl/colin-kaepernick-believes-jay-z-guilty-conscience-deals-nfl-target-rcna595364"
-    },
-    {
-      "ts": "2026-09-02T19:29:50.043+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "The war is raising the price of money. That’s a problem for the global economy",
-      "url": "https://cnn.com/2026/09/02/economy/debt-treasury-stocks-bond-market"
-    },
-    {
-      "ts": "2026-09-02T19:29:51.645+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "After the flood: human suffering on an unfathomable scale in Nepal’s worst-hit districts",
-      "url": "https://theguardian.com/world/2026/sep/02/after-the-flood-human-suffering-nepal-worst-hit-districts"
-    },
-    {
-      "ts": "2026-09-02T19:29:52.121+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Jury in Lindsay Clancy trial tells judge for a second time that it can’t agree on a verdict",
-      "url": "https://apnews.com/article/lindsay-clancy-jury-deliberations-6f3a9556fb5d7a2b159b33ac6f2edc2c"
-    },
-    {
-      "ts": "2026-09-02T19:29:52.664+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "5 ways future Hurricane Marie could impact L.A. on Labor Day weekend",
-      "url": "https://latimes.com/california/story/2026-09-02/hurricane-marie-could-impact-southern-california-on-labor-day-weekend"
-    },
-    {
-      "ts": "2026-09-02T19:29:53.12+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "He died of 'natural causes.' But his mother says she knows what killed him: heat",
-      "url": "https://npr.org/2026/09/02/nx-s1-5887544/heat-deaths-undercount"
-    },
-    {
-      "ts": "2026-09-02T19:29:53.609+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West",
-      "url": "https://bbc.com/news/articles/c62j50n131mo"
-    },
-    {
-      "ts": "2026-09-02T19:29:53.939+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "President Trump's cryptic call to Iranians revives regime change speculation",
-      "url": "https://foxnews.com/world/trump-revives-iran-regime-change-speculation-cryptic-call-people-rise-up"
-    },
-    {
-      "ts": "2026-09-02T19:29:54.227+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Kennedy Center takes down landmark sculpture gifted in 2019",
-      "url": "https://yahoo.com/news/politics/articles/kennedy-center-removing-landmark-sculpture-142801997.html"
-    },
-    {
-      "ts": "2026-09-02T19:46:39.199+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "‘Dancing With the Stars’ reveals new celeb cast and their pro partners",
-      "url": "https://abcnews.com/GMA/Culture/dancing-with-the-stars-season-35-celebrity-cast/story?id=136095657"
-    },
-    {
-      "ts": "2026-09-02T19:46:40.537+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Iran attacks Gulf states, accuses U.S. of bombing a wedding party",
-      "url": "https://cbsnews.com/live-updates/us-iran-war-trump-dismisses-diplomacy-tehran-says-wedding-hit-in-strike"
-    },
-    {
-      "ts": "2026-09-02T19:46:41.013+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "US to NATO allies: Be ready in case Putin attacks",
-      "url": "https://usatoday.com/story/news/world/2026/09/02/russia-putin-attack-nato-us-exclusive/91562464007"
-    },
-    {
-      "ts": "2026-09-02T19:46:41.254+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Colin Kaepernick believes Jay-Z has a ‘guilty conscience’ over deals with NFL and Target",
-      "url": "https://nbcnews.com/sports/nfl/colin-kaepernick-believes-jay-z-guilty-conscience-deals-nfl-target-rcna595364"
-    },
-    {
-      "ts": "2026-09-02T19:46:58.094+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "The war is raising the price of money. That’s a problem for the global economy",
-      "url": "https://cnn.com/2026/09/02/economy/debt-treasury-stocks-bond-market"
-    },
-    {
-      "ts": "2026-09-02T19:46:59.403+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "After the flood: human suffering on an unfathomable scale in Nepal’s worst-hit districts",
-      "url": "https://theguardian.com/world/2026/sep/02/after-the-flood-human-suffering-nepal-worst-hit-districts"
-    },
-    {
-      "ts": "2026-09-02T19:46:59.958+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Jury in Lindsay Clancy trial tells judge for a second time that it can’t agree on a verdict",
-      "url": "https://apnews.com/article/lindsay-clancy-jury-deliberations-6f3a9556fb5d7a2b159b33ac6f2edc2c"
-    },
-    {
-      "ts": "2026-09-02T19:47:01.289+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "5 ways future Hurricane Marie could impact L.A. on Labor Day weekend",
-      "url": "https://latimes.com/california/story/2026-09-02/hurricane-marie-could-impact-southern-california-on-labor-day-weekend"
-    },
-    {
-      "ts": "2026-09-02T19:47:01.69+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "He died of 'natural causes.' But his mother says she knows what killed him: heat",
-      "url": "https://npr.org/2026/09/02/nx-s1-5887544/heat-deaths-undercount"
-    },
-    {
-      "ts": "2026-09-02T19:47:02.301+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West",
-      "url": "https://bbc.com/news/articles/c62j50n131mo"
-    },
-    {
-      "ts": "2026-09-02T19:47:02.62+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Explosive Trump allegation emerges from inside New York AG Letitia James' office",
-      "url": "https://foxnews.com/politics/deleted-email-details-alleged-trump-targeting-push-inside-letitia-james-office-find-pursue-crimes"
-    },
-    {
-      "ts": "2026-09-02T19:47:02.825+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Kennedy Center takes down landmark sculpture gifted in 2019",
-      "url": "https://yahoo.com/news/politics/articles/kennedy-center-removing-landmark-sculpture-142801997.html"
-    },
-    {
-      "ts": "2026-09-02T20:37:15.35+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "‘Dancing With the Stars’ reveals new celeb cast and their pro partners",
-      "url": "https://abcnews.com/GMA/Culture/dancing-with-the-stars-season-35-celebrity-cast/story?id=136095657"
-    },
-    {
-      "ts": "2026-09-02T20:37:16.789+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Iran attacks Gulf states, accuses U.S. of bombing a wedding party",
-      "url": "https://cbsnews.com/live-updates/us-iran-war-trump-dismisses-diplomacy-tehran-says-wedding-hit-in-strike"
-    },
-    {
-      "ts": "2026-09-02T20:37:17.115+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "Shooting reported at Virginia elementary school",
-      "url": "https://usatoday.com/story/news/crime/2026/09/02/police-respond-waynesboro-virginia-school/91576713007"
-    },
-    {
-      "ts": "2026-09-02T20:37:17.4+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Colin Kaepernick believes Jay-Z has a ‘guilty conscience’ over deals with NFL and Target",
-      "url": "https://nbcnews.com/sports/nfl/colin-kaepernick-believes-jay-z-guilty-conscience-deals-nfl-target-rcna595364"
-    },
-    {
-      "ts": "2026-09-02T20:37:22.22+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "The war is raising the price of money. That’s a problem for the global economy",
-      "url": "https://cnn.com/2026/09/02/economy/debt-treasury-stocks-bond-market"
-    },
-    {
-      "ts": "2026-09-02T20:37:23.483+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "After the flood: human suffering on an unfathomable scale in Nepal’s worst-hit districts",
-      "url": "https://theguardian.com/world/2026/sep/02/after-the-flood-human-suffering-nepal-worst-hit-districts"
-    },
-    {
-      "ts": "2026-09-02T20:37:23.862+00:00",
-      "source_id": "ap1",
-      "kind": "headline",
-      "title": "Deadlocked jury in Lindsay Clancy trial goes home after a fifth day without a verdict",
-      "url": "https://apnews.com/article/lindsay-clancy-jury-deliberations-6f3a9556fb5d7a2b159b33ac6f2edc2c"
-    },
-    {
-      "ts": "2026-09-02T20:37:24.461+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Five ways future hurricane Marie could impact L.A. during Labor Day weekend",
-      "url": "https://latimes.com/california/story/2026-09-02/hurricane-marie-could-impact-southern-california-on-labor-day-weekend"
-    },
-    {
-      "ts": "2026-09-02T20:37:24.833+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "He died of 'natural causes.' But his mother says she knows what killed him: heat",
-      "url": "https://npr.org/2026/09/02/nx-s1-5887544/heat-deaths-undercount"
-    },
-    {
-      "ts": "2026-09-02T20:37:25.51+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West",
-      "url": "https://bbc.com/news/articles/c62j50n131mo"
-    },
-    {
-      "ts": "2026-09-02T20:37:25.862+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Republicans crow 'I told you so' after governor's ICE crackdown takes a brutal hit",
-      "url": "https://foxnews.com/politics/spanbergers-ice-restrictions-dealt-major-setback-judge-warns-other-blue-states"
-    },
-    {
-      "ts": "2026-09-02T20:37:26.056+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Kennedy Center takes down landmark sculpture gifted in 2019",
-      "url": "https://yahoo.com/news/politics/articles/kennedy-center-removing-landmark-sculpture-142801997.html"
-    },
     {
       "ts": "2026-09-02T21:58:15.578+00:00",
       "source_id": "abc1",
@@ -502,6 +250,90 @@
     },
     {
       "ts": "2026-09-03T05:00:42.981+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "Kennedy Center takes down landmark sculpture gifted in 2019",
+      "url": "https://yahoo.com/news/politics/articles/kennedy-center-removing-landmark-sculpture-142801997.html"
+    },
+    {
+      "ts": "2026-09-03T09:41:20.808+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "The Lindsay Clancy jury says they're still deadlocked. What happens in a mistrial?",
+      "url": "https://abcnews.com/GMA/News/lindsay-clancy-jury-deadlocked/story?id=136153308"
+    },
+    {
+      "ts": "2026-09-03T09:41:22.714+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "Military personnel told last month to stop calling Iran conflict \"Operation Epic Fury\"",
+      "url": "https://cbsnews.com/news/military-operation-epic-fury-may-5"
+    },
+    {
+      "ts": "2026-09-03T09:41:23.096+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "3 dead, 3 cops wounded after Minneapolis high-rise shoot-out",
+      "url": "https://usatoday.com/story/news/nation/2026/09/02/minneapolis-shooting-downtown-victims/91586767007"
+    },
+    {
+      "ts": "2026-09-03T09:41:23.573+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "Democrats vow aggressive investigations into Trump ‘corruption’ if they win the House",
+      "url": "https://nbcnews.com/politics/congress/democrats-vow-aggressive-investigations-trump-corruption-election-rcna595621"
+    },
+    {
+      "ts": "2026-09-03T09:41:34.751+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "Why warning lights are flashing in the most important market on the planet",
+      "url": "https://cnn.com/2026/09/02/economy/debt-treasury-stocks-bond-market"
+    },
+    {
+      "ts": "2026-09-03T09:41:36.104+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "After the flood: human suffering on an unfathomable scale in Nepal’s worst-hit districts",
+      "url": "https://theguardian.com/world/2026/sep/02/after-the-flood-human-suffering-nepal-worst-hit-districts"
+    },
+    {
+      "ts": "2026-09-03T09:41:36.669+00:00",
+      "source_id": "ap1",
+      "kind": "headline",
+      "title": "Iran strikes Kuwait in retaliation for US bombardments, and other Mideast news",
+      "url": "https://apnews.com/article/mideast-iran-hormuz-washington-september-3-2026-6b5f8c2e6153fa199cbdb567acef6806"
+    },
+    {
+      "ts": "2026-09-03T09:41:37.181+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "Plaschke: NBA drops the hammer on The Cheatin’ Clippers, and they can’t shed the stink",
+      "url": "https://latimes.com/sports/clippers/story/2026-09-02/nba-drops-hammer-clippers-kawhi-leonard-investigation"
+    },
+    {
+      "ts": "2026-09-03T09:41:37.548+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "He tried to eliminate FEMA. Now he says the Trump administration has changed course",
+      "url": "https://npr.org/2026/09/03/nx-s1-5943052/fema-trump-flood-wildfire-hurricane-disaster"
+    },
+    {
+      "ts": "2026-09-03T09:41:37.932+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "UN warns of 'supersized' El Niño as countries prepare for impact",
+      "url": "https://bbc.com/news/articles/c17jqp0xzpzo"
+    },
+    {
+      "ts": "2026-09-03T09:41:38.385+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Democrats eye midterm takeover as GOP faces brutal political headwinds: ‘Map wide open’",
+      "url": "https://foxnews.com/politics/johnson-downplays-gops-midterm-woes-democrats-eye-house-takeover"
+    },
+    {
+      "ts": "2026-09-03T09:41:38.832+00:00",
       "source_id": "yahoo1",
       "kind": "headline",
       "title": "Kennedy Center takes down landmark sculpture gifted in 2019",
