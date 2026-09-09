@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "generatedAt": "2026-09-09T10:05:26.461Z",
+  "generatedAt": "2026-09-09T14:32:21.771Z",
   "sources": {
     "abc1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:10.218Z",
+      "updatedAt": "2026-09-09T14:31:58.519Z",
       "error": null,
-      "runId": "abc1_2026-09-09T10-05-10-218Z",
+      "runId": "abc1_2026-09-09T14-31-58-519Z",
       "since": "2026-09-09T10:05:26.461Z",
       "item": {
         "title": "Trump ratchets up trade war, moves to ban many Canadian goods from entering US",
@@ -18,27 +18,27 @@
     },
     "cbs1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:12.084Z",
+      "updatedAt": "2026-09-09T14:31:59.966Z",
       "error": null,
-      "runId": "cbs1_2026-09-09T10-05-12-084Z",
-      "since": "2026-09-09T10:05:26.461Z",
+      "runId": "cbs1_2026-09-09T14-31-59-966Z",
+      "since": "2026-09-09T14:32:21.771Z",
       "item": {
-        "title": "Oil hits $100 per barrel as U.S. and Iran launch new attacks",
-        "url": "https://cbsnews.com/live-updates/iran-war-us-tankers-attacks-strikes-strait-of-hormuz-oil-price",
+        "title": "Don Jr.'s VC firm rejects Rep. Raskin's accusations of \"insider political influence\"",
+        "url": "https://cbsnews.com/news/donald-trump-jr-venture-capital-firm-denies-raskin-accusations",
         "imgUrl": null,
         "slotKey": "4d6f70f0b663",
-        "contentType": "live"
+        "contentType": "news"
       }
     },
     "usat1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:12.774Z",
+      "updatedAt": "2026-09-09T14:32:00.429Z",
       "error": null,
-      "runId": "usat1_2026-09-09T10-05-12-774Z",
-      "since": "2026-09-09T10:05:26.461Z",
+      "runId": "usat1_2026-09-09T14-32-00-429Z",
+      "since": "2026-09-09T14:32:21.771Z",
       "item": {
-        "title": "Both parties pick safer options in NH Senate primaries: takeaways",
-        "url": "https://usatoday.com/story/news/politics/elections/2026/09/08/sununu-pappas-new-hampshire-senate-primary-takeaways/91664507007",
+        "title": "2 women who tortured, killed Sam Nordquist sentenced to life in prison",
+        "url": "https://usatoday.com/story/news/crime/2026/09/09/sam-nordquist-murder-case-setencing/91670662007",
         "imgUrl": null,
         "slotKey": "5fd21635ad69",
         "contentType": "news"
@@ -46,12 +46,12 @@
     },
     "nbc1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:13.258Z",
+      "updatedAt": "2026-09-09T14:32:00.909Z",
       "error": null,
-      "runId": "nbc1_2026-09-09T10-05-13-258Z",
+      "runId": "nbc1_2026-09-09T14-32-00-909Z",
       "since": "2026-09-09T10:05:26.461Z",
       "item": {
-        "title": "Data center backlash is everywhere. The biggest pro-AI group is getting ready to fight back.",
+        "title": "Data center backlash is everywhere. The biggest pro-AI group is ready to fight back.",
         "url": "https://nbcnews.com/politics/2026-election/data-center-backlash-everywhere-biggest-ai-group-getting-ready-fight-rcna596593",
         "imgUrl": null,
         "slotKey": "579270cafa55",
@@ -60,9 +60,9 @@
     },
     "cnn1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:19.176Z",
+      "updatedAt": "2026-09-09T14:32:16.114Z",
       "error": null,
-      "runId": "cnn1_2026-09-09T10-05-15-631Z",
+      "runId": "cnn1_2026-09-09T14-32-12-154Z",
       "since": "2026-09-09T10:05:26.461Z",
       "item": {
         "title": "'Surge in construction' at suspected Iranian nuclear site, analysts say",
@@ -74,9 +74,9 @@
     },
     "guardian1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:20.356Z",
+      "updatedAt": "2026-09-09T14:32:17.170Z",
       "error": null,
-      "runId": "guardian1_2026-09-09T10-05-20-356Z",
+      "runId": "guardian1_2026-09-09T14-32-17-170Z",
       "since": "2026-09-09T10:05:26.461Z",
       "item": {
         "title": "Republicans in fight to hold on to majority look to ‘midterm convention’ to overcome Trump unpopularity",
@@ -87,28 +87,22 @@
       }
     },
     "ap1": {
-      "ok": true,
-      "updatedAt": "2026-09-09T10:05:21.039Z",
-      "error": null,
-      "runId": "ap1_2026-09-09T10-05-21-039Z",
-      "since": "2026-09-09T10:05:26.461Z",
-      "item": {
-        "title": "Iranian school turned to rubble by a US strike draws families to grieve children",
-        "url": "https://apnews.com/article/iran-minab-school-children-killed-d1edcacd8bd3fc64badaa5a4caf184c9",
-        "imgUrl": null,
-        "slotKey": "083847305a8b",
-        "contentType": "news"
-      }
+      "ok": false,
+      "updatedAt": "2026-09-09T14:32:17.542Z",
+      "error": "ap1: headline not found",
+      "runId": "ap1_2026-09-09T14-32-17-542Z",
+      "since": null,
+      "item": null
     },
     "latimes1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:21.722Z",
+      "updatedAt": "2026-09-09T14:32:17.696Z",
       "error": null,
-      "runId": "latimes1_2026-09-09T10-05-21-722Z",
-      "since": "2026-09-09T00:08:33.922Z",
+      "runId": "latimes1_2026-09-09T14-32-17-696Z",
+      "since": "2026-09-09T14:32:21.771Z",
       "item": {
-        "title": "L.A.’s record-level humidity can make you sick. How to survive the misery",
-        "url": "https://latimes.com/california/story/2026-09-08/l-a-s-record-level-humidity-can-make-you-sick-how-to-survive",
+        "title": "L.A.’s ‘perfect’ Mediterranean weather is a birthright. Why did it disappear this summer?",
+        "url": "https://latimes.com/california/story/2026-09-09/what-happened-to-l-a-s-perfect-mediterranean-weather-humidity-challenges-birthright",
         "imgUrl": null,
         "slotKey": "06617b56ef8d",
         "contentType": "news"
@@ -116,9 +110,9 @@
     },
     "npr1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:22.153Z",
+      "updatedAt": "2026-09-09T14:32:18.026Z",
       "error": null,
-      "runId": "npr1_2026-09-09T10-05-22-153Z",
+      "runId": "npr1_2026-09-09T14-32-18-026Z",
       "since": "2026-09-09T10:05:26.461Z",
       "item": {
         "title": "Republicans kick off a 'Trumpapalooza' of a midterm convention Wednesday in Texas",
@@ -130,13 +124,13 @@
     },
     "bbc1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:22.563Z",
+      "updatedAt": "2026-09-09T14:32:18.571Z",
       "error": null,
-      "runId": "bbc1_2026-09-09T10-05-22-563Z",
-      "since": "2026-09-09T05:11:19.612Z",
+      "runId": "bbc1_2026-09-09T14-32-18-571Z",
+      "since": "2026-09-09T14:32:21.771Z",
       "item": {
-        "title": "Oil hits $100 a barrel for first time since July after US and Houthi strikes",
-        "url": "https://bbc.com/news/articles/cyvznqypz0yo",
+        "title": "Germany's Merz attacks AfD in stormy debate after far-right election win",
+        "url": "https://bbc.com/news/articles/c98679wr78do",
         "imgUrl": null,
         "slotKey": "b890b46a9e6c",
         "contentType": "news"
@@ -144,27 +138,27 @@
     },
     "fox1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:22.967Z",
+      "updatedAt": "2026-09-09T14:32:18.884Z",
       "error": null,
-      "runId": "fox1_2026-09-09T10-05-22-967Z",
-      "since": "2026-09-09T10:05:26.461Z",
+      "runId": "fox1_2026-09-09T14-32-18-884Z",
+      "since": "2026-09-09T14:32:21.771Z",
       "item": {
-        "title": "GOP puts Trump ‘on the ballot’ with historic midterm convention in battle for Congress",
-        "url": "https://foxnews.com/politics/best-showman-politics-deliver-gop-bets-trump-historic-midterm-convention",
+        "title": "Iran failed to hit US Navy destroyers as American forces destroy 10 Iranian tankers: CENTCOM",
+        "url": "https://foxnews.com/live-news/iran-war-strikes-strait-of-hormuz-09-09-26",
         "imgUrl": null,
         "slotKey": "6b38efbc88f8",
-        "contentType": "news"
+        "contentType": "live"
       }
     },
     "yahoo1": {
       "ok": true,
-      "updatedAt": "2026-09-09T10:05:23.306Z",
+      "updatedAt": "2026-09-09T14:32:19.199Z",
       "error": null,
-      "runId": "yahoo1_2026-09-09T10-05-23-306Z",
-      "since": "2026-09-09T10:05:26.461Z",
+      "runId": "yahoo1_2026-09-09T14-32-19-199Z",
+      "since": "2026-09-09T14:32:21.771Z",
       "item": {
-        "title": "U.S. strike sinks Iranian oil tanker as escalating conflict spreads to Jordan",
-        "url": "https://yahoo.com/news/world/articles/tehran-threatens-vessels-bahrain-kuwait-212453680.html",
+        "title": "Fossilized eggs of Earth's biggest dinosaurs turn up in an unexpected place",
+        "url": "https://yahoo.com/news/science/articles/fossilized-eggs-largest-known-dinosaurs-230529502.html",
         "imgUrl": null,
         "slotKey": "c41bbb14e91d",
         "contentType": "news"
