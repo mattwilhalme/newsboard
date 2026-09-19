@@ -1,0 +1,42 @@
+name: Newsboard browser gap fill
+
+on:
+  schedule:
+    - cron: "*/7 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  PLAYWRIGHT_BROWSER_CHANNEL: chrome
+
+concurrency:
+  group: newsboard-browser-gap-fill
+  cancel-in-progress: false
+
+jobs:
+  browser-gap-fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Browser gap fill to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/crawl/github-browser-failing-sources.mjs
+      - name: Save browser diagnostics
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: browser-gap-fill-archive
+          path: archive
+          if-no-files-found: ignore
+          retention-days: 3
