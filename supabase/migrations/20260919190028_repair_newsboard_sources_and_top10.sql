@@ -1,3 +1,7 @@
+-- Restore publisher metadata used by the existing security-invoker public views.
+grant select on public.sources to anon;
+create policy public_read_sources on public.sources for select to anon using (true);
+
 create table if not exists public.top10_runs (
   id uuid primary key default gen_random_uuid(),
   source_id text not null,
@@ -49,11 +53,8 @@ alter table public.top10_events enable row level security;
 revoke all on public.top10_runs, public.top10_items, public.top10_events from public, anon, authenticated;
 grant select, insert, update, delete on public.top10_runs, public.top10_items, public.top10_events to service_role;
 
-drop policy if exists service_role_access on public.top10_runs;
 create policy service_role_access on public.top10_runs for all to service_role using (true) with check (true);
-drop policy if exists service_role_access on public.top10_items;
 create policy service_role_access on public.top10_items for all to service_role using (true) with check (true);
-drop policy if exists service_role_access on public.top10_events;
 create policy service_role_access on public.top10_events for all to service_role using (true) with check (true);
 
 create index if not exists top10_events_from_run_idx on public.top10_events (from_run_id);

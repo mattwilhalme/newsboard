@@ -4659,6 +4659,8 @@ order by avg_duration_ms desc;
 */
 
 export {
+  HERO_SCRAPERS_HTTP,
+  normalizeUrl,
   SOURCE_REGISTRY,
   SERVER_SOURCE_IDS,
   scrapeABCHero,

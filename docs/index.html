@@ -1497,7 +1497,7 @@
       if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
       if (!_supabaseCfg) return null;
       if (!_supabaseModPromise) {
-        _supabaseModPromise = import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm");
+        _supabaseModPromise = import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.95.3/+esm");
       }
       const mod = await _supabaseModPromise;
       _supabaseClient = mod.createClient(_supabaseCfg.url, _supabaseCfg.anonKey);
@@ -2355,11 +2355,43 @@
       return navigator.clipboard.writeText(txt);
     }
 
+    const crawlRpcCache = new Map();
+    async function crawlRpc(name, args = {}) {
+      const key = name + JSON.stringify(args);
+      const cached = crawlRpcCache.get(key);
+      if (cached && Date.now() - cached.at < 30000) return await cached.promise;
+      const promise = (async () => {
+        const client = await getSupabaseClient();
+        if (!client) throw new Error("Supabase is not configured");
+        const { data, error } = await client.rpc(name, args);
+        if (error) throw error;
+        return data;
+      })();
+      crawlRpcCache.set(key, {at: Date.now(), promise});
+      try { return await promise; }
+      catch (error) { crawlRpcCache.delete(key); throw error; }
+    }
+
     async function fetchJSON(url, opts) {
+      // Preserve renderer payloads while moving changing data to bounded RPCs.
+      const path = String(url).split("?")[0];
+      try {
+        if (path === TIMELINE_URL || path === "/api/timeline") {
+          const hours = Number(new URL(String(url), location.href).searchParams.get("hours") || 12);
+          return await crawlRpc("newsboard_timeline", {p_hours: hours});
+        }
+        if (path === TOP10_ABC_LATEST_URL || path === TOP10_ABC_HISTORY_URL) {
+          const data = await crawlRpc("newsboard_top10", {p_hours: 168});
+          if (path === TOP10_ABC_LATEST_URL && !data.latest) throw new Error("No database Top 10 snapshot yet");
+          if (path === TOP10_ABC_HISTORY_URL && !data.runs?.length) throw new Error("No database Top 10 history yet");
+          return path === TOP10_ABC_LATEST_URL ? data.latest : data;
+        }
+      } catch (error) {
+        console.warn("Supabase data unavailable; using preserved migration fallback", path, error);
+      }
       const r = await fetch(url, opts);
-      const text = await r.text();
-      try { return JSON.parse(text); }
-      catch { throw new Error(text || `HTTP ${r.status}`); }
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return await r.json();
     }
 
     async function loadSupabaseConfig(){
@@ -2373,90 +2405,7 @@
     }
 
     async function loadFromSupabase(){
-      if (isGitHubPages) return null;
-
-      // Prefer same-origin proxy when available; this avoids browser CORS issues.
-      try {
-        const proxied = await fetchJSON(`${SUPABASE_PROXY_URL}?ts=${Date.now()}`);
-        if (proxied?.ok && proxied?.cacheLike) {
-          return { cacheLike: proxied.cacheLike, history: proxied.history || null };
-        }
-      } catch {
-        // Ignore and continue to optional direct browser fallback below.
-      }
-
-      const supabase = await getSupabaseClient();
-      if (!supabase) return null;
-
-      function pick(row, keys){
-        for (const k of keys){
-          const v = row?.[k];
-          if (v === null || v === undefined) continue;
-          if (typeof v === "string" && !v.trim()) continue;
-          return v;
-        }
-        return null;
-      }
-
-      const cur = await supabase.from("v_current_hero_since").select("*");
-      if (cur.error) throw cur.error;
-
-      const hist = await supabase
-        .from("v_history_hero_stories")
-        .select("*")
-        .order("last_seen_at", { ascending: false })
-        .limit(200);
-      if (hist.error) throw hist.error;
-
-      const sources = {};
-      for (const row of (cur.data || [])){
-        const id = canonicalSourceId(row.source_id || row.id || "");
-        if (!id) continue;
-
-        const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "since_at", "current_since_at"]);
-        const secondsInTop = pick(row, ["seconds_in_top", "secondsInTop", "seconds_in_slot", "seconds_in_current"]);
-
-        const mapped = {
-          ok: row.ok !== false,
-          updatedAt: row.observed_at || row.updated_at || row.last_seen_at || null,
-          firstSeenAt,
-          secondsInTop,
-          error: row.error || null,
-          runId: row.run_id || null,
-
-          sourceName: row.source_name || row.sourceName || row.name || null,
-          changeType: row.change_type || row.changeType || null,
-          isStale: Boolean(row.is_stale ?? row.isStale ?? false),
-          lastChangeAt: row.last_change_at || row.lastChangeAt || null,
-
-          item: {
-            title: row.title || null,
-            url: row.url || null,
-            contentType: row.content_type || row.contentType || null,
-          },
-        };
-        sources[id] = mergeSourceRows(sources[id], mapped);
-      }
-
-      const historyObj = { generatedAt: new Date().toISOString(), sources: {} };
-      for (const row of (hist.data || [])){
-        const id = canonicalSourceId(pick(row, ["source_id", "source", "id"]) || "");
-        if (!id) continue;
-        if (!historyObj.sources[id]) historyObj.sources[id] = { entries: [] };
-
-        const url = pick(row, ["url", "story_url", "hero_url", "link", "href"]);
-        const title = pick(row, ["title", "any_title", "story_title", "headline", "hero_title"]);
-        const firstSeenAt = pick(row, ["first_seen_at", "firstSeenAt", "first_seen", "first_seen_ts"]);
-        const lastSeenAt = pick(row, ["last_seen_at", "lastSeenAt", "last_seen", "observed_at", "updated_at", "updatedAt"]);
-        const seenCount = pick(row, ["seen_count", "seenCount", "count", "observations"]);
-
-        historyObj.sources[id].entries.push({ url, title, firstSeenAt, lastSeenAt, seenCount });
-      }
-
-      // Align to cache.json-like structure for renderer
-      const cacheLike = { generatedAt: new Date().toISOString(), sources };
-
-      return { cacheLike, history: historyObj };
+      return await crawlRpc("newsboard_snapshot");
     }
 
     function canonicalStoryUrl(url){
@@ -3650,8 +3599,8 @@
       const headlineSinceAt = indicator?.headlineSinceAt || updatedAt || null;
       const reenteredAt = indicator?.reenteredAt || 0;
 
-      if (hasHeadlineUpdate && headlineSinceAt) {
-        time.textContent = `Updated ${ago(headlineSinceAt)}`;
+      if (updatedAt) {
+        time.textContent = `Updated ${ago(updatedAt || headlineSinceAt)}`;
       } else {
         time.textContent = "";
       }
@@ -3679,6 +3628,13 @@
       right.appendChild(time);
       right.appendChild(since);
       right.appendChild(firstSeenLine);
+      if (src?.health?.lastAttemptSuccess === false) {
+        const healthLine = document.createElement("div");
+        healthLine.className = "tiny";
+        healthLine.textContent = "Latest crawl failed";
+        healthLine.title = src.health.latestError || "";
+        right.appendChild(healthLine);
+      }
 
       head.appendChild(left);
       head.appendChild(right);
@@ -6101,6 +6057,8 @@
     if (clusterDebugEl) clusterDebugEl.checked = clusteringDebugMode;
     renderStatusLine();
     reload();
+    // Refresh visible data after each collection interval without page navigation.
+    setInterval(() => { if (!document.hidden && !isRefreshing) reload(); }, 300000);
 
     const runClusterHarnessFromQuery = new URLSearchParams(location.search).get("cluster_harness");
     if (runClusterHarnessFromQuery === "1" || runClusterHarnessFromQuery === "true") {

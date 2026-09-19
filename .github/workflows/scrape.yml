@@ -1,142 +1,41 @@
-name: Scrape + Publish (GitHub Pages)
+name: Newsboard manual browser backup
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   PLAYWRIGHT_BROWSER_CHANNEL: chrome
 
-on:
-  schedule:
-    - cron: "7,37 * * * *"
-  workflow_dispatch: {}
-
-permissions:
-  contents: write
-
 concurrency:
-  group: scrape-publish
+  group: newsboard-browser-backup
   cancel-in-progress: false
 
 jobs:
-  scrape:
+  manual-backup:
     runs-on: ubuntu-latest
     timeout-minutes: 12
-
+    permissions:
+      contents: read
     steps:
-      - name: Log run start
-        run: date -u +"run_start_utc=%Y-%m-%dT%H:%M:%SZ"
-
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Check Chrome
-        run: |
-          google-chrome --version || google-chrome-stable --version || true
-
-      - name: Ensure docs dirs
-        run: |
-          mkdir -p docs
-          mkdir -p docs/data
-
-      - name: Run scraper (writes cache.json)
+      - run: npm ci
+      - name: Browser backup to Supabase
         env:
-          NODE_ENV: production
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: node server.js --refresh
-
-      # Stop here if every source failed, so we don't publish empty headlines.
-      - name: Validate scrape health
-        run: |
-          node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('cache.json','utf8')); const src=Object.values(c?.sources||{}); const ok=src.filter(s=>s?.ok).length; const total=src.length; console.log('scrape health:', { ok, total }); if (total===0 || ok===0) { console.error('All sources failed; aborting publish.'); process.exit(1); }"
-
-      # Capture runner HTML/JSON for debugging (Guardian/CNN/Yahoo issues)
-      - name: List archive outputs (debug)
-        if: always()
-        run: |
-          echo "PWD: $(pwd)"
-          ls -la
-          ls -la archive || true
-          find . -maxdepth 6 -type f \( -name 'guardian1*.html' -o -name 'guardian1*.json' -o -name 'cnn*.html' -o -name 'cnn*.json' -o -name 'yahoo1*.html' -o -name 'yahoo1*.json' \) -print || true
-
-      - name: Upload archive (debug)
+        run: node scripts/crawl/github-backup.mjs
+      - name: Save browser diagnostics
         if: always()
         uses: actions/upload-artifact@v5
         with:
-          name: archive
+          name: manual-backup-archive
           path: archive
-          if-no-files-found: warn
-
-      - name: Copy cache.json to docs
-        run: |
-          test -f cache.json || (echo "Missing cache.json (server.js --refresh failed)" && exit 1)
-          cp cache.json docs/cache.json
-
-      - name: Build history/unified/current (docs/data)
-        env:
-          NODE_ENV: production
-          USE_CACHE_JSON: "true"
-          ENABLE_TOP10: "0"
-          SCRAPE_CONCURRENCY: 3
-          SCRAPE_TIMEOUT_MS: 90000
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: npm run scrape
-
-      - name: Write Supabase public config for Pages
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-        run: |
-          node -e "const fs=require('fs'); const url=process.env.SUPABASE_URL||''; const key=process.env.SUPABASE_ANON_KEY||''; if(!url||!key){console.error('Missing SUPABASE_URL or SUPABASE_ANON_KEY'); process.exit(1);} fs.writeFileSync('docs/supabase.json', JSON.stringify({ url, anonKey: key }, null, 2));"
-
-      - name: Verify output files exist
-        run: |
-          test -d docs || (echo "Missing docs/ directory" && exit 1)
-          test -f docs/cache.json || (echo "Missing docs/cache.json" && exit 1)
-          test -f docs/supabase.json || (echo "Missing docs/supabase.json" && exit 1)
-          test -f docs/data/history.json || (echo "Missing docs/data/history.json" && exit 1)
-          test -f docs/data/timeline.json || (echo "Missing docs/data/timeline.json" && exit 1)
-          test -f docs/data/unified.json || (echo "Missing docs/data/unified.json" && exit 1)
-          test -f docs/data/current.json || (echo "Missing docs/data/current.json" && exit 1)
-          test -f docs/data/top10_abc_latest.json || (echo "Missing docs/data/top10_abc_latest.json" && exit 1)
-          test -f docs/data/top10_abc_events_24h.json || (echo "Missing docs/data/top10_abc_events_24h.json" && exit 1)
-          test -f docs/data/top10_abc_events_history.json || (echo "Missing docs/data/top10_abc_events_history.json" && exit 1)
-          test -f docs/data/top10_abc_history.json || (echo "Missing docs/data/top10_abc_history.json" && exit 1)
-          ls -la docs/
-          ls -la docs/data || true
-
-      - name: Commit & push updated data
-        run: |
-          git config user.name "newsboard-bot"
-          git config user.email "newsboard-bot@users.noreply.github.com"
-
-          git add -f docs/cache.json
-          git add -f docs/supabase.json
-          git add -f docs/data/history.json docs/data/timeline.json docs/data/unified.json docs/data/current.json
-          git add -f docs/data/top10_abc_latest.json docs/data/top10_abc_events_24h.json docs/data/top10_abc_events_history.json docs/data/top10_abc_history.json
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
-          git commit -m "Update scraped data"
-
-          # Avoid non-fast-forward failures if something changed while we were scraping
-          git pull --rebase
-          git push
-
-      - name: Log run end
-        if: always()
-        run: date -u +"run_end_utc=%Y-%m-%dT%H:%M:%SZ"
+          if-no-files-found: ignore
