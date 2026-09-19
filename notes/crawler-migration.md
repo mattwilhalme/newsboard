@@ -67,7 +67,7 @@ No generated JSON file is required on the normal successful production path. Bro
 
 Preserved as migration/outage fallbacks: `docs/cache.json`, `docs/data/history.json`, `docs/data/timeline.json`, `docs/data/top10_abc_latest.json`, `docs/data/top10_abc_history.json`. These files retain their original timestamps; they are not refreshed by Cron. `docs/data/unified.json`, `docs/data/current.json`, `docs/data/top10_abc_events_24h.json`, `docs/data/top10_abc_events_history.json` remain archived/debug outputs and are no longer required for the frontend's normal path. `cache.json` remains local/debug state. `docs/supabase.json` is static public connection configuration and is still required; it contains no service-role credential.
 
-Old May/June Top 10 JSON archives were retained, not bulk imported or deleted. The active frontend windows are at most seven days, so those old archives do not supply the current window. A separate idempotent archival import can be done if historical access beyond the active UI window is desired.
+Legacy Top 10 JSON archives were retained, not bulk imported or deleted. The active frontend windows are at most seven days, so historical pre-migration archives do not supply the current window. A separate idempotent archival import can be done if historical access beyond the active UI window is desired.
 
 ## Validation and operations
 
@@ -134,3 +134,26 @@ Modified: `.github/workflows/scrape.yml`, `docs/index.html`, `server.js` (compar
 ## Next migration step
 
 Validate publisher-specific HTTP CP rules for USA Today/Guardian, investigate Yahoo host canonicalization and CNN's raw homepage, and solve AP's HTTP restriction without pretending a blocked response is a valid crawl. Until then those five require the preserved manual browser backup. Five-minute collection increases database growth substantially compared with the former half-hour schedule; monitor storage before assuming the earlier Free-tier capacity estimate still applies.
+
+
+## Final cutover result
+
+**Yes: Supabase now triggers and stores Newsboard crawls every five minutes without GitHub Actions or Git commits, for the seven validated HTTP publishers.** USA Today, Guardian, AP, CNN and Yahoo still depend on the manual Playwright backup; they are not automatically refreshed by the Edge crawler.
+
+- Published application/workflow commit: `a59e502b66e6181ff0534c220108203aed40883b`.
+- Live application: https://mattwilhalme.github.io/newsboard/
+- GitHub Pages confirmed that commit built successfully. A smoke test of the actual Pages URL returned HTTP 200 from all three read RPCs, rendered 10 ABC rows, reported no JavaScript errors, and requested no generated JSON.
+- Deployed Edge Function: `newsboard-crawl`, version 3. One active Cron job, `*/5 * * * *`.
+- Scheduled writes verified at 19:35, 19:40, 19:45 and 19:50 UTC on 2026-09-19: seven successes per invocation, roughly 2–3 seconds each. The five browser-required outcomes are explicitly reported as failures/requirements, making the whole run `partial`.
+- The **remote** `.github/workflows/scrape.yml` was read back and confirmed to have `workflow_dispatch` only, no `schedule`, and read-only repository permissions.
+- Manual dispatch test: https://github.com/mattwilhalme/newsboard/actions/runs/35465630782 — all 12 publishers succeeded; ABC stored 10 items. The database recorded `github_backup`, `success`, 12 succeeded, zero failed, and 59,720 ms duration. The workflow has no commit/push operation.
+- No setup steps remain for the active seven-publisher pipeline. Run the manual backup when fresh results are needed for the other five. Their previous successful observations remain visible and correctly aged between manual runs.
+- No Intelligence feature, clustering work, UI redesign, external paid browser service, data deletion, or historical-snapshot overwrite was introduced.
+
+To retrieve a publisher's most recent failure even after a later successful retry:
+
+```sql
+select distinct on(source_id) source_id,completed_at,error,collection_method
+from public.crawler_source_runs where not success
+order by source_id,completed_at desc;
+```

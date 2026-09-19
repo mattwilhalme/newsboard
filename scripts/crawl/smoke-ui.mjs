@@ -14,7 +14,7 @@ try{
  const page=await browser.newPage({viewport:{width:1440,height:1100}});const errors=[],rpc=[],fallback=[];
  page.on('pageerror',e=>errors.push(e.message));
  page.on('response',async r=>{if(r.url().includes('/rest/v1/rpc/'))rpc.push({url:r.url().split('/').pop(),status:r.status(),error:r.status()>=400?await r.text():null});if(/\/data\/.*\.json|\/cache\.json/.test(r.url()))fallback.push(r.url());});
- await page.goto(`http://127.0.0.1:${server.address().port}`,{waitUntil:'domcontentloaded'});
+ await page.goto(process.env.NEWSBOARD_SMOKE_URL || `http://127.0.0.1:${server.address().port}`,{waitUntil:'domcontentloaded'});
  await page.waitForFunction(()=>document.body.innerText.includes('Trump')||document.body.innerText.includes('Newsom'),{timeout:45000});
  await page.waitForTimeout(3000);
  await page.screenshot({path:'/tmp/newsboard-supabase-ui.png',fullPage:true});
