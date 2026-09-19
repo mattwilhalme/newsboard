@@ -1,5 +1,7 @@
 # Newsboard crawler migration
 
+Update: the five browser-dependent sources now also have a [scheduled targeted workflow](browser-gap-fill.md). The report below records the earlier Supabase cutover.
+
 ## Existing architecture (audited before changes)
 
 `.github/workflows/scrape.yml` schedules `7,37 * * * *` and supports workflow_dispatch. It installs Node 24 and dependencies, uses runner Chrome, executes `server.js --refresh`, checks at least one source succeeded, copies cache.json into docs, then runs scripts/run-scrape.js with USE_CACHE_JSON=true and ENABLE_TOP10=0. It commits and pushes nine changing JSON files plus the public Supabase configuration to GitHub Pages.

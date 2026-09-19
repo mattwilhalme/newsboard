@@ -22,3 +22,11 @@ select * from public.v_crawler_health where source_id in ('ap1','cnn1','guardian
 ```
 
 The frontend continues to use Supabase RPCs; no Pages data commit is required for updated stories.
+
+## Live verification
+
+Published to main in commit `0033d4d7`. The deployed workflow was read back and contains the requested cron, workflow_dispatch, read-only permissions, and no data commits. Full manual `scrape.yml` and the frontend were unchanged.
+
+Manual test: https://github.com/mattwilhalme/newsboard/actions/runs/35468397528 completed successfully. Supabase run `ab5bfe42-a608-4e55-bc8d-dfcb4427a579` recorded `github_browser_gap_fill`, exactly five attempted, five succeeded, zero failed, and 48,999 ms collection duration. The five source ids are exactly the requested set. Current state and snapshots were updated for all five.
+
+The production frontend smoke test returned HTTP 200 for all three Supabase RPCs, rendered ten ABC Top 10 rows, reported no JavaScript errors, and made zero generated-JSON data requests. The new schedule is enabled; the live collection test used manual dispatch. Actual scheduled start times remain controlled by GitHub.
