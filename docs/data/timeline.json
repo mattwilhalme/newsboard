@@ -1,162 +1,8 @@
 {
   "ok": true,
-  "generatedAt": "2026-09-19T11:30:53.548Z",
+  "generatedAt": "2026-09-19T14:45:43.737Z",
   "hours": 12,
   "events": [
-    {
-      "ts": "2026-09-18T23:33:46.64+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Protesters plan to form human chain around Kennedy Center amid Trump's threats",
-      "url": "https://abcnews.com/Politics/protesters-plan-form-human-chain-kennedy-center-amid/story?id=136558872"
-    },
-    {
-      "ts": "2026-09-18T23:33:48.303+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "2 ships attacked in Strait of Hormuz as Trump grapples with his next move",
-      "url": "https://cbsnews.com/live-updates/iran-war-trump-us-strait-of-hormuz-oil-houthis"
-    },
-    {
-      "ts": "2026-09-18T23:33:48.719+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "What Senate Republicans are saying about Mitch McConnell’s return",
-      "url": "https://usatoday.com/story/news/politics/2026/09/18/mitch-mcconnell-return-senate-republicans-response/91823076007"
-    },
-    {
-      "ts": "2026-09-18T23:33:49.04+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "Exclusive: Trump’s AI whisperer to attend state dinner with Xi Jinping",
-      "url": "https://nbcnews.com/politics/trump-administration/trump-ai-whisperer-david-sacks-state-dinner-xi-jinping-rcna598581"
-    },
-    {
-      "ts": "2026-09-18T23:34:00.583+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Faulty AI-assisted intel report nearly triggered US military operation",
-      "url": "https://cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship"
-    },
-    {
-      "ts": "2026-09-18T23:34:01.665+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "Men deported from US bound and beaten in Equatorial Guinea detention hotel, lawyers say",
-      "url": "https://theguardian.com/us-news/2026/sep/18/us-men-deported-hotel-equatorial-guinea"
-    },
-    {
-      "ts": "2026-09-18T23:34:02.497+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Driver accused in fatal Metro bus crash had multiple drug arrests but spent little time in jail, records show",
-      "url": "https://latimes.com/california/story/2026-09-18/lomg-history-of-drug-offenses-dogged-woman-who-slammed-speeding-suv-into-metro-bus"
-    },
-    {
-      "ts": "2026-09-18T23:34:02.888+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "How Google is drafting AI chatbot laws around the country",
-      "url": "https://npr.org/2026/09/18/nx-s1-5968878/ai-chatbots-safety-regulation-google"
-    },
-    {
-      "ts": "2026-09-18T23:34:03.646+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "US and Denmark reach deal over Greenland after Trump annexation threats",
-      "url": "https://bbc.com/news/articles/c63d7lexyym1o"
-    },
-    {
-      "ts": "2026-09-18T23:34:05.075+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Trump declares victory with historic Greenland deal as he secures 'permanent' US military rights",
-      "url": "https://foxnews.com/politics/trump-declares-victory-historic-deal-greenland-secures-permanent-us-military-rights"
-    },
-    {
-      "ts": "2026-09-18T23:34:05.519+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump says U.S. has reached a deal to take 'permanent control' of Greenland's security",
-      "url": "https://yahoo.com/news/politics/articles/trump-says-us-reached-agreement-214104868.html"
-    },
-    {
-      "ts": "2026-09-19T01:33:30.546+00:00",
-      "source_id": "abc1",
-      "kind": "headline",
-      "title": "Trump says US has struck security agreement with Denmark over Greenland",
-      "url": "https://abcnews.com/International/trump-us-struck-security-agreement-denmark-greenland/story?id=136572790"
-    },
-    {
-      "ts": "2026-09-19T01:33:31.744+00:00",
-      "source_id": "cbs1",
-      "kind": "headline",
-      "title": "Trump says he's struck deal for \"permanent control over security\" in Greenland",
-      "url": "https://cbsnews.com/news/trump-u-s-greenland-deal-security-denmark-bases"
-    },
-    {
-      "ts": "2026-09-19T01:33:32.073+00:00",
-      "source_id": "usat1",
-      "kind": "headline",
-      "title": "What Senate Republicans are saying about Mitch McConnell’s return",
-      "url": "https://usatoday.com/story/news/politics/2026/09/18/mitch-mcconnell-return-senate-republicans-response/91823076007"
-    },
-    {
-      "ts": "2026-09-19T01:33:32.342+00:00",
-      "source_id": "nbc1",
-      "kind": "headline",
-      "title": "The doomers, the dreamers and Xi: Trump hears from all sides on AI",
-      "url": "https://nbcnews.com/politics/donald-trump/doomers-dreamers-xi-trump-ai-david-sacks-jensen-huang-rcna598602"
-    },
-    {
-      "ts": "2026-09-19T01:33:43.36+00:00",
-      "source_id": "cnn1",
-      "kind": "headline",
-      "title": "Faulty AI-assisted intel report nearly triggered US military operation",
-      "url": "https://cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship"
-    },
-    {
-      "ts": "2026-09-19T01:33:44.547+00:00",
-      "source_id": "guardian1",
-      "kind": "headline",
-      "title": "US and Denmark reach security deal after Trump’s threats to take over Greenland",
-      "url": "https://theguardian.com/world/2026/sep/18/united-states-denmark-greenland-security"
-    },
-    {
-      "ts": "2026-09-19T01:33:45.044+00:00",
-      "source_id": "latimes1",
-      "kind": "headline",
-      "title": "Paramount, California settlement talks accelerate, moving Warner Bros. merger closer to the finish line",
-      "url": "https://latimes.com/entertainment-arts/business/story/2026-09-18/paramount-california-settlement-talks-where-things-stand-now"
-    },
-    {
-      "ts": "2026-09-19T01:33:45.381+00:00",
-      "source_id": "npr1",
-      "kind": "headline",
-      "title": "How Google is drafting AI chatbot laws around the country",
-      "url": "https://npr.org/2026/09/18/nx-s1-5968878/ai-chatbots-safety-regulation-google"
-    },
-    {
-      "ts": "2026-09-19T01:33:45.953+00:00",
-      "source_id": "bbc1",
-      "kind": "headline",
-      "title": "US and Denmark reach deal over Greenland after Trump annexation threats",
-      "url": "https://bbc.com/news/articles/c63d7lexyym1o"
-    },
-    {
-      "ts": "2026-09-19T01:33:46.124+00:00",
-      "source_id": "fox1",
-      "kind": "headline",
-      "title": "Another blackout plagues communist nation as fuel shortages bite hard",
-      "url": "https://foxnews.com/world/cuba-plunges-total-blackout-electrical-grid-collapses-us-embassy-warns"
-    },
-    {
-      "ts": "2026-09-19T01:33:46.311+00:00",
-      "source_id": "yahoo1",
-      "kind": "headline",
-      "title": "Trump says U.S. has reached a deal to take 'permanent control' of Greenland's security",
-      "url": "https://yahoo.com/news/politics/articles/trump-says-us-reached-agreement-214104868.html"
-    },
     {
       "ts": "2026-09-19T06:34:41.129+00:00",
       "source_id": "abc1",
@@ -310,6 +156,83 @@
       "kind": "headline",
       "title": "Trump says U.S. has reached a deal to take 'permanent control' of Greenland's security",
       "url": "https://yahoo.com/news/politics/articles/trump-says-us-reached-agreement-214104868.html"
+    },
+    {
+      "ts": "2026-09-19T14:45:28.261+00:00",
+      "source_id": "abc1",
+      "kind": "headline",
+      "title": "Trump says Donald Trump Jr. repaid Russian oligarch for wedding party",
+      "url": "https://abcnews.com/Politics/trump-donald-trump-jr-repaid-russian-oligarch-wedding/story?id=136571775"
+    },
+    {
+      "ts": "2026-09-19T14:45:29.918+00:00",
+      "source_id": "cbs1",
+      "kind": "headline",
+      "title": "CNN and MS NOW staffers turned away from White House after Trump ban",
+      "url": "https://cbsnews.com/news/white-house-media-ban-ms-now-politico-cnn-trump"
+    },
+    {
+      "ts": "2026-09-19T14:45:30.449+00:00",
+      "source_id": "usat1",
+      "kind": "headline",
+      "title": "What Senate Republicans are saying about Mitch McConnell’s return",
+      "url": "https://usatoday.com/story/news/politics/2026/09/18/mitch-mcconnell-return-senate-republicans-response/91823076007"
+    },
+    {
+      "ts": "2026-09-19T14:45:30.882+00:00",
+      "source_id": "nbc1",
+      "kind": "headline",
+      "title": "What might an AI doomsday look like? Experts have given it some thought",
+      "url": "https://nbcnews.com/tech/tech-news/ai-doomers-human-extinction-rcna597950"
+    },
+    {
+      "ts": "2026-09-19T14:45:36.399+00:00",
+      "source_id": "cnn1",
+      "kind": "headline",
+      "title": "CNN denied access to White House after Trump said he's banning the network",
+      "url": "https://cnn.com/2026/09/19/media/trump-msnow-cnn-politico-white-house-ban"
+    },
+    {
+      "ts": "2026-09-19T14:45:37.817+00:00",
+      "source_id": "guardian1",
+      "kind": "headline",
+      "title": "US and Denmark reach security deal after Trump’s threats to take over Greenland",
+      "url": "https://theguardian.com/world/2026/sep/18/united-states-denmark-greenland-security"
+    },
+    {
+      "ts": "2026-09-19T14:45:38.595+00:00",
+      "source_id": "latimes1",
+      "kind": "headline",
+      "title": "UC temporarily blocked from enforcing transgender name and pronoun rules",
+      "url": "https://latimes.com/california/story/2026-09-19/uc-transgender-harassment-policy-free-speech-lawsuit"
+    },
+    {
+      "ts": "2026-09-19T14:45:39.086+00:00",
+      "source_id": "npr1",
+      "kind": "headline",
+      "title": "Archaeologists are racing to save precious artifacts in Alaska after last year's storm",
+      "url": "https://npr.org/2026/09/19/nx-s1-5966568/ex-typhoon-halong-nunallaq-artifacts-archaeological-dig-site-alaska-quinhagak"
+    },
+    {
+      "ts": "2026-09-19T14:45:39.578+00:00",
+      "source_id": "bbc1",
+      "kind": "headline",
+      "title": "US and Denmark reach deal over Greenland after Trump annexation threats",
+      "url": "https://bbc.com/news/articles/c63d7lexyym1o"
+    },
+    {
+      "ts": "2026-09-19T14:45:39.903+00:00",
+      "source_id": "fox1",
+      "kind": "headline",
+      "title": "Mideast nation sounds alarm over ‘hostile aerial threat’ as UN warns conflict could widen",
+      "url": "https://foxnews.com/live-news/iran-war-strait-hormuz-trump-talks-oil-gas-prices-midterms-09-19-26"
+    },
+    {
+      "ts": "2026-09-19T14:45:40.199+00:00",
+      "source_id": "yahoo1",
+      "kind": "headline",
+      "title": "Another AI model went 'rogue' and accessed real systems. This time it was Gemini.",
+      "url": "https://yahoo.com/tech/ai/gemini/articles/google-says-ai-model-gained-013729328.html"
     }
   ]
 }
