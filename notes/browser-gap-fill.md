@@ -4,7 +4,7 @@
 
 Schedule: `*/7 * * * *`, UTC, plus workflow_dispatch. This is minute 0,7,14,21,28,35,42,49,56 each hour, not a strict seven-minute elapsed timer. GitHub scheduling can be delayed. See https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule.
 
-After obtaining the shared crawler lease, the script checks `v_crawler_health` and skips any source with a successful observation at most 420 seconds old. Missing/stale sources are collected. An entirely fresh invocation is recorded as `skipped`. The lease is retried three times at ten-second intervals if busy. `cancel-in-progress: false` avoids interrupting a database-backed crawl.
+The entry point is `scripts/crawl/github-browser-gap-fill.mjs`. After obtaining the shared crawler lease, it checks `v_crawler_health` and collects sources with no successful observation, age at least 420 seconds, or a failed latest attempt. An entirely fresh invocation is recorded as `skipped`. A busy lease exits successfully without scraping or retrying. `cancel-in-progress: false` avoids interrupting a database-backed crawl.
 
 Successful outputs update crawler_current and append snapshots/history atomically through newsboard_save_source. Failures preserve prior state. The workflow has read-only GitHub permissions and no cache/data generation or Git commit/push step. Diagnostics expire after three days. The seven-source Supabase Cron and full manual `scrape.yml` backup are unchanged.
 

@@ -20,6 +20,8 @@ jobs:
   browser-gap-fill:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -31,7 +33,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: node scripts/crawl/github-browser-failing-sources.mjs
+        run: node scripts/crawl/github-browser-gap-fill.mjs
       - name: Save browser diagnostics
         if: always()
         uses: actions/upload-artifact@v5
