@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { collectors, shouldCollect, main } from './github-browser-gap-fill.mjs';
 
-test('only the five browser-dependent sources are registered', () => {
-  assert.deepEqual(Object.keys(collectors), ['ap1', 'cnn1', 'guardian1', 'usat1', 'yahoo1']);
+test('only the configured browser-dependent sources are registered', () => {
+  assert.deepEqual(Object.keys(collectors), ['ap1', 'cnn1', 'nbc1', 'guardian1', 'usat1', 'yahoo1']);
   assert.ok(Object.values(collectors).every(collect => typeof collect === 'function'));
 });
 

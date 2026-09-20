@@ -1,12 +1,12 @@
 # Targeted browser collection
 
-`browser-gap-fill.yml` runs the five existing browser scrapers for AP (`ap1`), CNN (`cnn1`), Guardian (`guardian1`), USA Today (`usat1`) and Yahoo (`yahoo1`). It uses the same Supabase start/save/finish RPCs as the full backup and records `github_browser_gap_fill`. The trigger check was extended by migration `20260919204444_allow_github_browser_gap_fill.sql`.
+`browser-gap-fill.yml` runs six browser scrapers for AP (`ap1`), CNN (`cnn1`), NBC (`nbc1`), Guardian (`guardian1`), USA Today (`usat1`) and Yahoo (`yahoo1`). It uses the same Supabase start/save/finish RPCs as the full backup and records `github_browser_gap_fill`. The trigger check was extended by migration `20260919204444_allow_github_browser_gap_fill.sql`.
 
 Schedule: `*/7 * * * *`, UTC, plus workflow_dispatch. This is minute 0,7,14,21,28,35,42,49,56 each hour, not a strict seven-minute elapsed timer. GitHub scheduling can be delayed. See https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule.
 
 The entry point is `scripts/crawl/github-browser-gap-fill.mjs`. After obtaining the shared crawler lease, it checks `v_crawler_health` and collects sources with no successful observation, age at least 420 seconds, or a failed latest attempt. An entirely fresh invocation is recorded as `skipped`. A busy lease exits successfully without scraping or retrying. `cancel-in-progress: false` avoids interrupting a database-backed crawl.
 
-Successful outputs update crawler_current and append snapshots/history atomically through newsboard_save_source. Failures preserve prior state. The workflow has read-only GitHub permissions and no cache/data generation or Git commit/push step. Diagnostics expire after three days. The seven-source Supabase Cron and full manual `scrape.yml` backup are unchanged.
+Successful outputs update crawler_current and append snapshots/history atomically through newsboard_save_source. Failures preserve prior state. The workflow has read-only GitHub permissions and no cache/data generation or Git commit/push step. Diagnostics expire after three days. The five-minute Supabase Cron and full manual `scrape.yml` backup remain available. As of September 20, NBC joins the browser runner; AP, USA Today, NBC, Yahoo and Guardian use rendered mobile adapters. CNN is unchanged. See [mobile validation](mobile-editorial-crawling.md).
 
 Manual trigger:
 
@@ -18,7 +18,7 @@ Verify:
 
 ```sql
 select * from public.crawler_runs where trigger='github_browser_gap_fill' order by started_at desc limit 10;
-select * from public.v_crawler_health where source_id in ('ap1','cnn1','guardian1','usat1','yahoo1');
+select * from public.v_crawler_health where source_id in ('ap1','cnn1','nbc1','guardian1','usat1','yahoo1');
 ```
 
 The frontend continues to use Supabase RPCs; no Pages data commit is required for updated stories.

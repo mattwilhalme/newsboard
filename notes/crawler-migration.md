@@ -1,5 +1,7 @@
 # Newsboard crawler migration
 
+> This September 19 migration report is historical. Current routing and mobile validation are documented in [mobile editorial crawling](mobile-editorial-crawling.md): six HTTP sources, five mobile browser sources, and unchanged CNN browser collection.
+
 Update: the five browser-dependent sources now also have a [scheduled targeted workflow](browser-gap-fill.md). The report below records the earlier Supabase cutover.
 
 ## Existing architecture (audited before changes)

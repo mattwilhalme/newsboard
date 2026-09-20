@@ -7,6 +7,7 @@ import * as scrapers from '../../server.js';
 export const collectors = {
   ap1: scrapers.scrapeAPHero,
   cnn1: scrapers.scrapeCNNHero,
+  nbc1: scrapers.scrapeNBCHero,
   guardian1: scrapers.scrapeGuardianHero,
   usat1: scrapers.scrapeUSATHero,
   yahoo1: scrapers.scrapeWPHero,
@@ -74,7 +75,7 @@ export async function main() {
   check(await db.rpc('newsboard_finish_run', { p_run: runId, p_error: fatal }));
   // A freshness-only invocation did execute successfully, but performed no collection.
   if (!fatal && attempted === 0) {
-    check(await db.from('crawler_runs').update({ status: 'skipped', error_summary: 'All five browser sources are fresh (<420 seconds) and latest attempts have not failed' }).eq('id', runId));
+    check(await db.from('crawler_runs').update({ status: 'skipped', error_summary: 'All browser sources are fresh (<420 seconds) and latest attempts have not failed' }).eq('id', runId));
   }
   console.log(JSON.stringify({ run_id: runId, trigger, attempted, succeeded, error: fatal }));
   if (fatal || (attempted > 0 && succeeded === 0)) process.exitCode = 1;
