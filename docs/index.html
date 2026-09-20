@@ -487,6 +487,13 @@
     }
     .drawerOverlay.show{ opacity:1; pointer-events:auto; }
 
+    .storyIntelBadge{border:1px solid var(--line);border-radius:5px;padding:4px 7px;font-size:11px;font-weight:750;letter-spacing:.03em;color:var(--blue);background:var(--bg);cursor:pointer;white-space:nowrap}
+    .storyIntelBadge:hover,.storyIntelBadge:focus-visible{border-color:var(--blue);outline:2px solid transparent;background:rgba(40,100,190,.06)}
+    .storyHistoryHeadline{font-size:22px;line-height:1.3;margin:0 0 18px}
+    .storyHistoryMetrics{display:grid;grid-template-columns:125px 1fr;gap:9px;font-size:13px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .storyHistoryMetrics dt{color:var(--muted)}.storyHistoryMetrics dd{margin:0;font-weight:650}
+    .storyPropagation{list-style:none;padding:0;margin:24px 0}.storyPropagation li{border-left:2px solid var(--line);padding:0 0 22px 15px;margin-left:5px}
+    .storyPropagation p{font-size:13px;line-height:1.5;margin:7px 0}.storyEventLabel{font-size:14px;font-weight:700;margin-top:5px}
     .drawer{
       position:fixed;
       top:0;
@@ -1330,6 +1337,10 @@
   </footer>
 
   <div class="drawerOverlay" id="drawer-overlay"></div>
+  <aside class="drawer" id="drawer-story-history" role="dialog" aria-modal="true" aria-labelledby="story-history-title" aria-hidden="true">
+    <div class="drawerHead"><div class="drawerTitle" id="story-history-title">Story History</div><button id="btn-story-history-close" class="btn" type="button">Close</button></div>
+    <div class="drawerBody" id="story-history-content" aria-live="polite"></div>
+  </aside>
   <aside class="drawer" id="drawer-history" aria-hidden="true">
     <div class="drawerHead">
       <div>
@@ -2157,8 +2168,10 @@
     }
 
     function closeAllDrawers() {
+      storyDrawerRequest++;
+      if ($("drawer-story-history")?.classList.contains("open") && storyDrawerTrigger?.isConnected) storyDrawerTrigger.focus();
       stopMomentAutoplay();
-      const ids = ["drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item", "drawer-moment"];
+      const ids = ["drawer-story-history", "drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item", "drawer-moment"];
       for (const id of ids) {
         const d = $(id);
         if (!d) continue;
@@ -3545,6 +3558,77 @@
       card.style.setProperty("--enter-delay", `${delay}ms`);
     }
 
+    let storyBadges = [];
+    let storyDrawerRequest = 0;
+    let storyDrawerTrigger = null;
+    const FIRST_MEANING = "First detected by NewsBoard among monitored publishers in available processed history—not first published worldwide.";
+
+    async function loadStoryBadges(){
+      try {
+        const rows = await Promise.race([crawlRpc("newsboard_story_badges"), new Promise((_, reject) => setTimeout(() => reject(new Error("Story indicators timed out")), 3500))]);
+        storyBadges = Array.isArray(rows) ? rows : [];
+      } catch { storyBadges = []; } // Optional intelligence never blocks raw news.
+    }
+    function storyBadge(sourceId, item){
+      const badge = storyBadges.find(row => row.source_id === sourceId &&
+        normalizeUrlForStory(row.url) === normalizeUrlForStory(item?.url) &&
+        String(row.title || "").trim() === String(item?.title || "").trim());
+      if (!badge || Number(badge.publisher_count) < 2) return null;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "storyIntelBadge";
+      const first = badge.first_source_id === sourceId;
+      button.textContent = `${first ? "FIRST · " : ""}${badge.publisher_count} pubs`;
+      button.title = `${first ? FIRST_MEANING + " " : ""}Publishers still carrying this story in their latest observed coverage, refreshed within two hours. Open Story History.`;
+      button.setAttribute("aria-label", `Story History: ${button.textContent}`);
+      button.addEventListener("click", e => { e.stopPropagation(); openStoryHistory(badge.story_id, button); });
+      return button;
+    }
+    async function openStoryHistory(storyId, trigger){
+      closeAllDrawers();
+      storyDrawerTrigger = trigger;
+      const request = ++storyDrawerRequest;
+      const drawer = $("drawer-story-history"), host = $("story-history-content");
+      drawer.classList.add("open"); drawer.setAttribute("aria-hidden", "false");
+      $("drawer-overlay").classList.add("show");
+      host.textContent = "Loading story history…";
+      $("btn-story-history-close").focus();
+      try {
+        const data = await Promise.race([crawlRpc("newsboard_story_history", {p_story: storyId}), new Promise((_, reject) => setTimeout(() => reject(new Error("Story History timed out")), 5000))]);
+        if (request !== storyDrawerRequest) return;
+        if (!data?.story) { host.textContent = "Story history is not available yet."; return; }
+        const story = data.story, members = data.members || [];
+        const first = members.find(m => m.source_id === story.first_source_id);
+        const heading = document.createElement("h2"); heading.className = "storyHistoryHeadline"; heading.textContent = story.canonical_label;
+        host.replaceChildren(heading);
+        const metrics = document.createElement("dl"); metrics.className = "storyHistoryMetrics";
+        for (const [label, value] of [["First detected", `${first?.publisher || story.first_source_id} · ${fmtTime(story.first_detected_at)}`], ["Detected", ago(story.first_detected_at)], ["Recent publishers", data.publisher_count], ["Current No. 1s", data.current_number_ones]]) {
+          const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=label;dd.textContent=String(value);metrics.append(dt,dd);
+        }
+        host.appendChild(metrics);
+        const note=document.createElement("p");note.className="tiny";note.textContent=FIRST_MEANING+" Counts require a successful observation within two hours. Most sources track only their homepage lead; ABC tracks its Top 10. Times are shown in your timezone.";host.appendChild(note);
+        const list=document.createElement("ol");list.className="storyPropagation";
+        for (const event of data.events || []) {
+          const li=document.createElement("li");
+          const stamp=document.createElement("div");stamp.className="tiny";stamp.textContent=`${fmtTime(event.observed_at)} · ${event.publisher}`;
+          const text=document.createElement("div");text.className="storyEventLabel";
+          const meta=event.metadata || {}, rank=event.rank;
+          const labels={FIRST_DETECTED:`First detected at #${rank}`,PUBLISHER_PICKUP:`Picked up at #${rank}`,ENTERED_TOP10:`Entered Top 10 at #${rank}`,REACHED_NUMBER_ONE:"Reached No. 1",RANK_CHANGED:`Moved #${meta.from_rank} → #${meta.to_rank}`,HEADLINE_CHANGED:"Headline changed",URL_CHANGED:"Article URL changed",EXITED_TOP10:"Left Top 10",LEFT_HOMEPAGE_LEAD:"Left homepage lead (lower ranks not observed)",RETURNED_TO_LEAD:"Returned to homepage lead"};
+          text.textContent=labels[event.event_type] || event.event_type;
+          li.append(stamp,text);
+          if (event.event_type === "HEADLINE_CHANGED") {
+            const diff=document.createElement("p");diff.className="storyHeadlineDiff";diff.innerHTML=headlineDiffHtml(meta.old_headline,meta.new_headline);li.appendChild(diff);
+          } else if (["FIRST_DETECTED","PUBLISHER_PICKUP"].includes(event.event_type)) {
+            const headline=document.createElement("p");headline.textContent=event.headline;li.appendChild(headline);
+          }
+          if (event.published_at) {const published=document.createElement("div");published.className="tiny";published.textContent=`Published at ${fmtTime(event.published_at)} (publisher metadata)`;li.appendChild(published);}
+          list.appendChild(li);
+        }
+        host.appendChild(list);
+        if (data.events_truncated) {const note=document.createElement("p");note.textContent="Showing the first 1,000 events.";host.appendChild(note);}
+      } catch { if (request === storyDrawerRequest) host.textContent = "Story History is temporarily unavailable. Headlines remain available; close and try again."; }
+    }
+
     function buildCardEl(id, src, indicator, timelineBySource = {}){
       const card = document.createElement("section");
       card.className = "card";
@@ -3695,6 +3779,8 @@
       detailsBtn.setAttribute("data-id", id);
       actionsRow.appendChild(changeRow);
       actionsRow.appendChild(detailsBtn);
+      const intelligence = storyBadge(id, src?.item);
+      if (intelligence) actionsRow.appendChild(intelligence);
 
       const err = document.createElement("div");
       err.className = "tiny";
@@ -5589,6 +5675,8 @@
           a.rel = "noopener";
           a.textContent = row?.title || "—";
           body.appendChild(a);
+          const intelligence = storyBadge("abc1", row);
+          if (intelligence) body.appendChild(intelligence);
 
           const meta = document.createElement("div");
           meta.className = "top10Meta";
@@ -5836,6 +5924,7 @@
         const normalizedHistory = canonicalizeHistoryObj(history || {});
         timelineBySource = await loadCardTimelineBySource(12, sources);
 
+        await loadStoryBadges();
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
         latestDrawerPayload = { normalizedHistory, sources, indicators };
         renderData(normalizedHistory, indicators, sources, selectedWindowHours);
@@ -5990,6 +6079,7 @@
     $("history-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window-page")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
+    $("btn-story-history-close")?.addEventListener("click", () => closeAllDrawers());
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
     $("menu-go-overview")?.addEventListener("click", () => {
       setMenuOpen(false);
@@ -6009,6 +6099,12 @@
     });
 
     document.addEventListener("keydown", (e) => {
+      if (e.key === "Tab" && $("drawer-story-history")?.classList.contains("open")) {
+        const nodes = [...$("drawer-story-history").querySelectorAll('button,a[href],[tabindex="0"]')];
+        const first=nodes[0],last=nodes[nodes.length-1];
+        if (e.shiftKey && document.activeElement===first) {e.preventDefault();last?.focus();}
+        else if (!e.shiftKey && document.activeElement===last) {e.preventDefault();first?.focus();}
+      }
       if (e.key === "Escape") {
         stopMomentAutoplay();
         closeAllDrawers();
