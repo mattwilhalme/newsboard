@@ -61,3 +61,9 @@ The unchanged Edge function continues logging browser-required outcomes for brow
 - `scripts/crawl/{mobile-hero.test.mjs,github-browser-gap-fill.test.mjs,validate-mobile.mjs}`: regression coverage and live validation command.
 - `supabase/migrations/20260920150543_mobile_editorial_browser_sources.sql`: browser routing configuration only.
 - `supabase/README.md`, `notes/{browser-gap-fill,crawler-migration,mobile-editorial-crawling}.md`: current routing and evidence.
+
+## Deployed verification
+
+Code was pushed to `main` in commit `8b623d7f`; the routing migration was applied to the existing Supabase project. The first workflow correctly skipped NBC while its prior HTTP success was still fresh. Final workflow https://github.com/mattwilhalme/newsboard/actions/runs/35518731863 completed collection with six attempted, six succeeded, zero failed (the five requested mobile publishers plus unchanged CNN).
+
+Supabase run `28e0027e-c995-4f73-9834-da8a106b6f8a` recorded every source as `browser`, HTTP 200. Database queries confirmed a successful `crawler_source_runs` row, matching `crawler_current.run_id`, and a `crawler_snapshots` row for all six. All five mobile headlines matched the locally reviewed results above. The `newsboard-crawl` cron was verified active at `*/5 * * * *`. Workflow definitions, Edge function code, frontend/generated data, and ABC Top 10 were unchanged.
