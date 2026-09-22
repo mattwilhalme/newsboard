@@ -1,8 +1,6 @@
 name: Newsboard browser gap fill
 
 on:
-  schedule:
-    - cron: "*/7 * * * *"
   workflow_dispatch:
     inputs:
       dispatch_id:
