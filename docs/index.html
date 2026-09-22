@@ -1488,32 +1488,18 @@
     const isGitHubPages =
       location.hostname.endsWith("github.io");
 
-    const CACHE_URL = "./cache.json";
+    const SNAPSHOT_STORAGE_KEY = "nb_last_successful_snapshot_v1";
+    let usingStaleSnapshot = false;
+    let retryTimer = null;
     const TIMELINE_URL = "./data/timeline.json";
     const TOP10_ABC_LATEST_URL = "./data/top10_abc_latest.json";
     const TOP10_ABC_HISTORY_URL = "./data/top10_abc_history.json";
     const SUPABASE_CONFIG_URL = "./supabase.json";
-    const SUPABASE_PROXY_URL = "/api/supabase-snapshot";
 
     // Expect exactly these sources; render placeholders when missing
     const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","guardian1","ap1","latimes1","npr1","bbc1","fox1","yahoo1"];
 
-    // Supabase singleton (avoid multiple GoTrueClient instances)
     let _supabaseCfg = null;
-    let _supabaseModPromise = null;
-    let _supabaseClient = null;
-
-    async function getSupabaseClient(){
-      if (_supabaseClient) return _supabaseClient;
-      if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
-      if (!_supabaseCfg) return null;
-      if (!_supabaseModPromise) {
-        _supabaseModPromise = import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.95.3/+esm");
-      }
-      const mod = await _supabaseModPromise;
-      _supabaseClient = mod.createClient(_supabaseCfg.url, _supabaseCfg.anonKey);
-      return _supabaseClient;
-    }
 
     const HISTORY_WINDOW_OPTIONS = [6, 24, 168];
     const HISTORY_WINDOW_DEFAULT_HOURS = 24;
@@ -1794,7 +1780,9 @@
       if (!subline) return;
 
       if (lastRefreshError) {
-        subline.textContent = `Last refresh failed — showing cached data. Last successful update: ${tsLabel}`;
+        subline.textContent = lastSuccessfulUpdateTs
+          ? `Stale data — live data unavailable. Last successful snapshot: ${new Date(lastSuccessfulUpdateTs).toISOString()}`
+          : "Live data unavailable — retrying automatically. No saved snapshot.";
         return;
       }
       if (lastSuccessfulUpdateTs) {
@@ -2374,11 +2362,16 @@
       const cached = crawlRpcCache.get(key);
       if (cached && Date.now() - cached.at < 30000) return await cached.promise;
       const promise = (async () => {
-        const client = await getSupabaseClient();
-        if (!client) throw new Error("Supabase is not configured");
-        const { data, error } = await client.rpc(name, args);
-        if (error) throw error;
-        return data;
+        if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
+        if (!_supabaseCfg) throw new Error("Supabase is not configured");
+        // Initial data must not depend on downloading an SDK from a third-party CDN.
+        const response = await fetch(`${_supabaseCfg.url}/rest/v1/rpc/${name}`, {
+          method: "POST", cache: "no-store", signal: AbortSignal.timeout(12000),
+          headers: { apikey: _supabaseCfg.anonKey, Authorization: `Bearer ${_supabaseCfg.anonKey}`, "Content-Type": "application/json" },
+          body: JSON.stringify(args),
+        });
+        if (!response.ok) throw new Error(`Live data HTTP ${response.status}`);
+        return await response.json();
       })();
       crawlRpcCache.set(key, {at: Date.now(), promise});
       try { return await promise; }
@@ -2400,9 +2393,9 @@
           return path === TOP10_ABC_LATEST_URL ? data.latest : data;
         }
       } catch (error) {
-        console.warn("Supabase data unavailable; using preserved migration fallback", path, error);
+        throw error; // Frozen GitHub JSON is never a current-data fallback.
       }
-      const r = await fetch(url, opts);
+      const r = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(12000), ...opts });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       return await r.json();
     }
@@ -3684,7 +3677,8 @@
       const reenteredAt = indicator?.reenteredAt || 0;
 
       if (updatedAt) {
-        time.textContent = `Updated ${ago(updatedAt || headlineSinceAt)}`;
+        const stale = usingStaleSnapshot || Date.now() - Date.parse(updatedAt) > 20 * 60 * 1000;
+        time.textContent = stale ? `Stale data — snapshot ${new Date(updatedAt).toISOString()}` : `Updated ${ago(updatedAt || headlineSinceAt)}`;
       } else {
         time.textContent = "";
       }
@@ -3712,10 +3706,11 @@
       right.appendChild(time);
       right.appendChild(since);
       right.appendChild(firstSeenLine);
-      if (src?.health?.lastAttemptSuccess === false) {
+      const crawlStatus = src?.health?.crawlStatus || (src?.health?.lastAttemptSuccess === false ? "failed" : "success");
+      if (crawlStatus !== "success") {
         const healthLine = document.createElement("div");
         healthLine.className = "tiny";
-        healthLine.textContent = "Latest crawl failed";
+        healthLine.textContent = ({ pending: "Browser crawl pending", running: "Browser crawl running", failed: "Crawl Failed" })[crawlStatus] || "Crawl pending";
         healthLine.title = src.health.latestError || "";
         right.appendChild(healthLine);
       }
@@ -5219,9 +5214,6 @@
       }
     });
 
-    async function loadPublishedCache() {
-      return await fetchJSON(`${CACHE_URL}?ts=${Date.now()}`);
-    }
 
     async function loadPublishedTimeline(hours = 12) {
       try {
@@ -5880,6 +5872,9 @@
     }
 
     async function reload() {
+      if (isRefreshing) return;
+      clearTimeout(retryTimer);
+      crawlRpcCache.clear();
       const btnReload = $("btn-reload");
       if (btnReload) btnReload.disabled = true;
       isRefreshing = true;
@@ -5891,19 +5886,26 @@
         let history = null;
         let timelineBySource = {};
 
-        try{
-          const sb = await loadFromSupabase();
-          if (sb?.cacheLike) {
-            data = sb.cacheLike;
-            history = sb.history;
-          }
-        } catch (e){
-          console.warn("Supabase load failed", e);
+        let snapshot = null;
+        usingStaleSnapshot = false;
+        let liveError = null;
+        for (let attempt = 0; attempt < 2; attempt++) {
+          try {
+            snapshot = await loadFromSupabase();
+            if (!Object.values(snapshot?.cacheLike?.sources || {}).some(src => src?.item?.title && Number.isFinite(Date.parse(src.updatedAt)))) {
+              throw new Error("No successful live observations available");
+            }
+            saveJSONStorage(SNAPSHOT_STORAGE_KEY, snapshot);
+            break;
+          } catch (error) { crawlRpcCache.delete("newsboard_snapshot{}"); snapshot = null; liveError = error; }
         }
-
-        if (!data) {
-          data = await loadPublishedCache();
+        if (!snapshot) {
+          snapshot = loadJSONStorage(SNAPSHOT_STORAGE_KEY, null);
+          usingStaleSnapshot = true;
+          if (!snapshot?.cacheLike?.sources) throw liveError;
         }
+        data = snapshot.cacheLike;
+        history = snapshot.history;
 
         // Ensure we always have the full set, so cards don't disappear
         const sources = ensureExpectedSources(canonicalizeSourcesMap(data?.sources || {}));
@@ -5916,15 +5918,20 @@
         );
         const generatedMs = Date.parse(String(data?.generatedAt || ""));
         lastSuccessfulUpdateTs = latestSourceTs || (Number.isFinite(generatedMs) ? generatedMs : 0);
-        lastRefreshError = null;
+        lastRefreshError = usingStaleSnapshot ? summarizeError(liveError) : null;
+        renderStatusLine();
 
         if (!history) {
-          history = await fetchJSON(`./data/history.json?ts=${Date.now()}`).catch(() => null);
+          history = { sources: {} };
         }
         const normalizedHistory = canonicalizeHistoryObj(history || {});
-        timelineBySource = await loadCardTimelineBySource(12, sources);
-
-        await loadStoryBadges();
+        // Render current headlines before optional history/Story Intelligence requests.
+        const preliminary = computeIndicators(sources, normalizedHistory);
+        renderOverview(sources, preliminary.indicators, {});
+        if (!usingStaleSnapshot) {
+          timelineBySource = await loadCardTimelineBySource(12, sources);
+          await loadStoryBadges();
+        }
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
         latestDrawerPayload = { normalizedHistory, sources, indicators };
         renderData(normalizedHistory, indicators, sources, selectedWindowHours);
@@ -5936,7 +5943,7 @@
         renderOverview(sources, indicators, timelineBySource);
         renderStoryClusters(sources, indicators, timelineBySource);
         if (nextState) saveState(nextState);
-        setPlayXPlayStatus(`Updated ${fmtTime(new Date().toISOString())}`);
+        setPlayXPlayStatus(usingStaleSnapshot ? `Stale data — snapshot ${new Date(lastSuccessfulUpdateTs).toISOString()}` : `Updated ${fmtTime(new Date().toISOString())}`);
         if ($("drawer-source-data")?.classList.contains("open") && selectedSourceDataId) {
           renderSourceDataPanel(selectedSourceDataId);
         }
@@ -5965,6 +5972,7 @@
         await loadDeepDiveData().catch(() => {});
       } finally {
         isRefreshing = false;
+        if (lastRefreshError) retryTimer = setTimeout(reload, 15000);
         renderStatusLine();
         if (btnReload) btnReload.disabled = false;
       }
@@ -6153,6 +6161,8 @@
     if (clusterDebugEl) clusterDebugEl.checked = clusteringDebugMode;
     renderStatusLine();
     reload();
+    window.addEventListener("online", () => reload());
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) reload(); });
     // Refresh visible data after each collection interval without page navigation.
     setInterval(() => { if (!document.hidden && !isRefreshing) reload(); }, 300000);
 
