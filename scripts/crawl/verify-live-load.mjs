@@ -10,7 +10,8 @@ try {
  await page.waitForFunction(()=>document.querySelector('#btn-reload')?.disabled===false,{},{timeout:90000});
  assert.ok(snapshot?.cacheLike?.sources,'Initial load must fetch live snapshot without Refresh');
  const body=await page.locator('body').innerText();
- for(const src of Object.values(snapshot.cacheLike.sources))assert.ok(body.includes(src.item.title),`Missing live headline: ${src.item.title}`);
+ const expected=['abc1','cbs1','usat1','nbc1','cnn1','guardian1','ap1','latimes1','npr1','bbc1','fox1','yahoo1'];
+ for(const id of expected)assert.ok(body.includes(snapshot.cacheLike.sources[id].item.title),`Missing live headline: ${id}`);
  const workers=await page.evaluate(async()=>({controller:!!navigator.serviceWorker.controller,registrations:(await navigator.serviceWorker.getRegistrations()).length,cacheKeys:await caches.keys()}));
  assert.deepEqual(staticFallback,[]);assert.deepEqual(errors,[]);
  await page.screenshot({path:'/tmp/newsboard-live-first-load.png',fullPage:true});

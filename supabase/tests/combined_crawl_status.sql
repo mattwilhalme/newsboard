@@ -20,6 +20,10 @@ begin
  update public.crawler_source_runs set success=false,error='Browser failed' where run_id=browser;
  select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
  if actual<>'failed' then raise exception 'Both methods failed must be final: %',actual; end if;
+ update public.crawler_source_runs set completed_at=now()+interval '2 seconds' where run_id=general;
+ select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
+ if actual<>'pending' then raise exception 'A new general attempt must queue a browser retry: %',actual; end if;
+ update public.crawler_source_runs set completed_at=now()-interval '1 minute' where run_id=general;
  delete from public.crawler_source_runs where run_id=browser;
  update public.crawler_runs set started_at=now()-interval '11 minutes' where id=browser;
  select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
