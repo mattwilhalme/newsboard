@@ -3,7 +3,12 @@ name: Newsboard browser gap fill
 on:
   schedule:
     - cron: "*/7 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      dispatch_id:
+        description: Supabase dispatch attempt UUID (leave empty for manual runs)
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -23,6 +28,8 @@ jobs:
     permissions:
       contents: read
     steps:
+      - name: Record runner start
+        run: echo "NEWSBOARD_RUNNER_STARTED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_ENV"
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
@@ -31,6 +38,7 @@ jobs:
       - run: npm ci
       - name: Browser gap fill to Supabase
         env:
+          NEWSBOARD_DISPATCH_ID: ${{ inputs.dispatch_id }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node scripts/crawl/github-browser-gap-fill.mjs

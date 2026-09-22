@@ -1,0 +1,77 @@
+-- Rollback-only fixtures; do not run pieces separately.
+begin;
+do $$
+declare c jsonb; aid uuid; rid uuid; s text; n int;
+begin
+ if exists(select 1 from public.crawler_runs where status='running' and started_at>now()-interval '10 minutes') then raise exception 'A live crawler holds the lease; retry tests later'; end if;
+ update public.browser_scheduler_settings set enabled=true,retry_after=null,failures=0;
+ delete from public.browser_dispatch_attempts;
+ update public.crawler_current set observed_at=now() where source_id in (select source_id from public.crawler_publishers where method='browser');
+ c:=public.newsboard_browser_claim(true);
+ if c->>'decision'<>'fresh' then raise exception 'Recent crawl must suppress dispatch: %',c; end if;
+ update public.crawler_current set observed_at=now()-interval '8 minutes' where source_id in (select source_id from public.crawler_publishers where method='browser');
+ c:=public.newsboard_browser_claim(true); aid:=(c->>'attempt_id')::uuid;
+ if c->>'decision'<>'dispatch' or aid is null then raise exception 'Due crawl must claim: %',c; end if;
+ c:=public.newsboard_browser_claim(true);
+ if c->>'decision'<>'dispatch_active' then raise exception 'Repeated claim must be excluded: %',c; end if;
+ if not public.newsboard_browser_mark_sent(aid) then raise exception 'Claim must be sendable'; end if;
+ if public.newsboard_browser_mark_sent(aid) then raise exception 'Same dispatch must never be sent twice'; end if;
+ perform public.newsboard_browser_dispatch_result(aid,204,'test-request');
+ select status into s from public.browser_dispatch_attempts where id=aid;
+ if s<>'accepted' then raise exception 'API acceptance must not be crawl success'; end if;
+ c:=public.newsboard_browser_claim(true);
+ if c->>'decision'<>'dispatch_active' then raise exception 'Accepted dispatch must suppress ticks'; end if;
+ update public.browser_dispatch_attempts set expires_at=now()-interval '1 second' where id=aid;
+ c:=public.newsboard_browser_claim(true);
+ if c->>'decision'<>'backoff' then raise exception 'Never-started run must back off: %',c; end if;
+ if public.newsboard_browser_start(aid,123,now()) is not null then raise exception 'Late expired workflow must not crawl'; end if;
+ update public.browser_scheduler_settings set retry_after=null;
+ c:=public.newsboard_browser_claim(false);
+ if c->>'decision'<>'missing_credential' then raise exception 'Missing credential not recorded'; end if;
+ c:=public.newsboard_browser_claim(false);
+ if c->>'decision'<>'backoff' then raise exception 'Missing credential must not create a storm'; end if;
+ update public.browser_scheduler_settings set retry_after=null;
+ c:=public.newsboard_browser_claim(true);aid:=(c->>'attempt_id')::uuid;
+ perform public.newsboard_browser_dispatch_result(aid,403,'rejected',null,600);
+ if (select retry_after from public.browser_scheduler_settings where id)<now()+interval '600 seconds' then raise exception 'Rate-limit backoff lost'; end if;
+ update public.browser_scheduler_settings set retry_after=null;
+ c:=public.newsboard_browser_claim(true);aid:=(c->>'attempt_id')::uuid;
+ perform public.newsboard_browser_dispatch_result(aid,null);
+ if (select status from public.browser_dispatch_attempts where id=aid)<>'uncertain' then raise exception 'Unknown transport result must retain lease'; end if;
+ rid:=public.newsboard_browser_start(aid,123,now());
+ if rid is null then raise exception 'Accepted/uncertain workflow must attach crawler'; end if;
+ if public.newsboard_browser_start(aid,123,now()) is not null then raise exception 'Duplicate workflow must not crawl'; end if;
+ -- Late API result must not turn running into accepted.
+ perform public.newsboard_browser_dispatch_result(aid,204);
+ if (select status from public.browser_dispatch_attempts where id=aid)<>'running' then raise exception 'Late API result clobbered running state'; end if;
+ update public.crawler_runs set status='failed',completed_at=now() where id=rid;
+ perform public.newsboard_browser_complete(aid);
+ if (select status from public.browser_dispatch_attempts where id=aid)<>'failed' then raise exception 'Failed crawl outcome missing'; end if;
+ c:=public.newsboard_browser_claim(true);
+ if c->>'decision'<>'backoff' then raise exception 'Failed crawl must back off'; end if;
+ update public.browser_scheduler_settings set retry_after=null;
+ c:=public.newsboard_browser_claim(true);aid:=(c->>'attempt_id')::uuid;
+ rid:=public.newsboard_browser_start(aid,124,now());
+ update public.crawler_runs set status='success',completed_at=now() where id=rid;
+ perform public.newsboard_browser_complete(aid);
+ if (select status from public.browser_dispatch_attempts where id=aid)<>'success' then raise exception 'Recovery success missing'; end if;
+ if (select failures from public.browser_scheduler_settings where id)<>0 then raise exception 'Success must reset backoff'; end if;
+ -- A running worker that vanishes must release the dispatch after its lease,
+ -- while a late duplicate remains unable to start another crawl.
+ c:=public.newsboard_browser_claim(true);aid:=(c->>'attempt_id')::uuid;
+ rid:=public.newsboard_browser_start(aid,125,now());
+ update public.crawler_runs set started_at=now()-interval '11 minutes' where id=rid;
+ update public.browser_dispatch_attempts set expires_at=now()-interval '1 second' where id=aid;
+ c:=public.newsboard_browser_claim(true);
+ if c->>'decision'<>'backoff' then raise exception 'Expired running lease must back off'; end if;
+ if (select error from public.browser_dispatch_attempts where id=aid)<>'crawler_lease_expired' then raise exception 'Expired crawl diagnosis missing'; end if;
+ update public.browser_scheduler_settings set retry_after=null;
+ rid:=public.newsboard_start_run('github_backup');
+ c:=public.newsboard_browser_claim(true);
+ if c->>'decision'<>'crawler_active' then raise exception 'Active manual browser crawl must suppress dispatch'; end if;
+ perform public.newsboard_finish_run(rid,'rollback test');
+ if has_table_privilege('anon','public.browser_dispatch_attempts','SELECT') or has_table_privilege('authenticated','public.browser_scheduler_settings','SELECT') then raise exception 'Private state exposed'; end if;
+ if has_function_privilege('anon','public.newsboard_browser_claim(boolean)','EXECUTE') then raise exception 'Claim RPC exposed'; end if;
+end $$;
+select 'PASS: fresh, due, duplicate suppression, accepted not success, never-started expiry, late worker, missing credential, rejection/backoff, uncertain response, running/result race, failure/recovery, active manual lease, private access' as result;
+rollback;

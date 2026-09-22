@@ -24,9 +24,15 @@ export async function main() {
   if (!url || !key) throw new Error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required');
   const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
   const check = ({ data, error }) => { if (error) throw error; return data; };
-  const runId = check(await db.rpc('newsboard_start_run', { p_trigger: trigger }));
+  const dispatchId = process.env.NEWSBOARD_DISPATCH_ID || '';
+  const runId = dispatchId
+    ? check(await db.rpc('newsboard_browser_start', {
+        p_attempt: dispatchId, p_github_run_id: Number(process.env.GITHUB_RUN_ID),
+        p_runner_started_at: process.env.NEWSBOARD_RUNNER_STARTED_AT || new Date().toISOString(),
+      }))
+    : check(await db.rpc('newsboard_start_run', { p_trigger: trigger }));
   if (!runId) {
-    console.log('SKIPPED — another crawl holds the shared lease');
+    console.log('SKIPPED — crawl lease busy or dispatch attempt expired/already claimed');
     return;
   }
 
@@ -77,6 +83,7 @@ export async function main() {
   if (!fatal && attempted === 0) {
     check(await db.from('crawler_runs').update({ status: 'skipped', error_summary: 'All browser sources are fresh (<420 seconds) and latest attempts have not failed' }).eq('id', runId));
   }
+  if (dispatchId) check(await db.rpc('newsboard_browser_complete', { p_attempt: dispatchId }));
   console.log(JSON.stringify({ run_id: runId, trigger, attempted, succeeded, error: fatal }));
   if (fatal || (attempted > 0 && succeeded === 0)) process.exitCode = 1;
 
