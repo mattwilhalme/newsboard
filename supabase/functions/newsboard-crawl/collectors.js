@@ -1,4 +1,5 @@
 import * as cheerio from "cheerio";
+import {extractHttpTop10} from "./top10-http.js";
 import { createHash } from "node:crypto";
 const sha1=s=>createHash("sha1").update(s).digest("hex");
 const parseUrlSafe=s=>{try{return new URL(s);}catch{return null;}};
@@ -364,6 +365,8 @@ function extractLeadFromHtml({
 const HTTP_HERO_CONFIGS = {
   abc1: {
     sourceUrl: "https://abcnews.com/",
+    // A promoted live-update article is editorial; /Live is the TV utility.
+    urlAllow: url => /^https:\/\/(?:abcnews\.com|abcnews\.go\.com)\/[^?#]*\/(?:story|wireStory|live-updates)(?:[/?]|$)/i.test(url),
     hostPattern: /(^|\.)abcnews\.go\.com$|(^|\.)abcnews\.com$/i,
     selectors: ["main [data-testid='prism-card'] a[data-testid='prism-linkbase'][href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
@@ -441,16 +444,17 @@ export function parsePublisher(publisher, html) {
  if(!result.ok || !result.item?.title || !result.item?.url) throw new Error(result.error || 'No usable CP');
  return {...result,item:{...result.item,rank:1,contentType:/live-blog|live-updates|\/live\//i.test(result.item.url)?'live':'news'}};
 }
-export async function collectPublisher(publisher) {
+export async function collectPublisher(publisher, {onDocument} = {}) {
  const start=Date.now();
  const response=await fetch(publisher.sourceUrl,{signal:AbortSignal.timeout(20000),headers:{'user-agent':publisher.mobile?'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',accept:'text/html,application/xhtml+xml'}});
  if(!response.ok) throw Object.assign(new Error(`Homepage HTTP ${response.status}`),{httpStatus:response.status});
  const html=await response.text();
  if(html.length>8000000) throw new Error('Homepage exceeds 8 MB parsing budget');
+ if (onDocument) onDocument(html);
  const parsed=parsePublisher(publisher,html);
- const top10=publisher.id==='abc1'?parseAbcTop10(html):null;
- const items=top10 ? top10.map(item=>({...item,slot_key:`top10:${item.rank}`})) : [{...parsed.item,slot_key:'hero:1',fingerprint:top10Fingerprint(parsed.item.url,parsed.item.title)}];
- return {source_id:publisher.id,observed_at:new Date().toISOString(),item:parsed.item,top10,items,http_status:response.status,duration_ms:Date.now()-start,selector:parsed.selectorUsed};
+ const ranked=extractHttpTop10(publisher.id,html,parsed.item);
+ const items=[{...parsed.item,slot_key:'hero:1',fingerprint:top10Fingerprint(parsed.item.url,parsed.item.title)}];
+ return {source_id:publisher.id,observed_at:new Date().toISOString(),item:parsed.item,top10:ranked?.items??null,top10_quality:ranked?.quality,top10_diagnostics:ranked?.diagnostics,items,http_status:response.status,duration_ms:Date.now()-start,selector:parsed.selectorUsed};
 }
 export {normalizeUrl};
 

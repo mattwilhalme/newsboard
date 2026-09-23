@@ -5,6 +5,7 @@ import path from "path";
 import crypto from "crypto";
 import { chromium } from "playwright";
 import * as cheerio from "cheerio";
+import { collectBrowserTop10 } from "./lib/top10Browser.js";
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from "./lib/mobileHero.js";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
 
@@ -1829,12 +1830,13 @@ async function scrapeMobileHero(sourceId) {
       ...(config.breaking ? { breakingLabel: hero.breakingHeadline ? "Breaking News" : null,
         breakingHeadline: hero.breakingHeadline, breakingUrl: hero.breakingUrl ? normalizeUrl(hero.breakingUrl) : null } : {}),
     } : null;
+    const ranked = item ? await collectBrowserTop10(page, sourceId, item) : null;
     const meta = { collection_method: "browser", mobile: true, viewport: MOBILE_CONTEXT.viewport,
       http_status: httpStatus, page_url: page.url(), selector_used: hero.selector_used || null,
       selector_tier: hero.selector_tier || null, module_selector: config.modules,
       pickedTopY: hero.top ?? null };
     const snapshot = { id: sourceId, fetchedAt: nowISO(), runId, ok: Boolean(item),
-      error: item ? null : hero.error, item, meta };
+      error: item ? null : hero.error, item, meta, top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics };
     const archive = await archiveRun(page, runId, snapshot);
     if (process.env.NEWSBOARD_MOBILE_SCREENSHOTS === "1") {
       // Diagnostics only: screenshot failure must not discard a valid crawl.
@@ -1916,30 +1918,14 @@ async function scrapeCNNHero() {
         return { title: pickedTitle, url, topY, selector };
       }
       function firstDirectLead() {
-        const titleSelectors = [
-          ".container_lead-plus-headlines .container__title-url[href] [data-editable='title']",
-          ".container_lead-plus-headlines .container__title_url-text[data-editable='title']",
-          ".container_lead-package .container__title-url[href] [data-editable='title']",
-          ".container_lead-package .container__title_url-text[data-editable='title']",
-        ];
-        for (const sel of titleSelectors) {
-          for (const el of Array.from(document.querySelectorAll(sel))) {
-            const candidate = candidateFromAnchor(el.closest("a[href]"), el.textContent, sel);
-            if (candidate) return candidate;
-          }
-        }
-
-        const selectedHeadlineSelectors = [
-          ".container_lead-plus-headlines__selected a[href] .container__headline-text[data-editable='headline']",
-          ".container_lead-plus-headlines .container__item:first-child a[href] .container__headline-text[data-editable='headline']",
-        ];
-        for (const sel of selectedHeadlineSelectors) {
-          for (const el of Array.from(document.querySelectorAll(sel))) {
-            const candidate = candidateFromAnchor(el.closest("a[href]"), el.textContent, sel);
-            if (candidate) return candidate;
-          }
-        }
-        return null;
+        // Rank visible lead modules together. Selector-by-selector priority used
+        // to skip a higher live lead when a lower package had a title link.
+        const selector = '.container_lead-plus-headlines .container__title-url [data-editable="title"], .container_lead-package .container__title-url [data-editable="title"], .container_lead-plus-headlines .container__headline-text, .container_lead-package .container__headline-text';
+        return [...document.querySelectorAll(selector)].filter(el => {
+          const r = el.getBoundingClientRect(), style = getComputedStyle(el);
+          return r.width > 0 && r.height > 0 && r.right > 0 && r.left < innerWidth && style.visibility !== 'hidden';
+        }).map(el => candidateFromAnchor(el.closest('a[href]'), el.textContent, selector))
+          .filter(Boolean).sort((a,b) => a.topY-b.topY)[0] || null;
       }
       function selectorCandidates(sel, baseScore) {
         return Array.from(document.querySelectorAll(sel))
@@ -2019,10 +2005,11 @@ async function scrapeCNNHero() {
         }
       : null;
 
+    const ranked = item ? await collectBrowserTop10(page, "cnn1", item) : null;
     const fetchedAt = nowISO();
     const pageTitle = await page.title().catch(() => null);
     const snapshot = {
-      id: "cnn1",
+      id: "cnn1", top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics,
       fetchedAt,
       runId,
       ok: Boolean(item),
@@ -2047,7 +2034,7 @@ async function scrapeCNNHero() {
       runId,
       archive,
       item,
-      meta: snapshot.meta,
+      meta: snapshot.meta, top10: snapshot.top10, top10_quality: snapshot.top10_quality, top10_diagnostics: snapshot.top10_diagnostics,
     };
   }, { viewport: { width: 820, height: 1000 } });
 }

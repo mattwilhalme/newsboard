@@ -64,6 +64,7 @@ export async function main() {
           source_id,
           observed_at: result.updatedAt || new Date().toISOString(),
           item,
+          top10: result.top10, top10_quality: result.top10_quality, top10_diagnostics: result.top10_diagnostics,
           items: [{ ...item, rank: 1, slot_key: 'hero:1',
             fingerprint: createHash('sha1').update(`${item.url}|${item.title}`).digest('hex') }],
           http_status: result.meta?.http_status ?? null,
