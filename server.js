@@ -5,6 +5,8 @@ import path from "path";
 import crypto from "crypto";
 import { chromium } from "playwright";
 import * as cheerio from "cheerio";
+import { extractHttpTop10 } from "./supabase/functions/newsboard-crawl/top10-http.js";
+import { failedTop10 } from "./supabase/functions/_shared/top10.js";
 import { collectBrowserTop10 } from "./lib/top10Browser.js";
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from "./lib/mobileHero.js";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
@@ -1523,7 +1525,10 @@ async function scrapeABCHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const snapshot = { id: "abc1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "ABC not found"), item };
+    let ranked;
+    try { ranked = item ? extractHttpTop10("abc1", await page.content(), item) : null; }
+    catch (error) { ranked = failedTop10(error); }
+    const snapshot = { id: "abc1", top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics, fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "ABC not found"), item };
     const archive = await archiveRun(page, runId, snapshot);
     const pageTitle = await page.title().catch(() => null);
 
@@ -1533,7 +1538,7 @@ async function scrapeABCHero() {
       updatedAt: nowISO(),
       runId,
       archive,
-      item,
+      item, top10: snapshot.top10, top10_quality: snapshot.top10_quality, top10_diagnostics: snapshot.top10_diagnostics,
       meta: {
         run_kind: "hero",
         profile: "desktop",
@@ -1784,10 +1789,13 @@ async function scrapeCBSHero() {
       : null;
 
     const fetchedAt = nowISO();
-    const snapshot = { id: "cbs1", fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CBS not found"), item };
+    let ranked;
+    try { ranked = item ? extractHttpTop10("cbs1", await page.content(), item) : null; }
+    catch (error) { ranked = failedTop10(error); }
+    const snapshot = { id: "cbs1", top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics, fetchedAt, runId, ok: Boolean(item), error: item ? null : (hero?.error || "CBS not found"), item };
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, top10: snapshot.top10, top10_quality: snapshot.top10_quality, top10_diagnostics: snapshot.top10_diagnostics };
   });
 }
 

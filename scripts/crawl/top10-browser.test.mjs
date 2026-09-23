@@ -32,3 +32,8 @@ test('CNN excludes trending ribbon even when links lead to real articles',async(
  await page.setContent('<div class="container_ribbon"><a href="https://cnn.com/2026/09/23/news/ticker"><span class="container__headline-text">Trending topic ticker</span></a></div>');
  const r=await page.evaluate(extractRenderedCandidates,{config:BROWSER_TOP10.cnn1});assert.equal(r[0].rejected,'excluded module');
 });
+
+test('USA Today retains editorial grocery/car coverage, excluding commercial shopping',async()=>{
+ await page.setContent('<main>'+['/story/grocery/shopping/2026/news','/story/cars/shopping/2026/evs','/story/shopping/deals/2026/product','/picture-gallery/news/2026/gallery','/videos/news/2026/report'].map(u=>`<a class="gnt_m_lm_a" href="https://usatoday.com${u}">Editorial headline with enough text</a>`).join('')+'</main>');
+ const r=await page.evaluate(extractRenderedCandidates,{config:BROWSER_TOP10.usat1});assert.equal(r.find(x=>x.url.includes('/story/shopping/')).rejected,'utility/shopping');assert.equal(r.filter(x=>!x.rejected).length,4);
+});
