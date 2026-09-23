@@ -40,3 +40,7 @@ test('CBS uses lead section then more top stories, not unrelated links',()=>{
 test('browser ranking evaluates existing page once and contains extraction errors',async()=>{
  let calls=0;const r=await collectBrowserTop10({evaluate:async()=>{calls++;throw Error('DOM changed');}},'ap1',rows(1)[0]);assert.equal(calls,1);assert.equal(r.quality,'failed');assert.match(r.diagnostics.error,/DOM changed/);
 });
+
+test('out-of-scope HTTP publishers do not incur an extra HTML parse',()=>{
+ assert.equal(extractHttpTop10('bbc1',{toString(){throw Error('Unexpected HTML parse');}},{}),null);
+});

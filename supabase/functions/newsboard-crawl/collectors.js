@@ -100,8 +100,8 @@ function defaultTitleReject(title) {
   );
 }
 
-function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/") {
-  const $ = cheerio.load(html || "");
+function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/", document) {
+  const $ = document || cheerio.load(html || "");
   const out = [];
   const seen = new Set();
 
@@ -143,8 +143,8 @@ function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/")
   return { ...top, selector: "cbs_jsonld" };
 }
 
-function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/") {
-  const $ = cheerio.load(html || "");
+function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/", document) {
+  const $ = document || cheerio.load(html || "");
   const selectors = [
     "#component-latest-news article.item a:has(h4.item__hed)",
     "#component-latest-news h4.item__hed",
@@ -304,8 +304,9 @@ function extractLeadFromHtml({
   hostPattern = null,
   urlAllow = null,
   titleReject = null,
+  document,
 }) {
-  const $ = cheerio.load(html || "");
+  const $ = document || cheerio.load(html || "");
   const seen = new Set();
   const candidates = [];
   let selectorUsed = null;
@@ -373,7 +374,7 @@ const HTTP_HERO_CONFIGS = {
   cbs1: {
     sourceUrl: "https://www.cbsnews.com/",
     hostPattern: /(^|\.)cbsnews\.com$/i,
-    customExtractor: (html, sourceUrl) => extractCbsLeadFromDom(html, sourceUrl) || extractCbsFromJsonLd(html, sourceUrl),
+    customExtractor: (html, sourceUrl, document) => extractCbsLeadFromDom(html, sourceUrl, document) || extractCbsFromJsonLd(html, sourceUrl, document),
     selectors: ["main h4.item__hed a[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
   usat1: {
@@ -438,9 +439,9 @@ const HTTP_HERO_CONFIGS = {
 
 
 export const publishers = Object.entries(HTTP_HERO_CONFIGS).map(([id, config])=>({id, ...config}));
-export function parsePublisher(publisher, html) {
- const custom=publisher.customExtractor?.(html,publisher.sourceUrl);
- const result=custom ? {ok:true,item:{title:custom.title,url:custom.url,imgUrl:null,slotKey:sha1(`${publisher.id}|top`).slice(0,12)},selectorUsed:custom.selector} : extractLeadFromHtml({html,sourceId:publisher.id,...publisher});
+export function parsePublisher(publisher, html, document) {
+ const custom=publisher.customExtractor?.(html,publisher.sourceUrl,document);
+ const result=custom ? {ok:true,item:{title:custom.title,url:custom.url,imgUrl:null,slotKey:sha1(`${publisher.id}|top`).slice(0,12)},selectorUsed:custom.selector} : extractLeadFromHtml({html,document,sourceId:publisher.id,...publisher});
  if(!result.ok || !result.item?.title || !result.item?.url) throw new Error(result.error || 'No usable CP');
  return {...result,item:{...result.item,rank:1,contentType:/live-blog|live-updates|\/live\//i.test(result.item.url)?'live':'news'}};
 }
@@ -451,8 +452,12 @@ export async function collectPublisher(publisher, {onDocument} = {}) {
  const html=await response.text();
  if(html.length>8000000) throw new Error('Homepage exceeds 8 MB parsing budget');
  if (onDocument) onDocument(html);
- const parsed=parsePublisher(publisher,html);
- const ranked=extractHttpTop10(publisher.id,html,parsed.item);
+ // Share one parsed tree between CP and Top 10; other publishers do no extra parsing.
+ const document=['abc1','cbs1'].includes(publisher.id)?cheerio.load(html):undefined;
+ const parsed=parsePublisher(publisher,html,document);
+ const rankingStart=Date.now();
+ const ranked=extractHttpTop10(publisher.id,html,parsed.item,document);
+ if(ranked)ranked.diagnostics.extraction_ms=Date.now()-rankingStart;
  const items=[{...parsed.item,slot_key:'hero:1',fingerprint:top10Fingerprint(parsed.item.url,parsed.item.title)}];
  return {source_id:publisher.id,observed_at:new Date().toISOString(),item:parsed.item,top10:ranked?.items??null,top10_quality:ranked?.quality,top10_diagnostics:ranked?.diagnostics,items,http_status:response.status,duration_ms:Date.now()-start,selector:parsed.selectorUsed};
 }

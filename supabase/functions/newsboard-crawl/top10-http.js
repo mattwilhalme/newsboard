@@ -1,8 +1,9 @@
 import * as cheerio from 'cheerio';
 import {validateTop10,failedTop10} from '../_shared/top10.js';
-export function extractHttpTop10(sourceId,html,centerpiece) {
+export function extractHttpTop10(sourceId,html,centerpiece,document) {
+ if(!['abc1','cbs1'].includes(sourceId))return null;
  try {
-  const $=cheerio.load(html), candidates=[];
+  const $=document||cheerio.load(html), candidates=[];
   const config=sourceId==='abc1'?{
    base:'https://abcnews.com/',cards:'main [data-testid="prism-card"]',headline:'[data-testid="prism-headline"],h1,h2,h3,h4',anchor:'a[data-testid="prism-linkbase"][href]',host:/^(abcnews\.go\.com|abcnews\.com)$/,article:/\/(story|wireStory|live-updates)(\/|$)/,
   }:sourceId==='cbs1'?{

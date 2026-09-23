@@ -21,7 +21,12 @@ begin
    if (select count(*) from public.top10_items where run_id=tid)<>10 then raise exception 'Items missing'; end if;
    if not exists(select 1 from public.story_raw_batches b where top10_run_id=tid and jsonb_array_length(b.items)=10) then raise exception 'Story handoff missing'; end if;
    -- A later asynchronous processing failure cannot roll back already saved data.
-   begin raise exception 'Simulated Story Identity failure'; exception when others then null; end;
+   begin
+    perform public.newsboard_story_commit(gen_random_uuid(),'missing-test-batch','[]');
+    raise exception 'TEST_FAILED_STORY_LEASE_ACCEPTED';
+   exception when others then
+    if sqlerrm<>'Story worker lease lost' then raise; end if;
+   end;
    if not exists(select 1 from public.top10_runs where id=tid) then raise exception 'Story failure erased Top 10'; end if;
   elsif k=2 then
    second_run:=tid;
