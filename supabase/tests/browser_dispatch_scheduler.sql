@@ -6,6 +6,7 @@ begin
  if exists(select 1 from public.crawler_runs where status='running' and started_at>now()-interval '10 minutes') then raise exception 'A live crawler holds the lease; retry tests later'; end if;
  update public.browser_scheduler_settings set enabled=true,retry_after=null,failures=0;
  delete from public.browser_dispatch_attempts;
+ delete from public.crawler_browser_jobs;
  update public.crawler_current set observed_at=now() where source_id in (select source_id from public.crawler_publishers where method='browser');
  c:=public.newsboard_browser_claim(true);
  if c->>'decision'<>'fresh' then raise exception 'Recent crawl must suppress dispatch: %',c; end if;

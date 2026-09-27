@@ -1,19 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { collectors, shouldCollect, main } from './github-browser-gap-fill.mjs';
+import { collectors, main } from './github-browser-gap-fill.mjs';
 
-test('only the configured browser-dependent sources are registered', () => {
-  assert.deepEqual(Object.keys(collectors), ['ap1', 'cnn1', 'nbc1', 'guardian1', 'usat1', 'yahoo1']);
+test('existing browser collectors cover both browser-required and HTTP fallback publishers', () => {
+  assert.deepEqual(Object.keys(collectors), ['ap1', 'cnn1', 'nbc1', 'guardian1', 'usat1', 'yahoo1', 'abc1', 'cbs1', 'latimes1', 'npr1', 'bbc1', 'fox1']);
   assert.ok(Object.values(collectors).every(collect => typeof collect === 'function'));
-});
-
-test('freshness boundary and failed attempts determine collection', () => {
-  const fresh = { last_success_at: '2026-09-19T20:00:00Z', age_seconds: 419, last_attempt_success: true };
-  assert.equal(shouldCollect(fresh), false);
-  assert.equal(shouldCollect({ ...fresh, age_seconds: 420 }), true);
-  assert.equal(shouldCollect({ ...fresh, last_attempt_success: false }), true);
-  assert.equal(shouldCollect({ ...fresh, last_success_at: null }), true);
-  assert.equal(shouldCollect(undefined), true);
 });
 
 test('a busy lease exits cleanly without scraping or further database requests', async () => {
@@ -46,7 +37,7 @@ test('dispatched worker links the attempt and records completion even when alrea
   Object.assign(process.env,{SUPABASE_URL:'https://example.supabase.co',SUPABASE_SERVICE_ROLE_KEY:'test',NEWSBOARD_DISPATCH_ID:'00000000-0000-0000-0000-000000000001',GITHUB_RUN_ID:'123',NEWSBOARD_RUNNER_STARTED_AT:'2026-09-22T20:00:00Z'});
   globalThis.fetch=async(url,options={})=>{
     const endpoint=String(url).split('/').at(-1).split('?')[0];calls.push({endpoint,body:options.body?JSON.parse(options.body):null});
-    const body=endpoint==='newsboard_browser_start'?'00000000-0000-0000-0000-000000000002':endpoint==='v_crawler_health'?Object.keys(collectors).map(source_id=>({source_id,last_success_at:'2026-09-22T20:00:00Z',age_seconds:0,last_attempt_success:true})):null;
+    const body=endpoint==='newsboard_browser_start'?'00000000-0000-0000-0000-000000000002':endpoint==='newsboard_browser_sources'?[]:null;
     return new Response(JSON.stringify(body),{status:200,headers:{'content-type':'application/json'}});
   };
   try{
@@ -55,4 +46,17 @@ test('dispatched worker links the attempt and records completion even when alrea
     assert.equal(calls.at(-1).endpoint,'newsboard_browser_complete');
     assert.ok(calls.some(c=>c.endpoint==='newsboard_finish_run'));
   }finally{globalThis.fetch=originalFetch;process.env=originalEnv;}
+});
+
+test('only database-assigned HTTP fallback is crawled, regardless of previous observation freshness',async()=>{
+ const originalFetch=globalThis.fetch,originalEnv={...process.env},original=collectors.abc1;
+ const calls=[];let crawled=0;
+ Object.assign(process.env,{SUPABASE_URL:'https://example.supabase.co',SUPABASE_SERVICE_ROLE_KEY:'test'});delete process.env.NEWSBOARD_DISPATCH_ID;
+ collectors.abc1=async()=>{crawled++;return {ok:true,item:{title:'Recovered existing browser headline',url:'https://abcnews.com/US/story?id=1'},updatedAt:new Date().toISOString()};};
+ globalThis.fetch=async(url,options={})=>{
+  const endpoint=String(url).split('/').at(-1);calls.push({endpoint,body:options.body?JSON.parse(options.body):null});
+  const result=endpoint==='newsboard_start_run'?'00000000-0000-0000-0000-000000000003':endpoint==='newsboard_browser_sources'?[{source_id:'abc1'}]:null;
+  return new Response(JSON.stringify(result),{status:200,headers:{'content-type':'application/json'}});
+ };
+ try{await main();assert.equal(crawled,1);const saved=calls.find(c=>c.endpoint==='newsboard_save_source');assert.equal(saved.body.p.source_id,'abc1');assert.equal(saved.body.p.success,true);assert.ok(!calls.some(c=>c.endpoint.includes('v_crawler_health')));}finally{globalThis.fetch=originalFetch;process.env=originalEnv;collectors.abc1=original;}
 });

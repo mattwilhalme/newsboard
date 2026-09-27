@@ -1,5 +1,7 @@
 # First load and combined crawl status
 
+Historical September 22 implementation record. The persisted snapshot and stale UI described below were removed September 27; see [current state and live-loading behavior](crawl-state-and-live-loading.md).
+
 The Pages deployment publishes `main:/docs`. Supabase Cron writes HTTP observations every five minutes; the existing GitHub browser gap-fill workflow writes browser observations on its scheduled runs. Neither workflow updates Git snapshots. Wrangler is an alternative static deployment configuration, not the active GitHub Pages flow.
 
 The initial `reload()` previously tried a CDN-loaded Supabase SDK, then silently loaded `docs/cache.json` on failure and cleared the error. That frozen migration-era file could therefore appear current. A later Refresh retried the database. A 30-second RPC memo also meant Refresh could reuse a previous response. The local root `cache.json` is ignored by Git and used by the Express/debug scraper; it is not the Pages fallback.

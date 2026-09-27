@@ -1,0 +1,25 @@
+# Publisher attempt state and live loading
+
+## Cause and behavior
+
+The previous page could restore `nb_last_successful_snapshot_v1` after a failed live request. Whole-snapshot `.some` validation let a single usable publisher certify its neighbors. The page also conflated two hours without an editorial change with crawler health. These paths are removed. Initial load requests the live Supabase snapshot automatically, retries once immediately, and retries outages every 15 seconds. A fresh failed load displays unavailable placeholders; a failed refresh retains only the already-rendered session. The obsolete storage key is deleted. Editorial comparison/preferences storage, normal timestamps, history and diffs remain. No service worker or frozen Git JSON is used as a fallback.
+
+Previously, HTTP misses were immediately failed, browser gap-fill considered only six browser-required sources, and global browser-run status could be attributed to publishers that were never assigned. Repeated AP failures also imposed shared backoff on healthy browser publishers.
+
+Now every supported publisher has an explicit browser-fallback capability and a persisted source-specific job. Primary HTTP success cancels unnecessary fallback and remains successful. HTTP failure queues fallback; browser-required routing notices queue only when observations are due. Supabase's existing minute cron invokes the private authenticated dispatcher, which atomically checks queued work and dispatches the existing GitHub workflow. Its worker atomically claims only due publisher jobs, using the existing twelve collectors. No extraction selectors changed. The manual full browser backup remains available; no GitHub cron was restored.
+
+Pending/running jobs preserve the last successful observation. Browser success persists normally and marks success. Browser failure, an assigned run ending without a result, or an exhausted queue/run deadline produces definitive failure. Pending jobs have a 20-minute dispatch allowance (after retry backoff); running jobs have a ten-minute lease. Publishers without fallback fail after their configured primary attempt budget. A new attempt returns to pending; failed sources retry with their own exponential backoff, capped at 30 minutes. Dispatch/API failures retain the existing global backoff and atomic duplicate protection. Acceptance by GitHub never means crawl success.
+
+## Database and public contract
+
+Migrations `20260927041509_publisher_fallback_state.sql` and `20260927041555_restrict_fallback_job_writes.sql` add `crawler_publishers.browser_fallback_enabled`, RLS-protected `crawler_browser_jobs`, attempt-result trigger, queue/claim/expiry functions, and a finish-run wrapper. They update the scheduler's claim/completion functions and `v_crawler_attempt_status`. Existing source-run history and raw/Top 10 persistence remain intact. Anonymous clients can only read sanitized publisher job state; all mutations require the service role. Dispatch credentials and internal dispatch responses remain private.
+
+`newsboard_snapshot()` includes every configured publisher, including never-observed ones. Observation validity is independent of attempt health. It exposes `crawlStatus`, `definitiveFailure`, combined legacy `lastAttemptSuccess`, `lastSuccessfulCrawlAt`, `lastAttemptAt`, `lastFailureAt`, `lastHeadlineChangeAt`, and separate primary/browser attempt objects. Only definitive `crawlStatus=failed` renders `Crawl Failed`; a retained valid headline is explicitly described as the last successful observation. Legacy booleans alone cannot recreate failure. The legacy debug server's `isStale` field is no longer consumed by the dashboard.
+
+## Deployment and checks
+
+Both migrations were applied to production Supabase. No Edge Function, secret, cron expression, GitHub workflow or publisher selector update is needed: the existing dispatcher calls the replaced RPCs, and GitHub checks out the updated worker. Pages publishes `main:/docs`.
+
+Validation: 75 Node/Chrome tests; rollback-only combined-state and browser scheduler SQL suites; live browser verification with RPC outages. The eight requested cases cover primary success, fallback pending/running, browser recovery, both methods failed, fresh-load outage ignoring seeded storage, in-session refresh failure, independent publisher validation, and an unchanged headline with no stale label. Scheduler tests cover accepted-versus-completed, duplicate claims, missing credentials, API rejection, no-start expiry, interrupted worker lease, recovery and manual-run exclusion.
+
+Production evidence and outstanding publisher errors are recorded in the final task report. AP was returning HTTP 403 during investigation; this task intentionally does not change its extraction logic. GitHub runner queuing and publisher-side blocking remain external limits; a seven-minute due threshold is not a guaranteed observation interval.

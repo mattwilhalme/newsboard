@@ -16,11 +16,19 @@ try {
  assert.deepEqual(staticFallback,[]);assert.deepEqual(errors,[]);
  await page.screenshot({path:'/tmp/newsboard-live-first-load.png',fullPage:true});
  await page.route('**/rest/v1/rpc/newsboard_snapshot',r=>r.fulfill({status:503,json:{error:'Verification outage'}}));
+ await page.locator('#btn-reload').click();
+ await page.waitForFunction(()=>document.querySelector('#btn-reload')?.disabled===false,{},{timeout:90000});
+ assert.match(await page.locator('#subline').innerText(),/Live data unavailable/);
+ const kept=await page.locator('[data-role="headline-link"]').allTextContents();assert.ok(kept.some(t=>t&&t!=='—'));
+ await page.evaluate(saved=>localStorage.setItem('nb_last_successful_snapshot_v1',JSON.stringify(saved)),snapshot);
  await page.reload({waitUntil:'domcontentloaded'});
  await page.waitForFunction(()=>document.querySelector('#btn-reload')?.disabled===false,{},{timeout:90000});
- const staleLabel=await page.locator('#subline').innerText();assert.match(staleLabel,/Stale data.*snapshot: \d{4}-/);
- await page.screenshot({path:'/tmp/newsboard-live-stale-snapshot.png',fullPage:true});
+ const unavailableLabel=await page.locator('#subline').innerText();assert.match(unavailableLabel,/Live data unavailable/);
+ assert.ok((await page.locator('[data-role="headline-link"]').allTextContents()).every(t=>t==='—'));
+ assert.equal(await page.evaluate(()=>localStorage.getItem('nb_last_successful_snapshot_v1')),null);
+ assert.doesNotMatch(await page.locator('body').innerText(),/Stale data|stale \(no change/i);
+ await page.screenshot({path:'/tmp/newsboard-live-unavailable.png',fullPage:true});
  await page.unroute('**/rest/v1/rpc/newsboard_snapshot');
  await page.waitForFunction(()=>document.querySelector('#subline').innerText.startsWith('Last update:'),{},{timeout:45000});
- console.log(JSON.stringify({url:page.url(),sourceCount:Object.keys(snapshot.cacheLike.sources).length,automaticFirstLoad:true,automaticOutageRecovery:true,staleLabel,workers,staticFallback,errors,statuses:Object.fromEntries(Object.entries(snapshot.cacheLike.sources).map(([id,s])=>[id,s.health.crawlStatus]))},null,2));
+ console.log(JSON.stringify({url:page.url(),sourceCount:Object.keys(snapshot.cacheLike.sources).length,automaticFirstLoad:true,automaticOutageRecovery:true,unavailableLabel,sessionRetained:true,persistedFallbackAbsent:true,workers,staticFallback,errors,statuses:Object.fromEntries(Object.entries(snapshot.cacheLike.sources).map(([id,s])=>[id,s.health.crawlStatus]))},null,2));
 }finally{await browser.close();}

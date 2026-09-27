@@ -1,40 +1,66 @@
--- Execute inside a transaction; fixtures never persist.
+-- Rollback-only integration tests. Retry when the production crawl lease is idle.
 begin;
+set local role service_role;
 do $$
-declare sid text:='__combined_status_test__'; general uuid; browser uuid; actual text;
+declare sid text:='__fallback_test__'; other text:='__no_fallback_test__'; empty_sid text:='__never_observed__'; rid uuid; work text[]; state text; snap jsonb; before_item jsonb; deadline timestamptz;
 begin
- insert into public.sources(id,name) values(sid,'Rollback-only combined crawl test');
- insert into public.crawler_publishers(source_id,method) values(sid,'browser');
- insert into public.crawler_runs(trigger,status,started_at) values('manual_edge_function','failed',now()-interval '2 minutes') returning id into general;
- insert into public.crawler_source_runs(run_id,source_id,started_at,completed_at,collection_method,success,duration_ms,error)
- values(general,sid,now()-interval '2 minutes',now()-interval '1 minute','http',false,100,'General crawler miss');
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'pending' then raise exception 'General miss must be pending: %',actual; end if;
- insert into public.crawler_runs(trigger,status,started_at) values('github_browser_gap_fill','running',now()) returning id into browser;
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'running' then raise exception 'Browser attempt must be running: %',actual; end if;
- insert into public.crawler_source_runs(run_id,source_id,started_at,completed_at,collection_method,success,duration_ms)
- values(browser,sid,now(),now()+interval '1 second','browser',true,100);
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'success' then raise exception 'Browser success must win: %',actual; end if;
- update public.crawler_source_runs set success=false,error='Browser failed' where run_id=browser;
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'failed' then raise exception 'Both methods failed must be final: %',actual; end if;
- update public.crawler_source_runs set completed_at=now()+interval '2 seconds' where run_id=general;
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'pending' then raise exception 'A new general attempt must queue a browser retry: %',actual; end if;
- update public.crawler_source_runs set completed_at=now()-interval '1 minute' where run_id=general;
- delete from public.crawler_source_runs where run_id=browser;
- update public.crawler_runs set started_at=now()-interval '11 minutes' where id=browser;
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'failed' then raise exception 'Browser timeout must fail: %',actual; end if;
- update public.crawler_runs set status='failed',started_at=now() where id=browser;
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'failed' then raise exception 'Interrupted browser run must fail: %',actual; end if;
- delete from public.crawler_runs where id=browser;
- update public.crawler_source_runs set completed_at=now()-interval '21 minutes' where run_id=general;
- select crawl_status into actual from public.v_crawler_attempt_status where source_id=sid;
- if actual<>'failed' then raise exception 'Unclaimed delegation must time out: %',actual; end if;
+ if exists(select 1 from public.crawler_runs where status='running') then raise exception 'Live crawl active: retry test when idle'; end if;
+ insert into public.sources(id,name) values(sid,'Fallback fixture'),(other,'No fallback fixture'),(empty_sid,'No observation fixture');
+ insert into public.crawler_publishers(source_id,method,browser_fallback_enabled) values(sid,'http',true),(other,'http',false),(empty_sid,'http',false);
+ rid:=public.newsboard_start_run('manual_edge_function');
+ perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',sid,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','http','success',true,
+ 'output',jsonb_build_object('observed_at',clock_timestamp(),'item',jsonb_build_object('title','Preserved successful editorial headline','url','https://example.com/first'),'items','[{}]'::jsonb)));
+ select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
+ if state<>'success' then raise exception 'Primary success: %',state; end if;
+ select item into before_item from public.crawler_current where source_id=sid;
+ perform public.newsboard_finish_run(rid,null);
+ rid:=public.newsboard_start_run('manual_edge_function');
+ perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',sid,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','http','success',false,'error','HTTP failed'));
+ select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
+ if state<>'pending' then raise exception 'Primary miss must queue browser: %',state; end if;
+ if (select item from public.crawler_current where source_id=sid) is distinct from before_item then raise exception 'Primary failure erased headline'; end if;
+ select deadline_at into deadline from public.crawler_browser_jobs where source_id=sid;
+ perform public.newsboard_queue_browser(sid,rid);
+ if (select deadline_at from public.crawler_browser_jobs where source_id=sid)<>deadline then raise exception 'Duplicate delegation extends deadline'; end if;
+ perform public.newsboard_finish_run(rid,null);
+ rid:=public.newsboard_start_run('github_browser_gap_fill');
+ select array_agg(source_id) into work from public.newsboard_browser_sources(rid);
+ if not sid=any(work) or other=any(work) then raise exception 'Selective assignment failed: %',work; end if;
+ select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
+ if state<>'running' then raise exception 'Browser start must be running: %',state; end if;
+ perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',sid,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','browser','success',false,'error','Browser failed'));
+ select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
+ if state<>'failed' then raise exception 'Both methods failed: %',state; end if;
+ if (select item from public.crawler_current where source_id=sid) is distinct from before_item then raise exception 'Browser failure erased headline'; end if;
+ perform public.newsboard_finish_run(rid,'Fixture failure');
+ rid:=public.newsboard_start_run('manual_edge_function');
+ perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',sid,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','http','success',false,'error','Next primary attempt'));
+ select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
+ if state<>'pending' then raise exception 'New primary attempt must be pending even during backoff: %',state; end if;
+ perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',other,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','http','success',false,'error','No browser configured'));
+ perform public.newsboard_finish_run(rid,null);
+ update public.crawler_browser_jobs set next_retry_at=null where source_id=sid;
+ rid:=public.newsboard_start_run('github_browser_gap_fill');
+ perform public.newsboard_browser_sources(rid);
+ perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',sid,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','browser','success',true,
+ 'output',jsonb_build_object('observed_at',clock_timestamp(),'item',jsonb_build_object('title','Recovered browser editorial headline','url','https://example.com/recovered'),'items','[{}]'::jsonb)));
+ perform public.newsboard_finish_run(rid,null);
+ select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
+ if state<>'success' then raise exception 'Browser recovery must supersede failed HTTP: %',state; end if;
+ snap:=public.newsboard_snapshot()->'cacheLike'->'sources';
+ if snap->sid->'health'->>'crawlStatus'<>'success' or snap->other->'health'->>'crawlStatus'<>'failed' then raise exception 'Source independence failed'; end if;
+ if snap->sid->'health'->'primaryAttempt'->>'status'<>'failed' or snap->sid->'health'->'browserAttempt'->>'status'<>'succeeded' then raise exception 'Attempt metadata conflated'; end if;
+ if snap->sid->'item'->>'title'<>'Recovered browser editorial headline' then raise exception 'Browser observation not displayed'; end if;
+ if not snap ? empty_sid or (snap->empty_sid->>'ok')::boolean then raise exception 'Never-observed publisher missing or falsely certified'; end if;
+ -- An unrelated failed global browser run cannot fail this recovered source.
+ insert into public.crawler_runs(trigger,status,started_at,completed_at) values('github_browser_gap_fill','failed',clock_timestamp(),clock_timestamp());
+ if (select crawl_status from public.v_crawler_attempt_status where source_id=sid)<>'success' then raise exception 'Unassigned run corrupted health'; end if;
+ perform public.newsboard_queue_browser(sid);
+ update public.crawler_browser_jobs set deadline_at=now()-interval '1 second' where source_id=sid;
+ if (select crawl_status from public.v_crawler_attempt_status where source_id=sid)<>'failed' then raise exception 'Queue timeout not final'; end if;
+ perform public.newsboard_prepare_browser_jobs();
+ if (select status from public.crawler_browser_jobs where source_id=sid)<>'failed' then raise exception 'Timeout not persisted'; end if;
+ if has_table_privilege('anon','public.crawler_browser_jobs','UPDATE') or has_function_privilege('anon','public.newsboard_browser_sources(uuid)','EXECUTE') then raise exception 'Public mutation grant'; end if;
 end $$;
-select 'PASS: pending, running, browser success, both failed, browser timeout, interruption, queue timeout' as result;
+select 'PASS: primary success; pending; running; both fail; recovery; source independence; never-observed source; preserved CP; retry/backoff; unrelated run; timeout; permissions' as result;
 rollback;

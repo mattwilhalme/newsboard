@@ -11,13 +11,11 @@ export const collectors = {
   guardian1: scrapers.scrapeGuardianHero,
   usat1: scrapers.scrapeUSATHero,
   yahoo1: scrapers.scrapeWPHero,
+  abc1: scrapers.scrapeABCHero, cbs1: scrapers.scrapeCBSHero,
+  latimes1: scrapers.scrapeLATimesHero, npr1: scrapers.scrapeNPRHero,
+  bbc1: scrapers.scrapeBBCHero, fox1: scrapers.scrapeFoxHero,
 };
 const trigger = 'github_browser_gap_fill';
-export function shouldCollect(health) {
-  return !health?.last_success_at || health.last_attempt_success === false ||
-    health.age_seconds == null || !Number.isFinite(Number(health.age_seconds)) ||
-    Number(health.age_seconds) >= 420;
-}
 
 export async function main() {
   const { SUPABASE_URL: url, SUPABASE_SERVICE_ROLE_KEY: key } = process.env;
@@ -40,16 +38,11 @@ export async function main() {
   let attempted = 0;
   let succeeded = 0;
   try {
-    // Check after acquiring the lease so a completed manual recovery is respected.
-    const health = check(await db.from('v_crawler_health')
-      .select('source_id,last_success_at,age_seconds,last_attempt_success').in('source_id', Object.keys(collectors)));
-    const bySource = new Map(health.map(row => [row.source_id, row]));
-    for (const [source_id, collect] of Object.entries(collectors)) {
-      const previous = bySource.get(source_id);
-      if (!shouldCollect(previous)) {
-        console.log(`${source_id}: SKIPPED — last success ${previous.age_seconds}s ago`);
-        continue;
-      }
+    // The database atomically assigns only due/requested publishers to this run.
+    const work = check(await db.rpc('newsboard_browser_sources', {p_run: runId}));
+    for (const {source_id} of work) {
+      const collect = collectors[source_id];
+      if (!collect) throw new Error(`No configured browser collector for ${source_id}`);
       attempted++;
       const started_at = new Date().toISOString();
       let output = null;
@@ -82,7 +75,7 @@ export async function main() {
   check(await db.rpc('newsboard_finish_run', { p_run: runId, p_error: fatal }));
   // A freshness-only invocation did execute successfully, but performed no collection.
   if (!fatal && attempted === 0) {
-    check(await db.from('crawler_runs').update({ status: 'skipped', error_summary: 'All browser sources are fresh (<420 seconds) and latest attempts have not failed' }).eq('id', runId));
+    check(await db.from('crawler_runs').update({ status: 'skipped', error_summary: 'No due browser jobs' }).eq('id', runId));
   }
   if (dispatchId) check(await db.rpc('newsboard_browser_complete', { p_attempt: dispatchId }));
   console.log(JSON.stringify({ run_id: runId, trigger, attempted, succeeded, error: fatal }));

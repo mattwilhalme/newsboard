@@ -32,19 +32,40 @@ test('first load retries a transient miss and displays latest data without Refre
  s.setPayload(snapshot('Newer live headline')); await s.page.locator('#btn-reload').click(); await settled(s.page);
  assert.match(await s.page.locator('body').innerText(),/Newer live headline/);
 }));
-test('outage uses only last successful browser snapshot with timestamp; automatic retry recovers',()=>scenario(async s=>{
- const stamp='2026-09-18T12:00:00.000Z'; s.setPayload(snapshot('Saved prior headline',stamp));
- await s.page.goto('https://board.example/newsboard/'); await settled(s.page);
- s.setOffline(true); await s.page.reload(); await settled(s.page);
- assert.match(await s.page.locator('#subline').innerText(),new RegExp(`Stale data.*${stamp}`));
- assert.match(await s.page.locator('body').innerText(),/Saved prior headline/);
+test('fresh reload never resurrects a persisted snapshot; automatic retry recovers',()=>scenario(async s=>{
+ await s.page.goto('https://board.example/newsboard/');await settled(s.page);
+ await s.page.evaluate(saved=>localStorage.setItem('nb_last_successful_snapshot_v1',JSON.stringify(saved)),snapshot('Several-day-old cached headline','2026-09-18T12:00:00.000Z'));
+ s.setOffline(true);await s.page.reload();await settled(s.page);
+ assert.match(await s.page.locator('#subline').innerText(),/Live data unavailable/);
+ assert.doesNotMatch(await s.page.locator('body').innerText(),/Several-day-old|Current live headline|Stale data/);
+ assert.equal(await s.page.evaluate(()=>localStorage.getItem('nb_last_successful_snapshot_v1')),null);
  s.setOffline(false);s.setPayload(snapshot('Recovered automatically'));
  await s.page.waitForFunction(()=>document.body.innerText.includes('Recovered automatically'),{},{timeout:25000});
 }));
-test('outage on clean browser shows no obsolete GitHub stories',()=>scenario(async s=>{
+test('failed refresh preserves only the already rendered session',()=>scenario(async s=>{
+ await s.page.goto('https://board.example/newsboard/');await settled(s.page);
+ s.setOffline(true);await s.page.locator('#btn-reload').click();await settled(s.page);
+ assert.match(await s.page.locator('body').innerText(),/Current live headline/);
+ assert.doesNotMatch(await s.page.locator('body').innerText(),/Stale data|stale \(no change/);
+}));
+test('fresh outage shows unavailable and no historical headlines',()=>scenario(async s=>{
  s.setOffline(true);await s.page.goto('https://board.example/newsboard/');await settled(s.page);
- assert.match(await s.page.locator('#subline').innerText(),/No saved snapshot/);
- assert.doesNotMatch(await s.page.locator('body').innerText(),/Current live headline/);
+ assert.match(await s.page.locator('#subline').innerText(),/Live data unavailable/);
+ assert.doesNotMatch(await s.page.locator('body').innerText(),/Current live headline|Stale data/);
+}));
+test('publishers validate independently and legacy lastAttemptSuccess cannot declare failure',()=>scenario(async s=>{
+ const p=snapshot('Valid ABC headline');
+ p.cacheLike.sources.cnn1={ok:true,item:{title:'Invalid CNN row',url:'not-a-url'},updatedAt:'invalid',health:{crawlStatus:'success'}};
+ p.cacheLike.sources.nbc1={ok:true,item:{title:'Previous successful NBC headline',url:'https://nbcnews.com/news/test'},updatedAt:new Date().toISOString(),health:{crawlStatus:'failed'}};
+ p.cacheLike.sources.cbs1={ok:true,item:{title:'CBS legacy ambiguous state',url:'https://cbsnews.com/news/test'},updatedAt:new Date().toISOString(),health:{lastAttemptSuccess:false}};
+ s.setPayload(p);await s.page.goto('https://board.example/newsboard/');await settled(s.page);
+ const body=await s.page.locator('body').innerText();assert.match(body,/Valid ABC headline/);assert.doesNotMatch(body,/Invalid CNN row/);assert.match(body,/Previous successful NBC headline/);assert.match(body,/Crawl Failed — showing last successful observation/);
+ assert.equal((body.match(/Crawl Failed/g)||[]).length,1);
+}));
+test('unchanged old headline with a successful observation has no stale indicator',()=>scenario(async s=>{
+ const p=snapshot('Unchanged legitimate headline',new Date().toISOString());p.cacheLike.sources.abc1.lastChangeAt='2026-09-18T12:00:00Z';p.cacheLike.sources.abc1.isStale=true;
+ s.setPayload(p);await s.page.goto('https://board.example/newsboard/');await settled(s.page);
+ assert.doesNotMatch(await s.page.locator('body').innerText(),/stale/i);assert.equal(await s.page.locator('.changeDot.stale').count(),0);
 }));
 test('combined browser states render pending/running, success, then final failure',()=>scenario(async s=>{
  for(const status of ['pending','running','success','failed']) {
