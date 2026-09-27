@@ -57,6 +57,12 @@ begin
  perform public.newsboard_browser_complete(aid);
  if (select status from public.browser_dispatch_attempts where id=aid)<>'success' then raise exception 'Recovery success missing'; end if;
  if (select failures from public.browser_scheduler_settings where id)<>0 then raise exception 'Success must reset backoff'; end if;
+ -- Publisher extraction failure must not impose backoff on healthy publishers.
+ c:=public.newsboard_browser_claim(true);aid:=(c->>'attempt_id')::uuid;
+ rid:=public.newsboard_browser_start(aid,126,now());
+ update public.crawler_runs set status='partial',publishers_attempted=2,publishers_succeeded=1,completed_at=now() where id=rid;
+ perform public.newsboard_browser_complete(aid);
+ if (select retry_after from public.browser_scheduler_settings where id) is not null then raise exception 'Publisher failure blocked healthy publishers'; end if;
  -- A running worker that vanishes must release the dispatch after its lease,
  -- while a late duplicate remains unable to start another crawl.
  c:=public.newsboard_browser_claim(true);aid:=(c->>'attempt_id')::uuid;

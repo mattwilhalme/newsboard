@@ -60,6 +60,14 @@ begin
  if (select crawl_status from public.v_crawler_attempt_status where source_id=sid)<>'failed' then raise exception 'Queue timeout not final'; end if;
  perform public.newsboard_prepare_browser_jobs();
  if (select status from public.crawler_browser_jobs where source_id=sid)<>'failed' then raise exception 'Timeout not persisted'; end if;
+ update public.crawler_browser_jobs set next_retry_at=null where source_id=sid;
+ perform public.newsboard_queue_browser(sid);
+ rid:=public.newsboard_start_run('github_browser_gap_fill');
+ perform public.newsboard_browser_sources(rid);
+ update public.crawler_browser_jobs set deadline_at=now()-interval '1 second' where source_id=sid;
+ perform public.newsboard_prepare_browser_jobs();
+ if (select status from public.crawler_browser_jobs where source_id=sid)<>'failed' then raise exception 'Running timeout not persisted'; end if;
+ perform public.newsboard_finish_run(rid,'Timed out fixture');
  if has_table_privilege('anon','public.crawler_browser_jobs','UPDATE') or has_function_privilege('anon','public.newsboard_browser_sources(uuid)','EXECUTE') then raise exception 'Public mutation grant'; end if;
 end $$;
 select 'PASS: primary success; pending; running; both fail; recovery; source independence; never-observed source; preserved CP; retry/backoff; unrelated run; timeout; permissions' as result;
