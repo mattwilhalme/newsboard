@@ -492,6 +492,9 @@
     .storyHistoryMetrics dt{color:var(--muted)}.storyHistoryMetrics dd{margin:0;font-weight:650}
     .storyPropagation{list-style:none;padding:0;margin:24px 0}.storyPropagation li{border-left:2px solid var(--line);padding:0 0 22px 15px;margin-left:5px}
     .storyPropagation p{font-size:13px;line-height:1.5;margin:7px 0}.storyEventLabel{font-size:14px;font-weight:700;margin-top:5px}
+    .gdeltDetected{padding:12px 0 16px;border-bottom:1px solid var(--line);font-size:13px}.gdeltDetected strong{display:block;margin-bottom:4px}.gdeltList{list-style:none;margin:0;padding:8px 0}.gdeltResult{padding:13px 0;border-bottom:1px solid var(--line)}
+    .gdeltResultMeta{font-size:12px;color:var(--muted);margin-bottom:5px}.gdeltResult a{color:var(--text);font-family:var(--font-serif);font-size:17px;line-height:1.3;text-decoration:none}.gdeltResult a:hover{color:var(--blue);text-decoration:underline}
+    .gdeltPill{display:inline-block;margin-left:6px;padding:2px 5px;border-radius:999px;background:#EFF6FF;color:var(--blue);font-size:10px;font-family:var(--font-sans);font-weight:750}.gdeltSelf{background:var(--highlight-bg);color:var(--highlight-text)}.gdeltEarliest{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}.gdeltDebug{margin-top:10px;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
     .drawer{
       position:fixed;
       top:0;
@@ -1338,6 +1341,10 @@
     <div class="drawerHead"><div class="drawerTitle" id="story-history-title">Story History</div><button id="btn-story-history-close" class="btn" type="button">Close</button></div>
     <div class="drawerBody" id="story-history-content" aria-live="polite"></div>
   </aside>
+  <aside class="drawer" id="drawer-gdelt" role="dialog" aria-modal="true" aria-labelledby="gdelt-title" aria-hidden="true">
+    <div class="drawerHead"><div class="drawerTitle" id="gdelt-title">GDELT Coverage</div><button id="btn-gdelt-close" class="btn" type="button">Close</button></div>
+    <div class="drawerBody" id="gdelt-content" aria-live="polite"></div>
+  </aside>
   <aside class="drawer" id="drawer-history" aria-hidden="true">
     <div class="drawerHead">
       <div>
@@ -2154,7 +2161,7 @@
       storyDrawerRequest++;
       if ($("drawer-story-history")?.classList.contains("open") && storyDrawerTrigger?.isConnected) storyDrawerTrigger.focus();
       stopMomentAutoplay();
-      const ids = ["drawer-story-history", "drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item", "drawer-moment"];
+      const ids = ["drawer-story-history", "drawer-gdelt", "drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item", "drawer-moment"];
       for (const id of ids) {
         const d = $(id);
         if (!d) continue;
@@ -3554,6 +3561,7 @@
 
     let storyBadges = [];
     let storyDrawerRequest = 0;
+    let gdeltRequest = 0;
     let storyDrawerTrigger = null;
     const FIRST_MEANING = "First detected by NewsBoard among monitored publishers in available processed history—not first published worldwide.";
 
@@ -3621,6 +3629,34 @@
         host.appendChild(list);
         if (data.events_truncated) {const note=document.createElement("p");note.textContent="Showing the first 1,000 events.";host.appendChild(note);}
       } catch { if (request === storyDrawerRequest) host.textContent = "Story History is temporarily unavailable. Headlines remain available; close and try again."; }
+    }
+
+    function trackedPublisherDomains(sources = latestOverviewPayload?.sources || {}){
+      return [...new Set(Object.entries(sources).flatMap(([id, src]) => [sourceHomeUrl(id, src), src?.item?.url].map(value => { try { return new URL(value).hostname.replace(/^www\./, ""); } catch { return ""; } }).filter(Boolean)))];
+    }
+    async function gdeltCoverageRequest(story){
+      const params = new URLSearchParams({ headline: story.title, url: story.url || "", source: story.source || "", observed_at: story.observed_at, tracked_domains: trackedPublisherDomains().join(",") });
+      if (!isGitHubPages) return fetchJSON(`/api/gdelt/coverage?${params}`);
+      if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
+      if (!_supabaseCfg) throw new Error("Supabase is not configured");
+      const response = await fetch(`${_supabaseCfg.url}/functions/v1/gdelt-coverage?${params}`, { headers: { apikey: _supabaseCfg.anonKey, Authorization: `Bearer ${_supabaseCfg.anonKey}` } });
+      const body = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(body?.error || `Coverage request failed (${response.status})`);
+      return body;
+    }
+    function renderGdeltCoverage(host, data){
+      host.replaceChildren();
+      const detected=document.createElement("div");detected.className="gdeltDetected";const label=document.createElement("strong");label.textContent="Newsboard detected";const meta=document.createElement("div");meta.textContent=`${data.newsboard_story?.source || "Unknown publisher"} · ${fmtTime(data.newsboard_story?.observed_at)}`;detected.append(label,meta);host.appendChild(detected);
+      const results=Array.isArray(data.results)?data.results:[];
+      if(!results.length){const empty=document.createElement("p");empty.textContent="No credible matching English-language coverage was found in the selected window.";host.appendChild(empty);}
+      const list=document.createElement("ol");list.className="gdeltList";
+      for(const result of results){const li=document.createElement("li");li.className="gdeltResult";const row=document.createElement("div");row.className="gdeltResultMeta";row.textContent=`${result.gdelt_seen_at?fmtTime(result.gdelt_seen_at):"Time unavailable"} — ${result.domain||"Unknown publisher"}`;if(result.tracked_by_newsboard){const pill=document.createElement("span");pill.className="gdeltPill";pill.textContent="Newsboard tracks";row.appendChild(pill);}if(result.is_newsboard_article){const pill=document.createElement("span");pill.className="gdeltPill gdeltSelf";pill.textContent="This article";row.appendChild(pill);}const link=document.createElement("a");link.href=result.url;link.target="_blank";link.rel="noopener";link.textContent=result.title;li.append(row,link);list.appendChild(li);}host.appendChild(list);
+      if(data.earliest_match){const earliest=document.createElement("div");earliest.className="gdeltEarliest";earliest.innerHTML=`<strong>Earliest GDELT match:</strong> ${escapeHtml(data.earliest_match.domain||"Unknown publisher")} · ${escapeHtml(data.earliest_match.gdelt_seen_at?fmtTime(data.earliest_match.gdelt_seen_at):"Time unavailable")}`;host.appendChild(earliest);}
+      const debug=document.createElement("div");debug.className="gdeltDebug";debug.textContent=`Query: ${data.query||"—"} · ${Number(data.raw_result_count||0)} raw / ${results.length} shown`;host.appendChild(debug);
+    }
+    async function openGdeltCoverage(story){
+      closeAllDrawers();const request=++gdeltRequest,drawer=$("drawer-gdelt"),host=$("gdelt-content");drawer.classList.add("open");drawer.setAttribute("aria-hidden","false");$("drawer-overlay").classList.add("show");host.textContent="Tracing GDELT coverage…";$("btn-gdelt-close").focus();
+      try{const data=await gdeltCoverageRequest(story);if(request===gdeltRequest)renderGdeltCoverage(host,data);}catch(error){if(request===gdeltRequest)host.textContent=`GDELT Coverage is temporarily unavailable: ${summarizeError(error)}`;}
     }
 
     function buildCardEl(id, src, indicator, timelineBySource = {}){
@@ -3775,6 +3811,8 @@
       actionsRow.appendChild(detailsBtn);
       const intelligence = storyBadge(id, src?.item);
       if (intelligence) actionsRow.appendChild(intelligence);
+      const coverageBtn=document.createElement("button");coverageBtn.type="button";coverageBtn.className="linkbtn";coverageBtn.textContent="Trace coverage";coverageBtn.disabled=!src?.item?.title||!firstSeenEverAt;
+      coverageBtn.addEventListener("click",event=>{event.stopPropagation();const observedMs=Number(firstSeenEverAt)||Date.parse(firstSeenEverAt);openGdeltCoverage({title:src?.item?.title||"",url:src?.item?.url||"",source:sourceLabel(id,src),observed_at:new Date(observedMs).toISOString()});});actionsRow.appendChild(coverageBtn);
 
       const err = document.createElement("div");
       err.className = "tiny";
@@ -6079,6 +6117,7 @@
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window-page")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("btn-story-history-close")?.addEventListener("click", () => closeAllDrawers());
+    $("btn-gdelt-close")?.addEventListener("click", () => closeAllDrawers());
     $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
     $("menu-go-overview")?.addEventListener("click", () => {
       setMenuOpen(false);

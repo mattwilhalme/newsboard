@@ -10,6 +10,7 @@ import { failedTop10 } from "./supabase/functions/_shared/top10.js";
 import { collectBrowserTop10 } from "./lib/top10Browser.js";
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from "./lib/mobileHero.js";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
+import { fetchGdeltCoverage } from "./lib/gdeltCoverage.js";
 
 const app = express();
 app.use(express.json());
@@ -28,6 +29,7 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const ARCHIVE_DIR = path.join(process.cwd(), "archive");
 const CACHE_FILE = path.join(process.cwd(), "cache.json");
 const SUPABASE_CONFIG_FILE = path.join(process.cwd(), "docs", "supabase.json");
+const gdeltCache = new Map();
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
 
@@ -2950,6 +2952,23 @@ app.get("/api/sources", (req, res) => {
 app.get("/api/state", (req, res) => {
   const cache = ensureCacheShape(readCache());
   res.json({ ok: true, cache });
+});
+
+app.get("/api/gdelt/coverage", async (req, res) => {
+  const story = { title: cleanText(req.query?.headline), url: cleanText(req.query?.url), source: cleanText(req.query?.source), observed_at: cleanText(req.query?.observed_at) };
+  if (!story.title || !story.observed_at) return res.status(400).json({ error: "headline and observed_at are required" });
+  const trackedDomains = cleanText(req.query?.tracked_domains).split(",").map(v => v.trim()).filter(Boolean).slice(0, 50);
+  const key = `${story.title}|${story.url}|${story.observed_at}|${trackedDomains.join(",")}`;
+  const hit = gdeltCache.get(key);
+  if (hit?.expires > Date.now()) return res.set("X-Newsboard-Cache", "HIT").json(hit.data);
+  try {
+    const data = await fetchGdeltCoverage(story, { trackedDomains });
+    gdeltCache.set(key, { expires: Date.now() + 15 * 60 * 1000, data });
+    return res.set("Cache-Control", "public, max-age=900").set("X-Newsboard-Cache", "MISS").json(data);
+  } catch (error) {
+    const status = Number(error?.status) || (/timed out/.test(String(error?.message)) ? 504 : 502);
+    return res.status(status).json({ error: String(error?.message || error) });
+  }
 });
 
 app.get("/api/supabase-snapshot", async (req, res) => {

@@ -16,7 +16,9 @@
     "clean-archive": "rm -rf archive/*",
     "install-browsers": "npx playwright install",
     "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "preview": "wrangler dev",
+    "test:gdelt": "node scripts/gdelt-coverage.test.mjs",
+    "test:gdelt-ui": "node scripts/gdelt-ui.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.95.3",
