@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import { chromium } from 'playwright';
 const html = fs.readFileSync('docs/index.html', 'utf8');
 const formatJs = fs.readFileSync('docs/js/format.js', 'utf8');
+const dataJs = fs.readFileSync('docs/js/data/supabase.js', 'utf8');
 const snapshot = (title, stamp = new Date().toISOString(), status = 'success') => ({cacheLike:{sources:{abc1:{ok:true,updatedAt:stamp,item:{title,url:'https://abcnews.go.com/test'},health:{crawlStatus:status}}}},history:{sources:{}}});
 async function scenario(fn) {
  const browser = await chromium.launch({channel:'chrome'});
@@ -14,6 +15,7 @@ async function scenario(fn) {
   const url=new URL(route.request().url());
   if(url.pathname==='/newsboard/') return route.fulfill({contentType:'text/html',body:html});
   if(url.pathname.endsWith('/js/format.js')) return route.fulfill({contentType:'text/javascript',body:formatJs});
+  if(url.pathname.endsWith('/js/data/supabase.js')) return route.fulfill({contentType:'text/javascript',body:dataJs});
   if(url.pathname.endsWith('/supabase.json')) return route.fulfill({json:{url:'https://live.example',anonKey:'public-test'}});
   if(url.pathname.endsWith('/newsboard_snapshot')) {
    requests++; if(offline || misses-->0) return route.fulfill({status:503,json:{error:'temporary'}});

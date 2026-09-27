@@ -1483,11 +1483,13 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="./js/format.js"></script>
+  <script src="./js/data/supabase.js"></script>
   <script>
     const {
       fmtTime, ago, fmtDurationSeconds, fmtDurationMs, normalizeUrlForStory,
       normalizeTitleForStory, summarizeError, escapeHtml,
     } = window.NewsboardFormat;
+    const NewsboardData = window.NewsboardData;
     const $ = (id) => document.getElementById(id);
 
     const isLocal =
@@ -1503,12 +1505,10 @@
     const TIMELINE_URL = "./data/timeline.json";
     const TOP10_ABC_LATEST_URL = "./data/top10_abc_latest.json";
     const TOP10_ABC_HISTORY_URL = "./data/top10_abc_history.json";
-    const SUPABASE_CONFIG_URL = "./supabase.json";
 
     // Expect exactly these sources; render placeholders when missing
     const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","guardian1","ap1","latimes1","npr1","bbc1","fox1","yahoo1"];
 
-    let _supabaseCfg = null;
 
     const HISTORY_WINDOW_OPTIONS = [6, 24, 168];
     const HISTORY_WINDOW_DEFAULT_HOURS = 24;
@@ -2280,38 +2280,16 @@
       return navigator.clipboard.writeText(txt);
     }
 
-    const crawlRpcCache = new Map();
-    async function crawlRpc(name, args = {}) {
-      const key = name + JSON.stringify(args);
-      const cached = crawlRpcCache.get(key);
-      if (cached && Date.now() - cached.at < 30000) return await cached.promise;
-      const promise = (async () => {
-        if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
-        if (!_supabaseCfg) throw new Error("Supabase is not configured");
-        // Initial data must not depend on downloading an SDK from a third-party CDN.
-        const response = await fetch(`${_supabaseCfg.url}/rest/v1/rpc/${name}`, {
-          method: "POST", cache: "no-store", signal: AbortSignal.timeout(12000),
-          headers: { apikey: _supabaseCfg.anonKey, Authorization: `Bearer ${_supabaseCfg.anonKey}`, "Content-Type": "application/json" },
-          body: JSON.stringify(args),
-        });
-        if (!response.ok) throw new Error(`Live data HTTP ${response.status}`);
-        return await response.json();
-      })();
-      crawlRpcCache.set(key, {at: Date.now(), promise});
-      try { return await promise; }
-      catch (error) { crawlRpcCache.delete(key); throw error; }
-    }
-
     async function fetchJSON(url, opts) {
       // Preserve renderer payloads while moving changing data to bounded RPCs.
       const path = String(url).split("?")[0];
       try {
         if (path === TIMELINE_URL || path === "/api/timeline") {
           const hours = Number(new URL(String(url), location.href).searchParams.get("hours") || 12);
-          return await crawlRpc("newsboard_timeline", {p_hours: hours});
+          return await NewsboardData.getTimeline(hours);
         }
         if (path === TOP10_ABC_LATEST_URL || path === TOP10_ABC_HISTORY_URL) {
-          const data = await crawlRpc("newsboard_top10", {p_hours: 168});
+          const data = await NewsboardData.getTop10(168);
           if (path === TOP10_ABC_LATEST_URL && !data.latest) throw new Error("No database Top 10 snapshot yet");
           if (path === TOP10_ABC_HISTORY_URL && !data.runs?.length) throw new Error("No database Top 10 history yet");
           return path === TOP10_ABC_LATEST_URL ? data.latest : data;
@@ -2319,23 +2297,11 @@
       } catch (error) {
         throw error; // Frozen GitHub JSON is never a current-data fallback.
       }
-      const r = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(12000), ...opts });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return await r.json();
-    }
-
-    async function loadSupabaseConfig(){
-      try{
-        const cfg = await fetchJSON(`${SUPABASE_CONFIG_URL}?ts=${Date.now()}`);
-        if (!cfg || !cfg.url || !cfg.anonKey) return null;
-        return { url: String(cfg.url), anonKey: String(cfg.anonKey) };
-      } catch {
-        return null;
-      }
+      return await NewsboardData.requestJson(url, opts);
     }
 
     async function loadFromSupabase(){
-      return await crawlRpc("newsboard_snapshot");
+      return await NewsboardData.getCurrentObservations();
     }
 
     function canonicalStoryUrl(url){
@@ -3489,7 +3455,7 @@
 
     async function loadStoryBadges(){
       try {
-        const rows = await Promise.race([crawlRpc("newsboard_story_badges"), new Promise((_, reject) => setTimeout(() => reject(new Error("Story indicators timed out")), 3500))]);
+        const rows = await NewsboardData.getStoryBadges();
         storyBadges = Array.isArray(rows) ? rows : [];
       } catch { storyBadges = []; } // Optional intelligence never blocks raw news.
     }
@@ -3518,7 +3484,7 @@
       host.textContent = "Loading story history…";
       $("btn-story-history-close").focus();
       try {
-        const data = await Promise.race([crawlRpc("newsboard_story_history", {p_story: storyId}), new Promise((_, reject) => setTimeout(() => reject(new Error("Story History timed out")), 5000))]);
+        const data = await NewsboardData.getStoryHistory(storyId);
         if (request !== storyDrawerRequest) return;
         if (!data?.story) { host.textContent = "Story history is not available yet."; return; }
         const story = data.story, members = data.members || [];
@@ -3559,9 +3525,8 @@
     async function gdeltCoverageRequest(story){
       const params = new URLSearchParams({ headline: story.title, url: story.url || "", source: story.source || "", observed_at: story.observed_at, tracked_domains: trackedPublisherDomains().join(",") });
       if (!isGitHubPages) return fetchJSON(`/api/gdelt/coverage?${params}`);
-      if (!_supabaseCfg) _supabaseCfg = await loadSupabaseConfig();
-      if (!_supabaseCfg) throw new Error("Supabase is not configured");
-      const response = await fetch(`${_supabaseCfg.url}/functions/v1/gdelt-coverage?${params}`, { headers: { apikey: _supabaseCfg.anonKey, Authorization: `Bearer ${_supabaseCfg.anonKey}` } });
+      const config = await NewsboardData.getConfig();
+      const response = await fetch(`${config.url}/functions/v1/gdelt-coverage?${params}`, { headers: { apikey: config.anonKey, Authorization: `Bearer ${config.anonKey}` } });
       const body = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(body?.error || `Coverage request failed (${response.status})`);
       return body;
@@ -5825,7 +5790,7 @@
     async function reload() {
       if (isRefreshing) return;
       clearTimeout(retryTimer);
-      crawlRpcCache.clear();
+      NewsboardData.clearCache();
       const btnReload = $("btn-reload");
       if (btnReload) btnReload.disabled = true;
       isRefreshing = true;
@@ -5846,7 +5811,7 @@
               throw new Error("Invalid live snapshot envelope");
             }
             break;
-          } catch (error) { crawlRpcCache.delete("newsboard_snapshot{}"); snapshot = null; liveError = error; }
+          } catch (error) { NewsboardData.invalidateCurrentObservations(); snapshot = null; liveError = error; }
         }
         if (!snapshot) throw liveError;
         data = snapshot.cacheLike;

@@ -29,7 +29,7 @@ No framework or bundler is required initially. Use native ES modules and preserv
 ## Extraction order
 
 1. **Pure shared utilities (completed in Cleanup Pass 2):** escaping, time formatting, URL normalization, and error summarization now live in `docs/js/format.js` with direct unit coverage. It remains a classic static script to avoid converting the whole app to modules at once.
-2. **Supabase/data access:** isolate config loading, timeout/retry behavior, RPC calls, and response normalization. The first-load suite must continue proving no generated-data fallback and automatic outage recovery.
+2. **Supabase/data access (completed in the frontend architecture pass):** `docs/js/data/supabase.js` now owns config loading, request timeouts, RPC calls, caching, invalidation, and transport error normalization. Application retry and retention policy remains inline by design.
 3. **Drawer shell:** extract open/close/focus/Escape behavior without moving drawer-specific rendering. Verify desktop/mobile focus and overlay behavior.
 4. **Story History and GDELT drawers:** extract their independent fetch/render paths. Preserve failure isolation so optional intelligence never hides raw headlines.
 5. **Overview cards:** move card construction, source labels/order, health display, and Story badges. Run all first-load, last-good, and publisher-isolation cases.
