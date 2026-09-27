@@ -6,14 +6,15 @@ import { chromium } from 'playwright';
 const assets = new Map([
   ['/newsboard/', ['text/html', fs.readFileSync('docs/index.html', 'utf8')]],
   ['/newsboard/js/format.js', ['text/javascript', fs.readFileSync('docs/js/format.js', 'utf8')]],
+  ['/newsboard/js/health.js', ['text/javascript', fs.readFileSync('docs/js/health.js', 'utf8')]],
   ['/newsboard/js/data/supabase.js', ['text/javascript', fs.readFileSync('docs/js/data/supabase.js', 'utf8')]],
 ]);
 const now = new Date().toISOString();
 const earlier = new Date(Date.now() - 60_000).toISOString();
 const snapshot = {
   cacheLike: { generatedAt: now, sources: {
-    abc1: { ok: true, sourceName: 'ABC News', updatedAt: now, firstSeenAt: earlier, item: { title: 'ABC deterministic headline', url: 'https://abcnews.com/US/example/story?id=1' }, health: { crawlStatus: 'success', collectionMethod: 'http' } },
-    cbs1: { ok: true, sourceName: 'CBS News', updatedAt: earlier, firstSeenAt: earlier, item: { title: 'CBS retained last-good headline', url: 'https://www.cbsnews.com/news/example' }, health: { crawlStatus: 'failed', latestError: 'upstream blocked', collectionMethod: 'browser' } },
+    abc1: { ok: true, sourceName: 'ABC News', updatedAt: now, firstSeenAt: earlier, item: { title: 'ABC deterministic headline', url: 'https://abcnews.com/US/example/story?id=1' }, health: { crawlStatus: 'success', method: 'http' } },
+    cbs1: { ok: true, sourceName: 'CBS News', updatedAt: earlier, firstSeenAt: earlier, item: { title: 'CBS retained last-good headline', url: 'https://www.cbsnews.com/news/example' }, health: { crawlStatus: 'failed', latestError: 'upstream blocked', method: 'browser' } },
   } },
   history: { generatedAt: now, sources: {
     abc1: { entries: [{ title: 'ABC previous story', url: 'https://abcnews.com/US/previous/story?id=2', firstSeenAt: new Date(Date.now() - 120_000).toISOString(), lastSeenAt: new Date(Date.now() - 120_000).toISOString() }, { title: 'ABC original headline', url: 'https://abcnews.com/US/example/story?id=1', firstSeenAt: earlier, lastSeenAt: earlier }, { title: 'ABC deterministic headline', url: 'https://abcnews.com/US/example/story?id=1', firstSeenAt: now, lastSeenAt: now }] },
@@ -46,6 +47,10 @@ test('major views preserve deterministic content, controls and ordering', async 
 
     await page.locator('#tab-data').click();
     assert.equal(await page.locator('#view-data').isVisible(), true);
+    assert.equal(await page.locator('#collection-health tbody tr').count(), 12);
+    assert.match(await page.locator('[data-health-source="abc1"]').innerText(), /ABC News[\s\S]*Current[\s\S]*http/);
+    assert.match(await page.locator('[data-health-source="cbs1"]').innerText(), /CBS News[\s\S]*Issue[\s\S]*browser[\s\S]*upstream blocked/);
+    assert.equal(await page.locator('#cards-grid .card').count(), 12);
     assert.match(await page.locator('#data-page').innerText(), /ABC News[\s\S]*CBS News/);
     await page.locator('#data-window-page').selectOption('6');
     assert.equal(await page.locator('#data-window-page').inputValue(), '6');

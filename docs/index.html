@@ -853,6 +853,12 @@
       font-size:12px;
       color:var(--muted);
     }
+
+    .collectionHealthTable .healthState{font-weight:700}
+    .collectionHealthTable .healthState.current{color:var(--good)}
+    .collectionHealthTable .healthState.delayed{color:#9a6700}
+    .collectionHealthTable .healthState.issue{color:var(--bad)}
+    .collectionHealthError{max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)}
     .emptyState{
       border:1px dashed var(--line-strong);
       border-radius:var(--radius);
@@ -1235,6 +1241,13 @@
     <section id="view-data" style="display:none">
       <section class="labsSection">
         <div class="labsHeader">
+          <h2>Collection Health</h2>
+          <div class="labsHelp">Freshness of the latest retained successful observation and the latest explicitly reported collection state.</div>
+        </div>
+        <div id="collection-health"></div>
+      </section>
+      <section class="labsSection">
+        <div class="labsHeader">
           <h2>Data</h2>
         </div>
         <div class="viewDataShell">
@@ -1483,6 +1496,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="./js/format.js"></script>
+  <script src="./js/health.js"></script>
   <script src="./js/data/supabase.js"></script>
   <script>
     const {
@@ -1490,6 +1504,7 @@
       normalizeTitleForStory, summarizeError, escapeHtml,
     } = window.NewsboardFormat;
     const NewsboardData = window.NewsboardData;
+    const { derivePublisherHealth } = window.NewsboardHealth;
     const $ = (id) => document.getElementById(id);
 
     const isLocal =
@@ -2953,6 +2968,28 @@
     function renderData(normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = selectedWindowHours){
       renderDataInto($("data"), normalizedHistory, indicatorsById, currentSources, windowSpec);
       renderDataInto($("data-page"), normalizedHistory, indicatorsById, currentSources, windowSpec);
+    }
+
+    function renderCollectionHealth(sources = {}){
+      const host = $("collection-health");
+      if (!host) return;
+      const table = document.createElement("table");
+      table.className = "dataTable collectionHealthTable";
+      table.innerHTML = "<thead><tr><th>Publisher</th><th>Status</th><th>Last good</th><th>Method</th><th>Latest issue</th></tr></thead>";
+      const body = document.createElement("tbody");
+      for (const id of EXPECTED_SOURCE_IDS) {
+        const source = sources?.[id] || null;
+        const health = derivePublisherHealth(source);
+        const row = document.createElement("tr");
+        row.setAttribute("data-health-source", id);
+        const publisher = document.createElement("td"); publisher.textContent = sourceLabel(id, source);
+        const state = document.createElement("td"); state.className = `healthState ${health.state.toLowerCase()}`; state.textContent = health.state;
+        const lastGood = document.createElement("td"); lastGood.textContent = health.timestamp ? ago(health.timestamp).replace(" ago", "") : "—";
+        const method = document.createElement("td"); method.textContent = health.method || "—";
+        const error = document.createElement("td"); error.className = "collectionHealthError"; error.textContent = health.error || "—"; error.title = health.error || "";
+        row.append(publisher, state, lastGood, method, error); body.appendChild(row);
+      }
+      table.appendChild(body); host.replaceChildren(table);
     }
 
     function drawMiniBars(canvas, buckets){
@@ -5837,6 +5874,7 @@
         const normalizedHistory = canonicalizeHistoryObj(history || {});
         // Render current headlines before optional history/Story Intelligence requests.
         const preliminary = computeIndicators(sources, normalizedHistory);
+        renderCollectionHealth(sources);
         renderOverview(sources, preliminary.indicators, {});
         timelineBySource = await loadCardTimelineBySource(12, sources);
         await loadStoryBadges();
@@ -5867,6 +5905,7 @@
           const placeholderIndicators = {};
           const normalizedHistory = { generatedAt: null, sources: {} };
           latestDrawerPayload = { normalizedHistory, sources: placeholderSources, indicators: placeholderIndicators };
+          renderCollectionHealth(placeholderSources);
           renderData(normalizedHistory, placeholderIndicators, placeholderSources, selectedWindowHours);
           renderHistory(normalizedHistory, placeholderSources, placeholderIndicators, {
             hostId: "playxplay-history",

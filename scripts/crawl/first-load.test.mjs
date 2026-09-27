@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import { chromium } from 'playwright';
 const html = fs.readFileSync('docs/index.html', 'utf8');
 const formatJs = fs.readFileSync('docs/js/format.js', 'utf8');
+const healthJs = fs.readFileSync('docs/js/health.js', 'utf8');
 const dataJs = fs.readFileSync('docs/js/data/supabase.js', 'utf8');
 const snapshot = (title, stamp = new Date().toISOString(), status = 'success') => ({cacheLike:{sources:{abc1:{ok:true,updatedAt:stamp,item:{title,url:'https://abcnews.go.com/test'},health:{crawlStatus:status}}}},history:{sources:{}}});
 async function scenario(fn) {
@@ -15,6 +16,7 @@ async function scenario(fn) {
   const url=new URL(route.request().url());
   if(url.pathname==='/newsboard/') return route.fulfill({contentType:'text/html',body:html});
   if(url.pathname.endsWith('/js/format.js')) return route.fulfill({contentType:'text/javascript',body:formatJs});
+  if(url.pathname.endsWith('/js/health.js')) return route.fulfill({contentType:'text/javascript',body:healthJs});
   if(url.pathname.endsWith('/js/data/supabase.js')) return route.fulfill({contentType:'text/javascript',body:dataJs});
   if(url.pathname.endsWith('/supabase.json')) return route.fulfill({json:{url:'https://live.example',anonKey:'public-test'}});
   if(url.pathname.endsWith('/newsboard_snapshot')) {
@@ -50,6 +52,8 @@ test('failed refresh preserves only the already rendered session',()=>scenario(a
  await s.page.goto('https://board.example/newsboard/');await settled(s.page);
  s.setOffline(true);await s.page.locator('#btn-reload').click();await settled(s.page);
  assert.match(await s.page.locator('body').innerText(),/Current live headline/);
+ assert.equal(await s.page.locator('#collection-health tbody tr').count(),12);
+ assert.match(await s.page.locator('[data-health-source="abc1"]').innerText(),/Current/);
  assert.doesNotMatch(await s.page.locator('body').innerText(),/Stale data|stale \(no change/);
 }));
 test('fresh outage shows unavailable and no historical headlines',()=>scenario(async s=>{
