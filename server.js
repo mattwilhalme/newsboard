@@ -11,6 +11,7 @@ import { collectBrowserTop10 } from "./lib/top10Browser.js";
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from "./lib/mobileHero.js";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
 import { fetchGdeltCoverage } from "./lib/gdeltCoverage.js";
+import { PUBLISHERS, PUBLISHER_IDS } from "./lib/publisherRegistry.js";
 
 const app = express();
 app.use(express.json());
@@ -606,23 +607,10 @@ function baseSource(id, name, home_url, kind = "hero") {
   };
 }
 
-const SOURCE_REGISTRY = [
-  { id: "abc1", name: "ABC News", home_url: "https://abcnews.com/" },
-  { id: "cbs1", name: "CBS News", home_url: "https://www.cbsnews.com/" },
-  { id: "usat1", name: "USA Today", home_url: "https://www.usatoday.com/" },
-  { id: "nbc1", name: "NBC News", home_url: "https://www.nbcnews.com/" },
-  { id: "cnn1", name: "CNN", home_url: "https://www.cnn.com/" },
-  { id: "guardian1", name: "The Guardian", home_url: "https://www.theguardian.com/" },
-  { id: "ap1", name: "Associated Press", home_url: "https://apnews.com/" },
-  { id: "latimes1", name: "Los Angeles Times", home_url: "https://www.latimes.com/" },
-  { id: "npr1", name: "NPR", home_url: "https://www.npr.org/" },
-  { id: "bbc1", name: "BBC", home_url: "https://www.bbc.com/" },
-  { id: "fox1", name: "Fox News", home_url: "https://www.foxnews.com/" },
-  { id: "yahoo1", name: "Yahoo News", home_url: "https://www.yahoo.com/news/" },
-];
+const SOURCE_REGISTRY = PUBLISHERS.map(({ id, name, homeUrl }) => ({ id, name, home_url: homeUrl }));
 
 const SERVER_SOURCE_IDS = SOURCE_REGISTRY.map((s) => s.id);
-const UI_EXPECTED_SOURCE_IDS = ["abc1", "cbs1", "usat1", "nbc1", "cnn1", "guardian1", "ap1", "latimes1", "npr1", "bbc1", "fox1", "yahoo1"];
+const UI_EXPECTED_SOURCE_IDS = PUBLISHER_IDS;
 
 function canonicalServerSourceId(rawId) {
   const s = String(rawId || "").toLowerCase().trim();

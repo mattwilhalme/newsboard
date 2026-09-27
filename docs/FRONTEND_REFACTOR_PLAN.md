@@ -28,7 +28,7 @@ No framework or bundler is required initially. Use native ES modules and preserv
 
 ## Extraction order
 
-1. **Pure shared utilities:** move escaping, time formatting, URL normalization, and validation functions. Add direct unit tests before changing call sites.
+1. **Pure shared utilities (completed in Cleanup Pass 2):** escaping, time formatting, URL normalization, and error summarization now live in `docs/js/format.js` with direct unit coverage. It remains a classic static script to avoid converting the whole app to modules at once.
 2. **Supabase/data access:** isolate config loading, timeout/retry behavior, RPC calls, and response normalization. The first-load suite must continue proving no generated-data fallback and automatic outage recovery.
 3. **Drawer shell:** extract open/close/focus/Escape behavior without moving drawer-specific rendering. Verify desktop/mobile focus and overlay behavior.
 4. **Story History and GDELT drawers:** extract their independent fetch/render paths. Preserve failure isolation so optional intelligence never hides raw headlines.

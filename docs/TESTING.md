@@ -9,6 +9,9 @@
 - browser dispatcher authentication, atomic dispatch, retry, and response handling;
 - targeted browser worker selection/persistence behavior;
 - deterministic Story Identity matching and ambiguity rejection;
+- publisher-registry parity and sanitized centerpiece parser fixtures;
+- frontend formatting, URL normalization, error summarization, and HTML escaping;
+- GitHub Actions read-only/action-entry-point contracts;
 - first-load live-data retry, stale-cache avoidance, last-session retention, publisher isolation, and fallback-state rendering;
 - rendered mobile centerpiece and browser Top 10 extraction fixtures;
 - GDELT normalization/matching and drawer UI behavior.
@@ -23,17 +26,16 @@ Run these only against an explicitly selected test or controlled project and pre
 
 ## Important gaps
 
-1. Several HTTP publishers rely on live markup without small checked-in parser fixtures.
-2. Browser fixtures cover selectors but not a sanitized representative DOM for every publisher.
-3. The database routing registry and code adapter registries have no automatic parity/capability check.
-4. Frontend views beyond first-load and targeted drawers lack focused DOM fixtures.
-5. Workflow YAML is syntax-checked during cleanup but has no local schema/action-contract test.
-6. Long-retention Story Intelligence candidate saturation and reconstruction performance are not benchmarked.
-7. External GDELT latency/rate-limit behavior prevents deterministic live-result assertions.
+1. Browser adapters do not yet consume the shared sanitized publisher fixture corpus directly.
+2. Blocked, invalid, rewrite, replacement, and rank-movement fixture variants are not complete for every publisher.
+3. Frontend views beyond first-load and targeted drawers lack focused DOM fixtures.
+4. Workflow validation is a focused action contract check, not a complete YAML/schema validator.
+5. Long-retention Story Intelligence candidate saturation and reconstruction performance are not benchmarked.
+6. External GDELT latency/rate-limit behavior prevents deterministic live-result assertions.
 
 ## Fixture roadmap
 
-Add minimal sanitized HTML under a future `test/fixtures/publishers/<source-id>/` hierarchy. Each fixture should contain only the DOM and embedded metadata required by its adapter—headings, links, ordering containers, visibility attributes, and deliberate distractors. Do not check in full downloaded publisher pages.
+Minimal sanitized centerpiece HTML now lives under `test/fixtures/publishers/<source-id>/`. Each fixture contains only the DOM and embedded metadata required by its adapter—never full downloaded publisher pages. Extend this corpus with the cases below and migrate browser tests to consume it directly.
 
 For every publisher, cover:
 
