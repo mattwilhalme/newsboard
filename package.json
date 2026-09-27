@@ -17,6 +17,10 @@
     "install-browsers": "npx playwright install",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev",
+    "test:unit": "node --test scripts/crawl/collectors.test.mjs scripts/crawl/top10.test.mjs scripts/crawl/browser-dispatch.test.mjs scripts/crawl/github-browser-gap-fill.test.mjs scripts/story/matcher.test.mjs scripts/gdelt-coverage.test.mjs",
+    "test:ui": "PLAYWRIGHT_BROWSER_CHANNEL=chrome node --test scripts/crawl/first-load.test.mjs scripts/crawl/mobile-hero.test.mjs scripts/crawl/top10-browser.test.mjs && npm run test:gdelt-ui",
+    "verify": "npm run test:unit && npm run test:ui",
+    "test": "npm run verify",
     "test:gdelt": "node scripts/gdelt-coverage.test.mjs",
     "test:gdelt-ui": "node scripts/gdelt-ui.test.mjs"
   },

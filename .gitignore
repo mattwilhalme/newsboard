@@ -18,6 +18,12 @@ cache.json
 # OS files
 .DS_Store
 
+# Editor/manual backup residue
+*.backup
+*.backup[0-9]*
+*.orig
+*.rej
+
 # Temporary files
 *.tmp
 *.save
@@ -26,19 +32,6 @@ cache.json
 history.json
 current.json
 unified.json
-cnn-hp.html
-nbc-hp.html
-reuters-hp.html
-abc-raw.html
-cbs-hp.html
-usat-hp.html
-theguardian-hp.html
-reuters-hp.html
-washington-post.html
-wsj-hp.html
-fox-news.html
-abc-hp.html
-abc-raw.html
 supabase_cleanup.mjs
 !docs/data/history.json
 !docs/data/current.json
