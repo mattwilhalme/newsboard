@@ -68,6 +68,8 @@
     getTop10: (hours = 168) => rpc("newsboard_top10", { p_hours: Number(hours) }),
     getStoryBadges: () => rpc("newsboard_story_badges", {}, { timeoutMs: 3500 }),
     getStoryHistory: (storyId) => rpc("newsboard_story_history", { p_story: storyId }, { timeoutMs: 5000 }),
+    getRecentStories: (hours = 24, limit = 50) => rpc("newsboard_recent_stories", { p_hours: Number(hours), p_limit: Number(limit) }, { timeoutMs: 5000 }),
+    getStoryOperationalHealth: () => rpc("newsboard_story_operational_health", {}, { timeoutMs: 5000 }),
     invalidateCurrentObservations: () => invalidate("newsboard_snapshot"),
     requestJson,
     normalizeError,

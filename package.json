@@ -23,7 +23,8 @@
     "verify": "npm run validate:workflows && npm run test:unit && npm run test:ui",
     "test": "npm run verify",
     "test:gdelt": "node scripts/gdelt-coverage.test.mjs",
-    "test:gdelt-ui": "node scripts/gdelt-ui.test.mjs"
+    "test:gdelt-ui": "node scripts/gdelt-ui.test.mjs",
+    "story:audit": "node scripts/story/audit.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.95.3",

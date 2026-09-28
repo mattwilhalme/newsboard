@@ -1270,6 +1270,11 @@
 
     <section id="view-playxplay" style="display:none">
       <section class="labsSection">
+        <div class="labsHeader"><h2>Recent Stories</h2><div class="labsHelp">Multi-publisher identities from processed Newsboard observations. Detection order is not publication order.</div></div>
+        <div id="story-processing-health" class="tiny"></div>
+        <div id="recent-stories" class="historyList"></div>
+      </section>
+      <section class="labsSection">
         <div class="labsHelp">Live sequence of publisher top-story updates.</div>
         <div id="playxplay-status" class="tiny" style="margin-bottom:8px;color:var(--muted)"></div>
         <div class="historyList" id="playxplay-history"></div>
@@ -3496,6 +3501,7 @@
     let storyDrawerRequest = 0;
     let gdeltRequest = 0;
     let storyDrawerTrigger = null;
+    let openedStoryDeepLink = false;
     const FIRST_MEANING = "First detected by NewsBoard among monitored publishers in available processed history—not first published worldwide.";
 
     async function loadStoryBadges(){
@@ -3503,6 +3509,16 @@
         const rows = await NewsboardData.getStoryBadges();
         storyBadges = Array.isArray(rows) ? rows : [];
       } catch { storyBadges = []; } // Optional intelligence never blocks raw news.
+    }
+    async function loadRecentStories(){
+      const host=$("recent-stories"),healthHost=$("story-processing-health");if(!host)return;
+      try{
+        const [rows,health]=await Promise.all([NewsboardData.getRecentStories(24,50),NewsboardData.getStoryOperationalHealth().catch(()=>null)]);
+        if(healthHost)healthHost.textContent=health?`Story processing: ${health.status} · ${Math.round(Number(health.lag_seconds||0)/60)}m lag · ${health.unprocessed_batches||0} queued`:"Story processing status unavailable";
+        host.replaceChildren();
+        for(const story of Array.isArray(rows)?rows:[]){const row=document.createElement("button");row.type="button";row.className="hItem";row.innerHTML=`<span class="hTitle"></span><span class="tiny"></span>`;row.querySelector(".hTitle").textContent=story.canonical_label;row.querySelector(".tiny").textContent=`${story.publishers_detected} publishers · last observed ${ago(story.last_seen_at)}`;row.addEventListener("click",()=>openStoryHistory(story.story_id,row));host.appendChild(row);}
+        if(!host.children.length)host.textContent="No multi-publisher stories in this window.";
+      }catch{host.textContent="Recent Story History is temporarily unavailable.";if(healthHost)healthHost.textContent="Story processing status unavailable";}
     }
     function storyBadge(sourceId, item){
       const badge = storyBadges.find(row => row.source_id === sourceId &&
@@ -3528,6 +3544,7 @@
       $("drawer-overlay").classList.add("show");
       host.textContent = "Loading story history…";
       $("btn-story-history-close").focus();
+      const deepLink=new URL(location.href);deepLink.searchParams.set("story",storyId);window.history.replaceState(null,"",deepLink);
       try {
         const data = await NewsboardData.getStoryHistory(storyId);
         if (request !== storyDrawerRequest) return;
@@ -5896,6 +5913,7 @@
         renderCollectionHealth(sources, operationalHealth);
         timelineBySource = await loadCardTimelineBySource(12, sources);
         await loadStoryBadges();
+        await loadRecentStories();
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
         latestDrawerPayload = { normalizedHistory, sources, indicators };
         renderData(normalizedHistory, indicators, sources, selectedWindowHours);
@@ -5912,6 +5930,7 @@
           renderSourceDataPanel(selectedSourceDataId);
         }
         await loadDeepDiveData();
+        if(!openedStoryDeepLink){const storyId=new URL(location.href).searchParams.get("story");if(storyId){openedStoryDeepLink=true;openStoryHistory(storyId,null);}}
 
       } catch (e) {
         console.error("Refresh error:", e);

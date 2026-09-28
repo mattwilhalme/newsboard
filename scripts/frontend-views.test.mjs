@@ -39,6 +39,8 @@ test('major views preserve deterministic content, controls and ordering', async 
     if (url.pathname.endsWith('/newsboard_top10')) return route.fulfill({ json: top10 });
     if (url.pathname.endsWith('/newsboard_story_badges')) return route.fulfill({ json: [{story_id:storyId,source_id:'abc1',url:snapshot.cacheLike.sources.abc1.item.url,title:snapshot.cacheLike.sources.abc1.item.title,first_source_id:'abc1',publisher_count:2,first_detected_at:earlier}] });
     if (url.pathname.endsWith('/newsboard_story_history')) return route.fulfill({ json: storyHistory });
+    if (url.pathname.endsWith('/newsboard_recent_stories')) return route.fulfill({ json: [{story_id:storyId,canonical_label:'ABC deterministic headline',publishers_detected:2,last_seen_at:now}] });
+    if (url.pathname.endsWith('/newsboard_story_operational_health')) return route.fulfill({ json: {status:'healthy',lag_seconds:60,unprocessed_batches:0} });
     return route.abort();
   });
   try {
@@ -64,6 +66,8 @@ test('major views preserve deterministic content, controls and ordering', async 
     assert.equal(await page.locator('#data-window-page').inputValue(), '6');
 
     await page.locator('#tab-playxplay').click();
+    assert.match(await page.locator('#story-processing-health').innerText(),/healthy[\s\S]*1m lag/);
+    assert.match(await page.locator('#recent-stories').innerText(),/ABC deterministic headline[\s\S]*2 publishers/);
     const historyText = await page.locator('#playxplay-history').innerText();
     assert.ok(historyText.indexOf('ABC deterministic headline') < historyText.indexOf('CBS retained last-good headline'));
     await page.locator('#playxplay-history').getByRole('button', { name: 'Show all' }).click();
