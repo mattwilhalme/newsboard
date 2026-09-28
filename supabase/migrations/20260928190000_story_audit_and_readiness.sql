@@ -38,7 +38,7 @@ create function public.newsboard_story_operational_health() returns jsonb
 language sql stable security invoker set search_path='' as $$
 with state as(select max(observed_at) raw_at from public.story_raw_batches),processed as(select max(observed_at) processed_at from public.story_processed_batches), failed as(select count(*) n from public.story_processing_runs where status='failed' and started_at>now()-interval '24 hours')
 select jsonb_build_object('latest_raw_observation',s.raw_at,'latest_processed_observation',p.processed_at,
- 'lag_seconds',greatest(0,extract(epoch from(coalesce(s.raw_at,now())-coalesce(p.processed_at,s.raw_at,now())))::bigint,
+ 'lag_seconds',greatest(0,extract(epoch from(coalesce(s.raw_at,now())-coalesce(p.processed_at,s.raw_at,now())))::bigint),
  'unprocessed_batches',(select count(*) from public.story_raw_batches b where not exists(select 1 from public.story_processed_batches d where d.batch_key=b.batch_key)),
  'failed_runs_24h',f.n,'status',case when f.n>0 then 'degraded' when s.raw_at-p.processed_at>interval '15 minutes' then 'degraded' else 'healthy' end)
 from state s cross join processed p cross join failed f;
