@@ -492,6 +492,7 @@
     .storyHistoryMetrics dt{color:var(--muted)}.storyHistoryMetrics dd{margin:0;font-weight:650}
     .storyPropagation{list-style:none;padding:0;margin:24px 0}.storyPropagation li{border-left:2px solid var(--line);padding:0 0 22px 15px;margin-left:5px}
     .storyPropagation p{font-size:13px;line-height:1.5;margin:7px 0}.storyEventLabel{font-size:14px;font-weight:700;margin-top:5px}
+    .storyJourney{width:100%;border-collapse:collapse;margin:18px 0;font-size:12px}.storyJourney th,.storyJourney td{text-align:left;padding:7px;border-bottom:1px solid var(--line)}.storyJourney th{color:var(--muted)}
     .gdeltDetected{padding:12px 0 16px;border-bottom:1px solid var(--line);font-size:13px}.gdeltDetected strong{display:block;margin-bottom:4px}.gdeltList{list-style:none;margin:0;padding:8px 0}.gdeltResult{padding:13px 0;border-bottom:1px solid var(--line)}
     .gdeltResultMeta{font-size:12px;color:var(--muted);margin-bottom:5px}.gdeltResult a{color:var(--text);font-family:var(--font-serif);font-size:17px;line-height:1.3;text-decoration:none}.gdeltResult a:hover{color:var(--blue);text-decoration:underline}
     .gdeltPill{display:inline-block;margin-left:6px;padding:2px 5px;border-radius:999px;background:#EFF6FF;color:var(--blue);font-size:10px;font-family:var(--font-sans);font-weight:750}.gdeltSelf{background:var(--highlight-bg);color:var(--highlight-text)}.gdeltEarliest{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}.gdeltDebug{margin-top:10px;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
@@ -3531,16 +3532,24 @@
         const data = await NewsboardData.getStoryHistory(storyId);
         if (request !== storyDrawerRequest) return;
         if (!data?.story) { host.textContent = "Story history is not available yet."; return; }
-        const story = data.story, members = data.members || [];
+        const story = data.story, members = data.members || [], summary = data.metrics || {};
         const first = members.find(m => m.source_id === story.first_source_id);
         const heading = document.createElement("h2"); heading.className = "storyHistoryHeadline"; heading.textContent = story.canonical_label;
         host.replaceChildren(heading);
         const metrics = document.createElement("dl"); metrics.className = "storyHistoryMetrics";
-        for (const [label, value] of [["First detected", `${first?.publisher || story.first_source_id} · ${fmtTime(story.first_detected_at)}`], ["Detected", ago(story.first_detected_at)], ["Recent publishers", data.publisher_count], ["Current No. 1s", data.current_number_ones]]) {
+        for (const [label, value] of [["First detected by Newsboard", `${first?.publisher || story.first_source_id} · ${fmtTime(story.first_detected_at)}`], ["Detected", ago(story.first_detected_at)], ["Publishers detected", summary.publishers_detected ?? members.length], ["Recent publishers", data.publisher_count], ["Time to peak coverage", summary.time_to_peak_seconds == null ? "—" : fmtDurationSeconds(summary.time_to_peak_seconds)], ["Time to first No. 1", summary.time_to_number_one_seconds == null ? "Not observed" : fmtDurationSeconds(summary.time_to_number_one_seconds)], ["Rank changes", summary.rank_changes ?? 0], ["Headline rewrites", summary.headline_changes ?? 0]]) {
           const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=label;dd.textContent=String(value);metrics.append(dt,dd);
         }
         host.appendChild(metrics);
-        const note=document.createElement("p");note.className="tiny";note.textContent=FIRST_MEANING+" Counts require a successful observation within two hours. Most sources track only their homepage lead; ABC tracks its Top 10. Times are shown in your timezone.";host.appendChild(note);
+        const note=document.createElement("p");note.className="tiny";note.textContent=FIRST_MEANING+" Recent counts require a successful observation within two hours. Ranked events are generated only from complete, centerpiece-aligned Top 10 runs; partial coverage creates no movement or exit claims. Times are shown in your timezone.";host.appendChild(note);
+        if (members.length) {
+          const title=document.createElement("h3");title.textContent="Publisher journey";host.appendChild(title);
+          const table=document.createElement("table");table.className="storyJourney";table.innerHTML="<thead><tr><th>Publisher</th><th>First detected</th><th>First rank</th><th>Peak</th><th>Observed</th></tr></thead>";
+          const body=document.createElement("tbody");
+          for (const member of members) { const row=document.createElement("tr"); for (const value of [member.publisher,fmtTime(member.first_seen_at),member.first_rank?`#${member.first_rank}`:"Lead",member.peak_rank?`#${member.peak_rank}`:"—",fmtDurationSeconds(member.observed_duration_seconds||0)]) { const cell=document.createElement("td");cell.textContent=String(value);row.appendChild(cell); } body.appendChild(row); }
+          table.appendChild(body);host.appendChild(table);
+        }
+        const timelineTitle=document.createElement("h3");timelineTitle.textContent="Observed timeline";host.appendChild(timelineTitle);
         const list=document.createElement("ol");list.className="storyPropagation";
         for (const event of data.events || []) {
           const li=document.createElement("li");
