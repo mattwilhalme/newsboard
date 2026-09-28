@@ -25,8 +25,10 @@ export function validateTop10(candidates,{sourceId,baseUrl,centerpiece,diagnosti
   }
   const agreement=Boolean(items.length && canonicalArticleUrl(centerpiece?.url,baseUrl)===items[0].url);
   const quality=!items.length?'failed':!agreement?'warning':items.length===10?'complete':'partial';
-  return {items,quality,diagnostics:{...diagnostics,source_id:sourceId,item_count:items.length,unique:items.length,
+  return {items,quality,diagnostics:{...diagnostics,source_id:sourceId,adapter:sourceId,collector_method:diagnostics.method||null,
+    item_count:items.length,items_found:items.length,expected_items:10,unique:items.length,
     centerpiece_agreement:agreement,duplicates_removed:rejected.filter(r=>r.reason==='duplicate URL').length,
+    duplicate_urls_removed:rejected.filter(r=>r.reason==='duplicate URL').length,invalid_items_removed:rejected.length,
     candidates_rejected:rejected.length,rejected:rejected.slice(0,80),candidate_count:candidates?.length||0,
     warning:!agreement?'Rank 1 differs from centerpiece; excluded from rank-event/Story Identity processing':items.length<10?'Partial editorial list; no fillers or rank/exit events':null}};
 }

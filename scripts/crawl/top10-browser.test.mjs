@@ -14,6 +14,10 @@ const cases={
  cnn1:['https://cnn.com/2026/09/23/news/','<div class="container_lead-package">','</div>',(u,t)=>`<a href="${u}"><span style="display:block" class="container__headline-text">${t}</span></a>`],
  guardian1:['https://theguardian.com/world/2026/sep/23/','<main><div id="container-news"><ul>','</ul></div></main>',(u,t)=>`<li><a href="${u}" aria-label="${t}"></a><h3 class="card-headline"><span class="headline-text">${t}</span></h3></li>`],
  yahoo1:['https://yahoo.com/news/','<div id="top-stories">','</div>',(u,t,i)=>`<article aria-roledescription="slide" aria-label="Slide ${i+1} of 10" style="position:absolute;left:${i*400}px;top:100px;width:350px"><a data-ylk="elm:hdln" href="${u}">${t}</a></article>`],
+ latimes1:['https://latimes.com/california/story/2026-09-23/','<main>','</main>',(u,t)=>`<h2><a href="${u}">${t}</a></h2>`],
+ npr1:['https://npr.org/2026/09/23/','<main>','</main>',(u,t)=>`<a data-metrics-ga4="homepage_curation_click curated story" href="${u}">${t}</a>`],
+ bbc1:['https://bbc.com/news/articles/','<main>','</main>',(u,t)=>`<a href="${u}"><h2 data-testid="card-headline">${t}</h2></a>`],
+ fox1:['https://foxnews.com/politics/','<main class="main-content-primary">','</main>',(u,t)=>`<article class="story-${t.length}"><h2><a href="${u}">${t}</a></h2></article>`],
 };
 for(const [id,[base,start,end,card]] of Object.entries(cases))test(`${id}: publisher scope, rendered order, URL dedup and ten valid ranks`,async()=>{
  const url=i=>base+i+(id==='yahoo1'?'.html':'');

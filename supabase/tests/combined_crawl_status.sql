@@ -28,9 +28,11 @@ begin
  if not sid=any(work) or other=any(work) then raise exception 'Selective assignment failed: %',work; end if;
  select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
  if state<>'running' then raise exception 'Browser start must be running: %',state; end if;
- perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',sid,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','browser','success',false,'error','Browser failed'));
+ perform public.newsboard_save_source(jsonb_build_object('run_id',rid,'source_id',sid,'started_at',clock_timestamp(),'completed_at',clock_timestamp(),'method','browser','success',false,'outcome','blocked','http_status',403,'error','Mobile homepage HTTP 403'));
  select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
  if state<>'failed' then raise exception 'Both methods failed: %',state; end if;
+ if (select last_outcome from public.crawler_browser_jobs where source_id=sid)<>'blocked' then raise exception 'Blocked outcome missing'; end if;
+ if (select next_retry_at from public.crawler_browser_jobs where source_id=sid)<now()+interval '29 minutes' then raise exception 'Initial blocked cooldown too short'; end if;
  if (select item from public.crawler_current where source_id=sid) is distinct from before_item then raise exception 'Browser failure erased headline'; end if;
  perform public.newsboard_finish_run(rid,'Fixture failure');
  rid:=public.newsboard_start_run('manual_edge_function');
@@ -47,6 +49,7 @@ begin
  perform public.newsboard_finish_run(rid,null);
  select crawl_status into state from public.v_crawler_attempt_status where source_id=sid;
  if state<>'success' then raise exception 'Browser recovery must supersede failed HTTP: %',state; end if;
+ if (select failures<>0 or next_retry_at is not null or last_outcome<>'success' from public.crawler_browser_jobs where source_id=sid) then raise exception 'Successful crawl did not reset browser backoff'; end if;
  snap:=public.newsboard_snapshot()->'cacheLike'->'sources';
  if snap->sid->'health'->>'crawlStatus'<>'success' or snap->other->'health'->>'crawlStatus'<>'failed' then raise exception 'Source independence failed'; end if;
  if snap->sid->'health'->'primaryAttempt'->>'status'<>'failed' or snap->sid->'health'->'browserAttempt'->>'status'<>'succeeded' then raise exception 'Attempt metadata conflated'; end if;

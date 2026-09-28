@@ -858,6 +858,9 @@
     .collectionHealthTable .healthState.current{color:var(--good)}
     .collectionHealthTable .healthState.delayed{color:#9a6700}
     .collectionHealthTable .healthState.issue{color:var(--bad)}
+    .collectionHealthTable .healthState.healthy{color:var(--good)}
+    .collectionHealthTable .healthState.degraded,.collectionHealthTable .healthState.blocked{color:#9a6700}
+    .collectionHealthTable .healthState.stale,.collectionHealthTable .healthState.unavailable{color:var(--bad)}
     .collectionHealthError{max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)}
     .emptyState{
       border:1px dashed var(--line-strong);
@@ -2970,24 +2973,28 @@
       renderDataInto($("data-page"), normalizedHistory, indicatorsById, currentSources, windowSpec);
     }
 
-    function renderCollectionHealth(sources = {}){
+    function renderCollectionHealth(sources = {}, operational = {}){
       const host = $("collection-health");
       if (!host) return;
       const table = document.createElement("table");
       table.className = "dataTable collectionHealthTable";
-      table.innerHTML = "<thead><tr><th>Publisher</th><th>Status</th><th>Last good</th><th>Method</th><th>Latest issue</th></tr></thead>";
+      table.innerHTML = "<thead><tr><th>Publisher</th><th>Health</th><th>Last valid</th><th>Last attempt</th><th>24h success</th><th>Fallback</th><th>Top 10</th><th>Story processing</th></tr></thead>";
       const body = document.createElement("tbody");
       for (const id of EXPECTED_SOURCE_IDS) {
         const source = sources?.[id] || null;
-        const health = derivePublisherHealth(source);
+        const op = operational?.[id] || {};
+        const health = op.health ? { ...derivePublisherHealth(source), state: op.health[0].toUpperCase()+op.health.slice(1) } : derivePublisherHealth(source);
         const row = document.createElement("tr");
         row.setAttribute("data-health-source", id);
         const publisher = document.createElement("td"); publisher.textContent = sourceLabel(id, source);
         const state = document.createElement("td"); state.className = `healthState ${health.state.toLowerCase()}`; state.textContent = health.state;
         const lastGood = document.createElement("td"); lastGood.textContent = health.timestamp ? ago(health.timestamp).replace(" ago", "") : "—";
-        const method = document.createElement("td"); method.textContent = health.method || "—";
-        const error = document.createElement("td"); error.className = "collectionHealthError"; error.textContent = health.error || "—"; error.title = health.error || "";
-        row.append(publisher, state, lastGood, method, error); body.appendChild(row);
+        const attempt = document.createElement("td"); attempt.textContent = op.last_attempt_status ? `${op.last_attempt_status}${op.http_status ? ` ${op.http_status}` : ""}` : (source?.health?.crawlStatus || "—"); attempt.title = op.last_error || health.error || "";
+        const rate = document.createElement("td"); rate.textContent = op.success_rate_24h == null ? "—" : `${Math.round(Number(op.success_rate_24h)*100)}%`;
+        const fallback = document.createElement("td"); fallback.textContent = op.browser_fallback_state ? `${op.browser_fallback_state}${op.next_retry_at ? ` · retry ${fmtTime(op.next_retry_at)}` : ""}` : "—";
+        const top10 = document.createElement("td"); top10.textContent = op.top10_quality ? `${op.top10_quality} (${op.top10_items ?? 0})` : "Unavailable";
+        const story = document.createElement("td"); story.textContent = op.story_processed_through ? `${Math.round(Number(op.story_processing_lag_seconds||0)/60)}m lag` : "Unprocessed";
+        row.append(publisher, state, lastGood, attempt, rate, fallback, top10, story); body.appendChild(row);
       }
       table.appendChild(body); host.replaceChildren(table);
     }
@@ -5876,6 +5883,8 @@
         const preliminary = computeIndicators(sources, normalizedHistory);
         renderCollectionHealth(sources);
         renderOverview(sources, preliminary.indicators, {});
+        const operationalHealth = await NewsboardData.getCollectionHealth().catch(() => ({}));
+        renderCollectionHealth(sources, operationalHealth);
         timelineBySource = await loadCardTimelineBySource(12, sources);
         await loadStoryBadges();
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);

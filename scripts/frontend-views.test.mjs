@@ -32,6 +32,7 @@ test('major views preserve deterministic content, controls and ordering', async 
     if (assets.has(url.pathname)) { const [contentType, body] = assets.get(url.pathname); return route.fulfill({ contentType, body }); }
     if (url.pathname.endsWith('/supabase.json')) return route.fulfill({ json: { url: 'https://mock.supabase.test', anonKey: 'test-key' } });
     if (url.pathname.endsWith('/newsboard_snapshot')) return route.fulfill({ json: snapshot });
+    if (url.pathname.endsWith('/newsboard_collection_health')) return route.fulfill({ json: {} });
     if (url.pathname.endsWith('/newsboard_timeline')) return route.fulfill({ json: { events: [{ ts: now, source_id: 'abc1', kind: 'new_url', title: 'ABC deterministic headline', url: snapshot.cacheLike.sources.abc1.item.url }] } });
     if (url.pathname.endsWith('/newsboard_top10')) return route.fulfill({ json: top10 });
     if (url.pathname.endsWith('/newsboard_story_badges')) return route.fulfill({ json: [] });
@@ -48,8 +49,8 @@ test('major views preserve deterministic content, controls and ordering', async 
     await page.locator('#tab-data').click();
     assert.equal(await page.locator('#view-data').isVisible(), true);
     assert.equal(await page.locator('#collection-health tbody tr').count(), 12);
-    assert.match(await page.locator('[data-health-source="abc1"]').innerText(), /ABC News[\s\S]*Current[\s\S]*http/);
-    assert.match(await page.locator('[data-health-source="cbs1"]').innerText(), /CBS News[\s\S]*Issue[\s\S]*browser[\s\S]*upstream blocked/);
+    assert.match(await page.locator('[data-health-source="abc1"]').innerText(), /ABC News[\s\S]*Healthy[\s\S]*success/);
+    assert.match(await page.locator('[data-health-source="cbs1"]').innerText(), /CBS News[\s\S]*Degraded[\s\S]*failed/);
     assert.equal(await page.locator('#cards-grid .card').count(), 12);
     assert.match(await page.locator('#data-page').innerText(), /ABC News[\s\S]*CBS News/);
     await page.locator('#data-window-page').selectOption('6');

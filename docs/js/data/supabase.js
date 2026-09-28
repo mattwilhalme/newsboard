@@ -63,6 +63,7 @@
     clearCache,
     getConfig,
     getCurrentObservations: () => rpc("newsboard_snapshot"),
+    getCollectionHealth: () => rpc("newsboard_collection_health", {}, { timeoutMs: 5000 }),
     getTimeline: (hours = 12) => rpc("newsboard_timeline", { p_hours: Number(hours) }),
     getTop10: (hours = 168) => rpc("newsboard_top10", { p_hours: Number(hours) }),
     getStoryBadges: () => rpc("newsboard_story_badges", {}, { timeoutMs: 3500 }),

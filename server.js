@@ -2203,6 +2203,7 @@ async function scrapeLATimesHero() {
       : null;
 
     const fetchedAt = nowISO();
+    const ranked = item ? await collectBrowserTop10(page, "latimes1", item) : null;
     const snapshot = {
       id: "latimes1",
       fetchedAt,
@@ -2210,11 +2211,12 @@ async function scrapeLATimesHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "LA Times not found"),
       item,
+      top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, top10: snapshot.top10, top10_quality: snapshot.top10_quality, top10_diagnostics: snapshot.top10_diagnostics };
   });
 }
 
@@ -2312,6 +2314,7 @@ async function scrapeNPRHero() {
       : null;
 
     const fetchedAt = nowISO();
+    const ranked = item ? await collectBrowserTop10(page, "npr1", item) : null;
     const snapshot = {
       id: "npr1",
       fetchedAt,
@@ -2319,11 +2322,12 @@ async function scrapeNPRHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "NPR not found"),
       item,
+      top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics,
     };
 
     const archive = await archiveRun(page, runId, snapshot);
 
-    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item };
+    return { ok: Boolean(item), error: snapshot.error, updatedAt: nowISO(), runId, archive, item, top10: snapshot.top10, top10_quality: snapshot.top10_quality, top10_diagnostics: snapshot.top10_diagnostics };
   });
 }
 
@@ -2490,6 +2494,7 @@ async function scrapeBBCHero() {
       : null;
 
     const fetchedAt = nowISO();
+    const ranked = item ? await collectBrowserTop10(page, "bbc1", item) : null;
     const pageTitle = await page.title().catch(() => null);
     const snapshot = {
       id: "bbc1",
@@ -2498,6 +2503,7 @@ async function scrapeBBCHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "BBC not found"),
       item,
+      top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics,
       meta: {
         run_kind: "hero",
         profile: "desktop",
@@ -2519,6 +2525,7 @@ async function scrapeBBCHero() {
       archive,
       item,
       meta: snapshot.meta,
+      top10: snapshot.top10, top10_quality: snapshot.top10_quality, top10_diagnostics: snapshot.top10_diagnostics,
     };
   });
 }
@@ -2709,6 +2716,7 @@ async function scrapeFoxHero() {
       : null;
 
     const fetchedAt = nowISO();
+    const ranked = item ? await collectBrowserTop10(page, "fox1", item) : null;
     const pageTitle = await page.title().catch(() => null);
     const snapshot = {
       id: "fox1",
@@ -2717,6 +2725,7 @@ async function scrapeFoxHero() {
       ok: Boolean(item),
       error: item ? null : (hero?.error || "Fox News not found"),
       item,
+      top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics,
       meta: {
         run_kind: "hero",
         profile: "desktop",
@@ -2738,6 +2747,7 @@ async function scrapeFoxHero() {
       archive,
       item,
       meta: snapshot.meta,
+      top10: snapshot.top10, top10_quality: snapshot.top10_quality, top10_diagnostics: snapshot.top10_diagnostics,
     };
   });
 }

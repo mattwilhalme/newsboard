@@ -30,10 +30,12 @@ Deno.serve(async req=>{
      if(!publisher) throw new Error('No configured HTTP adapter');
      output=await collectPublisher(publisher);
     }catch(e){failure=e;}
-    const payload={run_id:run,source_id:cfg.source_id,started_at:started,completed_at:new Date().toISOString(),method:cfg.method,success:!failure,error:failure?.message||null,http_status:output?.http_status||failure?.httpStatus||null,output};
+    const httpStatus=output?.http_status||failure?.httpStatus||null;
+    const outcome=!failure?'success':[403,429].includes(httpStatus)?'blocked':'crawl_failed';
+    const payload={run_id:run,source_id:cfg.source_id,started_at:started,completed_at:new Date().toISOString(),method:cfg.method,success:!failure,outcome,error:failure?.message||null,http_status:httpStatus,output};
     const {error:saveError}=await db.rpc('newsboard_save_source',{p:payload});
     if(saveError){
-     const {error:recordError}=await db.from('crawler_source_runs').upsert({run_id:run,source_id:cfg.source_id,started_at:started,completed_at:new Date().toISOString(),collection_method:cfg.method,success:false,item_count:0,duration_ms:Date.now()-Date.parse(started),error:`persistence: ${saveError.message}`});
+     const {error:recordError}=await db.from('crawler_source_runs').upsert({run_id:run,source_id:cfg.source_id,started_at:started,completed_at:new Date().toISOString(),collection_method:cfg.method,success:false,outcome:'infrastructure_error',item_count:0,duration_ms:Date.now()-Date.parse(started),error:`persistence: ${saveError.message}`});
      if(recordError) throw new Error(`Publisher and failure persistence failed: ${cfg.source_id}`);
     }
     summary.push({publisher:cfg.source_id,success:!failure&&!saveError,items:output?.items.length||0,error:saveError?.message||failure?.message||null});

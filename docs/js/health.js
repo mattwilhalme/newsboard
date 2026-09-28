@@ -2,7 +2,9 @@
   // The primary crawl runs every five minutes and browser observations become due
   // after seven minutes. Fifteen minutes allows one slow/missed cycle without
   // describing a normally collected observation as delayed.
-  const COLLECTION_FRESHNESS_MS = 15 * 60 * 1000;
+  const HEALTHY_MS = 15 * 60 * 1000;
+  const STALE_MS = 45 * 60 * 1000;
+  const COLLECTION_FRESHNESS_MS = HEALTHY_MS;
 
   function derivePublisherHealth(source, now = Date.now()) {
     const timestamp = source?.health?.lastSuccessfulCrawlAt || source?.updatedAt || source?.updated_at || null;
@@ -18,11 +20,14 @@
       ? source.health.latestError.trim()
       : null;
 
-    let state = "Unknown";
-    if (hasObservation && explicitFailure) state = "Issue";
-    else if (hasObservation) state = ageMs <= COLLECTION_FRESHNESS_MS ? "Current" : "Delayed";
+    const outcome = String(source?.health?.lastAttemptStatus || source?.health?.browserAttempt?.outcome || "").toLowerCase();
+    let state = "Unavailable";
+    if (hasObservation && ageMs > STALE_MS) state = "Stale";
+    else if (hasObservation && outcome === "blocked") state = "Blocked";
+    else if (hasObservation && explicitFailure) state = "Degraded";
+    else if (hasObservation) state = ageMs <= HEALTHY_MS ? "Healthy" : "Degraded";
     return Object.freeze({ state, timestamp: hasObservation ? timestamp : null, ageMs, method, error });
   }
 
-  global.NewsboardHealth = Object.freeze({ COLLECTION_FRESHNESS_MS, derivePublisherHealth });
+  global.NewsboardHealth = Object.freeze({ COLLECTION_FRESHNESS_MS, HEALTHY_MS, STALE_MS, derivePublisherHealth });
 })(globalThis);

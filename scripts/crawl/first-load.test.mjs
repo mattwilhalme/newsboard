@@ -53,7 +53,7 @@ test('failed refresh preserves only the already rendered session',()=>scenario(a
  s.setOffline(true);await s.page.locator('#btn-reload').click();await settled(s.page);
  assert.match(await s.page.locator('body').innerText(),/Current live headline/);
  assert.equal(await s.page.locator('#collection-health tbody tr').count(),12);
- assert.match(await s.page.locator('[data-health-source="abc1"]').innerText(),/Current/);
+ assert.match(await s.page.locator('[data-health-source="abc1"]').innerText(),/Healthy/);
  assert.doesNotMatch(await s.page.locator('body').innerText(),/Stale data|stale \(no change/);
 }));
 test('fresh outage shows unavailable and no historical headlines',()=>scenario(async s=>{

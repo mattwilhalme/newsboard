@@ -1,6 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { collectors, main } from './github-browser-gap-fill.mjs';
+import { classifyCrawlResult, collectors, main } from './github-browser-gap-fill.mjs';
+
+test('publisher anti-bot responses are blocked, not infrastructure failures', () => {
+  for (const status of [403, 429]) assert.deepEqual(
+    classifyCrawlResult({ error: `Mobile homepage HTTP ${status}`, meta: { http_status: status } }),
+    { status: 'blocked', http_status: status, error: `Mobile homepage HTTP ${status}` },
+  );
+  assert.equal(classifyCrawlResult({ error: 'headline not found', meta: { http_status: 200 } }).status, 'crawl_failed');
+  assert.equal(classifyCrawlResult(null, new Error('browserType.launch: executable does not exist')).status, 'infrastructure_error');
+});
 
 test('existing browser collectors cover both browser-required and HTTP fallback publishers', () => {
   assert.deepEqual(Object.keys(collectors), ['ap1', 'cnn1', 'nbc1', 'guardian1', 'usat1', 'yahoo1', 'abc1', 'cbs1', 'latimes1', 'npr1', 'bbc1', 'fox1']);
@@ -59,4 +68,23 @@ test('only database-assigned HTTP fallback is crawled, regardless of previous ob
   return new Response(JSON.stringify(result),{status:200,headers:{'content-type':'application/json'}});
  };
  try{await main();assert.equal(crawled,1);const saved=calls.find(c=>c.endpoint==='newsboard_save_source');assert.equal(saved.body.p.source_id,'abc1');assert.equal(saved.body.p.success,true);assert.ok(!calls.some(c=>c.endpoint.includes('v_crawler_health')));}finally{globalThis.fetch=originalFetch;process.env=originalEnv;collectors.abc1=original;}
+});
+
+test('HTTP 403 is persisted as blocked and does not fail the worker', async () => {
+  const originalFetch=globalThis.fetch, originalEnv={...process.env}, original=collectors.ap1, originalExitCode=process.exitCode;
+  const calls=[];
+  Object.assign(process.env,{SUPABASE_URL:'https://example.supabase.co',SUPABASE_SERVICE_ROLE_KEY:'test'});delete process.env.NEWSBOARD_DISPATCH_ID;
+  collectors.ap1=async()=>({ok:false,error:'Mobile homepage HTTP 403',meta:{http_status:403}});
+  globalThis.fetch=async(url,options={})=>{
+    const endpoint=String(url).split('/').at(-1);calls.push({endpoint,body:options.body?JSON.parse(options.body):null});
+    const result=endpoint==='newsboard_start_run'?'00000000-0000-0000-0000-000000000004':endpoint==='newsboard_browser_sources'?[{source_id:'ap1'}]:null;
+    return new Response(JSON.stringify(result),{status:200,headers:{'content-type':'application/json'}});
+  };
+  try {
+    process.exitCode=undefined;
+    await main();
+    const saved=calls.find(c=>c.endpoint==='newsboard_save_source').body.p;
+    assert.equal(saved.outcome,'blocked');assert.equal(saved.http_status,403);assert.equal(saved.success,false);assert.equal(saved.output,null);
+    assert.equal(process.exitCode,undefined);
+  } finally { globalThis.fetch=originalFetch;process.env=originalEnv;collectors.ap1=original;process.exitCode=originalExitCode; }
 });
