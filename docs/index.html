@@ -635,6 +635,15 @@
     .latestTitle{ font-size:16px; line-height:1.3; font-weight:700; margin:0; font-family: var(--font-serif); }
     .latestTitle a{ color: var(--text); text-decoration:none; }
     .latestTitle a:hover{ color: var(--blue); text-decoration: underline; }
+    .storyRadarControls{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin:12px 0}
+    .storyRadarControl{display:flex;flex-direction:column;gap:4px}
+    .storyRadarCheck{display:flex;align-items:center;gap:6px;min-height:34px;font-size:12px;color:var(--muted)}
+    .storyRadarCard:focus-visible{outline:3px solid rgba(23,92,211,.22);outline-offset:2px}
+    .storyRadarLastSeen{white-space:nowrap;text-align:right}
+    .storyRadarMetrics{display:flex;gap:6px;flex-wrap:wrap}
+    .storyRadarMetric{display:inline-flex;align-items:center;padding:4px 7px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:11px;font-weight:700;color:var(--muted)}
+    .storyRadarMetric.isActive{background:#ecfdf3;border-color:#bbf7d0;color:#166534}
+    .storyRadarSummary{font-size:12px;color:var(--muted);margin-bottom:10px}
     .aboutCard{
       border:1px solid var(--line);
       border-radius:12px;
@@ -1223,6 +1232,7 @@
     <div class="viewTabs" role="tablist" aria-label="Views">
       <button id="tab-overview" class="tabBtn active" type="button" role="tab" aria-selected="true">Overview</button>
       <button id="tab-data" class="tabBtn" type="button" role="tab" aria-selected="false">Data</button>
+      <button id="tab-stories" class="tabBtn" type="button" role="tab" aria-selected="false">Story Radar</button>
       <button id="tab-playxplay" class="tabBtn" type="button" role="tab" aria-selected="false">History</button>
       <button id="tab-labs" class="tabBtn" type="button" role="tab" aria-selected="false">Labs</button>
     </div>
@@ -1268,11 +1278,34 @@
       </section>
     </section>
 
+    <section id="view-stories" style="display:none">
+      <section class="labsSection">
+        <div class="labsHeader">
+          <h2>Story Radar</h2>
+          <div class="labsHelp">Multi-publisher stories detected in Newsboard observations. Detection order reflects monitoring cadence, not publication order.</div>
+        </div>
+        <div class="storyRadarControls">
+          <label class="storyRadarControl tiny" for="story-radar-window">Window
+            <select id="story-radar-window" class="linkbtn"><option value="6">6h</option><option value="24" selected>24h</option><option value="168">7d</option></select>
+          </label>
+          <label class="storyRadarControl tiny" for="story-radar-min-publishers">Minimum reach
+            <select id="story-radar-min-publishers" class="linkbtn"><option value="2" selected>2 publishers</option><option value="3">3 publishers</option><option value="4">4 publishers</option></select>
+          </label>
+          <label class="storyRadarControl tiny" for="story-radar-sort">Sort
+            <select id="story-radar-sort" class="linkbtn"><option value="recent" selected>Most recent</option><option value="reach">Publisher reach</option><option value="movement">Editorial movement</option></select>
+          </label>
+          <label class="storyRadarCheck"><input id="story-radar-active" type="checkbox"> Active coverage only</label>
+        </div>
+        <div id="story-radar-summary" class="storyRadarSummary"></div>
+        <div id="story-radar-list" class="latestList"></div>
+      </section>
+    </section>
+
     <section id="view-playxplay" style="display:none">
       <section class="labsSection">
         <div class="labsHeader"><h2>Recent Stories</h2><div class="labsHelp">Multi-publisher identities from processed Newsboard observations. Detection order is not publication order.</div></div>
         <div id="story-processing-health" class="tiny"></div>
-        <div id="recent-stories" class="historyList"></div>
+        <div id="recent-stories" class="latestList"></div>
       </section>
       <section class="labsSection">
         <div class="labsHelp">Live sequence of publisher top-story updates.</div>
@@ -1448,6 +1481,7 @@
         </div>
         <button id="menu-go-overview" class="btn" type="button">Overview</button>
         <button id="menu-go-data" class="btn" type="button">Data</button>
+        <button id="menu-go-stories" class="btn" type="button">Story Radar</button>
         <button id="menu-go-playxplay" class="btn" type="button">History</button>
         <button id="menu-go-labs" class="btn" type="button">Labs</button>
       </div>
@@ -1509,6 +1543,7 @@
   <script src="./js/data/supabase.js"></script>
   <script src="./js/ui/drawers.js"></script>
   <script src="./js/ui/intelligence-drawers.js"></script>
+  <script src="./js/views/story-radar.js"></script>
   <script>
     const {
       fmtTime, ago, fmtDurationSeconds, fmtDurationMs, normalizeUrlForStory,
@@ -3496,6 +3531,8 @@
     }
 
     let storyBadges = [];
+    let recentStories = [];
+    let storyRadar = null;
     let openedStoryDeepLink = false;
     const FIRST_MEANING = "First detected by NewsBoard among monitored publishers in available processed history—not first published worldwide.";
 
@@ -3505,15 +3542,29 @@
         storyBadges = Array.isArray(rows) ? rows : [];
       } catch { storyBadges = []; } // Optional intelligence never blocks raw news.
     }
+    function storyRadarOptions(){
+      return {
+        hours: Number($("story-radar-window")?.value || 24),
+        minPublishers: Number($("story-radar-min-publishers")?.value || 2),
+        sort: $("story-radar-sort")?.value || "recent",
+        activeOnly: Boolean($("story-radar-active")?.checked),
+      };
+    }
+    function renderRecentStoryViews(){
+      if (!storyRadar) return;
+      storyRadar.render($("recent-stories"), recentStories, { hours:24, minPublishers:2, sort:"recent", compact:true, limit:6, emptyText:"No multi-publisher stories detected in the last 24 hours." });
+      const matches=storyRadar.render($("story-radar-list"), recentStories, storyRadarOptions());
+      const summary=$("story-radar-summary");
+      if(summary)summary.textContent=`${matches.length} ${matches.length===1?"story":"stories"} in this view · select a card for its observed propagation history`;
+    }
     async function loadRecentStories(){
       const host=$("recent-stories"),healthHost=$("story-processing-health");if(!host)return;
       try{
-        const [rows,health]=await Promise.all([NewsboardData.getRecentStories(24,50),NewsboardData.getStoryOperationalHealth().catch(()=>null)]);
+        const [rows,health]=await Promise.all([NewsboardData.getRecentStories(168,200),NewsboardData.getStoryOperationalHealth().catch(()=>null)]);
         if(healthHost)healthHost.textContent=health?`Story processing: ${health.status} · ${Math.round(Number(health.lag_seconds||0)/60)}m lag · ${health.unprocessed_batches||0} queued`:"Story processing status unavailable";
-        host.replaceChildren();
-        for(const story of Array.isArray(rows)?rows:[]){const row=document.createElement("button");row.type="button";row.className="hItem";row.innerHTML=`<span class="hTitle"></span><span class="tiny"></span>`;row.querySelector(".hTitle").textContent=story.canonical_label;row.querySelector(".tiny").textContent=`${story.publishers_detected} publishers · last observed ${ago(story.last_seen_at)}`;row.addEventListener("click",()=>openStoryHistory(story.story_id,row));host.appendChild(row);}
-        if(!host.children.length)host.textContent="No multi-publisher stories in this window.";
-      }catch{host.textContent="Recent Story History is temporarily unavailable.";if(healthHost)healthHost.textContent="Story processing status unavailable";}
+        recentStories=Array.isArray(rows)?rows:[];
+        renderRecentStoryViews();
+      }catch{recentStories=[];host.textContent="Recent Story History is temporarily unavailable.";const radarHost=$("story-radar-list");if(radarHost)radarHost.textContent="Story Radar is temporarily unavailable.";if(healthHost)healthHost.textContent="Story processing status unavailable";}
     }
     function storyBadge(sourceId, item){
       const badge = storyBadges.find(row => row.source_id === sourceId &&
@@ -5203,6 +5254,11 @@
       firstMeaning: FIRST_MEANING,
       headlineDiffHtml,
     });
+    storyRadar = window.NewsboardStoryRadar.create({
+      format: window.NewsboardFormat,
+      openStoryHistory,
+      sourceLabel: (sourceId) => sourceLabel(sourceId, null),
+    });
 
     function isMinorHeadlineEdit(prevTitle, nextTitle){
       const a = String(prevTitle || "").trim();
@@ -5393,30 +5449,34 @@
 
     function viewFromHash(){
       const raw = String(location.hash || "").replace(/^#/, "").trim().toLowerCase();
-      const valid = new Set(["overview", "data", "playxplay", "labs"]);
+      const valid = new Set(["overview", "data", "stories", "playxplay", "labs"]);
       return valid.has(raw) ? raw : "";
     }
 
     function setView(which, persist = true) {
-      const valid = new Set(["overview", "data", "playxplay", "labs"]);
+      const valid = new Set(["overview", "data", "stories", "playxplay", "labs"]);
       activeView = valid.has(which) ? which : "overview";
 
       const overview = $("view-overview");
       const data = $("view-data");
+      const stories = $("view-stories");
       const playxplay = $("view-playxplay");
       const labs = $("view-labs");
       const tabOverview = $("tab-overview");
       const tabData = $("tab-data");
+      const tabStories = $("tab-stories");
       const tabPlayXPlay = $("tab-playxplay");
       const tabLabs = $("tab-labs");
 
       const showOverview = activeView === "overview";
       const showData = activeView === "data";
+      const showStories = activeView === "stories";
       const showPlayXPlay = activeView === "playxplay";
       const showLabs = activeView === "labs";
 
       if (overview) overview.style.display = showOverview ? "" : "none";
       if (data) data.style.display = (showData && !isNarrowLayout()) ? "" : "none";
+      if (stories) stories.style.display = showStories ? "" : "none";
       if (playxplay) playxplay.style.display = showPlayXPlay ? "" : "none";
       if (labs) labs.style.display = showLabs ? "" : "none";
 
@@ -5427,6 +5487,10 @@
       if (tabData) {
         tabData.classList.toggle("active", showData);
         tabData.setAttribute("aria-selected", showData ? "true" : "false");
+      }
+      if (tabStories) {
+        tabStories.classList.toggle("active", showStories);
+        tabStories.setAttribute("aria-selected", showStories ? "true" : "false");
       }
       if (tabPlayXPlay) {
         tabPlayXPlay.classList.toggle("active", showPlayXPlay);
@@ -5928,6 +5992,7 @@
     });
     $("tab-overview")?.addEventListener("click", () => setView("overview"));
     $("tab-data")?.addEventListener("click", () => setView("data"));
+    $("tab-stories")?.addEventListener("click", () => setView("stories"));
     $("tab-playxplay")?.addEventListener("click", () => setView("playxplay"));
     $("tab-labs")?.addEventListener("click", () => setView("labs"));
     $("details-tab-changes")?.addEventListener("click", () => setDetailsTab("changes"));
@@ -6004,6 +6069,10 @@
     $("history-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("data-window-page")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
+    $("story-radar-window")?.addEventListener("change", renderRecentStoryViews);
+    $("story-radar-min-publishers")?.addEventListener("change", renderRecentStoryViews);
+    $("story-radar-sort")?.addEventListener("change", renderRecentStoryViews);
+    $("story-radar-active")?.addEventListener("change", renderRecentStoryViews);
     $("btn-story-history-close")?.addEventListener("click", () => closeAllDrawers());
     $("btn-gdelt-close")?.addEventListener("click", () => closeAllDrawers());
     $("menu-go-overview")?.addEventListener("click", () => {
@@ -6013,6 +6082,10 @@
     $("menu-go-data")?.addEventListener("click", () => {
       setMenuOpen(false);
       setView("data");
+    });
+    $("menu-go-stories")?.addEventListener("click", () => {
+      setMenuOpen(false);
+      setView("stories");
     });
     $("menu-go-playxplay")?.addEventListener("click", () => {
       setMenuOpen(false);
@@ -6044,7 +6117,7 @@
     let initialView = "overview";
     try {
       const savedView = String(localStorage.getItem(VIEW_STORAGE_KEY) || "").toLowerCase();
-      if (savedView === "overview" || savedView === "data" || savedView === "playxplay" || savedView === "labs") {
+      if (savedView === "overview" || savedView === "data" || savedView === "stories" || savedView === "playxplay" || savedView === "labs") {
         initialView = savedView;
       }
     } catch {}

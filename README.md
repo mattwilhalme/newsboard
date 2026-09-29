@@ -50,6 +50,8 @@ Browser fallback capability is configured for all twelve publishers. Database ro
 - **Rank movement:** the same canonical article moving between ranks in complete ranked coverage.
 - **Story Identity:** a conservative derived grouping of cross-publisher observations. Raw observations remain authoritative and are never rewritten by the grouping process.
 
+The Story Radar view surfaces recent multi-publisher identities by reach, active coverage, No. 1 appearances, rank movement, and headline rewrites. Its timing labels describe Newsboard observations rather than publication order.
+
 GDELT Coverage is a separate on-demand experiment. Its “earliest match” is GDELT discovery evidence, not a first-publisher claim.
 
 ## Operational behavior

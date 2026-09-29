@@ -12,7 +12,8 @@
 - publisher-registry parity and sanitized centerpiece parser fixtures;
 - frontend formatting, URL normalization, error summarization, and HTML escaping;
 - frontend data-boundary caching/invalidation and operational-metadata preservation;
-- deterministic Overview, Data, History, and Labs navigation/rendering;
+- deterministic Overview, Data, Story Radar, History, and Labs navigation/rendering;
+- Story Radar filtering, metrics, and shared History-card rendering;
 - GitHub Actions read-only/action-entry-point contracts;
 - first-load live-data retry, stale-cache avoidance, last-session retention, publisher isolation, and fallback-state rendering;
 - rendered mobile centerpiece and browser Top 10 extraction fixtures;
