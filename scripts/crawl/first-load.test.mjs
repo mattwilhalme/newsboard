@@ -6,6 +6,8 @@ const html = fs.readFileSync('docs/index.html', 'utf8');
 const formatJs = fs.readFileSync('docs/js/format.js', 'utf8');
 const healthJs = fs.readFileSync('docs/js/health.js', 'utf8');
 const dataJs = fs.readFileSync('docs/js/data/supabase.js', 'utf8');
+const drawersJs = fs.readFileSync('docs/js/ui/drawers.js', 'utf8');
+const intelligenceDrawersJs = fs.readFileSync('docs/js/ui/intelligence-drawers.js', 'utf8');
 const snapshot = (title, stamp = new Date().toISOString(), status = 'success') => ({cacheLike:{sources:{abc1:{ok:true,updatedAt:stamp,item:{title,url:'https://abcnews.go.com/test'},health:{crawlStatus:status}}}},history:{sources:{}}});
 async function scenario(fn) {
  const browser = await chromium.launch({channel:'chrome'});
@@ -18,6 +20,8 @@ async function scenario(fn) {
   if(url.pathname.endsWith('/js/format.js')) return route.fulfill({contentType:'text/javascript',body:formatJs});
   if(url.pathname.endsWith('/js/health.js')) return route.fulfill({contentType:'text/javascript',body:healthJs});
   if(url.pathname.endsWith('/js/data/supabase.js')) return route.fulfill({contentType:'text/javascript',body:dataJs});
+  if(url.pathname.endsWith('/js/ui/drawers.js')) return route.fulfill({contentType:'text/javascript',body:drawersJs});
+  if(url.pathname.endsWith('/js/ui/intelligence-drawers.js')) return route.fulfill({contentType:'text/javascript',body:intelligenceDrawersJs});
   if(url.pathname.endsWith('/supabase.json')) return route.fulfill({json:{url:'https://live.example',anonKey:'public-test'}});
   if(url.pathname.endsWith('/newsboard_snapshot')) {
    requests++; if(offline || misses-->0) return route.fulfill({status:503,json:{error:'temporary'}});

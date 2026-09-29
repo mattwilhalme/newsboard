@@ -1507,6 +1507,8 @@
   <script src="./js/format.js"></script>
   <script src="./js/health.js"></script>
   <script src="./js/data/supabase.js"></script>
+  <script src="./js/ui/drawers.js"></script>
+  <script src="./js/ui/intelligence-drawers.js"></script>
   <script>
     const {
       fmtTime, ago, fmtDurationSeconds, fmtDurationMs, normalizeUrlForStory,
@@ -2103,19 +2105,15 @@
       renderMomentList();
     }
 
-    function closeAllDrawers() {
-      storyDrawerRequest++;
-      if ($("drawer-story-history")?.classList.contains("open") && storyDrawerTrigger?.isConnected) storyDrawerTrigger.focus();
-      stopMomentAutoplay();
-      const ids = ["drawer-story-history", "drawer-gdelt", "drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item", "drawer-moment"];
-      for (const id of ids) {
-        const d = $(id);
-        if (!d) continue;
-        d.classList.remove("open");
-        d.setAttribute("aria-hidden", "true");
-      }
-      $("drawer-overlay")?.classList.remove("show");
-    }
+    let intelligenceDrawers = null;
+    const drawerManager = window.NewsboardDrawers.createDrawerManager({
+      drawerIds: ["drawer-story-history", "drawer-gdelt", "drawer-history", "drawer-data", "drawer-source-data", "drawer-menu", "drawer-history-item", "drawer-moment"],
+      beforeClose: () => {
+        stopMomentAutoplay();
+        intelligenceDrawers?.cancel();
+      },
+    });
+    function closeAllDrawers() { drawerManager.closeAll(); }
 
     function setMomentOpen(open){
       const drawer = $("drawer-moment");
@@ -3498,9 +3496,6 @@
     }
 
     let storyBadges = [];
-    let storyDrawerRequest = 0;
-    let gdeltRequest = 0;
-    let storyDrawerTrigger = null;
     let openedStoryDeepLink = false;
     const FIRST_MEANING = "First detected by NewsBoard among monitored publishers in available processed history—not first published worldwide.";
 
@@ -3535,86 +3530,12 @@
       button.addEventListener("click", e => { e.stopPropagation(); openStoryHistory(badge.story_id, button); });
       return button;
     }
-    async function openStoryHistory(storyId, trigger){
-      closeAllDrawers();
-      storyDrawerTrigger = trigger;
-      const request = ++storyDrawerRequest;
-      const drawer = $("drawer-story-history"), host = $("story-history-content");
-      drawer.classList.add("open"); drawer.setAttribute("aria-hidden", "false");
-      $("drawer-overlay").classList.add("show");
-      host.textContent = "Loading story history…";
-      $("btn-story-history-close").focus();
-      const deepLink=new URL(location.href);deepLink.searchParams.set("story",storyId);window.history.replaceState(null,"",deepLink);
-      try {
-        const data = await NewsboardData.getStoryHistory(storyId);
-        if (request !== storyDrawerRequest) return;
-        if (!data?.story) { host.textContent = "Story history is not available yet."; return; }
-        const story = data.story, members = data.members || [], summary = data.metrics || {};
-        const first = members.find(m => m.source_id === story.first_source_id);
-        const heading = document.createElement("h2"); heading.className = "storyHistoryHeadline"; heading.textContent = story.canonical_label;
-        host.replaceChildren(heading);
-        const metrics = document.createElement("dl"); metrics.className = "storyHistoryMetrics";
-        for (const [label, value] of [["First detected by Newsboard", `${first?.publisher || story.first_source_id} · ${fmtTime(story.first_detected_at)}`], ["Detected", ago(story.first_detected_at)], ["Publishers detected", summary.publishers_detected ?? members.length], ["Recent publishers", data.publisher_count], ["Time to peak coverage", summary.time_to_peak_seconds == null ? "—" : fmtDurationSeconds(summary.time_to_peak_seconds)], ["Time to first No. 1", summary.time_to_number_one_seconds == null ? "Not observed" : fmtDurationSeconds(summary.time_to_number_one_seconds)], ["Rank changes", summary.rank_changes ?? 0], ["Headline rewrites", summary.headline_changes ?? 0]]) {
-          const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=label;dd.textContent=String(value);metrics.append(dt,dd);
-        }
-        host.appendChild(metrics);
-        const note=document.createElement("p");note.className="tiny";note.textContent=FIRST_MEANING+" Recent counts require a successful observation within two hours. Ranked events are generated only from complete, centerpiece-aligned Top 10 runs; partial coverage creates no movement or exit claims. Times are shown in your timezone.";host.appendChild(note);
-        if (members.length) {
-          const title=document.createElement("h3");title.textContent="Publisher journey";host.appendChild(title);
-          const table=document.createElement("table");table.className="storyJourney";table.innerHTML="<thead><tr><th>Publisher</th><th>First detected</th><th>First rank</th><th>Peak</th><th>Observed</th></tr></thead>";
-          const body=document.createElement("tbody");
-          for (const member of members) { const row=document.createElement("tr"); for (const value of [member.publisher,fmtTime(member.first_seen_at),member.first_rank?`#${member.first_rank}`:"Lead",member.peak_rank?`#${member.peak_rank}`:"—",fmtDurationSeconds(member.observed_duration_seconds||0)]) { const cell=document.createElement("td");cell.textContent=String(value);row.appendChild(cell); } body.appendChild(row); }
-          table.appendChild(body);host.appendChild(table);
-        }
-        const timelineTitle=document.createElement("h3");timelineTitle.textContent="Observed timeline";host.appendChild(timelineTitle);
-        const list=document.createElement("ol");list.className="storyPropagation";
-        for (const event of data.events || []) {
-          const li=document.createElement("li");
-          const stamp=document.createElement("div");stamp.className="tiny";stamp.textContent=`${fmtTime(event.observed_at)} · ${event.publisher}`;
-          const text=document.createElement("div");text.className="storyEventLabel";
-          const meta=event.metadata || {}, rank=event.rank;
-          const labels={FIRST_DETECTED:`First detected at #${rank}`,PUBLISHER_PICKUP:`Picked up at #${rank}`,ENTERED_TOP10:`Entered Top 10 at #${rank}`,REACHED_NUMBER_ONE:"Reached No. 1",RANK_CHANGED:`Moved #${meta.from_rank} → #${meta.to_rank}`,HEADLINE_CHANGED:"Headline changed",URL_CHANGED:"Article URL changed",EXITED_TOP10:"Left Top 10",LEFT_HOMEPAGE_LEAD:"Left homepage lead (lower ranks not observed)",RETURNED_TO_LEAD:"Returned to homepage lead"};
-          text.textContent=labels[event.event_type] || event.event_type;
-          li.append(stamp,text);
-          if (event.event_type === "HEADLINE_CHANGED") {
-            const diff=document.createElement("p");diff.className="storyHeadlineDiff";diff.innerHTML=headlineDiffHtml(meta.old_headline,meta.new_headline);li.appendChild(diff);
-          } else if (["FIRST_DETECTED","PUBLISHER_PICKUP"].includes(event.event_type)) {
-            const headline=document.createElement("p");headline.textContent=event.headline;li.appendChild(headline);
-          }
-          if (event.published_at) {const published=document.createElement("div");published.className="tiny";published.textContent=`Published at ${fmtTime(event.published_at)} (publisher metadata)`;li.appendChild(published);}
-          list.appendChild(li);
-        }
-        host.appendChild(list);
-        if (data.events_truncated) {const note=document.createElement("p");note.textContent="Showing the first 1,000 events.";host.appendChild(note);}
-      } catch { if (request === storyDrawerRequest) host.textContent = "Story History is temporarily unavailable. Headlines remain available; close and try again."; }
-    }
+    function openStoryHistory(storyId, trigger){ return intelligenceDrawers.openStoryHistory(storyId, trigger); }
 
     function trackedPublisherDomains(sources = latestOverviewPayload?.sources || {}){
       return [...new Set(Object.entries(sources).flatMap(([id, src]) => [sourceHomeUrl(id, src), src?.item?.url].map(value => { try { return new URL(value).hostname.replace(/^www\./, ""); } catch { return ""; } }).filter(Boolean)))];
     }
-    async function gdeltCoverageRequest(story){
-      const params = new URLSearchParams({ headline: story.title, url: story.url || "", source: story.source || "", observed_at: story.observed_at, tracked_domains: trackedPublisherDomains().join(",") });
-      if (!isGitHubPages) return fetchJSON(`/api/gdelt/coverage?${params}`);
-      const config = await NewsboardData.getConfig();
-      const response = await fetch(`${config.url}/functions/v1/gdelt-coverage?${params}`, { headers: { apikey: config.anonKey, Authorization: `Bearer ${config.anonKey}` } });
-      const body = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(body?.error || `Coverage request failed (${response.status})`);
-      return body;
-    }
-    function renderGdeltCoverage(host, data){
-      host.replaceChildren();
-      const detected=document.createElement("div");detected.className="gdeltDetected";const label=document.createElement("strong");label.textContent="Newsboard detected";const meta=document.createElement("div");meta.textContent=`${data.newsboard_story?.source || "Unknown publisher"} · ${fmtTime(data.newsboard_story?.observed_at)}`;detected.append(label,meta);host.appendChild(detected);
-      const results=Array.isArray(data.results)?data.results:[];
-      if(!results.length){const empty=document.createElement("p");empty.textContent="No credible matching English-language coverage was found in the selected window.";host.appendChild(empty);}
-      const list=document.createElement("ol");list.className="gdeltList";
-      for(const result of results){const li=document.createElement("li");li.className="gdeltResult";const row=document.createElement("div");row.className="gdeltResultMeta";row.textContent=`${result.gdelt_seen_at?fmtTime(result.gdelt_seen_at):"Time unavailable"} — ${result.domain||"Unknown publisher"}`;if(result.tracked_by_newsboard){const pill=document.createElement("span");pill.className="gdeltPill";pill.textContent="Newsboard tracks";row.appendChild(pill);}if(result.is_newsboard_article){const pill=document.createElement("span");pill.className="gdeltPill gdeltSelf";pill.textContent="This article";row.appendChild(pill);}const link=document.createElement("a");link.href=result.url;link.target="_blank";link.rel="noopener";link.textContent=result.title;li.append(row,link);list.appendChild(li);}host.appendChild(list);
-      if(data.earliest_match){const earliest=document.createElement("div");earliest.className="gdeltEarliest";earliest.innerHTML=`<strong>Earliest GDELT match:</strong> ${escapeHtml(data.earliest_match.domain||"Unknown publisher")} · ${escapeHtml(data.earliest_match.gdelt_seen_at?fmtTime(data.earliest_match.gdelt_seen_at):"Time unavailable")}`;host.appendChild(earliest);}
-      const debug=document.createElement("div");debug.className="gdeltDebug";debug.textContent=`Query: ${data.query||"—"} · ${Number(data.raw_result_count||0)} raw / ${results.length} shown`;host.appendChild(debug);
-    }
-    async function openGdeltCoverage(story){
-      closeAllDrawers();const request=++gdeltRequest,drawer=$("drawer-gdelt"),host=$("gdelt-content");drawer.classList.add("open");drawer.setAttribute("aria-hidden","false");$("drawer-overlay").classList.add("show");host.textContent="Tracing GDELT coverage…";$("btn-gdelt-close").focus();
-      try{const data=await gdeltCoverageRequest(story);if(request===gdeltRequest)renderGdeltCoverage(host,data);}catch(error){if(request===gdeltRequest)host.textContent=`GDELT Coverage is temporarily unavailable: ${summarizeError(error)}`;}
-    }
+    function openGdeltCoverage(story){ return intelligenceDrawers.openGdeltCoverage(story); }
 
     function buildCardEl(id, src, indicator, timelineBySource = {}){
       const card = document.createElement("section");
@@ -5271,6 +5192,18 @@
       return html;
     }
 
+    intelligenceDrawers = window.NewsboardIntelligenceDrawers.create({
+      $,
+      data: NewsboardData,
+      drawerManager,
+      format: window.NewsboardFormat,
+      getTrackedDomains: trackedPublisherDomains,
+      isGitHubPages,
+      fetchJSON,
+      firstMeaning: FIRST_MEANING,
+      headlineDiffHtml,
+    });
+
     function isMinorHeadlineEdit(prevTitle, nextTitle){
       const a = String(prevTitle || "").trim();
       const b = String(nextTitle || "").trim();
@@ -6073,7 +6006,6 @@
     $("data-window-page")?.addEventListener("change", (e) => setSelectedWindowHours(e.target.value));
     $("btn-story-history-close")?.addEventListener("click", () => closeAllDrawers());
     $("btn-gdelt-close")?.addEventListener("click", () => closeAllDrawers());
-    $("drawer-overlay")?.addEventListener("click", () => closeAllDrawers());
     $("menu-go-overview")?.addEventListener("click", () => {
       setMenuOpen(false);
       setView("overview");
@@ -6091,18 +6023,6 @@
       setView("labs");
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Tab" && $("drawer-story-history")?.classList.contains("open")) {
-        const nodes = [...$("drawer-story-history").querySelectorAll('button,a[href],[tabindex="0"]')];
-        const first=nodes[0],last=nodes[nodes.length-1];
-        if (e.shiftKey && document.activeElement===first) {e.preventDefault();last?.focus();}
-        else if (!e.shiftKey && document.activeElement===last) {e.preventDefault();first?.focus();}
-      }
-      if (e.key === "Escape") {
-        stopMomentAutoplay();
-        closeAllDrawers();
-      }
-    });
 
     window.addEventListener("resize", () => {
       if (activeView === "data") setDataOpen(isNarrowLayout());

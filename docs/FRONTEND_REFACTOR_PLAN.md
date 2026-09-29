@@ -30,8 +30,8 @@ No framework or bundler is required initially. Use native ES modules and preserv
 
 1. **Pure shared utilities (completed in Cleanup Pass 2):** escaping, time formatting, URL normalization, and error summarization now live in `docs/js/format.js` with direct unit coverage. It remains a classic static script to avoid converting the whole app to modules at once.
 2. **Supabase/data access (completed in the frontend architecture pass):** `docs/js/data/supabase.js` now owns config loading, request timeouts, RPC calls, caching, invalidation, and transport error normalization. Application retry and retention policy remains inline by design.
-3. **Drawer shell:** extract open/close/focus/Escape behavior without moving drawer-specific rendering. Verify desktop/mobile focus and overlay behavior.
-4. **Story History and GDELT drawers:** extract their independent fetch/render paths. Preserve failure isolation so optional intelligence never hides raw headlines.
+3. **Drawer shell (completed):** `docs/js/ui/drawers.js` owns shared close, overlay, Escape, and focus-trap behavior. Deterministic browser coverage verifies Story History focus restoration.
+4. **Story History and GDELT drawers (completed):** `docs/js/ui/intelligence-drawers.js` owns their independent fetch/render paths. Optional intelligence remains failure-isolated from raw headlines.
 5. **Overview cards:** move card construction, source labels/order, health display, and Story badges. Run all first-load, last-good, and publisher-isolation cases.
 6. **History and Data views:** extract bounded history calculations and table rendering with fixture snapshots.
 7. **Labs/clustering:** move the largest self-contained analysis block last; retain current storage keys and deterministic cluster tests.

@@ -18,6 +18,8 @@
 - rendered mobile centerpiece and browser Top 10 extraction fixtures;
 - GDELT normalization/matching and drawer UI behavior.
 
+Frontend integration fixtures are centralized in `scripts/support/frontend-fixture.mjs`. The GDELT drawer test uses an explicit snapshot, observation timestamp, RPC responses, and coverage response; it does not depend on the current production snapshot to enable its action.
+
 Publisher-specific live commands (`test:bbc`, `test:fox`, and `test:yahoo`) remain available but depend on current external pages and are not deterministic enough for the default suite. `scripts/crawl/validate-*.mjs`, deployed UI smoke scripts, and Supabase SQL tests are also intentionally separate.
 
 ## SQL integration coverage
@@ -30,7 +32,7 @@ Run these only against an explicitly selected test or controlled project and pre
 
 1. Browser adapters do not yet consume the shared sanitized publisher fixture corpus directly.
 2. Blocked, invalid, rewrite, replacement, and rank-movement fixture variants are not complete for every publisher.
-3. Frontend views beyond first-load and targeted drawers lack focused DOM fixtures.
+3. Frontend views beyond first-load and the extracted intelligence drawers still lack focused DOM fixtures.
 4. Workflow validation is a focused action contract check, not a complete YAML/schema validator.
 5. Long-retention Story Intelligence candidate saturation and reconstruction performance are not benchmarked.
 6. External GDELT latency/rate-limit behavior prevents deterministic live-result assertions.
