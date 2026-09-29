@@ -2,7 +2,7 @@
   "use strict";
 
   function create({ format, openStoryHistory, sourceLabel }) {
-    const { ago, fmtTime } = format;
+    const { ago, fmtDurationSeconds, fmtTime } = format;
 
     function number(value) {
       const parsed = Number(value || 0);
@@ -48,9 +48,27 @@
       title.textContent = story.canonical_label || "Untitled story";
       main.appendChild(title);
 
+      const publisherRow = document.createElement("div");
+      publisherRow.className = "storyRadarPublishers";
+      const active = new Set(Array.isArray(story.active_source_ids) ? story.active_source_ids : []);
+      for (const sourceId of Array.isArray(story.publisher_ids) ? story.publisher_ids : []) {
+        const chip = document.createElement("span");
+        chip.className = `storyRadarPublisher${active.has(sourceId) ? " isActive" : ""}`;
+        chip.textContent = sourceLabel(sourceId);
+        publisherRow.appendChild(chip);
+      }
+      if (publisherRow.children.length) main.appendChild(publisherRow);
+
       const metrics = document.createElement("div");
       metrics.className = "storyRadarMetrics";
+      const recent = number(story.recent_publishers);
+      const lastSeenAge = Date.now() - Date.parse(String(story.last_seen_at || ""));
+      const lifecycle = recent === 0 ? "Fading" : (recent >= 3 && lastSeenAge < 30 * 60 * 1000 ? "Spreading" : "Holding");
+      metrics.appendChild(metric("Status", lifecycle, lifecycle === "Spreading" ? "isActive" : ""));
       metrics.appendChild(metric("Active", number(story.recent_publishers), number(story.recent_publishers) > 0 ? "isActive" : ""));
+      const firstAt = Date.parse(String(story.first_detected_at || ""));
+      const secondAt = Date.parse(String(story.second_publisher_at || ""));
+      if (!compact && Number.isFinite(firstAt) && Number.isFinite(secondAt) && secondAt >= firstAt) metrics.appendChild(metric("Second pickup", fmtDurationSeconds((secondAt-firstAt)/1000)));
       if (!compact || number(story.publishers_reaching_number_one)) metrics.appendChild(metric("No. 1", number(story.publishers_reaching_number_one)));
       if (!compact || number(story.rank_changes)) metrics.appendChild(metric("Rank moves", number(story.rank_changes)));
       if (!compact || number(story.headline_changes)) metrics.appendChild(metric("Rewrites", number(story.headline_changes)));
@@ -74,9 +92,14 @@
       const cutoff = Date.now() - hours * 60 * 60 * 1000;
       const minPublishers = Math.max(2, number(options.minPublishers) || 2);
       const activeOnly = Boolean(options.activeOnly);
+      const publisher = String(options.publisher || "");
+      const reachedNumberOne = Boolean(options.reachedNumberOne);
       const rows = (Array.isArray(stories) ? stories : []).filter((story) => {
         const lastSeen = Date.parse(String(story.last_seen_at || ""));
-        return Number.isFinite(lastSeen) && lastSeen >= cutoff && number(story.publishers_detected) >= minPublishers && (!activeOnly || number(story.recent_publishers) > 0);
+        const publishers = Array.isArray(story.publisher_ids) ? story.publisher_ids : [];
+        return Number.isFinite(lastSeen) && lastSeen >= cutoff && number(story.publishers_detected) >= minPublishers &&
+          (!activeOnly || number(story.recent_publishers) > 0) && (!publisher || publishers.includes(publisher)) &&
+          (!reachedNumberOne || number(story.publishers_reaching_number_one) > 0);
       });
       const sort = options.sort || "recent";
       rows.sort((a, b) => {

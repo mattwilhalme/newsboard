@@ -52,6 +52,8 @@ Browser fallback capability is configured for all twelve publishers. Database ro
 
 The Story Radar view surfaces recent multi-publisher identities by reach, active coverage, No. 1 appearances, rank movement, and headline rewrites. Its timing labels describe Newsboard observations rather than publication order.
 
+Private Story Identity review tooling can label matcher quality, move a publisher article to an existing identity, or create a new manual identity. Corrections preserve raw evidence, rebuild derived public reads, and remain active for future observations of the same canonical publisher URL.
+
 GDELT Coverage is a separate on-demand experiment. Its “earliest match” is GDELT discovery evidence, not a first-publisher claim.
 
 ## Operational behavior

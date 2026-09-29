@@ -9,6 +9,7 @@
 - browser dispatcher authentication, atomic dispatch, retry, and response handling;
 - targeted browser worker selection/persistence behavior;
 - deterministic Story Identity matching and ambiguity rejection;
+- persistent manual Story Identity overrides before derived-batch commit;
 - publisher-registry parity and sanitized centerpiece parser fixtures;
 - frontend formatting, URL normalization, error summarization, and HTML escaping;
 - frontend data-boundary caching/invalidation and operational-metadata preservation;

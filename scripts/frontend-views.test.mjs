@@ -43,11 +43,14 @@ test('major views preserve deterministic content, controls and ordering', async 
     await page.locator('#tab-stories').click();
     assert.equal(await page.locator('#view-stories').isVisible(), true);
     assert.equal(await page.locator('#story-radar-list .storyRadarCard').count(), 2);
-    assert.match(await page.locator('#story-radar-list').innerText(), /ABC deterministic headline[\s\S]*Active 2[\s\S]*No. 1 1[\s\S]*Secondary shared story/);
+    assert.match(await page.locator('#story-radar-list').innerText(), /ABC deterministic headline[\s\S]*ABC News[\s\S]*CBS News[\s\S]*Status Spreading[\s\S]*Active 3[\s\S]*No. 1 1[\s\S]*Secondary shared story/);
     await page.locator('#story-radar-min-publishers').selectOption('3');
     assert.equal(await page.locator('#story-radar-list .storyRadarCard').count(), 1);
     await page.locator('#story-radar-active').check();
     assert.match(await page.locator('#story-radar-summary').innerText(), /1 story/);
+    await page.locator('#story-radar-publisher').selectOption('abc1');
+    await page.locator('#story-radar-number-one').check();
+    assert.equal(await page.locator('#story-radar-list .storyRadarCard').count(), 1);
 
     await page.locator('#tab-playxplay').click();
     assert.match(await page.locator('#story-processing-health').innerText(),/healthy[\s\S]*1m lag/);

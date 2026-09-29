@@ -1,7 +1,7 @@
 begin;
 set local role service_role;
 do $$
-declare worker uuid; story uuid:=gen_random_uuid(); other_story uuid:=gen_random_uuid(); raw_run uuid; snap uuid; first_snap uuid; early_snap uuid; raw_top uuid; payload jsonb; count_before int; t timestamptz:='2026-09-18T12:00:00Z';
+declare worker uuid; story uuid:=gen_random_uuid(); other_story uuid:=gen_random_uuid(); new_story uuid; raw_run uuid; snap uuid; first_snap uuid; early_snap uuid; raw_top uuid; payload jsonb; correction jsonb; count_before int; t timestamptz:='2026-09-18T12:00:00Z';
 begin
  insert into public.sources(id,name,kind,home_url) values('story_test_abc','Story test ABC','hero','https://abcnews.com'),('story_test_ap','Story test AP','hero','https://apnews.com');
  worker:=public.newsboard_story_begin(t,t+interval '1 hour');
@@ -47,6 +47,23 @@ begin
  assert (select not active and current_rank is null from public.story_members where story_id=story and source_id='story_test_abc'),'exit deactivates membership';
  assert (select count(*)=1 from public.story_observations where story_id=story and event_type='EXITED_TOP10'),'Top 10 exit';
  assert not exists(select 1 from public.story_assignments where story_id=story and published_at is not null),'no invented publication time';
+ correction:=public.newsboard_story_correct_article('snapshot:'||first_snap,6,other_story,null,'Test reassignment','sql-test');
+ assert (correction->>'assignments_moved')::int=1,'article assignments moved';
+ assert (select first_seen_at=t+interval '5 minutes' and first_rank=1 from public.story_members where story_id=story and source_id='story_test_abc'),'publisher membership rebuilt without moved observation';
+ assert (public.newsboard_story_manual_targets('story_test_abc',array['https://abcnews.com/story/0'])->>'https://abcnews.com/story/0')::uuid=other_story,'future batches use manual target';
+ correction:=public.newsboard_story_correct_article('snapshot:'||first_snap,6,null,'Manual earthquake identity','Test manual identity','sql-test');
+ new_story:=(correction->>'target_story_id')::uuid;
+ assert (select manual_label='Manual earthquake identity' from public.stories where id=new_story),'manual identity label retained';
+ assert exists(select 1 from newsboard_private.story_identity_corrections where target_story_id=new_story and active),'correction ledger retained';
  perform public.newsboard_story_finish(worker,null);
+end $$;
+set local role anon;
+do $$
+begin
+ begin
+  perform public.newsboard_story_correct_article('forbidden',1,null,null,null,null);
+  raise exception 'Anonymous role unexpectedly invoked identity correction';
+ exception when insufficient_privilege then null;
+ end;
 end $$;
 rollback;

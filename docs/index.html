@@ -641,6 +641,9 @@
     .storyRadarCard:focus-visible{outline:3px solid rgba(23,92,211,.22);outline-offset:2px}
     .storyRadarLastSeen{white-space:nowrap;text-align:right}
     .storyRadarMetrics{display:flex;gap:6px;flex-wrap:wrap}
+    .storyRadarPublishers{display:flex;gap:5px;flex-wrap:wrap}
+    .storyRadarPublisher{display:inline-flex;padding:3px 6px;border-radius:999px;background:#f3f4f6;color:var(--muted);font-size:10px;font-weight:700;border:1px solid var(--line)}
+    .storyRadarPublisher.isActive{background:#ecfdf3;border-color:#bbf7d0;color:#166534}
     .storyRadarMetric{display:inline-flex;align-items:center;padding:4px 7px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:11px;font-weight:700;color:var(--muted)}
     .storyRadarMetric.isActive{background:#ecfdf3;border-color:#bbf7d0;color:#166534}
     .storyRadarSummary{font-size:12px;color:var(--muted);margin-bottom:10px}
@@ -1294,7 +1297,11 @@
           <label class="storyRadarControl tiny" for="story-radar-sort">Sort
             <select id="story-radar-sort" class="linkbtn"><option value="recent" selected>Most recent</option><option value="reach">Publisher reach</option><option value="movement">Editorial movement</option></select>
           </label>
+          <label class="storyRadarControl tiny" for="story-radar-publisher">Publisher
+            <select id="story-radar-publisher" class="linkbtn"><option value="">All publishers</option><option value="abc1">ABC News</option><option value="cbs1">CBS News</option><option value="usat1">USA Today</option><option value="nbc1">NBC News</option><option value="cnn1">CNN</option><option value="guardian1">The Guardian</option><option value="ap1">Associated Press</option><option value="latimes1">Los Angeles Times</option><option value="npr1">NPR</option><option value="bbc1">BBC</option><option value="fox1">Fox News</option><option value="yahoo1">Yahoo News</option></select>
+          </label>
           <label class="storyRadarCheck"><input id="story-radar-active" type="checkbox"> Active coverage only</label>
+          <label class="storyRadarCheck"><input id="story-radar-number-one" type="checkbox"> Reached No. 1</label>
         </div>
         <div id="story-radar-summary" class="storyRadarSummary"></div>
         <div id="story-radar-list" class="latestList"></div>
@@ -3548,6 +3555,8 @@
         minPublishers: Number($("story-radar-min-publishers")?.value || 2),
         sort: $("story-radar-sort")?.value || "recent",
         activeOnly: Boolean($("story-radar-active")?.checked),
+        publisher: $("story-radar-publisher")?.value || "",
+        reachedNumberOne: Boolean($("story-radar-number-one")?.checked),
       };
     }
     function renderRecentStoryViews(){
@@ -6072,7 +6081,9 @@
     $("story-radar-window")?.addEventListener("change", renderRecentStoryViews);
     $("story-radar-min-publishers")?.addEventListener("change", renderRecentStoryViews);
     $("story-radar-sort")?.addEventListener("change", renderRecentStoryViews);
+    $("story-radar-publisher")?.addEventListener("change", renderRecentStoryViews);
     $("story-radar-active")?.addEventListener("change", renderRecentStoryViews);
+    $("story-radar-number-one")?.addEventListener("change", renderRecentStoryViews);
     $("btn-story-history-close")?.addEventListener("click", () => closeAllDrawers());
     $("btn-gdelt-close")?.addEventListener("click", () => closeAllDrawers());
     $("menu-go-overview")?.addEventListener("click", () => {

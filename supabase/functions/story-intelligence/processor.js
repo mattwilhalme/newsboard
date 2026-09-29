@@ -15,11 +15,13 @@ export async function processWindow(db, { start = null, end = null, limit = 60, 
    });
    const terms=[...new Set(items.flatMap(i=>i.terms))];
    const candidates=await rpc('newsboard_story_candidates',{p_terms:terms,p_at:batch.observed_at,p_source:batch.source_id,p_urls:items.map(i=>i.url)});
+   const manualTargets=await rpc('newsboard_story_manual_targets',{p_source:batch.source_id,p_urls:items.map(i=>i.url)});
    const assignments=[];
    for(const item of items){
-    const matched=matchStory(item,candidates),id=matched.story_id||crypto.randomUUID();
+    const matched=matchStory(item,candidates),manualId=manualTargets?.[item.url]||null,id=manualId||matched.story_id||crypto.randomUUID();
     const published=item.published_at||item.publishedAt||null;
-    assignments.push({...item,story_id:id,published_at:published&&Number.isFinite(Date.parse(published))?new Date(published).toISOString():null,match:matched.metadata});
+    const match=manualId?{...matched.metadata,decision:'manual_override',manual_target_story_id:manualId}:matched.metadata;
+    assignments.push({...item,story_id:id,published_at:published&&Number.isFinite(Date.parse(published))?new Date(published).toISOString():null,match});
     let story=candidates.find(s=>s.id===id);
     if(!story){story={id,representatives:[]};candidates.push(story);}
     story.representatives.push({title:item.title,url:canonicalUrl(item.url),source_id:item.source_id,observed_at:item.observed_at});
