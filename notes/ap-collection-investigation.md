@@ -102,3 +102,14 @@ browser session, plan upgrade, or production collector change has been created.
 References: [Browser Run content rendering](https://developers.cloudflare.com/browser-run/quick-actions/content-endpoint/),
 [pricing](https://developers.cloudflare.com/browser-run/pricing/),
 [browser session commands](https://developers.cloudflare.com/browser-run/reference/wrangler-commands/).
+
+## Browserbase follow-up
+
+At the user's request, an AP-only remote runtime was implemented and tested
+using the newly added GitHub API-key secret. Standard Browserbase connected
+successfully but AP still returned its HTTP 403 managed interstitial. A separate
+US-proxy test was refused by Browserbase with HTTP 402 before any AP request.
+The proxy path therefore remains untested pending provider plan/credit access.
+Neither test wrote to the database; production has not been switched. See
+[integration and live evidence](ap-browserbase.md) for setup, run links, and
+the validation gate. Other publisher runtimes remain unchanged.

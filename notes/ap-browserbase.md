@@ -88,3 +88,25 @@ non-proxied session received AP's HTTP 403 `Just a moment...` interstitial,
 which remained blocked after the bounded rendering wait. No lead or ranked
 stories were accepted and no database writes occurred. This establishes that
 the API key and remote integration work, not that AP access works.
+
+[US-proxy comparison 36748028410](https://github.com/mattwilhalme/newsboard/actions/runs/36748028410)
+was rejected by Browserbase's session-creation API with HTTP 402 before any
+browser session or AP request. This is a provider plan/credit restriction,
+not evidence that AP blocks the proxy path. Browserbase's
+[official desktop client](https://github.com/browserbase/desktop-browserbase)
+documents proxy access as a paid-plan feature; its current
+[pricing page](https://www.browserbase.com/pricing) lists the Developer plan at
+$20/month with proxy allowance. No plan upgrade was made and AP access through
+that feature is still unverified.
+
+Production provider configuration was not changed, the branch was not merged,
+and neither live diagnostic run received Supabase credentials. Next step:
+the user must enable a proxy-capable plan or have Browserbase support confirm
+AP access before a further proxy comparison. Do not enable production just
+because credentials or paid features become available; the homepage test must
+still pass and repeat successfully.
+
+Verification: 75 unit tests, 29 targeted browser fixture tests, and workflow
+contracts passed. The optional full frontend browser suite stalled in the
+unchanged first-load test process and was stopped; do not claim a completed
+full regression suite. No frontend source was changed.
