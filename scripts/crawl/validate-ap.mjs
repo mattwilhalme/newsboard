@@ -8,12 +8,13 @@ import { collectBrowserTop10 } from '../../lib/top10Browser.js';
 
 const flag = process.argv.indexOf('--browser');
 const engine = flag < 0 ? 'chrome' : process.argv[flag + 1];
-if (!['chrome', 'webkit'].includes(engine)) throw new Error('Choose --browser chrome or webkit');
+if (!['chrome', 'webkit', 'browserbase'].includes(engine)) throw new Error('Choose --browser chrome, webkit or browserbase');
+process.env.NEWSBOARD_MOBILE_SCREENSHOTS = '1';
 const runId = `ap-access-${engine}-${new Date().toISOString().replace(/[:.]/g, '-')}`;
 let browser, context, page, result;
 try {
-  if (engine === 'chrome') {
-    result = await scrapeAPHero();
+  if (engine !== 'webkit') {
+    result = await scrapeAPHero({ browserProvider: engine === 'browserbase' ? 'browserbase' : 'local' });
   } else {
     browser = await webkit.launch({ headless: true });
     const profile = { ...devices['iPhone 13'], deviceScaleFactor: 1 };
@@ -50,4 +51,6 @@ try {
 }
 fs.writeFileSync(`archive/${runId}.json`, JSON.stringify(result, null, 2));
 console.log(JSON.stringify({ ok: result.ok, error: result.error, meta: result.meta, item: result.item, top10_quality: result.top10_quality, top10_items: result.top10?.length, runId }));
-if (!result.ok) process.exitCode = 1;
+// Production may retain a validated lead when ranked coverage is partial, but
+// an exact-homepage provider trial must prove all ten ranks and CP agreement.
+if (!result.ok || result.top10_quality !== 'complete' || result.top10?.length !== 10) process.exitCode = 1;

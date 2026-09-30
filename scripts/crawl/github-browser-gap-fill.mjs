@@ -22,7 +22,7 @@ export function classifyCrawlResult(result, error = null) {
   const httpStatus = Number.isInteger(candidateStatus) ? candidateStatus : null;
   const message = error?.message || result?.error || 'No usable CP';
   if ([403, 429].includes(httpStatus) || result?.meta?.access_blocked === true) return { status: 'blocked', http_status: httpStatus, error: message };
-  if (error && /browserType\.launch|executable doesn't exist|failed to launch|playwright/i.test(message)) {
+  if (error && (error.code === 'NEWSBOARD_BROWSER_INFRASTRUCTURE' || /browserType\.launch|executable doesn't exist|failed to launch|playwright/i.test(message))) {
     return { status: 'infrastructure_error', http_status: httpStatus, error: message };
   }
   return { status: 'crawl_failed', http_status: httpStatus, error: message };

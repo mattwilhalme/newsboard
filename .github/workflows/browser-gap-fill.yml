@@ -28,6 +28,7 @@ on:
         options:
           - chrome
           - webkit
+          - browserbase
 
 permissions:
   contents: read
@@ -35,6 +36,8 @@ permissions:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   PLAYWRIGHT_BROWSER_CHANNEL: chrome
+  NEWSBOARD_AP_BROWSER_PROVIDER: ${{ vars.NEWSBOARD_AP_BROWSER_PROVIDER || 'local' }}
+  NEWSBOARD_AP_BROWSERBASE_PROXY: ${{ vars.NEWSBOARD_AP_BROWSERBASE_PROXY || 'false' }}
 
 concurrency:
   group: ${{ inputs.validate_ap && 'newsboard-ap-validation' || 'newsboard-browser-gap-fill' }}
@@ -64,9 +67,16 @@ jobs:
           NEWSBOARD_DISPATCH_ID: ${{ inputs.dispatch_id }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
+          BROWSERBASE_PROJECT_ID: ${{ secrets.BROWSERBASE_PROJECT_ID }}
+          BROWSERBASE_CONTEXT_ID: ${{ secrets.BROWSERBASE_CONTEXT_ID }}
         run: node scripts/crawl/github-browser-gap-fill.mjs
       - name: Validate AP without database writes
         if: ${{ inputs.validate_ap }}
+        env:
+          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
+          BROWSERBASE_PROJECT_ID: ${{ secrets.BROWSERBASE_PROJECT_ID }}
+          BROWSERBASE_CONTEXT_ID: ${{ secrets.BROWSERBASE_CONTEXT_ID }}
         run: node scripts/crawl/validate-ap.mjs --browser ${{ inputs.validation_browser || 'chrome' }}
       - name: Save browser diagnostics
         if: always()

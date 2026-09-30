@@ -10,6 +10,7 @@ import { failedTop10 } from "./supabase/functions/_shared/top10.js";
 import { collectBrowserTop10 } from "./lib/top10Browser.js";
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from "./lib/mobileHero.js";
 import { loadAPHomepage } from "./lib/apHomepage.js";
+import { apBrowserProvider, withBrowserbaseAPPage } from "./lib/browserbase.js";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
 import { fetchGdeltCoverage } from "./lib/gdeltCoverage.js";
 import { PUBLISHERS, PUBLISHER_IDS } from "./lib/publisherRegistry.js";
@@ -662,6 +663,7 @@ function logSourceGuardrail() {
 }
 
 async function withBrowser(fn, opts = {}) {
+  if (opts.provider === "browserbase") return withBrowserbaseAPPage(fn);
   const launchOptions = {
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -1793,10 +1795,11 @@ async function scrapeCBSHero() {
 /* ---------------------------
    NBC (single top item)
 --------------------------- */
-async function scrapeMobileHero(sourceId) {
+async function scrapeMobileHero(sourceId, { browserProvider } = {}) {
   const config = MOBILE_ADAPTERS[sourceId];
-  return withBrowser(async page => {
-    const runId = `${sourceId}_mobile_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+  const provider = sourceId === "ap1" ? apBrowserProvider(process.env, browserProvider) : "local";
+  return withBrowser(async (page, browserMeta = {}) => {
+    const runId = `${sourceId}_mobile_${provider === "browserbase" ? "browserbase_" : ""}${new Date().toISOString().replace(/[:.]/g, "-")}`;
     let hero, httpStatus = null, accessMeta = {};
     try {
       if (sourceId === "ap1") {
@@ -1839,6 +1842,7 @@ async function scrapeMobileHero(sourceId) {
     } : null;
     const ranked = item ? await collectBrowserTop10(page, sourceId, item) : null;
     const meta = { collection_method: "browser", mobile: true, viewport: MOBILE_CONTEXT.viewport,
+      ...(sourceId === "ap1" ? { browser_provider: provider, ...browserMeta } : {}),
       ...accessMeta,
       http_status: httpStatus, page_url: page.url(), selector_used: hero.selector_used || null,
       selector_tier: hero.selector_tier || null, module_selector: config.modules,
@@ -1855,7 +1859,7 @@ async function scrapeMobileHero(sourceId) {
       }
     }
     return { ...snapshot, updatedAt: snapshot.fetchedAt, archive };
-  }, { contextOptions: MOBILE_CONTEXT });
+  }, { contextOptions: MOBILE_CONTEXT, provider });
 }
 
 async function scrapeNBCHero() {
@@ -2064,8 +2068,8 @@ async function scrapeUSATHero() {
 /* ---------------------------
    Associated Press (single top item)
 --------------------------- */
-async function scrapeAPHero() {
-  return scrapeMobileHero("ap1");
+async function scrapeAPHero(options = {}) {
+  return scrapeMobileHero("ap1", options);
 }
 
 /* ---------------------------
