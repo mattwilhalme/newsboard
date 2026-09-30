@@ -215,9 +215,12 @@
       justify-content:space-between;
       align-items:flex-start;
       gap:12px;
+      flex-wrap:wrap;
       border-bottom:1px solid var(--line);
       background: var(--surface);
     }
+
+    .cardHead > .srcTitle{ flex:1 1 auto; }
 
     .srcTitle{ display:flex; align-items:center; gap:6px; min-width:0; }
     .srcTitle .srcMeta{ flex:1 1 auto; }
@@ -249,9 +252,12 @@
     .srcName{ font-weight:700; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .srcNameLink{ color:inherit; text-decoration:none; }
     .srcNameLink:hover{ color:var(--blue); text-decoration:underline; }
+    .srcVia{ font-size:12px; color:var(--muted); white-space:nowrap; }
     .srcTime{ font-size:13px; color: var(--muted); white-space:nowrap; }
 
-    .rightMeta{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; text-align:right; }
+    .rightMeta{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; text-align:right; margin-left:auto; flex:0 1 auto; min-width:0; }
+    .cardStamp{ white-space:nowrap; }
+    .crawlStatus{ max-width:170px; }
 
     .tiny{ font-size:12px; color: var(--muted); }
     .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
@@ -1577,6 +1583,7 @@
     // Expect exactly these sources; render placeholders when missing
     const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","guardian1","apgoogle1","latimes1","npr1","bbc1","fox1","yahoo1"];
     const isDiscoverySource = id => canonicalSourceId(id) === "apgoogle1";
+    let discoveriesExpanded = false;
 
 
     const HISTORY_WINDOW_OPTIONS = [6, 24, 168];
@@ -3123,25 +3130,42 @@
       host.closest('aside').querySelector('.detailsTabs').style.display = discovery ? 'none' : '';
       $("source-data-window").closest('.row').style.display = discovery ? 'none' : '';
       if (discovery) {
-        title.textContent = `${sourceName} — Discoveries`;
-        if (range) range.textContent = `Collected ${sourceRow.updatedAt ? fmtTime(sourceRow.updatedAt) : '—'}`;
+        title.textContent = 'Associated Press — Discoveries';
+        if (range) range.textContent = `via Google News · Collected ${sourceRow.updatedAt ? fmtTime(sourceRow.updatedAt) : '—'}`;
         const note = document.createElement('p');
         note.className = 'tiny';
         note.textContent = 'AP articles indexed by Google News. Latest published first; unranked, not AP homepage lead or Top 10. Links open via Google News. Publication times come from the feed and may differ from discovery time.';
         host.appendChild(note);
-        const list = document.createElement('ul');
-        for (const item of sourceRow.items || []) {
+        const items = (Array.isArray(sourceRow.items) ? sourceRow.items : []).filter(item => {
           let url;
-          try { url = new URL(item.url); } catch { continue; }
-          if (url.protocol !== 'https:' || url.hostname !== 'news.google.com') continue;
-          const li = document.createElement('li');
-          const link = document.createElement('a');
-          link.href = url.href; link.target = '_blank'; link.rel = 'noopener'; link.textContent = item.title;
-          const date = document.createElement('div'); date.className = 'tiny'; date.textContent = `Published ${fmtTime(item.publishedAt)}`;
-          li.append(link, date); list.appendChild(li);
-        }
+          try { url = new URL(item?.url); } catch { return false; }
+          return url.protocol === 'https:' && url.hostname === 'news.google.com' && typeof item.title === 'string' && item.title.trim();
+        });
+        const list = document.createElement('div'); list.className = 'historyList discoveryList';
+        const renderDiscoveries = () => {
+          list.replaceChildren();
+          for (const item of items.slice(0, discoveriesExpanded ? items.length : 20)) {
+            const card = document.createElement('article'); card.className = 'latestItem discoveryItem';
+            const meta = document.createElement('div'); meta.className = 'latestMetaRow';
+            const date = document.createElement('div'); date.className = 'srcTime';
+            date.textContent = `Published ${fmtTime(item.publishedAt)} · ${ago(item.publishedAt)}`;
+            meta.appendChild(date);
+            const body = document.createElement('div'); body.className = 'latestBody';
+            const main = document.createElement('div'); main.className = 'latestMain';
+            const headline = document.createElement('h3'); headline.className = 'latestTitle';
+            const link = document.createElement('a'); link.href = item.url; link.target = '_blank'; link.rel = 'noopener'; link.textContent = item.title;
+            headline.appendChild(link); main.appendChild(headline); body.appendChild(main);
+            card.append(meta, body); list.appendChild(card);
+          }
+        };
+        renderDiscoveries();
         host.appendChild(list);
-        if (!list.childElementCount) { const empty = document.createElement('p'); empty.textContent = 'No discoveries available yet.'; host.appendChild(empty); }
+        if (items.length > 20) {
+          const toggle = document.createElement('button'); toggle.type = 'button'; toggle.className = 'linkbtn';
+          const updateToggle = () => { toggle.textContent = discoveriesExpanded ? 'Show fewer' : 'Show all'; toggle.setAttribute('aria-expanded', String(discoveriesExpanded)); };
+          updateToggle(); toggle.addEventListener('click', () => { discoveriesExpanded = !discoveriesExpanded; renderDiscoveries(); updateToggle(); }); host.appendChild(toggle);
+        }
+        if (!items.length) { const empty = document.createElement('p'); empty.className = 'inlineEmpty'; empty.textContent = 'No discoveries available yet.'; host.appendChild(empty); }
         return;
       }
       if (range) range.textContent = fmtWindowRange(sourceDataWindowHours);
@@ -3652,16 +3676,16 @@
         srcAnchor.href = homeUrl;
         srcAnchor.target = "_blank";
         srcAnchor.rel = "noopener";
-        srcAnchor.textContent = sourceLabel(id, src);
+        srcAnchor.textContent = discovery ? 'Associated Press' : sourceLabel(id, src);
         srcName.appendChild(srcAnchor);
       } else {
-        srcName.textContent = sourceLabel(id, src);
+        srcName.textContent = discovery ? 'Associated Press' : sourceLabel(id, src);
       }
 
       meta.appendChild(srcName);
       if (discovery) {
-        const label = document.createElement('div'); label.className = 'tiny';
-        label.textContent = 'Story discovery · Not AP homepage rankings'; meta.appendChild(label);
+        const label = document.createElement('div'); label.className = 'srcVia';
+        label.textContent = 'via Google News'; label.title = 'Unranked AP story discovery, not AP homepage rankings'; meta.appendChild(label);
       }
       left.appendChild(meta);
 
@@ -3679,7 +3703,7 @@
       right.className = "rightMeta";
 
       const time = document.createElement("div");
-      time.className = "tiny";
+      time.className = "tiny cardStamp";
       const updatedAt = src?.updatedAt || null;
       const firstSeenAt = src?.firstSeenAt || src?.since || null;
       const hasHeadlineUpdate = indicator?.changeType === "headline";
@@ -3694,7 +3718,7 @@
       }
 
       const since = document.createElement("div");
-      since.className = "tiny";
+      since.className = "tiny cardStamp";
       if (reenteredAt) {
         since.textContent = `Re-entered ${ago(reenteredAt)}`;
       } else {
@@ -3702,7 +3726,7 @@
       }
 
       const firstSeenLine = document.createElement("div");
-      firstSeenLine.className = "tiny";
+      firstSeenLine.className = "tiny cardStamp";
       if (hasHeadlineUpdate && headlineSinceAt) {
         firstSeenLine.textContent = firstSeenEverAt ? `First seen ${ago(firstSeenEverAt)}` : "First seen —";
       } else if (firstSeenEverAt) {
@@ -3715,11 +3739,11 @@
 
       right.appendChild(time);
       if (!discovery) { right.appendChild(since); right.appendChild(firstSeenLine); }
-      else { const published = document.createElement('div'); published.className = 'tiny'; published.textContent = src?.item?.publishedAt ? `Published ${ago(src.item.publishedAt)}` : 'Latest published discovery'; right.appendChild(published); }
+      else { const published = document.createElement('div'); published.className = 'tiny cardStamp'; published.textContent = src?.item?.publishedAt ? `Published ${ago(src.item.publishedAt)}` : 'Latest published discovery'; right.appendChild(published); }
       const crawlStatus = src?.health?.crawlStatus || "unknown";
-      if (crawlStatus !== "success") {
+      if (!discovery && crawlStatus !== "success") {
         const healthLine = document.createElement("div");
-        healthLine.className = "tiny";
+        healthLine.className = "tiny crawlStatus";
         healthLine.textContent = ({ pending: "Browser crawl pending", running: "Browser crawl running", failed: src?.ok ? "Crawl Failed — showing last successful observation" : "Crawl Failed" })[crawlStatus] || "Crawl pending";
         healthLine.title = src?.health?.latestError || "";
         right.appendChild(healthLine);
@@ -3790,7 +3814,7 @@
 
       const err = document.createElement("div");
       err.className = "tiny";
-      err.textContent = src?.error ? String(src.error) : "";
+      err.textContent = !discovery && src?.error ? String(src.error) : "";
 
       wrap.appendChild(h2);
       wrap.appendChild(actionsRow);

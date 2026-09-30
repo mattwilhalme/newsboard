@@ -41,6 +41,8 @@ Browser fallback capability is configured for the eleven homepage publishers. AP
 
 AP via Google News (`apgoogle1`) is an unranked discovery source of AP articles indexed by Google. The card highlights the latest publication date returned by the feed, not AP's editorial lead or Google's importance ranking. The discovery drawer lists up to 100 deduplicated articles, latest published first; links remain Google News redirect links. Feed publication dates are separate from Newsboard's observation time. Invalid/empty/stale feeds preserve the last good data and report failure. Historical AP homepage data (`ap1`, Associated Press) is retained unchanged, but its active browser routing is retired. Discovery snapshots do not generate hero, Top 10, headline/rank events, or enter homepage-based Story Identity processing.
 
+The AP card displays **Associated Press** with **via Google News** on a separate muted line. Discoveries reuse History's card typography/layout, showing 20 articles initially with a keyboard-accessible “Show all” toggle. AP crawl-status/error text is hidden only on the overview card; collection failures remain recorded and visible in Data. Overview timestamps stay on one line, with the metadata block moving intact when the header is too narrow.
+
 ## Data concepts
 
 - **Observation time:** when a successful Newsboard collector saw a publisher state.
