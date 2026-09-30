@@ -12,6 +12,14 @@ on:
         required: false
         default: false
         type: boolean
+      validation_runner:
+        description: Hosted runner for the read-only AP access test
+        required: false
+        default: ubuntu-latest
+        type: choice
+        options:
+          - ubuntu-latest
+          - macos-latest
 
 permissions:
   contents: read
@@ -26,7 +34,7 @@ concurrency:
 
 jobs:
   browser-gap-fill:
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.validate_ap && inputs.validation_runner || 'ubuntu-latest' }}
     timeout-minutes: 12
     permissions:
       contents: read
