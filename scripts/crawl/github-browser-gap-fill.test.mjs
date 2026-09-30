@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { classifyCrawlResult, collectors, main } from './github-browser-gap-fill.mjs';
-import { BrowserInfrastructureError } from '../../lib/browserbase.js';
 
 test('publisher anti-bot responses are blocked, not infrastructure failures', () => {
   for (const status of [403, 429]) assert.deepEqual(
@@ -11,7 +10,6 @@ test('publisher anti-bot responses are blocked, not infrastructure failures', ()
   assert.equal(classifyCrawlResult({ error: 'headline not found', meta: { http_status: 200 } }).status, 'crawl_failed');
   assert.equal(classifyCrawlResult({ error: 'AP access interstitial did not clear', meta: { http_status: 200, access_blocked: true } }).status, 'blocked');
   assert.equal(classifyCrawlResult(null, new Error('browserType.launch: executable does not exist')).status, 'infrastructure_error');
-  assert.equal(classifyCrawlResult(null, new BrowserInfrastructureError('Browserbase API HTTP 403')).status, 'infrastructure_error');
 });
 
 test('existing browser collectors cover both browser-required and HTTP fallback publishers', () => {

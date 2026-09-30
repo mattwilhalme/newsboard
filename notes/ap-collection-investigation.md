@@ -110,6 +110,13 @@ using the newly added GitHub API-key secret. Standard Browserbase connected
 successfully but AP still returned its HTTP 403 managed interstitial. A separate
 US-proxy test was refused by Browserbase with HTTP 402 before any AP request.
 The proxy path therefore remains untested pending provider plan/credit access.
-Neither test wrote to the database; production has not been switched. See
-[integration and live evidence](ap-browserbase.md) for setup, run links, and
-the validation gate. Other publisher runtimes remain unchanged.
+Neither test wrote to the database; production was not switched. Evidence:
+[standard session](https://github.com/mattwilhalme/newsboard/actions/runs/36747740641),
+[proxy prerequisite](https://github.com/mattwilhalme/newsboard/actions/runs/36748028410).
+At the user's request on September 30, the Browserbase implementation, tests,
+workflow configuration, and setup document were removed. The original mobile
+runtime and bounded AP readiness checks remain. The implementation can be
+recovered from Git history if needed; diagnostic evidence is retained here.
+The unused `BROWSERBASE_API_KEY` GitHub Actions secret was also removed and
+the remaining secret names were checked. No Browserbase account or provider-side
+key was deleted or revoked. No Browserbase configuration variables existed.

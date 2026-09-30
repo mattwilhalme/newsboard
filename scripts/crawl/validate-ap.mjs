@@ -8,13 +8,13 @@ import { collectBrowserTop10 } from '../../lib/top10Browser.js';
 
 const flag = process.argv.indexOf('--browser');
 const engine = flag < 0 ? 'chrome' : process.argv[flag + 1];
-if (!['chrome', 'webkit', 'browserbase'].includes(engine)) throw new Error('Choose --browser chrome, webkit or browserbase');
+if (!['chrome', 'webkit'].includes(engine)) throw new Error('Choose --browser chrome or webkit');
 process.env.NEWSBOARD_MOBILE_SCREENSHOTS = '1';
 const runId = `ap-access-${engine}-${new Date().toISOString().replace(/[:.]/g, '-')}`;
 let browser, context, page, result;
 try {
-  if (engine !== 'webkit') {
-    result = await scrapeAPHero({ browserProvider: engine === 'browserbase' ? 'browserbase' : 'local' });
+  if (engine === 'chrome') {
+    result = await scrapeAPHero();
   } else {
     browser = await webkit.launch({ headless: true });
     const profile = { ...devices['iPhone 13'], deviceScaleFactor: 1 };

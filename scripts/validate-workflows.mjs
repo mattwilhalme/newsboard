@@ -17,15 +17,10 @@ for (const file of files) {
 
 const gapFill = await readFile(new URL("browser-gap-fill.yml", directory), "utf8");
 assert.match(gapFill, /scripts\/crawl\/github-browser-gap-fill\.mjs/);
-assert.match(gapFill, /- browserbase\b/, 'AP validation must support Browserbase');
-assert.match(gapFill, /NEWSBOARD_AP_BROWSER_PROVIDER:.*vars\.NEWSBOARD_AP_BROWSER_PROVIDER.*'local'/);
 const apValidation = gapFill.split('- name: Validate AP without database writes')[1]?.split('- name: Save browser diagnostics')[0];
 assert.ok(apValidation, 'read-only AP validation step is required');
-assert.match(apValidation, /BROWSERBASE_API_KEY:.*secrets\.BROWSERBASE_API_KEY/);
-assert.match(apValidation, /NEWSBOARD_AP_BROWSERBASE_PROXY:.*inputs\.validation_proxy/, 'proxy trial must not require a production configuration change');
 assert.doesNotMatch(apValidation, /SUPABASE_|SERVICE_ROLE/, 'AP validation must not receive database credentials');
 const scrape = await readFile(new URL("scrape.yml", directory), "utf8");
 assert.match(scrape, /scripts\/crawl\/github-backup\.mjs/);
-assert.match(scrape, /NEWSBOARD_AP_BROWSER_PROVIDER:.*vars\.NEWSBOARD_AP_BROWSER_PROVIDER.*'local'/);
-assert.match(scrape, /BROWSERBASE_API_KEY:.*secrets\.BROWSERBASE_API_KEY/);
+assert.doesNotMatch(gapFill + scrape, /BROWSERBASE|browserbase/, 'removed Browserbase integration must not receive credentials or run');
 console.log(`Validated ${files.length} workflow action contracts.`);

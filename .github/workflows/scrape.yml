@@ -9,8 +9,6 @@ permissions:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   PLAYWRIGHT_BROWSER_CHANNEL: chrome
-  NEWSBOARD_AP_BROWSER_PROVIDER: ${{ vars.NEWSBOARD_AP_BROWSER_PROVIDER || 'local' }}
-  NEWSBOARD_AP_BROWSERBASE_PROXY: ${{ vars.NEWSBOARD_AP_BROWSERBASE_PROXY || 'false' }}
 
 concurrency:
   group: newsboard-browser-backup
@@ -33,9 +31,6 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
-          BROWSERBASE_PROJECT_ID: ${{ secrets.BROWSERBASE_PROJECT_ID }}
-          BROWSERBASE_CONTEXT_ID: ${{ secrets.BROWSERBASE_CONTEXT_ID }}
         run: node scripts/crawl/github-backup.mjs
       - name: Save browser diagnostics
         if: always()
