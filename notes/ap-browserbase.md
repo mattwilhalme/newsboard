@@ -66,8 +66,10 @@ authentication/quota/connection failures are `infrastructure_error`, not AP
 timeout remains a usage bound.
 
 Managed proxy usage is disabled by default. To explicitly trial Browserbase's
-US-geolocated proxy, set repository variable `NEWSBOARD_AP_BROWSERBASE_PROXY`
-to `true`; it can incur additional provider charges. Geolocation is best effort,
+US-geolocated proxy without changing production configuration, add
+`-f validation_proxy=true` to the diagnostic dispatch command above. It can
+incur additional provider charges. For production, repository variable
+`NEWSBOARD_AP_BROWSERBASE_PROXY` selects `true` or `false`. Geolocation is best effort,
 not a guarantee of a fixed US IP or identical editorial regional content. Set
 the variable back to `false` to disable it. CAPTCHA solving and advanced stealth
 are disabled. A denied page remains denied; this integration does not establish
@@ -77,3 +79,12 @@ References: [session creation](https://docs.browserbase.com/reference/api/create
 [session release](https://docs.browserbase.com/reference/api/update-a-session),
 [persistent contexts](https://docs.browserbase.com/platform/browser/core-features/contexts),
 [proxies](https://docs.browserbase.com/platform/identity/proxies).
+
+## Initial live result — September 30, 2026
+
+[Read-only cloud run 36747740641](https://github.com/mattwilhalme/newsboard/actions/runs/36747740641)
+created a Browserbase session and connected successfully. The standard
+non-proxied session received AP's HTTP 403 `Just a moment...` interstitial,
+which remained blocked after the bounded rendering wait. No lead or ranked
+stories were accepted and no database writes occurred. This establishes that
+the API key and remote integration work, not that AP access works.
