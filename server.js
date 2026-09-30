@@ -13,6 +13,7 @@ import { loadAPHomepage } from "./lib/apHomepage.js";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
 import { fetchGdeltCoverage } from "./lib/gdeltCoverage.js";
 import { PUBLISHERS, PUBLISHER_IDS } from "./lib/publisherRegistry.js";
+import { AP_DISCOVERY_ID, collectAPDiscovery } from './supabase/functions/_shared/google-news-discovery.js';
 
 const app = express();
 app.use(express.json());
@@ -608,7 +609,7 @@ function baseSource(id, name, home_url, kind = "hero") {
   };
 }
 
-const SOURCE_REGISTRY = PUBLISHERS.map(({ id, name, homeUrl }) => ({ id, name, home_url: homeUrl }));
+const SOURCE_REGISTRY = PUBLISHERS.map(({ id, name, homeUrl, kind }) => ({ id, name, home_url: homeUrl, kind }));
 
 const SERVER_SOURCE_IDS = SOURCE_REGISTRY.map((s) => s.id);
 const UI_EXPECTED_SOURCE_IDS = PUBLISHER_IDS;
@@ -642,7 +643,7 @@ function ensureCacheShape(cache) {
   delete c.sources.wp1;
 
   for (const s of SOURCE_REGISTRY) {
-    if (!c.sources[s.id]) c.sources[s.id] = baseSource(s.id, s.name, s.home_url, "hero");
+    if (!c.sources[s.id]) c.sources[s.id] = baseSource(s.id, s.name, s.home_url, s.kind);
   }
 
   return c;
@@ -2774,7 +2775,7 @@ async function scrapeWPHero() {
 --------------------------- */
 const HERO_SCRAPERS = {
   ...HERO_SCRAPERS_HTTP,
-  ap1: scrapeAPHero,
+  [AP_DISCOVERY_ID]: async () => { const output = await collectAPDiscovery(); return { ...output, ok: true, updatedAt: output.observed_at }; },
   usat1: scrapeUSATHero,
   nbc1: scrapeNBCHero,
   yahoo1: scrapeWPHero,
@@ -2818,6 +2819,11 @@ async function refreshSources({ id = "" } = {}) {
       failed.push(sid);
     }
     ran.push(sid);
+    // Discovery is not a homepage hero. Never emit legacy hero/rank events.
+    if (sid === AP_DISCOVERY_ID) {
+      cache.sources[sid] = { ...cache.sources[sid], kind: 'discovery', updatedAt: res.updatedAt, updated_at: res.updatedAt, ok: Boolean(res.ok || prevItem), item: res.item || prevItem, items: res.items || cache.sources[sid]?.items || [], health: { crawlStatus: res.ok ? 'success' : 'failed', method: 'http', latestError: res.error || null }, error: res.error || null };
+      continue;
+    }
     const durationMs = Math.max(0, Date.now() - t0);
     const observedAtIso = res?.updatedAt || nowISO();
     if (res?.item) {

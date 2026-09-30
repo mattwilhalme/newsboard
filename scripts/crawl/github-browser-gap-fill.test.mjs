@@ -13,7 +13,9 @@ test('publisher anti-bot responses are blocked, not infrastructure failures', ()
 });
 
 test('existing browser collectors cover both browser-required and HTTP fallback publishers', () => {
-  assert.deepEqual(Object.keys(collectors), ['ap1', 'cnn1', 'nbc1', 'guardian1', 'usat1', 'yahoo1', 'abc1', 'cbs1', 'latimes1', 'npr1', 'bbc1', 'fox1']);
+  assert.deepEqual(Object.keys(collectors), ['cnn1', 'nbc1', 'guardian1', 'usat1', 'yahoo1', 'abc1', 'cbs1', 'latimes1', 'npr1', 'bbc1', 'fox1']);
+  assert.equal('ap1' in collectors, false, 'retired AP homepage must not be scheduled');
+  assert.equal('apgoogle1' in collectors, false, 'HTTP discovery must not use browser fallback');
   assert.ok(Object.values(collectors).every(collect => typeof collect === 'function'));
 });
 

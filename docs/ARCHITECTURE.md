@@ -30,13 +30,15 @@ flowchart LR
 
 Every source attempt is passed to `newsboard_save_source`. Successful validated output appends immutable observations and advances `crawler_current`; failure records only attempt state. `newsboard_finish_run` derives run-level `success`, `partial`, or `failed` from the independent source outcomes.
 
+AP via Google News (`apgoogle1`, kind `discovery`) uses a cloud HTTP RSS search, not the AP homepage. The shared discovery parser accepts only AP-sourced Google News article links with recent publication dates, deduplicates them, and orders them latest published first. Publication and observation timestamps remain separate. `newsboard_save_source` routes this identity to `newsboard_save_discovery`, which validates provenance and rankless items, records snapshots/current/attempt health, and never emits homepage hero, headline, or Top 10 events. `story_raw_batches` excludes discovery sources from rank-based Story Identity. Archived AP homepage records (`ap1`) retain their original identity; only their active routing configuration is retired. The public snapshot supplies discovery provenance and items for a dedicated unranked drawer.
+
 ### Browser gap-fill
 
-All twelve publishers have explicit browser-fallback capability. Database functions in `20260927041509_publisher_fallback_state.sql` maintain a source-specific `crawler_browser_jobs` row. A failed HTTP attempt queues fallback; browser-authoritative sources are queued when due. Pending and running jobs preserve the prior successful observation.
+The eleven homepage publishers have explicit browser-fallback capability; AP's Google News discovery feed does not. Database functions in `20260927041509_publisher_fallback_state.sql` maintain a source-specific `crawler_browser_jobs` row. A failed HTTP homepage attempt queues fallback; browser-authoritative sources are queued when due. Pending and running jobs preserve the prior successful observation.
 
 The `newsboard-browser-dispatch` Edge Function uses an atomic database claim and calls the GitHub workflow-dispatch API. `.github/workflows/browser-gap-fill.yml` runs `scripts/crawl/github-browser-gap-fill.mjs`, which claims only due publisher jobs, invokes existing Playwright collectors from `server.js`, and persists each outcome through the same `newsboard_save_source` contract. Per-source retry/backoff and leases prevent one publisher from blocking the rest.
 
-`.github/workflows/scrape.yml` is the manual full-browser backup. It runs all twelve collectors, has no schedule, and never commits generated headline data to the repository.
+`.github/workflows/scrape.yml` is the manual full backup. It runs eleven homepage collectors and the AP Google News HTTP discovery collector, has no schedule, and never commits generated headline data to the repository.
 
 ### Local and legacy tooling
 

@@ -30,14 +30,16 @@ This matrix reflects the current collectors, browser ranking adapters, migration
 | NBC News | Yes | Yes | Mobile browser | Yes | Yes |
 | CNN | Yes | Yes | Browser | Yes | Yes |
 | The Guardian | Yes | Partial-capable | Mobile browser | Yes | Yes |
-| Associated Press | Yes | Yes | Mobile browser | Yes | Yes |
+| AP via Google News | Latest discovery, not homepage lead | Unranked | Google News RSS / HTTP Edge | No | Excluded from homepage/rank intelligence |
 | Los Angeles Times | Yes | No | HTTP Edge | Yes | Yes |
 | NPR | Yes | No | HTTP Edge | Yes | Yes |
 | BBC | Yes | No | HTTP Edge | Yes | Yes |
 | Fox News | Yes | No | HTTP Edge | Yes | Yes |
 | Yahoo News | Yes | Partial-capable | Mobile browser | Yes | Yes |
 
-Browser fallback capability is configured for all twelve publishers. Database routing remains authoritative if it differs from static code during an operational rollout.
+Browser fallback capability is configured for the eleven homepage publishers. AP uses a cloud-only Google News RSS search feed, with no browser fallback. Database routing remains authoritative if it differs from static code during an operational rollout.
+
+AP via Google News (`apgoogle1`) is an unranked discovery source of AP articles indexed by Google. The card highlights the latest publication date returned by the feed, not AP's editorial lead or Google's importance ranking. The discovery drawer lists up to 100 deduplicated articles, latest published first; links remain Google News redirect links. Feed publication dates are separate from Newsboard's observation time. Invalid/empty/stale feeds preserve the last good data and report failure. Historical AP homepage data (`ap1`, Associated Press) is retained unchanged, but its active browser routing is retired. Discovery snapshots do not generate hero, Top 10, headline/rank events, or enter homepage-based Story Identity processing.
 
 ## Data concepts
 
@@ -62,7 +64,7 @@ GDELT Coverage is a separate on-demand experiment. Its “earliest match” is G
 - Invalid, empty, blocked, or failed results never replace `crawler_current`; the last successful observation remains visible with attempt health shown separately.
 - HTTP failures and due browser-authoritative publishers create source-specific browser jobs. The private dispatcher invokes the targeted GitHub workflow with duplicate protection, leases, and per-source retry/backoff.
 - A fresh frontend load uses Supabase RPCs, retries transient failures, and does not resurrect persisted dashboard snapshots or generated JSON as current news.
-- The manual browser backup runs all twelve browser collectors and writes through the same Supabase persistence RPCs.
+- The manual backup runs eleven homepage collectors plus the AP Google News HTTP feed and writes through the same Supabase persistence RPCs.
 
 Operational history and rollback detail live in [notes/](notes/). Those reports are intentionally retained even when they describe earlier migration stages.
 

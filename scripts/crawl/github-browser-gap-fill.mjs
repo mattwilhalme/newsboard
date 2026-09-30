@@ -5,7 +5,6 @@ import { pathToFileURL } from 'node:url';
 import * as scrapers from '../../server.js';
 
 export const collectors = {
-  ap1: scrapers.scrapeAPHero,
   cnn1: scrapers.scrapeCNNHero,
   nbc1: scrapers.scrapeNBCHero,
   guardian1: scrapers.scrapeGuardianHero,

@@ -1484,7 +1484,7 @@
       <div class="historyList">
         <div class="aboutCard">
           <h3 class="aboutTitle">About NewsBoard</h3>
-          <p class="aboutText">NewsBoard is a newsroom tool for quickly checking the lead story or centerpiece across major news sites. It tracks homepage changes over time, making it easy to see what moved, when headlines or links shifted, and to review editorial decisions around breaking news moments.</p>
+          <p class="aboutText">NewsBoard is a newsroom tool for quickly checking the lead story or centerpiece across major news sites. It tracks homepage changes over time, making it easy to see what moved, when headlines or links shifted, and to review editorial decisions around breaking news moments. AP via Google News is a separate, unranked story-discovery feed of AP articles indexed by Google, not AP homepage tracking. Its highlight is the latest published discovery; links open through Google News. Archived AP homepage observations keep their original Associated Press label.</p>
         </div>
         <button id="menu-go-overview" class="btn" type="button">Overview</button>
         <button id="menu-go-data" class="btn" type="button">Data</button>
@@ -1575,7 +1575,8 @@
     const TOP10_ABC_HISTORY_URL = "./data/top10_abc_history.json";
 
     // Expect exactly these sources; render placeholders when missing
-    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","guardian1","ap1","latimes1","npr1","bbc1","fox1","yahoo1"];
+    const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","guardian1","apgoogle1","latimes1","npr1","bbc1","fox1","yahoo1"];
+    const isDiscoverySource = id => canonicalSourceId(id) === "apgoogle1";
 
 
     const HISTORY_WINDOW_OPTIONS = [6, 24, 168];
@@ -2303,6 +2304,7 @@
       const n = row?.sourceName || row?.name || null;
       if (s === "yahoo1") return "Yahoo News";
       if (s === "guardian1") return "The Guardian";
+      if (s === "apgoogle1") return "AP via Google News";
       if (n) return String(n);
 
       if (s === "abc" || s === "abc1") return "ABC News";
@@ -2332,6 +2334,7 @@
       if (s === "nbc1") return "https://www.nbcnews.com/";
       if (s === "cnn1") return "https://www.cnn.com/";
       if (s === "ap1") return "https://apnews.com/";
+      if (s === "apgoogle1") return "https://news.google.com/search?q=site%3Aapnews.com%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen";
       if (s === "latimes1") return "https://www.latimes.com/";
       if (s === "npr1") return "https://www.npr.org/";
       if (s === "bbc1") return "https://www.bbc.com/";
@@ -2885,7 +2888,7 @@
         ? normalizedHistory.sources
         : {};
 
-      const sourceIds = pickCardSourceIds(currentSources || {});
+      const sourceIds = pickCardSourceIds(currentSources || {}).filter(id => !isDiscoverySource(id));
       const hasAnyRows = sourceIds.some((id) => {
         const hasEntries = Array.isArray(historySources?.[id]?.entries) && historySources[id].entries.length > 0;
         const hasCurrent = Boolean(currentSources?.[id]?.item?.url || currentSources?.[id]?.item?.title);
@@ -3038,8 +3041,8 @@
         const attempt = document.createElement("td"); attempt.textContent = op.last_attempt_status ? `${op.last_attempt_status}${op.http_status ? ` ${op.http_status}` : ""}` : (source?.health?.crawlStatus || "—"); attempt.title = op.last_error || health.error || "";
         const rate = document.createElement("td"); rate.textContent = op.success_rate_24h == null ? "—" : `${Math.round(Number(op.success_rate_24h)*100)}%`;
         const fallback = document.createElement("td"); fallback.textContent = op.browser_fallback_state ? `${op.browser_fallback_state}${op.next_retry_at ? ` · retry ${fmtTime(op.next_retry_at)}` : ""}` : "—";
-        const top10 = document.createElement("td"); top10.textContent = op.top10_quality ? `${op.top10_quality} (${op.top10_items ?? 0})` : "Unavailable";
-        const story = document.createElement("td"); story.textContent = op.story_processed_through ? `${Math.round(Number(op.story_processing_lag_seconds||0)/60)}m lag` : "Unprocessed";
+        const top10 = document.createElement("td"); top10.textContent = isDiscoverySource(id) ? "Not applicable (unranked)" : op.top10_quality ? `${op.top10_quality} (${op.top10_items ?? 0})` : "Unavailable";
+        const story = document.createElement("td"); story.textContent = isDiscoverySource(id) ? "Discovery only" : op.story_processed_through ? `${Math.round(Number(op.story_processing_lag_seconds||0)/60)}m lag` : "Unprocessed";
         row.append(publisher, state, lastGood, attempt, rate, fallback, top10, story); body.appendChild(row);
       }
       table.appendChild(body); host.replaceChildren(table);
@@ -3116,6 +3119,31 @@
       const sourceRow = currentSources?.[sourceId] || {};
       const sourceName = sourceLabel(sourceId, sourceRow);
       title.textContent = `${sourceName} Details`;
+      const discovery = isDiscoverySource(sourceId);
+      host.closest('aside').querySelector('.detailsTabs').style.display = discovery ? 'none' : '';
+      $("source-data-window").closest('.row').style.display = discovery ? 'none' : '';
+      if (discovery) {
+        title.textContent = `${sourceName} — Discoveries`;
+        if (range) range.textContent = `Collected ${sourceRow.updatedAt ? fmtTime(sourceRow.updatedAt) : '—'}`;
+        const note = document.createElement('p');
+        note.className = 'tiny';
+        note.textContent = 'AP articles indexed by Google News. Latest published first; unranked, not AP homepage lead or Top 10. Links open via Google News. Publication times come from the feed and may differ from discovery time.';
+        host.appendChild(note);
+        const list = document.createElement('ul');
+        for (const item of sourceRow.items || []) {
+          let url;
+          try { url = new URL(item.url); } catch { continue; }
+          if (url.protocol !== 'https:' || url.hostname !== 'news.google.com') continue;
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = url.href; link.target = '_blank'; link.rel = 'noopener'; link.textContent = item.title;
+          const date = document.createElement('div'); date.className = 'tiny'; date.textContent = `Published ${fmtTime(item.publishedAt)}`;
+          li.append(link, date); list.appendChild(li);
+        }
+        host.appendChild(list);
+        if (!list.childElementCount) { const empty = document.createElement('p'); empty.textContent = 'No discoveries available yet.'; host.appendChild(empty); }
+        return;
+      }
       if (range) range.textContent = fmtWindowRange(sourceDataWindowHours);
 
       const entries = Array.isArray(normalizedHistory?.sources?.[sourceId]?.entries)
@@ -3438,6 +3466,7 @@
           changeType: row.changeType || row.change_type || null,
           lastChangeAt: row.lastChangeAt || row.last_change_at || null,
           item: {
+            ...item,
             title: item.title || null,
             url: item.url || null,
             contentType: item.contentType || item.content_type || row.contentType || row.content_type || null,
@@ -3467,6 +3496,8 @@
     function pickCardSourceIds(sources){
       // Always render in a stable order with placeholders
       const have = new Set(Object.keys(sources || {}));
+      // AP homepage history remains available, but is no longer an active card.
+      have.delete('ap1');
       const ordered = [];
       for (const id of EXPECTED_SOURCE_IDS){
         ordered.push(id);
@@ -3598,6 +3629,7 @@
     function openGdeltCoverage(story){ return intelligenceDrawers.openGdeltCoverage(story); }
 
     function buildCardEl(id, src, indicator, timelineBySource = {}){
+      const discovery = isDiscoverySource(id);
       const card = document.createElement("section");
       card.className = "card";
       card.setAttribute("data-source-id", id);
@@ -3627,6 +3659,10 @@
       }
 
       meta.appendChild(srcName);
+      if (discovery) {
+        const label = document.createElement('div'); label.className = 'tiny';
+        label.textContent = 'Story discovery · Not AP homepage rankings'; meta.appendChild(label);
+      }
       left.appendChild(meta);
 
       const btnCopyLink = document.createElement("button");
@@ -3678,8 +3714,8 @@
       }
 
       right.appendChild(time);
-      right.appendChild(since);
-      right.appendChild(firstSeenLine);
+      if (!discovery) { right.appendChild(since); right.appendChild(firstSeenLine); }
+      else { const published = document.createElement('div'); published.className = 'tiny'; published.textContent = src?.item?.publishedAt ? `Published ${ago(src.item.publishedAt)}` : 'Latest published discovery'; right.appendChild(published); }
       const crawlStatus = src?.health?.crawlStatus || "unknown";
       if (crawlStatus !== "success") {
         const healthLine = document.createElement("div");
@@ -3742,12 +3778,12 @@
       const detailsBtn = document.createElement("button");
       detailsBtn.type = "button";
       detailsBtn.className = "linkbtn";
-      detailsBtn.textContent = "Details";
+      detailsBtn.textContent = discovery ? "View discoveries" : "Details";
       detailsBtn.setAttribute("data-action", "open-source-data");
       detailsBtn.setAttribute("data-id", id);
-      actionsRow.appendChild(changeRow);
+      if (!discovery) actionsRow.appendChild(changeRow);
       actionsRow.appendChild(detailsBtn);
-      const intelligence = storyBadge(id, src?.item);
+      const intelligence = discovery ? null : storyBadge(id, src?.item);
       if (intelligence) actionsRow.appendChild(intelligence);
       const coverageBtn=document.createElement("button");coverageBtn.type="button";coverageBtn.className="linkbtn";coverageBtn.textContent="Trace coverage";coverageBtn.disabled=!src?.item?.title||!firstSeenEverAt;
       coverageBtn.addEventListener("click",event=>{event.stopPropagation();const observedMs=Number(firstSeenEverAt)||Date.parse(firstSeenEverAt);openGdeltCoverage({title:src?.item?.title||"",url:src?.item?.url||"",source:sourceLabel(id,src),observed_at:new Date(observedMs).toISOString()});});actionsRow.appendChild(coverageBtn);
@@ -3913,6 +3949,7 @@
     function overviewItemsFromSources(sources){
       const out = [];
       for (const [sourceId, src] of Object.entries(sources || {})) {
+        if (sourceId === 'ap1' || isDiscoverySource(sourceId)) continue;
         out.push({
           sourceId,
           sourceName: sourceLabel(sourceId, src),

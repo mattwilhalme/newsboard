@@ -120,3 +120,34 @@ recovered from Git history if needed; diagnostic evidence is retained here.
 The unused `BROWSERBASE_API_KEY` GitHub Actions secret was also removed and
 the remaining secret names were checked. No Browserbase account or provider-side
 key was deleted or revoked. No Browserbase configuration variables existed.
+
+## Google News discovery cutover — September 30
+
+The user approved cloud-only Google-driven AP discovery in place of exact AP
+homepage tracking. The new identity is `apgoogle1`, labeled **AP via Google News**,
+with an explicit **Story discovery · Not AP homepage rankings** subtitle.
+The first scheduled cloud fetch succeeded at 17:40:04 UTC and the manual cloud
+verification succeeded at 17:40:13 UTC, each storing 100 current AP discoveries.
+The card highlights the latest feed publication date; the drawer is an unranked
+list with Google News redirect links. This is not a promise of complete AP
+coverage, editorial prominence, or immediate Google indexing.
+
+Migration `20260930173830_ap_google_news_discovery.sql` was applied through the
+Supabase Management API; the local version matches the deployed migration.
+The existing private-authenticated `newsboard-crawl` Edge Function was deployed
+with the shared RSS parser. AP's former browser routing configuration was removed
+and its jobs cancelled; that configuration is recoverable from prior migrations.
+No historical AP observations were deleted or renamed. Verified before/after:
+4,475 hero rows, 250 Top 10 runs, 395 crawler snapshots, and 6,794 headline events.
+The discovery identity has zero hero, Top 10, headline event, or Story Identity
+raw-batch rows. Its snapshots retain explicit feed provenance on each item.
+
+Verification: 70 unit tests, 27 retained homepage browser tests, the new discovery
+UI test, the broader dashboard-view test, and workflow contracts passed.
+`supabase/tests/ap_google_discovery.sql` passed against production in a rollback
+transaction, covering replay, provenance, rejected ranks/Top 10/empty feeds,
+last-good preservation, historical identity, and anonymous read-only access.
+Attempts while a production lease was active failed harmlessly; no synthetic
+test records survived. Supabase security advisors introduced no new findings;
+existing notices concern intentionally private RLS tables and three pre-existing
+public-read security-definer RPCs.

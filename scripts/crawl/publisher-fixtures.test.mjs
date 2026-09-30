@@ -7,7 +7,7 @@ import { parsePublisher, publishers } from "../../supabase/functions/newsboard-c
 const fixtureUrl = (id) => new URL(`../../test/fixtures/publishers/${id}/centerpiece.html`, import.meta.url);
 
 test("each publisher has a small sanitized centerpiece fixture", async () => {
-  for (const id of PUBLISHER_IDS) {
+  for (const id of [...PUBLISHER_IDS.filter(id => id !== 'apgoogle1'), 'ap1']) {
     const fixture = fixtureUrl(id);
     assert.ok((await stat(fixture)).size < 10_000, `${id} fixture should remain minimal`);
     const html = await readFile(fixture, "utf8");

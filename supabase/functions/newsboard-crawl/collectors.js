@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import {extractHttpTop10} from "./top10-http.js";
 import { createHash } from "node:crypto";
+import { AP_DISCOVERY_ID, AP_DISCOVERY_URL, collectAPDiscovery } from '../_shared/google-news-discovery.js';
 const sha1=s=>createHash("sha1").update(s).digest("hex");
 const parseUrlSafe=s=>{try{return new URL(s);}catch{return null;}};
 function cleanText(s) {
@@ -438,7 +439,7 @@ const HTTP_HERO_CONFIGS = {
 };
 
 
-export const publishers = Object.entries(HTTP_HERO_CONFIGS).map(([id, config])=>({id, ...config}));
+export const publishers = [...Object.entries(HTTP_HERO_CONFIGS).filter(([id]) => id !== 'ap1').map(([id, config])=>({id, ...config})), { id: AP_DISCOVERY_ID, sourceUrl: AP_DISCOVERY_URL, kind: 'discovery' }];
 export function parsePublisher(publisher, html, document) {
  const custom=publisher.customExtractor?.(html,publisher.sourceUrl,document);
  const result=custom ? {ok:true,item:{title:custom.title,url:custom.url,imgUrl:null,slotKey:sha1(`${publisher.id}|top`).slice(0,12)},selectorUsed:custom.selector} : extractLeadFromHtml({html,document,sourceId:publisher.id,...publisher});
@@ -446,6 +447,7 @@ export function parsePublisher(publisher, html, document) {
  return {...result,item:{...result.item,rank:1,contentType:/live-blog|live-updates|\/live\//i.test(result.item.url)?'live':'news'}};
 }
 export async function collectPublisher(publisher, {onDocument} = {}) {
+ if (publisher.id === AP_DISCOVERY_ID) return collectAPDiscovery();
  const start=Date.now();
  const response=await fetch(publisher.sourceUrl,{signal:AbortSignal.timeout(20000),headers:{'user-agent':publisher.mobile?'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',accept:'text/html,application/xhtml+xml'}});
  if(!response.ok) throw Object.assign(new Error(`Homepage HTTP ${response.status}`),{httpStatus:response.status});
