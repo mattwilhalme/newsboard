@@ -7,6 +7,11 @@ on:
         description: Supabase dispatch attempt UUID (leave empty for manual runs)
         required: false
         type: string
+      validate_ap:
+        description: Test AP homepage access without database writes
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -16,7 +21,7 @@ env:
   PLAYWRIGHT_BROWSER_CHANNEL: chrome
 
 concurrency:
-  group: newsboard-browser-gap-fill
+  group: ${{ inputs.validate_ap && 'newsboard-ap-validation' || 'newsboard-browser-gap-fill' }}
   cancel-in-progress: false
 
 jobs:
@@ -35,11 +40,15 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Browser gap fill to Supabase
+        if: ${{ !inputs.validate_ap }}
         env:
           NEWSBOARD_DISPATCH_ID: ${{ inputs.dispatch_id }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node scripts/crawl/github-browser-gap-fill.mjs
+      - name: Validate AP without database writes
+        if: ${{ inputs.validate_ap }}
+        run: node scripts/crawl/validate-mobile.mjs ap1
       - name: Save browser diagnostics
         if: always()
         uses: actions/upload-artifact@v5

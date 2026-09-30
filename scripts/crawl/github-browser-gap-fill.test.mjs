@@ -8,6 +8,7 @@ test('publisher anti-bot responses are blocked, not infrastructure failures', ()
     { status: 'blocked', http_status: status, error: `Mobile homepage HTTP ${status}` },
   );
   assert.equal(classifyCrawlResult({ error: 'headline not found', meta: { http_status: 200 } }).status, 'crawl_failed');
+  assert.equal(classifyCrawlResult({ error: 'AP access interstitial did not clear', meta: { http_status: 200, access_blocked: true } }).status, 'blocked');
   assert.equal(classifyCrawlResult(null, new Error('browserType.launch: executable does not exist')).status, 'infrastructure_error');
 });
 

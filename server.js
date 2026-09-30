@@ -9,6 +9,7 @@ import { extractHttpTop10 } from "./supabase/functions/newsboard-crawl/top10-htt
 import { failedTop10 } from "./supabase/functions/_shared/top10.js";
 import { collectBrowserTop10 } from "./lib/top10Browser.js";
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from "./lib/mobileHero.js";
+import { loadAPHomepage } from "./lib/apHomepage.js";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "./lib/supabaseClient.js";
 import { fetchGdeltCoverage } from "./lib/gdeltCoverage.js";
 import { PUBLISHERS, PUBLISHER_IDS } from "./lib/publisherRegistry.js";
@@ -1796,12 +1797,20 @@ async function scrapeMobileHero(sourceId) {
   const config = MOBILE_ADAPTERS[sourceId];
   return withBrowser(async page => {
     const runId = `${sourceId}_mobile_${new Date().toISOString().replace(/[:.]/g, "-")}`;
-    let hero, httpStatus = null;
+    let hero, httpStatus = null, accessMeta = {};
     try {
-      const response = await page.goto(config.url, { waitUntil: "domcontentloaded", timeout: 45000 });
-      httpStatus = response?.status() ?? null;
-      if (httpStatus >= 400) throw new Error(`Mobile homepage HTTP ${httpStatus}`);
-      await page.locator(config.modules).first().waitFor({ state: "visible", timeout: 15000 });
+      if (sourceId === "ap1") {
+        const loaded = await loadAPHomepage(page);
+        const { ok, error, ...diagnostics } = loaded;
+        accessMeta = diagnostics;
+        httpStatus = loaded.http_status;
+        if (!ok) throw new Error(error);
+      } else {
+        const response = await page.goto(config.url, { waitUntil: "domcontentloaded", timeout: 45000 });
+        httpStatus = response?.status() ?? null;
+        if (httpStatus >= 400) throw new Error(`Mobile homepage HTTP ${httpStatus}`);
+        await page.locator(config.modules).first().waitFor({ state: "visible", timeout: 15000 });
+      }
       await page.waitForTimeout(1500);
       // Ordinary dismiss controls only; never bypass access/security challenges.
       if (sourceId === "guardian1") {
@@ -1830,6 +1839,7 @@ async function scrapeMobileHero(sourceId) {
     } : null;
     const ranked = item ? await collectBrowserTop10(page, sourceId, item) : null;
     const meta = { collection_method: "browser", mobile: true, viewport: MOBILE_CONTEXT.viewport,
+      ...accessMeta,
       http_status: httpStatus, page_url: page.url(), selector_used: hero.selector_used || null,
       selector_tier: hero.selector_tier || null, module_selector: config.modules,
       pickedTopY: hero.top ?? null };
