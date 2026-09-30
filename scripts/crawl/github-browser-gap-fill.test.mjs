@@ -71,11 +71,12 @@ test('only database-assigned HTTP fallback is crawled, regardless of previous ob
  try{await main();assert.equal(crawled,1);const saved=calls.find(c=>c.endpoint==='newsboard_save_source');assert.equal(saved.body.p.source_id,'abc1');assert.equal(saved.body.p.success,true);assert.ok(!calls.some(c=>c.endpoint.includes('v_crawler_health')));}finally{globalThis.fetch=originalFetch;process.env=originalEnv;collectors.abc1=original;}
 });
 
-test('HTTP 403 is persisted as blocked and does not fail the worker', async () => {
+test('denied responses and 200 interstitials are persisted as blocked without saving stories', async () => {
   const originalFetch=globalThis.fetch, originalEnv={...process.env}, original=collectors.ap1, originalExitCode=process.exitCode;
   const calls=[];
   Object.assign(process.env,{SUPABASE_URL:'https://example.supabase.co',SUPABASE_SERVICE_ROLE_KEY:'test'});delete process.env.NEWSBOARD_DISPATCH_ID;
-  collectors.ap1=async()=>({ok:false,error:'Mobile homepage HTTP 403',meta:{http_status:403}});
+  let status=403;
+  collectors.ap1=async()=>({ok:false,error:'AP access interstitial did not clear',meta:{http_status:status,access_blocked:true}});
   globalThis.fetch=async(url,options={})=>{
     const endpoint=String(url).split('/').at(-1);calls.push({endpoint,body:options.body?JSON.parse(options.body):null});
     const result=endpoint==='newsboard_start_run'?'00000000-0000-0000-0000-000000000004':endpoint==='newsboard_browser_sources'?[{source_id:'ap1'}]:null;
@@ -83,9 +84,12 @@ test('HTTP 403 is persisted as blocked and does not fail the worker', async () =
   };
   try {
     process.exitCode=undefined;
-    await main();
-    const saved=calls.find(c=>c.endpoint==='newsboard_save_source').body.p;
-    assert.equal(saved.outcome,'blocked');assert.equal(saved.http_status,403);assert.equal(saved.success,false);assert.equal(saved.output,null);
-    assert.equal(process.exitCode,undefined);
+    for (status of [403,200]) {
+      calls.length=0;
+      await main();
+      const saved=calls.find(c=>c.endpoint==='newsboard_save_source').body.p;
+      assert.equal(saved.outcome,'blocked');assert.equal(saved.http_status,status);assert.equal(saved.success,false);assert.equal(saved.output,null);
+      assert.equal(process.exitCode,undefined);
+    }
   } finally { globalThis.fetch=originalFetch;process.env=originalEnv;collectors.ap1=original;process.exitCode=originalExitCode; }
 });

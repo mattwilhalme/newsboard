@@ -20,6 +20,14 @@ on:
         options:
           - ubuntu-latest
           - macos-latest
+      validation_browser:
+        description: Mobile browser for the read-only AP access test
+        required: false
+        default: chrome
+        type: choice
+        options:
+          - chrome
+          - webkit
 
 permissions:
   contents: read
@@ -47,6 +55,9 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - name: Install WebKit for mobile Safari validation
+        if: ${{ inputs.validate_ap && inputs.validation_browser == 'webkit' }}
+        run: npx playwright install --with-deps webkit
       - name: Browser gap fill to Supabase
         if: ${{ !inputs.validate_ap }}
         env:
@@ -56,7 +67,7 @@ jobs:
         run: node scripts/crawl/github-browser-gap-fill.mjs
       - name: Validate AP without database writes
         if: ${{ inputs.validate_ap }}
-        run: node scripts/crawl/validate-mobile.mjs ap1
+        run: node scripts/crawl/validate-ap.mjs --browser ${{ inputs.validation_browser || 'chrome' }}
       - name: Save browser diagnostics
         if: always()
         uses: actions/upload-artifact@v5
