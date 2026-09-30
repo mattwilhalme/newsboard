@@ -24,11 +24,15 @@ is separate from making AP accessible.
 | Production GitHub Ubuntu browser | HTTP 403, managed interstitial | [Run 36716908972](https://github.com/mattwilhalme/newsboard/actions/runs/36716908972) |
 | GitHub Ubuntu with ten-second ordinary rendering wait | Still HTTP 403; no homepage module | [Read-only run 36742755489](https://github.com/mattwilhalme/newsboard/actions/runs/36742755489) |
 | GitHub macOS with the same adapter and wait | Still HTTP 403; no homepage module | [Read-only run 36743059899](https://github.com/mattwilhalme/newsboard/actions/runs/36743059899) |
+| GitHub macOS WebKit, iPhone 13 mobile profile | Still HTTP 403; no homepage module | [Read-only run 36744110896](https://github.com/mattwilhalme/newsboard/actions/runs/36744110896) |
 | Direct HTTP homepage, `index.rss`, historical hub RSS URL, sitemap | HTTP 403 | Live requests on September 30 |
 | Open RSS AP feed | HTTP 200, valid RSS, stale | `https://openrss.org/feed/apnews.com`, last build September 26, 21:40:08 UTC |
 | Google News AP search RSS | HTTP 200, valid RSS, 100 items | Last build September 30, 16:18:05 UTC; current AP headlines |
 
-The local lead in both tests was the AP story about the emergency landing of a
+All Chrome tests used the mobile Pixel 7 profile with touch and a 390-pixel
+viewport. The WebKit test used the iPhone 13 mobile profile, also 390 pixels wide.
+AP's mobile layout is on the same canonical homepage URL; these were not desktop
+requests. The local lead in both tests was the AP story about the emergency landing of a
 flight carrying Israelis. Existing mobile selectors chose the primary StandardE
 lead and Top 10 rank one agreed with it.
 
@@ -44,12 +48,13 @@ that this hardening alone does **not** restore scheduled AP collection.
 
 The existing browser workflow has an optional `validate_ap` input. It skips the
 database collector and runs only AP's diagnostic collector. `validation_runner`
-selects Ubuntu or macOS for this diagnostic mode. Regular production dispatches
+selects Ubuntu or macOS for this diagnostic mode; `validation_browser` selects
+stock Chrome or WebKit with an iPhone mobile profile. Regular production dispatches
 still use Ubuntu. The diagnostic mode has a separate concurrency group and uses
 no Supabase credentials.
 
 Validation: 66 unit tests, 27 targeted browser tests, workflow contract checks,
-and two live local successful extractions. Both isolated cloud tests failed
+and two live local successful extractions. All three isolated cloud tests failed
 cleanly and left production data unchanged. Changes are on `codex/ap-cloud-access`.
 
 ## Cloud ingestion options
@@ -78,3 +83,22 @@ event/UI behavior; feeding it into the current ranked ledger would invent AP
 lead/rank observations. The user requires cloud-only exact homepage tracking
 and has declined the unranked-discovery substitution. No local scheduled
 collector was installed.
+
+## Next exact-homepage cloud test
+
+Cloudflare Browser Run is available on Workers Free and Paid plans, including
+ten browser minutes per day on Free. The project already uses Cloudflare hosting,
+so it is an available provider to investigate before adding another service.
+It renders actual webpages and can support exact homepage extraction, but AP
+access from that provider is **not yet verified**. Browser Run identifies itself
+as a bot and does not bypass website protections.
+
+`wrangler whoami` on September 30 reported that the existing OAuth token had
+expired and could not be refreshed. Testing the hosted browser requires the
+user to reauthenticate Cloudflare (`npx wrangler login`) or supply an appropriately
+scoped API token through a secret environment variable. No Cloudflare Worker,
+browser session, plan upgrade, or production collector change has been created.
+
+References: [Browser Run content rendering](https://developers.cloudflare.com/browser-run/quick-actions/content-endpoint/),
+[pricing](https://developers.cloudflare.com/browser-run/pricing/),
+[browser session commands](https://developers.cloudflare.com/browser-run/reference/wrangler-commands/).
