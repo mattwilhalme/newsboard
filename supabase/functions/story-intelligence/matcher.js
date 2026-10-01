@@ -1,8 +1,11 @@
 // Versioned, dependency-free matching. Never infers publication time.
-export const MATCH_CONFIG = Object.freeze({ version: 'deterministic-v1', threshold: 0.75, ambiguityMargin: 0.08, candidateHours: 48, phraseBonus: 0.15,
+export const MATCH_CONFIG = Object.freeze({ version: 'deterministic-v2', threshold: 0.75, ambiguityMargin: 0.08, candidateHours: 48, phraseBonus: 0.15,
   weights: { headline: 0.40, terms: 0.35, entities: 0.12, url: 0.08, temporal: 0.05 } });
 const STOP = new Set('a an the and or but of to in on at by for from with as is are was were be been being it its this that these those his her their they he she we you your our has have had will would could can may might says said say new latest live updates update breaking news watch video photos what know about after before over under into amid also than how why who when where which some more most now just here there very report reported reports according powerful major severe'.split(' '));
-const ALIASES = { quake:'earthquake', quakes:'earthquake', earthquakes:'earthquake', hits:'strike', hit:'strike', strikes:'strike', struck:'strike', storms:'storm', leaves:'leave', remains:'remain', tariffs:'tariff', cuts:'cut', cutting:'cut', hikes:'hike', raises:'hike', increases:'hike', drones:'drone', launches:'launch', missiles:'missile', snipers:'sniper', bans:'ban', reporters:'reporter', announces:'announce', announced:'announce' };
+const ALIASES = { quake:'earthquake', quakes:'earthquake', earthquakes:'earthquake', hits:'strike', hit:'strike', strikes:'strike', struck:'strike', storms:'storm', leaves:'leave', remains:'remain', tariffs:'tariff', cuts:'cut', cutting:'cut', hikes:'hike', raises:'hike', increases:'hike', drones:'drone', launches:'launch', missiles:'missile', snipers:'sniper', bans:'ban', reporters:'reporter', announces:'announce', announced:'announce', killed:'kill', kills:'kill', dies:'die', died:'die', wins:'win', won:'win', loses:'lose', lost:'lose', approves:'approve', approved:'approve', rejects:'reject', rejected:'reject', resigns:'resign', resigned:'resign', nominates:'nominate', nominated:'nominate' };
+const ACTIONS = new Set('announce approve ban charge cut die elect evacuate fire hike indict kill launch lose nominate resign reject sentence strike sue suspend vote win'.split(' '));
+const LOCATIONS = new Set('california texas florida washington ukraine russia china israel gaza iran iraq syria europe asia africa mexico canada'.split(' '));
+const ACTION_CONFLICTS = [['cut','hike'],['win','lose'],['approve','reject'],['nominate','resign'],['charge','acquit']];
 export function normalizeHeadline(value) {
  return String(value||'').normalize('NFKC').toLowerCase().replace(/^(?:(?:live(?: updates)?|breaking(?: news)?|updates?)\s*[:|–—-]\s*)+/i,'')
  .replace(/\s+[|–—]\s+(?:ap news|associated press|abc news|nbc news|cbs news|cnn|bbc news|usa today|yahoo news|the guardian)$/i,'')
@@ -18,10 +21,14 @@ export function canonicalUrl(value) {
  }catch{return '';}
 }
 export function features(item) {
- const title=String(item.title||'');const terms=significantTerms(title);
+ const title=String(item.title||'');const description=String(item.description||item.deck||item.subheadline||'');
+ const terms=significantTerms(title),contextTerms=significantTerms(`${title} ${description}`);
  const entities=[...new Set([...title.matchAll(/\b[A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+)*/g)].filter(m=>m.index>0||m[0].includes(' ')||!new Set(['storm','thousands','earthquake','powerful','major','severe','largest','first','second','live','breaking']).has(m[0].toLowerCase())).flatMap(m=>significantTerms(m[0])).filter(t=>terms.includes(t)))];
+ const actions=contextTerms.filter(t=>ACTIONS.has(t));
+ const locations=contextTerms.filter(t=>LOCATIONS.has(t));
+ const numbers=[...new Set(`${title} ${description}`.match(/\b\d+(?:\.\d+)?\b/g)||[])];
  let slug='';try{slug=decodeURIComponent(new URL(item.url).pathname).replace(/\b(?:story|articles?|news|politics|world|international|business|wirestory|live|updates|html|com)\b/gi,' ');}catch{}
- return { normalized:normalizeHeadline(title), terms, entities, url:canonicalUrl(item.url), urlTerms:significantTerms(slug).filter(t=>!/[0-9]/.test(t)) };
+ return { normalized:normalizeHeadline(title), terms, contextTerms, entities, actions, locations, numbers, url:canonicalUrl(item.url), urlTerms:significantTerms(slug).filter(t=>!/[0-9]/.test(t)) };
 }
 const overlap=(a,b)=>a.filter(t=>b.includes(t));
 const dice=(a,b)=>a.length+b.length ? 2*overlap(a,b).length/(a.length+b.length):0;
@@ -29,27 +36,32 @@ const contain=(a,b)=>Math.min(a.length,b.length)?overlap(a,b).length/Math.min(a.
 export function scorePair(candidate, representative) {
  const a=features(candidate),b=features(representative);
  const hours=Math.abs(Date.parse(candidate.observed_at)-Date.parse(representative.observed_at))/3600000;
- const shared=overlap(a.terms,b.terms);
- const headline_similarity=dice(a.terms,b.terms), term_overlap=contain(a.terms,b.terms),entity_overlap=contain(a.entities,b.entities),url_overlap=dice(a.urlTerms,b.urlTerms);
+ const shared=overlap(a.contextTerms,b.contextTerms),sharedHeadline=overlap(a.terms,b.terms);
+ const headline_similarity=dice(a.terms,b.terms), term_overlap=contain(a.contextTerms,b.contextTerms),entity_overlap=contain(a.entities,b.entities),url_overlap=dice(a.urlTerms,b.urlTerms);
+ const context_similarity=dice(a.contextTerms,b.contextTerms),action_overlap=contain(a.actions,b.actions),location_overlap=contain(a.locations,b.locations),number_overlap=contain(a.numbers,b.numbers);
  const temporal_proximity=Number.isFinite(hours)?Math.max(0,1-hours/MATCH_CONFIG.candidateHours):0;
  const pairs = ts => ts.slice(1).map((t,i)=>ts[i]+' '+t);
  const shared_phrases = overlap(pairs(a.terms), pairs(b.terms));
- const phrase_corroboration = shared.length>=4 && shared_phrases.length>0 && overlap(a.urlTerms,b.urlTerms).length>=3;
+ const phrase_corroboration = sharedHeadline.length>=4 && shared_phrases.length>0 && overlap(a.urlTerms,b.urlTerms).length>=3;
  let reason='below_threshold';
  const sameUrl=a.url&&a.url===b.url&&candidate.source_id===representative.source_id;
- const conflict=[['cut','hike'],['win','lose'],['approves','rejects']].some(([x,y])=>(a.terms.includes(x)&&b.terms.includes(y))||(a.terms.includes(y)&&b.terms.includes(x)));
+ const conflict=ACTION_CONFLICTS.some(([x,y])=>(a.actions.includes(x)&&b.actions.includes(y))||(a.actions.includes(y)&&b.actions.includes(x)));
  const entityOnly=shared.length>0&&shared.every(t=>a.entities.includes(t)&&b.entities.includes(t));
  // One shared person/topic is never sufficient. URL continuity is publisher-local
  // and still requires title evidence, avoiding ever-changing live-blog reuse.
  const continuity=sameUrl&&!conflict&&shared.length>=2&&term_overlap>=0.5;
- const gated=!conflict&&shared.length>=3&&!entityOnly&&headline_similarity>=0.45;
+ const eventSimilarity=Math.max(headline_similarity,context_similarity);
+ const gated=!conflict&&shared.length>=3&&!entityOnly&&eventSimilarity>=0.45;
  const w=MATCH_CONFIG.weights;
  let score=w.headline*headline_similarity+w.terms*term_overlap+w.entities*entity_overlap+w.url*url_overlap+w.temporal*temporal_proximity;
+ if(action_overlap>0)score=Math.min(1,score+0.05);
+ if(location_overlap>0)score=Math.min(1,score+0.025);
+ if(number_overlap>0)score=Math.min(1,score+0.025);
  if(phrase_corroboration)score=Math.min(1,score+MATCH_CONFIG.phraseBonus);
  if(continuity){score=Math.max(score,0.98);reason='same_publisher_url_and_title';}
  else if(!gated){reason=conflict?'conflicting_action':'insufficient_event_evidence';score=Math.min(score,0.49);}
  else if(score>=MATCH_CONFIG.threshold)reason='high_confidence';
- return {score:Number(score.toFixed(4)),headline_similarity,term_overlap,entity_overlap,url_overlap,temporal_proximity,shared_terms:shared,shared_phrases,phrase_corroboration,reason,eligible:(gated||continuity)&&hours<=MATCH_CONFIG.candidateHours};
+ return {score:Number(score.toFixed(4)),headline_similarity,context_similarity,term_overlap,entity_overlap,action_overlap,location_overlap,number_overlap,url_overlap,temporal_proximity,shared_terms:shared,shared_phrases,phrase_corroboration,reason,eligible:(gated||continuity)&&hours<=MATCH_CONFIG.candidateHours,event_signature:{candidate:{entities:a.entities,actions:a.actions,locations:a.locations,numbers:a.numbers},representative:{entities:b.entities,actions:b.actions,locations:b.locations,numbers:b.numbers}}};
 }
 export function matchStory(item, stories) {
  const candidates=stories.map(story=>{

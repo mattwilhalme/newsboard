@@ -58,6 +58,42 @@ The Story Radar view surfaces recent multi-publisher identities by reach, active
 
 Private Story Identity review tooling can label matcher quality, move a publisher article to an existing identity, or create a new manual identity. Corrections preserve raw evidence, rebuild derived public reads, and remain active for future observations of the same canonical publisher URL.
 
+### Local Story Review console
+
+The local console provides a drag-and-drop editor for the same private correction operations used by `scripts/story/audit.mjs`. First apply `supabase/migrations/20260930190000_story_review_console.sql` through the project's normal migration workflow (or paste that file into the Supabase SQL Editor and run it once). Then launch with server-side credentials:
+
+```bash
+SUPABASE_URL="https://YOUR_PROJECT.supabase.co" \
+SUPABASE_SERVICE_ROLE_KEY="YOUR_SERVICE_ROLE_KEY" \
+npm run story:review
+```
+
+Open `http://localhost:3001/docs/review.html`. The review API rejects non-loopback clients and keeps the service-role key in Node; never put that key in `docs/` or browser storage. Recent cards use Newsboard detection time unless a publisher supplied a real publication timestamp. Drag a detection onto a group to persistently reassign that publisher URL, or onto **Create a new group** to create an identity. Select a group to inspect its members/history or change its editorial label. The page refreshes after every edit and polls once a minute.
+
+To combine two existing identities, drag the group that should disappear onto the group that should remain. The console confirms the direction before moving all historical assignments, preserving future URL routing, rebuilding the surviving group, and removing the source group.
+
+After a merge, the oldest observed article headline becomes the surviving identity's canonical default title. A manually edited editorial label remains authoritative and is not overwritten.
+
+Use the time-window selector and search box to narrow both columns. Clicking a recent detection selects it for the non-drag workflow; then select a group and click **Move into this group**, or click the new-group drop zone. A reassignment moves every stored observation of that publisher's canonical article URL and remains in force for future Story Intelligence batches. Press `Ctrl-C` in the launch terminal to stop the console.
+
+The Recent Detections column is a singleton queue: it shows only articles whose current Story Identity has one publisher member, ordered by newest Newsboard detection. Multi-publisher identities remain available in the Story Groups column.
+
+The Story Groups column displays only identities with two or more publisher members. Singleton identities stay in Recent Detections and Suggested Matches rather than appearing in both columns.
+
+Manually named singleton identities appear separately under **Groups being built**. They remain visible as drop targets until a second publisher article is added, at which point they graduate into the normal Story Groups list.
+
+Dragging a Recent Detection onto empty space in the Story Groups column immediately creates a building group using the current headline as its label. Dragging an article onto an existing group also applies immediately. These additive article moves do not require confirmation; multi-group merges and **Remove group** remain confirmed operations.
+
+Selecting a multi-publisher group renders each publisher article as a draggable bubble. Drop a bubble on another Story Group to reassign that article, or on **No group** to create a fresh singleton identity and return it to Recent Detections. The latter is a UI concept; the database continues to assign every processed article to a story identity.
+
+**Remove group** dissolves an invalid derived grouping into one singleton identity per publisher + canonical URL. It moves every historical occurrence of each URL, records an audit entry, and never deletes raw crawler evidence. Use Merge—not Remove—when two groups represent the same real story and should survive as one identity.
+
+Above that queue, Suggested Matches compares recent cross-publisher singleton groups with the production deterministic matcher. Only pairs meeting the normal automatic-match threshold are shown. **Merge** uses the audited group-merge operation; **Skip** records the rejected pair privately so it does not reappear.
+
+Matcher v2 adds event signatures (entities, actions, locations, and meaningful numbers), can use retained card descriptions/decks, and stores the complete evidence snapshot behind reviewed Merge/Skip decisions. Run `npm run story:evaluate` with the server-side Supabase environment variables to summarize labeled decisions by matcher version.
+
+The scheduled Story Intelligence worker also maintains a persistent suggestion queue using up to eight recent representatives per singleton. Skips suppress only the current evidence hash: a material headline/deck change or matcher-version change can resurface the pair. Pending suggestions remain available while the local console is closed and include expandable component-level evidence.
+
 GDELT Coverage is a separate on-demand experiment. Its “earliest match” is GDELT discovery evidence, not a first-publisher claim.
 
 ## Operational behavior

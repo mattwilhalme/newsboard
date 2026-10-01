@@ -21,7 +21,10 @@ export function validateTop10(candidates,{sourceId,baseUrl,centerpiece,diagnosti
     const reason=c.rejected || (!url?'invalid URL':title.length<12?'missing headline':title.length>350?'non-editorial':seen.has(url)?'duplicate URL':null);
     if(reason){rejected.push({index,title:title.slice(0,150),url,reason});continue;}
     seen.add(url);
-    if(items.length<10)items.push({rank:items.length+1,title,url,fingerprint:createHash('sha1').update(url).digest('hex'),related_links:[]});
+    if(items.length<10)items.push({rank:items.length+1,title,url,fingerprint:createHash('sha1').update(url).digest('hex'),related_links:[],
+      ...(String(c.description||c.deck||'').trim()?{description:String(c.description||c.deck).replace(/\s+/g,' ').trim().slice(0,1000)}:{}),
+      ...(String(c.published_at||'').trim()?{published_at:String(c.published_at).trim()}:{}),
+      ...(String(c.section||'').trim()?{section:String(c.section).trim().slice(0,100)}:{})});
   }
   const agreement=Boolean(items.length && canonicalArticleUrl(centerpiece?.url,baseUrl)===items[0].url);
   const quality=!items.length?'failed':!agreement?'warning':items.length===10?'complete':'partial';

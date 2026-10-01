@@ -10,6 +10,8 @@ test('manual article target overrides the matcher before commit', async () => {
     if(name==='newsboard_story_inputs')return {data:[{batch_key:'snapshot:test',source_id:'abc1',observed_at:'2026-09-29T12:00:00Z',items:[{rank:1,title:'Manual identity article',url:'https://abcnews.com/story?id=1'}]}],error:null};
     if(name==='newsboard_story_candidates')return {data:[],error:null};
     if(name==='newsboard_story_manual_targets')return {data:{'https://abcnews.com/story?id=1':target},error:null};
+    if(name==='newsboard_story_suggestion_inputs')return {data:[],error:null};
+    if(name==='newsboard_story_store_suggestions')return {data:0,error:null};
     if(name==='newsboard_story_commit'){committed=args.p_assignments;return {data:true,error:null};}
     if(name==='newsboard_story_finish')return {data:null,error:null};
     throw new Error(`Unexpected RPC ${name}`);

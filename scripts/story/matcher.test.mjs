@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {normalizeHeadline,canonicalUrl,matchStory,scorePair} from '../../supabase/functions/story-intelligence/matcher.js';
+import {MATCH_CONFIG,normalizeHeadline,canonicalUrl,features,matchStory,scorePair} from '../../supabase/functions/story-intelligence/matcher.js';
 const at='2026-09-20T15:00:00Z';
 function match(a,b){return matchStory({title:a,url:'https://a.test/story/a',source_id:'a',observed_at:at},[{id:'story',representatives:[{title:b,url:'https://b.test/story/b',source_id:'b',observed_at:at}]}]);}
 for(const [a,b,expected] of [
@@ -25,3 +25,5 @@ test('real CBS and USA Today match when URL slugs corroborate distinctive phrase
  const b={source_id:'usat1',observed_at:at,title:'Trump says triumphal arch will also serve as military complex with snipers',url:'https://usatoday.com/story/news/politics/2026/09/20/donald-trump-arch-military-complex/91859453007'};
  const score=scorePair(a,b);assert.ok(score.score>=.75);assert.equal(score.phrase_corroboration,true);
 });
+test('v2 exposes event signatures and matcher version',()=>{const f=features({title:'Trump nominates 2 officials in Washington'});assert.deepEqual(f.actions,['nominate']);assert.deepEqual(f.numbers,['2']);assert.ok(f.locations.includes('washington'));assert.equal(MATCH_CONFIG.version,'deterministic-v2');});
+test('description can corroborate terse compatible headlines',()=>{const r=scorePair({title:'Thousands remain without power',description:'Severe Texas storm strikes Houston',observed_at:at},{title:'Texas storm update',description:'Storm leaves thousands without power across Houston',observed_at:at});assert.equal(r.eligible,true);assert.ok(r.context_similarity>=.45);});

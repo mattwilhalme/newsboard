@@ -16,7 +16,10 @@ export function extractHttpTop10(sourceId,html,centerpiece,document) {
    const title=(heading.text()||a.attr('aria-label')||'').replace(/\s+/g,' ').trim();
    let u;try{u=new URL(a.attr('href'),config.base);}catch{}
    const excluded=card.closest('nav,footer,aside,[role="navigation"],[data-testid*="sponsor"],.sponsored,.newsletter,.most-popular').length;
-   candidates.push({title,url:u?.href,rejected:excluded?'excluded module':!u?'invalid URL':!config.host.test(u.hostname)||!config.article.test(u.pathname)?'non-editorial':null});
+   const description=(card.find('[class*="dek"],[class*="description"],[class*="summary"],p').first().text()||'').replace(/\s+/g,' ').trim();
+   const published_at=card.find('time[datetime]').first().attr('datetime')||null;
+   const section=(card.attr('data-section')||card.closest('[data-section]').attr('data-section')||'').trim();
+   candidates.push({title,url:u?.href,description,published_at,section,rejected:excluded?'excluded module':!u?'invalid URL':!config.host.test(u.hostname)||!config.article.test(u.pathname)?'non-editorial':null});
   });
   return validateTop10(candidates,{sourceId,baseUrl:config.base,centerpiece,diagnostics:{method:'http',strategy:config.cards}});
  } catch(e){return failedTop10(e);}

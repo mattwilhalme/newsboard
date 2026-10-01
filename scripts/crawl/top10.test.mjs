@@ -23,6 +23,10 @@ test('rank one mismatch produces a warning and URL identity survives retitling',
  const r=rows(10),v=validateTop10(r,{centerpiece:r[1]});assert.equal(v.quality,'warning');assert.equal(v.diagnostics.centerpiece_agreement,false);
  const renamed=validate([{...r[0],title:'A changed editorial headline'},...r.slice(1)]);assert.equal(renamed.items[0].fingerprint,validate(r).items[0].fingerprint);
 });
+test('ranked validation retains bounded lightweight matching evidence',()=>{
+ const candidate={title:'Editorial story with structured evidence',url:'https://example.com/story/evidence',description:'A useful homepage deck',published_at:'2026-09-30T12:00:00Z',section:'World'};
+ const item=validate([candidate]).items[0];assert.equal(item.description,candidate.description);assert.equal(item.published_at,candidate.published_at);assert.equal(item.section,'World');
+});
 test('one ABC homepage fetch returns CP plus ranking and recognizes live articles without live TV',async()=>{
  const original=globalThis.fetch;let requests=0;
  const html='<main>'+['/Live','/International/live-updates/real-news?id=1',...Array.from({length:9},(_,i)=>`/US/story?id=${i+2}`)].map((url,i)=>`<article data-testid="prism-card"><a data-testid="prism-linkbase" href="https://abcnews.com${url}"><h2>${i?'Primary editorial headline number '+i:'ABC News Live'}</h2></a></article>`).join('')+'</main>';

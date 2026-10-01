@@ -25,7 +25,9 @@
     "test": "npm run verify",
     "test:gdelt": "node scripts/gdelt-coverage.test.mjs",
     "test:gdelt-ui": "node scripts/gdelt-ui.test.mjs",
-    "story:audit": "node scripts/story/audit.mjs"
+    "story:audit": "node scripts/story/audit.mjs",
+    "story:evaluate": "node scripts/story/evaluate.mjs",
+    "story:review": "NEWSBOARD_HOST=127.0.0.1 node server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.95.3",
