@@ -41,3 +41,10 @@ test('USA Today retains editorial grocery/car coverage, excluding commercial sho
  await page.setContent('<main>'+['/story/grocery/shopping/2026/news','/story/cars/shopping/2026/evs','/story/shopping/deals/2026/product','/picture-gallery/news/2026/gallery','/videos/news/2026/report'].map(u=>`<a class="gnt_m_lm_a" href="https://usatoday.com${u}">Editorial headline with enough text</a>`).join('')+'</main>');
  const r=await page.evaluate(extractRenderedCandidates,{config:BROWSER_TOP10.usat1});assert.equal(r.find(x=>x.url.includes('/story/shopping/')).rejected,'utility/shopping');assert.equal(r.filter(x=>!x.rejected).length,4);
 });
+
+test('NPR rejects section labels even when they point at a dated story URL',async()=>{
+ await page.setContent('<main><a data-metrics-ga4="homepage_curation_click curated story" href="https://npr.org/2026/09/29/example">National Security</a><div class="story-text"><h3><a href="https://npr.org/2026/09/29/example">Officials announce a significant example development</a></h3></div></main>');
+ const r=await page.evaluate(extractRenderedCandidates,{config:BROWSER_TOP10.npr1});
+ assert.equal(r.find(x=>x.title==='National Security').rejected,'section/navigation label');
+ assert.equal(r.find(x=>x.title.startsWith('Officials announce')).rejected,null);
+});

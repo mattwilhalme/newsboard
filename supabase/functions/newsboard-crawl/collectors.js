@@ -403,12 +403,24 @@ const HTTP_HERO_CONFIGS = {
   latimes1: {
     sourceUrl: "https://www.latimes.com/",
     hostPattern: /(^|\.)latimes\.com$/i,
+    urlAllow: (url) => {
+      const u = parseUrlSafe(url);
+      if (!u || !/(^|\.)latimes\.com$/i.test(u.hostname)) return false;
+      const path = String(u.pathname || "");
+      // LAT Media Group video players use opaque UUID-like root paths, often
+      // with a numeric suffix (for example ...b30000-123), rather than an
+      // editorial /story/, /list/, or /live-updates/ route.
+      if (/^\/[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}(?:-\d+)?\/?$/i.test(path)) return false;
+      return /\/(story|list|live|live-updates)\//i.test(path);
+    },
     selectors: ["main h1.promo-title a[href]", "main .promo-title a[href]", "main article h1 a[href]"],
   },
   npr1: {
     sourceUrl: "https://www.npr.org/",
     hostPattern: /(^|\.)npr\.org$/i,
-    selectors: ["main article a[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+    urlAllow: (url) => /^https:\/\/(?:www\.)?npr\.org\/\d{4}\/\d{2}\/\d{2}\//i.test(url),
+    titleReject: (title) => defaultTitleReject(title) || /^(?:national security|politics|world|business|health|science|climate|culture|music|sports|technology)$/i.test(String(title || "").trim()),
+    selectors: ["main .story-text h3 a[href]", "main h3.title a[href]", "main a[data-metrics-ga4*='curated story'][href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
   bbc1: {
     sourceUrl: "https://www.bbc.com/news",
