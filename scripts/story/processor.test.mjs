@@ -4,8 +4,9 @@ import { processWindow } from '../../supabase/functions/story-intelligence/proce
 
 test('manual article target overrides the matcher before commit', async () => {
   const target='00000000-0000-0000-0000-000000000123';
-  let committed=null;
+  let committed=null;const calls=[];
   const db={rpc:async(name,args)=>{
+    calls.push(name);
     if(name==='newsboard_story_begin')return {data:'00000000-0000-0000-0000-000000000001',error:null};
     if(name==='newsboard_story_inputs')return {data:[{batch_key:'snapshot:test',source_id:'abc1',observed_at:'2026-09-29T12:00:00Z',items:[{rank:1,title:'Manual identity article',url:'https://abcnews.com/story?id=1'}]}],error:null};
     if(name==='newsboard_story_candidates')return {data:[],error:null};
@@ -20,4 +21,27 @@ test('manual article target overrides the matcher before commit', async () => {
   assert.equal(result.status,'success');
   assert.equal(committed[0].story_id,target);
   assert.equal(committed[0].match.decision,'manual_override');
+  assert.ok(calls.indexOf('newsboard_story_finish')<calls.indexOf('newsboard_story_suggestion_inputs'));
+});
+
+test('backlog runs finish cleanly before skipping suggestion maintenance', async () => {
+  const calls=[];
+  const batches=[1,2].map(rank=>({batch_key:`snapshot:${rank}`,source_id:'abc1',observed_at:'2026-09-29T12:00:00Z',items:[{rank:1,title:`Backlog article number ${rank}`,url:`https://abcnews.com/story?id=${rank}`}]}));
+  const db={rpc:async(name,args)=>{
+    calls.push(name);
+    if(name==='newsboard_story_begin')return {data:'00000000-0000-0000-0000-000000000001',error:null};
+    if(name==='newsboard_story_inputs')return {data:batches,error:null};
+    if(name==='newsboard_story_candidates')return {data:[],error:null};
+    if(name==='newsboard_story_manual_targets')return {data:{},error:null};
+    if(name==='newsboard_story_commit')return {data:true,error:null};
+    if(name==='newsboard_story_finish')return {data:null,error:null};
+    throw new Error(`Unexpected RPC ${name}`);
+  }};
+  const result=await processWindow(db,{limit:2,budgetMs:25000});
+  assert.equal(result.status,'success');
+  assert.equal(result.processed,2);
+  assert.equal(result.more_possible,true);
+  assert.equal(result.suggestions_refreshed,false);
+  assert.equal(calls.filter(name=>name==='newsboard_story_finish').length,1);
+  assert.equal(calls.includes('newsboard_story_suggestion_inputs'),false);
 });

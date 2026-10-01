@@ -19,7 +19,7 @@ export async function refreshMatchSuggestions(db,{limit=500}={}){
  }
  return {pairs_scored:rows.length,stored:await call('newsboard_story_store_suggestions',{p_rows:rows})};
 }
-export async function processWindow(db, { start = null, end = null, limit = 60, budgetMs = 45000 } = {}) {
+export async function processWindow(db, { start = null, end = null, limit = 24, budgetMs = 25000 } = {}) {
  const rpc=async(name,args)=>{const {data,error}=await db.rpc(name,args);if(error)throw new Error(`${name}: ${error.message}`);return data;};
  const run=await rpc('newsboard_story_begin',{p_start:start,p_end:end});
  if(!run)return {status:'busy',processed:0};
@@ -50,8 +50,16 @@ export async function processWindow(db, { start = null, end = null, limit = 60, 
    }
    if(await rpc('newsboard_story_commit',{p_run:run,p_batch_key:batch.batch_key,p_assignments:assignments}))processed++;
   }
-  await refreshMatchSuggestions(db).catch(error=>console.warn(`story suggestion refresh: ${error.message}`));
+  const morePossible=batches.length===limit||processed<batches.length;
+  // Release the worker lease before optional suggestion maintenance. Batch
+  // commits are durable, and an expensive suggestion refresh must never leave
+  // an otherwise useful processing run stuck until its lease expires.
   await rpc('newsboard_story_finish',{p_run:run,p_error:null});
-  return {status:'success',run_id:run,processed,batches_fetched:batches.length,more_possible:batches.length===limit||processed<batches.length};
+  let suggestionsRefreshed=false;
+  if(!morePossible&&Date.now()-began<budgetMs){
+   const refreshed=await refreshMatchSuggestions(db).catch(error=>{console.warn(`story suggestion refresh: ${error.message}`);return null;});
+   suggestionsRefreshed=Boolean(refreshed);
+  }
+  return {status:'success',run_id:run,processed,batches_fetched:batches.length,more_possible:morePossible,suggestions_refreshed:suggestionsRefreshed};
  }catch(error){await rpc('newsboard_story_finish',{p_run:run,p_error:error.message}).catch(()=>{});throw error;}
 }

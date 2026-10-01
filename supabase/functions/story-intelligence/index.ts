@@ -12,7 +12,7 @@ Deno.serve(async req=>{
  try{
   const input=await req.json();
   if((input.start&&!input.end)||(!input.start&&input.end))return json({error:'Backfill requires both start and end'},400);
-  const result=await processWindow(db,{start:input.start||null,end:input.end||null,limit:60});
+  const result=await processWindow(db,{start:input.start||null,end:input.end||null,limit:24,budgetMs:25000});
   console.log(JSON.stringify(result));return json(result);
  }catch(e){console.error(e.message);return json({error:e.message},500);}
 });
