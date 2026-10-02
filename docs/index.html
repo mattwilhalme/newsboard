@@ -5006,20 +5006,15 @@
       }
     }
 
-    async function loadDeepDiveData() {
+    async function loadDeepDiveData(hours = deepDiveState.windowHours) {
       let latest = null;
       let historyRuns = [];
 
       try {
-        latest = await fetchJSON(`${TOP10_ABC_LATEST_URL}?ts=${Date.now()}`);
-      } catch {}
-
-      try {
-        const payload = await fetchJSON(`${TOP10_ABC_HISTORY_URL}?ts=${Date.now()}`);
+        const payload = await NewsboardData.getTop10(Number(hours || DEEP_DIVE_DEFAULT_HOURS));
+        latest = payload?.latest || null;
         historyRuns = Array.isArray(payload?.runs) ? payload.runs : [];
-      } catch {
-        historyRuns = [];
-      }
+      } catch {}
 
       deepDiveState.latest = latest || { ok: false, observedAt: null, items: [], error: "Timeline data unavailable" };
       deepDiveState.historyRuns = historyRuns;
@@ -5137,11 +5132,24 @@
         const preliminary = computeIndicators(sources, normalizedHistory);
         renderCollectionHealth(sources);
         renderOverview(sources, preliminary.indicators, {});
-        const operationalHealth = await NewsboardData.getCollectionHealth().catch(() => ({}));
+        // Paint current headlines before enriching them. These requests are
+        // independent and used to run serially, making their latencies add up
+        // during every page load.
+        await new Promise((resolve) => requestAnimationFrame(() => resolve()));
+        const operationalHealthPromise = NewsboardData.getCollectionHealth().catch(() => ({}));
+        const timelinePromise = loadCardTimelineBySource(12, sources);
+        const storyBadgesPromise = loadStoryBadges();
+        const recentStoriesPromise = loadRecentStories();
+        const deepDivePromise = loadDeepDiveData();
+        const [operationalHealth, loadedTimeline] = await Promise.all([
+          operationalHealthPromise,
+          timelinePromise,
+          storyBadgesPromise,
+          recentStoriesPromise,
+          deepDivePromise,
+        ]);
+        timelineBySource = loadedTimeline;
         renderCollectionHealth(sources, operationalHealth);
-        timelineBySource = await loadCardTimelineBySource(12, sources);
-        await loadStoryBadges();
-        await loadRecentStories();
         const { indicators, nextState } = computeIndicators(sources, normalizedHistory);
         latestDrawerPayload = { normalizedHistory, sources, indicators };
         renderData(normalizedHistory, indicators, sources, selectedWindowHours);
@@ -5157,7 +5165,6 @@
         if ($("drawer-source-data")?.classList.contains("open") && selectedSourceDataId) {
           renderSourceDataPanel(selectedSourceDataId);
         }
-        await loadDeepDiveData();
         if(!openedStoryDeepLink){const storyId=new URL(location.href).searchParams.get("story");if(storyId){openedStoryDeepLink=true;openStoryHistory(storyId,null);}}
 
       } catch (e) {
@@ -5228,10 +5235,10 @@
     $("tab-labs")?.addEventListener("click", () => setView("labs"));
     $("details-tab-changes")?.addEventListener("click", () => setDetailsTab("changes"));
     $("details-tab-data")?.addEventListener("click", () => setDetailsTab("data"));
-    $("deep-window")?.addEventListener("change", (e) => {
+    $("deep-window")?.addEventListener("change", async (e) => {
       deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
       deepDiveState.selectedObservedAt = null;
-      renderDeepDive();
+      await loadDeepDiveData(deepDiveState.windowHours);
     });
     $("cluster-strictness")?.addEventListener("change", (e) => {
       const next = String(e.target?.value || "balanced").toLowerCase();
