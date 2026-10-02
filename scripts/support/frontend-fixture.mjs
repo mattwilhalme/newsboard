@@ -8,6 +8,7 @@ export const frontendAssets = new Map([
   ['/newsboard/js/ui/drawers.js', ['text/javascript', fs.readFileSync('docs/js/ui/drawers.js', 'utf8')]],
   ['/newsboard/js/ui/intelligence-drawers.js', ['text/javascript', fs.readFileSync('docs/js/ui/intelligence-drawers.js', 'utf8')]],
   ['/newsboard/js/views/story-radar.js', ['text/javascript', fs.readFileSync('docs/js/views/story-radar.js', 'utf8')]],
+  ['/newsboard/js/views/overview-cards.js', ['text/javascript', fs.readFileSync('docs/js/views/overview-cards.js', 'utf8')]],
 ]);
 
 export function createFrontendFixture(now = new Date().toISOString()) {

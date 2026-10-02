@@ -1557,6 +1557,7 @@
   <script src="./js/ui/drawers.js"></script>
   <script src="./js/ui/intelligence-drawers.js"></script>
   <script src="./js/views/story-radar.js"></script>
+  <script src="./js/views/overview-cards.js"></script>
   <script>
     const {
       fmtTime, ago, fmtDurationSeconds, fmtDurationMs, normalizeUrlForStory,
@@ -3517,81 +3518,6 @@
     }
 
     // ---- Dynamic cards ----
-    function pickCardSourceIds(sources){
-      // Always render in a stable order with placeholders
-      const have = new Set(Object.keys(sources || {}));
-      // AP homepage history remains available, but is no longer an active card.
-      have.delete('ap1');
-      const ordered = [];
-      for (const id of EXPECTED_SOURCE_IDS){
-        ordered.push(id);
-        have.delete(id);
-      }
-      // append any unexpected sources after
-      for (const id of Array.from(have).sort()) ordered.push(id);
-      return ordered;
-    }
-
-    function tsForSort(sources, id){
-      const t = sources?.[id]?.updatedAt || sources?.[id]?.firstSeenAt || null;
-      const ms = Date.parse(t || "");
-      return Number.isFinite(ms) ? ms : 0;
-    }
-
-    function isLiveBlogItem(src){
-      if (isVideoItem(src)) return false;
-      const contentType = String(src?.item?.contentType || src?.contentType || "").toLowerCase();
-      if (contentType === "live") return true;
-      const u = String(src?.item?.url || "").toLowerCase();
-      const t = String(src?.item?.title || "").toLowerCase();
-      return (
-        /\/live(\/|$)/.test(u) ||
-        /\/live-blog\//.test(u) ||
-        /\/live-updates(\/|$)/.test(u) ||
-        /\blive blog\b/.test(t)
-      );
-    }
-
-    function isVideoItem(src){
-      const contentType = String(src?.item?.contentType || src?.contentType || "").toLowerCase();
-      if (contentType === "video") return true;
-      const u = String(src?.item?.url || "").toLowerCase();
-      const t = String(src?.item?.title || "").toLowerCase();
-      return (
-        /\/video(\/|$)/.test(u) ||
-        (/\/live(\/|$)/.test(u) && /\babc news live\b/.test(t))
-      );
-    }
-
-    function changeTsForSort(sources, indicatorsById, id){
-      const ind = indicatorsById?.[id] || {};
-      const urlMs = Number(ind?.currentSinceAt || 0);
-      const headlineMs = Number(ind?.headlineSinceAt || 0);
-      const src = sources?.[id] || {};
-      const fallbackMs = Date.parse(String(src?.lastChangeAt || src?.updatedAt || src?.firstSeenAt || ""));
-      const best = Math.max(
-        Number.isFinite(urlMs) ? urlMs : 0,
-        Number.isFinite(headlineMs) ? headlineMs : 0,
-        Number.isFinite(fallbackMs) ? fallbackMs : 0
-      );
-      return Number.isFinite(best) ? best : 0;
-    }
-
-    function applyCardEntrance(card, id, idx){
-      const col = idx % 3;
-      const row = Math.floor(idx / 3);
-      const x = (col - 1) * 10;
-      const y = 18 + (row * 3);
-      const r = (col - 1) * 0.55;
-      const delay = Math.round((row * 90) + (col * 60));
-
-      card.classList.add("card-enter");
-      card.style.setProperty("--enter-x", `${x}px`);
-      card.style.setProperty("--enter-y", `${y}px`);
-      card.style.setProperty("--enter-r", `${r}deg`);
-      card.style.setProperty("--enter-delay", `${delay}ms`);
-    }
-
     let storyBadges = [];
     let recentStories = [];
     let storyRadar = null;
@@ -3652,244 +3578,22 @@
     }
     function openGdeltCoverage(story){ return intelligenceDrawers.openGdeltCoverage(story); }
 
-    function buildCardEl(id, src, indicator, timelineBySource = {}){
-      const discovery = isDiscoverySource(id);
-      const card = document.createElement("section");
-      card.className = "card";
-      card.setAttribute("data-source-id", id);
-
-      const head = document.createElement("div");
-      head.className = "cardHead";
-
-      const left = document.createElement("div");
-      left.className = "srcTitle";
-
-      const meta = document.createElement("div");
-      meta.className = "srcMeta";
-
-      const srcName = document.createElement("div");
-      srcName.className = "srcName";
-      const homeUrl = sourceHomeUrl(id, src);
-      if (homeUrl) {
-        const srcAnchor = document.createElement("a");
-        srcAnchor.className = "srcNameLink";
-        srcAnchor.href = homeUrl;
-        srcAnchor.target = "_blank";
-        srcAnchor.rel = "noopener";
-        srcAnchor.textContent = discovery ? 'Associated Press' : sourceLabel(id, src);
-        srcName.appendChild(srcAnchor);
-      } else {
-        srcName.textContent = discovery ? 'Associated Press' : sourceLabel(id, src);
-      }
-
-      meta.appendChild(srcName);
-      if (discovery) {
-        const label = document.createElement('div'); label.className = 'srcVia';
-        label.textContent = 'via Google News'; label.title = 'Unranked AP story discovery, not AP homepage rankings'; meta.appendChild(label);
-      }
-      left.appendChild(meta);
-
-      const btnCopyLink = document.createElement("button");
-      btnCopyLink.className = "copyIconBtn";
-      btnCopyLink.type = "button";
-      btnCopyLink.textContent = "⧉";
-      btnCopyLink.title = "Copy headline link";
-      btnCopyLink.setAttribute("aria-label", "Copy headline link");
-      btnCopyLink.setAttribute("data-action", "copy-headline");
-      btnCopyLink.setAttribute("data-id", id);
-      left.appendChild(btnCopyLink);
-
-      const right = document.createElement("div");
-      right.className = "rightMeta";
-
-      const time = document.createElement("div");
-      time.className = "tiny cardStamp";
-      const updatedAt = src?.updatedAt || null;
-      const firstSeenAt = src?.firstSeenAt || src?.since || null;
-      const hasHeadlineUpdate = indicator?.changeType === "headline";
-      const firstSeenEverAt = indicator?.firstSeenEverAt || firstSeenAt || updatedAt || null;
-      const headlineSinceAt = indicator?.headlineSinceAt || updatedAt || null;
-      const reenteredAt = indicator?.reenteredAt || 0;
-
-      if (updatedAt) {
-        time.textContent = `Updated ${ago(updatedAt || headlineSinceAt)}`;
-      } else {
-        time.textContent = "";
-      }
-
-      const since = document.createElement("div");
-      since.className = "tiny cardStamp";
-      if (reenteredAt) {
-        since.textContent = `Re-entered ${ago(reenteredAt)}`;
-      } else {
-        since.textContent = "";
-      }
-
-      const firstSeenLine = document.createElement("div");
-      firstSeenLine.className = "tiny cardStamp";
-      if (hasHeadlineUpdate && headlineSinceAt) {
-        firstSeenLine.textContent = firstSeenEverAt ? `First seen ${ago(firstSeenEverAt)}` : "First seen —";
-      } else if (firstSeenEverAt) {
-        firstSeenLine.textContent = `First seen ${ago(firstSeenEverAt)}`;
-      } else if (src?.secondsInTop !== null && src?.secondsInTop !== undefined) {
-        firstSeenLine.textContent = `First seen ${fmtDurationSeconds(src.secondsInTop)} ago`;
-      } else {
-        firstSeenLine.textContent = "First seen —";
-      }
-
-      right.appendChild(time);
-      if (!discovery) { right.appendChild(since); right.appendChild(firstSeenLine); }
-      else { const published = document.createElement('div'); published.className = 'tiny cardStamp'; published.textContent = src?.item?.publishedAt ? `Published ${ago(src.item.publishedAt)}` : 'Latest published discovery'; right.appendChild(published); }
-      const crawlStatus = src?.health?.crawlStatus || "unknown";
-      if (!discovery && crawlStatus !== "success") {
-        const healthLine = document.createElement("div");
-        healthLine.className = "tiny crawlStatus";
-        healthLine.textContent = ({ pending: "Browser crawl pending", running: "Browser crawl running", failed: src?.ok ? "Crawl Failed — showing last successful observation" : "Crawl Failed" })[crawlStatus] || "Crawl pending";
-        healthLine.title = src?.health?.latestError || "";
-        right.appendChild(healthLine);
-      }
-
-      head.appendChild(left);
-      head.appendChild(right);
-
-      const body = document.createElement("div");
-      body.className = "cardBody";
-
-      const wrap = document.createElement("div");
-      wrap.className = "headlineWrap";
-
-      if (src?.item?.breakingLabel) {
-        const breakingTag = document.createElement("div");
-        breakingTag.className = "breakingNewsTag";
-        breakingTag.textContent = src.item.breakingLabel;
-        wrap.appendChild(breakingTag);
-      }
-
-      if (isVideoItem(src)) {
-        const videoTag = document.createElement("div");
-        videoTag.className = "videoTag";
-        videoTag.textContent = "Video";
-        wrap.appendChild(videoTag);
-      }
-
-      if (isLiveBlogItem(src)) {
-        const liveTag = document.createElement("div");
-        liveTag.className = "liveBlogTag";
-        liveTag.textContent = "Live Blog";
-        wrap.appendChild(liveTag);
-      }
-
-      const h2 = document.createElement("h2");
-      h2.className = "headline";
-      const a = document.createElement("a");
-      a.setAttribute("data-role", "headline-link");
-      a.setAttribute("data-id", id);
-      a.href = src?.item?.url || "#";
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = src?.item?.title || "—";
-      h2.appendChild(a);
-
-      const changeRow = document.createElement("div");
-      changeRow.className = "changeRow";
-      const dot = document.createElement("span");
-      const changeType = String(indicator?.changeType || "").toLowerCase();
-      dot.className = `changeDot ${changeType === "url" ? "url" : changeType === "headline" ? "headline" : "none"}`;
-      changeRow.appendChild(dot);
-
-      const actionsRow = document.createElement("div");
-      actionsRow.className = "cardActions";
-      const detailsBtn = document.createElement("button");
-      detailsBtn.type = "button";
-      detailsBtn.className = "linkbtn";
-      detailsBtn.textContent = discovery ? "View discoveries" : "Details";
-      detailsBtn.setAttribute("data-action", "open-source-data");
-      detailsBtn.setAttribute("data-id", id);
-      if (!discovery) actionsRow.appendChild(changeRow);
-      actionsRow.appendChild(detailsBtn);
-      const intelligence = discovery ? null : storyBadge(id, src?.item);
-      if (intelligence) actionsRow.appendChild(intelligence);
-      const coverageBtn=document.createElement("button");coverageBtn.type="button";coverageBtn.className="linkbtn";coverageBtn.textContent="Trace coverage";coverageBtn.disabled=!src?.item?.title||!firstSeenEverAt;
-      coverageBtn.addEventListener("click",event=>{event.stopPropagation();const observedMs=Number(firstSeenEverAt)||Date.parse(firstSeenEverAt);openGdeltCoverage({title:src?.item?.title||"",url:src?.item?.url||"",source:sourceLabel(id,src),observed_at:new Date(observedMs).toISOString()});});actionsRow.appendChild(coverageBtn);
-
-      const err = document.createElement("div");
-      err.className = "tiny";
-      err.textContent = !discovery && src?.error ? String(src.error) : "";
-
-      wrap.appendChild(h2);
-      wrap.appendChild(actionsRow);
-      wrap.appendChild(err);
-
-      body.appendChild(wrap);
-
-      card.appendChild(head);
-      card.appendChild(body);
-
-      return card;
-    }
-
-    function sortedOverviewIds(sources, indicatorsById){
-      const ids = pickCardSourceIds(sources);
-      // Group by change type first: URL change, then headline change, then unchanged.
-      function changePriority(id){
-        const type = String(indicatorsById?.[id]?.changeType || "").toLowerCase();
-        if (type === "url") return 0;
-        if (type === "headline") return 1;
-        return 2;
-      }
-      ids.sort((a,b) => {
-        const pa = changePriority(a);
-        const pb = changePriority(b);
-        if (pa !== pb) return pa - pb;
-
-        const ca = changeTsForSort(sources, indicatorsById, a);
-        const cb = changeTsForSort(sources, indicatorsById, b);
-        if (cb !== ca) return cb - ca;
-
-        const ta = tsForSort(sources, a);
-        const tb = tsForSort(sources, b);
-        if (tb !== ta) return tb - ta;
-        return String(a).localeCompare(String(b));
-      });
-      return ids;
-    }
-
-    function renderCards(sources, indicatorsById, timelineBySource = {}){
-      const grid = $("cards-grid");
-      if (!grid) return;
-      grid.innerHTML = "";
-      const ids = sortedOverviewIds(sources, indicatorsById);
-      const hasContent = ids.some((id) => {
-        const src = sources?.[id] || {};
-        const title = String(src?.item?.title || "").trim();
-        const url = String(src?.item?.url || "").trim();
-        return (title && title !== "—") || url;
-      });
-
-      for (const id of ids){
-        const src = sources?.[id] || {};
-        const ind = indicatorsById?.[id] || { changeType: null };
-        const card = buildCardEl(id, src, ind, timelineBySource);
-        applyCardEntrance(card, id, grid.children.length);
-        grid.appendChild(card);
-      }
-
-      if (!hasContent) {
-        const empty = document.createElement("div");
-        empty.className = "emptyState";
-        empty.style.gridColumn = "1 / -1";
-        empty.textContent = "No data yet. Refreshing will repopulate cards when sources are available.";
-        grid.appendChild(empty);
-      }
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          for (const card of grid.querySelectorAll(".card.card-enter")) {
-            card.classList.add("card-settle");
-          }
-        });
-      });
-    }
+    const {
+      applyCardEntrance,
+      buildCardEl,
+      pickCardSourceIds,
+      renderCards,
+      sortedOverviewIds,
+    } = window.NewsboardOverview.createOverviewCards({
+      expectedSourceIds: EXPECTED_SOURCE_IDS,
+      isDiscoverySource,
+      sourceHomeUrl,
+      sourceLabel,
+      ago,
+      fmtDurationSeconds,
+      storyBadge,
+      openGdeltCoverage,
+    });
 
     function normalizeForCluster(value){
       return String(value || "")

@@ -32,7 +32,7 @@ No framework or bundler is required initially. Use native ES modules and preserv
 2. **Supabase/data access (completed in the frontend architecture pass):** `docs/js/data/supabase.js` now owns config loading, request timeouts, RPC calls, caching, invalidation, and transport error normalization. Application retry and retention policy remains inline by design.
 3. **Drawer shell (completed):** `docs/js/ui/drawers.js` owns shared close, overlay, Escape, and focus-trap behavior. Deterministic browser coverage verifies Story History focus restoration.
 4. **Story History and GDELT drawers (completed):** `docs/js/ui/intelligence-drawers.js` owns their independent fetch/render paths. Optional intelligence remains failure-isolated from raw headlines.
-5. **Overview cards:** move card construction, source labels/order, health display, and Story badges. Run all first-load, last-good, and publisher-isolation cases.
+5. **Overview cards (completed):** `docs/js/views/overview-cards.js` now owns card construction, source ordering, health display, Story badges, coverage actions, and entrance behavior shared by Overview and clustered cards.
 6. **History and Data views:** extract bounded history calculations and table rendering with fixture snapshots.
 7. **Labs/clustering:** move the largest self-contained analysis block last; retain current storage keys and deterministic cluster tests.
 8. **CSS by component:** only after markup modules are stable, split tokens/layout/components while comparing screenshots at desktop and narrow widths.
