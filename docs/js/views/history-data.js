@@ -231,7 +231,87 @@
       return { render, renderInto };
     }
 
-    return { canonicalStoryKey, computeSourceDataMetrics, createDataRenderer, fmtMetricValue, historyEntryBoundsMs };
+    function createHistoryRenderer({ sourceLabel, fmtTime, ago, openHistoryItemDrawer }) {
+      function storyCard(row, full = false) {
+        const card = document.createElement(full ? "section" : "article");
+        card.className = full ? "hItem latestItem isClickable" : "latestItem isClickable";
+        const metaRow = document.createElement("div");
+        metaRow.className = full ? "hHead" : "latestMetaRow";
+        const left = document.createElement("div"); left.className = "srcTitle";
+        const meta = document.createElement("div"); meta.className = "srcMeta srcMetaInline";
+        const name = document.createElement("div"); name.className = "srcName"; name.textContent = sourceLabel(row.source, null);
+        const when = document.createElement("div"); when.className = "srcTime";
+        const timestamp = row.updatedAt || row.lastSeenAt || row.firstSeenAt || null;
+        when.textContent = timestamp ? `${fmtTime(timestamp)} · ${ago(timestamp)}` : "—";
+        meta.append(name, when); left.appendChild(meta); metaRow.appendChild(left);
+        const body = document.createElement("div"); body.className = full ? "hBody" : "latestBody";
+        const main = document.createElement("div"); main.className = full ? "hMain" : "latestMain";
+        const title = document.createElement("h3"); title.className = full ? "hTitle" : "latestTitle";
+        const link = document.createElement("a"); link.href = row.url || "#"; link.target = "_blank"; link.rel = "noopener"; link.textContent = row.title || "—";
+        title.appendChild(link); main.appendChild(title); body.appendChild(main); card.append(metaRow, body);
+        card.addEventListener("click", (event) => {
+          if (event.target?.closest?.("a, button, input, select, label")) return;
+          openHistoryItemDrawer(row.source, row.url || "", row.title || "", timestamp);
+        });
+        return card;
+      }
+
+      function render(history, currentSources, indicatorsById = {}, options = {}) {
+        const host = document.getElementById(options?.hostId || "history");
+        if (!host) return;
+        host.innerHTML = "";
+        const useWindow = Boolean(options?.useWindow);
+        const cutoffMs = windowStartMs(options?.windowSpec ?? 24);
+        const recentLimit = Math.max(1, Number(options?.recentLimit || 16));
+        const sources = history?.sources && typeof history.sources === "object" ? history.sources : {};
+        const latestRows = [];
+        for (const [source, src] of Object.entries(currentSources || {})) {
+          const entries = Array.isArray(sources?.[source]?.entries) ? sources[source].entries : [];
+          const latest = entries.at(-1) || null;
+          const updatedAt = src?.updatedAt || src?.lastChangeAt || latest?.lastSeenAt || latest?.firstSeenAt || null;
+          const timestamp = Date.parse(updatedAt || "");
+          if (!Number.isFinite(timestamp)) continue;
+          latestRows.push({ source, title: String(src?.item?.title || "").trim() || "—", url: String(src?.item?.url || "").trim() || "#", updatedAt, __tMs: timestamp, __changeType: indicatorsById?.[source]?.changeType || null });
+        }
+        latestRows.sort((a, b) => b.__tMs - a.__tMs || String(a.source).localeCompare(String(b.source)));
+        const recentSection = document.createElement("section"); recentSection.className = "historySection";
+        const recentTitle = document.createElement("div"); recentTitle.className = "historySectionTitle"; recentTitle.textContent = "Most recent updates";
+        const recentList = document.createElement("div"); recentList.className = "historyList";
+        recentSection.append(recentTitle, recentList); host.appendChild(recentSection);
+        for (const row of latestRows.slice(0, recentLimit)) recentList.appendChild(storyCard(row));
+
+        const rows = [];
+        for (const [source, payload] of Object.entries(sources)) {
+          const entries = (Array.isArray(payload?.entries) ? payload.entries : []).filter((entry) => {
+            if (!useWindow) return true;
+            const timestamp = Date.parse(entry?.lastSeenAt || entry?.firstSeenAt || "");
+            return Number.isFinite(timestamp) && timestamp >= cutoffMs;
+          });
+          for (let index = 0; index < entries.length; index += 1) {
+            const entry = entries[index];
+            if (!entry?.url) continue;
+            const previous = entries[index - 1];
+            const changeType = previous && previous.url === entry.url && String(previous.title || "") !== String(entry.title || "") ? "headline" : (!previous || previous.url !== entry.url ? "url" : "other");
+            rows.push({ source, __changeType: changeType, ...entry });
+          }
+        }
+        const activity = (row) => { const value = Date.parse(row?.lastSeenAt || row?.firstSeenAt || ""); return Number.isFinite(value) ? value : 0; };
+        rows.sort((a, b) => activity(b) - activity(a) || String(a.source).localeCompare(String(b.source)) || String(a.url).localeCompare(String(b.url)) || String(a.title).localeCompare(String(b.title)));
+        if (!rows.length && !latestRows.length) {
+          const empty = document.createElement("div"); empty.className = "tiny"; empty.style.color = "var(--muted)"; empty.textContent = "No history yet."; recentList.appendChild(empty); return;
+        }
+        const fullSection = document.createElement("section"); fullSection.className = "historySection";
+        const fullTitle = document.createElement("div"); fullTitle.className = "historySectionTitle"; fullTitle.textContent = "Full history";
+        const toggle = document.createElement("button"); toggle.type = "button"; toggle.className = "linkbtn"; toggle.textContent = "Show all";
+        const fullList = document.createElement("div"); fullList.className = "historyList"; fullList.style.display = "none";
+        toggle.addEventListener("click", () => { const show = fullList.style.display === "none"; fullList.style.display = show ? "" : "none"; toggle.textContent = show ? "Hide all" : "Show all"; });
+        fullSection.append(fullTitle, toggle, fullList); host.appendChild(fullSection);
+        for (const row of rows) fullList.appendChild(storyCard(row, true));
+      }
+      return { render };
+    }
+
+    return { canonicalStoryKey, computeSourceDataMetrics, createDataRenderer, createHistoryRenderer, fmtMetricValue, historyEntryBoundsMs };
   }
 
   global.NewsboardHistoryData = { createHistoryData };

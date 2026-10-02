@@ -2478,250 +2478,6 @@
       setHistoryItemOpen(true);
     }
 
-    function renderHistory(history, currentSources, indicatorsById = {}, options = {}){
-      const host = $(options?.hostId || "history");
-      if (!host) return;
-      host.innerHTML = "";
-
-      const useWindow = Boolean(options?.useWindow);
-      const cutoffMs = windowStartMs(options?.windowSpec ?? selectedWindowHours);
-      const recentLimit = Math.max(1, Number(options?.recentLimit || 16));
-      function inWindow(x){
-        if (!useWindow) return true;
-        const t = Date.parse(x?.lastSeenAt || x?.firstSeenAt || "");
-        return Number.isFinite(t) ? t >= cutoffMs : false;
-      }
-
-      const sources = history && typeof history === "object" && history.sources && typeof history.sources === "object" ? history.sources : {};
-
-      const latestRows = [];
-      for (const [sourceId, src] of Object.entries(currentSources || {})) {
-        const item = src?.item || {};
-        const title = String(item.title || "").trim();
-        const url = String(item.url || "").trim();
-        const historyEntries = Array.isArray(sources?.[sourceId]?.entries) ? sources[sourceId].entries : [];
-        const latestHist = Array.isArray(historyEntries) && historyEntries.length
-          ? historyEntries[historyEntries.length - 1]
-          : null;
-
-        const ind = indicatorsById?.[sourceId] || { changeType: null };
-        const latestChangeType = ind?.changeType || null;
-
-        const tRaw = src?.updatedAt || src?.lastChangeAt || latestHist?.lastSeenAt || latestHist?.firstSeenAt || null;
-        const tMs = Number.isFinite(Date.parse(tRaw || "")) ? Date.parse(tRaw) : 0;
-        if (!tMs) continue;
-
-        latestRows.push({
-          source: sourceId,
-          title: title || "—",
-          url: url || "#",
-          updatedAt: tRaw,
-          __changeType: latestChangeType,
-          __tMs: tMs,
-        });
-      }
-
-      latestRows.sort((a, b) => {
-        if (b.__tMs !== a.__tMs) return b.__tMs - a.__tMs;
-        return String(a.source || "").localeCompare(String(b.source || ""));
-      });
-
-      const section = document.createElement("section");
-      section.className = "historySection";
-
-      const sectionTitle = document.createElement("div");
-      sectionTitle.className = "historySectionTitle";
-      sectionTitle.textContent = "Most recent updates";
-      section.appendChild(sectionTitle);
-
-      const unifiedList = document.createElement("div");
-      unifiedList.className = "historyList";
-      section.appendChild(unifiedList);
-      host.appendChild(section);
-
-      if (latestRows.length) {
-        for (const row of latestRows.slice(0, recentLimit)) {
-          const card = document.createElement("article");
-          card.className = "latestItem isClickable";
-
-          const meta = document.createElement("div");
-          meta.className = "latestMetaRow";
-
-          const left = document.createElement("div");
-          left.className = "srcTitle";
-
-          const leftMeta = document.createElement("div");
-          leftMeta.className = "srcMeta srcMetaInline";
-          const sourceName = document.createElement("div");
-          sourceName.className = "srcName";
-          sourceName.textContent = sourceLabel(row.source, null);
-          leftMeta.appendChild(sourceName);
-          const when = document.createElement("div");
-          when.className = "srcTime";
-          when.textContent = row.updatedAt ? `${fmtTime(row.updatedAt)} · ${ago(row.updatedAt)}` : "—";
-          leftMeta.appendChild(when);
-
-          left.appendChild(leftMeta);
-          meta.appendChild(left);
-
-          const h = document.createElement("h3");
-          h.className = "latestTitle";
-          const a = document.createElement("a");
-          a.href = row.url || "#";
-          a.target = "_blank";
-          a.rel = "noopener";
-          a.textContent = row.title || "—";
-          h.appendChild(a);
-
-          card.appendChild(meta);
-
-          const body = document.createElement("div");
-          body.className = "latestBody";
-
-          const main = document.createElement("div");
-          main.className = "latestMain";
-          main.appendChild(h);
-          body.appendChild(main);
-          card.appendChild(body);
-          card.addEventListener("click", (evt) => {
-            if (evt.target && evt.target.closest && evt.target.closest("a, button, input, select, label")) return;
-            openHistoryItemDrawer(row.source, row.url || "", row.title || "", row.updatedAt || null);
-          });
-          unifiedList.appendChild(card);
-        }
-      }
-
-      const rows = [];
-      for (const [source, obj] of Object.entries(sources)){
-        const entries = Array.isArray(obj?.entries) ? obj.entries : [];
-        const filtered = entries.filter(inWindow);
-        for (let i = 0; i < filtered.length; i++){
-          const e = filtered[i];
-          if (!e || !e.url) continue;
-
-          const prev = i - 1 >= 0 ? filtered[i - 1] : null;
-          const isHeadlineChange = Boolean(prev && prev.url === e.url && String(prev.title || "") !== String(e.title || ""));
-          const isNewUrl = Boolean(!prev || prev.url !== e.url);
-
-          rows.push({
-            source,
-            __changeType: isHeadlineChange ? "headline" : (isNewUrl ? "url" : "other"),
-            ...e,
-          });
-        }
-      }
-
-      function activityTime(x){
-        const t = Date.parse(x?.lastSeenAt || x?.firstSeenAt || "");
-        return Number.isFinite(t) ? t : 0;
-      }
-
-      rows.sort((a,b) => {
-        const ta = activityTime(a);
-        const tb = activityTime(b);
-        if (tb !== ta) return tb - ta;
-
-        const sa = String(a.source || "");
-        const sb = String(b.source || "");
-        if (sa !== sb) return sa.localeCompare(sb);
-
-        const ua = String(a.url || "");
-        const ub = String(b.url || "");
-        if (ua !== ub) return ua.localeCompare(ub);
-
-        const tla = String(a.title || "");
-        const tlb = String(b.title || "");
-        return tla.localeCompare(tlb);
-      });
-
-      if (!rows.length && !latestRows.length){
-        const empty = document.createElement("div");
-        empty.className = "tiny";
-        empty.style.color = "var(--muted)";
-        empty.textContent = "No history yet.";
-        unifiedList.appendChild(empty);
-        return;
-      }
-
-      const fullSection = document.createElement("section");
-      fullSection.className = "historySection";
-      const fullTitle = document.createElement("div");
-      fullTitle.className = "historySectionTitle";
-      fullTitle.textContent = "Full history";
-      fullSection.appendChild(fullTitle);
-
-      const toggle = document.createElement("button");
-      toggle.type = "button";
-      toggle.className = "linkbtn";
-      toggle.textContent = "Show all";
-      fullSection.appendChild(toggle);
-
-      const fullList = document.createElement("div");
-      fullList.className = "historyList";
-      fullList.style.display = "none";
-      fullSection.appendChild(fullList);
-      host.appendChild(fullSection);
-
-      toggle.addEventListener("click", () => {
-        const show = fullList.style.display === "none";
-        fullList.style.display = show ? "" : "none";
-        toggle.textContent = show ? "Hide all" : "Show all";
-      });
-
-      for (const it of rows){
-        const card = document.createElement("section");
-        card.className = "hItem latestItem isClickable";
-
-        const head = document.createElement("div");
-        head.className = "hHead";
-
-        const left = document.createElement("div");
-        left.className = "srcTitle";
-
-        const meta = document.createElement("div");
-        meta.className = "srcMeta srcMetaInline";
-        const name = document.createElement("div");
-        name.className = "srcName";
-        name.textContent = sourceLabel(it.source, null);
-        meta.appendChild(name);
-        const updated = document.createElement("div");
-        updated.className = "srcTime";
-        updated.textContent = it.lastSeenAt ? `${fmtTime(it.lastSeenAt)} · ${ago(it.lastSeenAt)}` : "—";
-        meta.appendChild(updated);
-
-        left.appendChild(meta);
-        head.appendChild(left);
-
-        const body = document.createElement("div");
-        body.className = "hBody";
-
-        const main = document.createElement("div");
-        main.className = "hMain";
-
-        const title = document.createElement("h3");
-        title.className = "hTitle";
-        const a = document.createElement("a");
-        a.href = it.url || "#";
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.textContent = it.title || "—";
-        title.appendChild(a);
-
-        main.appendChild(title);
-
-        body.appendChild(main);
-
-        card.appendChild(head);
-        card.appendChild(body);
-        card.addEventListener("click", (evt) => {
-          if (evt.target && evt.target.closest && evt.target.closest("a, button, input, select, label")) return;
-          openHistoryItemDrawer(it.source, it.url || "", it.title || "", it.lastSeenAt || null);
-        });
-
-        fullList.appendChild(card);
-      }
-    }
-
     function renderCollectionHealth(sources = {}, operational = {}){
       const host = $("collection-health");
       if (!host) return;
@@ -3290,6 +3046,7 @@
     const {
       computeSourceDataMetrics,
       createDataRenderer,
+      createHistoryRenderer,
     } = window.NewsboardHistoryData.createHistoryData({
       parseHoursSpec,
       windowStartMs,
@@ -3304,6 +3061,12 @@
       fmtDurationMs,
       escapeHtml,
       onSortChange: rerenderDrawers,
+    });
+    const { render: renderHistory } = createHistoryRenderer({
+      sourceLabel,
+      fmtTime,
+      ago,
+      openHistoryItemDrawer,
     });
 
     function normalizeForCluster(value){
