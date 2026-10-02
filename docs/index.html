@@ -1638,7 +1638,6 @@
     let selectedWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     let latestDrawerPayload = { normalizedHistory: null, sources: null, indicators: null };
     let latestOverviewPayload = { sources: {}, indicators: {}, timelineBySource: {} };
-    let dataSortState = { key: "publisher", dir: "asc" };
     let selectedSourceDataId = "";
     let sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
     let selectedHistoryItem = null;
@@ -2723,162 +2722,6 @@
       }
     }
 
-    function dataSortArrow(key){
-      if (dataSortState.key !== key) return "↕";
-      return dataSortState.dir === "asc" ? "↑" : "↓";
-    }
-
-    function toggleDataSort(key){
-      if (dataSortState.key === key) {
-        dataSortState = { key, dir: dataSortState.dir === "asc" ? "desc" : "asc" };
-      } else {
-        dataSortState = { key, dir: key === "publisher" ? "asc" : "desc" };
-      }
-      rerenderDrawers();
-    }
-
-    function renderDataInto(host, normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = selectedWindowHours){
-      if (!host) return;
-      host.innerHTML = "";
-
-      const historySources = normalizedHistory && typeof normalizedHistory === "object" && normalizedHistory.sources
-        ? normalizedHistory.sources
-        : {};
-
-      const sourceIds = pickCardSourceIds(currentSources || {}).filter(id => !isDiscoverySource(id));
-      const hasAnyRows = sourceIds.some((id) => {
-        const hasEntries = Array.isArray(historySources?.[id]?.entries) && historySources[id].entries.length > 0;
-        const hasCurrent = Boolean(currentSources?.[id]?.item?.url || currentSources?.[id]?.item?.title);
-        return hasEntries || hasCurrent;
-      });
-      if (!sourceIds.length || !hasAnyRows) {
-        const empty = document.createElement("div");
-        empty.className = "tiny";
-        empty.style.color = "var(--muted)";
-        empty.textContent = "No data loaded.";
-        host.appendChild(empty);
-        return;
-      }
-
-      const winStart = windowStartMs(windowSpec);
-      const now = Date.now();
-      const rows = [];
-
-      for (const sourceId of sourceIds) {
-        const sourceRow = currentSources?.[sourceId] || null;
-        const entries = Array.isArray(historySources?.[sourceId]?.entries) ? historySources[sourceId].entries : [];
-        const metrics = computeSourceDataMetrics(entries, windowSpec);
-        rows.push({
-          sourceId,
-          sourceRow,
-          metrics,
-          currentSinceAt: indicatorsById?.[sourceId]?.currentSinceAt || null,
-          sortPublisher: sourceLabel(sourceId, sourceRow),
-        });
-      }
-
-      rows.sort((a, b) => {
-        const mult = dataSortState.dir === "asc" ? 1 : -1;
-        const key = dataSortState.key;
-        if (key === "publisher") {
-          return mult * String(a.sortPublisher || "").localeCompare(String(b.sortPublisher || ""));
-        }
-        if (key === "urlChanges") {
-          return mult * (a.metrics.urlChangesDisplay - b.metrics.urlChangesDisplay);
-        }
-        if (key === "longestRun") {
-          return mult * (a.metrics.longestRunMs - b.metrics.longestRunMs);
-        }
-        if (key === "headlineOnly") {
-          return mult * (a.metrics.headlineOnlyChangesDisplay - b.metrics.headlineOnlyChangesDisplay);
-        }
-        if (key === "liveBlogs") {
-          return mult * (a.metrics.liveBlogsDisplay - b.metrics.liveBlogsDisplay);
-        }
-        if (key === "breakingNews") {
-          return mult * (a.metrics.breakingNewsDisplay - b.metrics.breakingNewsDisplay);
-        }
-        return 0;
-      });
-
-      const table = document.createElement("table");
-      table.className = "dataTable";
-
-      const thead = document.createElement("thead");
-      const trHead = document.createElement("tr");
-      const cols = [
-        { key: "publisher", label: "Publisher" },
-        { key: "urlChanges", label: "URL changes" },
-        { key: "longestRun", label: "Longest run" },
-        { key: "headlineOnly", label: "Headline Changes" },
-        { key: "liveBlogs", label: "Live Blogs" },
-        { key: "breakingNews", label: "Breaking News" },
-      ];
-      for (const col of cols) {
-        const th = document.createElement("th");
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "dataSortBtn";
-        btn.innerHTML = `${escapeHtml(col.label)} <span class="sortArrow">${escapeHtml(dataSortArrow(col.key))}</span>`;
-        btn.addEventListener("click", () => toggleDataSort(col.key));
-        th.appendChild(btn);
-        trHead.appendChild(th);
-      }
-      thead.appendChild(trHead);
-      table.appendChild(thead);
-
-      const tbody = document.createElement("tbody");
-
-      for (const row of rows) {
-        const tr = document.createElement("tr");
-
-        const tdPublisher = document.createElement("td");
-        tdPublisher.className = "dataPublisherCell";
-        tdPublisher.textContent = sourceLabel(row.sourceId, row.sourceRow);
-
-        const currentSinceRaw = row.currentSinceAt;
-        const currentSinceMs = Number.isFinite(Date.parse(String(currentSinceRaw || "")))
-          ? Date.parse(String(currentSinceRaw || ""))
-          : 0;
-        if (currentSinceMs > 0) {
-          const runLine = document.createElement("div");
-          runLine.className = "tiny";
-          runLine.textContent = `Current run ${fmtDurationMs(Math.max(0, now - Math.max(winStart, currentSinceMs)))}`;
-          tdPublisher.appendChild(document.createElement("br"));
-          tdPublisher.appendChild(runLine);
-        }
-
-        const tdUrl = document.createElement("td");
-        tdUrl.textContent = fmtMetricValue(row.metrics.urlChangesDisplay, row.metrics.perDay);
-
-        const tdLongest = document.createElement("td");
-        tdLongest.textContent = fmtDurationMs(row.metrics.longestRunMs);
-
-        const tdHeadline = document.createElement("td");
-        tdHeadline.textContent = fmtMetricValue(row.metrics.headlineOnlyChangesDisplay, row.metrics.perDay);
-        const tdLive = document.createElement("td");
-        tdLive.textContent = fmtMetricValue(row.metrics.liveBlogsDisplay, row.metrics.perDay);
-        const tdBreaking = document.createElement("td");
-        tdBreaking.textContent = fmtMetricValue(row.metrics.breakingNewsDisplay, row.metrics.perDay);
-
-        tr.appendChild(tdPublisher);
-        tr.appendChild(tdUrl);
-        tr.appendChild(tdLongest);
-        tr.appendChild(tdHeadline);
-        tr.appendChild(tdLive);
-        tr.appendChild(tdBreaking);
-        tbody.appendChild(tr);
-      }
-
-      table.appendChild(tbody);
-      host.appendChild(table);
-    }
-
-    function renderData(normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = selectedWindowHours){
-      renderDataInto($("data"), normalizedHistory, indicatorsById, currentSources, windowSpec);
-      renderDataInto($("data-page"), normalizedHistory, indicatorsById, currentSources, windowSpec);
-    }
-
     function renderCollectionHealth(sources = {}, operational = {}){
       const host = $("collection-health");
       if (!host) return;
@@ -3446,11 +3289,21 @@
 
     const {
       computeSourceDataMetrics,
-      fmtMetricValue,
-      historyEntryBoundsMs,
+      createDataRenderer,
     } = window.NewsboardHistoryData.createHistoryData({
       parseHoursSpec,
       windowStartMs,
+    });
+    const {
+      render: renderData,
+      renderInto: renderDataInto,
+    } = createDataRenderer({
+      pickCardSourceIds,
+      isDiscoverySource,
+      sourceLabel,
+      fmtDurationMs,
+      escapeHtml,
+      onSortChange: rerenderDrawers,
     });
 
     function normalizeForCluster(value){

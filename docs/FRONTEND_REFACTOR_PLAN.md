@@ -33,7 +33,7 @@ No framework or bundler is required initially. Use native ES modules and preserv
 3. **Drawer shell (completed):** `docs/js/ui/drawers.js` owns shared close, overlay, Escape, and focus-trap behavior. Deterministic browser coverage verifies Story History focus restoration.
 4. **Story History and GDELT drawers (completed):** `docs/js/ui/intelligence-drawers.js` owns their independent fetch/render paths. Optional intelligence remains failure-isolated from raw headlines.
 5. **Overview cards (completed):** `docs/js/views/overview-cards.js` now owns card construction, source ordering, health display, Story badges, coverage actions, and entrance behavior shared by Overview and clustered cards.
-6. **History and Data views (in progress):** `docs/js/views/history-data.js` now owns canonical story keys, bounded-window metrics, change counts, longest-run calculations, live/breaking counts, and chart buckets. Table and history-card rendering remain the next extraction step.
+6. **History and Data views (in progress):** `docs/js/views/history-data.js` now owns canonical story keys, bounded-window metrics, change counts, longest-run calculations, live/breaking counts, chart buckets, and the sortable Data table shared by the page and drawer. History-card rendering remains the next extraction step.
 7. **Labs/clustering:** move the largest self-contained analysis block last; retain current storage keys and deterministic cluster tests.
 8. **CSS by component:** only after markup modules are stable, split tokens/layout/components while comparing screenshots at desktop and narrow widths.
 

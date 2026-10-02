@@ -118,7 +118,120 @@
       return perDay ? `${rounded.toFixed(1)}/day` : String(rounded);
     }
 
-    return { canonicalStoryKey, computeSourceDataMetrics, fmtMetricValue, historyEntryBoundsMs };
+    function createDataRenderer({
+      pickCardSourceIds,
+      isDiscoverySource,
+      sourceLabel,
+      fmtDurationMs,
+      escapeHtml,
+      onSortChange,
+    }) {
+      let sortState = { key: "publisher", dir: "asc" };
+      const sortArrow = (key) => sortState.key !== key ? "↕" : sortState.dir === "asc" ? "↑" : "↓";
+      function toggleSort(key) {
+        sortState = sortState.key === key
+          ? { key, dir: sortState.dir === "asc" ? "desc" : "asc" }
+          : { key, dir: key === "publisher" ? "asc" : "desc" };
+        onSortChange();
+      }
+
+      function renderInto(host, normalizedHistory, indicatorsById = {}, currentSources = {}, windowSpec = 24) {
+        if (!host) return;
+        host.innerHTML = "";
+        const historySources = normalizedHistory?.sources && typeof normalizedHistory.sources === "object" ? normalizedHistory.sources : {};
+        const sourceIds = pickCardSourceIds(currentSources || {}).filter((id) => !isDiscoverySource(id));
+        const hasRows = sourceIds.some((id) => (historySources?.[id]?.entries?.length || currentSources?.[id]?.item?.url || currentSources?.[id]?.item?.title));
+        if (!sourceIds.length || !hasRows) {
+          const empty = document.createElement("div");
+          empty.className = "tiny";
+          empty.style.color = "var(--muted)";
+          empty.textContent = "No data loaded.";
+          host.appendChild(empty);
+          return;
+        }
+
+        const winStart = windowStartMs(windowSpec);
+        const rows = sourceIds.map((sourceId) => {
+          const sourceRow = currentSources?.[sourceId] || null;
+          return {
+            sourceId,
+            sourceRow,
+            metrics: computeSourceDataMetrics(historySources?.[sourceId]?.entries || [], windowSpec),
+            currentSinceAt: indicatorsById?.[sourceId]?.currentSinceAt || null,
+            sortPublisher: sourceLabel(sourceId, sourceRow),
+          };
+        });
+        const values = {
+          publisher: (row) => row.sortPublisher,
+          urlChanges: (row) => row.metrics.urlChangesDisplay,
+          longestRun: (row) => row.metrics.longestRunMs,
+          headlineOnly: (row) => row.metrics.headlineOnlyChangesDisplay,
+          liveBlogs: (row) => row.metrics.liveBlogsDisplay,
+          breakingNews: (row) => row.metrics.breakingNewsDisplay,
+        };
+        rows.sort((a, b) => {
+          const aValue = values[sortState.key](a);
+          const bValue = values[sortState.key](b);
+          const comparison = sortState.key === "publisher" ? String(aValue).localeCompare(String(bValue)) : aValue - bValue;
+          return sortState.dir === "asc" ? comparison : -comparison;
+        });
+
+        const table = document.createElement("table");
+        table.className = "dataTable";
+        const head = document.createElement("thead");
+        const headRow = document.createElement("tr");
+        for (const column of [
+          ["publisher", "Publisher"], ["urlChanges", "URL changes"], ["longestRun", "Longest run"],
+          ["headlineOnly", "Headline Changes"], ["liveBlogs", "Live Blogs"], ["breakingNews", "Breaking News"],
+        ]) {
+          const th = document.createElement("th");
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "dataSortBtn";
+          button.innerHTML = `${escapeHtml(column[1])} <span class="sortArrow">${escapeHtml(sortArrow(column[0]))}</span>`;
+          button.addEventListener("click", () => toggleSort(column[0]));
+          th.appendChild(button);
+          headRow.appendChild(th);
+        }
+        head.appendChild(headRow);
+        table.appendChild(head);
+        const body = document.createElement("tbody");
+        for (const row of rows) {
+          const tr = document.createElement("tr");
+          const publisher = document.createElement("td");
+          publisher.className = "dataPublisherCell";
+          publisher.textContent = sourceLabel(row.sourceId, row.sourceRow);
+          const sinceMs = Date.parse(String(row.currentSinceAt || ""));
+          if (Number.isFinite(sinceMs) && sinceMs > 0) {
+            const run = document.createElement("div");
+            run.className = "tiny";
+            run.textContent = `Current run ${fmtDurationMs(Math.max(0, now() - Math.max(winStart, sinceMs)))}`;
+            publisher.appendChild(document.createElement("br"));
+            publisher.appendChild(run);
+          }
+          const cell = (text) => { const td = document.createElement("td"); td.textContent = text; return td; };
+          tr.append(
+            publisher,
+            cell(fmtMetricValue(row.metrics.urlChangesDisplay, row.metrics.perDay)),
+            cell(fmtDurationMs(row.metrics.longestRunMs)),
+            cell(fmtMetricValue(row.metrics.headlineOnlyChangesDisplay, row.metrics.perDay)),
+            cell(fmtMetricValue(row.metrics.liveBlogsDisplay, row.metrics.perDay)),
+            cell(fmtMetricValue(row.metrics.breakingNewsDisplay, row.metrics.perDay)),
+          );
+          body.appendChild(tr);
+        }
+        table.appendChild(body);
+        host.appendChild(table);
+      }
+
+      function render(normalizedHistory, indicatorsById, currentSources, windowSpec) {
+        renderInto(document.getElementById("data"), normalizedHistory, indicatorsById, currentSources, windowSpec);
+        renderInto(document.getElementById("data-page"), normalizedHistory, indicatorsById, currentSources, windowSpec);
+      }
+      return { render, renderInto };
+    }
+
+    return { canonicalStoryKey, computeSourceDataMetrics, createDataRenderer, fmtMetricValue, historyEntryBoundsMs };
   }
 
   global.NewsboardHistoryData = { createHistoryData };
