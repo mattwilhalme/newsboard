@@ -1558,6 +1558,7 @@
   <script src="./js/ui/intelligence-drawers.js"></script>
   <script src="./js/views/story-radar.js"></script>
   <script src="./js/views/overview-cards.js"></script>
+  <script src="./js/views/history-data.js"></script>
   <script>
     const {
       fmtTime, ago, fmtDurationSeconds, fmtDurationMs, normalizeUrlForStory,
@@ -2722,158 +2723,6 @@
       }
     }
 
-    function historyEntryBoundsMs(entry){
-      const start = Date.parse(String(entry?.firstSeenAt || entry?.lastSeenAt || ""));
-      const endRaw = Date.parse(String(entry?.lastSeenAt || entry?.firstSeenAt || ""));
-      if (!Number.isFinite(start) && !Number.isFinite(endRaw)) return null;
-      const safeStart = Number.isFinite(start) ? start : endRaw;
-      const safeEnd = Number.isFinite(endRaw) ? endRaw : safeStart;
-      return {
-        startMs: safeStart,
-        endMs: safeEnd >= safeStart ? safeEnd : safeStart,
-      };
-    }
-
-    function computeSourceDataMetrics(entries, windowSpec){
-      const winStart = windowStartMs(windowSpec);
-      const hours = parseHoursSpec(windowSpec);
-      const daysDivisor = hours === 168 ? 7 : 1;
-      const normalized = [...(Array.isArray(entries) ? entries : [])]
-        .map((entry) => {
-          const bounds = historyEntryBoundsMs(entry);
-          if (!bounds) return null;
-          return { ...entry, ...bounds };
-        })
-        .filter(Boolean)
-        .sort((a, b) => {
-          if (a.startMs !== b.startMs) return a.startMs - b.startMs;
-          return a.endMs - b.endMs;
-        });
-
-      const inWindow = normalized.filter((entry) => entry.endMs >= winStart);
-      // Stats derivation:
-      // - URL change: consecutive entries with different canonical URL.
-      // - Headline-only change: same canonical URL, different title.
-      // - Unique stories: canonical URL count, with title fingerprint fallback when URL is missing.
-      // - Longest run: max continuous duration for a single canonical URL/fingerprint in window.
-      const canonicalKey = (entry) => {
-        const rawUrl = String(entry?.url || "").trim().toLowerCase();
-        if (rawUrl) {
-          try {
-            const u = new URL(rawUrl);
-            u.hash = "";
-            if (u.pathname.length > 1 && u.pathname.endsWith("/")) u.pathname = u.pathname.slice(0, -1);
-            for (const k of [...u.searchParams.keys()]) {
-              const lk = k.toLowerCase();
-              if (lk.startsWith("utm_") || lk === "fbclid" || lk === "gclid") u.searchParams.delete(k);
-            }
-            u.searchParams.sort();
-            return `u:${u.toString()}`;
-          } catch {}
-        }
-        const t = String(entry?.title || "").trim().toLowerCase();
-        return t ? `t:${t}` : "unknown";
-      };
-      const distinctUrls = new Set(inWindow.map((entry) => canonicalKey(entry)));
-      const liveBlogUrls = new Set(
-        inWindow
-          .filter((entry) => {
-            const type = String(entry?.contentType || entry?.content_type || "").toLowerCase();
-            const url = String(entry?.url || "").toLowerCase();
-            const title = String(entry?.title || "").toLowerCase();
-            return (type === "live" || /\/live(\/|$)/.test(url) || /\blive blog\b/.test(title)) && url;
-          })
-          .map((entry) => canonicalKey(entry)),
-      );
-      const liveBlogCount = liveBlogUrls.size;
-      const breakingNewsCount = inWindow.filter((entry) => {
-        const label = String(entry?.breakingLabel || entry?.breaking_label || "").toLowerCase();
-        const headline = String(entry?.breakingHeadline || entry?.breaking_headline || "").toLowerCase();
-        const title = String(entry?.title || "").toLowerCase();
-        return label.includes("breaking") || headline.includes("breaking") || title.startsWith("breaking");
-      }).length;
-
-      let urlChanges = 0;
-      let headlineOnlyChanges = 0;
-      for (let i = 1; i < normalized.length; i += 1) {
-        const prev = normalized[i - 1];
-        const cur = normalized[i];
-        if (cur.endMs < winStart) continue;
-
-        const prevUrl = canonicalKey(prev);
-        const curUrl = canonicalKey(cur);
-        const prevTitle = String(prev?.title || "");
-        const curTitle = String(cur?.title || "");
-
-        if (curUrl !== prevUrl) {
-          urlChanges += 1;
-        } else if (curTitle !== prevTitle) {
-          headlineOnlyChanges += 1;
-        }
-      }
-
-      let longestRunMs = 0;
-      let i = 0;
-      while (i < normalized.length) {
-        const first = normalized[i];
-        const runUrl = canonicalKey(first);
-        let runStart = first.startMs;
-        let runEnd = first.endMs;
-        let j = i + 1;
-        while (j < normalized.length && canonicalKey(normalized[j]) === runUrl) {
-          runEnd = Math.max(runEnd, normalized[j].endMs);
-          j += 1;
-        }
-        if (runEnd >= winStart) {
-          const boundedStart = Math.max(runStart, winStart);
-          longestRunMs = Math.max(longestRunMs, Math.max(0, runEnd - boundedStart));
-        }
-        i = j;
-      }
-
-      const bucketMinutes = hours <= 6 ? 30 : 60;
-      const bucketMs = bucketMinutes * 60 * 1000;
-      const bucketCount = Math.max(1, Math.ceil((Date.now() - winStart) / bucketMs));
-      const buckets = Array.from({ length: bucketCount }, (_, idx) => ({
-        startMs: winStart + (idx * bucketMs),
-        url: 0,
-        headline: 0,
-      }));
-      for (let i = 1; i < normalized.length; i += 1) {
-        const prev = normalized[i - 1];
-        const cur = normalized[i];
-        if (cur.endMs < winStart) continue;
-        const idx = Math.min(bucketCount - 1, Math.max(0, Math.floor((cur.endMs - winStart) / bucketMs)));
-        const prevKey = canonicalKey(prev);
-        const curKey = canonicalKey(cur);
-        if (curKey !== prevKey) buckets[idx].url += 1;
-        else if (String(cur?.title || "") !== String(prev?.title || "")) buckets[idx].headline += 1;
-      }
-
-      return {
-        urlChanges,
-        headlineOnlyChanges,
-        uniqueStories: distinctUrls.size,
-        longestRunMs,
-        urlChangesDisplay: urlChanges / daysDivisor,
-        headlineOnlyChangesDisplay: headlineOnlyChanges / daysDivisor,
-        uniqueStoriesDisplay: distinctUrls.size / daysDivisor,
-        perDay: daysDivisor > 1,
-        liveBlogs: liveBlogCount,
-        breakingNews: breakingNewsCount,
-        liveBlogsDisplay: liveBlogCount / daysDivisor,
-        breakingNewsDisplay: breakingNewsCount / daysDivisor,
-        buckets,
-      };
-    }
-
-    function fmtMetricValue(v, perDay){
-      const n = Number(v);
-      if (!Number.isFinite(n)) return "—";
-      const rounded = perDay ? Math.round(n * 10) / 10 : Math.round(n);
-      return perDay ? `${rounded.toFixed(1)}/day` : String(rounded);
-    }
-
     function dataSortArrow(key){
       if (dataSortState.key !== key) return "↕";
       return dataSortState.dir === "asc" ? "↑" : "↓";
@@ -3593,6 +3442,15 @@
       fmtDurationSeconds,
       storyBadge,
       openGdeltCoverage,
+    });
+
+    const {
+      computeSourceDataMetrics,
+      fmtMetricValue,
+      historyEntryBoundsMs,
+    } = window.NewsboardHistoryData.createHistoryData({
+      parseHoursSpec,
+      windowStartMs,
     });
 
     function normalizeForCluster(value){
