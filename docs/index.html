@@ -1559,6 +1559,7 @@
   <script src="./js/views/story-radar.js"></script>
   <script src="./js/views/overview-cards.js"></script>
   <script src="./js/views/history-data.js"></script>
+  <script src="./js/views/cluster-engine.js"></script>
   <script>
     const {
       fmtTime, ago, fmtDurationSeconds, fmtDurationMs, normalizeUrlForStory,
@@ -3069,30 +3070,7 @@
       openHistoryItemDrawer,
     });
 
-    function normalizeForCluster(value){
-      return String(value || "")
-        .toLowerCase()
-        .replace(/https?:\/\//g, " ")
-        .replace(/[^a-z0-9\s]/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-    }
-
-    function stableHash(value){
-      const input = String(value || "");
-      let h = 2166136261;
-      for (let i = 0; i < input.length; i += 1) {
-        h ^= input.charCodeAt(i);
-        h = Math.imul(h, 16777619);
-      }
-      return (h >>> 0).toString(36);
-    }
-
-    function slugify(value){
-      const s = normalizeForCluster(value).replace(/\s+/g, "-");
-      if (s) return s;
-      return `cluster-${stableHash(value || "topic")}`;
-    }
+    const { normalize: normalizeForCluster, slugify, stableHash } = window.NewsboardClusterEngine;
 
     function titleCaseShortLabel(phrase){
       const tokens = normalizeForCluster(phrase).split(" ").filter(Boolean);
