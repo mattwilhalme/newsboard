@@ -20,6 +20,8 @@
 - rendered mobile centerpiece and browser Top 10 extraction fixtures;
 - GDELT normalization/matching and drawer UI behavior.
 
+`.github/workflows/ci.yml` runs this same command on pushes to `main` and on pull requests using Node.js 24. The CI job is read-only and receives no Supabase credentials; live publisher checks and rollback-oriented SQL suites remain deliberately separate.
+
 Frontend integration fixtures are centralized in `scripts/support/frontend-fixture.mjs`. The GDELT drawer test uses an explicit snapshot, observation timestamp, RPC responses, and coverage response; it does not depend on the current production snapshot to enable its action.
 
 Publisher-specific live commands (`test:bbc`, `test:fox`, and `test:yahoo`) remain available but depend on current external pages and are not deterministic enough for the default suite. `scripts/crawl/validate-*.mjs`, deployed UI smoke scripts, and Supabase SQL tests are also intentionally separate.

@@ -23,4 +23,11 @@ assert.doesNotMatch(apValidation, /SUPABASE_|SERVICE_ROLE/, 'AP validation must 
 const scrape = await readFile(new URL("scrape.yml", directory), "utf8");
 assert.match(scrape, /scripts\/crawl\/github-backup\.mjs/);
 assert.doesNotMatch(gapFill + scrape, /BROWSERBASE|browserbase/, 'removed Browserbase integration must not receive credentials or run');
+const ci = await readFile(new URL("ci.yml", directory), "utf8");
+assert.match(ci, /\bpush:\s*\n/, 'CI must run for pushes');
+assert.match(ci, /\bpull_request:\s*\n/, 'CI must run for pull requests');
+assert.match(ci, /node-version:\s*24\b/, 'CI must use the production Node.js major version');
+assert.match(ci, /npm ci\b/, 'CI must install the committed dependency lockfile');
+assert.match(ci, /npm run verify\b/, 'CI must run the complete deterministic regression contract');
+assert.doesNotMatch(ci, /SUPABASE_|SERVICE_ROLE|scripts\/crawl\/validate-|scripts\/test-/, 'CI must not receive database credentials or invoke live publisher checks');
 console.log(`Validated ${files.length} workflow action contracts.`);
