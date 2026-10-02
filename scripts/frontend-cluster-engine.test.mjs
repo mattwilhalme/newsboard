@@ -19,3 +19,22 @@ test("cluster hashes are deterministic and distinguish inputs", () => {
   assert.notEqual(engine.stableHash("same story"), engine.stableHash("different story"));
   assert.match(engine.slugify(""), /^cluster-[a-z0-9]+$/);
 });
+
+test("feature tools remove boilerplate while preserving acronyms, stems, and aliases", () => {
+  const aliasIndex = new Map([["mexico", new Set(["mexico", "mexican"])], ["nationalguard", new Set(["nationalguard", "guard"])]]);
+  const tools = engine.createFeatureTools({
+    boilerplate: ["live updates", "what we know"],
+    stopwords: new Set(["the", "of", "in"]),
+    canonicalOverrides: new Map([["usa", "us"]]),
+    acronymAllowlist: new Set(["DHS", "US"]),
+    aliasIndex,
+    joinedBigrams: new Map([["national guard", "nationalguard"]]),
+  });
+  const metadata = tools.buildTokenMetadata("Live Updates: DHS warns Mexican National Guard soldiers");
+  assert.equal(metadata.titleNorm, "DHS warns Mexican National Guard soldiers");
+  assert.ok(metadata.tokensCore.includes("DHS"));
+  assert.ok(metadata.tokensCore.includes("warn"));
+  assert.ok(metadata.tokensCore.includes("mexican"));
+  assert.ok(metadata.aliases.has("nationalguard"));
+  assert.ok(metadata.aliases.has("guard"));
+});

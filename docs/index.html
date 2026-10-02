@@ -3215,6 +3215,15 @@
       return out;
     })();
 
+    const clusterFeatureTools = window.NewsboardClusterEngine.createFeatureTools({
+      boilerplate: CLUSTER_BOILERPLATE,
+      stopwords: CLUSTER_STOPWORDS,
+      canonicalOverrides: CLUSTER_CANONICAL_OVERRIDES,
+      acronymAllowlist: CLUSTER_ACRONYM_ALLOWLIST,
+      aliasIndex: CLUSTER_ALIAS_INDEX,
+      joinedBigrams: CLUSTER_JOINED_BIGRAMS,
+    });
+
     const CLUSTER_ENTITY_STOPWORDS = new Set([
       "the", "a", "an", "and", "or", "for", "with", "to", "of", "in", "on", "at", "from",
       "after", "amid", "as", "by", "into", "what", "why", "how", "latest", "live", "updates",
@@ -3560,15 +3569,11 @@
 
     function buildStoryFeature(item){
       const titleRaw = String(item?.title || "").trim();
-      const titleNorm = normalizeHeadline(titleRaw);
-      const normTokensUpper = tokenize(titleNorm).map((token) => normalizeAcronymToken(token));
-      const canonicalTokens = normTokensUpper
-        .map((token) => cleanupToken(token))
-        .map((token) => stemToken(token))
-        .map((token) => toLowerIfNotAcronym(token))
-        .map((token) => canonicalizeToken(token))
-        .filter((token) => token.length >= 2 && !CLUSTER_STOPWORDS.has(String(token).toLowerCase()));
-      const tokenSet = new Set(canonicalTokens);
+      const tokenMetadata = clusterFeatureTools.buildTokenMetadata(titleRaw);
+      const titleNorm = tokenMetadata.titleNorm;
+      const normTokensUpper = tokenMetadata.tokensUpper;
+      const canonicalTokens = tokenMetadata.tokensCore;
+      const tokenSet = tokenMetadata.tokenSet;
       const entities = extractEntitiesFromHeadline(titleRaw, titleNorm, {
         tokensUpper: normTokensUpper,
         tokensCore: canonicalTokens,
