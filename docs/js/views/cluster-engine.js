@@ -70,6 +70,65 @@
     }
     return { compare, compareRelaxed };
   }
+  function createEntityTools({ stopwords, demonymToCountry, phraseMap, acronymAllowlist, joinedBigrams }) {
+    const canonicalize = (value) => {
+      const raw = String(value || "").toLowerCase().trim();
+      if (!raw) return "";
+      const compact = raw.replace(/\./g, "");
+      const mapped = demonymToCountry.get(compact) || phraseMap.get(raw) || phraseMap.get(compact) || compact;
+      return String(mapped || "").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+    };
+    const isAcronym = (token) => {
+      const value = String(token || "").trim();
+      return /^[A-Z]{2,6}$/.test(value) && acronymAllowlist.has(value);
+    };
+    function extractCapitalized(rawTitle) {
+      const words = (String(rawTitle || "").replace(/[‘’]/g, "'").replace(/[“”]/g, '"').match(/[A-Za-z][A-Za-z'.-]*/g) || [])
+        .map((word) => String(word || "").replace(/'s$/i, "").replace(/\.+$/g, "").trim())
+        .filter((word) => word.length >= 2);
+      const entities = new Set();
+      let index = 0;
+      while (index < words.length) {
+        const word = words[index] || "";
+        if (!/^[A-Z][a-z'.-]+$/.test(word) && !/^[A-Z]{2,}$/.test(word)) { index += 1; continue; }
+        const sequence = [word];
+        let next = index + 1;
+        while (next < words.length && sequence.length < 4 && (/^[A-Z][a-z'.-]+$/.test(words[next]) || /^[A-Z]{2,}$/.test(words[next]))) {
+          sequence.push(words[next]); next += 1;
+        }
+        const canonical = canonicalize(sequence.join(" "));
+        const single = canonicalize(word);
+        if (canonical && (sequence.length > 1 || phraseMap.has(canonical.replace(/_/g, " ")) || phraseMap.has(word.toLowerCase()) || demonymToCountry.has(word.toLowerCase()))) entities.add(canonical);
+        else if (single && !stopwords.has(single)) entities.add(single);
+        index = next;
+      }
+      return entities;
+    }
+    function extract(rawTitle, normalizedHeadline, tokenMeta = null) {
+      const entities = extractCapitalized(rawTitle);
+      const lower = String(normalizedHeadline || "").toLowerCase();
+      for (const [phrase, canonical] of phraseMap.entries()) {
+        const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        if (new RegExp(`\\b${escaped}\\b`, "i").test(lower)) {
+          const value = canonicalize(canonical); if (value) entities.add(value);
+        }
+      }
+      for (const token of lower.split(/\s+/g).filter((value) => value.length >= 2)) {
+        const value = canonicalize(token);
+        if (value && !stopwords.has(value) && (demonymToCountry.has(token) || phraseMap.has(token))) entities.add(value);
+      }
+      for (const token of Array.isArray(tokenMeta?.tokensUpper) ? tokenMeta.tokensUpper : []) {
+        if (isAcronym(token)) entities.add(canonicalize(token));
+      }
+      const core = Array.isArray(tokenMeta?.tokensCore) ? tokenMeta.tokensCore : [];
+      for (let index = 0; index + 1 < core.length; index += 1) {
+        const joined = joinedBigrams.get(`${core[index]} ${core[index + 1]}`);
+        if (joined) entities.add(canonicalize(joined));
+      }
+      return entities;
+    }
+    return { canonicalize, extract, extractCapitalized, isAcronym };
+  }
   function createFeatureTools({ boilerplate, stopwords, canonicalOverrides, acronymAllowlist, aliasIndex, joinedBigrams }) {
     const isAcronym = (token) => {
       const value = String(token || "").trim();
@@ -129,5 +188,5 @@
     }
     return { buildTokenMetadata, canonicalizeToken, cleanupToken, expandAliases, isAcronym, lowerUnlessAcronym, normalizeAcronym, normalizeHeadline, stemToken, tokenize };
   }
-  global.NewsboardClusterEngine = { createFeatureTools, createScoringTools, jaccard, normalize, slugify, stableHash };
+  global.NewsboardClusterEngine = { createEntityTools, createFeatureTools, createScoringTools, jaccard, normalize, slugify, stableHash };
 })(window);

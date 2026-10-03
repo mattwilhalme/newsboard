@@ -53,3 +53,22 @@ test("cluster scoring distinguishes entity, token, and broad-entity evidence", (
   assert.equal(tokenOnly.matched, true);
   assert.equal(tokenOnly.rule, "token_fallback");
 });
+
+test("entity tools canonicalize countries, phrases, acronyms, and demonyms", () => {
+  const entities = engine.createEntityTools({
+    stopwords: new Set(["the", "after"]),
+    demonymToCountry: new Map([["mexican", "mexico"]]),
+    phraseMap: new Map([["national guard", "national_guard"], ["fbi", "fbi"]]),
+    acronymAllowlist: new Set(["FBI", "US"]),
+    joinedBigrams: new Map([["national guard", "nationalguard"]]),
+  });
+  assert.equal(entities.canonicalize("Mexican"), "mexico");
+  assert.equal(entities.canonicalize("National Guard"), "national_guard");
+  assert.deepEqual(
+    [...entities.extract("FBI joins Mexican National Guard", "FBI joins Mexican National Guard", {
+      tokensUpper: ["FBI", "joins", "Mexican", "National", "Guard"],
+      tokensCore: ["FBI", "join", "mexican", "national", "guard"],
+    })].sort(),
+    ["fbi", "mexican_national_guard", "mexico", "national_guard", "nationalguard"],
+  );
+});
