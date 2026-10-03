@@ -4,6 +4,7 @@ import {chromium} from 'playwright';
 import {BROWSER_TOP10,extractRenderedCandidates} from '../../lib/top10Browser.js';
 import {validateTop10} from '../../supabase/functions/_shared/top10.js';
 import {MOBILE_ADAPTERS,extractMobileHero} from '../../lib/mobileHero.js';
+import {loadPublisherFixture} from '../support/publisher-fixtures.mjs';
 let browser,page;
 before(async()=>{browser=await chromium.launch({channel:process.env.PLAYWRIGHT_BROWSER_CHANNEL||'chrome'});page=await browser.newPage({viewport:{width:390,height:844}});});
 after(async()=>browser?.close());
@@ -19,6 +20,13 @@ const cases={
  bbc1:['https://bbc.com/news/articles/','<main>','</main>',(u,t)=>`<a href="${u}"><h2 data-testid="card-headline">${t}</h2></a>`],
  fox1:['https://foxnews.com/politics/','<main class="main-content-primary">','</main>',(u,t)=>`<article class="story-${t.length}"><h2><a href="${u}">${t}</a></h2></article>`],
 };
+test('rendered ranking adapters consume shared publisher fixtures',async()=>{
+ for(const id of ['ap1','usat1','nbc1','cnn1','guardian1','yahoo1']){
+  await page.setContent(await loadPublisherFixture(id));
+  const candidates=await page.evaluate(extractRenderedCandidates,{config:BROWSER_TOP10[id]});
+  assert.ok(candidates.some(candidate=>!candidate.rejected),`${id} should expose an editorial candidate`);
+ }
+});
 for(const [id,[base,start,end,card]] of Object.entries(cases))test(`${id}: publisher scope, rendered order, URL dedup and ten valid ranks`,async()=>{
  const url=i=>base+i+(id==='yahoo1'?'.html':'');
  const html=start+Array.from({length:10},(_,i)=>card(url(i),`Editorial headline number ${i}`,i)).join('')+card(url(0)+'?utm_source=duplicate','Duplicate headline same article',10)+end;

@@ -2,6 +2,7 @@ import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from '../../lib/mobileHero.js';
+import { loadPublisherFixture } from '../support/publisher-fixtures.mjs';
 let browser, context, page;
 before(async () => {
   browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_BROWSER_CHANNEL || 'chrome' });
@@ -17,6 +18,20 @@ async function select(id, html) {
 test('mobile profile uses touch and a 390px CSS viewport', async () => {
   await select('ap1', '<main></main>');
   assert.deepEqual(await page.evaluate(() => ({ width: innerWidth, touch: navigator.maxTouchPoints > 0 })), { width: 390, touch: true });
+});
+test('browser-primary adapters consume the shared sanitized fixture corpus', async () => {
+  const expected = {
+    ap1: 'https://apnews.com/article/example-story',
+    usat1: 'https://www.usatoday.com/story/news/2026/09/27/example/123/',
+    nbc1: 'https://www.nbcnews.com/news/us-news/example-rcna123456',
+    guardian1: 'https://www.theguardian.com/world/2026/sep/27/example',
+    yahoo1: 'https://www.yahoo.com/news/example-story-120000000.html',
+  };
+  for (const [sourceId, url] of Object.entries(expected)) {
+    const result = await select(sourceId, await loadPublisherFixture(sourceId));
+    assert.equal(result.ok, true, `${sourceId} should produce a valid centerpiece`);
+    assert.equal(result.url, url);
+  }
 });
 test('AP ignores trending and hidden desktop leads', async () => {
   const a = '<a href="https://apnews.com/article/lead">The visible primary AP editorial story</a>';

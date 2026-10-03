@@ -15,6 +15,61 @@
   function slugify(value) {
     return normalize(value).replace(/\s+/g, "-") || `cluster-${stableHash(value || "topic")}`;
   }
+  function jaccard(left, right) {
+    const values = (input) => input && typeof input[Symbol.iterator] === "function" ? input : [];
+    const a = left instanceof Set ? left : new Set(values(left));
+    const b = right instanceof Set ? right : new Set(values(right));
+    if (!a.size || !b.size) return 0;
+    let overlap = 0;
+    for (const value of a) if (b.has(value)) overlap += 1;
+    const union = a.size + b.size - overlap;
+    return union > 0 ? overlap / union : 0;
+  }
+  function createScoringTools({ broadEntities = new Set() } = {}) {
+    function compare(feature, cluster, preset) {
+      const clusterEntities = cluster.entitySet && typeof cluster.entitySet.has === "function"
+        ? cluster.entitySet
+        : (cluster.exemplarEntitySet || new Set());
+      const entityOverlap = jaccard(feature.entities, clusterEntities);
+      const tokenOverlap = jaccard(feature.tokenSet, cluster.exemplarTokenSet);
+      const hasEntities = feature.entities.size > 0 && clusterEntities.size > 0;
+      const sharedEntities = hasEntities
+        ? [...feature.entities].filter((entity) => clusterEntities.has(entity))
+        : [];
+      let matched = false;
+      let rule = "no_match";
+      if (hasEntities) {
+        if (entityOverlap >= preset.entityStrong) {
+          const broadOnly = sharedEntities.length === 1 && broadEntities.has(sharedEntities[0]);
+          if (broadOnly && tokenOverlap < preset.tokenWithEntity) rule = "entity_broad_needs_tokens";
+          else { matched = true; rule = "entity_strong"; }
+        } else if (entityOverlap >= preset.entityWeak && tokenOverlap >= preset.tokenWithEntity) {
+          matched = true;
+          rule = "entity_plus_token";
+        }
+      } else if (tokenOverlap >= preset.tokenOnly) {
+        matched = true;
+        rule = "token_fallback";
+      }
+      const score = hasEntities ? (entityOverlap * 0.68) + (tokenOverlap * 0.32) : tokenOverlap;
+      return { matched, rule, score, entityOverlap, tokenOverlap, hasEntities, sharedEntities };
+    }
+    function compareRelaxed(feature, cluster, preset) {
+      const entityOverlap = jaccard(feature.entities, cluster.exemplarEntitySet);
+      const tokenOverlap = jaccard(feature.tokenSet, cluster.exemplarTokenSet);
+      const hasEntities = feature.entities.size > 0 && cluster.exemplarEntitySet.size > 0;
+      const ok = hasEntities
+        ? entityOverlap >= preset.relaxedEntity && tokenOverlap >= preset.relaxedToken
+        : tokenOverlap >= preset.relaxedToken;
+      return {
+        ok,
+        score: hasEntities ? (entityOverlap * 0.6) + (tokenOverlap * 0.4) : tokenOverlap,
+        entityOverlap,
+        tokenOverlap,
+      };
+    }
+    return { compare, compareRelaxed };
+  }
   function createFeatureTools({ boilerplate, stopwords, canonicalOverrides, acronymAllowlist, aliasIndex, joinedBigrams }) {
     const isAcronym = (token) => {
       const value = String(token || "").trim();
@@ -74,5 +129,5 @@
     }
     return { buildTokenMetadata, canonicalizeToken, cleanupToken, expandAliases, isAcronym, lowerUnlessAcronym, normalizeAcronym, normalizeHeadline, stemToken, tokenize };
   }
-  global.NewsboardClusterEngine = { createFeatureTools, normalize, slugify, stableHash };
+  global.NewsboardClusterEngine = { createFeatureTools, createScoringTools, jaccard, normalize, slugify, stableHash };
 })(window);

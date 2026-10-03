@@ -38,3 +38,18 @@ test("feature tools remove boilerplate while preserving acronyms, stems, and ali
   assert.ok(metadata.aliases.has("nationalguard"));
   assert.ok(metadata.aliases.has("guard"));
 });
+
+test("cluster scoring distinguishes entity, token, and broad-entity evidence", () => {
+  const scoring = engine.createScoringTools({ broadEntities: new Set(["us"]) });
+  const preset = { entityStrong: 0.5, entityWeak: 0.25, tokenWithEntity: 0.3, tokenOnly: 0.5, relaxedEntity: 0.2, relaxedToken: 0.2 };
+  const cluster = { entitySet: new Set(["us"]), exemplarEntitySet: new Set(["us"]), exemplarTokenSet: new Set(["election", "vote"]) };
+  const broadOnly = scoring.compare({ entities: new Set(["us"]), tokenSet: new Set(["economy"]) }, cluster, preset);
+  assert.equal(broadOnly.matched, false);
+  assert.equal(broadOnly.rule, "entity_broad_needs_tokens");
+  const corroborated = scoring.compare({ entities: new Set(["us"]), tokenSet: new Set(["election"]) }, cluster, preset);
+  assert.equal(corroborated.matched, true);
+  assert.equal(corroborated.rule, "entity_strong");
+  const tokenOnly = scoring.compare({ entities: new Set(), tokenSet: new Set(["election"]) }, cluster, preset);
+  assert.equal(tokenOnly.matched, true);
+  assert.equal(tokenOnly.rule, "token_fallback");
+});

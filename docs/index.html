@@ -3277,6 +3277,9 @@
       "us", "uk", "eu", "un", "nato",
       "mexico", "venezuela", "russia", "ukraine", "israel", "palestine", "iran", "china",
     ]);
+    const clusterScoringTools = window.NewsboardClusterEngine.createScoringTools({
+      broadEntities: CLUSTER_BROAD_ENTITIES,
+    });
 
     function canonicalizeEntity(value){
       const raw = String(value || "").toLowerCase().trim();
@@ -3630,52 +3633,11 @@
     }
 
     function computeEntityTokenSimilarity(feature, cluster, preset){
-      const clusterEntities = cluster.entitySet instanceof Set ? cluster.entitySet : (cluster.exemplarEntitySet || new Set());
-      const entityOverlap = jaccard(feature.entities, clusterEntities);
-      const tokenOverlap = jaccard(feature.tokenSet, cluster.exemplarTokenSet);
-      const hasEntities = feature.entities.size > 0 && clusterEntities.size > 0;
-      const sharedEntities = [];
-      if (hasEntities) {
-        for (const entity of feature.entities) {
-          if (clusterEntities.has(entity)) sharedEntities.push(entity);
-        }
-      }
-      let matched = false;
-      let rule = "no_match";
-      if (hasEntities) {
-        if (entityOverlap >= preset.entityStrong) {
-          const broadOnly = sharedEntities.length === 1 && CLUSTER_BROAD_ENTITIES.has(sharedEntities[0]);
-          if (broadOnly && tokenOverlap < preset.tokenWithEntity) {
-            matched = false;
-            rule = "entity_broad_needs_tokens";
-          } else {
-            matched = true;
-            rule = "entity_strong";
-          }
-        } else if (entityOverlap >= preset.entityWeak && tokenOverlap >= preset.tokenWithEntity) {
-          matched = true;
-          rule = "entity_plus_token";
-        }
-      } else if (tokenOverlap >= preset.tokenOnly) {
-        matched = true;
-        rule = "token_fallback";
-      }
-      const score = hasEntities
-        ? ((entityOverlap * 0.68) + (tokenOverlap * 0.32))
-        : tokenOverlap;
-      return { matched, rule, score, entityOverlap, tokenOverlap, hasEntities, sharedEntities };
+      return clusterScoringTools.compare(feature, cluster, preset);
     }
 
     function relaxedSimilarity(feature, cluster, preset){
-      const entityOverlap = jaccard(feature.entities, cluster.exemplarEntitySet);
-      const tokenOverlap = jaccard(feature.tokenSet, cluster.exemplarTokenSet);
-      const hasEntities = feature.entities.size > 0 && cluster.exemplarEntitySet.size > 0;
-      if (hasEntities) {
-        const ok = entityOverlap >= preset.relaxedEntity && tokenOverlap >= preset.relaxedToken;
-        return { ok, score: (entityOverlap * 0.6) + (tokenOverlap * 0.4), entityOverlap, tokenOverlap };
-      }
-      const ok = tokenOverlap >= preset.relaxedToken;
-      return { ok, score: tokenOverlap, entityOverlap, tokenOverlap };
+      return clusterScoringTools.compareRelaxed(feature, cluster, preset);
     }
 
     function recomputeClusterMetadata(cluster){
