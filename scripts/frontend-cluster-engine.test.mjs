@@ -7,6 +7,8 @@ const source = await readFile(new URL("../docs/js/views/cluster-engine.js", impo
 const context = { window: {} };
 vm.runInNewContext(source, context, { filename: "cluster-engine.js" });
 const engine = context.window.NewsboardClusterEngine;
+const assignmentSource = await readFile(new URL("../docs/js/views/cluster-assignment.js", import.meta.url), "utf8");
+vm.runInNewContext(assignmentSource, context, { filename: "cluster-assignment.js" });
 
 test("cluster normalization and slugs are stable across punctuation and URLs", () => {
   assert.equal(engine.normalize("  U.S. Election: Live Updates!  "), "u s election live updates");
@@ -71,4 +73,26 @@ test("entity tools canonicalize countries, phrases, acronyms, and demonyms", () 
     })].sort(),
     ["fbi", "mexican_national_guard", "mexico", "national_guard", "nationalguard"],
   );
+});
+
+test("assignment groups corroborated stories and leaves unrelated solos in Other", () => {
+  const preset = { entityStrong: 0.5, entityWeak: 0.25, tokenWithEntity: 0.25, tokenOnly: 0.5, relaxedEntity: 0.2, relaxedToken: 0.2, merge: 0.5 };
+  const scoring = engine.createScoringTools({ broadEntities: new Set() });
+  const features = {
+    a: { sourceId: "a", title: "Quake strikes city", titleRaw: "Quake strikes city", titleNorm: "Quake strikes city", norm: "quake strikes city", firstSeenMs: 1, entities: new Set(["city"]), tokenSet: new Set(["quake", "city"]), labelTokens: ["quake", "city"], canonicalTokens: ["quake", "city"], topTokens: ["quake", "city"], clusterKey: "quake|city" },
+    b: { sourceId: "b", title: "City hit by quake", titleRaw: "City hit by quake", titleNorm: "City hit by quake", norm: "city hit by quake", firstSeenMs: 2, entities: new Set(["city"]), tokenSet: new Set(["quake", "city"]), labelTokens: ["city", "quake"], canonicalTokens: ["city", "quake"], topTokens: ["city", "quake"], clusterKey: "city|quake" },
+    c: { sourceId: "c", title: "Markets close higher", titleRaw: "Markets close higher", titleNorm: "Markets close higher", norm: "markets close higher", firstSeenMs: 3, entities: new Set(), tokenSet: new Set(["market", "close"]), labelTokens: ["market", "close"], canonicalTokens: ["market", "close"], topTokens: ["market", "close"], clusterKey: "market|close" },
+  };
+  const assignment = context.window.NewsboardClusterAssignment.create({
+    CLUSTER_PRESETS: { balanced: preset }, CLUSTER_STOPWORDS: new Set(), CLUSTER_TITLE_DEPRIORITIZED: new Set(),
+    CLUSTER_MERGE_WINDOW_MS: 100, CLUSTER_HARD_JOIN_WINDOW_MS: 100, CLUSTER_DOMINANT_WINDOW_MS: 100,
+    CLUSTER_ENTITY_BUDGET: 3, CLUSTER_ACRONYM_ALLOWLIST: new Set(), buildStoryFeature: (item) => features[item.sourceId],
+    clusterLabelFromTokens: (tokens) => tokens.join(" "), compactTwoWordLabel: (label) => label,
+    clusterScoringTools: scoring, slugify: engine.slugify, stableHash: engine.stableHash, jaccard: engine.jaccard,
+  });
+  const result = assignment.buildStoryClusters([{ sourceId: "a" }, { sourceId: "b" }, { sourceId: "c" }]);
+  assert.equal(result.clusters.length, 1);
+  assert.equal(result.clusters[0].items.length, 2);
+  assert.equal(result.bySource.a.clusterId, result.bySource.b.clusterId);
+  assert.equal(result.bySource.c.clusterId, "other");
 });

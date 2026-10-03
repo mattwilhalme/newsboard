@@ -34,7 +34,7 @@ No framework or bundler is required initially. Use native ES modules and preserv
 4. **Story History and GDELT drawers (completed):** `docs/js/ui/intelligence-drawers.js` owns their independent fetch/render paths. Optional intelligence remains failure-isolated from raw headlines.
 5. **Overview cards (completed):** `docs/js/views/overview-cards.js` now owns card construction, source ordering, health display, Story badges, coverage actions, and entrance behavior shared by Overview and clustered cards.
 6. **History and Data views (completed):** `docs/js/views/history-data.js` owns canonical story keys, bounded-window metrics, change counts, longest-run calculations, live/breaking counts, chart buckets, the sortable Data table, and recent/full History card rendering.
-7. **Labs/clustering (in progress):** `docs/js/views/cluster-engine.js` now owns stable normalization, slugs, cluster identifiers, boilerplate removal, acronym preservation, stemming, canonical tokens, alias expansion, entity extraction, and similarity scoring. Continue by moving cluster assignment/merge policy, then the Labs rendering shell while retaining current storage keys and deterministic tests.
+7. **Labs/clustering (in progress):** `docs/js/views/cluster-engine.js` owns feature normalization, entity extraction, and similarity scoring; `docs/js/views/cluster-assignment.js` owns deterministic assignment, entity-budget and dominant-entity merges, solo reassignment, and final source mapping. Continue by moving the Labs rendering shell while retaining current storage keys and deterministic tests.
 8. **CSS by component:** only after markup modules are stable, split tokens/layout/components while comparing screenshots at desktop and narrow widths.
 
 ## Regression checks per step
