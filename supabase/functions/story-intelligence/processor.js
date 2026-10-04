@@ -17,7 +17,7 @@ export async function processFeedArticles(rpc,{limit=100,budgetEnd=Infinity}={})
    if(await rpc('newsboard_feed_story_commit',{p_article:article.id,p_story:storyId,p_matcher_version:MATCH_CONFIG.version,p_metadata:metadata}))processed++;
   }catch(error){console.warn(`feed story article ${article.id}: ${error.message}`);}
  }
- return {fetched:(articles||[]).length,processed};
+ return {fetched:(articles||[]).length,processed,retries:(articles||[]).filter(article=>article.retry).length};
 }
 
 function evidenceHash(pair,evidence){

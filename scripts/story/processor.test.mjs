@@ -15,6 +15,19 @@ test('feed articles generate publication-only matcher input and assignments',asy
  assert.equal(commit.p_metadata.published_at,'2026-10-04T17:03:00Z');assert.equal('rank' in commit.p_metadata,false);
 });
 
+test('feed rematches use the same precision matcher and report bounded retry work',async()=>{
+ const target='00000000-0000-0000-0000-000000000456';let commit;
+ const rpc=async(name,args)=>{
+  if(name==='newsboard_feed_story_inputs')return [{id:'a2',retry:true,previous_attempts:3,publisher_id:'cbs1',headline:'Powerful earthquake strikes Northern California',description:'A magnitude 7.1 quake hit near Eureka',canonical_url:'https://cbsnews.com/news/quake',first_seen_at:'2026-10-04T17:15:00Z'}];
+  if(name==='newsboard_story_candidates')return [{id:target,representatives:[{source_id:'abc1',title:'Magnitude 7.1 earthquake hits Northern California near Eureka',description:'Officials report a powerful quake',url:'https://abcnews.com/quake',observed_at:'2026-10-04T17:20:00Z'}]}];
+  if(name==='newsboard_feed_story_commit'){commit=args;return true;}
+  throw new Error(name);
+ };
+ const result=await processFeedArticles(rpc);
+ assert.deepEqual(result,{fetched:1,processed:1,retries:1});
+ assert.equal(commit.p_story,target);assert.equal(commit.p_metadata.evidence_kind,'publication_feed');
+});
+
 test('manual article target overrides the matcher before commit', async () => {
   const target='00000000-0000-0000-0000-000000000123';
   let committed=null;const calls=[];

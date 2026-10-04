@@ -20,3 +20,9 @@ Feed discovery is publication evidence only. It writes deduplicated `publisher_a
 Rows are unique on `(publisher_id, canonical_url)`; repeated polls update one row. `feed_poll_runs` adds about 768 rows/day. Existing crawler snapshots/source runs, Top 10 runs/items, dispatches, story processing runs, and the new poll table lack automatic time retention. Ranked observations were already flagged as a 30–90 day retention candidate in `notes/multi-publisher-top10.md`; no cleanup is done here.
 
 Publisher `published_at`, feed `first_seen_at`, homepage detection, first ranked appearance, and first #1 remain distinct.
+
+## Matching effectiveness
+
+Unmatched feed articles are reconsidered at most eight times over a 72-hour eligibility window. Retry delays grow from 15 minutes to a maximum of eight hours. A meaningful feed metadata update makes an article immediately eligible and resets its retry budget. RSS evidence may join an existing Story Identity but still cannot create one or alter homepage/rank semantics.
+
+The service-role-only `newsboard_feed_effectiveness(hours)` RPC returns aggregate discovery count, match rate, retry backlog/exhaustion, average publication-to-discovery delay, and latest timestamps for each feed-enabled publisher. It exposes no raw article data and can support a future deliberately designed Story Radar provenance view.
