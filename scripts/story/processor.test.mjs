@@ -1,6 +1,19 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { processWindow } from '../../supabase/functions/story-intelligence/processor.js';
+import { processFeedArticles, processWindow } from '../../supabase/functions/story-intelligence/processor.js';
+
+test('feed articles generate publication-only matcher input and assignments',async()=>{
+ let commit;
+ const rpc=async(name,args)=>{
+  if(name==='newsboard_feed_story_inputs')return [{id:'a1',publisher_id:'abc1',headline:'Officials announce major coastal evacuation',description:'Residents leave ahead of the storm',canonical_url:'https://abcnews.com/story/1',first_seen_at:'2026-10-04T17:15:00Z',published_at:'2026-10-04T17:03:00Z'}];
+  if(name==='newsboard_story_candidates')return [];
+  if(name==='newsboard_feed_story_commit'){commit=args;return true;}
+  throw new Error(name);
+ };
+ const result=await processFeedArticles(rpc);
+ assert.equal(result.processed,1);assert.equal(commit.p_story,null);assert.equal(commit.p_metadata.evidence_kind,'publication_feed');
+ assert.equal(commit.p_metadata.published_at,'2026-10-04T17:03:00Z');assert.equal('rank' in commit.p_metadata,false);
+});
 
 test('manual article target overrides the matcher before commit', async () => {
   const target='00000000-0000-0000-0000-000000000123';

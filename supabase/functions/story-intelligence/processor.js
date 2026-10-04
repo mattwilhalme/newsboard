@@ -4,6 +4,22 @@ import { MATCH_CONFIG, scorePair } from './matcher.js';
 export const AUTO_MERGE_CONFIG = Object.freeze({ minimumScore: 0.84, limit: 8 });
 export const EXACT_DUPLICATE_CLEANUP_LIMIT = 12;
 
+export async function processFeedArticles(rpc,{limit=100,budgetEnd=Infinity}={}){
+ const articles=await rpc('newsboard_feed_story_inputs',{p_limit:limit}).catch(()=>[]);let processed=0;
+ for(const article of articles||[]){
+  if(Date.now()>budgetEnd)break;
+  const item={title:article.headline,url:article.canonical_url,description:article.description,source_id:article.publisher_id,observed_at:article.first_seen_at,published_at:article.published_at};
+  try{
+   const f=features(item); if(!item.title?.trim()||!f.url)continue;
+   const candidates=await rpc('newsboard_story_candidates',{p_terms:f.terms,p_at:item.observed_at,p_source:item.source_id,p_urls:[f.url]});
+   const matched=matchStory({...item,...f},candidates),storyId=matched.story_id||null;
+   const metadata={...matched.metadata,terms:f.terms,evidence_kind:'publication_feed',published_at:item.published_at,description:item.description};
+   if(await rpc('newsboard_feed_story_commit',{p_article:article.id,p_story:storyId,p_matcher_version:MATCH_CONFIG.version,p_metadata:metadata}))processed++;
+  }catch(error){console.warn(`feed story article ${article.id}: ${error.message}`);}
+ }
+ return {fetched:(articles||[]).length,processed};
+}
+
 function evidenceHash(pair,evidence){
  const reps=[...new Set([...(pair.representatives_a||[]),...(pair.representatives_b||[])].map(r=>`${r.source_id}|${r.title}|${r.url}|${r.description||''}`))].sort();
  let h=2166136261;for(const ch of `${MATCH_CONFIG.version}|${reps.join('||')}`){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return (h>>>0).toString(16).padStart(8,'0');
@@ -53,7 +69,8 @@ export async function processWindow(db, { start = null, end = null, limit = 24, 
    }
    if(await rpc('newsboard_story_commit',{p_run:run,p_batch_key:batch.batch_key,p_assignments:assignments}))processed++;
   }
-  const morePossible=batches.length===limit||processed<batches.length;
+  const feed=await processFeedArticles(rpc,{budgetEnd:began+budgetMs}).catch(error=>{console.warn(`feed story inputs: ${error.message}`);return {fetched:0,processed:0};});
+  const morePossible=batches.length===limit||processed<batches.length||feed.fetched>=100;
   // Release the worker lease before optional suggestion maintenance. Batch
   // commits are durable, and an expensive suggestion refresh must never leave
   // an otherwise useful processing run stuck until its lease expires.
@@ -73,6 +90,6 @@ export async function processWindow(db, { start = null, end = null, limit = 24, 
     p_limit:EXACT_DUPLICATE_CLEANUP_LIMIT,p_recent:7,
    }).catch(error=>{console.warn(`exact story duplicate cleanup: ${error.message}`);return null;});
   }
-  return {status:'success',run_id:run,processed,batches_fetched:batches.length,more_possible:morePossible,suggestions_refreshed:suggestionsRefreshed,auto_merge:autoMergeResult,exact_duplicate_cleanup:exactDuplicateCleanup};
+  return {status:'success',run_id:run,processed,batches_fetched:batches.length,feed_articles:feed,more_possible:morePossible,suggestions_refreshed:suggestionsRefreshed,auto_merge:autoMergeResult,exact_duplicate_cleanup:exactDuplicateCleanup};
  }catch(error){await rpc('newsboard_story_finish',{p_run:run,p_error:error.message}).catch(()=>{});throw error;}
 }
