@@ -1,6 +1,8 @@
 import { features, canonicalUrl, matchStory } from './matcher.js';
 import { MATCH_CONFIG, scorePair } from './matcher.js';
 
+export const AUTO_MERGE_CONFIG = Object.freeze({ minimumScore: 0.84, limit: 8 });
+
 function evidenceHash(pair,evidence){
  const reps=[...new Set([...(pair.representatives_a||[]),...(pair.representatives_b||[])].map(r=>`${r.source_id}|${r.title}|${r.url}|${r.description||''}`))].sort();
  let h=2166136261;for(const ch of `${MATCH_CONFIG.version}|${reps.join('||')}`){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return (h>>>0).toString(16).padStart(8,'0');
@@ -55,11 +57,16 @@ export async function processWindow(db, { start = null, end = null, limit = 24, 
   // commits are durable, and an expensive suggestion refresh must never leave
   // an otherwise useful processing run stuck until its lease expires.
   await rpc('newsboard_story_finish',{p_run:run,p_error:null});
-  let suggestionsRefreshed=false;
+  let suggestionsRefreshed=false,autoMergeResult=null;
   if(!morePossible&&Date.now()-began<budgetMs){
    const refreshed=await refreshMatchSuggestions(db).catch(error=>{console.warn(`story suggestion refresh: ${error.message}`);return null;});
    suggestionsRefreshed=Boolean(refreshed);
+   if(refreshed&&Date.now()-began<budgetMs){
+    autoMergeResult=await rpc('newsboard_story_auto_merge_suggestions',{
+     p_limit:AUTO_MERGE_CONFIG.limit,p_min_score:AUTO_MERGE_CONFIG.minimumScore,
+    }).catch(error=>{console.warn(`story suggestion auto-merge: ${error.message}`);return null;});
+   }
   }
-  return {status:'success',run_id:run,processed,batches_fetched:batches.length,more_possible:morePossible,suggestions_refreshed:suggestionsRefreshed};
+  return {status:'success',run_id:run,processed,batches_fetched:batches.length,more_possible:morePossible,suggestions_refreshed:suggestionsRefreshed,auto_merge:autoMergeResult};
  }catch(error){await rpc('newsboard_story_finish',{p_run:run,p_error:error.message}).catch(()=>{});throw error;}
 }
