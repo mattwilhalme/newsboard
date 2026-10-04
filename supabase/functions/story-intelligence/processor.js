@@ -2,6 +2,7 @@ import { features, canonicalUrl, matchStory } from './matcher.js';
 import { MATCH_CONFIG, scorePair } from './matcher.js';
 
 export const AUTO_MERGE_CONFIG = Object.freeze({ minimumScore: 0.84, limit: 8 });
+export const EXACT_DUPLICATE_CLEANUP_LIMIT = 12;
 
 function evidenceHash(pair,evidence){
  const reps=[...new Set([...(pair.representatives_a||[]),...(pair.representatives_b||[])].map(r=>`${r.source_id}|${r.title}|${r.url}|${r.description||''}`))].sort();
@@ -57,7 +58,7 @@ export async function processWindow(db, { start = null, end = null, limit = 24, 
   // commits are durable, and an expensive suggestion refresh must never leave
   // an otherwise useful processing run stuck until its lease expires.
   await rpc('newsboard_story_finish',{p_run:run,p_error:null});
-  let suggestionsRefreshed=false,autoMergeResult=null;
+  let suggestionsRefreshed=false,autoMergeResult=null,exactDuplicateCleanup=null;
   if(!morePossible&&Date.now()-began<budgetMs){
    const refreshed=await refreshMatchSuggestions(db).catch(error=>{console.warn(`story suggestion refresh: ${error.message}`);return null;});
    suggestionsRefreshed=Boolean(refreshed);
@@ -67,6 +68,11 @@ export async function processWindow(db, { start = null, end = null, limit = 24, 
     }).catch(error=>{console.warn(`story suggestion auto-merge: ${error.message}`);return null;});
    }
   }
-  return {status:'success',run_id:run,processed,batches_fetched:batches.length,more_possible:morePossible,suggestions_refreshed:suggestionsRefreshed,auto_merge:autoMergeResult};
+  if(!morePossible&&Date.now()-began<budgetMs){
+   exactDuplicateCleanup=await rpc('newsboard_story_consolidate_exact_duplicates',{
+    p_limit:EXACT_DUPLICATE_CLEANUP_LIMIT,p_recent:7,
+   }).catch(error=>{console.warn(`exact story duplicate cleanup: ${error.message}`);return null;});
+  }
+  return {status:'success',run_id:run,processed,batches_fetched:batches.length,more_possible:morePossible,suggestions_refreshed:suggestionsRefreshed,auto_merge:autoMergeResult,exact_duplicate_cleanup:exactDuplicateCleanup};
  }catch(error){await rpc('newsboard_story_finish',{p_run:run,p_error:error.message}).catch(()=>{});throw error;}
 }

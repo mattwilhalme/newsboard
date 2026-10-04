@@ -14,6 +14,7 @@ test('manual article target overrides the matcher before commit', async () => {
     if(name==='newsboard_story_suggestion_inputs')return {data:[],error:null};
     if(name==='newsboard_story_store_suggestions')return {data:0,error:null};
     if(name==='newsboard_story_auto_merge_suggestions')return {data:{merged:0,failed:0},error:null};
+    if(name==='newsboard_story_consolidate_exact_duplicates')return {data:{merged:0,failed:0,recent_days:args.p_recent},error:null};
     if(name==='newsboard_story_commit'){committed=args.p_assignments;return {data:true,error:null};}
     if(name==='newsboard_story_finish')return {data:null,error:null};
     throw new Error(`Unexpected RPC ${name}`);
@@ -36,12 +37,16 @@ test('high-confidence suggestion maintenance applies bounded automatic merges', 
     if(name==='newsboard_story_suggestion_inputs')return {data:[],error:null};
     if(name==='newsboard_story_store_suggestions')return {data:0,error:null};
     if(name==='newsboard_story_auto_merge_suggestions')return {data:{merged:2,failed:0,minimum_score:args.p_min_score},error:null};
+    if(name==='newsboard_story_consolidate_exact_duplicates')return {data:{merged:12,failed:0,recent_days:args.p_recent},error:null};
     throw new Error(`Unexpected RPC ${name}`);
   }};
   const result=await processWindow(db);
   assert.deepEqual(result.auto_merge,{merged:2,failed:0,minimum_score:0.84});
   const autoCall=calls.find(([name])=>name==='newsboard_story_auto_merge_suggestions');
   assert.deepEqual(autoCall[1],{p_limit:8,p_min_score:0.84});
+  const cleanupCall=calls.find(([name])=>name==='newsboard_story_consolidate_exact_duplicates');
+  assert.deepEqual(cleanupCall[1],{p_limit:12,p_recent:7});
+  assert.deepEqual(result.exact_duplicate_cleanup,{merged:12,failed:0,recent_days:7});
 });
 
 test('backlog runs finish cleanly before skipping suggestion maintenance', async () => {

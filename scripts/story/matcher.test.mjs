@@ -16,6 +16,15 @@ for(const [a,b,expected] of [
 test('normalization strips formatting but preserves semantic terms',()=>{assert.equal(normalizeHeadline('LIVE UPDATES:  Storm hits Texas — NBC News'),'storm hits texas');assert.notEqual(normalizeHeadline('Trump supports tariffs'),normalizeHeadline('Trump opposes tariffs'));});
 test('URL identity preserves article ID parameters',()=>{assert.equal(canonicalUrl('https://www.abcnews.com/US/story/?id=12&utm_source=x#x'),'https://abcnews.com/US/story?id=12');});
 test('ambiguous stories stay separate',()=>{const rep={title:'Powerful earthquake strikes Northern California',url:'https://b.test/a',source_id:'b',observed_at:at};const result=matchStory({...rep,source_id:'a'},[{id:'one',representatives:[rep]},{id:'two',representatives:[rep]}]);assert.equal(result.story_id,null);assert.equal(result.metadata.decision,'ambiguous');});
+test('same-publisher URL continuity deterministically overrides duplicate candidate ambiguity',()=>{
+ const item={title:'Storm leaves thousands without power in Texas',url:'https://a.test/story/texas-storm',source_id:'a',observed_at:at};
+ const representative={...item,title:'Thousands remain without power after severe Texas storms'};
+ const result=matchStory(item,[{id:'older',representatives:[representative]},{id:'newer',representatives:[representative]}]);
+ assert.equal(result.story_id,'newer');
+ assert.equal(result.metadata.decision,'matched');
+ assert.equal(result.metadata.reason,'same_publisher_url_and_title');
+ assert.equal(result.metadata.ambiguity_overridden,true);
+});
 test('compares multiple representatives, not only a canonical label',()=>{const result=matchStory({title:'Storm leaves thousands without power in Texas',observed_at:at,source_id:'a'},[{id:'one',representatives:[{title:'Texas governor speaks at press conference',observed_at:at},{title:'Thousands remain without power after severe Texas storms',observed_at:at}]}]);assert.equal(result.story_id,'one');});
 test('shared entities alone and old stories cannot establish identity',()=>{assert.equal(match('Trump China','Trump China').story_id,null);assert.equal(scorePair({title:'Storm leaves thousands without power in Texas',observed_at:at},{title:'Storm leaves thousands without power in Texas',observed_at:'2026-09-10T00:00:00Z'}).eligible,false);});
 test('same publisher URL still rejects unrelated rolling-blog topic',()=>{const r=scorePair({source_id:'a',title:'Trump announces China tariffs',url:'https://a.test/live',observed_at:at},{source_id:'a',title:'Warriors trade star player',url:'https://a.test/live',observed_at:at});assert.equal(r.eligible,false);});

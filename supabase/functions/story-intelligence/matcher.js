@@ -69,7 +69,12 @@ export function matchStory(item, stories) {
   return {candidate_story_id:story.id,...ranked[0]};
  }).filter(x=>Number.isFinite(x.score)).sort((a,b)=>b.score-a.score||a.candidate_story_id.localeCompare(b.candidate_story_id));
  const best=candidates[0],second=candidates[1];
- const ambiguous=best&&second&&second.eligible&&best.score-second.score<MATCH_CONFIG.ambiguityMargin;
+ // Exact publisher-local URL continuity is stronger than candidate ambiguity:
+ // duplicate identities can otherwise keep spawning and tie at the same score.
+ // scorePair still requires compatible title evidence, so reused live URLs with
+ // a changed topic do not receive this override.
+ const continuityOverride=best?.reason==='same_publisher_url_and_title';
+ const ambiguous=!continuityOverride&&best&&second&&second.eligible&&best.score-second.score<MATCH_CONFIG.ambiguityMargin;
  const accepted=best?.eligible&&best.score>=MATCH_CONFIG.threshold&&!ambiguous;
- return {story_id:accepted?best.candidate_story_id:null,metadata:{version:MATCH_CONFIG.version,decision:accepted?'matched':ambiguous?'ambiguous':'new_story',threshold:MATCH_CONFIG.threshold,...(best||{}),candidates:candidates.slice(0,3)}};
+ return {story_id:accepted?best.candidate_story_id:null,metadata:{version:MATCH_CONFIG.version,decision:accepted?'matched':ambiguous?'ambiguous':'new_story',ambiguity_overridden:Boolean(continuityOverride&&second?.eligible),threshold:MATCH_CONFIG.threshold,...(best||{}),candidates:candidates.slice(0,3)}};
 }
