@@ -714,6 +714,9 @@
 .collectionHealthTable .healthState.degraded,.collectionHealthTable .healthState.blocked{color:#9a6700}
 .collectionHealthTable .healthState.stale,.collectionHealthTable .healthState.unavailable{color:var(--bad)}
 .collectionHealthError{max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)}
+.collectionHealthScroll{overflow-x:auto}
+.collectionHealthTable{min-width:900px}
+.mobileCollectionHealth{display:none;margin-bottom:16px}
 .emptyState{
   border:1px dashed var(--line-strong);
   border-radius:var(--radius);
@@ -990,6 +993,7 @@
   }
 }
 @media (max-width: 700px){
+  .mobileCollectionHealth{display:block}
   #drawer-data,
   #drawer-source-data{
     top:auto;

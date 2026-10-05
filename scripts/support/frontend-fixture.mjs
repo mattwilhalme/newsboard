@@ -32,12 +32,16 @@ export function createFrontendFixture(now = new Date().toISOString()) {
     } },
   };
   const top10 = { latest: { ok: true, observedAt: now, items: [{ rank: 1, title: 'ABC ranked story', url: 'https://abcnews.com/US/ranked/story?id=3' }] }, runs: [{ ok: true, observedAt: now, items: [{ rank: 1, title: 'ABC ranked story', url: 'https://abcnews.com/US/ranked/story?id=3' }] }] };
+  const collectionHealth = {
+    abc1: { health: 'healthy', last_attempt_status: 'success', http_status: 200, success_rate_24h: 1 },
+    cbs1: { health: 'healthy', last_attempt_status: 'success', http_status: 200, success_rate_24h: 1, recovered_by_fallback: true, last_primary_attempt_status: 'crawl_failed', primary_http_status: 503, last_primary_error: 'upstream blocked', browser_fallback_state: 'succeeded' },
+  };
   const storyHistory = { story: { id: storyId, canonical_label: 'ABC deterministic headline', first_detected_at: earlier, first_source_id: 'abc1' }, publisher_count: 2, current_number_ones: 1, metrics: { publishers_detected: 2, time_to_peak_seconds: 60, time_to_number_one_seconds: 60, rank_changes: 2, headline_changes: 1 }, members: [{ source_id: 'abc1', publisher: 'ABC News', first_seen_at: earlier, first_rank: 4, peak_rank: 1, observed_duration_seconds: 60 }, { source_id: 'cbs1', publisher: 'CBS News', first_seen_at: now, first_rank: 6, peak_rank: 3, observed_duration_seconds: 30 }], events: [{ event_type: 'FIRST_DETECTED', observed_at: earlier, publisher: 'ABC News', rank: 4, headline: 'ABC deterministic headline', metadata: {} }, { event_type: 'PUBLISHER_PICKUP', observed_at: now, publisher: 'CBS News', rank: 6, headline: 'CBS retained last-good headline', metadata: {} }] };
   const recentStories = [
     { story_id: storyId, canonical_label: 'ABC deterministic headline', first_detected_at: earlier, second_publisher_at: now, first_source_id: 'abc1', last_seen_at: now, publishers_detected: 3, recent_publishers: 3, publisher_ids: ['abc1','cbs1','nbc1'], active_source_ids: ['abc1','cbs1','nbc1'], publishers_reaching_number_one: 1, rank_changes: 2, headline_changes: 1 },
     { story_id: '00000000-0000-0000-0000-000000000100', canonical_label: 'Secondary shared story', first_detected_at: earlier, second_publisher_at: now, first_source_id: 'cbs1', last_seen_at: earlier, publishers_detected: 2, recent_publishers: 0, publisher_ids: ['cbs1','fox1'], active_source_ids: [], publishers_reaching_number_one: 0, rank_changes: 0, headline_changes: 0 },
   ];
-  return { earlier, now, recentStories, snapshot, storyHistory, storyId, top10 };
+  return { collectionHealth, earlier, now, recentStories, snapshot, storyHistory, storyId, top10 };
 }
 
 export async function installFrontendRoutes(page, fixture, { coverage } = {}) {
@@ -49,7 +53,7 @@ export async function installFrontendRoutes(page, fixture, { coverage } = {}) {
     }
     if (url.pathname.endsWith('/supabase.json')) return route.fulfill({ json: { url: 'https://mock.supabase.test', anonKey: 'test-key' } });
     if (url.pathname.endsWith('/newsboard_snapshot')) return route.fulfill({ json: fixture.snapshot });
-    if (url.pathname.endsWith('/newsboard_collection_health')) return route.fulfill({ json: {} });
+    if (url.pathname.endsWith('/newsboard_collection_health')) return route.fulfill({ json: fixture.collectionHealth });
     if (url.pathname.endsWith('/newsboard_timeline')) return route.fulfill({ json: { events: [{ ts: fixture.now, source_id: 'abc1', kind: 'new_url', title: 'ABC deterministic headline', url: fixture.snapshot.cacheLike.sources.abc1.item.url }] } });
     if (url.pathname.endsWith('/newsboard_top10')) return route.fulfill({ json: fixture.top10 });
     if (url.pathname.endsWith('/newsboard_story_badges')) return route.fulfill({ json: [{ story_id: fixture.storyId, source_id: 'abc1', url: fixture.snapshot.cacheLike.sources.abc1.item.url, title: fixture.snapshot.cacheLike.sources.abc1.item.title, first_source_id: 'abc1', publisher_count: 2, first_detected_at: fixture.earlier }] });

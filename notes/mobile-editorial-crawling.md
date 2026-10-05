@@ -49,7 +49,7 @@ Data-only migration `20260920150543_mobile_editorial_browser_sources.sql` sets t
 
 Successful results use `collection_method = browser` in `crawler_source_runs`, update `crawler_current`, and append `crawler_snapshots` through the existing atomic save RPC. Failed collections retain prior good state. Existing Top 10, history and frontend processing are unchanged. Mobile viewport/selector/page URL diagnostics are recorded in archive JSON without adding a schema field.
 
-The unchanged Edge function continues logging browser-required outcomes for browser-configured sources. Those are routing notices recorded as failures, not attempted mobile HTTP requests; they can make `v_crawler_health.last_attempt_success` false after a browser success. A future focused change could distinguish delegated sources from actual collection failures. No monitoring redesign is included here.
+The unchanged Edge function continues logging browser-required outcomes for browser-configured sources. Those rows remain useful routing evidence, but `newsboard_collection_health()` now excludes them from effective browser collection cycles. For HTTP-primary sources, a successful linked browser fallback recovers the failed primary cycle while preserving the primary status and error as diagnostic fields. Raw attempt history remains unchanged.
 
 ## Verification and changed files
 

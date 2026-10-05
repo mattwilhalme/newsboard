@@ -66,7 +66,7 @@
           <h2>Collection Health</h2>
           <div class="labsHelp">Freshness of the latest retained successful observation and the latest explicitly reported collection state.</div>
         </div>
-        <div id="collection-health"></div>
+        <div id="collection-health" class="collectionHealthScroll"></div>
       </section>
       <section class="labsSection">
         <div class="labsHeader">
@@ -248,6 +248,13 @@
       <button id="btn-data-close" class="btn" type="button">Close</button>
     </div>
     <div class="drawerBody">
+      <section class="mobileCollectionHealth">
+        <div class="labsHeader">
+          <h2>Collection Health</h2>
+          <div class="labsHelp">Effective collection-cycle health with primary and fallback diagnostics.</div>
+        </div>
+        <div id="collection-health-mobile" class="collectionHealthScroll"></div>
+      </section>
       <div id="data"></div>
     </div>
   </aside>
@@ -1281,8 +1288,9 @@
     }
 
     function renderCollectionHealth(sources = {}, operational = {}){
-      const host = $("collection-health");
-      if (!host) return;
+      const hosts = [$("collection-health"), $("collection-health-mobile")].filter(Boolean);
+      if (!hosts.length) return;
+      const buildTable = (mobile = false) => {
       const table = document.createElement("table");
       table.className = "dataTable collectionHealthTable";
       table.innerHTML = "<thead><tr><th>Publisher</th><th>Health</th><th>Last valid</th><th>Last attempt</th><th>24h success</th><th>Fallback</th><th>Top 10</th><th>Story processing</th></tr></thead>";
@@ -1292,18 +1300,27 @@
         const op = operational?.[id] || {};
         const health = op.health ? { ...derivePublisherHealth(source), state: op.health[0].toUpperCase()+op.health.slice(1) } : derivePublisherHealth(source);
         const row = document.createElement("tr");
-        row.setAttribute("data-health-source", id);
+        row.setAttribute(mobile ? "data-mobile-health-source" : "data-health-source", id);
         const publisher = document.createElement("td"); publisher.textContent = sourceLabel(id, source);
         const state = document.createElement("td"); state.className = `healthState ${health.state.toLowerCase()}`; state.textContent = health.state;
         const lastGood = document.createElement("td"); lastGood.textContent = health.timestamp ? ago(health.timestamp).replace(" ago", "") : "—";
-        const attempt = document.createElement("td"); attempt.textContent = op.last_attempt_status ? `${op.last_attempt_status}${op.http_status ? ` ${op.http_status}` : ""}` : (source?.health?.crawlStatus || "—"); attempt.title = op.last_error || health.error || "";
+        const attempt = document.createElement("td");
+        const effectiveAttempt = op.last_attempt_status ? `${op.last_attempt_status}${op.http_status ? ` ${op.http_status}` : ""}` : (source?.health?.crawlStatus || "—");
+        const primaryAttempt = op.last_primary_attempt_status && op.last_primary_attempt_status !== "success"
+          ? `primary ${op.last_primary_attempt_status}${op.primary_http_status ? ` ${op.primary_http_status}` : ""}`
+          : null;
+        attempt.textContent = op.recovered_by_fallback && primaryAttempt ? `${effectiveAttempt} · fallback (${primaryAttempt})` : effectiveAttempt;
+        attempt.title = [op.last_error || health.error, op.last_primary_error].filter(Boolean).join(" · ");
         const rate = document.createElement("td"); rate.textContent = op.success_rate_24h == null ? "—" : `${Math.round(Number(op.success_rate_24h)*100)}%`;
         const fallback = document.createElement("td"); fallback.textContent = op.browser_fallback_state ? `${op.browser_fallback_state}${op.next_retry_at ? ` · retry ${fmtTime(op.next_retry_at)}` : ""}` : "—";
         const top10 = document.createElement("td"); top10.textContent = isDiscoverySource(id) ? "Not applicable (unranked)" : op.top10_quality ? `${op.top10_quality} (${op.top10_items ?? 0})` : "Unavailable";
         const story = document.createElement("td"); story.textContent = isDiscoverySource(id) ? "Discovery only" : op.story_processed_through ? `${Math.round(Number(op.story_processing_lag_seconds||0)/60)}m lag` : "Unprocessed";
         row.append(publisher, state, lastGood, attempt, rate, fallback, top10, story); body.appendChild(row);
       }
-      table.appendChild(body); host.replaceChildren(table);
+      table.appendChild(body);
+      return table;
+      };
+      for (const host of hosts) host.replaceChildren(buildTable(host.id === "collection-health-mobile"));
     }
 
     function drawMiniBars(canvas, buckets){

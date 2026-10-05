@@ -34,7 +34,7 @@ test('major views preserve deterministic content, controls and ordering', async 
     assert.equal(await page.locator('#view-data').isVisible(), true);
     assert.equal(await page.locator('#collection-health tbody tr').count(), 12);
     assert.match(await page.locator('[data-health-source="abc1"]').innerText(), /ABC News[\s\S]*Healthy[\s\S]*success/);
-    assert.match(await page.locator('[data-health-source="cbs1"]').innerText(), /CBS News[\s\S]*Degraded[\s\S]*failed/);
+    assert.match(await page.locator('[data-health-source="cbs1"]').innerText(), /CBS News[\s\S]*Healthy[\s\S]*success 200 · fallback \(primary crawl_failed 503\)/);
     assert.equal(await page.locator('#cards-grid .card').count(), 12);
     assert.match(await page.locator('#data-page').innerText(), /ABC News[\s\S]*CBS News/);
     await page.locator('#data-window-page').selectOption('6');
@@ -69,6 +69,13 @@ test('major views preserve deterministic content, controls and ordering', async 
     assert.match(await page.locator('#view-labs').innerText(), /Story Clusters[\s\S]*ABC ranked story/);
     await page.locator('#cluster-strictness').selectOption('strict');
     assert.equal(await page.locator('#cluster-strictness').inputValue(), 'strict');
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.locator('#tab-data').click();
+    assert.equal(await page.locator('#drawer-data').getAttribute('aria-hidden'), 'false');
+    assert.equal(await page.locator('#collection-health-mobile tbody tr').count(), 12);
+    assert.match(await page.locator('[data-mobile-health-source="abc1"]').innerText(), /ABC News[\s\S]*Healthy[\s\S]*success/);
+    assert.match(await page.locator('[data-mobile-health-source="cbs1"]').innerText(), /CBS News[\s\S]*Healthy[\s\S]*success 200 · fallback \(primary crawl_failed 503\)/);
     assert.deepEqual(errors, []);
   } finally { await browser.close(); }
 });

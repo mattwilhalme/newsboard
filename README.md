@@ -99,6 +99,7 @@ GDELT Coverage is a separate on-demand experiment. Its “earliest match” is G
 ## Operational behavior
 
 - The Edge crawler records each publisher independently and reports `success`, `partial`, or `failed` at run level.
+- Collection Health measures effective publisher cycles: browser-routing notices are excluded for browser-authoritative sources, and a successful browser fallback recovers its failed HTTP primary cycle while retaining the primary error as diagnostic context.
 - Invalid, empty, blocked, or failed results never replace `crawler_current`; the last successful observation remains visible with attempt health shown separately.
 - HTTP failures and due browser-authoritative publishers create source-specific browser jobs. The private dispatcher invokes the targeted GitHub workflow with duplicate protection, leases, and per-source retry/backoff.
 - A fresh frontend load uses Supabase RPCs, retries transient failures, and does not resurrect persisted dashboard snapshots or generated JSON as current news.
