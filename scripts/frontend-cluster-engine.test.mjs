@@ -9,6 +9,12 @@ vm.runInNewContext(source, context, { filename: "cluster-engine.js" });
 const engine = context.window.NewsboardClusterEngine;
 const assignmentSource = await readFile(new URL("../docs/js/views/cluster-assignment.js", import.meta.url), "utf8");
 vm.runInNewContext(assignmentSource, context, { filename: "cluster-assignment.js" });
+const labsSource = await readFile(new URL("../docs/js/views/labs.js", import.meta.url), "utf8");
+vm.runInNewContext(labsSource, context, { filename: "labs.js" });
+
+test("Labs view exposes a dependency-injected rendering shell", () => {
+  assert.equal(typeof context.window.NewsboardLabsView?.create, "function");
+});
 
 test("cluster normalization and slugs are stable across punctuation and URLs", () => {
   assert.equal(engine.normalize("  U.S. Election: Live Updates!  "), "u s election live updates");
