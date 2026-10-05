@@ -30,4 +30,9 @@ assert.match(ci, /node-version:\s*24\b/, 'CI must use the production Node.js maj
 assert.match(ci, /npm ci\b/, 'CI must install the committed dependency lockfile');
 assert.match(ci, /npm run verify\b/, 'CI must run the complete deterministic regression contract');
 assert.doesNotMatch(ci, /SUPABASE_|SERVICE_ROLE|scripts\/crawl\/validate-|scripts\/test-/, 'CI must not receive database credentials or invoke live publisher checks');
+const drift = await readFile(new URL("live-crawler-drift.yml", directory), "utf8");
+assert.match(drift, /schedule:\s*\n\s+- cron:/, 'live drift detection must remain scheduled');
+assert.match(drift, /npm run test:crawler-drift\b/, 'live drift workflow must run the read-only canary');
+assert.match(drift, /if:\s*always\(\)/, 'live drift diagnostics must upload after failures');
+assert.doesNotMatch(drift, /SUPABASE_|SERVICE_ROLE|NEWSBOARD_TOKEN|git\s+push\b/, 'live drift detection must not receive persistence credentials or push');
 console.log(`Validated ${files.length} workflow action contracts.`);

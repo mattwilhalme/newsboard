@@ -28,6 +28,8 @@ Frontend integration fixtures are centralized in `scripts/support/frontend-fixtu
 
 Publisher-specific live commands (`test:bbc`, `test:fox`, and `test:yahoo`) remain available but depend on current external pages and are not deterministic enough for the default suite. `scripts/crawl/validate-*.mjs`, deployed UI smoke scripts, and Supabase SQL tests are also intentionally separate.
 
+`npm run test:crawler-drift` is the read-only live canary for all twelve active sources. GitHub Actions runs it every six hours and on manual dispatch, retries a failing source once to suppress one-off network noise, uploads a seven-day JSON diagnostic artifact even after failures, and receives no Supabase or crawler credentials. A failed canary reports repeatable publisher markup/access drift but never changes crawler state.
+
 ## SQL integration coverage
 
 `supabase/tests/` contains rollback-oriented suites for crawler safety, combined attempt state, browser dispatch scheduling, multi-publisher Top 10 persistence, and Story Intelligence. They cover invariants that cannot be proven by JavaScript mocks alone, including last-good retention, partial runs, leases, RLS, replay/idempotency, rank events, and raw/derived failure isolation.
