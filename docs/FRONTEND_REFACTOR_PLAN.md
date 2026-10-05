@@ -35,7 +35,7 @@ No framework or bundler is required initially. Use native ES modules and preserv
 5. **Overview cards (completed):** `docs/js/views/overview-cards.js` now owns card construction, source ordering, health display, Story badges, coverage actions, and entrance behavior shared by Overview and clustered cards.
 6. **History and Data views (completed):** `docs/js/views/history-data.js` owns canonical story keys, bounded-window metrics, change counts, longest-run calculations, live/breaking counts, chart buckets, the sortable Data table, and recent/full History card rendering.
 7. **Labs/clustering (completed):** `docs/js/views/cluster-engine.js` owns feature normalization, entity extraction, and similarity scoring; `docs/js/views/cluster-assignment.js` owns deterministic assignment, entity-budget and dominant-entity merges, solo reassignment, and final source mapping; `docs/js/views/labs.js` owns cluster chips, grouped card rendering, drag ordering, debug details, fallback rendering, and the clustering harness. Existing storage keys and deterministic behavior remain unchanged.
-8. **CSS by component:** only after markup modules are stable, split tokens/layout/components while comparing screenshots at desktop and narrow widths.
+8. **CSS by component (completed):** the unchanged stylesheet order now lives in `docs/css/tokens.css`, `docs/css/layout.css`, and `docs/css/components.css`. Browser fixtures serve the same production files so desktop and narrow-width behavior remain covered without introducing a build step.
 
 ## Regression checks per step
 

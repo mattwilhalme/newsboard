@@ -3,6 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { chromium } from 'playwright';
 const html = fs.readFileSync('docs/index.html', 'utf8');
+const cssAssets = new Map([
+ ['/newsboard/css/tokens.css', fs.readFileSync('docs/css/tokens.css', 'utf8')],
+ ['/newsboard/css/layout.css', fs.readFileSync('docs/css/layout.css', 'utf8')],
+ ['/newsboard/css/components.css', fs.readFileSync('docs/css/components.css', 'utf8')],
+]);
 const formatJs = fs.readFileSync('docs/js/format.js', 'utf8');
 const healthJs = fs.readFileSync('docs/js/health.js', 'utf8');
 const dataJs = fs.readFileSync('docs/js/data/supabase.js', 'utf8');
@@ -23,6 +28,7 @@ async function scenario(fn) {
  await page.route('**/*', async route => {
   const url=new URL(route.request().url());
   if(url.pathname==='/newsboard/') return route.fulfill({contentType:'text/html',body:html});
+  if(cssAssets.has(url.pathname)) return route.fulfill({contentType:'text/css',body:cssAssets.get(url.pathname)});
   if(url.pathname.endsWith('/js/format.js')) return route.fulfill({contentType:'text/javascript',body:formatJs});
   if(url.pathname.endsWith('/js/health.js')) return route.fulfill({contentType:'text/javascript',body:healthJs});
   if(url.pathname.endsWith('/js/data/supabase.js')) return route.fulfill({contentType:'text/javascript',body:dataJs});

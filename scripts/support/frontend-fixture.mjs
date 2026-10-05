@@ -2,6 +2,9 @@ import fs from 'node:fs';
 
 export const frontendAssets = new Map([
   ['/newsboard/', ['text/html', fs.readFileSync('docs/index.html', 'utf8')]],
+  ['/newsboard/css/tokens.css', ['text/css', fs.readFileSync('docs/css/tokens.css', 'utf8')]],
+  ['/newsboard/css/layout.css', ['text/css', fs.readFileSync('docs/css/layout.css', 'utf8')]],
+  ['/newsboard/css/components.css', ['text/css', fs.readFileSync('docs/css/components.css', 'utf8')]],
   ['/newsboard/js/format.js', ['text/javascript', fs.readFileSync('docs/js/format.js', 'utf8')]],
   ['/newsboard/js/health.js', ['text/javascript', fs.readFileSync('docs/js/health.js', 'utf8')]],
   ['/newsboard/js/data/supabase.js', ['text/javascript', fs.readFileSync('docs/js/data/supabase.js', 'utf8')]],

@@ -1,0 +1,32 @@
+:root{
+  --bg:#F7F8FA;
+  --surface:#FFFFFF;
+  --card:#FFFFFF;
+  --text:#111827;
+  --muted:#6B7280;
+  --border:#E5E7EB;
+  --line:var(--border);
+  --line-strong:#D1D5DB;
+  --accent:#2563EB;
+  --good:#22C55E;
+  --danger:#EF4444;
+  --highlight-bg:#FEF3C7;
+  --highlight-text:#92400E;
+  --highlight-border:#F59E0B;
+  --shadow: 0 1px 2px rgba(17,24,39,0.06);
+  --radius: 10px;
+  --maxw: 1100px;
+
+  --blue:var(--accent);
+  --blue2:#1D4ED8;
+
+  --ok:var(--good);
+  --bad:var(--danger);
+  --warn:var(--highlight-border);
+
+  --chip:#F9FAFB;
+  --chipText:#374151;
+
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
