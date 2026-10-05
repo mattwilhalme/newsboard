@@ -37,7 +37,7 @@ test('missing rank module preserves a valid HTTP centerpiece',async()=>{
  try{globalThis.fetch=async()=>new Response('<main><h2><a href="https://abcnews.com/US/story?id=7">Valid centerpiece without ranked cards</a></h2></main>');const r=await collectPublisher(publishers.find(x=>x.id==='abc1'));assert.ok(r.item.title);assert.equal(r.top10_quality,'failed');}finally{globalThis.fetch=original;}
 });
 test('CBS uses lead section then more top stories, not unrelated links',()=>{
- const card=(i)=>`<article class="item"><a href="https://cbsnews.com/news/story-${i}"><h4 class="item__hed">CBS editorial headline ${i}</h4></a></article>`;
+ const card=(i)=>`<article class="item"><a href="https://cbsnews.com/news/story-${i}"><h2 class="item__hed">CBS editorial headline ${i}</h2></a></article>`;
  const html='<nav>'+card(99)+'</nav><section id="component-latest-news">'+Array.from({length:9},(_,i)=>card(i)).join('')+'</section><section id="component-more-top-stories">'+card(9)+'</section>';
  assert.equal(extractHttpTop10('cbs1',html,{url:'https://cbsnews.com/news/story-0'}).quality,'complete');
 });

@@ -825,10 +825,10 @@ function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/")
 function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/") {
   const $ = cheerio.load(html || "");
   const selectors = [
-    "#component-latest-news article.item a:has(h4.item__hed)",
-    "#component-latest-news h4.item__hed",
-    "article.item.item--type-updating_story a:has(h4.item__hed)",
-    "h4.item__hed",
+    "#component-latest-news article.item a:has(.item__hed)",
+    "#component-latest-news .item__hed",
+    "article.item.item--type-updating_story a:has(.item__hed)",
+    ".item__hed",
   ];
   const seen = new Set();
 
@@ -843,7 +843,7 @@ function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/"
       if (!a.length) continue;
       const url = toAbsoluteUrl(a.attr("href") || "", sourceUrl);
       const title = stripHeadlineNoise(cleanText(
-        a.find("h4.item__hed,h1,h2,h3,h4").first().text() ||
+        a.find(".item__hed,h1,h2,h3,h4").first().text() ||
         a.attr("aria-label") ||
         a.text() ||
         "",
@@ -1750,11 +1750,11 @@ async function scrapeCBSHero() {
         }
       }
 
-      // Prefer an h4 item__hed (your target)
-      const h4 = document.querySelector("h4.item__hed");
-      if (h4) {
-        const a = h4.closest("a[href]") || h4.parentElement?.querySelector("a[href]");
-        const title = clean(h4.textContent || "");
+      // Prefer CBS's lead module headline; the heading level changes with layouts.
+      const leadHeading = document.querySelector("#component-latest-news article.item .item__hed");
+      if (leadHeading) {
+        const a = leadHeading.closest("a[href]") || leadHeading.parentElement?.querySelector("a[href]");
+        const title = clean(leadHeading.textContent || "");
         const href = a?.getAttribute("href") || "";
         const url = href ? abs(href) : null;
         if (title && url) return { ok: true, title, url };

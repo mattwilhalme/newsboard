@@ -147,10 +147,10 @@ function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/",
 function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/", document) {
   const $ = document || cheerio.load(html || "");
   const selectors = [
-    "#component-latest-news article.item a:has(h4.item__hed)",
-    "#component-latest-news h4.item__hed",
-    "article.item.item--type-updating_story a:has(h4.item__hed)",
-    "h4.item__hed",
+    "#component-latest-news article.item a:has(.item__hed)",
+    "#component-latest-news .item__hed",
+    "article.item.item--type-updating_story a:has(.item__hed)",
+    ".item__hed",
   ];
   const seen = new Set();
 
@@ -165,7 +165,7 @@ function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/"
       if (!a.length) continue;
       const url = toAbsoluteUrl(a.attr("href") || "", sourceUrl);
       const title = stripHeadlineNoise(cleanText(
-        a.find("h4.item__hed,h1,h2,h3,h4").first().text() ||
+        a.find(".item__hed,h1,h2,h3,h4").first().text() ||
         a.attr("aria-label") ||
         a.text() ||
         "",
@@ -376,7 +376,7 @@ const HTTP_HERO_CONFIGS = {
     sourceUrl: "https://www.cbsnews.com/",
     hostPattern: /(^|\.)cbsnews\.com$/i,
     customExtractor: (html, sourceUrl, document) => extractCbsLeadFromDom(html, sourceUrl, document) || extractCbsFromJsonLd(html, sourceUrl, document),
-    selectors: ["main h4.item__hed a[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
+    selectors: ["main a:has(.item__hed)[href]", "main h1 a[href], main h2 a[href], main h3 a[href]"],
   },
   usat1: {
     sourceUrl: "https://www.usatoday.com/",
