@@ -66,7 +66,7 @@ test('major views preserve deterministic content, controls and ordering', async 
 
     await page.locator('#tab-labs').click();
     assert.equal(await page.locator('#view-labs').isVisible(), true);
-    assert.match(await page.locator('#view-labs').innerText(), /Story Clusters[\s\S]*ABC ranked story/);
+    assert.match(await page.locator('#view-labs').innerText(), /Story Clusters[\s\S]*ABC deterministic headline/);
     await page.locator('#cluster-strictness').selectOption('strict');
     assert.equal(await page.locator('#cluster-strictness').inputValue(), 'strict');
 

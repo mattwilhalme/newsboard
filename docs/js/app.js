@@ -17,8 +17,6 @@ const isGitHubPages =
 try { localStorage.removeItem("nb_last_successful_snapshot_v1"); } catch {}
 let retryTimer = null;
 const TIMELINE_URL = "./data/timeline.json";
-const TOP10_ABC_LATEST_URL = "./data/top10_abc_latest.json";
-const TOP10_ABC_HISTORY_URL = "./data/top10_abc_history.json";
 
 // Expect exactly these sources; render placeholders when missing
 const EXPECTED_SOURCE_IDS = ["abc1","cbs1","usat1","nbc1","cnn1","guardian1","apgoogle1","latimes1","npr1","bbc1","fox1","yahoo1"];
@@ -29,12 +27,6 @@ let discoveriesExpanded = false;
 const HISTORY_WINDOW_OPTIONS = [6, 24, 168];
 const HISTORY_WINDOW_DEFAULT_HOURS = 24;
 const DEEP_DIVE_DEFAULT_HOURS = 24;
-const deepDiveState = {
-  latest: null,
-  historyRuns: [],
-  windowHours: DEEP_DIVE_DEFAULT_HOURS,
-  selectedObservedAt: null,
-};
 const VIEW_STORAGE_KEY = "newsboard_view";
 const CLUSTER_CARD_ORDER_KEY = "nb_cluster_card_order";
 const CLUSTER_STRICTNESS_KEY = "nb_cluster_strictness";
@@ -801,12 +793,6 @@ async function fetchJSON(url, opts) {
       const hours = Number(new URL(String(url), location.href).searchParams.get("hours") || 12);
       return await NewsboardData.getTimeline(hours);
     }
-    if (path === TOP10_ABC_LATEST_URL || path === TOP10_ABC_HISTORY_URL) {
-      const data = await NewsboardData.getTop10(168);
-      if (path === TOP10_ABC_LATEST_URL && !data.latest) throw new Error("No database Top 10 snapshot yet");
-      if (path === TOP10_ABC_HISTORY_URL && !data.runs?.length) throw new Error("No database Top 10 history yet");
-      return path === TOP10_ABC_LATEST_URL ? data.latest : data;
-    }
   } catch (error) {
     throw error; // Frozen GitHub JSON is never a current-data fallback.
   }
@@ -1474,6 +1460,16 @@ function trackedPublisherDomains(sources = latestOverviewPayload?.sources || {})
 }
 function openGdeltCoverage(story){ return intelligenceDrawers.openGdeltCoverage(story); }
 
+intelligenceDrawers = window.NewsboardIntelligenceDrawers.create({
+  $, data: NewsboardData, drawerManager, format: window.NewsboardFormat,
+  getTrackedDomains: trackedPublisherDomains, isGitHubPages, fetchJSON,
+  firstMeaning: FIRST_MEANING, headlineDiffHtml,
+});
+storyRadar = window.NewsboardStoryRadar.create({
+  format: window.NewsboardFormat, openStoryHistory,
+  sourceLabel: (sourceId) => sourceLabel(sourceId, null),
+});
+
 const {
   applyCardEntrance,
   buildCardEl,
@@ -1947,258 +1943,6 @@ async function loadPublishedTimeline(hours = 12) {
   }
 }
 
-function deepDiveRunsForWindow() {
-  const runs = Array.isArray(deepDiveState.historyRuns) ? deepDiveState.historyRuns : [];
-  const cutoffMs = Date.now() - (Number(deepDiveState.windowHours || DEEP_DIVE_DEFAULT_HOURS) * 60 * 60 * 1000);
-  return runs
-    .filter((run) => {
-      const ms = Date.parse(String(run?.observedAt || ""));
-      return Number.isFinite(ms) && ms >= cutoffMs;
-    })
-    .sort((a, b) => Date.parse(String(a?.observedAt || "")) - Date.parse(String(b?.observedAt || "")));
-}
-
-function deepDiveDurationLabel(fromTs, toTs){
-  const from = Date.parse(String(fromTs || ""));
-  const to = Date.parse(String(toTs || ""));
-  if (!Number.isFinite(from) || !Number.isFinite(to) || to < from) return "—";
-  return fmtDurationSeconds(Math.floor((to - from) / 1000));
-}
-
-function headlineDiffHtml(prevTitle, nextTitle){
-  const a = String(prevTitle || "");
-  const b = String(nextTitle || "");
-  if (!a && !b) return "—";
-  if (!a || !b || a === b) return escapeHtml(b || a);
-
-  let start = 0;
-  const minLen = Math.min(a.length, b.length);
-  while (start < minLen && a[start] === b[start]) start += 1;
-
-  let endA = a.length - 1;
-  let endB = b.length - 1;
-  while (endA >= start && endB >= start && a[endA] === b[endB]) {
-    endA -= 1;
-    endB -= 1;
-  }
-
-  const prefix = a.slice(0, start);
-  const removed = a.slice(start, endA + 1);
-  const added = b.slice(start, endB + 1);
-  const suffix = b.slice(endB + 1);
-
-  let html = "";
-  if (prefix) html += escapeHtml(prefix);
-  if (removed) html += `<span class="diffDel">${escapeHtml(removed)}</span>`;
-  if (added) html += `<span class="diffAdd">${escapeHtml(added)}</span>`;
-  if (suffix) html += escapeHtml(suffix);
-  return html;
-}
-
-intelligenceDrawers = window.NewsboardIntelligenceDrawers.create({
-  $,
-  data: NewsboardData,
-  drawerManager,
-  format: window.NewsboardFormat,
-  getTrackedDomains: trackedPublisherDomains,
-  isGitHubPages,
-  fetchJSON,
-  firstMeaning: FIRST_MEANING,
-  headlineDiffHtml,
-});
-storyRadar = window.NewsboardStoryRadar.create({
-  format: window.NewsboardFormat,
-  openStoryHistory,
-  sourceLabel: (sourceId) => sourceLabel(sourceId, null),
-});
-
-function isMinorHeadlineEdit(prevTitle, nextTitle){
-  const a = String(prevTitle || "").trim();
-  const b = String(nextTitle || "").trim();
-  if (!a || !b || a === b) return true;
-
-  const maxLen = Math.max(a.length, b.length);
-  const minLen = Math.min(a.length, b.length);
-  if (!maxLen) return true;
-
-  let start = 0;
-  while (start < minLen && a[start] === b[start]) start += 1;
-
-  let endA = a.length - 1;
-  let endB = b.length - 1;
-  while (endA >= start && endB >= start && a[endA] === b[endB]) {
-    endA -= 1;
-    endB -= 1;
-  }
-
-  const changed = Math.max(0, (endA - start + 1)) + Math.max(0, (endB - start + 1));
-  return changed <= Math.max(14, Math.round(maxLen * 0.28));
-}
-
-function appendHeadlineEditMarkup(host, prevTitle, nextTitle){
-  const majorEdit = !isMinorHeadlineEdit(prevTitle, nextTitle);
-  if (majorEdit) {
-    const newest = document.createElement("div");
-    newest.className = "headlineNew";
-    newest.textContent = String(nextTitle || "—");
-    host.appendChild(newest);
-  }
-
-  const line = document.createElement("div");
-  line.innerHTML = headlineDiffHtml(prevTitle, nextTitle);
-  host.appendChild(line);
-}
-
-function headlineHistoryFromTimeline(events, currentUrl = null){
-  const rows = [...(events || [])]
-    .filter((ev) => ev && ev.ts && ev.title && ev.url)
-    .sort((a, b) => Date.parse(String(a.ts || "")) - Date.parse(String(b.ts || "")));
-
-  if (!rows.length) return { original: null, previous: null, changes: [] };
-
-  const latest = rows[rows.length - 1];
-  const activeUrl = String(currentUrl || latest?.url || "");
-  if (!activeUrl) return { original: null, previous: null, changes: [] };
-
-  // Current URL streak (same story URL currently in No. 1 spot).
-  const streak = [];
-  for (let i = rows.length - 1; i >= 0; i--) {
-    const ev = rows[i];
-    if (String(ev?.url || "") !== activeUrl) break;
-    streak.unshift(ev);
-  }
-  if (!streak.length) return { original: null, previous: null, changes: [] };
-
-  const streakStartIdx = rows.length - streak.length;
-  const prevEv = streakStartIdx > 0 ? rows[streakStartIdx - 1] : null;
-  const previous = prevEv
-    ? { title: String(prevEv.title || "").trim(), ts: prevEv.ts, url: prevEv.url || null }
-    : null;
-  const original = { title: String(streak[0].title || "").trim(), ts: streak[0].ts, url: activeUrl };
-
-  const out = [];
-  let prevTitle = null;
-  for (const ev of streak) {
-    const title = String(ev.title || "").trim();
-    if (!title) continue;
-    if (prevTitle === null) {
-      prevTitle = title;
-      continue;
-    }
-    if (title !== prevTitle) {
-      out.push({
-        fromTitle: prevTitle,
-        toTitle: title,
-        changedAt: ev.ts,
-      });
-      prevTitle = title;
-    }
-  }
-
-  return {
-    original,
-    previous,
-    changes: out.sort((a, b) => Date.parse(String(b?.changedAt || "")) - Date.parse(String(a?.changedAt || ""))),
-  };
-}
-
-function deepDiveMovement(item, prevRun){
-  const prevItems = Array.isArray(prevRun?.items) ? prevRun.items : [];
-  const prev = prevItems.find((x) => String(x?.fingerprint || "") === String(item?.fingerprint || ""));
-  if (!prev) return { label: "NEW", delta: null };
-  const p = Number(prev.rank);
-  const c = Number(item?.rank);
-  if (!Number.isFinite(p) || !Number.isFinite(c)) return { label: "NEW", delta: null };
-  if (p === c) return { label: `#${p}`, delta: 0 };
-  if (p > c) return { label: `↑ #${p}`, delta: p - c };
-  return { label: `↓ #${p}`, delta: c - p };
-}
-
-function isBreakingBannerTop10Item(item){
-  const title = String(item?.title || "").trim();
-  return /^breaking(\b|\d)/i.test(title);
-}
-
-function deepDiveTop10Since(runs, selectedIdx, fingerprint){
-  let firstIdx = selectedIdx;
-  for (let i = selectedIdx; i >= 0; i--) {
-    const has = (runs[i]?.items || []).some((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
-    if (!has) break;
-    firstIdx = i;
-  }
-  return runs[firstIdx]?.observedAt || null;
-}
-
-function deepDiveHeadlineChanges(runs, selectedIdx, row) {
-  const fp = String(row?.fingerprint || "");
-  if (!fp) return [];
-
-  const events = [];
-  let currentTitle = null;
-  let currentTitleFirstSeenAt = null;
-
-  for (let i = 0; i <= selectedIdx; i++) {
-    const it = (runs[i]?.items || []).find((x) => String(x?.fingerprint || "") === fp);
-    if (!it) continue;
-    const title = String(it?.title || "");
-    if (!title) continue;
-
-    if (currentTitle === null) {
-      currentTitle = title;
-      currentTitleFirstSeenAt = runs[i]?.observedAt || null;
-      continue;
-    }
-
-    if (title !== currentTitle) {
-      events.push({
-        fromTitle: currentTitle,
-        toTitle: title,
-        firstSeenAt: runs[i]?.observedAt || null,
-        changedAt: runs[i]?.observedAt || null,
-      });
-      currentTitle = title;
-      currentTitleFirstSeenAt = runs[i]?.observedAt || null;
-    }
-  }
-
-  if (!events.length) return [];
-
-  // Reverse chronological (latest first)
-  return events.sort((a, b) => Date.parse(String(b?.changedAt || "")) - Date.parse(String(a?.changedAt || "")));
-}
-
-function deepDiveNo1Since(runs, selectedIdx, fingerprint){
-  let lastNo1Idx = -1;
-  for (let i = selectedIdx; i >= 0; i--) {
-    const row = (runs[i]?.items || []).find((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
-    if (row && Number(row.rank) === 1) {
-      lastNo1Idx = i;
-      break;
-    }
-  }
-  if (lastNo1Idx < 0) return null;
-
-  let firstIdx = lastNo1Idx;
-  for (let i = lastNo1Idx; i >= 0; i--) {
-    const row = (runs[i]?.items || []).find((it) => String(it?.fingerprint || "") === String(fingerprint || ""));
-    if (!row || Number(row.rank) !== 1) break;
-    firstIdx = i;
-  }
-  return runs[firstIdx]?.observedAt || null;
-}
-
-function deepDiveRelatedSince(runs, selectedIdx, url){
-  let firstIdx = selectedIdx;
-  for (let i = selectedIdx; i >= 0; i--) {
-    const topRow = (runs[i]?.items || [])[0] || null;
-    const rel = Array.isArray(topRow?.related_links) ? topRow.related_links : [];
-    const has = rel.some((it) => String(it?.url || "") === String(url || ""));
-    if (!has) break;
-    firstIdx = i;
-  }
-  return runs[firstIdx]?.observedAt || null;
-}
-
 function viewFromHash(){
   const raw = String(location.hash || "").replace(/^#/, "").trim().toLowerCase();
   const valid = new Set(["overview", "data", "stories", "playxplay", "labs"]);
@@ -2208,341 +1952,27 @@ function viewFromHash(){
 function setView(which, persist = true) {
   const valid = new Set(["overview", "data", "stories", "playxplay", "labs"]);
   activeView = valid.has(which) ? which : "overview";
-
-  const overview = $("view-overview");
-  const data = $("view-data");
-  const stories = $("view-stories");
-  const playxplay = $("view-playxplay");
-  const labs = $("view-labs");
-  const tabOverview = $("tab-overview");
-  const tabData = $("tab-data");
-  const tabStories = $("tab-stories");
-  const tabPlayXPlay = $("tab-playxplay");
-  const tabLabs = $("tab-labs");
-
-  const showOverview = activeView === "overview";
-  const showData = activeView === "data";
-  const showStories = activeView === "stories";
-  const showPlayXPlay = activeView === "playxplay";
-  const showLabs = activeView === "labs";
-
-  if (overview) overview.style.display = showOverview ? "" : "none";
-  if (data) data.style.display = (showData && !isNarrowLayout()) ? "" : "none";
-  if (stories) stories.style.display = showStories ? "" : "none";
-  if (playxplay) playxplay.style.display = showPlayXPlay ? "" : "none";
-  if (labs) labs.style.display = showLabs ? "" : "none";
-
-  if (tabOverview) {
-    tabOverview.classList.toggle("active", showOverview);
-    tabOverview.setAttribute("aria-selected", showOverview ? "true" : "false");
+  const views = {
+    overview: $("view-overview"), data: $("view-data"), stories: $("view-stories"),
+    playxplay: $("view-playxplay"), labs: $("view-labs"),
+  };
+  for (const [name, node] of Object.entries(views)) {
+    if (node) node.style.display = activeView === name && (name !== "data" || !isNarrowLayout()) ? "" : "none";
   }
-  if (tabData) {
-    tabData.classList.toggle("active", showData);
-    tabData.setAttribute("aria-selected", showData ? "true" : "false");
+  for (const name of Object.keys(views)) {
+    const tab = $(name === "playxplay" ? "tab-playxplay" : `tab-${name}`);
+    if (tab) {
+      tab.classList.toggle("active", activeView === name);
+      tab.setAttribute("aria-selected", activeView === name ? "true" : "false");
+    }
   }
-  if (tabStories) {
-    tabStories.classList.toggle("active", showStories);
-    tabStories.setAttribute("aria-selected", showStories ? "true" : "false");
-  }
-  if (tabPlayXPlay) {
-    tabPlayXPlay.classList.toggle("active", showPlayXPlay);
-    tabPlayXPlay.setAttribute("aria-selected", showPlayXPlay ? "true" : "false");
-  }
-  if (tabLabs) {
-    tabLabs.classList.toggle("active", showLabs);
-    tabLabs.setAttribute("aria-selected", showLabs ? "true" : "false");
-  }
-
   if (persist) {
     try { localStorage.setItem(VIEW_STORAGE_KEY, activeView); } catch {}
     const nextHash = `#${activeView}`;
-    if (location.hash !== nextHash) {
-      history.replaceState(null, "", `${location.pathname}${location.search}${nextHash}`);
-    }
+    if (location.hash !== nextHash) history.replaceState(null, "", `${location.pathname}${location.search}${nextHash}`);
   }
-
-  if (showLabs) {
-    renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
-  }
-  if (showData) {
-    setDataOpen(isNarrowLayout());
-  } else {
-    setDataOpen(false);
-  }
-}
-
-function renderDeepDive() {
-  const latest = deepDiveState.latest || {};
-  const runs = deepDiveRunsForWindow();
-  if (!deepDiveState.selectedObservedAt && runs.length) {
-    deepDiveState.selectedObservedAt = runs[runs.length - 1]?.observedAt || null;
-  }
-  const foundIdx = runs.findIndex((r) => String(r?.observedAt || "") === String(deepDiveState.selectedObservedAt || ""));
-  const selectedIdx = foundIdx >= 0 ? foundIdx : Math.max(0, runs.length - 1);
-  const selectedRun = runs[selectedIdx] || latest || {};
-  const prevRun = selectedIdx > 0 ? runs[selectedIdx - 1] : null;
-  const topItems = Array.isArray(selectedRun?.items)
-    ? [...selectedRun.items]
-      .filter((row) => !isBreakingBannerTop10Item(row))
-      .sort((a, b) => Number(a.rank) - Number(b.rank))
-    : [];
-
-  const rail = $("deep-run-rail");
-  if (rail) {
-    rail.innerHTML = "";
-    const stamp = document.createElement("div");
-    stamp.className = "snapshotStamp";
-    stamp.textContent = selectedRun?.observedAt ? fmtTime(selectedRun.observedAt) : "No snapshots";
-
-    const stampNav = document.createElement("div");
-    stampNav.className = "snapshotNav";
-    const prevSnap = document.createElement("button");
-    prevSnap.className = "linkbtn";
-    prevSnap.type = "button";
-    prevSnap.textContent = "<";
-    const nextSnap = document.createElement("button");
-    nextSnap.className = "linkbtn";
-    nextSnap.type = "button";
-    nextSnap.textContent = ">";
-    stampNav.appendChild(prevSnap);
-    stampNav.appendChild(stamp);
-    stampNav.appendChild(nextSnap);
-
-    const scrubber = document.createElement("input");
-    scrubber.className = "shotRailScrubber";
-    scrubber.type = "range";
-    scrubber.min = "0";
-    scrubber.max = String(Math.max(0, runs.length - 1));
-    scrubber.step = "1";
-    scrubber.value = String(runs.length ? (runs.length - 1 - selectedIdx) : 0); // 0=newest, max=oldest
-    scrubber.disabled = runs.length <= 1;
-    let pendingReverseIdx = Number(scrubber.value || 0);
-
-    function runFromReverseIdx(reverseIdx) {
-      if (!runs.length) return;
-      const idx = Math.max(0, Math.min(runs.length - 1, Number(reverseIdx || 0)));
-      const nextIdx = (runs.length - 1) - idx;
-      return runs[nextIdx] || null;
-    }
-
-    function previewScrubSelection() {
-      const next = runFromReverseIdx(pendingReverseIdx);
-      if (!next) return;
-      stamp.textContent = fmtTime(next?.observedAt);
-    }
-
-    function commitScrubSelection() {
-      const next = runFromReverseIdx(pendingReverseIdx);
-      if (!next) return;
-      if (String(next?.observedAt || "") === String(deepDiveState.selectedObservedAt || "")) return;
-      deepDiveState.selectedObservedAt = next?.observedAt || null;
-      renderDeepDive();
-    }
-
-    function stepScrubber(delta) {
-      if (scrubber.disabled) return;
-      const min = Number(scrubber.min || 0);
-      const max = Number(scrubber.max || 0);
-      const current = Number(scrubber.value || 0);
-      const next = Math.max(min, Math.min(max, current + delta));
-      if (next === current) return;
-      scrubber.value = String(next);
-      pendingReverseIdx = next;
-      previewScrubSelection();
-      commitScrubSelection();
-    }
-
-    scrubber.addEventListener("input", () => {
-      pendingReverseIdx = Number(scrubber.value || 0);
-      previewScrubSelection();
-    });
-    scrubber.addEventListener("change", commitScrubSelection);
-    scrubber.addEventListener("mouseup", commitScrubSelection);
-    scrubber.addEventListener("touchend", commitScrubSelection, { passive: true });
-    scrubber.addEventListener("wheel", (ev) => {
-      if (scrubber.disabled) return;
-      ev.preventDefault();
-      const dir = ev.deltaY > 0 ? 1 : -1;
-      stepScrubber(dir);
-    }, { passive: false });
-
-    prevSnap.disabled = runs.length <= 1;
-    nextSnap.disabled = runs.length <= 1;
-    // Left (<): more recent. Right (>): older / back in time.
-    prevSnap.addEventListener("click", () => stepScrubber(-1));
-    nextSnap.addEventListener("click", () => stepScrubber(1));
-
-    rail.appendChild(stampNav);
-    rail.appendChild(scrubber);
-  }
-
-  const latestTime = $("deep-latest-time");
-  if (latestTime) latestTime.textContent = `Observed: ${selectedRun?.observedAt ? fmtTime(selectedRun.observedAt) : "—"}`;
-
-  const err = $("deep-latest-error");
-  if (err) err.textContent = selectedRun?.ok === false ? String(selectedRun?.error || "Top 10 scrape incomplete") : "";
-
-  const topList = $("deep-top10-list");
-  if (topList) {
-    topList.innerHTML = "";
-    for (const row of topItems) {
-      const li = document.createElement("li");
-      li.className = "top10Row";
-
-      const rank = document.createElement("div");
-      rank.className = "top10Rank";
-      rank.textContent = `${Number(row?.rank) || "?"}.`;
-
-      const body = document.createElement("div");
-      body.className = "deepEventBody";
-      const a = document.createElement("a");
-      a.className = "top10Link";
-      a.href = row?.url || "#";
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = row?.title || "—";
-      body.appendChild(a);
-      const intelligence = storyBadge("abc1", row);
-      if (intelligence) body.appendChild(intelligence);
-
-      const meta = document.createElement("div");
-      meta.className = "top10Meta";
-
-      const move = deepDiveMovement(row, prevRun);
-      const top10Since = deepDiveTop10Since(runs, selectedIdx, row?.fingerprint);
-      const no1Since = deepDiveNo1Since(runs, selectedIdx, row?.fingerprint);
-
-      function metric(label, value, klass, showLabel = true) {
-        const wrap = document.createElement("div");
-        wrap.className = "metric";
-        const lbl = document.createElement("span");
-        lbl.className = "statLabel";
-        lbl.textContent = label;
-        const chip = document.createElement("span");
-        chip.className = `statBtn ${klass || ""}`.trim();
-        chip.textContent = value || "—";
-        if (showLabel) wrap.appendChild(lbl);
-        wrap.appendChild(chip);
-        return { wrap, chip };
-      }
-
-      const showLabels = Number(row?.rank) === 1;
-      const prevValue = move.label || "—";
-      const no1Value = deepDiveDurationLabel(no1Since, selectedRun?.observedAt);
-      const top10Value = deepDiveDurationLabel(top10Since, selectedRun?.observedAt);
-
-      const mPrev = metric("Previously", prevValue, `isPrev ${String(move.label || "").startsWith("↓") ? "down" : ""}`, showLabels);
-      const mNo1 = metric("No. 1", no1Value, "isNo1", showLabels);
-      const mTop10 = metric("Top 10", top10Value, "isTop10", showLabels);
-
-      if (Number(row?.rank) === 1) {
-        meta.appendChild(mNo1.wrap); // Always show for #1
-        if (top10Value !== "—") meta.appendChild(mTop10.wrap);
-        if (prevValue !== "NEW") meta.appendChild(mPrev.wrap); // New #1 has no "Previously"
-      } else {
-        meta.appendChild(mPrev.wrap);
-        if (no1Value !== "—") meta.appendChild(mNo1.wrap);
-        if (top10Value !== "—") meta.appendChild(mTop10.wrap);
-      }
-
-      if (move.delta && Number.isFinite(move.delta)) {
-        const intensity = Math.min(0.52, 0.16 + (move.delta * 0.04));
-        const dirDown = String(move.label || "").startsWith("↓");
-        mPrev.chip.style.background = dirDown
-          ? `linear-gradient(90deg, rgba(255,255,255,.92), rgba(200,108,0,${intensity}))`
-          : `linear-gradient(90deg, rgba(200,108,0,${intensity}), rgba(255,255,255,.9))`;
-      }
-
-      body.appendChild(meta);
-
-      const headlineChanges = deepDiveHeadlineChanges(runs, selectedIdx, row);
-      const related = Number(row?.rank) === 1 && Array.isArray(row?.related_links) ? row.related_links : [];
-      const hasDetails = Boolean(headlineChanges.length);
-      if (hasDetails) {
-        const wrap = document.createElement("div");
-        wrap.className = "relatedWrap";
-
-        const toggle = document.createElement("button");
-        toggle.type = "button";
-        toggle.className = "relatedToggle";
-        toggle.textContent = Number(row?.rank) === 1 && related.length ? `Details (${related.length} context)` : "Details";
-
-        const panel = document.createElement("div");
-        panel.className = "relatedPanel";
-
-        for (const ev of headlineChanges) {
-          const diff = document.createElement("div");
-          diff.className = "headlineDiff";
-          const metaLine = document.createElement("div");
-          metaLine.className = "headlineDiffMeta";
-          metaLine.innerHTML = `<strong>Updated:</strong> ${escapeHtml(fmtTime(ev?.changedAt))}`;
-          diff.appendChild(metaLine);
-          appendHeadlineEditMarkup(diff, ev?.fromTitle, ev?.toTitle);
-          panel.appendChild(diff);
-        }
-
-        // For #1, list content/context links after headline changes.
-        if (related.length) {
-          const list = document.createElement("ul");
-          list.className = "relatedList";
-          for (const rel of related) {
-            const item = document.createElement("li");
-            item.className = "relatedItem";
-
-            const link = document.createElement("a");
-            link.className = "relatedLink";
-            link.href = rel?.url || "#";
-            link.target = "_blank";
-            link.rel = "noopener";
-            link.textContent = rel?.title || rel?.url || "Related link";
-
-            const since = deepDiveRelatedSince(runs, selectedIdx, rel?.url);
-            const chip = document.createElement("span");
-            chip.className = "statBtn isTop10";
-            chip.textContent = deepDiveDurationLabel(since, selectedRun?.observedAt);
-
-            item.appendChild(link);
-            if (chip.textContent !== "—") item.appendChild(chip);
-            list.appendChild(item);
-          }
-          panel.appendChild(list);
-        }
-
-        toggle.addEventListener("click", () => panel.classList.toggle("open"));
-        wrap.appendChild(toggle);
-        wrap.appendChild(panel);
-        body.appendChild(wrap);
-      }
-
-      li.appendChild(rank);
-      li.appendChild(body);
-      topList.appendChild(li);
-    }
-    if (!topItems.length) {
-      const li = document.createElement("li");
-      li.className = "top10Row";
-      li.textContent = "No Top 10 snapshot available yet.";
-      topList.appendChild(li);
-    }
-  }
-}
-
-async function loadDeepDiveData(hours = deepDiveState.windowHours) {
-  let latest = null;
-  let historyRuns = [];
-
-  try {
-    const payload = await NewsboardData.getTop10(Number(hours || DEEP_DIVE_DEFAULT_HOURS));
-    latest = payload?.latest || null;
-    historyRuns = Array.isArray(payload?.runs) ? payload.runs : [];
-  } catch {}
-
-  deepDiveState.latest = latest || { ok: false, observedAt: null, items: [], error: "Timeline data unavailable" };
-  deepDiveState.historyRuns = historyRuns;
-  if (!deepDiveState.selectedObservedAt && deepDiveState.latest?.observedAt) {
-    deepDiveState.selectedObservedAt = deepDiveState.latest.observedAt;
-  }
-  renderDeepDive();
+  if (activeView === "labs") renderStoryClusters(latestOverviewPayload.sources, latestOverviewPayload.indicators, latestOverviewPayload.timelineBySource);
+  setDataOpen(activeView === "data" ? isNarrowLayout() : false);
 }
 
 async function loadCardTimelineBySource(hours = 12, sourcesData = null) {
@@ -2599,6 +2029,59 @@ function timelineKindLabel(kind){
   if (kind === "new_url") return "URL changed";
   if (kind === "new_headline") return "Headline changed";
   return "Heartbeat";
+}
+
+function headlineDiffHtml(prevTitle, nextTitle){
+  const a = String(prevTitle || ""), b = String(nextTitle || "");
+  if (!a && !b) return "—";
+  if (!a || !b || a === b) return escapeHtml(b || a);
+  let start = 0;
+  while (start < Math.min(a.length, b.length) && a[start] === b[start]) start += 1;
+  let endA = a.length - 1, endB = b.length - 1;
+  while (endA >= start && endB >= start && a[endA] === b[endB]) { endA -= 1; endB -= 1; }
+  return `${escapeHtml(a.slice(0, start))}<span class="diffDel">${escapeHtml(a.slice(start, endA + 1))}</span><span class="diffAdd">${escapeHtml(b.slice(start, endB + 1))}</span>${escapeHtml(b.slice(endB + 1))}`;
+}
+
+function isMinorHeadlineEdit(prevTitle, nextTitle){
+  const a = String(prevTitle || "").trim(), b = String(nextTitle || "").trim();
+  if (!a || !b || a === b) return true;
+  let start = 0;
+  while (start < Math.min(a.length, b.length) && a[start] === b[start]) start += 1;
+  let endA = a.length - 1, endB = b.length - 1;
+  while (endA >= start && endB >= start && a[endA] === b[endB]) { endA -= 1; endB -= 1; }
+  return Math.max(0, endA - start + 1) + Math.max(0, endB - start + 1) <= Math.max(14, Math.round(Math.max(a.length, b.length) * 0.28));
+}
+
+function appendHeadlineEditMarkup(host, prevTitle, nextTitle){
+  if (!isMinorHeadlineEdit(prevTitle, nextTitle)) {
+    const newest = document.createElement("div");
+    newest.className = "headlineNew";
+    newest.textContent = String(nextTitle || "—");
+    host.appendChild(newest);
+  }
+  const line = document.createElement("div");
+  line.innerHTML = headlineDiffHtml(prevTitle, nextTitle);
+  host.appendChild(line);
+}
+
+function headlineHistoryFromTimeline(events, currentUrl = null){
+  const rows = [...(events || [])].filter((ev) => ev && ev.ts && ev.title && ev.url).sort((a, b) => Date.parse(a.ts) - Date.parse(b.ts));
+  if (!rows.length) return { original: null, previous: null, changes: [] };
+  const activeUrl = String(currentUrl || rows.at(-1)?.url || "");
+  const streak = [];
+  for (let i = rows.length - 1; i >= 0 && String(rows[i].url || "") === activeUrl; i--) streak.unshift(rows[i]);
+  if (!streak.length) return { original: null, previous: null, changes: [] };
+  const start = rows.length - streak.length;
+  const previous = start ? { title: String(rows[start - 1].title || "").trim(), ts: rows[start - 1].ts, url: rows[start - 1].url || null } : null;
+  const changes = [];
+  let previousTitle = null;
+  for (const ev of streak) {
+    const title = String(ev.title || "").trim();
+    if (!title) continue;
+    if (previousTitle !== null && title !== previousTitle) changes.push({ fromTitle: previousTitle, toTitle: title, changedAt: ev.ts });
+    previousTitle = title;
+  }
+  return { original: { title: String(streak[0].title || "").trim(), ts: streak[0].ts, url: activeUrl }, previous, changes: changes.reverse() };
 }
 
 async function reload() {
@@ -2661,13 +2144,11 @@ async function reload() {
     const timelinePromise = loadCardTimelineBySource(12, sources);
     const storyBadgesPromise = loadStoryBadges();
     const recentStoriesPromise = loadRecentStories();
-    const deepDivePromise = loadDeepDiveData();
     const [operationalHealth, loadedTimeline] = await Promise.all([
       operationalHealthPromise,
       timelinePromise,
       storyBadgesPromise,
       recentStoriesPromise,
-      deepDivePromise,
     ]);
     timelineBySource = loadedTimeline;
     renderCollectionHealth(sources, operationalHealth);
@@ -2709,7 +2190,6 @@ async function reload() {
       renderStoryClusters(placeholderSources, placeholderIndicators, {});
     }
     setPlayXPlayStatus("Live updates unavailable. Retrying automatically.");
-    await loadDeepDiveData().catch(() => {});
   } finally {
     isRefreshing = false;
     if (lastRefreshError) retryTimer = setTimeout(reload, 15000);
@@ -2756,11 +2236,6 @@ $("tab-playxplay")?.addEventListener("click", () => setView("playxplay"));
 $("tab-labs")?.addEventListener("click", () => setView("labs"));
 $("details-tab-changes")?.addEventListener("click", () => setDetailsTab("changes"));
 $("details-tab-data")?.addEventListener("click", () => setDetailsTab("data"));
-$("deep-window")?.addEventListener("change", async (e) => {
-  deepDiveState.windowHours = Number(e.target.value || DEEP_DIVE_DEFAULT_HOURS);
-  deepDiveState.selectedObservedAt = null;
-  await loadDeepDiveData(deepDiveState.windowHours);
-});
 $("cluster-strictness")?.addEventListener("change", (e) => {
   const next = String(e.target?.value || "balanced").toLowerCase();
   clusteringStrictness = CLUSTER_PRESETS[next] ? next : "balanced";
@@ -2890,8 +2365,6 @@ sourceDataWindowHours = HISTORY_WINDOW_DEFAULT_HOURS;
 setDetailsTab("changes");
 const sourceDataWindow = $("source-data-window");
 if (sourceDataWindow) sourceDataWindow.value = String(sourceDataWindowHours);
-const deepWindow = $("deep-window");
-if (deepWindow) deepWindow.value = String(DEEP_DIVE_DEFAULT_HOURS);
 const momentLookback = $("moment-lookback");
 if (momentLookback) momentLookback.value = String(momentState.lookbackMinutes);
 const clusterStrictnessEl = $("cluster-strictness");

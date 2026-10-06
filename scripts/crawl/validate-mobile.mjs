@@ -7,7 +7,6 @@ const collectors = {
   nbc1: scrapers.scrapeNBCHero, yahoo1: scrapers.scrapeWPHero,
   guardian1: scrapers.scrapeGuardianHero,
 };
-process.env.NEWSBOARD_MOBILE_SCREENSHOTS = '1';
 const results = [];
 for (const [source_id, collect] of Object.entries(collectors)) {
   if (process.argv[2] && process.argv[2] !== source_id) continue;

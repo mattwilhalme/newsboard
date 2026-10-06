@@ -12,17 +12,10 @@ test("secondary startup requests run concurrently after the initial overview pai
   const timeline = source.indexOf("const timelinePromise", paintYield);
   const storyBadges = source.indexOf("const storyBadgesPromise", paintYield);
   const recentStories = source.indexOf("const recentStoriesPromise", paintYield);
-  const deepDive = source.indexOf("const deepDivePromise", paintYield);
 
   assert.ok(initialRender >= 0, "initial overview should render as soon as the live snapshot is ready");
   assert.ok(paintYield > initialRender, "the browser should get a paint opportunity before hydration");
-  for (const request of [collectionHealth, timeline, storyBadges, recentStories, deepDive]) {
+  for (const request of [collectionHealth, timeline, storyBadges, recentStories]) {
     assert.ok(request > paintYield && request < parallelHydration, "secondary requests should start before the shared await");
   }
-});
-
-test("Top 10 startup data is scoped to the selected timeline window", () => {
-  assert.match(source, /async function loadDeepDiveData\(hours = deepDiveState\.windowHours\)/);
-  assert.match(source, /NewsboardData\.getTop10\(Number\(hours \|\| DEEP_DIVE_DEFAULT_HOURS\)\)/);
-  assert.match(source, /await loadDeepDiveData\(deepDiveState\.windowHours\)/);
 });

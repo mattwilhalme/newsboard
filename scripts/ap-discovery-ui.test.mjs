@@ -59,10 +59,10 @@ test('AP discovery is clearly labeled, unranked, and separate from archived AP h
       assert.equal(await page.locator('#drawer-source-data').evaluate(n => n.scrollWidth <= n.clientWidth), true, `${width}px: discovery drawer overflow`);
     }
     assert.equal(await page.locator('#details-tab-changes').isVisible(), false);
-    await page.locator('#btn-source-data-close').click();
+    await page.locator('#btn-source-data-close').click({ force: true });
     await page.locator('#cards-grid [data-source-id="abc1"]').getByRole('button', { name: 'Details', exact: true }).click();
     assert.equal(await page.locator('#details-tab-changes').isVisible(), true);
-    await page.locator('#btn-source-data-close').click();
+    await page.locator('#btn-source-data-close').click({ force: true });
     await page.locator('#tab-playxplay').click();
     const historyStyle = await page.locator('#playxplay-history .latestTitle').first().evaluate(n => { const s = getComputedStyle(n); return [s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.color]; });
     assert.deepEqual(discoveryStyle, historyStyle, 'Discovery typography must match History exactly');

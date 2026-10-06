@@ -14,7 +14,6 @@ try {
  for(const id of expected)assert.ok(body.includes(snapshot.cacheLike.sources[id].item.title),`Missing live headline: ${id}`);
  const workers=await page.evaluate(async()=>({controller:!!navigator.serviceWorker.controller,registrations:(await navigator.serviceWorker.getRegistrations()).length,cacheKeys:await caches.keys()}));
  assert.deepEqual(staticFallback,[]);assert.deepEqual(errors,[]);
- await page.screenshot({path:'/tmp/newsboard-live-first-load.png',fullPage:true});
  await page.route('**/rest/v1/rpc/newsboard_snapshot',r=>r.fulfill({status:503,json:{error:'Verification outage'}}));
  await page.locator('#btn-reload').click();
  await page.waitForFunction(()=>document.querySelector('#btn-reload')?.disabled===false,{},{timeout:90000});
@@ -27,7 +26,6 @@ try {
  assert.ok((await page.locator('[data-role="headline-link"]').allTextContents()).every(t=>t==='—'));
  assert.equal(await page.evaluate(()=>localStorage.getItem('nb_last_successful_snapshot_v1')),null);
  assert.doesNotMatch(await page.locator('body').innerText(),/Stale data|stale \(no change/i);
- await page.screenshot({path:'/tmp/newsboard-live-unavailable.png',fullPage:true});
  await page.unroute('**/rest/v1/rpc/newsboard_snapshot');
  await page.waitForFunction(()=>document.querySelector('#subline').innerText.startsWith('Last update:'),{},{timeout:45000});
  console.log(JSON.stringify({url:page.url(),sourceCount:Object.keys(snapshot.cacheLike.sources).length,automaticFirstLoad:true,automaticOutageRecovery:true,unavailableLabel,sessionRetained:true,persistedFallbackAbsent:true,workers,staticFallback,errors,statuses:Object.fromEntries(Object.entries(snapshot.cacheLike.sources).map(([id,s])=>[id,s.health.crawlStatus]))},null,2));

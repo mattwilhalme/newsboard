@@ -1853,14 +1853,6 @@ async function scrapeMobileHero(sourceId) {
     const snapshot = { id: sourceId, fetchedAt: nowISO(), runId, ok: Boolean(item),
       error: item ? null : hero.error, item, meta, top10: ranked?.items, top10_quality: ranked?.quality, top10_diagnostics: ranked?.diagnostics };
     const archive = await archiveRun(page, runId, snapshot);
-    if (process.env.NEWSBOARD_MOBILE_SCREENSHOTS === "1") {
-      // Diagnostics only: screenshot failure must not discard a valid crawl.
-      await page.screenshot({ path: path.join(ARCHIVE_DIR, `${runId}.png`), timeout: 10000 }).catch(() => {});
-      if (hero.ok && hero.top > 200) {
-        await page.evaluate(y => scrollTo(0, Math.max(0, y - 100)), hero.top);
-        await page.screenshot({ path: path.join(ARCHIVE_DIR, `${runId}_lead.png`), timeout: 10000 }).catch(() => {});
-      }
-    }
     return { ...snapshot, updatedAt: snapshot.fetchedAt, archive };
   }, { contextOptions: MOBILE_CONTEXT });
 }
