@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { chromium } from 'playwright';
+import { launchTestBrowser } from './support/browser.mjs';
 import { createFrontendFixture, installFrontendRoutes } from './support/frontend-fixture.mjs';
 
 test('AP discovery is clearly labeled, unranked, and separate from archived AP homepage data', { timeout: 45_000 }, async () => {
@@ -9,7 +9,7 @@ test('AP discovery is clearly labeled, unranked, and separate from archived AP h
   const invalid = { ...items[0], title: 'Unsafe external link must not render', url: 'https://example.com/unsafe' };
   fixture.snapshot.cacheLike.sources.apgoogle1 = { ok: true, sourceName: 'AP via Google News', kind: 'discovery', updatedAt: fixture.now, item: items[0], items: [...items, invalid], error: 'Crawl Failed: simulated feed outage', health: { crawlStatus: 'failed', latestError: 'simulated feed outage', method: 'http' } };
   fixture.snapshot.cacheLike.sources.ap1 = { ok: true, sourceName: 'Associated Press', updatedAt: fixture.now, item: { title: 'Historical AP homepage lead', url: 'https://apnews.com/article/history' } };
-  const browser = await chromium.launch({ channel: 'chrome' });
+  const browser = await launchTestBrowser();
   try {
     const page = await browser.newPage(); page.setDefaultTimeout(10_000);
     const errors = []; page.on('pageerror', e => errors.push(e.message));

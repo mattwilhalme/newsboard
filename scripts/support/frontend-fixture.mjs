@@ -16,6 +16,7 @@ export const frontendAssets = new Map([
   ['/newsboard/js/views/cluster-engine.js', ['text/javascript', fs.readFileSync('docs/js/views/cluster-engine.js', 'utf8')]],
   ['/newsboard/js/views/cluster-assignment.js', ['text/javascript', fs.readFileSync('docs/js/views/cluster-assignment.js', 'utf8')]],
   ['/newsboard/js/views/labs.js', ['text/javascript', fs.readFileSync('docs/js/views/labs.js', 'utf8')]],
+  ['/newsboard/js/app.js', ['text/javascript', fs.readFileSync('docs/js/app.js', 'utf8')]],
 ]);
 
 export function createFrontendFixture(now = new Date().toISOString()) {

@@ -32,8 +32,8 @@ test("server, Edge HTTP, browser and UI publisher lists stay in parity", async (
   assert.deepEqual(sorted(Object.keys(BROWSER_TOP10)), sorted([...PUBLISHER_IDS.filter(id => !["abc1","cbs1","apgoogle1"].includes(id)), 'ap1']));
   assert.deepEqual(sorted(Object.keys(collectors)), sorted(PUBLISHER_IDS.filter(id => id !== 'apgoogle1')));
 
-  const html = await readFile(new URL("../../docs/index.html", import.meta.url), "utf8");
-  const match = html.match(/const EXPECTED_SOURCE_IDS = (\[[^;]+\]);/);
+  const appSource = await readFile(new URL("../../docs/js/app.js", import.meta.url), "utf8");
+  const match = appSource.match(/const EXPECTED_SOURCE_IDS = (\[[^;]+\]);/);
   assert.ok(match, "frontend expected-source registry is present");
   assert.deepEqual(JSON.parse(match[1]), PUBLISHER_IDS);
 });

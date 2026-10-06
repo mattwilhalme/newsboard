@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+import { launchTestBrowser } from './support/browser.mjs';
 import { createFrontendFixture, installFrontendRoutes } from './support/frontend-fixture.mjs';
 
 const fixture = createFrontendFixture('2026-09-19T11:30:53.548Z');
@@ -13,7 +13,7 @@ const coverage = {
   earliest_match: { title: 'Trump Jr. repaid oligarch for wedding party', url: 'https://example.com/a', domain: 'example.com', gdelt_seen_at: '2026-09-19T10:41:00Z' },
 };
 
-const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const browser = await launchTestBrowser();
 try {
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   const pageErrors = [];

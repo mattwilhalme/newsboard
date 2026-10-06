@@ -20,6 +20,8 @@
 - rendered mobile centerpiece and browser Top 10 extraction fixtures;
 - GDELT normalization/matching and drawer UI behavior.
 
+`npm run test:ui` starts with a browser preflight so an unavailable browser fails once with a direct setup hint instead of producing a cascade of fixture failures. Chrome is the default. To use Playwright's managed Chromium, run `npm run install-browsers` and set `PLAYWRIGHT_BROWSER_CHANNEL=chromium`.
+
 `.github/workflows/ci.yml` runs this same command on pushes to `main` and on pull requests using Node.js 24. The CI job is read-only and receives no Supabase credentials; live publisher checks and rollback-oriented SQL suites remain deliberately separate.
 
 The Playwright files run sequentially. Each file may reuse a browser internally, but launching the independent Chrome suites concurrently caused nondeterministic process termination on constrained CI and local hosts.

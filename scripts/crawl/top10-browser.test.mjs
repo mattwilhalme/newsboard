@@ -1,12 +1,12 @@
 import test,{before,after} from 'node:test';
 import assert from 'node:assert/strict';
-import {chromium} from 'playwright';
+import {launchTestBrowser} from '../support/browser.mjs';
 import {BROWSER_TOP10,extractRenderedCandidates} from '../../lib/top10Browser.js';
 import {validateTop10} from '../../supabase/functions/_shared/top10.js';
 import {MOBILE_ADAPTERS,extractMobileHero} from '../../lib/mobileHero.js';
 import {loadPublisherFixture} from '../support/publisher-fixtures.mjs';
 let browser,page;
-before(async()=>{browser=await chromium.launch({channel:process.env.PLAYWRIGHT_BROWSER_CHANNEL||'chrome'});page=await browser.newPage({viewport:{width:390,height:844}});});
+before(async()=>{browser=await launchTestBrowser();page=await browser.newPage({viewport:{width:390,height:844}});});
 after(async()=>browser?.close());
 const cases={
  ap1:['https://apnews.com/article/','<main><div class="PageListStandardE">','</div></main>',(u,t)=>`<h2 class="PagePromo-title"><a href="${u}">${t}</a></h2>`],

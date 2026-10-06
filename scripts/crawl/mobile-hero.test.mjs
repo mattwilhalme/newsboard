@@ -1,11 +1,11 @@
 import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright';
+import { launchTestBrowser } from '../support/browser.mjs';
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from '../../lib/mobileHero.js';
 import { loadPublisherFixture } from '../support/publisher-fixtures.mjs';
 let browser, context, page;
 before(async () => {
-  browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_BROWSER_CHANNEL || 'chrome' });
+  browser = await launchTestBrowser();
   context = await browser.newContext(MOBILE_CONTEXT);
   page = await context.newPage();
 });

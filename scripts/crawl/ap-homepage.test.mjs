@@ -1,11 +1,11 @@
 import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright';
+import { launchTestBrowser } from '../support/browser.mjs';
 import { loadAPHomepage } from '../../lib/apHomepage.js';
 import { MOBILE_CONTEXT, MOBILE_ADAPTERS, extractMobileHero } from '../../lib/mobileHero.js';
 
 let browser;
-before(async () => { browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_BROWSER_CHANNEL || 'chrome' }); });
+before(async () => { browser = await launchTestBrowser(); });
 after(async () => { await browser?.close(); });
 const homepage = '<title>AP News</title><meta name="viewport" content="width=device-width,initial-scale=1"><main><div class="PageListStandardE"><div class="PageListStandardE-leadPromo-info"><h2 class="PagePromo-title"><a href="https://apnews.com/article/lead">A validated AP editorial lead story</a></h2></div></div></main>';
 const interstitial = '<title>Just a moment...</title><p>Checking your browser</p>';

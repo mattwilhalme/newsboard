@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { chromium } from 'playwright';
+import { launchTestBrowser } from './support/browser.mjs';
 import { createFrontendFixture, installFrontendRoutes } from './support/frontend-fixture.mjs';
 
 const now = new Date().toISOString();
@@ -8,7 +8,7 @@ const fixture = createFrontendFixture(now);
 const { snapshot } = fixture;
 
 test('major views preserve deterministic content, controls and ordering', async () => {
-  const browser = await chromium.launch({ channel: 'chrome' });
+  const browser = await launchTestBrowser();
   const page = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const errors = []; page.on('pageerror', (error) => errors.push(error.message));
   await installFrontendRoutes(page, fixture);

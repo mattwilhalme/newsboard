@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { readFile } from "node:fs/promises";
 
-const source = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+const source = await readFile(new URL("../docs/js/app.js", import.meta.url), "utf8");
 
 test("secondary startup requests run concurrently after the initial overview paint", () => {
   const initialRender = source.indexOf("renderOverview(sources, preliminary.indicators, {});");
