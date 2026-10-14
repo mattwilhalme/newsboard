@@ -1,5 +1,6 @@
 import {createClient} from '@supabase/supabase-js';
 import {publishers,collectPublisher} from './collectors.js';
+import {notifyLiveBlogDiscovery} from '../_shared/live-blog-discovery.js';
 const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json'}});
 Deno.serve(async req=>{
  if(req.method!=='POST') return json({error:'POST required'},405);
@@ -37,6 +38,12 @@ Deno.serve(async req=>{
     if(saveError){
      const {error:recordError}=await db.from('crawler_source_runs').upsert({run_id:run,source_id:cfg.source_id,started_at:started,completed_at:new Date().toISOString(),collection_method:cfg.method,success:false,outcome:'infrastructure_error',item_count:0,duration_ms:Date.now()-Date.parse(started),error:`persistence: ${saveError.message}`});
      if(recordError) throw new Error(`Publisher and failure persistence failed: ${cfg.source_id}`);
+    }
+    if(!failure&&!saveError&&output?.top10){
+     try{
+      const discovery=await notifyLiveBlogDiscovery({channel:'top10',sourceId:cfg.source_id,observedAt:output.observed_at,runId:run,items:output.top10},{secret:Deno.env.get('NEWSBOARD_DISCOVERY_SECRET')||''});
+      if(discovery.status==='delivered') console.log(JSON.stringify({run_id:run,source_id:cfg.source_id,live_blog_discovery:'delivered'}));
+     }catch(error){console.warn(JSON.stringify({run_id:run,source_id:cfg.source_id,live_blog_discovery:'failed',error:error.message}));}
     }
     summary.push({publisher:cfg.source_id,success:!failure&&!saveError,items:output?.items.length||0,error:saveError?.message||failure?.message||null});
    }));

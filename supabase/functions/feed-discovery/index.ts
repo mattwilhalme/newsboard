@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { fetchFeed } from '../_shared/feed-discovery.js';
+import { notifyLiveBlogDiscovery } from '../_shared/live-blog-discovery.js';
 import { FEEDS } from './feeds.js';
 const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json'}});
 Deno.serve(async req=>{
@@ -13,7 +14,7 @@ Deno.serve(async req=>{
  const byId=Object.fromEntries((states||[]).map((x:any)=>[x.id,x])); const results:any[]=[];
  for(let offset=0;offset<FEEDS.length;offset+=3) await Promise.all(FEEDS.slice(offset,offset+3).map(async feed=>{
    const started=new Date().toISOString();
-   try { const result=await fetchFeed(feed,byId[feed.id]); const {error:save}=await db.rpc('newsboard_save_feed_poll',{p_feed_id:feed.id,p_started_at:started,p_status:result.status,p_etag:result.etag,p_last_modified:result.lastModified,p_items:result.items}); if(save)throw save; results.push({feed:feed.id,status:result.status,items:result.items.length}); }
+   try { const result=await fetchFeed(feed,byId[feed.id]); const {error:save}=await db.rpc('newsboard_save_feed_poll',{p_feed_id:feed.id,p_started_at:started,p_status:result.status,p_etag:result.etag,p_last_modified:result.lastModified,p_items:result.items}); if(save)throw save; try { await notifyLiveBlogDiscovery({channel:'feed',sourceId:feed.publisherId,observedAt:new Date().toISOString(),runId:`feed:${feed.id}:${started}`,items:result.items},{secret:Deno.env.get('NEWSBOARD_DISCOVERY_SECRET')||''}); } catch(discoveryError) { console.warn(JSON.stringify({feed:feed.id,live_blog_discovery:'failed',error:discoveryError.message})); } results.push({feed:feed.id,status:result.status,items:result.items.length}); }
    catch(e){await db.rpc('newsboard_save_feed_failure',{p_feed_id:feed.id,p_started_at:started,p_error:String(e.message||e),p_http_status:e.httpStatus||null});results.push({feed:feed.id,error:String(e.message||e)});}
  }));
  return json({results});

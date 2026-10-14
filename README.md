@@ -14,6 +14,8 @@ Publisher homepage
 
 Supabase is the production system of record. A five-minute private Edge crawl handles publishers with validated HTTP adapters. Browser-authoritative publishers and failed HTTP attempts are queued independently for the targeted GitHub Actions gap-fill worker. Every publisher result is persisted independently, so one failure cannot erase or delay the last successful observation for another publisher. A separate Edge worker derives Story Identity and propagation events from successful observations.
 
+ABC, CBS, CNN, and NBC top-10/feed results are also checked for strict live-blog URL patterns. Matching URLs are sent from the server-side crawl functions to Live Reader's signed discovery endpoint using `NEWSBOARD_DISCOVERY_SECRET`; delivery failures are logged but never fail Newsboard collection or persistence.
+
 The manual browser backup workflow remains available for recovery. `server.js`, `cache.json`, `archive/`, and the generated JSON builder support local development, diagnostics, and legacy tooling; they are not the production dashboard's source of current headlines. The frontend is the static [docs/index.html](docs/index.html) page and loads current data directly from Supabase.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for implementation detail and production invariants.
