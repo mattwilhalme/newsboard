@@ -47,6 +47,10 @@ test('NBC fallback stays inside the first editorial package', async () => {
   assert.equal(result.url, 'https://www.nbcnews.com/news/lead-rcna13');
   assert.equal(result.selector_tier, 'fallback');
 });
+test('NBC accepts an editorial special as the lead story', async () => {
+  const result = await select('nbc1', '<section class="pkg multi-storyline"><h2 class="multistoryline__headline"><a href="https://www.nbcnews.com/specials/classroom-video-investigation/">The eighth grader who viewed thousands of videos at school</a></h2></section>');
+  assert.equal(result.url, 'https://www.nbcnews.com/specials/classroom-video-investigation/');
+});
 test('Yahoo excludes offscreen slides and the personalized feed', async () => {
   const result = await select('yahoo1', '<div id="top-stories"><article aria-roledescription="slide" aria-label="Slide 2 of 8" style="position:absolute;left:370px;width:350px"><a data-ylk="cpos:2;elm:hdln;" href="https://www.yahoo.com/news/second.html">Higher but offscreen secondary slide</a></article><article aria-roledescription="slide" aria-label="Slide 1 of 8"><h3><a data-ylk="cpos:1;elm:hdln;" href="https://www.yahoo.com/news/lead.html">The first editorial Yahoo news slide</a></h3></article></div><h2><a href="https://www.yahoo.com/news/recommended.html">Stories for you recommendation</a></h2>');
   assert.equal(result.url, 'https://www.yahoo.com/news/lead.html');

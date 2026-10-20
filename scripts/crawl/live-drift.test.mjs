@@ -2,12 +2,23 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { evaluateLiveDrift, LIVE_DRIFT_CONTRACTS } from '../../lib/crawlerDrift.js';
 import { PUBLISHER_IDS } from '../../lib/publisherRegistry.js';
+import { SCHEDULED_LIVE_DRIFT_SKIPS, SCHEDULED_LIVE_DRIFT_SOURCE_IDS } from './live-drift.mjs';
 
 const item = { title: 'A sufficiently descriptive editorial headline', url: 'https://example.com/news/story' };
 const ranked = Array.from({ length: 10 }, (_, index) => ({ ...item, rank: index + 1, url: `${item.url}-${index}` }));
 
 test('every active publisher has a live drift contract', () => {
   assert.deepEqual(Object.keys(LIVE_DRIFT_CONTRACTS), [...PUBLISHER_IDS]);
+});
+
+test('scheduled drift only skips publishers that block the runner', () => {
+  assert.deepEqual(SCHEDULED_LIVE_DRIFT_SKIPS, {
+    usat1: 'publisher returns HTTP 402 to GitHub-hosted browser traffic',
+  });
+  assert.deepEqual(
+    [...SCHEDULED_LIVE_DRIFT_SOURCE_IDS, ...Object.keys(SCHEDULED_LIVE_DRIFT_SKIPS)].sort(),
+    [...PUBLISHER_IDS].sort(),
+  );
 });
 
 test('complete ranking contracts require ten items and centerpiece agreement', () => {

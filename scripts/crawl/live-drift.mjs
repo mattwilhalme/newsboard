@@ -20,9 +20,19 @@ export const liveCollectors = {
   yahoo1: scrapers.scrapeWPHero,
 };
 
+// USA Today returns a publisher-generated HTTP 402 to GitHub-hosted browser
+// traffic. Keep its contract and explicit CLI check, but do not turn a known
+// runner access restriction into permanent scheduled drift noise.
+export const SCHEDULED_LIVE_DRIFT_SOURCE_IDS = Object.freeze(
+  Object.keys(LIVE_DRIFT_CONTRACTS).filter(sourceId => sourceId !== 'usat1'),
+);
+export const SCHEDULED_LIVE_DRIFT_SKIPS = Object.freeze({
+  usat1: 'publisher returns HTTP 402 to GitHub-hosted browser traffic',
+});
+
 export async function main() {
   const requested = process.argv.slice(2);
-  const sourceIds = requested.length ? requested : Object.keys(LIVE_DRIFT_CONTRACTS);
+  const sourceIds = requested.length ? requested : SCHEDULED_LIVE_DRIFT_SOURCE_IDS;
   const unknown = sourceIds.filter(sourceId => !liveCollectors[sourceId]);
   if (unknown.length) throw new Error(`Unknown source ids: ${unknown.join(', ')}`);
 
@@ -49,6 +59,7 @@ export async function main() {
     started_at: startedAt,
     completed_at: new Date().toISOString(),
     read_only: true,
+    skipped: requested.length ? {} : SCHEDULED_LIVE_DRIFT_SKIPS,
     ok: results.every(result => result.ok),
     results,
   };
