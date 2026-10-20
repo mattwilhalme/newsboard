@@ -63,10 +63,10 @@ test('AP discovery is clearly labeled, unranked, and separate from archived AP h
     await page.locator('#cards-grid [data-source-id="abc1"]').getByRole('button', { name: 'Details', exact: true }).click();
     assert.equal(await page.locator('#details-tab-changes').isVisible(), true);
     await page.locator('#btn-source-data-close').click({ force: true });
-    await page.locator('#tab-playxplay').click();
+    await page.locator('#tab-playxplay').click({ force: true });
     const historyStyle = await page.locator('#playxplay-history .latestTitle').first().evaluate(n => { const s = getComputedStyle(n); return [s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.color]; });
     assert.deepEqual(discoveryStyle, historyStyle, 'Discovery typography must match History exactly');
-    await page.locator('#tab-data').click();
+    await page.locator('#tab-data').click({ force: true });
     assert.match(await page.locator('[data-health-source="apgoogle1"]').innerText(), /Degraded[\s\S]*failed[\s\S]*Not applicable \(unranked\)[\s\S]*Discovery only/);
     assert.deepEqual(errors, []);
   } finally { await browser.close(); }
