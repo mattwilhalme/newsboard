@@ -42,7 +42,7 @@ The `newsboard-browser-dispatch` Edge Function uses an atomic database claim and
 
 ### Local and legacy tooling
 
-`server.js` remains active for local development, collector implementations, diagnostics, and the browser workers that import its scraper exports. Its local `cache.json` and `archive/` output are runtime/debug artifacts, not the production source of current dashboard data. `scripts/run-scrape.js` still builds retained JSON artifacts for comparison and historical tooling. `wrangler.jsonc` can serve/deploy static `docs/` assets but does not replace Supabase crawler orchestration.
+`server.js` supports local development and provides scraper exports for the browser workers. It writes local diagnostics to `cache.json` and `archive/`. The production dashboard reads from Supabase, and the retained JSON snapshots are historical. `wrangler.jsonc` can serve or deploy static `docs/` assets.
 
 ## Persistence and public reads
 
