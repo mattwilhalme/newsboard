@@ -7,7 +7,7 @@ export function extractHttpTop10(sourceId,html,centerpiece,document) {
   const config=sourceId==='abc1'?{
    base:'https://abcnews.com/',cards:'main [data-testid="prism-card"]',headline:'[data-testid="prism-headline"],h1,h2,h3,h4',anchor:'a[data-testid="prism-linkbase"][href]',host:/^(abcnews\.go\.com|abcnews\.com)$/,article:/\/(story|wireStory|live-updates)(\/|$)/,
   }:sourceId==='cbs1'?{
-   base:'https://www.cbsnews.com/',cards:'#component-latest-news article.item, #component-more-top-stories article.item',headline:'h4.item__hed,h1,h2,h3,h4',anchor:'a[href]',host:/^(www\.)?cbsnews\.com$/,article:/^\/(news|live-updates)\//,
+   base:'https://www.cbsnews.com/',cards:'.container.slug--front-door-new-views-v2 section.component.list-grid article.item',headline:'.item__hed,h1,h2,h3,h4',anchor:'a[href]',host:/^(www\.)?cbsnews\.com$/,article:/^\/(?:[a-z0-9-]+\/)?(?:news|live-updates)\//,
   }:null;
   if(!config)return null;
   $(config.cards).each((index,el)=>{

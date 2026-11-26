@@ -1751,8 +1751,12 @@ async function scrapeCBSHero() {
         }
       }
 
-      // Prefer CBS's lead module headline; the heading level changes with layouts.
-      const leadHeading = document.querySelector("#component-latest-news article.item .item__hed");
+      // CBS now places its editorial hero grid before the Latest News module.
+      // Follow homepage module order so the centerpiece remains the visually
+      // leading story when CBS changes the hero section's generated id.
+      const leadHeading = document.querySelector(
+        ".container.slug--front-door-new-views-v2 section.component.list-grid article.item .item__hed, #component-latest-news article.item .item__hed",
+      );
       if (leadHeading) {
         const a = leadHeading.closest("a[href]") || leadHeading.parentElement?.querySelector("a[href]");
         const title = clean(leadHeading.textContent || "");
@@ -1896,7 +1900,9 @@ async function scrapeCNNHero() {
         const u = parsed(url);
         if (!u || !/(^|\.)cnn\.com$/i.test(u.hostname)) return false;
         const p = String(u.pathname || "").toLowerCase();
-        if (!/^\/\d{4}\/\d{2}\/\d{2}\//.test(p)) return false;
+        const datedStory = /^\/\d{4}\/\d{2}\/\d{2}\//.test(p);
+        const sectionStory = /^\/(us|world|politics|business|health|entertainment|sport|sports|travel|style|science|climate|weather|tech|media|middleeast|europe|asia|americas|africa)\//.test(p);
+        if (!datedStory && !sectionStory) return false;
         if (/\/(audio|videos?|profiles?|newsletter|account|live-tv|subscriptions?|access|cnn-underscored)(\/|$)/i.test(p)) return false;
         return true;
       }
@@ -1927,7 +1933,7 @@ async function scrapeCNNHero() {
       function firstDirectLead() {
         // Rank visible lead modules together. Selector-by-selector priority used
         // to skip a higher live lead when a lower package had a title link.
-        const selector = '.container_lead-plus-headlines .container__title-url [data-editable="title"], .container_lead-package .container__title-url [data-editable="title"], .container_lead-plus-headlines .container__headline-text, .container_lead-package .container__headline-text';
+        const selector = '.layout__main .zone .container__headline-text, .container_lead-plus-headlines .container__title-url [data-editable="title"], .container_lead-package .container__title-url [data-editable="title"], .container_lead-plus-headlines .container__headline-text, .container_lead-package .container__headline-text';
         return [...document.querySelectorAll(selector)].filter(el => {
           const r = el.getBoundingClientRect(), style = getComputedStyle(el);
           return r.width > 0 && r.height > 0 && r.right > 0 && r.left < innerWidth && style.visibility !== 'hidden';
@@ -1969,6 +1975,8 @@ async function scrapeCNNHero() {
       }
 
       const selectors = [
+        ".layout__main .zone a.container__link[href]",
+        ".layout__main a.container__link[href]",
         ".container_lead-package a[href]",
         ".container_lead-package__title-url[href]",
         ".container_lead-plus-headlines .container__title-url[href]",

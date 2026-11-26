@@ -764,6 +764,7 @@ function sourceHomeUrl(k, row){
   const s = canonicalSourceId(k);
   if (s === "guardian1") return "https://www.theguardian.com/";
   if (s === "yahoo1") return "https://news.yahoo.com/";
+  if (s === "apgoogle1" || s === "ap1") return "https://apnews.com/";
   const fromRow = row?.home_url || row?.homeUrl || null;
   if (fromRow) return String(fromRow);
   if (s === "abc1") return "https://abcnews.com/";
@@ -771,8 +772,6 @@ function sourceHomeUrl(k, row){
   if (s === "usat1") return "https://www.usatoday.com/";
   if (s === "nbc1") return "https://www.nbcnews.com/";
   if (s === "cnn1") return "https://www.cnn.com/";
-  if (s === "ap1") return "https://apnews.com/";
-  if (s === "apgoogle1") return "https://news.google.com/search?q=site%3Aapnews.com%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen";
   if (s === "latimes1") return "https://www.latimes.com/";
   if (s === "npr1") return "https://www.npr.org/";
   if (s === "bbc1") return "https://www.bbc.com/";

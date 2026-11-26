@@ -147,6 +147,7 @@ function extractCbsFromJsonLd(html = "", sourceUrl = "https://www.cbsnews.com/",
 function extractCbsLeadFromDom(html = "", sourceUrl = "https://www.cbsnews.com/", document) {
   const $ = document || cheerio.load(html || "");
   const selectors = [
+    ".container.slug--front-door-new-views-v2 section.component.list-grid article.item .item__hed",
     "#component-latest-news article.item a:has(.item__hed)",
     "#component-latest-news .item__hed",
     "article.item.item--type-updating_story a:has(.item__hed)",

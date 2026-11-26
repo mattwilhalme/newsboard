@@ -36,9 +36,9 @@ test('missing rank module preserves a valid HTTP centerpiece',async()=>{
  const original=globalThis.fetch;
  try{globalThis.fetch=async()=>new Response('<main><h2><a href="https://abcnews.com/US/story?id=7">Valid centerpiece without ranked cards</a></h2></main>');const r=await collectPublisher(publishers.find(x=>x.id==='abc1'));assert.ok(r.item.title);assert.equal(r.top10_quality,'failed');}finally{globalThis.fetch=original;}
 });
-test('CBS uses lead section then more top stories, not unrelated links',()=>{
+test('CBS uses homepage hero modules in editorial order, not unrelated links',()=>{
  const card=(i)=>`<article class="item"><a href="https://cbsnews.com/news/story-${i}"><h2 class="item__hed">CBS editorial headline ${i}</h2></a></article>`;
- const html='<nav>'+card(99)+'</nav><section id="component-latest-news">'+Array.from({length:9},(_,i)=>card(i)).join('')+'</section><section id="component-more-top-stories">'+card(9)+'</section>';
+ const html='<nav>'+card(99)+'</nav><div class="container slug--front-door-new-views-v2"><section class="component list-grid">'+Array.from({length:9},(_,i)=>card(i)).join('')+'</section><section class="component list-grid">'+card(9)+'</section></div>';
  assert.equal(extractHttpTop10('cbs1',html,{url:'https://cbsnews.com/news/story-0'}).quality,'complete');
 });
 test('browser ranking evaluates existing page once and contains extraction errors',async()=>{
